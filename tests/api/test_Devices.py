@@ -357,6 +357,6 @@ def is_valid_get_device_detail(obj):
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 def test_get_device_detail(api):
-    endpoint_result = api.devices.get_device_detail( param_identifier = '', param_search_by = '', param_timestamp = '1560376277')
+    endpoint_result = api.devices.get_device_detail( param_identifier = '', param_search_by = '', param_timestamp = '1560378327')
     assert is_valid_get_device_detail(endpoint_result)
 

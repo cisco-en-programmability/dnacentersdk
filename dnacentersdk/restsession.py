@@ -227,9 +227,7 @@ class RestSession(object):
 
         while True:
             # Make the HTTP request to the API endpoint
-            print(method, abs_url, kwargs)
             response = self._req_session.request(method, abs_url, **kwargs)
-            print('Response', response.headers)
 
             try:
                 # Check the response code for error conditions
@@ -252,7 +250,6 @@ class RestSession(object):
             f = open(file_name, 'w+')
             f.write(content)
             f.close()
-            print("\nFile {} downloaded\n".format(file_name))
         except Exception as e:
             raise DownloadFailure('Could not create/write to {}. Reason: {}'.format(file_name, e.message))
     
@@ -282,7 +279,6 @@ class RestSession(object):
         if 'fileName' in response.headers:
             file_name = response.headers.get('fileName')
             self.download_file(file_name, response.text)
-            # return {}
         elif 'Content-Disposition' in response.headers:
             file_name = self.get_filename_from_cd(response.headers.get('Content-Disposition')).replace('"', '')
             self.download_file(file_name, response.text)

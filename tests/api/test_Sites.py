@@ -9,7 +9,7 @@ def is_valid_get_site_health(obj):
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 def test_get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1560376277')
+    endpoint_result = api.sites.get_site_health( param_timestamp = '1560378327')
     assert is_valid_get_site_health(endpoint_result)
 
 
