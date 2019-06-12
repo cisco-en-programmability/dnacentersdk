@@ -91,7 +91,7 @@ class FabricWired( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_98a39bf4485a9871').validate(payload) )
+        self._request_validator('jsd_98a39bf4485a9871').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -129,7 +129,7 @@ class FabricWired( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_bead7b3443b996a7').validate(payload) )
+        self._request_validator('jsd_bead7b3443b996a7').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -170,7 +170,7 @@ class FabricWired( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_cb81b93540baaab0').validate(payload) )
+        self._request_validator('jsd_cb81b93540baaab0').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

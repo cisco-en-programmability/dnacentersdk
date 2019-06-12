@@ -107,7 +107,7 @@ class Task( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_26b44ab04649a183').validate(payload) )
+        self._request_validator('jsd_26b44ab04649a183').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -144,7 +144,7 @@ class Task( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_a1a9387346ba92b1').validate(payload) )
+        self._request_validator('jsd_a1a9387346ba92b1').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -207,7 +207,7 @@ class Task( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_e78bb8a2449b9eed').validate(payload) )
+        self._request_validator('jsd_e78bb8a2449b9eed').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -244,7 +244,7 @@ class Task( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_f5a269c44f2a95fa').validate(payload) )
+        self._request_validator('jsd_f5a269c44f2a95fa').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -285,7 +285,7 @@ class Task( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_e487f8d3481b94f2').validate(payload) )
+        self._request_validator('jsd_e487f8d3481b94f2').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

@@ -101,7 +101,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_01b09a254b9ab259').validate(payload) )
+        self._request_validator('jsd_01b09a254b9ab259').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -144,7 +144,7 @@ class TemplateProgrammer( object ):
         if rq_templates is not None: payload.update( { 'templates':  rq_templates })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_00aec9b1422ab27e').validate(payload) )
+        self._request_validator('jsd_00aec9b1422ab27e').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -202,7 +202,7 @@ class TemplateProgrammer( object ):
         if rq_version is not None: payload.update( { 'version':  rq_version })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_7781fa0548a98342').validate(payload) )
+        self._request_validator('jsd_7781fa0548a98342').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -239,7 +239,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_109d1b4f4289aecd').validate(payload) )
+        self._request_validator('jsd_109d1b4f4289aecd').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -281,7 +281,7 @@ class TemplateProgrammer( object ):
         if rq_templateId is not None: payload.update( { 'templateId':  rq_templateId })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_6099da82477b858a').validate(payload) )
+        self._request_validator('jsd_6099da82477b858a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -320,7 +320,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_83a3b9404cb88787').validate(payload) )
+        self._request_validator('jsd_83a3b9404cb88787').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -363,7 +363,7 @@ class TemplateProgrammer( object ):
         if rq_templates is not None: payload.update( { 'templates':  rq_templates })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_9480fa1f47ca9254').validate(payload) )
+        self._request_validator('jsd_9480fa1f47ca9254').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -400,7 +400,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_9c9a785741cbb41f').validate(payload) )
+        self._request_validator('jsd_9c9a785741cbb41f').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -437,7 +437,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_a7b42836408a8e74').validate(payload) )
+        self._request_validator('jsd_a7b42836408a8e74').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -475,7 +475,7 @@ class TemplateProgrammer( object ):
         if rq_templateId is not None: payload.update( { 'templateId':  rq_templateId })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_62b05b2c40a9b216').validate(payload) )
+        self._request_validator('jsd_62b05b2c40a9b216').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -513,7 +513,7 @@ class TemplateProgrammer( object ):
         if rq_templateId is not None: payload.update( { 'templateId':  rq_templateId })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_f393abe84989bb48').validate(payload) )
+        self._request_validator('jsd_f393abe84989bb48').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -550,7 +550,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_d0a1abfa435b841d').validate(payload) )
+        self._request_validator('jsd_d0a1abfa435b841d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -610,7 +610,7 @@ class TemplateProgrammer( object ):
         if rq_version is not None: payload.update( { 'version':  rq_version })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_f6b119ad4d4aaf16').validate(payload) )
+        self._request_validator('jsd_f6b119ad4d4aaf16').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -647,7 +647,7 @@ class TemplateProgrammer( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_c8bf6b65414a9bc7').validate(payload) )
+        self._request_validator('jsd_c8bf6b65414a9bc7').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

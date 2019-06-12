@@ -89,7 +89,7 @@ class SiteProfile( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_7fbe4b804879baa4').validate(payload) )
+        self._request_validator('jsd_7fbe4b804879baa4').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -130,7 +130,7 @@ class SiteProfile( object ):
         if rq_callbackUrl is not None: payload.update( { 'callbackUrl':  rq_callbackUrl })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_828828f44f28bd0d').validate(payload) )
+        self._request_validator('jsd_828828f44f28bd0d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

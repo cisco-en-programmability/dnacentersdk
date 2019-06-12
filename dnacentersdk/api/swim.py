@@ -123,7 +123,7 @@ class Swim( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_0c8f7a0b49b9aedd').validate(payload) )
+        self._request_validator('jsd_0c8f7a0b49b9aedd').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -158,7 +158,7 @@ class Swim( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_8cb6783b4faba1f4').validate(payload) )
+        self._request_validator('jsd_8cb6783b4faba1f4').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -202,7 +202,7 @@ class Swim( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_4dbe3bc743a891bc').validate(payload) )
+        self._request_validator('jsd_4dbe3bc743a891bc').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -243,7 +243,7 @@ class Swim( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_bc8aab4746ca883d').validate(payload) )
+        self._request_validator('jsd_bc8aab4746ca883d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -282,7 +282,7 @@ class Swim( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_fb9beb664f2aba4c').validate(payload) )
+        self._request_validator('jsd_fb9beb664f2aba4c').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

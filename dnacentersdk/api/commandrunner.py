@@ -87,7 +87,7 @@ class CommandRunner( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_33bb2b9d40199e14').validate(payload) )
+        self._request_validator('jsd_33bb2b9d40199e14').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -128,7 +128,7 @@ class CommandRunner( object ):
         if rq_timeout is not None: payload.update( { 'timeout':  rq_timeout })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_d6b8ca774739adf4').validate(payload) )
+        self._request_validator('jsd_d6b8ca774739adf4').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

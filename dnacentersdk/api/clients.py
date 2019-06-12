@@ -89,7 +89,7 @@ class Clients( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_149aa93b4ddb80dd').validate(payload) )
+        self._request_validator('jsd_149aa93b4ddb80dd').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -128,7 +128,7 @@ class Clients( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_e2adba7943bab3e9').validate(payload) )
+        self._request_validator('jsd_e2adba7943bab3e9').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

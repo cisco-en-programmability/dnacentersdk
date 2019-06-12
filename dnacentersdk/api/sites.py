@@ -89,7 +89,7 @@ class Sites( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_17a82ac94cf99ab0').validate(payload) )
+        self._request_validator('jsd_17a82ac94cf99ab0').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -130,7 +130,7 @@ class Sites( object ):
         if rq_device is not None: payload.update( { 'device':  rq_device })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_eeb168eb41988e07').validate(payload) )
+        self._request_validator('jsd_eeb168eb41988e07').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -170,7 +170,7 @@ class Sites( object ):
         if rq_site is not None: payload.update( { 'site':  rq_site })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_50b589fd4c7a930a').validate(payload) )
+        self._request_validator('jsd_50b589fd4c7a930a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

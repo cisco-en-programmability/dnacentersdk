@@ -87,7 +87,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_069d9823451b892d').validate(payload) )
+        self._request_validator('jsd_069d9823451b892d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -122,7 +122,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_17929bc7465bb564').validate(payload) )
+        self._request_validator('jsd_17929bc7465bb564').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -165,7 +165,7 @@ class NetworkDiscovery( object ):
         if rq_writeCommunity is not None: payload.update( { 'writeCommunity':  rq_writeCommunity })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_10b06a6a4f7bb3cb').validate(payload) )
+        self._request_validator('jsd_10b06a6a4f7bb3cb').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -213,7 +213,7 @@ class NetworkDiscovery( object ):
         if rq_username is not None: payload.update( { 'username':  rq_username })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_1da5ebdd434aacfe').validate(payload) )
+        self._request_validator('jsd_1da5ebdd434aacfe').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -248,7 +248,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_44974ba5435a801d').validate(payload) )
+        self._request_validator('jsd_44974ba5435a801d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -285,7 +285,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_4c8cab5f435a80f4').validate(payload) )
+        self._request_validator('jsd_4c8cab5f435a80f4').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -353,7 +353,7 @@ class NetworkDiscovery( object ):
         if rq_userNameList is not None: payload.update( { 'userNameList':  rq_userNameList })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_55b439dc4239b140').validate(payload) )
+        self._request_validator('jsd_55b439dc4239b140').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -388,7 +388,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_6bacb8d14639bdc7').validate(payload) )
+        self._request_validator('jsd_6bacb8d14639bdc7').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -423,7 +423,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_4d9ca8e2431a8a24').validate(payload) )
+        self._request_validator('jsd_4d9ca8e2431a8a24').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -478,7 +478,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_3d9b99c343398a27').validate(payload) )
+        self._request_validator('jsd_3d9b99c343398a27').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -517,7 +517,7 @@ class NetworkDiscovery( object ):
         if rq_siteUuids is not None: payload.update( { 'siteUuids':  rq_siteUuids })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_709fda3c42b8877a').validate(payload) )
+        self._request_validator('jsd_709fda3c42b8877a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -556,7 +556,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_33b799d04d0a8907').validate(payload) )
+        self._request_validator('jsd_33b799d04d0a8907').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -591,7 +591,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_7aa3da9d4e098ef2').validate(payload) )
+        self._request_validator('jsd_7aa3da9d4e098ef2').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -628,7 +628,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_63bb88b74f59aa17').validate(payload) )
+        self._request_validator('jsd_63bb88b74f59aa17').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -700,7 +700,7 @@ class NetworkDiscovery( object ):
         if rq_userNameList is not None: payload.update( { 'userNameList':  rq_userNameList })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_9788b8fc4418831d').validate(payload) )
+        self._request_validator('jsd_9788b8fc4418831d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -735,7 +735,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_948ea8194348bc0b').validate(payload) )
+        self._request_validator('jsd_948ea8194348bc0b').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -778,7 +778,7 @@ class NetworkDiscovery( object ):
         if rq_readCommunity is not None: payload.update( { 'readCommunity':  rq_readCommunity })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_47a1b84b4e1b8044').validate(payload) )
+        self._request_validator('jsd_47a1b84b4e1b8044').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -821,7 +821,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_99872a134d0a9fb4').validate(payload) )
+        self._request_validator('jsd_99872a134d0a9fb4').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -856,7 +856,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_a5ac99774c6bb541').validate(payload) )
+        self._request_validator('jsd_a5ac99774c6bb541').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -899,7 +899,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_a4967be64dfaaa1a').validate(payload) )
+        self._request_validator('jsd_a4967be64dfaaa1a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -942,7 +942,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_a6b798ab4acaa34e').validate(payload) )
+        self._request_validator('jsd_a6b798ab4acaa34e').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -979,7 +979,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_58a3699e489b9529').validate(payload) )
+        self._request_validator('jsd_58a3699e489b9529').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1025,7 +1025,7 @@ class NetworkDiscovery( object ):
         if rq_username is not None: payload.update( { 'username':  rq_username })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_b68a6bd8473a9a25').validate(payload) )
+        self._request_validator('jsd_b68a6bd8473a9a25').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1064,7 +1064,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_c1ba9a424c08a01b').validate(payload) )
+        self._request_validator('jsd_c1ba9a424c08a01b').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1099,7 +1099,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_bf859ac64a0ba19c').validate(payload) )
+        self._request_validator('jsd_bf859ac64a0ba19c').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1142,7 +1142,7 @@ class NetworkDiscovery( object ):
         if rq_netconfPort is not None: payload.update( { 'netconfPort':  rq_netconfPort })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_c5acd9fa4c1a8abc').validate(payload) )
+        self._request_validator('jsd_c5acd9fa4c1a8abc').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1177,7 +1177,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_db8e09234a988bab').validate(payload) )
+        self._request_validator('jsd_db8e09234a988bab').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1214,7 +1214,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_f5ac590c4ca9975a').validate(payload) )
+        self._request_validator('jsd_f5ac590c4ca9975a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1260,7 +1260,7 @@ class NetworkDiscovery( object ):
         if rq_username is not None: payload.update( { 'username':  rq_username })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_89b36b4649999d81').validate(payload) )
+        self._request_validator('jsd_89b36b4649999d81').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1305,7 +1305,7 @@ class NetworkDiscovery( object ):
         if rq_username is not None: payload.update( { 'username':  rq_username })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_fba0d80747eb82e8').validate(payload) )
+        self._request_validator('jsd_fba0d80747eb82e8').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1340,7 +1340,7 @@ class NetworkDiscovery( object ):
 
         payload = payload or []
 
-        print("validate: ", self._request_validator('jsd_979688084b7ba60d').validate(payload) )
+        self._request_validator('jsd_979688084b7ba60d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1379,7 +1379,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_a6965b454c9a8663').validate(payload) )
+        self._request_validator('jsd_a6965b454c9a8663').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1418,7 +1418,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_f6ac994f451ba011').validate(payload) )
+        self._request_validator('jsd_f6ac994f451ba011').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1459,7 +1459,7 @@ class NetworkDiscovery( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_ff816b8e435897eb').validate(payload) )
+        self._request_validator('jsd_ff816b8e435897eb').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

@@ -54,6 +54,6 @@ def is_valid_get_overall_network_health(obj):
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 def test_get_overall_network_health(api):
-    endpoint_result = api.networks.get_overall_network_health( param_timestamp = '1560378327')
+    endpoint_result = api.networks.get_overall_network_health( param_timestamp = '1560378629')
     assert is_valid_get_overall_network_health(endpoint_result)
 

@@ -117,7 +117,7 @@ class PathTrace( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_55bc3bf94e38b6ff').validate(payload) )
+        self._request_validator('jsd_55bc3bf94e38b6ff').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -154,7 +154,7 @@ class PathTrace( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_8a9d2b76443b914e').validate(payload) )
+        self._request_validator('jsd_8a9d2b76443b914e').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -198,7 +198,7 @@ class PathTrace( object ):
         if rq_sourcePort is not None: payload.update( { 'sourcePort':  rq_sourcePort })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_a395fae644ca899c').validate(payload) )
+        self._request_validator('jsd_a395fae644ca899c').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -235,7 +235,7 @@ class PathTrace( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_7ab9a8bd4f3b86a4').validate(payload) )
+        self._request_validator('jsd_7ab9a8bd4f3b86a4').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

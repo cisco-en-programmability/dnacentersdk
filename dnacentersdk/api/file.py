@@ -87,7 +87,7 @@ class File( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_3f89bbfc4f6b8b50').validate(payload) )
+        self._request_validator('jsd_3f89bbfc4f6b8b50').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -124,7 +124,7 @@ class File( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_42b6a86e44b8bdfc').validate(payload) )
+        self._request_validator('jsd_42b6a86e44b8bdfc').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -161,7 +161,7 @@ class File( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        print("validate: ", self._request_validator('jsd_9698c8ec4a0b8c1a').validate(payload) )
+        self._request_validator('jsd_9698c8ec4a0b8c1a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
