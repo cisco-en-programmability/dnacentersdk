@@ -1,0 +1,9 @@
+sudo: false
+language: python
+python:
+  - "3.5"
+  - "3.6"
+#  - "3.7"  It doesn't look like Travis is supporting v3.7 yet
+install: "script/setup"
+script: "script/ci"
+cache: pip
