@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator1399891C42A8Be64(object):
     """Create Tag request schema definition."""
     def __init__(self):
-        # print("created 1399-891c-42a8-be64")
         super(JSONSchemaValidator1399891C42A8Be64, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'systemTag': {'type': 'boolean'}, 'description': {'type': 'string'}, 'dynamicRules': {'type': 'array', 'items': {'type': 'object', 'properties': {'memberType': {'type': 'string'}, 'rules': {'type': 'object', 'properties': {'values': {'type': 'array', 'items': {'type': 'string'}}, 'items': {'type': 'array', 'items': {'type': 'string'}}, 'operation': {'type': 'string'}, 'name': {'type': 'string'}, 'value': {'type': 'string'}}}}}}, 'name': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}}} )
 

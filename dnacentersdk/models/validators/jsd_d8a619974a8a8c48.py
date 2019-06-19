@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorD8A619974A8A8C48(object):
     """Claim Device request schema definition."""
     def __init__(self):
-        # print("created d8a6-1997-4a8a-8c48")
         super(JSONSchemaValidatorD8A619974A8A8C48, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'configFileUrl': {'type': 'string'}, 'configId': {'type': 'string'}, 'deviceClaimList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configId': {'type': 'string'}, 'configParameters': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}}}}, 'deviceId': {'type': 'string'}, 'licenseLevel': {'type': 'string'}, 'licenseType': {'type': 'string'}, 'topOfStackSerialNumber': {'type': 'string'}}}}, 'fileServiceId': {'type': 'string'}, 'imageId': {'type': 'string'}, 'imageUrl': {'type': 'string'}, 'populateInventory': {'type': 'boolean'}, 'projectId': {'type': 'string'}, 'workflowId': {'type': 'string'}}} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorFb9BEb664F2ABa4C(object):
     """Trigger software image activation request schema definition."""
     def __init__(self):
-        # print("created fb9b-eb66-4f2a-ba4c")
         super(JSONSchemaValidatorFb9BEb664F2ABa4C, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'activateLowerImageVersion': {'type': 'boolean'}, 'deviceUpgradeMode': {'type': 'string'}, 'deviceUuid': {'type': 'string'}, 'distributeIfNeeded': {'type': 'boolean'}, 'imageUuidList': {'type': 'array', 'items': {'type': 'string'}}, 'smuImageUuidList': {'type': 'array', 'items': {'type': 'string'}}}}} )
 

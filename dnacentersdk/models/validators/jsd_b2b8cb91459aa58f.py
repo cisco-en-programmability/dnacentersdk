@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorB2B8Cb91459AA58F(object):
     """Get Physical Topology request schema definition."""
     def __init__(self):
-        # print("created b2b8-cb91-459a-a58f")
         super(JSONSchemaValidatorB2B8Cb91459AA58F, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

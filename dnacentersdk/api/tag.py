@@ -78,8 +78,7 @@ class Tag( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -103,8 +102,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/tag/${id}/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/tag/${id}/member', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_00a2fa6146089317', json_data)
 
@@ -118,11 +117,10 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'memberType': param_member_type,
-            'memberAssociationType': param_member_association_type,
-            'level': param_level,
-        }
+        params = { }
+        if param_member_type is not None: params.update( { 'memberType': param_member_type })
+        if param_member_association_type is not None: params.update( { 'memberAssociationType': param_member_association_type })
+        if param_level is not None: params.update( { 'level': param_level })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -146,8 +144,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/tag/${id}/member/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/tag/${id}/member/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}/member/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag/${id}/member/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_2e9db85840fbb1cf', json_data)
 
@@ -158,8 +156,7 @@ class Tag( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -188,8 +185,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/tag', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_1399891c42a8be64', json_data)
 
@@ -199,8 +196,7 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -223,8 +219,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/tag/member/type', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/tag/member/type', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag/member/type', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag/member/type', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4695090d403b8eaa', json_data)
 
@@ -235,8 +231,7 @@ class Tag( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -261,8 +256,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/tag/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/tag/member', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v2/tag/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v2/tag/member', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_45bc7a8344a8bc1e', json_data)
 
@@ -273,8 +268,7 @@ class Tag( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -303,8 +297,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/tag', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4d86a993469a9da9', json_data)
 
@@ -320,14 +314,13 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'name': param_name,
-            'nameSpace': param_name_space,
-            'attributeName': param_attribute_name,
-            'level': param_level,
-            'size': param_size,
-            'systemTag': param_system_tag,
-        }
+        params = { }
+        if param_name is not None: params.update( { 'name': param_name })
+        if param_name_space is not None: params.update( { 'nameSpace': param_name_space })
+        if param_attribute_name is not None: params.update( { 'attributeName': param_attribute_name })
+        if param_level is not None: params.update( { 'level': param_level })
+        if param_size is not None: params.update( { 'size': param_size })
+        if param_system_tag is not None: params.update( { 'systemTag': param_system_tag })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -350,8 +343,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/tag/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/tag/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_8091a9b84bfba53b', json_data)
 
@@ -362,8 +355,7 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -387,8 +379,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/tag/${id}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_429c28154bdaa13d', json_data)
 
@@ -400,8 +392,7 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -426,8 +417,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/tag/${id}/member/${memberId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/tag/${id}/member/${memberId}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_caa3ea704d78b37e', json_data)
 
@@ -443,13 +434,12 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'memberType': param_member_type,
-            'offset': param_offset,
-            'limit': param_limit,
-            'memberAssociationType': param_member_association_type,
-            'level': param_level,
-        }
+        params = { }
+        if param_member_type is not None: params.update( { 'memberType': param_member_type })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_member_association_type is not None: params.update( { 'memberAssociationType': param_member_association_type })
+        if param_level is not None: params.update( { 'level': param_level })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -473,8 +463,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/tag/${id}/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/tag/${id}/member', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_eab7abe048fb99ad', json_data)
 
@@ -485,8 +475,7 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -510,8 +499,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/tag/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c1a359b14c89b573', json_data)
 
@@ -532,19 +521,18 @@ class Tag( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'name': param_name,
-            'additionalInfo.nameSpace': param_additional_info_name_space,
-            'additionalInfo.attributes': param_additional_info_attributes,
-            'level': param_level,
-            'offset': param_offset,
-            'limit': param_limit,
-            'size': param_size,
-            'field': param_field,
-            'sortBy': param_sort_by,
-            'order': param_order,
-            'systemTag': param_system_tag,
-        }
+        params = { }
+        if param_name is not None: params.update( { 'name': param_name })
+        if param_additional_info_name_space is not None: params.update( { 'additionalInfo.nameSpace': param_additional_info_name_space })
+        if param_additional_info_attributes is not None: params.update( { 'additionalInfo.attributes': param_additional_info_attributes })
+        if param_level is not None: params.update( { 'level': param_level })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_size is not None: params.update( { 'size': param_size })
+        if param_field is not None: params.update( { 'field': param_field })
+        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
+        if param_order is not None: params.update( { 'order': param_order })
+        if param_system_tag is not None: params.update( { 'systemTag': param_system_tag })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -567,8 +555,8 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/tag', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_ee9aab01487a8896', json_data)
 

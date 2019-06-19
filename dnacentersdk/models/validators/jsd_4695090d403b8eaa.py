@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator4695090D403B8Eaa(object):
     """Get Tag resource types request schema definition."""
     def __init__(self):
-        # print("created 4695-090d-403b-8eaa")
         super(JSONSchemaValidator4695090D403B8Eaa, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

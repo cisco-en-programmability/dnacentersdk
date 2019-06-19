@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator7989F86846FaAf99(object):
     """Get Workflow Count request schema definition."""
     def __init__(self):
-        # print("created 7989-f868-46fa-af99")
         super(JSONSchemaValidator7989F86846FaAf99, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorC8Bf6B65414A9Bc7(object):
     """Get Template Versions request schema definition."""
     def __init__(self):
-        # print("created c8bf-6b65-414a-9bc7")
         super(JSONSchemaValidatorC8Bf6B65414A9Bc7, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

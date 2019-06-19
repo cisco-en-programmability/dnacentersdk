@@ -72,19 +72,18 @@ class NonFabricWireless( object ):
 
 
     # Delete and provision SSID
-    def delete_and_provision_ssid(self, path_param_managed_a_p_locations, path_param_ssid_name, headers=None,payload=None,**request_parameters):
+    def delete_and_provision_ssid(self, path_param_managed_aplocations, path_param_ssid_name, headers=None,payload=None,**request_parameters):
         check_type( path_param_ssid_name, basestring, may_be_none=False)
-        check_type( path_param_managed_a_p_locations, basestring, may_be_none=False)
+        check_type( path_param_managed_aplocations, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
             'ssidName': path_param_ssid_name,
-            'managedAPLocations': path_param_managed_a_p_locations,
+            'managedAPLocations': path_param_managed_aplocations,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
@@ -104,8 +103,8 @@ class NonFabricWireless( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/business/ssid/${ssidName}/${managedAPLocations}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/business/ssid/${ssidName}/${managedAPLocations}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/provision-ssid/${ssidName}/${managedAPLocations}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/dna/intent/api/v1/provision-ssid/${ssidName}/${managedAPLocations}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_cca098344a489dfa', json_data)
 
@@ -115,8 +114,7 @@ class NonFabricWireless( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -159,8 +157,7 @@ class NonFabricWireless( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -189,8 +186,8 @@ class NonFabricWireless( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/business/ssid', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/business/ssid', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/provision-ssid', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/dna/intent/api/v1/provision-ssid', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_db9f997f4e59aec1', json_data)
 
@@ -201,8 +198,7 @@ class NonFabricWireless( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -238,9 +234,8 @@ class NonFabricWireless( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'ssidName': param_ssid_name,
-        }
+        params = { }
+        if param_ssid_name is not None: params.update( { 'ssidName': param_ssid_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorE487F8D3481B94F2(object):
     """Get task by OperationId request schema definition."""
     def __init__(self):
-        # print("created e487-f8d3-481b-94f2")
         super(JSONSchemaValidatorE487F8D3481B94F2, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator5889Fb844939A13B(object):
     """Claim a Device to a Site request schema definition."""
     def __init__(self):
-        # print("created 5889-fb84-4939-a13b")
         super(JSONSchemaValidator5889Fb844939A13B, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceId': {'type': 'string'}, 'siteId': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Default', 'AccessPoint', 'StackSwitch', 'Sensor', 'MobilityExpress']}}} )
 

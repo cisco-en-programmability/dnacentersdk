@@ -76,8 +76,7 @@ class File( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -100,8 +99,8 @@ class File( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/file/namespace', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/file/namespace', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/file/namespace', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/file/namespace', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_3f89bbfc4f6b8b50', json_data)
 
@@ -112,8 +111,7 @@ class File( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -137,8 +135,8 @@ class File( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/file/namespace/${nameSpace}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/file/namespace/${nameSpace}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/file/namespace/${nameSpace}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/file/namespace/${nameSpace}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_42b6a86e44b8bdfc', json_data)
 
@@ -149,8 +147,7 @@ class File( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -174,8 +171,8 @@ class File( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/file/${fileId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/file/${fileId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/file/${fileId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/file/${fileId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_9698c8ec4a0b8c1a', json_data)
 

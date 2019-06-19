@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorC5AcD9Fa4C1A8Abc(object):
     """Update Netconf credentials request schema definition."""
     def __init__(self):
-        # print("created c5ac-d9fa-4c1a-8abc")
         super(JSONSchemaValidatorC5AcD9Fa4C1A8Abc, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'netconfPort': {'type': 'string'}}} )
 

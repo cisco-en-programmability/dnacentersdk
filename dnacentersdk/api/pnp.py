@@ -78,8 +78,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -104,8 +103,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/sacct/${domain}/vacct/${name}/sync-result', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/sacct/${domain}/vacct/${name}/sync-result', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/sacct/${domain}/vacct/${name}/sync-result', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/sacct/${domain}/vacct/${name}/sync-result', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_0a9c988445cb91c8', json_data)
 
@@ -116,8 +115,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -139,8 +137,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/import', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/import', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/import', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/import', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_21a6db2540298f55', json_data)
 
@@ -152,8 +150,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -196,8 +193,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_3086c9624f498b85', json_data)
 
@@ -208,8 +205,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -233,8 +229,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/unclaim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/unclaim', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/unclaim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/unclaim', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_0b836b7b4b6a9fd5', json_data)
 
@@ -245,8 +241,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -282,8 +277,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_1e962af345b8b59f', json_data)
 
@@ -295,8 +290,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -329,8 +323,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_09b0f9ce4239ae10', json_data)
 
@@ -341,8 +335,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -368,8 +361,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/site-claim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/site-claim', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-claim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-claim', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_5889fb844939a13b', json_data)
 
@@ -381,10 +374,9 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'domain': param_domain,
-            'name': param_name,
-        }
+        params = { }
+        if param_domain is not None: params.update( { 'domain': param_domain })
+        if param_name is not None: params.update( { 'name': param_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -407,8 +399,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/vacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/vacct', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/onboarding/pnp-settings/vacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/onboarding/pnp-settings/vacct', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_2499e9ad42e8ae5b', json_data)
 
@@ -418,8 +410,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -442,8 +433,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/sacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/sacct', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_3cb24acb486b89d2', json_data)
 
@@ -454,8 +445,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -479,8 +469,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_80acb88e4ac9ac6d', json_data)
 
@@ -491,8 +481,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -528,8 +517,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_6f9819e84178870c', json_data)
 
@@ -540,9 +529,8 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'name': param_name,
-        }
+        params = { }
+        if param_name is not None: params.update( { 'name': param_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -565,8 +553,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_7989f86846faaf99', json_data)
 
@@ -577,8 +565,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -609,8 +596,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_8da0391947088a5a', json_data)
 
@@ -620,8 +607,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -644,8 +630,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_7e92f9eb46db8320', json_data)
 
@@ -656,8 +642,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -683,8 +668,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/reset', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/reset', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/reset', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/reset', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_9e857b5a4a0bbcdb', json_data)
 
@@ -695,8 +680,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -732,8 +716,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/vacct-sync', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/vacct-sync', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/vacct-sync', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/vacct-sync', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a4b6c87a4ffb9efa', json_data)
 
@@ -749,14 +733,13 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'limit': param_limit,
-            'offset': param_offset,
-            'sort': param_sort,
-            'sortOrder': param_sort_order,
-            'type': param_type,
-            'name': param_name,
-        }
+        params = { }
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_sort is not None: params.update( { 'sort': param_sort })
+        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
+        if param_type is not None: params.update( { 'type': param_type })
+        if param_name is not None: params.update( { 'name': param_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -779,8 +762,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_aeb4dad04a99bbe3', json_data)
 
@@ -791,8 +774,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -816,8 +798,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_af8d7b0e470b8ae2', json_data)
 
@@ -828,8 +810,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -853,8 +834,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_bab6c9e5440885cc', json_data)
 
@@ -865,8 +846,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -890,8 +870,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/sacct/${domain}/vacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-settings/sacct/${domain}/vacct', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct/${domain}/vacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct/${domain}/vacct', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_70a479a6462a9496', json_data)
 
@@ -902,8 +882,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -929,8 +908,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/site-config-preview', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/site-config-preview', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-config-preview', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-config-preview', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_cf9418234d9ab37e', json_data)
 
@@ -941,8 +920,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -974,8 +952,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/claim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/claim', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/claim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/claim', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_d8a619974a8a8c48', json_data)
 
@@ -1003,26 +981,25 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'limit': param_limit,
-            'offset': param_offset,
-            'sort': param_sort,
-            'sortOrder': param_sort_order,
-            'serialNumber': param_serial_number,
-            'state': param_state,
-            'onbState': param_onb_state,
-            'cmState': param_cm_state,
-            'name': param_name,
-            'pid': param_pid,
-            'source': param_source,
-            'projectId': param_project_id,
-            'workflowId': param_workflow_id,
-            'projectName': param_project_name,
-            'workflowName': param_workflow_name,
-            'smartAccountId': param_smart_account_id,
-            'virtualAccountId': param_virtual_account_id,
-            'lastContact': param_last_contact,
-        }
+        params = { }
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_sort is not None: params.update( { 'sort': param_sort })
+        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_state is not None: params.update( { 'state': param_state })
+        if param_onb_state is not None: params.update( { 'onbState': param_onb_state })
+        if param_cm_state is not None: params.update( { 'cmState': param_cm_state })
+        if param_name is not None: params.update( { 'name': param_name })
+        if param_pid is not None: params.update( { 'pid': param_pid })
+        if param_source is not None: params.update( { 'source': param_source })
+        if param_project_id is not None: params.update( { 'projectId': param_project_id })
+        if param_workflow_id is not None: params.update( { 'workflowId': param_workflow_id })
+        if param_project_name is not None: params.update( { 'projectName': param_project_name })
+        if param_workflow_name is not None: params.update( { 'workflowName': param_workflow_name })
+        if param_smart_account_id is not None: params.update( { 'smartAccountId': param_smart_account_id })
+        if param_virtual_account_id is not None: params.update( { 'virtualAccountId': param_virtual_account_id })
+        if param_last_contact is not None: params.update( { 'lastContact': param_last_contact })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1045,8 +1022,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_e6b3db8046c99654', json_data)
 
@@ -1057,8 +1034,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1100,8 +1076,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_848b5a7b4f9b8c12', json_data)
 
@@ -1125,22 +1101,21 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'serialNumber': param_serial_number,
-            'state': param_state,
-            'onbState': param_onb_state,
-            'cmState': param_cm_state,
-            'name': param_name,
-            'pid': param_pid,
-            'source': param_source,
-            'projectId': param_project_id,
-            'workflowId': param_workflow_id,
-            'projectName': param_project_name,
-            'workflowName': param_workflow_name,
-            'smartAccountId': param_smart_account_id,
-            'virtualAccountId': param_virtual_account_id,
-            'lastContact': param_last_contact,
-        }
+        params = { }
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_state is not None: params.update( { 'state': param_state })
+        if param_onb_state is not None: params.update( { 'onbState': param_onb_state })
+        if param_cm_state is not None: params.update( { 'cmState': param_cm_state })
+        if param_name is not None: params.update( { 'name': param_name })
+        if param_pid is not None: params.update( { 'pid': param_pid })
+        if param_source is not None: params.update( { 'source': param_source })
+        if param_project_id is not None: params.update( { 'projectId': param_project_id })
+        if param_workflow_id is not None: params.update( { 'workflowId': param_workflow_id })
+        if param_project_name is not None: params.update( { 'projectName': param_project_name })
+        if param_workflow_name is not None: params.update( { 'workflowName': param_workflow_name })
+        if param_smart_account_id is not None: params.update( { 'smartAccountId': param_smart_account_id })
+        if param_virtual_account_id is not None: params.update( { 'virtualAccountId': param_virtual_account_id })
+        if param_last_contact is not None: params.update( { 'lastContact': param_last_contact })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1163,8 +1138,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_d9a1fa9c4068b23c', json_data)
 
@@ -1177,11 +1152,10 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'serialNumber': param_serial_number,
-            'sort': param_sort,
-            'sortOrder': param_sort_order,
-        }
+        params = { }
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_sort is not None: params.update( { 'sort': param_sort })
+        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1204,8 +1178,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/history', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/history', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/history', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/history', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f09319674049a7d4', json_data)
 
@@ -1216,8 +1190,7 @@ class Pnp( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1241,8 +1214,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_cdab9b474899ae06', json_data)
 
@@ -1253,8 +1226,7 @@ class Pnp( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1286,8 +1258,8 @@ class Pnp( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/onboarding/pnp-device', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f3b26b5544cabab9', json_data)
 

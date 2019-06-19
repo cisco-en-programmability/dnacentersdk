@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator26B44Ab04649A183(object):
     """Get task count request schema definition."""
     def __init__(self):
-        # print("created 26b4-4ab0-4649-a183")
         super(JSONSchemaValidator26B44Ab04649A183, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

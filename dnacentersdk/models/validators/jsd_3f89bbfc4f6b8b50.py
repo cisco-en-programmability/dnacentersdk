@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator3F89Bbfc4F6B8B50(object):
     """Get list of available namespaces request schema definition."""
     def __init__(self):
-        # print("created 3f89-bbfc-4f6b-8b50")
         super(JSONSchemaValidator3F89Bbfc4F6B8B50, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

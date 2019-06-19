@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator9E857B5A4A0BBcdb(object):
     """Reset Device request schema definition."""
     def __init__(self):
-        # print("created 9e85-7b5a-4a0b-bcdb")
         super(JSONSchemaValidator9E857B5A4A0BBcdb, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceResetList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configId': {'type': 'string'}, 'configParameters': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}}}}, 'deviceId': {'type': 'string'}, 'licenseLevel': {'type': 'string'}, 'licenseType': {'type': 'string'}, 'topOfStackSerialNumber': {'type': 'string'}}}}, 'projectId': {'type': 'string'}, 'workflowId': {'type': 'string'}}} )
 

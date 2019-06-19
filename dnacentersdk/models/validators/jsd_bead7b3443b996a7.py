@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorBead7B3443B996A7(object):
     """Adds border device in SDA Fabric request schema definition."""
     def __init__(self):
-        # print("created bead-7b34-43b9-96a7")
         super(JSONSchemaValidatorBead7B3443B996A7, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceManagementIpAddress': {'type': 'string'}, 'siteHierarchy': {'type': 'string'}, 'externalDomainRoutingProtocolName': {'type': 'string'}, 'externalConnectivityIpPoolName': {'type': 'string'}, 'internalAutonomouSystemNumber': {'type': 'string'}, 'borderSessionType': {'type': 'string'}, 'connectedToInternet': {'type': 'boolean'}, 'externalConnectivitySettings': {'type': 'array', 'items': {'type': 'object', 'properties': {'interfaceName': {'type': 'string'}, 'externalAutonomouSystemNumber': {'type': 'string'}, 'l3Handoff': {'type': 'array', 'items': {'type': 'object', 'properties': {'virtualNetwork': {'type': 'object', 'properties': {'virtualNetworkName': {'type': 'string'}}}}}}}}}}}} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator84B37Ae54C59Ab28(object):
     """Get Organization list for Meraki request schema definition."""
     def __init__(self):
-        # print("created 84b3-7ae5-4c59-ab28")
         super(JSONSchemaValidator84B37Ae54C59Ab28, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

@@ -77,8 +77,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -102,8 +101,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/module/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/module/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/module/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/module/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_0db7da744c0b83d8', json_data)
 
@@ -113,8 +112,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -137,8 +135,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_3d923b184dc9a4ca', json_data)
 
@@ -150,9 +148,8 @@ class Devices( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'forceSync': param_force_sync,
-        }
+        params = { }
+        if param_force_sync is not None: params.update( { 'forceSync': param_force_sync })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -174,8 +171,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/network-device/sync', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/network-device/sync', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/network-device/sync', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/network-device/sync', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_3b9ef9674429be4c', json_data)
 
@@ -216,39 +213,38 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'hostname': param_hostname,
-            'managementIpAddress': param_management_ip_address,
-            'macAddress': param_mac_address,
-            'locationName': param_location_name,
-            'serialNumber': param_serial_number,
-            'location': param_location,
-            'family': param_family,
-            'type': param_type,
-            'series': param_series,
-            'collectionStatus': param_collection_status,
-            'collectionInterval': param_collection_interval,
-            'notSyncedForMinutes': param_not_synced_for_minutes,
-            'errorCode': param_error_code,
-            'errorDescription': param_error_description,
-            'softwareVersion': param_software_version,
-            'softwareType': param_software_type,
-            'platformId': param_platform_id,
-            'role': param_role,
-            'reachabilityStatus': param_reachability_status,
-            'upTime': param_up_time,
-            'associatedWlcIp': param_associated_wlc_ip,
-            'license.name': param_license_name,
-            'license.type': param_license_type,
-            'license.status': param_license_status,
-            'module+name': param_module_name,
-            'module+equpimenttype': param_module_equpimenttype,
-            'module+servicestate': param_module_servicestate,
-            'module+vendorequipmenttype': param_module_vendorequipmenttype,
-            'module+partnumber': param_module_partnumber,
-            'module+operationstatecode': param_module_operationstatecode,
-            'id': param_id,
-        }
+        params = { }
+        if param_hostname is not None: params.update( { 'hostname': param_hostname })
+        if param_management_ip_address is not None: params.update( { 'managementIpAddress': param_management_ip_address })
+        if param_mac_address is not None: params.update( { 'macAddress': param_mac_address })
+        if param_location_name is not None: params.update( { 'locationName': param_location_name })
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_location is not None: params.update( { 'location': param_location })
+        if param_family is not None: params.update( { 'family': param_family })
+        if param_type is not None: params.update( { 'type': param_type })
+        if param_series is not None: params.update( { 'series': param_series })
+        if param_collection_status is not None: params.update( { 'collectionStatus': param_collection_status })
+        if param_collection_interval is not None: params.update( { 'collectionInterval': param_collection_interval })
+        if param_not_synced_for_minutes is not None: params.update( { 'notSyncedForMinutes': param_not_synced_for_minutes })
+        if param_error_code is not None: params.update( { 'errorCode': param_error_code })
+        if param_error_description is not None: params.update( { 'errorDescription': param_error_description })
+        if param_software_version is not None: params.update( { 'softwareVersion': param_software_version })
+        if param_software_type is not None: params.update( { 'softwareType': param_software_type })
+        if param_platform_id is not None: params.update( { 'platformId': param_platform_id })
+        if param_role is not None: params.update( { 'role': param_role })
+        if param_reachability_status is not None: params.update( { 'reachabilityStatus': param_reachability_status })
+        if param_up_time is not None: params.update( { 'upTime': param_up_time })
+        if param_associated_wlc_ip is not None: params.update( { 'associatedWlcIp': param_associated_wlc_ip })
+        if param_license_name is not None: params.update( { 'license.name': param_license_name })
+        if param_license_type is not None: params.update( { 'license.type': param_license_type })
+        if param_license_status is not None: params.update( { 'license.status': param_license_status })
+        if param_module_name is not None: params.update( { 'module+name': param_module_name })
+        if param_module_equpimenttype is not None: params.update( { 'module+equpimenttype': param_module_equpimenttype })
+        if param_module_servicestate is not None: params.update( { 'module+servicestate': param_module_servicestate })
+        if param_module_vendorequipmenttype is not None: params.update( { 'module+vendorequipmenttype': param_module_vendorequipmenttype })
+        if param_module_partnumber is not None: params.update( { 'module+partnumber': param_module_partnumber })
+        if param_module_operationstatecode is not None: params.update( { 'module+operationstatecode': param_module_operationstatecode })
+        if param_id is not None: params.update( { 'id': param_id })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -271,8 +267,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_20b19b52464b8972', json_data)
 
@@ -282,8 +278,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -306,8 +301,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_38bd0b884b89a785', json_data)
 
@@ -317,8 +312,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -341,8 +335,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_5db21b8e43fab7d8', json_data)
 
@@ -354,9 +348,8 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'interfaceType': param_interface_type,
-        }
+        params = { }
+        if param_interface_type is not None: params.update( { 'interfaceType': param_interface_type })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -380,8 +373,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/vlan', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/vlan', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/vlan', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}/vlan', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_288df9494f2a9746', json_data)
 
@@ -394,8 +387,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -421,8 +413,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_349c888443b89a58', json_data)
 
@@ -434,9 +426,8 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'isForceDelete': param_is_force_delete,
-        }
+        params = { }
+        if param_is_force_delete is not None: params.update( { 'isForceDelete': param_is_force_delete })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -460,8 +451,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/network-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/network-device/${id}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_1c894b5848eab214', json_data)
 
@@ -472,8 +463,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -497,8 +487,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_84b33a9e480abcaf', json_data)
 
@@ -509,8 +499,7 @@ class Devices( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -560,8 +549,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/network-device', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/network-device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4bb22af046fa8f08', json_data)
 
@@ -571,8 +560,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -595,8 +583,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/config/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/config/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/config/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/config/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_888f585c49b88441', json_data)
 
@@ -608,9 +596,8 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'name': param_name,
-        }
+        params = { }
+        if param_name is not None: params.update( { 'name': param_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -634,8 +621,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}/interface-name', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}/interface-name', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/interface-name', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/interface-name', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4eb56a614cc9a2d2', json_data)
 
@@ -646,8 +633,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -671,8 +657,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/collection-schedule', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/collection-schedule', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/collection-schedule', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}/collection-schedule', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_82918a1b4d289c5c', json_data)
 
@@ -687,13 +673,12 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'deviceId': param_device_id,
-            'nameList': param_name_list,
-            'vendorEquipmentTypeList': param_vendor_equipment_type_list,
-            'partNumberList': param_part_number_list,
-            'operationalStateCodeList': param_operational_state_code_list,
-        }
+        params = { }
+        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
+        if param_name_list is not None: params.update( { 'nameList': param_name_list })
+        if param_vendor_equipment_type_list is not None: params.update( { 'vendorEquipmentTypeList': param_vendor_equipment_type_list })
+        if param_part_number_list is not None: params.update( { 'partNumberList': param_part_number_list })
+        if param_operational_state_code_list is not None: params.update( { 'operationalStateCodeList': param_operational_state_code_list })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -716,8 +701,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/module/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/module/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/module/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/module/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_8db939744649a782', json_data)
 
@@ -728,8 +713,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -753,8 +737,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_5b8639224cd88ea7', json_data)
 
@@ -765,8 +749,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -790,8 +773,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/meraki-organization', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/meraki-organization', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/meraki-organization', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}/meraki-organization', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_84b37ae54c59ab28', json_data)
 
@@ -801,8 +784,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -825,8 +807,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/ospf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/ospf', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/ospf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/ospf', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_70ad397649e9b4d3', json_data)
 
@@ -837,8 +819,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -862,8 +843,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/functional-capability/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/functional-capability/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/functional-capability/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/functional-capability/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_81bb4804405a8d2f', json_data)
 
@@ -873,8 +854,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -897,8 +877,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/isis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/isis', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/isis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/isis', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_84ad8b0e42cab48a', json_data)
 
@@ -908,8 +888,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -932,8 +911,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/config', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/config', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_b7bcaa084e2b90d0', json_data)
 
@@ -944,8 +923,7 @@ class Devices( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -971,8 +949,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/network-device/brief', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/network-device/brief', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/network-device/brief', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/network-device/brief', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_b9855ad54ae98156', json_data)
 
@@ -983,8 +961,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1008,8 +985,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_ba9dc85b4b8a9a17', json_data)
 
@@ -1020,8 +997,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1045,8 +1021,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_cd8469e647caab0e', json_data)
 
@@ -1057,8 +1033,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1082,8 +1057,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_d0a4b88145aabb51', json_data)
 
@@ -1094,8 +1069,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1119,8 +1093,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/brief', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/brief', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/brief', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}/brief', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_819f9aa54feab7bf', json_data)
 
@@ -1131,8 +1105,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1156,8 +1129,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_8fa8eb404a4a8d96', json_data)
 
@@ -1169,10 +1142,9 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'offset': param_offset,
-            'limit': param_limit,
-        }
+        params = { }
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1195,8 +1167,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f5947a4c439a8bf0', json_data)
 
@@ -1207,8 +1179,7 @@ class Devices( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1258,8 +1229,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/network-device', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/network-device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_aeb9eb67460b92df', json_data)
 
@@ -1270,8 +1241,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1295,8 +1265,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/interface/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/interface/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_b888792d43baba46', json_data)
 
@@ -1308,10 +1278,9 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'deviceId': param_device_id,
-            'functionName': param_function_name,
-        }
+        params = { }
+        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
+        if param_function_name is not None: params.update( { 'functionName': param_function_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1334,8 +1303,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/functional-capability', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/functional-capability', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/functional-capability', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/functional-capability', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c3b3c9ef4e6b8a09', json_data)
 
@@ -1347,10 +1316,9 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'serialNumber': param_serial_number,
-            'macaddress': param_macaddress,
-        }
+        params = { }
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_macaddress is not None: params.update( { 'macaddress': param_macaddress })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1373,8 +1341,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c9809b6744f8a502', json_data)
 
@@ -1385,8 +1353,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1410,8 +1377,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_d888ab6d4d59a8c1', json_data)
 
@@ -1422,8 +1389,7 @@ class Devices( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1451,8 +1417,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/network-device/file', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/network-device/file', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/network-device/file', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/network-device/file', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_cd98780f4888a66d', json_data)
 
@@ -1464,8 +1430,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1490,8 +1455,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f49548c54be8a3e2', json_data)
 
@@ -1523,30 +1488,29 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'vrfName': param_vrf_name,
-            'managementIpAddress': param_management_ip_address,
-            'hostname': param_hostname,
-            'macAddress': param_mac_address,
-            'family': param_family,
-            'collectionStatus': param_collection_status,
-            'collectionInterval': param_collection_interval,
-            'softwareVersion': param_software_version,
-            'softwareType': param_software_type,
-            'reachabilityStatus': param_reachability_status,
-            'reachabilityFailureReason': param_reachability_failure_reason,
-            'errorCode': param_error_code,
-            'platformId': param_platform_id,
-            'series': param_series,
-            'type': param_type,
-            'serialNumber': param_serial_number,
-            'upTime': param_up_time,
-            'role': param_role,
-            'roleSource': param_role_source,
-            'associatedWlcIp': param_associated_wlc_ip,
-            'offset': param_offset,
-            'limit': param_limit,
-        }
+        params = { }
+        if param_vrf_name is not None: params.update( { 'vrfName': param_vrf_name })
+        if param_management_ip_address is not None: params.update( { 'managementIpAddress': param_management_ip_address })
+        if param_hostname is not None: params.update( { 'hostname': param_hostname })
+        if param_mac_address is not None: params.update( { 'macAddress': param_mac_address })
+        if param_family is not None: params.update( { 'family': param_family })
+        if param_collection_status is not None: params.update( { 'collectionStatus': param_collection_status })
+        if param_collection_interval is not None: params.update( { 'collectionInterval': param_collection_interval })
+        if param_software_version is not None: params.update( { 'softwareVersion': param_software_version })
+        if param_software_type is not None: params.update( { 'softwareType': param_software_type })
+        if param_reachability_status is not None: params.update( { 'reachabilityStatus': param_reachability_status })
+        if param_reachability_failure_reason is not None: params.update( { 'reachabilityFailureReason': param_reachability_failure_reason })
+        if param_error_code is not None: params.update( { 'errorCode': param_error_code })
+        if param_platform_id is not None: params.update( { 'platformId': param_platform_id })
+        if param_series is not None: params.update( { 'series': param_series })
+        if param_type is not None: params.update( { 'type': param_type })
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_up_time is not None: params.update( { 'upTime': param_up_time })
+        if param_role is not None: params.update( { 'role': param_role })
+        if param_role_source is not None: params.update( { 'roleSource': param_role_source })
+        if param_associated_wlc_ip is not None: params.update( { 'associatedWlcIp': param_associated_wlc_ip })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1569,8 +1533,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/autocomplete', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/autocomplete', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/autocomplete', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/autocomplete', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_ffa748cc44e9a437', json_data)
 
@@ -1587,15 +1551,14 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'deviceId': param_device_id,
-            'limit': param_limit,
-            'offset': param_offset,
-            'nameList': param_name_list,
-            'vendorEquipmentTypeList': param_vendor_equipment_type_list,
-            'partNumberList': param_part_number_list,
-            'operationalStateCodeList': param_operational_state_code_list,
-        }
+        params = { }
+        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_name_list is not None: params.update( { 'nameList': param_name_list })
+        if param_vendor_equipment_type_list is not None: params.update( { 'vendorEquipmentTypeList': param_vendor_equipment_type_list })
+        if param_part_number_list is not None: params.update( { 'partNumberList': param_part_number_list })
+        if param_operational_state_code_list is not None: params.update( { 'operationalStateCodeList': param_operational_state_code_list })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1618,8 +1581,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/module', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/module', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/module', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/module', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_eb8249e34f69b0f1', json_data)
 
@@ -1630,8 +1593,7 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1655,8 +1617,8 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f6826a8e41bba242', json_data)
 
@@ -1669,11 +1631,10 @@ class Devices( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'timestamp': param_timestamp,
-            'searchBy': param_search_by,
-            'identifier': param_identifier,
-        }
+        params = { }
+        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
+        if param_search_by is not None: params.update( { 'searchBy': param_search_by })
+        if param_identifier is not None: params.update( { 'identifier': param_identifier })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {

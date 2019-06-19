@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator98A39Bf4485A9871(object):
     """Gets border device details from SDA Fabric request schema definition."""
     def __init__(self):
-        # print("created 98a3-9bf4-485a-9871")
         super(JSONSchemaValidator98A39Bf4485A9871, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

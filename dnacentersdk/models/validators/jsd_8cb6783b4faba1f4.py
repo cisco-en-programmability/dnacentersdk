@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator8Cb6783B4FabA1F4(object):
     """Trigger software image distribution request schema definition."""
     def __init__(self):
-        # print("created 8cb6-783b-4fab-a1f4")
         super(JSONSchemaValidator8Cb6783B4FabA1F4, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceUuid': {'type': 'string'}, 'imageUuid': {'type': 'string'}}}} )
 

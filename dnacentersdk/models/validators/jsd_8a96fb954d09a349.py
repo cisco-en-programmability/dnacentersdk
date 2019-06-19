@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator8A96Fb954D09A349(object):
     """Create Enterprise SSID request schema definition."""
     def __init__(self):
-        # print("created 8a96-fb95-4d09-a349")
         super(JSONSchemaValidator8A96Fb954D09A349, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'name': {'type': 'string', 'maxLength': 32}, 'securityLevel': {'type': 'string', 'enum': ['WPA2_ENTERPRISE', 'WPA2_PERSONAL', 'OPEN']}, 'passphrase': {'type': 'string', 'maxLength': 63, 'minLength': 8}, 'enableFastLane': {'type': 'boolean'}, 'enableMACFiltering': {'type': 'boolean'}, 'trafficType': {'type': 'string', 'enum': ['voicedata', 'data']}, 'radioPolicy': {'type': 'string', 'enum': ['Dual band operation (2.4GHz and 5GHz)', 'Dual band operation with band select', '5GHz only', '2.4GHz only']}, 'enableBroadcastSSID': {'type': 'boolean'}, 'fastTransition': {'type': 'string', 'enum': ['Adaptive', 'Enable', 'Disable']}}} )
 

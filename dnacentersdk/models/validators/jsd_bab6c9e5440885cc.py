@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorBab6C9E5440885Cc(object):
     """Get Device by Id request schema definition."""
     def __init__(self):
-        # print("created bab6-c9e5-4408-85cc")
         super(JSONSchemaValidatorBab6C9E5440885Cc, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

@@ -77,9 +77,8 @@ class Sites( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'timestamp': param_timestamp,
-        }
+        params = { }
+        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -117,8 +116,7 @@ class Sites( object ):
             check_type( headers.get('__timeout', self._session.headers.get('__timeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -143,8 +141,8 @@ class Sites( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/site/${siteId}/device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/site/${siteId}/device', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/device-to-site/${siteId}/device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/dna/intent/api/v1/device-to-site/${siteId}/device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_eeb168eb41988e07', json_data)
 
@@ -157,8 +155,7 @@ class Sites( object ):
             check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {

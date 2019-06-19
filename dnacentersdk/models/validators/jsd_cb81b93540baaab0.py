@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorCb81B93540BaAab0(object):
     """Deletes border device from SDA Fabric request schema definition."""
     def __init__(self):
-        # print("created cb81-b935-40ba-aab0")
         super(JSONSchemaValidatorCb81B93540BaAab0, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

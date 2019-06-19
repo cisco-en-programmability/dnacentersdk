@@ -83,15 +83,14 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'projectId': param_project_id,
-            'softwareType': param_software_type,
-            'softwareVersion': param_software_version,
-            'productFamily': param_product_family,
-            'productSeries': param_product_series,
-            'productType': param_product_type,
-            'filterConflictingTemplates': param_filter_conflicting_templates,
-        }
+        params = { }
+        if param_project_id is not None: params.update( { 'projectId': param_project_id })
+        if param_software_type is not None: params.update( { 'softwareType': param_software_type })
+        if param_software_version is not None: params.update( { 'softwareVersion': param_software_version })
+        if param_product_family is not None: params.update( { 'productFamily': param_product_family })
+        if param_product_series is not None: params.update( { 'productSeries': param_product_series })
+        if param_product_type is not None: params.update( { 'productType': param_product_type })
+        if param_filter_conflicting_templates is not None: params.update( { 'filterConflictingTemplates': param_filter_conflicting_templates })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -114,8 +113,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_01b09a254b9ab259', json_data)
 
@@ -126,8 +125,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -157,8 +155,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/project', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_00aec9b1422ab27e', json_data)
 
@@ -169,8 +167,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -215,8 +212,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/template-programmer/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/template-programmer/template', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_7781fa0548a98342', json_data)
 
@@ -227,9 +224,8 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'name': param_name,
-        }
+        params = { }
+        if param_name is not None: params.update( { 'name': param_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -252,8 +248,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/project', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_109d1b4f4289aecd', json_data)
 
@@ -264,8 +260,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -294,8 +289,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/template/deploy', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/template/deploy', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/template/deploy', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/template-programmer/template/deploy', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_6099da82477b858a', json_data)
 
@@ -307,9 +302,8 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'latestVersion': param_latest_version,
-        }
+        params = { }
+        if param_latest_version is not None: params.update( { 'latestVersion': param_latest_version })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -333,8 +327,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_83a3b9404cb88787', json_data)
 
@@ -345,8 +339,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -376,8 +369,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/template-programmer/project', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_9480fa1f47ca9254', json_data)
 
@@ -388,8 +381,7 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -413,8 +405,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_9c9a785741cbb41f', json_data)
 
@@ -425,8 +417,7 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -450,8 +441,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a7b42836408a8e74', json_data)
 
@@ -462,8 +453,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -488,8 +478,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/template/version', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/template/version', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/template/version', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/template-programmer/template/version', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_62b05b2c40a9b216', json_data)
 
@@ -500,8 +490,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -526,8 +515,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/template-programmer/template/preview', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/template-programmer/template/preview', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/template-programmer/template/preview', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/template-programmer/template/preview', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f393abe84989bb48', json_data)
 
@@ -538,8 +527,7 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -563,8 +551,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_d0a1abfa435b841d', json_data)
 
@@ -576,8 +564,7 @@ class TemplateProgrammer( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -623,8 +610,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/project/${projectId}/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/template-programmer/project/${projectId}/template', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/project/${projectId}/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/template-programmer/project/${projectId}/template', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f6b119ad4d4aaf16', json_data)
 
@@ -635,8 +622,7 @@ class TemplateProgrammer( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -660,8 +646,8 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c8bf6b65414a9bc7', json_data)
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator7E92F9Eb46Db8320(object):
     """Get PnP global settings request schema definition."""
     def __init__(self):
-        # print("created 7e92-f9eb-46db-8320")
         super(JSONSchemaValidator7E92F9Eb46Db8320, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

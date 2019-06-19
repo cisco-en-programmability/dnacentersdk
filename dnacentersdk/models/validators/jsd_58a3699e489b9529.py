@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator58A3699E489B9529(object):
     """Get Credential sub type by credential Id request schema definition."""
     def __init__(self):
-        # print("created 58a3-699e-489b-9529")
         super(JSONSchemaValidator58A3699E489B9529, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

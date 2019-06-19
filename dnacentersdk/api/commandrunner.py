@@ -76,8 +76,7 @@ class CommandRunner( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -100,8 +99,8 @@ class CommandRunner( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/network-device-poller/cli/legit-reads', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/network-device-poller/cli/legit-reads', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device-poller/cli/legit-reads', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device-poller/cli/legit-reads', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_33bb2b9d40199e14', json_data)
 
@@ -112,8 +111,7 @@ class CommandRunner( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -141,8 +139,8 @@ class CommandRunner( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/network-device-poller/cli/read-request', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/network-device-poller/cli/read-request', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/network-device-poller/cli/read-request', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/network-device-poller/cli/read-request', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_d6b8ca774739adf4', json_data)
 

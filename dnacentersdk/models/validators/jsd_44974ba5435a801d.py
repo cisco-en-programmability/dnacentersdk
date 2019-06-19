@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator44974Ba5435A801D(object):
     """Get SNMP properties request schema definition."""
     def __init__(self):
-        # print("created 4497-4ba5-435a-801d")
         super(JSONSchemaValidator44974Ba5435A801D, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

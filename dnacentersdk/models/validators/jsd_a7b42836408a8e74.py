@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorA7B42836408A8E74(object):
     """Delete Template request schema definition."""
     def __init__(self):
-        # print("created a7b4-2836-408a-8e74")
         super(JSONSchemaValidatorA7B42836408A8E74, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator7Aa3Da9D4E098Ef2(object):
     """Create SNMP read community request schema definition."""
     def __init__(self):
-        # print("created 7aa3-da9d-4e09-8ef2")
         super(JSONSchemaValidator7Aa3Da9D4E098Ef2, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'readCommunity': {'type': 'string'}}}} )
 

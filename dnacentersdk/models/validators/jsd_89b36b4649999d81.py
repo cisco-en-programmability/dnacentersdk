@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator89B36B4649999D81(object):
     """Update HTTP read credential request schema definition."""
     def __init__(self):
-        # print("created 89b3-6b46-4999-9d81")
         super(JSONSchemaValidator89B36B4649999D81, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'password': {'type': 'string'}, 'port': {'type': 'number'}, 'secure': {'type': 'boolean'}, 'username': {'type': 'string'}}} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator5B8639224Cd88Ea7(object):
     """Get Device Interface count by id request schema definition."""
     def __init__(self):
-        # print("created 5b86-3922-4cd8-8ea7")
         super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator50B589Fd4C7A930A(object):
     """Create Site request schema definition."""
     def __init__(self):
-        # print("created 50b5-89fd-4c7a-930a")
         super(JSONSchemaValidator50B589Fd4C7A930A, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'type': {'type': 'string', 'enum': ['area', 'building', 'floor']}, 'site': {'type': 'object', 'properties': {'area': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}, 'building': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'address': {'type': 'string'}}}, 'floor': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}}}}} )
 

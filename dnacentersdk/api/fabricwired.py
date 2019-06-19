@@ -78,8 +78,7 @@ class FabricWired( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -118,8 +117,7 @@ class FabricWired( object ):
             check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -157,8 +155,7 @@ class FabricWired( object ):
             check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {

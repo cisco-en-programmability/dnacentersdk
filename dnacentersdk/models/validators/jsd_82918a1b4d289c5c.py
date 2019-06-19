@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator82918A1B4D289C5C(object):
     """Get Polling Interval by Id request schema definition."""
     def __init__(self):
-        # print("created 8291-8a1b-4d28-9c5c")
         super(JSONSchemaValidator82918A1B4D289C5C, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

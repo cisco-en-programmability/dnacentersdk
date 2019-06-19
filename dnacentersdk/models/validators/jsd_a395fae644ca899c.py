@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorA395Fae644Ca899C(object):
     """Initiate a new Pathtrace request schema definition."""
     def __init__(self):
-        # print("created a395-fae6-44ca-899c")
         super(JSONSchemaValidatorA395Fae644Ca899C, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'controlPath': {'type': 'boolean'}, 'destIP': {'type': 'string'}, 'destPort': {'type': 'string'}, 'inclusions': {'type': 'array', 'items': {'type': 'string'}}, 'periodicRefresh': {'type': 'boolean'}, 'protocol': {'type': 'string'}, 'sourceIP': {'type': 'string'}, 'sourcePort': {'type': 'string'}}} )
 

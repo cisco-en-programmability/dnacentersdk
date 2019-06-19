@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator6F9819E84178870C(object):
     """Update PnP Server Profile request schema definition."""
     def __init__(self):
-        # print("created 6f98-19e8-4178-870c")
         super(JSONSchemaValidator6F9819E84178870C, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'autoSyncPeriod': {'type': 'number'}, 'ccoUser': {'type': 'string'}, 'expiry': {'type': 'number'}, 'lastSync': {'type': 'number'}, 'profile': {'type': 'object', 'properties': {'addressFqdn': {'type': 'string'}, 'addressIpV4': {'type': 'string'}, 'cert': {'type': 'string'}, 'makeDefault': {'type': 'boolean'}, 'name': {'type': 'string'}, 'port': {'type': 'number'}, 'profileId': {'type': 'string'}, 'proxy': {'type': 'boolean'}}}, 'smartAccountId': {'type': 'string'}, 'syncResult': {'type': 'object', 'properties': {'syncList': {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceSnList': {'type': 'array', 'items': {'type': 'string'}}, 'syncType': {'type': 'string', 'enum': ['Add', 'Update', 'Delete', 'MismatchError']}}}}, 'syncMsg': {'type': 'string'}}}, 'syncResultStr': {'type': 'string'}, 'syncStartTime': {'type': 'number'}, 'syncStatus': {'type': 'string', 'enum': ['NOT_SYNCED', 'SYNCING', 'SUCCESS', 'FAILURE']}, 'tenantId': {'type': 'string'}, 'token': {'type': 'string'}, 'virtualAccountId': {'type': 'string'}}} )
 

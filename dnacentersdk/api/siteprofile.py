@@ -77,9 +77,8 @@ class SiteProfile( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'deviceIp': param_device_ip,
-        }
+        params = { }
+        if param_device_ip is not None: params.update( { 'deviceIp': param_device_ip })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -102,8 +101,8 @@ class SiteProfile( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/business/nfv/provisioningDetail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/business/nfv/provisioningDetail', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/nfv-provision-detail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/dna/intent/api/v1/nfv-provision-detail', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_7fbe4b804879baa4', json_data)
 
@@ -116,8 +115,7 @@ class SiteProfile( object ):
             check_type( headers.get('__timeout', self._session.headers.get('__timeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -143,8 +141,8 @@ class SiteProfile( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/business/nfv', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/business/nfv', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/provision-nfv', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/dna/intent/api/v1/provision-nfv', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_828828f44f28bd0d', json_data)
 

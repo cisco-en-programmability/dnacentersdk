@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator3Cb24Acb486B89D2(object):
     """Get Smart Account List request schema definition."""
     def __init__(self):
-        # print("created 3cb2-4acb-486b-89d2")
         super(JSONSchemaValidator3Cb24Acb486B89D2, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

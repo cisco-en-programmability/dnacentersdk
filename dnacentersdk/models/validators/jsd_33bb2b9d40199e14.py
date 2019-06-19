@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator33Bb2B9D40199E14(object):
     """Get all keywords of CLIs accepted by command runner request schema definition."""
     def __init__(self):
-        # print("created 33bb-2b9d-4019-9e14")
         super(JSONSchemaValidator33Bb2B9D40199E14, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

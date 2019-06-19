@@ -72,10 +72,10 @@ class PathTrace( object ):
 
 
     # Retrives all previous Pathtraces summary
-    def retrives_all_previous_pathtraces_summary(self, param_dest_i_p = None, param_dest_port = None, param_gt_create_time = None, param_last_update_time = None, param_limit = None, param_lt_create_time = None, param_offset = None, param_order = None, param_periodic_refresh = None, param_protocol = None, param_sort_by = None, param_source_i_p = None, param_source_port = None, param_status = None, param_task_id = None, headers=None,payload=None,**request_parameters):
+    def retrives_all_previous_pathtraces_summary(self, param_dest_ip = None, param_dest_port = None, param_gt_create_time = None, param_last_update_time = None, param_limit = None, param_lt_create_time = None, param_offset = None, param_order = None, param_periodic_refresh = None, param_protocol = None, param_sort_by = None, param_source_ip = None, param_source_port = None, param_status = None, param_task_id = None, headers=None,payload=None,**request_parameters):
         check_type( param_periodic_refresh, bool)
-        check_type( param_source_i_p, basestring)
-        check_type( param_dest_i_p, basestring)
+        check_type( param_source_ip, basestring)
+        check_type( param_dest_ip, basestring)
         check_type( param_source_port, basestring)
         check_type( param_dest_port, basestring)
         check_type( param_gt_create_time, basestring)
@@ -91,23 +91,22 @@ class PathTrace( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'periodicRefresh': param_periodic_refresh,
-            'sourceIP': param_source_i_p,
-            'destIP': param_dest_i_p,
-            'sourcePort': param_source_port,
-            'destPort': param_dest_port,
-            'gtCreateTime': param_gt_create_time,
-            'ltCreateTime': param_lt_create_time,
-            'protocol': param_protocol,
-            'status': param_status,
-            'taskId': param_task_id,
-            'lastUpdateTime': param_last_update_time,
-            'limit': param_limit,
-            'offset': param_offset,
-            'order': param_order,
-            'sortBy': param_sort_by,
-        }
+        params = { }
+        if param_periodic_refresh is not None: params.update( { 'periodicRefresh': param_periodic_refresh })
+        if param_source_ip is not None: params.update( { 'sourceIP': param_source_ip })
+        if param_dest_ip is not None: params.update( { 'destIP': param_dest_ip })
+        if param_source_port is not None: params.update( { 'sourcePort': param_source_port })
+        if param_dest_port is not None: params.update( { 'destPort': param_dest_port })
+        if param_gt_create_time is not None: params.update( { 'gtCreateTime': param_gt_create_time })
+        if param_lt_create_time is not None: params.update( { 'ltCreateTime': param_lt_create_time })
+        if param_protocol is not None: params.update( { 'protocol': param_protocol })
+        if param_status is not None: params.update( { 'status': param_status })
+        if param_task_id is not None: params.update( { 'taskId': param_task_id })
+        if param_last_update_time is not None: params.update( { 'lastUpdateTime': param_last_update_time })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_order is not None: params.update( { 'order': param_order })
+        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -130,8 +129,8 @@ class PathTrace( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/flow-analysis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/flow-analysis', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_55bc3bf94e38b6ff', json_data)
 
@@ -142,8 +141,7 @@ class PathTrace( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -167,8 +165,8 @@ class PathTrace( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_8a9d2b76443b914e', json_data)
 
@@ -179,8 +177,7 @@ class PathTrace( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -211,8 +208,8 @@ class PathTrace( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/flow-analysis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/flow-analysis', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a395fae644ca899c', json_data)
 
@@ -223,8 +220,7 @@ class PathTrace( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -248,8 +244,8 @@ class PathTrace( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_7ab9a8bd4f3b86a4', json_data)
 

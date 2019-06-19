@@ -76,8 +76,7 @@ class Networks( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -100,8 +99,8 @@ class Networks( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/topology/vlan/vlan-names', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/topology/vlan/vlan-names', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/topology/vlan/vlan-names', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/topology/vlan/vlan-names', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_6284db4649aa8d31', json_data)
 
@@ -111,8 +110,7 @@ class Networks( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -135,8 +133,8 @@ class Networks( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/topology/site-topology', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/topology/site-topology', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/topology/site-topology', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/topology/site-topology', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_9ba14a9e441b8a60', json_data)
 
@@ -147,9 +145,8 @@ class Networks( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'nodeType': param_node_type,
-        }
+        params = { }
+        if param_node_type is not None: params.update( { 'nodeType': param_node_type })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -172,8 +169,8 @@ class Networks( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/topology/physical-topology', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/topology/physical-topology', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/topology/physical-topology', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/topology/physical-topology', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_b2b8cb91459aa58f', json_data)
 
@@ -184,8 +181,7 @@ class Networks( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -209,24 +205,23 @@ class Networks( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c2b5fb764d888375', json_data)
 
 
     # Get topology details
-    def get_topology_details(self, path_param_vlan_i_d, headers=None,payload=None,**request_parameters):
-        check_type( path_param_vlan_i_d, basestring, may_be_none=False)
+    def get_topology_details(self, path_param_vlan_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_vlan_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'vlanID': path_param_vlan_i_d,
+            'vlanID': path_param_vlan_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
@@ -246,8 +241,8 @@ class Networks( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/topology/l2/${vlanID}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/topology/l2/${vlanID}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/topology/l2/${vlanID}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/topology/l2/${vlanID}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_b9b48ac8463a8aba', json_data)
 
@@ -258,9 +253,8 @@ class Networks( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'timestamp': param_timestamp,
-        }
+        params = { }
+        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {

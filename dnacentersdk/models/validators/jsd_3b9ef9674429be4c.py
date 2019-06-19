@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator3B9EF9674429Be4C(object):
     """Sync Devices using forceSync request schema definition."""
     def __init__(self):
-        # print("created 3b9e-f967-4429-be4c")
         super(JSONSchemaValidator3B9EF9674429Be4C, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {}} )
 

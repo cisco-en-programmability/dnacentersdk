@@ -86,18 +86,17 @@ class Task( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'startTime': param_start_time,
-            'endTime': param_end_time,
-            'data': param_data,
-            'errorCode': param_error_code,
-            'serviceType': param_service_type,
-            'username': param_username,
-            'progress': param_progress,
-            'isError': param_is_error,
-            'failureReason': param_failure_reason,
-            'parentId': param_parent_id,
-        }
+        params = { }
+        if param_start_time is not None: params.update( { 'startTime': param_start_time })
+        if param_end_time is not None: params.update( { 'endTime': param_end_time })
+        if param_data is not None: params.update( { 'data': param_data })
+        if param_error_code is not None: params.update( { 'errorCode': param_error_code })
+        if param_service_type is not None: params.update( { 'serviceType': param_service_type })
+        if param_username is not None: params.update( { 'username': param_username })
+        if param_progress is not None: params.update( { 'progress': param_progress })
+        if param_is_error is not None: params.update( { 'isError': param_is_error })
+        if param_failure_reason is not None: params.update( { 'failureReason': param_failure_reason })
+        if param_parent_id is not None: params.update( { 'parentId': param_parent_id })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -120,8 +119,8 @@ class Task( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/task/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/task/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/task/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/task/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_26b44ab04649a183', json_data)
 
@@ -132,8 +131,7 @@ class Task( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -157,8 +155,8 @@ class Task( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/task/${taskId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/task/${taskId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/task/${taskId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/task/${taskId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a1a9387346ba92b1', json_data)
 
@@ -182,22 +180,21 @@ class Task( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'startTime': param_start_time,
-            'endTime': param_end_time,
-            'data': param_data,
-            'errorCode': param_error_code,
-            'serviceType': param_service_type,
-            'username': param_username,
-            'progress': param_progress,
-            'isError': param_is_error,
-            'failureReason': param_failure_reason,
-            'parentId': param_parent_id,
-            'offset': param_offset,
-            'limit': param_limit,
-            'sortBy': param_sort_by,
-            'order': param_order,
-        }
+        params = { }
+        if param_start_time is not None: params.update( { 'startTime': param_start_time })
+        if param_end_time is not None: params.update( { 'endTime': param_end_time })
+        if param_data is not None: params.update( { 'data': param_data })
+        if param_error_code is not None: params.update( { 'errorCode': param_error_code })
+        if param_service_type is not None: params.update( { 'serviceType': param_service_type })
+        if param_username is not None: params.update( { 'username': param_username })
+        if param_progress is not None: params.update( { 'progress': param_progress })
+        if param_is_error is not None: params.update( { 'isError': param_is_error })
+        if param_failure_reason is not None: params.update( { 'failureReason': param_failure_reason })
+        if param_parent_id is not None: params.update( { 'parentId': param_parent_id })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
+        if param_order is not None: params.update( { 'order': param_order })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -220,8 +217,8 @@ class Task( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/task', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/task', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/task', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/task', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_e78bb8a2449b9eed', json_data)
 
@@ -232,8 +229,7 @@ class Task( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -257,8 +253,8 @@ class Task( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/task/${taskId}/tree', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/task/${taskId}/tree', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/task/${taskId}/tree', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/task/${taskId}/tree', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f5a269c44f2a95fa', json_data)
 
@@ -271,8 +267,7 @@ class Task( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -298,8 +293,8 @@ class Task( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/task/operation/${operationId}/${offset}/${limit}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/task/operation/${operationId}/${offset}/${limit}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/task/operation/${operationId}/${offset}/${limit}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/task/operation/${operationId}/${offset}/${limit}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_e487f8d3481b94f2', json_data)
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorAc8AE94C4E69A09D(object):
     """Authentication API request schema definition."""
     def __init__(self):
-        # print("created ac8a-e94c-4e69-a09d")
         super(JSONSchemaValidatorAc8AE94C4E69A09D, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

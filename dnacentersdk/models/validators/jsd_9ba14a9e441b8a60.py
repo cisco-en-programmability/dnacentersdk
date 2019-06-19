@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator9Ba14A9E441B8A60(object):
     """Get Site Topology request schema definition."""
     def __init__(self):
-        # print("created 9ba1-4a9e-441b-8a60")
         super(JSONSchemaValidator9Ba14A9E441B8A60, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

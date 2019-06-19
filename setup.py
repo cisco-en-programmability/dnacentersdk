@@ -85,5 +85,4 @@ setup(
     packages=find_packages(include=[PACKAGE_NAME, PACKAGE_NAME + '.*']),
 
     install_requires=INSTALLATION_REQUIREMENTS,
-    # tests_require=
 )

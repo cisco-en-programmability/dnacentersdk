@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorF5A269C44F2A95Fa(object):
     """Get task tree request schema definition."""
     def __init__(self):
-        # print("created f5a2-69c4-4f2a-95fa")
         super(JSONSchemaValidatorF5A269C44F2A95Fa, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

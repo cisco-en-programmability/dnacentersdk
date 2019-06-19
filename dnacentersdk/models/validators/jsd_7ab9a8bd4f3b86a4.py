@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator7Ab9A8Bd4F3B86A4(object):
     """Retrieves previous Pathtrace request schema definition."""
     def __init__(self):
-        # print("created 7ab9-a8bd-4f3b-86a4")
         super(JSONSchemaValidator7Ab9A8Bd4F3B86A4, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

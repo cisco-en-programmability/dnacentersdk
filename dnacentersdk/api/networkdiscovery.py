@@ -76,8 +76,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -100,8 +99,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_069d9823451b892d', json_data)
 
@@ -112,8 +111,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -135,8 +133,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/netconf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/netconf', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/netconf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/netconf', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_17929bc7465bb564', json_data)
 
@@ -147,8 +145,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -178,8 +175,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_10b06a6a4f7bb3cb', json_data)
 
@@ -190,8 +187,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -226,8 +222,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/snmpv3', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/snmpv3', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/snmpv3', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/snmpv3', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_1da5ebdd434aacfe', json_data)
 
@@ -237,8 +233,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -261,8 +256,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/snmp-property', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/snmp-property', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/snmp-property', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/snmp-property', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_44974ba5435a801d', json_data)
 
@@ -273,8 +268,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -298,8 +292,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/discovery/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/discovery/${id}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/discovery/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/discovery/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4c8cab5f435a80f4', json_data)
 
@@ -310,8 +304,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -366,8 +359,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/discovery', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/discovery', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/discovery', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/discovery', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_55b439dc4239b140', json_data)
 
@@ -378,8 +371,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -401,8 +393,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/snmpv2-write-community', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_6bacb8d14639bdc7', json_data)
 
@@ -413,8 +405,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -436,8 +427,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/http-write', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/http-write', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/http-write', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/http-write', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4d9ca8e2431a8a24', json_data)
 
@@ -457,17 +448,16 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'taskId': param_task_id,
-            'sortBy': param_sort_by,
-            'sortOrder': param_sort_order,
-            'ipAddress': param_ip_address,
-            'pingStatus': param_ping_status,
-            'snmpStatus': param_snmp_status,
-            'cliStatus': param_cli_status,
-            'netconfStatus': param_netconf_status,
-            'httpStatus': param_http_status,
-        }
+        params = { }
+        if param_task_id is not None: params.update( { 'taskId': param_task_id })
+        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
+        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
+        if param_ip_address is not None: params.update( { 'ipAddress': param_ip_address })
+        if param_ping_status is not None: params.update( { 'pingStatus': param_ping_status })
+        if param_snmp_status is not None: params.update( { 'snmpStatus': param_snmp_status })
+        if param_cli_status is not None: params.update( { 'cliStatus': param_cli_status })
+        if param_netconf_status is not None: params.update( { 'netconfStatus': param_netconf_status })
+        if param_http_status is not None: params.update( { 'httpStatus': param_http_status })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -491,8 +481,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/summary', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/summary', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${id}/summary', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${id}/summary', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_3d9b99c343398a27', json_data)
 
@@ -504,8 +494,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -530,8 +519,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_709fda3c42b8877a', json_data)
 
@@ -543,8 +532,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -569,8 +557,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_33b799d04d0a8907', json_data)
 
@@ -581,8 +569,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -604,8 +591,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_7aa3da9d4e098ef2', json_data)
 
@@ -616,8 +603,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -641,8 +627,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_63bb88b74f59aa17', json_data)
 
@@ -653,8 +639,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -713,8 +698,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/discovery', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/discovery', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/discovery', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/discovery', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_9788b8fc4418831d', json_data)
 
@@ -725,8 +710,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -748,8 +732,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/cli', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/cli', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/cli', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/cli', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_948ea8194348bc0b', json_data)
 
@@ -760,8 +744,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -791,8 +774,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/snmpv2-read-community', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_47a1b84b4e1b8044', json_data)
 
@@ -806,11 +789,10 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'offset': param_offset,
-            'limit': param_limit,
-            'ipAddress': param_ip_address,
-        }
+        params = { }
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_ip_address is not None: params.update( { 'ipAddress': param_ip_address })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -834,8 +816,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/job', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/job', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${id}/job', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${id}/job', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_99872a134d0a9fb4', json_data)
 
@@ -846,8 +828,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -869,8 +850,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/snmp-property', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/snmp-property', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/snmp-property', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/snmp-property', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a5ac99774c6bb541', json_data)
 
@@ -884,12 +865,11 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'offset': param_offset,
-            'limit': param_limit,
-            'ipAddress': param_ip_address,
-            'name': param_name,
-        }
+        params = { }
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_ip_address is not None: params.update( { 'ipAddress': param_ip_address })
+        if param_name is not None: params.update( { 'name': param_name })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -912,8 +892,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/job', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/job', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/job', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/job', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a4967be64dfaaa1a', json_data)
 
@@ -927,9 +907,8 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'taskId': param_task_id,
-        }
+        params = { }
+        if param_task_id is not None: params.update( { 'taskId': param_task_id })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -955,8 +934,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${id}/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${id}/network-device/${startIndex}/${recordsToReturn}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a6b798ab4acaa34e', json_data)
 
@@ -967,8 +946,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -992,8 +970,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/global-credential/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/global-credential/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/global-credential/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/global-credential/${id}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_58a3699e489b9529', json_data)
 
@@ -1004,8 +982,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1038,8 +1015,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/http-write', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/http-write', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/http-write', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/http-write', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_b68a6bd8473a9a25', json_data)
 
@@ -1051,8 +1028,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1077,8 +1053,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/discovery/${startIndex}/${recordsToDelete}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/discovery/${startIndex}/${recordsToDelete}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/discovery/${startIndex}/${recordsToDelete}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/discovery/${startIndex}/${recordsToDelete}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c1ba9a424c08a01b', json_data)
 
@@ -1089,8 +1065,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1112,8 +1087,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/http-read', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/http-read', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/http-read', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/http-read', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_bf859ac64a0ba19c', json_data)
 
@@ -1124,8 +1099,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1155,8 +1129,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/netconf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/netconf', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/netconf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/netconf', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_c5acd9fa4c1a8abc', json_data)
 
@@ -1166,8 +1140,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1190,8 +1163,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/discovery', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/discovery', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/discovery', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/discovery', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_db8e09234a988bab', json_data)
 
@@ -1202,8 +1175,7 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1227,8 +1199,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/global-credential/${globalCredentialId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f5ac590c4ca9975a', json_data)
 
@@ -1239,8 +1211,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1273,8 +1244,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/http-read', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/http-read', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/http-read', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/http-read', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_89b36b4649999d81', json_data)
 
@@ -1285,8 +1256,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1318,8 +1288,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/cli', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/global-credential/cli', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/global-credential/cli', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/global-credential/cli', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_fba0d80747eb82e8', json_data)
 
@@ -1330,8 +1300,7 @@ class NetworkDiscovery( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1353,8 +1322,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/snmpv3', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/global-credential/snmpv3', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/global-credential/snmpv3', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/global-credential/snmpv3', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_979688084b7ba60d', json_data)
 
@@ -1366,9 +1335,8 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'taskId': param_task_id,
-        }
+        params = { }
+        if param_task_id is not None: params.update( { 'taskId': param_task_id })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1392,8 +1360,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/network-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/network-device/count', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${id}/network-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${id}/network-device/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a6965b454c9a8663', json_data)
 
@@ -1405,9 +1373,8 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'taskId': param_task_id,
-        }
+        params = { }
+        if param_task_id is not None: params.update( { 'taskId': param_task_id })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1431,8 +1398,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/discovery/${id}/network-device', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/discovery/${id}/network-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/discovery/${id}/network-device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f6ac994f451ba011', json_data)
 
@@ -1445,11 +1412,10 @@ class NetworkDiscovery( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'credentialSubType': param_credential_sub_type,
-            'sortBy': param_sort_by,
-            'order': param_order,
-        }
+        params = { }
+        if param_credential_sub_type is not None: params.update( { 'credentialSubType': param_credential_sub_type })
+        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
+        if param_order is not None: params.update( { 'order': param_order })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1472,8 +1438,8 @@ class NetworkDiscovery( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/global-credential', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/global-credential', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/global-credential', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/global-credential', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_ff816b8e435897eb', json_data)
 

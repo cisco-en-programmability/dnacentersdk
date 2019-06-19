@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator0A9C988445Cb91C8(object):
     """Get Sync Result for Virtual Account request schema definition."""
     def __init__(self):
-        # print("created 0a9c-9884-45cb-91c8")
         super(JSONSchemaValidator0A9C988445Cb91C8, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

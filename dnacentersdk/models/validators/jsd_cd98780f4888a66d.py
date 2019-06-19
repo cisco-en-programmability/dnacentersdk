@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorCd98780F4888A66D(object):
     """Export Device list request schema definition."""
     def __init__(self):
-        # print("created cd98-780f-4888-a66d")
         super(JSONSchemaValidatorCd98780F4888A66D, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceUuids': {'type': 'array', 'items': {'type': 'string'}}, 'id': {'type': 'string'}, 'operationEnum': {'type': 'string', 'enum': ['CREDENTIALDETAILS', 'DEVICEDETAILS']}, 'parameters': {'type': 'array', 'items': {'type': 'string'}}, 'password': {'type': 'string'}}} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorD6B8Ca774739Adf4(object):
     """Run read-only commands on devices to get their real-time configuration request schema definition."""
     def __init__(self):
-        # print("created d6b8-ca77-4739-adf4")
         super(JSONSchemaValidatorD6B8Ca774739Adf4, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'commands': {'type': 'array', 'items': {'type': 'string'}}, 'description': {'type': 'string'}, 'deviceUuids': {'type': 'array', 'items': {'type': 'string'}}, 'name': {'type': 'string'}, 'timeout': {'type': 'number'}}} )
 

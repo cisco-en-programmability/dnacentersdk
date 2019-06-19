@@ -77,9 +77,8 @@ class Clients( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'timestamp': param_timestamp,
-        }
+        params = { }
+        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -115,10 +114,9 @@ class Clients( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'timestamp': param_timestamp,
-            'macAddress': param_mac_address,
-        }
+        params = { }
+        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
+        if param_mac_address is not None: params.update( { 'macAddress': param_mac_address })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {

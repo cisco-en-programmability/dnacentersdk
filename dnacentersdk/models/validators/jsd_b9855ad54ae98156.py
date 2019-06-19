@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorB9855Ad54Ae98156(object):
     """Update Device role request schema definition."""
     def __init__(self):
-        # print("created b985-5ad5-4ae9-8156")
         super(JSONSchemaValidatorB9855Ad54Ae98156, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'id': {'type': 'string'}, 'role': {'type': 'string'}, 'roleSource': {'type': 'string'}}} )
 

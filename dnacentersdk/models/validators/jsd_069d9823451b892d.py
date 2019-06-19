@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator069D9823451B892D(object):
     """Get count of all discovery jobs request schema definition."""
     def __init__(self):
-        # print("created 069d-9823-451b-892d")
         super(JSONSchemaValidator069D9823451B892D, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

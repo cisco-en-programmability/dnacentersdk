@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator0B836B7B4B6A9Fd5(object):
     """Un-Claim Device request schema definition."""
     def __init__(self):
-        # print("created 0b83-6b7b-4b6a-9fd5")
         super(JSONSchemaValidator0B836B7B4B6A9Fd5, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceIdList': {'type': 'array', 'items': {'type': 'string'}}}} )
 

@@ -232,8 +232,7 @@ def extract_and_parse_json(response):
     try:
         return json.loads(response.text, object_hook=OrderedDict)
     except:
-        print('extract_and_parse_json failed. Reason response was not a json')
-        return json.loads('{}', object_hook=OrderedDict)
+        return None
 
 
 def json_dict(json_data):

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorEeb168Eb41988E07(object):
     """Assign Device To Site request schema definition."""
     def __init__(self):
-        # print("created eeb1-68eb-4198-8e07")
         super(JSONSchemaValidatorEeb168Eb41988E07, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'device': {'type': 'array', 'items': {'type': 'object', 'properties': {'ip': {'type': 'string'}}}}}} )
 

@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorCca519Ba45EbB423(object):
     """Get Enterprise SSID request schema definition."""
     def __init__(self):
-        # print("created cca5-19ba-45eb-b423")
         super(JSONSchemaValidatorCca519Ba45EbB423, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

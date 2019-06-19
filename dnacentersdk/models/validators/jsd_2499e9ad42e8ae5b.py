@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator2499E9Ad42E8Ae5B(object):
     """Deregister Virtual Account request schema definition."""
     def __init__(self):
-        # print("created 2499-e9ad-42e8-ae5b")
         super(JSONSchemaValidator2499E9Ad42E8Ae5B, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

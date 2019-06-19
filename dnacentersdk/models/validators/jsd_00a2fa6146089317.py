@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator00A2Fa6146089317(object):
     """Add members to the tag request schema definition."""
     def __init__(self):
-        # print("created 00a2-fa61-4608-9317")
         super(JSONSchemaValidator00A2Fa6146089317, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {}} )
 

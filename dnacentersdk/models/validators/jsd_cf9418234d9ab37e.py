@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorCf9418234D9AB37E(object):
     """Preview Config request schema definition."""
     def __init__(self):
-        # print("created cf94-1823-4d9a-b37e")
         super(JSONSchemaValidatorCf9418234D9AB37E, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceId': {'type': 'string'}, 'siteId': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Default', 'AccessPoint', 'StackSwitch', 'Sensor', 'MobilityExpress']}}} )
 

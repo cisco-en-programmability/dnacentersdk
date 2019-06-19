@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorBc8AAb4746Ca883D(object):
     """Import software image via URL request schema definition."""
     def __init__(self):
-        # print("created bc8a-ab47-46ca-883d")
         super(JSONSchemaValidatorBc8AAb4746Ca883D, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'applicationType': {'type': 'string'}, 'imageFamily': {'type': 'string'}, 'sourceURL': {'type': 'string'}, 'thirdParty': {'type': 'boolean'}, 'vendor': {'type': 'string'}}}} )
 

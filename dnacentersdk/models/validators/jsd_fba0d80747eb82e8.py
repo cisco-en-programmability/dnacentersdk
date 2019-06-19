@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidatorFba0D80747Eb82E8(object):
     """Update CLI credentials request schema definition."""
     def __init__(self):
-        # print("created fba0-d807-47eb-82e8")
         super(JSONSchemaValidatorFba0D80747Eb82E8, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'enablePassword': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'password': {'type': 'string'}, 'username': {'type': 'string'}}} )
 

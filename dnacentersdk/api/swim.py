@@ -72,7 +72,7 @@ class Swim( object ):
 
 
     # Get software image details
-    def get_software_image_details(self, param_application_type = None, param_created_time = None, param_family = None, param_image_integrity_status = None, param_image_name = None, param_image_series = None, param_image_size_greater_than = None, param_image_size_lesser_than = None, param_image_uuid = None, param_is_c_c_o_latest = None, param_is_c_c_o_recommended = None, param_is_tagged_golden = None, param_limit = None, param_name = None, param_offset = None, param_sort_by = None, param_sort_order = 'asc', param_version = None, headers=None,payload=None,**request_parameters):
+    def get_software_image_details(self, param_application_type = None, param_created_time = None, param_family = None, param_image_integrity_status = None, param_image_name = None, param_image_series = None, param_image_size_greater_than = None, param_image_size_lesser_than = None, param_image_uuid = None, param_is_cco_latest = None, param_is_cco_recommended = None, param_is_tagged_golden = None, param_limit = None, param_name = None, param_offset = None, param_sort_by = None, param_sort_order = 'asc', param_version = None, headers=None,payload=None,**request_parameters):
         check_type( param_image_uuid, basestring)
         check_type( param_name, basestring)
         check_type( param_family, basestring)
@@ -82,8 +82,8 @@ class Swim( object ):
         check_type( param_image_series, basestring)
         check_type( param_image_name, basestring)
         check_type( param_is_tagged_golden, bool)
-        check_type( param_is_c_c_o_recommended, bool)
-        check_type( param_is_c_c_o_latest, bool)
+        check_type( param_is_cco_recommended, bool)
+        check_type( param_is_cco_latest, bool)
         check_type( param_created_time, int)
         check_type( param_image_size_greater_than, int)
         check_type( param_image_size_lesser_than, int)
@@ -94,26 +94,25 @@ class Swim( object ):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'imageUuid': param_image_uuid,
-            'name': param_name,
-            'family': param_family,
-            'applicationType': param_application_type,
-            'imageIntegrityStatus': param_image_integrity_status,
-            'version': param_version,
-            'imageSeries': param_image_series,
-            'imageName': param_image_name,
-            'isTaggedGolden': param_is_tagged_golden,
-            'isCCORecommended': param_is_c_c_o_recommended,
-            'isCCOLatest': param_is_c_c_o_latest,
-            'createdTime': param_created_time,
-            'imageSizeGreaterThan': param_image_size_greater_than,
-            'imageSizeLesserThan': param_image_size_lesser_than,
-            'sortBy': param_sort_by,
-            'sortOrder': param_sort_order,
-            'limit': param_limit,
-            'offset': param_offset,
-        }
+        params = { }
+        if param_image_uuid is not None: params.update( { 'imageUuid': param_image_uuid })
+        if param_name is not None: params.update( { 'name': param_name })
+        if param_family is not None: params.update( { 'family': param_family })
+        if param_application_type is not None: params.update( { 'applicationType': param_application_type })
+        if param_image_integrity_status is not None: params.update( { 'imageIntegrityStatus': param_image_integrity_status })
+        if param_version is not None: params.update( { 'version': param_version })
+        if param_image_series is not None: params.update( { 'imageSeries': param_image_series })
+        if param_image_name is not None: params.update( { 'imageName': param_image_name })
+        if param_is_tagged_golden is not None: params.update( { 'isTaggedGolden': param_is_tagged_golden })
+        if param_is_cco_recommended is not None: params.update( { 'isCCORecommended': param_is_cco_recommended })
+        if param_is_cco_latest is not None: params.update( { 'isCCOLatest': param_is_cco_latest })
+        if param_created_time is not None: params.update( { 'createdTime': param_created_time })
+        if param_image_size_greater_than is not None: params.update( { 'imageSizeGreaterThan': param_image_size_greater_than })
+        if param_image_size_lesser_than is not None: params.update( { 'imageSizeLesserThan': param_image_size_lesser_than })
+        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
+        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_offset is not None: params.update( { 'offset': param_offset })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -136,8 +135,8 @@ class Swim( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/image/importation', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/image/importation', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/image/importation', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/image/importation', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_0c8f7a0b49b9aedd', json_data)
 
@@ -148,8 +147,7 @@ class Swim( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-        }
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -171,8 +169,8 @@ class Swim( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/image/distribution', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/image/distribution', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/image/distribution', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/image/distribution', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_8cb6783b4faba1f4', json_data)
 
@@ -187,12 +185,11 @@ class Swim( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'isThirdParty': param_is_third_party,
-            'thirdPartyVendor': param_third_party_vendor,
-            'thirdPartyImageFamily': param_third_party_image_family,
-            'thirdPartyApplicationType': param_third_party_application_type,
-        }
+        params = { }
+        if param_is_third_party is not None: params.update( { 'isThirdParty': param_is_third_party })
+        if param_third_party_vendor is not None: params.update( { 'thirdPartyVendor': param_third_party_vendor })
+        if param_third_party_image_family is not None: params.update( { 'thirdPartyImageFamily': param_third_party_image_family })
+        if param_third_party_application_type is not None: params.update( { 'thirdPartyApplicationType': param_third_party_application_type })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -215,8 +212,8 @@ class Swim( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/image/importation/source/file', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/image/importation/source/file', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/image/importation/source/file', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/image/importation/source/file', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_4dbe3bc743a891bc', json_data)
 
@@ -230,11 +227,10 @@ class Swim( object ):
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'scheduleAt': param_schedule_at,
-            'scheduleDesc': param_schedule_desc,
-            'scheduleOrigin': param_schedule_origin,
-        }
+        params = { }
+        if param_schedule_at is not None: params.update( { 'scheduleAt': param_schedule_at })
+        if param_schedule_desc is not None: params.update( { 'scheduleDesc': param_schedule_desc })
+        if param_schedule_origin is not None: params.update( { 'scheduleOrigin': param_schedule_origin })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -256,8 +252,8 @@ class Swim( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/image/importation/source/url', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/image/importation/source/url', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/image/importation/source/url', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/image/importation/source/url', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_bc8aab4746ca883d', json_data)
 
@@ -271,9 +267,8 @@ class Swim( object ):
             check_type( headers.get('Client-Url', self._session.headers.get('Client-Url')), basestring)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
-        params = {
-            'scheduleValidate': param_schedule_validate,
-        }
+        params = { }
+        if param_schedule_validate is not None: params.update( { 'scheduleValidate': param_schedule_validate })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -295,8 +290,8 @@ class Swim( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/image/activation/device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/image/activation/device', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/api/v1/image/activation/device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/image/activation/device', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_fb9beb664f2aba4c', json_data)
 

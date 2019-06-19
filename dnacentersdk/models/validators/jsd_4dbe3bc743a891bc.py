@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator4Dbe3Bc743A891Bc(object):
     """Import local software image request schema definition."""
     def __init__(self):
-        # print("created 4dbe-3bc7-43a8-91bc")
         super(JSONSchemaValidator4Dbe3Bc743A891Bc, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 

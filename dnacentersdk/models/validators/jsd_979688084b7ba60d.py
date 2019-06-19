@@ -38,7 +38,6 @@ from builtins import *
 class JSONSchemaValidator979688084B7BA60D(object):
     """Create SNMPv3 credentials request schema definition."""
     def __init__(self):
-        # print("created 9796-8808-4b7b-a60d")
         super(JSONSchemaValidator979688084B7BA60D, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'authPassword': {'type': 'string'}, 'authType': {'type': 'string', 'enum': ['SHA', 'MD5']}, 'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'privacyPassword': {'type': 'string'}, 'privacyType': {'type': 'string', 'enum': ['DES', 'AES128']}, 'snmpMode': {'type': 'string', 'enum': ['AUTHPRIV', 'AUTHNOPRIV', 'NOAUTHNOPRIV']}, 'username': {'type': 'string'}}}} )
 
