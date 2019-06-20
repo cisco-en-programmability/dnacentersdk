@@ -12,7 +12,7 @@ def is_valid_get_client_detail(obj):
 
 # e2ad-ba79-43ba-b3e9
 def get_client_detail(api):
-    endpoint_result = api.clients.get_client_detail( param_mac_address = '', param_timestamp = '1560982577' )
+    endpoint_result = api.clients.get_client_detail( param_mac_address = '', param_timestamp = '1561049238' )
     return endpoint_result
 
 # e2ad-ba79-43ba-b3e9
@@ -28,7 +28,7 @@ def is_valid_get_overall_client_health(obj):
 
 # 149a-a93b-4ddb-80dd
 def get_overall_client_health(api):
-    endpoint_result = api.clients.get_overall_client_health( param_timestamp = '1560982577' )
+    endpoint_result = api.clients.get_overall_client_health( param_timestamp = '1561049238' )
     return endpoint_result
 
 # 149a-a93b-4ddb-80dd
