@@ -92,7 +92,7 @@ def is_valid_get_overall_network_health(obj):
 
 # ca91-da84-401a-bba1
 def get_overall_network_health(api):
-    endpoint_result = api.networks.get_overall_network_health( param_timestamp = '1561049238' )
+    endpoint_result = api.networks.get_overall_network_health( param_timestamp = '1561076614' )
     return endpoint_result
 
 # ca91-da84-401a-bba1

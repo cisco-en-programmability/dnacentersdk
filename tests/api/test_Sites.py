@@ -12,7 +12,7 @@ def is_valid_get_site_health(obj):
 
 # 17a8-2ac9-4cf9-9ab0
 def get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1561049238' )
+    endpoint_result = api.sites.get_site_health( param_timestamp = '1561076614' )
     return endpoint_result
 
 # 17a8-2ac9-4cf9-9ab0
