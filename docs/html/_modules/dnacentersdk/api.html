@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dnacentersdk.api &mdash; dnacentersdk 0+unknown documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> dnacentersdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0+unknown
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#pip-install">PIP Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#pip-upgrade">PIP Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#get-the-source-code">Get the Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/intro.html#work-with-the-dna-center-apis-in-native-python">Work with the DNA Center APIs in Native Python!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/intro.html#mit-license">MIT License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/intro.html#dnacentersdk-license">dnacentersdk License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/quickstart.html#get-your-dna-center-access-token">Get your DNA Center Access Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/quickstart.html#create-a-dnacenterapi-connection-object">Create a DNACenterAPI “Connection Object”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/quickstart.html#making-api-calls">Making API Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/quickstart.html#catching-exceptions">Catching Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/quickstart.html#working-with-returned-objects">Working with Returned Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/api.html">User API Doc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/api.html#dnacenterapi">DNACenterAPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#template-programmer">template_programmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#tag">tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#network-discovery">network_discovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#task">task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#command-runner">command_runner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#file">file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#path-trace">path_trace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#swim">swim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#pnp">pnp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#site-profile">site_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#devices">devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#sites">sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#networks">networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#clients">clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#non-fabric-wireless">non_fabric_wireless</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/api.html#fabric-wired">fabric_wired</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/api.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/api.html#warnings">Warnings</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Contributor Covenant Code of Conduct</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../code_of_conduct.html#our-pledge">Our Pledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../code_of_conduct.html#our-standards">Our Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../code_of_conduct.html#our-responsibilities">Our Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../code_of_conduct.html#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../code_of_conduct.html#enforcement">Enforcement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../code_of_conduct.html#attribution">Attribution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#how-to-contribute-feedback-issues-thoughts-and-ideas">How to contribute Feedback, Issues, Thoughts and Ideas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing.html#interested-in-contributing-code">Interested in Contributing Code?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#notes-on-the-test-suite">Notes on the Test Suite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#contributing-code-using-the-ci-automated-testing">Contributing Code - Using the CI Automated Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../contributing.html#contributing-code-running-the-test-suite-locally">Contributing Code - Running the Test Suite Locally</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">dnacentersdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>dnacentersdk.api</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for dnacentersdk.api</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;DNA Center API wrappers.</span>
+
+<span class="sd">Copyright (c) 2019 Cisco and/or its affiliates.</span>
+
+<span class="sd">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="sd">of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="sd">in the Software without restriction, including without limitation the rights</span>
+<span class="sd">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="sd">copies of the Software, and to permit persons to whom the Software is</span>
+<span class="sd">furnished to do so, subject to the following conditions:</span>
+
+<span class="sd">The above copyright notice and this permission notice shall be included in all</span>
+<span class="sd">copies or substantial portions of the Software.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="sd">SOFTWARE.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">past.types</span> <span class="k">import</span> <span class="n">basestring</span>
+
+<span class="kn">from</span> <span class="nn">dnacentersdk.config</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_BASE_URL</span><span class="p">,</span> <span class="n">DEFAULT_SINGLE_REQUEST_TIMEOUT</span><span class="p">,</span>
+    <span class="n">DEFAULT_WAIT_ON_RATE_LIMIT</span><span class="p">,</span> <span class="n">DEFAULT_VERIFY</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">dnacentersdk.environment</span> <span class="k">import</span> <span class="n">DNA_CENTER_ACCESS_TOKEN</span>
+<span class="kn">from</span> <span class="nn">dnacentersdk.exceptions</span> <span class="k">import</span> <span class="n">AccessTokenError</span>
+<span class="kn">from</span> <span class="nn">dnacentersdk.models.mydict</span> <span class="k">import</span> <span class="n">mydict_data_factory</span>
+<span class="kn">from</span> <span class="nn">dnacentersdk.models.schema_validator</span> <span class="k">import</span> <span class="n">json_schema_validate</span>
+<span class="kn">from</span> <span class="nn">dnacentersdk.restsession</span> <span class="k">import</span> <span class="n">RestSession</span>
+<span class="kn">from</span> <span class="nn">dnacentersdk.utils</span> <span class="k">import</span> <span class="n">check_type</span>
+
+<span class="kn">from</span> <span class="nn">.authentication</span> <span class="k">import</span> <span class="n">Authentication</span>
+<span class="kn">from</span> <span class="nn">.template_programmer</span> <span class="k">import</span> <span class="n">TemplateProgrammer</span>
+<span class="kn">from</span> <span class="nn">.tag</span> <span class="k">import</span> <span class="n">Tag</span>
+<span class="kn">from</span> <span class="nn">.network_discovery</span> <span class="k">import</span> <span class="n">NetworkDiscovery</span>
+<span class="kn">from</span> <span class="nn">.task</span> <span class="k">import</span> <span class="n">Task</span>
+<span class="kn">from</span> <span class="nn">.command_runner</span> <span class="k">import</span> <span class="n">CommandRunner</span>
+<span class="kn">from</span> <span class="nn">.file</span> <span class="k">import</span> <span class="n">File</span>
+<span class="kn">from</span> <span class="nn">.path_trace</span> <span class="k">import</span> <span class="n">PathTrace</span>
+<span class="kn">from</span> <span class="nn">.swim</span> <span class="k">import</span> <span class="n">Swim</span>
+<span class="kn">from</span> <span class="nn">.pnp</span> <span class="k">import</span> <span class="n">Pnp</span>
+<span class="kn">from</span> <span class="nn">.site_profile</span> <span class="k">import</span> <span class="n">SiteProfile</span>
+<span class="kn">from</span> <span class="nn">.devices</span> <span class="k">import</span> <span class="n">Devices</span>
+<span class="kn">from</span> <span class="nn">.sites</span> <span class="k">import</span> <span class="n">Sites</span>
+<span class="kn">from</span> <span class="nn">.networks</span> <span class="k">import</span> <span class="n">Networks</span>
+<span class="kn">from</span> <span class="nn">.clients</span> <span class="k">import</span> <span class="n">Clients</span>
+<span class="kn">from</span> <span class="nn">.non_fabric_wireless</span> <span class="k">import</span> <span class="n">NonFabricWireless</span>
+<span class="kn">from</span> <span class="nn">.fabric_wired</span> <span class="k">import</span> <span class="n">FabricWired</span>
+
+
+
+<div class="viewcode-block" id="DNACenterAPI"><a class="viewcode-back" href="../../api/api.html#dnacentersdk.DNACenterAPI">[docs]</a><span class="k">class</span> <span class="nc">DNACenterAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;DNA Center API wrapper.</span>
+
+<span class="sd">    Creates a &#39;session&#39; for all API calls through a created DNACenterAPI</span>
+<span class="sd">    object.  The &#39;session&#39; handles authentication, provides the needed headers,</span>
+<span class="sd">    and checks all responses for error conditions.</span>
+
+<span class="sd">    DNACenterAPI wraps all of the individual DNA Center APIs and represents</span>
+<span class="sd">    them in a simple hierarchical structure.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DNACenterAPI.__init__"><a class="viewcode-back" href="../../api/api.html#dnacentersdk.DNACenterAPI.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">access_token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">DEFAULT_BASE_URL</span><span class="p">,</span>
+                 <span class="n">single_request_timeout</span><span class="o">=</span><span class="n">DEFAULT_SINGLE_REQUEST_TIMEOUT</span><span class="p">,</span>
+                 <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="n">DEFAULT_WAIT_ON_RATE_LIMIT</span><span class="p">,</span>
+                 <span class="n">verify</span><span class="o">=</span><span class="n">DEFAULT_VERIFY</span><span class="p">,</span>
+                 <span class="n">object_factory</span><span class="o">=</span><span class="n">mydict_data_factory</span><span class="p">,</span>
+                 <span class="n">request_validator</span><span class="o">=</span><span class="n">json_schema_validate</span><span class="p">,</span>
+                 <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">encodedAuth</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a new DNACenterAPI object.</span>
+
+<span class="sd">        An access token must be used when interacting with the DNA Center API.</span>
+<span class="sd">        This package supports three methods for you to provide that access</span>
+<span class="sd">        token:</span>
+
+<span class="sd">        . . .</span>
+
+<span class="sd">        An AccessTokenError is raised if an access token is not provided</span>
+<span class="sd">        via one of these two methods.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            access_token(basestring): The access token to be used for API</span>
+<span class="sd">                calls to the DNA Center service.  Defaults to checking for a</span>
+<span class="sd">                DNA_CENTER_ACCESS_TOKEN environment variable.</span>
+<span class="sd">            base_url(basestring): The base URL to be prefixed to the</span>
+<span class="sd">                individual API endpoint suffixes.</span>
+<span class="sd">                Defaults to dnacentersdk.DEFAULT_BASE_URL.</span>
+<span class="sd">            single_request_timeout(int): Timeout (in seconds) for RESTful HTTP</span>
+<span class="sd">                requests. Defaults to</span>
+<span class="sd">                dnacentersdk.config.DEFAULT_SINGLE_REQUEST_TIMEOUT.</span>
+<span class="sd">            wait_on_rate_limit(bool): Enables or disables automatic rate-limit</span>
+<span class="sd">                handling. Defaults to</span>
+<span class="sd">                dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT.</span>
+<span class="sd">            verify(bool,basestring): Controls whether we verify the server’s TLS certificate, or a string, in which case it must be a path to a CA bundle to use. Defaults to </span>
+<span class="sd">                dnacentersdk.config.DEFAULT_VERIFY.</span>
+<span class="sd">            object_factory(callable): The factory function to use to create</span>
+<span class="sd">                Python objects from the returned DNA Center JSON data objects.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DNACenterAPI: A new DNACenterAPI object.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: If the parameter types are incorrect.</span>
+<span class="sd">            AccessTokenError: If an access token is not provided via the</span>
+<span class="sd">                access_token argument or an environment variable.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">basestring</span><span class="p">,</span> <span class="n">may_be_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">basestring</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">single_request_timeout</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">wait_on_rate_limit</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">basestring</span><span class="p">,</span> <span class="n">may_be_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">basestring</span><span class="p">,</span> <span class="n">may_be_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">encodedAuth</span><span class="p">,</span> <span class="n">basestring</span><span class="p">,</span> <span class="n">may_be_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">check_type</span><span class="p">(</span><span class="n">verify</span><span class="p">,</span> <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="n">basestring</span><span class="p">),</span> <span class="n">may_be_none</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span> <span class="ow">or</span> <span class="n">DNA_CENTER_ACCESS_TOKEN</span>
+
+        <span class="c1"># Init AccessTokensAPI wrapper early to use for oauth requests</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">authentication</span> <span class="o">=</span> <span class="n">Authentication</span><span class="p">(</span>
+            <span class="n">base_url</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span>
+            <span class="n">single_request_timeout</span><span class="o">=</span><span class="n">single_request_timeout</span><span class="p">,</span>
+            <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Check if the user has provided the required basicAuth parameters</span>
+        <span class="n">has_basic_auth</span> <span class="o">=</span> <span class="nb">all</span><span class="p">([</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">])</span> <span class="ow">or</span> <span class="nb">all</span><span class="p">([</span><span class="n">encodedAuth</span><span class="p">])</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">access_token</span> <span class="ow">and</span> <span class="n">has_basic_auth</span><span class="p">:</span>
+            <span class="n">access_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">authentication</span><span class="o">.</span><span class="n">authentication_api</span><span class="p">(</span>
+                <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+                <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                <span class="n">encodedAuth</span><span class="o">=</span><span class="n">encodedAuth</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">Token</span>
+        
+        <span class="c1"># If an access token hasn&#39;t been provided as a parameter, environment</span>
+        <span class="c1"># variable, or obtained via an OAuth exchange raise an error.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">access_token</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AccessTokenError</span><span class="p">(</span>
+                <span class="s2">&quot;You must provide a DNA Center access token to interact with &quot;</span>
+                <span class="s2">&quot;the DNA Center APIs, either via a DNA_CENTER_ACCESS_TOKEN &quot;</span>
+                <span class="s2">&quot;environment variable or via the access_token argument.&quot;</span>
+                <span class="s2">&quot;To interact with the APIs and get your access_token, you could provide&quot;</span> 
+                <span class="s2">&quot;either username and password arguments or via the encodedAuth argument.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Create the API session</span>
+        <span class="c1"># All of the API calls associated with a DNACenterAPI object will</span>
+        <span class="c1"># leverage a single RESTful &#39;session&#39; connecting to the DNA Center</span>
+        <span class="c1"># cloud.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_session</span> <span class="o">=</span> <span class="n">RestSession</span><span class="p">(</span>
+            <span class="n">access_token</span><span class="o">=</span><span class="n">access_token</span><span class="p">,</span>
+            <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span>
+            <span class="n">single_request_timeout</span><span class="o">=</span><span class="n">single_request_timeout</span><span class="p">,</span>
+            <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="n">wait_on_rate_limit</span><span class="p">,</span>
+            <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># API wrappers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template_programmer</span> <span class="o">=</span> <span class="n">TemplateProgrammer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">network_discovery</span> <span class="o">=</span> <span class="n">NetworkDiscovery</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">command_runner</span> <span class="o">=</span> <span class="n">CommandRunner</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path_trace</span> <span class="o">=</span> <span class="n">PathTrace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">swim</span> <span class="o">=</span> <span class="n">Swim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pnp</span> <span class="o">=</span> <span class="n">Pnp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">site_profile</span> <span class="o">=</span> <span class="n">SiteProfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">devices</span> <span class="o">=</span> <span class="n">Devices</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sites</span> <span class="o">=</span> <span class="n">Sites</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">networks</span> <span class="o">=</span> <span class="n">Networks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clients</span> <span class="o">=</span> <span class="n">Clients</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">non_fabric_wireless</span> <span class="o">=</span> <span class="n">NonFabricWireless</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fabric_wired</span> <span class="o">=</span> <span class="n">FabricWired</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">,</span> <span class="n">object_factory</span><span class="p">,</span> <span class="n">request_validator</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">access_token</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The access token used for API calls to the DNA Center service.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">access_token</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">base_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The base URL prefixed to the individual API endpoint suffixes.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">base_url</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">single_request_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Timeout (in seconds) for an single HTTP request.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">single_request_timeout</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">wait_on_rate_limit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Automatic rate-limit handling enabled / disabled.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">wait_on_rate_limit</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The verify (TLS Certificate) for the API endpoints.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">_verify</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (c) 2019 Cisco and/or its affiliates.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

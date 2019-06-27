@@ -1,0 +1,1519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User API Doc &mdash; dnacentersdk 0+unknown documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributor Covenant Code of Conduct" href="../code_of_conduct.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> dnacentersdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0+unknown
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#pip-install">PIP Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#pip-upgrade">PIP Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#get-the-source-code">Get the Source Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#work-with-the-dna-center-apis-in-native-python">Work with the DNA Center APIs in Native Python!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#mit-license">MIT License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#dnacentersdk-license">dnacentersdk License</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#get-your-dna-center-access-token">Get your DNA Center Access Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#create-a-dnacenterapi-connection-object">Create a DNACenterAPI “Connection Object”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#making-api-calls">Making API Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#catching-exceptions">Catching Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#working-with-returned-objects">Working with Returned Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User API Doc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dnacenterapi">DNACenterAPI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#template-programmer">template_programmer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tag">tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-discovery">network_discovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task">task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-runner">command_runner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file">file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#path-trace">path_trace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#swim">swim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pnp">pnp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#site-profile">site_profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#devices">devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sites">sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#networks">networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clients">clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-fabric-wireless">non_fabric_wireless</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fabric-wired">fabric_wired</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#warnings">Warnings</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Contributor Covenant Code of Conduct</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code_of_conduct.html#our-pledge">Our Pledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code_of_conduct.html#our-standards">Our Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code_of_conduct.html#our-responsibilities">Our Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code_of_conduct.html#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code_of_conduct.html#enforcement">Enforcement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code_of_conduct.html#attribution">Attribution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#how-to-contribute-feedback-issues-thoughts-and-ideas">How to contribute Feedback, Issues, Thoughts and Ideas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#interested-in-contributing-code">Interested in Contributing Code?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../contributing.html#notes-on-the-test-suite">Notes on the Test Suite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing.html#contributing-code-using-the-ci-automated-testing">Contributing Code - Using the CI Automated Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../contributing.html#contributing-code-running-the-test-suite-locally">Contributing Code - Running the Test Suite Locally</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">dnacentersdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>User API Doc</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-api-doc">
+<span id="id1"></span><h1>User API Doc<a class="headerlink" href="#user-api-doc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dnacenterapi">
+<h2>DNACenterAPI<a class="headerlink" href="#dnacenterapi" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#dnacentersdk.DNACenterAPI" title="dnacentersdk.DNACenterAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">DNACenterAPI</span></code></a> class creates “connection objects” for working with the DNA Center APIs and hierarchically organizes the DNA Center APIs and their endpoints underneath these connection objects.</p>
+<dl class="class">
+<dt id="dnacentersdk.DNACenterAPI">
+<em class="property">class </em><code class="descname">DNACenterAPI</code><a class="reference internal" href="../_modules/dnacentersdk/api.html#DNACenterAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.DNACenterAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center API wrapper.</p>
+<p>Creates a ‘session’ for all API calls through a created DNACenterAPI
+object.  The ‘session’ handles authentication, provides the needed headers,
+and checks all responses for error conditions.</p>
+<p>DNACenterAPI wraps all of the individual DNA Center APIs and represents
+them in a simple hierarchical structure.</p>
+<dl class="method">
+<dt id="dnacentersdk.DNACenterAPI.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>access_token=None</em>, <em>base_url='https://sandboxdnac.cisco.com:443'</em>, <em>single_request_timeout=60</em>, <em>wait_on_rate_limit=True</em>, <em>verify=True</em>, <em>object_factory=&lt;function mydict_data_factory&gt;</em>, <em>request_validator=&lt;function json_schema_validate&gt;</em>, <em>username=None</em>, <em>password=None</em>, <em>encodedAuth=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api.html#DNACenterAPI.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.DNACenterAPI.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new DNACenterAPI object.</p>
+<p>An access token must be used when interacting with the DNA Center API.
+This package supports three methods for you to provide that access
+token:</p>
+<p>…</p>
+<p>An AccessTokenError is raised if an access token is not provided
+via one of these two methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>access_token</strong> (<em>basestring</em>) – The access token to be used for API
+calls to the DNA Center service.  Defaults to checking for a
+DNA_CENTER_ACCESS_TOKEN environment variable.</p></li>
+<li><p><strong>base_url</strong> (<em>basestring</em>) – The base URL to be prefixed to the
+individual API endpoint suffixes.
+Defaults to dnacentersdk.DEFAULT_BASE_URL.</p></li>
+<li><p><strong>single_request_timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Timeout (in seconds) for RESTful HTTP
+requests. Defaults to
+dnacentersdk.config.DEFAULT_SINGLE_REQUEST_TIMEOUT.</p></li>
+<li><p><strong>wait_on_rate_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – Enables or disables automatic rate-limit
+handling. Defaults to
+dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT.</p></li>
+<li><p><strong>verify</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>,</em><em>basestring</em>) – Controls whether we verify the server’s TLS certificate, or a string, in which case it must be a path to a CA bundle to use. Defaults to
+dnacentersdk.config.DEFAULT_VERIFY.</p></li>
+<li><p><strong>object_factory</strong> (<em>callable</em>) – The factory function to use to create
+Python objects from the returned DNA Center JSON data objects.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new DNACenterAPI object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#dnacentersdk.DNACenterAPI" title="dnacentersdk.DNACenterAPI">DNACenterAPI</a></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.7)"><strong>TypeError</strong></a> – If the parameter types are incorrect.</p></li>
+<li><p><a class="reference internal" href="#dnacentersdk.AccessTokenError" title="dnacentersdk.AccessTokenError"><strong>AccessTokenError</strong></a> – If an access token is not provided via the
+    access_token argument or an environment variable.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.DNACenterAPI.access_token">
+<code class="descname">access_token</code><a class="headerlink" href="#dnacentersdk.DNACenterAPI.access_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The access token used for API calls to the DNA Center service.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.DNACenterAPI.base_url">
+<code class="descname">base_url</code><a class="headerlink" href="#dnacentersdk.DNACenterAPI.base_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The base URL prefixed to the individual API endpoint suffixes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.DNACenterAPI.single_request_timeout">
+<code class="descname">single_request_timeout</code><a class="headerlink" href="#dnacentersdk.DNACenterAPI.single_request_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Timeout (in seconds) for an single HTTP request.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.DNACenterAPI.wait_on_rate_limit">
+<code class="descname">wait_on_rate_limit</code><a class="headerlink" href="#dnacentersdk.DNACenterAPI.wait_on_rate_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatic rate-limit handling enabled / disabled.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.DNACenterAPI.verify">
+<code class="descname">verify</code><a class="headerlink" href="#dnacentersdk.DNACenterAPI.verify" title="Permalink to this definition">¶</a></dt>
+<dd><p>The verify (TLS Certificate) for the API endpoints.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="template-programmer">
+<span id="id2"></span><h3>template_programmer<a class="headerlink" href="#template-programmer" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer">
+<em class="property">class </em><code class="descname">TemplateProgrammer</code><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Template Programmer API.</p>
+<p>Wraps the DNA Center Template Programmer API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.gets_the_templates_available">
+<code class="descname">gets_the_templates_available</code><span class="sig-paren">(</span><em>param_filter_conflicting_templates=None</em>, <em>param_product_family=None</em>, <em>param_product_series=None</em>, <em>param_product_type=None</em>, <em>param_project_id=None</em>, <em>param_software_type=None</em>, <em>param_software_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.gets_the_templates_available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.gets_the_templates_available" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.create_project">
+<code class="descname">create_project</code><span class="sig-paren">(</span><em>rq_createTime=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_lastUpdateTime=None</em>, <em>rq_name=None</em>, <em>rq_tags=None</em>, <em>rq_templates=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.create_project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.create_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.update_template">
+<code class="descname">update_template</code><span class="sig-paren">(</span><em>rq_author=None</em>, <em>rq_composite=None</em>, <em>rq_containingTemplates=None</em>, <em>rq_createTime=None</em>, <em>rq_description=None</em>, <em>rq_deviceTypes=None</em>, <em>rq_failurePolicy=None</em>, <em>rq_id=None</em>, <em>rq_lastUpdateTime=None</em>, <em>rq_name=None</em>, <em>rq_parentTemplateId=None</em>, <em>rq_projectId=None</em>, <em>rq_projectName=None</em>, <em>rq_rollbackTemplateContent=None</em>, <em>rq_rollbackTemplateParams=None</em>, <em>rq_softwareType=None</em>, <em>rq_softwareVariant=None</em>, <em>rq_softwareVersion=None</em>, <em>rq_tags=None</em>, <em>rq_templateContent=None</em>, <em>rq_templateParams=None</em>, <em>rq_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.update_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.update_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.get_projects">
+<code class="descname">get_projects</code><span class="sig-paren">(</span><em>param_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.get_projects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.get_projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.deploy_template">
+<code class="descname">deploy_template</code><span class="sig-paren">(</span><em>rq_forcePushTemplate=None</em>, <em>rq_isComposite=None</em>, <em>rq_mainTemplateId=None</em>, <em>rq_memberTemplateDeploymentInfo=None</em>, <em>rq_targetInfo=None</em>, <em>rq_templateId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.deploy_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.deploy_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.get_template_details">
+<code class="descname">get_template_details</code><span class="sig-paren">(</span><em>path_param_template_id</em>, <em>param_latest_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.get_template_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.get_template_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.update_project">
+<code class="descname">update_project</code><span class="sig-paren">(</span><em>rq_createTime=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_lastUpdateTime=None</em>, <em>rq_name=None</em>, <em>rq_tags=None</em>, <em>rq_templates=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.update_project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.update_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.get_template_deployment_status">
+<code class="descname">get_template_deployment_status</code><span class="sig-paren">(</span><em>path_param_deployment_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.get_template_deployment_status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.get_template_deployment_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.delete_template">
+<code class="descname">delete_template</code><span class="sig-paren">(</span><em>path_param_template_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.delete_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.delete_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.version_template">
+<code class="descname">version_template</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_templateId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.version_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.version_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.preview_template">
+<code class="descname">preview_template</code><span class="sig-paren">(</span><em>rq_params=None</em>, <em>rq_templateId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.preview_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.preview_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.delete_project">
+<code class="descname">delete_project</code><span class="sig-paren">(</span><em>path_param_project_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.delete_project"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.delete_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.create_template">
+<code class="descname">create_template</code><span class="sig-paren">(</span><em>path_param_project_id</em>, <em>rq_author=None</em>, <em>rq_composite=None</em>, <em>rq_containingTemplates=None</em>, <em>rq_createTime=None</em>, <em>rq_description=None</em>, <em>rq_deviceTypes=None</em>, <em>rq_failurePolicy=None</em>, <em>rq_id=None</em>, <em>rq_lastUpdateTime=None</em>, <em>rq_name=None</em>, <em>rq_parentTemplateId=None</em>, <em>rq_projectId=None</em>, <em>rq_projectName=None</em>, <em>rq_rollbackTemplateContent=None</em>, <em>rq_rollbackTemplateParams=None</em>, <em>rq_softwareType=None</em>, <em>rq_softwareVariant=None</em>, <em>rq_softwareVersion=None</em>, <em>rq_tags=None</em>, <em>rq_templateContent=None</em>, <em>rq_templateParams=None</em>, <em>rq_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.create_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.create_template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.template_programmer.TemplateProgrammer.get_template_versions">
+<code class="descname">get_template_versions</code><span class="sig-paren">(</span><em>path_param_template_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/template_programmer.html#TemplateProgrammer.get_template_versions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.template_programmer.TemplateProgrammer.get_template_versions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tag">
+<span id="id3"></span><h3>tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.tag.Tag">
+<em class="property">class </em><code class="descname">Tag</code><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Tag API.</p>
+<p>Wraps the DNA Center Tag API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.add_members_to_the_tag">
+<code class="descname">add_members_to_the_tag</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.add_members_to_the_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.add_members_to_the_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.get_tag_member_count">
+<code class="descname">get_tag_member_count</code><span class="sig-paren">(</span><em>param_member_type</em>, <em>path_param_id</em>, <em>param_level='0'</em>, <em>param_member_association_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.get_tag_member_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.get_tag_member_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.create_tag">
+<code class="descname">create_tag</code><span class="sig-paren">(</span><em>rq_description=None</em>, <em>rq_dynamicRules=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_name=None</em>, <em>rq_systemTag=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.create_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.create_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.get_tag_resource_types">
+<code class="descname">get_tag_resource_types</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.get_tag_resource_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.get_tag_resource_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.updates_tag_membership">
+<code class="descname">updates_tag_membership</code><span class="sig-paren">(</span><em>rq_memberToTags=None</em>, <em>rq_memberType=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.updates_tag_membership"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.updates_tag_membership" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.update_tag">
+<code class="descname">update_tag</code><span class="sig-paren">(</span><em>rq_description=None</em>, <em>rq_dynamicRules=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_name=None</em>, <em>rq_systemTag=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.update_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.update_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.get_tag_count">
+<code class="descname">get_tag_count</code><span class="sig-paren">(</span><em>param_attribute_name=None</em>, <em>param_level=None</em>, <em>param_name=None</em>, <em>param_name_space=None</em>, <em>param_size=None</em>, <em>param_system_tag=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.get_tag_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.get_tag_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.delete_tag">
+<code class="descname">delete_tag</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.delete_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.delete_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.remove_tag_member">
+<code class="descname">remove_tag_member</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>path_param_member_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.remove_tag_member"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.remove_tag_member" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.get_tag_members_by_id">
+<code class="descname">get_tag_members_by_id</code><span class="sig-paren">(</span><em>param_member_type</em>, <em>path_param_id</em>, <em>param_level='0'</em>, <em>param_limit=None</em>, <em>param_member_association_type=None</em>, <em>param_offset=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.get_tag_members_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.get_tag_members_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.get_tag_by_id">
+<code class="descname">get_tag_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.get_tag_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.get_tag_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.tag.Tag.get_tag">
+<code class="descname">get_tag</code><span class="sig-paren">(</span><em>param_additional_info_attributes=None</em>, <em>param_additional_info_name_space=None</em>, <em>param_field=None</em>, <em>param_level=None</em>, <em>param_limit=None</em>, <em>param_name=None</em>, <em>param_offset=None</em>, <em>param_order=None</em>, <em>param_size=None</em>, <em>param_sort_by=None</em>, <em>param_system_tag=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/tag.html#Tag.get_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.tag.Tag.get_tag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="network-discovery">
+<span id="id4"></span><h3>network_discovery<a class="headerlink" href="#network-discovery" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery">
+<em class="property">class </em><code class="descname">NetworkDiscovery</code><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Network Discovery API.</p>
+<p>Wraps the DNA Center Network Discovery API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_count_of_all_discovery_jobs">
+<code class="descname">get_count_of_all_discovery_jobs</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_count_of_all_discovery_jobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_count_of_all_discovery_jobs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_netconf_credentials">
+<code class="descname">create_netconf_credentials</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_netconf_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_netconf_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_snmp_write_community">
+<code class="descname">update_snmp_write_community</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_writeCommunity=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_snmp_write_community"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_snmp_write_community" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_snmpv3_credentials">
+<code class="descname">update_snmpv3_credentials</code><span class="sig-paren">(</span><em>rq_authPassword=None</em>, <em>rq_authType=None</em>, <em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_privacyPassword=None</em>, <em>rq_privacyType=None</em>, <em>rq_snmpMode=None</em>, <em>rq_username=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_snmpv3_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_snmpv3_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_snmp_properties">
+<code class="descname">get_snmp_properties</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_snmp_properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_snmp_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.delete_discovery_by_id">
+<code class="descname">delete_discovery_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.delete_discovery_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.delete_discovery_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.start_discovery">
+<code class="descname">start_discovery</code><span class="sig-paren">(</span><em>rq_cdpLevel=None</em>, <em>rq_discoveryType=None</em>, <em>rq_enablePasswordList=None</em>, <em>rq_globalCredentialIdList=None</em>, <em>rq_httpReadCredential=None</em>, <em>rq_httpWriteCredential=None</em>, <em>rq_ipAddressList=None</em>, <em>rq_ipFilterList=None</em>, <em>rq_lldpLevel=None</em>, <em>rq_name=None</em>, <em>rq_netconfPort=None</em>, <em>rq_noAddNewDevice=None</em>, <em>rq_parentDiscoveryId=None</em>, <em>rq_passwordList=None</em>, <em>rq_preferredMgmtIPMethod=None</em>, <em>rq_protocolOrder=None</em>, <em>rq_reDiscovery=None</em>, <em>rq_retry=None</em>, <em>rq_snmpAuthPassphrase=None</em>, <em>rq_snmpAuthProtocol=None</em>, <em>rq_snmpMode=None</em>, <em>rq_snmpPrivPassphrase=None</em>, <em>rq_snmpPrivProtocol=None</em>, <em>rq_snmpROCommunity=None</em>, <em>rq_snmpROCommunityDesc=None</em>, <em>rq_snmpRWCommunity=None</em>, <em>rq_snmpRWCommunityDesc=None</em>, <em>rq_snmpUserName=None</em>, <em>rq_snmpVersion=None</em>, <em>rq_timeout=None</em>, <em>rq_updateMgmtIp=None</em>, <em>rq_userNameList=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.start_discovery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.start_discovery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_snmp_write_community">
+<code class="descname">create_snmp_write_community</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_snmp_write_community"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_snmp_write_community" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_http_write_credentials">
+<code class="descname">create_http_write_credentials</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_http_write_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_http_write_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_network_devices_from_discovery">
+<code class="descname">get_network_devices_from_discovery</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>param_cli_status=None</em>, <em>param_http_status=None</em>, <em>param_ip_address=None</em>, <em>param_netconf_status=None</em>, <em>param_ping_status=None</em>, <em>param_snmp_status=None</em>, <em>param_sort_by=None</em>, <em>param_sort_order=None</em>, <em>param_task_id=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_network_devices_from_discovery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_network_devices_from_discovery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_global_credentials">
+<code class="descname">update_global_credentials</code><span class="sig-paren">(</span><em>path_param_global_credential_id</em>, <em>rq_siteUuids=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_global_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_global_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_discoveries_by_range">
+<code class="descname">get_discoveries_by_range</code><span class="sig-paren">(</span><em>path_param_records_to_return</em>, <em>path_param_start_index</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_discoveries_by_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_discoveries_by_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_snmp_read_community">
+<code class="descname">create_snmp_read_community</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_snmp_read_community"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_snmp_read_community" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovery_by_id">
+<code class="descname">get_discovery_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_discovery_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovery_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.updates_an_existing_discovery_by_specified_id">
+<code class="descname">updates_an_existing_discovery_by_specified_id</code><span class="sig-paren">(</span><em>rq_attributeInfo=None</em>, <em>rq_cdpLevel=None</em>, <em>rq_deviceIds=None</em>, <em>rq_discoveryCondition=None</em>, <em>rq_discoveryStatus=None</em>, <em>rq_discoveryType=None</em>, <em>rq_enablePasswordList=None</em>, <em>rq_globalCredentialIdList=None</em>, <em>rq_httpReadCredential=None</em>, <em>rq_httpWriteCredential=None</em>, <em>rq_id=None</em>, <em>rq_ipAddressList=None</em>, <em>rq_ipFilterList=None</em>, <em>rq_isAutoCdp=None</em>, <em>rq_lldpLevel=None</em>, <em>rq_name=None</em>, <em>rq_netconfPort=None</em>, <em>rq_numDevices=None</em>, <em>rq_parentDiscoveryId=None</em>, <em>rq_passwordList=None</em>, <em>rq_preferredMgmtIPMethod=None</em>, <em>rq_protocolOrder=None</em>, <em>rq_retryCount=None</em>, <em>rq_snmpAuthPassphrase=None</em>, <em>rq_snmpAuthProtocol=None</em>, <em>rq_snmpMode=None</em>, <em>rq_snmpPrivPassphrase=None</em>, <em>rq_snmpPrivProtocol=None</em>, <em>rq_snmpRoCommunity=None</em>, <em>rq_snmpRoCommunityDesc=None</em>, <em>rq_snmpRwCommunity=None</em>, <em>rq_snmpRwCommunityDesc=None</em>, <em>rq_snmpUserName=None</em>, <em>rq_timeOut=None</em>, <em>rq_updateMgmtIp=None</em>, <em>rq_userNameList=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.updates_an_existing_discovery_by_specified_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.updates_an_existing_discovery_by_specified_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_cli_credentials">
+<code class="descname">create_cli_credentials</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_cli_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_cli_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_snmp_read_community">
+<code class="descname">update_snmp_read_community</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_readCommunity=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_snmp_read_community"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_snmp_read_community" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_list_of_discoveries_by_discovery_id">
+<code class="descname">get_list_of_discoveries_by_discovery_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>param_ip_address=None</em>, <em>param_limit=None</em>, <em>param_offset=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_list_of_discoveries_by_discovery_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_list_of_discoveries_by_discovery_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_update_snmp_properties">
+<code class="descname">create_update_snmp_properties</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_update_snmp_properties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_update_snmp_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovery_jobs_by_ip">
+<code class="descname">get_discovery_jobs_by_ip</code><span class="sig-paren">(</span><em>param_ip_address</em>, <em>param_limit=None</em>, <em>param_name=None</em>, <em>param_offset=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_discovery_jobs_by_ip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovery_jobs_by_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovered_devices_by_range">
+<code class="descname">get_discovered_devices_by_range</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>path_param_records_to_return</em>, <em>path_param_start_index</em>, <em>param_task_id=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_discovered_devices_by_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovered_devices_by_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_credential_sub_type_by_credential_id">
+<code class="descname">get_credential_sub_type_by_credential_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_credential_sub_type_by_credential_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_credential_sub_type_by_credential_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_http_write_credentials">
+<code class="descname">update_http_write_credentials</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_password=None</em>, <em>rq_port=None</em>, <em>rq_secure=None</em>, <em>rq_username=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_http_write_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_http_write_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.delete_discovery_by_specified_range">
+<code class="descname">delete_discovery_by_specified_range</code><span class="sig-paren">(</span><em>path_param_records_to_delete</em>, <em>path_param_start_index</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.delete_discovery_by_specified_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.delete_discovery_by_specified_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_http_read_credentials">
+<code class="descname">create_http_read_credentials</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_http_read_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_http_read_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_netconf_credentials">
+<code class="descname">update_netconf_credentials</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_netconfPort=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_netconf_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_netconf_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.delete_all_discovery">
+<code class="descname">delete_all_discovery</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.delete_all_discovery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.delete_all_discovery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.delete_global_credentials_by_id">
+<code class="descname">delete_global_credentials_by_id</code><span class="sig-paren">(</span><em>path_param_global_credential_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.delete_global_credentials_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.delete_global_credentials_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_http_read_credential">
+<code class="descname">update_http_read_credential</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_password=None</em>, <em>rq_port=None</em>, <em>rq_secure=None</em>, <em>rq_username=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_http_read_credential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_http_read_credential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.update_cli_credentials">
+<code class="descname">update_cli_credentials</code><span class="sig-paren">(</span><em>rq_comments=None</em>, <em>rq_credentialType=None</em>, <em>rq_description=None</em>, <em>rq_enablePassword=None</em>, <em>rq_id=None</em>, <em>rq_instanceTenantId=None</em>, <em>rq_instanceUuid=None</em>, <em>rq_password=None</em>, <em>rq_username=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.update_cli_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.update_cli_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.create_snmpv3_credentials">
+<code class="descname">create_snmpv3_credentials</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.create_snmpv3_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.create_snmpv3_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_devices_discovered_by_id">
+<code class="descname">get_devices_discovered_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>param_task_id=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_devices_discovered_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_devices_discovered_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovered_network_devices_by_discovery_id">
+<code class="descname">get_discovered_network_devices_by_discovery_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>param_task_id=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_discovered_network_devices_by_discovery_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_discovered_network_devices_by_discovery_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.network_discovery.NetworkDiscovery.get_global_credentials">
+<code class="descname">get_global_credentials</code><span class="sig-paren">(</span><em>param_credential_sub_type</em>, <em>param_order=None</em>, <em>param_sort_by=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/network_discovery.html#NetworkDiscovery.get_global_credentials"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.network_discovery.NetworkDiscovery.get_global_credentials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="task">
+<span id="id5"></span><h3>task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.task.Task">
+<em class="property">class </em><code class="descname">Task</code><a class="reference internal" href="../_modules/dnacentersdk/api/task.html#Task"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.task.Task" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Task API.</p>
+<p>Wraps the DNA Center Task API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.task.Task.get_task_count">
+<code class="descname">get_task_count</code><span class="sig-paren">(</span><em>param_data=None</em>, <em>param_end_time=None</em>, <em>param_error_code=None</em>, <em>param_failure_reason=None</em>, <em>param_is_error=None</em>, <em>param_parent_id=None</em>, <em>param_progress=None</em>, <em>param_service_type=None</em>, <em>param_start_time=None</em>, <em>param_username=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/task.html#Task.get_task_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.task.Task.get_task_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.task.Task.get_task_by_id">
+<code class="descname">get_task_by_id</code><span class="sig-paren">(</span><em>path_param_task_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/task.html#Task.get_task_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.task.Task.get_task_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.task.Task.get_tasks">
+<code class="descname">get_tasks</code><span class="sig-paren">(</span><em>param_data=None</em>, <em>param_end_time=None</em>, <em>param_error_code=None</em>, <em>param_failure_reason=None</em>, <em>param_is_error=None</em>, <em>param_limit=None</em>, <em>param_offset=None</em>, <em>param_order=None</em>, <em>param_parent_id=None</em>, <em>param_progress=None</em>, <em>param_service_type=None</em>, <em>param_sort_by=None</em>, <em>param_start_time=None</em>, <em>param_username=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/task.html#Task.get_tasks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.task.Task.get_tasks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.task.Task.get_task_tree">
+<code class="descname">get_task_tree</code><span class="sig-paren">(</span><em>path_param_task_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/task.html#Task.get_task_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.task.Task.get_task_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.task.Task.get_task_by_operationid">
+<code class="descname">get_task_by_operationid</code><span class="sig-paren">(</span><em>path_param_limit</em>, <em>path_param_offset</em>, <em>path_param_operation_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/task.html#Task.get_task_by_operationid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.task.Task.get_task_by_operationid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="command-runner">
+<span id="id6"></span><h3>command_runner<a class="headerlink" href="#command-runner" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.command_runner.CommandRunner">
+<em class="property">class </em><code class="descname">CommandRunner</code><a class="reference internal" href="../_modules/dnacentersdk/api/command_runner.html#CommandRunner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.command_runner.CommandRunner" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Command Runner API.</p>
+<p>Wraps the DNA Center Command Runner API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.command_runner.CommandRunner.get_all_keywords_of_clis_accepted_by_command_runner">
+<code class="descname">get_all_keywords_of_clis_accepted_by_command_runner</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/command_runner.html#CommandRunner.get_all_keywords_of_clis_accepted_by_command_runner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.command_runner.CommandRunner.get_all_keywords_of_clis_accepted_by_command_runner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.command_runner.CommandRunner.run_read_only_commands_on_devices_to_get_their_real_time_configuration">
+<code class="descname">run_read_only_commands_on_devices_to_get_their_real_time_configuration</code><span class="sig-paren">(</span><em>rq_commands=None</em>, <em>rq_description=None</em>, <em>rq_deviceUuids=None</em>, <em>rq_name=None</em>, <em>rq_timeout=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/command_runner.html#CommandRunner.run_read_only_commands_on_devices_to_get_their_real_time_configuration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.command_runner.CommandRunner.run_read_only_commands_on_devices_to_get_their_real_time_configuration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="file">
+<span id="id7"></span><h3>file<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.file.File">
+<em class="property">class </em><code class="descname">File</code><a class="reference internal" href="../_modules/dnacentersdk/api/file.html#File"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.file.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center File API.</p>
+<p>Wraps the DNA Center File API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.file.File.get_list_of_available_namespaces">
+<code class="descname">get_list_of_available_namespaces</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/file.html#File.get_list_of_available_namespaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.file.File.get_list_of_available_namespaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.file.File.get_list_of_files">
+<code class="descname">get_list_of_files</code><span class="sig-paren">(</span><em>path_param_name_space</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/file.html#File.get_list_of_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.file.File.get_list_of_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.file.File.download_a_file_by_fileid">
+<code class="descname">download_a_file_by_fileid</code><span class="sig-paren">(</span><em>path_param_file_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/file.html#File.download_a_file_by_fileid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.file.File.download_a_file_by_fileid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="path-trace">
+<span id="id8"></span><h3>path_trace<a class="headerlink" href="#path-trace" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.path_trace.PathTrace">
+<em class="property">class </em><code class="descname">PathTrace</code><a class="reference internal" href="../_modules/dnacentersdk/api/path_trace.html#PathTrace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.path_trace.PathTrace" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Path Trace API.</p>
+<p>Wraps the DNA Center Path Trace API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.path_trace.PathTrace.retrives_all_previous_pathtraces_summary">
+<code class="descname">retrives_all_previous_pathtraces_summary</code><span class="sig-paren">(</span><em>param_dest_ip=None</em>, <em>param_dest_port=None</em>, <em>param_gt_create_time=None</em>, <em>param_last_update_time=None</em>, <em>param_limit=None</em>, <em>param_lt_create_time=None</em>, <em>param_offset=None</em>, <em>param_order=None</em>, <em>param_periodic_refresh=None</em>, <em>param_protocol=None</em>, <em>param_sort_by=None</em>, <em>param_source_ip=None</em>, <em>param_source_port=None</em>, <em>param_status=None</em>, <em>param_task_id=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/path_trace.html#PathTrace.retrives_all_previous_pathtraces_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.path_trace.PathTrace.retrives_all_previous_pathtraces_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.path_trace.PathTrace.deletes_pathtrace_by_id">
+<code class="descname">deletes_pathtrace_by_id</code><span class="sig-paren">(</span><em>path_param_flow_analysis_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/path_trace.html#PathTrace.deletes_pathtrace_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.path_trace.PathTrace.deletes_pathtrace_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.path_trace.PathTrace.initiate_a_new_pathtrace">
+<code class="descname">initiate_a_new_pathtrace</code><span class="sig-paren">(</span><em>rq_controlPath=None</em>, <em>rq_destIP=None</em>, <em>rq_destPort=None</em>, <em>rq_inclusions=None</em>, <em>rq_periodicRefresh=None</em>, <em>rq_protocol=None</em>, <em>rq_sourceIP=None</em>, <em>rq_sourcePort=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/path_trace.html#PathTrace.initiate_a_new_pathtrace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.path_trace.PathTrace.initiate_a_new_pathtrace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.path_trace.PathTrace.retrieves_previous_pathtrace">
+<code class="descname">retrieves_previous_pathtrace</code><span class="sig-paren">(</span><em>path_param_flow_analysis_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/path_trace.html#PathTrace.retrieves_previous_pathtrace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.path_trace.PathTrace.retrieves_previous_pathtrace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="swim">
+<span id="id9"></span><h3>swim<a class="headerlink" href="#swim" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.swim.Swim">
+<em class="property">class </em><code class="descname">Swim</code><a class="reference internal" href="../_modules/dnacentersdk/api/swim.html#Swim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.swim.Swim" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center SWIM API.</p>
+<p>Wraps the DNA Center SWIM API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.swim.Swim.get_software_image_details">
+<code class="descname">get_software_image_details</code><span class="sig-paren">(</span><em>param_application_type=None</em>, <em>param_created_time=None</em>, <em>param_family=None</em>, <em>param_image_integrity_status=None</em>, <em>param_image_name=None</em>, <em>param_image_series=None</em>, <em>param_image_size_greater_than=None</em>, <em>param_image_size_lesser_than=None</em>, <em>param_image_uuid=None</em>, <em>param_is_cco_latest=None</em>, <em>param_is_cco_recommended=None</em>, <em>param_is_tagged_golden=None</em>, <em>param_limit=None</em>, <em>param_name=None</em>, <em>param_offset=None</em>, <em>param_sort_by=None</em>, <em>param_sort_order='asc'</em>, <em>param_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/swim.html#Swim.get_software_image_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.swim.Swim.get_software_image_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.swim.Swim.trigger_software_image_distribution">
+<code class="descname">trigger_software_image_distribution</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/swim.html#Swim.trigger_software_image_distribution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.swim.Swim.trigger_software_image_distribution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.swim.Swim.import_local_software_image">
+<code class="descname">import_local_software_image</code><span class="sig-paren">(</span><em>param_is_third_party=None</em>, <em>param_third_party_application_type=None</em>, <em>param_third_party_image_family=None</em>, <em>param_third_party_vendor=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/swim.html#Swim.import_local_software_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.swim.Swim.import_local_software_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.swim.Swim.import_software_image_via_url">
+<code class="descname">import_software_image_via_url</code><span class="sig-paren">(</span><em>param_schedule_at=None</em>, <em>param_schedule_desc=None</em>, <em>param_schedule_origin=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/swim.html#Swim.import_software_image_via_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.swim.Swim.import_software_image_via_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.swim.Swim.trigger_software_image_activation">
+<code class="descname">trigger_software_image_activation</code><span class="sig-paren">(</span><em>param_schedule_validate=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/swim.html#Swim.trigger_software_image_activation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.swim.Swim.trigger_software_image_activation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="pnp">
+<span id="id10"></span><h3>pnp<a class="headerlink" href="#pnp" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.pnp.Pnp">
+<em class="property">class </em><code class="descname">Pnp</code><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center PnP API.</p>
+<p>Wraps the DNA Center PnP API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_sync_result_for_virtual_account">
+<code class="descname">get_sync_result_for_virtual_account</code><span class="sig-paren">(</span><em>path_param_domain</em>, <em>path_param_name</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_sync_result_for_virtual_account"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_sync_result_for_virtual_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.import_devices_in_bulk">
+<code class="descname">import_devices_in_bulk</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.import_devices_in_bulk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.import_devices_in_bulk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.update_workflow">
+<code class="descname">update_workflow</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>rq__id=None</em>, <em>rq_addToInventory=None</em>, <em>rq_addedOn=None</em>, <em>rq_configId=None</em>, <em>rq_currTaskIdx=None</em>, <em>rq_description=None</em>, <em>rq_endTime=None</em>, <em>rq_execTime=None</em>, <em>rq_imageId=None</em>, <em>rq_instanceType=None</em>, <em>rq_lastupdateOn=None</em>, <em>rq_name=None</em>, <em>rq_startTime=None</em>, <em>rq_state=None</em>, <em>rq_tasks=None</em>, <em>rq_tenantId=None</em>, <em>rq_type=None</em>, <em>rq_useState=None</em>, <em>rq_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.update_workflow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.update_workflow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.un_claim_device">
+<code class="descname">un_claim_device</code><span class="sig-paren">(</span><em>rq_deviceIdList=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.un_claim_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.un_claim_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.add_virtual_account">
+<code class="descname">add_virtual_account</code><span class="sig-paren">(</span><em>rq_autoSyncPeriod=None</em>, <em>rq_ccoUser=None</em>, <em>rq_expiry=None</em>, <em>rq_lastSync=None</em>, <em>rq_profile=None</em>, <em>rq_smartAccountId=None</em>, <em>rq_syncResult=None</em>, <em>rq_syncResultStr=None</em>, <em>rq_syncStartTime=None</em>, <em>rq_syncStatus=None</em>, <em>rq_tenantId=None</em>, <em>rq_token=None</em>, <em>rq_virtualAccountId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.add_virtual_account"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.add_virtual_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.update_device">
+<code class="descname">update_device</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>rq__id=None</em>, <em>rq_deviceInfo=None</em>, <em>rq_runSummaryList=None</em>, <em>rq_systemResetWorkflow=None</em>, <em>rq_systemWorkflow=None</em>, <em>rq_tenantId=None</em>, <em>rq_version=None</em>, <em>rq_workflow=None</em>, <em>rq_workflowParameters=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.update_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.update_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.claim_a_device_to_a_site">
+<code class="descname">claim_a_device_to_a_site</code><span class="sig-paren">(</span><em>rq_deviceId=None</em>, <em>rq_siteId=None</em>, <em>rq_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.claim_a_device_to_a_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.claim_a_device_to_a_site" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.deregister_virtual_account">
+<code class="descname">deregister_virtual_account</code><span class="sig-paren">(</span><em>param_domain</em>, <em>param_name</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.deregister_virtual_account"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.deregister_virtual_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_smart_account_list">
+<code class="descname">get_smart_account_list</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_smart_account_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_smart_account_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_workflow_by_id">
+<code class="descname">get_workflow_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_workflow_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_workflow_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.update_pnp_server_profile">
+<code class="descname">update_pnp_server_profile</code><span class="sig-paren">(</span><em>rq_autoSyncPeriod=None</em>, <em>rq_ccoUser=None</em>, <em>rq_expiry=None</em>, <em>rq_lastSync=None</em>, <em>rq_profile=None</em>, <em>rq_smartAccountId=None</em>, <em>rq_syncResult=None</em>, <em>rq_syncResultStr=None</em>, <em>rq_syncStartTime=None</em>, <em>rq_syncStatus=None</em>, <em>rq_tenantId=None</em>, <em>rq_token=None</em>, <em>rq_virtualAccountId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.update_pnp_server_profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.update_pnp_server_profile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_workflow_count">
+<code class="descname">get_workflow_count</code><span class="sig-paren">(</span><em>param_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_workflow_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_workflow_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.update_pnp_global_settings">
+<code class="descname">update_pnp_global_settings</code><span class="sig-paren">(</span><em>rq__id=None</em>, <em>rq_aaaCredentials=None</em>, <em>rq_acceptEula=None</em>, <em>rq_defaultProfile=None</em>, <em>rq_savaMappingList=None</em>, <em>rq_taskTimeOuts=None</em>, <em>rq_tenantId=None</em>, <em>rq_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.update_pnp_global_settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.update_pnp_global_settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_pnp_global_settings">
+<code class="descname">get_pnp_global_settings</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_pnp_global_settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_pnp_global_settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.reset_device">
+<code class="descname">reset_device</code><span class="sig-paren">(</span><em>rq_deviceResetList=None</em>, <em>rq_projectId=None</em>, <em>rq_workflowId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.reset_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.reset_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.sync_virtual_account_devices">
+<code class="descname">sync_virtual_account_devices</code><span class="sig-paren">(</span><em>rq_autoSyncPeriod=None</em>, <em>rq_ccoUser=None</em>, <em>rq_expiry=None</em>, <em>rq_lastSync=None</em>, <em>rq_profile=None</em>, <em>rq_smartAccountId=None</em>, <em>rq_syncResult=None</em>, <em>rq_syncResultStr=None</em>, <em>rq_syncStartTime=None</em>, <em>rq_syncStatus=None</em>, <em>rq_tenantId=None</em>, <em>rq_token=None</em>, <em>rq_virtualAccountId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.sync_virtual_account_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.sync_virtual_account_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_workflows">
+<code class="descname">get_workflows</code><span class="sig-paren">(</span><em>param_limit=None</em>, <em>param_name=None</em>, <em>param_offset=None</em>, <em>param_sort=None</em>, <em>param_sort_order=None</em>, <em>param_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_workflows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_workflows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.delete_workflow_by_id">
+<code class="descname">delete_workflow_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.delete_workflow_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.delete_workflow_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_device_by_id">
+<code class="descname">get_device_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_device_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_device_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_virtual_account_list">
+<code class="descname">get_virtual_account_list</code><span class="sig-paren">(</span><em>path_param_domain</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_virtual_account_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_virtual_account_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.preview_config">
+<code class="descname">preview_config</code><span class="sig-paren">(</span><em>rq_deviceId=None</em>, <em>rq_siteId=None</em>, <em>rq_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.preview_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.preview_config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.claim_device">
+<code class="descname">claim_device</code><span class="sig-paren">(</span><em>rq_configFileUrl=None</em>, <em>rq_configId=None</em>, <em>rq_deviceClaimList=None</em>, <em>rq_fileServiceId=None</em>, <em>rq_imageId=None</em>, <em>rq_imageUrl=None</em>, <em>rq_populateInventory=None</em>, <em>rq_projectId=None</em>, <em>rq_workflowId=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.claim_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.claim_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_device_list">
+<code class="descname">get_device_list</code><span class="sig-paren">(</span><em>param_cm_state=None</em>, <em>param_last_contact=None</em>, <em>param_limit=None</em>, <em>param_name=None</em>, <em>param_offset=None</em>, <em>param_onb_state=None</em>, <em>param_pid=None</em>, <em>param_project_id=None</em>, <em>param_project_name=None</em>, <em>param_serial_number=None</em>, <em>param_smart_account_id=None</em>, <em>param_sort=None</em>, <em>param_sort_order=None</em>, <em>param_source=None</em>, <em>param_state=None</em>, <em>param_virtual_account_id=None</em>, <em>param_workflow_id=None</em>, <em>param_workflow_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_device_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_device_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.add_a_workflow">
+<code class="descname">add_a_workflow</code><span class="sig-paren">(</span><em>rq__id=None</em>, <em>rq_addToInventory=None</em>, <em>rq_addedOn=None</em>, <em>rq_configId=None</em>, <em>rq_currTaskIdx=None</em>, <em>rq_description=None</em>, <em>rq_endTime=None</em>, <em>rq_execTime=None</em>, <em>rq_imageId=None</em>, <em>rq_instanceType=None</em>, <em>rq_lastupdateOn=None</em>, <em>rq_name=None</em>, <em>rq_startTime=None</em>, <em>rq_state=None</em>, <em>rq_tasks=None</em>, <em>rq_tenantId=None</em>, <em>rq_type=None</em>, <em>rq_useState=None</em>, <em>rq_version=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.add_a_workflow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.add_a_workflow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_device_count">
+<code class="descname">get_device_count</code><span class="sig-paren">(</span><em>param_cm_state=None</em>, <em>param_last_contact=None</em>, <em>param_name=None</em>, <em>param_onb_state=None</em>, <em>param_pid=None</em>, <em>param_project_id=None</em>, <em>param_project_name=None</em>, <em>param_serial_number=None</em>, <em>param_smart_account_id=None</em>, <em>param_source=None</em>, <em>param_state=None</em>, <em>param_virtual_account_id=None</em>, <em>param_workflow_id=None</em>, <em>param_workflow_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_device_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_device_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.get_device_history">
+<code class="descname">get_device_history</code><span class="sig-paren">(</span><em>param_serial_number</em>, <em>param_sort=None</em>, <em>param_sort_order=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.get_device_history"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.get_device_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.delete_device_by_id_from_pnp">
+<code class="descname">delete_device_by_id_from_pnp</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.delete_device_by_id_from_pnp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.delete_device_by_id_from_pnp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.pnp.Pnp.add_device">
+<code class="descname">add_device</code><span class="sig-paren">(</span><em>rq__id=None</em>, <em>rq_deviceInfo=None</em>, <em>rq_runSummaryList=None</em>, <em>rq_systemResetWorkflow=None</em>, <em>rq_systemWorkflow=None</em>, <em>rq_tenantId=None</em>, <em>rq_version=None</em>, <em>rq_workflow=None</em>, <em>rq_workflowParameters=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/pnp.html#Pnp.add_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.pnp.Pnp.add_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="site-profile">
+<span id="id11"></span><h3>site_profile<a class="headerlink" href="#site-profile" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.site_profile.SiteProfile">
+<em class="property">class </em><code class="descname">SiteProfile</code><a class="reference internal" href="../_modules/dnacentersdk/api/site_profile.html#SiteProfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.site_profile.SiteProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Site Profile API.</p>
+<p>Wraps the DNA Center Site Profile API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.site_profile.SiteProfile.get_device_details_by_ip">
+<code class="descname">get_device_details_by_ip</code><span class="sig-paren">(</span><em>param_device_ip</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/site_profile.html#SiteProfile.get_device_details_by_ip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.site_profile.SiteProfile.get_device_details_by_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.site_profile.SiteProfile.provision_nfv">
+<code class="descname">provision_nfv</code><span class="sig-paren">(</span><em>rq_callbackUrl=None</em>, <em>rq_provisioning=None</em>, <em>rq_siteProfile=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/site_profile.html#SiteProfile.provision_nfv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.site_profile.SiteProfile.provision_nfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="devices">
+<span id="id12"></span><h3>devices<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.devices.Devices">
+<em class="property">class </em><code class="descname">Devices</code><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Devices API.</p>
+<p>Wraps the DNA Center Devices API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_module_info_by_id">
+<code class="descname">get_module_info_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_module_info_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_module_info_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_interface_count">
+<code class="descname">get_device_interface_count</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_interface_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_interface_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.sync_devices_using_forcesync">
+<code class="descname">sync_devices_using_forcesync</code><span class="sig-paren">(</span><em>param_force_sync=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.sync_devices_using_forcesync"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.sync_devices_using_forcesync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_list">
+<code class="descname">get_device_list</code><span class="sig-paren">(</span><em>param_associated_wlc_ip=None</em>, <em>param_collection_interval=None</em>, <em>param_collection_status=None</em>, <em>param_error_code=None</em>, <em>param_error_description=None</em>, <em>param_family=None</em>, <em>param_hostname=None</em>, <em>param_id=None</em>, <em>param_license_name=None</em>, <em>param_license_status=None</em>, <em>param_license_type=None</em>, <em>param_location=None</em>, <em>param_location_name=None</em>, <em>param_mac_address=None</em>, <em>param_management_ip_address=None</em>, <em>param_module_equpimenttype=None</em>, <em>param_module_name=None</em>, <em>param_module_operationstatecode=None</em>, <em>param_module_partnumber=None</em>, <em>param_module_servicestate=None</em>, <em>param_module_vendorequipmenttype=None</em>, <em>param_not_synced_for_minutes=None</em>, <em>param_platform_id=None</em>, <em>param_reachability_status=None</em>, <em>param_role=None</em>, <em>param_serial_number=None</em>, <em>param_series=None</em>, <em>param_software_type=None</em>, <em>param_software_version=None</em>, <em>param_type=None</em>, <em>param_up_time=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_polling_interval_for_all_devices">
+<code class="descname">get_polling_interval_for_all_devices</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_polling_interval_for_all_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_polling_interval_for_all_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_count">
+<code class="descname">get_device_count</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_interface_vlans">
+<code class="descname">get_device_interface_vlans</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>param_interface_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_interface_vlans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_interface_vlans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_interfaces_by_specified_range">
+<code class="descname">get_device_interfaces_by_specified_range</code><span class="sig-paren">(</span><em>path_param_device_id</em>, <em>path_param_records_to_return</em>, <em>path_param_start_index</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_interfaces_by_specified_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_interfaces_by_specified_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.delete_device_by_id">
+<code class="descname">delete_device_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>param_is_force_delete=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.delete_device_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.delete_device_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_config_by_id">
+<code class="descname">get_device_config_by_id</code><span class="sig-paren">(</span><em>path_param_network_device_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_config_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_config_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.add_device">
+<code class="descname">add_device</code><span class="sig-paren">(</span><em>rq_cliTransport=None</em>, <em>rq_computeDevice=None</em>, <em>rq_enablePassword=None</em>, <em>rq_extendedDiscoveryInfo=None</em>, <em>rq_httpPassword=None</em>, <em>rq_httpPort=None</em>, <em>rq_httpSecure=None</em>, <em>rq_httpUserName=None</em>, <em>rq_ipAddress=None</em>, <em>rq_merakiOrgId=None</em>, <em>rq_netconfPort=None</em>, <em>rq_password=None</em>, <em>rq_serialNumber=None</em>, <em>rq_snmpAuthPassphrase=None</em>, <em>rq_snmpAuthProtocol=None</em>, <em>rq_snmpMode=None</em>, <em>rq_snmpPrivPassphrase=None</em>, <em>rq_snmpPrivProtocol=None</em>, <em>rq_snmpROCommunity=None</em>, <em>rq_snmpRWCommunity=None</em>, <em>rq_snmpRetry=None</em>, <em>rq_snmpTimeout=None</em>, <em>rq_snmpUserName=None</em>, <em>rq_snmpVersion=None</em>, <em>rq_type=None</em>, <em>rq_updateMgmtIPaddressList=None</em>, <em>rq_userName=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.add_device"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.add_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_config_count">
+<code class="descname">get_device_config_count</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_config_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_config_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_interface_details_by_device_id_and_interface_name">
+<code class="descname">get_interface_details_by_device_id_and_interface_name</code><span class="sig-paren">(</span><em>param_name</em>, <em>path_param_device_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_interface_details_by_device_id_and_interface_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_interface_details_by_device_id_and_interface_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_polling_interval_by_id">
+<code class="descname">get_polling_interval_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_polling_interval_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_polling_interval_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_module_count">
+<code class="descname">get_module_count</code><span class="sig-paren">(</span><em>param_device_id</em>, <em>param_name_list=None</em>, <em>param_operational_state_code_list=None</em>, <em>param_part_number_list=None</em>, <em>param_vendor_equipment_type_list=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_module_count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_module_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_interface_count_by_id">
+<code class="descname">get_device_interface_count_by_id</code><span class="sig-paren">(</span><em>path_param_device_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_interface_count_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_interface_count_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_organization_list_for_meraki">
+<code class="descname">get_organization_list_for_meraki</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_organization_list_for_meraki"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_organization_list_for_meraki" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_ospf_interfaces">
+<code class="descname">get_ospf_interfaces</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_ospf_interfaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_ospf_interfaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_functional_capability_by_id">
+<code class="descname">get_functional_capability_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_functional_capability_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_functional_capability_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_isis_interfaces">
+<code class="descname">get_isis_interfaces</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_isis_interfaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_isis_interfaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_config_for_all_devices">
+<code class="descname">get_device_config_for_all_devices</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_config_for_all_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_config_for_all_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.update_device_role">
+<code class="descname">update_device_role</code><span class="sig-paren">(</span><em>rq_id=None</em>, <em>rq_role=None</em>, <em>rq_roleSource=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.update_device_role"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.update_device_role" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_interface_info_by_id">
+<code class="descname">get_interface_info_by_id</code><span class="sig-paren">(</span><em>path_param_device_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_interface_info_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_interface_info_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_interface_by_ip">
+<code class="descname">get_interface_by_ip</code><span class="sig-paren">(</span><em>path_param_ip_address</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_interface_by_ip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_interface_by_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_network_device_by_ip">
+<code class="descname">get_network_device_by_ip</code><span class="sig-paren">(</span><em>path_param_ip_address</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_network_device_by_ip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_network_device_by_ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_summary">
+<code class="descname">get_device_summary</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_summary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_by_id">
+<code class="descname">get_device_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_all_interfaces">
+<code class="descname">get_all_interfaces</code><span class="sig-paren">(</span><em>param_limit=500</em>, <em>param_offset=1</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_all_interfaces"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_all_interfaces" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.sync_devices">
+<code class="descname">sync_devices</code><span class="sig-paren">(</span><em>rq_cliTransport=None</em>, <em>rq_computeDevice=None</em>, <em>rq_enablePassword=None</em>, <em>rq_extendedDiscoveryInfo=None</em>, <em>rq_httpPassword=None</em>, <em>rq_httpPort=None</em>, <em>rq_httpSecure=None</em>, <em>rq_httpUserName=None</em>, <em>rq_ipAddress=None</em>, <em>rq_merakiOrgId=None</em>, <em>rq_netconfPort=None</em>, <em>rq_password=None</em>, <em>rq_serialNumber=None</em>, <em>rq_snmpAuthPassphrase=None</em>, <em>rq_snmpAuthProtocol=None</em>, <em>rq_snmpMode=None</em>, <em>rq_snmpPrivPassphrase=None</em>, <em>rq_snmpPrivProtocol=None</em>, <em>rq_snmpROCommunity=None</em>, <em>rq_snmpRWCommunity=None</em>, <em>rq_snmpRetry=None</em>, <em>rq_snmpTimeout=None</em>, <em>rq_snmpUserName=None</em>, <em>rq_snmpVersion=None</em>, <em>rq_type=None</em>, <em>rq_updateMgmtIPaddressList=None</em>, <em>rq_userName=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.sync_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.sync_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_interface_by_id">
+<code class="descname">get_interface_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_interface_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_interface_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_functional_capability_for_devices">
+<code class="descname">get_functional_capability_for_devices</code><span class="sig-paren">(</span><em>param_device_id</em>, <em>param_function_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_functional_capability_for_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_functional_capability_for_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.register_device_for_wsa">
+<code class="descname">register_device_for_wsa</code><span class="sig-paren">(</span><em>param_macaddress=None</em>, <em>param_serial_number=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.register_device_for_wsa"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.register_device_for_wsa" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_by_serial_number">
+<code class="descname">get_device_by_serial_number</code><span class="sig-paren">(</span><em>path_param_serial_number</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_by_serial_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_by_serial_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.export_device_list">
+<code class="descname">export_device_list</code><span class="sig-paren">(</span><em>rq_deviceUuids=None</em>, <em>rq_id=None</em>, <em>rq_operationEnum=None</em>, <em>rq_parameters=None</em>, <em>rq_password=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.export_device_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.export_device_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_network_device_by_pagination_range">
+<code class="descname">get_network_device_by_pagination_range</code><span class="sig-paren">(</span><em>path_param_records_to_return</em>, <em>path_param_start_index</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_network_device_by_pagination_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_network_device_by_pagination_range" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.retrieves_all_network_devices">
+<code class="descname">retrieves_all_network_devices</code><span class="sig-paren">(</span><em>param_associated_wlc_ip=None</em>, <em>param_collection_interval=None</em>, <em>param_collection_status=None</em>, <em>param_error_code=None</em>, <em>param_family=None</em>, <em>param_hostname=None</em>, <em>param_limit=None</em>, <em>param_mac_address=None</em>, <em>param_management_ip_address=None</em>, <em>param_offset=None</em>, <em>param_platform_id=None</em>, <em>param_reachability_failure_reason=None</em>, <em>param_reachability_status=None</em>, <em>param_role=None</em>, <em>param_role_source=None</em>, <em>param_serial_number=None</em>, <em>param_series=None</em>, <em>param_software_type=None</em>, <em>param_software_version=None</em>, <em>param_type=None</em>, <em>param_up_time=None</em>, <em>param_vrf_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.retrieves_all_network_devices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.retrieves_all_network_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_modules">
+<code class="descname">get_modules</code><span class="sig-paren">(</span><em>param_device_id</em>, <em>param_limit=None</em>, <em>param_name_list=None</em>, <em>param_offset=None</em>, <em>param_operational_state_code_list=None</em>, <em>param_part_number_list=None</em>, <em>param_vendor_equipment_type_list=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_modules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_modules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_wireless_lan_controller_details_by_id">
+<code class="descname">get_wireless_lan_controller_details_by_id</code><span class="sig-paren">(</span><em>path_param_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_wireless_lan_controller_details_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_wireless_lan_controller_details_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.devices.Devices.get_device_detail">
+<code class="descname">get_device_detail</code><span class="sig-paren">(</span><em>param_identifier</em>, <em>param_search_by</em>, <em>param_timestamp</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/devices.html#Devices.get_device_detail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.devices.Devices.get_device_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sites">
+<span id="id13"></span><h3>sites<a class="headerlink" href="#sites" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.sites.Sites">
+<em class="property">class </em><code class="descname">Sites</code><a class="reference internal" href="../_modules/dnacentersdk/api/sites.html#Sites"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.sites.Sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Sites API.</p>
+<p>Wraps the DNA Center Sites API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.sites.Sites.get_site_health">
+<code class="descname">get_site_health</code><span class="sig-paren">(</span><em>param_timestamp</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/sites.html#Sites.get_site_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.sites.Sites.get_site_health" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.sites.Sites.assign_device_to_site">
+<code class="descname">assign_device_to_site</code><span class="sig-paren">(</span><em>path_param_site_id</em>, <em>rq_device=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/sites.html#Sites.assign_device_to_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.sites.Sites.assign_device_to_site" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.sites.Sites.create_site">
+<code class="descname">create_site</code><span class="sig-paren">(</span><em>rq_site=None</em>, <em>rq_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/sites.html#Sites.create_site"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.sites.Sites.create_site" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="networks">
+<span id="id14"></span><h3>networks<a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.networks.Networks">
+<em class="property">class </em><code class="descname">Networks</code><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Networks API.</p>
+<p>Wraps the DNA Center Networks API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.networks.Networks.get_vlan_details">
+<code class="descname">get_vlan_details</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks.get_vlan_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks.get_vlan_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.networks.Networks.get_site_topology">
+<code class="descname">get_site_topology</code><span class="sig-paren">(</span><em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks.get_site_topology"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks.get_site_topology" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.networks.Networks.get_physical_topology">
+<code class="descname">get_physical_topology</code><span class="sig-paren">(</span><em>param_node_type=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks.get_physical_topology"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks.get_physical_topology" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.networks.Networks.get_l3_topology_details">
+<code class="descname">get_l3_topology_details</code><span class="sig-paren">(</span><em>path_param_topology_type</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks.get_l3_topology_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks.get_l3_topology_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.networks.Networks.get_topology_details">
+<code class="descname">get_topology_details</code><span class="sig-paren">(</span><em>path_param_vlan_id</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks.get_topology_details"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks.get_topology_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.networks.Networks.get_overall_network_health">
+<code class="descname">get_overall_network_health</code><span class="sig-paren">(</span><em>param_timestamp</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/networks.html#Networks.get_overall_network_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.networks.Networks.get_overall_network_health" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="clients">
+<span id="id15"></span><h3>clients<a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.clients.Clients">
+<em class="property">class </em><code class="descname">Clients</code><a class="reference internal" href="../_modules/dnacentersdk/api/clients.html#Clients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.clients.Clients" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Clients API.</p>
+<p>Wraps the DNA Center Clients API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.clients.Clients.get_overall_client_health">
+<code class="descname">get_overall_client_health</code><span class="sig-paren">(</span><em>param_timestamp</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/clients.html#Clients.get_overall_client_health"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.clients.Clients.get_overall_client_health" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.clients.Clients.get_client_detail">
+<code class="descname">get_client_detail</code><span class="sig-paren">(</span><em>param_mac_address</em>, <em>param_timestamp</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/clients.html#Clients.get_client_detail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.clients.Clients.get_client_detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="non-fabric-wireless">
+<span id="id16"></span><h3>non_fabric_wireless<a class="headerlink" href="#non-fabric-wireless" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.non_fabric_wireless.NonFabricWireless">
+<em class="property">class </em><code class="descname">NonFabricWireless</code><a class="reference internal" href="../_modules/dnacentersdk/api/non_fabric_wireless.html#NonFabricWireless"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.non_fabric_wireless.NonFabricWireless" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Non-Fabric Wireless API.</p>
+<p>Wraps the DNA Center Non-Fabric Wireless API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.non_fabric_wireless.NonFabricWireless.delete_and_provision_ssid">
+<code class="descname">delete_and_provision_ssid</code><span class="sig-paren">(</span><em>path_param_managed_aplocations</em>, <em>path_param_ssid_name</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/non_fabric_wireless.html#NonFabricWireless.delete_and_provision_ssid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.non_fabric_wireless.NonFabricWireless.delete_and_provision_ssid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.non_fabric_wireless.NonFabricWireless.create_enterprise_ssid">
+<code class="descname">create_enterprise_ssid</code><span class="sig-paren">(</span><em>rq_enableBroadcastSSID=None</em>, <em>rq_enableFastLane=None</em>, <em>rq_enableMACFiltering=None</em>, <em>rq_fastTransition=None</em>, <em>rq_name=None</em>, <em>rq_passphrase=None</em>, <em>rq_radioPolicy=None</em>, <em>rq_securityLevel=None</em>, <em>rq_trafficType=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/non_fabric_wireless.html#NonFabricWireless.create_enterprise_ssid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.non_fabric_wireless.NonFabricWireless.create_enterprise_ssid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.non_fabric_wireless.NonFabricWireless.create_and_provision_ssid">
+<code class="descname">create_and_provision_ssid</code><span class="sig-paren">(</span><em>rq_enableFabric=None</em>, <em>rq_flexConnect=None</em>, <em>rq_managedAPLocations=None</em>, <em>rq_ssidDetails=None</em>, <em>rq_ssidType=None</em>, <em>rq_vlanAndDynamicInterfaceDetails=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/non_fabric_wireless.html#NonFabricWireless.create_and_provision_ssid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.non_fabric_wireless.NonFabricWireless.create_and_provision_ssid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.non_fabric_wireless.NonFabricWireless.delete_enterprise_ssid">
+<code class="descname">delete_enterprise_ssid</code><span class="sig-paren">(</span><em>path_param_ssid_name</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/non_fabric_wireless.html#NonFabricWireless.delete_enterprise_ssid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.non_fabric_wireless.NonFabricWireless.delete_enterprise_ssid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.non_fabric_wireless.NonFabricWireless.get_enterprise_ssid">
+<code class="descname">get_enterprise_ssid</code><span class="sig-paren">(</span><em>param_ssid_name=None</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/non_fabric_wireless.html#NonFabricWireless.get_enterprise_ssid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.non_fabric_wireless.NonFabricWireless.get_enterprise_ssid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="fabric-wired">
+<span id="id17"></span><h3>fabric_wired<a class="headerlink" href="#fabric-wired" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="dnacentersdk.api.fabric_wired.FabricWired">
+<em class="property">class </em><code class="descname">FabricWired</code><a class="reference internal" href="../_modules/dnacentersdk/api/fabric_wired.html#FabricWired"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.fabric_wired.FabricWired" title="Permalink to this definition">¶</a></dt>
+<dd><p>DNA Center Fabric Wired API.</p>
+<p>Wraps the DNA Center Fabric Wired API and exposes the API as native Python
+methods that return native Python objects.</p>
+<dl class="method">
+<dt id="dnacentersdk.api.fabric_wired.FabricWired.gets_border_device_details_from_sda_fabric">
+<code class="descname">gets_border_device_details_from_sda_fabric</code><span class="sig-paren">(</span><em>path_param_device_ip_address</em>, <em>path_param_sda_border_device</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/fabric_wired.html#FabricWired.gets_border_device_details_from_sda_fabric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.fabric_wired.FabricWired.gets_border_device_details_from_sda_fabric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.fabric_wired.FabricWired.adds_border_device_in_sda_fabric">
+<code class="descname">adds_border_device_in_sda_fabric</code><span class="sig-paren">(</span><em>path_param_sda_border_device</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/fabric_wired.html#FabricWired.adds_border_device_in_sda_fabric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.fabric_wired.FabricWired.adds_border_device_in_sda_fabric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dnacentersdk.api.fabric_wired.FabricWired.deletes_border_device_from_sda_fabric">
+<code class="descname">deletes_border_device_from_sda_fabric</code><span class="sig-paren">(</span><em>path_param_device_ip_address</em>, <em>path_param_sda_border_device</em>, <em>headers=None</em>, <em>payload=None</em>, <em>**request_parameters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/dnacentersdk/api/fabric_wired.html#FabricWired.deletes_border_device_from_sda_fabric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.api.fabric_wired.FabricWired.deletes_border_device_from_sda_fabric" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<span id="id18"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="dnacentersdk.dnacentersdkException">
+<em class="property">exception </em><code class="descname">dnacentersdkException</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#dnacentersdkException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.dnacentersdkException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Base class for all dnacentersdk package exceptions.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.AccessTokenError">
+<em class="property">exception </em><code class="descname">AccessTokenError</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#AccessTokenError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.AccessTokenError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dnacentersdk.exceptions.dnacentersdkException</span></code></p>
+<p>Raised when an incorrect DNA Center Access Token has been provided.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.ApiError">
+<em class="property">exception </em><code class="descname">ApiError</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#ApiError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.ApiError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dnacentersdk.exceptions.dnacentersdkException</span></code></p>
+<p>Errors returned in response to requests sent to the DNA Center APIs.</p>
+<p>Several data attributes are available for inspection.</p>
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.response">
+<code class="descname">response</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.response" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.Response</span></code> object returned from the API call.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.request">
+<code class="descname">request</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.PreparedRequest</span></code> of the API call.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.status_code">
+<code class="descname">status_code</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.status_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>The HTTP status code from the API response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.status">
+<code class="descname">status</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The HTTP status from the API response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.details">
+<code class="descname">details</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.details" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parsed JSON details from the API response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.message">
+<code class="descname">message</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>The error message from the parsed API response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dnacentersdk.ApiError.description">
+<code class="descname">description</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.ApiError.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A description of the HTTP Response Code from the API docs.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.RateLimitError">
+<em class="property">exception </em><code class="descname">RateLimitError</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#RateLimitError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.RateLimitError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dnacentersdk.exceptions.ApiError</span></code></p>
+<p>DNA Center Rate-Limit exceeded Error.</p>
+<p>Raised when a rate-limit exceeded message is received and the request
+<strong>will not</strong> be retried.</p>
+<dl class="attribute">
+<dt id="dnacentersdk.RateLimitError.retry_after">
+<code class="descname">retry_after</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.RateLimitError.retry_after" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>Retry-After</cite> time period (in seconds) provided by DNA Center.</p>
+<p>Defaults to 15 seconds if the response <cite>Retry-After</cite> header isn’t
+present in the response headers, and defaults to a minimum wait time of
+1 second if DNA Center returns a <cite>Retry-After</cite> header of 0 seconds.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.RateLimitWarning">
+<em class="property">exception </em><code class="descname">RateLimitWarning</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#RateLimitWarning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.RateLimitWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></a></p>
+<p>DNA Center rate-limit exceeded warning.</p>
+<p>Raised when a rate-limit exceeded message is received and the request will
+be retried.</p>
+<dl class="attribute">
+<dt id="dnacentersdk.RateLimitWarning.retry_after">
+<code class="descname">retry_after</code><em class="property"> = None</em><a class="headerlink" href="#dnacentersdk.RateLimitWarning.retry_after" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>Retry-After</cite> time period (in seconds) provided by DNA Center.</p>
+<p>Defaults to 15 seconds if the response <cite>Retry-After</cite> header isn’t
+present in the response headers, and defaults to a minimum wait time of
+1 second if DNA Center returns a <cite>Retry-After</cite> header of 0 seconds.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.MalformedResponse">
+<em class="property">exception </em><code class="descname">MalformedResponse</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#MalformedResponse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.MalformedResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dnacentersdk.exceptions.dnacentersdkException</span></code></p>
+<p>Raised when a malformed response is received from DNA Center.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.MalformedRequest">
+<em class="property">exception </em><code class="descname">MalformedRequest</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#MalformedRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.MalformedRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dnacentersdk.exceptions.dnacentersdkException</span></code></p>
+<p>Raised when a malformed request is received from DNA Center user.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="dnacentersdk.DownloadFailure">
+<em class="property">exception </em><code class="descname">DownloadFailure</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#DownloadFailure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dnacentersdk.DownloadFailure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dnacentersdk.exceptions.dnacentersdkException</span></code></p>
+<p>Raised when download operation was not successful.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="warnings">
+<span id="id19"></span><h2>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt>
+<em class="property">exception </em><code class="descname">RateLimitWarning</code><a class="reference internal" href="../_modules/dnacentersdk/exceptions.html#RateLimitWarning"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></a></p>
+<p>DNA Center rate-limit exceeded warning.</p>
+<p>Raised when a rate-limit exceeded message is received and the request will
+be retried.</p>
+<dl class="attribute">
+<dt>
+<code class="descname">retry_after</code><em class="property"> = None</em></dt>
+<dd><p>The <cite>Retry-After</cite> time period (in seconds) provided by DNA Center.</p>
+<p>Defaults to 15 seconds if the response <cite>Retry-After</cite> header isn’t
+present in the response headers, and defaults to a minimum wait time of
+1 second if DNA Center returns a <cite>Retry-After</cite> header of 0 seconds.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p><em>Copyright (c) 2019 Cisco and/or its affiliates.</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../code_of_conduct.html" class="btn btn-neutral float-right" title="Contributor Covenant Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (c) 2019 Cisco and/or its affiliates.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
