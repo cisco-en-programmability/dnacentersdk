@@ -25,12 +25,13 @@ SOFTWARE.
 import os
 import string
 
-from .config import ACCESS_TOKEN_ENVIRONMENT_VARIABLE
+from .config import ACCESS_TOKEN_ENVIRONMENT_VARIABLE, DEFAULT_PASS, DEFAULT_USER
 
 DNA_CENTER_ACCESS_TOKEN = os.getenv(ACCESS_TOKEN_ENVIRONMENT_VARIABLE)
-if DNA_CENTER_ACCESS_TOKEN is None:
+if DNA_CENTER_ACCESS_TOKEN is None and not (DEFAULT_PASS and DEFAULT_USER):
     raise RuntimeError(
-        "You must set a {} environment variable to run the test suite"
+        "You must set a {} environment variable to run the test suite "
+        "or check the DEFAULT_PASS and DEFAULT_USER values in config."
         "".format(ACCESS_TOKEN_ENVIRONMENT_VARIABLE)
     )
 

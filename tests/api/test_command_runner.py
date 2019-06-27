@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNACenterAPI sites API fixtures and tests.
+"""DNACenterAPI command_runner API fixtures and tests.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -26,50 +26,35 @@ import pytest
 import dnacentersdk
 
 
+from .test_devices import get_device_list
 
 
-# 17a8-2ac9-4cf9-9ab0
-def is_valid_get_site_health(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
+# 33bb-2b9d-4019-9e14
+def is_valid_get_all_keywords_of_clis_accepted_by_command_runner(obj):
+    some_keys = [ 'response' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
-def get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1561661891', payload = '' )
+def get_all_keywords_of_clis_accepted_by_command_runner(api):
+    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted_by_command_runner( payload = '' )
     return endpoint_result
 
 
-def test_get_site_health(api):
-    assert is_valid_get_site_health(get_site_health(api))
+def test_get_all_keywords_of_clis_accepted_by_command_runner(api):
+    assert is_valid_get_all_keywords_of_clis_accepted_by_command_runner(get_all_keywords_of_clis_accepted_by_command_runner(api))
 
 
-# 50b5-89fd-4c7a-930a
-def is_valid_create_site(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
+# d6b8-ca77-4739-adf4
+def is_valid_run_read_only_commands_on_devices_to_get_their_real_time_configuration(obj):
+    some_keys = [ 'response' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
-def create_site(api):
-    endpoint_result = api.sites.create_site( rq_site = None, rq_type = None, payload = '' )
+def run_read_only_commands_on_devices_to_get_their_real_time_configuration(api):
+    endpoint_result = api.command_runner.run_read_only_commands_on_devices_to_get_their_real_time_configuration( rq_commands = [ get_all_keywords_of_clis_accepted_by_command_runner(api).response[0] ], rq_description = None, rq_deviceUuids = [ get_device_list(api).response[0].id ], rq_name = None, rq_timeout = None, payload = '' )
     return endpoint_result
 
 
-def test_create_site(api):
-    assert is_valid_create_site(create_site(api))
-
-
-# eeb1-68eb-4198-8e07
-def is_valid_assign_device_to_site(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
-
-
-def assign_device_to_site(api):
-    endpoint_result = api.sites.assign_device_to_site( path_param_site_id = '', rq_device = None, payload = '' )
-    return endpoint_result
-
-
-@pytest.mark.skip(reason="no way of currently testing this")
-def test_assign_device_to_site(api):
-    assert is_valid_assign_device_to_site(assign_device_to_site(api))
+def test_run_read_only_commands_on_devices_to_get_their_real_time_configuration(api):
+    assert is_valid_run_read_only_commands_on_devices_to_get_their_real_time_configuration(run_read_only_commands_on_devices_to_get_their_real_time_configuration(api))
 

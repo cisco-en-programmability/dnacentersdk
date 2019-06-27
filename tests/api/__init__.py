@@ -29,22 +29,22 @@ import pytest
 import dnacentersdk
 from tests.environment import DNA_CENTER_ACCESS_TOKEN
 
-from dnacentersdk.api.templateprogrammer import TemplateProgrammer
+from dnacentersdk.api.template_programmer import TemplateProgrammer
 from dnacentersdk.api.tag import Tag
-from dnacentersdk.api.networkdiscovery import NetworkDiscovery
+from dnacentersdk.api.network_discovery import NetworkDiscovery
 from dnacentersdk.api.task import Task
-from dnacentersdk.api.commandrunner import CommandRunner
+from dnacentersdk.api.command_runner import CommandRunner
 from dnacentersdk.api.file import File
-from dnacentersdk.api.pathtrace import PathTrace
+from dnacentersdk.api.path_trace import PathTrace
 from dnacentersdk.api.swim import Swim
 from dnacentersdk.api.pnp import Pnp
-from dnacentersdk.api.siteprofile import SiteProfile
+from dnacentersdk.api.site_profile import SiteProfile
 from dnacentersdk.api.devices import Devices
 from dnacentersdk.api.sites import Sites
 from dnacentersdk.api.networks import Networks
 from dnacentersdk.api.clients import Clients
-from dnacentersdk.api.nonfabricwireless import NonFabricWireless
-from dnacentersdk.api.fabricwired import FabricWired
+from dnacentersdk.api.non_fabric_wireless import NonFabricWireless
+from dnacentersdk.api.fabric_wired import FabricWired
 
 from tests.config import (
     ACCESS_TOKEN_ENVIRONMENT_VARIABLE, DEFAULT_BASE_URL,

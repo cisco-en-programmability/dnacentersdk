@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNACenterAPI sites API fixtures and tests.
+"""DNACenterAPI site_profile API fixtures and tests.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -28,48 +28,32 @@ import dnacentersdk
 
 
 
-# 17a8-2ac9-4cf9-9ab0
-def is_valid_get_site_health(obj):
+# 7fbe-4b80-4879-baa4
+def is_valid_get_device_details_by_ip(obj):
     some_keys = ['executionId', 'executionStatusUrl', 'message']
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
-def get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1561661891', payload = '' )
+def get_device_details_by_ip(api):
+    endpoint_result = api.site_profile.get_device_details_by_ip( param_device_ip = '10.10.20.253', payload = '' )
     return endpoint_result
 
 
-def test_get_site_health(api):
-    assert is_valid_get_site_health(get_site_health(api))
+def test_get_device_details_by_ip(api):
+    assert is_valid_get_device_details_by_ip(get_device_details_by_ip(api))
 
 
-# 50b5-89fd-4c7a-930a
-def is_valid_create_site(obj):
+# 8288-28f4-4f28-bd0d
+def is_valid_provision_nfv(obj):
     some_keys = [ 'executionId', 'executionStatusUrl' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
-def create_site(api):
-    endpoint_result = api.sites.create_site( rq_site = None, rq_type = None, payload = '' )
+def provision_nfv(api):
+    endpoint_result = api.site_profile.provision_nfv( rq_callbackUrl = None, rq_provisioning = None, rq_siteProfile = None, payload = '' )
     return endpoint_result
 
 
-def test_create_site(api):
-    assert is_valid_create_site(create_site(api))
-
-
-# eeb1-68eb-4198-8e07
-def is_valid_assign_device_to_site(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
-
-
-def assign_device_to_site(api):
-    endpoint_result = api.sites.assign_device_to_site( path_param_site_id = '', rq_device = None, payload = '' )
-    return endpoint_result
-
-
-@pytest.mark.skip(reason="no way of currently testing this")
-def test_assign_device_to_site(api):
-    assert is_valid_assign_device_to_site(assign_device_to_site(api))
+def test_provision_nfv(api):
+    assert is_valid_provision_nfv(provision_nfv(api))
 

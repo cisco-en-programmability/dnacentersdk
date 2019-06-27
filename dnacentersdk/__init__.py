@@ -36,7 +36,7 @@ from ._metadata import *
 from ._version import get_versions
 from .api import DNACenterAPI
 from .exceptions import (
-    AccessTokenError, ApiError, MalformedResponse, MalformedRequest, RateLimitError,
+    AccessTokenError, ApiError, MalformedResponse, MalformedRequest, RateLimitError, DownloadFailure,
     RateLimitWarning, dnacentersdkException,
 )
 from .models.mydict import mydict_data_factory

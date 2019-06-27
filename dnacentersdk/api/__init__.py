@@ -36,22 +36,22 @@ from dnacentersdk.restsession import RestSession
 from dnacentersdk.utils import check_type
 
 from .authentication import Authentication
-from .templateprogrammer import TemplateProgrammer
+from .template_programmer import TemplateProgrammer
 from .tag import Tag
-from .networkdiscovery import NetworkDiscovery
+from .network_discovery import NetworkDiscovery
 from .task import Task
-from .commandrunner import CommandRunner
+from .command_runner import CommandRunner
 from .file import File
-from .pathtrace import PathTrace
+from .path_trace import PathTrace
 from .swim import Swim
 from .pnp import Pnp
-from .siteprofile import SiteProfile
+from .site_profile import SiteProfile
 from .devices import Devices
 from .sites import Sites
 from .networks import Networks
 from .clients import Clients
-from .nonfabricwireless import NonFabricWireless
-from .fabricwired import FabricWired
+from .non_fabric_wireless import NonFabricWireless
+from .fabric_wired import FabricWired
 
 
 
