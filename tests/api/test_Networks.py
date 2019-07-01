@@ -110,7 +110,7 @@ def is_valid_get_overall_network_health(obj):
 
 
 def get_overall_network_health(api):
-    endpoint_result = api.networks.get_overall_network_health( param_timestamp = '1561661891', payload = '' )
+    endpoint_result = api.networks.get_overall_network_health( param_timestamp = '1562021578', payload = '' )
     return endpoint_result
 
 

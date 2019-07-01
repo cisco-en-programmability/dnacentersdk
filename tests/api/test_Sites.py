@@ -35,7 +35,7 @@ def is_valid_get_site_health(obj):
 
 
 def get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1561661891', payload = '' )
+    endpoint_result = api.sites.get_site_health( param_timestamp = '1562021578', payload = '' )
     return endpoint_result
 
 
