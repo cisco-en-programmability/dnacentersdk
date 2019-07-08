@@ -108,83 +108,6 @@ class Tag( object ):
         return self._object_factory('bpm_00a2fa6146089317', json_data)
 
 
-    # Create Tag
-    def create_tag(self, rq_description = None, rq_dynamicRules = None, rq_id = None, rq_instanceTenantId = None, rq_name = None, rq_systemTag = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_systemTag is not None: payload.update( { 'systemTag':  rq_systemTag })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_dynamicRules is not None: payload.update( { 'dynamicRules':  rq_dynamicRules })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_instanceTenantId is not None: payload.update( { 'instanceTenantId':  rq_instanceTenantId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_1399891c42a8be64').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_1399891c42a8be64', json_data)
-
-
-    # Delete Tag
-    def delete_tag(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'id': path_param_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_429c28154bdaa13d').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_429c28154bdaa13d', json_data)
-
-
     # Get Tag Member count
     def get_tag_member_count(self, param_member_type, path_param_id, param_level = '0', param_member_association_type = None, headers=None,payload=None,**request_parameters):
         check_type( param_member_type, basestring, may_be_none=False)
@@ -225,6 +148,47 @@ class Tag( object ):
         else self._session.get(apply_path_params('/api/v2/tag/${id}/member/count', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_2e9db85840fbb1cf', json_data)
+
+
+    # Create Tag
+    def create_tag(self, rq_description = None, rq_dynamicRules = None, rq_id = None, rq_instanceTenantId = None, rq_name = None, rq_systemTag = None, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        if rq_systemTag is not None: payload.update( { 'systemTag':  rq_systemTag })
+        if rq_description is not None: payload.update( { 'description':  rq_description })
+        if rq_dynamicRules is not None: payload.update( { 'dynamicRules':  rq_dynamicRules })
+        if rq_name is not None: payload.update( { 'name':  rq_name })
+        if rq_id is not None: payload.update( { 'id':  rq_id })
+        if rq_instanceTenantId is not None: payload.update( { 'instanceTenantId':  rq_instanceTenantId })
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_1399891c42a8be64').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_1399891c42a8be64', json_data)
 
 
     # Get Tag resource types
@@ -385,8 +349,8 @@ class Tag( object ):
         return self._object_factory('bpm_8091a9b84bfba53b', json_data)
 
 
-    # Get Tag by Id
-    def get_tag_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
+    # Delete Tag
+    def delete_tag(self, path_param_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
@@ -402,7 +366,7 @@ class Tag( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_c1a359b14c89b573').validate(payload)
+        self._request_validator('jsd_429c28154bdaa13d').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -415,10 +379,48 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_c1a359b14c89b573', json_data)
+        return self._object_factory('bpm_429c28154bdaa13d', json_data)
+
+
+    # Remove Tag member
+    def remove_tag_member(self, path_param_id, path_param_member_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_id, basestring, may_be_none=False)
+        check_type( path_param_member_id, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'id': path_param_id,
+            'memberId': path_param_member_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_caa3ea704d78b37e').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_caa3ea704d78b37e', json_data)
 
 
     # Get Tag members by Id
@@ -467,10 +469,9 @@ class Tag( object ):
         return self._object_factory('bpm_eab7abe048fb99ad', json_data)
 
 
-    # Remove Tag member
-    def remove_tag_member(self, path_param_id, path_param_member_id, headers=None,payload=None,**request_parameters):
+    # Get Tag by Id
+    def get_tag_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_id, basestring, may_be_none=False)
-        check_type( path_param_member_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
@@ -479,14 +480,13 @@ class Tag( object ):
 
         path_params = {
             'id': path_param_id,
-            'memberId': path_param_member_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_caa3ea704d78b37e').validate(payload)
+        self._request_validator('jsd_c1a359b14c89b573').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -499,10 +499,10 @@ class Tag( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_caa3ea704d78b37e', json_data)
+        return self._object_factory('bpm_c1a359b14c89b573', json_data)
 
 
     # Get Tag

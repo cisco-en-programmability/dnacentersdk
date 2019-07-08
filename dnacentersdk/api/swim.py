@@ -218,44 +218,6 @@ class Swim( object ):
         return self._object_factory('bpm_4dbe3bc743a891bc', json_data)
 
 
-    # Trigger software image activation
-    def trigger_software_image_activation(self, param_schedule_validate = None, headers=None,payload=None,**request_parameters):
-        check_type( param_schedule_validate, bool)
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('Client-Type', self._session.headers.get('Client-Type')), basestring)
-            check_type( headers.get('Client-Url', self._session.headers.get('Client-Url')), basestring)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        if param_schedule_validate is not None: params.update( { 'scheduleValidate': param_schedule_validate })
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or []
-
-        self._request_validator('jsd_fb9beb664f2aba4c').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/image/activation/device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/image/activation/device', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_fb9beb664f2aba4c', json_data)
-
-
     # Import software image via URL
     def import_software_image_via_url(self, param_schedule_at = None, param_schedule_desc = None, param_schedule_origin = None, headers=None,payload=None,**request_parameters):
         check_type( param_schedule_at, basestring)
@@ -294,5 +256,43 @@ class Swim( object ):
         else self._session.post(apply_path_params('/api/v1/image/importation/source/url', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_bc8aab4746ca883d', json_data)
+
+
+    # Trigger software image activation
+    def trigger_software_image_activation(self, param_schedule_validate = None, headers=None,payload=None,**request_parameters):
+        check_type( param_schedule_validate, bool)
+        if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
+            check_type( headers.get('Client-Type', self._session.headers.get('Client-Type')), basestring)
+            check_type( headers.get('Client-Url', self._session.headers.get('Client-Url')), basestring)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        if param_schedule_validate is not None: params.update( { 'scheduleValidate': param_schedule_validate })
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or []
+
+        self._request_validator('jsd_fb9beb664f2aba4c').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.post(apply_path_params('/api/v1/image/activation/device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/image/activation/device', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_fb9beb664f2aba4c', json_data)
 
 

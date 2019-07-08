@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Device Interface count data model.
+"""DNA Center Get Device Interface count by id data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -36,7 +36,7 @@ from dnacentersdk.exceptions import MalformedRequest
 from builtins import *
 
 class JSONSchemaValidator5B8639224Cd88Ea7(object):
-    """Get Device Interface count request schema definition."""
+    """Get Device Interface count by id request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )

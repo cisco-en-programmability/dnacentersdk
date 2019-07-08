@@ -28,47 +28,50 @@ import dnacentersdk
 
 
 
-# a4b5-6a5f-478a-97dd
+# bead-7b34-43b9-96a7
 def is_valid_adds_border_device_in_sda_fabric(obj):
     some_keys = [ 'status', 'description' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
 def adds_border_device_in_sda_fabric(api):
-    endpoint_result = api.fabric_wired.adds_border_device_in_sda_fabric( payload = '' )
+    endpoint_result = api.fabric_wired.adds_border_device_in_sda_fabric( path_param_sda_border_device = '', payload = [{'deviceManagementIpAddress': 'string', 'siteHierarchy': 'string', 'externalDomainRoutingProtocolName': 'string', 'externalConnectivityIpPoolName': 'string', 'internalAutonomouSystemNumber': 'string', 'borderSessionType': 'string', 'connectedToInternet': True, 'externalConnectivitySettings': [{'interfaceName': 'string', 'externalAutonomouSystemNumber': 'string', 'l3Handoff': [{'virtualNetwork': {'virtualNetworkName': 'string'}}]}]}] )
     return endpoint_result
 
 
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_adds_border_device_in_sda_fabric(api):
     assert is_valid_adds_border_device_in_sda_fabric(adds_border_device_in_sda_fabric(api))
 
 
-# d0b3-593c-4a7a-af22
+# 98a3-9bf4-485a-9871
 def is_valid_gets_border_device_details_from_sda_fabric(obj):
     some_keys = [ 'status', 'description' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
 def gets_border_device_details_from_sda_fabric(api):
-    endpoint_result = api.fabric_wired.gets_border_device_details_from_sda_fabric( path_param_device_ip_address = '', payload = '' )
+    endpoint_result = api.fabric_wired.gets_border_device_details_from_sda_fabric( path_param_device_ip_address = '', path_param_sda_border_device = '', payload = '' )
     return endpoint_result
 
 
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_gets_border_device_details_from_sda_fabric(api):
     assert is_valid_gets_border_device_details_from_sda_fabric(gets_border_device_details_from_sda_fabric(api))
 
 
-# 1e80-bb50-430b-8634
+# cb81-b935-40ba-aab0
 def is_valid_deletes_border_device_from_sda_fabric(obj):
     some_keys = [ 'status', 'description' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
 def deletes_border_device_from_sda_fabric(api):
-    endpoint_result = api.fabric_wired.deletes_border_device_from_sda_fabric( path_param_device_ip_address = '', payload = '' )
+    endpoint_result = api.fabric_wired.deletes_border_device_from_sda_fabric( path_param_device_ip_address = '', path_param_sda_border_device = '', payload = '' )
     return endpoint_result
 
 
+@pytest.mark.skip(reason="no way of currently testing this")
 def test_deletes_border_device_from_sda_fabric(api):
     assert is_valid_deletes_border_device_from_sda_fabric(deletes_border_device_from_sda_fabric(api))
 

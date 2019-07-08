@@ -36,15 +36,15 @@ from dnacentersdk.api.task import Task
 from dnacentersdk.api.command_runner import CommandRunner
 from dnacentersdk.api.file import File
 from dnacentersdk.api.path_trace import PathTrace
-from dnacentersdk.api.non_fabric_wireless import NonFabricWireless
-from dnacentersdk.api.fabric_wired import FabricWired
+from dnacentersdk.api.swim import Swim
+from dnacentersdk.api.pnp import Pnp
+from dnacentersdk.api.site_profile import SiteProfile
 from dnacentersdk.api.devices import Devices
 from dnacentersdk.api.sites import Sites
 from dnacentersdk.api.networks import Networks
 from dnacentersdk.api.clients import Clients
-from dnacentersdk.api.pnp import Pnp
-from dnacentersdk.api.swim import Swim
-from dnacentersdk.api.site_profile import SiteProfile
+from dnacentersdk.api.non_fabric_wireless import NonFabricWireless
+from dnacentersdk.api.fabric_wired import FabricWired
 
 from tests.config import (
     ACCESS_TOKEN_ENVIRONMENT_VARIABLE, DEFAULT_BASE_URL,
@@ -155,11 +155,14 @@ def test_file_api_object_creation(api):
 def test_path_trace_api_object_creation(api):
     assert isinstance(api.path_trace, PathTrace)
 
-def test_non_fabric_wireless_api_object_creation(api):
-    assert isinstance(api.non_fabric_wireless, NonFabricWireless)
+def test_swim_api_object_creation(api):
+    assert isinstance(api.swim, Swim)
 
-def test_fabric_wired_api_object_creation(api):
-    assert isinstance(api.fabric_wired, FabricWired)
+def test_pnp_api_object_creation(api):
+    assert isinstance(api.pnp, Pnp)
+
+def test_site_profile_api_object_creation(api):
+    assert isinstance(api.site_profile, SiteProfile)
 
 def test_devices_api_object_creation(api):
     assert isinstance(api.devices, Devices)
@@ -173,12 +176,9 @@ def test_networks_api_object_creation(api):
 def test_clients_api_object_creation(api):
     assert isinstance(api.clients, Clients)
 
-def test_pnp_api_object_creation(api):
-    assert isinstance(api.pnp, Pnp)
+def test_non_fabric_wireless_api_object_creation(api):
+    assert isinstance(api.non_fabric_wireless, NonFabricWireless)
 
-def test_swim_api_object_creation(api):
-    assert isinstance(api.swim, Swim)
-
-def test_site_profile_api_object_creation(api):
-    assert isinstance(api.site_profile, SiteProfile)
+def test_fabric_wired_api_object_creation(api):
+    assert isinstance(api.fabric_wired, FabricWired)
 

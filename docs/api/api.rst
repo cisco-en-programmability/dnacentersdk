@@ -86,21 +86,30 @@ path_trace
 
 
 
-.. _Non-Fabric Wireless:
+.. _SWIM:
 
-non_fabric_wireless
--------------------
+swim
+----
 
-.. autoclass:: dnacentersdk.api.non_fabric_wireless.NonFabricWireless()
+.. autoclass:: dnacentersdk.api.swim.Swim()
 
 
 
-.. _Fabric Wired:
+.. _PnP:
 
-fabric_wired
+pnp
+---
+
+.. autoclass:: dnacentersdk.api.pnp.Pnp()
+
+
+
+.. _Site Profile:
+
+site_profile
 ------------
 
-.. autoclass:: dnacentersdk.api.fabric_wired.FabricWired()
+.. autoclass:: dnacentersdk.api.site_profile.SiteProfile()
 
 
 
@@ -140,30 +149,21 @@ clients
 
 
 
-.. _PnP:
+.. _Non-Fabric Wireless:
 
-pnp
----
+non_fabric_wireless
+-------------------
 
-.. autoclass:: dnacentersdk.api.pnp.Pnp()
-
-
-
-.. _SWIM:
-
-swim
-----
-
-.. autoclass:: dnacentersdk.api.swim.Swim()
+.. autoclass:: dnacentersdk.api.non_fabric_wireless.NonFabricWireless()
 
 
 
-.. _Site Profile:
+.. _Fabric Wired:
 
-site_profile
+fabric_wired
 ------------
 
-.. autoclass:: dnacentersdk.api.site_profile.SiteProfile()
+.. autoclass:: dnacentersdk.api.fabric_wired.FabricWired()
 
 
 .. _Exceptions:

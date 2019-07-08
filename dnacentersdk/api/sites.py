@@ -107,217 +107,13 @@ class Sites( object ):
         return self._object_factory('bpm_17a82ac94cf99ab0', json_data)
 
 
-    # Update Site
-    def update_site(self, path_param_site_id, rq_site = None, rq_type = None, headers=None,payload=None,**request_parameters):
-        check_type( path_param_site_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
-            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'siteId': path_param_site_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_type is not None: payload.update( { 'type':  rq_type })
-        if rq_site is not None: payload.update( { 'site':  rq_site })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_33aab9b842388023').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.put(apply_path_params('/dna/intent/api/v1/update-site/${siteId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/dna/intent/api/v1/update-site/${siteId}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_33aab9b842388023', json_data)
-
-
-    # Create Site
-    def create_site(self, rq_site = None, rq_type = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
-            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_type is not None: payload.update( { 'type':  rq_type })
-        if rq_site is not None: payload.update( { 'site':  rq_site })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_23896b124bd8b9bf').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/create-site', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/create-site', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_23896b124bd8b9bf', json_data)
-
-
-    # Get Site
-    def get_site(self, param_limit = None, param_name = None, param_offset = None, param_site_id = None, param_type = None, headers=None,payload=None,**request_parameters):
-        check_type( param_name, basestring)
-        check_type( param_site_id, basestring)
-        check_type( param_type, basestring)
-        check_type( param_offset, int)
-        check_type( param_limit, int)
-        if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
-            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        if param_name is not None: params.update( { 'name': param_name })
-        if param_site_id is not None: params.update( { 'siteId': param_site_id })
-        if param_type is not None: params.update( { 'type': param_type })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_209509d247599e19').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/get-site', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/get-site', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_209509d247599e19', json_data)
-
-
-    # Delete Site
-    def delete_site(self, path_param_site_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_site_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
-            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'siteId': path_param_site_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_92acda91406aa050').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/delete-site/${siteId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/delete-site/${siteId}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_92acda91406aa050', json_data)
-
-
-    # Get Site Count
-    def get_site_count(self, param_site_id = None, headers=None,payload=None,**request_parameters):
-        check_type( param_site_id, basestring)
-        if headers is not None:
-            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        if param_site_id is not None: params.update( { 'siteId': param_site_id })
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_d9bdb9034df99dba').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/getsitecount', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/getsitecount', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_d9bdb9034df99dba', json_data)
-
-
     # Assign Device To Site
     def assign_device_to_site(self, path_param_site_id, rq_device = None, headers=None,payload=None,**request_parameters):
         check_type( path_param_site_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
             check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
+            check_type( headers.get('__timeout', self._session.headers.get('__timeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
@@ -351,16 +147,15 @@ class Sites( object ):
         return self._object_factory('bpm_eeb168eb41988e07', json_data)
 
 
-    # Get Membership
-    def get_membership(self, param_site_id, headers=None,payload=None,**request_parameters):
-        check_type( param_site_id, basestring, may_be_none=False)
+    # Create Site
+    def create_site(self, rq_site = None, rq_type = None, headers=None,payload=None,**request_parameters):
         if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
+            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
+            check_type( headers.get('__timeout', self._session.headers.get('__timeout')), int)
+            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
-        if param_site_id is not None: params.update( { 'siteId': param_site_id })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -368,9 +163,11 @@ class Sites( object ):
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
+        if rq_type is not None: payload.update( { 'type':  rq_type })
+        if rq_site is not None: payload.update( { 'site':  rq_site })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_eba669054e08a60e').validate(payload)
+        self._request_validator('jsd_50b589fd4c7a930a').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -383,9 +180,9 @@ class Sites( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/membership', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/membership', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/dna/system/api/v1/site', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/dna/system/api/v1/site', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_eba669054e08a60e', json_data)
+        return self._object_factory('bpm_50b589fd4c7a930a', json_data)
 
 

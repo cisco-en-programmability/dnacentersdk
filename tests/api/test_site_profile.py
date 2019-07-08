@@ -50,7 +50,7 @@ def is_valid_provision_nfv(obj):
 
 
 def provision_nfv(api):
-    endpoint_result = api.site_profile.provision_nfv( rq_provisioning = None, rq_siteProfile = None, payload = '' )
+    endpoint_result = api.site_profile.provision_nfv( rq_callbackUrl = None, rq_provisioning = None, rq_siteProfile = None, payload = '' )
     return endpoint_result
 
 
