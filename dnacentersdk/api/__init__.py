@@ -43,15 +43,15 @@ from .task import Task
 from .command_runner import CommandRunner
 from .file import File
 from .path_trace import PathTrace
-from .swim import Swim
-from .pnp import Pnp
-from .site_profile import SiteProfile
+from .non_fabric_wireless import NonFabricWireless
+from .fabric_wired import FabricWired
 from .devices import Devices
 from .sites import Sites
 from .networks import Networks
 from .clients import Clients
-from .non_fabric_wireless import NonFabricWireless
-from .fabric_wired import FabricWired
+from .pnp import Pnp
+from .swim import Swim
+from .site_profile import SiteProfile
 
 
 
@@ -171,15 +171,15 @@ class DNACenterAPI(object):
         self.command_runner = CommandRunner(self._session, object_factory, request_validator)
         self.file = File(self._session, object_factory, request_validator)
         self.path_trace = PathTrace(self._session, object_factory, request_validator)
-        self.swim = Swim(self._session, object_factory, request_validator)
-        self.pnp = Pnp(self._session, object_factory, request_validator)
-        self.site_profile = SiteProfile(self._session, object_factory, request_validator)
+        self.non_fabric_wireless = NonFabricWireless(self._session, object_factory, request_validator)
+        self.fabric_wired = FabricWired(self._session, object_factory, request_validator)
         self.devices = Devices(self._session, object_factory, request_validator)
         self.sites = Sites(self._session, object_factory, request_validator)
         self.networks = Networks(self._session, object_factory, request_validator)
         self.clients = Clients(self._session, object_factory, request_validator)
-        self.non_fabric_wireless = NonFabricWireless(self._session, object_factory, request_validator)
-        self.fabric_wired = FabricWired(self._session, object_factory, request_validator)
+        self.pnp = Pnp(self._session, object_factory, request_validator)
+        self.swim = Swim(self._session, object_factory, request_validator)
+        self.site_profile = SiteProfile(self._session, object_factory, request_validator)
 
     @property
     def access_token(self):

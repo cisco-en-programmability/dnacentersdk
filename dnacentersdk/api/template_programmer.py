@@ -71,6 +71,48 @@ class TemplateProgrammer( object ):
         self._request_validator = request_validator
 
 
+    # Create Project
+    def create_project(self, rq_createTime = None, rq_description = None, rq_id = None, rq_lastUpdateTime = None, rq_name = None, rq_tags = None, rq_templates = None, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        if rq_createTime is not None: payload.update( { 'createTime':  rq_createTime })
+        if rq_description is not None: payload.update( { 'description':  rq_description })
+        if rq_id is not None: payload.update( { 'id':  rq_id })
+        if rq_lastUpdateTime is not None: payload.update( { 'lastUpdateTime':  rq_lastUpdateTime })
+        if rq_name is not None: payload.update( { 'name':  rq_name })
+        if rq_tags is not None: payload.update( { 'tags':  rq_tags })
+        if rq_templates is not None: payload.update( { 'templates':  rq_templates })
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_00aec9b1422ab27e').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_00aec9b1422ab27e', json_data)
+
+
     # Gets the templates available
     def gets_the_templates_available(self, param_filter_conflicting_templates = None, param_product_family = None, param_product_series = None, param_product_type = None, param_project_id = None, param_software_type = None, param_software_version = None, headers=None,payload=None,**request_parameters):
         check_type( param_project_id, basestring)
@@ -117,105 +159,6 @@ class TemplateProgrammer( object ):
         else self._session.get(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_01b09a254b9ab259', json_data)
-
-
-    # Create Project
-    def create_project(self, rq_createTime = None, rq_description = None, rq_id = None, rq_lastUpdateTime = None, rq_name = None, rq_tags = None, rq_templates = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_createTime is not None: payload.update( { 'createTime':  rq_createTime })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_lastUpdateTime is not None: payload.update( { 'lastUpdateTime':  rq_lastUpdateTime })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_tags is not None: payload.update( { 'tags':  rq_tags })
-        if rq_templates is not None: payload.update( { 'templates':  rq_templates })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_00aec9b1422ab27e').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/template-programmer/project', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_00aec9b1422ab27e', json_data)
-
-
-    # Update Template
-    def update_template(self, rq_author = None, rq_composite = None, rq_containingTemplates = None, rq_createTime = None, rq_description = None, rq_deviceTypes = None, rq_failurePolicy = None, rq_id = None, rq_lastUpdateTime = None, rq_name = None, rq_parentTemplateId = None, rq_projectId = None, rq_projectName = None, rq_rollbackTemplateContent = None, rq_rollbackTemplateParams = None, rq_softwareType = None, rq_softwareVariant = None, rq_softwareVersion = None, rq_tags = None, rq_templateContent = None, rq_templateParams = None, rq_version = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_author is not None: payload.update( { 'author':  rq_author })
-        if rq_composite is not None: payload.update( { 'composite':  rq_composite })
-        if rq_containingTemplates is not None: payload.update( { 'containingTemplates':  rq_containingTemplates })
-        if rq_createTime is not None: payload.update( { 'createTime':  rq_createTime })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_deviceTypes is not None: payload.update( { 'deviceTypes':  rq_deviceTypes })
-        if rq_failurePolicy is not None: payload.update( { 'failurePolicy':  rq_failurePolicy })
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_lastUpdateTime is not None: payload.update( { 'lastUpdateTime':  rq_lastUpdateTime })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_parentTemplateId is not None: payload.update( { 'parentTemplateId':  rq_parentTemplateId })
-        if rq_projectId is not None: payload.update( { 'projectId':  rq_projectId })
-        if rq_projectName is not None: payload.update( { 'projectName':  rq_projectName })
-        if rq_rollbackTemplateContent is not None: payload.update( { 'rollbackTemplateContent':  rq_rollbackTemplateContent })
-        if rq_rollbackTemplateParams is not None: payload.update( { 'rollbackTemplateParams':  rq_rollbackTemplateParams })
-        if rq_softwareType is not None: payload.update( { 'softwareType':  rq_softwareType })
-        if rq_softwareVariant is not None: payload.update( { 'softwareVariant':  rq_softwareVariant })
-        if rq_softwareVersion is not None: payload.update( { 'softwareVersion':  rq_softwareVersion })
-        if rq_tags is not None: payload.update( { 'tags':  rq_tags })
-        if rq_templateContent is not None: payload.update( { 'templateContent':  rq_templateContent })
-        if rq_templateParams is not None: payload.update( { 'templateParams':  rq_templateParams })
-        if rq_version is not None: payload.update( { 'version':  rq_version })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_7781fa0548a98342').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_7781fa0548a98342', json_data)
 
 
     # Get Projects
@@ -295,26 +238,45 @@ class TemplateProgrammer( object ):
         return self._object_factory('bpm_6099da82477b858a', json_data)
 
 
-    # Get Template Details
-    def get_template_details(self, path_param_template_id, param_latest_version = None, headers=None,payload=None,**request_parameters):
-        check_type( param_latest_version, bool)
-        check_type( path_param_template_id, basestring, may_be_none=False)
+    # Update Template
+    def update_template(self, rq_author = None, rq_composite = None, rq_containingTemplates = None, rq_createTime = None, rq_description = None, rq_deviceTypes = None, rq_failurePolicy = None, rq_id = None, rq_lastUpdateTime = None, rq_name = None, rq_parentTemplateId = None, rq_projectId = None, rq_projectName = None, rq_rollbackTemplateContent = None, rq_rollbackTemplateParams = None, rq_softwareType = None, rq_softwareVariant = None, rq_softwareVersion = None, rq_tags = None, rq_templateContent = None, rq_templateParams = None, rq_version = None, headers=None,payload=None,**request_parameters):
         if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
-        if param_latest_version is not None: params.update( { 'latestVersion': param_latest_version })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'templateId': path_param_template_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
+        if rq_author is not None: payload.update( { 'author':  rq_author })
+        if rq_composite is not None: payload.update( { 'composite':  rq_composite })
+        if rq_containingTemplates is not None: payload.update( { 'containingTemplates':  rq_containingTemplates })
+        if rq_createTime is not None: payload.update( { 'createTime':  rq_createTime })
+        if rq_description is not None: payload.update( { 'description':  rq_description })
+        if rq_deviceTypes is not None: payload.update( { 'deviceTypes':  rq_deviceTypes })
+        if rq_failurePolicy is not None: payload.update( { 'failurePolicy':  rq_failurePolicy })
+        if rq_id is not None: payload.update( { 'id':  rq_id })
+        if rq_lastUpdateTime is not None: payload.update( { 'lastUpdateTime':  rq_lastUpdateTime })
+        if rq_name is not None: payload.update( { 'name':  rq_name })
+        if rq_parentTemplateId is not None: payload.update( { 'parentTemplateId':  rq_parentTemplateId })
+        if rq_projectId is not None: payload.update( { 'projectId':  rq_projectId })
+        if rq_projectName is not None: payload.update( { 'projectName':  rq_projectName })
+        if rq_rollbackTemplateContent is not None: payload.update( { 'rollbackTemplateContent':  rq_rollbackTemplateContent })
+        if rq_rollbackTemplateParams is not None: payload.update( { 'rollbackTemplateParams':  rq_rollbackTemplateParams })
+        if rq_softwareType is not None: payload.update( { 'softwareType':  rq_softwareType })
+        if rq_softwareVariant is not None: payload.update( { 'softwareVariant':  rq_softwareVariant })
+        if rq_softwareVersion is not None: payload.update( { 'softwareVersion':  rq_softwareVersion })
+        if rq_tags is not None: payload.update( { 'tags':  rq_tags })
+        if rq_templateContent is not None: payload.update( { 'templateContent':  rq_templateContent })
+        if rq_templateParams is not None: payload.update( { 'templateParams':  rq_templateParams })
+        if rq_version is not None: payload.update( { 'version':  rq_version })
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_83a3b9404cb88787').validate(payload)
+        self._request_validator('jsd_7781fa0548a98342').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -327,10 +289,10 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
+        json_data = self._session.put(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/template-programmer/template', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_83a3b9404cb88787', json_data)
+        return self._object_factory('bpm_7781fa0548a98342', json_data)
 
 
     # Update Project
@@ -375,42 +337,6 @@ class TemplateProgrammer( object ):
         return self._object_factory('bpm_9480fa1f47ca9254', json_data)
 
 
-    # Get Template deployment status
-    def get_template_deployment_status(self, path_param_deployment_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_deployment_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'deploymentId': path_param_deployment_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_9c9a785741cbb41f').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_9c9a785741cbb41f', json_data)
-
-
     # Delete Template
     def delete_template(self, path_param_template_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_template_id, basestring, may_be_none=False)
@@ -445,43 +371,6 @@ class TemplateProgrammer( object ):
         else self._session.delete(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a7b42836408a8e74', json_data)
-
-
-    # Version Template
-    def version_template(self, rq_comments = None, rq_templateId = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_comments is not None: payload.update( { 'comments':  rq_comments })
-        if rq_templateId is not None: payload.update( { 'templateId':  rq_templateId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_62b05b2c40a9b216').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/template/version', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/template-programmer/template/version', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_62b05b2c40a9b216', json_data)
 
 
     # Preview Template
@@ -521,9 +410,9 @@ class TemplateProgrammer( object ):
         return self._object_factory('bpm_f393abe84989bb48', json_data)
 
 
-    # Delete Project
-    def delete_project(self, path_param_project_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_project_id, basestring, may_be_none=False)
+    # Get Template Versions
+    def get_template_versions(self, path_param_template_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_template_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
@@ -531,14 +420,14 @@ class TemplateProgrammer( object ):
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'projectId': path_param_project_id,
+            'templateId': path_param_template_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_d0a1abfa435b841d').validate(payload)
+        self._request_validator('jsd_c8bf6b65414a9bc7').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -551,10 +440,85 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_d0a1abfa435b841d', json_data)
+        return self._object_factory('bpm_c8bf6b65414a9bc7', json_data)
+
+
+    # Version Template
+    def version_template(self, rq_comments = None, rq_templateId = None, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        if rq_comments is not None: payload.update( { 'comments':  rq_comments })
+        if rq_templateId is not None: payload.update( { 'templateId':  rq_templateId })
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_62b05b2c40a9b216').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.post(apply_path_params('/api/v1/template-programmer/template/version', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/template-programmer/template/version', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_62b05b2c40a9b216', json_data)
+
+
+    # Get Template Details
+    def get_template_details(self, path_param_template_id, param_latest_version = None, headers=None,payload=None,**request_parameters):
+        check_type( param_latest_version, bool)
+        check_type( path_param_template_id, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        if param_latest_version is not None: params.update( { 'latestVersion': param_latest_version })
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'templateId': path_param_template_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_83a3b9404cb88787').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template/${templateId}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_83a3b9404cb88787', json_data)
 
 
     # Create Template
@@ -616,9 +580,9 @@ class TemplateProgrammer( object ):
         return self._object_factory('bpm_f6b119ad4d4aaf16', json_data)
 
 
-    # Get Template Versions
-    def get_template_versions(self, path_param_template_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_template_id, basestring, may_be_none=False)
+    # Get Template deployment status
+    def get_template_deployment_status(self, path_param_deployment_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_deployment_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
@@ -626,14 +590,14 @@ class TemplateProgrammer( object ):
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'templateId': path_param_template_id,
+            'deploymentId': path_param_deployment_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_c8bf6b65414a9bc7').validate(payload)
+        self._request_validator('jsd_9c9a785741cbb41f').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -646,9 +610,45 @@ class TemplateProgrammer( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/template-programmer/template/version/${templateId}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/template-programmer/template/deploy/status/${deploymentId}', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_c8bf6b65414a9bc7', json_data)
+        return self._object_factory('bpm_9c9a785741cbb41f', json_data)
+
+
+    # Delete Project
+    def delete_project(self, path_param_project_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_project_id, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'projectId': path_param_project_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_d0a1abfa435b841d').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.delete(apply_path_params('/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/template-programmer/project/${projectId}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_d0a1abfa435b841d', json_data)
 
 

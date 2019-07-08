@@ -175,42 +175,6 @@ class Networks( object ):
         return self._object_factory('bpm_b2b8cb91459aa58f', json_data)
 
 
-    # Get L3 Topology Details
-    def get_l3_topology_details(self, path_param_topology_type, headers=None,payload=None,**request_parameters):
-        check_type( path_param_topology_type, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'topologyType': path_param_topology_type,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_c2b5fb764d888375').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_c2b5fb764d888375', json_data)
-
-
     # Get topology details
     def get_topology_details(self, path_param_vlan_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_vlan_id, basestring, may_be_none=False)
@@ -247,9 +211,45 @@ class Networks( object ):
         return self._object_factory('bpm_b9b48ac8463a8aba', json_data)
 
 
+    # Get L3 Topology Details
+    def get_l3_topology_details(self, path_param_topology_type, headers=None,payload=None,**request_parameters):
+        check_type( path_param_topology_type, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'topologyType': path_param_topology_type,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_c2b5fb764d888375').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/topology/l3/${topologyType}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_c2b5fb764d888375', json_data)
+
+
     # Get Overall Network Health
-    def get_overall_network_health(self, param_timestamp, headers=None,payload=None,**request_parameters):
-        check_type( param_timestamp, basestring, may_be_none=False)
+    def get_overall_network_health(self, param_timestamp = None, headers=None,payload=None,**request_parameters):
+        check_type( param_timestamp, basestring)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 

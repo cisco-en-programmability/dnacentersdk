@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Device Interface count data model.
+"""DNA Center Provision data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -35,11 +35,11 @@ from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
-class JSONSchemaValidator5B8639224Cd88Ea7(object):
-    """Get Device Interface count request schema definition."""
+class JSONSchemaValidatorA0Be3A2F47Ab9F3C(object):
+    """Provision request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
+        super(JSONSchemaValidatorA0Be3A2F47Ab9F3C, self).__init__()
+        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceName': {'type': 'string'}, 'managedAPLocations': {'type': 'array', 'items': {'type': 'string'}}, 'dynamicInterfaces': {'type': 'array', 'items': {'type': 'object', 'properties': {'interfaceIPAddress': {'type': 'string'}, 'interfaceNetmaskInCIDR': {'type': 'number'}, 'interfaceGateway': {'type': 'string'}, 'lagOrPortNumber': {'type': 'number'}, 'vlanId': {'type': 'number'}, 'interfaceName': {'type': 'string'}}}}}}} )
 
     def validate(self, request):
         try:

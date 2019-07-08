@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Device Interface count data model.
+"""DNA Center Update Site data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -35,11 +35,11 @@ from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
-class JSONSchemaValidator5B8639224Cd88Ea7(object):
-    """Get Device Interface count request schema definition."""
+class JSONSchemaValidator33AaB9B842388023(object):
+    """Update Site request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
+        super(JSONSchemaValidator33AaB9B842388023, self).__init__()
+        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'type': {'type': 'string', 'enum': ['area', 'building', 'floor']}, 'site': {'type': 'object', 'properties': {'area': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}, 'building': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'address': {'type': 'string'}, 'parentName': {'type': 'string'}, 'latitude': {'type': 'number'}, 'longitude': {'type': 'number'}}}, 'floor': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'rfModel': {'type': 'string', 'enum': ['Cubes And Walled Offices', 'Drywall Office Only', 'Indoor High Ceiling', 'Outdoor Open Space']}, 'width': {'type': 'number'}, 'length': {'type': 'number'}, 'height': {'type': 'number'}}}}}}} )
 
     def validate(self, request):
         try:

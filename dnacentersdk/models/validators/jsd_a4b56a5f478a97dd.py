@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Device Interface count data model.
+"""DNA Center Adds border device in SDA Fabric data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -35,11 +35,11 @@ from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
-class JSONSchemaValidator5B8639224Cd88Ea7(object):
-    """Get Device Interface count request schema definition."""
+class JSONSchemaValidatorA4B56A5F478A97Dd(object):
+    """Adds border device in SDA Fabric request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
+        super(JSONSchemaValidatorA4B56A5F478A97Dd, self).__init__()
+        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceManagementIpAddress': {'type': 'string'}, 'siteHierarchy': {'type': 'string'}, 'externalDomainRoutingProtocolName': {'type': 'string'}, 'externalConnectivityIpPoolName': {'type': 'string'}, 'internalAutonomouSystemNumber': {'type': 'string'}, 'borderSessionType': {'type': 'string'}, 'connectedToInternet': {'type': 'boolean'}, 'externalConnectivitySettings': {'type': 'array', 'items': {'type': 'object', 'properties': {'interfaceName': {'type': 'string'}, 'externalAutonomouSystemNumber': {'type': 'string'}, 'l3Handoff': {'type': 'array', 'items': {'type': 'object', 'properties': {'virtualNetwork': {'type': 'object', 'properties': {'virtualNetworkName': {'type': 'string'}}}}}}}}}}}} )
 
     def validate(self, request):
         try:

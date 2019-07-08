@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Sync Devices using forceSync data model.
+"""DNA Center Sync Devices data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -36,7 +36,7 @@ from dnacentersdk.exceptions import MalformedRequest
 from builtins import *
 
 class JSONSchemaValidator3B9EF9674429Be4C(object):
-    """Sync Devices using forceSync request schema definition."""
+    """Sync Devices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator3B9EF9674429Be4C, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'array', 'items': {}} )

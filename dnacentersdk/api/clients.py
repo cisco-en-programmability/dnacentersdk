@@ -72,8 +72,8 @@ class Clients( object ):
 
 
     # Get Overall Client Health
-    def get_overall_client_health(self, param_timestamp, headers=None,payload=None,**request_parameters):
-        check_type( param_timestamp, basestring, may_be_none=False)
+    def get_overall_client_health(self, param_timestamp = None, headers=None,payload=None,**request_parameters):
+        check_type( param_timestamp, basestring)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
@@ -108,8 +108,8 @@ class Clients( object ):
 
 
     # Get Client Detail
-    def get_client_detail(self, param_mac_address, param_timestamp, headers=None,payload=None,**request_parameters):
-        check_type( param_timestamp, basestring, may_be_none=False)
+    def get_client_detail(self, param_mac_address, param_timestamp = None, headers=None,payload=None,**request_parameters):
+        check_type( param_timestamp, basestring)
         check_type( param_mac_address, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)

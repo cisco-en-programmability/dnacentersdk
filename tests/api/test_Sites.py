@@ -35,7 +35,7 @@ def is_valid_get_site_health(obj):
 
 
 def get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1562021578', payload = '' )
+    endpoint_result = api.sites.get_site_health( param_timestamp = '1562604598', payload = '' )
     return endpoint_result
 
 
@@ -43,7 +43,7 @@ def test_get_site_health(api):
     assert is_valid_get_site_health(get_site_health(api))
 
 
-# 50b5-89fd-4c7a-930a
+# 2389-6b12-4bd8-b9bf
 def is_valid_create_site(obj):
     some_keys = [ 'executionId', 'executionStatusUrl' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Device Interface count data model.
+"""DNA Center Create Wireless Profile data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -35,11 +35,11 @@ from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
-class JSONSchemaValidator5B8639224Cd88Ea7(object):
-    """Get Device Interface count request schema definition."""
+class JSONSchemaValidator47Ba59204E0AB742(object):
+    """Create Wireless Profile request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
+        super(JSONSchemaValidator47Ba59204E0AB742, self).__init__()
+        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'profileDetails': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'sites': {'type': 'array', 'items': {'type': 'string'}}, 'ssidDetails': {'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Guest', 'Enterprise']}, 'enableFabric': {'type': 'boolean'}, 'flexConnect': {'type': 'object', 'properties': {'enableFlexConnect': {'type': 'boolean'}, 'localToVlan': {'type': 'number'}}}, 'interfaceName': {'type': 'string'}}}}}}}} )
 
     def validate(self, request):
         try:

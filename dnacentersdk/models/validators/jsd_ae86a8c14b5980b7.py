@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Device Interface count data model.
+"""DNA Center Delete Wireless Profile data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -35,10 +35,10 @@ from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
-class JSONSchemaValidator5B8639224Cd88Ea7(object):
-    """Get Device Interface count request schema definition."""
+class JSONSchemaValidatorAe86A8C14B5980B7(object):
+    """Delete Wireless Profile request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidator5B8639224Cd88Ea7, self).__init__()
+        super(JSONSchemaValidatorAe86A8C14B5980B7, self).__init__()
         self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
 
     def validate(self, request):

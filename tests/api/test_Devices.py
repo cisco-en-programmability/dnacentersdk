@@ -58,21 +58,6 @@ def test_get_device_list(api):
     assert is_valid_get_device_list(get_device_list(api))
 
 
-# 3b9e-f967-4429-be4c
-def is_valid_sync_devices_using_forcesync(obj):
-    some_keys = [ 'response' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
-
-
-def sync_devices_using_forcesync(api):
-    endpoint_result = api.devices.sync_devices_using_forcesync( param_force_sync = None, payload = ['get_device_list(api).response[0].id'] )
-    return endpoint_result
-
-
-def test_sync_devices_using_forcesync(api):
-    assert is_valid_sync_devices_using_forcesync(sync_devices_using_forcesync(api))
-
-
 # 38bd-0b88-4b89-a785
 def is_valid_get_polling_interval_for_all_devices(obj):
     some_keys = [ 'response' ]
@@ -170,7 +155,7 @@ def is_valid_get_all_interfaces(obj):
 
 
 def get_all_interfaces(api):
-    endpoint_result = api.devices.get_all_interfaces( param_limit = 500, param_offset = 1, payload = '' )
+    endpoint_result = api.devices.get_all_interfaces( payload = '' )
     return endpoint_result
 
 
@@ -434,14 +419,14 @@ def test_get_device_by_id(api):
     assert is_valid_get_device_by_id(get_device_by_id(api))
 
 
-# aeb9-eb67-460b-92df
+# 3b9e-f967-4429-be4c
 def is_valid_sync_devices(obj):
     some_keys = [ 'response' ]
     return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
 def sync_devices(api):
-    endpoint_result = api.devices.sync_devices( rq_cliTransport = None, rq_computeDevice = None, rq_enablePassword = None, rq_extendedDiscoveryInfo = None, rq_httpPassword = None, rq_httpPort = None, rq_httpSecure = None, rq_httpUserName = None, rq_ipAddress = None, rq_merakiOrgId = None, rq_netconfPort = None, rq_password = None, rq_serialNumber = None, rq_snmpAuthPassphrase = None, rq_snmpAuthProtocol = None, rq_snmpMode = None, rq_snmpPrivPassphrase = None, rq_snmpPrivProtocol = None, rq_snmpROCommunity = None, rq_snmpRWCommunity = None, rq_snmpRetry = None, rq_snmpTimeout = None, rq_snmpUserName = None, rq_snmpVersion = None, rq_type = None, rq_updateMgmtIPaddressList = None, rq_userName = None, payload = '' )
+    endpoint_result = api.devices.sync_devices( param_force_sync = None, payload = ['get_device_list(api).response[0].id'] )
     return endpoint_result
 
 
@@ -516,7 +501,7 @@ def is_valid_get_device_detail(obj):
 
 
 def get_device_detail(api):
-    endpoint_result = api.devices.get_device_detail( param_identifier = 'macAddress', param_search_by = get_device_list(api).response[0].macAddress, param_timestamp = '1562021578', payload = '' )
+    endpoint_result = api.devices.get_device_detail( param_identifier = 'macAddress', param_search_by = get_device_list(api).response[0].macAddress, param_timestamp = None, payload = '' )
     return endpoint_result
 
 

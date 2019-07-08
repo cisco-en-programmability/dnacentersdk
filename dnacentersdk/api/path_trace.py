@@ -135,6 +135,42 @@ class PathTrace( object ):
         return self._object_factory('bpm_55bc3bf94e38b6ff', json_data)
 
 
+    # Retrieves previous Pathtrace
+    def retrieves_previous_pathtrace(self, path_param_flow_analysis_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_flow_analysis_id, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'flowAnalysisId': path_param_flow_analysis_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_7ab9a8bd4f3b86a4').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_7ab9a8bd4f3b86a4', json_data)
+
+
     # Deletes Pathtrace by Id
     def deletes_pathtrace_by_id(self, path_param_flow_analysis_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_flow_analysis_id, basestring, may_be_none=False)
@@ -212,41 +248,5 @@ class PathTrace( object ):
         else self._session.post(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_a395fae644ca899c', json_data)
-
-
-    # Retrieves previous Pathtrace
-    def retrieves_previous_pathtrace(self, path_param_flow_analysis_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_flow_analysis_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'flowAnalysisId': path_param_flow_analysis_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_7ab9a8bd4f3b86a4').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_7ab9a8bd4f3b86a4', json_data)
 
 

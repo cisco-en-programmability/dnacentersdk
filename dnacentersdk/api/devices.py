@@ -107,22 +107,26 @@ class Devices( object ):
         return self._object_factory('bpm_0db7da744c0b83d8', json_data)
 
 
-    # Get Device Interface Count
-    def get_device_interface_count(self, headers=None,payload=None,**request_parameters):
+    # Delete Device by Id
+    def delete_device_by_id(self, path_param_id, param_is_force_delete = None, headers=None,payload=None,**request_parameters):
+        check_type( param_is_force_delete, bool)
+        check_type( path_param_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
+        if param_is_force_delete is not None: params.update( { 'isForceDelete': param_is_force_delete })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
+            'id': path_param_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_3d923b184dc9a4ca').validate(payload)
+        self._request_validator('jsd_1c894b5848eab214').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -135,14 +139,14 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/api/v1/interface/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/interface/count', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_3d923b184dc9a4ca', json_data)
+        return self._object_factory('bpm_1c894b5848eab214', json_data)
 
 
-    # Sync Devices using forceSync
-    def sync_devices_using_forcesync(self, param_force_sync = None, headers=None,payload=None,**request_parameters):
+    # Sync Devices
+    def sync_devices(self, param_force_sync = None, headers=None,payload=None,**request_parameters):
         check_type( param_force_sync, bool)
         if headers is not None:
             check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
@@ -273,74 +277,6 @@ class Devices( object ):
         return self._object_factory('bpm_20b19b52464b8972', json_data)
 
 
-    # Get Polling Interval for all devices
-    def get_polling_interval_for_all_devices(self, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_38bd0b884b89a785').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_38bd0b884b89a785', json_data)
-
-
-    # Get Device Count
-    def get_device_count(self, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_5db21b8e43fab7d8').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/count', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_5db21b8e43fab7d8', json_data)
-
-
     # Get Device Interface VLANs
     def get_device_interface_vlans(self, path_param_id, param_interface_type = None, headers=None,payload=None,**request_parameters):
         check_type( param_interface_type, basestring)
@@ -377,6 +313,40 @@ class Devices( object ):
         else self._session.get(apply_path_params('/api/v1/network-device/${id}/vlan', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_288df9494f2a9746', json_data)
+
+
+    # Get Polling Interval for all devices
+    def get_polling_interval_for_all_devices(self, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_38bd0b884b89a785').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/collection-schedule/global', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_38bd0b884b89a785', json_data)
 
 
     # Get Device Interfaces by specified range
@@ -419,26 +389,22 @@ class Devices( object ):
         return self._object_factory('bpm_349c888443b89a58', json_data)
 
 
-    # Delete Device by Id
-    def delete_device_by_id(self, path_param_id, param_is_force_delete = None, headers=None,payload=None,**request_parameters):
-        check_type( param_is_force_delete, bool)
-        check_type( path_param_id, basestring, may_be_none=False)
+    # Get Device Interface Count
+    def get_device_interface_count(self, headers=None,payload=None,**request_parameters):
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
-        if param_is_force_delete is not None: params.update( { 'isForceDelete': param_is_force_delete })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'id': path_param_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_1c894b5848eab214').validate(payload)
+        self._request_validator('jsd_3d923b184dc9a4ca').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -451,46 +417,10 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v1/network-device/${id}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/interface/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/count', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_1c894b5848eab214', json_data)
-
-
-    # Get Device Config by Id
-    def get_device_config_by_id(self, path_param_network_device_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_network_device_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'networkDeviceId': path_param_network_device_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_84b33a9e480abcaf').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_84b33a9e480abcaf', json_data)
+        return self._object_factory('bpm_3d923b184dc9a4ca', json_data)
 
 
     # Add Device
@@ -555,40 +485,6 @@ class Devices( object ):
         return self._object_factory('bpm_4bb22af046fa8f08', json_data)
 
 
-    # Get Device Config Count
-    def get_device_config_count(self, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_888f585c49b88441').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/config/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/config/count', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_888f585c49b88441', json_data)
-
-
     # Get Interface details by device Id and interface name
     def get_interface_details_by_device_id_and_interface_name(self, param_name, path_param_device_id, headers=None,payload=None,**request_parameters):
         check_type( param_name, basestring, may_be_none=False)
@@ -627,6 +523,110 @@ class Devices( object ):
         return self._object_factory('bpm_4eb56a614cc9a2d2', json_data)
 
 
+    # Get Device Interface count
+    def get_device_interface_count(self, path_param_device_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_device_id, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'deviceId': path_param_device_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_5b8639224cd88ea7').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_5b8639224cd88ea7', json_data)
+
+
+    # Get Device Count
+    def get_device_count(self, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_5db21b8e43fab7d8').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/count', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_5db21b8e43fab7d8', json_data)
+
+
+    # Get OSPF interfaces
+    def get_ospf_interfaces(self, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_70ad397649e9b4d3').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/interface/ospf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/ospf', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_70ad397649e9b4d3', json_data)
+
+
     # Get Polling Interval by Id
     def get_polling_interval_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_id, basestring, may_be_none=False)
@@ -663,86 +663,6 @@ class Devices( object ):
         return self._object_factory('bpm_82918a1b4d289c5c', json_data)
 
 
-    # Get Module count
-    def get_module_count(self, param_device_id, param_name_list = None, param_operational_state_code_list = None, param_part_number_list = None, param_vendor_equipment_type_list = None, headers=None,payload=None,**request_parameters):
-        check_type( param_device_id, basestring, may_be_none=False)
-        check_type( param_name_list, basestring)
-        check_type( param_vendor_equipment_type_list, basestring)
-        check_type( param_part_number_list, basestring)
-        check_type( param_operational_state_code_list, basestring)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
-        if param_name_list is not None: params.update( { 'nameList': param_name_list })
-        if param_vendor_equipment_type_list is not None: params.update( { 'vendorEquipmentTypeList': param_vendor_equipment_type_list })
-        if param_part_number_list is not None: params.update( { 'partNumberList': param_part_number_list })
-        if param_operational_state_code_list is not None: params.update( { 'operationalStateCodeList': param_operational_state_code_list })
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_8db939744649a782').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/module/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/module/count', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_8db939744649a782', json_data)
-
-
-    # Get Device Interface count by id
-    def get_device_interface_count_by_id(self, path_param_device_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_device_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'deviceId': path_param_device_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_5b8639224cd88ea7').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}/count', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_5b8639224cd88ea7', json_data)
-
-
     # Get Organization list for Meraki
     def get_organization_list_for_meraki(self, path_param_id, headers=None,payload=None,**request_parameters):
         check_type( path_param_id, basestring, may_be_none=False)
@@ -777,40 +697,6 @@ class Devices( object ):
         else self._session.get(apply_path_params('/api/v1/network-device/${id}/meraki-organization', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_84b37ae54c59ab28', json_data)
-
-
-    # Get OSPF interfaces
-    def get_ospf_interfaces(self, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_70ad397649e9b4d3').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/interface/ospf', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/interface/ospf', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_70ad397649e9b4d3', json_data)
 
 
     # Get Functional Capability by Id
@@ -883,8 +769,9 @@ class Devices( object ):
         return self._object_factory('bpm_84ad8b0e42cab48a', json_data)
 
 
-    # Get Device Config for all devices
-    def get_device_config_for_all_devices(self, headers=None,payload=None,**request_parameters):
+    # Get Device Config by Id
+    def get_device_config_by_id(self, path_param_network_device_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_network_device_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
@@ -892,13 +779,14 @@ class Devices( object ):
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
+            'networkDeviceId': path_param_network_device_id,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_b7bcaa084e2b90d0').validate(payload)
+        self._request_validator('jsd_84b33a9e480abcaf').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -911,156 +799,10 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/config', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${networkDeviceId}/config', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_b7bcaa084e2b90d0', json_data)
-
-
-    # Update Device role
-    def update_device_role(self, rq_id = None, rq_role = None, rq_roleSource = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_role is not None: payload.update( { 'role':  rq_role })
-        if rq_roleSource is not None: payload.update( { 'roleSource':  rq_roleSource })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_b9855ad54ae98156').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v1/network-device/brief', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v1/network-device/brief', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_b9855ad54ae98156', json_data)
-
-
-    # Get Interface info by Id
-    def get_interface_info_by_id(self, path_param_device_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_device_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'deviceId': path_param_device_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_ba9dc85b4b8a9a17').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_ba9dc85b4b8a9a17', json_data)
-
-
-    # Get Interface by IP
-    def get_interface_by_ip(self, path_param_ip_address, headers=None,payload=None,**request_parameters):
-        check_type( path_param_ip_address, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'ipAddress': path_param_ip_address,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_cd8469e647caab0e').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_cd8469e647caab0e', json_data)
-
-
-    # Get Network Device by IP
-    def get_network_device_by_ip(self, path_param_ip_address, headers=None,payload=None,**request_parameters):
-        check_type( path_param_ip_address, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'ipAddress': path_param_ip_address,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_d0a4b88145aabb51').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_d0a4b88145aabb51', json_data)
+        return self._object_factory('bpm_84b33a9e480abcaf', json_data)
 
 
     # Get Device Summary
@@ -1135,16 +877,340 @@ class Devices( object ):
         return self._object_factory('bpm_8fa8eb404a4a8d96', json_data)
 
 
-    # Get all interfaces
-    def get_all_interfaces(self, param_limit = 500, param_offset = 1, headers=None,payload=None,**request_parameters):
-        check_type( param_offset, int)
-        check_type( param_limit, int)
+    # Get Interface info by Id
+    def get_interface_info_by_id(self, path_param_device_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_device_id, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_limit is not None: params.update( { 'limit': param_limit })
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'deviceId': path_param_device_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_ba9dc85b4b8a9a17').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/network-device/${deviceId}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_ba9dc85b4b8a9a17', json_data)
+
+
+    # Register device for WSA
+    def register_device_for_wsa(self, param_macaddress = None, param_serial_number = None, headers=None,payload=None,**request_parameters):
+        check_type( param_serial_number, basestring)
+        check_type( param_macaddress, basestring)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
+        if param_macaddress is not None: params.update( { 'macaddress': param_macaddress })
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_c9809b6744f8a502').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_c9809b6744f8a502', json_data)
+
+
+    # Update Device role
+    def update_device_role(self, rq_id = None, rq_role = None, rq_roleSource = None, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        if rq_id is not None: payload.update( { 'id':  rq_id })
+        if rq_role is not None: payload.update( { 'role':  rq_role })
+        if rq_roleSource is not None: payload.update( { 'roleSource':  rq_roleSource })
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_b9855ad54ae98156').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.put(apply_path_params('/api/v1/network-device/brief', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.put(apply_path_params('/api/v1/network-device/brief', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_b9855ad54ae98156', json_data)
+
+
+    # Get Device Config for all devices
+    def get_device_config_for_all_devices(self, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_b7bcaa084e2b90d0').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/config', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/config', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_b7bcaa084e2b90d0', json_data)
+
+
+    # Export Device list
+    def export_device_list(self, rq_deviceUuids = None, rq_id = None, rq_operationEnum = None, rq_parameters = None, rq_password = None, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        if rq_deviceUuids is not None: payload.update( { 'deviceUuids':  rq_deviceUuids })
+        if rq_id is not None: payload.update( { 'id':  rq_id })
+        if rq_operationEnum is not None: payload.update( { 'operationEnum':  rq_operationEnum })
+        if rq_parameters is not None: payload.update( { 'parameters':  rq_parameters })
+        if rq_password is not None: payload.update( { 'password':  rq_password })
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_cd98780f4888a66d').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.post(apply_path_params('/api/v1/network-device/file', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/api/v1/network-device/file', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_cd98780f4888a66d', json_data)
+
+
+    # Get Interface by IP
+    def get_interface_by_ip(self, path_param_ip_address, headers=None,payload=None,**request_parameters):
+        check_type( path_param_ip_address, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'ipAddress': path_param_ip_address,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_cd8469e647caab0e').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/interface/ip-address/${ipAddress}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_cd8469e647caab0e', json_data)
+
+
+    # Get Network Device by IP
+    def get_network_device_by_ip(self, path_param_ip_address, headers=None,payload=None,**request_parameters):
+        check_type( path_param_ip_address, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'ipAddress': path_param_ip_address,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_d0a4b88145aabb51').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/ip-address/${ipAddress}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_d0a4b88145aabb51', json_data)
+
+
+    # Get Device Config Count
+    def get_device_config_count(self, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_888f585c49b88441').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/config/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/config/count', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_888f585c49b88441', json_data)
+
+
+    # Get Device by Serial number
+    def get_device_by_serial_number(self, path_param_serial_number, headers=None,payload=None,**request_parameters):
+        check_type( path_param_serial_number, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'serialNumber': path_param_serial_number,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_d888ab6d4d59a8c1').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_d888ab6d4d59a8c1', json_data)
+
+
+    # Get all interfaces
+    def get_all_interfaces(self, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1171,6 +1237,134 @@ class Devices( object ):
         else self._session.get(apply_path_params('/api/v1/interface', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_f5947a4c439a8bf0', json_data)
+
+
+    # Get Module count
+    def get_module_count(self, param_device_id, param_name_list = None, param_operational_state_code_list = None, param_part_number_list = None, param_vendor_equipment_type_list = None, headers=None,payload=None,**request_parameters):
+        check_type( param_device_id, basestring, may_be_none=False)
+        check_type( param_name_list, basestring)
+        check_type( param_vendor_equipment_type_list, basestring)
+        check_type( param_part_number_list, basestring)
+        check_type( param_operational_state_code_list, basestring)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
+        if param_name_list is not None: params.update( { 'nameList': param_name_list })
+        if param_vendor_equipment_type_list is not None: params.update( { 'vendorEquipmentTypeList': param_vendor_equipment_type_list })
+        if param_part_number_list is not None: params.update( { 'partNumberList': param_part_number_list })
+        if param_operational_state_code_list is not None: params.update( { 'operationalStateCodeList': param_operational_state_code_list })
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_8db939744649a782').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/module/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/module/count', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_8db939744649a782', json_data)
+
+
+    # Get Modules
+    def get_modules(self, param_device_id, param_limit = None, param_name_list = None, param_offset = None, param_operational_state_code_list = None, param_part_number_list = None, param_vendor_equipment_type_list = None, headers=None,payload=None,**request_parameters):
+        check_type( param_device_id, basestring, may_be_none=False)
+        check_type( param_limit, basestring)
+        check_type( param_offset, basestring)
+        check_type( param_name_list, basestring)
+        check_type( param_vendor_equipment_type_list, basestring)
+        check_type( param_part_number_list, basestring)
+        check_type( param_operational_state_code_list, basestring)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
+        if param_limit is not None: params.update( { 'limit': param_limit })
+        if param_offset is not None: params.update( { 'offset': param_offset })
+        if param_name_list is not None: params.update( { 'nameList': param_name_list })
+        if param_vendor_equipment_type_list is not None: params.update( { 'vendorEquipmentTypeList': param_vendor_equipment_type_list })
+        if param_part_number_list is not None: params.update( { 'partNumberList': param_part_number_list })
+        if param_operational_state_code_list is not None: params.update( { 'operationalStateCodeList': param_operational_state_code_list })
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_eb8249e34f69b0f1').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/module', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/module', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_eb8249e34f69b0f1', json_data)
+
+
+    # Get wireless lan controller details by Id
+    def get_wireless_lan_controller_details_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
+        check_type( path_param_id, basestring, may_be_none=False)
+        if headers is not None:
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+            'id': path_param_id,
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_f6826a8e41bba242').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_f6826a8e41bba242', json_data)
 
 
     # Sync Devices
@@ -1272,8 +1466,8 @@ class Devices( object ):
 
 
     # Get Functional Capability for devices
-    def get_functional_capability_for_devices(self, param_device_id, param_function_name = None, headers=None,payload=None,**request_parameters):
-        check_type( param_device_id, basestring, may_be_none=False)
+    def get_functional_capability_for_devices(self, param_device_id = None, param_function_name = None, headers=None,payload=None,**request_parameters):
+        check_type( param_device_id, basestring)
         check_type( param_function_name, basestring)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
@@ -1309,16 +1503,18 @@ class Devices( object ):
         return self._object_factory('bpm_c3b3c9ef4e6b8a09', json_data)
 
 
-    # Register device for WSA
-    def register_device_for_wsa(self, param_macaddress = None, param_serial_number = None, headers=None,payload=None,**request_parameters):
-        check_type( param_serial_number, basestring)
-        check_type( param_macaddress, basestring)
+    # Get Device Detail
+    def get_device_detail(self, param_identifier, param_search_by, param_timestamp = None, headers=None,payload=None,**request_parameters):
+        check_type( param_timestamp, basestring)
+        check_type( param_search_by, basestring, may_be_none=False)
+        check_type( param_identifier, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
-        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
-        if param_macaddress is not None: params.update( { 'macaddress': param_macaddress })
+        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
+        if param_search_by is not None: params.update( { 'searchBy': param_search_by })
+        if param_identifier is not None: params.update( { 'identifier': param_identifier })
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
@@ -1328,7 +1524,7 @@ class Devices( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_c9809b6744f8a502').validate(payload)
+        self._request_validator('jsd_89b2fb144f5bb09b').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1341,86 +1537,10 @@ class Devices( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/tenantinfo/macaddress', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/device-detail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/dna/intent/api/v1/device-detail', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_c9809b6744f8a502', json_data)
-
-
-    # Get Device by Serial number
-    def get_device_by_serial_number(self, path_param_serial_number, headers=None,payload=None,**request_parameters):
-        check_type( path_param_serial_number, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'serialNumber': path_param_serial_number,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_d888ab6d4d59a8c1').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/serial-number/${serialNumber}', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_d888ab6d4d59a8c1', json_data)
-
-
-    # Export Device list
-    def export_device_list(self, rq_deviceUuids = None, rq_id = None, rq_operationEnum = None, rq_parameters = None, rq_password = None, headers=None,payload=None,**request_parameters):
-        if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        if rq_deviceUuids is not None: payload.update( { 'deviceUuids':  rq_deviceUuids })
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_operationEnum is not None: payload.update( { 'operationEnum':  rq_operationEnum })
-        if rq_parameters is not None: payload.update( { 'parameters':  rq_parameters })
-        if rq_password is not None: payload.update( { 'password':  rq_password })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_cd98780f4888a66d').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/network-device/file', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/network-device/file', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_cd98780f4888a66d', json_data)
+        return self._object_factory('bpm_89b2fb144f5bb09b', json_data)
 
 
     # Get Network Device by pagination range
@@ -1537,129 +1657,5 @@ class Devices( object ):
         else self._session.get(apply_path_params('/api/v1/network-device/autocomplete', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_ffa748cc44e9a437', json_data)
-
-
-    # Get Modules
-    def get_modules(self, param_device_id, param_limit = None, param_name_list = None, param_offset = None, param_operational_state_code_list = None, param_part_number_list = None, param_vendor_equipment_type_list = None, headers=None,payload=None,**request_parameters):
-        check_type( param_device_id, basestring, may_be_none=False)
-        check_type( param_limit, basestring)
-        check_type( param_offset, basestring)
-        check_type( param_name_list, basestring)
-        check_type( param_vendor_equipment_type_list, basestring)
-        check_type( param_part_number_list, basestring)
-        check_type( param_operational_state_code_list, basestring)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        if param_device_id is not None: params.update( { 'deviceId': param_device_id })
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_name_list is not None: params.update( { 'nameList': param_name_list })
-        if param_vendor_equipment_type_list is not None: params.update( { 'vendorEquipmentTypeList': param_vendor_equipment_type_list })
-        if param_part_number_list is not None: params.update( { 'partNumberList': param_part_number_list })
-        if param_operational_state_code_list is not None: params.update( { 'operationalStateCodeList': param_operational_state_code_list })
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_eb8249e34f69b0f1').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/module', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/module', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_eb8249e34f69b0f1', json_data)
-
-
-    # Get wireless lan controller details by Id
-    def get_wireless_lan_controller_details_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-            'id': path_param_id,
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_f6826a8e41bba242').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device/${id}/wireless-info', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_f6826a8e41bba242', json_data)
-
-
-    # Get Device Detail
-    def get_device_detail(self, param_identifier, param_search_by, param_timestamp, headers=None,payload=None,**request_parameters):
-        check_type( param_timestamp, basestring, may_be_none=False)
-        check_type( param_search_by, basestring, may_be_none=False)
-        check_type( param_identifier, basestring, may_be_none=False)
-        if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
-
-        params = { }
-        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
-        if param_search_by is not None: params.update( { 'searchBy': param_search_by })
-        if param_identifier is not None: params.update( { 'identifier': param_identifier })
-        params.update(dict_filt(request_parameters, 'params'))
-
-        path_params = {
-        }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
-
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_89b2fb144f5bb09b').validate(payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
-
-
-        # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/device-detail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/device-detail', path_params), params=params, json=payload)
-
-        return self._object_factory('bpm_89b2fb144f5bb09b', json_data)
 
 

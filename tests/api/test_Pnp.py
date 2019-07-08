@@ -135,7 +135,8 @@ def test_get_pnp_global_settings(api):
 
 # e6b3-db80-46c9-9654
 def is_valid_get_device_list(obj):
-    return len(obj) > 0 and all([ item for item in obj ])
+    some_keys = [ 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow' ]
+    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
 
 
 def get_device_list(api):

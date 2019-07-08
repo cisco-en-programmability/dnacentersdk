@@ -71,9 +71,8 @@ class FabricWired( object ):
         self._request_validator = request_validator
 
 
-    # Gets border device details from SDA Fabric
-    def gets_border_device_details_from_sda_fabric(self, path_param_device_ip_address, path_param_sda_border_device, headers=None,payload=None,**request_parameters):
-        check_type( path_param_sda_border_device, basestring, may_be_none=False)
+    # Deletes border device from SDA Fabric
+    def deletes_border_device_from_sda_fabric(self, path_param_device_ip_address, headers=None,payload=None,**request_parameters):
         check_type( path_param_device_ip_address, basestring, may_be_none=False)
         if headers is not None:
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
@@ -82,7 +81,6 @@ class FabricWired( object ):
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'sda/border-device': path_param_sda_border_device,
             'device-ip-address': path_param_device_ip_address,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
@@ -90,7 +88,7 @@ class FabricWired( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_98a39bf4485a9871').validate(payload)
+        self._request_validator('jsd_1e80bb50430b8634').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -103,31 +101,27 @@ class FabricWired( object ):
 
 
         # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/business/sda/border-device/${device-ip-address}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/business/sda/border-device/${device-ip-address}', path_params), params=params, json=payload)
+        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/business-border/sda/border-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.delete(apply_path_params('/dna/intent/api/v1/business-border/sda/border-device', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_98a39bf4485a9871', json_data)
+        return self._object_factory('bpm_1e80bb50430b8634', json_data)
 
 
     # Adds border device in SDA Fabric
-    def adds_border_device_in_sda_fabric(self, path_param_sda_border_device, headers=None,payload=None,**request_parameters):
-        check_type( path_param_sda_border_device, basestring, may_be_none=False)
+    def adds_border_device_in_sda_fabric(self, headers=None,payload=None,**request_parameters):
         if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'sda/border-device': path_param_sda_border_device,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
 
         payload = payload or []
 
-        self._request_validator('jsd_bead7b3443b996a7').validate(payload)
+        self._request_validator('jsd_a4b56a5f478a97dd').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -140,26 +134,22 @@ class FabricWired( object ):
 
 
         # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/business/sda/border-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/business/sda/border-device', path_params), params=params, json=payload)
+        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/business-border/sda/border-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/dna/intent/api/v1/business-border/sda/border-device', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_bead7b3443b996a7', json_data)
+        return self._object_factory('bpm_a4b56a5f478a97dd', json_data)
 
 
-    # Deletes border device from SDA Fabric
-    def deletes_border_device_from_sda_fabric(self, path_param_device_ip_address, path_param_sda_border_device, headers=None,payload=None,**request_parameters):
-        check_type( path_param_sda_border_device, basestring, may_be_none=False)
+    # Gets border device details from SDA Fabric
+    def gets_border_device_details_from_sda_fabric(self, path_param_device_ip_address, headers=None,payload=None,**request_parameters):
         check_type( path_param_device_ip_address, basestring, may_be_none=False)
         if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool)
-            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
         params.update(dict_filt(request_parameters, 'params'))
 
         path_params = {
-            'sda/border-device': path_param_sda_border_device,
             'device-ip-address': path_param_device_ip_address,
         }
         path_params.update(dict_filt(request_parameters, 'path_params'))
@@ -167,7 +157,7 @@ class FabricWired( object ):
         payload = payload or {}
         payload.update( dict_filt(request_parameters, 'payload') )
 
-        self._request_validator('jsd_cb81b93540baaab0').validate(payload)
+        self._request_validator('jsd_d0b3593c4a7aaf22').validate(payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -180,9 +170,9 @@ class FabricWired( object ):
 
 
         # API request
-        json_data = self._session.delete(apply_path_params('/dna/intent/api/v1/business/sda/border-device/${device-ip-address}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/dna/intent/api/v1/business/sda/border-device/${device-ip-address}', path_params), params=params, json=payload)
+        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/business-border/sda/border-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.get(apply_path_params('/dna/intent/api/v1/business-border/sda/border-device', path_params), params=params, json=payload)
 
-        return self._object_factory('bpm_cb81b93540baaab0', json_data)
+        return self._object_factory('bpm_d0b3593c4a7aaf22', json_data)
 
 

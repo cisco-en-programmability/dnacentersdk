@@ -108,11 +108,11 @@ class SiteProfile( object ):
 
 
     # Provision NFV
-    def provision_nfv(self, rq_callbackUrl = None, rq_provisioning = None, rq_siteProfile = None, headers=None,payload=None,**request_parameters):
+    def provision_nfv(self, rq_provisioning = None, rq_siteProfile = None, headers=None,payload=None,**request_parameters):
         if headers is not None:
             check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
             check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('__timeout', self._session.headers.get('__timeout')), int)
+            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
             check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
 
         params = { }
@@ -125,7 +125,6 @@ class SiteProfile( object ):
         payload = payload or {}
         if rq_siteProfile is not None: payload.update( { 'siteProfile':  rq_siteProfile })
         if rq_provisioning is not None: payload.update( { 'provisioning':  rq_provisioning })
-        if rq_callbackUrl is not None: payload.update( { 'callbackUrl':  rq_callbackUrl })
         payload.update( dict_filt(request_parameters, 'payload') )
 
         self._request_validator('jsd_828828f44f28bd0d').validate(payload)
@@ -145,5 +144,43 @@ class SiteProfile( object ):
         else self._session.post(apply_path_params('/dna/intent/api/v1/provision-nfv', path_params), params=params, json=payload)
 
         return self._object_factory('bpm_828828f44f28bd0d', json_data)
+
+
+    # NFV Provisioning Detail
+    def nfv_provisioning_detail(self, rq_device_ip = None, headers=None,payload=None,**request_parameters):
+        if headers is not None:
+            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
+            check_type( headers.get('__runsynctimeout', self._session.headers.get('__runsynctimeout')), int)
+            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
+            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+
+        params = { }
+        params.update(dict_filt(request_parameters, 'params'))
+
+        path_params = {
+        }
+        path_params.update(dict_filt(request_parameters, 'path_params'))
+
+        payload = payload or {}
+        if rq_device_ip is not None: payload.update( { 'device_ip':  rq_device_ip })
+        payload.update( dict_filt(request_parameters, 'payload') )
+
+        self._request_validator('jsd_2f97e8fa45f8b2a3').validate(payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+                _headers.update(headers)
+                with_custom_headers = True
+        if dict_filt(request_parameters, 'headers'):
+                _headers.update(dict_filt(request_parameters, 'headers'))
+                with_custom_headers = True
+
+
+        # API request
+        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/nfv-provision-detail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
+        else self._session.post(apply_path_params('/dna/intent/api/v1/nfv-provision-detail', path_params), params=params, json=payload)
+
+        return self._object_factory('bpm_2f97e8fa45f8b2a3', json_data)
 
 
