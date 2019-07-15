@@ -516,7 +516,7 @@ def is_valid_get_device_detail(obj):
 
 
 def get_device_detail(api):
-    endpoint_result = api.devices.get_device_detail( param_identifier = 'macAddress', param_search_by = get_device_list(api).response[0].macAddress, param_timestamp = '1562604695', payload = '' )
+    endpoint_result = api.devices.get_device_detail( param_identifier = 'macAddress', param_search_by = get_device_list(api).response[0].macAddress, param_timestamp = '1563231300', payload = '' )
     return endpoint_result
 
 
