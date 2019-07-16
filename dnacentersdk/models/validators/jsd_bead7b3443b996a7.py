@@ -31,20 +31,106 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorBead7B3443B996A7(object):
     """Adds border device in SDA Fabric request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBead7B3443B996A7, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceManagementIpAddress': {'type': 'string'}, 'siteHierarchy': {'type': 'string'}, 'externalDomainRoutingProtocolName': {'type': 'string'}, 'externalConnectivityIpPoolName': {'type': 'string'}, 'internalAutonomouSystemNumber': {'type': 'string'}, 'borderSessionType': {'type': 'string'}, 'connectedToInternet': {'type': 'boolean'}, 'externalConnectivitySettings': {'type': 'array', 'items': {'type': 'object', 'properties': {'interfaceName': {'type': 'string'}, 'externalAutonomouSystemNumber': {'type': 'string'}, 'l3Handoff': {'type': 'array', 'items': {'type': 'object', 'properties': {'virtualNetwork': {'type': 'object', 'properties': {'virtualNetworkName': {'type': 'string'}}}}}}}}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "items": {
+                "properties": {
+                "borderSessionType": {
+                "description":
+                "Border Session Type",
+                "type": "string"
+                },
+                "connectedToInternet": {
+                "type": "boolean"
+                },
+                "deviceManagementIpAddress": {
+                "description":
+                "Device Management Ip Address",
+                "type": "string"
+                },
+                "externalConnectivityIpPoolName": {
+                "description":
+                "External Connectivity Ip Pool Name",
+                "type": "string"
+                },
+                "externalConnectivitySettings": {
+                "description":
+                "External Connectivity Settings",
+                "items": {
+                "properties": {
+                "externalAutonomouSystemNumber": {
+                "description":
+                "External Autonomou System Number",
+                "type": "string"
+                },
+                "interfaceName": {
+                "description":
+                "Interface Name",
+                "type": "string"
+                },
+                "l3Handoff": {
+                "description":
+                "L3 Handoff",
+                "items": {
+                "properties": {
+                "virtualNetwork": {
+                "description":
+                "Virtual Network",
+                "properties": {
+                "virtualNetworkName": {
+                "description":
+                "Virtual Network Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "externalDomainRoutingProtocolName": {
+                "description":
+                "External Domain Routing Protocol Name",
+                "type": "string"
+                },
+                "internalAutonomouSystemNumber": {
+                "description":
+                "Internal Autonomou System Number",
+                "type": "string"
+                },
+                "siteHierarchy": {
+                "description":
+                "Site Hierarchy",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

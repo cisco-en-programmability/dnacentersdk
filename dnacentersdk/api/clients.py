@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class Clients( object ):
+
+class Clients(object):
     """DNA Center Clients API.
 
-    Wraps the DNA Center Clients API and exposes the API as native Python
+    Wraps the DNA Center Clients
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,78 +71,156 @@ class Clients( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def get_overall_client_health(self,
+                                  timestamp,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
+        """Returns Overall Client Health information by Client type (Wired
+        and Wireless) for any given point of time.
 
-    # Get Overall Client Health
-    def get_overall_client_health(self, param_timestamp, headers=None,payload=None,**request_parameters):
-        check_type( param_timestamp, basestring, may_be_none=False)
+        Args:
+            timestamp(basestring): Epoch time(in milliseconds) when
+                the Client health data is required.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(timestamp, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'timestamp':
+                timestamp,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_149aa93b4ddb80dd').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_149aa93b4ddb80dd').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/client-health', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/client-health', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/client-health')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_149aa93b4ddb80dd', json_data)
 
+    def get_client_detail(self,
+                          mac_address,
+                          timestamp,
+                          headers=None,
+                          payload=None,
+                          active_validation=True,
+                          **request_parameters):
+        """Returns detailed Client information retrieved by Mac Address for
+        any given point of time. .
 
-    # Get Client Detail
-    def get_client_detail(self, param_mac_address, param_timestamp, headers=None,payload=None,**request_parameters):
-        check_type( param_timestamp, basestring, may_be_none=False)
-        check_type( param_mac_address, basestring, may_be_none=False)
+        Args:
+            timestamp(basestring): Epoch time(in milliseconds) when
+                the Client health data is required.
+            mac_address(basestring): MAC Address of the client.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(timestamp, basestring,
+                   may_be_none=False)
+        check_type(mac_address, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_timestamp is not None: params.update( { 'timestamp': param_timestamp })
-        if param_mac_address is not None: params.update( { 'macAddress': param_mac_address })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'timestamp':
+                timestamp,
+            'macAddress':
+                mac_address,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_e2adba7943bab3e9').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e2adba7943bab3e9').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/client-detail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/client-detail', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/client-detail')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_e2adba7943bab3e9', json_data)
-
-

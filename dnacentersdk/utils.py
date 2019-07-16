@@ -45,7 +45,6 @@ from datetime import datetime, timedelta, tzinfo
 
 from past.builtins import basestring
 
-# from .config import DNA_CENTER_DATETIME_FORMAT
 from .exceptions import (
     ApiError, RateLimitError,
 )
@@ -217,7 +216,7 @@ def check_response_code(response, expected_response_code):
         raise ApiError(response)
 
 
-def extract_and_parse_json(response):
+def extract_and_parse_json(response, ignore=False):
     """Extract and parse the JSON data from an requests.response object.
 
     Args:
@@ -228,10 +227,12 @@ def extract_and_parse_json(response):
         The parsed JSON data as the appropriate native Python data type.
 
     """
-    #FIXME: Case where response does not have a dict in text (204 for example)
     try:
-        return json.loads(response.text, object_hook=OrderedDict)
-    except:
+        if ignore:
+            return None
+        else:
+            return json.loads(response.text, object_hook=OrderedDict)
+    except Exception:
         return None
 
 
@@ -260,11 +261,12 @@ def json_dict(json_data):
             "received: {!r}".format(json_data)
         )
 
+
 def apply_path_params(URL, path_params):
     if isinstance(URL, str) and isinstance(path_params, dict):
         for k in path_params:
-            URL = URL.replace('${' + k + '}', str(path_params[k]) )
-            URL = URL.replace(k, str(path_params[k]) )
+            URL = URL.replace('${' + k + '}', str(path_params[k]))
+            URL = URL.replace(k, str(path_params[k]))
         return URL
     else:
         raise TypeError(
@@ -272,6 +274,3 @@ def apply_path_params(URL, path_params):
             "'path_params' must be a dictionary or valid JSON string; "
             "received: (URL={}, path_params={})".format(URL, path_params)
         )
-
-def dict_filt(d,y):
-  return dict([ (k,d[k]) for k in d if k in set(y) ])

@@ -17,10 +17,10 @@ elegantly represented in intuitive JSON.  What could be easier?
 
     import requests
 
-    URL = 'https://sandboxdnac.cisco.com:443/api/v1/network-device' 
+    URL = 'https://sandboxdnac.cisco2.com:443/api/v1/network-device' 
     ACCESS_TOKEN = '<your_access_token>'
-    ROOM_ID = '<room_id>'
 
+    family = '<family_name>'
     headers = {'X-Auth-Token': ACCESS_TOKEN,
                'Content-type': 'application/json;charset=utf-8'}
     params_data = { 'family': family }
@@ -53,7 +53,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
     dnac = api.DNACenterAPI()
     try:
-        devices = dnac.devices.get_device_list(param_family='Switches and Hubs')
+        devices = dnac.devices.get_device_list(family='Switches and Hubs')
         for device in devices.response:
             print('{:20s}{}'.format(device.hostname, device.upTime))
     except ApiError as e:
@@ -96,13 +96,51 @@ All of this, combined, lets you do powerful things simply:
     dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!")
 
     # Find all devices that have 'Switches and Hubs' in their family
-    devices = dnac.devices.get_device_list(param_family='Switches and Hubs')
+    devices = dnac.devices.get_device_list(family='Switches and Hubs')
 
     # Print all of demo devices
     for device in devices.response:
         print('{:20s}{}'.format(device.hostname, device.upTime))
 
-    #TODO: Add more examples.
+    # Find all tags
+    all_tags = dnac.tag.get_tag(sort_by='name', order='des')
+    demo_tags = [tag for tag in all_tags.response if 'Demo' in tag.name ]
+
+    #  Delete all of the demo tags
+    for tag in demo_tags:
+        dnac.tag.delete_tag(tag.id)
+    
+    # Create a new demo tag
+    demo_tag = dnac.tag.create_tag(name='dna Demo')
+    task_demo_tag = dnac.task.get_task_by_id(task_id=demo_tag.response.taskId)
+
+    if not task_demo_tag.response.isError:
+        # Retrieve created tag
+        created_tag = dnac.tag.get_tag(name='dna Demo')
+
+        # Update tag
+        update_tag = dnac.tag.update_tag(id=created_tag.response[0].id, 
+                                         name='Updated ' + created_tag.response[0].name,
+                                         description='DNA demo tag')
+        
+        print(dnac.task.get_task_by_id(task_id=update_tag.response.taskId).response.progress)
+        
+        # Retrieved updated
+        updated_tag = dnac.tag.get_tag(name='Updated dna Demo')
+        print(updated_tag)
+    else:
+        # Get task error details 
+        print('Unfortunately ', task_demo_tag.response.progress)
+        print('Reason: ', task_demo_tag.response.failureReason)
+
+..
+    _ # Find all tag resource types
+    resource_types = dnac.tag.get_tag_resource_types().response
+    # Add just first two
+    for i in range(0, min([len(resource_types), 2])):
+        dnac.tag.add_members_to_the_tag(id=created_tag.response[0].id,
+                                        payload={ "memberType": resource_types[i] })
+
 
 
 Head over to the :ref:`Quickstart` page to begin working with the

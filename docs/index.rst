@@ -65,11 +65,14 @@ DNA Center for Developers
 Leveraging the DNA Center APIs and developing on top of the DNA Center cloud is easy.  Signup for a `free account`_ and then head over to the `DNA Center for Developers`_ website to learn more.
 
 
-*Copyright (c) 2016-2019 Cisco and/or its affiliates.*
+*Copyright (c) 2019 Cisco and/or its affiliates.*
 
 
-.. _free account: `DNA Center`
 .. _DNA Center: https://www.cisco.com/c/en/us/products/cloud-systems-management/dna-center/index.html
+.. _free account: `DNA Center`_
 .. _DNA Center for Developers: https://developer.cisco.com/site/networking/
 .. _contribution: https://github.com/CiscoDevNet/dnacentersdk#contribution
 .. _dnacentersdk: https://github.com/CiscoDevNet/dnacentersdk
+
+..
+   _to_do: Change github urls.

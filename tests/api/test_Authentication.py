@@ -24,21 +24,30 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
+import calendar
+import time
+from tests.environment import (
+    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH
+)
 
 
-
-
-# ac8a-e94c-4e69-a09d
 def is_valid_authentication_api(obj):
-    some_keys = [  ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['Token']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def authentication_api(api):
-    endpoint_result = api.authentication.authentication_api( username = 'devnetuser', password = 'Cisco123!' )
+    endpoint_result = api.authentication.authentication_api(
+        username=DNA_CENTER_USERNAME,
+        password=DNA_CENTER_PASSWORD,
+        encoded_auth=DNA_CENTER_ENCODED_AUTH
+    )
     return endpoint_result
 
 
 def test_authentication_api(api):
-    assert is_valid_authentication_api(authentication_api(api))
-
+    assert is_valid_authentication_api(
+        authentication_api(api)
+    )

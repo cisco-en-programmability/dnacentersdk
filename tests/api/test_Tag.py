@@ -24,189 +24,351 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
+import calendar
+import time
 
 
-
-
-# 1399-891c-42a8-be64
 def is_valid_create_tag(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def create_tag(api):
-    endpoint_result = api.tag.create_tag( rq_description = None, rq_dynamicRules = None, rq_id = None, rq_instanceTenantId = None, rq_name = 'InterestingTool01', rq_systemTag = None, payload = '' )
+    endpoint_result = api.tag.create_tag(
+        description=None,
+        dynamicRules=None,
+        id=None,
+        instanceTenantId=None,
+        name='InterestingTool01',
+        systemTag=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_create_tag(api):
-    assert is_valid_create_tag(create_tag(api))
+    assert is_valid_create_tag(
+        create_tag(api)
+    )
 
 
-# ee9a-ab01-487a-8896
 def is_valid_get_tag(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_tag(api):
-    endpoint_result = api.tag.get_tag( param_additional_info_attributes = None, param_additional_info_name_space = None, param_field = None, param_level = None, param_limit = None, param_name = None, param_offset = None, param_order = 'des', param_size = None, param_sort_by = 'name', param_system_tag = None, payload = '' )
+    endpoint_result = api.tag.get_tag(
+        additional_info_attributes=None,
+        additional_info_name_space=None,
+        field=None,
+        level=None,
+        limit=None,
+        name=None,
+        offset=None,
+        order='des',
+        size=None,
+        sort_by='name',
+        system_tag=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_tag(api):
-    assert is_valid_get_tag(get_tag(api))
+    assert is_valid_get_tag(
+        get_tag(api)
+    )
 
 
-# c1a3-59b1-4c89-b573
+def is_valid_get_tag_created(obj):
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def get_tag_created(api):
+    endpoint_result = api.tag.get_tag(
+        additional_info_attributes=None,
+        additional_info_name_space=None,
+        field=None,
+        level=None,
+        limit=None,
+        name='InterestingTool01',
+        offset=None,
+        order=None,
+        size=None,
+        sort_by=None,
+        system_tag=None,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+def test_get_tag_created(api):
+    assert is_valid_get_tag_created(
+        get_tag_created(api)
+    )
+
+
 def is_valid_get_tag_by_id(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_tag_by_id(api):
-    endpoint_result = api.tag.get_tag_by_id( path_param_id = get_tag(api).response[0].id, payload = '' )
+    endpoint_result = api.tag.get_tag_by_id(
+        id=get_tag(api).response[0].id,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_tag_by_id(api):
-    assert is_valid_get_tag_by_id(get_tag_by_id(api))
+    assert is_valid_get_tag_by_id(
+        get_tag_by_id(api)
+    )
 
 
-# 8091-a9b8-4bfb-a53b
+def is_valid_get_tag_by_id_created(obj):
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def get_tag_by_id_created(api):
+    endpoint_result = api.tag.get_tag_by_id(
+        id=get_tag_created(api).response[0].id,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+def test_get_tag_by_id_created(api):
+    assert is_valid_get_tag_by_id_created(
+        get_tag_by_id_created(api)
+    )
+
+
 def is_valid_get_tag_count(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_tag_count(api):
-    endpoint_result = api.tag.get_tag_count( param_attribute_name = None, param_level = None, param_name = None, param_name_space = None, param_size = None, param_system_tag = None, payload = '' )
+    endpoint_result = api.tag.get_tag_count(
+        attribute_name=None,
+        level=None,
+        name=None,
+        name_space=None,
+        size=None,
+        system_tag=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_tag_count(api):
-    assert is_valid_get_tag_count(get_tag_count(api))
+    assert is_valid_get_tag_count(
+        get_tag_count(api)
+    )
 
 
-# 4695-090d-403b-8eaa
 def is_valid_get_tag_resource_types(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_tag_resource_types(api):
-    endpoint_result = api.tag.get_tag_resource_types( payload = '' )
+    endpoint_result = api.tag.get_tag_resource_types(
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_tag_resource_types(api):
-    assert is_valid_get_tag_resource_types(get_tag_resource_types(api))
+    assert is_valid_get_tag_resource_types(
+        get_tag_resource_types(api)
+    )
 
 
-# 2e9d-b858-40fb-b1cf
 def is_valid_get_tag_member_count(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_tag_member_count(api):
-    endpoint_result = api.tag.get_tag_member_count( param_member_type = get_tag_resource_types(api).response[0], path_param_id = get_tag(api).response[0].id, param_level = '0', param_member_association_type = None, payload = '' )
+    endpoint_result = api.tag.get_tag_member_count(
+        id=get_tag(api).response[0].id,
+        member_type=get_tag_resource_types(api).response[0],
+        level='0',
+        member_association_type=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_tag_member_count(api):
-    assert is_valid_get_tag_member_count(get_tag_member_count(api))
+    assert is_valid_get_tag_member_count(
+        get_tag_member_count(api)
+    )
 
 
-# 45bc-7a83-44a8-bc1e
 def is_valid_updates_tag_membership(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def updates_tag_membership(api):
-    endpoint_result = api.tag.updates_tag_membership( rq_memberToTags = [{'key': ['get_tag(api).response[0].id']}], rq_memberType = get_tag_resource_types(api).response[0], payload = '' )
+    tag = get_tag_created(api).response[0].id
+    key = api.devices.get_device_list().response[0].id
+    endpoint_result = api.tag.updates_tag_membership(
+        memberToTags={key: [tag]},
+        memberType='networkdevice',
+        payload=None,
+        active_validation=False
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
 def test_updates_tag_membership(api):
-    assert is_valid_updates_tag_membership(updates_tag_membership(api))
+    assert is_valid_updates_tag_membership(
+        updates_tag_membership(api)
+    )
 
 
-# 00a2-fa61-4608-9317
 def is_valid_add_members_to_the_tag(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def add_members_to_the_tag(api):
-    endpoint_result = api.tag.add_members_to_the_tag( path_param_id = get_tag(api).response[0].id, payload = {'memberType': 'get_tag_resource_types(api).response[0]'} )
+    endpoint_result = api.tag.add_members_to_the_tag(
+        id=get_tag_created(api).response[0].id,
+        payload={
+            "networkdevice": [api.devices.get_device_list().response[0].id]
+        },
+        active_validation=True
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
 def test_add_members_to_the_tag(api):
-    assert is_valid_add_members_to_the_tag(add_members_to_the_tag(api))
+    assert is_valid_add_members_to_the_tag(
+        add_members_to_the_tag(api)
+    )
 
 
-# eab7-abe0-48fb-99ad
 def is_valid_get_tag_members_by_id(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_tag_members_by_id(api):
-    endpoint_result = api.tag.get_tag_members_by_id( param_member_type = get_tag_resource_types(api).response[0], path_param_id = get_tag(api).response[0].id, param_level = '0', param_limit = None, param_member_association_type = None, param_offset = None, payload = '' )
+    endpoint_result = api.tag.get_tag_members_by_id(
+        id=get_tag_created(api).response[0].id,
+        member_type=get_tag_resource_types(api).response[0],
+        level='0',
+        limit=None,
+        member_association_type=None,
+        offset=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_tag_members_by_id(api):
-    assert is_valid_get_tag_members_by_id(get_tag_members_by_id(api))
+    assert is_valid_get_tag_members_by_id(
+        get_tag_members_by_id(api)
+    )
 
 
-# 4d86-a993-469a-9da9
 def is_valid_update_tag(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def update_tag(api):
-    endpoint_result = api.tag.update_tag( rq_description = None, rq_dynamicRules = None, rq_id = get_tag(api).response[0].id, rq_instanceTenantId = None, rq_name = '{} Updated'.format(get_tag(api).response[0].name), rq_systemTag = None, payload = '' )
+    tag = get_tag_created(api).response[0]
+    endpoint_result = api.tag.update_tag(
+        description=None,
+        dynamicRules=None,
+        id=tag.id,
+        instanceTenantId=None,
+        name='{} Updated'.format(tag.name),
+        systemTag=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_update_tag(api):
-    assert is_valid_update_tag(update_tag(api))
+    assert is_valid_update_tag(
+        update_tag(api)
+    )
 
 
-# 429c-2815-4bda-a13d
+def is_valid_remove_tag_member(obj):
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def remove_tag_member(api):
+    tag = api.tag.get_tag(name='InterestingTool01 Updated').response[0]
+    device = api.devices.get_device_list().response[0]
+    endpoint_result = api.tag.remove_tag_member(
+        id=tag.id,
+        member_id=device.id,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+def test_remove_tag_member(api):
+    assert is_valid_remove_tag_member(
+        remove_tag_member(api)
+    )
+
+
 def is_valid_delete_tag(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['version', 'response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def delete_tag(api):
-    endpoint_result = api.tag.delete_tag( path_param_id = get_tag(api).response[0].id, payload = '' )
+    tag = api.tag.get_tag(name='InterestingTool01 Updated').response[0]
+    endpoint_result = api.tag.delete_tag(
+        id=tag.id,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_delete_tag(api):
-    assert is_valid_delete_tag(delete_tag(api))
-
-
-# caa3-ea70-4d78-b37e
-def is_valid_remove_tag_member(obj):
-    some_keys = [ 'version' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
-
-
-def remove_tag_member(api):
-    endpoint_result = api.tag.remove_tag_member( path_param_id = get_tag(api).response[0].id, path_param_member_id = get_tag_resource_types(api).response[0], payload = '' )
-    return endpoint_result
-
-
-@pytest.mark.skip(reason="no way of currently testing this")
-def test_remove_tag_member(api):
-    assert is_valid_remove_tag_member(remove_tag_member(api))
-
+    assert is_valid_delete_tag(
+        delete_tag(api)
+    )

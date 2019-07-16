@@ -22,28 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import os
-import random
-import string
-import tempfile
-
 import pytest
 
 pytest_plugins = [
     'tests.test_dnacentersdk',
     'tests.api',
-    'tests.api.test_NetworkDiscovery',
 ]
-
-# Helper Functions
-
-# pytest Fixtures
-
-@pytest.fixture("session")
-def temp_directory():
-    directory_abs_path = tempfile.mkdtemp()
-
-    yield directory_abs_path
-
-    os.rmdir(directory_abs_path)
-

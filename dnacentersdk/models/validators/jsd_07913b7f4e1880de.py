@@ -31,20 +31,83 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator07913B7F4E1880De(object):
     """Provision request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator07913B7F4E1880De, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceName': {'type': 'string'}, 'site': {'type': 'string'}, 'managedAPLocations': {'type': 'array', 'items': {'type': 'string'}}, 'dynamicInterfaces': {'type': 'array', 'items': {'type': 'object', 'properties': {'interfaceIPAddress': {'type': 'string'}, 'interfaceNetmaskInCIDR': {'type': 'number'}, 'interfaceGateway': {'type': 'string'}, 'lagOrPortNumber': {'type': 'number'}, 'vlanId': {'type': 'number'}, 'interfaceName': {'type': 'string'}}}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "items": {
+                "properties": {
+                "deviceName": {
+                "description":
+                "Device Name",
+                "type": "string"
+                },
+                "dynamicInterfaces": {
+                "description":
+                "Dynamic Interfaces",
+                "items": {
+                "properties": {
+                "interfaceGateway": {
+                "description":
+                "Interface Gateway",
+                "type": "string"
+                },
+                "interfaceIPAddress": {
+                "description":
+                "Interface IPAddress",
+                "type": "string"
+                },
+                "interfaceName": {
+                "description":
+                "Interface Name",
+                "type": "string"
+                },
+                "interfaceNetmaskInCIDR": {
+                "type": "number"
+                },
+                "lagOrPortNumber": {
+                "type": "number"
+                },
+                "vlanId": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "managedAPLocations": {
+                "description":
+                "Managed APLocations",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "site": {
+                "description":
+                "Site",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

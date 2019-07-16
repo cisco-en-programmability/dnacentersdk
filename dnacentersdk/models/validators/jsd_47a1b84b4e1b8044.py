@@ -31,20 +31,68 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator47A1B84B4E1B8044(object):
     """Update SNMP read community request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator47A1B84B4E1B8044, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'readCommunity': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "comments": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "credentialType": {
+                "description":
+                 "",
+                "enum": [
+                "GLOBAL",
+                "APP"
+                ],
+                "type": "string"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceTenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceUuid": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "readCommunity": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -27,7 +27,10 @@ import os
 import pytest
 
 import dnacentersdk
-from tests.environment import DNA_CENTER_ACCESS_TOKEN
+from tests.environment import (
+    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH
+)
 
 from dnacentersdk.api.template_programmer import TemplateProgrammer
 from dnacentersdk.api.tag import Tag
@@ -45,140 +48,141 @@ from dnacentersdk.api.networks import Networks
 from dnacentersdk.api.clients import Clients
 from dnacentersdk.api.non_fabric_wireless import NonFabricWireless
 from dnacentersdk.api.fabric_wired import FabricWired
+from dnacentersdk.api.authentication import Authentication
 
 from tests.config import (
-    ACCESS_TOKEN_ENVIRONMENT_VARIABLE, DEFAULT_BASE_URL,
-    DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT,
-    DEFAULT_USER, DEFAULT_PASS
+    DEFAULT_BASE_URL, DEFAULT_VERIFY,
+    DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT
 )
 
 
 # Fixtures
 
-@pytest.fixture(scope="session")
-def access_token():
-    return DNA_CENTER_ACCESS_TOKEN
-
-
-@pytest.fixture
-def unset_access_token(access_token):
-    del os.environ[ACCESS_TOKEN_ENVIRONMENT_VARIABLE]
-    yield None
-    os.environ[ACCESS_TOKEN_ENVIRONMENT_VARIABLE] = access_token
-
-
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="session")  # If failure because auth, try: @pytest.fixture(scope="module") which is slower
 def api():
-    return dnacentersdk.DNACenterAPI(username=DEFAULT_USER, password=DEFAULT_PASS)
+    return dnacentersdk.DNACenterAPI(username=DNA_CENTER_USERNAME,
+                                     password=DNA_CENTER_PASSWORD,
+                                     encoded_auth=DNA_CENTER_ENCODED_AUTH,
+                                     base_url=DEFAULT_BASE_URL,
+                                     single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
+                                     wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
+                                     verify=DEFAULT_VERIFY)
 
 
-# Tests
-
-# Test creating DNACenterAPI objects
-
-# @pytest.mark.usefixtures("unset_access_token")
-# def test_create_without_an_access_token():
-#     with pytest.raises(dnacentersdk.AccessTokenError):
-#         dnacentersdk.DNACenterAPI()
-
-
-def test_create_with_access_token_environment_variable():
-    connection_object = dnacentersdk.DNACenterAPI()
-    assert isinstance(connection_object, dnacentersdk.DNACenterAPI)
-
-
-def test_create_with_access_token_argument(access_token):
-    connection_object = dnacentersdk.DNACenterAPI(
-        access_token=access_token
-    )
-    assert isinstance(connection_object, dnacentersdk.DNACenterAPI)
-
-
-def test_default_base_url():
-    connection_object = dnacentersdk.DNACenterAPI()
-    assert connection_object.base_url == DEFAULT_BASE_URL
+def test_default_base_url(api):
+    assert api.base_url == DEFAULT_BASE_URL
 
 
 def test_custom_base_url():
     custom_url = "https://custom.domain.com/v1/"
-    connection_object = dnacentersdk.DNACenterAPI(base_url=custom_url)
+    connection_object = dnacentersdk.DNACenterAPI(
+        username=DNA_CENTER_USERNAME,
+        password=DNA_CENTER_PASSWORD,
+        encoded_auth=DNA_CENTER_ENCODED_AUTH,
+        base_url=custom_url,
+        verify=DEFAULT_VERIFY)
     assert connection_object.base_url == custom_url
 
 
-def test_default_single_request_timeout():
-    connection_object = dnacentersdk.DNACenterAPI()
-    assert connection_object.single_request_timeout == \
+def test_default_single_request_timeout(api):
+    assert api.single_request_timeout == \
         DEFAULT_SINGLE_REQUEST_TIMEOUT
 
 
 def test_custom_single_request_timeout():
     custom_timeout = 10
     connection_object = dnacentersdk.DNACenterAPI(
-        single_request_timeout=custom_timeout
+        username=DNA_CENTER_USERNAME,
+        password=DNA_CENTER_PASSWORD,
+        encoded_auth=DNA_CENTER_ENCODED_AUTH,
+        base_url=DEFAULT_BASE_URL,
+        single_request_timeout=custom_timeout,
+        verify=DEFAULT_VERIFY
     )
     assert connection_object.single_request_timeout == custom_timeout
 
 
-def test_default_wait_on_rate_limit():
-    connection_object = dnacentersdk.DNACenterAPI()
-    assert connection_object.wait_on_rate_limit == \
+def test_default_wait_on_rate_limit(api):
+    assert api.wait_on_rate_limit == \
         DEFAULT_WAIT_ON_RATE_LIMIT
 
 
 def test_non_default_wait_on_rate_limit():
     connection_object = dnacentersdk.DNACenterAPI(
-        wait_on_rate_limit=not DEFAULT_WAIT_ON_RATE_LIMIT
+        username=DNA_CENTER_USERNAME,
+        password=DNA_CENTER_PASSWORD,
+        encoded_auth=DNA_CENTER_ENCODED_AUTH,
+        base_url=DEFAULT_BASE_URL,
+        wait_on_rate_limit=not DEFAULT_WAIT_ON_RATE_LIMIT,
+        verify=DEFAULT_VERIFY
     )
     assert connection_object.wait_on_rate_limit != \
         DEFAULT_WAIT_ON_RATE_LIMIT
 
 
-# Test creation of component API objects
 def test_template_programmer_api_object_creation(api):
     assert isinstance(api.template_programmer, TemplateProgrammer)
+
 
 def test_tag_api_object_creation(api):
     assert isinstance(api.tag, Tag)
 
+
 def test_network_discovery_api_object_creation(api):
     assert isinstance(api.network_discovery, NetworkDiscovery)
+
 
 def test_task_api_object_creation(api):
     assert isinstance(api.task, Task)
 
+
 def test_command_runner_api_object_creation(api):
     assert isinstance(api.command_runner, CommandRunner)
+
 
 def test_file_api_object_creation(api):
     assert isinstance(api.file, File)
 
+
 def test_path_trace_api_object_creation(api):
     assert isinstance(api.path_trace, PathTrace)
+
 
 def test_swim_api_object_creation(api):
     assert isinstance(api.swim, Swim)
 
+
 def test_pnp_api_object_creation(api):
     assert isinstance(api.pnp, Pnp)
+
 
 def test_site_profile_api_object_creation(api):
     assert isinstance(api.site_profile, SiteProfile)
 
+
 def test_devices_api_object_creation(api):
     assert isinstance(api.devices, Devices)
+
 
 def test_sites_api_object_creation(api):
     assert isinstance(api.sites, Sites)
 
+
 def test_networks_api_object_creation(api):
     assert isinstance(api.networks, Networks)
+
 
 def test_clients_api_object_creation(api):
     assert isinstance(api.clients, Clients)
 
+
 def test_non_fabric_wireless_api_object_creation(api):
     assert isinstance(api.non_fabric_wireless, NonFabricWireless)
+
 
 def test_fabric_wired_api_object_creation(api):
     assert isinstance(api.fabric_wired, FabricWired)
 
+
+def test_authentication_api_object_creation(api):
+    assert isinstance(api.authentication, Authentication)

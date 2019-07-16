@@ -31,20 +31,594 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator828828F44F28Bd0D(object):
     """Provision NFV request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator828828F44F28Bd0D, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'siteProfile': {'type': 'array', 'items': {'type': 'object', 'properties': {'siteProfileName': {'type': 'string'}, 'device': {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceType': {'type': 'string', 'enum': ['ENCS5100', 'ENCS5400']}, 'tagName': {'type': 'string'}, 'serviceProviders': {'type': 'array', 'items': {'type': 'object', 'properties': {'serviceProvider': {'type': 'string'}, 'linkType': {'type': 'string', 'enum': ['GigabitEthernet']}, 'connect': {'type': 'boolean'}, 'defaultGateway': {'type': 'boolean'}}}}, 'dia': {'type': 'boolean'}, 'services': {'type': 'array', 'items': {'type': 'object', 'properties': {'type': {'type': 'string', 'enum': ['isr', 'vedge', 'waas', 'asa', 'ngfw', 'paloalto', 'fortinet', 'checkpoint', 'riverbed', 'silverpeak']}, 'profile': {'type': 'string'}, 'mode': {'type': 'string'}}}}, 'customServices': {'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'applicationType': {'type': 'string'}, 'profile': {'type': 'string'}}}}, 'customNetworks': {'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'servicesToConnect': {'type': 'array', 'items': {'type': 'object', 'properties': {'service': {'type': 'string'}}}}, 'connectionType': {'type': 'string'}, 'networkMode': {'type': 'string'}, 'vlan': {'type': 'string'}}}}, 'vlan': {'type': 'array', 'items': {'type': 'object', 'properties': {'type': {'type': 'string'}, 'id': {'type': 'string'}}}}}}}, 'customTemplate': {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceType': {'type': 'string', 'enum': ['NFVIS', 'ASAv']}, 'template': {'type': 'string'}}}}}}}, 'provisioning': {'type': 'array', 'items': {'type': 'object', 'properties': {'site': {'type': 'object', 'properties': {'siteProfileName': {'type': 'string'}, 'area': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}, 'building': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'address': {'type': 'string'}}}, 'floor': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}}}, 'templateParam': {'type': 'object', 'properties': {'nfvis': {'type': 'object', 'properties': {'var1': {'type': 'string'}}}, 'asav': {'type': 'object', 'properties': {'var1': {'type': 'string'}}}}}, 'networksettings': {'type': 'object', 'properties': {'ipPool': {'type': 'object', 'properties': {'globalPool': {'type': 'object', 'properties': {'name': {'type': 'string'}}}}}}}, 'device': {'type': 'array', 'items': {'type': 'object', 'properties': {'ip': {'type': 'string'}, 'deviceSerialNumber': {'type': 'string'}, 'tagName': {'type': 'string'}, 'serviceProviders': {'type': 'array', 'items': {'type': 'object', 'properties': {'serviceProvider': {'type': 'string'}, 'wanInterface': {'type': 'object', 'properties': {'ipAddress': {'type': 'string'}, 'interfaceName': {'type': 'string'}, 'subnetmask': {'type': 'string'}, 'bandwidth': {'type': 'string'}, 'gateway': {'type': 'string'}}}}}}, 'services': {'type': 'array', 'items': {'type': 'object', 'properties': {'type': {'type': 'string'}, 'mode': {'type': 'string'}, 'systemIp': {'type': 'string'}, 'centralManagerIP': {'type': 'string'}, 'centralRegistrationKey': {'type': 'string'}, 'commonKey': {'type': 'string'}, 'adminPasswordHash': {'type': 'string'}}}}, 'vlan': {'type': 'array', 'items': {'type': 'object', 'properties': {'type': {'type': 'string'}, 'id': {'type': 'string'}, 'interfaces': {'type': 'string'}, 'network': {'type': 'string'}}}}, 'subPools': {'type': 'array', 'items': {'type': 'object', 'properties': {'type': {'type': 'string', 'enum': ['Lan', 'Management', 'Service', 'Wan', 'Generic']}, 'name': {'type': 'string'}, 'ipSubnet': {'type': 'string'}, 'gateway': {'type': 'string'}}}}, 'customNetworks': {'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'port': {'type': 'string'}, 'ipAddressPool': {'type': 'string'}}}}}}}}}}, 'callbackUrl': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "callbackUrl": {
+                "description":
+                "Callback Url",
+                "type": "string"
+                },
+                "provisioning": {
+                "description":
+                "Provisioning",
+                "items": {
+                "properties": {
+                "device": {
+                "description":
+                "Device",
+                "items": {
+                "properties": {
+                "customNetworks": {
+                "description":
+                "Custom Networks",
+                "items": {
+                "properties": {
+                "ipAddressPool": {
+                "description":
+                "Ip Address Pool",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "port": {
+                "description":
+                "Port",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "deviceSerialNumber": {
+                "description":
+                "Device Serial Number",
+                "type": "string"
+                },
+                "ip": {
+                "description":
+                "Ip",
+                "type": "string"
+                },
+                "serviceProviders": {
+                "description":
+                "Service Providers",
+                "items": {
+                "properties": {
+                "serviceProvider": {
+                "description":
+                "Service Provider",
+                "type": "string"
+                },
+                "wanInterface": {
+                "description":
+                "Wan Interface",
+                "properties": {
+                "bandwidth": {
+                "description":
+                "Bandwidth",
+                "type": "string"
+                },
+                "gateway": {
+                "description":
+                "Gateway",
+                "type": "string"
+                },
+                "interfaceName": {
+                "description":
+                "Interface Name",
+                "type": "string"
+                },
+                "ipAddress": {
+                "description":
+                "Ip Address",
+                "type": "string"
+                },
+                "subnetmask": {
+                "description":
+                "Subnetmask",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "services": {
+                "description":
+                "Services",
+                "items": {
+                "properties": {
+                "adminPasswordHash": {
+                "description":
+                "Admin Password Hash",
+                "type": "string"
+                },
+                "centralManagerIP": {
+                "description":
+                "Central Manager IP",
+                "type": "string"
+                },
+                "centralRegistrationKey": {
+                "description":
+                "Central Registration Key",
+                "type": "string"
+                },
+                "commonKey": {
+                "description":
+                "Common Key",
+                "type": "string"
+                },
+                "mode": {
+                "description":
+                "Mode",
+                "type": "string"
+                },
+                "systemIp": {
+                "description":
+                "System Ip",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                "Type",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "subPools": {
+                "description":
+                "Sub Pools",
+                "items": {
+                "properties": {
+                "gateway": {
+                "description":
+                "Gateway",
+                "type": "string"
+                },
+                "ipSubnet": {
+                "description":
+                "Ip Subnet",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                "Type",
+                "enum": [
+                "Lan",
+                "Management",
+                "Service",
+                "Wan",
+                "Generic"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "tagName": {
+                "description":
+                "Tag Name",
+                "type": "string"
+                },
+                "vlan": {
+                "description":
+                "Vlan",
+                "items": {
+                "properties": {
+                "id": {
+                "description":
+                "Id",
+                "type": "string"
+                },
+                "interfaces": {
+                "description":
+                "Interfaces",
+                "type": "string"
+                },
+                "network": {
+                "description":
+                "Network",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                "Type",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "networksettings": {
+                "description":
+                "Networksettings",
+                "properties": {
+                "ipPool": {
+                "description":
+                "Ip Pool",
+                "properties": {
+                "globalPool": {
+                "description":
+                "Global Pool",
+                "properties": {
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "site": {
+                "description":
+                "Site",
+                "properties": {
+                "area": {
+                "description":
+                "Area",
+                "properties": {
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "parentName": {
+                "description":
+                "Parent Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "building": {
+                "description":
+                "Building",
+                "properties": {
+                "address": {
+                "description":
+                "Address",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "floor": {
+                "description":
+                "Floor",
+                "properties": {
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "parentName": {
+                "description":
+                "Parent Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "siteProfileName": {
+                "description":
+                "Site Profile Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "templateParam": {
+                "description":
+                "Template Param",
+                "properties": {
+                "asav": {
+                "description":
+                "Asav",
+                "properties": {
+                "var1": {
+                "description":
+                "Var1",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "nfvis": {
+                "description":
+                "Nfvis",
+                "properties": {
+                "var1": {
+                "description":
+                "Var1",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "siteProfile": {
+                "description":
+                "Site Profile",
+                "items": {
+                "properties": {
+                "customTemplate": {
+                "description":
+                "Custom Template",
+                "items": {
+                "properties": {
+                "deviceType": {
+                "description":
+                "Device Type",
+                "enum": [
+                "NFVIS",
+                "ASAv"
+                ],
+                "type": "string"
+                },
+                "template": {
+                "description":
+                "Template",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "device": {
+                "description":
+                "Device",
+                "items": {
+                "properties": {
+                "customNetworks": {
+                "description":
+                "Custom Networks",
+                "items": {
+                "properties": {
+                "connectionType": {
+                "description":
+                "Connection Type",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "networkMode": {
+                "description":
+                "Network Mode",
+                "type": "string"
+                },
+                "servicesToConnect": {
+                "description":
+                "Services To Connect",
+                "items": {
+                "properties": {
+                "service": {
+                "description":
+                "Service",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "vlan": {
+                "description":
+                "Vlan",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "customServices": {
+                "description":
+                "Custom Services",
+                "items": {
+                "properties": {
+                "applicationType": {
+                "description":
+                "Application Type",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "profile": {
+                "description":
+                "Profile",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "deviceType": {
+                "description":
+                "Device Type",
+                "enum": [
+                "ENCS5100",
+                "ENCS5400"
+                ],
+                "type": "string"
+                },
+                "dia": {
+                "type": "boolean"
+                },
+                "serviceProviders": {
+                "description":
+                "Service Providers",
+                "items": {
+                "properties": {
+                "connect": {
+                "type": "boolean"
+                },
+                "defaultGateway": {
+                "type": "boolean"
+                },
+                "linkType": {
+                "description":
+                "Link Type",
+                "enum": [
+                "GigabitEthernet"
+                ],
+                "type": "string"
+                },
+                "serviceProvider": {
+                "description":
+                "Service Provider",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "services": {
+                "description":
+                "Services",
+                "items": {
+                "properties": {
+                "mode": {
+                "description":
+                "Mode",
+                "type": "string"
+                },
+                "profile": {
+                "description":
+                "Profile",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                "Type",
+                "enum": [
+                "isr",
+                "vedge",
+                "waas",
+                "asa",
+                "ngfw",
+                "paloalto",
+                "fortinet",
+                "checkpoint",
+                "riverbed",
+                "silverpeak"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "tagName": {
+                "description":
+                "Tag Name",
+                "type": "string"
+                },
+                "vlan": {
+                "description":
+                "Vlan",
+                "items": {
+                "properties": {
+                "id": {
+                "description":
+                "Id",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                "Type",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "siteProfileName": {
+                "description":
+                "Site Profile Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

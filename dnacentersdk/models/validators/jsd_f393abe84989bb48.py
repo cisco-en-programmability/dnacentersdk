@@ -31,20 +31,39 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorF393Abe84989Bb48(object):
     """Preview Template request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF393Abe84989Bb48, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'params': {'type': 'object', 'properties': {}}, 'templateId': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "params": {
+                "description":
+                 "",
+                "properties": {},
+                "type": "object"
+                },
+                "templateId": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

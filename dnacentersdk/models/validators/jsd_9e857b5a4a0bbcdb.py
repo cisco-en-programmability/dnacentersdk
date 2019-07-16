@@ -31,20 +31,103 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator9E857B5A4A0BBcdb(object):
     """Reset Device request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator9E857B5A4A0BBcdb, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceResetList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configId': {'type': 'string'}, 'configParameters': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}}}}, 'deviceId': {'type': 'string'}, 'licenseLevel': {'type': 'string'}, 'licenseType': {'type': 'string'}, 'topOfStackSerialNumber': {'type': 'string'}}}}, 'projectId': {'type': 'string'}, 'workflowId': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "deviceResetList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "configList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "configParameters": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "value": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "deviceId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseLevel": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "topOfStackSerialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "projectId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workflowId": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -31,20 +31,59 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator00AeC9B1422AB27E(object):
     """Create Project request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator00AeC9B1422AB27E, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'createTime': {'type': 'number'}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'lastUpdateTime': {'type': 'number'}, 'name': {'type': 'string'}, 'tags': {'type': 'array', 'items': {'type': 'string'}}, 'templates': {}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "createTime": {
+                "type": "number"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "lastUpdateTime": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "tags": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "templates": {}
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

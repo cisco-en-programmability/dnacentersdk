@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class PathTrace( object ):
+
+class PathTrace(object):
     """DNA Center Path Trace API.
 
-    Wraps the DNA Center Path Trace API and exposes the API as native Python
+    Wraps the DNA Center Path Trace
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,183 +71,398 @@ class PathTrace( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def retrives_all_previous_pathtraces_summary(self,
+                                                 dest_ip=None,
+                                                 dest_port=None,
+                                                 gt_create_time=None,
+                                                 last_update_time=None,
+                                                 limit=None,
+                                                 lt_create_time=None,
+                                                 offset=None,
+                                                 order=None,
+                                                 periodic_refresh=None,
+                                                 protocol=None,
+                                                 sort_by=None,
+                                                 source_ip=None,
+                                                 source_port=None,
+                                                 status=None,
+                                                 task_id=None,
+                                                 headers=None,
+                                                 payload=None,
+                                                 active_validation=True,
+                                                 **request_parameters):
+        """Returns a summary of all flow analyses stored. Results can be
+        filtered by specified parameters.
 
-    # Retrives all previous Pathtraces summary
-    def retrives_all_previous_pathtraces_summary(self, param_dest_ip = None, param_dest_port = None, param_gt_create_time = None, param_last_update_time = None, param_limit = None, param_lt_create_time = None, param_offset = None, param_order = None, param_periodic_refresh = None, param_protocol = None, param_sort_by = None, param_source_ip = None, param_source_port = None, param_status = None, param_task_id = None, headers=None,payload=None,**request_parameters):
-        check_type( param_periodic_refresh, bool)
-        check_type( param_source_ip, basestring)
-        check_type( param_dest_ip, basestring)
-        check_type( param_source_port, basestring)
-        check_type( param_dest_port, basestring)
-        check_type( param_gt_create_time, basestring)
-        check_type( param_lt_create_time, basestring)
-        check_type( param_protocol, basestring)
-        check_type( param_status, basestring)
-        check_type( param_task_id, basestring)
-        check_type( param_last_update_time, basestring)
-        check_type( param_limit, basestring)
-        check_type( param_offset, basestring)
-        check_type( param_order, basestring)
-        check_type( param_sort_by, basestring)
+        Args:
+            periodic_refresh(bool): Is analysis periodically
+                refreshed?.
+            source_ip(basestring): Source IP address.
+            dest_ip(basestring): Destination IP address.
+            source_port(basestring): Source port.
+            dest_port(basestring): Destination port.
+            gt_create_time(basestring): Analyses requested after
+                this time.
+            lt_create_time(basestring): Analyses requested before
+                this time.
+            protocol(basestring): protocol query parameter.
+            status(basestring): status query parameter.
+            task_id(basestring): Task ID.
+            last_update_time(basestring): Last update time.
+            limit(basestring): Number of resources returned.
+            offset(basestring): Start index of resources returned
+                (1-based).
+            order(basestring): Order by this field.
+            sort_by(basestring): Sort by this field.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(periodic_refresh, bool)
+        check_type(source_ip, basestring)
+        check_type(dest_ip, basestring)
+        check_type(source_port, basestring)
+        check_type(dest_port, basestring)
+        check_type(gt_create_time, basestring)
+        check_type(lt_create_time, basestring)
+        check_type(protocol, basestring)
+        check_type(status, basestring)
+        check_type(task_id, basestring)
+        check_type(last_update_time, basestring)
+        check_type(limit, basestring)
+        check_type(offset, basestring)
+        check_type(order, basestring)
+        check_type(sort_by, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_periodic_refresh is not None: params.update( { 'periodicRefresh': param_periodic_refresh })
-        if param_source_ip is not None: params.update( { 'sourceIP': param_source_ip })
-        if param_dest_ip is not None: params.update( { 'destIP': param_dest_ip })
-        if param_source_port is not None: params.update( { 'sourcePort': param_source_port })
-        if param_dest_port is not None: params.update( { 'destPort': param_dest_port })
-        if param_gt_create_time is not None: params.update( { 'gtCreateTime': param_gt_create_time })
-        if param_lt_create_time is not None: params.update( { 'ltCreateTime': param_lt_create_time })
-        if param_protocol is not None: params.update( { 'protocol': param_protocol })
-        if param_status is not None: params.update( { 'status': param_status })
-        if param_task_id is not None: params.update( { 'taskId': param_task_id })
-        if param_last_update_time is not None: params.update( { 'lastUpdateTime': param_last_update_time })
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_order is not None: params.update( { 'order': param_order })
-        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'periodicRefresh':
+                periodic_refresh,
+            'sourceIP':
+                source_ip,
+            'destIP':
+                dest_ip,
+            'sourcePort':
+                source_port,
+            'destPort':
+                dest_port,
+            'gtCreateTime':
+                gt_create_time,
+            'ltCreateTime':
+                lt_create_time,
+            'protocol':
+                protocol,
+            'status':
+                status,
+            'taskId':
+                task_id,
+            'lastUpdateTime':
+                last_update_time,
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'order':
+                order,
+            'sortBy':
+                sort_by,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_55bc3bf94e38b6ff').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_55bc3bf94e38b6ff').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/flow-analysis')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_55bc3bf94e38b6ff', json_data)
 
+    def deletes_pathtrace_by_id(self,
+                                flow_analysis_id,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
+        """Deletes a flow analysis request by its id.
 
-    # Deletes Pathtrace by Id
-    def deletes_pathtrace_by_id(self, path_param_flow_analysis_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_flow_analysis_id, basestring, may_be_none=False)
+        Args:
+            flow_analysis_id(basestring): Flow analysis request id.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(flow_analysis_id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'flowAnalysisId': path_param_flow_analysis_id,
+            'flowAnalysisId': flow_analysis_id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_8a9d2b76443b914e').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_8a9d2b76443b914e').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload, headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload)
 
         return self._object_factory('bpm_8a9d2b76443b914e', json_data)
 
+    def initiate_a_new_pathtrace(self,
+                                 controlPath=None,
+                                 destIP=None,
+                                 destPort=None,
+                                 inclusions=None,
+                                 periodicRefresh=None,
+                                 protocol=None,
+                                 sourceIP=None,
+                                 sourcePort=None,
+                                 headers=None,
+                                 payload=None,
+                                 active_validation=True,
+                                 **request_parameters):
+        """Initiates a new flow analysis with periodic refresh and stat
+        collection options. Returns a request id and a task id
+        to get results and follow progress.
 
-    # Initiate a new Pathtrace
-    def initiate_a_new_pathtrace(self, rq_controlPath = None, rq_destIP = None, rq_destPort = None, rq_inclusions = None, rq_periodicRefresh = None, rq_protocol = None, rq_sourceIP = None, rq_sourcePort = None, headers=None,payload=None,**request_parameters):
+        Args:
+            controlPath(boolean): FlowAnalysisRequest's controlPath.
+            destIP(string): FlowAnalysisRequest's destIP.
+            destPort(string): FlowAnalysisRequest's destPort.
+            inclusions(list): FlowAnalysisRequest's inclusions (list
+                of strings).
+            periodicRefresh(boolean): FlowAnalysisRequest's
+                periodicRefresh.
+            protocol(string): FlowAnalysisRequest's protocol.
+            sourceIP(string): FlowAnalysisRequest's sourceIP.
+            sourcePort(string): FlowAnalysisRequest's sourcePort.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_controlPath is not None: payload.update( { 'controlPath':  rq_controlPath })
-        if rq_destIP is not None: payload.update( { 'destIP':  rq_destIP })
-        if rq_destPort is not None: payload.update( { 'destPort':  rq_destPort })
-        if rq_inclusions is not None: payload.update( { 'inclusions':  rq_inclusions })
-        if rq_periodicRefresh is not None: payload.update( { 'periodicRefresh':  rq_periodicRefresh })
-        if rq_protocol is not None: payload.update( { 'protocol':  rq_protocol })
-        if rq_sourceIP is not None: payload.update( { 'sourceIP':  rq_sourceIP })
-        if rq_sourcePort is not None: payload.update( { 'sourcePort':  rq_sourcePort })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_a395fae644ca899c').validate(payload)
+        _payload = {
+            'controlPath':
+                controlPath,
+            'destIP':
+                destIP,
+            'destPort':
+                destPort,
+            'inclusions':
+                inclusions,
+            'periodicRefresh':
+                periodicRefresh,
+            'protocol':
+                protocol,
+            'sourceIP':
+                sourceIP,
+            'sourcePort':
+                sourcePort,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a395fae644ca899c').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/flow-analysis', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/flow-analysis')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_a395fae644ca899c', json_data)
 
+    def retrieves_previous_pathtrace(self,
+                                     flow_analysis_id,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
+        """Returns result of a previously requested flow analysis by its
+        Flow Analysis id.
 
-    # Retrieves previous Pathtrace
-    def retrieves_previous_pathtrace(self, path_param_flow_analysis_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_flow_analysis_id, basestring, may_be_none=False)
+        Args:
+            flow_analysis_id(basestring): Flow analysis request id.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(flow_analysis_id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'flowAnalysisId': path_param_flow_analysis_id,
+            'flowAnalysisId': flow_analysis_id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_7ab9a8bd4f3b86a4').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_7ab9a8bd4f3b86a4').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/flow-analysis/${flowAnalysisId}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_7ab9a8bd4f3b86a4', json_data)
-
-

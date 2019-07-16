@@ -31,20 +31,78 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorFba0D80747Eb82E8(object):
     """Update CLI credentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFba0D80747Eb82E8, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'enablePassword': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'password': {'type': 'string'}, 'username': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "comments": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "credentialType": {
+                "description":
+                 "",
+                "enum": [
+                "GLOBAL",
+                "APP"
+                ],
+                "type": "string"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "enablePassword": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceTenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceUuid": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "password": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "username": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -31,20 +31,106 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator1Da5Ebdd434AAcfe(object):
     """Update SNMPv3 credentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator1Da5Ebdd434AAcfe, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'authPassword': {'type': 'string'}, 'authType': {'type': 'string', 'enum': ['SHA', 'MD5']}, 'comments': {'type': 'string'}, 'credentialType': {'type': 'string', 'enum': ['GLOBAL', 'APP']}, 'description': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}, 'instanceUuid': {'type': 'string'}, 'privacyPassword': {'type': 'string'}, 'privacyType': {'type': 'string', 'enum': ['DES', 'AES128']}, 'snmpMode': {'type': 'string', 'enum': ['AUTHPRIV', 'AUTHNOPRIV', 'NOAUTHNOPRIV']}, 'username': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "authPassword": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "authType": {
+                "description":
+                 "",
+                "enum": [
+                "SHA",
+                "MD5"
+                ],
+                "type": "string"
+                },
+                "comments": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "credentialType": {
+                "description":
+                 "",
+                "enum": [
+                "GLOBAL",
+                "APP"
+                ],
+                "type": "string"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceTenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceUuid": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "privacyPassword": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "privacyType": {
+                "description":
+                 "",
+                "enum": [
+                "DES",
+                "AES128"
+                ],
+                "type": "string"
+                },
+                "snmpMode": {
+                "description":
+                 "",
+                "enum": [
+                "AUTHPRIV",
+                "AUTHNOPRIV",
+                "NOAUTHNOPRIV"
+                ],
+                "type": "string"
+                },
+                "username": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -31,20 +31,256 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator8Da0391947088A5A(object):
     """Update PnP global settings request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator8Da0391947088A5A, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'_id': {'type': 'string'}, 'aaaCredentials': {'type': 'object', 'properties': {'password': {'type': 'string'}, 'username': {'type': 'string'}}}, 'acceptEula': {'type': 'boolean'}, 'defaultProfile': {'type': 'object', 'properties': {'cert': {'type': 'string'}, 'fqdnAddresses': {'type': 'array', 'items': {'type': 'string'}}, 'ipAddresses': {'type': 'array', 'items': {'type': 'string'}}, 'port': {'type': 'number'}, 'proxy': {'type': 'boolean'}}}, 'savaMappingList': {'type': 'array', 'items': {'type': 'object', 'properties': {'autoSyncPeriod': {'type': 'number'}, 'ccoUser': {'type': 'string'}, 'expiry': {'type': 'number'}, 'lastSync': {'type': 'number'}, 'profile': {'type': 'object', 'properties': {'addressFqdn': {'type': 'string'}, 'addressIpV4': {'type': 'string'}, 'cert': {'type': 'string'}, 'makeDefault': {'type': 'boolean'}, 'name': {'type': 'string'}, 'port': {'type': 'number'}, 'profileId': {'type': 'string'}, 'proxy': {'type': 'boolean'}}}, 'smartAccountId': {'type': 'string'}, 'syncResult': {'type': 'object', 'properties': {'syncList': {'type': 'array', 'items': {'type': 'object', 'properties': {'deviceSnList': {'type': 'array', 'items': {'type': 'string'}}, 'syncType': {'type': 'string', 'enum': ['Add', 'Update', 'Delete', 'MismatchError']}}}}, 'syncMsg': {'type': 'string'}}}, 'syncResultStr': {'type': 'string'}, 'syncStartTime': {'type': 'number'}, 'syncStatus': {'type': 'string', 'enum': ['NOT_SYNCED', 'SYNCING', 'SUCCESS', 'FAILURE']}, 'tenantId': {'type': 'string'}, 'token': {'type': 'string'}, 'virtualAccountId': {'type': 'string'}}}}, 'taskTimeOuts': {'type': 'object', 'properties': {'configTimeOut': {'type': 'number'}, 'generalTimeOut': {'type': 'number'}, 'imageDownloadTimeOut': {'type': 'number'}}}, 'tenantId': {'type': 'string'}, 'version': {'type': 'number'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "_id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "aaaCredentials": {
+                "description":
+                 "",
+                "properties": {
+                "password": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "username": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "acceptEula": {
+                "type": "boolean"
+                },
+                "defaultProfile": {
+                "description":
+                 "",
+                "properties": {
+                "cert": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "fqdnAddresses": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "ipAddresses": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "port": {
+                "type": "number"
+                },
+                "proxy": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "savaMappingList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "autoSyncPeriod": {
+                "type": "number"
+                },
+                "ccoUser": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "expiry": {
+                "type": "number"
+                },
+                "lastSync": {
+                "type": "number"
+                },
+                "profile": {
+                "description":
+                 "",
+                "properties": {
+                "addressFqdn": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "addressIpV4": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "cert": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "makeDefault": {
+                "type": "boolean"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "port": {
+                "type": "number"
+                },
+                "profileId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "proxy": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "smartAccountId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "syncResult": {
+                "description":
+                 "",
+                "properties": {
+                "syncList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "deviceSnList": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "syncType": {
+                "description":
+                 "",
+                "enum": [
+                "Add",
+                "Update",
+                "Delete",
+                "MismatchError"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "syncMsg": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "syncResultStr": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "syncStartTime": {
+                "type": "number"
+                },
+                "syncStatus": {
+                "description":
+                 "",
+                "enum": [
+                "NOT_SYNCED",
+                "SYNCING",
+                "SUCCESS",
+                "FAILURE"
+                ],
+                "type": "string"
+                },
+                "tenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "token": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "virtualAccountId": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "taskTimeOuts": {
+                "description":
+                 "",
+                "properties": {
+                "configTimeOut": {
+                "type": "number"
+                },
+                "generalTimeOut": {
+                "type": "number"
+                },
+                "imageDownloadTimeOut": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "tenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "version": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

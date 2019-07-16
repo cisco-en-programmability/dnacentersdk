@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Get Interface details by device Id and interface name data model.
+"""DNA Center Get Interface details data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -31,20 +31,27 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
+
 class JSONSchemaValidator4Eb56A614Cc9A2D2(object):
-    """Get Interface details by device Id and interface name request schema definition."""
+    """Get Interface details request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator4Eb56A614Cc9A2D2, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'additionalProperties': False} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "additionalProperties": false,
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

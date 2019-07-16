@@ -31,20 +31,103 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator1399891C42A8Be64(object):
     """Create Tag request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator1399891C42A8Be64, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'systemTag': {'type': 'boolean'}, 'description': {'type': 'string'}, 'dynamicRules': {'type': 'array', 'items': {'type': 'object', 'properties': {'memberType': {'type': 'string'}, 'rules': {'type': 'object', 'properties': {'values': {'type': 'array', 'items': {'type': 'string'}}, 'items': {'type': 'array', 'items': {'type': 'string'}}, 'operation': {'type': 'string'}, 'name': {'type': 'string'}, 'value': {'type': 'string'}}}}}}, 'name': {'type': 'string'}, 'id': {'type': 'string'}, 'instanceTenantId': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "dynamicRules": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "memberType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "rules": {
+                "description":
+                 "",
+                "properties": {
+                "items": {
+                "description":
+                 "",
+                "items": {},
+                "type": "array"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "operation": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "value": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "values": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceTenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "systemTag": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

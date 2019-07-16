@@ -31,20 +31,91 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator8A96Fb954D09A349(object):
     """Create Enterprise SSID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator8A96Fb954D09A349, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'name': {'type': 'string', 'maxLength': 32}, 'securityLevel': {'type': 'string', 'enum': ['WPA2_ENTERPRISE', 'WPA2_PERSONAL', 'OPEN']}, 'passphrase': {'type': 'string', 'maxLength': 63, 'minLength': 8}, 'enableFastLane': {'type': 'boolean'}, 'enableMACFiltering': {'type': 'boolean'}, 'trafficType': {'type': 'string', 'enum': ['voicedata', 'data']}, 'radioPolicy': {'type': 'string', 'enum': ['Dual band operation (2.4GHz and 5GHz)', 'Dual band operation with band select', '5GHz only', '2.4GHz only']}, 'enableBroadcastSSID': {'type': 'boolean'}, 'fastTransition': {'type': 'string', 'enum': ['Adaptive', 'Enable', 'Disable']}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "enableBroadcastSSID": {
+                "type": "boolean"
+                },
+                "enableFastLane": {
+                "type": "boolean"
+                },
+                "enableMACFiltering": {
+                "type": "boolean"
+                },
+                "fastTransition": {
+                "description":
+                "Fast Transition",
+                "enum": [
+                "Adaptive",
+                "Enable",
+                "Disable"
+                ],
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Enter SSID Name",
+                "maxLength": 32,
+                "type": "string"
+                },
+                "passphrase": {
+                "description":
+                "Pass Phrase (Only applicable for SSID with
+                 PERSONAL security level)",
+                "maxLength": 63,
+                "minLength": 8,
+                "type": "string"
+                },
+                "radioPolicy": {
+                "description":
+                "Radio Policy",
+                "enum": [
+                "Dual band operation (2.4GHz and 5GHz)",
+                "Dual band operation with band select",
+                "5GHz only",
+                "2.4GHz only"
+                ],
+                "type": "string"
+                },
+                "securityLevel": {
+                "description":
+                "Security Level",
+                "enum": [
+                "WPA2_ENTERPRISE",
+                "WPA2_PERSONAL",
+                "OPEN"
+                ],
+                "type": "string"
+                },
+                "trafficType": {
+                "description":
+                "Traffic Type",
+                "enum": [
+                "voicedata",
+                "data"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class Pnp( object ):
+
+class Pnp(object):
     """DNA Center PnP API.
 
-    Wraps the DNA Center PnP API and exposes the API as native Python
+    Wraps the DNA Center PnP
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,1197 +71,2746 @@ class Pnp( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def get_sync_result_for_virtual_account(self,
+                                            domain,
+                                            name,
+                                            headers=None,
+                                            payload=None,
+                                            active_validation=True,
+                                            **request_parameters):
+        """Returns the summary of devices synced from the given smart
+        account & virtual account with PnP.
 
-    # Get Sync Result for Virtual Account
-    def get_sync_result_for_virtual_account(self, path_param_domain, path_param_name, headers=None,payload=None,**request_parameters):
-        check_type( path_param_domain, basestring, may_be_none=False)
-        check_type( path_param_name, basestring, may_be_none=False)
+        Args:
+            domain(basestring): Smart Account Domain.
+            name(basestring): Virtual Account Name.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(domain, basestring,
+                   may_be_none=False)
+        check_type(name, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'domain': path_param_domain,
-            'name': path_param_name,
+            'domain': domain,
+            'name': name,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_0a9c988445cb91c8').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_0a9c988445cb91c8').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/sacct/${domain}/vacct/${name}/sync-result', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/sacct/${domain}/vacct/${name}/sync-result', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-'
+                 + 'device/sacct/${domain}/vacct/${name}/sync-result')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_0a9c988445cb91c8', json_data)
 
+    def import_devices_in_bulk(self,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """Add devices to PnP in bulk.
 
-    # Import Devices in bulk
-    def import_devices_in_bulk(self, headers=None,payload=None,**request_parameters):
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or []
-
-        self._request_validator('jsd_21a6db2540298f55').validate(payload)
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_21a6db2540298f55').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/import', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/import', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/import')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_21a6db2540298f55', json_data)
 
+    def update_workflow(self,
+                        id,
+                        _id=None,
+                        addToInventory=None,
+                        addedOn=None,
+                        configId=None,
+                        currTaskIdx=None,
+                        description=None,
+                        endTime=None,
+                        execTime=None,
+                        imageId=None,
+                        instanceType=None,
+                        lastupdateOn=None,
+                        name=None,
+                        startTime=None,
+                        state=None,
+                        tasks=None,
+                        tenantId=None,
+                        type=None,
+                        useState=None,
+                        version=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
+        """Updates an existing workflow.
 
-    # Update Workflow
-    def update_workflow(self, path_param_id, rq__id = None, rq_addToInventory = None, rq_addedOn = None, rq_configId = None, rq_currTaskIdx = None, rq_description = None, rq_endTime = None, rq_execTime = None, rq_imageId = None, rq_instanceType = None, rq_lastupdateOn = None, rq_name = None, rq_startTime = None, rq_state = None, rq_tasks = None, rq_tenantId = None, rq_type = None, rq_useState = None, rq_version = None, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            _id(string): Workflow's _id.
+            addToInventory(boolean): Workflow's addToInventory.
+            addedOn(number): Workflow's addedOn.
+            configId(string): Workflow's configId.
+            currTaskIdx(number): Workflow's currTaskIdx.
+            description(string): Workflow's description.
+            endTime(number): Workflow's endTime.
+            execTime(number): Workflow's execTime.
+            imageId(string): Workflow's imageId.
+            instanceType(string): Workflow's instanceType. Available
+                values are 'SystemWorkflow',
+                'UserWorkflow' and
+                'SystemResetWorkflow'.
+            lastupdateOn(number): Workflow's lastupdateOn.
+            name(string): Workflow's name.
+            startTime(number): Workflow's startTime.
+            state(string): Workflow's state.
+            tasks(list): Workflow's tasks (list of objects).
+            tenantId(string): Workflow's tenantId.
+            type(string): Workflow's type.
+            useState(string): Workflow's useState.
+            version(number): Workflow's version.
+            id(basestring): id path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq__id is not None: payload.update( { '_id':  rq__id })
-        if rq_addToInventory is not None: payload.update( { 'addToInventory':  rq_addToInventory })
-        if rq_addedOn is not None: payload.update( { 'addedOn':  rq_addedOn })
-        if rq_configId is not None: payload.update( { 'configId':  rq_configId })
-        if rq_currTaskIdx is not None: payload.update( { 'currTaskIdx':  rq_currTaskIdx })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_endTime is not None: payload.update( { 'endTime':  rq_endTime })
-        if rq_execTime is not None: payload.update( { 'execTime':  rq_execTime })
-        if rq_imageId is not None: payload.update( { 'imageId':  rq_imageId })
-        if rq_instanceType is not None: payload.update( { 'instanceType':  rq_instanceType })
-        if rq_lastupdateOn is not None: payload.update( { 'lastupdateOn':  rq_lastupdateOn })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_startTime is not None: payload.update( { 'startTime':  rq_startTime })
-        if rq_state is not None: payload.update( { 'state':  rq_state })
-        if rq_tasks is not None: payload.update( { 'tasks':  rq_tasks })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_type is not None: payload.update( { 'type':  rq_type })
-        if rq_useState is not None: payload.update( { 'useState':  rq_useState })
-        if rq_version is not None: payload.update( { 'version':  rq_version })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_3086c9624f498b85').validate(payload)
+        _payload = {
+            '_id':
+                _id,
+            'addToInventory':
+                addToInventory,
+            'addedOn':
+                addedOn,
+            'configId':
+                configId,
+            'currTaskIdx':
+                currTaskIdx,
+            'description':
+                description,
+            'endTime':
+                endTime,
+            'execTime':
+                execTime,
+            'imageId':
+                imageId,
+            'instanceType':
+                instanceType,
+            'lastupdateOn':
+                lastupdateOn,
+            'name':
+                name,
+            'startTime':
+                startTime,
+            'state':
+                state,
+            'tasks':
+                tasks,
+            'tenantId':
+                tenantId,
+            'type':
+                type,
+            'useState':
+                useState,
+            'version':
+                version,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_3086c9624f498b85').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_3086c9624f498b85', json_data)
 
+    def un_claim_device(self,
+                        deviceIdList=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
+        """Un-Claims one of more devices with specified workflow.
 
-    # Un-Claim Device
-    def un_claim_device(self, rq_deviceIdList = None, headers=None,payload=None,**request_parameters):
+        Args:
+            deviceIdList(list): UnclaimRequest's deviceIdList (list
+                of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_deviceIdList is not None: payload.update( { 'deviceIdList':  rq_deviceIdList })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_0b836b7b4b6a9fd5').validate(payload)
+        _payload = {
+            'deviceIdList':
+                deviceIdList,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_0b836b7b4b6a9fd5').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/unclaim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/unclaim', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/unclaim')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_0b836b7b4b6a9fd5', json_data)
 
+    def add_virtual_account(self,
+                            autoSyncPeriod=None,
+                            ccoUser=None,
+                            expiry=None,
+                            lastSync=None,
+                            profile=None,
+                            smartAccountId=None,
+                            syncResult=None,
+                            syncResultStr=None,
+                            syncStartTime=None,
+                            syncStatus=None,
+                            tenantId=None,
+                            token=None,
+                            virtualAccountId=None,
+                            headers=None,
+                            payload=None,
+                            active_validation=True,
+                            **request_parameters):
+        """Registers a Smart Account, Virtual Account and the relevant
+        server profile info with the PnP System & database. The
+        devices present in the registered virtual account are
+        synced with the PnP database as well. The response
+        payload returns the new profile.
 
-    # Add Virtual Account
-    def add_virtual_account(self, rq_autoSyncPeriod = None, rq_ccoUser = None, rq_expiry = None, rq_lastSync = None, rq_profile = None, rq_smartAccountId = None, rq_syncResult = None, rq_syncResultStr = None, rq_syncStartTime = None, rq_syncStatus = None, rq_tenantId = None, rq_token = None, rq_virtualAccountId = None, headers=None,payload=None,**request_parameters):
+        Args:
+            autoSyncPeriod(number): SAVAMapping's autoSyncPeriod.
+            ccoUser(string): SAVAMapping's ccoUser.
+            expiry(number): SAVAMapping's expiry.
+            lastSync(number): SAVAMapping's lastSync.
+            profile(object): SAVAMapping's profile.
+            smartAccountId(string): SAVAMapping's smartAccountId.
+            syncResult(object): SAVAMapping's syncResult.
+            syncResultStr(string): SAVAMapping's syncResultStr.
+            syncStartTime(number): SAVAMapping's syncStartTime.
+            syncStatus(string): SAVAMapping's syncStatus. Available
+                values are 'NOT_SYNCED', 'SYNCING',
+                'SUCCESS' and 'FAILURE'.
+            tenantId(string): SAVAMapping's tenantId.
+            token(string): SAVAMapping's token.
+            virtualAccountId(string): SAVAMapping's
+                virtualAccountId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_autoSyncPeriod is not None: payload.update( { 'autoSyncPeriod':  rq_autoSyncPeriod })
-        if rq_ccoUser is not None: payload.update( { 'ccoUser':  rq_ccoUser })
-        if rq_expiry is not None: payload.update( { 'expiry':  rq_expiry })
-        if rq_lastSync is not None: payload.update( { 'lastSync':  rq_lastSync })
-        if rq_profile is not None: payload.update( { 'profile':  rq_profile })
-        if rq_smartAccountId is not None: payload.update( { 'smartAccountId':  rq_smartAccountId })
-        if rq_syncResult is not None: payload.update( { 'syncResult':  rq_syncResult })
-        if rq_syncResultStr is not None: payload.update( { 'syncResultStr':  rq_syncResultStr })
-        if rq_syncStartTime is not None: payload.update( { 'syncStartTime':  rq_syncStartTime })
-        if rq_syncStatus is not None: payload.update( { 'syncStatus':  rq_syncStatus })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_token is not None: payload.update( { 'token':  rq_token })
-        if rq_virtualAccountId is not None: payload.update( { 'virtualAccountId':  rq_virtualAccountId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_1e962af345b8b59f').validate(payload)
+        _payload = {
+            'autoSyncPeriod':
+                autoSyncPeriod,
+            'ccoUser':
+                ccoUser,
+            'expiry':
+                expiry,
+            'lastSync':
+                lastSync,
+            'profile':
+                profile,
+            'smartAccountId':
+                smartAccountId,
+            'syncResult':
+                syncResult,
+            'syncResultStr':
+                syncResultStr,
+            'syncStartTime':
+                syncStartTime,
+            'syncStatus':
+                syncStatus,
+            'tenantId':
+                tenantId,
+            'token':
+                token,
+            'virtualAccountId':
+                virtualAccountId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_1e962af345b8b59f').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/savacct')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_1e962af345b8b59f', json_data)
 
+    def update_device(self,
+                      id,
+                      _id=None,
+                      deviceInfo=None,
+                      runSummaryList=None,
+                      systemResetWorkflow=None,
+                      systemWorkflow=None,
+                      tenantId=None,
+                      version=None,
+                      workflow=None,
+                      workflowParameters=None,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
+        """Updates device details specified by device id in PnP database.
 
-    # Update Device
-    def update_device(self, path_param_id, rq__id = None, rq_deviceInfo = None, rq_runSummaryList = None, rq_systemResetWorkflow = None, rq_systemWorkflow = None, rq_tenantId = None, rq_version = None, rq_workflow = None, rq_workflowParameters = None, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            _id(string): Device's _id.
+            deviceInfo(object): Device's deviceInfo.
+            runSummaryList(list): Device's runSummaryList (list of
+                objects).
+            systemResetWorkflow(object): Device's
+                systemResetWorkflow.
+            systemWorkflow(object): Device's systemWorkflow.
+            tenantId(string): Device's tenantId.
+            version(number): Device's version.
+            workflow(object): Device's workflow.
+            workflowParameters(object): Device's workflowParameters.
+            id(basestring): id path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq__id is not None: payload.update( { '_id':  rq__id })
-        if rq_deviceInfo is not None: payload.update( { 'deviceInfo':  rq_deviceInfo })
-        if rq_runSummaryList is not None: payload.update( { 'runSummaryList':  rq_runSummaryList })
-        if rq_systemResetWorkflow is not None: payload.update( { 'systemResetWorkflow':  rq_systemResetWorkflow })
-        if rq_systemWorkflow is not None: payload.update( { 'systemWorkflow':  rq_systemWorkflow })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_version is not None: payload.update( { 'version':  rq_version })
-        if rq_workflow is not None: payload.update( { 'workflow':  rq_workflow })
-        if rq_workflowParameters is not None: payload.update( { 'workflowParameters':  rq_workflowParameters })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_09b0f9ce4239ae10').validate(payload)
+        _payload = {
+            '_id':
+                _id,
+            'deviceInfo':
+                deviceInfo,
+            'runSummaryList':
+                runSummaryList,
+            'systemResetWorkflow':
+                systemResetWorkflow,
+            'systemWorkflow':
+                systemWorkflow,
+            'tenantId':
+                tenantId,
+            'version':
+                version,
+            'workflow':
+                workflow,
+            'workflowParameters':
+                workflowParameters,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_09b0f9ce4239ae10').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_09b0f9ce4239ae10', json_data)
 
+    def claim_a_device_to_a_site(self,
+                                 deviceId=None,
+                                 siteId=None,
+                                 type=None,
+                                 headers=None,
+                                 payload=None,
+                                 active_validation=True,
+                                 **request_parameters):
+        """Claim a device based on DNA-C Site based design process.
+        Different parameters are required for different device
+        platforms.
 
-    # Claim a Device to a Site
-    def claim_a_device_to_a_site(self, rq_deviceId = None, rq_siteId = None, rq_type = None, headers=None,payload=None,**request_parameters):
+        Args:
+            deviceId(string): SiteProvisionRequest's deviceId.
+            siteId(string): SiteProvisionRequest's siteId.
+            type(string): SiteProvisionRequest's type. Available
+                values are 'Default', 'AccessPoint',
+                'StackSwitch', 'Sensor' and
+                'MobilityExpress'.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_deviceId is not None: payload.update( { 'deviceId':  rq_deviceId })
-        if rq_siteId is not None: payload.update( { 'siteId':  rq_siteId })
-        if rq_type is not None: payload.update( { 'type':  rq_type })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_5889fb844939a13b').validate(payload)
+        _payload = {
+            'deviceId':
+                deviceId,
+            'siteId':
+                siteId,
+            'type':
+                type,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_5889fb844939a13b').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-claim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-claim', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/site-claim')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_5889fb844939a13b', json_data)
 
+    def deregister_virtual_account(self,
+                                   domain,
+                                   name,
+                                   headers=None,
+                                   payload=None,
+                                   active_validation=True,
+                                   **request_parameters):
+        """Deregisters the specified smart account & virtual account info
+        and the associated device information from the PnP
+        System & database. The devices associated with the
+        deregistered virtual account are removed from the PnP
+        database as well. The response payload contains the
+        deregistered smart & virtual account information.
 
-    # Deregister Virtual Account
-    def deregister_virtual_account(self, param_domain, param_name, headers=None,payload=None,**request_parameters):
-        check_type( param_domain, basestring, may_be_none=False)
-        check_type( param_name, basestring, may_be_none=False)
+        Args:
+            domain(basestring): Smart Account Domain.
+            name(basestring): Virtual Account Name.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(domain, basestring,
+                   may_be_none=False)
+        check_type(name, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_domain is not None: params.update( { 'domain': param_domain })
-        if param_name is not None: params.update( { 'name': param_name })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'domain':
+                domain,
+            'name':
+                name,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_2499e9ad42e8ae5b').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_2499e9ad42e8ae5b').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v1/onboarding/pnp-settings/vacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v1/onboarding/pnp-settings/vacct', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/vacct')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload, headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload)
 
         return self._object_factory('bpm_2499e9ad42e8ae5b', json_data)
 
+    def get_smart_account_list(self,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """Returns the list of Smart Account domains.
 
-    # Get Smart Account List
-    def get_smart_account_list(self, headers=None,payload=None,**request_parameters):
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_3cb24acb486b89d2').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_3cb24acb486b89d2').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/sacct')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_3cb24acb486b89d2', json_data)
 
+    def get_workflow_by_id(self,
+                           id,
+                           headers=None,
+                           payload=None,
+                           active_validation=True,
+                           **request_parameters):
+        """Returns a workflow specified by id.
 
-    # Get Workflow by Id
-    def get_workflow_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): id path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_80acb88e4ac9ac6d').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_80acb88e4ac9ac6d').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_80acb88e4ac9ac6d', json_data)
 
+    def update_pnp_server_profile(self,
+                                  autoSyncPeriod=None,
+                                  ccoUser=None,
+                                  expiry=None,
+                                  lastSync=None,
+                                  profile=None,
+                                  smartAccountId=None,
+                                  syncResult=None,
+                                  syncResultStr=None,
+                                  syncStartTime=None,
+                                  syncStatus=None,
+                                  tenantId=None,
+                                  token=None,
+                                  virtualAccountId=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
+        """Updates the PnP Server profile in a registered Virtual Account
+        in the PnP database. The response payload returns the
+        updated smart & virtual account info.
 
-    # Update PnP Server Profile
-    def update_pnp_server_profile(self, rq_autoSyncPeriod = None, rq_ccoUser = None, rq_expiry = None, rq_lastSync = None, rq_profile = None, rq_smartAccountId = None, rq_syncResult = None, rq_syncResultStr = None, rq_syncStartTime = None, rq_syncStatus = None, rq_tenantId = None, rq_token = None, rq_virtualAccountId = None, headers=None,payload=None,**request_parameters):
+        Args:
+            autoSyncPeriod(number): SAVAMapping's autoSyncPeriod.
+            ccoUser(string): SAVAMapping's ccoUser.
+            expiry(number): SAVAMapping's expiry.
+            lastSync(number): SAVAMapping's lastSync.
+            profile(object): SAVAMapping's profile.
+            smartAccountId(string): SAVAMapping's smartAccountId.
+            syncResult(object): SAVAMapping's syncResult.
+            syncResultStr(string): SAVAMapping's syncResultStr.
+            syncStartTime(number): SAVAMapping's syncStartTime.
+            syncStatus(string): SAVAMapping's syncStatus. Available
+                values are 'NOT_SYNCED', 'SYNCING',
+                'SUCCESS' and 'FAILURE'.
+            tenantId(string): SAVAMapping's tenantId.
+            token(string): SAVAMapping's token.
+            virtualAccountId(string): SAVAMapping's
+                virtualAccountId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_autoSyncPeriod is not None: payload.update( { 'autoSyncPeriod':  rq_autoSyncPeriod })
-        if rq_ccoUser is not None: payload.update( { 'ccoUser':  rq_ccoUser })
-        if rq_expiry is not None: payload.update( { 'expiry':  rq_expiry })
-        if rq_lastSync is not None: payload.update( { 'lastSync':  rq_lastSync })
-        if rq_profile is not None: payload.update( { 'profile':  rq_profile })
-        if rq_smartAccountId is not None: payload.update( { 'smartAccountId':  rq_smartAccountId })
-        if rq_syncResult is not None: payload.update( { 'syncResult':  rq_syncResult })
-        if rq_syncResultStr is not None: payload.update( { 'syncResultStr':  rq_syncResultStr })
-        if rq_syncStartTime is not None: payload.update( { 'syncStartTime':  rq_syncStartTime })
-        if rq_syncStatus is not None: payload.update( { 'syncStatus':  rq_syncStatus })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_token is not None: payload.update( { 'token':  rq_token })
-        if rq_virtualAccountId is not None: payload.update( { 'virtualAccountId':  rq_virtualAccountId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_6f9819e84178870c').validate(payload)
+        _payload = {
+            'autoSyncPeriod':
+                autoSyncPeriod,
+            'ccoUser':
+                ccoUser,
+            'expiry':
+                expiry,
+            'lastSync':
+                lastSync,
+            'profile':
+                profile,
+            'smartAccountId':
+                smartAccountId,
+            'syncResult':
+                syncResult,
+            'syncResultStr':
+                syncResultStr,
+            'syncStartTime':
+                syncStartTime,
+            'syncStatus':
+                syncStatus,
+            'tenantId':
+                tenantId,
+            'token':
+                token,
+            'virtualAccountId':
+                virtualAccountId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_6f9819e84178870c').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings/savacct', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/savacct')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_6f9819e84178870c', json_data)
 
+    def get_workflow_count(self,
+                           name=None,
+                           headers=None,
+                           payload=None,
+                           active_validation=True,
+                           **request_parameters):
+        """Returns the workflow count.
 
-    # Get Workflow Count
-    def get_workflow_count(self, param_name = None, headers=None,payload=None,**request_parameters):
-        check_type( param_name, basestring)
+        Args:
+            name(basestring): Workflow Name.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(name, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_name is not None: params.update( { 'name': param_name })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'name':
+                name,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_7989f86846faaf99').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_7989f86846faaf99').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow/count', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_7989f86846faaf99', json_data)
 
+    def update_pnp_global_settings(self,
+                                   _id=None,
+                                   aaaCredentials=None,
+                                   acceptEula=None,
+                                   defaultProfile=None,
+                                   savaMappingList=None,
+                                   taskTimeOuts=None,
+                                   tenantId=None,
+                                   version=None,
+                                   headers=None,
+                                   payload=None,
+                                   active_validation=True,
+                                   **request_parameters):
+        """Updates the user's list of global PnP settings.
 
-    # Update PnP global settings
-    def update_pnp_global_settings(self, rq__id = None, rq_aaaCredentials = None, rq_acceptEula = None, rq_defaultProfile = None, rq_savaMappingList = None, rq_taskTimeOuts = None, rq_tenantId = None, rq_version = None, headers=None,payload=None,**request_parameters):
+        Args:
+            _id(string): Settings's _id.
+            aaaCredentials(object): Settings's aaaCredentials.
+            acceptEula(boolean): Settings's acceptEula.
+            defaultProfile(object): Settings's defaultProfile.
+            savaMappingList(list): Settings's savaMappingList (list
+                of objects).
+            taskTimeOuts(object): Settings's taskTimeOuts.
+            tenantId(string): Settings's tenantId.
+            version(number): Settings's version.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq__id is not None: payload.update( { '_id':  rq__id })
-        if rq_aaaCredentials is not None: payload.update( { 'aaaCredentials':  rq_aaaCredentials })
-        if rq_acceptEula is not None: payload.update( { 'acceptEula':  rq_acceptEula })
-        if rq_defaultProfile is not None: payload.update( { 'defaultProfile':  rq_defaultProfile })
-        if rq_savaMappingList is not None: payload.update( { 'savaMappingList':  rq_savaMappingList })
-        if rq_taskTimeOuts is not None: payload.update( { 'taskTimeOuts':  rq_taskTimeOuts })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_version is not None: payload.update( { 'version':  rq_version })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_8da0391947088a5a').validate(payload)
+        _payload = {
+            '_id':
+                _id,
+            'aaaCredentials':
+                aaaCredentials,
+            'acceptEula':
+                acceptEula,
+            'defaultProfile':
+                defaultProfile,
+            'savaMappingList':
+                savaMappingList,
+            'taskTimeOuts':
+                taskTimeOuts,
+            'tenantId':
+                tenantId,
+            'version':
+                version,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_8da0391947088a5a').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-settings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_8da0391947088a5a', json_data)
 
+    def get_pnp_global_settings(self,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
+        """Returns global PnP settings of the user.
 
-    # Get PnP global settings
-    def get_pnp_global_settings(self, headers=None,payload=None,**request_parameters):
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_7e92f9eb46db8320').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_7e92f9eb46db8320').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-settings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_7e92f9eb46db8320', json_data)
 
+    def reset_device(self,
+                     deviceResetList=None,
+                     projectId=None,
+                     workflowId=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
+        """Recovers a device from a Workflow Execution Error state.
 
-    # Reset Device
-    def reset_device(self, rq_deviceResetList = None, rq_projectId = None, rq_workflowId = None, headers=None,payload=None,**request_parameters):
+        Args:
+            deviceResetList(list): ResetRequest's deviceResetList
+                (list of objects).
+            projectId(string): ResetRequest's projectId.
+            workflowId(string): ResetRequest's workflowId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_deviceResetList is not None: payload.update( { 'deviceResetList':  rq_deviceResetList })
-        if rq_projectId is not None: payload.update( { 'projectId':  rq_projectId })
-        if rq_workflowId is not None: payload.update( { 'workflowId':  rq_workflowId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_9e857b5a4a0bbcdb').validate(payload)
+        _payload = {
+            'deviceResetList':
+                deviceResetList,
+            'projectId':
+                projectId,
+            'workflowId':
+                workflowId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_9e857b5a4a0bbcdb').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/reset', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/reset', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/reset')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_9e857b5a4a0bbcdb', json_data)
 
+    def sync_virtual_account_devices(self,
+                                     autoSyncPeriod=None,
+                                     ccoUser=None,
+                                     expiry=None,
+                                     lastSync=None,
+                                     profile=None,
+                                     smartAccountId=None,
+                                     syncResult=None,
+                                     syncResultStr=None,
+                                     syncStartTime=None,
+                                     syncStatus=None,
+                                     tenantId=None,
+                                     token=None,
+                                     virtualAccountId=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
+        """Synchronizes the device info from the given smart account &
+        virtual account with the PnP database. The response
+        payload returns a list of synced devices.
 
-    # Sync Virtual Account Devices
-    def sync_virtual_account_devices(self, rq_autoSyncPeriod = None, rq_ccoUser = None, rq_expiry = None, rq_lastSync = None, rq_profile = None, rq_smartAccountId = None, rq_syncResult = None, rq_syncResultStr = None, rq_syncStartTime = None, rq_syncStatus = None, rq_tenantId = None, rq_token = None, rq_virtualAccountId = None, headers=None,payload=None,**request_parameters):
+        Args:
+            autoSyncPeriod(number): SAVAMapping's autoSyncPeriod.
+            ccoUser(string): SAVAMapping's ccoUser.
+            expiry(number): SAVAMapping's expiry.
+            lastSync(number): SAVAMapping's lastSync.
+            profile(object): SAVAMapping's profile.
+            smartAccountId(string): SAVAMapping's smartAccountId.
+            syncResult(object): SAVAMapping's syncResult.
+            syncResultStr(string): SAVAMapping's syncResultStr.
+            syncStartTime(number): SAVAMapping's syncStartTime.
+            syncStatus(string): SAVAMapping's syncStatus. Available
+                values are 'NOT_SYNCED', 'SYNCING',
+                'SUCCESS' and 'FAILURE'.
+            tenantId(string): SAVAMapping's tenantId.
+            token(string): SAVAMapping's token.
+            virtualAccountId(string): SAVAMapping's
+                virtualAccountId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_autoSyncPeriod is not None: payload.update( { 'autoSyncPeriod':  rq_autoSyncPeriod })
-        if rq_ccoUser is not None: payload.update( { 'ccoUser':  rq_ccoUser })
-        if rq_expiry is not None: payload.update( { 'expiry':  rq_expiry })
-        if rq_lastSync is not None: payload.update( { 'lastSync':  rq_lastSync })
-        if rq_profile is not None: payload.update( { 'profile':  rq_profile })
-        if rq_smartAccountId is not None: payload.update( { 'smartAccountId':  rq_smartAccountId })
-        if rq_syncResult is not None: payload.update( { 'syncResult':  rq_syncResult })
-        if rq_syncResultStr is not None: payload.update( { 'syncResultStr':  rq_syncResultStr })
-        if rq_syncStartTime is not None: payload.update( { 'syncStartTime':  rq_syncStartTime })
-        if rq_syncStatus is not None: payload.update( { 'syncStatus':  rq_syncStatus })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_token is not None: payload.update( { 'token':  rq_token })
-        if rq_virtualAccountId is not None: payload.update( { 'virtualAccountId':  rq_virtualAccountId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_a4b6c87a4ffb9efa').validate(payload)
+        _payload = {
+            'autoSyncPeriod':
+                autoSyncPeriod,
+            'ccoUser':
+                ccoUser,
+            'expiry':
+                expiry,
+            'lastSync':
+                lastSync,
+            'profile':
+                profile,
+            'smartAccountId':
+                smartAccountId,
+            'syncResult':
+                syncResult,
+            'syncResultStr':
+                syncResultStr,
+            'syncStartTime':
+                syncStartTime,
+            'syncStatus':
+                syncStatus,
+            'tenantId':
+                tenantId,
+            'token':
+                token,
+            'virtualAccountId':
+                virtualAccountId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a4b6c87a4ffb9efa').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/vacct-sync', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/vacct-sync', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/vacct-sync')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_a4b6c87a4ffb9efa', json_data)
 
+    def get_workflows(self,
+                      limit=None,
+                      name=None,
+                      offset=None,
+                      sort=None,
+                      sort_order=None,
+                      type=None,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
+        """Returns the list of workflows based on filter criteria. If a
+        limit is not specified, it will default to return 50
+        workflows. Pagination and sorting are also supported by
+        this endpoint.
 
-    # Get Workflows
-    def get_workflows(self, param_limit = None, param_name = None, param_offset = None, param_sort = None, param_sort_order = None, param_type = None, headers=None,payload=None,**request_parameters):
-        check_type( param_limit, int)
-        check_type( param_offset, int)
-        check_type( param_sort, basestring)
-        check_type( param_sort_order, basestring)
-        check_type( param_type, basestring)
-        check_type( param_name, basestring)
+        Args:
+            limit(int): Limits number of results.
+            offset(int): Index of first result.
+            sort(basestring): Comma seperated lost of fields to sort
+                on.
+            sort_order(basestring): Sort Order Ascending (asc) or
+                Descending (des).
+            type(basestring): Workflow Type.
+            name(basestring): Workflow Name.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(sort, basestring)
+        check_type(sort_order, basestring)
+        check_type(type, basestring)
+        check_type(name, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_sort is not None: params.update( { 'sort': param_sort })
-        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
-        if param_type is not None: params.update( { 'type': param_type })
-        if param_name is not None: params.update( { 'name': param_name })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'sort':
+                sort,
+            'sortOrder':
+                sort_order,
+            'type':
+                type,
+            'name':
+                name,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_aeb4dad04a99bbe3').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_aeb4dad04a99bbe3').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_aeb4dad04a99bbe3', json_data)
 
+    def delete_workflow_by_id(self,
+                              id,
+                              headers=None,
+                              payload=None,
+                              active_validation=True,
+                              **request_parameters):
+        """Deletes a workflow specified by id.
 
-    # Delete Workflow By Id
-    def delete_workflow_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): id path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_af8d7b0e470b8ae2').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_af8d7b0e470b8ae2').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v1/onboarding/pnp-workflow/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload, headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload)
 
         return self._object_factory('bpm_af8d7b0e470b8ae2', json_data)
 
+    def get_device_by_id(self,
+                         id,
+                         headers=None,
+                         payload=None,
+                         active_validation=True,
+                         **request_parameters):
+        """Returns device details specified by device id.
 
-    # Get Device by Id
-    def get_device_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): id path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_bab6c9e5440885cc').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_bab6c9e5440885cc').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_bab6c9e5440885cc', json_data)
 
+    def get_virtual_account_list(self,
+                                 domain,
+                                 headers=None,
+                                 payload=None,
+                                 active_validation=True,
+                                 **request_parameters):
+        """Returns list of virtual accounts associated with the specified
+        smart account.
 
-    # Get Virtual Account List
-    def get_virtual_account_list(self, path_param_domain, headers=None,payload=None,**request_parameters):
-        check_type( path_param_domain, basestring, may_be_none=False)
+        Args:
+            domain(basestring): Smart Account Domain.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(domain, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'domain': path_param_domain,
+            'domain': domain,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_70a479a6462a9496').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_70a479a6462a9496').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct/${domain}/vacct', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-settings/sacct/${domain}/vacct', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-'
+                 + 'settings/sacct/${domain}/vacct')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_70a479a6462a9496', json_data)
 
+    def preview_config(self,
+                       deviceId=None,
+                       siteId=None,
+                       type=None,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
+        """Triggers a preview for site-based Day 0 Configuration.
 
-    # Preview Config
-    def preview_config(self, rq_deviceId = None, rq_siteId = None, rq_type = None, headers=None,payload=None,**request_parameters):
+        Args:
+            deviceId(string): SiteProvisionRequest's deviceId.
+            siteId(string): SiteProvisionRequest's siteId.
+            type(string): SiteProvisionRequest's type. Available
+                values are 'Default', 'AccessPoint',
+                'StackSwitch', 'Sensor' and
+                'MobilityExpress'.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_deviceId is not None: payload.update( { 'deviceId':  rq_deviceId })
-        if rq_siteId is not None: payload.update( { 'siteId':  rq_siteId })
-        if rq_type is not None: payload.update( { 'type':  rq_type })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_cf9418234d9ab37e').validate(payload)
+        _payload = {
+            'deviceId':
+                deviceId,
+            'siteId':
+                siteId,
+            'type':
+                type,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_cf9418234d9ab37e').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-config-preview', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/site-config-preview', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/site-config-'
+                 + 'preview')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_cf9418234d9ab37e', json_data)
 
+    def claim_device(self,
+                     configFileUrl=None,
+                     configId=None,
+                     deviceClaimList=None,
+                     fileServiceId=None,
+                     imageId=None,
+                     imageUrl=None,
+                     populateInventory=None,
+                     projectId=None,
+                     workflowId=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
+        """Claims one of more devices with specified workflow.
 
-    # Claim Device
-    def claim_device(self, rq_configFileUrl = None, rq_configId = None, rq_deviceClaimList = None, rq_fileServiceId = None, rq_imageId = None, rq_imageUrl = None, rq_populateInventory = None, rq_projectId = None, rq_workflowId = None, headers=None,payload=None,**request_parameters):
+        Args:
+            configFileUrl(string): ClaimDeviceRequest's
+                configFileUrl.
+            configId(string): ClaimDeviceRequest's configId.
+            deviceClaimList(list): ClaimDeviceRequest's
+                deviceClaimList (list of objects).
+            fileServiceId(string): ClaimDeviceRequest's
+                fileServiceId.
+            imageId(string): ClaimDeviceRequest's imageId.
+            imageUrl(string): ClaimDeviceRequest's imageUrl.
+            populateInventory(boolean): ClaimDeviceRequest's
+                populateInventory.
+            projectId(string): ClaimDeviceRequest's projectId.
+            workflowId(string): ClaimDeviceRequest's workflowId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_configFileUrl is not None: payload.update( { 'configFileUrl':  rq_configFileUrl })
-        if rq_configId is not None: payload.update( { 'configId':  rq_configId })
-        if rq_deviceClaimList is not None: payload.update( { 'deviceClaimList':  rq_deviceClaimList })
-        if rq_fileServiceId is not None: payload.update( { 'fileServiceId':  rq_fileServiceId })
-        if rq_imageId is not None: payload.update( { 'imageId':  rq_imageId })
-        if rq_imageUrl is not None: payload.update( { 'imageUrl':  rq_imageUrl })
-        if rq_populateInventory is not None: payload.update( { 'populateInventory':  rq_populateInventory })
-        if rq_projectId is not None: payload.update( { 'projectId':  rq_projectId })
-        if rq_workflowId is not None: payload.update( { 'workflowId':  rq_workflowId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_d8a619974a8a8c48').validate(payload)
+        _payload = {
+            'configFileUrl':
+                configFileUrl,
+            'configId':
+                configId,
+            'deviceClaimList':
+                deviceClaimList,
+            'fileServiceId':
+                fileServiceId,
+            'imageId':
+                imageId,
+            'imageUrl':
+                imageUrl,
+            'populateInventory':
+                populateInventory,
+            'projectId':
+                projectId,
+            'workflowId':
+                workflowId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d8a619974a8a8c48').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/claim', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device/claim', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/claim')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_d8a619974a8a8c48', json_data)
 
+    def get_device_list(self,
+                        cm_state=None,
+                        last_contact=None,
+                        limit=None,
+                        name=None,
+                        offset=None,
+                        onb_state=None,
+                        pid=None,
+                        project_id=None,
+                        project_name=None,
+                        serial_number=None,
+                        smart_account_id=None,
+                        sort=None,
+                        sort_order=None,
+                        source=None,
+                        state=None,
+                        virtual_account_id=None,
+                        workflow_id=None,
+                        workflow_name=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
+        """Returns list of devices based on filter crieteria. If a limit is
+        not specified, it will default to return 50 devices.
+        Pagination and sorting are also supported by this
+        endpoint.
 
-    # Get Device list
-    def get_device_list(self, param_cm_state = None, param_last_contact = None, param_limit = None, param_name = None, param_offset = None, param_onb_state = None, param_pid = None, param_project_id = None, param_project_name = None, param_serial_number = None, param_smart_account_id = None, param_sort = None, param_sort_order = None, param_source = None, param_state = None, param_virtual_account_id = None, param_workflow_id = None, param_workflow_name = None, headers=None,payload=None,**request_parameters):
-        check_type( param_limit, int)
-        check_type( param_offset, int)
-        check_type( param_sort, basestring)
-        check_type( param_sort_order, basestring)
-        check_type( param_serial_number, basestring)
-        check_type( param_state, basestring)
-        check_type( param_onb_state, basestring)
-        check_type( param_cm_state, basestring)
-        check_type( param_name, basestring)
-        check_type( param_pid, basestring)
-        check_type( param_source, basestring)
-        check_type( param_project_id, basestring)
-        check_type( param_workflow_id, basestring)
-        check_type( param_project_name, basestring)
-        check_type( param_workflow_name, basestring)
-        check_type( param_smart_account_id, basestring)
-        check_type( param_virtual_account_id, basestring)
-        check_type( param_last_contact, bool)
+        Args:
+            limit(int): Limits number of results.
+            offset(int): Index of first result.
+            sort(basestring): Comma seperated list of fields to sort
+                on.
+            sort_order(basestring): Sort Order Ascending (asc) or
+                Descending (des).
+            serial_number(basestring): Device Serial Number.
+            state(basestring): Device State.
+            onb_state(basestring): Device Onboarding State.
+            cm_state(basestring): Device Connection Manager State.
+            name(basestring): Device Name.
+            pid(basestring): Device ProductId.
+            source(basestring): Device Source.
+            project_id(basestring): Device Project Id.
+            workflow_id(basestring): Device Workflow Id.
+            project_name(basestring): Device Project Name.
+            workflow_name(basestring): Device Workflow Name.
+            smart_account_id(basestring): Device Smart Account.
+            virtual_account_id(basestring): Device Virtual Account.
+            last_contact(bool): Device Has Contacted lastContact >
+                0.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(sort, basestring)
+        check_type(sort_order, basestring)
+        check_type(serial_number, basestring)
+        check_type(state, basestring)
+        check_type(onb_state, basestring)
+        check_type(cm_state, basestring)
+        check_type(name, basestring)
+        check_type(pid, basestring)
+        check_type(source, basestring)
+        check_type(project_id, basestring)
+        check_type(workflow_id, basestring)
+        check_type(project_name, basestring)
+        check_type(workflow_name, basestring)
+        check_type(smart_account_id, basestring)
+        check_type(virtual_account_id, basestring)
+        check_type(last_contact, bool)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_sort is not None: params.update( { 'sort': param_sort })
-        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
-        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
-        if param_state is not None: params.update( { 'state': param_state })
-        if param_onb_state is not None: params.update( { 'onbState': param_onb_state })
-        if param_cm_state is not None: params.update( { 'cmState': param_cm_state })
-        if param_name is not None: params.update( { 'name': param_name })
-        if param_pid is not None: params.update( { 'pid': param_pid })
-        if param_source is not None: params.update( { 'source': param_source })
-        if param_project_id is not None: params.update( { 'projectId': param_project_id })
-        if param_workflow_id is not None: params.update( { 'workflowId': param_workflow_id })
-        if param_project_name is not None: params.update( { 'projectName': param_project_name })
-        if param_workflow_name is not None: params.update( { 'workflowName': param_workflow_name })
-        if param_smart_account_id is not None: params.update( { 'smartAccountId': param_smart_account_id })
-        if param_virtual_account_id is not None: params.update( { 'virtualAccountId': param_virtual_account_id })
-        if param_last_contact is not None: params.update( { 'lastContact': param_last_contact })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'sort':
+                sort,
+            'sortOrder':
+                sort_order,
+            'serialNumber':
+                serial_number,
+            'state':
+                state,
+            'onbState':
+                onb_state,
+            'cmState':
+                cm_state,
+            'name':
+                name,
+            'pid':
+                pid,
+            'source':
+                source,
+            'projectId':
+                project_id,
+            'workflowId':
+                workflow_id,
+            'projectName':
+                project_name,
+            'workflowName':
+                workflow_name,
+            'smartAccountId':
+                smart_account_id,
+            'virtualAccountId':
+                virtual_account_id,
+            'lastContact':
+                last_contact,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_e6b3db8046c99654').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e6b3db8046c99654').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_e6b3db8046c99654', json_data)
 
+    def add_a_workflow(self,
+                       _id=None,
+                       addToInventory=None,
+                       addedOn=None,
+                       configId=None,
+                       currTaskIdx=None,
+                       description=None,
+                       endTime=None,
+                       execTime=None,
+                       imageId=None,
+                       instanceType=None,
+                       lastupdateOn=None,
+                       name=None,
+                       startTime=None,
+                       state=None,
+                       tasks=None,
+                       tenantId=None,
+                       type=None,
+                       useState=None,
+                       version=None,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
+        """Adds a PnP Workflow along with the relevant tasks in the
+        workflow into the PnP database.
 
-    # Add a Workflow
-    def add_a_workflow(self, rq__id = None, rq_addToInventory = None, rq_addedOn = None, rq_configId = None, rq_currTaskIdx = None, rq_description = None, rq_endTime = None, rq_execTime = None, rq_imageId = None, rq_instanceType = None, rq_lastupdateOn = None, rq_name = None, rq_startTime = None, rq_state = None, rq_tasks = None, rq_tenantId = None, rq_type = None, rq_useState = None, rq_version = None, headers=None,payload=None,**request_parameters):
+        Args:
+            _id(string): Workflow's _id.
+            addToInventory(boolean): Workflow's addToInventory.
+            addedOn(number): Workflow's addedOn.
+            configId(string): Workflow's configId.
+            currTaskIdx(number): Workflow's currTaskIdx.
+            description(string): Workflow's description.
+            endTime(number): Workflow's endTime.
+            execTime(number): Workflow's execTime.
+            imageId(string): Workflow's imageId.
+            instanceType(string): Workflow's instanceType. Available
+                values are 'SystemWorkflow',
+                'UserWorkflow' and
+                'SystemResetWorkflow'.
+            lastupdateOn(number): Workflow's lastupdateOn.
+            name(string): Workflow's name.
+            startTime(number): Workflow's startTime.
+            state(string): Workflow's state.
+            tasks(list): Workflow's tasks (list of objects).
+            tenantId(string): Workflow's tenantId.
+            type(string): Workflow's type.
+            useState(string): Workflow's useState.
+            version(number): Workflow's version.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq__id is not None: payload.update( { '_id':  rq__id })
-        if rq_addToInventory is not None: payload.update( { 'addToInventory':  rq_addToInventory })
-        if rq_addedOn is not None: payload.update( { 'addedOn':  rq_addedOn })
-        if rq_configId is not None: payload.update( { 'configId':  rq_configId })
-        if rq_currTaskIdx is not None: payload.update( { 'currTaskIdx':  rq_currTaskIdx })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_endTime is not None: payload.update( { 'endTime':  rq_endTime })
-        if rq_execTime is not None: payload.update( { 'execTime':  rq_execTime })
-        if rq_imageId is not None: payload.update( { 'imageId':  rq_imageId })
-        if rq_instanceType is not None: payload.update( { 'instanceType':  rq_instanceType })
-        if rq_lastupdateOn is not None: payload.update( { 'lastupdateOn':  rq_lastupdateOn })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_startTime is not None: payload.update( { 'startTime':  rq_startTime })
-        if rq_state is not None: payload.update( { 'state':  rq_state })
-        if rq_tasks is not None: payload.update( { 'tasks':  rq_tasks })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_type is not None: payload.update( { 'type':  rq_type })
-        if rq_useState is not None: payload.update( { 'useState':  rq_useState })
-        if rq_version is not None: payload.update( { 'version':  rq_version })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_848b5a7b4f9b8c12').validate(payload)
+        _payload = {
+            '_id':
+                _id,
+            'addToInventory':
+                addToInventory,
+            'addedOn':
+                addedOn,
+            'configId':
+                configId,
+            'currTaskIdx':
+                currTaskIdx,
+            'description':
+                description,
+            'endTime':
+                endTime,
+            'execTime':
+                execTime,
+            'imageId':
+                imageId,
+            'instanceType':
+                instanceType,
+            'lastupdateOn':
+                lastupdateOn,
+            'name':
+                name,
+            'startTime':
+                startTime,
+            'state':
+                state,
+            'tasks':
+                tasks,
+            'tenantId':
+                tenantId,
+            'type':
+                type,
+            'useState':
+                useState,
+            'version':
+                version,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_848b5a7b4f9b8c12').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-workflow', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_848b5a7b4f9b8c12', json_data)
 
+    def get_device_count(self,
+                         cm_state=None,
+                         last_contact=None,
+                         name=None,
+                         onb_state=None,
+                         pid=None,
+                         project_id=None,
+                         project_name=None,
+                         serial_number=None,
+                         smart_account_id=None,
+                         source=None,
+                         state=None,
+                         virtual_account_id=None,
+                         workflow_id=None,
+                         workflow_name=None,
+                         headers=None,
+                         payload=None,
+                         active_validation=True,
+                         **request_parameters):
+        """Returns the device count based on filter criteria. This is
+        useful for pagination.
 
-    # Get Device Count
-    def get_device_count(self, param_cm_state = None, param_last_contact = None, param_name = None, param_onb_state = None, param_pid = None, param_project_id = None, param_project_name = None, param_serial_number = None, param_smart_account_id = None, param_source = None, param_state = None, param_virtual_account_id = None, param_workflow_id = None, param_workflow_name = None, headers=None,payload=None,**request_parameters):
-        check_type( param_serial_number, basestring)
-        check_type( param_state, basestring)
-        check_type( param_onb_state, basestring)
-        check_type( param_cm_state, basestring)
-        check_type( param_name, basestring)
-        check_type( param_pid, basestring)
-        check_type( param_source, basestring)
-        check_type( param_project_id, basestring)
-        check_type( param_workflow_id, basestring)
-        check_type( param_project_name, basestring)
-        check_type( param_workflow_name, basestring)
-        check_type( param_smart_account_id, basestring)
-        check_type( param_virtual_account_id, basestring)
-        check_type( param_last_contact, bool)
+        Args:
+            serial_number(basestring): Device Serial Number.
+            state(basestring): Device State.
+            onb_state(basestring): Device Onboarding State.
+            cm_state(basestring): Device Connection Manager State.
+            name(basestring): Device Name.
+            pid(basestring): Device ProductId.
+            source(basestring): Device Source.
+            project_id(basestring): Device Project Id.
+            workflow_id(basestring): Device Workflow Id.
+            project_name(basestring): Device Project Name.
+            workflow_name(basestring): Device Workflow Name.
+            smart_account_id(basestring): Device Smart Account.
+            virtual_account_id(basestring): Device Virtual Account.
+            last_contact(bool): Device Has Contacted lastContact >
+                0.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(serial_number, basestring)
+        check_type(state, basestring)
+        check_type(onb_state, basestring)
+        check_type(cm_state, basestring)
+        check_type(name, basestring)
+        check_type(pid, basestring)
+        check_type(source, basestring)
+        check_type(project_id, basestring)
+        check_type(workflow_id, basestring)
+        check_type(project_name, basestring)
+        check_type(workflow_name, basestring)
+        check_type(smart_account_id, basestring)
+        check_type(virtual_account_id, basestring)
+        check_type(last_contact, bool)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
-        if param_state is not None: params.update( { 'state': param_state })
-        if param_onb_state is not None: params.update( { 'onbState': param_onb_state })
-        if param_cm_state is not None: params.update( { 'cmState': param_cm_state })
-        if param_name is not None: params.update( { 'name': param_name })
-        if param_pid is not None: params.update( { 'pid': param_pid })
-        if param_source is not None: params.update( { 'source': param_source })
-        if param_project_id is not None: params.update( { 'projectId': param_project_id })
-        if param_workflow_id is not None: params.update( { 'workflowId': param_workflow_id })
-        if param_project_name is not None: params.update( { 'projectName': param_project_name })
-        if param_workflow_name is not None: params.update( { 'workflowName': param_workflow_name })
-        if param_smart_account_id is not None: params.update( { 'smartAccountId': param_smart_account_id })
-        if param_virtual_account_id is not None: params.update( { 'virtualAccountId': param_virtual_account_id })
-        if param_last_contact is not None: params.update( { 'lastContact': param_last_contact })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'serialNumber':
+                serial_number,
+            'state':
+                state,
+            'onbState':
+                onb_state,
+            'cmState':
+                cm_state,
+            'name':
+                name,
+            'pid':
+                pid,
+            'source':
+                source,
+            'projectId':
+                project_id,
+            'workflowId':
+                workflow_id,
+            'projectName':
+                project_name,
+            'workflowName':
+                workflow_name,
+            'smartAccountId':
+                smart_account_id,
+            'virtualAccountId':
+                virtual_account_id,
+            'lastContact':
+                last_contact,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_d9a1fa9c4068b23c').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d9a1fa9c4068b23c').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/count', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_d9a1fa9c4068b23c', json_data)
 
+    def get_device_history(self,
+                           serial_number,
+                           sort=None,
+                           sort_order=None,
+                           headers=None,
+                           payload=None,
+                           active_validation=True,
+                           **request_parameters):
+        """Returns history for a specific device. Serial number is a
+        required parameter.
 
-    # Get Device History
-    def get_device_history(self, param_serial_number, param_sort = None, param_sort_order = None, headers=None,payload=None,**request_parameters):
-        check_type( param_serial_number, basestring, may_be_none=False)
-        check_type( param_sort, basestring)
-        check_type( param_sort_order, basestring)
+        Args:
+            serial_number(basestring): Device Serial Number.
+            sort(basestring): Comma seperated list of fields to sort
+                on.
+            sort_order(basestring): Sort Order Ascending (asc) or
+                Descending (des).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(serial_number, basestring,
+                   may_be_none=False)
+        check_type(sort, basestring)
+        check_type(sort_order, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_serial_number is not None: params.update( { 'serialNumber': param_serial_number })
-        if param_sort is not None: params.update( { 'sort': param_sort })
-        if param_sort_order is not None: params.update( { 'sortOrder': param_sort_order })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'serialNumber':
+                serial_number,
+            'sort':
+                sort,
+            'sortOrder':
+                sort_order,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_f09319674049a7d4').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f09319674049a7d4').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/history', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/onboarding/pnp-device/history', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/history')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_f09319674049a7d4', json_data)
 
+    def delete_device_by_id_from_pnp(self,
+                                     id,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
+        """Deletes specified device from PnP database.
 
-    # Delete Device by Id from PnP
-    def delete_device_by_id_from_pnp(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): id path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_cdab9b474899ae06').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_cdab9b474899ae06').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v1/onboarding/pnp-device/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload, headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload)
 
         return self._object_factory('bpm_cdab9b474899ae06', json_data)
 
+    def add_device(self,
+                   _id=None,
+                   deviceInfo=None,
+                   runSummaryList=None,
+                   systemResetWorkflow=None,
+                   systemWorkflow=None,
+                   tenantId=None,
+                   version=None,
+                   workflow=None,
+                   workflowParameters=None,
+                   headers=None,
+                   payload=None,
+                   active_validation=True,
+                   **request_parameters):
+        """Adds a device to the PnP database.
 
-    # Add Device
-    def add_device(self, rq__id = None, rq_deviceInfo = None, rq_runSummaryList = None, rq_systemResetWorkflow = None, rq_systemWorkflow = None, rq_tenantId = None, rq_version = None, rq_workflow = None, rq_workflowParameters = None, headers=None,payload=None,**request_parameters):
+        Args:
+            _id(string): Device's _id.
+            deviceInfo(object): Device's deviceInfo.
+            runSummaryList(list): Device's runSummaryList (list of
+                objects).
+            systemResetWorkflow(object): Device's
+                systemResetWorkflow.
+            systemWorkflow(object): Device's systemWorkflow.
+            tenantId(string): Device's tenantId.
+            version(number): Device's version.
+            workflow(object): Device's workflow.
+            workflowParameters(object): Device's workflowParameters.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq__id is not None: payload.update( { '_id':  rq__id })
-        if rq_deviceInfo is not None: payload.update( { 'deviceInfo':  rq_deviceInfo })
-        if rq_runSummaryList is not None: payload.update( { 'runSummaryList':  rq_runSummaryList })
-        if rq_systemResetWorkflow is not None: payload.update( { 'systemResetWorkflow':  rq_systemResetWorkflow })
-        if rq_systemWorkflow is not None: payload.update( { 'systemWorkflow':  rq_systemWorkflow })
-        if rq_tenantId is not None: payload.update( { 'tenantId':  rq_tenantId })
-        if rq_version is not None: payload.update( { 'version':  rq_version })
-        if rq_workflow is not None: payload.update( { 'workflow':  rq_workflow })
-        if rq_workflowParameters is not None: payload.update( { 'workflowParameters':  rq_workflowParameters })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_f3b26b5544cabab9').validate(payload)
+        _payload = {
+            '_id':
+                _id,
+            'deviceInfo':
+                deviceInfo,
+            'runSummaryList':
+                runSummaryList,
+            'systemResetWorkflow':
+                systemResetWorkflow,
+            'systemWorkflow':
+                systemWorkflow,
+            'tenantId':
+                tenantId,
+            'version':
+                version,
+            'workflow':
+                workflow,
+            'workflowParameters':
+                workflowParameters,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f3b26b5544cabab9').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/onboarding/pnp-device', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/onboarding/pnp-device')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_f3b26b5544cabab9', json_data)
-
-

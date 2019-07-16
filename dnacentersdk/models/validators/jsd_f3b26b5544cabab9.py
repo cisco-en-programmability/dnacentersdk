@@ -31,20 +31,1286 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorF3B26B5544CaBab9(object):
     """Add Device request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF3B26B5544CaBab9, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'_id': {'type': 'string'}, 'deviceInfo': {'type': 'object', 'properties': {'aaaCredentials': {'type': 'object', 'properties': {'password': {'type': 'string'}, 'username': {'type': 'string'}}}, 'addedOn': {'type': 'number'}, 'addnMacAddrs': {'type': 'array', 'items': {'type': 'string'}}, 'agentType': {'type': 'string', 'enum': ['POSIX', 'IOS']}, 'authStatus': {'type': 'string'}, 'authenticatedSudiSerialNo': {'type': 'string'}, 'capabilitiesSupported': {'type': 'array', 'items': {'type': 'string'}}, 'cmState': {'type': 'string', 'enum': ['NotContacted', 'Contacted', 'Disconnected', 'SecuringConnection', 'SecuredConnection', 'Authenticated', 'ErrorSecuringConnection', 'ErrorAuthenticating']}, 'description': {'type': 'string'}, 'deviceSudiSerialNos': {'type': 'array', 'items': {'type': 'string'}}, 'deviceType': {'type': 'string'}, 'featuresSupported': {'type': 'array', 'items': {'type': 'string'}}, 'fileSystemList': {'type': 'array', 'items': {'type': 'object', 'properties': {'freespace': {'type': 'number'}, 'name': {'type': 'string'}, 'readable': {'type': 'boolean'}, 'size': {'type': 'number'}, 'type': {'type': 'string'}, 'writeable': {'type': 'boolean'}}}}, 'firstContact': {'type': 'number'}, 'hostname': {'type': 'string'}, 'httpHeaders': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}, 'imageFile': {'type': 'string'}, 'imageVersion': {'type': 'string'}, 'ipInterfaces': {'type': 'array', 'items': {'type': 'object', 'properties': {'ipv4Address': {}, 'ipv6AddressList': {'type': 'array', 'items': {}}, 'macAddress': {'type': 'string'}, 'name': {'type': 'string'}, 'status': {'type': 'string'}}}}, 'lastContact': {'type': 'number'}, 'lastSyncTime': {'type': 'number'}, 'lastUpdateOn': {'type': 'number'}, 'location': {'type': 'object', 'properties': {'address': {'type': 'string'}, 'altitude': {'type': 'string'}, 'latitude': {'type': 'string'}, 'longitude': {'type': 'string'}, 'siteId': {'type': 'string'}}}, 'macAddress': {'type': 'string'}, 'mode': {'type': 'string'}, 'name': {'type': 'string'}, 'neighborLinks': {'type': 'array', 'items': {'type': 'object', 'properties': {'localInterfaceName': {'type': 'string'}, 'localMacAddress': {'type': 'string'}, 'localShortInterfaceName': {'type': 'string'}, 'remoteDeviceName': {'type': 'string'}, 'remoteInterfaceName': {'type': 'string'}, 'remoteMacAddress': {'type': 'string'}, 'remotePlatform': {'type': 'string'}, 'remoteShortInterfaceName': {'type': 'string'}, 'remoteVersion': {'type': 'string'}}}}, 'onbState': {'type': 'string', 'enum': ['NotContacted', 'Connecting', 'ErrorSecuringConnection', 'ErrorAuthenticating', 'Initializing', 'Initialized', 'ErrorInitializing', 'SudiAuthorizing', 'ErrorSudiAuthorizing', 'ExecutingWorkflow', 'ExecutedWorkflow', 'ErrorExecutingWorkflow', 'ExecutingReset', 'ErrorExecutingReset', 'Provisioned']}, 'pid': {'type': 'string'}, 'pnpProfileList': {'type': 'array', 'items': {'type': 'object', 'properties': {'createdBy': {'type': 'string'}, 'discoveryCreated': {'type': 'boolean'}, 'primaryEndpoint': {'type': 'object', 'properties': {'certificate': {'type': 'string'}, 'fqdn': {'type': 'string'}, 'ipv4Address': {}, 'ipv6Address': {}, 'port': {'type': 'number'}, 'protocol': {'type': 'string'}}}, 'profileName': {'type': 'string'}, 'secondaryEndpoint': {'type': 'object', 'properties': {'certificate': {'type': 'string'}, 'fqdn': {'type': 'string'}, 'ipv4Address': {}, 'ipv6Address': {}, 'port': {'type': 'number'}, 'protocol': {'type': 'string'}}}}}}, 'populateInventory': {'type': 'boolean'}, 'preWorkflowCliOuputs': {'type': 'array', 'items': {'type': 'object', 'properties': {'cli': {'type': 'string'}, 'cliOutput': {'type': 'string'}}}}, 'projectId': {'type': 'string'}, 'projectName': {'type': 'string'}, 'reloadRequested': {'type': 'boolean'}, 'serialNumber': {'type': 'string'}, 'smartAccountId': {'type': 'string'}, 'source': {'type': 'string'}, 'stack': {'type': 'boolean'}, 'stackInfo': {'type': 'object', 'properties': {'isFullRing': {'type': 'boolean'}, 'stackMemberList': {'type': 'array', 'items': {'type': 'object', 'properties': {'hardwareVersion': {'type': 'string'}, 'licenseLevel': {'type': 'string'}, 'licenseType': {'type': 'string'}, 'macAddress': {'type': 'string'}, 'pid': {'type': 'string'}, 'priority': {'type': 'number'}, 'role': {'type': 'string'}, 'serialNumber': {'type': 'string'}, 'softwareVersion': {'type': 'string'}, 'stackNumber': {'type': 'number'}, 'state': {'type': 'string'}, 'sudiSerialNumber': {'type': 'string'}}}}, 'stackRingProtocol': {'type': 'string'}, 'supportsStackWorkflows': {'type': 'boolean'}, 'totalMemberCount': {'type': 'number'}, 'validLicenseLevels': {'type': 'array', 'items': {'type': 'string'}}}}, 'state': {'type': 'string', 'enum': ['Unclaimed', 'Planned', 'Onboarding', 'Provisioned', 'Error', 'Deleted']}, 'sudiRequired': {'type': 'boolean'}, 'tags': {}, 'userSudiSerialNos': {'type': 'array', 'items': {'type': 'string'}}, 'virtualAccountId': {'type': 'string'}, 'workflowId': {'type': 'string'}, 'workflowName': {'type': 'string'}}}, 'runSummaryList': {'type': 'array', 'items': {'type': 'object', 'properties': {'details': {'type': 'string'}, 'errorFlag': {'type': 'boolean'}, 'historyTaskInfo': {'type': 'object', 'properties': {'addnDetails': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}, 'name': {'type': 'string'}, 'timeTaken': {'type': 'number'}, 'type': {'type': 'string'}, 'workItemList': {'type': 'array', 'items': {'type': 'object', 'properties': {'command': {'type': 'string'}, 'endTime': {'type': 'number'}, 'outputStr': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'timeTaken': {'type': 'number'}}}}}}, 'timestamp': {'type': 'number'}}}}, 'systemResetWorkflow': {'type': 'object', 'properties': {'_id': {'type': 'string'}, 'addToInventory': {'type': 'boolean'}, 'addedOn': {'type': 'number'}, 'configId': {'type': 'string'}, 'currTaskIdx': {'type': 'number'}, 'description': {'type': 'string'}, 'endTime': {'type': 'number'}, 'execTime': {'type': 'number'}, 'imageId': {'type': 'string'}, 'instanceType': {'type': 'string', 'enum': ['SystemWorkflow', 'UserWorkflow', 'SystemResetWorkflow']}, 'lastupdateOn': {'type': 'number'}, 'name': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'tasks': {'type': 'array', 'items': {'type': 'object', 'properties': {'currWorkItemIdx': {'type': 'number'}, 'endTime': {'type': 'number'}, 'name': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'taskSeqNo': {'type': 'number'}, 'timeTaken': {'type': 'number'}, 'type': {'type': 'string'}, 'workItemList': {'type': 'array', 'items': {'type': 'object', 'properties': {'command': {'type': 'string'}, 'endTime': {'type': 'number'}, 'outputStr': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'timeTaken': {'type': 'number'}}}}}}}, 'tenantId': {'type': 'string'}, 'type': {'type': 'string'}, 'useState': {'type': 'string'}, 'version': {'type': 'number'}}}, 'systemWorkflow': {'type': 'object', 'properties': {'_id': {'type': 'string'}, 'addToInventory': {'type': 'boolean'}, 'addedOn': {'type': 'number'}, 'configId': {'type': 'string'}, 'currTaskIdx': {'type': 'number'}, 'description': {'type': 'string'}, 'endTime': {'type': 'number'}, 'execTime': {'type': 'number'}, 'imageId': {'type': 'string'}, 'instanceType': {'type': 'string', 'enum': ['SystemWorkflow', 'UserWorkflow', 'SystemResetWorkflow']}, 'lastupdateOn': {'type': 'number'}, 'name': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'tasks': {'type': 'array', 'items': {'type': 'object', 'properties': {'currWorkItemIdx': {'type': 'number'}, 'endTime': {'type': 'number'}, 'name': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'taskSeqNo': {'type': 'number'}, 'timeTaken': {'type': 'number'}, 'type': {'type': 'string'}, 'workItemList': {'type': 'array', 'items': {'type': 'object', 'properties': {'command': {'type': 'string'}, 'endTime': {'type': 'number'}, 'outputStr': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'timeTaken': {'type': 'number'}}}}}}}, 'tenantId': {'type': 'string'}, 'type': {'type': 'string'}, 'useState': {'type': 'string'}, 'version': {'type': 'number'}}}, 'tenantId': {'type': 'string'}, 'version': {'type': 'number'}, 'workflow': {'type': 'object', 'properties': {'_id': {'type': 'string'}, 'addToInventory': {'type': 'boolean'}, 'addedOn': {'type': 'number'}, 'configId': {'type': 'string'}, 'currTaskIdx': {'type': 'number'}, 'description': {'type': 'string'}, 'endTime': {'type': 'number'}, 'execTime': {'type': 'number'}, 'imageId': {'type': 'string'}, 'instanceType': {'type': 'string', 'enum': ['SystemWorkflow', 'UserWorkflow', 'SystemResetWorkflow']}, 'lastupdateOn': {'type': 'number'}, 'name': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'tasks': {'type': 'array', 'items': {'type': 'object', 'properties': {'currWorkItemIdx': {'type': 'number'}, 'endTime': {'type': 'number'}, 'name': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'taskSeqNo': {'type': 'number'}, 'timeTaken': {'type': 'number'}, 'type': {'type': 'string'}, 'workItemList': {'type': 'array', 'items': {'type': 'object', 'properties': {'command': {'type': 'string'}, 'endTime': {'type': 'number'}, 'outputStr': {'type': 'string'}, 'startTime': {'type': 'number'}, 'state': {'type': 'string'}, 'timeTaken': {'type': 'number'}}}}}}}, 'tenantId': {'type': 'string'}, 'type': {'type': 'string'}, 'useState': {'type': 'string'}, 'version': {'type': 'number'}}}, 'workflowParameters': {'type': 'object', 'properties': {'configList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configId': {'type': 'string'}, 'configParameters': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}}}}, 'licenseLevel': {'type': 'string'}, 'licenseType': {'type': 'string'}, 'topOfStackSerialNumber': {'type': 'string'}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "_id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "deviceInfo": {
+                "description":
+                 "",
+                "properties": {
+                "aaaCredentials": {
+                "description":
+                 "",
+                "properties": {
+                "password": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "username": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "addedOn": {
+                "type": "number"
+                },
+                "addnMacAddrs": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "agentType": {
+                "description":
+                 "",
+                "enum": [
+                "POSIX",
+                "IOS"
+                ],
+                "type": "string"
+                },
+                "authStatus": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "authenticatedSudiSerialNo": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "capabilitiesSupported": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "cmState": {
+                "description":
+                 "",
+                "enum": [
+                "NotContacted",
+                "Contacted",
+                "Disconnected",
+                "SecuringConnection",
+                "SecuredConnection",
+                "Authenticated",
+                "ErrorSecuringConnection",
+                "ErrorAuthenticating"
+                ],
+                "type": "string"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "deviceSudiSerialNos": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "deviceType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "featuresSupported": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "fileSystemList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "freespace": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "readable": {
+                "type": "boolean"
+                },
+                "size": {
+                "type": "number"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "writeable": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "firstContact": {
+                "type": "number"
+                },
+                "hostname": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "httpHeaders": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "value": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "imageFile": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "imageVersion": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "ipInterfaces": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "ipv4Address": {},
+                "ipv6AddressList": {
+                "description":
+                 "",
+                "items": {},
+                "type": "array"
+                },
+                "macAddress": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "status": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "lastContact": {
+                "type": "number"
+                },
+                "lastSyncTime": {
+                "type": "number"
+                },
+                "lastUpdateOn": {
+                "type": "number"
+                },
+                "location": {
+                "description":
+                 "",
+                "properties": {
+                "address": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "altitude": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "latitude": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "longitude": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "siteId": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "macAddress": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "mode": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "neighborLinks": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "localInterfaceName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "localMacAddress": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "localShortInterfaceName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "remoteDeviceName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "remoteInterfaceName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "remoteMacAddress": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "remotePlatform": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "remoteShortInterfaceName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "remoteVersion": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "onbState": {
+                "description":
+                 "",
+                "enum": [
+                "NotContacted",
+                "Connecting",
+                "ErrorSecuringConnection",
+                "ErrorAuthenticating",
+                "Initializing",
+                "Initialized",
+                "ErrorInitializing",
+                "SudiAuthorizing",
+                "ErrorSudiAuthorizing",
+                "ExecutingWorkflow",
+                "ExecutedWorkflow",
+                "ErrorExecutingWorkflow",
+                "ExecutingReset",
+                "ErrorExecutingReset",
+                "Provisioned"
+                ],
+                "type": "string"
+                },
+                "pid": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "pnpProfileList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "createdBy": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "discoveryCreated": {
+                "type": "boolean"
+                },
+                "primaryEndpoint": {
+                "description":
+                 "",
+                "properties": {
+                "certificate": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "fqdn": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "ipv4Address": {},
+                "ipv6Address": {},
+                "port": {
+                "type": "number"
+                },
+                "protocol": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "profileName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "secondaryEndpoint": {
+                "description":
+                 "",
+                "properties": {
+                "certificate": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "fqdn": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "ipv4Address": {},
+                "ipv6Address": {},
+                "port": {
+                "type": "number"
+                },
+                "protocol": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "populateInventory": {
+                "type": "boolean"
+                },
+                "preWorkflowCliOuputs": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "cli": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "cliOutput": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "projectId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "projectName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "reloadRequested": {
+                "type": "boolean"
+                },
+                "serialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "smartAccountId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "source": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "stack": {
+                "type": "boolean"
+                },
+                "stackInfo": {
+                "description":
+                 "",
+                "properties": {
+                "isFullRing": {
+                "type": "boolean"
+                },
+                "stackMemberList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "hardwareVersion": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseLevel": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "macAddress": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "pid": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "priority": {
+                "type": "number"
+                },
+                "role": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "serialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "softwareVersion": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "stackNumber": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "sudiSerialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "stackRingProtocol": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "supportsStackWorkflows": {
+                "type": "boolean"
+                },
+                "totalMemberCount": {
+                "type": "number"
+                },
+                "validLicenseLevels": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "state": {
+                "description":
+                 "",
+                "enum": [
+                "Unclaimed",
+                "Planned",
+                "Onboarding",
+                "Provisioned",
+                "Error",
+                "Deleted"
+                ],
+                "type": "string"
+                },
+                "sudiRequired": {
+                "type": "boolean"
+                },
+                "tags": {},
+                "userSudiSerialNos": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "virtualAccountId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workflowId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workflowName": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "runSummaryList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "details": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "errorFlag": {
+                "type": "boolean"
+                },
+                "historyTaskInfo": {
+                "description":
+                 "",
+                "properties": {
+                "addnDetails": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "value": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "timeTaken": {
+                "type": "number"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workItemList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "command": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "outputStr": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "timeTaken": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "timestamp": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "systemResetWorkflow": {
+                "description":
+                 "",
+                "properties": {
+                "_id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "addToInventory": {
+                "type": "boolean"
+                },
+                "addedOn": {
+                "type": "number"
+                },
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "currTaskIdx": {
+                "type": "number"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "execTime": {
+                "type": "number"
+                },
+                "imageId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceType": {
+                "description":
+                 "",
+                "enum": [
+                "SystemWorkflow",
+                "UserWorkflow",
+                "SystemResetWorkflow"
+                ],
+                "type": "string"
+                },
+                "lastupdateOn": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "tasks": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "currWorkItemIdx": {
+                "type": "number"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "taskSeqNo": {
+                "type": "number"
+                },
+                "timeTaken": {
+                "type": "number"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workItemList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "command": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "outputStr": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "timeTaken": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "tenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "useState": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "version": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "systemWorkflow": {
+                "description":
+                 "",
+                "properties": {
+                "_id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "addToInventory": {
+                "type": "boolean"
+                },
+                "addedOn": {
+                "type": "number"
+                },
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "currTaskIdx": {
+                "type": "number"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "execTime": {
+                "type": "number"
+                },
+                "imageId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceType": {
+                "description":
+                 "",
+                "enum": [
+                "SystemWorkflow",
+                "UserWorkflow",
+                "SystemResetWorkflow"
+                ],
+                "type": "string"
+                },
+                "lastupdateOn": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "tasks": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "currWorkItemIdx": {
+                "type": "number"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "taskSeqNo": {
+                "type": "number"
+                },
+                "timeTaken": {
+                "type": "number"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workItemList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "command": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "outputStr": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "timeTaken": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "tenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "useState": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "version": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "tenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "version": {
+                "type": "number"
+                },
+                "workflow": {
+                "description":
+                 "",
+                "properties": {
+                "_id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "addToInventory": {
+                "type": "boolean"
+                },
+                "addedOn": {
+                "type": "number"
+                },
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "currTaskIdx": {
+                "type": "number"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "execTime": {
+                "type": "number"
+                },
+                "imageId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instanceType": {
+                "description":
+                 "",
+                "enum": [
+                "SystemWorkflow",
+                "UserWorkflow",
+                "SystemResetWorkflow"
+                ],
+                "type": "string"
+                },
+                "lastupdateOn": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "tasks": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "currWorkItemIdx": {
+                "type": "number"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "taskSeqNo": {
+                "type": "number"
+                },
+                "timeTaken": {
+                "type": "number"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workItemList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "command": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "endTime": {
+                "type": "number"
+                },
+                "outputStr": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "startTime": {
+                "type": "number"
+                },
+                "state": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "timeTaken": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "tenantId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "useState": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "version": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "workflowParameters": {
+                "description":
+                 "",
+                "properties": {
+                "configList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "configParameters": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "value": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "licenseLevel": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "topOfStackSerialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

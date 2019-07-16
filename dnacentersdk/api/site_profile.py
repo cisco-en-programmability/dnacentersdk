@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class SiteProfile( object ):
+
+class SiteProfile(object):
     """DNA Center Site Profile API.
 
-    Wraps the DNA Center Site Profile API and exposes the API as native Python
+    Wraps the DNA Center Site Profile
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,80 +71,171 @@ class SiteProfile( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def get_device_details_by_ip(self,
+                                 device_ip,
+                                 headers=None,
+                                 payload=None,
+                                 active_validation=True,
+                                 **request_parameters):
+        """**Beta** - Returns provisioning device information for the
+        specified IP address.
 
-    # Get Device details by IP
-    def get_device_details_by_ip(self, param_device_ip, headers=None,payload=None,**request_parameters):
-        check_type( param_device_ip, basestring, may_be_none=False)
+        Args:
+            device_ip(basestring): Device to which the provisioning
+                detail has to be retrieved.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(device_ip, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_device_ip is not None: params.update( { 'deviceIp': param_device_ip })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'deviceIp':
+                device_ip,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_7fbe4b804879baa4').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_7fbe4b804879baa4').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/dna/intent/api/v1/nfv-provision-detail', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/dna/intent/api/v1/nfv-provision-detail', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/business/nfv/provisioningDetail')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_7fbe4b804879baa4', json_data)
 
+    def provision_nfv(self,
+                      callbackUrl=None,
+                      provisioning=None,
+                      siteProfile=None,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
+        """Design and Provision single/multi NFV device with given
+        site/area/building/floor .
 
-    # Provision NFV
-    def provision_nfv(self, rq_callbackUrl = None, rq_provisioning = None, rq_siteProfile = None, headers=None,payload=None,**request_parameters):
+        Args:
+            callbackUrl(string): Callback Url, property of the
+                request body.
+            provisioning(list): Provisioning, property of the
+                request body (list of objects).
+            siteProfile(list): Site Profile, property of the request
+                body (list of objects).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('__runsync', self._session.headers.get('__runsync')), bool, may_be_none=False)
-            check_type( headers.get('__persistbapioutput', self._session.headers.get('__persistbapioutput')), bool, may_be_none=False)
-            check_type( headers.get('__timeout', self._session.headers.get('__timeout')), int)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('__runsync',
+                                   self._session.headers.get(
+                                       '__runsync')),
+                       bool, may_be_none=False)
+            check_type(headers.get('__persistbapioutput',
+                                   self._session.headers.get(
+                                       '__persistbapioutput')),
+                       bool, may_be_none=False)
+            check_type(headers.get('__timeout',
+                                   self._session.headers.get(
+                                       '__timeout')),
+                       int)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_siteProfile is not None: payload.update( { 'siteProfile':  rq_siteProfile })
-        if rq_provisioning is not None: payload.update( { 'provisioning':  rq_provisioning })
-        if rq_callbackUrl is not None: payload.update( { 'callbackUrl':  rq_callbackUrl })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_828828f44f28bd0d').validate(payload)
+        _payload = {
+            'siteProfile':
+                siteProfile,
+            'provisioning':
+                provisioning,
+            'callbackUrl':
+                callbackUrl,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_828828f44f28bd0d').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/dna/intent/api/v1/provision-nfv', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/dna/intent/api/v1/provision-nfv', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/business/nfv')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_828828f44f28bd0d', json_data)
-
-

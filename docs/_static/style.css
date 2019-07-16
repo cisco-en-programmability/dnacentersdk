@@ -1,0 +1,17 @@
+/* 
+normal : Wrap (each line can still has N functions depending on their length)
+pre : Wrap (1 function per line) 
+nowrap: default
+*/
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: pre;
+}
+
+.wy-table td p, .rst-content table.docutils td p, .rst-content table.field-list td p {
+    line-height: 25px;
+}
+
+/* vertical-align: middle is default */
+.wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
+    vertical-align: top;
+}

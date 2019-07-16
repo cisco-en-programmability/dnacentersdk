@@ -31,20 +31,29 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator3B9EF9674429Be4C(object):
     """Sync Devices using forceSync request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator3B9EF9674429Be4C, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "description":
+                 "",
+                "items": {},
+                "type": "array"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

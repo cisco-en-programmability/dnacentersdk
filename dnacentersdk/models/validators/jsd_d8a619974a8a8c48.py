@@ -31,20 +31,131 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorD8A619974A8A8C48(object):
     """Claim Device request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD8A619974A8A8C48, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'configFileUrl': {'type': 'string'}, 'configId': {'type': 'string'}, 'deviceClaimList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configList': {'type': 'array', 'items': {'type': 'object', 'properties': {'configId': {'type': 'string'}, 'configParameters': {'type': 'array', 'items': {'type': 'object', 'properties': {'key': {'type': 'string'}, 'value': {'type': 'string'}}}}}}}, 'deviceId': {'type': 'string'}, 'licenseLevel': {'type': 'string'}, 'licenseType': {'type': 'string'}, 'topOfStackSerialNumber': {'type': 'string'}}}}, 'fileServiceId': {'type': 'string'}, 'imageId': {'type': 'string'}, 'imageUrl': {'type': 'string'}, 'populateInventory': {'type': 'boolean'}, 'projectId': {'type': 'string'}, 'workflowId': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "configFileUrl": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "deviceClaimList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "configList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "configId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "configParameters": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "value": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "deviceId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseLevel": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "licenseType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "topOfStackSerialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "fileServiceId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "imageId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "imageUrl": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "populateInventory": {
+                "type": "boolean"
+                },
+                "projectId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "workflowId": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

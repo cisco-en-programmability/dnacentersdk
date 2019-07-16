@@ -31,20 +31,63 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorFb9BEb664F2ABa4C(object):
     """Trigger software image activation request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFb9BEb664F2ABa4C, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'activateLowerImageVersion': {'type': 'boolean'}, 'deviceUpgradeMode': {'type': 'string'}, 'deviceUuid': {'type': 'string'}, 'distributeIfNeeded': {'type': 'boolean'}, 'imageUuidList': {'type': 'array', 'items': {'type': 'string'}}, 'smuImageUuidList': {'type': 'array', 'items': {'type': 'string'}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "items": {
+                "properties": {
+                "activateLowerImageVersion": {
+                "type": "boolean"
+                },
+                "deviceUpgradeMode": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "deviceUuid": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "distributeIfNeeded": {
+                "type": "boolean"
+                },
+                "imageUuidList": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "smuImageUuidList": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

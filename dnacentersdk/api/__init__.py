@@ -28,7 +28,10 @@ from dnacentersdk.config import (
     DEFAULT_BASE_URL, DEFAULT_SINGLE_REQUEST_TIMEOUT,
     DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY,
 )
-from dnacentersdk.environment import DNA_CENTER_ACCESS_TOKEN
+from dnacentersdk.environment import (
+    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH
+)
 from dnacentersdk.exceptions import AccessTokenError
 from dnacentersdk.models.mydict import mydict_data_factory
 from dnacentersdk.models.schema_validator import json_schema_validate
@@ -54,7 +57,6 @@ from .non_fabric_wireless import NonFabricWireless
 from .fabric_wired import FabricWired
 
 
-
 class DNACenterAPI(object):
     """DNA Center API wrapper.
 
@@ -66,43 +68,58 @@ class DNACenterAPI(object):
     them in a simple hierarchical structure.
     """
 
-    def __init__(self, access_token=None, base_url=DEFAULT_BASE_URL,
+    def __init__(self, username=None,
+                 password=None,
+                 encoded_auth=None,
+                 base_url=DEFAULT_BASE_URL,
                  single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
                  wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
                  verify=DEFAULT_VERIFY,
                  object_factory=mydict_data_factory,
-                 request_validator=json_schema_validate,
-                 username=None,
-                 password=None,
-                 encodedAuth=None):
+                 validator=json_schema_validate):
         """Create a new DNACenterAPI object.
+        An access token is required to interact with the DNA Center APIs.
+        This package supports two methods for you to generate the
+        authorization token:
 
-        An access token must be used when interacting with the DNA Center API.
-        This package supports three methods for you to provide that access
-        token:
+          1. Provide a encoded_auth value (username:password encoded in
+          base 64). *This has priority over the following method*
 
-        . . .
+          2. Provide username and password values.
 
-        An AccessTokenError is raised if an access token is not provided
-        via one of these two methods.
+        This package supports two methods for you to set those values:
+
+          1. Provide the parameter. That is the encoded_auth or
+          username and password parameters.
+
+          2. If an argument is not supplied, the package checks for
+          its environment variable counterpart. That is the
+          DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME,
+          DNA_CENTER_PASSWORD.
+
+        When not given enough parameters an AccessTokenError is raised.
 
         Args:
-            access_token(basestring): The access token to be used for API
-                calls to the DNA Center service.  Defaults to checking for a
-                DNA_CENTER_ACCESS_TOKEN environment variable.
             base_url(basestring): The base URL to be prefixed to the
                 individual API endpoint suffixes.
                 Defaults to dnacentersdk.DEFAULT_BASE_URL.
+            username(basestring): HTTP Basic Auth username.
+            password(basestring): HTTP Basic Auth password.
+            encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
             single_request_timeout(int): Timeout (in seconds) for RESTful HTTP
                 requests. Defaults to
                 dnacentersdk.config.DEFAULT_SINGLE_REQUEST_TIMEOUT.
             wait_on_rate_limit(bool): Enables or disables automatic rate-limit
                 handling. Defaults to
                 dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT.
-            verify(bool,basestring): Controls whether we verify the server’s TLS certificate, or a string, in which case it must be a path to a CA bundle to use. Defaults to 
+            verify(bool,basestring): Controls whether we verify the server’s
+                TLS certificate, or a string, in which case it must be a path
+                to a CA bundle to use. Defaults to
                 dnacentersdk.config.DEFAULT_VERIFY.
             object_factory(callable): The factory function to use to create
                 Python objects from the returned DNA Center JSON data objects.
+            validator(callable): The factory function to use to validate
+                Python objects sent in the body of the request.
 
         Returns:
             DNACenterAPI: A new DNACenterAPI object.
@@ -113,18 +130,24 @@ class DNACenterAPI(object):
                 access_token argument or an environment variable.
 
         """
-        check_type(access_token, basestring, may_be_none=True)
         check_type(base_url, basestring)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool)
         check_type(username, basestring, may_be_none=True)
         check_type(password, basestring, may_be_none=True)
-        check_type(encodedAuth, basestring, may_be_none=True)
+        check_type(encoded_auth, basestring, may_be_none=True)
         check_type(verify, (bool, basestring), may_be_none=False)
 
-        access_token = access_token or DNA_CENTER_ACCESS_TOKEN
+        if username is None:
+            username = DNA_CENTER_USERNAME
 
-        # Init AccessTokensAPI wrapper early to use for oauth requests
+        if password is None:
+            password = DNA_CENTER_PASSWORD
+
+        if encoded_auth is None:
+            encoded_auth = DNA_CENTER_ENCODED_AUTH
+
+        # Init Authentication wrapper early to use for basicAuth requests
         self.authentication = Authentication(
             base_url, object_factory,
             single_request_timeout=single_request_timeout,
@@ -132,31 +155,26 @@ class DNACenterAPI(object):
         )
 
         # Check if the user has provided the required basicAuth parameters
-        has_basic_auth = all([username, password]) or all([encodedAuth])
-        if not access_token and has_basic_auth:
-            access_token = self.authentication.authentication_api(
+        if encoded_auth is None and (username is None or password is None):
+            raise AccessTokenError(
+                "You must generate a DNA Center access token to interact with"
+                " the DNA Center APIs, either via the username and password "
+                "or the encoded_auth argument."
+            )
+
+        def get_access_token():
+            return self.authentication.authentication_api(
                 username=username,
                 password=password,
-                encodedAuth=encodedAuth
-            ).Token
-        
-        # If an access token hasn't been provided as a parameter, environment
-        # variable, or obtained via an OAuth exchange raise an error.
-        if not access_token:
-            raise AccessTokenError(
-                "You must provide a DNA Center access token to interact with "
-                "the DNA Center APIs, either via a DNA_CENTER_ACCESS_TOKEN "
-                "environment variable or via the access_token argument."
-                "To interact with the APIs and get your access_token, you could provide" 
-                "either username and password arguments or via the encodedAuth argument."
-            )
+                encoded_auth=encoded_auth).Token
 
         # Create the API session
         # All of the API calls associated with a DNACenterAPI object will
         # leverage a single RESTful 'session' connecting to the DNA Center
         # cloud.
         self._session = RestSession(
-            access_token=access_token,
+            get_access_token=get_access_token,
+            access_token=get_access_token(),
             base_url=base_url,
             single_request_timeout=single_request_timeout,
             wait_on_rate_limit=wait_on_rate_limit,
@@ -164,22 +182,43 @@ class DNACenterAPI(object):
         )
 
         # API wrappers
-        self.template_programmer = TemplateProgrammer(self._session, object_factory, request_validator)
-        self.tag = Tag(self._session, object_factory, request_validator)
-        self.network_discovery = NetworkDiscovery(self._session, object_factory, request_validator)
-        self.task = Task(self._session, object_factory, request_validator)
-        self.command_runner = CommandRunner(self._session, object_factory, request_validator)
-        self.file = File(self._session, object_factory, request_validator)
-        self.path_trace = PathTrace(self._session, object_factory, request_validator)
-        self.swim = Swim(self._session, object_factory, request_validator)
-        self.pnp = Pnp(self._session, object_factory, request_validator)
-        self.site_profile = SiteProfile(self._session, object_factory, request_validator)
-        self.devices = Devices(self._session, object_factory, request_validator)
-        self.sites = Sites(self._session, object_factory, request_validator)
-        self.networks = Networks(self._session, object_factory, request_validator)
-        self.clients = Clients(self._session, object_factory, request_validator)
-        self.non_fabric_wireless = NonFabricWireless(self._session, object_factory, request_validator)
-        self.fabric_wired = FabricWired(self._session, object_factory, request_validator)
+        self.template_programmer = \
+            TemplateProgrammer(self._session, object_factory, validator)
+        self.tag = \
+            Tag(self._session, object_factory, validator)
+        self.network_discovery = \
+            NetworkDiscovery(self._session, object_factory, validator)
+        self.task = \
+            Task(self._session, object_factory, validator)
+        self.command_runner = \
+            CommandRunner(self._session, object_factory, validator)
+        self.file = \
+            File(self._session, object_factory, validator)
+        self.path_trace = \
+            PathTrace(self._session, object_factory, validator)
+        self.swim = \
+            Swim(self._session, object_factory, validator)
+        self.pnp = \
+            Pnp(self._session, object_factory, validator)
+        self.site_profile = \
+            SiteProfile(self._session, object_factory, validator)
+        self.devices = \
+            Devices(self._session, object_factory, validator)
+        self.sites = \
+            Sites(self._session, object_factory, validator)
+        self.networks = \
+            Networks(self._session, object_factory, validator)
+        self.clients = \
+            Clients(self._session, object_factory, validator)
+        self.non_fabric_wireless = \
+            NonFabricWireless(self._session, object_factory, validator)
+        self.fabric_wired = \
+            FabricWired(self._session, object_factory, validator)
+
+    @property
+    def session(self):
+        """The DNA Center API session."""
+        return self._session
 
     @property
     def access_token(self):

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Run read-only commands on devices to get their real-time configuration data model.
+"""DNA Center Run read-only commands on devices data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -31,20 +31,58 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
 
+
 class JSONSchemaValidatorD6B8Ca774739Adf4(object):
-    """Run read-only commands on devices to get their real-time configuration request schema definition."""
+    """Run read-only commands on devices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD6B8Ca774739Adf4, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'commands': {'type': 'array', 'items': {'type': 'string'}}, 'description': {'type': 'string'}, 'deviceUuids': {'type': 'array', 'items': {'type': 'string'}}, 'name': {'type': 'string'}, 'timeout': {'type': 'number'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "commands": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "deviceUuids": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "timeout": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

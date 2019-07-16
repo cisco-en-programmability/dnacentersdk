@@ -23,7 +23,7 @@ The :class:`DNACenterAPI` class creates "connection objects" for working with th
 
 
 
-.. _Template Programmer:
+.. _template_programmer:
 
 template_programmer
 -------------------
@@ -32,7 +32,7 @@ template_programmer
 
 
 
-.. _Tag:
+.. _tag:
 
 tag
 ---
@@ -41,7 +41,7 @@ tag
 
 
 
-.. _Network Discovery:
+.. _network_discovery:
 
 network_discovery
 -----------------
@@ -50,7 +50,7 @@ network_discovery
 
 
 
-.. _Task:
+.. _task:
 
 task
 ----
@@ -59,7 +59,7 @@ task
 
 
 
-.. _Command Runner:
+.. _command_runner:
 
 command_runner
 --------------
@@ -68,7 +68,7 @@ command_runner
 
 
 
-.. _File:
+.. _file:
 
 file
 ----
@@ -77,7 +77,7 @@ file
 
 
 
-.. _Path Trace:
+.. _path_trace:
 
 path_trace
 ----------
@@ -86,7 +86,7 @@ path_trace
 
 
 
-.. _SWIM:
+.. _swim:
 
 swim
 ----
@@ -95,7 +95,7 @@ swim
 
 
 
-.. _PnP:
+.. _pnp:
 
 pnp
 ---
@@ -104,7 +104,7 @@ pnp
 
 
 
-.. _Site Profile:
+.. _site_profile:
 
 site_profile
 ------------
@@ -113,7 +113,7 @@ site_profile
 
 
 
-.. _Devices:
+.. _devices:
 
 devices
 -------
@@ -122,7 +122,7 @@ devices
 
 
 
-.. _Sites:
+.. _sites:
 
 sites
 -----
@@ -131,7 +131,7 @@ sites
 
 
 
-.. _Networks:
+.. _networks:
 
 networks
 --------
@@ -140,7 +140,7 @@ networks
 
 
 
-.. _Clients:
+.. _clients:
 
 clients
 -------
@@ -149,7 +149,7 @@ clients
 
 
 
-.. _Non-Fabric Wireless:
+.. _non_fabric_wireless:
 
 non_fabric_wireless
 -------------------
@@ -158,13 +158,37 @@ non_fabric_wireless
 
 
 
-.. _Fabric Wired:
+.. _fabric_wired:
 
 fabric_wired
 ------------
 
 .. autoclass:: dnacentersdk.api.fabric_wired.FabricWired()
 
+
+
+.. _authentication:
+
+authentication
+--------------
+
+.. autoclass:: dnacentersdk.api.authentication.Authentication()
+
+
+.. _DNA Center Data Object:
+
+DNA Center Data Object
+=======================
+
+
+.. _MyDict:
+
+MyDict
+------
+
+.. autoclass:: dnacentersdk.models.mydict.MyDict()
+    :members:
+    :exclude-members: get_dict, clear, fromkeys, pop, popitem, setdefault, update, values
 
 .. _Exceptions:
 
@@ -191,15 +215,7 @@ Exceptions
     :show-inheritance:
     :members:
 
-.. autoexception:: MalformedResponse()
-    :show-inheritance:
-    :members:
-
 .. autoexception:: MalformedRequest()
-    :show-inheritance:
-    :members:
-
-.. autoexception:: DownloadFailure()
     :show-inheritance:
     :members:
 

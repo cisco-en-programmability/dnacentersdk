@@ -31,20 +31,89 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator6099Da82477B858A(object):
     """Deploy Template request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator6099Da82477B858A, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'forcePushTemplate': {'type': 'boolean'}, 'isComposite': {'type': 'boolean'}, 'mainTemplateId': {'type': 'string'}, 'memberTemplateDeploymentInfo': {'type': 'array', 'items': {'type': 'string'}}, 'targetInfo': {'type': 'array', 'items': {'type': 'object', 'properties': {'hostName': {'type': 'string'}, 'id': {'type': 'string'}, 'params': {'type': 'object', 'properties': {}}, 'type': {'type': 'string', 'enum': ['MANAGED_DEVICE_IP', 'MANAGED_DEVICE_UUID', 'PRE_PROVISIONED_SERIAL', 'PRE_PROVISIONED_MAC', 'DEFAULT', 'MANAGED_DEVICE_HOSTNAME']}}}}, 'templateId': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "forcePushTemplate": {
+                "type": "boolean"
+                },
+                "isComposite": {
+                "type": "boolean"
+                },
+                "mainTemplateId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "memberTemplateDeploymentInfo": {
+                "description":
+                 "",
+                "items": {},
+                "type": "array"
+                },
+                "targetInfo": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "hostName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "params": {
+                "description":
+                 "",
+                "properties": {},
+                "type": "object"
+                },
+                "type": {
+                "description":
+                 "",
+                "enum": [
+                "MANAGED_DEVICE_IP",
+                "MANAGED_DEVICE_UUID",
+                "PRE_PROVISIONED_SERIAL",
+                "PRE_PROVISIONED_MAC",
+                "DEFAULT",
+                "MANAGED_DEVICE_HOSTNAME"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "templateId": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

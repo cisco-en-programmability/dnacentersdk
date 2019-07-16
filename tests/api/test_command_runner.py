@@ -24,37 +24,51 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-
-
+import calendar
+import time
 from .test_devices import get_device_list
 
 
-# 33bb-2b9d-4019-9e14
-def is_valid_get_all_keywords_of_clis_accepted_by_command_runner(obj):
-    some_keys = [ 'response' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+def is_valid_get_all_keywords_of_clis_accepted(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
-def get_all_keywords_of_clis_accepted_by_command_runner(api):
-    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted_by_command_runner( payload = '' )
+def get_all_keywords_of_clis_accepted(api):
+    endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted(
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
-def test_get_all_keywords_of_clis_accepted_by_command_runner(api):
-    assert is_valid_get_all_keywords_of_clis_accepted_by_command_runner(get_all_keywords_of_clis_accepted_by_command_runner(api))
+def test_get_all_keywords_of_clis_accepted(api):
+    assert is_valid_get_all_keywords_of_clis_accepted(
+        get_all_keywords_of_clis_accepted(api)
+    )
 
 
-# d6b8-ca77-4739-adf4
-def is_valid_run_read_only_commands_on_devices_to_get_their_real_time_configuration(obj):
-    some_keys = [ 'response' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+def is_valid_run_read_only_commands_on_devices(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
-def run_read_only_commands_on_devices_to_get_their_real_time_configuration(api):
-    endpoint_result = api.command_runner.run_read_only_commands_on_devices_to_get_their_real_time_configuration( rq_commands = [ get_all_keywords_of_clis_accepted_by_command_runner(api).response[0] ], rq_description = None, rq_deviceUuids = [ get_device_list(api).response[0].id ], rq_name = None, rq_timeout = None, payload = '' )
+def run_read_only_commands_on_devices(api):
+    endpoint_result = api.command_runner.run_read_only_commands_on_devices(
+        commands=['show'],
+        description=None,
+        deviceUuids=[get_device_list(api).response[0].id],
+        name=None,
+        timeout=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
-def test_run_read_only_commands_on_devices_to_get_their_real_time_configuration(api):
-    assert is_valid_run_read_only_commands_on_devices_to_get_their_real_time_configuration(run_read_only_commands_on_devices_to_get_their_real_time_configuration(api))
-
+def test_run_read_only_commands_on_devices(api):
+    assert is_valid_run_read_only_commands_on_devices(
+        run_read_only_commands_on_devices(api)
+    )

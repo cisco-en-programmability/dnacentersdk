@@ -23,22 +23,22 @@ SOFTWARE.
 """
 
 import os
-import string
 
-from .config import ACCESS_TOKEN_ENVIRONMENT_VARIABLE, DEFAULT_PASS, DEFAULT_USER
-
-DNA_CENTER_ACCESS_TOKEN = os.getenv(ACCESS_TOKEN_ENVIRONMENT_VARIABLE)
-if DNA_CENTER_ACCESS_TOKEN is None and not (DEFAULT_PASS and DEFAULT_USER):
-    raise RuntimeError(
-        "You must set a {} environment variable to run the test suite "
-        "or check the DEFAULT_PASS and DEFAULT_USER values in config."
-        "".format(ACCESS_TOKEN_ENVIRONMENT_VARIABLE)
-    )
-
-DNA_CENTER_TEST_STRING_PREFIX = os.getenv(
-    "DNA_CENTER_TEST_STRING_PREFIX", default="dnacentersdk py.test",
+from .config import (
+    USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE,
+    ENCODED_AUTH_ENVIRONMENT_VARIABLE
 )
 
-DNA_CENTER_TEST_STRING_TEMPLATE = string.Template(os.getenv(
-    "DNA_CENTER_TEST_STRING_TEMPLATE", default="$prefix $item [$datetime]",
-))
+DNA_CENTER_USERNAME = os.getenv(USERNAME_ENVIRONMENT_VARIABLE)
+DNA_CENTER_PASSWORD = os.getenv(PASSWORD_ENVIRONMENT_VARIABLE)
+DNA_CENTER_ENCODED_AUTH = os.getenv(ENCODED_AUTH_ENVIRONMENT_VARIABLE)
+
+if (DNA_CENTER_USERNAME is None or DNA_CENTER_PASSWORD is None)\
+   and DNA_CENTER_ENCODED_AUTH is None:
+    raise RuntimeError(
+        "You must set {} and {} environment variables"
+        " or set {} environment variable to run the test suite"
+        "".format(USERNAME_ENVIRONMENT_VARIABLE,
+                  PASSWORD_ENVIRONMENT_VARIABLE,
+                  ENCODED_AUTH_ENVIRONMENT_VARIABLE)
+    )

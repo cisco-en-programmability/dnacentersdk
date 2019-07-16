@@ -31,20 +31,442 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorF6B119Ad4D4AAf16(object):
     """Create Template request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF6B119Ad4D4AAf16, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'author': {'type': 'string'}, 'composite': {'type': 'boolean'}, 'containingTemplates': {'type': 'array', 'items': {'type': 'object', 'properties': {'composite': {'type': 'boolean'}, 'id': {'type': 'string'}, 'name': {'type': 'string'}, 'version': {'type': 'string'}}}}, 'createTime': {'type': 'number'}, 'description': {'type': 'string'}, 'deviceTypes': {'type': 'array', 'items': {'type': 'object', 'properties': {'productFamily': {'type': 'string'}, 'productSeries': {'type': 'string'}, 'productType': {'type': 'string'}}}}, 'failurePolicy': {'type': 'string', 'enum': ['ABORT_ON_ERROR', 'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR', 'ROLLBACK_TARGET_ON_ERROR', 'ABORT_TARGET_ON_ERROR']}, 'id': {'type': 'string'}, 'lastUpdateTime': {'type': 'number'}, 'name': {'type': 'string'}, 'parentTemplateId': {'type': 'string'}, 'projectId': {'type': 'string'}, 'projectName': {'type': 'string'}, 'rollbackTemplateContent': {'type': 'string'}, 'rollbackTemplateParams': {'type': 'array', 'items': {'type': 'object', 'properties': {'binding': {'type': 'string'}, 'dataType': {'type': 'string', 'enum': ['STRING', 'INTEGER', 'IPADDRESS', 'MACADDRESS', 'SECTIONDIVIDER']}, 'defaultValue': {'type': 'string'}, 'description': {'type': 'string'}, 'displayName': {'type': 'string'}, 'group': {'type': 'string'}, 'id': {'type': 'string'}, 'instructionText': {'type': 'string'}, 'key': {'type': 'string'}, 'notParam': {'type': 'boolean'}, 'order': {'type': 'number'}, 'paramArray': {'type': 'boolean'}, 'parameterName': {'type': 'string'}, 'provider': {'type': 'string'}, 'range': {'type': 'array', 'items': {'type': 'object', 'properties': {'id': {'type': 'string'}, 'maxValue': {'type': 'number'}, 'minValue': {'type': 'number'}}}}, 'required': {'type': 'boolean'}, 'selection': {'type': 'object', 'properties': {'id': {'type': 'string'}, 'selectionType': {'type': 'string', 'enum': ['SINGLE_SELECT', 'MULTI_SELECT']}, 'selectionValues': {'type': 'object', 'properties': {}}}}}}}, 'softwareType': {'type': 'string'}, 'softwareVariant': {'type': 'string'}, 'softwareVersion': {'type': 'string'}, 'tags': {'type': 'array', 'items': {'type': 'string'}}, 'templateContent': {'type': 'string'}, 'templateParams': {'type': 'array', 'items': {'type': 'object', 'properties': {'binding': {'type': 'string'}, 'dataType': {'type': 'string', 'enum': ['STRING', 'INTEGER', 'IPADDRESS', 'MACADDRESS', 'SECTIONDIVIDER']}, 'defaultValue': {'type': 'string'}, 'description': {'type': 'string'}, 'displayName': {'type': 'string'}, 'group': {'type': 'string'}, 'id': {'type': 'string'}, 'instructionText': {'type': 'string'}, 'key': {'type': 'string'}, 'notParam': {'type': 'boolean'}, 'order': {'type': 'number'}, 'paramArray': {'type': 'boolean'}, 'parameterName': {'type': 'string'}, 'provider': {'type': 'string'}, 'range': {'type': 'array', 'items': {'type': 'object', 'properties': {'id': {'type': 'string'}, 'maxValue': {'type': 'number'}, 'minValue': {'type': 'number'}}}}, 'required': {'type': 'boolean'}, 'selection': {'type': 'object', 'properties': {'id': {'type': 'string'}, 'selectionType': {'type': 'string', 'enum': ['SINGLE_SELECT', 'MULTI_SELECT']}, 'selectionValues': {'type': 'object', 'properties': {}}}}}}}, 'version': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "author": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "composite": {
+                "type": "boolean"
+                },
+                "containingTemplates": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "composite": {
+                "type": "boolean"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "version": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "createTime": {
+                "type": "number"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "deviceTypes": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "productFamily": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "productSeries": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "productType": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "failurePolicy": {
+                "description":
+                 "",
+                "enum": [
+                "ABORT_ON_ERROR",
+                "CONTINUE_ON_ERROR",
+                "ROLLBACK_ON_ERROR",
+                "ROLLBACK_TARGET_ON_ERROR",
+                "ABORT_TARGET_ON_ERROR"
+                ],
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "lastUpdateTime": {
+                "type": "number"
+                },
+                "name": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "parentTemplateId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "projectId": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "projectName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "rollbackTemplateContent": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "rollbackTemplateParams": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "binding": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "dataType": {
+                "description":
+                 "",
+                "enum": [
+                "STRING",
+                "INTEGER",
+                "IPADDRESS",
+                "MACADDRESS",
+                "SECTIONDIVIDER"
+                ],
+                "type": "string"
+                },
+                "defaultValue": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "displayName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "group": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instructionText": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "notParam": {
+                "type": "boolean"
+                },
+                "order": {
+                "type": "number"
+                },
+                "paramArray": {
+                "type": "boolean"
+                },
+                "parameterName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "provider": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "range": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "maxValue": {
+                "type": "number"
+                },
+                "minValue": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "required": {
+                "type": "boolean"
+                },
+                "selection": {
+                "description":
+                 "",
+                "properties": {
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "selectionType": {
+                "description":
+                 "",
+                "enum": [
+                "SINGLE_SELECT",
+                "MULTI_SELECT"
+                ],
+                "type": "string"
+                },
+                "selectionValues": {
+                "description":
+                 "",
+                "properties": {},
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "softwareType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "softwareVariant": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "softwareVersion": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "tags": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "templateContent": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "templateParams": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "binding": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "dataType": {
+                "description":
+                 "",
+                "enum": [
+                "STRING",
+                "INTEGER",
+                "IPADDRESS",
+                "MACADDRESS",
+                "SECTIONDIVIDER"
+                ],
+                "type": "string"
+                },
+                "defaultValue": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "description":
+                 {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "displayName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "group": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "instructionText": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "key": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "notParam": {
+                "type": "boolean"
+                },
+                "order": {
+                "type": "number"
+                },
+                "paramArray": {
+                "type": "boolean"
+                },
+                "parameterName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "provider": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "range": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "maxValue": {
+                "type": "number"
+                },
+                "minValue": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "required": {
+                "type": "boolean"
+                },
+                "selection": {
+                "description":
+                 "",
+                "properties": {
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "selectionType": {
+                "description":
+                 "",
+                "enum": [
+                "SINGLE_SELECT",
+                "MULTI_SELECT"
+                ],
+                "type": "string"
+                },
+                "selectionValues": {
+                "description":
+                 "",
+                "properties": {},
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "version": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -38,8 +38,6 @@ class TestDNACenterSDK:
         assert hasattr(dnacentersdk, "AccessTokenError")
         assert hasattr(dnacentersdk, "RateLimitError")
         assert hasattr(dnacentersdk, "RateLimitWarning")
-        assert hasattr(dnacentersdk, "MalformedResponse")
-        assert hasattr(dnacentersdk, "MalformedRequest")
         assert hasattr(dnacentersdk, "dnacentersdkException")
 
         # Data Models

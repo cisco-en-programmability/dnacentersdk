@@ -41,25 +41,34 @@ from builtins import *
 import requests
 from past.builtins import basestring
 
-from .config import DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY
-from .exceptions import MalformedResponse, RateLimitError, RateLimitWarning, DownloadFailure
+from .config import (
+    DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY
+)
+from .exceptions import (
+    dnacentersdkException, RateLimitError, RateLimitWarning
+)
 from .response_codes import EXPECTED_RESPONSE_CODE
 from .utils import (
     check_response_code, check_type, extract_and_parse_json, validate_base_url,
 )
+from requests_toolbelt.multipart import encoder
+import socket
+import errno
 
 
 # Main module interface
 class RestSession(object):
     """RESTful HTTP session class for making calls to the DNA Center APIs."""
 
-    def __init__(self, access_token, base_url
-        , single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT
-        , wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT 
-        , verify = DEFAULT_VERIFY):
+    def __init__(self, get_access_token, access_token, base_url,
+                 single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
+                 wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
+                 verify=DEFAULT_VERIFY):
         """Initialize a new RestSession object.
 
         Args:
+            get_access_token(callable): The DNA Center method to get a new
+                access token.
             access_token(basestring): The DNA Center access token to be used
                 for this session.
             base_url(basestring): The base URL that will be suffixed onto API
@@ -68,6 +77,9 @@ class RestSession(object):
                 HTTP REST API request.
             wait_on_rate_limit(bool): Enable or disable automatic rate-limit
                 handling.
+            verify(bool,basestring): Controls whether we verify the server’s
+                TLS certificate, or a string, in which case it must be a path
+                to a CA bundle to use.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -79,11 +91,11 @@ class RestSession(object):
         check_type(wait_on_rate_limit, bool, may_be_none=False)
         check_type(verify, (bool, basestring), may_be_none=False)
 
-
         super(RestSession, self).__init__()
 
         # Initialize attributes and properties
         self._base_url = str(validate_base_url(base_url))
+        self._get_access_token = get_access_token
         self._access_token = str(access_token)
         self._single_request_timeout = single_request_timeout
         self._wait_on_rate_limit = wait_on_rate_limit
@@ -91,6 +103,9 @@ class RestSession(object):
 
         # Initialize a new `requests` session
         self._req_session = requests.session()
+        a = requests.adapters.HTTPAdapter(max_retries=3)
+        self._req_session.mount('https://', a)
+        self._req_session.mount('http://', a)
 
         # Update the headers of the `requests` session
         self.update_headers({'X-Auth-Token': access_token,
@@ -167,6 +182,14 @@ class RestSession(object):
         check_type(headers, dict, may_be_none=False)
         self._req_session.headers.update(headers)
 
+    def refresh_token(self):
+        """Call the get_access_token method and update the session's
+        auth header with the new token.
+        """
+
+        self._access_token = self._get_access_token()
+        self.update_headers({'X-Auth-Token': self.access_token})
+
     def abs_url(self, url):
         """Given a relative or absolute URL; return an absolute URL.
 
@@ -184,18 +207,6 @@ class RestSession(object):
         else:
             # url is already an absolute URL; return as is
             return url
-
-    def get_filename_from_cd(self, cd):
-        """
-        Get filename from content-disposition
-        """
-        if not cd:
-            return None
-        fname = re.findall('filename=(.+)', cd)
-        if len(fname) == 0:
-            return None
-        return fname[0]
-
 
     def request(self, method, url, erc, **kwargs):
         """Abstract base method for making requests to the DNA Center APIs.
@@ -227,8 +238,25 @@ class RestSession(object):
 
         while True:
             # Make the HTTP request to the API endpoint
-            response = self._req_session.request(method, abs_url, **kwargs)
-
+            try:
+                response = self._req_session.request(method, abs_url, **kwargs)
+            except socket.error:
+                # A socket error
+                try:
+                    response = self._req_session.request(method, abs_url,
+                                                         **kwargs)
+                except Exception as e:
+                    raise dnacentersdkException('Socket error {}'.format(e))
+            except IOError as e:
+                if e.errno == errno.EPIPE:
+                    # EPIPE error
+                    try:
+                        response = self._req_session.request(method, abs_url,
+                                                             **kwargs)
+                    except Exception as e:
+                        raise dnacentersdkException('PipeError {}'.format(e))
+                else:
+                    raise dnacentersdkException('IOError {}'.format(e))
             try:
                 # Check the response code for error conditions
                 check_response_code(response, erc)
@@ -245,14 +273,30 @@ class RestSession(object):
             else:
                 return response
 
-    def download_file(self, file_name, content):
-        try:
-            f = open(file_name, 'w+')
-            f.write(content)
-            f.close()
-        except Exception as e:
-            raise DownloadFailure('Could not create/write to {}. Reason: {}'.format(file_name, e.message))
-    
+    def multipart_data(self, fields, create_callback):
+        """Creates a multipart/form-data body.
+
+        Args:
+            fields(dict,list): form data values.
+            create_callback(function): function that creates a function that
+                monitors the progress of the upload.
+            boundary: MultipartEncoder's boundary.
+                Default value: None.
+            encoding(string): MultipartEncoder's encoding.
+                Default value: utf-8.
+        """
+        if fields is not None:
+            e = encoder.MultipartEncoder(
+                fields=fields
+            )
+            if create_callback is not None:
+                callback = create_callback(e)
+                m = encoder.MultipartEncoderMonitor(e, callback)
+                return m
+            else:
+                return e
+        else:
+            return None
 
     def get(self, url, params=None, **kwargs):
         """Sends a GET request.
@@ -274,16 +318,19 @@ class RestSession(object):
 
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['GET'])
-
-        response = self.request('GET', url, erc, params=params, **kwargs)
-        if 'fileName' in response.headers:
-            file_name = response.headers.get('fileName')
-            self.download_file(file_name, response.text)
-        elif 'Content-Disposition' in response.headers:
-            file_name = self.get_filename_from_cd(response.headers.get('Content-Disposition')).replace('"', '')
-            self.download_file(file_name, response.text)
-        return extract_and_parse_json(response)
-
+        stream = kwargs.pop('stream', None)
+        with self.request('GET', url, erc, params=params, **kwargs) as resp:
+            if stream and 'fileName' in resp.headers:
+                try:
+                    file_name = resp.headers.get('fileName')
+                    with open(file_name, 'wb') as f:
+                        for chunk in resp.iter_content(chunk_size=1024):
+                            if chunk:
+                                f.write(chunk)
+                except Exception as e:
+                    raise dnacentersdkException('DownloadFailure {}'.format(e))
+            return extract_and_parse_json(resp, ignore=stream)
+        return None
 
     def post(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a POST request.
@@ -307,8 +354,8 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['POST'])
 
-        response = self.request('POST', url, erc, params=params, json=json, data=data,
-                                **kwargs)
+        response = self.request('POST', url, erc, params=params,
+                                json=json, data=data, **kwargs)
         return extract_and_parse_json(response)
 
     def put(self, url, params=None, json=None, data=None, **kwargs):
@@ -333,8 +380,8 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['PUT'])
 
-        response = self.request('PUT', url, erc, params=params, json=json, data=data,
-                                **kwargs)
+        response = self.request('PUT', url, erc, params=params,
+                                json=json, data=data, **kwargs)
         return extract_and_parse_json(response)
 
     def delete(self, url, params=None, **kwargs):
@@ -357,5 +404,5 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['DELETE'])
 
-        response =  self.request('DELETE', url, erc, params=params, **kwargs)
+        response = self.request('DELETE', url, erc, params=params, **kwargs)
         return extract_and_parse_json(response)

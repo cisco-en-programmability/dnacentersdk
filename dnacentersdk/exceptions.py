@@ -82,7 +82,9 @@ class ApiError(dnacentersdkException):
             except ValueError:
                 logger.warning("Error parsing JSON response body")
 
-        self.message = self.details.get("message") if self.details else None
+        self.message = self.details.get("message") or\
+            self.details.get("response", {}).get("message")\
+            if self.details else None
         """The error message from the parsed API response."""
 
         self.description = RESPONSE_CODES.get(self.status_code)
@@ -147,15 +149,6 @@ class RateLimitWarning(UserWarning):
         super(RateLimitWarning, self).__init__()
 
 
-class MalformedResponse(dnacentersdkException):
-    """Raised when a malformed response is received from DNA Center."""
-    pass
-
-
 class MalformedRequest(dnacentersdkException):
     """Raised when a malformed request is received from DNA Center user."""
-    pass
-
-class DownloadFailure(dnacentersdkException):
-    """Raised when download operation was not successful."""
     pass

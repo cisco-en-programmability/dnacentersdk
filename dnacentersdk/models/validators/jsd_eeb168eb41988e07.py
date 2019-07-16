@@ -31,20 +31,43 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorEeb168Eb41988E07(object):
     """Assign Device To Site request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEeb168Eb41988E07, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'device': {'type': 'array', 'items': {'type': 'object', 'properties': {'ip': {'type': 'string'}}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "device": {
+                "description":
+                "Device",
+                "items": {
+                "properties": {
+                "ip": {
+                "description":
+                "Ip",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class Tag( object ):
+
+class Tag(object):
     """DNA Center Tag API.
 
-    Wraps the DNA Center Tag API and exposes the API as native Python
+    Wraps the DNA Center Tag
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,494 +71,1063 @@ class Tag( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def add_members_to_the_tag(self,
+                               id,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """Adds members to the tag specified by id.
 
-    # Add members to the tag
-    def add_members_to_the_tag(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): Tag ID.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_00a2fa6146089317').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_00a2fa6146089317').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/${id}/member')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_00a2fa6146089317', json_data)
 
+    def get_tag_member_count(self,
+                             id,
+                             member_type,
+                             level='0',
+                             member_association_type=None,
+                             headers=None,
+                             payload=None,
+                             active_validation=True,
+                             **request_parameters):
+        """Returns the number of members in a given tag.
 
-    # Get Tag Member count
-    def get_tag_member_count(self, param_member_type, path_param_id, param_level = '0', param_member_association_type = None, headers=None,payload=None,**request_parameters):
-        check_type( param_member_type, basestring, may_be_none=False)
-        check_type( param_member_association_type, basestring)
-        check_type( param_level, basestring)
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): Tag ID.
+            member_type(basestring): memberType query parameter.
+            member_association_type(basestring):
+                memberAssociationType query parameter.
+            level(basestring): level query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(member_type, basestring,
+                   may_be_none=False)
+        check_type(member_association_type, basestring)
+        check_type(level, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_member_type is not None: params.update( { 'memberType': param_member_type })
-        if param_member_association_type is not None: params.update( { 'memberAssociationType': param_member_association_type })
-        if param_level is not None: params.update( { 'level': param_level })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'memberType':
+                member_type,
+            'memberAssociationType':
+                member_association_type,
+            'level':
+                level,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_2e9db85840fbb1cf').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_2e9db85840fbb1cf').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}/member/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag/${id}/member/count', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/${id}/member/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_2e9db85840fbb1cf', json_data)
 
+    def create_tag(self,
+                   description=None,
+                   dynamicRules=None,
+                   id=None,
+                   instanceTenantId=None,
+                   name=None,
+                   systemTag=None,
+                   headers=None,
+                   payload=None,
+                   active_validation=True,
+                   **request_parameters):
+        """Creates tag with specified tag attributes.
 
-    # Create Tag
-    def create_tag(self, rq_description = None, rq_dynamicRules = None, rq_id = None, rq_instanceTenantId = None, rq_name = None, rq_systemTag = None, headers=None,payload=None,**request_parameters):
+        Args:
+            description(string): TagDTO's description.
+            dynamicRules(list): TagDTO's dynamicRules (list of
+                objects).
+            id(string): TagDTO's id.
+            instanceTenantId(string): TagDTO's instanceTenantId.
+            name(string): TagDTO's name.
+            systemTag(boolean): TagDTO's systemTag.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_systemTag is not None: payload.update( { 'systemTag':  rq_systemTag })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_dynamicRules is not None: payload.update( { 'dynamicRules':  rq_dynamicRules })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_instanceTenantId is not None: payload.update( { 'instanceTenantId':  rq_instanceTenantId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_1399891c42a8be64').validate(payload)
+        _payload = {
+            'systemTag':
+                systemTag,
+            'description':
+                description,
+            'dynamicRules':
+                dynamicRules,
+            'name':
+                name,
+            'id':
+                id,
+            'instanceTenantId':
+                instanceTenantId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_1399891c42a8be64').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_1399891c42a8be64', json_data)
 
+    def get_tag_resource_types(self,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """Returns list of supported resource types.
 
-    # Get Tag resource types
-    def get_tag_resource_types(self, headers=None,payload=None,**request_parameters):
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_4695090d403b8eaa').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_4695090d403b8eaa').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag/member/type', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag/member/type', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/member/type')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_4695090d403b8eaa', json_data)
 
+    def updates_tag_membership(self,
+                               memberToTags=None,
+                               memberType=None,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """Updates tag membership. As part of the request payload through
+        this API, only the specified members are added /
+        retained to the given input tags. Possible values of
+        memberType attribute in the request payload can be
+        queried by using the /tag/member/type API.
 
-    # Updates tag membership
-    def updates_tag_membership(self, rq_memberToTags = None, rq_memberType = None, headers=None,payload=None,**request_parameters):
+        Args:
+            memberToTags(list): TagMemberDTO's memberToTags (list of
+                objects).
+            memberType(string): TagMemberDTO's memberType.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_memberToTags is not None: payload.update( { 'memberToTags':  rq_memberToTags })
-        if rq_memberType is not None: payload.update( { 'memberType':  rq_memberType })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_45bc7a8344a8bc1e').validate(payload)
+        _payload = {
+            'memberToTags':
+                memberToTags,
+            'memberType':
+                memberType,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_45bc7a8344a8bc1e').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v2/tag/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v2/tag/member', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/member')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_45bc7a8344a8bc1e', json_data)
 
+    def update_tag(self,
+                   description=None,
+                   dynamicRules=None,
+                   id=None,
+                   instanceTenantId=None,
+                   name=None,
+                   systemTag=None,
+                   headers=None,
+                   payload=None,
+                   active_validation=True,
+                   **request_parameters):
+        """Updates a tag specified by id.
 
-    # Update Tag
-    def update_tag(self, rq_description = None, rq_dynamicRules = None, rq_id = None, rq_instanceTenantId = None, rq_name = None, rq_systemTag = None, headers=None,payload=None,**request_parameters):
+        Args:
+            description(string): TagDTO's description.
+            dynamicRules(list): TagDTO's dynamicRules (list of
+                objects).
+            id(string): TagDTO's id.
+            instanceTenantId(string): TagDTO's instanceTenantId.
+            name(string): TagDTO's name.
+            systemTag(boolean): TagDTO's systemTag.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_systemTag is not None: payload.update( { 'systemTag':  rq_systemTag })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_dynamicRules is not None: payload.update( { 'dynamicRules':  rq_dynamicRules })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_id is not None: payload.update( { 'id':  rq_id })
-        if rq_instanceTenantId is not None: payload.update( { 'instanceTenantId':  rq_instanceTenantId })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_4d86a993469a9da9').validate(payload)
+        _payload = {
+            'systemTag':
+                systemTag,
+            'description':
+                description,
+            'dynamicRules':
+                dynamicRules,
+            'name':
+                name,
+            'id':
+                id,
+            'instanceTenantId':
+                instanceTenantId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_4d86a993469a9da9').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.put(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.put(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_4d86a993469a9da9', json_data)
 
+    def get_tag_count(self,
+                      attribute_name=None,
+                      level=None,
+                      name=None,
+                      name_space=None,
+                      size=None,
+                      system_tag=None,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
+        """Returns tag count.
 
-    # Get Tag Count
-    def get_tag_count(self, param_attribute_name = None, param_level = None, param_name = None, param_name_space = None, param_size = None, param_system_tag = None, headers=None,payload=None,**request_parameters):
-        check_type( param_name, basestring)
-        check_type( param_name_space, basestring)
-        check_type( param_attribute_name, basestring)
-        check_type( param_level, basestring)
-        check_type( param_size, basestring)
-        check_type( param_system_tag, basestring)
+        Args:
+            name(basestring): name query parameter.
+            name_space(basestring): nameSpace query parameter.
+            attribute_name(basestring): attributeName query
+                parameter.
+            level(basestring): level query parameter.
+            size(basestring): size in kilobytes(KB).
+            system_tag(basestring): systemTag query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(name, basestring)
+        check_type(name_space, basestring)
+        check_type(attribute_name, basestring)
+        check_type(level, basestring)
+        check_type(size, basestring)
+        check_type(system_tag, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_name is not None: params.update( { 'name': param_name })
-        if param_name_space is not None: params.update( { 'nameSpace': param_name_space })
-        if param_attribute_name is not None: params.update( { 'attributeName': param_attribute_name })
-        if param_level is not None: params.update( { 'level': param_level })
-        if param_size is not None: params.update( { 'size': param_size })
-        if param_system_tag is not None: params.update( { 'systemTag': param_system_tag })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'name':
+                name,
+            'nameSpace':
+                name_space,
+            'attributeName':
+                attribute_name,
+            'level':
+                level,
+            'size':
+                size,
+            'systemTag':
+                system_tag,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_8091a9b84bfba53b').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_8091a9b84bfba53b').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag/count', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_8091a9b84bfba53b', json_data)
 
+    def delete_tag(self,
+                   id,
+                   headers=None,
+                   payload=None,
+                   active_validation=True,
+                   **request_parameters):
+        """Deletes a tag specified by id.
 
-    # Delete Tag
-    def delete_tag(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): Tag ID.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_429c28154bdaa13d').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_429c28154bdaa13d').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload, headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload)
 
         return self._object_factory('bpm_429c28154bdaa13d', json_data)
 
+    def remove_tag_member(self,
+                          id,
+                          member_id,
+                          headers=None,
+                          payload=None,
+                          active_validation=True,
+                          **request_parameters):
+        """Removes Tag member from the tag specified by id.
 
-    # Remove Tag member
-    def remove_tag_member(self, path_param_id, path_param_member_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
-        check_type( path_param_member_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): Tag ID.
+            member_id(basestring): TagMember id to be removed from
+                tag.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        check_type(member_id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
-            'memberId': path_param_member_id,
+            'id': id,
+            'memberId': member_id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_caa3ea704d78b37e').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_caa3ea704d78b37e').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.delete(apply_path_params('/api/v2/tag/${id}/member/${memberId}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/${id}/member/${memberId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload, headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=params,
+                                             json=_payload)
 
         return self._object_factory('bpm_caa3ea704d78b37e', json_data)
 
+    def get_tag_members_by_id(self,
+                              id,
+                              member_type,
+                              level='0',
+                              limit=None,
+                              member_association_type=None,
+                              offset=None,
+                              headers=None,
+                              payload=None,
+                              active_validation=True,
+                              **request_parameters):
+        """Returns tag members specified by id.
 
-    # Get Tag members by Id
-    def get_tag_members_by_id(self, param_member_type, path_param_id, param_level = '0', param_limit = None, param_member_association_type = None, param_offset = None, headers=None,payload=None,**request_parameters):
-        check_type( param_member_type, basestring, may_be_none=False)
-        check_type( param_offset, basestring)
-        check_type( param_limit, basestring)
-        check_type( param_member_association_type, basestring)
-        check_type( param_level, basestring)
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): Tag ID.
+            member_type(basestring): Entity type of the member.
+                Possible values can be retrieved by
+                using /tag/member/type API.
+            offset(basestring): Used for pagination. It indicates
+                the starting row number out of available
+                member records.
+            limit(basestring): Used to Number of maximum members to
+                return in the result.
+            member_association_type(basestring): Indicates how the
+                member is associated with the tag.
+                Possible values and description. 1)
+                DYNAMIC : The member is associated to
+                the tag through rules. 2) STATIC – The
+                member is associated to the tag
+                manually. 3) MIXED – The member is
+                associated manually and also satisfies
+                the rule defined for the tag.
+            level(basestring): level query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(member_type, basestring,
+                   may_be_none=False)
+        check_type(offset, basestring)
+        check_type(limit, basestring)
+        check_type(member_association_type, basestring)
+        check_type(level, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_member_type is not None: params.update( { 'memberType': param_member_type })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_member_association_type is not None: params.update( { 'memberAssociationType': param_member_association_type })
-        if param_level is not None: params.update( { 'level': param_level })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'memberType':
+                member_type,
+            'offset':
+                offset,
+            'limit':
+                limit,
+            'memberAssociationType':
+                member_association_type,
+            'level':
+                level,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_eab7abe048fb99ad').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_eab7abe048fb99ad').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag/${id}/member', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/${id}/member')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_eab7abe048fb99ad', json_data)
 
+    def get_tag_by_id(self,
+                      id,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
+        """Returns tag specified by Id.
 
-    # Get Tag by Id
-    def get_tag_by_id(self, path_param_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_id, basestring, may_be_none=False)
+        Args:
+            id(basestring): Tag ID.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'id': path_param_id,
+            'id': id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_c1a359b14c89b573').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_c1a359b14c89b573').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag/${id}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag/${id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_c1a359b14c89b573', json_data)
 
+    def get_tag(self,
+                additional_info_attributes=None,
+                additional_info_name_space=None,
+                field=None,
+                level=None,
+                limit=None,
+                name=None,
+                offset=None,
+                order=None,
+                size=None,
+                sort_by=None,
+                system_tag=None,
+                headers=None,
+                payload=None,
+                active_validation=True,
+                **request_parameters):
+        """Returns the tags for given filter criteria.
 
-    # Get Tag
-    def get_tag(self, param_additional_info_attributes = None, param_additional_info_name_space = None, param_field = None, param_level = None, param_limit = None, param_name = None, param_offset = None, param_order = None, param_size = None, param_sort_by = None, param_system_tag = None, headers=None,payload=None,**request_parameters):
-        check_type( param_name, basestring)
-        check_type( param_additional_info_name_space, basestring)
-        check_type( param_additional_info_attributes, basestring)
-        check_type( param_level, basestring)
-        check_type( param_offset, basestring)
-        check_type( param_limit, basestring)
-        check_type( param_size, basestring)
-        check_type( param_field, basestring)
-        check_type( param_sort_by, basestring)
-        check_type( param_order, basestring)
-        check_type( param_system_tag, basestring)
+        Args:
+            name(basestring): Tag name is mandatory when filter
+                operation is used.
+            additional_info_name_space(basestring):
+                additionalInfo.nameSpace query
+                parameter.
+            additional_info_attributes(basestring):
+                additionalInfo.attributes query
+                parameter.
+            level(basestring): level query parameter.
+            offset(basestring): offset query parameter.
+            limit(basestring): limit query parameter.
+            size(basestring): size in kilobytes(KB).
+            field(basestring): Available field names are :'name,id,p
+                arentId,type,additionalInfo.nameSpace,ad
+                ditionalInfo.attributes'.
+            sort_by(basestring): Only supported attribute is name.
+                SortyBy is mandatory when order is used.
+            order(basestring): Available values are asc and des.
+            system_tag(basestring): systemTag query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(name, basestring)
+        check_type(additional_info_name_space, basestring)
+        check_type(additional_info_attributes, basestring)
+        check_type(level, basestring)
+        check_type(offset, basestring)
+        check_type(limit, basestring)
+        check_type(size, basestring)
+        check_type(field, basestring)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        check_type(system_tag, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_name is not None: params.update( { 'name': param_name })
-        if param_additional_info_name_space is not None: params.update( { 'additionalInfo.nameSpace': param_additional_info_name_space })
-        if param_additional_info_attributes is not None: params.update( { 'additionalInfo.attributes': param_additional_info_attributes })
-        if param_level is not None: params.update( { 'level': param_level })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_size is not None: params.update( { 'size': param_size })
-        if param_field is not None: params.update( { 'field': param_field })
-        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
-        if param_order is not None: params.update( { 'order': param_order })
-        if param_system_tag is not None: params.update( { 'systemTag': param_system_tag })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'name':
+                name,
+            'additionalInfo.nameSpace':
+                additional_info_name_space,
+            'additionalInfo.attributes':
+                additional_info_attributes,
+            'level':
+                level,
+            'offset':
+                offset,
+            'limit':
+                limit,
+            'size':
+                size,
+            'field':
+                field,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+            'systemTag':
+                system_tag,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_ee9aab01487a8896').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ee9aab01487a8896').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v2/tag', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v2/tag', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/tag')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_ee9aab01487a8896', json_data)
-
-

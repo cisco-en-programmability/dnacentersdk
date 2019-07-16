@@ -31,20 +31,182 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator4Bb22Af046Fa8F08(object):
     """Add Device request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator4Bb22Af046Fa8F08, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'cliTransport': {'type': 'string'}, 'computeDevice': {'type': 'boolean'}, 'enablePassword': {'type': 'string'}, 'extendedDiscoveryInfo': {'type': 'string'}, 'httpPassword': {'type': 'string'}, 'httpPort': {'type': 'string'}, 'httpSecure': {'type': 'boolean'}, 'httpUserName': {'type': 'string'}, 'ipAddress': {'type': 'array', 'items': {'type': 'string'}}, 'merakiOrgId': {'type': 'array', 'items': {'type': 'string'}}, 'netconfPort': {'type': 'string'}, 'password': {'type': 'string'}, 'serialNumber': {'type': 'string'}, 'snmpAuthPassphrase': {'type': 'string'}, 'snmpAuthProtocol': {'type': 'string'}, 'snmpMode': {'type': 'string'}, 'snmpPrivPassphrase': {'type': 'string'}, 'snmpPrivProtocol': {'type': 'string'}, 'snmpROCommunity': {'type': 'string'}, 'snmpRWCommunity': {'type': 'string'}, 'snmpRetry': {'type': 'number'}, 'snmpTimeout': {'type': 'number'}, 'snmpUserName': {'type': 'string'}, 'snmpVersion': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['COMPUTE_DEVICE', 'MERAKI_DASHBOARD', 'NETWORK_DEVICE', 'NODATACHANGE']}, 'updateMgmtIPaddressList': {'type': 'array', 'items': {'type': 'object', 'properties': {'existMgmtIpAddress': {'type': 'string'}, 'newMgmtIpAddress': {'type': 'string'}}}}, 'userName': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "cliTransport": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "computeDevice": {
+                "type": "boolean"
+                },
+                "enablePassword": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "extendedDiscoveryInfo": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "httpPassword": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "httpPort": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "httpSecure": {
+                "type": "boolean"
+                },
+                "httpUserName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "ipAddress": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "merakiOrgId": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "netconfPort": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "password": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "serialNumber": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpAuthPassphrase": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpAuthProtocol": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpMode": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpPrivPassphrase": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpPrivProtocol": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpROCommunity": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpRWCommunity": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpRetry": {
+                "type": "number"
+                },
+                "snmpTimeout": {
+                "type": "number"
+                },
+                "snmpUserName": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "snmpVersion": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                 "",
+                "enum": [
+                "COMPUTE_DEVICE",
+                "MERAKI_DASHBOARD",
+                "NETWORK_DEVICE",
+                "NODATACHANGE"
+                ],
+                "type": "string"
+                },
+                "updateMgmtIPaddressList": {
+                "description":
+                 "",
+                "items": {
+                "properties": {
+                "existMgmtIpAddress": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "newMgmtIpAddress": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "userName": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

@@ -24,36 +24,52 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
+import calendar
+import time
+from tests.config import SITE_PROFILE_DEVICE_IP
 
 
-
-
-# 7fbe-4b80-4879-baa4
 def is_valid_get_device_details_by_ip(obj):
     some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_device_details_by_ip(api):
-    endpoint_result = api.site_profile.get_device_details_by_ip( param_device_ip = '10.10.20.253', payload = '' )
+    endpoint_result = api.site_profile.get_device_details_by_ip(
+        device_ip=SITE_PROFILE_DEVICE_IP,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
+@pytest.mark.skipif(not all([SITE_PROFILE_DEVICE_IP]) is True,
+                    reason="tests.config values required not present")
 def test_get_device_details_by_ip(api):
-    assert is_valid_get_device_details_by_ip(get_device_details_by_ip(api))
+    assert is_valid_get_device_details_by_ip(
+        get_device_details_by_ip(api)
+    )
 
 
-# 8288-28f4-4f28-bd0d
 def is_valid_provision_nfv(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def provision_nfv(api):
-    endpoint_result = api.site_profile.provision_nfv( rq_callbackUrl = None, rq_provisioning = None, rq_siteProfile = None, payload = '' )
+    endpoint_result = api.site_profile.provision_nfv(
+        callbackUrl=None,
+        provisioning=None,
+        siteProfile=None,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_provision_nfv(api):
-    assert is_valid_provision_nfv(provision_nfv(api))
-
+    assert is_valid_provision_nfv(
+        provision_nfv(api)
+    )

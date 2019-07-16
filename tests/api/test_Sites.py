@@ -24,52 +24,79 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
+import calendar
+import time
 
 
-
-
-# 17a8-2ac9-4cf9-9ab0
 def is_valid_get_site_health(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_site_health(api):
-    endpoint_result = api.sites.get_site_health( param_timestamp = '1563231300', payload = '' )
+    endpoint_result = api.sites.get_site_health(
+        timestamp='',
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_site_health(api):
-    assert is_valid_get_site_health(get_site_health(api))
+    assert is_valid_get_site_health(
+        get_site_health(api)
+    )
 
 
-# 50b5-89fd-4c7a-930a
 def is_valid_create_site(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def create_site(api):
-    endpoint_result = api.sites.create_site( rq_site = None, rq_type = None, payload = '' )
+    endpoint_result = api.sites.create_site(
+        site=None,
+        type=None,
+        payload={
+            'type': 'building',
+            'site': {
+                'building': {
+                    'name': 'Test_Building',
+                    'address': '10.10.22.70'
+                }
+            }
+        },
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_create_site(api):
-    assert is_valid_create_site(create_site(api))
+    assert is_valid_create_site(
+        create_site(api)
+    )
 
 
-# eeb1-68eb-4198-8e07
 def is_valid_assign_device_to_site(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def assign_device_to_site(api):
-    endpoint_result = api.sites.assign_device_to_site( path_param_site_id = '', rq_device = None, payload = '' )
+    device = api.devices.get_device_list().response[0]
+    endpoint_result = api.sites.assign_device_to_site(
+        site_id='1',
+        device=[{'ip': device.managementIpAddress}],
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
 def test_assign_device_to_site(api):
-    assert is_valid_assign_device_to_site(assign_device_to_site(api))
-
+    assert is_valid_assign_device_to_site(
+        assign_device_to_site(api)
+    )

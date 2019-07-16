@@ -24,85 +24,134 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
+import calendar
+import time
+from tests.config import (NEW_ENTERPRISE_SSID_PAYLOAD, NEW_ENTERPRISE_SSID_NAME,
+                          NEW_PROVISION_SSID_PAYLOAD, NEW_MANAGED_APLOCATIONS)
 
 
-
-
-# 8a96-fb95-4d09-a349
 def is_valid_create_enterprise_ssid(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def create_enterprise_ssid(api):
-    endpoint_result = api.non_fabric_wireless.create_enterprise_ssid( rq_enableBroadcastSSID = None, rq_enableFastLane = None, rq_enableMACFiltering = None, rq_fastTransition = None, rq_name = None, rq_passphrase = None, rq_radioPolicy = None, rq_securityLevel = None, rq_trafficType = None, payload = {'name': 'string', 'securityLevel': 'WPA2_ENTERPRISE', 'passphrase': 'string', 'enableFastLane': True, 'enableMACFiltering': True, 'trafficType': 'voicedata', 'radioPolicy': 'Dual band operation (2.4GHz and 5GHz)', 'enableBroadcastSSID': True, 'fastTransition': 'Adaptive'} )
+    endpoint_result = api.non_fabric_wireless.create_enterprise_ssid(
+        enableBroadcastSSID=None,
+        enableFastLane=None,
+        enableMACFiltering=None,
+        fastTransition=None,
+        name=None,
+        passphrase=None,
+        radioPolicy=None,
+        securityLevel=None,
+        trafficType=None,
+        payload=NEW_ENTERPRISE_SSID_PAYLOAD,
+        active_validation=True
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+@pytest.mark.skipif(not all([NEW_ENTERPRISE_SSID_PAYLOAD]) is True,
+                    reason="tests.config values required not present")
 def test_create_enterprise_ssid(api):
-    assert is_valid_create_enterprise_ssid(create_enterprise_ssid(api))
+    assert is_valid_create_enterprise_ssid(
+        create_enterprise_ssid(api)
+    )
 
 
-# cca5-19ba-45eb-b423
 def is_valid_get_enterprise_ssid(obj):
-    return len(obj) > 0 and all([ item for item in obj ])
+    return len(obj) >= 0 and all([item for item in obj])
 
 
 def get_enterprise_ssid(api):
-    endpoint_result = api.non_fabric_wireless.get_enterprise_ssid( param_ssid_name = None, payload = '' )
+    endpoint_result = api.non_fabric_wireless.get_enterprise_ssid(
+        ssid_name=NEW_ENTERPRISE_SSID_NAME,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+@pytest.mark.skipif(not all([NEW_ENTERPRISE_SSID_NAME]) is True,
+                    reason="tests.config values required not present")
 def test_get_enterprise_ssid(api):
-    assert is_valid_get_enterprise_ssid(get_enterprise_ssid(api))
+    assert is_valid_get_enterprise_ssid(
+        get_enterprise_ssid(api)
+    )
 
 
-# c7a6-592b-4b98-a369
-def is_valid_delete_enterprise_ssid(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
-
-
-def delete_enterprise_ssid(api):
-    endpoint_result = api.non_fabric_wireless.delete_enterprise_ssid( path_param_ssid_name = '', payload = '' )
-    return endpoint_result
-
-
-@pytest.mark.skip(reason="no way of currently testing this")
-def test_delete_enterprise_ssid(api):
-    assert is_valid_delete_enterprise_ssid(delete_enterprise_ssid(api))
-
-
-# db9f-997f-4e59-aec1
 def is_valid_create_and_provision_ssid(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def create_and_provision_ssid(api):
-    endpoint_result = api.non_fabric_wireless.create_and_provision_ssid( rq_enableFabric = None, rq_flexConnect = None, rq_managedAPLocations = None, rq_ssidDetails = None, rq_ssidType = None, rq_vlanAndDynamicInterfaceDetails = None, payload = {'managedAPLocations': ['string'], 'ssidDetails': {'name': 'string', 'securityLevel': 'WPA2_ENTERPRISE', 'enableFastLane': True, 'passphrase': 'string', 'trafficType': 'data', 'enableBroadcastSSID': True, 'radioPolicy': 'Dual band operation (2.4GHz and 5GHz)', 'enableMACFiltering': True, 'fastTransition': 'Adaptive', 'webAuthURL': 'string'}, 'ssidType': 'Guest', 'enableFabric': True, 'flexConnect': {'enableFlexConnect': True, 'localToVlan': 0}, 'vlanAndDynamicInterfaceDetails': {'managedAPLocation': {'interfaceIPAddress': 'string', 'interfaceNetmaskInCIDR': 0, 'interfaceGateway': 'string', 'lagOrPortNumber': 0}, 'vlanId': 0, 'vlanName': 'string'}} )
+    endpoint_result = api.non_fabric_wireless.create_and_provision_ssid(
+        enableFabric=None,
+        flexConnect=None,
+        managedAPLocations=None,
+        ssidDetails=None,
+        ssidType=None,
+        vlanAndDynamicInterfaceDetails=None,
+        payload=NEW_PROVISION_SSID_PAYLOAD,
+        active_validation=True
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+@pytest.mark.skipif(not all([NEW_PROVISION_SSID_PAYLOAD]) is True,
+                    reason="tests.config values required not present")
 def test_create_and_provision_ssid(api):
-    assert is_valid_create_and_provision_ssid(create_and_provision_ssid(api))
+    assert is_valid_create_and_provision_ssid(
+        create_and_provision_ssid(api)
+    )
 
 
-# cca0-9834-4a48-9dfa
 def is_valid_delete_and_provision_ssid(obj):
-    some_keys = [ 'executionId', 'executionStatusUrl' ]
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def delete_and_provision_ssid(api):
-    endpoint_result = api.non_fabric_wireless.delete_and_provision_ssid( path_param_managed_aplocations = '', path_param_ssid_name = '', payload = '' )
+    endpoint_result = api.non_fabric_wireless.delete_and_provision_ssid(
+        managed_aplocations=NEW_MANAGED_APLOCATIONS,
+        ssid_name=NEW_ENTERPRISE_SSID_NAME,
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+@pytest.mark.skipif(not all([NEW_MANAGED_APLOCATIONS, NEW_ENTERPRISE_SSID_NAME]) is True,
+                    reason="tests.config values required not present")
 def test_delete_and_provision_ssid(api):
-    assert is_valid_delete_and_provision_ssid(delete_and_provision_ssid(api))
+    assert is_valid_delete_and_provision_ssid(
+        delete_and_provision_ssid(api)
+    )
 
+
+def is_valid_delete_enterprise_ssid(obj):
+    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def delete_enterprise_ssid(api):
+    endpoint_result = api.non_fabric_wireless.delete_enterprise_ssid(
+        ssid_name=NEW_ENTERPRISE_SSID_NAME,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+@pytest.mark.skipif(not all([NEW_ENTERPRISE_SSID_NAME]) is True,
+                    reason="tests.config values required not present")
+def test_delete_enterprise_ssid(api):
+    assert is_valid_delete_enterprise_ssid(
+        delete_enterprise_ssid(api)
+    )

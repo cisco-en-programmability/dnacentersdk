@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class CommandRunner( object ):
+
+class CommandRunner(object):
     """DNA Center Command Runner API.
 
-    Wraps the DNA Center Command Runner API and exposes the API as native Python
+    Wraps the DNA Center Command Runner
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,78 +71,162 @@ class CommandRunner( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def get_all_keywords_of_clis_accepted(self,
+                                          headers=None,
+                                          payload=None,
+                                          active_validation=True,
+                                          **request_parameters):
+        """Get valid keywords.
 
-    # Get all keywords of CLIs accepted by command runner
-    def get_all_keywords_of_clis_accepted_by_command_runner(self, headers=None,payload=None,**request_parameters):
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_33bb2b9d40199e14').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_33bb2b9d40199e14').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/network-device-poller/cli/legit-reads', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/network-device-poller/cli/legit-reads', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/network-device-poller/cli/legit-reads')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_33bb2b9d40199e14', json_data)
 
+    def run_read_only_commands_on_devices(self,
+                                          commands=None,
+                                          description=None,
+                                          deviceUuids=None,
+                                          name=None,
+                                          timeout=None,
+                                          headers=None,
+                                          payload=None,
+                                          active_validation=True,
+                                          **request_parameters):
+        """Submit request for read-only CLIs.
 
-    # Run read-only commands on devices to get their real-time configuration
-    def run_read_only_commands_on_devices_to_get_their_real_time_configuration(self, rq_commands = None, rq_description = None, rq_deviceUuids = None, rq_name = None, rq_timeout = None, headers=None,payload=None,**request_parameters):
+        Args:
+            commands(list): CommandRunnerDTO's commands (list of
+                strings).
+            description(string): CommandRunnerDTO's description.
+            deviceUuids(list): CommandRunnerDTO's deviceUuids (list
+                of strings).
+            name(string): CommandRunnerDTO's name.
+            timeout(number): CommandRunnerDTO's timeout.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
-            check_type( headers.get('Content-Type', self._session.headers.get('Content-Type')), basestring, may_be_none=False)
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('Content-Type',
+                                   self._session.headers.get(
+                                       'Content-Type')),
+                       basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        if rq_commands is not None: payload.update( { 'commands':  rq_commands })
-        if rq_description is not None: payload.update( { 'description':  rq_description })
-        if rq_deviceUuids is not None: payload.update( { 'deviceUuids':  rq_deviceUuids })
-        if rq_name is not None: payload.update( { 'name':  rq_name })
-        if rq_timeout is not None: payload.update( { 'timeout':  rq_timeout })
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_d6b8ca774739adf4').validate(payload)
+        _payload = {
+            'commands':
+                commands,
+            'description':
+                description,
+            'deviceUuids':
+                deviceUuids,
+            'name':
+                name,
+            'timeout':
+                timeout,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d6b8ca774739adf4').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.post(apply_path_params('/api/v1/network-device-poller/cli/read-request', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.post(apply_path_params('/api/v1/network-device-poller/cli/read-request', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/network-device-poller/cli/read-'
+                 + 'request')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=params,
+                                           json=_payload)
 
         return self._object_factory('bpm_d6b8ca774739adf4', json_data)
-
-

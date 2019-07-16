@@ -31,20 +31,54 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorBc8AAb4746Ca883D(object):
     """Import software image via URL request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc8AAb4746Ca883D, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'array', 'items': {'type': 'object', 'properties': {'applicationType': {'type': 'string'}, 'imageFamily': {'type': 'string'}, 'sourceURL': {'type': 'string'}, 'thirdParty': {'type': 'boolean'}, 'vendor': {'type': 'string'}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "items": {
+                "properties": {
+                "applicationType": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "imageFamily": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "sourceURL": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "thirdParty": {
+                "type": "boolean"
+                },
+                "vendor": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

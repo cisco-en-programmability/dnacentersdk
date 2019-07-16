@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Access-Tokens API wrapper.
+"""DNA Center Authentication API wrapper.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -55,7 +55,7 @@ __copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
 __license__ = "MIT"
 
 
-class Authentication( object ):
+class Authentication(object):
     """DNA Center Authentication API.
 
     Wraps the DNA Center Authentication API and exposes the API as native
@@ -63,13 +63,20 @@ class Authentication( object ):
 
     """
 
-    def __init__(self, base_url, object_factory, single_request_timeout=None, verify=True):
-        """Initialize an Authentication object with the provided RestSession.
+    def __init__(self, base_url, object_factory, single_request_timeout=None,
+                 verify=True):
+        """Initialize an Authentication
+        object with the provided RestSession.
 
         Args:
             base_url(basestring): The base URL the API endpoints.
+            object_factory(callable): The factory function to use to create
+                Python objects from the returned DNA Center JSON data objects.
             single_request_timeout(int): Timeout in seconds for the API
                 requests.
+            verify(bool,basestring): Controls whether we verify the server’s
+                TLS certificate, or a string, in which case it must be a path
+                to a CA bundle to use.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -84,7 +91,8 @@ class Authentication( object ):
         self._base_url = str(validate_base_url(base_url))
         self._single_request_timeout = single_request_timeout
         self._verify = verify
-        self._request_kwargs = {"timeout": single_request_timeout, "verify": verify}
+        self._request_kwargs = {"timeout": single_request_timeout,
+                                "verify": verify}
         self._object_factory = object_factory
 
     @property
@@ -102,21 +110,16 @@ class Authentication( object ):
         """Timeout in seconds for the API requests."""
         return self._single_request_timeout
 
-    # Authentication API
-    def authentication_api(self, username, password, encodedAuth = None):
-        """Exchange an Authorization Code for an Access Token.
+    def authentication_api(self, username, password, encoded_auth=None):
+        """Exchange basic auth data for an Access Token.
 
-        Exchange an Authorization Code for an Access Token that can be used to
-        invoke the APIs.
+        Exchange basic auth data for an Access Token(x-auth-token)
+        that can be used to invoke the APIs.
 
         Args:
-            client_id(basestring): Provided when you created your integration.
-            client_secret(basestring): Provided when you created your
-                integration.
-            code(basestring): The Authorization Code provided by the user
-                OAuth process.
-            redirect_uri(basestring): The redirect URI used in the user OAuth
-                process.
+            username(basestring): HTTP Basic Auth username.
+            password(basestring): HTTP Basic Auth password.
+            encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
 
         Returns:
             AccessToken: An AccessToken object with the access token provided
@@ -127,23 +130,28 @@ class Authentication( object ):
             ApiError: If the DNA Center cloud returns an error.
 
         """
-        self._endpoint_url = urllib.parse.urljoin(self._base_url, '/dna/system/api/v1/auth/token')
+        temp_url = '/dna/system/api/v1/auth/token'
+        self._endpoint_url = urllib.parse.urljoin(self._base_url, temp_url)
 
-        if encodedAuth is not None:
-            check_type(encodedAuth, basestring, may_be_none=False)
+        if encoded_auth is not None:
+            check_type(encoded_auth, basestring, may_be_none=False)
+            if isinstance(encoded_auth, str):
+                encoded_auth = bytes(encoded_auth, 'utf-8')
             # API request
-            response = requests.post(self._endpoint_url, data=None, headers={'authorization': b'Basic ' + encodedAuth},
-                                    **self._request_kwargs)
+            response = requests.post(self._endpoint_url, data=None,
+                                     headers={'authorization': b'Basic '
+                                              + encoded_auth},
+                                     **self._request_kwargs)
         else:
             check_type(username, basestring, may_be_none=False)
             check_type(password, basestring, may_be_none=False)
             # API request
-            response = requests.post(self._endpoint_url, data=None, auth=(username, password),
-                                    **self._request_kwargs)
-        
+            response = requests.post(self._endpoint_url, data=None,
+                                     auth=(username, password),
+                                     **self._request_kwargs)
+
         check_response_code(response, EXPECTED_RESPONSE_CODE['POST'])
         json_data = extract_and_parse_json(response)
 
         # Return a access_token object created from the response JSON data
         return self._object_factory('bpm_ac8ae94c4e69a09d', json_data)
-

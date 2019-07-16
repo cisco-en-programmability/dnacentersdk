@@ -29,8 +29,12 @@ import json
 
 
 class MyDict(dict):
-    """
-    A **Python** _dict_ subclass which tries to act like **JavaScript** objects, so you can use the **dot notation** (.) to access members of the object. If the member doesn't exist yet then it's created when you assign something to it. Brackets notation (d['foo']) is also possible.
+    """A **Python** _dict_ subclass which tries to act like **JavaScript**
+    objects, so you can use the **dot notation** (.) to access members of
+    the object.
+    If the member doesn't exist yet then it's created when you assign
+    something to it.
+    Brackets notation (d['foo']) is also possible.
     """
 
     def __init__(self, dict_source=None, **kw):
@@ -90,10 +94,12 @@ class MyDict(dict):
         """
         Check existence of "path" in the tree.
 
-        d = MyDict({'foo': {'bar': 'baz'}})
-        d.has_path('foo.bar') == True
+        .. code-block:: python
 
-        **It only supports "dot-notation" (d.foo.bar)
+            d = MyDict({'foo': {'bar': 'baz'}})
+            d.has_path('foo.bar') == True
+
+        It only supports "dot-notation" (d.foo.bar)
         """
         if super(MyDict, self).__contains__(key):
             return True
@@ -170,32 +176,9 @@ class MyDict(dict):
 
         return _get_dict(self)
 
-    @staticmethod
-    def from_json(json_source):
-        """
-        Returns a "MyDict" instance from a:
-            JSON string
-            <file>-like containing a JSON string
-        """
 
-        if isinstance(json_source, (str, bytes)):
-            # decode bytes to str
-            if isinstance(json_source, bytes):
-                json_source = json_source.decode('utf8')
-
-            load_method = 'loads'
-
-        elif hasattr(json_source, 'read'):
-            json_source.seek(0)
-            load_method = 'load'
-
-        # json_obj = json.load(json_source)
-        # json_obj = json.loads(json_source)
-        json_obj = getattr(json, load_method)(json_source)
-
-        return MyDict(json_obj)
-
-# Data factory function with standard params. 
 def mydict_data_factory(model, json_data):
-    return MyDict(json_data = json_data).json_data #- Uses kw (json_data =) to handle array responses. Returns .json_data as is not important
-
+    """Data factory function with standard params."""
+    # Uses kw (json_data =) to handle array responses.
+    # Returns .json_data as is not important.
+    return MyDict(json_data=json_data).json_data

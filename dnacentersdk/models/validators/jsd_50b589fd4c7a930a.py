@@ -31,20 +31,96 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator50B589Fd4C7A930A(object):
     """Create Site request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator50B589Fd4C7A930A, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'type': {'type': 'string', 'enum': ['area', 'building', 'floor']}, 'site': {'type': 'object', 'properties': {'area': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}, 'building': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'address': {'type': 'string'}}}, 'floor': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'parentName': {'type': 'string'}}}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "site": {
+                "description":
+                "Site",
+                "properties": {
+                "area": {
+                "description":
+                "Area",
+                "properties": {
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "parentName": {
+                "description":
+                "Parent Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "building": {
+                "description":
+                "Building",
+                "properties": {
+                "address": {
+                "description":
+                "Address",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "floor": {
+                "description":
+                "Floor",
+                "properties": {
+                "name": {
+                "description":
+                "Name",
+                "type": "string"
+                },
+                "parentName": {
+                "description":
+                "Parent Name",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": {
+                "description":
+                "Type",
+                "enum": [
+                "area",
+                "building",
+                "floor"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

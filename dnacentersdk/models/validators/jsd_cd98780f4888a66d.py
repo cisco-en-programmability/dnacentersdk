@@ -31,20 +31,63 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidatorCd98780F4888A66D(object):
     """Export Device list request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCd98780F4888A66D, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'deviceUuids': {'type': 'array', 'items': {'type': 'string'}}, 'id': {'type': 'string'}, 'operationEnum': {'type': 'string', 'enum': ['CREDENTIALDETAILS', 'DEVICEDETAILS']}, 'parameters': {'type': 'array', 'items': {'type': 'string'}}, 'password': {'type': 'string'}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "deviceUuids": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "id": {
+                "description":
+                 "",
+                "type": "string"
+                },
+                "operationEnum": {
+                "description":
+                 "",
+                "enum": [
+                "CREDENTIALDETAILS",
+                "DEVICEDETAILS"
+                ],
+                "type": "string"
+                },
+                "parameters": {
+                "description":
+                 "",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "password": {
+                "description":
+                 "",
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )

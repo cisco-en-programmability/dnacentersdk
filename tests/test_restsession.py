@@ -44,18 +44,19 @@ def rate_limit_detected(w):
 
 
 # Tests
-# @pytest.mark.ratelimit
-# def test_rate_limit_retry(api, list_of_rooms, add_rooms):
-#     # Save state and initialize test setup
-#     original_wait_on_rate_limit = api._session.wait_on_rate_limit
-#     api._session.wait_on_rate_limit = True
+@pytest.mark.ratelimit
+def test_rate_limit_retry(api):
+    # Save state and initialize test setup
+    original_wait_on_rate_limit = api._session.wait_on_rate_limit
+    api._session.wait_on_rate_limit = True
 
-#     with warnings.catch_warnings(record=True) as w:
-#         rooms = api.rooms.list()
-#         while True:
-#             # Try and trigger a rate-limit
-#             list(rooms)
-#             if rate_limit_detected(w):
-#                 break
-
-#     api._session.wait_on_rate_limit = original_wait_on_rate_limit
+    with warnings.catch_warnings(record=True) as w:
+        devices = api.devices.get_device_list()
+        i = 0
+        while i < len(devices.response):
+            # Try and trigger a rate-limit
+            api.devices.get_device_config_by_id(path_network_device_id=devices.response[i].id)
+            i += 1
+            if rate_limit_detected(w):
+                break
+    api._session.wait_on_rate_limit = original_wait_on_rate_limit

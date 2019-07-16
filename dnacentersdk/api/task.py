@@ -40,13 +40,14 @@ from ..utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
-    dict_filt,
 )
 
-class Task( object ):
+
+class Task(object):
     """DNA Center Task API.
 
-    Wraps the DNA Center Task API and exposes the API as native Python
+    Wraps the DNA Center Task
+    API and exposes the API as native Python
     methods that return native Python objects.
 
     """
@@ -70,232 +71,496 @@ class Task( object ):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def get_task_count(self,
+                       data=None,
+                       end_time=None,
+                       error_code=None,
+                       failure_reason=None,
+                       is_error=None,
+                       parent_id=None,
+                       progress=None,
+                       service_type=None,
+                       start_time=None,
+                       username=None,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
+        """Returns Task count.
 
-    # Get task count
-    def get_task_count(self, param_data = None, param_end_time = None, param_error_code = None, param_failure_reason = None, param_is_error = None, param_parent_id = None, param_progress = None, param_service_type = None, param_start_time = None, param_username = None, headers=None,payload=None,**request_parameters):
-        check_type( param_start_time, basestring)
-        check_type( param_end_time, basestring)
-        check_type( param_data, basestring)
-        check_type( param_error_code, basestring)
-        check_type( param_service_type, basestring)
-        check_type( param_username, basestring)
-        check_type( param_progress, basestring)
-        check_type( param_is_error, basestring)
-        check_type( param_failure_reason, basestring)
-        check_type( param_parent_id, basestring)
+        Args:
+            start_time(basestring): This is the epoch start time
+                from which tasks need to be fetched.
+            end_time(basestring): This is the epoch end time upto
+                which audit records need to be fetched.
+            data(basestring): Fetch tasks that contains this data.
+            error_code(basestring): Fetch tasks that have this error
+                code.
+            service_type(basestring): Fetch tasks with this service
+                type.
+            username(basestring): Fetch tasks with this username.
+            progress(basestring): Fetch tasks that contains this
+                progress.
+            is_error(basestring): Fetch tasks ended as success or
+                failure. Valid values: true, false.
+            failure_reason(basestring): Fetch tasks that contains
+                this failure reason.
+            parent_id(basestring): Fetch tasks that have this parent
+                Id.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(start_time, basestring)
+        check_type(end_time, basestring)
+        check_type(data, basestring)
+        check_type(error_code, basestring)
+        check_type(service_type, basestring)
+        check_type(username, basestring)
+        check_type(progress, basestring)
+        check_type(is_error, basestring)
+        check_type(failure_reason, basestring)
+        check_type(parent_id, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_start_time is not None: params.update( { 'startTime': param_start_time })
-        if param_end_time is not None: params.update( { 'endTime': param_end_time })
-        if param_data is not None: params.update( { 'data': param_data })
-        if param_error_code is not None: params.update( { 'errorCode': param_error_code })
-        if param_service_type is not None: params.update( { 'serviceType': param_service_type })
-        if param_username is not None: params.update( { 'username': param_username })
-        if param_progress is not None: params.update( { 'progress': param_progress })
-        if param_is_error is not None: params.update( { 'isError': param_is_error })
-        if param_failure_reason is not None: params.update( { 'failureReason': param_failure_reason })
-        if param_parent_id is not None: params.update( { 'parentId': param_parent_id })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'data':
+                data,
+            'errorCode':
+                error_code,
+            'serviceType':
+                service_type,
+            'username':
+                username,
+            'progress':
+                progress,
+            'isError':
+                is_error,
+            'failureReason':
+                failure_reason,
+            'parentId':
+                parent_id,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_26b44ab04649a183').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_26b44ab04649a183').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/task/count', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/task/count', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/task/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_26b44ab04649a183', json_data)
 
+    def get_task_by_id(self,
+                       task_id,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
+        """Returns a task by specified id.
 
-    # Get task by Id
-    def get_task_by_id(self, path_param_task_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_task_id, basestring, may_be_none=False)
+        Args:
+            task_id(basestring): UUID of the Task.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(task_id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'taskId': path_param_task_id,
+            'taskId': task_id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_a1a9387346ba92b1').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a1a9387346ba92b1').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/task/${taskId}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/task/${taskId}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/task/${taskId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_a1a9387346ba92b1', json_data)
 
+    def get_tasks(self,
+                  data=None,
+                  end_time=None,
+                  error_code=None,
+                  failure_reason=None,
+                  is_error=None,
+                  limit=None,
+                  offset=None,
+                  order=None,
+                  parent_id=None,
+                  progress=None,
+                  service_type=None,
+                  sort_by=None,
+                  start_time=None,
+                  username=None,
+                  headers=None,
+                  payload=None,
+                  active_validation=True,
+                  **request_parameters):
+        """Returns task(s) based on filter criteria.
 
-    # Get tasks
-    def get_tasks(self, param_data = None, param_end_time = None, param_error_code = None, param_failure_reason = None, param_is_error = None, param_limit = None, param_offset = None, param_order = None, param_parent_id = None, param_progress = None, param_service_type = None, param_sort_by = None, param_start_time = None, param_username = None, headers=None,payload=None,**request_parameters):
-        check_type( param_start_time, basestring)
-        check_type( param_end_time, basestring)
-        check_type( param_data, basestring)
-        check_type( param_error_code, basestring)
-        check_type( param_service_type, basestring)
-        check_type( param_username, basestring)
-        check_type( param_progress, basestring)
-        check_type( param_is_error, basestring)
-        check_type( param_failure_reason, basestring)
-        check_type( param_parent_id, basestring)
-        check_type( param_offset, basestring)
-        check_type( param_limit, basestring)
-        check_type( param_sort_by, basestring)
-        check_type( param_order, basestring)
+        Args:
+            start_time(basestring): This is the epoch start time
+                from which tasks need to be fetched.
+            end_time(basestring): This is the epoch end time upto
+                which audit records need to be fetched.
+            data(basestring): Fetch tasks that contains this data.
+            error_code(basestring): Fetch tasks that have this error
+                code.
+            service_type(basestring): Fetch tasks with this service
+                type.
+            username(basestring): Fetch tasks with this username.
+            progress(basestring): Fetch tasks that contains this
+                progress.
+            is_error(basestring): Fetch tasks ended as success or
+                failure. Valid values: true, false.
+            failure_reason(basestring): Fetch tasks that contains
+                this failure reason.
+            parent_id(basestring): Fetch tasks that have this parent
+                Id.
+            offset(basestring): offset query parameter.
+            limit(basestring): limit query parameter.
+            sort_by(basestring): Sort results by this field.
+            order(basestring): Sort order - asc or dsc.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(start_time, basestring)
+        check_type(end_time, basestring)
+        check_type(data, basestring)
+        check_type(error_code, basestring)
+        check_type(service_type, basestring)
+        check_type(username, basestring)
+        check_type(progress, basestring)
+        check_type(is_error, basestring)
+        check_type(failure_reason, basestring)
+        check_type(parent_id, basestring)
+        check_type(offset, basestring)
+        check_type(limit, basestring)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        if param_start_time is not None: params.update( { 'startTime': param_start_time })
-        if param_end_time is not None: params.update( { 'endTime': param_end_time })
-        if param_data is not None: params.update( { 'data': param_data })
-        if param_error_code is not None: params.update( { 'errorCode': param_error_code })
-        if param_service_type is not None: params.update( { 'serviceType': param_service_type })
-        if param_username is not None: params.update( { 'username': param_username })
-        if param_progress is not None: params.update( { 'progress': param_progress })
-        if param_is_error is not None: params.update( { 'isError': param_is_error })
-        if param_failure_reason is not None: params.update( { 'failureReason': param_failure_reason })
-        if param_parent_id is not None: params.update( { 'parentId': param_parent_id })
-        if param_offset is not None: params.update( { 'offset': param_offset })
-        if param_limit is not None: params.update( { 'limit': param_limit })
-        if param_sort_by is not None: params.update( { 'sortBy': param_sort_by })
-        if param_order is not None: params.update( { 'order': param_order })
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'data':
+                data,
+            'errorCode':
+                error_code,
+            'serviceType':
+                service_type,
+            'username':
+                username,
+            'progress':
+                progress,
+            'isError':
+                is_error,
+            'failureReason':
+                failure_reason,
+            'parentId':
+                parent_id,
+            'offset':
+                offset,
+            'limit':
+                limit,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_e78bb8a2449b9eed').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e78bb8a2449b9eed').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/task', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/task', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/task')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_e78bb8a2449b9eed', json_data)
 
+    def get_task_tree(self,
+                      task_id,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
+        """Returns a task with its children tasks by based on their id.
 
-    # Get task tree
-    def get_task_tree(self, path_param_task_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_task_id, basestring, may_be_none=False)
+        Args:
+            task_id(basestring): UUID of the Task.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(task_id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'taskId': path_param_task_id,
+            'taskId': task_id,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_f5a269c44f2a95fa').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f5a269c44f2a95fa').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/task/${taskId}/tree', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/task/${taskId}/tree', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/task/${taskId}/tree')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_f5a269c44f2a95fa', json_data)
 
+    def get_task_by_operationid(self,
+                                limit,
+                                offset,
+                                operation_id,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
+        """Returns root tasks associated with an Operationid.
 
-    # Get task by OperationId
-    def get_task_by_operationid(self, path_param_limit, path_param_offset, path_param_operation_id, headers=None,payload=None,**request_parameters):
-        check_type( path_param_operation_id, basestring, may_be_none=False)
-        check_type( path_param_offset, int, may_be_none=False)
-        check_type( path_param_limit, int, may_be_none=False)
+        Args:
+            operation_id(basestring): operationId path parameter.
+            offset(int): Index, minimum value is 0.
+            limit(int): The maximum value of {limit} supported is
+                500.              Base 1 indexing for
+                {limit}, minimum value is 1.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(operation_id, basestring,
+                   may_be_none=False)
+        check_type(offset, int,
+                   may_be_none=False)
+        check_type(limit, int,
+                   may_be_none=False)
         if headers is not None:
-            check_type( headers.get('X-Auth-Token', self._session.headers.get('X-Auth-Token')), basestring, may_be_none=False)
+            check_type(headers.get('X-Auth-Token',
+                                   self._session.headers.get(
+                                       'X-Auth-Token')),
+                       basestring, may_be_none=False)
 
-        params = { }
-        params.update(dict_filt(request_parameters, 'params'))
+        params = {
+        }
+        params.update(request_parameters)
+        params = dict_from_items_with_values(params)
 
         path_params = {
-            'operationId': path_param_operation_id,
-            'offset': path_param_offset,
-            'limit': path_param_limit,
+            'operationId': operation_id,
+            'offset': offset,
+            'limit': limit,
         }
-        path_params.update(dict_filt(request_parameters, 'path_params'))
 
-        payload = payload or {}
-        payload.update( dict_filt(request_parameters, 'payload') )
-
-        self._request_validator('jsd_e487f8d3481b94f2').validate(payload)
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e487f8d3481b94f2').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-                _headers.update(headers)
-                with_custom_headers = True
-        if dict_filt(request_parameters, 'headers'):
-                _headers.update(dict_filt(request_parameters, 'headers'))
-                with_custom_headers = True
+            _headers.update(headers)
+            with_custom_headers = True
 
-
-        # API request
-        json_data = self._session.get(apply_path_params('/api/v1/task/operation/${operationId}/${offset}/${limit}', path_params), params=params, json=payload, headers=_headers) if with_custom_headers \
-        else self._session.get(apply_path_params('/api/v1/task/operation/${operationId}/${offset}/${limit}', path_params), params=params, json=payload)
+        e_url = ('/dna/intent/api/v1/task/operation/${operationId}/${offse'
+                 + 't}/${limit}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload, headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=params,
+                                          json=_payload)
 
         return self._object_factory('bpm_e487f8d3481b94f2', json_data)
-
-

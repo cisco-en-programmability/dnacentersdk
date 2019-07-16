@@ -24,36 +24,48 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
+import calendar
+import time
 
 
-
-
-# e2ad-ba79-43ba-b3e9
 def is_valid_get_client_detail(obj):
     some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_client_detail(api):
-    endpoint_result = api.clients.get_client_detail( param_mac_address = '', param_timestamp = '1563231300', payload = '' )
+    endpoint_result = api.clients.get_client_detail(
+        mac_address='',
+        timestamp='',
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_client_detail(api):
-    assert is_valid_get_client_detail(get_client_detail(api))
+    assert is_valid_get_client_detail(
+        get_client_detail(api)
+    )
 
 
-# 149a-a93b-4ddb-80dd
 def is_valid_get_overall_client_health(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else any([ obj.get(item) is not None for item in some_keys ])
+    some_keys = ['response']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
 
 
 def get_overall_client_health(api):
-    endpoint_result = api.clients.get_overall_client_health( param_timestamp = '1563231300', payload = '' )
+    endpoint_result = api.clients.get_overall_client_health(
+        timestamp='',
+        payload=None,
+        active_validation=True
+    )
     return endpoint_result
 
 
 def test_get_overall_client_health(api):
-    assert is_valid_get_overall_client_health(get_overall_client_health(api))
-
+    assert is_valid_get_overall_client_health(
+        get_overall_client_health(api)
+    )

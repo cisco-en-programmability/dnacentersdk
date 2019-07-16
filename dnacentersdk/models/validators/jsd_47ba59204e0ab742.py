@@ -31,20 +31,93 @@ from __future__ import (
 )
 
 import fastjsonschema
+import json
 from dnacentersdk.exceptions import MalformedRequest
 
 from builtins import *
+
 
 class JSONSchemaValidator47Ba59204E0AB742(object):
     """Create Wireless Profile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator47Ba59204E0AB742, self).__init__()
-        self._validator = fastjsonschema.compile( {'type': 'object', 'properties': {'profileDetails': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'sites': {'type': 'array', 'items': {'type': 'string'}}, 'ssidDetails': {'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Guest', 'Enterprise']}, 'enableFabric': {'type': 'boolean'}, 'flexConnect': {'type': 'object', 'properties': {'enableFlexConnect': {'type': 'boolean'}, 'localToVlan': {'type': 'number'}}}, 'interfaceName': {'type': 'string'}}}}}}}} )
+        self._validator = fastjsonschema.compile(json.loads(
+            '''{
+                "properties": {
+                "profileDetails": {
+                "description":
+                "Profile Details",
+                "properties": {
+                "name": {
+                "description":
+                "Profile Name",
+                "type": "string"
+                },
+                "sites": {
+                "description":
+                "Sites",
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "ssidDetails": {
+                "description":
+                "Ssid Details",
+                "items": {
+                "properties": {
+                "enableFabric": {
+                "type": "boolean"
+                },
+                "flexConnect": {
+                "description":
+                "Flex Connect",
+                "properties": {
+                "enableFlexConnect": {
+                "type": "boolean"
+                },
+                "localToVlan": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "interfaceName": {
+                "description":
+                "Interface Name",
+                "type": "string"
+                },
+                "name": {
+                "description":
+                "Ssid Name",
+                "type": "string"
+                },
+                "type": {
+                "description":
+                "Ssid Type",
+                "enum": [
+                "Guest",
+                "Enterprise"
+                ],
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:
             self._validator(request)
-            return True
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise MalformedRequest('{} is invalid. Reason: {}'.format(request, e.message))
-            return False
+            raise MalformedRequest(
+                '{} is invalid. Reason: {}'.format(request, e.message)
+            )
