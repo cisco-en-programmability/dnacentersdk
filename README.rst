@@ -108,9 +108,9 @@ dnacentersdk_ is a community development projects.  Feedback, thoughts, ideas, a
 
 *Copyright (c) 2019 Cisco and/or its affiliates.*
 
-.. _Introduction: http://dnacentersdk.readthedocs.io/en/latest/user/intro.html
+.. _Introduction: https://dnacentersdk.readthedocs.io/en/latest/api/intro.html
 .. _dnacentersdk.readthedocs.io: https://dnacentersdk.readthedocs.io
-.. _Quickstart: http://dnacentersdk.readthedocs.io/en/latest/user/quickstart.html
+.. _Quickstart: http://dnacentersdk.readthedocs.io/en/latest/api/quickstart.html
 .. _examples: https://github.com/zapodeanu/dnacentersdk/tree/master/examples
 .. _dnacentersdk: https://github.com/zapodeanu/dnacentersdk
 .. _issues: https://github.com/zapodeanu/dnacentersdk/issues
