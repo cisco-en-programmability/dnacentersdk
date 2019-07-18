@@ -8,7 +8,9 @@ dnacentersdk
 
 -------------------------------------------------------------------------------
 
-Welcome to the docs!  dnacentersdk is a *community developed* Pythonic wrapping of the DNA Center APIs. The package represents all of the Cisco DNA Center API interactions via native Python tools.  Making working with the Cisco DNA Center APIs in Python a *native* and *natural* experience.
+Welcome to the docs!  dnacentersdk is a *community developed* Pythonic wrapping of the DNA Center APIs (for API versions: 1.2.10).
+The package represents all of the Cisco DNA Center API interactions via native Python tools.
+Making working with the Cisco DNA Center APIs in Python a *native* and *natural* experience.
 
 **dnacentersdk helps you get things done faster.**  We take care of the API semantics, and you can focus on writing your code.
 
@@ -73,6 +75,3 @@ Leveraging the DNA Center APIs and developing on top of the DNA Center cloud is 
 .. _DNA Center for Developers: https://developer.cisco.com/site/networking/
 .. _contribution: https://github.com/CiscoDevNet/dnacentersdk#contribution
 .. _dnacentersdk: https://github.com/CiscoDevNet/dnacentersdk
-
-..
-   _to_do: Change github urls.

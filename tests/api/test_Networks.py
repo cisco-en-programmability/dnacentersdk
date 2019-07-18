@@ -132,7 +132,7 @@ def test_get_topology_details(api):
 
 
 def is_valid_get_overall_network_health(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
+    some_keys = ['version', 'response', 'measuredBy', 'latestMeasuredByEntity', 'latestHealthScore']
     return True if len(some_keys) == 0 else\
         any([obj.has_path(item) for item in some_keys])
 

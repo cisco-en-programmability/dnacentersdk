@@ -26,3 +26,113 @@ import pytest
 import dnacentersdk
 import calendar
 import time
+from tests.config import PATH_TRACE_SOURCE_IP, PATH_TRACE_DEST_IP
+
+
+def is_valid_initiate_a_new_pathtrace(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def initiate_a_new_pathtrace(api):
+    endpoint_result = api.path_trace.initiate_a_new_pathtrace(
+        controlPath=None,
+        destIP=PATH_TRACE_DEST_IP,
+        destPort=None,
+        inclusions=None,
+        periodicRefresh=None,
+        protocol=None,
+        sourceIP=PATH_TRACE_SOURCE_IP,
+        sourcePort=None,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+@pytest.mark.skipif(not all([PATH_TRACE_SOURCE_IP, PATH_TRACE_DEST_IP]) is True,
+                    reason="tests.config values required not present")
+def test_initiate_a_new_pathtrace(api):
+    assert is_valid_initiate_a_new_pathtrace(
+        initiate_a_new_pathtrace(api)
+    )
+
+
+def is_valid_deletes_pathtrace_by_id(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def deletes_pathtrace_by_id(api):
+    endpoint_result = api.path_trace.deletes_pathtrace_by_id(
+        flow_analysis_id=retrives_all_previous_pathtraces_summary(api).response[0].id,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+def test_deletes_pathtrace_by_id(api):
+    assert is_valid_deletes_pathtrace_by_id(
+        deletes_pathtrace_by_id(api)
+    )
+
+
+def is_valid_retrieves_previous_pathtrace(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def retrieves_previous_pathtrace(api):
+    endpoint_result = api.path_trace.retrieves_previous_pathtrace(
+        flow_analysis_id=initiate_a_new_pathtrace(api).response.flowAnalysisId,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+def test_retrieves_previous_pathtrace(api):
+    assert is_valid_retrieves_previous_pathtrace(
+        retrieves_previous_pathtrace(api)
+    )
+
+
+def is_valid_retrives_all_previous_pathtraces_summary(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def retrives_all_previous_pathtraces_summary(api):
+    endpoint_result = api.path_trace.retrives_all_previous_pathtraces_summary(
+        dest_ip=None,
+        dest_port=None,
+        gt_create_time=None,
+        last_update_time=None,
+        limit=None,
+        lt_create_time=None,
+        offset=None,
+        order=None,
+        periodic_refresh=None,
+        protocol=None,
+        sort_by=None,
+        source_ip=PATH_TRACE_SOURCE_IP,
+        source_port=None,
+        status=None,
+        task_id=None,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+@pytest.mark.skipif(not all([PATH_TRACE_SOURCE_IP]) is True,
+                    reason="tests.config values required not present")
+def test_retrives_all_previous_pathtraces_summary(api):
+    assert is_valid_retrives_all_previous_pathtraces_summary(
+        retrives_all_previous_pathtraces_summary(api)
+    )

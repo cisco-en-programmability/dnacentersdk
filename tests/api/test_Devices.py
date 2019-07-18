@@ -168,8 +168,13 @@ def is_valid_get_device_interface_vlans(obj):
 
 
 def get_device_interface_vlans(api):
+    devices = api.devices.get_device_list().response
+    devices_filtered = [device if 'Switches and Hubs' in device.family
+                        and device.interfaceCount and device.interfaceCount > "1"
+                        else None for device in devices]
+    devices_filtered = list(filter(lambda x: x, devices_filtered))
     endpoint_result = api.devices.get_device_interface_vlans(
-        id=get_device_list(api).response[0].id,
+        id=devices_filtered[0].id,
         interface_type=None,
         payload=None,
         active_validation=True
@@ -278,7 +283,7 @@ def is_valid_get_interface_details(obj):
 def get_interface_details(api):
     endpoint_result = api.devices.get_interface_details(
         device_id=get_device_list(api).response[0].id,
-        name=get_all_interfaces(api).response[0].portName,
+        name=get_device_interface_vlans(api).response[0].interfaceName,
         payload=None,
         active_validation=True
     )

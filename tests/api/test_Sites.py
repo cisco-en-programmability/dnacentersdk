@@ -86,9 +86,11 @@ def is_valid_assign_device_to_site(obj):
 
 
 def assign_device_to_site(api):
+    sites = get_site_health(api).response
+    siteId = sites[0].siteId if sites and len(sites) > 0 else '1'
     device = api.devices.get_device_list().response[0]
     endpoint_result = api.sites.assign_device_to_site(
-        site_id='1',
+        site_id=siteId,
         device=[{'ip': device.managementIpAddress}],
         payload=None,
         active_validation=True

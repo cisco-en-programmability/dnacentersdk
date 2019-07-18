@@ -157,9 +157,13 @@ class DNACenterAPI(object):
         # Check if the user has provided the required basicAuth parameters
         if encoded_auth is None and (username is None or password is None):
             raise AccessTokenError(
-                "You must generate a DNA Center access token to interact with"
-                " the DNA Center APIs, either via the username and password "
-                "or the encoded_auth argument."
+                "You need an access token to interact with the DNA Center"
+                " APIs. DNA Center uses HTTP Basic Auth to create an access"
+                " token. You must provide the username and password or just"
+                " the encoded_auth, either by setting each parameter or its"
+                " environment variable counterpart ("
+                "DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,"
+                " DNA_CENTER_ENCODED_AUTH)."
             )
 
         def get_access_token():

@@ -11,8 +11,6 @@
 | [`script/test`](#scripttest) | Run the project's test suite |
 | [`script/build`](#scriptbuild) | Build the project's product(s) |
 | [`script/ci`](#scriptci) | Continuous integration script |
-| [`script/ci-bootstrap`](#scriptcibootstrap) | CI bootstrap script |
-| [`script/server`](#scriptserver) | Control project servers and services |
 | [`script/console`](#scriptconsole) | Access the project's console |
 
 ### script/installdeps
@@ -50,10 +48,6 @@ This script implements `lint`, `tests`, and `ratelimiting` command line options 
 
 [`script/ci`][ci] Continuous integration script.
 
-### script/ci-bootstrap
-
-[`script/ci-bootstrap`][ci-bootstrap] Prepare the CI environment.
-
 ### script/console
 
 [`script/console`][console] Open a console for the project.
@@ -71,5 +65,4 @@ The GitHub Engineering Team: [Scripts to Rule Them All](https://githubengineerin
 [test]: test
 [build]: build
 [ci]: ci
-[ci-bootstrap]: ci-bootstrap
 [console]: console

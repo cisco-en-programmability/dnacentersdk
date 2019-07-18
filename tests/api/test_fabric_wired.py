@@ -26,8 +26,7 @@ import pytest
 import dnacentersdk
 import calendar
 import time
-from tests.config import (BORDER_DEVICE_SDA_FABRIC_PAYLOAD, BORDER_DEVICE_SDA_FABRIC_PATH,
-                          BORDER_DEVICE_SDA_FABRIC_IP)
+from tests.config import BORDER_DEVICE_SDA_FABRIC_PATH
 
 
 def is_valid_adds_border_device_in_sda_fabric(obj):
@@ -37,15 +36,18 @@ def is_valid_adds_border_device_in_sda_fabric(obj):
 
 
 def adds_border_device_in_sda_fabric(api):
+    device = api.devices.get_device_list().response[0]
     endpoint_result = api.fabric_wired.adds_border_device_in_sda_fabric(
         sda_border_device=BORDER_DEVICE_SDA_FABRIC_PATH,
-        payload=BORDER_DEVICE_SDA_FABRIC_PAYLOAD,
+        payload=[{
+            "deviceManagementIpAddress": device.managementIpAddress
+        }],
         active_validation=True
     )
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([BORDER_DEVICE_SDA_FABRIC_PATH, BORDER_DEVICE_SDA_FABRIC_PAYLOAD]) is True,
+@pytest.mark.skipif(not all([BORDER_DEVICE_SDA_FABRIC_PATH]) is True,
                     reason="tests.config values required not present")
 def test_adds_border_device_in_sda_fabric(api):
     assert is_valid_adds_border_device_in_sda_fabric(
@@ -60,8 +62,9 @@ def is_valid_gets_border_device_details_from_sda_fabric(obj):
 
 
 def gets_border_device_details_from_sda_fabric(api):
+    device = api.devices.get_device_list().response[0]
     endpoint_result = api.fabric_wired.gets_border_device_details_from_sda_fabric(
-        device_ip_address=BORDER_DEVICE_SDA_FABRIC_IP,
+        device_ip_address=device.managementIpAddress,
         sda_border_device=BORDER_DEVICE_SDA_FABRIC_PATH,
         payload=None,
         active_validation=True
@@ -69,7 +72,7 @@ def gets_border_device_details_from_sda_fabric(api):
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([BORDER_DEVICE_SDA_FABRIC_IP, BORDER_DEVICE_SDA_FABRIC_PATH]) is True,
+@pytest.mark.skipif(not all([BORDER_DEVICE_SDA_FABRIC_PATH]) is True,
                     reason="tests.config values required not present")
 def test_gets_border_device_details_from_sda_fabric(api):
     assert is_valid_gets_border_device_details_from_sda_fabric(
@@ -84,8 +87,9 @@ def is_valid_deletes_border_device_from_sda_fabric(obj):
 
 
 def deletes_border_device_from_sda_fabric(api):
+    device = api.devices.get_device_list().response[0]
     endpoint_result = api.fabric_wired.deletes_border_device_from_sda_fabric(
-        device_ip_address=BORDER_DEVICE_SDA_FABRIC_IP,
+        device_ip_address=device.managementIpAddress,
         sda_border_device=BORDER_DEVICE_SDA_FABRIC_PATH,
         payload=None,
         active_validation=True
@@ -93,7 +97,7 @@ def deletes_border_device_from_sda_fabric(api):
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([BORDER_DEVICE_SDA_FABRIC_IP, BORDER_DEVICE_SDA_FABRIC_PATH]) is True,
+@pytest.mark.skipif(not all([BORDER_DEVICE_SDA_FABRIC_PATH]) is True,
                     reason="tests.config values required not present")
 def test_deletes_border_device_from_sda_fabric(api):
     assert is_valid_deletes_border_device_from_sda_fabric(

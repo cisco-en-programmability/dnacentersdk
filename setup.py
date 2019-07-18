@@ -19,14 +19,16 @@ PACKAGE_NAME = 'dnacentersdk'
 PACKAGE_KEYWORDS = [
     'cisco',
     'dna',
+    'dnacenter',
     'python',
     'api',
     'sdk',
 ]
 
 PACKAGE_CLASSIFIERS = [
-    'Development Status :: 5 - Production/Stable',
+    'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
     'Intended Audience :: System Administrators',
     'Intended Audience :: Telecommunications Industry',
     'Intended Audience :: Education',
@@ -36,8 +38,9 @@ PACKAGE_CLASSIFIERS = [
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
-    'Topic :: Communications',
-    'Topic :: Communications :: Chat'
+    'Topic :: System',
+    'Topic :: System :: Networking',
+    'Topic :: Utilities'
 ]
 
 INSTALLATION_REQUIREMENTS = [

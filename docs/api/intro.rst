@@ -17,7 +17,7 @@ elegantly represented in intuitive JSON.  What could be easier?
 
     import requests
 
-    URL = 'https://sandboxdnac.cisco2.com:443/api/v1/network-device' 
+    URL = 'https://sandboxdnac2.cisco.com:443/dna/intent/api/v1/network-device' 
     ACCESS_TOKEN = '<your_access_token>'
 
     family = '<family_name>'
@@ -62,8 +62,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 **dnacentersdk handles all of this for you:**
 
-+ Reads your DNA Center access token from a ``DNA_CENTER_ACCESS_TOKEN`` environment
-  variable
++ Reads your DNA Center credentials from environment variables (DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD)
 
 + Wraps and represents all DNA Center API calls as a simple hierarchical tree of
   native-Python methods (with default arguments provided everywhere possible!)
@@ -132,16 +131,6 @@ All of this, combined, lets you do powerful things simply:
         # Get task error details 
         print('Unfortunately ', task_demo_tag.response.progress)
         print('Reason: ', task_demo_tag.response.failureReason)
-
-..
-    _ # Find all tag resource types
-    resource_types = dnac.tag.get_tag_resource_types().response
-    # Add just first two
-    for i in range(0, min([len(resource_types), 2])):
-        dnac.tag.add_members_to_the_tag(id=created_tag.response[0].id,
-                                        payload={ "memberType": resource_types[i] })
-
-
 
 Head over to the :ref:`Quickstart` page to begin working with the
 **DNA Center APIs in native Python**!

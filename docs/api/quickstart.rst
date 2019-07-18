@@ -17,18 +17,33 @@ Get your DNA Center Access Token
 ---------------------------------
 
 To interact with the DNA Center APIs, you must have a **DNA Center Access Token**.
-A DNA Center Access Token is how the DNA Center APIs validate access.
+A DNA Center Access Token is how the DNA Center APIs validate access and identify the
+requesting user.
 
+As a `best practice`__, you can store your DNA 'credentials' as
+an environment variables in your development or production environment. By
+default, dnacentersdk will look for the following environment variables to create new connection objects:
 
-Use your DNA Center Access Token
----------------------------------
+    * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
+      For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'
 
-As a `best practice`__, you can store your DNA Center access token 'credential' as
-an environment variable in your development or production environment.  By
-default, dnacentersdk will look for a ``DNA_CENTER_ACCESS_TOKEN`` environment
-variable when creating new connection objects.
+    * ``DNA_CENTER_USERNAME`` - HTTP Basic Auth username.
+
+    * ``DNA_CENTER_PASSWORD`` - HTTP Basic Auth password.
 
 __ https://12factor.net/config
+
+
+However you choose to set it, if you have both ``DNA_CENTER_USERNAME``, ``DNA_CENTER_PASSWORD`` or just 
+``DNA_CENTER_ENCODED_AUTH`` environment variables, you are good to go.  dnacentersdk will use them to create 
+your access token, by default, when creating new :class:`DNACenterAPI` objects.
+
+If you don't want to set your credentials as environment variables, you
+can manually provide your access token when creating a DNACenterAPI object.
+
+
+Set credentials as environment variables
+-----------------------------------------
 
 There are many places and diverse ways that you can set an environment
 variable, which can include:
@@ -41,7 +56,8 @@ It can be as simple as setting it in your CLI before running your script...
 
 .. code-block:: bash
 
-    $ DNA_CENTER_ACCESS_TOKEN=your_access_token_here
+    $ DNA_CENTER_USERNAME=your_username_here
+    $ DNA_CENTER_PASSWORD=your_password_here
     $ python myscript.py
 
 ...or putting your credentials in a shell script that you ``source`` when your
@@ -50,18 +66,9 @@ shell starts up or before your run a script:
 .. code-block:: bash
 
     $ cat mycredentials.sh
-    export DNA_CENTER_ACCESS_TOKEN=your_access_token_here
+    export DNA_CENTER_ENCODED_AUTH=your_encoded_auth_here
     $ source mycredentials.sh
     $ python myscript.py
-
-However you choose to set it, if you have your access token stored in a
-``DNA_CENTER_ACCESS_TOKEN`` environment variable when using dnacentersdk, you are
-good to go.  dnacentersdk will pull and use this access token, by default,
-when creating new :class:`DNACenterAPI` objects.
-
-If you don't want to set your access token as an environment variable, or
-perhaps your application will acquire access tokens via some other means, you
-can manually provide your access token when creating a DNACenterAPI object.
 
 
 Create a DNACenterAPI "Connection Object"
@@ -77,11 +84,11 @@ object".
     >>> from dnacentersdk import DNACenterAPI
     >>> api = DNACenterAPI()
 
-As discussed above (`Use your DNA Center Access Token`_), dnacentersdk defaults
-to pulling your DNA Center access token from a ``DNA_CENTER_ACCESS_TOKEN`` environment
-variable.  If you do not have this environment variable set and you try to
-create a new :class:`DNACenterAPI` object without providing a DNA Center access
-token, a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` subclass).
+As discussed above (`Get your DNA Center Access Token`_), dnacentersdk defaults
+to pulling from environment variables to generate your access token.
+If you do not have those environment variables set and you try to
+create a new :class:`DNACenterAPI` object without providing them,
+a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` subclass).
 
 .. code-block:: python
 
@@ -91,30 +98,36 @@ token, a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` 
       File "<stdin>", line 1, in <module>
       File "dnacentersdk/__init__.py", line 147, in __init__
         raise AccessTokenError(error_message)
-    AccessTokenError: You must provide a DNA Center access token to interact with the DNA Center 
-    APIs, either via a DNA_CENTER_ACCESS_TOKEN environment variable or via the access_token argument.
-    To interact with the APIs and get your access_token, you could provide either username and 
-    password arguments or the encoded_auth argument.
+    AccessTokenError: You need an access token to interact with the DNA Center
+    APIs. DNA Center uses HTTP Basic Auth to create an access
+    token. You must provide the username and password or just
+    the encoded_auth, either by setting each parameter or its
+    environment variable counterpart (DNA_CENTER_USERNAME,
+    DNA_CENTER_PASSWORD, DNA_CENTER_ENCODED_AUTH).
 
-Use the ``access_token`` argument to manually provide your access token, when
-creating a new :class:`DNACenterAPI` connection object.
-
-.. code-block:: python
-
-    >>> from dnacentersdk import DNACenterAPI
-    >>> api = DNACenterAPI(access_token='eyJ0eXAi...Ghg')
-
-Note that this can be very useful if you are reading in access token(s) from a
-file or database and/or when you want to create more than one connection
-object.
+Use the arguments to manually provide enough information for the HTTP Basic Auth process, 
+when creating a new :class:`DNACenterAPI` connection object.
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> kingston_at = 'eyJ0eXBt...Fdc'
-    >>> london_at = 'eyJ0eXAi...Ghg'
-    >>> kingston_api = DNACenterAPI(access_token=kingston_at)
-    >>> london_api = DNACenterAPI(access_token=london_at)
+    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK')
+
+.. code-block:: python
+
+    >>> from dnacentersdk import DNACenterAPI
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!')
+
+Note that this can be very useful if you are reading authentication credentials
+from a file or database and/or when you want to create more than one connection object.
+
+.. code-block:: python
+
+    >>> from dnacentersdk import DNACenterAPI
+    >>> kingston_auth = 'ZG5hY2VudGVydXNlcjpDaXNjbzEyMyEK'
+    >>> london_auth = ('london', 'rcx0cf43!')
+    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth)
+    >>> london_api = DNACenterAPI(*london_auth)  # * Unpacks tuple
 
 
 Making API Calls
@@ -163,7 +176,7 @@ All of the calls have been wrapped and represented as native Python method
 calls, like :meth:`DNACenterAPI.pnp.get_workflows() <dnacentersdk.api.pnp.Pnp.get_workflows>` which gets the workflows details
 for the pnp - see 
 the `Get Workflows
-<https://pubhub.devnetcloud.com/media/dnac-api-docs-1-3/docs/swagger-1.3-v2_annotated.html#!/PnP/getWorkflows>`_ API endpoint
+<https://pubhub.devnetcloud.com/media/dna-center-api-1210/docs/swagger_dnacp_1210_annotated.html#!/PnP/getWorkflows>`_ API endpoint
 documentation.
 
 As you can see, we have represented the API endpoints using simple terms
@@ -252,16 +265,16 @@ You can catch any errors returned by the DNA Center cloud by catching
 
 .. code-block:: python
 
+    >>> from dnacentersdk.exceptions import ApiError
     >>> try:
     ...     task = api.task.get_task_by_operationid(
     ...       limit=2,
     ...       offset=1,
     ...       operation_id='xyz')
-    ... except Exception as e:
+    ... except ApiError as e:
     ...     print(e)
-    [500] Server Error - errorId=20,componentName=CRUD executeQuery
-    Failed! errorId=20,componentName=CRUD executeQuery Failed!
-    Named query not known: task.findTaskByOperationId
+    ApiError: [500] Server Error - errorId=20,componentName=CRUD executeQuery Failed! errorId=20,
+    componentName=CRUD executeQuery Failed! Named query not known: task.findTaskByOperationId
     >>>
 
 dnacentersdk will also raise a number of other standard errors

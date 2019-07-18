@@ -46,7 +46,11 @@ Contributing Code - Using the CI Automated Testing
 
 4. Configure the following environment variables in your development environment:
 
-   * ``TEST_DNA_CENTER_ACCESS_TOKEN`` - Your test account's DNA Center access token.
+   * ``TEST_DNA_CENTER_ENCODED_AUTH`` - Your test account's DNA Center encoded_auth (username:password encoded in base 64). This variable has priority over username and password.
+
+   * ``TEST_DNA_CENTER_USERNAME`` - Your test account's DNA Center username.
+
+   * ``TEST_DNA_CENTER_PASSWORD`` - Your test account's DNA Center password.
 
 5. Add your code to your forked repository.
 
@@ -72,29 +76,31 @@ Contributing Code - Running the Test Suite Locally
 
 3. Configure the following environment variables in your development environment:
 
-   * ``TEST_DNA_CENTER_ACCESS_TOKEN`` - Your test account's DNA Center access token.
+   * ``TEST_DNA_CENTER_ENCODED_AUTH`` - Your test account's DNA Center encoded_auth (username:password encoded in base 64). This variable has priority over username and password.
+
+   * ``TEST_DNA_CENTER_USERNAME`` - Your test account's DNA Center username.
+
+   * ``TEST_DNA_CENTER_PASSWORD`` - Your test account's DNA Center password.
 
    *Example:*
 
    .. code-block:: bash
 
        #!/usr/bin/env bash
-       export TEST_DNA_CENTER_ACCESS_TOKEN="<test account's access token>"
+       export TEST_DNA_CENTER_ENCODED_AUTH="<test account's username:password encoded in base 64>"
 
 4. Configure the following config variables in your development configuration as you see fit:
 
    * ``DISCOVERY_ID`` - Your test discovery id for test_network_discovery.
    * ``LOCAL_SOFTWARE_IMAGE_NAME`` - Your test local software image name for test_swim.
    * ``LOCAL_SOFTWARE_IMAGE_PATH`` - Your test local software image path for test_swim.
-   * ``BORDER_DEVICE_SDA_FABRIC_PAYLOAD`` - Your test border device sda fabric payload for test_fabric_wired.
    * ``BORDER_DEVICE_SDA_FABRIC_PATH`` - Your test border device sda fabric path for test_fabric_wired.
-   * ``BORDER_DEVICE_SDA_FABRIC_IP`` - Your test border device sda fabric ip for test_fabric_wired.
    * ``NEW_ENTERPRISE_SSID_PAYLOAD`` - Your test new enterprise ssid payload for test_non_fabric_wireless.
    * ``NEW_ENTERPRISE_SSID_NAME`` - Your test new enterprise ssid name for test_non_fabric_wireless.
    * ``NEW_PROVISION_SSID_PAYLOAD`` - Your test new provision ssid payload for test_non_fabric_wireless.
    * ``NEW_MANAGED_APLOCATIONS`` - Your test new managed aplocations for test_non_fabric_wireless.
-   * ``path_trace_SOURCE_IP`` - Your test path trace source ip for test_path_trace.
-   * ``path_trace_DEST_IP`` - Your test path trace dest ip for test_path_trace.
+   * ``PATH_TRACE_SOURCE_IP`` - Your test path trace source ip for test_path_trace.
+   * ``PATH_TRACE_DEST_IP`` - Your test path trace dest ip for test_path_trace.
    * ``SITE_PROFILE_DEVICE_IP`` - Your test site profile device ip for test_site_profile.
    * ``MERAKI_DEVICE_ID`` - Your test meraki device id for test_devices.
    * ``DOMAIN_VIRTUAL_ACCOUNT`` - Your test domain virtual account for test_pnp.

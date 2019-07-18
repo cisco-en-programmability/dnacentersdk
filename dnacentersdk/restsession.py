@@ -45,7 +45,7 @@ from .config import (
     DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY
 )
 from .exceptions import (
-    dnacentersdkException, RateLimitError, RateLimitWarning
+    dnacentersdkException, RateLimitError, RateLimitWarning, ApiError
 )
 from .response_codes import EXPECTED_RESPONSE_CODE
 from .utils import (
@@ -208,7 +208,7 @@ class RestSession(object):
             # url is already an absolute URL; return as is
             return url
 
-    def request(self, method, url, erc, **kwargs):
+    def request(self, method, url, erc, custom_refresh, **kwargs):
         """Abstract base method for making requests to the DNA Center APIs.
 
         This base method:
@@ -270,6 +270,13 @@ class RestSession(object):
                 else:
                     # Re-raise the RateLimitError
                     raise
+            except ApiError as e:
+                if e.status_code == 401 and custom_refresh < 1:
+                    self.refresh_token()
+                    self.request(method, url, erc, 1, **kwargs)
+                else:
+                    # Re-raise the ApiError
+                    raise
             else:
                 return response
 
@@ -319,7 +326,7 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['GET'])
         stream = kwargs.pop('stream', None)
-        with self.request('GET', url, erc, params=params, **kwargs) as resp:
+        with self.request('GET', url, erc, 0, params=params, **kwargs) as resp:
             if stream and 'fileName' in resp.headers:
                 try:
                     file_name = resp.headers.get('fileName')
@@ -354,7 +361,7 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['POST'])
 
-        response = self.request('POST', url, erc, params=params,
+        response = self.request('POST', url, erc, 0, params=params,
                                 json=json, data=data, **kwargs)
         return extract_and_parse_json(response)
 
@@ -380,7 +387,7 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['PUT'])
 
-        response = self.request('PUT', url, erc, params=params,
+        response = self.request('PUT', url, erc, 0, params=params,
                                 json=json, data=data, **kwargs)
         return extract_and_parse_json(response)
 
@@ -404,5 +411,5 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['DELETE'])
 
-        response = self.request('DELETE', url, erc, params=params, **kwargs)
+        response = self.request('DELETE', url, erc, 0, params=params, **kwargs)
         return extract_and_parse_json(response)
