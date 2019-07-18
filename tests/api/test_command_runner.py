@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from .test_devices import get_device_list
 

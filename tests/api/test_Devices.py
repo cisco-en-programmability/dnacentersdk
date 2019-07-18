@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from tests.config import MERAKI_DEVICE_ID
 
@@ -483,7 +482,7 @@ def is_valid_get_organization_list_for_meraki(obj):
 
 def get_organization_list_for_meraki(api):
     endpoint_result = api.devices.get_organization_list_for_meraki(
-        id=MERAKI_DEVICE_ID,
+        id=str(MERAKI_DEVICE_ID),
         payload=None,
         active_validation=True
     )

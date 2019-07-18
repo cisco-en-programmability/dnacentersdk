@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from tests.environment import (
     DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,

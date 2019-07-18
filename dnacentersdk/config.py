@@ -24,7 +24,7 @@ SOFTWARE.
 
 
 # Package Constants
-DEFAULT_BASE_URL = 'https://192.168.196.3:443'
+DEFAULT_BASE_URL = 'https://sandboxdnac2.cisco.com:443'
 
 DEFAULT_SINGLE_REQUEST_TIMEOUT = 60
 

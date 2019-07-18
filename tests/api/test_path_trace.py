@@ -24,9 +24,7 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
-from tests.config import PATH_TRACE_SOURCE_IP, PATH_TRACE_DEST_IP
 
 
 def is_valid_initiate_a_new_pathtrace(obj):
@@ -36,14 +34,19 @@ def is_valid_initiate_a_new_pathtrace(obj):
 
 
 def initiate_a_new_pathtrace(api):
+    discoveries = api.network_discovery.get_discoveries_by_range(records_to_return=10, start_index=1).response
+    ipAddressLists = [list(set(discovery.ipAddressList.split('-'))) if discovery.ipAddressList else set()
+                      for discovery in discoveries]
+    ipAddressList = list(set([ip for iplist in ipAddressLists for ip in iplist]))
+    ipAddressList.sort()
     endpoint_result = api.path_trace.initiate_a_new_pathtrace(
         controlPath=None,
-        destIP=PATH_TRACE_DEST_IP,
+        destIP=ipAddressList[-1],
         destPort=None,
         inclusions=None,
         periodicRefresh=None,
         protocol=None,
-        sourceIP=PATH_TRACE_SOURCE_IP,
+        sourceIP=ipAddressList[0],
         sourcePort=None,
         payload=None,
         active_validation=True
@@ -51,8 +54,6 @@ def initiate_a_new_pathtrace(api):
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([PATH_TRACE_SOURCE_IP, PATH_TRACE_DEST_IP]) is True,
-                    reason="tests.config values required not present")
 def test_initiate_a_new_pathtrace(api):
     assert is_valid_initiate_a_new_pathtrace(
         initiate_a_new_pathtrace(api)
@@ -108,6 +109,11 @@ def is_valid_retrives_all_previous_pathtraces_summary(obj):
 
 
 def retrives_all_previous_pathtraces_summary(api):
+    discoveries = api.network_discovery.get_discoveries_by_range(records_to_return=10, start_index=1).response
+    ipAddressLists = [list(set(discovery.ipAddressList.split('-'))) if discovery.ipAddressList else set()
+                      for discovery in discoveries]
+    ipAddressList = list(set([ip for iplist in ipAddressLists for ip in iplist]))
+    ipAddressList.sort()
     endpoint_result = api.path_trace.retrives_all_previous_pathtraces_summary(
         dest_ip=None,
         dest_port=None,
@@ -120,7 +126,7 @@ def retrives_all_previous_pathtraces_summary(api):
         periodic_refresh=None,
         protocol=None,
         sort_by=None,
-        source_ip=PATH_TRACE_SOURCE_IP,
+        source_ip=ipAddressList[0],
         source_port=None,
         status=None,
         task_id=None,
@@ -130,8 +136,6 @@ def retrives_all_previous_pathtraces_summary(api):
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([PATH_TRACE_SOURCE_IP]) is True,
-                    reason="tests.config values required not present")
 def test_retrives_all_previous_pathtraces_summary(api):
     assert is_valid_retrives_all_previous_pathtraces_summary(
         retrives_all_previous_pathtraces_summary(api)

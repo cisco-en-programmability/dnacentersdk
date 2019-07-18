@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from tests.config import (NEW_VIRTUAL_ACCOUNT_PAYLOAD, SYNC_VIRTUAL_ACCOUNT_PAYLOAD,
                           DOMAIN_VIRTUAL_ACCOUNT, NAME_VIRTUAL_ACCOUNT)

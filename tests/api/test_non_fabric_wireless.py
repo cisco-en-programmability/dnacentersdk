@@ -24,10 +24,9 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
-from tests.config import (NEW_ENTERPRISE_SSID_PAYLOAD, NEW_ENTERPRISE_SSID_NAME,
-                          NEW_PROVISION_SSID_PAYLOAD, NEW_MANAGED_APLOCATIONS)
+from tests.config import (NEW_ENTERPRISE_SSID_NAME,
+                          NEW_MANAGED_APLOCATIONS)
 
 
 def is_valid_create_enterprise_ssid(obj):
@@ -47,14 +46,12 @@ def create_enterprise_ssid(api):
         radioPolicy=None,
         securityLevel=None,
         trafficType=None,
-        payload=NEW_ENTERPRISE_SSID_PAYLOAD,
+        payload={},
         active_validation=True
     )
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([NEW_ENTERPRISE_SSID_PAYLOAD]) is True,
-                    reason="tests.config values required not present")
 def test_create_enterprise_ssid(api):
     assert is_valid_create_enterprise_ssid(
         create_enterprise_ssid(api)
@@ -96,14 +93,12 @@ def create_and_provision_ssid(api):
         ssidDetails=None,
         ssidType=None,
         vlanAndDynamicInterfaceDetails=None,
-        payload=NEW_PROVISION_SSID_PAYLOAD,
+        payload={},
         active_validation=True
     )
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([NEW_PROVISION_SSID_PAYLOAD]) is True,
-                    reason="tests.config values required not present")
 def test_create_and_provision_ssid(api):
     assert is_valid_create_and_provision_ssid(
         create_and_provision_ssid(api)

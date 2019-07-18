@@ -24,9 +24,7 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
-from tests.config import DISCOVERY_ID
 
 
 def is_valid_get_count_of_all_discovery_jobs(obj):
@@ -77,7 +75,7 @@ def is_valid_get_discoveries_by_range(obj):
 
 def get_discoveries_by_range(api):
     endpoint_result = api.network_discovery.get_discoveries_by_range(
-        records_to_return=5,
+        records_to_return=10,
         start_index=1,
         payload=None,
         active_validation=True
@@ -166,30 +164,6 @@ def test_get_list_of_discoveries_by_discovery_id(api):
     )
 
 
-def is_valid_get_discovery_jobs_by_ip(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
-
-
-def get_discovery_jobs_by_ip(api):
-    endpoint_result = api.network_discovery.get_discovery_jobs_by_ip(
-        ip_address=get_discoveries_by_range(api).response[0].ipAddressList.split('-')[0],
-        limit=None,
-        name=None,
-        offset=None,
-        payload=None,
-        active_validation=True
-    )
-    return endpoint_result
-
-
-def test_get_discovery_jobs_by_ip(api):
-    assert is_valid_get_discovery_jobs_by_ip(
-        get_discovery_jobs_by_ip(api)
-    )
-
-
 def is_valid_get_discovered_devices_by_range(obj):
     some_keys = ['response', 'version']
     return True if len(some_keys) == 0 else\
@@ -197,8 +171,10 @@ def is_valid_get_discovered_devices_by_range(obj):
 
 
 def get_discovered_devices_by_range(api):
+    discoveries = get_discoveries_by_range(api).response
+    filtered_discoveries = list(filter(lambda x: x.numDevices > 0, discoveries))
     endpoint_result = api.network_discovery.get_discovered_devices_by_range(
-        id=str(DISCOVERY_ID),
+        id=filtered_discoveries[0].id,
         records_to_return=3,
         start_index=1,
         task_id=None,
@@ -208,8 +184,6 @@ def get_discovered_devices_by_range(api):
     return endpoint_result
 
 
-@pytest.mark.skipif(not all([DISCOVERY_ID]) is True,
-                    reason="tests.config values required not present")
 def test_get_discovered_devices_by_range(api):
     assert is_valid_get_discovered_devices_by_range(
         get_discovered_devices_by_range(api)
@@ -351,6 +325,30 @@ def update_netconf_credentials(api):
 def test_update_netconf_credentials(api):
     assert is_valid_update_netconf_credentials(
         update_netconf_credentials(api)
+    )
+
+
+def is_valid_get_discovery_jobs_by_ip(obj):
+    some_keys = ['response', 'version']
+    return True if len(some_keys) == 0 else\
+        any([obj.has_path(item) for item in some_keys])
+
+
+def get_discovery_jobs_by_ip(api):
+    endpoint_result = api.network_discovery.get_discovery_jobs_by_ip(
+        ip_address=get_discoveries_by_range(api).response[0].ipAddressList.split('-')[0],
+        limit=None,
+        name=None,
+        offset=None,
+        payload=None,
+        active_validation=True
+    )
+    return endpoint_result
+
+
+def test_get_discovery_jobs_by_ip(api):
+    assert is_valid_get_discovery_jobs_by_ip(
+        get_discovery_jobs_by_ip(api)
     )
 
 
@@ -533,6 +531,7 @@ def is_valid_update_cli_credentials(obj):
 
 
 def update_cli_credentials(api):
+    time.sleep(5)
     credentials = api.network_discovery.get_global_credentials(credential_sub_type="CLI").response
     endpoint_result = api.network_discovery.update_cli_credentials(
         comments=None,
@@ -609,6 +608,7 @@ def is_valid_delete_global_credentials_by_id_cli(obj):
 
 
 def delete_global_credentials_by_id_cli(api):
+    time.sleep(5)
     credentials = api.network_discovery.get_global_credentials(credential_sub_type="CLI").response
     endpoint_result = api.network_discovery.delete_global_credentials_by_id(
         global_credential_id=list(filter(lambda x: x.username == 'test_user_devnet', credentials))[0].id,

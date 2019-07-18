@@ -48,7 +48,7 @@ Use the following command to download the source code (GIT repository):
 
 .. code-block:: bash
 
-    $ git clone https://github.com/CiscoDevNet/dnacentersdk.git
+    $ git clone https://github.com/zapodeanu/dnacentersdk.git
 
 You can then install the package to your environment, with the following
 command:
@@ -62,4 +62,4 @@ command:
 
 
 .. _Python Package Index (PyPI): https://pypi.python.org/pypi/dnacentersdk
-.. _CiscoDevNet/dnacentersdk: https://github.com/CiscoDevNet/dnacentersdk
+.. _CiscoDevNet/dnacentersdk: https://github.com/zapodeanu/dnacentersdk

@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from tests.config import LOCAL_SOFTWARE_IMAGE_PATH, LOCAL_SOFTWARE_IMAGE_NAME
 from tests.config import DEFAULT_BASE_URL

@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from tests.config import SITE_PROFILE_DEVICE_IP
 

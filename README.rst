@@ -113,16 +113,16 @@ dnacentersdk_ is a community development projects.  Feedback, thoughts, ideas, a
 .. _Introduction: http://dnacentersdk.readthedocs.io/en/latest/user/intro.html
 .. _dnacentersdk.readthedocs.io: https://dnacentersdk.readthedocs.io
 .. _Quickstart: http://dnacentersdk.readthedocs.io/en/latest/user/quickstart.html
-.. _examples: https://github.com/CiscoDevNet/dnacentersdk/tree/master/examples
-.. _dnacentersdk: https://github.com/CiscoDevNet/dnacentersdk
-.. _issues: https://github.com/CiscoDevNet/dnacentersdk/issues
+.. _examples: https://github.com/zapodeanu/dnacentersdk/tree/master/examples
+.. _dnacentersdk: https://github.com/zapodeanu/dnacentersdk
+.. _issues: https://github.com/zapodeanu/dnacentersdk/issues
 .. _Community: #
-.. _projects: https://github.com/CiscoDevNet/dnacentersdk/projects
-.. _pull requests: https://github.com/CiscoDevNet/dnacentersdk/pulls
-.. _releases: https://github.com/CiscoDevNet/dnacentersdk/releases
+.. _projects: https://github.com/zapodeanu/dnacentersdk/projects
+.. _pull requests: https://github.com/zapodeanu/dnacentersdk/pulls
+.. _releases: https://github.com/zapodeanu/dnacentersdk/releases
 .. _the repository: dnacentersdk_
 .. _pull request: `pull requests`_
-.. _Contributing: https://github.com/CiscoDevNet/dnacentersdk/blob/master/docs/contributing.rst
+.. _Contributing: https://github.com/zapodeanu/dnacentersdk/blob/master/docs/contributing.rst
 
 ..
    _to_do: Change urls.

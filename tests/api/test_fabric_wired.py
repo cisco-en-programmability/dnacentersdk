@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 import dnacentersdk
-import calendar
 import time
 from tests.config import BORDER_DEVICE_SDA_FABRIC_PATH
 
