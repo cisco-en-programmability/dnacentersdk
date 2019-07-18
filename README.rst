@@ -52,8 +52,6 @@ dnacentersdk
         print('Unfortunately ', task_demo_tag.response.progress)
         print('Reason: ', task_demo_tag.response.failureReason)
 
-That's more than 10 DNA Center API calls in less than 41 lines of code (with comments, whitespaces and print statemets).
-
 dnacentersdk makes your life better...  `Learn how!`__
 
 __ Introduction_
