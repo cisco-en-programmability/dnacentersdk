@@ -45,15 +45,20 @@ from .config import (
     DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY
 )
 from .exceptions import (
-    dnacentersdkException, RateLimitError, RateLimitWarning, ApiError
+    dnacentersdkException, RateLimitError, RateLimitWarning, ApiError,
 )
 from .response_codes import EXPECTED_RESPONSE_CODE
 from .utils import (
     check_response_code, check_type, extract_and_parse_json, validate_base_url,
+    pprint_request_info, pprint_response_info,
 )
 from requests_toolbelt.multipart import encoder
 import socket
 import errno
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 # Main module interface
@@ -63,7 +68,9 @@ class RestSession(object):
     def __init__(self, get_access_token, access_token, base_url,
                  single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
                  wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
-                 verify=DEFAULT_VERIFY):
+                 verify=DEFAULT_VERIFY,
+                 version=None,
+                 debug=False):
         """Initialize a new RestSession object.
 
         Args:
@@ -80,6 +87,12 @@ class RestSession(object):
             verify(bool,basestring): Controls whether we verify the server’s
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
+            version(basestring): Controls which version of DNA_CENTER to use.
+                Defaults to dnacentersdk.config.DNA_CENTER_VERSION
+            debug(bool,basestring): Controls whether to log information about
+                DNA Center APIs' request and response process.
+                Defaults to the DEBUG environment variable or False
+                if the environment variable is not set.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -90,6 +103,7 @@ class RestSession(object):
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool, may_be_none=False)
         check_type(verify, (bool, basestring), may_be_none=False)
+        check_type(debug, (bool), may_be_none=False)
 
         super(RestSession, self).__init__()
 
@@ -100,16 +114,27 @@ class RestSession(object):
         self._single_request_timeout = single_request_timeout
         self._wait_on_rate_limit = wait_on_rate_limit
         self._verify = verify
+        self._version = version
+        self._debug = debug
+
+        if debug:
+            logger.setLevel(logging.DEBUG)
+            logger.propagate = True
+        else:
+            logger.addHandler(logging.NullHandler())
+            logger.propagate = False
 
         # Initialize a new `requests` session
         self._req_session = requests.session()
-        a = requests.adapters.HTTPAdapter(max_retries=3)
-        self._req_session.mount('https://', a)
-        self._req_session.mount('http://', a)
 
         # Update the headers of the `requests` session
         self.update_headers({'X-Auth-Token': access_token,
                              'Content-type': 'application/json;charset=utf-8'})
+
+    @property
+    def version(self):
+        """The API version of DNA Center."""
+        return self._version
 
     @property
     def verify(self):
@@ -167,6 +192,11 @@ class RestSession(object):
         """The HTTP headers used for requests in this session."""
         return self._req_session.headers.copy()
 
+    @property
+    def debug(self):
+        """The DNA Center access token used for this session."""
+        return self._debug
+
     def update_headers(self, headers):
         """Update the HTTP headers used for requests in this session.
 
@@ -216,6 +246,8 @@ class RestSession(object):
             * Makes the actual HTTP request to the API endpoint
             * Provides support for DNA Center rate-limiting
             * Inspects response codes and raises exceptions as appropriate
+            * Updates the token if response code is 401 - Unauthorized
+                and makes the request to the API endpoint again
 
         Args:
             method(basestring): The request-method type ('GET', 'POST', etc.).
@@ -236,13 +268,21 @@ class RestSession(object):
         kwargs.setdefault('timeout', self.single_request_timeout)
         kwargs.setdefault('verify', self.verify)
 
+        c = custom_refresh
         while True:
+            c += 1
             # Make the HTTP request to the API endpoint
             try:
+                logger.debug('Attempt {}'.format(c))
+                logger.debug(pprint_request_info(abs_url, method,
+                                                 _headers=self.headers,
+                                                 **kwargs))
                 response = self._req_session.request(method, abs_url, **kwargs)
             except socket.error:
                 # A socket error
                 try:
+                    c += 1
+                    logger.debug('Attempt {}'.format(c))
                     response = self._req_session.request(method, abs_url,
                                                          **kwargs)
                 except Exception as e:
@@ -251,6 +291,8 @@ class RestSession(object):
                 if e.errno == errno.EPIPE:
                     # EPIPE error
                     try:
+                        c += 1
+                        logger.debug('Attempt {}'.format(c))
                         response = self._req_session.request(method, abs_url,
                                                              **kwargs)
                     except Exception as e:
@@ -272,12 +314,17 @@ class RestSession(object):
                     raise
             except ApiError as e:
                 if e.status_code == 401 and custom_refresh < 1:
+                    logger.debug(pprint_response_info(response))
+                    logger.debug('Refreshing access token')
                     self.refresh_token()
-                    self.request(method, url, erc, 1, **kwargs)
+                    logger.debug('Refreshed token.')
+                    return self.request(method, url, erc, 1, **kwargs)
                 else:
                     # Re-raise the ApiError
+                    logger.debug(pprint_response_info(response))
                     raise
             else:
+                logger.debug(pprint_response_info(response))
                 return response
 
     def multipart_data(self, fields, create_callback):
@@ -325,17 +372,19 @@ class RestSession(object):
 
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['GET'])
-        stream = kwargs.pop('stream', None)
+        stream = kwargs.get('stream', None)
         with self.request('GET', url, erc, 0, params=params, **kwargs) as resp:
             if stream and 'fileName' in resp.headers:
                 try:
                     file_name = resp.headers.get('fileName')
                     with open(file_name, 'wb') as f:
+                        logger.debug('Downloading {} ...'.format(file_name))
                         for chunk in resp.iter_content(chunk_size=1024):
                             if chunk:
                                 f.write(chunk)
                 except Exception as e:
                     raise dnacentersdkException('DownloadFailure {}'.format(e))
+                logger.debug('Downloaded')
             return extract_and_parse_json(resp, ignore=stream)
         return None
 

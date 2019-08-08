@@ -52,6 +52,11 @@ Contributing Code - Using the CI Automated Testing
 
    * ``TEST_DNA_CENTER_PASSWORD`` - Your test account's DNA Center password.
 
+   * ``DEBUG_ENVIRONMENT_VARIABLE`` - Your test's debug variable, which controls whether to log information about DNA Center APIs' request and response process.
+
+   * ``VERSION_ENVIRONMENT_VARIABLE`` - The DNA Center API's version for your test account.
+
+
 5. Add your code to your forked repository.
 
    If you are creating some new feature or functionality (excellent!), please also write a `test`_ to verify that your code works as expected.
@@ -82,6 +87,11 @@ Contributing Code - Running the Test Suite Locally
 
    * ``TEST_DNA_CENTER_PASSWORD`` - Your test account's DNA Center password.
 
+   * ``DEBUG_ENVIRONMENT_VARIABLE`` - Your test's debug variable, which controls whether to log information about DNA Center APIs' request and response process.
+
+   * ``VERSION_ENVIRONMENT_VARIABLE`` - The DNA Center API's version for your test account.
+
+
    *Example:*
 
    .. code-block:: bash
@@ -97,11 +107,8 @@ Contributing Code - Running the Test Suite Locally
    * ``NEW_ENTERPRISE_SSID_NAME`` - Your test new enterprise ssid name for test_non_fabric_wireless.
    * ``NEW_MANAGED_APLOCATIONS`` - Your test new managed aplocations for test_non_fabric_wireless.
    * ``SITE_PROFILE_DEVICE_IP`` - Your test site profile device ip for test_site_profile.
-   * ``MERAKI_DEVICE_ID`` - Your test meraki device id for test_devices.
-   * ``DOMAIN_VIRTUAL_ACCOUNT`` - Your test domain virtual account for test_pnp.
-   * ``NAME_VIRTUAL_ACCOUNT`` - Your test name virtual account for test_pnp.
+   * ``MERAKI_ORG_ID`` - Your test meraki org id (list of strings) for test_devices.
    * ``NEW_VIRTUAL_ACCOUNT_PAYLOAD`` - Your test new virtual account payload for test_pnp.
-   * ``SYNC_VIRTUAL_ACCOUNT_PAYLOAD`` - Your test sync virtual account payload for test_pnp.
 
 5. Add your code to your forked repository.
 

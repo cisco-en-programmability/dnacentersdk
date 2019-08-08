@@ -27,4 +27,69 @@ import pytest
 pytest_plugins = [
     'tests.test_dnacentersdk',
     'tests.api',
+    'tests.api.v1_2_10',
+    'tests.api.v1_3_0',
 ]
+
+
+def pytest_configure(config):
+    config.addinivalue_line(
+        "markers", "ratelimit: run a ratelimit test",
+    )
+    config.addinivalue_line(
+        "markers", "dnacentersdk: dnacentersdk test"
+    )
+    config.addinivalue_line(
+        "markers", "authentication: authentication wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "clients: clients wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "command_runner: command_runner wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "custom_caller: custom_caller wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "devices: devices wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "fabric_wired: fabric_wired wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "file: file wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "network_discovery: network_discovery wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "networks: networks wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "non_fabric_wireless: non_fabric_wireless wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "path_trace: path_trace wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "pnp: pnp wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "swim: swim wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "site_profile: site_profile wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "sites: sites wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "tag: tag wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "task: task wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "template_programmer: template_programmer wrapper test"
+    )

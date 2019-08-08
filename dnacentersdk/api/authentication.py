@@ -111,9 +111,7 @@ class Authentication(object):
         return self._single_request_timeout
 
     def authentication_api(self, username, password, encoded_auth=None):
-        """Exchange basic auth data for an Access Token.
-
-        Exchange basic auth data for an Access Token(x-auth-token)
+        """Exchange basic auth data for an Access Token(x-auth-token)
         that can be used to invoke the APIs.
 
         Args:

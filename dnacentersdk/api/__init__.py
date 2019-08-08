@@ -30,31 +30,81 @@ from dnacentersdk.config import (
 )
 from dnacentersdk.environment import (
     DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
-    DNA_CENTER_ENCODED_AUTH
+    DNA_CENTER_ENCODED_AUTH, DNA_CENTER_DEBUG,
+    DNA_CENTER_VERSION,
 )
-from dnacentersdk.exceptions import AccessTokenError
+from dnacentersdk.exceptions import AccessTokenError, dnacentersdkException
 from dnacentersdk.models.mydict import mydict_data_factory
 from dnacentersdk.models.schema_validator import json_schema_validate
 from dnacentersdk.restsession import RestSession
 from dnacentersdk.utils import check_type
 
 from .authentication import Authentication
-from .template_programmer import TemplateProgrammer
-from .tag import Tag
-from .network_discovery import NetworkDiscovery
-from .task import Task
-from .command_runner import CommandRunner
-from .file import File
-from .path_trace import PathTrace
-from .swim import Swim
-from .pnp import Pnp
-from .site_profile import SiteProfile
-from .devices import Devices
-from .sites import Sites
-from .networks import Networks
-from .clients import Clients
-from .non_fabric_wireless import NonFabricWireless
-from .fabric_wired import FabricWired
+from .v1_2_10.clients import \
+    Clients as Clients_v1_2_10
+from .v1_2_10.command_runner import \
+    CommandRunner as CommandRunner_v1_2_10
+from .v1_2_10.devices import \
+    Devices as Devices_v1_2_10
+from .v1_2_10.fabric_wired import \
+    FabricWired as FabricWired_v1_2_10
+from .v1_2_10.file import \
+    File as File_v1_2_10
+from .v1_2_10.network_discovery import \
+    NetworkDiscovery as NetworkDiscovery_v1_2_10
+from .v1_2_10.networks import \
+    Networks as Networks_v1_2_10
+from .v1_2_10.non_fabric_wireless import \
+    NonFabricWireless as NonFabricWireless_v1_2_10
+from .v1_2_10.path_trace import \
+    PathTrace as PathTrace_v1_2_10
+from .v1_2_10.pnp import \
+    Pnp as Pnp_v1_2_10
+from .v1_2_10.swim import \
+    Swim as Swim_v1_2_10
+from .v1_2_10.site_profile import \
+    SiteProfile as SiteProfile_v1_2_10
+from .v1_2_10.sites import \
+    Sites as Sites_v1_2_10
+from .v1_2_10.tag import \
+    Tag as Tag_v1_2_10
+from .v1_2_10.task import \
+    Task as Task_v1_2_10
+from .v1_2_10.template_programmer import \
+    TemplateProgrammer as TemplateProgrammer_v1_2_10
+from .v1_3_0.clients import \
+    Clients as Clients_v1_3_0
+from .v1_3_0.command_runner import \
+    CommandRunner as CommandRunner_v1_3_0
+from .v1_3_0.devices import \
+    Devices as Devices_v1_3_0
+from .v1_3_0.fabric_wired import \
+    FabricWired as FabricWired_v1_3_0
+from .v1_3_0.file import \
+    File as File_v1_3_0
+from .v1_3_0.network_discovery import \
+    NetworkDiscovery as NetworkDiscovery_v1_3_0
+from .v1_3_0.networks import \
+    Networks as Networks_v1_3_0
+from .v1_3_0.non_fabric_wireless import \
+    NonFabricWireless as NonFabricWireless_v1_3_0
+from .v1_3_0.path_trace import \
+    PathTrace as PathTrace_v1_3_0
+from .v1_3_0.pnp import \
+    Pnp as Pnp_v1_3_0
+from .v1_3_0.swim import \
+    Swim as Swim_v1_3_0
+from .v1_3_0.site_profile import \
+    SiteProfile as SiteProfile_v1_3_0
+from .v1_3_0.sites import \
+    Sites as Sites_v1_3_0
+from .v1_3_0.tag import \
+    Tag as Tag_v1_3_0
+from .v1_3_0.task import \
+    Task as Task_v1_3_0
+from .v1_3_0.template_programmer import \
+    TemplateProgrammer as TemplateProgrammer_v1_3_0
+from .custom_caller import CustomCaller
 
 
 class DNACenterAPI(object):
@@ -75,6 +125,8 @@ class DNACenterAPI(object):
                  single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
                  wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
                  verify=DEFAULT_VERIFY,
+                 version=DNA_CENTER_VERSION,
+                 debug=None,
                  object_factory=mydict_data_factory,
                  validator=json_schema_validate):
         """Create a new DNACenterAPI object.
@@ -102,7 +154,7 @@ class DNACenterAPI(object):
         Args:
             base_url(basestring): The base URL to be prefixed to the
                 individual API endpoint suffixes.
-                Defaults to dnacentersdk.DEFAULT_BASE_URL.
+                Defaults to dnacentersdk.config.DEFAULT_BASE_URL.
             username(basestring): HTTP Basic Auth username.
             password(basestring): HTTP Basic Auth password.
             encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
@@ -116,6 +168,12 @@ class DNACenterAPI(object):
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use. Defaults to
                 dnacentersdk.config.DEFAULT_VERIFY.
+            version(basestring): Controls which version of DNA_CENTER to use.
+                Defaults to dnacentersdk.config.DNA_CENTER_VERSION
+            debug(bool,basestring): Controls whether to log information about
+                DNA Center APIs' request and response process.
+                Defaults to the DEBUG environment variable or False
+                if the environment variable is not set.
             object_factory(callable): The factory function to use to create
                 Python objects from the returned DNA Center JSON data objects.
             validator(callable): The factory function to use to validate
@@ -133,10 +191,15 @@ class DNACenterAPI(object):
         check_type(base_url, basestring)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool)
+        check_type(debug, (bool, basestring), may_be_none=True)
         check_type(username, basestring, may_be_none=True)
         check_type(password, basestring, may_be_none=True)
         check_type(encoded_auth, basestring, may_be_none=True)
         check_type(verify, (bool, basestring), may_be_none=False)
+        check_type(version, basestring, may_be_none=False)
+
+        if version not in ['1.2.10', '1.3.0']:
+            raise dnacentersdkException('Unknown API version')
 
         if username is None:
             username = DNA_CENTER_USERNAME
@@ -146,6 +209,12 @@ class DNACenterAPI(object):
 
         if encoded_auth is None:
             encoded_auth = DNA_CENTER_ENCODED_AUTH
+
+        if debug is None:
+            debug = DNA_CENTER_DEBUG
+
+        if isinstance(debug, str):
+            debug = 'true' in debug.lower()
 
         # Init Authentication wrapper early to use for basicAuth requests
         self.authentication = Authentication(
@@ -183,41 +252,143 @@ class DNACenterAPI(object):
             single_request_timeout=single_request_timeout,
             wait_on_rate_limit=wait_on_rate_limit,
             verify=verify,
+            version=version,
+            debug=debug,
         )
 
         # API wrappers
-        self.template_programmer = \
-            TemplateProgrammer(self._session, object_factory, validator)
-        self.tag = \
-            Tag(self._session, object_factory, validator)
-        self.network_discovery = \
-            NetworkDiscovery(self._session, object_factory, validator)
-        self.task = \
-            Task(self._session, object_factory, validator)
-        self.command_runner = \
-            CommandRunner(self._session, object_factory, validator)
-        self.file = \
-            File(self._session, object_factory, validator)
-        self.path_trace = \
-            PathTrace(self._session, object_factory, validator)
-        self.swim = \
-            Swim(self._session, object_factory, validator)
-        self.pnp = \
-            Pnp(self._session, object_factory, validator)
-        self.site_profile = \
-            SiteProfile(self._session, object_factory, validator)
-        self.devices = \
-            Devices(self._session, object_factory, validator)
-        self.sites = \
-            Sites(self._session, object_factory, validator)
-        self.networks = \
-            Networks(self._session, object_factory, validator)
-        self.clients = \
-            Clients(self._session, object_factory, validator)
-        self.non_fabric_wireless = \
-            NonFabricWireless(self._session, object_factory, validator)
-        self.fabric_wired = \
-            FabricWired(self._session, object_factory, validator)
+        if version == '1.2.10':
+            self.clients = \
+                Clients_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.command_runner = \
+                CommandRunner_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.devices = \
+                Devices_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.fabric_wired = \
+                FabricWired_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.file = \
+                File_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.network_discovery = \
+                NetworkDiscovery_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.networks = \
+                Networks_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.non_fabric_wireless = \
+                NonFabricWireless_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.path_trace = \
+                PathTrace_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.pnp = \
+                Pnp_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.swim = \
+                Swim_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.site_profile = \
+                SiteProfile_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.sites = \
+                Sites_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.tag = \
+                Tag_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.task = \
+                Task_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.template_programmer = \
+                TemplateProgrammer_v1_2_10(
+                    self._session, object_factory, validator
+                )
+        if version == '1.3.0':
+            self.clients = \
+                Clients_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.command_runner = \
+                CommandRunner_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.devices = \
+                Devices_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.fabric_wired = \
+                FabricWired_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.file = \
+                File_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.network_discovery = \
+                NetworkDiscovery_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.networks = \
+                Networks_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.non_fabric_wireless = \
+                NonFabricWireless_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.path_trace = \
+                PathTrace_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.pnp = \
+                Pnp_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.swim = \
+                Swim_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.site_profile = \
+                SiteProfile_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.sites = \
+                Sites_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.tag = \
+                Tag_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.task = \
+                Task_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.template_programmer = \
+                TemplateProgrammer_v1_3_0(
+                    self._session, object_factory, validator
+                )
+        self.custom_caller = \
+            CustomCaller(self._session, object_factory)
 
     @property
     def session(self):
@@ -248,3 +419,8 @@ class DNACenterAPI(object):
     def verify(self):
         """The verify (TLS Certificate) for the API endpoints."""
         return self._session._verify
+
+    @property
+    def version(self):
+        """The verify (TLS Certificate) for the API endpoints."""
+        return self._session._version

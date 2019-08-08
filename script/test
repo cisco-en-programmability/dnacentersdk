@@ -7,7 +7,7 @@
 
 # Run all tests by default
 default=true
-
+module=('dnacentersdk')
 
 # Process Script Arguments
 for i in ${@}; do
@@ -28,8 +28,8 @@ for i in ${@}; do
         ;;
 
         *)
-        echo "Unknown argument: $i"
-        exit 1
+        module+=($i)
+        default=
         ;;
     esac
 done
@@ -46,14 +46,25 @@ if [ ${default} ] || [ ${lint} ]; then
     flake8 --config=.test.flake8 tests/
 fi
 
+# Run the rate-limit tests
+if [ ${ratelimiting} ]; then
+    echo "==> Running the rate-limit tests"
+    pytest -s -m "ratelimit"
+fi
+
+# Run only one module test
+if [ ${#module[@]} -gt 1 ]; then
+    temp=${module[@]}
+    # Join array elements with ' or '
+    modules=${temp// / or }
+    echo "==> Running the "${modules}" tests"
+    pytest -s -m "${modules}"
+    exit 0
+fi
+
 # Run the test suite
 if [ ${default} ] || [ ${tests} ]; then
     echo "==> Running the test suite"
     pytest -s -m "not ratelimit"
 fi
 
-# Run the rate-limit tests
-if [ ${ratelimiting} ]; then
-    echo "==> Running the rate-limit tests"
-    pytest -s -m "ratelimit"
-fi

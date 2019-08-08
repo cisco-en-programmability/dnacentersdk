@@ -64,6 +64,10 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 + Reads your DNA Center credentials from environment variables (DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD)
 
++ Reads your DNA Center API version from environment variable VERSION. Supported versions: '1.2.10' and '1.3.0'.
+
++ Reads your DNA Center debug from environment variable DEBUG. Boolean, it controls whether to log information about DNA Center APIs' request and response process.
+
 + Wraps and represents all DNA Center API calls as a simple hierarchical tree of
   native-Python methods (with default arguments provided everywhere possible!)
 

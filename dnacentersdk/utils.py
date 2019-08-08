@@ -274,3 +274,76 @@ def apply_path_params(URL, path_params):
             "'path_params' must be a dictionary or valid JSON string; "
             "received: (URL={}, path_params={})".format(URL, path_params)
         )
+
+
+def pprint_request_info(url, method, _headers, **kwargs):
+    debug_print = (
+        "\nRequest"
+        "\n\tURL: {}"
+        "\n\tMethod: {}"
+        "\n\tHeaders: \n{}"
+    )
+    _headers.update(kwargs.get('headers', {}))
+    _headers = '\n'.join(['\t\t{}: {}'.format(a, b)
+                         for a, b in _headers.items()])
+    debug_print = debug_print.format(url, method, _headers)
+
+    kwargs_to_include = ['params', 'json', 'data', 'stream']
+    kwargs_pprint = {
+        'params': 'Params', 'json': 'Body',
+        'data': 'Body', 'stream': 'Stream'
+    }
+
+    for kw in kwargs_to_include:
+        if kwargs.get(kw) is not None and kwargs_pprint.get(kw):
+            value = kwargs.get(kw)
+            key = kwargs_pprint.get(kw)
+            if isinstance(value, list) or isinstance(value, dict):
+                value = json.dumps(value, indent=4)
+                lines = [' ' * (8 + len(key)) + line
+                         for line in value.split('\n')]
+                value = '\n'.join(lines)
+            else:
+                value = '\t\t{}'.format(value)
+
+            format_str = '{}\n\t{}:\n{}'
+            debug_print = format_str.format(debug_print,
+                                            key,
+                                            value)
+    return debug_print
+
+
+def pprint_response_info(response):
+    debug_print = (
+        "\nResponse"
+        "\n\tStatus: {} - {}"
+        "\n\tHeaders: \n{}"
+    )
+    headers = response.headers
+    headers = '\n'.join(['\t\t{}: {}'.format(a, b)
+                         for a, b in headers.items()])
+    body = None
+    file_resp_headers = ['Content-Disposition', 'fileName']
+
+    if 'application/json' in response.headers.get('Content-Type'):
+        try:
+            body = response.json()
+            body = json.dumps(body, indent=4)
+            body = '\n'.join([' ' * 13 + line for line in body.split('\n')])
+        except Exception:
+            body = response.text or response.content
+            pass
+    elif any([i in response.headers for i in file_resp_headers]):
+        body = None
+    else:
+        body = response.text or response.content
+
+    debug_print = debug_print.format(response.status_code,
+                                     response.reason,
+                                     headers)
+
+    if body is not None:
+        format_str = '{}\n\t{}:\n{}'
+        debug_print = format_str.format(debug_print, 'Body', body)
+
+    return debug_print

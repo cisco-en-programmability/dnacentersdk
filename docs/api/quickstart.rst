@@ -24,6 +24,8 @@ As a `best practice`__, you can store your DNA 'credentials' as
 an environment variables in your development or production environment. By
 default, dnacentersdk will look for the following environment variables to create new connection objects:
 
+    * ``VERSION`` - DNA Center API version to use. Defaults to '1.2.10'.
+
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
       For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'
 
@@ -34,12 +36,12 @@ default, dnacentersdk will look for the following environment variables to creat
 __ https://12factor.net/config
 
 
-However you choose to set it, if you have both ``DNA_CENTER_USERNAME``, ``DNA_CENTER_PASSWORD`` or just 
-``DNA_CENTER_ENCODED_AUTH`` environment variables, you are good to go.  dnacentersdk will use them to create 
-your access token, by default, when creating new :class:`DNACenterAPI` objects.
+However, you choose to set it, if you have ``VERSION``, ``DNA_CENTER_USERNAME`` and ``DNA_CENTER_PASSWORD``, or
+``VERSION`` and ``DNA_CENTER_ENCODED_AUTH`` environment variables, you are good to go.
+dnacentersdk will use them to create your access token when creating new :class:`DNACenterAPI` objects.
 
 If you don't want to set your credentials as environment variables, you
-can manually provide your access token when creating a DNACenterAPI object.
+can manually provide them as parameters when creating a DNACenterAPI object.
 
 
 Set credentials as environment variables
@@ -111,12 +113,12 @@ when creating a new :class:`DNACenterAPI` connection object.
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK')
+    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', version='1.2.10')
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!')
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', version='1.2.10')
 
 Note that this can be very useful if you are reading authentication credentials
 from a file or database and/or when you want to create more than one connection object.
@@ -173,7 +175,7 @@ ready to start making API calls.
 It really is that easy.
 
 All of the calls have been wrapped and represented as native Python method
-calls, like :meth:`DNACenterAPI.pnp.get_workflows() <dnacentersdk.api.pnp.Pnp.get_workflows>` which gets the workflows details
+calls, like :meth:`DNACenterAPI.pnp.get_workflows() <dnacentersdk.api.v1_2_10.pnp.Pnp.get_workflows>` which gets the workflows details
 for the pnp - see 
 the `Get Workflows
 <https://pubhub.devnetcloud.com/media/dna-center-api-1210/docs/swagger_dnacp_1210_annotated.html#!/PnP/getWorkflows>`_ API endpoint
@@ -185,11 +187,8 @@ API endpoint as a ``pnp.get_workflows()`` method available underneath the
 :class:`DNACenterAPI` connection object.
 
 A full list of the available API methods, with their descriptions and
-parameters, is available in the :ref:`User API Doc`, and a brief summary of the
-structure is provided here.
-
-
-.. include:: api_structure_table.rst
+parameters, is available in the :ref:`User API Doc`. A summary of the structure is available 
+for :ref:`v1.2.10 <v1_2_10 summary>` and :ref:`v1.3.0 <v1_3_0 summary>`.
 
 You can easily access and call any of these methods directly from your
 :class:`DNACenterAPI` connection object:
@@ -290,36 +289,36 @@ The DNA Center cloud returns data objects in JSON format, like so:
 
 .. code-block:: json
 
-    [{ "version ": 1,
-      "deviceInfo ": { "serialNumber ":  "1234567890s ",
-      "name ":  "Postname-add ",
-      "pid ":  "ws-c9300 ",
-      "lastSyncTime ": 0,
-      "addedOn ": 1559870763581,
-      "lastUpdateOn ": 1559870763581,
-      "firstContact ": 0,
-      "lastContact ": 0,
-      "state ":  "Unclaimed ",
-      "onbState ":  "Not Contacted ",
-      "cmState ":  "Not Contacted ",
-      "source ":  "User ",
-      "reloadRequested ": false,
-      "aaaCredentials ": { "username ":  " ",  "password ":  " "},
-      "populateInventory ": false,
-      "stack ": false,
-      "sudiRequired ": false,
-      "validActions ": { "editSUDI ": true,
-        "editWfParams ": true,
-        "delete ": true,
-        "claim ": true,
-        "unclaim ": true,
-        "reset ": false}},
-      "workflowParameters ": {},
-      "runSummaryList ": [{ "timestamp ": 1559870763581,
-        "details ":  "User Added Device ",
-        "errorFlag ": false}],
-      "tenantId ":  "5bd3634ab2bea0004c3ebb58 ",
-      "id ":  "5cf9bd2b568ecc000779da65 "}]
+    [{ "version": 1,
+      "deviceInfo": { "serialNumber":  "1234567890s",
+      "name":  "Postname-add ",
+      "pid":  "ws-c9300 ",
+      "lastSyncTime": 0,
+      "addedOn": 1559870763581,
+      "lastUpdateOn": 1559870763581,
+      "firstContact": 0,
+      "lastContact": 0,
+      "state":  "Unclaimed ",
+      "onbState":  "Not Contacted ",
+      "cmState":  "Not Contacted ",
+      "source":  "User ",
+      "reloadRequested": false,
+      "aaaCredentials": { "username":  "",  "password":  ""},
+      "populateInventory": false,
+      "stack": false,
+      "sudiRequired": false,
+      "validActions": { "editSUDI": true,
+        "editWfParams": true,
+        "delete": true,
+        "claim": true,
+        "unclaim": true,
+        "reset": false}},
+      "workflowParameters": {},
+      "runSummaryList": [{ "timestamp": 1559870763581,
+        "details":  "User Added Device ",
+        "errorFlag": false}],
+      "tenantId":  "5bd3634ab2bea0004c3ebb58 ",
+      "id":  "5cf9bd2b568ecc000779da65 "}]
 
 
 Sure, JSON data objects can easily be parsed and represented in Python using
