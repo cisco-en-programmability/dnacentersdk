@@ -1,0 +1,458 @@
+# -*- coding: utf-8 -*-
+"""DNA Center API wrappers.
+
+Copyright (c) 2019 Cisco and/or its affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+from past.types import basestring
+
+from dnacentersdk.config import (
+    DEFAULT_BASE_URL, DEFAULT_SINGLE_REQUEST_TIMEOUT,
+    DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY,
+)
+from dnacentersdk.environment import (
+    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH, DNA_CENTER_DEBUG,
+    DNA_CENTER_VERSION,
+)
+from dnacentersdk.exceptions import AccessTokenError, VersionError
+from dnacentersdk.models.mydict import mydict_data_factory
+from dnacentersdk.models.schema_validator import json_schema_validate
+from dnacentersdk.restsession import RestSession
+from dnacentersdk.utils import check_type
+
+from .authentication import Authentication
+from .v1_2_10.clients import \
+    Clients as Clients_v1_2_10
+from .v1_2_10.command_runner import \
+    CommandRunner as CommandRunner_v1_2_10
+from .v1_2_10.devices import \
+    Devices as Devices_v1_2_10
+from .v1_2_10.fabric_wired import \
+    FabricWired as FabricWired_v1_2_10
+from .v1_2_10.file import \
+    File as File_v1_2_10
+from .v1_2_10.network_discovery import \
+    NetworkDiscovery as NetworkDiscovery_v1_2_10
+from .v1_2_10.networks import \
+    Networks as Networks_v1_2_10
+from .v1_2_10.non_fabric_wireless import \
+    NonFabricWireless as NonFabricWireless_v1_2_10
+from .v1_2_10.path_trace import \
+    PathTrace as PathTrace_v1_2_10
+from .v1_2_10.pnp import \
+    Pnp as Pnp_v1_2_10
+from .v1_2_10.swim import \
+    Swim as Swim_v1_2_10
+from .v1_2_10.site_profile import \
+    SiteProfile as SiteProfile_v1_2_10
+from .v1_2_10.sites import \
+    Sites as Sites_v1_2_10
+from .v1_2_10.tag import \
+    Tag as Tag_v1_2_10
+from .v1_2_10.task import \
+    Task as Task_v1_2_10
+from .v1_2_10.template_programmer import \
+    TemplateProgrammer as TemplateProgrammer_v1_2_10
+from .v1_3_0.clients import \
+    Clients as Clients_v1_3_0
+from .v1_3_0.command_runner import \
+    CommandRunner as CommandRunner_v1_3_0
+from .v1_3_0.devices import \
+    Devices as Devices_v1_3_0
+from .v1_3_0.fabric_wired import \
+    FabricWired as FabricWired_v1_3_0
+from .v1_3_0.file import \
+    File as File_v1_3_0
+from .v1_3_0.network_discovery import \
+    NetworkDiscovery as NetworkDiscovery_v1_3_0
+from .v1_3_0.networks import \
+    Networks as Networks_v1_3_0
+from .v1_3_0.non_fabric_wireless import \
+    NonFabricWireless as NonFabricWireless_v1_3_0
+from .v1_3_0.path_trace import \
+    PathTrace as PathTrace_v1_3_0
+from .v1_3_0.pnp import \
+    Pnp as Pnp_v1_3_0
+from .v1_3_0.swim import \
+    Swim as Swim_v1_3_0
+from .v1_3_0.site_profile import \
+    SiteProfile as SiteProfile_v1_3_0
+from .v1_3_0.sites import \
+    Sites as Sites_v1_3_0
+from .v1_3_0.tag import \
+    Tag as Tag_v1_3_0
+from .v1_3_0.task import \
+    Task as Task_v1_3_0
+from .v1_3_0.template_programmer import \
+    TemplateProgrammer as TemplateProgrammer_v1_3_0
+from .custom_caller import CustomCaller
+
+
+class DNACenterAPI(object):
+    """DNA Center API wrapper.
+
+    Creates a 'session' for all API calls through a created DNACenterAPI
+    object.  The 'session' handles authentication, provides the needed headers,
+    and checks all responses for error conditions.
+
+    DNACenterAPI wraps all of the individual DNA Center APIs and represents
+    them in a simple hierarchical structure.
+    """
+
+    def __init__(self, username=None,
+                 password=None,
+                 encoded_auth=None,
+                 base_url=DEFAULT_BASE_URL,
+                 single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
+                 wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
+                 verify=DEFAULT_VERIFY,
+                 version=DNA_CENTER_VERSION,
+                 debug=None,
+                 object_factory=mydict_data_factory,
+                 validator=json_schema_validate):
+        """Create a new DNACenterAPI object.
+        An access token is required to interact with the DNA Center APIs.
+        This package supports two methods for you to generate the
+        authorization token:
+
+          1. Provide a encoded_auth value (username:password encoded in
+          base 64). *This has priority over the following method*
+
+          2. Provide username and password values.
+
+        This package supports two methods for you to set those values:
+
+          1. Provide the parameter. That is the encoded_auth or
+          username and password parameters.
+
+          2. If an argument is not supplied, the package checks for
+          its environment variable counterpart. That is the
+          DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME,
+          DNA_CENTER_PASSWORD.
+
+        When not given enough parameters an AccessTokenError is raised.
+
+        Args:
+            base_url(basestring): The base URL to be prefixed to the
+                individual API endpoint suffixes.
+                Defaults to dnacentersdk.config.DEFAULT_BASE_URL.
+            username(basestring): HTTP Basic Auth username.
+            password(basestring): HTTP Basic Auth password.
+            encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
+            single_request_timeout(int): Timeout (in seconds) for RESTful HTTP
+                requests. Defaults to
+                dnacentersdk.config.DEFAULT_SINGLE_REQUEST_TIMEOUT.
+            wait_on_rate_limit(bool): Enables or disables automatic rate-limit
+                handling. Defaults to
+                dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT.
+            verify(bool,basestring): Controls whether we verify the server’s
+                TLS certificate, or a string, in which case it must be a path
+                to a CA bundle to use. Defaults to
+                dnacentersdk.config.DEFAULT_VERIFY.
+            version(basestring): Controls which version of DNA_CENTER to use.
+                Defaults to dnacentersdk.config.DNA_CENTER_VERSION
+            debug(bool,basestring): Controls whether to log information about
+                DNA Center APIs' request and response process.
+                Defaults to the DEBUG environment variable or False
+                if the environment variable is not set.
+            object_factory(callable): The factory function to use to create
+                Python objects from the returned DNA Center JSON data objects.
+            validator(callable): The factory function to use to validate
+                Python objects sent in the body of the request.
+
+        Returns:
+            DNACenterAPI: A new DNACenterAPI object.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            AccessTokenError: If an access token is not provided via the
+                access_token argument or an environment variable.
+            VersionError: If the version is not provided via the version
+                argument or an environment variable, or it is not a
+                DNA Center API supported version
+                ['1.2.10', '1.3.0'].
+
+        """
+        check_type(base_url, basestring)
+        check_type(single_request_timeout, int)
+        check_type(wait_on_rate_limit, bool)
+        check_type(debug, (bool, basestring), may_be_none=True)
+        check_type(username, basestring, may_be_none=True)
+        check_type(password, basestring, may_be_none=True)
+        check_type(encoded_auth, basestring, may_be_none=True)
+        check_type(verify, (bool, basestring), may_be_none=False)
+        check_type(version, basestring, may_be_none=False)
+
+        if version not in ['1.2.10', '1.3.0']:
+            raise VersionError(
+                'Unknown API version, '
+                + 'known versions are {}'.format(
+                    '1.2.10 and 1.3.0.'
+                )
+            )
+
+        if username is None:
+            username = DNA_CENTER_USERNAME
+
+        if password is None:
+            password = DNA_CENTER_PASSWORD
+
+        if encoded_auth is None:
+            encoded_auth = DNA_CENTER_ENCODED_AUTH
+
+        if debug is None:
+            debug = DNA_CENTER_DEBUG
+
+        if isinstance(debug, str):
+            debug = 'true' in debug.lower()
+
+        # Init Authentication wrapper early to use for basicAuth requests
+        self.authentication = Authentication(
+            base_url, object_factory,
+            single_request_timeout=single_request_timeout,
+            verify=verify,
+        )
+
+        # Check if the user has provided the required basicAuth parameters
+        if encoded_auth is None and (username is None or password is None):
+            raise AccessTokenError(
+                "You need an access token to interact with the DNA Center"
+                " APIs. DNA Center uses HTTP Basic Auth to create an access"
+                " token. You must provide the username and password or just"
+                " the encoded_auth, either by setting each parameter or its"
+                " environment variable counterpart ("
+                "DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,"
+                " DNA_CENTER_ENCODED_AUTH)."
+            )
+
+        def get_access_token():
+            return self.authentication.authentication_api(
+                username=username,
+                password=password,
+                encoded_auth=encoded_auth).Token
+
+        # Create the API session
+        # All of the API calls associated with a DNACenterAPI object will
+        # leverage a single RESTful 'session' connecting to the DNA Center
+        # cloud.
+        self._session = RestSession(
+            get_access_token=get_access_token,
+            access_token=get_access_token(),
+            base_url=base_url,
+            single_request_timeout=single_request_timeout,
+            wait_on_rate_limit=wait_on_rate_limit,
+            verify=verify,
+            version=version,
+            debug=debug,
+        )
+
+        # API wrappers
+        if version == '1.2.10':
+            self.clients = \
+                Clients_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.command_runner = \
+                CommandRunner_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.devices = \
+                Devices_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.fabric_wired = \
+                FabricWired_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.file = \
+                File_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.network_discovery = \
+                NetworkDiscovery_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.networks = \
+                Networks_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.non_fabric_wireless = \
+                NonFabricWireless_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.path_trace = \
+                PathTrace_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.pnp = \
+                Pnp_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.swim = \
+                Swim_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.site_profile = \
+                SiteProfile_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.sites = \
+                Sites_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.tag = \
+                Tag_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.task = \
+                Task_v1_2_10(
+                    self._session, object_factory, validator
+                )
+            self.template_programmer = \
+                TemplateProgrammer_v1_2_10(
+                    self._session, object_factory, validator
+                )
+        if version == '1.3.0':
+            self.clients = \
+                Clients_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.command_runner = \
+                CommandRunner_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.devices = \
+                Devices_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.fabric_wired = \
+                FabricWired_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.file = \
+                File_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.network_discovery = \
+                NetworkDiscovery_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.networks = \
+                Networks_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.non_fabric_wireless = \
+                NonFabricWireless_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.path_trace = \
+                PathTrace_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.pnp = \
+                Pnp_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.swim = \
+                Swim_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.site_profile = \
+                SiteProfile_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.sites = \
+                Sites_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.tag = \
+                Tag_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.task = \
+                Task_v1_3_0(
+                    self._session, object_factory, validator
+                )
+            self.template_programmer = \
+                TemplateProgrammer_v1_3_0(
+                    self._session, object_factory, validator
+                )
+        self.custom_caller = \
+            CustomCaller(self._session, object_factory)
+
+    @property
+    def session(self):
+        """The DNA Center API session."""
+        return self._session
+
+    @property
+    def access_token(self):
+        """The access token used for API calls to the DNA Center service."""
+        return self._session.access_token
+
+    @property
+    def base_url(self):
+        """The base URL prefixed to the individual API endpoint suffixes."""
+        return self._session.base_url
+
+    @property
+    def single_request_timeout(self):
+        """Timeout (in seconds) for an single HTTP request."""
+        return self._session.single_request_timeout
+
+    @property
+    def wait_on_rate_limit(self):
+        """Automatic rate-limit handling enabled / disabled."""
+        return self._session.wait_on_rate_limit
+
+    @property
+    def verify(self):
+        """The verify (TLS Certificate) for the API endpoints."""
+        return self._session._verify
+
+    @property
+    def version(self):
+        """The API version of DNA Center."""
+        return self._session._version
+
+    @verify.setter
+    def verify(self, value):
+        """The verify (TLS Certificate) for the API endpoints."""
+        self.authentication.verify = value
+        self._session.verify = value
+
+    @base_url.setter
+    def base_url(self, value):
+        """The base URL for the API endpoints."""
+        self.authentication.base_url = value
+        self._session.base_url = value
+
+    @single_request_timeout.setter
+    def single_request_timeout(self, value):
+        """The timeout (seconds) for a single HTTP REST API request."""
+        self.authentication.single_request_timeout = value
+        self._session.single_request_timeout = value
+
+    @wait_on_rate_limit.setter
+    def wait_on_rate_limit(self, value):
+        """Enable or disable automatic rate-limit handling."""
+        self._session.wait_on_rate_limit = value

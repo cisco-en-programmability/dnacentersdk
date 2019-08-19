@@ -103,6 +103,7 @@ class RestSession(object):
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool, may_be_none=False)
         check_type(verify, (bool, basestring), may_be_none=False)
+        check_type(version, basestring, may_be_none=False)
         check_type(debug, (bool), may_be_none=False)
 
         super(RestSession, self).__init__()
@@ -143,8 +144,8 @@ class RestSession(object):
 
     @verify.setter
     def verify(self, value):
-        """Enable or disable automatic rate-limit handling."""
-        check_type(value, bool, may_be_none=False)
+        """The verify (TLS Certificate) for the API endpoints."""
+        check_type(value, (bool, basestring), may_be_none=False)
         self._verify = value
 
     @property
@@ -154,9 +155,12 @@ class RestSession(object):
 
     @base_url.setter
     def base_url(self, value):
-        """Change the base URL for the API endpoints."""
-        check_type(value, str, may_be_none=False)
-        self._base_url = value
+        """The base URL for the API endpoints."""
+        check_type(value, basestring, may_be_none=False)
+        self._base_url = str(validate_base_url(value))
+        logger.debug('Refreshing access token')
+        self.refresh_token()  # Update access_token
+        logger.debug('Refreshed token.')
 
     @property
     def access_token(self):
