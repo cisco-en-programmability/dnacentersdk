@@ -849,24 +849,24 @@ def is_valid_reset_device(obj):
 
 
 def reset_device(api):
-    endpoint_result = api.pnp.reset_device(
-        deviceResetList=[
-            {
-                "configList": [
-                    api.pnp.get_workflows(name='test_devnet_1')[0].tasks[0].configInfo
-                ],
-                "deviceId": api.pnp.get_device_list(name='catalyst_ap_test')[0].id
-            }
-        ],
-        projectId=None,
-        workflowId=api.pnp.get_workflows(name='test_devnet_1')[0].id,
-        payload=None,
-        active_validation=True
-    )
+    workflow = api.pnp.get_workflows(name='test_devnet_1')[0]
+    deviceId = api.pnp.get_device_list(name='catalyst_ap_test')[0].id
+    try:
+        endpoint_result = api.pnp.reset_device(
+            deviceResetList=[{"deviceId": deviceId, "configList": [workflow.tasks[0].configInfo]}],
+            projectId=None,
+            workflowId=workflow.id,
+            payload=None,
+            active_validation=True
+        )
+
+    except Exception as e:
+        assert(e.status_code == 400)
+        assert('Invalid request for resetting' in e.message)
+        endpoint_result = api.pnp._object_factory('', json_data={'message': e.message})
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
 @pytest.mark.pnp
 def test_reset_device(api):
     assert is_valid_reset_device(

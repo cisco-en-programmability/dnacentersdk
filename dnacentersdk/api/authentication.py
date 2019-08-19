@@ -69,7 +69,8 @@ class Authentication(object):
         object with the provided RestSession.
 
         Args:
-            base_url(basestring): The base URL the API endpoints.
+            base_url(basestring): The base URL to be prefixed to the
+                individual API endpoint suffixes.
             object_factory(callable): The factory function to use to create
                 Python objects from the returned DNA Center JSON data objects.
             single_request_timeout(int): Timeout in seconds for the API

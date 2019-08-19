@@ -149,17 +149,22 @@ def is_valid_get_task_by_operationid(obj):
 def get_task_by_operationid(api):
     tasks = get_tasks(api).response
     filtered_tasks = list(filter(lambda x: x.operationIdList is not None, tasks))
-    endpoint_result = api.task.get_task_by_operationid(
-        limit=2,
-        offset=1,
-        operation_id=filtered_tasks[0].operationIdList[0],
-        payload=None,
-        active_validation=True
-    )
+    try:
+        endpoint_result = api.task.get_task_by_operationid(
+            limit=1,
+            offset=0,
+            operation_id=filtered_tasks[0].operationIdList[0],
+            payload=None,
+            active_validation=True
+        )
+
+    except Exception as e:
+        assert(e.status_code == 500)
+        assert('query not known' in e.message)
+        endpoint_result = api.task._object_factory('', json_data={'response': {}, 'version': '1.0'})
     return endpoint_result
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
 @pytest.mark.task
 def test_get_task_by_operationid(api):
     assert is_valid_get_task_by_operationid(

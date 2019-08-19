@@ -152,6 +152,12 @@ class RestSession(object):
         """The base URL for the API endpoints."""
         return self._base_url
 
+    @base_url.setter
+    def base_url(self, value):
+        """Change the base URL for the API endpoints."""
+        check_type(value, str, may_be_none=False)
+        self._base_url = value
+
     @property
     def access_token(self):
         """The DNA Center access token used for this session."""

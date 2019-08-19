@@ -33,7 +33,7 @@ from dnacentersdk.environment import (
     DNA_CENTER_ENCODED_AUTH, DNA_CENTER_DEBUG,
     DNA_CENTER_VERSION,
 )
-from dnacentersdk.exceptions import AccessTokenError, dnacentersdkException
+from dnacentersdk.exceptions import AccessTokenError, VersionError
 from dnacentersdk.models.mydict import mydict_data_factory
 from dnacentersdk.models.schema_validator import json_schema_validate
 from dnacentersdk.restsession import RestSession
@@ -186,6 +186,10 @@ class DNACenterAPI(object):
             TypeError: If the parameter types are incorrect.
             AccessTokenError: If an access token is not provided via the
                 access_token argument or an environment variable.
+            VersionError: If the version is not provided via the version
+                argument or an environment variable, or it is not a
+                DNA Center API supported version
+                ['1.2.10', '1.3.0'].
 
         """
         check_type(base_url, basestring)
@@ -199,7 +203,12 @@ class DNACenterAPI(object):
         check_type(version, basestring, may_be_none=False)
 
         if version not in ['1.2.10', '1.3.0']:
-            raise dnacentersdkException('Unknown API version')
+            raise VersionError(
+                'Unknown API version, '
+                + 'known versions are {}'.format(
+                    '1.2.10 and 1.3.0.'
+                )
+            )
 
         if username is None:
             username = DNA_CENTER_USERNAME
@@ -404,6 +413,11 @@ class DNACenterAPI(object):
     def base_url(self):
         """The base URL prefixed to the individual API endpoint suffixes."""
         return self._session.base_url
+
+    @base_url.setter(self, value):
+        """Change the base URL for API endpoints"""
+        check_value(value, str, may_be_none=False)
+        self._session.base_url = value
 
     @property
     def single_request_timeout(self):

@@ -24,7 +24,7 @@ As a `best practice`__, you can store your DNA 'credentials' as
 an environment variables in your development or production environment. By
 default, dnacentersdk will look for the following environment variables to create new connection objects:
 
-    * ``VERSION`` - DNA Center API version to use. Defaults to '1.2.10'.
+    * ``VERSION`` - DNA Center API version to use. Defaults to '1.3.0'.
 
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
       For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'
@@ -98,7 +98,7 @@ a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` subclas
     >>> api = DNACenterAPI()
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
-      File "dnacentersdk/__init__.py", line 147, in __init__
+      File "dnacentersdk/__init__.py", line 237, in __init__
         raise AccessTokenError(error_message)
     AccessTokenError: You need an access token to interact with the DNA Center
     APIs. DNA Center uses HTTP Basic Auth to create an access
@@ -107,18 +107,38 @@ a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` subclas
     environment variable counterpart (DNA_CENTER_USERNAME,
     DNA_CENTER_PASSWORD, DNA_CENTER_ENCODED_AUTH).
 
+
+Also, dnacentersdk defaults to pulling from environment variables, other important values like
+VERSION and DEBUG, a default value is offered for both. VERSION defaults to '1.3.0' and DEBUG to 'False'.
+
+If you don't provide a known version and try to create a new :class:`DNACenterAPI`, a :exc:`VersionError` will be raised.
+
+.. code-block:: python
+
+    >>> from dnacentersdk import DNACenterAPI
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url='https://sandboxdnac2.cisco.com:443', version='0.1.12')
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "dnacentersdk/__init__.py", line 209, in __init__
+        raise VersionError(error_message)
+    VersionError: Unknown API version, known versions are 1.2.10 and 1.3.0.
+
+
 Use the arguments to manually provide enough information for the HTTP Basic Auth process, 
 when creating a new :class:`DNACenterAPI` connection object.
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', version='1.2.10')
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 1.2.10
+    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', version='1.2.10')
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 1.2.10
+    >>> # The base_url used by default is `from dnacentersdk.config import DEFAULT_BASE_URL`
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
 
 Note that this can be very useful if you are reading authentication credentials
 from a file or database and/or when you want to create more than one connection object.
@@ -128,8 +148,8 @@ from a file or database and/or when you want to create more than one connection 
     >>> from dnacentersdk import DNACenterAPI
     >>> kingston_auth = 'ZG5hY2VudGVydXNlcjpDaXNjbzEyMyEK'
     >>> london_auth = ('london', 'rcx0cf43!')
-    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth)
-    >>> london_api = DNACenterAPI(*london_auth)  # * Unpacks tuple
+    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
+    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='1.3.0')  # * Unpacks tuple
 
 
 Making API Calls
@@ -240,6 +260,7 @@ message.
 
     >>> from dnacentersdk import DNACenterAPI, ApiError
     >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!')
+    >>> # The base_url used by default is `from dnacentersdk.config import DEFAULT_BASE_URL`
     >>> task = api.task.get_task_by_operationid(
          limit=2,
          offset=1,

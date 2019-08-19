@@ -36,11 +36,13 @@ class TestDNACenterSDK:
         assert hasattr(dnacentersdk, "DNACenterAPI")
 
         # Exceptions
-        assert hasattr(dnacentersdk, "ApiError")
         assert hasattr(dnacentersdk, "AccessTokenError")
+        assert hasattr(dnacentersdk, "ApiError")
+        assert hasattr(dnacentersdk, "dnacentersdkException")
+        assert hasattr(dnacentersdk, "MalformedRequest")
         assert hasattr(dnacentersdk, "RateLimitError")
         assert hasattr(dnacentersdk, "RateLimitWarning")
-        assert hasattr(dnacentersdk, "dnacentersdkException")
+        assert hasattr(dnacentersdk, "VersionError")
 
         # Data Models
         assert hasattr(dnacentersdk, "mydict_data_factory")

@@ -51,6 +51,11 @@ class AccessTokenError(dnacentersdkException):
     pass
 
 
+class VersionError(dnacentersdkException):
+    """Raised when an incorrect DNA Center version has been provided."""
+    pass
+
+
 class ApiError(dnacentersdkException):
     """Errors returned in response to requests sent to the DNA Center APIs.
 

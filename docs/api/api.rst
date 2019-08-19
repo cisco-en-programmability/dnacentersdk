@@ -395,6 +395,10 @@ Exceptions
     :show-inheritance:
     :members:
 
+.. autoexception:: VersionError()
+    :show-inheritance:
+    :members:
+
 .. autoexception:: dnacentersdkException()
     :show-inheritance:
     :members:

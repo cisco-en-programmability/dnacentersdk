@@ -12,7 +12,8 @@ dnacentersdk
 
     from dnacentersdk import api
 
-    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!")
+    # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 1.2.10.
+    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
 
     # Find all devices that have 'Switches and Hubs' in their family
     devices = dnac.devices.get_device_list(family='Switches and Hubs')
@@ -52,9 +53,8 @@ dnacentersdk
         print('Unfortunately ', task_demo_tag.response.progress)
         print('Reason: ', task_demo_tag.response.failureReason)
 
-dnacentersdk makes your life better...  `Learn how!`__
 
-__ Introduction_
+Introduction_
 
 
 Installation
@@ -79,7 +79,7 @@ Documentation
 -------------
 
 **Excellent documentation is now available at:**
-http://dnacentersdk.readthedocs.io
+https://dnacentersdk.readthedocs.io
 
 Check out the Quickstart_ to dive in and begin using dnacentersdk.
 
@@ -106,21 +106,24 @@ Contribution
 dnacentersdk_ is a community development projects.  Feedback, thoughts, ideas, and code contributions are welcome!  Please see the `Contributing`_ guide for more information.
 
 
+Inspiration
+------------
+
+This library is inspired by the webexteamssdk_  library
+
+
 *Copyright (c) 2019 Cisco and/or its affiliates.*
 
 .. _Introduction: https://dnacentersdk.readthedocs.io/en/latest/api/intro.html
 .. _dnacentersdk.readthedocs.io: https://dnacentersdk.readthedocs.io
-.. _Quickstart: http://dnacentersdk.readthedocs.io/en/latest/api/quickstart.html
-.. _examples: https://github.com/zapodeanu/dnacentersdk/tree/master/examples
+.. _Quickstart: https://dnacentersdk.readthedocs.io/en/latest/api/quickstart.html
 .. _dnacentersdk: https://github.com/zapodeanu/dnacentersdk
 .. _issues: https://github.com/zapodeanu/dnacentersdk/issues
 .. _Community: #
-.. _projects: https://github.com/zapodeanu/dnacentersdk/projects
 .. _pull requests: https://github.com/zapodeanu/dnacentersdk/pulls
 .. _releases: https://github.com/zapodeanu/dnacentersdk/releases
 .. _the repository: dnacentersdk_
 .. _pull request: `pull requests`_
 .. _Contributing: https://github.com/zapodeanu/dnacentersdk/blob/master/docs/contributing.rst
+.. _webexteamssdk: https://github.com/CiscoDevNet/webexteamssdk
 
-..
-   _to_do: Change urls.

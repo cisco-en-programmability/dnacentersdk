@@ -51,7 +51,8 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
     from dnacentersdk import api
 
-    dnac = api.DNACenterAPI()
+    dnac = api.DNACenterAPI(base_url='https://sandboxdnac2.cisco.com:443', version='1.3.0')
+    # Or even just dnac = api.DNACenterAPI() as base_url and version have those values.
     try:
         devices = dnac.devices.get_device_list(family='Switches and Hubs')
         for device in devices.response:
@@ -64,7 +65,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 + Reads your DNA Center credentials from environment variables (DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD)
 
-+ Reads your DNA Center API version from environment variable VERSION. Supported versions: '1.2.10' and '1.3.0'.
++ Reads your DNA Center API version from environment variable VERSION. Supported versions: '1.2.10' and '1.3.0'. Now with version and base_url, you have more control.
 
 + Reads your DNA Center debug from environment variable DEBUG. Boolean, it controls whether to log information about DNA Center APIs' request and response process.
 
@@ -96,7 +97,8 @@ All of this, combined, lets you do powerful things simply:
 
     from dnacentersdk import api
 
-    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!")
+    # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 1.2.10.
+    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
 
     # Find all devices that have 'Switches and Hubs' in their family
     devices = dnac.devices.get_device_list(family='Switches and Hubs')
