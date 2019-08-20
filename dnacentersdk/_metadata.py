@@ -25,7 +25,7 @@ SOFTWARE.
 
 __title__ = 'dnacentersdk'
 __description__ = 'Community-developed Python SDK for the DNA Center APIs'
-__url__ = 'https://github.com/zapodeanu/dnacentersdk'
+__url__ = 'https://github.com/cisco-en-programmability/dnacentersdk'
 __download_url__ = 'https://pypi.python.org/pypi/dnacentersdk'
 __author__ = 'Jose Bogarín'
 __author_email__ = 'jbogarin@altus.cr'

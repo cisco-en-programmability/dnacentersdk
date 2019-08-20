@@ -121,13 +121,13 @@ This library is inspired by the webexteamssdk_  library
 .. _Introduction: https://dnacentersdk.readthedocs.io/en/latest/api/intro.html
 .. _dnacentersdk.readthedocs.io: https://dnacentersdk.readthedocs.io
 .. _Quickstart: https://dnacentersdk.readthedocs.io/en/latest/api/quickstart.html
-.. _dnacentersdk: https://github.com/zapodeanu/dnacentersdk
-.. _issues: https://github.com/zapodeanu/dnacentersdk/issues
+.. _dnacentersdk: https://github.com/cisco-en-programmability/dnacentersdk
+.. _issues: https://github.com/cisco-en-programmability/dnacentersdk/issues
 .. _Community: #
-.. _pull requests: https://github.com/zapodeanu/dnacentersdk/pulls
-.. _releases: https://github.com/zapodeanu/dnacentersdk/releases
+.. _pull requests: https://github.com/cisco-en-programmability/dnacentersdk/pulls
+.. _releases: https://github.com/cisco-en-programmability/dnacentersdk/releases
 .. _the repository: dnacentersdk_
 .. _pull request: `pull requests`_
-.. _Contributing: https://github.com/zapodeanu/dnacentersdk/blob/master/docs/contributing.rst
+.. _Contributing: https://github.com/cisco-en-programmability/dnacentersdk/blob/master/docs/contributing.rst
 .. _webexteamssdk: https://github.com/CiscoDevNet/webexteamssdk
 

@@ -73,5 +73,5 @@ Leveraging the DNA Center APIs and developing on top of the DNA Center cloud is 
 .. _DNA Center: https://www.cisco.com/c/en/us/products/cloud-systems-management/dna-center/index.html
 .. _free account: `DNA Center`_
 .. _DNA Center for Developers: https://developer.cisco.com/site/networking/
-.. _contribution: https://github.com/zapodeanu/dnacentersdk#contribution
-.. _dnacentersdk: https://github.com/zapodeanu/dnacentersdk
+.. _contribution: https://github.com/cisco-en-programmability/dnacentersdk#contribution
+.. _dnacentersdk: https://github.com/cisco-en-programmability/dnacentersdk

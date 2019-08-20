@@ -127,12 +127,12 @@ Contributing Code - Running the Test Suite Locally
 9. Submit a `pull request`_.  If everything looks good, we will gladly merge your request!
 
 
-.. _script: https://github.com/zapodeanu/dnacentersdk/tree/master/script
-.. _issues: https://github.com/zapodeanu/dnacentersdk/issues
-.. _repository: https://github.com/zapodeanu/dnacentersdk
-.. _test: https://github.com/zapodeanu/dnacentersdk/tree/master/tests
+.. _script: https://github.com/cisco-en-programmability/dnacentersdk/tree/master/script
+.. _issues: https://github.com/cisco-en-programmability/dnacentersdk/issues
+.. _repository: https://github.com/cisco-en-programmability/dnacentersdk
+.. _test: https://github.com/cisco-en-programmability/dnacentersdk/tree/master/tests
 .. _PEP8: https://www.python.org/dev/peps/pep-0008/
-.. _pull request: https://github.com/zapodeanu/dnacentersdk/pulls
+.. _pull request: https://github.com/cisco-en-programmability/dnacentersdk/pulls
 
 
 ..
