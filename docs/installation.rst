@@ -41,7 +41,7 @@ Get the Source Code
 
 dnacentersdk is developed on GitHub.  If you like and use this package,
 please take a few seconds to Star the package on
-the `CiscoDevNet/dnacentersdk`_ GitHub page.  Your feedback and
+the `cisco-en-programmability/dnacentersdk`_ GitHub page.  Your feedback and
 contributions are always welcome.
 
 Use the following command to download the source code (GIT repository):
@@ -62,4 +62,4 @@ command:
 
 
 .. _Python Package Index (PyPI): https://pypi.python.org/pypi/dnacentersdk
-.. _CiscoDevNet/dnacentersdk: https://github.com/cisco-en-programmability/dnacentersdk
+.. _cisco-en-programmability/dnacentersdk: https://github.com/cisco-en-programmability/dnacentersdk
