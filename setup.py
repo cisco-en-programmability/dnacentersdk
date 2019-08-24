@@ -7,8 +7,6 @@ from codecs import open
 
 from setuptools import find_packages, setup
 
-import versioneer
-
 
 __copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
 __license__ = "MIT"
@@ -68,9 +66,8 @@ with open(os.path.join(project_root, 'README.rst'), encoding='utf-8') as f:
 setup(
     name=PACKAGE_NAME,
 
-    version=versioneer.get_version(),
-    cmdclass=versioneer.get_cmdclass(),
-
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
     description=metadata['__description__'],
     long_description=long_description,
 

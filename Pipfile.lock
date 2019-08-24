@@ -453,14 +453,6 @@
             ],
             "version": "==1.25.3"
         },
-        "versioneer": {
-            "hashes": [
-                "sha256:08e395c0acc544f78645b9c0ebfccaf47950ae61e0c85bd1aaea98ff59609aeb",
-                "sha256:ead1f78168150011189521b479d3a0dd2f55c94f5b07747b484fd693c3fbf335"
-            ],
-            "index": "pypi",
-            "version": "==0.18"
-        },
         "wcwidth": {
             "hashes": [
                 "sha256:3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e",

@@ -1,4 +1,2 @@
 include LICENSE.txt
 include README.rst
-include versioneer.py
-include dnacentersdk/_version.py

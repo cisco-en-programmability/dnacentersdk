@@ -16,8 +16,3 @@ pipenv update --dev
 
 echo "Freeze package requirements"
 pipenv run pip freeze > requirements.lock
-
-echo "Update versioneer script(s)"
-rm versioneer.py
-pipenv run versioneer install
-echo "Done."
