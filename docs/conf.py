@@ -7,14 +7,13 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 
-from dnacentersdk._version import get_versions
-
+from pkg_resources import get_distribution
+release = get_distribution('dnacentersdk').version
+version = '.'.join(release.split('.')[:2])
 
 project = u'dnacentersdk'
 copyright = u'Copyright (c) 2019 Cisco and/or its affiliates.'
 author = u''
-version = get_versions()['version']
-release = get_versions()['version']
 language = None
 
 
