@@ -33,7 +33,6 @@ from __future__ import (
 import logging
 
 from ._metadata import *
-from ._version import get_versions
 from .api import DNACenterAPI
 from .exceptions import (
     AccessTokenError,
@@ -51,9 +50,6 @@ from .models.schema_validator import (
 )
 
 
-__version__ = get_versions()['version']
-del get_versions
-
 
 # Initialize Package Logging
 logging.basicConfig()
@@ -62,6 +58,7 @@ requests_log = logging.getLogger("urllib3")
 requests_log.addHandler(logging.NullHandler())
 requests_log.propagate = False
 
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
+from pkg_resources import get_distribution
+release = get_distribution('dnacentersdk').version
+# for example take major/minor
+__version__ = '.'.join(release.split('.')[:2])
