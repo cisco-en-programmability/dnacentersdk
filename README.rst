@@ -99,10 +99,6 @@ Questions, Support & Discussion
 
 dnacentersdk is a *community developed* and *community supported* project.  If you experience any issues using this package, please report them using the issues_ page.
 
-Please join the `Python DNA Center Devs`__ DNA Center space to ask questions, join the discussion, and share your projects and creations.
-
-__ Community_
-
 
 Contribution
 ------------
@@ -123,7 +119,6 @@ This library is inspired by the webexteamssdk_  library
 .. _Quickstart: https://dnacentersdk.readthedocs.io/en/latest/api/quickstart.html
 .. _dnacentersdk: https://github.com/cisco-en-programmability/dnacentersdk
 .. _issues: https://github.com/cisco-en-programmability/dnacentersdk/issues
-.. _Community: #
 .. _pull requests: https://github.com/cisco-en-programmability/dnacentersdk/pulls
 .. _releases: https://github.com/cisco-en-programmability/dnacentersdk/releases
 .. _the repository: dnacentersdk_
