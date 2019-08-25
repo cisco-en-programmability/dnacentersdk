@@ -443,7 +443,6 @@ class DNACenterAPI(object):
     @base_url.setter
     def base_url(self, value):
         """The base URL for the API endpoints."""
-        self.authentication.base_url = value
         self._session.base_url = value
 
     @single_request_timeout.setter

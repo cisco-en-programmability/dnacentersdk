@@ -158,9 +158,6 @@ class RestSession(object):
         """The base URL for the API endpoints."""
         check_type(value, basestring, may_be_none=False)
         self._base_url = str(validate_base_url(value))
-        logger.debug('Refreshing access token')
-        self.refresh_token()  # Update access_token
-        logger.debug('Refreshed token.')
 
     @property
     def access_token(self):
