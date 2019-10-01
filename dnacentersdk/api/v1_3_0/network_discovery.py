@@ -39,6 +39,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
+    dict_of_str,
 )
 
 
@@ -123,7 +124,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/count')
@@ -191,7 +192,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/netconf')
@@ -297,7 +298,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/snmpv2-write-'
@@ -428,7 +429,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/snmpv3')
@@ -534,7 +535,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/snmpv2-read-'
@@ -613,7 +614,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${startIndex}/${recordsToRe'
@@ -734,7 +735,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}/summary')
@@ -802,7 +803,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/http-write')
@@ -870,7 +871,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/snmp-property')
@@ -944,7 +945,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}')
@@ -1162,7 +1163,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery')
@@ -1236,7 +1237,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}')
@@ -1304,7 +1305,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/snmpv2-write-'
@@ -1374,7 +1375,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/cli')
@@ -1491,7 +1492,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/http-read')
@@ -1582,7 +1583,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}/job')
@@ -1650,7 +1651,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/snmpv3')
@@ -1719,7 +1720,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/snmp-property')
@@ -1949,7 +1950,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery')
@@ -2066,7 +2067,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/http-write')
@@ -2144,7 +2145,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${startIndex}/${recordsToDe'
@@ -2212,7 +2213,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery')
@@ -2291,7 +2292,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}/network-device/count')
@@ -2364,7 +2365,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-'
@@ -2476,7 +2477,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/cli')
@@ -2545,7 +2546,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/http-read')
@@ -2649,7 +2650,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/netconf')
@@ -2722,7 +2723,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/${id}')
@@ -2804,7 +2805,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-'
@@ -2874,7 +2875,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential/snmpv2-read-'
@@ -2964,7 +2965,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/job')
@@ -3054,7 +3055,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}/network-'
@@ -3140,7 +3141,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/global-credential')
@@ -3219,7 +3220,7 @@ class NetworkDiscovery(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/discovery/${id}/network-device')

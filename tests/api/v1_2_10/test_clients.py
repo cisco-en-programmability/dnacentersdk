@@ -39,7 +39,7 @@ def is_valid_get_client_detail(obj):
 def get_client_detail(api):
     endpoint_result = api.clients.get_client_detail(
         mac_address='',
-        timestamp='',
+        timestamp=None,
         payload=None,
         active_validation=True
     )
@@ -61,7 +61,7 @@ def is_valid_get_overall_client_health(obj):
 
 def get_overall_client_health(api):
     endpoint_result = api.clients.get_overall_client_health(
-        timestamp='',
+        timestamp=None,
         payload=None,
         active_validation=True
     )

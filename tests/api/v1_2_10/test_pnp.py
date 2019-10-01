@@ -499,7 +499,7 @@ def is_valid_preview_config(obj):
 
 
 def preview_config(api):
-    sites = api.sites.get_site_health(timestamp='').response
+    sites = api.sites.get_site_health(timestamp=None).response
     sites = list(filter(lambda x: x.siteType == 'building', sites))
     siteId = sites[-1].siteId if len(sites) > 0 else "1"
     endpoint_result = api.pnp.preview_config(
@@ -526,7 +526,7 @@ def is_valid_claim_a_device_to_a_site(obj):
 
 
 def claim_a_device_to_a_site(api):
-    sites = api.sites.get_site_health(timestamp='').response
+    sites = api.sites.get_site_health(timestamp=None).response
     sites = list(filter(lambda x: x.siteType == 'building', sites))
     siteId = sites[-1].siteId if len(sites) > 0 else "1"
     deviceId = api.pnp.get_device_list(name='catalyst_ap_test')[0].id

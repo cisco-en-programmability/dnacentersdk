@@ -84,7 +84,7 @@ class RestSession(object):
                 HTTP REST API request.
             wait_on_rate_limit(bool): Enable or disable automatic rate-limit
                 handling.
-            verify(bool,basestring): Controls whether we verify the server’s
+            verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
             version(basestring): Controls which version of DNA_CENTER to use.

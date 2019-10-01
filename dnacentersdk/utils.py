@@ -347,3 +347,18 @@ def pprint_response_info(response):
         debug_print = format_str.format(debug_print, 'Body', body)
 
     return debug_print
+
+
+def dict_of_str(json_dict):
+    """Given a dictionary; return a new dictionary with all items as strings.
+
+    Args:
+        json_dict(dict): Input JSON dictionary.
+
+    Returns:
+        A Python dictionary with the contents of the JSON object as strings.
+    """
+    result = {}
+    for key, value in json_dict.items():
+        result[key] = '{}'.format(value)
+    return result

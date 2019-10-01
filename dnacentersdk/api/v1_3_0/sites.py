@@ -39,6 +39,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
+    dict_of_str,
 )
 
 
@@ -71,7 +72,7 @@ class Sites(object):
         self._request_validator = request_validator
 
     def get_site_health(self,
-                        timestamp,
+                        timestamp=None,
                         headers=None,
                         payload=None,
                         active_validation=True,
@@ -79,8 +80,9 @@ class Sites(object):
         """Returns Overall Health information for all sites.
 
         Args:
-            timestamp(basestring): Epoch time(in milliseconds) when
-                the Site Hierarchy data is required.
+            timestamp(int, basestring): Epoch time(in milliseconds)
+                when the Site Hierarchy data is
+                required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -101,8 +103,7 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(timestamp, basestring,
-                   may_be_none=False)
+        check_type(timestamp, (int, basestring))
         if headers is not None:
             check_type(headers.get('X-Auth-Token',
                                    self._session.headers.get(
@@ -113,6 +114,10 @@ class Sites(object):
             'timestamp':
                 timestamp,
         }
+
+        if params['timestamp'] is None:
+            params['timestamp'] = ''
+
         params.update(request_parameters)
         params = dict_from_items_with_values(params)
 
@@ -130,7 +135,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/site-health')
@@ -225,7 +230,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/site/${siteId}')
@@ -315,7 +320,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/site')
@@ -421,7 +426,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/site')
@@ -505,7 +510,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/site/${siteId}')
@@ -585,7 +590,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/site/count')
@@ -675,7 +680,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/system/api/v1/site/${siteId}/device')
@@ -757,7 +762,7 @@ class Sites(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/membership')

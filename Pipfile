@@ -15,3 +15,5 @@ sphinx-rtd-theme = "*"
 pytest = "==4.6.1"
 flake8 = "*"
 ipython = "*"
+readthedocs-sphinx-search = {git = "https://github.com/readthedocs/readthedocs-sphinx-search",ref = "master"}
+setuptools_scm = "==3.3.3"

@@ -39,6 +39,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
+    dict_of_str,
 )
 
 
@@ -140,7 +141,7 @@ class NonFabricWireless(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/business/ssid/${ssidName}/${managedAP'
@@ -263,7 +264,7 @@ class NonFabricWireless(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/enterprise-ssid')
@@ -367,7 +368,7 @@ class NonFabricWireless(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/business/ssid')
@@ -441,7 +442,7 @@ class NonFabricWireless(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/enterprise-ssid/${ssidName}')
@@ -517,7 +518,7 @@ class NonFabricWireless(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/enterprise-ssid')

@@ -39,6 +39,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
+    dict_of_str,
 )
 
 
@@ -71,7 +72,7 @@ class Clients(object):
         self._request_validator = request_validator
 
     def get_overall_client_health(self,
-                                  timestamp,
+                                  timestamp=None,
                                   headers=None,
                                   payload=None,
                                   active_validation=True,
@@ -80,8 +81,8 @@ class Clients(object):
         and Wireless) for any given point of time.
 
         Args:
-            timestamp(basestring): Epoch time(in milliseconds) when
-                the Client health data is required.
+            timestamp(int, basestring): Epoch time(in milliseconds)
+                when the Client health data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -102,8 +103,7 @@ class Clients(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(timestamp, basestring,
-                   may_be_none=False)
+        check_type(timestamp, (int, basestring))
         if headers is not None:
             check_type(headers.get('X-Auth-Token',
                                    self._session.headers.get(
@@ -114,6 +114,10 @@ class Clients(object):
             'timestamp':
                 timestamp,
         }
+
+        if params['timestamp'] is None:
+            params['timestamp'] = ''
+
         params.update(request_parameters)
         params = dict_from_items_with_values(params)
 
@@ -131,7 +135,7 @@ class Clients(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/client-health')
@@ -147,7 +151,7 @@ class Clients(object):
 
     def get_client_detail(self,
                           mac_address,
-                          timestamp,
+                          timestamp=None,
                           headers=None,
                           payload=None,
                           active_validation=True,
@@ -156,8 +160,8 @@ class Clients(object):
         any given point of time. .
 
         Args:
-            timestamp(basestring): Epoch time(in milliseconds) when
-                the Client health data is required.
+            timestamp(int, basestring): Epoch time(in milliseconds)
+                when the Client health data is required.
             mac_address(basestring): MAC Address of the client.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -179,8 +183,7 @@ class Clients(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(timestamp, basestring,
-                   may_be_none=False)
+        check_type(timestamp, (int, basestring))
         check_type(mac_address, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -195,6 +198,10 @@ class Clients(object):
             'macAddress':
                 mac_address,
         }
+
+        if params['timestamp'] is None:
+            params['timestamp'] = ''
+
         params.update(request_parameters)
         params = dict_from_items_with_values(params)
 
@@ -212,7 +219,7 @@ class Clients(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/client-detail')

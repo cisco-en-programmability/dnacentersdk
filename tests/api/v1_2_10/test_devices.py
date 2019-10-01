@@ -881,7 +881,7 @@ def get_device_detail(api):
     endpoint_result = api.devices.get_device_detail(
         identifier='macAddress',
         search_by=get_device_list(api).response[0].macAddress,
-        timestamp='',
+        timestamp=None,
         payload=None,
         active_validation=True
     )

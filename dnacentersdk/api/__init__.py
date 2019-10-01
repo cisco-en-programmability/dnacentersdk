@@ -164,7 +164,7 @@ class DNACenterAPI(object):
             wait_on_rate_limit(bool): Enables or disables automatic rate-limit
                 handling. Defaults to
                 dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT.
-            verify(bool,basestring): Controls whether we verify the server’s
+            verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use. Defaults to
                 dnacentersdk.config.DEFAULT_VERIFY.

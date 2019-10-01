@@ -67,6 +67,8 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 + Reads your DNA Center API version from environment variable VERSION. Supported versions: '1.2.10' and '1.3.0'. Now with version and base_url, you have more control.
 
++ Controls whether to verify the server's TLS certificate or not according to the verify parameter.
+
 + Reads your DNA Center debug from environment variable DEBUG. Boolean, it controls whether to log information about DNA Center APIs' request and response process.
 
 + Wraps and represents all DNA Center API calls as a simple hierarchical tree of

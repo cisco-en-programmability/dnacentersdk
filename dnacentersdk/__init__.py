@@ -50,7 +50,6 @@ from .models.schema_validator import (
 )
 
 
-
 # Initialize Package Logging
 logging.basicConfig()
 logger = logging.getLogger(__name__)

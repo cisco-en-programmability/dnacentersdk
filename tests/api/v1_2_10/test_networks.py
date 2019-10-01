@@ -146,7 +146,7 @@ def is_valid_get_overall_network_health(obj):
 
 def get_overall_network_health(api):
     endpoint_result = api.networks.get_overall_network_health(
-        timestamp='',
+        timestamp=None,
         payload=None,
         active_validation=True
     )

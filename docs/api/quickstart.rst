@@ -24,6 +24,8 @@ As a `best practice`__, you can store your DNA 'credentials' as
 an environment variables in your development or production environment. By
 default, dnacentersdk will look for the following environment variables to create new connection objects:
 
+    * ``DEBUG`` - Tells the SDK whether to log request and response information. Useful for debugging and seeing what is going on under the hood. Defaults to False.
+
     * ``VERSION`` - DNA Center API version to use. Defaults to '1.3.0'.
 
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
@@ -150,6 +152,59 @@ from a file or database and/or when you want to create more than one connection 
     >>> london_auth = ('london', 'rcx0cf43!')
     >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
     >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='1.3.0')  # * Unpacks tuple
+
+
+Certificates
+------------
+
+Besides username, password, encoded_auth, base_url, and version, there are other parameters when creating the :class:`DNACenterAPI`, many of them have a default value (check `Package Constants`_ for more).
+
+When dealing with certificates, the most important one is the ``verify`` parameter.
+
+To avoid getting errors like the following:
+
+.. code-block:: python
+
+    >>> from dnacentersdk import DNACenterAPI
+    >>> own_dna = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
+    ... base_url="https://128.107.71.199:443", version='1.3.0')
+    requests.exceptions.SLError: HTTPSConnectionPool(host='128.107.71.199', port=443):
+    Max retries exceeded with url: /dna/system/api/v1/auth/token (Caused by
+    SSLError (SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: self signed certificate in certificate chain (_ssl.c:1076)')))
+    >>>
+
+Include the verify parameter and set it to False:
+
+.. code-block:: python
+
+    >>> from dnacentersdk import DNACenterAPI
+    >>> own_dna = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
+    ... base_url="https://128.107.71.199:443", version='1.3.0',
+    ... verify=False)
+    InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate
+     verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+      InsecureRequestWarning)
+    >>>
+
+
+You will see urllib3 warnings instead. If you want to disable them, the easiest way is with:
+
+.. code-block:: python
+
+    >>> import urllib3
+    >>> urllib3.disable_warnings()
+
+
+Package Constants
+------------------
+
+The following are the default values pulled ``from dnacentersdk.config`` and used when creating the connection object.
+
+.. automodule:: dnacentersdk.config
+    :members:
+    :no-undoc-members:
+    :exclude-members: DEBUG_ENVIRONMENT_VARIABLE, VERSION_ENVIRONMENT_VARIABLE, USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE, ENCODED_AUTH_ENVIRONMENT_VARIABLE
 
 
 Making API Calls

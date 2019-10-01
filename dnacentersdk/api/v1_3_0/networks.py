@@ -39,6 +39,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     apply_path_params,
+    dict_of_str,
 )
 
 
@@ -123,7 +124,7 @@ class Networks(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/topology/vlan/vlan-names')
@@ -190,7 +191,7 @@ class Networks(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/topology/site-topology')
@@ -263,7 +264,7 @@ class Networks(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/topology/physical-topology')
@@ -336,7 +337,7 @@ class Networks(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/topology/l2/${vlanID}')
@@ -409,7 +410,7 @@ class Networks(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/topology/l3/${topologyType}')
@@ -434,8 +435,9 @@ class Networks(object):
         given point of time.
 
         Args:
-            timestamp(basestring): Epoch time(in milliseconds) when
-                the Network health data is required.
+            timestamp(int, basestring): Epoch time(in milliseconds)
+                when the Network health data is
+                required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -456,7 +458,7 @@ class Networks(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(timestamp, basestring)
+        check_type(timestamp, (int, basestring))
         if headers is not None:
             check_type(headers.get('X-Auth-Token',
                                    self._session.headers.get(
@@ -467,6 +469,10 @@ class Networks(object):
             'timestamp':
                 timestamp,
         }
+
+        if params['timestamp'] is None:
+            params['timestamp'] = ''
+
         params.update(request_parameters)
         params = dict_from_items_with_values(params)
 
@@ -484,7 +490,7 @@ class Networks(object):
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
-            _headers.update(headers)
+            _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/network-health')

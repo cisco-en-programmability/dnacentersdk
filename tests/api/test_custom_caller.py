@@ -57,6 +57,7 @@ def custom_caller(api):
     return api.custom_caller
 
 
+@pytest.mark.custom_caller
 def test_custom_caller(custom_caller):
     original_credentials = custom_caller.get_global_credentials().response
     time.sleep(10)

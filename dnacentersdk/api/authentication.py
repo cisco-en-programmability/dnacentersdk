@@ -75,7 +75,7 @@ class Authentication(object):
                 Python objects from the returned DNA Center JSON data objects.
             single_request_timeout(int): Timeout in seconds for the API
                 requests.
-            verify(bool,basestring): Controls whether we verify the server’s
+            verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
 
