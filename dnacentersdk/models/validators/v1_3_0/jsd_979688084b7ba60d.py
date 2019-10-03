@@ -48,65 +48,98 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 "authPassword": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "authType": {
                 "description":
                  "",
                 "enum": [
                 "SHA",
-                "MD5"
+                "MD5",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "comments": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "credentialType": {
                 "description":
                  "",
                 "enum": [
                 "GLOBAL",
-                "APP"
+                "APP",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceTenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceUuid": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "privacyPassword": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "privacyType": {
                 "description":
                  "",
                 "enum": [
                 "DES",
-                "AES128"
+                "AES128",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "snmpMode": {
                 "description":
@@ -114,17 +147,27 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 "enum": [
                 "AUTHPRIV",
                 "AUTHNOPRIV",
-                "NOAUTHNOPRIV"
+                "NOAUTHNOPRIV",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "username": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')

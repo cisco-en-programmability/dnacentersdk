@@ -24,14 +24,16 @@ SOFTWARE.
 
 from past.types import basestring
 
-from dnacentersdk.config import (
-    DEFAULT_BASE_URL, DEFAULT_SINGLE_REQUEST_TIMEOUT,
-    DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY,
-)
 from dnacentersdk.environment import (
-    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
-    DNA_CENTER_ENCODED_AUTH, DNA_CENTER_DEBUG,
+    DNA_CENTER_USERNAME,
+    DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH,
+    DNA_CENTER_DEBUG,
     DNA_CENTER_VERSION,
+    DNA_CENTER_BASE_URL,
+    DNA_CENTER_SINGLE_REQUEST_TIMEOUT,
+    DNA_CENTER_WAIT_ON_RATE_LIMIT,
+    DNA_CENTER_VERIFY,
 )
 from dnacentersdk.exceptions import AccessTokenError, VersionError
 from dnacentersdk.models.mydict import mydict_data_factory
@@ -118,15 +120,15 @@ class DNACenterAPI(object):
     them in a simple hierarchical structure.
     """
 
-    def __init__(self, username=None,
-                 password=None,
-                 encoded_auth=None,
-                 base_url=DEFAULT_BASE_URL,
-                 single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
-                 wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
-                 verify=DEFAULT_VERIFY,
+    def __init__(self, username=DNA_CENTER_USERNAME,
+                 password=DNA_CENTER_PASSWORD,
+                 encoded_auth=DNA_CENTER_ENCODED_AUTH,
+                 base_url=DNA_CENTER_BASE_URL,
+                 single_request_timeout=DNA_CENTER_SINGLE_REQUEST_TIMEOUT,
+                 wait_on_rate_limit=DNA_CENTER_WAIT_ON_RATE_LIMIT,
+                 verify=DNA_CENTER_VERIFY,
                  version=DNA_CENTER_VERSION,
-                 debug=None,
+                 debug=DNA_CENTER_DEBUG,
                  object_factory=mydict_data_factory,
                  validator=json_schema_validate):
         """Create a new DNACenterAPI object.
@@ -154,25 +156,35 @@ class DNACenterAPI(object):
         Args:
             base_url(basestring): The base URL to be prefixed to the
                 individual API endpoint suffixes.
-                Defaults to dnacentersdk.config.DEFAULT_BASE_URL.
+                Defaults to the DNA_CENTER_BASE_URL environment variable or
+                dnacentersdk.config.DEFAULT_BASE_URL
+                if the environment variable is not set.
             username(basestring): HTTP Basic Auth username.
             password(basestring): HTTP Basic Auth password.
             encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
             single_request_timeout(int): Timeout (in seconds) for RESTful HTTP
-                requests. Defaults to
-                dnacentersdk.config.DEFAULT_SINGLE_REQUEST_TIMEOUT.
+                requests. Defaults to the DNA_CENTER_ environment variable or
+                dnacentersdk.config.DNA_CENTER_SINGLE_REQUEST_TIMEOUT
+                if the environment variable is not set.
             wait_on_rate_limit(bool): Enables or disables automatic rate-limit
-                handling. Defaults to
-                dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT.
+                handling. Defaults to the DNA_CENTER_WAIT_ON_RATE_LIMIT
+                environment variable or
+                dnacentersdk.config.DNA_CENTER_WAIT_ON_RATE_LIMIT
+                if the environment variable is not set.
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
-                to a CA bundle to use. Defaults to
-                dnacentersdk.config.DEFAULT_VERIFY.
+                to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY
+                (or DNA_CENTER_VERIFY_STRING) environment variable or
+                dnacentersdk.config.DNA_CENTER_VERIFY
+                (or DNA_CENTER_VERIFY_STRING) if the environment variable is
+                not set.
             version(basestring): Controls which version of DNA_CENTER to use.
-                Defaults to dnacentersdk.config.DNA_CENTER_VERSION
+                Defaults to the DNA_CENTER_VERSION environment variable or
+                dnacentersdk.config.DNA_CENTER_VERSION
+                if the environment variable is not set.
             debug(bool,basestring): Controls whether to log information about
                 DNA Center APIs' request and response process.
-                Defaults to the DEBUG environment variable or False
+                Defaults to the DNA_CENTER_DEBUG environment variable or False
                 if the environment variable is not set.
             object_factory(callable): The factory function to use to create
                 Python objects from the returned DNA Center JSON data objects.
@@ -209,18 +221,6 @@ class DNACenterAPI(object):
                     '1.2.10 and 1.3.0.'
                 )
             )
-
-        if username is None:
-            username = DNA_CENTER_USERNAME
-
-        if password is None:
-            password = DNA_CENTER_PASSWORD
-
-        if encoded_auth is None:
-            encoded_auth = DNA_CENTER_ENCODED_AUTH
-
-        if debug is None:
-            debug = DNA_CENTER_DEBUG
 
         if isinstance(debug, str):
             debug = 'true' in debug.lower()

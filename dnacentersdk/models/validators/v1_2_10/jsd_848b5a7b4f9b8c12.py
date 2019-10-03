@@ -47,38 +47,65 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 "_id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "addToInventory": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "addedOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "configId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "currTaskIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "execTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "imageId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceType": {
                 "description":
@@ -86,25 +113,41 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
-                "SystemResetWorkflow"
+                "SystemResetWorkflow",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "lastupdateOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tasks": {
                 "description":
@@ -112,34 +155,58 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "taskSeqNo": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workItemList": {
                 "description":
@@ -149,54 +216,96 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 "command": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "outputStr": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "useState": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

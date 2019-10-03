@@ -48,36 +48,58 @@ class JSONSchemaValidatorCd98780F4888A66D(object):
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "operationEnum": {
                 "description":
                  "",
                 "enum": [
                 "CREDENTIALDETAILS",
-                "DEVICEDETAILS"
+                "DEVICEDETAILS",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parameters": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "password": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

@@ -46,7 +46,10 @@ class JSONSchemaValidator3B9EF9674429Be4C(object):
                 "description":
                  "",
                 "items": {},
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

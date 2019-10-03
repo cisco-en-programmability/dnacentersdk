@@ -47,12 +47,18 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 "deviceId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "siteId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
@@ -62,9 +68,13 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 "AccessPoint",
                 "StackSwitch",
                 "Sensor",
-                "MobilityExpress"
+                "MobilityExpress",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

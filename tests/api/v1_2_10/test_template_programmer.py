@@ -25,15 +25,15 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
 def is_valid_gets_the_templates_available(obj):
-    some_keys = []
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_01b09a254b9ab259_v1_2_10').validate(obj)
+    return True
 
 
 def gets_the_templates_available(api):
@@ -59,7 +59,8 @@ def test_gets_the_templates_available(api):
 
 
 def is_valid_get_projects(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_109d1b4f4289aecd_v1_2_10').validate(obj)
+    return True
 
 
 def get_projects(api):
@@ -79,9 +80,8 @@ def test_get_projects(api):
 
 
 def is_valid_get_template_details(obj):
-    some_keys = ['author', 'composite', 'containingTemplates', 'createTime', 'description']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_83a3b9404cb88787_v1_2_10').validate(obj)
+    return True
 
 
 def get_template_details(api):
@@ -108,7 +108,8 @@ def test_get_template_details(api):
 
 
 def is_valid_get_template_versions(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_c8bf6b65414a9bc7_v1_2_10').validate(obj)
+    return True
 
 
 def get_template_versions(api):
@@ -134,9 +135,8 @@ def test_get_template_versions(api):
 
 
 def is_valid_create_project(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_00aec9b1422ab27e_v1_2_10').validate(obj)
+    return True
 
 
 def create_project(api):
@@ -162,9 +162,8 @@ def test_create_project(api):
 
 
 def is_valid_create_template(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f6b119ad4d4aaf16_v1_2_10').validate(obj)
+    return True
 
 
 def create_template(api):
@@ -214,9 +213,8 @@ def test_create_template(api):
 
 
 def is_valid_update_template(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_7781fa0548a98342_v1_2_10').validate(obj)
+    return True
 
 
 def update_template(api):
@@ -260,9 +258,8 @@ def test_update_template(api):
 
 
 def is_valid_update_project(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_9480fa1f47ca9254_v1_2_10').validate(obj)
+    return True
 
 
 def update_project(api):
@@ -290,9 +287,8 @@ def test_update_project(api):
 
 
 def is_valid_version_template(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_62b05b2c40a9b216_v1_2_10').validate(obj)
+    return True
 
 
 def version_template(api):
@@ -316,9 +312,8 @@ def test_version_template(api):
 
 
 def is_valid_preview_template(obj):
-    some_keys = ['cliPreview', 'templateId', 'validationErrors']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f393abe84989bb48_v1_2_10').validate(obj)
+    return True
 
 
 def preview_template(api):
@@ -342,9 +337,8 @@ def test_preview_template(api):
 
 
 def is_valid_deploy_template(obj):
-    some_keys = ['deploymentId', 'deploymentName', 'devices', 'duration', 'endTime']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_6099da82477b858a_v1_2_10').validate(obj)
+    return True
 
 
 def deploy_template(api):
@@ -377,9 +371,8 @@ def test_deploy_template(api):
 
 
 def is_valid_get_template_deployment_status(obj):
-    some_keys = ['deploymentId', 'deploymentName', 'devices', 'duration', 'endTime']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_9c9a785741cbb41f_v1_2_10').validate(obj)
+    return True
 
 
 def get_template_deployment_status(api):
@@ -401,9 +394,8 @@ def test_get_template_deployment_status(api):
 
 
 def is_valid_delete_template(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_a7b42836408a8e74_v1_2_10').validate(obj)
+    return True
 
 
 def delete_template(api):
@@ -426,9 +418,8 @@ def test_delete_template(api):
 
 
 def is_valid_delete_project(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_d0a1abfa435b841d_v1_2_10').validate(obj)
+    return True
 
 
 def delete_project(api):

@@ -100,10 +100,9 @@ class NonFabricWireless(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -170,10 +169,9 @@ class NonFabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -245,10 +243,9 @@ class NonFabricWireless(object):
         check_type(payload, dict)
         check_type(profile_name, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'profileName':
@@ -314,10 +311,9 @@ class NonFabricWireless(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -384,10 +380,9 @@ class NonFabricWireless(object):
         check_type(wireless_profile_name, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -457,10 +452,9 @@ class NonFabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -547,10 +541,9 @@ class NonFabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -630,10 +623,9 @@ class NonFabricWireless(object):
         check_type(ssid_name, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -713,10 +705,9 @@ class NonFabricWireless(object):
         check_type(managed_aplocations, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -790,10 +781,9 @@ class NonFabricWireless(object):
         check_type(payload, dict)
         check_type(ssid_name, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'ssidName':
@@ -896,10 +886,9 @@ class NonFabricWireless(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }

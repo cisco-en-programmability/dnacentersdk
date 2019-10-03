@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.config import BORDER_DEVICE_SDA_FABRIC_PATH
 
 
@@ -32,9 +33,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_adds_border_device_in_sda_fabric(obj):
-    some_keys = ['status', 'description', 'executionStatusUrl']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_bead7b3443b996a7_v1_2_10').validate(obj)
+    return True
 
 
 def adds_border_device_in_sda_fabric(api):
@@ -59,9 +59,8 @@ def test_adds_border_device_in_sda_fabric(api):
 
 
 def is_valid_gets_border_device_details_from_sda_fabric(obj):
-    some_keys = ['status', 'description', 'payload']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_98a39bf4485a9871_v1_2_10').validate(obj)
+    return True
 
 
 def gets_border_device_details_from_sda_fabric(api):
@@ -85,9 +84,8 @@ def test_gets_border_device_details_from_sda_fabric(api):
 
 
 def is_valid_deletes_border_device_from_sda_fabric(obj):
-    some_keys = ['status', 'description', 'executionStatusUrl']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cb81b93540baaab0_v1_2_10').validate(obj)
+    return True
 
 
 def deletes_border_device_from_sda_fabric(api):

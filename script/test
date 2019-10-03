@@ -7,7 +7,7 @@
 
 # Run all tests by default
 default=true
-module=('dnacentersdk')
+module=('api')
 
 # Process Script Arguments
 for i in ${@}; do

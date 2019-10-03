@@ -52,12 +52,21 @@ class JSONSchemaValidatorEeb168Eb41988E07(object):
                 "ip": {
                 "description":
                 "Ip",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

@@ -25,15 +25,15 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
 def is_valid_get_vlan_details(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_6284db4649aa8d31_v1_2_10').validate(obj)
+    return True
 
 
 def get_vlan_details(api):
@@ -52,9 +52,8 @@ def test_get_vlan_details(api):
 
 
 def is_valid_get_site_topology(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_9ba14a9e441b8a60_v1_2_10').validate(obj)
+    return True
 
 
 def get_site_topology(api):
@@ -73,9 +72,8 @@ def test_get_site_topology(api):
 
 
 def is_valid_get_physical_topology(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_b2b8cb91459aa58f_v1_2_10').validate(obj)
+    return True
 
 
 def get_physical_topology(api):
@@ -95,9 +93,8 @@ def test_get_physical_topology(api):
 
 
 def is_valid_get_l3_topology_details(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_c2b5fb764d888375_v1_2_10').validate(obj)
+    return True
 
 
 def get_l3_topology_details(api):
@@ -117,9 +114,8 @@ def test_get_l3_topology_details(api):
 
 
 def is_valid_get_topology_details(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_b9b48ac8463a8aba_v1_2_10').validate(obj)
+    return True
 
 
 def get_topology_details(api):
@@ -139,9 +135,8 @@ def test_get_topology_details(api):
 
 
 def is_valid_get_overall_network_health(obj):
-    some_keys = ['version', 'response', 'measuredBy', 'latestMeasuredByEntity', 'latestHealthScore']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_ca91da84401abba1_v1_2_10').validate(obj)
+    return True
 
 
 def get_overall_network_health(api):

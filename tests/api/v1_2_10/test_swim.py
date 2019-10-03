@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.config import LOCAL_SOFTWARE_IMAGE_PATH, LOCAL_SOFTWARE_IMAGE_NAME
 from tests.config import DEFAULT_BASE_URL
 from .test_file import get_list_of_files
@@ -35,9 +36,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_get_software_image_details(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_0c8f7a0b49b9aedd_v1_2_10').validate(obj)
+    return True
 
 
 def get_software_image_details(api):
@@ -74,9 +74,8 @@ def test_get_software_image_details(api):
 
 
 def is_valid_import_local_software_image(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_4dbe3bc743a891bc_v1_2_10').validate(obj)
+    return True
 
 
 def import_local_software_image(api):
@@ -104,9 +103,8 @@ def test_import_local_software_image(api):
 
 
 def is_valid_import_software_image_via_url(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_bc8aab4746ca883d_v1_2_10').validate(obj)
+    return True
 
 
 def import_software_image_via_url(api):
@@ -137,9 +135,8 @@ def test_import_software_image_via_url(api):
 
 
 def is_valid_trigger_software_image_activation(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_fb9beb664f2aba4c_v1_2_10').validate(obj)
+    return True
 
 
 def trigger_software_image_activation(api):
@@ -164,9 +161,8 @@ def test_trigger_software_image_activation(api):
 
 
 def is_valid_trigger_software_image_distribution(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8cb6783b4faba1f4_v1_2_10').validate(obj)
+    return True
 
 
 def trigger_software_image_distribution(api):

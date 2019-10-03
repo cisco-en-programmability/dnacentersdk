@@ -47,42 +47,64 @@ class JSONSchemaValidator47A1B84B4E1B8044(object):
                 "comments": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "credentialType": {
                 "description":
                  "",
                 "enum": [
                 "GLOBAL",
-                "APP"
+                "APP",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceTenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceUuid": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "readCommunity": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

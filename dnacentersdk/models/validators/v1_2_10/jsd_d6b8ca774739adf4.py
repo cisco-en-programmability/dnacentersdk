@@ -48,31 +48,52 @@ class JSONSchemaValidatorD6B8Ca774739Adf4(object):
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "deviceUuids": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeout": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

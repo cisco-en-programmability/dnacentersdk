@@ -25,15 +25,15 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
 def is_valid_get_site_health(obj):
-    some_keys = ['response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_17a82ac94cf99ab0_v1_2_10').validate(obj)
+    return True
 
 
 def get_site_health(api):
@@ -53,9 +53,8 @@ def test_get_site_health(api):
 
 
 def is_valid_create_site(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_50b589fd4c7a930a_v1_2_10').validate(obj)
+    return True
 
 
 def create_site(api):
@@ -84,9 +83,8 @@ def test_create_site(api):
 
 
 def is_valid_assign_device_to_site(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_eeb168eb41988e07_v1_2_10').validate(obj)
+    return True
 
 
 def assign_device_to_site(api):

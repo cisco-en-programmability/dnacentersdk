@@ -105,10 +105,9 @@ class Sites(object):
         check_type(payload, dict)
         check_type(timestamp, (int, basestring))
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'timestamp':
@@ -189,22 +188,18 @@ class Sites(object):
         check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('__persistbapioutput',
-                                   self._session.headers.get(
-                                       '__persistbapioutput')),
-                       bool, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool, may_be_none=False)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -280,22 +275,18 @@ class Sites(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('__persistbapioutput',
-                                   self._session.headers.get(
-                                       '__persistbapioutput')),
-                       bool, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool, may_be_none=False)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -380,22 +371,18 @@ class Sites(object):
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('__persistbapioutput',
-                                   self._session.headers.get(
-                                       '__persistbapioutput')),
-                       bool, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool, may_be_none=False)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'name':
@@ -473,22 +460,18 @@ class Sites(object):
         check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('__persistbapioutput',
-                                   self._session.headers.get(
-                                       '__persistbapioutput')),
-                       bool, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool, may_be_none=False)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -556,18 +539,15 @@ class Sites(object):
         check_type(payload, dict)
         check_type(site_id, basestring)
         if headers is not None:
-            check_type(headers.get('__persistbapioutput',
-                                   self._session.headers.get(
-                                       '__persistbapioutput')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'siteId':
@@ -641,22 +621,18 @@ class Sites(object):
         check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__persistbapioutput',
-                                   self._session.headers.get(
-                                       '__persistbapioutput')),
-                       bool, may_be_none=False)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool, may_be_none=False)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -728,18 +704,15 @@ class Sites(object):
         check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'siteId':

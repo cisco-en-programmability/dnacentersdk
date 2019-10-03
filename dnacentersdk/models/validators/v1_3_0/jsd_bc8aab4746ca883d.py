@@ -48,28 +48,46 @@ class JSONSchemaValidatorBc8AAb4746Ca883D(object):
                 "applicationType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "imageFamily": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "sourceURL": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "thirdParty": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "vendor": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')

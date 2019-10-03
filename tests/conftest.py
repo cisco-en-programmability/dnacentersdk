@@ -37,7 +37,10 @@ def pytest_configure(config):
         "markers", "ratelimit: run a ratelimit test",
     )
     config.addinivalue_line(
-        "markers", "dnacentersdk: dnacentersdk test"
+        "markers", "dnacentersdk: package mark"
+    )
+    config.addinivalue_line(
+        "markers", "api: dnacentersdk mark"
     )
     config.addinivalue_line(
         "markers", "authentication: authentication wrapper test"

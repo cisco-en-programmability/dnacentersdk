@@ -55,15 +55,24 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "building": {
                 "description":
@@ -72,15 +81,24 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 "address": {
                 "description":
                 "Address",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "floor": {
                 "description":
@@ -89,18 +107,30 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
@@ -108,9 +138,13 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 "enum": [
                 "area",
                 "building",
-                "floor"
+                "floor",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

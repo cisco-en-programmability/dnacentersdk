@@ -100,10 +100,9 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -167,14 +166,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -256,14 +253,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -377,14 +372,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -493,14 +486,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -588,10 +579,9 @@ class NetworkDiscovery(object):
         check_type(records_to_return, int,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -692,10 +682,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'taskId':
@@ -778,14 +767,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -847,10 +834,9 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -920,10 +906,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1002,17 +987,18 @@ class NetworkDiscovery(object):
             cdpLevel(number): InventoryRequest's cdpLevel.
             discoveryType(string): InventoryRequest's discoveryType.
             enablePasswordList(list): InventoryRequest's
-                enablePasswordList (list of strings).
+                enablePasswordList (list of string,
+                objects).
             globalCredentialIdList(list): InventoryRequest's
-                globalCredentialIdList (list of
-                strings).
+                globalCredentialIdList (list of string,
+                objects).
             httpReadCredential(object): InventoryRequest's
                 httpReadCredential.
             httpWriteCredential(object): InventoryRequest's
                 httpWriteCredential.
             ipAddressList(string): InventoryRequest's ipAddressList.
             ipFilterList(list): InventoryRequest's ipFilterList
-                (list of strings).
+                (list of string, objects).
             lldpLevel(number): InventoryRequest's lldpLevel.
             name(string): InventoryRequest's name.
             netconfPort(string): InventoryRequest's netconfPort.
@@ -1021,7 +1007,7 @@ class NetworkDiscovery(object):
             parentDiscoveryId(string): InventoryRequest's
                 parentDiscoveryId.
             passwordList(list): InventoryRequest's passwordList
-                (list of strings).
+                (list of string, objects).
             preferredMgmtIPMethod(string): InventoryRequest's
                 preferredMgmtIPMethod.
             protocolOrder(string): InventoryRequest's protocolOrder.
@@ -1049,7 +1035,7 @@ class NetworkDiscovery(object):
             timeout(number): InventoryRequest's timeout.
             updateMgmtIp(boolean): InventoryRequest's updateMgmtIp.
             userNameList(list): InventoryRequest's userNameList
-                (list of strings).
+                (list of string, objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1071,14 +1057,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1212,10 +1196,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1280,14 +1263,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1350,14 +1331,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1444,14 +1423,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1552,10 +1529,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'offset':
@@ -1626,14 +1602,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1695,14 +1669,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1789,8 +1761,8 @@ class NetworkDiscovery(object):
             enablePasswordList(string): DiscoveryNIO's
                 enablePasswordList.
             globalCredentialIdList(list): DiscoveryNIO's
-                globalCredentialIdList (list of
-                strings).
+                globalCredentialIdList (list of string,
+                objects).
             httpReadCredential(object): DiscoveryNIO's
                 httpReadCredential.
             httpWriteCredential(object): DiscoveryNIO's
@@ -1850,14 +1822,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2019,14 +1989,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2119,10 +2087,9 @@ class NetworkDiscovery(object):
         check_type(records_to_delete, int,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2189,10 +2156,9 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2265,10 +2231,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'taskId':
@@ -2340,10 +2305,9 @@ class NetworkDiscovery(object):
         check_type(global_credential_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2431,14 +2395,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2521,14 +2483,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2608,14 +2568,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2698,10 +2656,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2774,14 +2731,12 @@ class NetworkDiscovery(object):
         check_type(global_credential_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2850,14 +2805,12 @@ class NetworkDiscovery(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2933,10 +2886,9 @@ class NetworkDiscovery(object):
                    may_be_none=False)
         check_type(name, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'offset':
@@ -3026,10 +2978,9 @@ class NetworkDiscovery(object):
         check_type(records_to_return, int,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'taskId':
@@ -3111,10 +3062,9 @@ class NetworkDiscovery(object):
         check_type(sort_by, basestring)
         check_type(order, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'credentialSubType':
@@ -3193,10 +3143,9 @@ class NetworkDiscovery(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'taskId':

@@ -45,34 +45,56 @@ class JSONSchemaValidator00AeC9B1422AB27E(object):
             '''{
                 "properties": {
                 "createTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "lastUpdateTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tags": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "object"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "templates": {}
                 },

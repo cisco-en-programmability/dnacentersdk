@@ -111,7 +111,7 @@ a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` subclas
 
 
 Also, dnacentersdk defaults to pulling from environment variables, other important values like
-VERSION and DEBUG, a default value is offered for both. VERSION defaults to '1.3.0' and DEBUG to 'False'.
+DNA_CENTER_VERSION and DNA_CENTER_DEBUG, a default value is offered for both. DNA_CENTER_VERSION defaults to '1.3.0' and DNA_CENTER_DEBUG to 'False'.
 
 If you don't provide a known version and try to create a new :class:`DNACenterAPI`, a :exc:`VersionError` will be raised.
 
@@ -204,7 +204,7 @@ The following are the default values pulled ``from dnacentersdk.config`` and use
 .. automodule:: dnacentersdk.config
     :members:
     :no-undoc-members:
-    :exclude-members: DEBUG_ENVIRONMENT_VARIABLE, VERSION_ENVIRONMENT_VARIABLE, USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE, ENCODED_AUTH_ENVIRONMENT_VARIABLE
+    :exclude-members: DEBUG_ENVIRONMENT_VARIABLE, VERSION_ENVIRONMENT_VARIABLE, USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE, ENCODED_AUTH_ENVIRONMENT_VARIABLE, BASE_URL_ENVIRONMENT_VARIABLE, SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE, WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE, VERIFY_ENVIRONMENT_VARIABLE
 
 
 Making API Calls

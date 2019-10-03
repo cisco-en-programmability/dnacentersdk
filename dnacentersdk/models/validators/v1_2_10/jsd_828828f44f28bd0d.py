@@ -47,7 +47,10 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "callbackUrl": {
                 "description":
                 "Callback Url",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "provisioning": {
                 "description":
@@ -67,32 +70,53 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "ipAddressPool": {
                 "description":
                 "Ip Address Pool",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "port": {
                 "description":
                 "Port",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "deviceSerialNumber": {
                 "description":
                 "Device Serial Number",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "ip": {
                 "description":
                 "Ip",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "serviceProviders": {
                 "description":
@@ -102,7 +126,10 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "serviceProvider": {
                 "description":
                 "Service Provider",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "wanInterface": {
                 "description":
@@ -111,35 +138,59 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "bandwidth": {
                 "description":
                 "Bandwidth",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "gateway": {
                 "description":
                 "Gateway",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "interfaceName": {
                 "description":
                 "Interface Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "ipAddress": {
                 "description":
                 "Ip Address",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "subnetmask": {
                 "description":
                 "Subnetmask",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "services": {
                 "description":
@@ -149,42 +200,69 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "adminPasswordHash": {
                 "description":
                 "Admin Password Hash",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "centralManagerIP": {
                 "description":
                 "Central Manager IP",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "centralRegistrationKey": {
                 "description":
                 "Central Registration Key",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "commonKey": {
                 "description":
                 "Common Key",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "mode": {
                 "description":
                 "Mode",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "systemIp": {
                 "description":
                 "System Ip",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                 "Type",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "subPools": {
                 "description":
@@ -194,17 +272,26 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "gateway": {
                 "description":
                 "Gateway",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "ipSubnet": {
                 "description":
                 "Ip Subnet",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
@@ -214,19 +301,32 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "Management",
                 "Service",
                 "Wan",
-                "Generic"
+                "Generic",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "tagName": {
                 "description":
                 "Tag Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "vlan": {
                 "description":
@@ -236,32 +336,56 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "id": {
                 "description":
                 "Id",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "interfaces": {
                 "description":
                 "Interfaces",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "network": {
                 "description":
                 "Network",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                 "Type",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "networksettings": {
                 "description":
@@ -278,16 +402,28 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "site": {
                 "description":
@@ -300,15 +436,24 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "building": {
                 "description":
@@ -317,15 +462,24 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "address": {
                 "description":
                 "Address",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "floor": {
                 "description":
@@ -334,23 +488,38 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "siteProfileName": {
                 "description":
                 "Site Profile Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "templateParam": {
                 "description":
@@ -363,10 +532,16 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "var1": {
                 "description":
                 "Var1",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "nfvis": {
                 "description":
@@ -375,18 +550,33 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "var1": {
                 "description":
                 "Var1",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "siteProfile": {
                 "description":
@@ -403,19 +593,32 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "Device Type",
                 "enum": [
                 "NFVIS",
-                "ASAv"
+                "ASAv",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "template": {
                 "description":
                 "Template",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "device": {
                 "description":
@@ -430,17 +633,26 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "connectionType": {
                 "description":
                 "Connection Type",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "networkMode": {
                 "description":
                 "Network Mode",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "servicesToConnect": {
                 "description":
@@ -450,22 +662,40 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "service": {
                 "description":
                 "Service",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "vlan": {
                 "description":
                 "Vlan",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "customServices": {
                 "description":
@@ -475,34 +705,56 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "applicationType": {
                 "description":
                 "Application Type",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "profile": {
                 "description":
                 "Profile",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "deviceType": {
                 "description":
                 "Device Type",
                 "enum": [
                 "ENCS5100",
-                "ENCS5400"
+                "ENCS5400",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "dia": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "serviceProviders": {
                 "description":
@@ -510,28 +762,47 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "items": {
                 "properties": {
                 "connect": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "defaultGateway": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "linkType": {
                 "description":
                 "Link Type",
                 "enum": [
-                "GigabitEthernet"
+                "GigabitEthernet",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "serviceProvider": {
                 "description":
                 "Service Provider",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "services": {
                 "description":
@@ -541,12 +812,18 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "mode": {
                 "description":
                 "Mode",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "profile": {
                 "description":
                 "Profile",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
@@ -561,19 +838,32 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "fortinet",
                 "checkpoint",
                 "riverbed",
-                "silverpeak"
+                "silverpeak",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "tagName": {
                 "description":
                 "Tag Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "vlan": {
                 "description":
@@ -583,32 +873,59 @@ class JSONSchemaValidator828828F44F28Bd0D(object):
                 "id": {
                 "description":
                 "Id",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                 "Type",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "siteProfileName": {
                 "description":
                 "Site Profile Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

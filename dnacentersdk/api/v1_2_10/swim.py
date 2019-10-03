@@ -158,10 +158,9 @@ class Swim(object):
         check_type(limit, int)
         check_type(offset, int)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'imageUuid':
@@ -263,14 +262,12 @@ class Swim(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -382,14 +379,12 @@ class Swim(object):
         check_type(third_party_image_family, basestring)
         check_type(third_party_application_type, basestring)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'isThirdParty':
@@ -485,14 +480,12 @@ class Swim(object):
         check_type(schedule_desc, basestring)
         check_type(schedule_origin, basestring)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'scheduleAt':
@@ -565,22 +558,18 @@ class Swim(object):
         check_type(payload, list)
         check_type(schedule_validate, bool)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('Client-Type',
-                                   self._session.headers.get(
-                                       'Client-Type')),
-                       basestring)
-            check_type(headers.get('Client-Url',
-                                   self._session.headers.get(
-                                       'Client-Url')),
-                       basestring)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'Client-Type' in headers:
+                check_type(headers.get('Client-Type'),
+                           basestring)
+            if 'Client-Url' in headers:
+                check_type(headers.get('Client-Url'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'scheduleValidate':

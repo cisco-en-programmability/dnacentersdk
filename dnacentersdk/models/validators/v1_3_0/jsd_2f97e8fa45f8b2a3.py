@@ -47,7 +47,10 @@ class JSONSchemaValidator2F97E8Fa45F8B2A3(object):
                 "device_ip": {
                 "description":
                 "Device Ip",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

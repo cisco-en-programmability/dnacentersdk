@@ -48,7 +48,10 @@ class JSONSchemaValidator07913B7F4E1880De(object):
                 "deviceName": {
                 "description":
                 "Device Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "dynamicInterfaces": {
                 "description":
@@ -58,47 +61,83 @@ class JSONSchemaValidator07913B7F4E1880De(object):
                 "interfaceGateway": {
                 "description":
                 "Interface Gateway",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "interfaceIPAddress": {
                 "description":
                 "Interface IPAddress",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "interfaceName": {
                 "description":
                 "Interface Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "interfaceNetmaskInCIDR": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "lagOrPortNumber": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "vlanId": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "managedAPLocations": {
                 "description":
                 "Managed APLocations",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "site": {
                 "description":
                 "Site",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')

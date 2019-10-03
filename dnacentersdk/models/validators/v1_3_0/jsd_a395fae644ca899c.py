@@ -45,43 +45,70 @@ class JSONSchemaValidatorA395Fae644Ca899C(object):
             '''{
                 "properties": {
                 "controlPath": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "destIP": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "destPort": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "inclusions": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "periodicRefresh": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "protocol": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "sourceIP": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "sourcePort": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

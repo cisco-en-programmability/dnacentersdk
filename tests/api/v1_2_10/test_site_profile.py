@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.config import SITE_PROFILE_DEVICE_IP
 
 
@@ -56,9 +57,8 @@ def test_get_device_details_by_ip(api):
 
 
 def is_valid_provision_nfv(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_828828f44f28bd0d_v1_2_10').validate(obj)
+    return True
 
 
 def provision_nfv(api):

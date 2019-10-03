@@ -48,9 +48,16 @@ class JSONSchemaValidator0B836B7B4B6A9Fd5(object):
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "object"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

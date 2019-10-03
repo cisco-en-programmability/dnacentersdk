@@ -100,10 +100,9 @@ class Networks(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -167,10 +166,9 @@ class Networks(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -238,10 +236,9 @@ class Networks(object):
         check_type(payload, dict)
         check_type(node_type, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'nodeType':
@@ -312,10 +309,9 @@ class Networks(object):
         check_type(vlan_id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -385,10 +381,9 @@ class Networks(object):
         check_type(topology_type, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -460,10 +455,9 @@ class Networks(object):
         check_type(payload, dict)
         check_type(timestamp, (int, basestring))
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'timestamp':

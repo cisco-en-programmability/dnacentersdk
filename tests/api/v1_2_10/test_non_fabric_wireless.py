@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.config import (NEW_ENTERPRISE_SSID_NAME,
                           NEW_MANAGED_APLOCATIONS)
 
@@ -33,9 +34,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_create_enterprise_ssid(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8a96fb954d09a349_v1_2_10').validate(obj)
+    return True
 
 
 def create_enterprise_ssid(api):
@@ -63,7 +63,8 @@ def test_create_enterprise_ssid(api):
 
 
 def is_valid_get_enterprise_ssid(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_cca519ba45ebb423_v1_2_10').validate(obj)
+    return True
 
 
 def get_enterprise_ssid(api):
@@ -85,9 +86,8 @@ def test_get_enterprise_ssid(api):
 
 
 def is_valid_create_and_provision_ssid(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_db9f997f4e59aec1_v1_2_10').validate(obj)
+    return True
 
 
 def create_and_provision_ssid(api):
@@ -112,9 +112,8 @@ def test_create_and_provision_ssid(api):
 
 
 def is_valid_delete_and_provision_ssid(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cca098344a489dfa_v1_2_10').validate(obj)
+    return True
 
 
 def delete_and_provision_ssid(api):
@@ -137,9 +136,8 @@ def test_delete_and_provision_ssid(api):
 
 
 def is_valid_delete_enterprise_ssid(obj):
-    some_keys = ['executionId', 'executionStatusUrl', 'message']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_c7a6592b4b98a369_v1_2_10').validate(obj)
+    return True
 
 
 def delete_enterprise_ssid(api):

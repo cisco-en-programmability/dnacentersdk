@@ -25,13 +25,59 @@ SOFTWARE.
 import os
 
 from .config import (
-    USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE,
-    ENCODED_AUTH_ENVIRONMENT_VARIABLE, DEBUG_ENVIRONMENT_VARIABLE,
+    USERNAME_ENVIRONMENT_VARIABLE,
+    PASSWORD_ENVIRONMENT_VARIABLE,
+    ENCODED_AUTH_ENVIRONMENT_VARIABLE,
+    DEBUG_ENVIRONMENT_VARIABLE,
     VERSION_ENVIRONMENT_VARIABLE,
+    BASE_URL_ENVIRONMENT_VARIABLE,
+    SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE,
+    WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
+    VERIFY_ENVIRONMENT_VARIABLE,
+    VERIFY_STRING_ENVIRONMENT_VARIABLE,
+    DEFAULT_DEBUG,
+    DEFAULT_VERSION,
+    DEFAULT_BASE_URL,
+    DEFAULT_SINGLE_REQUEST_TIMEOUT,
+    DEFAULT_WAIT_ON_RATE_LIMIT,
+    DEFAULT_VERIFY,
 )
+
+
+def is_bool(value):
+    if isinstance(value, str):
+        return 'true' in value.lower()
+    else:
+        return bool(value)
+
+
+def _get_env_value(env_var, default_value, env_type, cast_func):
+    env_var_value = os.getenv(env_var, default_value)
+    if isinstance(env_var_value, env_type):
+        return env_var_value
+    elif env_var_value is not None:
+        return cast_func(env_var_value)
+    else:
+        return env_var_value
+
 
 DNA_CENTER_USERNAME = os.getenv(USERNAME_ENVIRONMENT_VARIABLE)
 DNA_CENTER_PASSWORD = os.getenv(PASSWORD_ENVIRONMENT_VARIABLE)
 DNA_CENTER_ENCODED_AUTH = os.getenv(ENCODED_AUTH_ENVIRONMENT_VARIABLE)
-DNA_CENTER_DEBUG = os.getenv(DEBUG_ENVIRONMENT_VARIABLE, 'False')
-DNA_CENTER_VERSION = os.getenv(VERSION_ENVIRONMENT_VARIABLE, '1.3.0')
+
+DNA_CENTER_DEBUG = _get_env_value(
+    DEBUG_ENVIRONMENT_VARIABLE, DEFAULT_DEBUG,
+    str, is_bool)
+DNA_CENTER_VERSION = _get_env_value(
+    VERSION_ENVIRONMENT_VARIABLE, DEFAULT_VERSION, str, str)
+DNA_CENTER_BASE_URL = _get_env_value(
+    BASE_URL_ENVIRONMENT_VARIABLE, DEFAULT_BASE_URL, str, str)
+DNA_CENTER_SINGLE_REQUEST_TIMEOUT = _get_env_value(
+    SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE,
+    DEFAULT_SINGLE_REQUEST_TIMEOUT, int, int)
+DNA_CENTER_WAIT_ON_RATE_LIMIT = _get_env_value(
+    WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
+    DEFAULT_WAIT_ON_RATE_LIMIT, bool, is_bool)
+DNA_CENTER_VERIFY = _get_env_value(
+    VERIFY_STRING_ENVIRONMENT_VARIABLE, None, str, str) or \
+    _get_env_value(VERIFY_ENVIRONMENT_VARIABLE, DEFAULT_VERIFY, bool, is_bool)

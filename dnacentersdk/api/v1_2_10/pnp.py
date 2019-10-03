@@ -109,10 +109,9 @@ class Pnp(object):
         check_type(name, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -179,14 +178,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -293,14 +290,12 @@ class Pnp(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -385,7 +380,7 @@ class Pnp(object):
 
         Args:
             deviceIdList(list): UnclaimRequest's deviceIdList (list
-                of strings).
+                of string, objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -407,14 +402,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -514,14 +507,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -636,14 +627,12 @@ class Pnp(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -738,14 +727,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -829,10 +816,9 @@ class Pnp(object):
         check_type(name, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'domain':
@@ -901,10 +887,9 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -972,10 +957,9 @@ class Pnp(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1071,14 +1055,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1172,10 +1154,9 @@ class Pnp(object):
         check_type(payload, dict)
         check_type(name, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'name':
@@ -1258,14 +1239,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1346,10 +1325,9 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1420,14 +1398,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1529,14 +1505,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1651,10 +1625,9 @@ class Pnp(object):
         check_type(type, basestring)
         check_type(name, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'limit':
@@ -1734,10 +1707,9 @@ class Pnp(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1806,10 +1778,9 @@ class Pnp(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1880,10 +1851,9 @@ class Pnp(object):
         check_type(domain, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -1958,14 +1928,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2059,14 +2027,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2210,10 +2176,9 @@ class Pnp(object):
         check_type(virtual_account_id, basestring)
         check_type(last_contact, bool)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'limit':
@@ -2355,14 +2320,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2509,10 +2472,9 @@ class Pnp(object):
         check_type(virtual_account_id, basestring)
         check_type(last_contact, bool)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'serialNumber':
@@ -2617,10 +2579,9 @@ class Pnp(object):
         check_type(sort, basestring)
         check_type(sort_order, basestring)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
             'serialNumber':
@@ -2694,10 +2655,9 @@ class Pnp(object):
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -2782,14 +2742,12 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            check_type(headers.get('Content-Type',
-                                   self._session.headers.get(
-                                       'Content-Type')),
-                       basestring, may_be_none=False)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }

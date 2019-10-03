@@ -45,42 +45,69 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
             '''{
                 "properties": {
                 "enableFabric": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "flexConnect": {
                 "description":
                 "Flex Connect - Applicable for non fabric profile",
                 "properties": {
                 "enableFlexConnect": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "localToVlan": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "managedAPLocations": {
                 "description":
                 "Managed AP Locations (Enter entire Site(s)
                  hierarchy)",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "ssidDetails": {
                 "description":
                 "SsidDetails",
                 "properties": {
                 "enableBroadcastSSID": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "enableFastLane": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "enableMACFiltering": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "fastTransition": {
                 "description":
@@ -88,20 +115,30 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 "enum": [
                 "Adaptive",
                 "Enable",
-                "Disable"
+                "Disable",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "passphrase": {
                 "description":
                 "Pass Phrase ( Only applicable for SSID with
                  PERSONAL auth type )",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "radioPolicy": {
                 "description":
@@ -110,9 +147,13 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 "Dual band operation (2.4GHz and 5GHz)",
                 "Dual band operation with band select",
                 "5GHz only",
-                "2.4GHz only"
+                "2.4GHz only",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "securityLevel": {
                 "description":
@@ -122,35 +163,53 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 "WPA2_ENTERPRISE",
                 "WPA2_PERSONAL",
                 "OPEN",
-                "WEB_AUTH"
+                "WEB_AUTH",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "trafficType": {
                 "description":
                 "Traffic Type",
                 "enum": [
                 "data",
-                "voicedata"
+                "voicedata",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "webAuthURL": {
                 "description":
                 "Web Auth URL",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "ssidType": {
                 "description":
                 "SSID Type",
                 "enum": [
                 "Guest",
-                "Enterprise"
+                "Enterprise",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

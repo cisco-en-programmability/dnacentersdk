@@ -47,7 +47,10 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "_id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "aaaCredentials": {
                 "description":
@@ -56,18 +59,30 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "password": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "username": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "acceptEula": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "defaultProfile": {
                 "description":
@@ -76,32 +91,56 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "cert": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "fqdnAddresses": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "ipAddresses": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "port": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "proxy": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "savaMappingList": {
                 "description":
@@ -109,18 +148,30 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "items": {
                 "properties": {
                 "autoSyncPeriod": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "ccoUser": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "expiry": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "lastSync": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "profile": {
                 "description":
@@ -129,44 +180,74 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "addressFqdn": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "addressIpV4": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "cert": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "makeDefault": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "port": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "profileId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "proxy": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "smartAccountId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "syncResult": {
                 "description":
@@ -181,9 +262,16 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "object"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "syncType": {
                 "description":
@@ -192,30 +280,52 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "Add",
                 "Update",
                 "Delete",
-                "MismatchError"
+                "MismatchError",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "syncMsg": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "syncResultStr": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "syncStartTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "syncStatus": {
                 "description":
@@ -224,53 +334,90 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "NOT_SYNCED",
                 "SYNCING",
                 "SUCCESS",
-                "FAILURE"
+                "FAILURE",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "token": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "virtualAccountId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "taskTimeOuts": {
                 "description":
                  "",
                 "properties": {
                 "configTimeOut": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "generalTimeOut": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "imageDownloadTimeOut": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

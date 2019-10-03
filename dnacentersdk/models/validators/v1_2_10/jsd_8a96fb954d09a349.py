@@ -45,13 +45,22 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
             '''{
                 "properties": {
                 "enableBroadcastSSID": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "enableFastLane": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "enableMACFiltering": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "fastTransition": {
                 "description":
@@ -59,15 +68,22 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 "enum": [
                 "Adaptive",
                 "Enable",
-                "Disable"
+                "Disable",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Enter SSID Name",
                 "maxLength": 32,
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "passphrase": {
                 "description":
@@ -75,7 +91,10 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                  PERSONAL security level)",
                 "maxLength": 63,
                 "minLength": 8,
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "radioPolicy": {
                 "description":
@@ -84,9 +103,13 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 "Dual band operation (2.4GHz and 5GHz)",
                 "Dual band operation with band select",
                 "5GHz only",
-                "2.4GHz only"
+                "2.4GHz only",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "securityLevel": {
                 "description":
@@ -94,18 +117,26 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 "enum": [
                 "WPA2_ENTERPRISE",
                 "WPA2_PERSONAL",
-                "OPEN"
+                "OPEN",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "trafficType": {
                 "description":
                 "Traffic Type",
                 "enum": [
                 "voicedata",
-                "data"
+                "data",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

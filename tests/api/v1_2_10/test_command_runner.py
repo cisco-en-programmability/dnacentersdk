@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from .test_devices import get_device_list
 
 
@@ -32,9 +33,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_get_all_keywords_of_clis_accepted(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_33bb2b9d40199e14_v1_2_10').validate(obj)
+    return True
 
 
 def get_all_keywords_of_clis_accepted(api):
@@ -53,9 +53,8 @@ def test_get_all_keywords_of_clis_accepted(api):
 
 
 def is_valid_run_read_only_commands_on_devices(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_d6b8ca774739adf4_v1_2_10').validate(obj)
+    return True
 
 
 def run_read_only_commands_on_devices(api):

@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.config import (NEW_VIRTUAL_ACCOUNT_PAYLOAD)
 
 
@@ -32,7 +33,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_get_smart_account_list(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_3cb24acb486b89d2_v1_2_10').validate(obj)
+    return True
 
 
 def get_smart_account_list(api):
@@ -51,7 +53,8 @@ def test_get_smart_account_list(api):
 
 
 def is_valid_get_virtual_account_list(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_70a479a6462a9496_v1_2_10').validate(obj)
+    return True
 
 
 def get_virtual_account_list(api):
@@ -71,9 +74,8 @@ def test_get_virtual_account_list(api):
 
 
 def is_valid_add_virtual_account(obj):
-    some_keys = ['virtualAccountId', 'autoSyncPeriod', 'syncResultStr', 'profile', 'ccoUser']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_1e962af345b8b59f_v1_2_10').validate(obj)
+    return True
 
 
 def add_virtual_account(api):
@@ -107,9 +109,8 @@ def test_add_virtual_account(api):
 
 
 def is_valid_get_sync_result_for_virtual_account(obj):
-    some_keys = ['virtualAccountId', 'autoSyncPeriod', 'syncResultStr', 'profile', 'ccoUser']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_0a9c988445cb91c8_v1_2_10').validate(obj)
+    return True
 
 
 def get_sync_result_for_virtual_account(api):
@@ -130,9 +131,8 @@ def test_get_sync_result_for_virtual_account(api):
 
 
 def is_valid_update_pnp_server_profile(obj):
-    some_keys = ['virtualAccountId', 'autoSyncPeriod', 'syncResultStr', 'profile', 'ccoUser']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_6f9819e84178870c_v1_2_10').validate(obj)
+    return True
 
 
 def update_pnp_server_profile(api):
@@ -164,9 +164,8 @@ def test_update_pnp_server_profile(api):
 
 
 def is_valid_sync_virtual_account_devices(obj):
-    some_keys = ['virtualAccountId', 'autoSyncPeriod', 'syncResultStr', 'profile', 'ccoUser']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_a4b6c87a4ffb9efa_v1_2_10').validate(obj)
+    return True
 
 
 def sync_virtual_account_devices(api):
@@ -198,9 +197,8 @@ def test_sync_virtual_account_devices(api):
 
 
 def is_valid_deregister_virtual_account(obj):
-    some_keys = ['virtualAccountId', 'autoSyncPeriod', 'syncResultStr', 'profile', 'ccoUser']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_2499e9ad42e8ae5b_v1_2_10').validate(obj)
+    return True
 
 
 def deregister_virtual_account(api):
@@ -222,9 +220,8 @@ def test_deregister_virtual_account(api):
 
 
 def is_valid_get_workflow_count(obj):
-    some_keys = ['response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_7989f86846faaf99_v1_2_10').validate(obj)
+    return True
 
 
 def get_workflow_count(api):
@@ -244,7 +241,8 @@ def test_get_workflow_count(api):
 
 
 def is_valid_get_workflows(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_aeb4dad04a99bbe3_v1_2_10').validate(obj)
+    return True
 
 
 def get_workflows(api):
@@ -269,9 +267,8 @@ def test_get_workflows(api):
 
 
 def is_valid_get_pnp_global_settings(obj):
-    some_keys = ['savaMappingList', 'taskTimeOuts', 'tenantId', 'aaaCredentials', 'defaultProfile']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_7e92f9eb46db8320_v1_2_10').validate(obj)
+    return True
 
 
 def get_pnp_global_settings(api):
@@ -290,9 +287,8 @@ def test_get_pnp_global_settings(api):
 
 
 def is_valid_update_pnp_global_settings(obj):
-    some_keys = ['savaMappingList', 'taskTimeOuts', 'tenantId', 'aaaCredentials', 'defaultProfile']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8da0391947088a5a_v1_2_10').validate(obj)
+    return True
 
 
 def update_pnp_global_settings(api):
@@ -319,9 +315,8 @@ def test_update_pnp_global_settings(api):
 
 
 def is_valid_get_device_count(obj):
-    some_keys = ['response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_d9a1fa9c4068b23c_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_count(api):
@@ -354,9 +349,8 @@ def test_get_device_count(api):
 
 
 def is_valid_import_devices_in_bulk(obj):
-    some_keys = ['successList', 'failureList']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_21a6db2540298f55_v1_2_10').validate(obj)
+    return True
 
 
 def import_devices_in_bulk(api):
@@ -380,7 +374,8 @@ def test_import_devices_in_bulk(api):
 
 
 def is_valid_get_device_list(obj):
-    return len(obj) >= 0 and all([item for item in obj])
+    json_schema_validate('jsd_e6b3db8046c99654_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_list(api):
@@ -417,9 +412,8 @@ def test_get_device_list(api):
 
 
 def is_valid_get_device_by_id(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_bab6c9e5440885cc_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_by_id(api):
@@ -439,9 +433,8 @@ def test_get_device_by_id(api):
 
 
 def is_valid_get_device_history(obj):
-    some_keys = ['response', 'statusCode']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f09319674049a7d4_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_history(api):
@@ -463,9 +456,8 @@ def test_get_device_history(api):
 
 
 def is_valid_add_device_2(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f3b26b5544cabab9_v1_2_10').validate(obj)
+    return True
 
 
 def add_device_2(api):
@@ -493,9 +485,8 @@ def test_add_device_2(api):
 
 
 def is_valid_preview_config(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cf9418234d9ab37e_v1_2_10').validate(obj)
+    return True
 
 
 def preview_config(api):
@@ -520,9 +511,8 @@ def test_preview_config(api):
 
 
 def is_valid_claim_a_device_to_a_site(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_5889fb844939a13b_v1_2_10').validate(obj)
+    return True
 
 
 def claim_a_device_to_a_site(api):
@@ -554,9 +544,8 @@ def test_claim_a_device_to_a_site(api):
 
 
 def is_valid_delete_device_by_id_from_pnp_imported(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cdab9b474899ae06_v1_2_10').validate(obj)
+    return True
 
 
 def delete_device_by_id_from_pnp_imported(api):
@@ -576,9 +565,8 @@ def test_delete_device_by_id_from_pnp_imported(api):
 
 
 def is_valid_add_device(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f3b26b5544cabab9_v1_2_10').validate(obj)
+    return True
 
 
 def add_device(api):
@@ -606,9 +594,8 @@ def test_add_device(api):
 
 
 def is_valid_update_device(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_09b0f9ce4239ae10_v1_2_10').validate(obj)
+    return True
 
 
 def update_device(api):
@@ -637,9 +624,8 @@ def test_update_device(api):
 
 
 def is_valid_add_a_workflow(obj):
-    some_keys = ['_id', 'state', 'type', 'description', 'lastupdateOn']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_848b5a7b4f9b8c12_v1_2_10').validate(obj)
+    return True
 
 
 def add_a_workflow(api):
@@ -718,9 +704,8 @@ def test_add_a_workflow(api):
 
 
 def is_valid_get_workflow_by_id(obj):
-    some_keys = ['_id', 'state', 'type', 'description', 'lastupdateOn']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_80acb88e4ac9ac6d_v1_2_10').validate(obj)
+    return True
 
 
 def get_workflow_by_id(api):
@@ -740,9 +725,8 @@ def test_get_workflow_by_id(api):
 
 
 def is_valid_update_workflow(obj):
-    some_keys = ['_id', 'state', 'type', 'description', 'lastupdateOn']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_3086c9624f498b85_v1_2_10').validate(obj)
+    return True
 
 
 def update_workflow(api):
@@ -782,9 +766,8 @@ def test_update_workflow(api):
 
 
 def is_valid_claim_device(obj):
-    some_keys = ['jsonArrayResponse', 'jsonResponse', 'message', 'statusCode']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_d8a619974a8a8c48_v1_2_10').validate(obj)
+    return True
 
 
 def claim_device(api):
@@ -820,9 +803,8 @@ def test_claim_device(api):
 
 
 def is_valid_un_claim_device(obj):
-    some_keys = ['jsonArrayResponse', 'jsonResponse', 'message', 'statusCode']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_0b836b7b4b6a9fd5_v1_2_10').validate(obj)
+    return True
 
 
 def un_claim_device(api):
@@ -843,9 +825,8 @@ def test_un_claim_device(api):
 
 
 def is_valid_reset_device(obj):
-    some_keys = ['jsonArrayResponse', 'jsonResponse', 'message', 'statusCode']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_9e857b5a4a0bbcdb_v1_2_10').validate(obj)
+    return True
 
 
 def reset_device(api):
@@ -875,9 +856,8 @@ def test_reset_device(api):
 
 
 def is_valid_delete_workflow_by_id(obj):
-    some_keys = ['_id', 'state', 'type', 'description', 'lastupdateOn']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_af8d7b0e470b8ae2_v1_2_10').validate(obj)
+    return True
 
 
 def delete_workflow_by_id(api):
@@ -903,9 +883,8 @@ def test_delete_workflow_by_id(api):
 
 
 def is_valid_delete_device_by_id_from_pnp_added(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cdab9b474899ae06_v1_2_10').validate(obj)
+    return True
 
 
 def delete_device_by_id_from_pnp_added(api):
@@ -925,9 +904,8 @@ def test_delete_device_by_id_from_pnp_added(api):
 
 
 def is_valid_delete_device_by_id_from_pnp_added_2(obj):
-    some_keys = ['_id', 'deviceInfo', 'systemResetWorkflow', 'systemWorkflow', 'workflow']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cdab9b474899ae06_v1_2_10').validate(obj)
+    return True
 
 
 def delete_device_by_id_from_pnp_added_2(api):

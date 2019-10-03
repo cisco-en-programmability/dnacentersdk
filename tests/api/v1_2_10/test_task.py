@@ -25,15 +25,15 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
 def is_valid_get_tasks(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_e78bb8a2449b9eed_v1_2_10').validate(obj)
+    return True
 
 
 def get_tasks(api):
@@ -66,9 +66,8 @@ def test_get_tasks(api):
 
 
 def is_valid_get_task_tree(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f5a269c44f2a95fa_v1_2_10').validate(obj)
+    return True
 
 
 def get_task_tree(api):
@@ -88,9 +87,8 @@ def test_get_task_tree(api):
 
 
 def is_valid_get_task_count(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_26b44ab04649a183_v1_2_10').validate(obj)
+    return True
 
 
 def get_task_count(api):
@@ -119,9 +117,8 @@ def test_get_task_count(api):
 
 
 def is_valid_get_task_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_a1a9387346ba92b1_v1_2_10').validate(obj)
+    return True
 
 
 def get_task_by_id(api):
@@ -141,9 +138,8 @@ def test_get_task_by_id(api):
 
 
 def is_valid_get_task_by_operationid(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_e487f8d3481b94f2_v1_2_10').validate(obj)
+    return True
 
 
 def get_task_by_operationid(api):

@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.environment import (
     DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
     DNA_CENTER_ENCODED_AUTH
@@ -35,9 +36,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_authentication_api(obj):
-    some_keys = ['Token']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_ac8ae94c4e69a09d_v1_2_10').validate(obj)
+    return True
 
 
 def authentication_api(api):

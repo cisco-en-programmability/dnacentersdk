@@ -51,15 +51,24 @@ class JSONSchemaValidator47Ba59204E0AB742(object):
                 "name": {
                 "description":
                 "Profile Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "sites": {
                 "description":
                 "Sites",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "ssidDetails": {
                 "description":
@@ -67,47 +76,78 @@ class JSONSchemaValidator47Ba59204E0AB742(object):
                 "items": {
                 "properties": {
                 "enableFabric": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "flexConnect": {
                 "description":
                 "Flex Connect",
                 "properties": {
                 "enableFlexConnect": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "localToVlan": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "interfaceName": {
                 "description":
                 "Interface Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Ssid Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                 "Ssid Type",
                 "enum": [
                 "Guest",
-                "Enterprise"
+                "Enterprise",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

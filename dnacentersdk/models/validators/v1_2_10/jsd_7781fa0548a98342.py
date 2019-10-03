@@ -47,10 +47,16 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "author": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "composite": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "containingTemplates": {
                 "description":
@@ -58,36 +64,60 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "items": {
                 "properties": {
                 "composite": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "createTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "deviceTypes": {
                 "description":
@@ -97,22 +127,37 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "productFamily": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "productSeries": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "productType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "failurePolicy": {
                 "description":
@@ -122,42 +167,67 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "CONTINUE_ON_ERROR",
                 "ROLLBACK_ON_ERROR",
                 "ROLLBACK_TARGET_ON_ERROR",
-                "ABORT_TARGET_ON_ERROR"
+                "ABORT_TARGET_ON_ERROR",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "lastUpdateTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentTemplateId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "projectId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "projectName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "rollbackTemplateContent": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "rollbackTemplateParams": {
                 "description":
@@ -167,7 +237,10 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "binding": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "dataType": {
                 "description":
@@ -177,64 +250,105 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "INTEGER",
                 "IPADDRESS",
                 "MACADDRESS",
-                "SECTIONDIVIDER"
+                "SECTIONDIVIDER",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "defaultValue": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "displayName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "group": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instructionText": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "key": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "notParam": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "order": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "paramArray": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "parameterName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "provider": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "range": {
                 "description":
@@ -244,21 +358,39 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "maxValue": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "minValue": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "required": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "selection": {
                 "description":
@@ -267,58 +399,97 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "selectionType": {
                 "description":
                  "",
                 "enum": [
                 "SINGLE_SELECT",
-                "MULTI_SELECT"
+                "MULTI_SELECT",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "selectionValues": {
                 "description":
                  "",
                 "properties": {},
-                "type": "object"
+                "type": [
+                "object",
+                "null",
+                "number"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "softwareType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "softwareVariant": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "softwareVersion": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tags": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "object"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "templateContent": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "templateParams": {
                 "description":
@@ -328,7 +499,10 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "binding": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "dataType": {
                 "description":
@@ -338,64 +512,105 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "INTEGER",
                 "IPADDRESS",
                 "MACADDRESS",
-                "SECTIONDIVIDER"
+                "SECTIONDIVIDER",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "defaultValue": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "displayName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "group": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instructionText": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "key": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "notParam": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "order": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "paramArray": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "parameterName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "provider": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "range": {
                 "description":
@@ -405,21 +620,39 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "maxValue": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "minValue": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "required": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "selection": {
                 "description":
@@ -428,35 +661,58 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "selectionType": {
                 "description":
                  "",
                 "enum": [
                 "SINGLE_SELECT",
-                "MULTI_SELECT"
+                "MULTI_SELECT",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "selectionValues": {
                 "description":
                  "",
                 "properties": {},
-                "type": "object"
+                "type": [
+                "object",
+                "null",
+                "number"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "version": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

@@ -55,15 +55,24 @@ class JSONSchemaValidator23896B124Bd8B9Bf(object):
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "building": {
                 "description":
@@ -72,46 +81,76 @@ class JSONSchemaValidator23896B124Bd8B9Bf(object):
                 "address": {
                 "description":
                 "Address",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "latitude": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "longitude": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "floor": {
                 "description":
                 "Floor",
                 "properties": {
                 "height": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "length": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                 "Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "parentName": {
                 "description":
                 "Parent Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "rfModel": {
                 "description":
@@ -120,18 +159,31 @@ class JSONSchemaValidator23896B124Bd8B9Bf(object):
                 "Cubes And Walled Offices",
                 "Drywall Office Only",
                 "Indoor High Ceiling",
-                "Outdoor Open Space"
+                "Outdoor Open Space",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "width": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
@@ -139,9 +191,13 @@ class JSONSchemaValidator23896B124Bd8B9Bf(object):
                 "enum": [
                 "area",
                 "building",
-                "floor"
+                "floor",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

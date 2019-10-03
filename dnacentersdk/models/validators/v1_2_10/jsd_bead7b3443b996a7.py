@@ -48,20 +48,32 @@ class JSONSchemaValidatorBead7B3443B996A7(object):
                 "borderSessionType": {
                 "description":
                 "Border Session Type",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "connectedToInternet": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "deviceManagementIpAddress": {
                 "description":
                 "Device Management Ip Address",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "externalConnectivityIpPoolName": {
                 "description":
                 "External Connectivity Ip Pool Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "externalConnectivitySettings": {
                 "description":
@@ -71,12 +83,18 @@ class JSONSchemaValidatorBead7B3443B996A7(object):
                 "externalAutonomouSystemNumber": {
                 "description":
                 "External Autonomou System Number",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "interfaceName": {
                 "description":
                 "Interface Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "l3Handoff": {
                 "description":
@@ -90,38 +108,68 @@ class JSONSchemaValidatorBead7B3443B996A7(object):
                 "virtualNetworkName": {
                 "description":
                 "Virtual Network Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "externalDomainRoutingProtocolName": {
                 "description":
                 "External Domain Routing Protocol Name",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "internalAutonomouSystemNumber": {
                 "description":
                 "Internal Autonomou System Number",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "siteHierarchy": {
                 "description":
                 "Site Hierarchy",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')

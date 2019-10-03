@@ -47,7 +47,10 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "_id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "deviceInfo": {
                 "description":
@@ -60,53 +63,87 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "password": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "username": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "addedOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "addnMacAddrs": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "agentType": {
                 "description":
                  "",
                 "enum": [
                 "POSIX",
-                "IOS"
+                "IOS",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "authStatus": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "authenticatedSudiSerialNo": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "capabilitiesSupported": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "cmState": {
                 "description":
@@ -119,36 +156,58 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "SecuredConnection",
                 "Authenticated",
                 "ErrorSecuringConnection",
-                "ErrorAuthenticating"
+                "ErrorAuthenticating",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "deviceSudiSerialNos": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "deviceType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "featuresSupported": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "fileSystemList": {
                 "description":
@@ -156,39 +215,69 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "freespace": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "readable": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "size": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "writeable": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "firstContact": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "hostname": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "httpHeaders": {
                 "description":
@@ -198,27 +287,46 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "key": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "value": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "imageFile": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "imageVersion": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "ipInterfaces": {
                 "description":
@@ -229,37 +337,68 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "ipv6AddressList": {
                 "description":
                  "",
-                "items": {},
-                "type": "array"
+                "items": {
+                "type": [
+                "object"
+                ]
+                },
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "macAddress": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "status": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "lastContact": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "lastSyncTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "lastUpdateOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "location": {
                 "description":
@@ -268,45 +407,74 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "address": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "altitude": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "latitude": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 },
                 "longitude": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 },
                 "siteId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "macAddress": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "mode": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "neighborLinks": {
                 "description":
@@ -316,52 +484,85 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "localInterfaceName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "localMacAddress": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "localShortInterfaceName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "remoteDeviceName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "remoteInterfaceName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "remoteMacAddress": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "remotePlatform": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "remoteShortInterfaceName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "remoteVersion": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "onbState": {
                 "description":
@@ -381,14 +582,21 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "ErrorExecutingWorkflow",
                 "ExecutingReset",
                 "ErrorExecutingReset",
-                "Provisioned"
+                "Provisioned",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "pid": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "pnpProfileList": {
                 "description":
@@ -398,10 +606,16 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "createdBy": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "discoveryCreated": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "primaryEndpoint": {
                 "description":
@@ -410,30 +624,48 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "certificate": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "fqdn": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "ipv4Address": {},
                 "ipv6Address": {},
                 "port": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "protocol": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "profileName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "secondaryEndpoint": {
                 "description":
@@ -442,33 +674,57 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "certificate": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "fqdn": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "ipv4Address": {},
                 "ipv6Address": {},
                 "port": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "protocol": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "populateInventory": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "preWorkflowCliOuputs": {
                 "description":
@@ -478,55 +734,91 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "cli": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "cliOutput": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "projectId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "projectName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "reloadRequested": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "serialNumber": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "smartAccountId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "source": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "stack": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "stackInfo": {
                 "description":
                  "",
                 "properties": {
                 "isFullRing": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "stackMemberList": {
                 "description":
@@ -536,85 +828,145 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "hardwareVersion": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "licenseLevel": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "licenseType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "macAddress": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "pid": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "priority": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "role": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "serialNumber": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "softwareVersion": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "stackNumber": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "sudiSerialNumber": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "stackRingProtocol": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "supportsStackWorkflows": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "totalMemberCount": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "validLicenseLevels": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
@@ -625,39 +977,64 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "Onboarding",
                 "Provisioned",
                 "Error",
-                "Deleted"
+                "Deleted",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "sudiRequired": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "tags": {},
                 "userSudiSerialNos": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "virtualAccountId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workflowId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workflowName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "runSummaryList": {
                 "description":
@@ -667,10 +1044,16 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "details": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "errorFlag": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "historyTaskInfo": {
                 "description":
@@ -684,30 +1067,52 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "key": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "value": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workItemList": {
                 "description":
@@ -717,42 +1122,78 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "command": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "outputStr": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "timestamp": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "systemResetWorkflow": {
                 "description":
@@ -761,38 +1202,65 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "_id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "addToInventory": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "addedOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "configId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "currTaskIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "execTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "imageId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceType": {
                 "description":
@@ -800,25 +1268,41 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
-                "SystemResetWorkflow"
+                "SystemResetWorkflow",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "lastupdateOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tasks": {
                 "description":
@@ -826,34 +1310,58 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "taskSeqNo": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workItemList": {
                 "description":
@@ -863,57 +1371,102 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "command": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "outputStr": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "useState": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "systemWorkflow": {
                 "description":
@@ -922,38 +1475,65 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "_id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "addToInventory": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "addedOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "configId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "currTaskIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "execTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "imageId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceType": {
                 "description":
@@ -961,25 +1541,41 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
-                "SystemResetWorkflow"
+                "SystemResetWorkflow",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "lastupdateOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tasks": {
                 "description":
@@ -987,34 +1583,58 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "taskSeqNo": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workItemList": {
                 "description":
@@ -1024,65 +1644,116 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "command": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "outputStr": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "useState": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "workflow": {
                 "description":
@@ -1091,38 +1762,65 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "_id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "addToInventory": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "addedOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "configId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "currTaskIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "description":
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "execTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "imageId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceType": {
                 "description":
@@ -1130,25 +1828,41 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
-                "SystemResetWorkflow"
+                "SystemResetWorkflow",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "lastupdateOn": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "tasks": {
                 "description":
@@ -1156,34 +1870,58 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "taskSeqNo": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "workItemList": {
                 "description":
@@ -1193,57 +1931,102 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "command": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "endTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "outputStr": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "startTime": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 },
                 "state": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "timeTaken": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "tenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "useState": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "version": {
-                "type": "number"
+                "type": [
+                "number",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "workflowParameters": {
                 "description":
@@ -1257,7 +2040,10 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "configId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "configParameters": {
                 "description":
@@ -1267,40 +2053,71 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "key": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "value": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "licenseLevel": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "licenseType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "topOfStackSerialNumber": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

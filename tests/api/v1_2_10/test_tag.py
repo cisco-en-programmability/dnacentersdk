@@ -25,15 +25,15 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
 def is_valid_create_tag(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_1399891c42a8be64_v1_2_10').validate(obj)
+    return True
 
 
 def create_tag(api):
@@ -58,9 +58,8 @@ def test_create_tag(api):
 
 
 def is_valid_get_tag(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_ee9aab01487a8896_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag(api):
@@ -90,9 +89,8 @@ def test_get_tag(api):
 
 
 def is_valid_get_tag_created(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_ee9aab01487a8896_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_created(api):
@@ -122,9 +120,8 @@ def test_get_tag_created(api):
 
 
 def is_valid_get_tag_by_id(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_c1a359b14c89b573_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_by_id(api):
@@ -144,9 +141,8 @@ def test_get_tag_by_id(api):
 
 
 def is_valid_get_tag_by_id_created(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_c1a359b14c89b573_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_by_id_created(api):
@@ -166,9 +162,8 @@ def test_get_tag_by_id_created(api):
 
 
 def is_valid_get_tag_count(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8091a9b84bfba53b_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_count(api):
@@ -193,9 +188,8 @@ def test_get_tag_count(api):
 
 
 def is_valid_get_tag_resource_types(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_4695090d403b8eaa_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_resource_types(api):
@@ -214,9 +208,8 @@ def test_get_tag_resource_types(api):
 
 
 def is_valid_get_tag_member_count(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_2e9db85840fbb1cf_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_member_count(api):
@@ -239,9 +232,8 @@ def test_get_tag_member_count(api):
 
 
 def is_valid_updates_tag_membership(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_45bc7a8344a8bc1e_v1_2_10').validate(obj)
+    return True
 
 
 def updates_tag_membership(api):
@@ -264,9 +256,8 @@ def test_updates_tag_membership(api):
 
 
 def is_valid_add_members_to_the_tag(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_00a2fa6146089317_v1_2_10').validate(obj)
+    return True
 
 
 def add_members_to_the_tag(api):
@@ -288,9 +279,8 @@ def test_add_members_to_the_tag(api):
 
 
 def is_valid_get_tag_members_by_id(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_eab7abe048fb99ad_v1_2_10').validate(obj)
+    return True
 
 
 def get_tag_members_by_id(api):
@@ -315,9 +305,8 @@ def test_get_tag_members_by_id(api):
 
 
 def is_valid_update_tag(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_4d86a993469a9da9_v1_2_10').validate(obj)
+    return True
 
 
 def update_tag(api):
@@ -343,9 +332,8 @@ def test_update_tag(api):
 
 
 def is_valid_remove_tag_member(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_caa3ea704d78b37e_v1_2_10').validate(obj)
+    return True
 
 
 def remove_tag_member(api):
@@ -368,9 +356,8 @@ def test_remove_tag_member(api):
 
 
 def is_valid_delete_tag(obj):
-    some_keys = ['version', 'response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_429c28154bdaa13d_v1_2_10').validate(obj)
+    return True
 
 
 def delete_tag(api):

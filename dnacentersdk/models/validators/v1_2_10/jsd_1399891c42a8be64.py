@@ -48,7 +48,10 @@ class JSONSchemaValidator1399891C42A8Be64(object):
                  {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "dynamicRules": {
                 "description":
@@ -58,7 +61,10 @@ class JSONSchemaValidator1399891C42A8Be64(object):
                 "memberType": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "rules": {
                 "description":
@@ -68,56 +74,97 @@ class JSONSchemaValidator1399891C42A8Be64(object):
                 "description":
                  "",
                 "items": {},
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "operation": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "value": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null",
+                "number"
+                ]
                 },
                 "values": {
                 "description":
                  "",
                 "items": {
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null",
+                "number"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "instanceTenantId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "name": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "systemTag": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

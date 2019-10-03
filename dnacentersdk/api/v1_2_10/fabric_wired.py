@@ -110,10 +110,9 @@ class FabricWired(object):
         check_type(device_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -185,18 +184,15 @@ class FabricWired(object):
         check_type(sda_border_device, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }
@@ -269,18 +265,15 @@ class FabricWired(object):
         check_type(device_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
-            check_type(headers.get('__runsync',
-                                   self._session.headers.get(
-                                       '__runsync')),
-                       bool)
-            check_type(headers.get('__runsynctimeout',
-                                   self._session.headers.get(
-                                       '__runsynctimeout')),
-                       int)
-            check_type(headers.get('X-Auth-Token',
-                                   self._session.headers.get(
-                                       'X-Auth-Token')),
-                       basestring, may_be_none=False)
+            if '__runsync' in headers:
+                check_type(headers.get('__runsync'),
+                           bool)
+            if '__runsynctimeout' in headers:
+                check_type(headers.get('__runsynctimeout'),
+                           int)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         params = {
         }

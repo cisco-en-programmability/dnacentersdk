@@ -23,6 +23,12 @@
 
 # Package Constants
 
+#: **debug** default value.
+DEFAULT_DEBUG = 'False'
+
+#: **version** default value.
+DEFAULT_VERSION = '1.3.0'
+
 #: **base_url** default value.
 DEFAULT_BASE_URL = 'https://sandboxdnac2.cisco.com:443'
 
@@ -39,11 +45,11 @@ DEFAULT_WAIT_ON_RATE_LIMIT = True
 DEFAULT_VERIFY = True
 
 #: name of the environment debug variable
-DEBUG_ENVIRONMENT_VARIABLE = 'DEBUG'
+DEBUG_ENVIRONMENT_VARIABLE = 'DNA_CENTER_DEBUG'
 
 # DNA Center API version. Format: MAJOR.MINOR.PATCH
 #: name of the environment version variable
-VERSION_ENVIRONMENT_VARIABLE = 'VERSION'
+VERSION_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERSION'
 
 #: name of the environment username variable
 USERNAME_ENVIRONMENT_VARIABLE = 'DNA_CENTER_USERNAME'
@@ -53,3 +59,19 @@ PASSWORD_ENVIRONMENT_VARIABLE = 'DNA_CENTER_PASSWORD'
 
 #: name of the environment encoded_auth variable
 ENCODED_AUTH_ENVIRONMENT_VARIABLE = 'DNA_CENTER_ENCODED_AUTH'
+
+#: name of the environment base_url variable
+BASE_URL_ENVIRONMENT_VARIABLE = 'DNA_CENTER_BASE_URL'
+
+#: name of the environment single_request_timeout variable
+SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE = \
+    'DNA_CENTER_SINGLE_REQUEST_TIMEOUT'
+
+#: name of the environment wait_on_rate_limit variable
+WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_WAIT_ON_RATE_LIMIT'
+
+#: name of the environment verify variable
+VERIFY_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY'
+
+#: name of the environment verify variable
+VERIFY_STRING_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY_STRING'

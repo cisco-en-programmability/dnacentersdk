@@ -45,21 +45,33 @@ class JSONSchemaValidator6099Da82477B858A(object):
             '''{
                 "properties": {
                 "forcePushTemplate": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "isComposite": {
-                "type": "boolean"
+                "type": [
+                "boolean",
+                "null"
+                ]
                 },
                 "mainTemplateId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "memberTemplateDeploymentInfo": {
                 "description":
                  "",
                 "items": {},
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "targetInfo": {
                 "description":
@@ -69,18 +81,27 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 "hostName": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "id": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 },
                 "params": {
                 "description":
                  "",
                 "properties": {},
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "type": {
                 "description":
@@ -91,19 +112,32 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 "PRE_PROVISIONED_SERIAL",
                 "PRE_PROVISIONED_MAC",
                 "DEFAULT",
-                "MANAGED_DEVICE_HOSTNAME"
+                "MANAGED_DEVICE_HOSTNAME",
+                null
                 ],
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
-                "type": "array"
+                "type": [
+                "array",
+                "null"
+                ]
                 },
                 "templateId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

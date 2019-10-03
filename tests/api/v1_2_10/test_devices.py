@@ -25,6 +25,7 @@ import pytest
 import dnacentersdk
 import time
 from tests.environment import DNA_CENTER_VERSION
+from tests.models.schema_validator import json_schema_validate
 from tests.config import MERAKI_ORG_ID
 
 
@@ -32,9 +33,8 @@ pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version 
 
 
 def is_valid_get_device_interface_count(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_3d923b184dc9a4ca_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_interface_count(api):
@@ -53,9 +53,8 @@ def test_get_device_interface_count(api):
 
 
 def is_valid_get_device_list(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_20b19b52464b8972_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_list(api):
@@ -105,9 +104,8 @@ def test_get_device_list(api):
 
 
 def is_valid_sync_devices_using_forcesync(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_3b9ef9674429be4c_v1_2_10').validate(obj)
+    return True
 
 
 def sync_devices_using_forcesync(api):
@@ -127,9 +125,8 @@ def test_sync_devices_using_forcesync(api):
 
 
 def is_valid_get_polling_interval_for_all_devices(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_38bd0b884b89a785_v1_2_10').validate(obj)
+    return True
 
 
 def get_polling_interval_for_all_devices(api):
@@ -148,9 +145,8 @@ def test_get_polling_interval_for_all_devices(api):
 
 
 def is_valid_get_device_count(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_5db21b8e43fab7d8_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_count(api):
@@ -169,9 +165,8 @@ def test_get_device_count(api):
 
 
 def is_valid_get_device_interface_vlans(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_288df9494f2a9746_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_interface_vlans(api):
@@ -197,9 +192,8 @@ def test_get_device_interface_vlans(api):
 
 
 def is_valid_get_device_interfaces_by_specified_range(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_349c888443b89a58_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_interfaces_by_specified_range(api):
@@ -221,9 +215,8 @@ def test_get_device_interfaces_by_specified_range(api):
 
 
 def is_valid_get_device_config_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_84b33a9e480abcaf_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_config_by_id(api):
@@ -243,9 +236,8 @@ def test_get_device_config_by_id(api):
 
 
 def is_valid_get_device_config_count(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_888f585c49b88441_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_config_count(api):
@@ -264,9 +256,8 @@ def test_get_device_config_count(api):
 
 
 def is_valid_get_all_interfaces(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f5947a4c439a8bf0_v1_2_10').validate(obj)
+    return True
 
 
 def get_all_interfaces(api):
@@ -287,9 +278,8 @@ def test_get_all_interfaces(api):
 
 
 def is_valid_get_interface_details(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_4eb56a614cc9a2d2_v1_2_10').validate(obj)
+    return True
 
 
 def get_interface_details(api):
@@ -310,9 +300,8 @@ def test_get_interface_details(api):
 
 
 def is_valid_get_polling_interval_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_82918a1b4d289c5c_v1_2_10').validate(obj)
+    return True
 
 
 def get_polling_interval_by_id(api):
@@ -332,9 +321,8 @@ def test_get_polling_interval_by_id(api):
 
 
 def is_valid_get_module_count(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8db939744649a782_v1_2_10').validate(obj)
+    return True
 
 
 def get_module_count(api):
@@ -358,9 +346,8 @@ def test_get_module_count(api):
 
 
 def is_valid_get_interface_info_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_ba9dc85b4b8a9a17_v1_2_10').validate(obj)
+    return True
 
 
 def get_interface_info_by_id(api):
@@ -380,9 +367,8 @@ def test_get_interface_info_by_id(api):
 
 
 def is_valid_get_device_summary(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_819f9aa54feab7bf_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_summary(api):
@@ -402,9 +388,8 @@ def test_get_device_summary(api):
 
 
 def is_valid_get_functional_capability_for_devices(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_c3b3c9ef4e6b8a09_v1_2_10').validate(obj)
+    return True
 
 
 def get_functional_capability_for_devices(api):
@@ -425,9 +410,8 @@ def test_get_functional_capability_for_devices(api):
 
 
 def is_valid_get_device_interface_count_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_5b8639224cd88ea7_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_interface_count_by_id(api):
@@ -447,9 +431,8 @@ def test_get_device_interface_count_by_id(api):
 
 
 def is_valid_get_modules(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_eb8249e34f69b0f1_v1_2_10').validate(obj)
+    return True
 
 
 def get_modules(api):
@@ -475,9 +458,8 @@ def test_get_modules(api):
 
 
 def is_valid_get_wireless_lan_controller_details_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f6826a8e41bba242_v1_2_10').validate(obj)
+    return True
 
 
 def get_wireless_lan_controller_details_by_id(api):
@@ -497,9 +479,8 @@ def test_get_wireless_lan_controller_details_by_id(api):
 
 
 def is_valid_get_organization_list_for_meraki(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_84b37ae54c59ab28_v1_2_10').validate(obj)
+    return True
 
 
 def get_organization_list_for_meraki(api):
@@ -557,9 +538,8 @@ def test_get_organization_list_for_meraki(api):
 
 
 def is_valid_get_ospf_interfaces(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_70ad397649e9b4d3_v1_2_10').validate(obj)
+    return True
 
 
 def get_ospf_interfaces(api):
@@ -578,9 +558,8 @@ def test_get_ospf_interfaces(api):
 
 
 def is_valid_get_functional_capability_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_81bb4804405a8d2f_v1_2_10').validate(obj)
+    return True
 
 
 def get_functional_capability_by_id(api):
@@ -602,9 +581,8 @@ def test_get_functional_capability_by_id(api):
 
 
 def is_valid_get_isis_interfaces(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_84ad8b0e42cab48a_v1_2_10').validate(obj)
+    return True
 
 
 def get_isis_interfaces(api):
@@ -623,9 +601,8 @@ def test_get_isis_interfaces(api):
 
 
 def is_valid_get_device_config_for_all_devices(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_b7bcaa084e2b90d0_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_config_for_all_devices(api):
@@ -644,9 +621,8 @@ def test_get_device_config_for_all_devices(api):
 
 
 def is_valid_get_interface_by_ip(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cd8469e647caab0e_v1_2_10').validate(obj)
+    return True
 
 
 def get_interface_by_ip(api):
@@ -668,9 +644,8 @@ def test_get_interface_by_ip(api):
 
 
 def is_valid_get_network_device_by_ip(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_d0a4b88145aabb51_v1_2_10').validate(obj)
+    return True
 
 
 def get_network_device_by_ip(api):
@@ -690,9 +665,8 @@ def test_get_network_device_by_ip(api):
 
 
 def is_valid_get_device_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8fa8eb404a4a8d96_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_by_id(api):
@@ -712,9 +686,8 @@ def test_get_device_by_id(api):
 
 
 def is_valid_sync_devices(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_aeb9eb67460b92df_v1_2_10').validate(obj)
+    return True
 
 
 def sync_devices(api):
@@ -760,9 +733,8 @@ def test_sync_devices(api):
 
 
 def is_valid_get_interface_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_b888792d43baba46_v1_2_10').validate(obj)
+    return True
 
 
 def get_interface_by_id(api):
@@ -782,9 +754,8 @@ def test_get_interface_by_id(api):
 
 
 def is_valid_get_device_by_serial_number(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_d888ab6d4d59a8c1_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_by_serial_number(api):
@@ -806,9 +777,8 @@ def test_get_device_by_serial_number(api):
 
 
 def is_valid_get_network_device_by_pagination_range(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_f49548c54be8a3e2_v1_2_10').validate(obj)
+    return True
 
 
 def get_network_device_by_pagination_range(api):
@@ -829,9 +799,8 @@ def test_get_network_device_by_pagination_range(api):
 
 
 def is_valid_retrieves_all_network_devices(obj):
-    some_keys = []
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_ffa748cc44e9a437_v1_2_10').validate(obj)
+    return True
 
 
 def retrieves_all_network_devices(api):
@@ -872,9 +841,8 @@ def test_retrieves_all_network_devices(api):
 
 
 def is_valid_get_device_detail(obj):
-    some_keys = ['response']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_89b2fb144f5bb09b_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_detail(api):
@@ -896,9 +864,8 @@ def test_get_device_detail(api):
 
 
 def is_valid_get_module_info_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_0db7da744c0b83d8_v1_2_10').validate(obj)
+    return True
 
 
 def get_module_info_by_id(api):
@@ -918,9 +885,8 @@ def test_get_module_info_by_id(api):
 
 
 def is_valid_add_device(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_4bb22af046fa8f08_v1_2_10').validate(obj)
+    return True
 
 
 def add_device(api):
@@ -986,9 +952,8 @@ def test_add_device(api):
 
 
 def is_valid_get_device_by_id_last(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_8fa8eb404a4a8d96_v1_2_10').validate(obj)
+    return True
 
 
 def get_device_by_id_last(api):
@@ -1008,9 +973,8 @@ def test_get_device_by_id_last(api):
 
 
 def is_valid_update_device_role(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_b9855ad54ae98156_v1_2_10').validate(obj)
+    return True
 
 
 def update_device_role(api):
@@ -1032,9 +996,8 @@ def test_update_device_role(api):
 
 
 def is_valid_register_device_for_wsa(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_c9809b6744f8a502_v1_2_10').validate(obj)
+    return True
 
 
 def register_device_for_wsa(api):
@@ -1055,9 +1018,8 @@ def test_register_device_for_wsa(api):
 
 
 def is_valid_export_device_list(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_cd98780f4888a66d_v1_2_10').validate(obj)
+    return True
 
 
 def export_device_list(api):
@@ -1081,9 +1043,8 @@ def test_export_device_list(api):
 
 
 def is_valid_delete_device_by_id(obj):
-    some_keys = ['response', 'version']
-    return True if len(some_keys) == 0 else\
-        any([obj.has_path(item) for item in some_keys])
+    json_schema_validate('jsd_1c894b5848eab214_v1_2_10').validate(obj)
+    return True
 
 
 def delete_device_by_id(api):

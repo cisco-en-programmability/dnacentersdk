@@ -48,12 +48,18 @@ class JSONSchemaValidatorF393Abe84989Bb48(object):
                 "description":
                  "",
                 "properties": {},
-                "type": "object"
+                "type": [
+                "object",
+                "null"
+                ]
                 },
                 "templateId": {
                 "description":
                  "",
-                "type": "string"
+                "type": [
+                "string",
+                "null"
+                ]
                 }
                 },
                 "type": "object"

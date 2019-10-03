@@ -11,4 +11,4 @@ __copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
 __license__ = "MIT"
 
 
-api = dnacentersdk.DNACenterAPI(verify=False)
+api = dnacentersdk.DNACenterAPI()
