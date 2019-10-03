@@ -21,12 +21,13 @@ A DNA Center Access Token is how the DNA Center APIs validate access and identif
 requesting user.
 
 As a `best practice`__, you can store your DNA 'credentials' as
-an environment variables in your development or production environment. By
-default, dnacentersdk will look for the following environment variables to create new connection objects:
+an environment variables in your development or production environment. 
 
-    * ``DEBUG`` - Tells the SDK whether to log request and response information. Useful for debugging and seeing what is going on under the hood. Defaults to False.
+By default, dnacentersdk will look for the following environment variables to create new connection objects:
 
-    * ``VERSION`` - DNA Center API version to use. Defaults to '1.3.0'.
+    * ``DNA_CENTER_DEBUG`` - Tells the SDK whether to log request and response information. Useful for debugging and seeing what is going on under the hood. Defaults to False.
+
+    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '1.3.0'.
 
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
       For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'
@@ -34,6 +35,14 @@ default, dnacentersdk will look for the following environment variables to creat
     * ``DNA_CENTER_USERNAME`` - HTTP Basic Auth username.
 
     * ``DNA_CENTER_PASSWORD`` - HTTP Basic Auth password.
+
+    * ``DNA_CENTER_BASE_URL`` - The base URL to be prefixed to the individual API endpoint suffixes. Defaults to 'https://sandboxdnac2.cisco.com:443'.
+
+    * ``DNA_CENTER_SINGLE_REQUEST_TIMEOUT`` - Timeout (in seconds) for RESTful HTTP requests. Defaults to 60.
+
+    * ``DNA_CENTER_WAIT_ON_RATE_LIMIT`` - Enables or disables automatic rate-limit handling. Defaults to True.
+
+    * ``DNA_CENTER_VERIFY`` - Controls whether to verify the server's TLS certificate or not. Defaults to True.
 
 __ https://12factor.net/config
 
@@ -109,9 +118,6 @@ a :exc:`AccessTokenError` will be raised (a :exc:`dnacentersdkException` subclas
     environment variable counterpart (DNA_CENTER_USERNAME,
     DNA_CENTER_PASSWORD, DNA_CENTER_ENCODED_AUTH).
 
-
-Also, dnacentersdk defaults to pulling from environment variables, other important values like
-DNA_CENTER_VERSION and DNA_CENTER_DEBUG, a default value is offered for both. DNA_CENTER_VERSION defaults to '1.3.0' and DNA_CENTER_DEBUG to 'False'.
 
 If you don't provide a known version and try to create a new :class:`DNACenterAPI`, a :exc:`VersionError` will be raised.
 
@@ -204,7 +210,7 @@ The following are the default values pulled ``from dnacentersdk.config`` and use
 .. automodule:: dnacentersdk.config
     :members:
     :no-undoc-members:
-    :exclude-members: DEBUG_ENVIRONMENT_VARIABLE, VERSION_ENVIRONMENT_VARIABLE, USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE, ENCODED_AUTH_ENVIRONMENT_VARIABLE, BASE_URL_ENVIRONMENT_VARIABLE, SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE, WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE, VERIFY_ENVIRONMENT_VARIABLE
+    :exclude-members: DEBUG_ENVIRONMENT_VARIABLE, VERSION_ENVIRONMENT_VARIABLE, USERNAME_ENVIRONMENT_VARIABLE, PASSWORD_ENVIRONMENT_VARIABLE, ENCODED_AUTH_ENVIRONMENT_VARIABLE, BASE_URL_ENVIRONMENT_VARIABLE, SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE, WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE, VERIFY_ENVIRONMENT_VARIABLE, VERIFY_STRING_ENVIRONMENT_VARIABLE 
 
 
 Making API Calls

@@ -163,24 +163,24 @@ class DNACenterAPI(object):
             password(basestring): HTTP Basic Auth password.
             encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
             single_request_timeout(int): Timeout (in seconds) for RESTful HTTP
-                requests. Defaults to the DNA_CENTER_ environment variable or
-                dnacentersdk.config.DNA_CENTER_SINGLE_REQUEST_TIMEOUT
+                requests. Defaults to the DNA_CENTER_SINGLE_REQUEST_TIMEOUT
+                environment variable or
+                dnacentersdk.config.DEFAULT_SINGLE_REQUEST_TIMEOUT
                 if the environment variable is not set.
             wait_on_rate_limit(bool): Enables or disables automatic rate-limit
                 handling. Defaults to the DNA_CENTER_WAIT_ON_RATE_LIMIT
                 environment variable or
-                dnacentersdk.config.DNA_CENTER_WAIT_ON_RATE_LIMIT
+                dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT
                 if the environment variable is not set.
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY
                 (or DNA_CENTER_VERIFY_STRING) environment variable or
-                dnacentersdk.config.DNA_CENTER_VERIFY
-                (or DNA_CENTER_VERIFY_STRING) if the environment variable is
-                not set.
+                dnacentersdk.config.DEFAULT_VERIFY if the environment
+                variables are not set.
             version(basestring): Controls which version of DNA_CENTER to use.
                 Defaults to the DNA_CENTER_VERSION environment variable or
-                dnacentersdk.config.DNA_CENTER_VERSION
+                dnacentersdk.config.DEFAULT_VERSION
                 if the environment variable is not set.
             debug(bool,basestring): Controls whether to log information about
                 DNA Center APIs' request and response process.
