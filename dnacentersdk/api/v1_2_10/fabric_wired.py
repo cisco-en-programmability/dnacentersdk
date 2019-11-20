@@ -138,8 +138,8 @@ class FabricWired(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/border-device/${device-'
-                 + 'ip-address}')
+        e_url = ('/dna/intent/api/v1/business/${sda/border-'
+                 + 'device}/${device-ip-address}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
@@ -214,7 +214,7 @@ class FabricWired(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/border-device')
+        e_url = ('/dna/intent/api/v1/business/${sda/border-device}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=params,
@@ -299,8 +299,8 @@ class FabricWired(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/sda/border-device/${device-'
-                 + 'ip-address}')
+        e_url = ('/dna/intent/api/v1/business/${sda/border-'
+                 + 'device}/${device-ip-address}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,

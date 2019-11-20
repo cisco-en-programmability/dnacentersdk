@@ -481,6 +481,127 @@ package update!).  dnacentersdk is written to automatically take advantage
 of new attributes and data as they are returned.
 
 
+Adding API call definitions
+-----------------------------
+
+Custom caller functions help you:
+
+  1. Add support for custom API calls.
+
+  2. Add support for API calls that are/were not documented when the SDK was released.
+
+
+.. code-block:: python
+
+    from dnacentersdk import api
+
+    # Create a DNACenterAPI connection object;
+    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 1.2.10.,
+    # and requests to verify the server's TLS certificate with verify=True.
+    dnac = api.DNACenterAPI(username="devnetuser",
+                            password="Cisco123!",
+                            base_url="https://sandboxdnac2.cisco.com:443",
+                            version='1.2.10',
+                            verify=True)
+
+    # Add your custom API call to the connection object.
+    # Define the get_global_credentials function.
+    # Call it with:
+    #     get_global_credentials('NETCONF')
+    def get_global_credentials(subtype):
+        return dnac.custom_caller.call_api('GET',
+                                   '/dna/intent/api/v1/global-credential',
+                                   params={
+                                       'credentialSubType': subtype
+                                   })
+
+
+    # Add your custom API call to the connection object.
+    # Define the delete_global_credentials_by_id function
+    # under the custom_caller wrapper.
+    # Call it with:
+    #     dnac.custom_caller.delete_global_credentials_by_id('be456g16-14fd-4cac-94b7-ac3b8f9f')
+    dnac.custom_caller.add_api('delete_global_credentials_by_id',
+                              lambda global_credential_id:
+                                  dnac.custom_caller.call_api(
+                                      'DELETE',
+                                      '/dna/intent/api/v1/global-credential/${credentialId}',
+                                      path_params={
+                                          'credentialId': global_credential_id,
+                                      })
+                              )
+
+    # Advance usage example using Custom Caller functions.
+    def setup_custom():
+        """
+        Defines the get_global_credentials and create_netconf_credentials functions
+        under the custom_caller wrapper, and with help documentation
+        in two different ways.
+
+        Check that they have been added with
+            'get_global_credentials' in dir(dnac.custom_caller)
+            'create_netconf_credentials' in dir(dnac.custom_caller)
+
+        Quickly check that you indeed have them as functions with
+            type(getattr(dnac.custom_caller, 'create_netconf_credentials'))
+            type(getattr(dnac.custom_caller, 'create_netconf_credentials'))
+
+        Check the documentation with
+            help(dnac.custom_caller.get_global_credentials)
+            help(dnac.custom_caller.create_netconf_credentials)
+
+        """
+
+        # Alternative 1: Definition with helper function.
+        def _get_global_credentials(credential_type):
+            """Custom global credential API call, returns response attribute
+
+                Args:
+                    credential_type(str): Credential type as CLI
+                        / SNMPV2_READ_COMMUNITY /
+                        SNMPV2_WRITE_COMMUNITY / SNMPV3 /
+                        HTTP_WRITE / HTTP_READ / NETCONF. 
+
+                Returns: 
+                    MyDict: JSON response. Access the object's properties by using
+                    the dot notation or the bracket notation.
+            """
+            return dnac.custom_caller.call_api(
+                                        'GET',
+                                        '/dna/intent/api/v1/global-credential',
+                                        params={
+                                            'credentialSubType': credential_type
+                                        }).response
+        # Finally add the function as an attribute.
+        dnac.custom_caller.add_api('get_global_credentials', _get_global_credentials)
+
+        # Alternative 2: Definition with lambda function.
+        dnac.custom_caller.add_api('create_netconf_credentials',
+                                lambda port:
+                                    dnac.custom_caller.call_api(
+                                        'POST',
+                                        '/dna/intent/api/v1/global-credential/netconf',
+                                        json=[{
+                                            "netconfPort": port
+                                        }])
+                                )
+        # Finally add the documentation
+        dnac.custom_caller.create_netconf_credentials.__doc__ = """
+            Custom global credential API call to add NETCONF credentials
+            
+            Receives:
+                port(string): Netconf port number
+            
+            Returns: JSON response.
+            """
+
+
+Check out the `Custom Caller`_ documentation to begin using it.
+
+
+.. _Custom Caller: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#custom-caller
+
+
 *Copyright (c) 2019 Cisco and/or its affiliates.*
 
 .. _PEP 20: https://www.python.org/dev/peps/pep-0020/
