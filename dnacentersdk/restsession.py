@@ -275,6 +275,13 @@ class RestSession(object):
         kwargs.setdefault('timeout', self.single_request_timeout)
         kwargs.setdefault('verify', self.verify)
 
+        # Fixes requests inconsistent behavior with additional parameters
+        if not kwargs.get('json'):
+            kwargs.pop('json', None)
+
+        if not kwargs.get('data'):
+            kwargs.pop('data', None)
+
         c = custom_refresh
         while True:
             c += 1
