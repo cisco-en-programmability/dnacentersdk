@@ -28,10 +28,10 @@ else:
 
 results = {}
 
-print(api.devices.get_device_list())  # Permissions issue
+# print(api.devices.get_device_list())  # Permissions issue
 
-'''
 results["workflows"] = api.pnp.get_workflows()
+'''
 results["client_health"] = api.clients.get_overall_client_health()
 results["sites"] = api.sites.get_site()
 results["all_device_configs"] = api.devices.get_device_config_for_all_devices()
