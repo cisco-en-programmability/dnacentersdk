@@ -14,25 +14,9 @@ devnet = {
     "base_url": "https://sandboxdnac2.cisco.com:443",
     "public_cert": False,
 }
-pov = {
-    "debug": True,
-    "username": "admin",
-    "password": "C1sco12345",
-    "base_url": "https://100.64.0.101:443",
-    "public_cert": False,
-}
-
 if which_dnac == "devnet":
     api = DNACenterAPI(
         username=devnet["username"],
-        password=devnet["password"],
-        base_url=devnet["base_url"],
-        verify=devnet["public_cert"],
-        debug=devnet["debug"],
-    )
-elif which_dnac == "pov":
-    api = DNACenterAPI(
-        username=pov["username"],
         password=devnet["password"],
         base_url=devnet["base_url"],
         verify=devnet["public_cert"],
