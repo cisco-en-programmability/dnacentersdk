@@ -34,5 +34,8 @@ RUN python3 -m pip install --no-cache-dir -r $WORK_DIR/requirements.txt
 # Provide some examples in case the user doesn't mount their own script dir.
 COPY example_scripts $WORK_DIR
 
+# Copy over bootstrap file
+COPY bootstrap.py $WORK_DIR
+
 # Run script.
 CMD python3 $WORK_DIR/$PYTHON_SCRIPT
