@@ -9,8 +9,9 @@ files_in_dir = os.listdir(script_dir)
 
 list_of_scripts = []
 # Ensure that we only show the python files.  (Those ending in .py)
+# Exclude any files that start with "__".  This way you can have local "helper" scripts to import.
 for file in files_in_dir:
-    if file[-3:] == ".py":
+    if file[-3:] == ".py" and "__" not in file:
         list_of_scripts.append(file)
 
 # Sort list alphabetically by filename.
@@ -26,7 +27,14 @@ if list_of_scripts:
         choice = int(input(f'Select 0-{qty_of_scripts - 1}: '))
         if 0 <= choice < qty_of_scripts - 1:
             # A valid choice has been made.
-            os.system(f"/usr/bin/python3 {os.path.join(script_dir, list_of_scripts[choice])}")
+            os.chdir(script_dir)
+            os.system(
+                "/usr/bin/python3 {}".format(
+                    os.path.join(script_dir, list_of_scripts[choice].replace(" ", "\ "))
+                )
+            )
+        else:
+            print("Inputted value out of range.")
     except ValueError:
         print("Inputted value out of range.")
 else:
