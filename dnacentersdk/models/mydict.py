@@ -176,6 +176,18 @@ class MyDict(dict):
 
         return _get_dict(self)
 
+    def __getstate__(self):
+        """
+        Returns a <dict> of the <MyDict> object - enables Pickle to work
+        """
+        return self.__dict__
+
+    def __setstate__(self, d):
+        """
+        merge in a <dict> onto the <MyDict> object - enables Pickle to work
+        """
+        self.__dict__.update(d)
+
 
 def mydict_data_factory(model, json_data):
     """Data factory function with standard params."""
