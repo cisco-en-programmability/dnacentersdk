@@ -12,6 +12,7 @@ fastjsonschema = ">=2.13"
 [dev-packages] # Here goes your package requirements for developing the application and its versions (which packaes you will use when developing the application)
 sphinx = ">=2.1.0"
 sphinx-rtd-theme = "*"
+sphinx_search = "*"
 pytest = "==5.4.3"
 pytest-rerunfailures = "==9.0"
 flake8 = "*"
