@@ -53,7 +53,8 @@ class Networks(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new Networks object with the provided RestSession.
+        """Initialize a new Networks
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -73,18 +74,12 @@ class Networks(object):
 
     def get_vlan_details(self,
                          headers=None,
-                         payload=None,
-                         active_validation=True,
                          **request_parameters):
         """Returns the list of VLAN names.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -98,7 +93,6 @@ class Networks(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -111,14 +105,6 @@ class Networks(object):
 
         path_params = {
         }
-
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_6284db4649aa8d31_v1_3_0')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -130,27 +116,20 @@ class Networks(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_6284db4649aa8d31_v1_3_0', json_data)
 
     def get_site_topology(self,
                           headers=None,
-                          payload=None,
-                          active_validation=True,
                           **request_parameters):
         """Returns site topology.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -164,7 +143,6 @@ class Networks(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -178,14 +156,6 @@ class Networks(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_9ba14a9e441b8a60_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -196,18 +166,15 @@ class Networks(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_9ba14a9e441b8a60_v1_3_0', json_data)
 
     def get_physical_topology(self,
                               node_type=None,
                               headers=None,
-                              payload=None,
-                              active_validation=True,
                               **request_parameters):
         """Returns the raw physical topology by specified criteria of
         nodeType.
@@ -216,10 +183,6 @@ class Networks(object):
             node_type(basestring): nodeType query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -233,7 +196,6 @@ class Networks(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(node_type, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -250,14 +212,6 @@ class Networks(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_b2b8cb91459aa58f_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -268,18 +222,15 @@ class Networks(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_b2b8cb91459aa58f_v1_3_0', json_data)
 
     def get_topology_details(self,
                              vlan_id,
                              headers=None,
-                             payload=None,
-                             active_validation=True,
                              **request_parameters):
         """Returns Layer 2 network topology by specified VLAN ID.
 
@@ -288,10 +239,6 @@ class Networks(object):
                 etc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -305,7 +252,6 @@ class Networks(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(vlan_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -322,14 +268,6 @@ class Networks(object):
             'vlanID': vlan_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_b9b48ac8463a8aba_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -340,18 +278,15 @@ class Networks(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_b9b48ac8463a8aba_v1_3_0', json_data)
 
     def get_l3_topology_details(self,
                                 topology_type,
                                 headers=None,
-                                payload=None,
-                                active_validation=True,
                                 **request_parameters):
         """Returns the Layer 3 network topology by routing protocol.
 
@@ -360,10 +295,6 @@ class Networks(object):
                 topology(OSPF,ISIS,etc).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -377,7 +308,6 @@ class Networks(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(topology_type, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -394,14 +324,6 @@ class Networks(object):
             'topologyType': topology_type,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_c2b5fb764d888375_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -412,18 +334,15 @@ class Networks(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_c2b5fb764d888375_v1_3_0', json_data)
 
     def get_overall_network_health(self,
                                    timestamp=None,
                                    headers=None,
-                                   payload=None,
-                                   active_validation=True,
                                    **request_parameters):
         """Returns Overall Network Health information by Device category
         (Access, Distribution, Core, Router, Wireless) for any
@@ -435,10 +354,6 @@ class Networks(object):
                 required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -452,7 +367,6 @@ class Networks(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(timestamp, (int, basestring))
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -473,14 +387,6 @@ class Networks(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_ca91da84401abba1_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -491,9 +397,8 @@ class Networks(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_ca91da84401abba1_v1_3_0', json_data)

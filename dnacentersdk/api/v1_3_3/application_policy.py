@@ -53,7 +53,8 @@ class ApplicationPolicy(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new ApplicationPolicy object with the provided RestSession.
+        """Initialize a new ApplicationPolicy
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -73,18 +74,12 @@ class ApplicationPolicy(object):
 
     def get_applications_count(self,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Get the number of all existing applications.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -98,7 +93,6 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -112,14 +106,6 @@ class ApplicationPolicy(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_039de8b147a98690_v1_3_3')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -130,10 +116,9 @@ class ApplicationPolicy(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_039de8b147a98690_v1_3_3', json_data)
 
@@ -268,8 +253,6 @@ class ApplicationPolicy(object):
     def delete_application_set(self,
                                id,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Delete existing application-set by it's id.
 
@@ -277,10 +260,6 @@ class ApplicationPolicy(object):
             id(basestring): id query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -294,7 +273,6 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -312,14 +290,6 @@ class ApplicationPolicy(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_70b6f8e140b8b784_v1_3_3')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -330,10 +300,9 @@ class ApplicationPolicy(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_70b6f8e140b8b784_v1_3_3', json_data)
 
@@ -342,8 +311,6 @@ class ApplicationPolicy(object):
                          name=None,
                          offset=1,
                          headers=None,
-                         payload=None,
-                         active_validation=True,
                          **request_parameters):
         """Get applications by offset/limit or by name.
 
@@ -355,10 +322,6 @@ class ApplicationPolicy(object):
             name(basestring): Application's name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -373,7 +336,6 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(offset, int)
         check_type(limit, int)
         check_type(name, basestring)
@@ -395,14 +357,6 @@ class ApplicationPolicy(object):
 
         path_params = {
         }
-
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_8893b834445bb29c_v1_3_3')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -414,10 +368,9 @@ class ApplicationPolicy(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_8893b834445bb29c_v1_3_3', json_data)
 
@@ -426,8 +379,6 @@ class ApplicationPolicy(object):
                              name=None,
                              offset=1,
                              headers=None,
-                             payload=None,
-                             active_validation=True,
                              **request_parameters):
         """Get appllication-sets by offset/limit or by name.
 
@@ -437,10 +388,6 @@ class ApplicationPolicy(object):
             name(basestring): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -454,7 +401,6 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(offset, int)
         check_type(limit, int)
         check_type(name, basestring)
@@ -477,14 +423,6 @@ class ApplicationPolicy(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_cb868b2142898159_v1_3_3')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -495,18 +433,15 @@ class ApplicationPolicy(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_cb868b2142898159_v1_3_3', json_data)
 
     def delete_application(self,
                            id,
                            headers=None,
-                           payload=None,
-                           active_validation=True,
                            **request_parameters):
         """Delete existing application by its id.
 
@@ -514,10 +449,6 @@ class ApplicationPolicy(object):
             id(basestring): Application's Id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -531,7 +462,6 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -549,14 +479,6 @@ class ApplicationPolicy(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_d49af9b84c6aa8ea_v1_3_3')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -567,27 +489,20 @@ class ApplicationPolicy(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_d49af9b84c6aa8ea_v1_3_3', json_data)
 
     def get_application_sets_count(self,
                                    headers=None,
-                                   payload=None,
-                                   active_validation=True,
                                    **request_parameters):
         """Get the number of existing application-sets .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -601,7 +516,6 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -615,14 +529,6 @@ class ApplicationPolicy(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_cfa049a644bb8a07_v1_3_3')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -634,10 +540,9 @@ class ApplicationPolicy(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_cfa049a644bb8a07_v1_3_3', json_data)
 

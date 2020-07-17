@@ -53,7 +53,8 @@ class NetworkDiscovery(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new NetworkDiscovery object with the provided RestSession.
+        """Initialize a new NetworkDiscovery
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -73,18 +74,12 @@ class NetworkDiscovery(object):
 
     def get_count_of_all_discovery_jobs(self,
                                         headers=None,
-                                        payload=None,
-                                        active_validation=True,
                                         **request_parameters):
         """Returns the count of all available discovery jobs.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -98,7 +93,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -112,14 +106,6 @@ class NetworkDiscovery(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_069d9823451b892d_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -130,10 +116,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_069d9823451b892d_v1_2_10', json_data)
 
@@ -439,18 +424,12 @@ class NetworkDiscovery(object):
 
     def get_snmp_properties(self,
                             headers=None,
-                            payload=None,
-                            active_validation=True,
                             **request_parameters):
         """Returns SNMP properties.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -464,7 +443,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -478,14 +456,6 @@ class NetworkDiscovery(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_44974ba5435a801d_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -496,18 +466,15 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_44974ba5435a801d_v1_2_10', json_data)
 
     def delete_discovery_by_id(self,
                                id,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Stops the discovery for the given Discovery ID and removes it.
         Discovery ID can be obtained using the "Get Discoveries
@@ -517,10 +484,6 @@ class NetworkDiscovery(object):
             id(basestring): Discovery ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -534,7 +497,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -551,14 +513,6 @@ class NetworkDiscovery(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_4c8cab5f435a80f4_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -569,10 +523,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_4c8cab5f435a80f4_v1_2_10', json_data)
 
@@ -941,8 +894,6 @@ class NetworkDiscovery(object):
                                            sort_order=None,
                                            task_id=None,
                                            headers=None,
-                                           payload=None,
-                                           active_validation=True,
                                            **request_parameters):
         """Returns the network devices from a discovery job based on given
         filters. Discovery ID can be obtained using the "Get
@@ -962,10 +913,6 @@ class NetworkDiscovery(object):
             http_status(basestring): httpStatus query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -979,7 +926,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(task_id, basestring)
         check_type(sort_by, basestring)
         check_type(sort_order, basestring)
@@ -1023,14 +969,6 @@ class NetworkDiscovery(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_3d9b99c343398a27_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1041,10 +979,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_3d9b99c343398a27_v1_2_10', json_data)
 
@@ -1134,8 +1071,6 @@ class NetworkDiscovery(object):
                                  records_to_return,
                                  start_index,
                                  headers=None,
-                                 payload=None,
-                                 active_validation=True,
                                  **request_parameters):
         """Returns the discovery by specified range.
 
@@ -1144,10 +1079,6 @@ class NetworkDiscovery(object):
             records_to_return(int): Number of records to return.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1161,7 +1092,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(start_index, int,
                    may_be_none=False)
         check_type(records_to_return, int,
@@ -1181,14 +1111,6 @@ class NetworkDiscovery(object):
             'recordsToReturn': records_to_return,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_33b799d04d0a8907_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1200,10 +1122,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_33b799d04d0a8907_v1_2_10', json_data)
 
@@ -1278,8 +1199,6 @@ class NetworkDiscovery(object):
     def get_discovery_by_id(self,
                             id,
                             headers=None,
-                            payload=None,
-                            active_validation=True,
                             **request_parameters):
         """Returns discovery by Discovery ID. Discovery ID can be obtained
         using the "Get Discoveries by range" API.
@@ -1288,10 +1207,6 @@ class NetworkDiscovery(object):
             id(basestring): Discovery ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1305,7 +1220,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -1322,14 +1236,6 @@ class NetworkDiscovery(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_63bb88b74f59aa17_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1340,10 +1246,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_63bb88b74f59aa17_v1_2_10', json_data)
 
@@ -1753,8 +1658,6 @@ class NetworkDiscovery(object):
                                                 limit=None,
                                                 offset=None,
                                                 headers=None,
-                                                payload=None,
-                                                active_validation=True,
                                                 **request_parameters):
         """Returns the list of discovery jobs for the given Discovery ID.
         The results can be optionally filtered based on IP.
@@ -1768,10 +1671,6 @@ class NetworkDiscovery(object):
             ip_address(basestring): ipAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1785,7 +1684,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(offset, int)
         check_type(limit, int)
         check_type(ip_address, basestring)
@@ -1811,14 +1709,6 @@ class NetworkDiscovery(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_99872a134d0a9fb4_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1829,10 +1719,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_99872a134d0a9fb4_v1_2_10', json_data)
 
@@ -1909,8 +1798,6 @@ class NetworkDiscovery(object):
                                  name=None,
                                  offset=None,
                                  headers=None,
-                                 payload=None,
-                                 active_validation=True,
                                  **request_parameters):
         """Returns the list of discovery jobs for the given IP.
 
@@ -1921,10 +1808,6 @@ class NetworkDiscovery(object):
             name(basestring): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1938,7 +1821,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(offset, int)
         check_type(limit, int)
         check_type(ip_address, basestring,
@@ -1965,14 +1847,6 @@ class NetworkDiscovery(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_a4967be64dfaaa1a_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1983,10 +1857,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_a4967be64dfaaa1a_v1_2_10', json_data)
 
@@ -1996,8 +1869,6 @@ class NetworkDiscovery(object):
                                         start_index,
                                         task_id=None,
                                         headers=None,
-                                        payload=None,
-                                        active_validation=True,
                                         **request_parameters):
         """Returns the network devices discovered for the given discovery
         and for the given range. The maximum number of records
@@ -2011,10 +1882,6 @@ class NetworkDiscovery(object):
             task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2028,7 +1895,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(task_id, basestring)
         check_type(id, basestring,
                    may_be_none=False)
@@ -2054,14 +1920,6 @@ class NetworkDiscovery(object):
             'recordsToReturn': records_to_return,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_a6b798ab4acaa34e_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2073,18 +1931,15 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_a6b798ab4acaa34e_v1_2_10', json_data)
 
     def get_credential_sub_type_by_credential_id(self,
                                                  id,
                                                  headers=None,
-                                                 payload=None,
-                                                 active_validation=True,
                                                  **request_parameters):
         """Returns the credential sub type for the given Id.
 
@@ -2092,10 +1947,6 @@ class NetworkDiscovery(object):
             id(basestring): Global Credential ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2109,7 +1960,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -2126,14 +1976,6 @@ class NetworkDiscovery(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_58a3699e489b9529_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2144,10 +1986,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_58a3699e489b9529_v1_2_10', json_data)
 
@@ -2270,8 +2111,6 @@ class NetworkDiscovery(object):
                                             records_to_delete,
                                             start_index,
                                             headers=None,
-                                            payload=None,
-                                            active_validation=True,
                                             **request_parameters):
         """Stops discovery for the given range and removes them.
 
@@ -2280,10 +2119,6 @@ class NetworkDiscovery(object):
             records_to_delete(int): Number of records to delete.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2297,7 +2132,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(start_index, int,
                    may_be_none=False)
         check_type(records_to_delete, int,
@@ -2317,14 +2151,6 @@ class NetworkDiscovery(object):
             'recordsToDelete': records_to_delete,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_c1ba9a424c08a01b_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2336,10 +2162,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_c1ba9a424c08a01b_v1_2_10', json_data)
 
@@ -2514,18 +2339,12 @@ class NetworkDiscovery(object):
 
     def delete_all_discovery(self,
                              headers=None,
-                             payload=None,
-                             active_validation=True,
                              **request_parameters):
         """Stops all the discoveries and removes them.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2539,7 +2358,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2553,14 +2371,6 @@ class NetworkDiscovery(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_db8e09234a988bab_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2571,18 +2381,15 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_db8e09234a988bab_v1_2_10', json_data)
 
     def delete_global_credentials_by_id(self,
                                         global_credential_id,
                                         headers=None,
-                                        payload=None,
-                                        active_validation=True,
                                         **request_parameters):
         """Deletes global credential for the given ID.
 
@@ -2591,10 +2398,6 @@ class NetworkDiscovery(object):
                 credential.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2608,7 +2411,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(global_credential_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -2625,14 +2427,6 @@ class NetworkDiscovery(object):
             'globalCredentialId': global_credential_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_f5ac590c4ca9975a_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2644,10 +2438,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_f5ac590c4ca9975a_v1_2_10', json_data)
 
@@ -2947,8 +2740,6 @@ class NetworkDiscovery(object):
                                      id,
                                      task_id=None,
                                      headers=None,
-                                     payload=None,
-                                     active_validation=True,
                                      **request_parameters):
         """Returns the count of network devices discovered in the given
         discovery. Discovery ID can be obtained using the "Get
@@ -2959,10 +2750,6 @@ class NetworkDiscovery(object):
             task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2976,7 +2763,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(task_id, basestring)
         check_type(id, basestring,
                    may_be_none=False)
@@ -2995,14 +2781,6 @@ class NetworkDiscovery(object):
         path_params = {
             'id': id,
         }
-
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_a6965b454c9a8663_v1_2_10')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -3014,10 +2792,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_a6965b454c9a8663_v1_2_10', json_data)
 
@@ -3025,8 +2802,6 @@ class NetworkDiscovery(object):
                                                        id,
                                                        task_id=None,
                                                        headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
                                                        **request_parameters):
         """Returns the network devices discovered for the given Discovery
         ID. Discovery ID can be obtained using the "Get
@@ -3037,10 +2812,6 @@ class NetworkDiscovery(object):
             task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -3054,7 +2825,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(task_id, basestring)
         check_type(id, basestring,
                    may_be_none=False)
@@ -3074,14 +2844,6 @@ class NetworkDiscovery(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_f6ac994f451ba011_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -3092,10 +2854,9 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_f6ac994f451ba011_v1_2_10', json_data)
 
@@ -3104,8 +2865,6 @@ class NetworkDiscovery(object):
                                order=None,
                                sort_by=None,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Returns global credential for the given credential sub type.
 
@@ -3118,10 +2877,6 @@ class NetworkDiscovery(object):
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -3135,7 +2890,6 @@ class NetworkDiscovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(credential_sub_type, basestring,
                    may_be_none=False)
         check_type(sort_by, basestring)
@@ -3159,14 +2913,6 @@ class NetworkDiscovery(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_ff816b8e435897eb_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -3177,9 +2923,8 @@ class NetworkDiscovery(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_ff816b8e435897eb_v1_2_10', json_data)

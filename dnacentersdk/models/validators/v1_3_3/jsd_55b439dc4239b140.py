@@ -59,8 +59,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "enablePasswordList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -74,8 +72,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "globalCredentialIdList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -89,8 +85,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "httpReadCredential": {
-                "description":
-                 "",
                 "properties": {
                 "comments": {
                 "description":
@@ -181,8 +175,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "httpWriteCredential": {
-                "description":
-                 "",
                 "properties": {
                 "comments": {
                 "description":
@@ -281,8 +273,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "ipFilterList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -332,8 +322,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "passwordList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -475,8 +463,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "userNameList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

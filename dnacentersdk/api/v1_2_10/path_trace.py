@@ -53,7 +53,8 @@ class PathTrace(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new PathTrace object with the provided RestSession.
+        """Initialize a new PathTrace
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -88,8 +89,6 @@ class PathTrace(object):
                                                  status=None,
                                                  task_id=None,
                                                  headers=None,
-                                                 payload=None,
-                                                 active_validation=True,
                                                  **request_parameters):
         """Returns a summary of all flow analyses stored. Results can be
         filtered by specified parameters.
@@ -116,10 +115,6 @@ class PathTrace(object):
             sort_by(basestring): Sort by this field.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -133,7 +128,6 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(periodic_refresh, bool)
         check_type(source_ip, basestring)
         check_type(dest_ip, basestring)
@@ -192,14 +186,6 @@ class PathTrace(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_55bc3bf94e38b6ff_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -210,18 +196,15 @@ class PathTrace(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_55bc3bf94e38b6ff_v1_2_10', json_data)
 
     def deletes_pathtrace_by_id(self,
                                 flow_analysis_id,
                                 headers=None,
-                                payload=None,
-                                active_validation=True,
                                 **request_parameters):
         """Deletes a flow analysis request by its id.
 
@@ -229,10 +212,6 @@ class PathTrace(object):
             flow_analysis_id(basestring): Flow analysis request id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -246,7 +225,6 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(flow_analysis_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -263,14 +241,6 @@ class PathTrace(object):
             'flowAnalysisId': flow_analysis_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_8a9d2b76443b914e_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -281,10 +251,9 @@ class PathTrace(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_8a9d2b76443b914e_v1_2_10', json_data)
 
@@ -397,8 +366,6 @@ class PathTrace(object):
     def retrieves_previous_pathtrace(self,
                                      flow_analysis_id,
                                      headers=None,
-                                     payload=None,
-                                     active_validation=True,
                                      **request_parameters):
         """Returns result of a previously requested flow analysis by its
         Flow Analysis id.
@@ -407,10 +374,6 @@ class PathTrace(object):
             flow_analysis_id(basestring): Flow analysis request id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -424,7 +387,6 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(flow_analysis_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -441,14 +403,6 @@ class PathTrace(object):
             'flowAnalysisId': flow_analysis_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_7ab9a8bd4f3b86a4_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -459,9 +413,8 @@ class PathTrace(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_7ab9a8bd4f3b86a4_v1_2_10', json_data)

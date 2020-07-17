@@ -56,6 +56,53 @@ class VersionError(dnacentersdkException):
     pass
 
 
+class DownloadFailure(dnacentersdkException):
+    """Errors returned in response to requests sent to the DNA Center APIs
+    with stream=True.
+
+    Several data attributes are available for inspection.
+    """
+    def __init__(self, response, exception):
+        assert isinstance(response, requests.Response)
+        assert isinstance(exception, Exception)
+
+        # Extended exception attributes
+        self.response = response
+        """The :class:`requests.Response` object returned from the API call."""
+
+        self.request = self.response.request
+        """The :class:`requests.PreparedRequest` of the API call."""
+
+        self.status_code = self.response.status_code
+        """The HTTP status code from the API response."""
+
+        self.status = self.response.reason
+        """The HTTP status from the API response."""
+
+        self.original_error = exception
+        """The original exception"""
+
+        self.raw = self.response.raw
+        """The raw value of the API response"""
+
+        self.message = "Check raw property to retrieve raw response."
+
+        super(DownloadFailure, self).__init__(
+            "[{status_code}]{status} - {message} : {original_error}".format(
+                status_code=self.status_code,
+                status=" " + self.status if self.status else "",
+                message=self.message,
+                original_error=self.original_error,
+            )
+        )
+
+    def __repr__(self):
+        return "<{exception_name} [{status_code}]>".format(
+            exception_name=self.__class__.__name__,
+            status_code=self.status_code,
+        )
+
+
 class ApiError(dnacentersdkException):
     """Errors returned in response to requests sent to the DNA Center APIs.
 

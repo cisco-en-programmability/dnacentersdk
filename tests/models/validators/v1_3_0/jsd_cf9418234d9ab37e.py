@@ -45,8 +45,6 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
             '''{
                 "properties": {
                 "response": {
-                "description":
-                 "",
                 "properties": {
                 "complete": {
                 "type": [

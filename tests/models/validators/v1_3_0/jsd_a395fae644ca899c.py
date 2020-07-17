@@ -45,8 +45,6 @@ class JSONSchemaValidatorA395Fae644Ca899C(object):
             '''{
                 "properties": {
                 "response": {
-                "description":
-                 "",
                 "properties": {
                 "flowAnalysisId": {
                 "description":

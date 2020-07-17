@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add default authentication profile in SDA Fabric data model.
+"""DNA Center Add default authentication profile data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -38,8 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorBca339D844C8A3C0(object):
-    """Add default authentication profile in SDA Fabric request schema
-    definition."""
+    """Add default authentication profile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBca339D844C8A3C0, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

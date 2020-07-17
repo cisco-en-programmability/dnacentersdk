@@ -53,7 +53,8 @@ class Pnp(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new Pnp object with the provided RestSession.
+        """Initialize a new Pnp
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -150,8 +151,6 @@ class Pnp(object):
                                             domain,
                                             name,
                                             headers=None,
-                                            payload=None,
-                                            active_validation=True,
                                             **request_parameters):
         """Returns the summary of devices synced from the given smart
         account & virtual account with PnP.
@@ -161,10 +160,6 @@ class Pnp(object):
             name(basestring): Virtual Account Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -178,7 +173,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(domain, basestring,
                    may_be_none=False)
         check_type(name, basestring,
@@ -198,14 +192,6 @@ class Pnp(object):
             'name': name,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_0a9c988445cb91c8_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -217,10 +203,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_0a9c988445cb91c8_v1_3_0', json_data)
 
@@ -341,8 +326,6 @@ class Pnp(object):
                                    domain,
                                    name,
                                    headers=None,
-                                   payload=None,
-                                   active_validation=True,
                                    **request_parameters):
         """Deregisters the specified smart account & virtual account info
         and the associated device information from the PnP
@@ -356,10 +339,6 @@ class Pnp(object):
             name(basestring): Virtual Account Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -373,7 +352,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(domain, basestring,
                    may_be_none=False)
         check_type(name, basestring,
@@ -395,14 +373,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_2499e9ad42e8ae5b_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -413,10 +383,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_2499e9ad42e8ae5b_v1_3_0', json_data)
 
@@ -772,18 +741,12 @@ class Pnp(object):
 
     def get_smart_account_list(self,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Returns the list of Smart Account domains.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -798,7 +761,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -812,14 +774,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_3cb24acb486b89d2_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -830,10 +784,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_3cb24acb486b89d2_v1_3_0', json_data)
 
@@ -1054,8 +1007,6 @@ class Pnp(object):
     def get_workflow_count(self,
                            name=None,
                            headers=None,
-                           payload=None,
-                           active_validation=True,
                            **request_parameters):
         """Returns the workflow count.
 
@@ -1063,10 +1014,6 @@ class Pnp(object):
             name(basestring): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1080,7 +1027,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -1097,14 +1043,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_7989f86846faaf99_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1115,18 +1053,15 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_7989f86846faaf99_v1_3_0', json_data)
 
     def get_virtual_account_list(self,
                                  domain,
                                  headers=None,
-                                 payload=None,
-                                 active_validation=True,
                                  **request_parameters):
         """Returns list of virtual accounts associated with the specified
         smart account.
@@ -1135,10 +1070,6 @@ class Pnp(object):
             domain(basestring): Smart Account Domain.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1153,7 +1084,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(domain, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -1170,14 +1100,6 @@ class Pnp(object):
             'domain': domain,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_70a479a6462a9496_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1189,27 +1111,20 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_70a479a6462a9496_v1_3_0', json_data)
 
     def get_pnp_global_settings(self,
                                 headers=None,
-                                payload=None,
-                                active_validation=True,
                                 **request_parameters):
         """Returns global PnP settings of the user.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1223,7 +1138,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1237,14 +1151,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_7e92f9eb46db8320_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1255,10 +1161,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_7e92f9eb46db8320_v1_3_0', json_data)
 
@@ -1728,8 +1633,6 @@ class Pnp(object):
     def delete_workflow_by_id(self,
                               id,
                               headers=None,
-                              payload=None,
-                              active_validation=True,
                               **request_parameters):
         """Deletes a workflow specified by id.
 
@@ -1737,10 +1640,6 @@ class Pnp(object):
             id(basestring): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1754,7 +1653,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -1770,14 +1668,6 @@ class Pnp(object):
         path_params = {
             'id': id,
         }
-
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_af8d7b0e470b8ae2_v1_3_0')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1789,18 +1679,15 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_af8d7b0e470b8ae2_v1_3_0', json_data)
 
     def delete_device_by_id_from_pnp(self,
                                      id,
                                      headers=None,
-                                     payload=None,
-                                     active_validation=True,
                                      **request_parameters):
         """Deletes specified device from PnP database.
 
@@ -1808,10 +1695,6 @@ class Pnp(object):
             id(basestring): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1825,7 +1708,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -1842,14 +1724,6 @@ class Pnp(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_cdab9b474899ae06_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1860,10 +1734,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_cdab9b474899ae06_v1_3_0', json_data)
 
@@ -1875,8 +1748,6 @@ class Pnp(object):
                       sort_order=None,
                       type=None,
                       headers=None,
-                      payload=None,
-                      active_validation=True,
                       **request_parameters):
         """Returns the list of workflows based on filter criteria. If a
         limit is not specified, it will default to return 50
@@ -1894,10 +1765,6 @@ class Pnp(object):
             name(basestring): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1912,7 +1779,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(limit, int)
         check_type(offset, int)
         check_type(sort, basestring)
@@ -1944,14 +1810,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_aeb4dad04a99bbe3_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1962,18 +1820,15 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_aeb4dad04a99bbe3_v1_3_0', json_data)
 
     def get_device_by_id(self,
                          id,
                          headers=None,
-                         payload=None,
-                         active_validation=True,
                          **request_parameters):
         """Returns device details specified by device id.
 
@@ -1981,10 +1836,6 @@ class Pnp(object):
             id(basestring): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1998,7 +1849,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -2015,14 +1865,6 @@ class Pnp(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_bab6c9e5440885cc_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2033,10 +1875,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_bab6c9e5440885cc_v1_3_0', json_data)
 
@@ -2056,8 +1897,6 @@ class Pnp(object):
                          workflow_id=None,
                          workflow_name=None,
                          headers=None,
-                         payload=None,
-                         active_validation=True,
                          **request_parameters):
         """Returns the device count based on filter criteria. This is
         useful for pagination.
@@ -2080,10 +1919,6 @@ class Pnp(object):
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2097,7 +1932,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(serial_number, basestring)
         check_type(state, basestring)
         check_type(onb_state, basestring)
@@ -2153,14 +1987,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_d9a1fa9c4068b23c_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2171,18 +1997,15 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_d9a1fa9c4068b23c_v1_3_0', json_data)
 
     def get_workflow_by_id(self,
                            id,
                            headers=None,
-                           payload=None,
-                           active_validation=True,
                            **request_parameters):
         """Returns a workflow specified by id.
 
@@ -2190,10 +2013,6 @@ class Pnp(object):
             id(basestring): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2207,7 +2026,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -2224,14 +2042,6 @@ class Pnp(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_80acb88e4ac9ac6d_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2242,10 +2052,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_80acb88e4ac9ac6d_v1_3_0', json_data)
 
@@ -2254,8 +2063,6 @@ class Pnp(object):
                            sort=None,
                            sort_order=None,
                            headers=None,
-                           payload=None,
-                           active_validation=True,
                            **request_parameters):
         """Returns history for a specific device. Serial number is a
         required parameter.
@@ -2268,10 +2075,6 @@ class Pnp(object):
                 Descending (des).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2285,7 +2088,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(serial_number, basestring,
                    may_be_none=False)
         check_type(sort, basestring)
@@ -2309,14 +2111,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_f09319674049a7d4_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2327,10 +2121,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_f09319674049a7d4_v1_3_0', json_data)
 
@@ -2354,8 +2147,6 @@ class Pnp(object):
                         workflow_id=None,
                         workflow_name=None,
                         headers=None,
-                        payload=None,
-                        active_validation=True,
                         **request_parameters):
         """Returns list of devices based on filter crieteria. If a limit is
         not specified, it will default to return 50 devices.
@@ -2386,10 +2177,6 @@ class Pnp(object):
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2403,7 +2190,6 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(limit, int)
         check_type(offset, int)
         check_type(sort, basestring)
@@ -2471,14 +2257,6 @@ class Pnp(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_e6b3db8046c99654_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -2489,10 +2267,9 @@ class Pnp(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_e6b3db8046c99654_v1_3_0', json_data)
 

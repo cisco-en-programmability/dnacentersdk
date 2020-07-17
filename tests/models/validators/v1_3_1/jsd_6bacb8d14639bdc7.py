@@ -45,8 +45,6 @@ class JSONSchemaValidator6BacB8D14639Bdc7(object):
             '''{
                 "properties": {
                 "response": {
-                "description":
-                 "",
                 "properties": {
                 "taskId": {},
                 "url": {

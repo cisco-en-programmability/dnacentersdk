@@ -45,8 +45,6 @@ class JSONSchemaValidator0B836B7B4B6A9Fd5(object):
             '''{
                 "properties": {
                 "deviceIdList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

@@ -105,8 +105,6 @@ class JSONSchemaValidator4Bb22Af046Fa8F08(object):
                 ]
                 },
                 "ipAddress": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -119,8 +117,6 @@ class JSONSchemaValidator4Bb22Af046Fa8F08(object):
                 ]
                 },
                 "merakiOrgId": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -256,8 +252,6 @@ class JSONSchemaValidator4Bb22Af046Fa8F08(object):
                 ]
                 },
                 "updateMgmtIPaddressList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "existMgmtIpAddress": {

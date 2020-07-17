@@ -53,7 +53,8 @@ class NonFabricWireless(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new NonFabricWireless object with the provided RestSession.
+        """Initialize a new NonFabricWireless
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -212,8 +213,6 @@ class NonFabricWireless(object):
     def get_wireless_profile(self,
                              profile_name=None,
                              headers=None,
-                             payload=None,
-                             active_validation=True,
                              **request_parameters):
         """Gets either one or all the wireless network profiles if no name
         is provided for network-profile.
@@ -222,10 +221,6 @@ class NonFabricWireless(object):
             profile_name(basestring): profileName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -240,7 +235,6 @@ class NonFabricWireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(profile_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -257,14 +251,6 @@ class NonFabricWireless(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_6896993e41b8bd7a_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -275,10 +261,9 @@ class NonFabricWireless(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_6896993e41b8bd7a_v1_3_0', json_data)
 
@@ -349,8 +334,6 @@ class NonFabricWireless(object):
     def delete_wireless_profile(self,
                                 wireless_profile_name,
                                 headers=None,
-                                payload=None,
-                                active_validation=True,
                                 **request_parameters):
         """Delete the Wireless Profile from DNAC whose name is provided.
 
@@ -359,10 +342,6 @@ class NonFabricWireless(object):
                 path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -376,7 +355,6 @@ class NonFabricWireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(wireless_profile_name, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -393,14 +371,6 @@ class NonFabricWireless(object):
             'wirelessProfileName': wireless_profile_name,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_ae86a8c14b5980b7_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -412,10 +382,9 @@ class NonFabricWireless(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_ae86a8c14b5980b7_v1_3_0', json_data)
 
@@ -592,8 +561,6 @@ class NonFabricWireless(object):
     def delete_enterprise_ssid(self,
                                ssid_name,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Deletes given enterprise SSID.
 
@@ -602,10 +569,6 @@ class NonFabricWireless(object):
                 deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -619,7 +582,6 @@ class NonFabricWireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(ssid_name, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -636,14 +598,6 @@ class NonFabricWireless(object):
             'ssidName': ssid_name,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_c7a6592b4b98a369_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -654,10 +608,9 @@ class NonFabricWireless(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_c7a6592b4b98a369_v1_3_0', json_data)
 
@@ -665,8 +618,6 @@ class NonFabricWireless(object):
                                   managed_aplocations,
                                   ssid_name,
                                   headers=None,
-                                  payload=None,
-                                  active_validation=True,
                                   **request_parameters):
         """Removes SSID for the given site hierarchy matching network
         profile, provision the device and deletes the SSID from
@@ -682,10 +633,6 @@ class NonFabricWireless(object):
                 without extra space.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -699,7 +646,6 @@ class NonFabricWireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(ssid_name, basestring,
                    may_be_none=False)
         check_type(managed_aplocations, basestring,
@@ -719,14 +665,6 @@ class NonFabricWireless(object):
             'managedAPLocations': managed_aplocations,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_cca098344a489dfa_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -738,18 +676,15 @@ class NonFabricWireless(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_cca098344a489dfa_v1_3_0', json_data)
 
     def get_enterprise_ssid(self,
                             ssid_name=None,
                             headers=None,
-                            payload=None,
-                            active_validation=True,
                             **request_parameters):
         """Gets either one or all the enterprise SSID.
 
@@ -760,10 +695,6 @@ class NonFabricWireless(object):
                 be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -778,7 +709,6 @@ class NonFabricWireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(ssid_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -795,14 +725,6 @@ class NonFabricWireless(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_cca519ba45ebb423_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -813,10 +735,9 @@ class NonFabricWireless(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_cca519ba45ebb423_v1_3_0', json_data)
 

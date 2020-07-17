@@ -53,7 +53,8 @@ class Tag(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new Tag object with the provided RestSession.
+        """Initialize a new Tag
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -152,8 +153,6 @@ class Tag(object):
                              level='0',
                              member_association_type=None,
                              headers=None,
-                             payload=None,
-                             active_validation=True,
                              **request_parameters):
         """Returns the number of members in a given tag.
 
@@ -165,10 +164,6 @@ class Tag(object):
             level(basestring): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -182,7 +177,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(member_type, basestring,
                    may_be_none=False)
         check_type(member_association_type, basestring)
@@ -209,14 +203,6 @@ class Tag(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_2e9db85840fbb1cf_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -227,10 +213,9 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_2e9db85840fbb1cf_v1_2_10', json_data)
 
@@ -331,18 +316,12 @@ class Tag(object):
 
     def get_tag_resource_types(self,
                                headers=None,
-                               payload=None,
-                               active_validation=True,
                                **request_parameters):
         """Returns list of supported resource types.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -356,7 +335,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -370,14 +348,6 @@ class Tag(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_4695090d403b8eaa_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -388,10 +358,9 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_4695090d403b8eaa_v1_2_10', json_data)
 
@@ -580,8 +549,6 @@ class Tag(object):
                       size=None,
                       system_tag=None,
                       headers=None,
-                      payload=None,
-                      active_validation=True,
                       **request_parameters):
         """Returns tag count.
 
@@ -595,10 +562,6 @@ class Tag(object):
             system_tag(basestring): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -612,7 +575,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(name, basestring)
         check_type(name_space, basestring)
         check_type(attribute_name, basestring)
@@ -644,14 +606,6 @@ class Tag(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_8091a9b84bfba53b_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -662,18 +616,15 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_8091a9b84bfba53b_v1_2_10', json_data)
 
     def delete_tag(self,
                    id,
                    headers=None,
-                   payload=None,
-                   active_validation=True,
                    **request_parameters):
         """Deletes a tag specified by id.
 
@@ -681,10 +632,6 @@ class Tag(object):
             id(basestring): Tag ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -698,7 +645,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -715,14 +661,6 @@ class Tag(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_429c28154bdaa13d_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -733,10 +671,9 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_429c28154bdaa13d_v1_2_10', json_data)
 
@@ -744,8 +681,6 @@ class Tag(object):
                           id,
                           member_id,
                           headers=None,
-                          payload=None,
-                          active_validation=True,
                           **request_parameters):
         """Removes Tag member from the tag specified by id.
 
@@ -755,10 +690,6 @@ class Tag(object):
                 tag.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -772,7 +703,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         check_type(member_id, basestring,
@@ -792,14 +722,6 @@ class Tag(object):
             'memberId': member_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_caa3ea704d78b37e_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -810,10 +732,9 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_caa3ea704d78b37e_v1_2_10', json_data)
 
@@ -825,8 +746,6 @@ class Tag(object):
                               member_association_type=None,
                               offset=None,
                               headers=None,
-                              payload=None,
-                              active_validation=True,
                               **request_parameters):
         """Returns tag members specified by id.
 
@@ -852,10 +771,6 @@ class Tag(object):
             level(basestring): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -869,7 +784,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(member_type, basestring,
                    may_be_none=False)
         check_type(offset, basestring)
@@ -902,14 +816,6 @@ class Tag(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_eab7abe048fb99ad_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -920,18 +826,15 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_eab7abe048fb99ad_v1_2_10', json_data)
 
     def get_tag_by_id(self,
                       id,
                       headers=None,
-                      payload=None,
-                      active_validation=True,
                       **request_parameters):
         """Returns tag specified by Id.
 
@@ -939,10 +842,6 @@ class Tag(object):
             id(basestring): Tag ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -956,7 +855,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -973,14 +871,6 @@ class Tag(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_c1a359b14c89b573_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -991,10 +881,9 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_c1a359b14c89b573_v1_2_10', json_data)
 
@@ -1011,8 +900,6 @@ class Tag(object):
                 sort_by=None,
                 system_tag=None,
                 headers=None,
-                payload=None,
-                active_validation=True,
                 **request_parameters):
         """Returns the tags for given filter criteria.
 
@@ -1038,10 +925,6 @@ class Tag(object):
             system_tag(basestring): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1055,7 +938,6 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(name, basestring)
         check_type(additional_info_name_space, basestring)
         check_type(additional_info_attributes, basestring)
@@ -1102,14 +984,6 @@ class Tag(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_ee9aab01487a8896_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1120,9 +994,8 @@ class Tag(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_ee9aab01487a8896_v1_2_10', json_data)

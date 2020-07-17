@@ -71,8 +71,6 @@ class JSONSchemaValidatorA4B6C87A4Ffb9Efa(object):
                 ]
                 },
                 "profile": {
-                "description":
-                 "",
                 "properties": {
                 "addressFqdn": {
                 "description":
@@ -147,17 +145,11 @@ class JSONSchemaValidatorA4B6C87A4Ffb9Efa(object):
                 ]
                 },
                 "syncResult": {
-                "description":
-                 "",
                 "properties": {
                 "syncList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "deviceSnList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

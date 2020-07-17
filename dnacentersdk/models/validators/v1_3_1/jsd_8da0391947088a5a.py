@@ -53,8 +53,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "aaaCredentials": {
-                "description":
-                 "",
                 "properties": {
                 "password": {
                 "description":
@@ -85,8 +83,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "defaultProfile": {
-                "description":
-                 "",
                 "properties": {
                 "cert": {
                 "description":
@@ -97,8 +93,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "fqdnAddresses": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -111,8 +105,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "ipAddresses": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -143,8 +135,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "savaMappingList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "autoSyncPeriod": {
@@ -174,8 +164,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "profile": {
-                "description":
-                 "",
                 "properties": {
                 "addressFqdn": {
                 "description":
@@ -250,17 +238,11 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncResult": {
-                "description":
-                 "",
                 "properties": {
                 "syncList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "deviceSnList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -378,8 +360,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "taskTimeOuts": {
-                "description":
-                 "",
                 "properties": {
                 "configTimeOut": {
                 "type": [

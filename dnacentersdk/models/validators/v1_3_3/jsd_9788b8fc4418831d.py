@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Updates an existing discovery by specified Id data model.
+"""DNA Center Updates discovery by Id data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -38,16 +38,13 @@ from builtins import *
 
 
 class JSONSchemaValidator9788B8Fc4418831D(object):
-    """Updates an existing discovery by specified Id request schema
-    definition."""
+    """Updates discovery by Id request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator9788B8Fc4418831D, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "properties": {
                 "attributeInfo": {
-                "description":
-                 "",
                 "properties": {},
                 "type": [
                 "object",
@@ -101,8 +98,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "globalCredentialIdList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -116,8 +111,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "httpReadCredential": {
-                "description":
-                 "",
                 "properties": {
                 "comments": {
                 "description":
@@ -208,8 +201,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "httpWriteCredential": {
-                "description":
-                 "",
                 "properties": {
                 "comments": {
                 "description":

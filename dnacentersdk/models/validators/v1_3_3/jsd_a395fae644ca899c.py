@@ -67,8 +67,6 @@ class JSONSchemaValidatorA395Fae644Ca899C(object):
                 ]
                 },
                 "inclusions": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

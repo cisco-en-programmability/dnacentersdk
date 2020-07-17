@@ -43,8 +43,6 @@ class JSONSchemaValidator3B9EF9674429Be4C(object):
         super(JSONSchemaValidator3B9EF9674429Be4C, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
-                "description":
-                 "",
                 "items": {},
                 "type": [
                 "array",

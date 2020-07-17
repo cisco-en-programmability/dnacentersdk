@@ -53,7 +53,8 @@ class Swim(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new Swim object with the provided RestSession.
+        """Initialize a new Swim
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -91,8 +92,6 @@ class Swim(object):
                                    sort_order='asc',
                                    version=None,
                                    headers=None,
-                                   payload=None,
-                                   active_validation=True,
                                    **request_parameters):
         """Returns software image list based on a filter criteria. For
         example: "filterbyName = cat3k%".
@@ -121,10 +120,6 @@ class Swim(object):
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -138,7 +133,6 @@ class Swim(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(image_uuid, basestring)
         check_type(name, basestring)
         check_type(family, basestring)
@@ -206,14 +200,6 @@ class Swim(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_0c8f7a0b49b9aedd_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -224,10 +210,9 @@ class Swim(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_0c8f7a0b49b9aedd_v1_3_0', json_data)
 
@@ -308,8 +293,6 @@ class Swim(object):
                                     third_party_image_family=None,
                                     third_party_vendor=None,
                                     headers=None,
-                                    payload=None,
-                                    active_validation=True,
                                     **request_parameters):
         """Fetches a software image from local file system and uploads to
         DNA Center. Supported software image files extensions
@@ -356,10 +339,6 @@ class Swim(object):
                 the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -371,9 +350,10 @@ class Swim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+            DownloadFailure: If was not able to download the raw
+            response to a file.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(is_third_party, bool)
         check_type(third_party_vendor, basestring)
         check_type(third_party_image_family, basestring)
@@ -402,14 +382,6 @@ class Swim(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_4dbe3bc743a891bc_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -429,8 +401,7 @@ class Swim(object):
                                            data=m_data,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
-                                           json=_payload)
+            json_data = self._session.post(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_4dbe3bc743a891bc_v1_3_0', json_data)
 

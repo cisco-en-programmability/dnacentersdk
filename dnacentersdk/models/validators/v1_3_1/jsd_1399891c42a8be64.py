@@ -54,8 +54,6 @@ class JSONSchemaValidator1399891C42A8Be64(object):
                 ]
                 },
                 "dynamicRules": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "memberType": {
@@ -67,12 +65,8 @@ class JSONSchemaValidator1399891C42A8Be64(object):
                 ]
                 },
                 "rules": {
-                "description":
-                 "",
                 "properties": {
                 "items": {
-                "description":
-                 "",
                 "items": {},
                 "type": [
                 "array",
@@ -105,8 +99,6 @@ class JSONSchemaValidator1399891C42A8Be64(object):
                 ]
                 },
                 "values": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

@@ -53,7 +53,8 @@ class TemplateProgrammer(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new TemplateProgrammer object with the provided RestSession.
+        """Initialize a new TemplateProgrammer
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -80,8 +81,6 @@ class TemplateProgrammer(object):
                                      software_type=None,
                                      software_version=None,
                                      headers=None,
-                                     payload=None,
-                                     active_validation=True,
                                      **request_parameters):
         """List the templates available.
 
@@ -100,10 +99,6 @@ class TemplateProgrammer(object):
                 parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -117,7 +112,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(project_id, basestring)
         check_type(software_type, basestring)
         check_type(software_version, basestring)
@@ -152,14 +146,6 @@ class TemplateProgrammer(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_01b09a254b9ab259_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -170,10 +156,9 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_01b09a254b9ab259_v1_2_10', json_data)
 
@@ -450,8 +435,6 @@ class TemplateProgrammer(object):
     def get_projects(self,
                      name=None,
                      headers=None,
-                     payload=None,
-                     active_validation=True,
                      **request_parameters):
         """Returns the projects in the system.
 
@@ -459,10 +442,6 @@ class TemplateProgrammer(object):
             name(basestring): Name of project to be searched.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -477,7 +456,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -494,14 +472,6 @@ class TemplateProgrammer(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_109d1b4f4289aecd_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -512,10 +482,9 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_109d1b4f4289aecd_v1_2_10', json_data)
 
@@ -624,8 +593,6 @@ class TemplateProgrammer(object):
                              template_id,
                              latest_version=None,
                              headers=None,
-                             payload=None,
-                             active_validation=True,
                              **request_parameters):
         """Returns details of the specified template.
 
@@ -634,10 +601,6 @@ class TemplateProgrammer(object):
             latest_version(bool): latestVersion query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -651,7 +614,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(latest_version, bool)
         check_type(template_id, basestring,
                    may_be_none=False)
@@ -671,14 +633,6 @@ class TemplateProgrammer(object):
             'templateId': template_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_83a3b9404cb88787_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -690,10 +644,9 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_83a3b9404cb88787_v1_2_10', json_data)
 
@@ -799,8 +752,6 @@ class TemplateProgrammer(object):
     def get_template_deployment_status(self,
                                        deployment_id,
                                        headers=None,
-                                       payload=None,
-                                       active_validation=True,
                                        **request_parameters):
         """Returns the status of a deployed template.
 
@@ -808,10 +759,6 @@ class TemplateProgrammer(object):
             deployment_id(basestring): deploymentId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -825,7 +772,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(deployment_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -842,14 +788,6 @@ class TemplateProgrammer(object):
             'deploymentId': deployment_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_9c9a785741cbb41f_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -861,18 +799,15 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_9c9a785741cbb41f_v1_2_10', json_data)
 
     def delete_template(self,
                         template_id,
                         headers=None,
-                        payload=None,
-                        active_validation=True,
                         **request_parameters):
         """Deletes an existing template.
 
@@ -880,10 +815,6 @@ class TemplateProgrammer(object):
             template_id(basestring): templateId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -897,7 +828,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(template_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -914,14 +844,6 @@ class TemplateProgrammer(object):
             'templateId': template_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_a7b42836408a8e74_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -933,10 +855,9 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_a7b42836408a8e74_v1_2_10', json_data)
 
@@ -1101,8 +1022,6 @@ class TemplateProgrammer(object):
     def delete_project(self,
                        project_id,
                        headers=None,
-                       payload=None,
-                       active_validation=True,
                        **request_parameters):
         """Deletes an existing Project.
 
@@ -1110,10 +1029,6 @@ class TemplateProgrammer(object):
             project_id(basestring): projectId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1127,7 +1042,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(project_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -1144,14 +1058,6 @@ class TemplateProgrammer(object):
             'projectId': project_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_d0a1abfa435b841d_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1163,10 +1069,9 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_d0a1abfa435b841d_v1_2_10', json_data)
 
@@ -1350,8 +1255,6 @@ class TemplateProgrammer(object):
     def get_template_versions(self,
                               template_id,
                               headers=None,
-                              payload=None,
-                              active_validation=True,
                               **request_parameters):
         """Returns the versions of a specified template.
 
@@ -1359,10 +1262,6 @@ class TemplateProgrammer(object):
             template_id(basestring): templateId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1377,7 +1276,6 @@ class TemplateProgrammer(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(template_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -1394,14 +1292,6 @@ class TemplateProgrammer(object):
             'templateId': template_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_c8bf6b65414a9bc7_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -1413,9 +1303,8 @@ class TemplateProgrammer(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_c8bf6b65414a9bc7_v1_2_10', json_data)

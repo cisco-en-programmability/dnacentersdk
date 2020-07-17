@@ -61,13 +61,9 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 ]
                 },
                 "deviceClaimList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "configList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "configId": {
@@ -79,8 +75,6 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 ]
                 },
                 "configParameters": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "key": {

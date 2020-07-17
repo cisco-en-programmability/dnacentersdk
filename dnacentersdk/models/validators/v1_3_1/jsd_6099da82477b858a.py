@@ -65,8 +65,6 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "memberTemplateDeploymentInfo": {
-                "description":
-                 "",
                 "items": {},
                 "type": [
                 "array",
@@ -74,8 +72,6 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "targetInfo": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "hostName": {
@@ -95,8 +91,6 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "params": {
-                "description":
-                 "",
                 "properties": {},
                 "type": [
                 "object",

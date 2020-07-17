@@ -45,8 +45,6 @@ class JSONSchemaValidatorD6B8Ca774739Adf4(object):
             '''{
                 "properties": {
                 "commands": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -68,8 +66,6 @@ class JSONSchemaValidatorD6B8Ca774739Adf4(object):
                 ]
                 },
                 "deviceUuids": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

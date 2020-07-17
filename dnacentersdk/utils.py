@@ -216,24 +216,25 @@ def check_response_code(response, expected_response_code):
         raise ApiError(response)
 
 
-def extract_and_parse_json(response, ignore=False):
+def extract_and_parse_json(response):
     """Extract and parse the JSON data from an requests.response object.
 
     Args:
         response(requests.response): The response object returned by a request
             using the requests package.
+        stream(bool): If the request was to get a raw response content
 
     Returns:
         The parsed JSON data as the appropriate native Python data type.
 
+    Raises:
+        JSONDecodeError: caused by json.loads
+        TypeError: caused by json.loads
     """
     try:
-        if ignore:
-            return None
-        else:
-            return json.loads(response.text, object_hook=OrderedDict)
-    except Exception:
-        return None
+        return json.loads(response.text, object_hook=OrderedDict)
+    except Exception as e:
+        raise e
 
 
 def json_dict(json_data):

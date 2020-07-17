@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Run read-only commands on devices to get their real-time
-configuration data model.
+"""DNA Center Run read-only commands on devices data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -39,16 +38,13 @@ from builtins import *
 
 
 class JSONSchemaValidatorD6B8Ca774739Adf4(object):
-    """Run read-only commands on devices to get their real-time
-    configuration request schema definition."""
+    """Run read-only commands on devices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD6B8Ca774739Adf4, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "properties": {
                 "response": {
-                "description":
-                 "",
                 "properties": {
                 "taskId": {},
                 "url": {

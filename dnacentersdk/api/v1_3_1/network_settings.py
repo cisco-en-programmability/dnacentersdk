@@ -53,7 +53,8 @@ class NetworkSettings(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new NetworkSettings object with the provided RestSession.
+        """Initialize a new NetworkSettings
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -74,8 +75,6 @@ class NetworkSettings(object):
     def get_device_credential_details(self,
                                       site_id=None,
                                       headers=None,
-                                      payload=None,
-                                      active_validation=True,
                                       **request_parameters):
         """API to get device credential details.
 
@@ -83,10 +82,6 @@ class NetworkSettings(object):
             site_id(basestring): site id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -100,7 +95,6 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(site_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -117,14 +111,6 @@ class NetworkSettings(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_899f08e7401b82dd_v1_3_1')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -135,27 +121,20 @@ class NetworkSettings(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_899f08e7401b82dd_v1_3_1', json_data)
 
     def get_global_pool(self,
                         headers=None,
-                        payload=None,
-                        active_validation=True,
                         **request_parameters):
         """API to get global pool.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -169,7 +148,6 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -183,14 +161,6 @@ class NetworkSettings(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_c0bca85643c8b58d_v1_3_1')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -201,18 +171,15 @@ class NetworkSettings(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_c0bca85643c8b58d_v1_3_1', json_data)
 
     def delete_device_credential(self,
                                  id,
                                  headers=None,
-                                 payload=None,
-                                 active_validation=True,
                                  **request_parameters):
         """Delete device credential.
 
@@ -220,10 +187,6 @@ class NetworkSettings(object):
             id(basestring): global credential id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -237,7 +200,6 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -254,14 +216,6 @@ class NetworkSettings(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_259eab3045988958_v1_3_1')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -272,18 +226,15 @@ class NetworkSettings(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_259eab3045988958_v1_3_1', json_data)
 
     def delete_sp_profile(self,
                           sp_profile_name,
                           headers=None,
-                          payload=None,
-                          active_validation=True,
                           **request_parameters):
         """API to delete Service Provider profile (QoS).
 
@@ -291,10 +242,6 @@ class NetworkSettings(object):
             sp_profile_name(basestring): sp profile name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -308,7 +255,6 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(sp_profile_name, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -325,14 +271,6 @@ class NetworkSettings(object):
             'sp-profile-name': sp_profile_name,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_4ca2db1143ebb5d7_v1_3_1')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -343,27 +281,20 @@ class NetworkSettings(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_4ca2db1143ebb5d7_v1_3_1', json_data)
 
     def get_service_provider_details(self,
                                      headers=None,
-                                     payload=None,
-                                     active_validation=True,
                                      **request_parameters):
         """API to get service provider details (QoS).
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -377,7 +308,6 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -391,14 +321,6 @@ class NetworkSettings(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_70847bdc4d89a437_v1_3_1')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -409,18 +331,15 @@ class NetworkSettings(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_70847bdc4d89a437_v1_3_1', json_data)
 
     def delete_global_ip_pool(self,
                               id,
                               headers=None,
-                              payload=None,
-                              active_validation=True,
                               **request_parameters):
         """API to delete global IP pool.
 
@@ -428,10 +347,6 @@ class NetworkSettings(object):
             id(basestring): global pool id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -445,7 +360,6 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -462,14 +376,6 @@ class NetworkSettings(object):
             'id': id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_1eaa8b2148ab81de_v1_3_1')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -480,9 +386,8 @@ class NetworkSettings(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_1eaa8b2148ab81de_v1_3_1', json_data)

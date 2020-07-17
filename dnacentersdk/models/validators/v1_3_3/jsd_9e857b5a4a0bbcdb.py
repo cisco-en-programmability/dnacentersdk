@@ -45,13 +45,9 @@ class JSONSchemaValidator9E857B5A4A0BBcdb(object):
             '''{
                 "properties": {
                 "deviceResetList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "configList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "configId": {
@@ -63,8 +59,6 @@ class JSONSchemaValidator9E857B5A4A0BBcdb(object):
                 ]
                 },
                 "configParameters": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "key": {

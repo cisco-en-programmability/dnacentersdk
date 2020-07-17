@@ -178,6 +178,5 @@ class CustomCaller(object):
         if original_response:
             return response
         else:
-            stream = kwargs.get('stream', None)
-            json_data = extract_and_parse_json(response, ignore=stream)
+            json_data = extract_and_parse_json(response)
             return self._object_factory('bpm_custom', json_data)

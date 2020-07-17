@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Adds border device in SDA Fabric data model.
+"""DNA Center Adds border device data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -38,7 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorBead7B3443B996A7(object):
-    """Adds border device in SDA Fabric request schema definition."""
+    """Adds border device request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBead7B3443B996A7, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

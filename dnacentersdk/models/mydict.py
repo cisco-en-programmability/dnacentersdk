@@ -136,8 +136,6 @@ class MyDict(dict):
     def get_dict(self):
         """Returns a <dict> of the <MyDict> object"""
 
-        # d_ = {}
-
         def _get_dict(member):
 
             if isinstance(member, (dict, MyDict)):
@@ -171,10 +169,33 @@ class MyDict(dict):
             else:
                 return member
 
-        # d_.update(**self)
-        # return d_
-
         return _get_dict(self)
+
+    def __getstate__(self):
+        """
+        Returns a <dict> of the <MyDict> object
+        - enables Pickle to work
+        """
+        # Uses the inherited 'copy' method from builtins.dict
+        return self.copy()
+
+    def __setstate__(self, state):
+        """
+        Replaces all <MyDict> items with the <dict> items
+        - enables Pickle to work
+        """
+        #  Uses the inherited
+        #  'copy', 'clear' and 'update' methods from builtins.dict.
+        current_state = self.copy()
+        #  Removes previous items
+        self.clear()
+        try:
+            #  Updates items
+            self.update(**state)
+        except Exception as e:
+            #  Restores items
+            self.update(**current_state)
+            raise e
 
 
 def mydict_data_factory(model, json_data):

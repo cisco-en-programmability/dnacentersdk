@@ -8,12 +8,12 @@ requests = ">=2.4.2"
 requests-toolbelt = ">=0.9.1"
 future = "*"
 fastjsonschema = ">=2.13"
-click = "==7.0"
 
 [dev-packages] # Here goes your package requirements for developing the application and its versions (which packaes you will use when developing the application)
 sphinx = ">=2.1.0"
 sphinx-rtd-theme = "*"
-pytest = "==4.6.1"
+pytest = "==5.4.3"
+pytest-rerunfailures = "==9.0"
 flake8 = "*"
 ipython = "*"
 readthedocs-sphinx-search = {git = "https://github.com/readthedocs/readthedocs-sphinx-search",ref = "master"}

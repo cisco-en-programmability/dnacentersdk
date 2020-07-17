@@ -59,8 +59,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "containingTemplates": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "composite": {
@@ -120,8 +118,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "deviceTypes": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "productFamily": {
@@ -230,8 +226,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "rollbackTemplateParams": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "binding": {
@@ -351,8 +345,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "range": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "id": {
@@ -393,8 +385,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "selection": {
-                "description":
-                 "",
                 "properties": {
                 "id": {
                 "description":
@@ -418,8 +408,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "selectionValues": {
-                "description":
-                 "",
                 "properties": {},
                 "type": [
                 "object",
@@ -469,8 +457,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "tags": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -492,8 +478,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "templateParams": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "binding": {
@@ -613,8 +597,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "range": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "id": {
@@ -655,8 +637,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "selection": {
-                "description":
-                 "",
                 "properties": {
                 "id": {
                 "description":
@@ -680,8 +660,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "selectionValues": {
-                "description":
-                 "",
                 "properties": {},
                 "type": [
                 "object",

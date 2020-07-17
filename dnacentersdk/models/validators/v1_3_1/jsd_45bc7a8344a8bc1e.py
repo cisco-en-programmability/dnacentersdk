@@ -45,13 +45,9 @@ class JSONSchemaValidator45Bc7A8344A8Bc1E(object):
             '''{
                 "properties": {
                 "memberToTags": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

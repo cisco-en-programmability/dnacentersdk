@@ -53,7 +53,8 @@ class FabricWired(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new FabricWired object with the provided RestSession.
+        """Initialize a new FabricWired
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -71,13 +72,11 @@ class FabricWired(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def gets_border_device_details_from_sda_fabric(self,
-                                                   device_ip_address,
-                                                   sda_border_device,
-                                                   headers=None,
-                                                   payload=None,
-                                                   active_validation=True,
-                                                   **request_parameters):
+    def gets_border_device_detail(self,
+                                  device_ip_address,
+                                  sda_border_device,
+                                  headers=None,
+                                  **request_parameters):
         """**Beta** - Gets border device detail from SDA Fabric.
 
         Args:
@@ -87,10 +86,6 @@ class FabricWired(object):
                 parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -104,7 +99,6 @@ class FabricWired(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(sda_border_device, basestring,
                    may_be_none=False)
         check_type(device_ip_address, basestring,
@@ -124,14 +118,6 @@ class FabricWired(object):
             'device-ip-address': device_ip_address,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_98a39bf4485a9871_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -143,19 +129,18 @@ class FabricWired(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_98a39bf4485a9871_v1_2_10', json_data)
 
-    def adds_border_device_in_sda_fabric(self,
-                                         sda_border_device,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def adds_border_device(self,
+                           sda_border_device,
+                           headers=None,
+                           payload=None,
+                           active_validation=True,
+                           **request_parameters):
         """Adds border device in SDA Fabric.
 
         Args:
@@ -226,13 +211,11 @@ class FabricWired(object):
 
         return self._object_factory('bpm_bead7b3443b996a7_v1_2_10', json_data)
 
-    def deletes_border_device_from_sda_fabric(self,
-                                              device_ip_address,
-                                              sda_border_device,
-                                              headers=None,
-                                              payload=None,
-                                              active_validation=True,
-                                              **request_parameters):
+    def deletes_border_device(self,
+                              device_ip_address,
+                              sda_border_device,
+                              headers=None,
+                              **request_parameters):
         """Deletes border device from SDA Fabric.
 
         Args:
@@ -242,10 +225,6 @@ class FabricWired(object):
                 parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -259,7 +238,6 @@ class FabricWired(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(sda_border_device, basestring,
                    may_be_none=False)
         check_type(device_ip_address, basestring,
@@ -285,14 +263,6 @@ class FabricWired(object):
             'device-ip-address': device_ip_address,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_cb81b93540baaab0_v1_2_10')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -304,9 +274,8 @@ class FabricWired(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload, headers=_headers)
+                                             headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params,
-                                             json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_cb81b93540baaab0_v1_2_10', json_data)

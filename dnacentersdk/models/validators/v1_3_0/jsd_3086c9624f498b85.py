@@ -150,8 +150,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "tasks": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -209,8 +207,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "workItemList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "command": {

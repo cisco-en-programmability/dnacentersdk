@@ -82,8 +82,6 @@ class JSONSchemaValidator00AeC9B1422AB27E(object):
                 ]
                 },
                 "tags": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

@@ -53,7 +53,8 @@ class Task(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new Task object with the provided RestSession.
+        """Initialize a new Task
+        object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
@@ -83,8 +84,6 @@ class Task(object):
                        start_time=None,
                        username=None,
                        headers=None,
-                       payload=None,
-                       active_validation=True,
                        **request_parameters):
         """Returns Task count.
 
@@ -109,10 +108,6 @@ class Task(object):
                 Id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -126,7 +121,6 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(start_time, basestring)
         check_type(end_time, basestring)
         check_type(data, basestring)
@@ -170,14 +164,6 @@ class Task(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_26b44ab04649a183_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -188,18 +174,15 @@ class Task(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_26b44ab04649a183_v1_3_0', json_data)
 
     def get_task_by_id(self,
                        task_id,
                        headers=None,
-                       payload=None,
-                       active_validation=True,
                        **request_parameters):
         """Returns a task by specified id.
 
@@ -207,10 +190,6 @@ class Task(object):
             task_id(basestring): UUID of the Task.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -224,7 +203,6 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(task_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -241,14 +219,6 @@ class Task(object):
             'taskId': task_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_a1a9387346ba92b1_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -259,10 +229,9 @@ class Task(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_a1a9387346ba92b1_v1_3_0', json_data)
 
@@ -282,8 +251,6 @@ class Task(object):
                   start_time=None,
                   username=None,
                   headers=None,
-                  payload=None,
-                  active_validation=True,
                   **request_parameters):
         """Returns task(s) based on filter criteria.
 
@@ -312,10 +279,6 @@ class Task(object):
             order(basestring): Sort order - asc or dsc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -329,7 +292,6 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(start_time, basestring)
         check_type(end_time, basestring)
         check_type(data, basestring)
@@ -385,14 +347,6 @@ class Task(object):
         path_params = {
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_e78bb8a2449b9eed_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -403,18 +357,15 @@ class Task(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_e78bb8a2449b9eed_v1_3_0', json_data)
 
     def get_task_tree(self,
                       task_id,
                       headers=None,
-                      payload=None,
-                      active_validation=True,
                       **request_parameters):
         """Returns a task with its children tasks by based on their id.
 
@@ -422,10 +373,6 @@ class Task(object):
             task_id(basestring): UUID of the Task.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -439,7 +386,6 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(task_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -456,14 +402,6 @@ class Task(object):
             'taskId': task_id,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_f5a269c44f2a95fa_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -474,10 +412,9 @@ class Task(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_f5a269c44f2a95fa_v1_3_0', json_data)
 
@@ -486,8 +423,6 @@ class Task(object):
                                 offset,
                                 operation_id,
                                 headers=None,
-                                payload=None,
-                                active_validation=True,
                                 **request_parameters):
         """Returns root tasks associated with an Operationid.
 
@@ -499,10 +434,6 @@ class Task(object):
                 {limit}, minimum value is 1.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -516,7 +447,6 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
         check_type(operation_id, basestring,
                    may_be_none=False)
         check_type(offset, int,
@@ -539,14 +469,6 @@ class Task(object):
             'limit': limit,
         }
 
-        _payload = {
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_e487f8d3481b94f2_v1_3_0')\
-                .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -558,9 +480,8 @@ class Task(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload, headers=_headers)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
-                                          json=_payload)
+            json_data = self._session.get(endpoint_full_url, params=params)
 
         return self._object_factory('bpm_e487f8d3481b94f2_v1_3_0', json_data)

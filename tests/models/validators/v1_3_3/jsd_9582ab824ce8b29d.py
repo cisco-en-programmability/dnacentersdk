@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add Port assignment for user device in SDA Fabric data model.
+"""DNA Center Add Port assignment for user device data model.
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -38,8 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidator9582Ab824Ce8B29D(object):
-    """Add Port assignment for user device in SDA Fabric request schema
-    definition."""
+    """Add Port assignment for user device request schema definition."""
     def __init__(self):
         super(JSONSchemaValidator9582Ab824Ce8B29D, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

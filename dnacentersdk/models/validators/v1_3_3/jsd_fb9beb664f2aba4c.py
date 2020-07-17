@@ -74,8 +74,6 @@ class JSONSchemaValidatorFb9BEb664F2ABa4C(object):
                 ]
                 },
                 "imageUuidList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -89,8 +87,6 @@ class JSONSchemaValidatorFb9BEb664F2ABa4C(object):
                 ]
                 },
                 "smuImageUuidList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

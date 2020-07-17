@@ -45,8 +45,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
             '''{
                 "properties": {
                 "attributeInfo": {
-                "description":
-                 "",
                 "properties": {},
                 "type": [
                 "object",
@@ -100,8 +98,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "globalCredentialIdList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -115,8 +111,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "httpReadCredential": {
-                "description":
-                 "",
                 "properties": {
                 "comments": {
                 "description":
@@ -207,8 +201,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "httpWriteCredential": {
-                "description":
-                 "",
                 "properties": {
                 "comments": {
                 "description":

@@ -8,6 +8,9 @@
 # Run all tests by default
 default=true
 module=('api')
+# Configure pytest-rerunfailures settings
+reruns=10
+delay=2
 
 # Process Script Arguments
 for i in ${@}; do
@@ -49,7 +52,7 @@ fi
 # Run the rate-limit tests
 if [ ${ratelimiting} ]; then
     echo "==> Running the rate-limit tests"
-    pytest -s -m "ratelimit"
+    pytest -s -m "ratelimit" --reruns $reruns --reruns-delay $delay
 fi
 
 # Run only one module test
@@ -58,13 +61,13 @@ if [ ${#module[@]} -gt 1 ]; then
     # Join array elements with ' or '
     modules=${temp// / or }
     echo "==> Running the "${modules}" tests"
-    pytest -s -m "${modules}"
+    pytest -s -m "${modules}" --reruns $reruns --reruns-delay $delay
     exit 0
 fi
 
 # Run the test suite
 if [ ${default} ] || [ ${tests} ]; then
     echo "==> Running the test suite"
-    pytest -s -m "not ratelimit"
+    pytest -s -m "not ratelimit" --reruns $reruns --reruns-delay $delay
 fi
 

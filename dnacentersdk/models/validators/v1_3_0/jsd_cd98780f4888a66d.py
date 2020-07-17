@@ -45,8 +45,6 @@ class JSONSchemaValidatorCd98780F4888A66D(object):
             '''{
                 "properties": {
                 "deviceUuids": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -80,8 +78,6 @@ class JSONSchemaValidatorCd98780F4888A66D(object):
                 ]
                 },
                 "parameters": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

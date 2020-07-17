@@ -27,7 +27,7 @@ By default, dnacentersdk will look for the following environment variables to cr
 
     * ``DNA_CENTER_DEBUG`` - Tells the SDK whether to log request and response information. Useful for debugging and seeing what is going on under the hood. Defaults to False.
 
-    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '1.3.0'.
+    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '2.1.1'.
 
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
       For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'

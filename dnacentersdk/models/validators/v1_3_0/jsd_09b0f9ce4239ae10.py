@@ -53,12 +53,8 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "deviceInfo": {
-                "description":
-                 "",
                 "properties": {
                 "aaaCredentials": {
-                "description":
-                 "",
                 "properties": {
                 "password": {
                 "description":
@@ -89,8 +85,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "addnMacAddrs": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -132,8 +126,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "capabilitiesSupported": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -174,8 +166,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "deviceSudiSerialNos": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -196,8 +186,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "featuresSupported": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -210,8 +198,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "fileSystemList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "freespace": {
@@ -280,8 +266,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "httpHeaders": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "key": {
@@ -329,14 +313,10 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "ipInterfaces": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "ipv4Address": {},
                 "ipv6AddressList": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "object"
@@ -401,8 +381,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "location": {
-                "description":
-                 "",
                 "properties": {
                 "address": {
                 "description":
@@ -477,8 +455,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "neighborLinks": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "localInterfaceName": {
@@ -599,8 +575,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "pnpProfileList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "createdBy": {
@@ -618,8 +592,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "primaryEndpoint": {
-                "description":
-                 "",
                 "properties": {
                 "certificate": {
                 "description":
@@ -668,8 +640,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "secondaryEndpoint": {
-                "description":
-                 "",
                 "properties": {
                 "certificate": {
                 "description":
@@ -727,8 +697,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "preWorkflowCliOuputs": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "cli": {
@@ -811,8 +779,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "stackInfo": {
-                "description":
-                 "",
                 "properties": {
                 "isFullRing": {
                 "type": [
@@ -821,8 +787,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "stackMemberList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "hardwareVersion": {
@@ -949,8 +913,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "validLicenseLevels": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -993,8 +955,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "tags": {},
                 "userSudiSerialNos": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",
@@ -1037,8 +997,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "runSummaryList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "details": {
@@ -1056,12 +1014,8 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "historyTaskInfo": {
-                "description":
-                 "",
                 "properties": {
                 "addnDetails": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "key": {
@@ -1115,8 +1069,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workItemList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "command": {
@@ -1196,8 +1148,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "systemResetWorkflow": {
-                "description":
-                 "",
                 "properties": {
                 "_id": {
                 "description":
@@ -1305,8 +1255,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tasks": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -1364,8 +1312,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workItemList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "command": {
@@ -1469,8 +1415,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "systemWorkflow": {
-                "description":
-                 "",
                 "properties": {
                 "_id": {
                 "description":
@@ -1578,8 +1522,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tasks": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -1637,8 +1579,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workItemList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "command": {
@@ -1756,8 +1696,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workflow": {
-                "description":
-                 "",
                 "properties": {
                 "_id": {
                 "description":
@@ -1865,8 +1803,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tasks": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -1924,8 +1860,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workItemList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "command": {
@@ -2029,12 +1963,8 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workflowParameters": {
-                "description":
-                 "",
                 "properties": {
                 "configList": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "configId": {
@@ -2046,8 +1976,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configParameters": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "key": {

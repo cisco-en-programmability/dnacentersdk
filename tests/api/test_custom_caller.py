@@ -23,8 +23,6 @@ SOFTWARE.
 """
 
 import pytest
-import dnacentersdk
-import time
 
 
 @pytest.fixture(scope="session")
@@ -57,19 +55,13 @@ def custom_caller(api):
     return api.custom_caller
 
 
-@pytest.mark.api
 @pytest.mark.custom_caller
 def test_custom_caller(custom_caller):
     original_credentials = custom_caller.get_global_credentials().response
-    time.sleep(10)
-    custom_caller.create_netconf_credentials()
-    time.sleep(10)
-    credentials_added = custom_caller.get_global_credentials().response
-    assert len(original_credentials) < len(credentials_added)
-    credential_id = list(filter(lambda x: x.netconfPort == '65533', credentials_added))[0].id
-    time.sleep(10)
-    custom_caller.delete_global_credentials_by_id(credential_id)
-    time.sleep(10)
+    assert original_credentials is not None
+    create_response = custom_caller.create_netconf_credentials()
+    assert create_response is not None
+    delete_response = custom_caller.delete_global_credentials_by_id('string')
+    assert delete_response is not None
     credentials_removed = custom_caller.get_global_credentials().response
-    credentials_removed = list(filter(lambda x: x.netconfPort == '65533', credentials_removed))
-    assert len(credentials_removed) == 0
+    assert credentials_removed is not None

@@ -45,8 +45,6 @@ class JSONSchemaValidator709FDa3C42B8877A(object):
             '''{
                 "properties": {
                 "siteUuids": {
-                "description":
-                 "",
                 "items": {
                 "type": [
                 "string",

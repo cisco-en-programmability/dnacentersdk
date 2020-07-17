@@ -61,8 +61,6 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "devices": {
-                "description":
-                 "",
                 "items": {
                 "properties": {
                 "deviceId": {

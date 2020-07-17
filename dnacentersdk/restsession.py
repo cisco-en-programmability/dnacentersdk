@@ -33,6 +33,7 @@ from __future__ import (
 from future import standard_library
 standard_library.install_aliases()
 
+import os
 import time
 import urllib.parse
 import warnings
@@ -46,6 +47,7 @@ from .config import (
 )
 from .exceptions import (
     dnacentersdkException, RateLimitError, RateLimitWarning, ApiError,
+    DownloadFailure,
 )
 from .response_codes import EXPECTED_RESPONSE_CODE
 from .utils import (
@@ -56,6 +58,7 @@ from requests_toolbelt.multipart import encoder
 import socket
 import errno
 import logging
+from requests.packages.urllib3.response import HTTPResponse
 
 
 logger = logging.getLogger(__name__)
@@ -387,20 +390,31 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['GET'])
         stream = kwargs.get('stream', None)
+
+        dirpath = kwargs.pop('dirpath', None)
+        if not(dirpath) or not(os.path.isdir(dirpath)):
+            dirpath = os.getcwd()
+
+        save_file = kwargs.pop('save_file', False)
         with self.request('GET', url, erc, 0, params=params, **kwargs) as resp:
-            if stream and 'fileName' in resp.headers:
-                try:
-                    file_name = resp.headers.get('fileName')
-                    with open(file_name, 'wb') as f:
-                        logger.debug('Downloading {} ...'.format(file_name))
-                        for chunk in resp.iter_content(chunk_size=1024):
-                            if chunk:
-                                f.write(chunk)
-                except Exception as e:
-                    raise dnacentersdkException('DownloadFailure {}'.format(e))
-                logger.debug('Downloaded')
-            return extract_and_parse_json(resp, ignore=stream)
-        return None
+            if stream:
+                if save_file and resp.headers and resp.headers.get('fileName'):
+                    try:
+                        file_name = os.path.join(dirpath,
+                                                 resp.headers.get('fileName'))
+                        with open(file_name, 'wb') as f:
+                            logger.debug('Downloading {}'.format(file_name))
+                            for chunk in resp.iter_content(chunk_size=1024):
+                                if chunk:
+                                    f.write(chunk)
+                    except Exception as e:
+                        raise DownloadFailure(resp, e)
+                    logger.debug('Downloaded')
+                # Needed to create a copy of the raw response
+                # if not copied it would not recover data and other properties
+                return HTTPResponse(resp.raw)
+            return extract_and_parse_json(resp)
+        return extract_and_parse_json(resp)
 
     def post(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a POST request.

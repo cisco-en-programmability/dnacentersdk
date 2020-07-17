@@ -118,14 +118,14 @@ from .v1_3_1.device_onboarding_pnp import \
     DeviceOnboardingPnp as DeviceOnboardingPnp_v1_3_1
 from .v1_3_1.devices import \
     Devices as Devices_v1_3_1
+from .v1_3_1.event_management import \
+    EventManagement as EventManagement_v1_3_1
 from .v1_3_1.fabric_wired import \
     FabricWired as FabricWired_v1_3_1
 from .v1_3_1.file import \
     File as File_v1_3_1
 from .v1_3_1.issues import \
     Issues as Issues_v1_3_1
-from .v1_3_1.network_discovery import \
-    NetworkDiscovery as NetworkDiscovery_v1_3_1
 from .v1_3_1.network_discovery import \
     NetworkDiscovery as NetworkDiscovery_v1_3_1
 from .v1_3_1.network_settings import \
@@ -162,6 +162,8 @@ from .v1_3_3.devices import \
     Devices as Devices_v1_3_3
 from .v1_3_3.discovery import \
     Discovery as Discovery_v1_3_3
+from .v1_3_3.event_management import \
+    EventManagement as EventManagement_v1_3_3
 from .v1_3_3.file import \
     File as File_v1_3_3
 from .v1_3_3.issues import \
@@ -188,6 +190,52 @@ from .v1_3_3.users import \
     Users as Users_v1_3_3
 from .v1_3_3.wireless import \
     Wireless as Wireless_v1_3_3
+from .v2_1_1.application_policy import \
+    ApplicationPolicy as ApplicationPolicy_v2_1_1
+from .v2_1_1.clients import \
+    Clients as Clients_v2_1_1
+from .v2_1_1.command_runner import \
+    CommandRunner as CommandRunner_v2_1_1
+from .v2_1_1.configuration_templates import \
+    ConfigurationTemplates as ConfigurationTemplates_v2_1_1
+from .v2_1_1.device_onboarding_pnp import \
+    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_1_1
+from .v2_1_1.device_replacement import \
+    DeviceReplacement as DeviceReplacement_v2_1_1
+from .v2_1_1.devices import \
+    Devices as Devices_v2_1_1
+from .v2_1_1.discovery import \
+    Discovery as Discovery_v2_1_1
+from .v2_1_1.event_management import \
+    EventManagement as EventManagement_v2_1_1
+from .v2_1_1.file import \
+    File as File_v2_1_1
+from .v2_1_1.itsm import \
+    Itsm as Itsm_v2_1_1
+from .v2_1_1.issues import \
+    Issues as Issues_v2_1_1
+from .v2_1_1.network_settings import \
+    NetworkSettings as NetworkSettings_v2_1_1
+from .v2_1_1.path_trace import \
+    PathTrace as PathTrace_v2_1_1
+from .v2_1_1.sda import \
+    Sda as Sda_v2_1_1
+from .v2_1_1.site_design import \
+    SiteDesign as SiteDesign_v2_1_1
+from .v2_1_1.sites import \
+    Sites as Sites_v2_1_1
+from .v2_1_1.software_image_management_swim import \
+    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_1_1
+from .v2_1_1.tag import \
+    Tag as Tag_v2_1_1
+from .v2_1_1.task import \
+    Task as Task_v2_1_1
+from .v2_1_1.topology import \
+    Topology as Topology_v2_1_1
+from .v2_1_1.users import \
+    Users as Users_v2_1_1
+from .v2_1_1.wireless import \
+    Wireless as Wireless_v2_1_1
 from .custom_caller import CustomCaller
 
 
@@ -283,7 +331,7 @@ class DNACenterAPI(object):
             VersionError: If the version is not provided via the version
                 argument or an environment variable, or it is not a
                 DNA Center API supported version
-                ['1.2.10', '1.3.0', '1.3.1', '1.3.3'].
+                ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1'].
 
         """
         check_type(base_url, basestring)
@@ -296,11 +344,11 @@ class DNACenterAPI(object):
         check_type(verify, (bool, basestring), may_be_none=False)
         check_type(version, basestring, may_be_none=False)
 
-        if version not in ['1.2.10', '1.3.0', '1.3.1', '1.3.3']:
+        if version not in ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1']:
             raise VersionError(
                 'Unknown API version, '
                 + 'known versions are {}'.format(
-                    '1.2.10, 1.3.0, 1.3.1 and 1.3.3.'
+                    '1.2.10, 1.3.0, 1.3.1, 1.3.3 and 2.1.1.'
                 )
             )
 
@@ -503,6 +551,10 @@ class DNACenterAPI(object):
                 Devices_v1_3_1(
                     self._session, object_factory, validator
                 )
+            self.event_management = \
+                EventManagement_v1_3_1(
+                    self._session, object_factory, validator
+                )
             self.fabric_wired = \
                 FabricWired_v1_3_1(
                     self._session, object_factory, validator
@@ -513,10 +565,6 @@ class DNACenterAPI(object):
                 )
             self.issues = \
                 Issues_v1_3_1(
-                    self._session, object_factory, validator
-                )
-            self.network_discovery = \
-                NetworkDiscovery_v1_3_1(
                     self._session, object_factory, validator
                 )
             self.network_discovery = \
@@ -592,6 +640,10 @@ class DNACenterAPI(object):
                 Discovery_v1_3_3(
                     self._session, object_factory, validator
                 )
+            self.event_management = \
+                EventManagement_v1_3_3(
+                    self._session, object_factory, validator
+                )
             self.file = \
                 File_v1_3_3(
                     self._session, object_factory, validator
@@ -642,6 +694,99 @@ class DNACenterAPI(object):
                 )
             self.wireless = \
                 Wireless_v1_3_3(
+                    self._session, object_factory, validator
+                )
+        if version == '2.1.1':
+            self.application_policy = \
+                ApplicationPolicy_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.clients = \
+                Clients_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.command_runner = \
+                CommandRunner_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.configuration_templates = \
+                ConfigurationTemplates_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.device_onboarding_pnp = \
+                DeviceOnboardingPnp_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.device_replacement = \
+                DeviceReplacement_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.devices = \
+                Devices_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.discovery = \
+                Discovery_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.event_management = \
+                EventManagement_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.file = \
+                File_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.itsm = \
+                Itsm_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.issues = \
+                Issues_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.network_settings = \
+                NetworkSettings_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.path_trace = \
+                PathTrace_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.sda = \
+                Sda_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.site_design = \
+                SiteDesign_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.sites = \
+                Sites_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.software_image_management_swim = \
+                SoftwareImageManagementSwim_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.tag = \
+                Tag_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.task = \
+                Task_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.topology = \
+                Topology_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.users = \
+                Users_v2_1_1(
+                    self._session, object_factory, validator
+                )
+            self.wireless = \
+                Wireless_v2_1_1(
                     self._session, object_factory, validator
                 )
         self.custom_caller = \
