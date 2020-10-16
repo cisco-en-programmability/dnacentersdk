@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.0', reason='version does not match')
 
 
-def is_valid_create_project(obj):
+def is_valid_create_project(json_schema_validate, obj):
     json_schema_validate('jsd_00aec9b1422ab27e_v1_3_0').validate(obj)
     return True
 
@@ -50,8 +48,9 @@ def create_project(api):
 
 
 @pytest.mark.template_programmer
-def test_create_project(api):
+def test_create_project(api, validator):
     assert is_valid_create_project(
+        validator,
         create_project(api)
     )
 
@@ -72,9 +71,10 @@ def create_project_default(api):
 
 
 @pytest.mark.template_programmer
-def test_create_project_default(api):
+def test_create_project_default(api, validator):
     try:
         assert is_valid_create_project(
+            validator,
             create_project_default(api)
         )
     except Exception as original_e:
@@ -82,7 +82,7 @@ def test_create_project_default(api):
             raise original_e
 
 
-def is_valid_gets_the_templates_available(obj):
+def is_valid_gets_the_templates_available(json_schema_validate, obj):
     json_schema_validate('jsd_01b09a254b9ab259_v1_3_0').validate(obj)
     return True
 
@@ -101,8 +101,9 @@ def gets_the_templates_available(api):
 
 
 @pytest.mark.template_programmer
-def test_gets_the_templates_available(api):
+def test_gets_the_templates_available(api, validator):
     assert is_valid_gets_the_templates_available(
+        validator,
         gets_the_templates_available(api)
     )
 
@@ -121,9 +122,10 @@ def gets_the_templates_available_default(api):
 
 
 @pytest.mark.template_programmer
-def test_gets_the_templates_available_default(api):
+def test_gets_the_templates_available_default(api, validator):
     try:
         assert is_valid_gets_the_templates_available(
+            validator,
             gets_the_templates_available_default(api)
         )
     except Exception as original_e:
@@ -131,7 +133,7 @@ def test_gets_the_templates_available_default(api):
             raise original_e
 
 
-def is_valid_get_projects(obj):
+def is_valid_get_projects(json_schema_validate, obj):
     json_schema_validate('jsd_109d1b4f4289aecd_v1_3_0').validate(obj)
     return True
 
@@ -144,8 +146,9 @@ def get_projects(api):
 
 
 @pytest.mark.template_programmer
-def test_get_projects(api):
+def test_get_projects(api, validator):
     assert is_valid_get_projects(
+        validator,
         get_projects(api)
     )
 
@@ -158,9 +161,10 @@ def get_projects_default(api):
 
 
 @pytest.mark.template_programmer
-def test_get_projects_default(api):
+def test_get_projects_default(api, validator):
     try:
         assert is_valid_get_projects(
+            validator,
             get_projects_default(api)
         )
     except Exception as original_e:
@@ -168,7 +172,7 @@ def test_get_projects_default(api):
             raise original_e
 
 
-def is_valid_deploy_template(obj):
+def is_valid_deploy_template(json_schema_validate, obj):
     json_schema_validate('jsd_6099da82477b858a_v1_3_0').validate(obj)
     return True
 
@@ -188,8 +192,9 @@ def deploy_template(api):
 
 
 @pytest.mark.template_programmer
-def test_deploy_template(api):
+def test_deploy_template(api, validator):
     assert is_valid_deploy_template(
+        validator,
         deploy_template(api)
     )
 
@@ -209,9 +214,10 @@ def deploy_template_default(api):
 
 
 @pytest.mark.template_programmer
-def test_deploy_template_default(api):
+def test_deploy_template_default(api, validator):
     try:
         assert is_valid_deploy_template(
+            validator,
             deploy_template_default(api)
         )
     except Exception as original_e:
@@ -219,7 +225,7 @@ def test_deploy_template_default(api):
             raise original_e
 
 
-def is_valid_update_template(obj):
+def is_valid_update_template(json_schema_validate, obj):
     json_schema_validate('jsd_7781fa0548a98342_v1_3_0').validate(obj)
     return True
 
@@ -255,8 +261,9 @@ def update_template(api):
 
 
 @pytest.mark.template_programmer
-def test_update_template(api):
+def test_update_template(api, validator):
     assert is_valid_update_template(
+        validator,
         update_template(api)
     )
 
@@ -292,9 +299,10 @@ def update_template_default(api):
 
 
 @pytest.mark.template_programmer
-def test_update_template_default(api):
+def test_update_template_default(api, validator):
     try:
         assert is_valid_update_template(
+            validator,
             update_template_default(api)
         )
     except Exception as original_e:
@@ -302,7 +310,7 @@ def test_update_template_default(api):
             raise original_e
 
 
-def is_valid_update_project(obj):
+def is_valid_update_project(json_schema_validate, obj):
     json_schema_validate('jsd_9480fa1f47ca9254_v1_3_0').validate(obj)
     return True
 
@@ -323,8 +331,9 @@ def update_project(api):
 
 
 @pytest.mark.template_programmer
-def test_update_project(api):
+def test_update_project(api, validator):
     assert is_valid_update_project(
+        validator,
         update_project(api)
     )
 
@@ -345,9 +354,10 @@ def update_project_default(api):
 
 
 @pytest.mark.template_programmer
-def test_update_project_default(api):
+def test_update_project_default(api, validator):
     try:
         assert is_valid_update_project(
+            validator,
             update_project_default(api)
         )
     except Exception as original_e:
@@ -355,7 +365,7 @@ def test_update_project_default(api):
             raise original_e
 
 
-def is_valid_delete_template(obj):
+def is_valid_delete_template(json_schema_validate, obj):
     json_schema_validate('jsd_a7b42836408a8e74_v1_3_0').validate(obj)
     return True
 
@@ -368,8 +378,9 @@ def delete_template(api):
 
 
 @pytest.mark.template_programmer
-def test_delete_template(api):
+def test_delete_template(api, validator):
     assert is_valid_delete_template(
+        validator,
         delete_template(api)
     )
 
@@ -382,9 +393,10 @@ def delete_template_default(api):
 
 
 @pytest.mark.template_programmer
-def test_delete_template_default(api):
+def test_delete_template_default(api, validator):
     try:
         assert is_valid_delete_template(
+            validator,
             delete_template_default(api)
         )
     except Exception as original_e:
@@ -392,7 +404,7 @@ def test_delete_template_default(api):
             raise original_e
 
 
-def is_valid_preview_template(obj):
+def is_valid_preview_template(json_schema_validate, obj):
     json_schema_validate('jsd_f393abe84989bb48_v1_3_0').validate(obj)
     return True
 
@@ -408,8 +420,9 @@ def preview_template(api):
 
 
 @pytest.mark.template_programmer
-def test_preview_template(api):
+def test_preview_template(api, validator):
     assert is_valid_preview_template(
+        validator,
         preview_template(api)
     )
 
@@ -425,9 +438,10 @@ def preview_template_default(api):
 
 
 @pytest.mark.template_programmer
-def test_preview_template_default(api):
+def test_preview_template_default(api, validator):
     try:
         assert is_valid_preview_template(
+            validator,
             preview_template_default(api)
         )
     except Exception as original_e:
@@ -435,7 +449,7 @@ def test_preview_template_default(api):
             raise original_e
 
 
-def is_valid_get_template_versions(obj):
+def is_valid_get_template_versions(json_schema_validate, obj):
     json_schema_validate('jsd_c8bf6b65414a9bc7_v1_3_0').validate(obj)
     return True
 
@@ -448,8 +462,9 @@ def get_template_versions(api):
 
 
 @pytest.mark.template_programmer
-def test_get_template_versions(api):
+def test_get_template_versions(api, validator):
     assert is_valid_get_template_versions(
+        validator,
         get_template_versions(api)
     )
 
@@ -462,9 +477,10 @@ def get_template_versions_default(api):
 
 
 @pytest.mark.template_programmer
-def test_get_template_versions_default(api):
+def test_get_template_versions_default(api, validator):
     try:
         assert is_valid_get_template_versions(
+            validator,
             get_template_versions_default(api)
         )
     except Exception as original_e:
@@ -472,7 +488,7 @@ def test_get_template_versions_default(api):
             raise original_e
 
 
-def is_valid_version_template(obj):
+def is_valid_version_template(json_schema_validate, obj):
     json_schema_validate('jsd_62b05b2c40a9b216_v1_3_0').validate(obj)
     return True
 
@@ -488,8 +504,9 @@ def version_template(api):
 
 
 @pytest.mark.template_programmer
-def test_version_template(api):
+def test_version_template(api, validator):
     assert is_valid_version_template(
+        validator,
         version_template(api)
     )
 
@@ -505,9 +522,10 @@ def version_template_default(api):
 
 
 @pytest.mark.template_programmer
-def test_version_template_default(api):
+def test_version_template_default(api, validator):
     try:
         assert is_valid_version_template(
+            validator,
             version_template_default(api)
         )
     except Exception as original_e:
@@ -515,7 +533,7 @@ def test_version_template_default(api):
             raise original_e
 
 
-def is_valid_get_template_details(obj):
+def is_valid_get_template_details(json_schema_validate, obj):
     json_schema_validate('jsd_83a3b9404cb88787_v1_3_0').validate(obj)
     return True
 
@@ -529,8 +547,9 @@ def get_template_details(api):
 
 
 @pytest.mark.template_programmer
-def test_get_template_details(api):
+def test_get_template_details(api, validator):
     assert is_valid_get_template_details(
+        validator,
         get_template_details(api)
     )
 
@@ -544,9 +563,10 @@ def get_template_details_default(api):
 
 
 @pytest.mark.template_programmer
-def test_get_template_details_default(api):
+def test_get_template_details_default(api, validator):
     try:
         assert is_valid_get_template_details(
+            validator,
             get_template_details_default(api)
         )
     except Exception as original_e:
@@ -554,7 +574,7 @@ def test_get_template_details_default(api):
             raise original_e
 
 
-def is_valid_create_template(obj):
+def is_valid_create_template(json_schema_validate, obj):
     json_schema_validate('jsd_f6b119ad4d4aaf16_v1_3_0').validate(obj)
     return True
 
@@ -591,8 +611,9 @@ def create_template(api):
 
 
 @pytest.mark.template_programmer
-def test_create_template(api):
+def test_create_template(api, validator):
     assert is_valid_create_template(
+        validator,
         create_template(api)
     )
 
@@ -629,9 +650,10 @@ def create_template_default(api):
 
 
 @pytest.mark.template_programmer
-def test_create_template_default(api):
+def test_create_template_default(api, validator):
     try:
         assert is_valid_create_template(
+            validator,
             create_template_default(api)
         )
     except Exception as original_e:
@@ -639,7 +661,7 @@ def test_create_template_default(api):
             raise original_e
 
 
-def is_valid_get_template_deployment_status(obj):
+def is_valid_get_template_deployment_status(json_schema_validate, obj):
     json_schema_validate('jsd_9c9a785741cbb41f_v1_3_0').validate(obj)
     return True
 
@@ -652,8 +674,9 @@ def get_template_deployment_status(api):
 
 
 @pytest.mark.template_programmer
-def test_get_template_deployment_status(api):
+def test_get_template_deployment_status(api, validator):
     assert is_valid_get_template_deployment_status(
+        validator,
         get_template_deployment_status(api)
     )
 
@@ -666,9 +689,10 @@ def get_template_deployment_status_default(api):
 
 
 @pytest.mark.template_programmer
-def test_get_template_deployment_status_default(api):
+def test_get_template_deployment_status_default(api, validator):
     try:
         assert is_valid_get_template_deployment_status(
+            validator,
             get_template_deployment_status_default(api)
         )
     except Exception as original_e:
@@ -676,7 +700,7 @@ def test_get_template_deployment_status_default(api):
             raise original_e
 
 
-def is_valid_delete_project(obj):
+def is_valid_delete_project(json_schema_validate, obj):
     json_schema_validate('jsd_d0a1abfa435b841d_v1_3_0').validate(obj)
     return True
 
@@ -689,8 +713,9 @@ def delete_project(api):
 
 
 @pytest.mark.template_programmer
-def test_delete_project(api):
+def test_delete_project(api, validator):
     assert is_valid_delete_project(
+        validator,
         delete_project(api)
     )
 
@@ -703,9 +728,10 @@ def delete_project_default(api):
 
 
 @pytest.mark.template_programmer
-def test_delete_project_default(api):
+def test_delete_project_default(api, validator):
     try:
         assert is_valid_delete_project(
+            validator,
             delete_project_default(api)
         )
     except Exception as original_e:

@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
-def is_valid_get_module_info_by_id(obj):
+def is_valid_get_module_info_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_0db7da744c0b83d8_v1_2_10').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_module_info_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_module_info_by_id(api):
+def test_get_module_info_by_id(api, validator):
     assert is_valid_get_module_info_by_id(
+        validator,
         get_module_info_by_id(api)
     )
 
@@ -56,9 +55,10 @@ def get_module_info_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_module_info_by_id_default(api):
+def test_get_module_info_by_id_default(api, validator):
     try:
         assert is_valid_get_module_info_by_id(
+            validator,
             get_module_info_by_id_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_module_info_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_device_interface_count(obj):
+def is_valid_get_device_interface_count(json_schema_validate, obj):
     json_schema_validate('jsd_3d923b184dc9a4ca_v1_2_10').validate(obj)
     return True
 
@@ -79,8 +79,9 @@ def get_device_interface_count(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_count(api):
+def test_get_device_interface_count(api, validator):
     assert is_valid_get_device_interface_count(
+        validator,
         get_device_interface_count(api)
     )
 
@@ -93,9 +94,10 @@ def get_device_interface_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_count_default(api):
+def test_get_device_interface_count_default(api, validator):
     try:
         assert is_valid_get_device_interface_count(
+            validator,
             get_device_interface_count_default(api)
         )
     except Exception as original_e:
@@ -103,7 +105,7 @@ def test_get_device_interface_count_default(api):
             raise original_e
 
 
-def is_valid_sync_devices_using_forcesync(obj):
+def is_valid_sync_devices_using_forcesync(json_schema_validate, obj):
     json_schema_validate('jsd_3b9ef9674429be4c_v1_2_10').validate(obj)
     return True
 
@@ -118,8 +120,9 @@ def sync_devices_using_forcesync(api):
 
 
 @pytest.mark.devices
-def test_sync_devices_using_forcesync(api):
+def test_sync_devices_using_forcesync(api, validator):
     assert is_valid_sync_devices_using_forcesync(
+        validator,
         sync_devices_using_forcesync(api)
     )
 
@@ -134,9 +137,10 @@ def sync_devices_using_forcesync_default(api):
 
 
 @pytest.mark.devices
-def test_sync_devices_using_forcesync_default(api):
+def test_sync_devices_using_forcesync_default(api, validator):
     try:
         assert is_valid_sync_devices_using_forcesync(
+            validator,
             sync_devices_using_forcesync_default(api)
         )
     except Exception as original_e:
@@ -144,7 +148,7 @@ def test_sync_devices_using_forcesync_default(api):
             raise original_e
 
 
-def is_valid_get_device_list(obj):
+def is_valid_get_device_list(json_schema_validate, obj):
     json_schema_validate('jsd_20b19b52464b8972_v1_2_10').validate(obj)
     return True
 
@@ -187,8 +191,9 @@ def get_device_list(api):
 
 
 @pytest.mark.devices
-def test_get_device_list(api):
+def test_get_device_list(api, validator):
     assert is_valid_get_device_list(
+        validator,
         get_device_list(api)
     )
 
@@ -231,9 +236,10 @@ def get_device_list_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_list_default(api):
+def test_get_device_list_default(api, validator):
     try:
         assert is_valid_get_device_list(
+            validator,
             get_device_list_default(api)
         )
     except Exception as original_e:
@@ -241,7 +247,7 @@ def test_get_device_list_default(api):
             raise original_e
 
 
-def is_valid_get_polling_interval_for_all_devices(obj):
+def is_valid_get_polling_interval_for_all_devices(json_schema_validate, obj):
     json_schema_validate('jsd_38bd0b884b89a785_v1_2_10').validate(obj)
     return True
 
@@ -254,8 +260,9 @@ def get_polling_interval_for_all_devices(api):
 
 
 @pytest.mark.devices
-def test_get_polling_interval_for_all_devices(api):
+def test_get_polling_interval_for_all_devices(api, validator):
     assert is_valid_get_polling_interval_for_all_devices(
+        validator,
         get_polling_interval_for_all_devices(api)
     )
 
@@ -268,9 +275,10 @@ def get_polling_interval_for_all_devices_default(api):
 
 
 @pytest.mark.devices
-def test_get_polling_interval_for_all_devices_default(api):
+def test_get_polling_interval_for_all_devices_default(api, validator):
     try:
         assert is_valid_get_polling_interval_for_all_devices(
+            validator,
             get_polling_interval_for_all_devices_default(api)
         )
     except Exception as original_e:
@@ -278,7 +286,7 @@ def test_get_polling_interval_for_all_devices_default(api):
             raise original_e
 
 
-def is_valid_get_device_count(obj):
+def is_valid_get_device_count(json_schema_validate, obj):
     json_schema_validate('jsd_5db21b8e43fab7d8_v1_2_10').validate(obj)
     return True
 
@@ -291,8 +299,9 @@ def get_device_count(api):
 
 
 @pytest.mark.devices
-def test_get_device_count(api):
+def test_get_device_count(api, validator):
     assert is_valid_get_device_count(
+        validator,
         get_device_count(api)
     )
 
@@ -305,9 +314,10 @@ def get_device_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_count_default(api):
+def test_get_device_count_default(api, validator):
     try:
         assert is_valid_get_device_count(
+            validator,
             get_device_count_default(api)
         )
     except Exception as original_e:
@@ -315,7 +325,7 @@ def test_get_device_count_default(api):
             raise original_e
 
 
-def is_valid_get_device_interface_vlans(obj):
+def is_valid_get_device_interface_vlans(json_schema_validate, obj):
     json_schema_validate('jsd_288df9494f2a9746_v1_2_10').validate(obj)
     return True
 
@@ -329,8 +339,9 @@ def get_device_interface_vlans(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_vlans(api):
+def test_get_device_interface_vlans(api, validator):
     assert is_valid_get_device_interface_vlans(
+        validator,
         get_device_interface_vlans(api)
     )
 
@@ -344,9 +355,10 @@ def get_device_interface_vlans_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_vlans_default(api):
+def test_get_device_interface_vlans_default(api, validator):
     try:
         assert is_valid_get_device_interface_vlans(
+            validator,
             get_device_interface_vlans_default(api)
         )
     except Exception as original_e:
@@ -354,7 +366,7 @@ def test_get_device_interface_vlans_default(api):
             raise original_e
 
 
-def is_valid_get_device_interfaces_by_specified_range(obj):
+def is_valid_get_device_interfaces_by_specified_range(json_schema_validate, obj):
     json_schema_validate('jsd_349c888443b89a58_v1_2_10').validate(obj)
     return True
 
@@ -369,8 +381,9 @@ def get_device_interfaces_by_specified_range(api):
 
 
 @pytest.mark.devices
-def test_get_device_interfaces_by_specified_range(api):
+def test_get_device_interfaces_by_specified_range(api, validator):
     assert is_valid_get_device_interfaces_by_specified_range(
+        validator,
         get_device_interfaces_by_specified_range(api)
     )
 
@@ -385,9 +398,10 @@ def get_device_interfaces_by_specified_range_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interfaces_by_specified_range_default(api):
+def test_get_device_interfaces_by_specified_range_default(api, validator):
     try:
         assert is_valid_get_device_interfaces_by_specified_range(
+            validator,
             get_device_interfaces_by_specified_range_default(api)
         )
     except Exception as original_e:
@@ -395,7 +409,7 @@ def test_get_device_interfaces_by_specified_range_default(api):
             raise original_e
 
 
-def is_valid_delete_device_by_id(obj):
+def is_valid_delete_device_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_1c894b5848eab214_v1_2_10').validate(obj)
     return True
 
@@ -409,8 +423,9 @@ def delete_device_by_id(api):
 
 
 @pytest.mark.devices
-def test_delete_device_by_id(api):
+def test_delete_device_by_id(api, validator):
     assert is_valid_delete_device_by_id(
+        validator,
         delete_device_by_id(api)
     )
 
@@ -424,9 +439,10 @@ def delete_device_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_delete_device_by_id_default(api):
+def test_delete_device_by_id_default(api, validator):
     try:
         assert is_valid_delete_device_by_id(
+            validator,
             delete_device_by_id_default(api)
         )
     except Exception as original_e:
@@ -434,7 +450,7 @@ def test_delete_device_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_device_config_by_id(obj):
+def is_valid_get_device_config_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_84b33a9e480abcaf_v1_2_10').validate(obj)
     return True
 
@@ -447,8 +463,9 @@ def get_device_config_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_by_id(api):
+def test_get_device_config_by_id(api, validator):
     assert is_valid_get_device_config_by_id(
+        validator,
         get_device_config_by_id(api)
     )
 
@@ -461,9 +478,10 @@ def get_device_config_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_by_id_default(api):
+def test_get_device_config_by_id_default(api, validator):
     try:
         assert is_valid_get_device_config_by_id(
+            validator,
             get_device_config_by_id_default(api)
         )
     except Exception as original_e:
@@ -471,7 +489,7 @@ def test_get_device_config_by_id_default(api):
             raise original_e
 
 
-def is_valid_add_device(obj):
+def is_valid_add_device(json_schema_validate, obj):
     json_schema_validate('jsd_4bb22af046fa8f08_v1_2_10').validate(obj)
     return True
 
@@ -512,8 +530,9 @@ def add_device(api):
 
 
 @pytest.mark.devices
-def test_add_device(api):
+def test_add_device(api, validator):
     assert is_valid_add_device(
+        validator,
         add_device(api)
     )
 
@@ -554,9 +573,10 @@ def add_device_default(api):
 
 
 @pytest.mark.devices
-def test_add_device_default(api):
+def test_add_device_default(api, validator):
     try:
         assert is_valid_add_device(
+            validator,
             add_device_default(api)
         )
     except Exception as original_e:
@@ -564,7 +584,7 @@ def test_add_device_default(api):
             raise original_e
 
 
-def is_valid_get_device_config_count(obj):
+def is_valid_get_device_config_count(json_schema_validate, obj):
     json_schema_validate('jsd_888f585c49b88441_v1_2_10').validate(obj)
     return True
 
@@ -577,8 +597,9 @@ def get_device_config_count(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_count(api):
+def test_get_device_config_count(api, validator):
     assert is_valid_get_device_config_count(
+        validator,
         get_device_config_count(api)
     )
 
@@ -591,9 +612,10 @@ def get_device_config_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_count_default(api):
+def test_get_device_config_count_default(api, validator):
     try:
         assert is_valid_get_device_config_count(
+            validator,
             get_device_config_count_default(api)
         )
     except Exception as original_e:
@@ -601,7 +623,7 @@ def test_get_device_config_count_default(api):
             raise original_e
 
 
-def is_valid_get_interface_details(obj):
+def is_valid_get_interface_details(json_schema_validate, obj):
     json_schema_validate('jsd_4eb56a614cc9a2d2_v1_2_10').validate(obj)
     return True
 
@@ -615,8 +637,9 @@ def get_interface_details(api):
 
 
 @pytest.mark.devices
-def test_get_interface_details(api):
+def test_get_interface_details(api, validator):
     assert is_valid_get_interface_details(
+        validator,
         get_interface_details(api)
     )
 
@@ -630,9 +653,10 @@ def get_interface_details_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_details_default(api):
+def test_get_interface_details_default(api, validator):
     try:
         assert is_valid_get_interface_details(
+            validator,
             get_interface_details_default(api)
         )
     except Exception as original_e:
@@ -640,7 +664,7 @@ def test_get_interface_details_default(api):
             raise original_e
 
 
-def is_valid_get_polling_interval_by_id(obj):
+def is_valid_get_polling_interval_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_82918a1b4d289c5c_v1_2_10').validate(obj)
     return True
 
@@ -653,8 +677,9 @@ def get_polling_interval_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_polling_interval_by_id(api):
+def test_get_polling_interval_by_id(api, validator):
     assert is_valid_get_polling_interval_by_id(
+        validator,
         get_polling_interval_by_id(api)
     )
 
@@ -667,9 +692,10 @@ def get_polling_interval_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_polling_interval_by_id_default(api):
+def test_get_polling_interval_by_id_default(api, validator):
     try:
         assert is_valid_get_polling_interval_by_id(
+            validator,
             get_polling_interval_by_id_default(api)
         )
     except Exception as original_e:
@@ -677,7 +703,7 @@ def test_get_polling_interval_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_module_count(obj):
+def is_valid_get_module_count(json_schema_validate, obj):
     json_schema_validate('jsd_8db939744649a782_v1_2_10').validate(obj)
     return True
 
@@ -694,8 +720,9 @@ def get_module_count(api):
 
 
 @pytest.mark.devices
-def test_get_module_count(api):
+def test_get_module_count(api, validator):
     assert is_valid_get_module_count(
+        validator,
         get_module_count(api)
     )
 
@@ -712,9 +739,10 @@ def get_module_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_module_count_default(api):
+def test_get_module_count_default(api, validator):
     try:
         assert is_valid_get_module_count(
+            validator,
             get_module_count_default(api)
         )
     except Exception as original_e:
@@ -722,7 +750,7 @@ def test_get_module_count_default(api):
             raise original_e
 
 
-def is_valid_get_device_interface_count_by_id(obj):
+def is_valid_get_device_interface_count_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_5b8639224cd88ea7_v1_2_10').validate(obj)
     return True
 
@@ -735,8 +763,9 @@ def get_device_interface_count_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_count_by_id(api):
+def test_get_device_interface_count_by_id(api, validator):
     assert is_valid_get_device_interface_count_by_id(
+        validator,
         get_device_interface_count_by_id(api)
     )
 
@@ -749,9 +778,10 @@ def get_device_interface_count_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_count_by_id_default(api):
+def test_get_device_interface_count_by_id_default(api, validator):
     try:
         assert is_valid_get_device_interface_count_by_id(
+            validator,
             get_device_interface_count_by_id_default(api)
         )
     except Exception as original_e:
@@ -759,7 +789,7 @@ def test_get_device_interface_count_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_organization_list_for_meraki(obj):
+def is_valid_get_organization_list_for_meraki(json_schema_validate, obj):
     json_schema_validate('jsd_84b37ae54c59ab28_v1_2_10').validate(obj)
     return True
 
@@ -772,8 +802,9 @@ def get_organization_list_for_meraki(api):
 
 
 @pytest.mark.devices
-def test_get_organization_list_for_meraki(api):
+def test_get_organization_list_for_meraki(api, validator):
     assert is_valid_get_organization_list_for_meraki(
+        validator,
         get_organization_list_for_meraki(api)
     )
 
@@ -786,9 +817,10 @@ def get_organization_list_for_meraki_default(api):
 
 
 @pytest.mark.devices
-def test_get_organization_list_for_meraki_default(api):
+def test_get_organization_list_for_meraki_default(api, validator):
     try:
         assert is_valid_get_organization_list_for_meraki(
+            validator,
             get_organization_list_for_meraki_default(api)
         )
     except Exception as original_e:
@@ -796,7 +828,7 @@ def test_get_organization_list_for_meraki_default(api):
             raise original_e
 
 
-def is_valid_get_ospf_interfaces(obj):
+def is_valid_get_ospf_interfaces(json_schema_validate, obj):
     json_schema_validate('jsd_70ad397649e9b4d3_v1_2_10').validate(obj)
     return True
 
@@ -809,8 +841,9 @@ def get_ospf_interfaces(api):
 
 
 @pytest.mark.devices
-def test_get_ospf_interfaces(api):
+def test_get_ospf_interfaces(api, validator):
     assert is_valid_get_ospf_interfaces(
+        validator,
         get_ospf_interfaces(api)
     )
 
@@ -823,9 +856,10 @@ def get_ospf_interfaces_default(api):
 
 
 @pytest.mark.devices
-def test_get_ospf_interfaces_default(api):
+def test_get_ospf_interfaces_default(api, validator):
     try:
         assert is_valid_get_ospf_interfaces(
+            validator,
             get_ospf_interfaces_default(api)
         )
     except Exception as original_e:
@@ -833,7 +867,7 @@ def test_get_ospf_interfaces_default(api):
             raise original_e
 
 
-def is_valid_get_functional_capability_by_id(obj):
+def is_valid_get_functional_capability_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_81bb4804405a8d2f_v1_2_10').validate(obj)
     return True
 
@@ -846,8 +880,9 @@ def get_functional_capability_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_functional_capability_by_id(api):
+def test_get_functional_capability_by_id(api, validator):
     assert is_valid_get_functional_capability_by_id(
+        validator,
         get_functional_capability_by_id(api)
     )
 
@@ -860,9 +895,10 @@ def get_functional_capability_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_functional_capability_by_id_default(api):
+def test_get_functional_capability_by_id_default(api, validator):
     try:
         assert is_valid_get_functional_capability_by_id(
+            validator,
             get_functional_capability_by_id_default(api)
         )
     except Exception as original_e:
@@ -870,7 +906,7 @@ def test_get_functional_capability_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_isis_interfaces(obj):
+def is_valid_get_isis_interfaces(json_schema_validate, obj):
     json_schema_validate('jsd_84ad8b0e42cab48a_v1_2_10').validate(obj)
     return True
 
@@ -883,8 +919,9 @@ def get_isis_interfaces(api):
 
 
 @pytest.mark.devices
-def test_get_isis_interfaces(api):
+def test_get_isis_interfaces(api, validator):
     assert is_valid_get_isis_interfaces(
+        validator,
         get_isis_interfaces(api)
     )
 
@@ -897,9 +934,10 @@ def get_isis_interfaces_default(api):
 
 
 @pytest.mark.devices
-def test_get_isis_interfaces_default(api):
+def test_get_isis_interfaces_default(api, validator):
     try:
         assert is_valid_get_isis_interfaces(
+            validator,
             get_isis_interfaces_default(api)
         )
     except Exception as original_e:
@@ -907,7 +945,7 @@ def test_get_isis_interfaces_default(api):
             raise original_e
 
 
-def is_valid_get_device_config_for_all_devices(obj):
+def is_valid_get_device_config_for_all_devices(json_schema_validate, obj):
     json_schema_validate('jsd_b7bcaa084e2b90d0_v1_2_10').validate(obj)
     return True
 
@@ -920,8 +958,9 @@ def get_device_config_for_all_devices(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_for_all_devices(api):
+def test_get_device_config_for_all_devices(api, validator):
     assert is_valid_get_device_config_for_all_devices(
+        validator,
         get_device_config_for_all_devices(api)
     )
 
@@ -934,9 +973,10 @@ def get_device_config_for_all_devices_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_for_all_devices_default(api):
+def test_get_device_config_for_all_devices_default(api, validator):
     try:
         assert is_valid_get_device_config_for_all_devices(
+            validator,
             get_device_config_for_all_devices_default(api)
         )
     except Exception as original_e:
@@ -944,7 +984,7 @@ def test_get_device_config_for_all_devices_default(api):
             raise original_e
 
 
-def is_valid_update_device_role(obj):
+def is_valid_update_device_role(json_schema_validate, obj):
     json_schema_validate('jsd_b9855ad54ae98156_v1_2_10').validate(obj)
     return True
 
@@ -961,8 +1001,9 @@ def update_device_role(api):
 
 
 @pytest.mark.devices
-def test_update_device_role(api):
+def test_update_device_role(api, validator):
     assert is_valid_update_device_role(
+        validator,
         update_device_role(api)
     )
 
@@ -979,9 +1020,10 @@ def update_device_role_default(api):
 
 
 @pytest.mark.devices
-def test_update_device_role_default(api):
+def test_update_device_role_default(api, validator):
     try:
         assert is_valid_update_device_role(
+            validator,
             update_device_role_default(api)
         )
     except Exception as original_e:
@@ -989,7 +1031,7 @@ def test_update_device_role_default(api):
             raise original_e
 
 
-def is_valid_get_interface_info_by_id(obj):
+def is_valid_get_interface_info_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_ba9dc85b4b8a9a17_v1_2_10').validate(obj)
     return True
 
@@ -1002,8 +1044,9 @@ def get_interface_info_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_interface_info_by_id(api):
+def test_get_interface_info_by_id(api, validator):
     assert is_valid_get_interface_info_by_id(
+        validator,
         get_interface_info_by_id(api)
     )
 
@@ -1016,9 +1059,10 @@ def get_interface_info_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_info_by_id_default(api):
+def test_get_interface_info_by_id_default(api, validator):
     try:
         assert is_valid_get_interface_info_by_id(
+            validator,
             get_interface_info_by_id_default(api)
         )
     except Exception as original_e:
@@ -1026,7 +1070,7 @@ def test_get_interface_info_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_interface_by_ip(obj):
+def is_valid_get_interface_by_ip(json_schema_validate, obj):
     json_schema_validate('jsd_cd8469e647caab0e_v1_2_10').validate(obj)
     return True
 
@@ -1039,8 +1083,9 @@ def get_interface_by_ip(api):
 
 
 @pytest.mark.devices
-def test_get_interface_by_ip(api):
+def test_get_interface_by_ip(api, validator):
     assert is_valid_get_interface_by_ip(
+        validator,
         get_interface_by_ip(api)
     )
 
@@ -1053,9 +1098,10 @@ def get_interface_by_ip_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_by_ip_default(api):
+def test_get_interface_by_ip_default(api, validator):
     try:
         assert is_valid_get_interface_by_ip(
+            validator,
             get_interface_by_ip_default(api)
         )
     except Exception as original_e:
@@ -1063,7 +1109,7 @@ def test_get_interface_by_ip_default(api):
             raise original_e
 
 
-def is_valid_get_network_device_by_ip(obj):
+def is_valid_get_network_device_by_ip(json_schema_validate, obj):
     json_schema_validate('jsd_d0a4b88145aabb51_v1_2_10').validate(obj)
     return True
 
@@ -1076,8 +1122,9 @@ def get_network_device_by_ip(api):
 
 
 @pytest.mark.devices
-def test_get_network_device_by_ip(api):
+def test_get_network_device_by_ip(api, validator):
     assert is_valid_get_network_device_by_ip(
+        validator,
         get_network_device_by_ip(api)
     )
 
@@ -1090,9 +1137,10 @@ def get_network_device_by_ip_default(api):
 
 
 @pytest.mark.devices
-def test_get_network_device_by_ip_default(api):
+def test_get_network_device_by_ip_default(api, validator):
     try:
         assert is_valid_get_network_device_by_ip(
+            validator,
             get_network_device_by_ip_default(api)
         )
     except Exception as original_e:
@@ -1100,7 +1148,7 @@ def test_get_network_device_by_ip_default(api):
             raise original_e
 
 
-def is_valid_get_device_summary(obj):
+def is_valid_get_device_summary(json_schema_validate, obj):
     json_schema_validate('jsd_819f9aa54feab7bf_v1_2_10').validate(obj)
     return True
 
@@ -1113,8 +1161,9 @@ def get_device_summary(api):
 
 
 @pytest.mark.devices
-def test_get_device_summary(api):
+def test_get_device_summary(api, validator):
     assert is_valid_get_device_summary(
+        validator,
         get_device_summary(api)
     )
 
@@ -1127,9 +1176,10 @@ def get_device_summary_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_summary_default(api):
+def test_get_device_summary_default(api, validator):
     try:
         assert is_valid_get_device_summary(
+            validator,
             get_device_summary_default(api)
         )
     except Exception as original_e:
@@ -1137,7 +1187,7 @@ def test_get_device_summary_default(api):
             raise original_e
 
 
-def is_valid_get_device_by_id(obj):
+def is_valid_get_device_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_8fa8eb404a4a8d96_v1_2_10').validate(obj)
     return True
 
@@ -1150,8 +1200,9 @@ def get_device_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_device_by_id(api):
+def test_get_device_by_id(api, validator):
     assert is_valid_get_device_by_id(
+        validator,
         get_device_by_id(api)
     )
 
@@ -1164,9 +1215,10 @@ def get_device_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_by_id_default(api):
+def test_get_device_by_id_default(api, validator):
     try:
         assert is_valid_get_device_by_id(
+            validator,
             get_device_by_id_default(api)
         )
     except Exception as original_e:
@@ -1174,7 +1226,7 @@ def test_get_device_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_all_interfaces(obj):
+def is_valid_get_all_interfaces(json_schema_validate, obj):
     json_schema_validate('jsd_f5947a4c439a8bf0_v1_2_10').validate(obj)
     return True
 
@@ -1188,8 +1240,9 @@ def get_all_interfaces(api):
 
 
 @pytest.mark.devices
-def test_get_all_interfaces(api):
+def test_get_all_interfaces(api, validator):
     assert is_valid_get_all_interfaces(
+        validator,
         get_all_interfaces(api)
     )
 
@@ -1203,9 +1256,10 @@ def get_all_interfaces_default(api):
 
 
 @pytest.mark.devices
-def test_get_all_interfaces_default(api):
+def test_get_all_interfaces_default(api, validator):
     try:
         assert is_valid_get_all_interfaces(
+            validator,
             get_all_interfaces_default(api)
         )
     except Exception as original_e:
@@ -1213,7 +1267,7 @@ def test_get_all_interfaces_default(api):
             raise original_e
 
 
-def is_valid_sync_devices(obj):
+def is_valid_sync_devices(json_schema_validate, obj):
     json_schema_validate('jsd_aeb9eb67460b92df_v1_2_10').validate(obj)
     return True
 
@@ -1254,8 +1308,9 @@ def sync_devices(api):
 
 
 @pytest.mark.devices
-def test_sync_devices(api):
+def test_sync_devices(api, validator):
     assert is_valid_sync_devices(
+        validator,
         sync_devices(api)
     )
 
@@ -1296,9 +1351,10 @@ def sync_devices_default(api):
 
 
 @pytest.mark.devices
-def test_sync_devices_default(api):
+def test_sync_devices_default(api, validator):
     try:
         assert is_valid_sync_devices(
+            validator,
             sync_devices_default(api)
         )
     except Exception as original_e:
@@ -1306,7 +1362,7 @@ def test_sync_devices_default(api):
             raise original_e
 
 
-def is_valid_get_interface_by_id(obj):
+def is_valid_get_interface_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_b888792d43baba46_v1_2_10').validate(obj)
     return True
 
@@ -1319,8 +1375,9 @@ def get_interface_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_interface_by_id(api):
+def test_get_interface_by_id(api, validator):
     assert is_valid_get_interface_by_id(
+        validator,
         get_interface_by_id(api)
     )
 
@@ -1333,9 +1390,10 @@ def get_interface_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_by_id_default(api):
+def test_get_interface_by_id_default(api, validator):
     try:
         assert is_valid_get_interface_by_id(
+            validator,
             get_interface_by_id_default(api)
         )
     except Exception as original_e:
@@ -1343,7 +1401,7 @@ def test_get_interface_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_functional_capability_for_devices(obj):
+def is_valid_get_functional_capability_for_devices(json_schema_validate, obj):
     json_schema_validate('jsd_c3b3c9ef4e6b8a09_v1_2_10').validate(obj)
     return True
 
@@ -1357,8 +1415,9 @@ def get_functional_capability_for_devices(api):
 
 
 @pytest.mark.devices
-def test_get_functional_capability_for_devices(api):
+def test_get_functional_capability_for_devices(api, validator):
     assert is_valid_get_functional_capability_for_devices(
+        validator,
         get_functional_capability_for_devices(api)
     )
 
@@ -1372,9 +1431,10 @@ def get_functional_capability_for_devices_default(api):
 
 
 @pytest.mark.devices
-def test_get_functional_capability_for_devices_default(api):
+def test_get_functional_capability_for_devices_default(api, validator):
     try:
         assert is_valid_get_functional_capability_for_devices(
+            validator,
             get_functional_capability_for_devices_default(api)
         )
     except Exception as original_e:
@@ -1382,7 +1442,7 @@ def test_get_functional_capability_for_devices_default(api):
             raise original_e
 
 
-def is_valid_register_device_for_wsa(obj):
+def is_valid_register_device_for_wsa(json_schema_validate, obj):
     json_schema_validate('jsd_c9809b6744f8a502_v1_2_10').validate(obj)
     return True
 
@@ -1396,8 +1456,9 @@ def register_device_for_wsa(api):
 
 
 @pytest.mark.devices
-def test_register_device_for_wsa(api):
+def test_register_device_for_wsa(api, validator):
     assert is_valid_register_device_for_wsa(
+        validator,
         register_device_for_wsa(api)
     )
 
@@ -1411,9 +1472,10 @@ def register_device_for_wsa_default(api):
 
 
 @pytest.mark.devices
-def test_register_device_for_wsa_default(api):
+def test_register_device_for_wsa_default(api, validator):
     try:
         assert is_valid_register_device_for_wsa(
+            validator,
             register_device_for_wsa_default(api)
         )
     except Exception as original_e:
@@ -1421,7 +1483,7 @@ def test_register_device_for_wsa_default(api):
             raise original_e
 
 
-def is_valid_get_device_by_serial_number(obj):
+def is_valid_get_device_by_serial_number(json_schema_validate, obj):
     json_schema_validate('jsd_d888ab6d4d59a8c1_v1_2_10').validate(obj)
     return True
 
@@ -1434,8 +1496,9 @@ def get_device_by_serial_number(api):
 
 
 @pytest.mark.devices
-def test_get_device_by_serial_number(api):
+def test_get_device_by_serial_number(api, validator):
     assert is_valid_get_device_by_serial_number(
+        validator,
         get_device_by_serial_number(api)
     )
 
@@ -1448,9 +1511,10 @@ def get_device_by_serial_number_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_by_serial_number_default(api):
+def test_get_device_by_serial_number_default(api, validator):
     try:
         assert is_valid_get_device_by_serial_number(
+            validator,
             get_device_by_serial_number_default(api)
         )
     except Exception as original_e:
@@ -1458,7 +1522,7 @@ def test_get_device_by_serial_number_default(api):
             raise original_e
 
 
-def is_valid_export_device_list(obj):
+def is_valid_export_device_list(json_schema_validate, obj):
     json_schema_validate('jsd_cd98780f4888a66d_v1_2_10').validate(obj)
     return True
 
@@ -1477,8 +1541,9 @@ def export_device_list(api):
 
 
 @pytest.mark.devices
-def test_export_device_list(api):
+def test_export_device_list(api, validator):
     assert is_valid_export_device_list(
+        validator,
         export_device_list(api)
     )
 
@@ -1497,9 +1562,10 @@ def export_device_list_default(api):
 
 
 @pytest.mark.devices
-def test_export_device_list_default(api):
+def test_export_device_list_default(api, validator):
     try:
         assert is_valid_export_device_list(
+            validator,
             export_device_list_default(api)
         )
     except Exception as original_e:
@@ -1507,7 +1573,7 @@ def test_export_device_list_default(api):
             raise original_e
 
 
-def is_valid_get_network_device_by_pagination_range(obj):
+def is_valid_get_network_device_by_pagination_range(json_schema_validate, obj):
     json_schema_validate('jsd_f49548c54be8a3e2_v1_2_10').validate(obj)
     return True
 
@@ -1521,8 +1587,9 @@ def get_network_device_by_pagination_range(api):
 
 
 @pytest.mark.devices
-def test_get_network_device_by_pagination_range(api):
+def test_get_network_device_by_pagination_range(api, validator):
     assert is_valid_get_network_device_by_pagination_range(
+        validator,
         get_network_device_by_pagination_range(api)
     )
 
@@ -1536,9 +1603,10 @@ def get_network_device_by_pagination_range_default(api):
 
 
 @pytest.mark.devices
-def test_get_network_device_by_pagination_range_default(api):
+def test_get_network_device_by_pagination_range_default(api, validator):
     try:
         assert is_valid_get_network_device_by_pagination_range(
+            validator,
             get_network_device_by_pagination_range_default(api)
         )
     except Exception as original_e:
@@ -1546,7 +1614,7 @@ def test_get_network_device_by_pagination_range_default(api):
             raise original_e
 
 
-def is_valid_retrieves_all_network_devices(obj):
+def is_valid_retrieves_all_network_devices(json_schema_validate, obj):
     json_schema_validate('jsd_ffa748cc44e9a437_v1_2_10').validate(obj)
     return True
 
@@ -1580,8 +1648,9 @@ def retrieves_all_network_devices(api):
 
 
 @pytest.mark.devices
-def test_retrieves_all_network_devices(api):
+def test_retrieves_all_network_devices(api, validator):
     assert is_valid_retrieves_all_network_devices(
+        validator,
         retrieves_all_network_devices(api)
     )
 
@@ -1615,9 +1684,10 @@ def retrieves_all_network_devices_default(api):
 
 
 @pytest.mark.devices
-def test_retrieves_all_network_devices_default(api):
+def test_retrieves_all_network_devices_default(api, validator):
     try:
         assert is_valid_retrieves_all_network_devices(
+            validator,
             retrieves_all_network_devices_default(api)
         )
     except Exception as original_e:
@@ -1625,7 +1695,7 @@ def test_retrieves_all_network_devices_default(api):
             raise original_e
 
 
-def is_valid_get_modules(obj):
+def is_valid_get_modules(json_schema_validate, obj):
     json_schema_validate('jsd_eb8249e34f69b0f1_v1_2_10').validate(obj)
     return True
 
@@ -1644,8 +1714,9 @@ def get_modules(api):
 
 
 @pytest.mark.devices
-def test_get_modules(api):
+def test_get_modules(api, validator):
     assert is_valid_get_modules(
+        validator,
         get_modules(api)
     )
 
@@ -1664,9 +1735,10 @@ def get_modules_default(api):
 
 
 @pytest.mark.devices
-def test_get_modules_default(api):
+def test_get_modules_default(api, validator):
     try:
         assert is_valid_get_modules(
+            validator,
             get_modules_default(api)
         )
     except Exception as original_e:
@@ -1674,7 +1746,7 @@ def test_get_modules_default(api):
             raise original_e
 
 
-def is_valid_get_wireless_lan_controller_details_by_id(obj):
+def is_valid_get_wireless_lan_controller_details_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_f6826a8e41bba242_v1_2_10').validate(obj)
     return True
 
@@ -1687,8 +1759,9 @@ def get_wireless_lan_controller_details_by_id(api):
 
 
 @pytest.mark.devices
-def test_get_wireless_lan_controller_details_by_id(api):
+def test_get_wireless_lan_controller_details_by_id(api, validator):
     assert is_valid_get_wireless_lan_controller_details_by_id(
+        validator,
         get_wireless_lan_controller_details_by_id(api)
     )
 
@@ -1701,9 +1774,10 @@ def get_wireless_lan_controller_details_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_wireless_lan_controller_details_by_id_default(api):
+def test_get_wireless_lan_controller_details_by_id_default(api, validator):
     try:
         assert is_valid_get_wireless_lan_controller_details_by_id(
+            validator,
             get_wireless_lan_controller_details_by_id_default(api)
         )
     except Exception as original_e:
@@ -1711,7 +1785,7 @@ def test_get_wireless_lan_controller_details_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_device_detail(obj):
+def is_valid_get_device_detail(json_schema_validate, obj):
     json_schema_validate('jsd_89b2fb144f5bb09b_v1_2_10').validate(obj)
     return True
 
@@ -1726,8 +1800,9 @@ def get_device_detail(api):
 
 
 @pytest.mark.devices
-def test_get_device_detail(api):
+def test_get_device_detail(api, validator):
     assert is_valid_get_device_detail(
+        validator,
         get_device_detail(api)
     )
 
@@ -1742,9 +1817,10 @@ def get_device_detail_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_detail_default(api):
+def test_get_device_detail_default(api, validator):
     try:
         assert is_valid_get_device_detail(
+            validator,
             get_device_detail_default(api)
         )
     except Exception as original_e:

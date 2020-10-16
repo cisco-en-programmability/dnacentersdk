@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.1.1', reason='version does not match')
 
 
-def is_valid_get_all_keywords_of_clis_accepted(obj):
+def is_valid_get_all_keywords_of_clis_accepted(json_schema_validate, obj):
     json_schema_validate('jsd_33bb2b9d40199e14_v2_1_1').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_all_keywords_of_clis_accepted(api):
 
 
 @pytest.mark.command_runner
-def test_get_all_keywords_of_clis_accepted(api):
+def test_get_all_keywords_of_clis_accepted(api, validator):
     assert is_valid_get_all_keywords_of_clis_accepted(
+        validator,
         get_all_keywords_of_clis_accepted(api)
     )
 
@@ -56,9 +55,10 @@ def get_all_keywords_of_clis_accepted_default(api):
 
 
 @pytest.mark.command_runner
-def test_get_all_keywords_of_clis_accepted_default(api):
+def test_get_all_keywords_of_clis_accepted_default(api, validator):
     try:
         assert is_valid_get_all_keywords_of_clis_accepted(
+            validator,
             get_all_keywords_of_clis_accepted_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_all_keywords_of_clis_accepted_default(api):
             raise original_e
 
 
-def is_valid_run_read_only_commands_on_devices(obj):
+def is_valid_run_read_only_commands_on_devices(json_schema_validate, obj):
     json_schema_validate('jsd_d6b8ca774739adf4_v2_1_1').validate(obj)
     return True
 
@@ -85,8 +85,9 @@ def run_read_only_commands_on_devices(api):
 
 
 @pytest.mark.command_runner
-def test_run_read_only_commands_on_devices(api):
+def test_run_read_only_commands_on_devices(api, validator):
     assert is_valid_run_read_only_commands_on_devices(
+        validator,
         run_read_only_commands_on_devices(api)
     )
 
@@ -105,9 +106,10 @@ def run_read_only_commands_on_devices_default(api):
 
 
 @pytest.mark.command_runner
-def test_run_read_only_commands_on_devices_default(api):
+def test_run_read_only_commands_on_devices_default(api, validator):
     try:
         assert is_valid_run_read_only_commands_on_devices(
+            validator,
             run_read_only_commands_on_devices_default(api)
         )
     except Exception as original_e:

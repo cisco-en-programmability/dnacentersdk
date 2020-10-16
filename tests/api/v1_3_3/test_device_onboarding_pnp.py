@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.3', reason='version does not match')
 
 
-def is_valid_get_sync_result_for_virtual_account(obj):
+def is_valid_get_sync_result_for_virtual_account(json_schema_validate, obj):
     json_schema_validate('jsd_0a9c988445cb91c8_v1_3_3').validate(obj)
     return True
 
@@ -43,8 +41,9 @@ def get_sync_result_for_virtual_account(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_sync_result_for_virtual_account(api):
+def test_get_sync_result_for_virtual_account(api, validator):
     assert is_valid_get_sync_result_for_virtual_account(
+        validator,
         get_sync_result_for_virtual_account(api)
     )
 
@@ -58,9 +57,10 @@ def get_sync_result_for_virtual_account_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_sync_result_for_virtual_account_default(api):
+def test_get_sync_result_for_virtual_account_default(api, validator):
     try:
         assert is_valid_get_sync_result_for_virtual_account(
+            validator,
             get_sync_result_for_virtual_account_default(api)
         )
     except Exception as original_e:
@@ -68,7 +68,7 @@ def test_get_sync_result_for_virtual_account_default(api):
             raise original_e
 
 
-def is_valid_un_claim_device(obj):
+def is_valid_un_claim_device(json_schema_validate, obj):
     json_schema_validate('jsd_0b836b7b4b6a9fd5_v1_3_3').validate(obj)
     return True
 
@@ -83,8 +83,9 @@ def un_claim_device(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_un_claim_device(api):
+def test_un_claim_device(api, validator):
     assert is_valid_un_claim_device(
+        validator,
         un_claim_device(api)
     )
 
@@ -99,9 +100,10 @@ def un_claim_device_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_un_claim_device_default(api):
+def test_un_claim_device_default(api, validator):
     try:
         assert is_valid_un_claim_device(
+            validator,
             un_claim_device_default(api)
         )
     except Exception as original_e:
@@ -109,7 +111,7 @@ def test_un_claim_device_default(api):
             raise original_e
 
 
-def is_valid_update_device(obj):
+def is_valid_update_device(json_schema_validate, obj):
     json_schema_validate('jsd_09b0f9ce4239ae10_v1_3_3').validate(obj)
     return True
 
@@ -133,8 +135,9 @@ def update_device(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_device(api):
+def test_update_device(api, validator):
     assert is_valid_update_device(
+        validator,
         update_device(api)
     )
 
@@ -158,9 +161,10 @@ def update_device_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_device_default(api):
+def test_update_device_default(api, validator):
     try:
         assert is_valid_update_device(
+            validator,
             update_device_default(api)
         )
     except Exception as original_e:
@@ -168,7 +172,7 @@ def test_update_device_default(api):
             raise original_e
 
 
-def is_valid_import_devices_in_bulk(obj):
+def is_valid_import_devices_in_bulk(json_schema_validate, obj):
     json_schema_validate('jsd_21a6db2540298f55_v1_3_3').validate(obj)
     return True
 
@@ -182,8 +186,9 @@ def import_devices_in_bulk(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_import_devices_in_bulk(api):
+def test_import_devices_in_bulk(api, validator):
     assert is_valid_import_devices_in_bulk(
+        validator,
         import_devices_in_bulk(api)
     )
 
@@ -197,9 +202,10 @@ def import_devices_in_bulk_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_import_devices_in_bulk_default(api):
+def test_import_devices_in_bulk_default(api, validator):
     try:
         assert is_valid_import_devices_in_bulk(
+            validator,
             import_devices_in_bulk_default(api)
         )
     except Exception as original_e:
@@ -207,7 +213,7 @@ def test_import_devices_in_bulk_default(api):
             raise original_e
 
 
-def is_valid_add_virtual_account(obj):
+def is_valid_add_virtual_account(json_schema_validate, obj):
     json_schema_validate('jsd_1e962af345b8b59f_v1_3_3').validate(obj)
     return True
 
@@ -234,8 +240,9 @@ def add_virtual_account(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_virtual_account(api):
+def test_add_virtual_account(api, validator):
     assert is_valid_add_virtual_account(
+        validator,
         add_virtual_account(api)
     )
 
@@ -262,9 +269,10 @@ def add_virtual_account_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_virtual_account_default(api):
+def test_add_virtual_account_default(api, validator):
     try:
         assert is_valid_add_virtual_account(
+            validator,
             add_virtual_account_default(api)
         )
     except Exception as original_e:
@@ -272,7 +280,7 @@ def test_add_virtual_account_default(api):
             raise original_e
 
 
-def is_valid_update_workflow(obj):
+def is_valid_update_workflow(json_schema_validate, obj):
     json_schema_validate('jsd_3086c9624f498b85_v1_3_3').validate(obj)
     return True
 
@@ -306,8 +314,9 @@ def update_workflow(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_workflow(api):
+def test_update_workflow(api, validator):
     assert is_valid_update_workflow(
+        validator,
         update_workflow(api)
     )
 
@@ -341,9 +350,10 @@ def update_workflow_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_workflow_default(api):
+def test_update_workflow_default(api, validator):
     try:
         assert is_valid_update_workflow(
+            validator,
             update_workflow_default(api)
         )
     except Exception as original_e:
@@ -351,7 +361,7 @@ def test_update_workflow_default(api):
             raise original_e
 
 
-def is_valid_deregister_virtual_account(obj):
+def is_valid_deregister_virtual_account(json_schema_validate, obj):
     json_schema_validate('jsd_2499e9ad42e8ae5b_v1_3_3').validate(obj)
     return True
 
@@ -365,8 +375,9 @@ def deregister_virtual_account(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_deregister_virtual_account(api):
+def test_deregister_virtual_account(api, validator):
     assert is_valid_deregister_virtual_account(
+        validator,
         deregister_virtual_account(api)
     )
 
@@ -380,9 +391,10 @@ def deregister_virtual_account_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_deregister_virtual_account_default(api):
+def test_deregister_virtual_account_default(api, validator):
     try:
         assert is_valid_deregister_virtual_account(
+            validator,
             deregister_virtual_account_default(api)
         )
     except Exception as original_e:
@@ -390,7 +402,7 @@ def test_deregister_virtual_account_default(api):
             raise original_e
 
 
-def is_valid_get_smart_account_list(obj):
+def is_valid_get_smart_account_list(json_schema_validate, obj):
     json_schema_validate('jsd_3cb24acb486b89d2_v1_3_3').validate(obj)
     return True
 
@@ -403,8 +415,9 @@ def get_smart_account_list(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_smart_account_list(api):
+def test_get_smart_account_list(api, validator):
     assert is_valid_get_smart_account_list(
+        validator,
         get_smart_account_list(api)
     )
 
@@ -417,9 +430,10 @@ def get_smart_account_list_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_smart_account_list_default(api):
+def test_get_smart_account_list_default(api, validator):
     try:
         assert is_valid_get_smart_account_list(
+            validator,
             get_smart_account_list_default(api)
         )
     except Exception as original_e:
@@ -427,7 +441,7 @@ def test_get_smart_account_list_default(api):
             raise original_e
 
 
-def is_valid_claim_a_device_to_a_site(obj):
+def is_valid_claim_a_device_to_a_site(json_schema_validate, obj):
     return True if obj else False
 
 
@@ -443,8 +457,9 @@ def claim_a_device_to_a_site(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_a_device_to_a_site(api):
+def test_claim_a_device_to_a_site(api, validator):
     assert is_valid_claim_a_device_to_a_site(
+        validator,
         claim_a_device_to_a_site(api)
     )
 
@@ -461,9 +476,10 @@ def claim_a_device_to_a_site_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_a_device_to_a_site_default(api):
+def test_claim_a_device_to_a_site_default(api, validator):
     try:
         assert is_valid_claim_a_device_to_a_site(
+            validator,
             claim_a_device_to_a_site_default(api)
         )
     except Exception as original_e:
@@ -471,7 +487,7 @@ def test_claim_a_device_to_a_site_default(api):
             raise original_e
 
 
-def is_valid_update_pnp_server_profile(obj):
+def is_valid_update_pnp_server_profile(json_schema_validate, obj):
     json_schema_validate('jsd_6f9819e84178870c_v1_3_3').validate(obj)
     return True
 
@@ -498,8 +514,9 @@ def update_pnp_server_profile(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_server_profile(api):
+def test_update_pnp_server_profile(api, validator):
     assert is_valid_update_pnp_server_profile(
+        validator,
         update_pnp_server_profile(api)
     )
 
@@ -526,9 +543,10 @@ def update_pnp_server_profile_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_server_profile_default(api):
+def test_update_pnp_server_profile_default(api, validator):
     try:
         assert is_valid_update_pnp_server_profile(
+            validator,
             update_pnp_server_profile_default(api)
         )
     except Exception as original_e:
@@ -536,7 +554,7 @@ def test_update_pnp_server_profile_default(api):
             raise original_e
 
 
-def is_valid_get_pnp_global_settings(obj):
+def is_valid_get_pnp_global_settings(json_schema_validate, obj):
     json_schema_validate('jsd_7e92f9eb46db8320_v1_3_3').validate(obj)
     return True
 
@@ -549,8 +567,9 @@ def get_pnp_global_settings(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_pnp_global_settings(api):
+def test_get_pnp_global_settings(api, validator):
     assert is_valid_get_pnp_global_settings(
+        validator,
         get_pnp_global_settings(api)
     )
 
@@ -563,9 +582,10 @@ def get_pnp_global_settings_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_pnp_global_settings_default(api):
+def test_get_pnp_global_settings_default(api, validator):
     try:
         assert is_valid_get_pnp_global_settings(
+            validator,
             get_pnp_global_settings_default(api)
         )
     except Exception as original_e:
@@ -573,7 +593,7 @@ def test_get_pnp_global_settings_default(api):
             raise original_e
 
 
-def is_valid_get_workflow_count(obj):
+def is_valid_get_workflow_count(json_schema_validate, obj):
     json_schema_validate('jsd_7989f86846faaf99_v1_3_3').validate(obj)
     return True
 
@@ -586,8 +606,9 @@ def get_workflow_count(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_count(api):
+def test_get_workflow_count(api, validator):
     assert is_valid_get_workflow_count(
+        validator,
         get_workflow_count(api)
     )
 
@@ -600,9 +621,10 @@ def get_workflow_count_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_count_default(api):
+def test_get_workflow_count_default(api, validator):
     try:
         assert is_valid_get_workflow_count(
+            validator,
             get_workflow_count_default(api)
         )
     except Exception as original_e:
@@ -610,7 +632,7 @@ def test_get_workflow_count_default(api):
             raise original_e
 
 
-def is_valid_get_virtual_account_list(obj):
+def is_valid_get_virtual_account_list(json_schema_validate, obj):
     json_schema_validate('jsd_70a479a6462a9496_v1_3_3').validate(obj)
     return True
 
@@ -623,8 +645,9 @@ def get_virtual_account_list(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_virtual_account_list(api):
+def test_get_virtual_account_list(api, validator):
     assert is_valid_get_virtual_account_list(
+        validator,
         get_virtual_account_list(api)
     )
 
@@ -637,9 +660,10 @@ def get_virtual_account_list_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_virtual_account_list_default(api):
+def test_get_virtual_account_list_default(api, validator):
     try:
         assert is_valid_get_virtual_account_list(
+            validator,
             get_virtual_account_list_default(api)
         )
     except Exception as original_e:
@@ -647,7 +671,7 @@ def test_get_virtual_account_list_default(api):
             raise original_e
 
 
-def is_valid_get_workflow_by_id(obj):
+def is_valid_get_workflow_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_80acb88e4ac9ac6d_v1_3_3').validate(obj)
     return True
 
@@ -660,8 +684,9 @@ def get_workflow_by_id(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_by_id(api):
+def test_get_workflow_by_id(api, validator):
     assert is_valid_get_workflow_by_id(
+        validator,
         get_workflow_by_id(api)
     )
 
@@ -674,9 +699,10 @@ def get_workflow_by_id_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_by_id_default(api):
+def test_get_workflow_by_id_default(api, validator):
     try:
         assert is_valid_get_workflow_by_id(
+            validator,
             get_workflow_by_id_default(api)
         )
     except Exception as original_e:
@@ -684,7 +710,7 @@ def test_get_workflow_by_id_default(api):
             raise original_e
 
 
-def is_valid_add_a_workflow(obj):
+def is_valid_add_a_workflow(json_schema_validate, obj):
     json_schema_validate('jsd_848b5a7b4f9b8c12_v1_3_3').validate(obj)
     return True
 
@@ -717,8 +743,9 @@ def add_a_workflow(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_a_workflow(api):
+def test_add_a_workflow(api, validator):
     assert is_valid_add_a_workflow(
+        validator,
         add_a_workflow(api)
     )
 
@@ -751,9 +778,10 @@ def add_a_workflow_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_a_workflow_default(api):
+def test_add_a_workflow_default(api, validator):
     try:
         assert is_valid_add_a_workflow(
+            validator,
             add_a_workflow_default(api)
         )
     except Exception as original_e:
@@ -761,7 +789,7 @@ def test_add_a_workflow_default(api):
             raise original_e
 
 
-def is_valid_update_pnp_global_settings(obj):
+def is_valid_update_pnp_global_settings(json_schema_validate, obj):
     json_schema_validate('jsd_8da0391947088a5a_v1_3_3').validate(obj)
     return True
 
@@ -783,8 +811,9 @@ def update_pnp_global_settings(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_global_settings(api):
+def test_update_pnp_global_settings(api, validator):
     assert is_valid_update_pnp_global_settings(
+        validator,
         update_pnp_global_settings(api)
     )
 
@@ -806,9 +835,10 @@ def update_pnp_global_settings_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_global_settings_default(api):
+def test_update_pnp_global_settings_default(api, validator):
     try:
         assert is_valid_update_pnp_global_settings(
+            validator,
             update_pnp_global_settings_default(api)
         )
     except Exception as original_e:
@@ -816,7 +846,7 @@ def test_update_pnp_global_settings_default(api):
             raise original_e
 
 
-def is_valid_reset_device(obj):
+def is_valid_reset_device(json_schema_validate, obj):
     json_schema_validate('jsd_9e857b5a4a0bbcdb_v1_3_3').validate(obj)
     return True
 
@@ -833,8 +863,9 @@ def reset_device(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_reset_device(api):
+def test_reset_device(api, validator):
     assert is_valid_reset_device(
+        validator,
         reset_device(api)
     )
 
@@ -851,9 +882,10 @@ def reset_device_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_reset_device_default(api):
+def test_reset_device_default(api, validator):
     try:
         assert is_valid_reset_device(
+            validator,
             reset_device_default(api)
         )
     except Exception as original_e:
@@ -861,7 +893,7 @@ def test_reset_device_default(api):
             raise original_e
 
 
-def is_valid_sync_virtual_account_devices(obj):
+def is_valid_sync_virtual_account_devices(json_schema_validate, obj):
     json_schema_validate('jsd_a4b6c87a4ffb9efa_v1_3_3').validate(obj)
     return True
 
@@ -888,8 +920,9 @@ def sync_virtual_account_devices(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_sync_virtual_account_devices(api):
+def test_sync_virtual_account_devices(api, validator):
     assert is_valid_sync_virtual_account_devices(
+        validator,
         sync_virtual_account_devices(api)
     )
 
@@ -916,9 +949,10 @@ def sync_virtual_account_devices_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_sync_virtual_account_devices_default(api):
+def test_sync_virtual_account_devices_default(api, validator):
     try:
         assert is_valid_sync_virtual_account_devices(
+            validator,
             sync_virtual_account_devices_default(api)
         )
     except Exception as original_e:
@@ -926,7 +960,7 @@ def test_sync_virtual_account_devices_default(api):
             raise original_e
 
 
-def is_valid_delete_workflow_by_id(obj):
+def is_valid_delete_workflow_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_af8d7b0e470b8ae2_v1_3_3').validate(obj)
     return True
 
@@ -939,8 +973,9 @@ def delete_workflow_by_id(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_workflow_by_id(api):
+def test_delete_workflow_by_id(api, validator):
     assert is_valid_delete_workflow_by_id(
+        validator,
         delete_workflow_by_id(api)
     )
 
@@ -953,9 +988,10 @@ def delete_workflow_by_id_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_workflow_by_id_default(api):
+def test_delete_workflow_by_id_default(api, validator):
     try:
         assert is_valid_delete_workflow_by_id(
+            validator,
             delete_workflow_by_id_default(api)
         )
     except Exception as original_e:
@@ -963,7 +999,7 @@ def test_delete_workflow_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_workflows(obj):
+def is_valid_get_workflows(json_schema_validate, obj):
     json_schema_validate('jsd_aeb4dad04a99bbe3_v1_3_3').validate(obj)
     return True
 
@@ -981,8 +1017,9 @@ def get_workflows(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflows(api):
+def test_get_workflows(api, validator):
     assert is_valid_get_workflows(
+        validator,
         get_workflows(api)
     )
 
@@ -1000,9 +1037,10 @@ def get_workflows_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflows_default(api):
+def test_get_workflows_default(api, validator):
     try:
         assert is_valid_get_workflows(
+            validator,
             get_workflows_default(api)
         )
     except Exception as original_e:
@@ -1010,7 +1048,7 @@ def test_get_workflows_default(api):
             raise original_e
 
 
-def is_valid_preview_config(obj):
+def is_valid_preview_config(json_schema_validate, obj):
     return True if obj else False
 
 
@@ -1026,8 +1064,9 @@ def preview_config(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_preview_config(api):
+def test_preview_config(api, validator):
     assert is_valid_preview_config(
+        validator,
         preview_config(api)
     )
 
@@ -1044,9 +1083,10 @@ def preview_config_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_preview_config_default(api):
+def test_preview_config_default(api, validator):
     try:
         assert is_valid_preview_config(
+            validator,
             preview_config_default(api)
         )
     except Exception as original_e:
@@ -1054,7 +1094,7 @@ def test_preview_config_default(api):
             raise original_e
 
 
-def is_valid_get_device_by_id(obj):
+def is_valid_get_device_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_bab6c9e5440885cc_v1_3_3').validate(obj)
     return True
 
@@ -1067,8 +1107,9 @@ def get_device_by_id(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_by_id(api):
+def test_get_device_by_id(api, validator):
     assert is_valid_get_device_by_id(
+        validator,
         get_device_by_id(api)
     )
 
@@ -1081,9 +1122,10 @@ def get_device_by_id_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_by_id_default(api):
+def test_get_device_by_id_default(api, validator):
     try:
         assert is_valid_get_device_by_id(
+            validator,
             get_device_by_id_default(api)
         )
     except Exception as original_e:
@@ -1091,7 +1133,7 @@ def test_get_device_by_id_default(api):
             raise original_e
 
 
-def is_valid_claim_device(obj):
+def is_valid_claim_device(json_schema_validate, obj):
     json_schema_validate('jsd_d8a619974a8a8c48_v1_3_3').validate(obj)
     return True
 
@@ -1114,8 +1156,9 @@ def claim_device(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_device(api):
+def test_claim_device(api, validator):
     assert is_valid_claim_device(
+        validator,
         claim_device(api)
     )
 
@@ -1138,9 +1181,10 @@ def claim_device_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_device_default(api):
+def test_claim_device_default(api, validator):
     try:
         assert is_valid_claim_device(
+            validator,
             claim_device_default(api)
         )
     except Exception as original_e:
@@ -1148,7 +1192,7 @@ def test_claim_device_default(api):
             raise original_e
 
 
-def is_valid_delete_device_by_id_from_pnp(obj):
+def is_valid_delete_device_by_id_from_pnp(json_schema_validate, obj):
     json_schema_validate('jsd_cdab9b474899ae06_v1_3_3').validate(obj)
     return True
 
@@ -1161,8 +1205,9 @@ def delete_device_by_id_from_pnp(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_device_by_id_from_pnp(api):
+def test_delete_device_by_id_from_pnp(api, validator):
     assert is_valid_delete_device_by_id_from_pnp(
+        validator,
         delete_device_by_id_from_pnp(api)
     )
 
@@ -1175,9 +1220,10 @@ def delete_device_by_id_from_pnp_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_device_by_id_from_pnp_default(api):
+def test_delete_device_by_id_from_pnp_default(api, validator):
     try:
         assert is_valid_delete_device_by_id_from_pnp(
+            validator,
             delete_device_by_id_from_pnp_default(api)
         )
     except Exception as original_e:
@@ -1185,7 +1231,7 @@ def test_delete_device_by_id_from_pnp_default(api):
             raise original_e
 
 
-def is_valid_get_device_list(obj):
+def is_valid_get_device_list(json_schema_validate, obj):
     json_schema_validate('jsd_e6b3db8046c99654_v1_3_3').validate(obj)
     return True
 
@@ -1215,8 +1261,9 @@ def get_device_list(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_list(api):
+def test_get_device_list(api, validator):
     assert is_valid_get_device_list(
+        validator,
         get_device_list(api)
     )
 
@@ -1246,9 +1293,10 @@ def get_device_list_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_list_default(api):
+def test_get_device_list_default(api, validator):
     try:
         assert is_valid_get_device_list(
+            validator,
             get_device_list_default(api)
         )
     except Exception as original_e:
@@ -1256,7 +1304,7 @@ def test_get_device_list_default(api):
             raise original_e
 
 
-def is_valid_add_device(obj):
+def is_valid_add_device(json_schema_validate, obj):
     json_schema_validate('jsd_f3b26b5544cabab9_v1_3_3').validate(obj)
     return True
 
@@ -1279,8 +1327,9 @@ def add_device(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_device(api):
+def test_add_device(api, validator):
     assert is_valid_add_device(
+        validator,
         add_device(api)
     )
 
@@ -1303,9 +1352,10 @@ def add_device_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_device_default(api):
+def test_add_device_default(api, validator):
     try:
         assert is_valid_add_device(
+            validator,
             add_device_default(api)
         )
     except Exception as original_e:
@@ -1313,7 +1363,7 @@ def test_add_device_default(api):
             raise original_e
 
 
-def is_valid_get_device_count(obj):
+def is_valid_get_device_count(json_schema_validate, obj):
     json_schema_validate('jsd_d9a1fa9c4068b23c_v1_3_3').validate(obj)
     return True
 
@@ -1339,8 +1389,9 @@ def get_device_count(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_count(api):
+def test_get_device_count(api, validator):
     assert is_valid_get_device_count(
+        validator,
         get_device_count(api)
     )
 
@@ -1366,9 +1417,10 @@ def get_device_count_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_count_default(api):
+def test_get_device_count_default(api, validator):
     try:
         assert is_valid_get_device_count(
+            validator,
             get_device_count_default(api)
         )
     except Exception as original_e:
@@ -1376,7 +1428,7 @@ def test_get_device_count_default(api):
             raise original_e
 
 
-def is_valid_get_device_history(obj):
+def is_valid_get_device_history(json_schema_validate, obj):
     json_schema_validate('jsd_f09319674049a7d4_v1_3_3').validate(obj)
     return True
 
@@ -1391,8 +1443,9 @@ def get_device_history(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_history(api):
+def test_get_device_history(api, validator):
     assert is_valid_get_device_history(
+        validator,
         get_device_history(api)
     )
 
@@ -1407,9 +1460,10 @@ def get_device_history_default(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_history_default(api):
+def test_get_device_history_default(api, validator):
     try:
         assert is_valid_get_device_history(
+            validator,
             get_device_history_default(api)
         )
     except Exception as original_e:

@@ -58,6 +58,14 @@ v2.1.1 summary
 .. include:: api_structure_table_v2_1_1.rst
 
 
+.. _v2_1_2 summary:
+
+v2.1.2 summary
+-----------------------------
+
+.. include:: api_structure_table_v2_1_2.rst
+
+
 DNACenterAPI Class
 ========================
 
@@ -974,6 +982,244 @@ wireless
 --------
 
 .. autoclass:: dnacentersdk.api.v2_1_1.wireless.Wireless()
+
+
+
+
+DNACenterAPI v2.1.2
+===============================
+
+.. _application_policy_2_1_2:
+
+application_policy
+------------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.application_policy.ApplicationPolicy()
+
+
+
+.. _applications_2_1_2:
+
+applications
+------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.applications.Applications()
+
+
+
+.. _clients_2_1_2:
+
+clients
+-------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.clients.Clients()
+
+
+
+.. _command_runner_2_1_2:
+
+command_runner
+--------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.command_runner.CommandRunner()
+
+
+
+.. _configuration_archive_2_1_2:
+
+configuration_archive
+---------------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.configuration_archive.ConfigurationArchive()
+
+
+
+.. _configuration_templates_2_1_2:
+
+configuration_templates
+-----------------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.configuration_templates.ConfigurationTemplates()
+
+
+
+.. _device_onboarding_pnp_2_1_2:
+
+device_onboarding_pnp
+---------------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.device_onboarding_pnp.DeviceOnboardingPnp()
+
+
+
+.. _device_replacement_2_1_2:
+
+device_replacement
+------------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.device_replacement.DeviceReplacement()
+
+
+
+.. _devices_2_1_2:
+
+devices
+-------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.devices.Devices()
+
+
+
+.. _discovery_2_1_2:
+
+discovery
+---------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.discovery.Discovery()
+
+
+
+.. _event_management_2_1_2:
+
+event_management
+----------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.event_management.EventManagement()
+
+
+
+.. _file_2_1_2:
+
+file
+----
+
+.. autoclass:: dnacentersdk.api.v2_1_2.file.File()
+
+
+
+.. _itsm_2_1_2:
+
+itsm
+----
+
+.. autoclass:: dnacentersdk.api.v2_1_2.itsm.Itsm()
+
+
+
+.. _issues_2_1_2:
+
+issues
+------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.issues.Issues()
+
+
+
+.. _network_settings_2_1_2:
+
+network_settings
+----------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.network_settings.NetworkSettings()
+
+
+
+.. _path_trace_2_1_2:
+
+path_trace
+----------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.path_trace.PathTrace()
+
+
+
+.. _sda_2_1_2:
+
+sda
+---
+
+.. autoclass:: dnacentersdk.api.v2_1_2.sda.Sda()
+
+
+
+.. _sensors_2_1_2:
+
+sensors
+-------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.sensors.Sensors()
+
+
+
+.. _site_design_2_1_2:
+
+site_design
+-----------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.site_design.SiteDesign()
+
+
+
+.. _sites_2_1_2:
+
+sites
+-----
+
+.. autoclass:: dnacentersdk.api.v2_1_2.sites.Sites()
+
+
+
+.. _software_image_management_swim_2_1_2:
+
+software_image_management_swim
+------------------------------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.software_image_management_swim.SoftwareImageManagementSwim()
+
+
+
+.. _tag_2_1_2:
+
+tag
+---
+
+.. autoclass:: dnacentersdk.api.v2_1_2.tag.Tag()
+
+
+
+.. _task_2_1_2:
+
+task
+----
+
+.. autoclass:: dnacentersdk.api.v2_1_2.task.Task()
+
+
+
+.. _topology_2_1_2:
+
+topology
+--------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.topology.Topology()
+
+
+
+.. _users_2_1_2:
+
+users
+-----
+
+.. autoclass:: dnacentersdk.api.v2_1_2.users.Users()
+
+
+
+.. _wireless_2_1_2:
+
+wireless
+--------
+
+.. autoclass:: dnacentersdk.api.v2_1_2.wireless.Wireless()
 
 
 .. _DNA Center Data Object:

@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
-def is_valid_authentication_api(obj):
+def is_valid_authentication_api(json_schema_validate, obj):
     json_schema_validate('jsd_ac8ae94c4e69a09d_v1_2_10').validate(obj)
     return True
 
@@ -43,8 +41,9 @@ def authentication_api(api):
 
 
 @pytest.mark.authentication
-def test_authentication_api(api):
+def test_authentication_api(api, validator):
     assert is_valid_authentication_api(
+        validator,
         authentication_api(api)
     )
 
@@ -58,9 +57,10 @@ def authentication_api_default(api):
 
 
 @pytest.mark.authentication
-def test_authentication_api_default(api):
+def test_authentication_api_default(api, validator):
     try:
         assert is_valid_authentication_api(
+            validator,
             authentication_api_default(api)
         )
     except Exception as original_e:

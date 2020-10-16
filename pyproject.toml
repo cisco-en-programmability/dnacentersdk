@@ -1,5 +1,19 @@
+[tool.poetry]
+name = "dnacentersdk"
+version = "2.0.1"
+description = "Cisco DNA Center Platform SDK"
+authors = ["Jose Bogarin Solano <jbogarin@altus.cr>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.5"
+requests = "^2.24.0"
+fastjsonschema = "^2.14.5"
+future = "^0.18.2"
+requests-toolbelt = "^0.9.1"
+
+[tool.poetry.dev-dependencies]
+
 [build-system]
-requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.4"]
-
-[tool.setuptools_scm]
-
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

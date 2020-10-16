@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.1.1', reason='version does not match')
 
 
-def is_valid_get_nfv_profile(obj):
+def is_valid_get_nfv_profile(json_schema_validate, obj):
     json_schema_validate('jsd_1eb19887457b9616_v2_1_1').validate(obj)
     return True
 
@@ -45,8 +43,9 @@ def get_nfv_profile(api):
 
 
 @pytest.mark.site_design
-def test_get_nfv_profile(api):
+def test_get_nfv_profile(api, validator):
     assert is_valid_get_nfv_profile(
+        validator,
         get_nfv_profile(api)
     )
 
@@ -62,9 +61,10 @@ def get_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_get_nfv_profile_default(api):
+def test_get_nfv_profile_default(api, validator):
     try:
         assert is_valid_get_nfv_profile(
+            validator,
             get_nfv_profile_default(api)
         )
     except Exception as original_e:
@@ -72,7 +72,7 @@ def test_get_nfv_profile_default(api):
             raise original_e
 
 
-def is_valid_update_nfv_profile(obj):
+def is_valid_update_nfv_profile(json_schema_validate, obj):
     json_schema_validate('jsd_0fa00adf48698287_v2_1_1').validate(obj)
     return True
 
@@ -89,8 +89,9 @@ def update_nfv_profile(api):
 
 
 @pytest.mark.site_design
-def test_update_nfv_profile(api):
+def test_update_nfv_profile(api, validator):
     assert is_valid_update_nfv_profile(
+        validator,
         update_nfv_profile(api)
     )
 
@@ -107,9 +108,10 @@ def update_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_update_nfv_profile_default(api):
+def test_update_nfv_profile_default(api, validator):
     try:
         assert is_valid_update_nfv_profile(
+            validator,
             update_nfv_profile_default(api)
         )
     except Exception as original_e:
@@ -117,7 +119,7 @@ def test_update_nfv_profile_default(api):
             raise original_e
 
 
-def is_valid_nfv_provisioning_detail(obj):
+def is_valid_nfv_provisioning_detail(json_schema_validate, obj):
     json_schema_validate('jsd_2f97e8fa45f8b2a3_v2_1_1').validate(obj)
     return True
 
@@ -132,8 +134,9 @@ def nfv_provisioning_detail(api):
 
 
 @pytest.mark.site_design
-def test_nfv_provisioning_detail(api):
+def test_nfv_provisioning_detail(api, validator):
     assert is_valid_nfv_provisioning_detail(
+        validator,
         nfv_provisioning_detail(api)
     )
 
@@ -148,9 +151,10 @@ def nfv_provisioning_detail_default(api):
 
 
 @pytest.mark.site_design
-def test_nfv_provisioning_detail_default(api):
+def test_nfv_provisioning_detail_default(api, validator):
     try:
         assert is_valid_nfv_provisioning_detail(
+            validator,
             nfv_provisioning_detail_default(api)
         )
     except Exception as original_e:
@@ -158,7 +162,7 @@ def test_nfv_provisioning_detail_default(api):
             raise original_e
 
 
-def is_valid_delete_nfv_profile(obj):
+def is_valid_delete_nfv_profile(json_schema_validate, obj):
     json_schema_validate('jsd_5ebbfa2541b8b8a9_v2_1_1').validate(obj)
     return True
 
@@ -172,8 +176,9 @@ def delete_nfv_profile(api):
 
 
 @pytest.mark.site_design
-def test_delete_nfv_profile(api):
+def test_delete_nfv_profile(api, validator):
     assert is_valid_delete_nfv_profile(
+        validator,
         delete_nfv_profile(api)
     )
 
@@ -187,9 +192,10 @@ def delete_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_delete_nfv_profile_default(api):
+def test_delete_nfv_profile_default(api, validator):
     try:
         assert is_valid_delete_nfv_profile(
+            validator,
             delete_nfv_profile_default(api)
         )
     except Exception as original_e:
@@ -197,7 +203,7 @@ def test_delete_nfv_profile_default(api):
             raise original_e
 
 
-def is_valid_create_nfv_profile(obj):
+def is_valid_create_nfv_profile(json_schema_validate, obj):
     json_schema_validate('jsd_66951aaa407ba89c_v2_1_1').validate(obj)
     return True
 
@@ -213,8 +219,9 @@ def create_nfv_profile(api):
 
 
 @pytest.mark.site_design
-def test_create_nfv_profile(api):
+def test_create_nfv_profile(api, validator):
     assert is_valid_create_nfv_profile(
+        validator,
         create_nfv_profile(api)
     )
 
@@ -230,9 +237,10 @@ def create_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_create_nfv_profile_default(api):
+def test_create_nfv_profile_default(api, validator):
     try:
         assert is_valid_create_nfv_profile(
+            validator,
             create_nfv_profile_default(api)
         )
     except Exception as original_e:
@@ -240,7 +248,7 @@ def test_create_nfv_profile_default(api):
             raise original_e
 
 
-def is_valid_provision_nfv(obj):
+def is_valid_provision_nfv(json_schema_validate, obj):
     json_schema_validate('jsd_6f9cda9a465884b4_v2_1_1').validate(obj)
     return True
 
@@ -256,8 +264,9 @@ def provision_nfv(api):
 
 
 @pytest.mark.site_design
-def test_provision_nfv(api):
+def test_provision_nfv(api, validator):
     assert is_valid_provision_nfv(
+        validator,
         provision_nfv(api)
     )
 
@@ -273,9 +282,10 @@ def provision_nfv_default(api):
 
 
 @pytest.mark.site_design
-def test_provision_nfv_default(api):
+def test_provision_nfv_default(api, validator):
     try:
         assert is_valid_provision_nfv(
+            validator,
             provision_nfv_default(api)
         )
     except Exception as original_e:
@@ -283,7 +293,7 @@ def test_provision_nfv_default(api):
             raise original_e
 
 
-def is_valid_get_device_details_by_ip(obj):
+def is_valid_get_device_details_by_ip(json_schema_validate, obj):
     json_schema_validate('jsd_9cb2cb3f494a824f_v2_1_1').validate(obj)
     return True
 
@@ -296,8 +306,9 @@ def get_device_details_by_ip(api):
 
 
 @pytest.mark.site_design
-def test_get_device_details_by_ip(api):
+def test_get_device_details_by_ip(api, validator):
     assert is_valid_get_device_details_by_ip(
+        validator,
         get_device_details_by_ip(api)
     )
 
@@ -310,9 +321,10 @@ def get_device_details_by_ip_default(api):
 
 
 @pytest.mark.site_design
-def test_get_device_details_by_ip_default(api):
+def test_get_device_details_by_ip_default(api, validator):
     try:
         assert is_valid_get_device_details_by_ip(
+            validator,
             get_device_details_by_ip_default(api)
         )
     except Exception as original_e:

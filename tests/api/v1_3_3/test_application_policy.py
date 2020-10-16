@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.3', reason='version does not match')
 
 
-def is_valid_get_applications_count(obj):
+def is_valid_get_applications_count(json_schema_validate, obj):
     json_schema_validate('jsd_039de8b147a98690_v1_3_3').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_applications_count(api):
 
 
 @pytest.mark.application_policy
-def test_get_applications_count(api):
+def test_get_applications_count(api, validator):
     assert is_valid_get_applications_count(
+        validator,
         get_applications_count(api)
     )
 
@@ -56,9 +55,10 @@ def get_applications_count_default(api):
 
 
 @pytest.mark.application_policy
-def test_get_applications_count_default(api):
+def test_get_applications_count_default(api, validator):
     try:
         assert is_valid_get_applications_count(
+            validator,
             get_applications_count_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_applications_count_default(api):
             raise original_e
 
 
-def is_valid_edit_application(obj):
+def is_valid_edit_application(json_schema_validate, obj):
     json_schema_validate('jsd_398668874439a41d_v1_3_3').validate(obj)
     return True
 
@@ -80,8 +80,9 @@ def edit_application(api):
 
 
 @pytest.mark.application_policy
-def test_edit_application(api):
+def test_edit_application(api, validator):
     assert is_valid_edit_application(
+        validator,
         edit_application(api)
     )
 
@@ -95,9 +96,10 @@ def edit_application_default(api):
 
 
 @pytest.mark.application_policy
-def test_edit_application_default(api):
+def test_edit_application_default(api, validator):
     try:
         assert is_valid_edit_application(
+            validator,
             edit_application_default(api)
         )
     except Exception as original_e:
@@ -105,7 +107,7 @@ def test_edit_application_default(api):
             raise original_e
 
 
-def is_valid_create_application_set(obj):
+def is_valid_create_application_set(json_schema_validate, obj):
     json_schema_validate('jsd_3e94cb1b485b8b0e_v1_3_3').validate(obj)
     return True
 
@@ -119,8 +121,9 @@ def create_application_set(api):
 
 
 @pytest.mark.application_policy
-def test_create_application_set(api):
+def test_create_application_set(api, validator):
     assert is_valid_create_application_set(
+        validator,
         create_application_set(api)
     )
 
@@ -134,9 +137,10 @@ def create_application_set_default(api):
 
 
 @pytest.mark.application_policy
-def test_create_application_set_default(api):
+def test_create_application_set_default(api, validator):
     try:
         assert is_valid_create_application_set(
+            validator,
             create_application_set_default(api)
         )
     except Exception as original_e:
@@ -144,7 +148,7 @@ def test_create_application_set_default(api):
             raise original_e
 
 
-def is_valid_delete_application_set(obj):
+def is_valid_delete_application_set(json_schema_validate, obj):
     json_schema_validate('jsd_70b6f8e140b8b784_v1_3_3').validate(obj)
     return True
 
@@ -157,8 +161,9 @@ def delete_application_set(api):
 
 
 @pytest.mark.application_policy
-def test_delete_application_set(api):
+def test_delete_application_set(api, validator):
     assert is_valid_delete_application_set(
+        validator,
         delete_application_set(api)
     )
 
@@ -171,9 +176,10 @@ def delete_application_set_default(api):
 
 
 @pytest.mark.application_policy
-def test_delete_application_set_default(api):
+def test_delete_application_set_default(api, validator):
     try:
         assert is_valid_delete_application_set(
+            validator,
             delete_application_set_default(api)
         )
     except Exception as original_e:
@@ -181,7 +187,7 @@ def test_delete_application_set_default(api):
             raise original_e
 
 
-def is_valid_get_applications(obj):
+def is_valid_get_applications(json_schema_validate, obj):
     json_schema_validate('jsd_8893b834445bb29c_v1_3_3').validate(obj)
     return True
 
@@ -196,8 +202,9 @@ def get_applications(api):
 
 
 @pytest.mark.application_policy
-def test_get_applications(api):
+def test_get_applications(api, validator):
     assert is_valid_get_applications(
+        validator,
         get_applications(api)
     )
 
@@ -212,9 +219,10 @@ def get_applications_default(api):
 
 
 @pytest.mark.application_policy
-def test_get_applications_default(api):
+def test_get_applications_default(api, validator):
     try:
         assert is_valid_get_applications(
+            validator,
             get_applications_default(api)
         )
     except Exception as original_e:
@@ -222,7 +230,7 @@ def test_get_applications_default(api):
             raise original_e
 
 
-def is_valid_get_application_sets(obj):
+def is_valid_get_application_sets(json_schema_validate, obj):
     json_schema_validate('jsd_cb868b2142898159_v1_3_3').validate(obj)
     return True
 
@@ -237,8 +245,9 @@ def get_application_sets(api):
 
 
 @pytest.mark.application_policy
-def test_get_application_sets(api):
+def test_get_application_sets(api, validator):
     assert is_valid_get_application_sets(
+        validator,
         get_application_sets(api)
     )
 
@@ -253,9 +262,10 @@ def get_application_sets_default(api):
 
 
 @pytest.mark.application_policy
-def test_get_application_sets_default(api):
+def test_get_application_sets_default(api, validator):
     try:
         assert is_valid_get_application_sets(
+            validator,
             get_application_sets_default(api)
         )
     except Exception as original_e:
@@ -263,7 +273,7 @@ def test_get_application_sets_default(api):
             raise original_e
 
 
-def is_valid_delete_application(obj):
+def is_valid_delete_application(json_schema_validate, obj):
     json_schema_validate('jsd_d49af9b84c6aa8ea_v1_3_3').validate(obj)
     return True
 
@@ -276,8 +286,9 @@ def delete_application(api):
 
 
 @pytest.mark.application_policy
-def test_delete_application(api):
+def test_delete_application(api, validator):
     assert is_valid_delete_application(
+        validator,
         delete_application(api)
     )
 
@@ -290,9 +301,10 @@ def delete_application_default(api):
 
 
 @pytest.mark.application_policy
-def test_delete_application_default(api):
+def test_delete_application_default(api, validator):
     try:
         assert is_valid_delete_application(
+            validator,
             delete_application_default(api)
         )
     except Exception as original_e:
@@ -300,7 +312,7 @@ def test_delete_application_default(api):
             raise original_e
 
 
-def is_valid_get_application_sets_count(obj):
+def is_valid_get_application_sets_count(json_schema_validate, obj):
     json_schema_validate('jsd_cfa049a644bb8a07_v1_3_3').validate(obj)
     return True
 
@@ -313,8 +325,9 @@ def get_application_sets_count(api):
 
 
 @pytest.mark.application_policy
-def test_get_application_sets_count(api):
+def test_get_application_sets_count(api, validator):
     assert is_valid_get_application_sets_count(
+        validator,
         get_application_sets_count(api)
     )
 
@@ -327,9 +340,10 @@ def get_application_sets_count_default(api):
 
 
 @pytest.mark.application_policy
-def test_get_application_sets_count_default(api):
+def test_get_application_sets_count_default(api, validator):
     try:
         assert is_valid_get_application_sets_count(
+            validator,
             get_application_sets_count_default(api)
         )
     except Exception as original_e:
@@ -337,7 +351,7 @@ def test_get_application_sets_count_default(api):
             raise original_e
 
 
-def is_valid_create_application(obj):
+def is_valid_create_application(json_schema_validate, obj):
     json_schema_validate('jsd_fb9bf80f491a9851_v1_3_3').validate(obj)
     return True
 
@@ -351,8 +365,9 @@ def create_application(api):
 
 
 @pytest.mark.application_policy
-def test_create_application(api):
+def test_create_application(api, validator):
     assert is_valid_create_application(
+        validator,
         create_application(api)
     )
 
@@ -366,9 +381,10 @@ def create_application_default(api):
 
 
 @pytest.mark.application_policy
-def test_create_application_default(api):
+def test_create_application_default(api, validator):
     try:
         assert is_valid_create_application(
+            validator,
             create_application_default(api)
         )
     except Exception as original_e:

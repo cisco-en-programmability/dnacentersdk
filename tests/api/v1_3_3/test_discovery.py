@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.3', reason='version does not match')
 
 
-def is_valid_get_count_of_all_discovery_jobs(obj):
+def is_valid_get_count_of_all_discovery_jobs(json_schema_validate, obj):
     json_schema_validate('jsd_069d9823451b892d_v1_3_3').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_count_of_all_discovery_jobs(api):
 
 
 @pytest.mark.discovery
-def test_get_count_of_all_discovery_jobs(api):
+def test_get_count_of_all_discovery_jobs(api, validator):
     assert is_valid_get_count_of_all_discovery_jobs(
+        validator,
         get_count_of_all_discovery_jobs(api)
     )
 
@@ -56,9 +55,10 @@ def get_count_of_all_discovery_jobs_default(api):
 
 
 @pytest.mark.discovery
-def test_get_count_of_all_discovery_jobs_default(api):
+def test_get_count_of_all_discovery_jobs_default(api, validator):
     try:
         assert is_valid_get_count_of_all_discovery_jobs(
+            validator,
             get_count_of_all_discovery_jobs_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_count_of_all_discovery_jobs_default(api):
             raise original_e
 
 
-def is_valid_create_netconf_credentials(obj):
+def is_valid_create_netconf_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_17929bc7465bb564_v1_3_3').validate(obj)
     return True
 
@@ -80,8 +80,9 @@ def create_netconf_credentials(api):
 
 
 @pytest.mark.discovery
-def test_create_netconf_credentials(api):
+def test_create_netconf_credentials(api, validator):
     assert is_valid_create_netconf_credentials(
+        validator,
         create_netconf_credentials(api)
     )
 
@@ -95,9 +96,10 @@ def create_netconf_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_netconf_credentials_default(api):
+def test_create_netconf_credentials_default(api, validator):
     try:
         assert is_valid_create_netconf_credentials(
+            validator,
             create_netconf_credentials_default(api)
         )
     except Exception as original_e:
@@ -105,7 +107,7 @@ def test_create_netconf_credentials_default(api):
             raise original_e
 
 
-def is_valid_update_snmp_write_community(obj):
+def is_valid_update_snmp_write_community(json_schema_validate, obj):
     json_schema_validate('jsd_10b06a6a4f7bb3cb_v1_3_3').validate(obj)
     return True
 
@@ -126,8 +128,9 @@ def update_snmp_write_community(api):
 
 
 @pytest.mark.discovery
-def test_update_snmp_write_community(api):
+def test_update_snmp_write_community(api, validator):
     assert is_valid_update_snmp_write_community(
+        validator,
         update_snmp_write_community(api)
     )
 
@@ -148,9 +151,10 @@ def update_snmp_write_community_default(api):
 
 
 @pytest.mark.discovery
-def test_update_snmp_write_community_default(api):
+def test_update_snmp_write_community_default(api, validator):
     try:
         assert is_valid_update_snmp_write_community(
+            validator,
             update_snmp_write_community_default(api)
         )
     except Exception as original_e:
@@ -158,7 +162,7 @@ def test_update_snmp_write_community_default(api):
             raise original_e
 
 
-def is_valid_update_snmpv3_credentials(obj):
+def is_valid_update_snmpv3_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_1da5ebdd434aacfe_v1_3_3').validate(obj)
     return True
 
@@ -184,8 +188,9 @@ def update_snmpv3_credentials(api):
 
 
 @pytest.mark.discovery
-def test_update_snmpv3_credentials(api):
+def test_update_snmpv3_credentials(api, validator):
     assert is_valid_update_snmpv3_credentials(
+        validator,
         update_snmpv3_credentials(api)
     )
 
@@ -211,9 +216,10 @@ def update_snmpv3_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_snmpv3_credentials_default(api):
+def test_update_snmpv3_credentials_default(api, validator):
     try:
         assert is_valid_update_snmpv3_credentials(
+            validator,
             update_snmpv3_credentials_default(api)
         )
     except Exception as original_e:
@@ -221,7 +227,7 @@ def test_update_snmpv3_credentials_default(api):
             raise original_e
 
 
-def is_valid_get_discoveries_by_range(obj):
+def is_valid_get_discoveries_by_range(json_schema_validate, obj):
     json_schema_validate('jsd_33b799d04d0a8907_v1_3_3').validate(obj)
     return True
 
@@ -235,8 +241,9 @@ def get_discoveries_by_range(api):
 
 
 @pytest.mark.discovery
-def test_get_discoveries_by_range(api):
+def test_get_discoveries_by_range(api, validator):
     assert is_valid_get_discoveries_by_range(
+        validator,
         get_discoveries_by_range(api)
     )
 
@@ -250,9 +257,10 @@ def get_discoveries_by_range_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discoveries_by_range_default(api):
+def test_get_discoveries_by_range_default(api, validator):
     try:
         assert is_valid_get_discoveries_by_range(
+            validator,
             get_discoveries_by_range_default(api)
         )
     except Exception as original_e:
@@ -260,7 +268,7 @@ def test_get_discoveries_by_range_default(api):
             raise original_e
 
 
-def is_valid_get_network_devices_from_discovery(obj):
+def is_valid_get_network_devices_from_discovery(json_schema_validate, obj):
     json_schema_validate('jsd_3d9b99c343398a27_v1_3_3').validate(obj)
     return True
 
@@ -282,8 +290,9 @@ def get_network_devices_from_discovery(api):
 
 
 @pytest.mark.discovery
-def test_get_network_devices_from_discovery(api):
+def test_get_network_devices_from_discovery(api, validator):
     assert is_valid_get_network_devices_from_discovery(
+        validator,
         get_network_devices_from_discovery(api)
     )
 
@@ -305,9 +314,10 @@ def get_network_devices_from_discovery_default(api):
 
 
 @pytest.mark.discovery
-def test_get_network_devices_from_discovery_default(api):
+def test_get_network_devices_from_discovery_default(api, validator):
     try:
         assert is_valid_get_network_devices_from_discovery(
+            validator,
             get_network_devices_from_discovery_default(api)
         )
     except Exception as original_e:
@@ -315,7 +325,7 @@ def test_get_network_devices_from_discovery_default(api):
             raise original_e
 
 
-def is_valid_get_snmp_properties(obj):
+def is_valid_get_snmp_properties(json_schema_validate, obj):
     json_schema_validate('jsd_44974ba5435a801d_v1_3_3').validate(obj)
     return True
 
@@ -328,8 +338,9 @@ def get_snmp_properties(api):
 
 
 @pytest.mark.discovery
-def test_get_snmp_properties(api):
+def test_get_snmp_properties(api, validator):
     assert is_valid_get_snmp_properties(
+        validator,
         get_snmp_properties(api)
     )
 
@@ -342,9 +353,10 @@ def get_snmp_properties_default(api):
 
 
 @pytest.mark.discovery
-def test_get_snmp_properties_default(api):
+def test_get_snmp_properties_default(api, validator):
     try:
         assert is_valid_get_snmp_properties(
+            validator,
             get_snmp_properties_default(api)
         )
     except Exception as original_e:
@@ -352,7 +364,7 @@ def test_get_snmp_properties_default(api):
             raise original_e
 
 
-def is_valid_delete_discovery_by_id(obj):
+def is_valid_delete_discovery_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_4c8cab5f435a80f4_v1_3_3').validate(obj)
     return True
 
@@ -365,8 +377,9 @@ def delete_discovery_by_id(api):
 
 
 @pytest.mark.discovery
-def test_delete_discovery_by_id(api):
+def test_delete_discovery_by_id(api, validator):
     assert is_valid_delete_discovery_by_id(
+        validator,
         delete_discovery_by_id(api)
     )
 
@@ -379,9 +392,10 @@ def delete_discovery_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_discovery_by_id_default(api):
+def test_delete_discovery_by_id_default(api, validator):
     try:
         assert is_valid_delete_discovery_by_id(
+            validator,
             delete_discovery_by_id_default(api)
         )
     except Exception as original_e:
@@ -389,7 +403,7 @@ def test_delete_discovery_by_id_default(api):
             raise original_e
 
 
-def is_valid_update_snmp_read_community(obj):
+def is_valid_update_snmp_read_community(json_schema_validate, obj):
     json_schema_validate('jsd_47a1b84b4e1b8044_v1_3_3').validate(obj)
     return True
 
@@ -410,8 +424,9 @@ def update_snmp_read_community(api):
 
 
 @pytest.mark.discovery
-def test_update_snmp_read_community(api):
+def test_update_snmp_read_community(api, validator):
     assert is_valid_update_snmp_read_community(
+        validator,
         update_snmp_read_community(api)
     )
 
@@ -432,9 +447,10 @@ def update_snmp_read_community_default(api):
 
 
 @pytest.mark.discovery
-def test_update_snmp_read_community_default(api):
+def test_update_snmp_read_community_default(api, validator):
     try:
         assert is_valid_update_snmp_read_community(
+            validator,
             update_snmp_read_community_default(api)
         )
     except Exception as original_e:
@@ -442,7 +458,7 @@ def test_update_snmp_read_community_default(api):
             raise original_e
 
 
-def is_valid_create_http_write_credentials(obj):
+def is_valid_create_http_write_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_4d9ca8e2431a8a24_v1_3_3').validate(obj)
     return True
 
@@ -456,8 +472,9 @@ def create_http_write_credentials(api):
 
 
 @pytest.mark.discovery
-def test_create_http_write_credentials(api):
+def test_create_http_write_credentials(api, validator):
     assert is_valid_create_http_write_credentials(
+        validator,
         create_http_write_credentials(api)
     )
 
@@ -471,9 +488,10 @@ def create_http_write_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_http_write_credentials_default(api):
+def test_create_http_write_credentials_default(api, validator):
     try:
         assert is_valid_create_http_write_credentials(
+            validator,
             create_http_write_credentials_default(api)
         )
     except Exception as original_e:
@@ -481,7 +499,7 @@ def test_create_http_write_credentials_default(api):
             raise original_e
 
 
-def is_valid_get_credential_sub_type_by_credential_id(obj):
+def is_valid_get_credential_sub_type_by_credential_id(json_schema_validate, obj):
     json_schema_validate('jsd_58a3699e489b9529_v1_3_3').validate(obj)
     return True
 
@@ -494,8 +512,9 @@ def get_credential_sub_type_by_credential_id(api):
 
 
 @pytest.mark.discovery
-def test_get_credential_sub_type_by_credential_id(api):
+def test_get_credential_sub_type_by_credential_id(api, validator):
     assert is_valid_get_credential_sub_type_by_credential_id(
+        validator,
         get_credential_sub_type_by_credential_id(api)
     )
 
@@ -508,9 +527,10 @@ def get_credential_sub_type_by_credential_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_credential_sub_type_by_credential_id_default(api):
+def test_get_credential_sub_type_by_credential_id_default(api, validator):
     try:
         assert is_valid_get_credential_sub_type_by_credential_id(
+            validator,
             get_credential_sub_type_by_credential_id_default(api)
         )
     except Exception as original_e:
@@ -518,7 +538,7 @@ def test_get_credential_sub_type_by_credential_id_default(api):
             raise original_e
 
 
-def is_valid_start_discovery(obj):
+def is_valid_start_discovery(json_schema_validate, obj):
     json_schema_validate('jsd_55b439dc4239b140_v1_3_3').validate(obj)
     return True
 
@@ -564,8 +584,9 @@ def start_discovery(api):
 
 
 @pytest.mark.discovery
-def test_start_discovery(api):
+def test_start_discovery(api, validator):
     assert is_valid_start_discovery(
+        validator,
         start_discovery(api)
     )
 
@@ -611,9 +632,10 @@ def start_discovery_default(api):
 
 
 @pytest.mark.discovery
-def test_start_discovery_default(api):
+def test_start_discovery_default(api, validator):
     try:
         assert is_valid_start_discovery(
+            validator,
             start_discovery_default(api)
         )
     except Exception as original_e:
@@ -621,7 +643,7 @@ def test_start_discovery_default(api):
             raise original_e
 
 
-def is_valid_update_global_credentials(obj):
+def is_valid_update_global_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_709fda3c42b8877a_v1_3_3').validate(obj)
     return True
 
@@ -637,8 +659,9 @@ def update_global_credentials(api):
 
 
 @pytest.mark.discovery
-def test_update_global_credentials(api):
+def test_update_global_credentials(api, validator):
     assert is_valid_update_global_credentials(
+        validator,
         update_global_credentials(api)
     )
 
@@ -654,9 +677,10 @@ def update_global_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_global_credentials_default(api):
+def test_update_global_credentials_default(api, validator):
     try:
         assert is_valid_update_global_credentials(
+            validator,
             update_global_credentials_default(api)
         )
     except Exception as original_e:
@@ -664,7 +688,7 @@ def test_update_global_credentials_default(api):
             raise original_e
 
 
-def is_valid_create_snmp_write_community(obj):
+def is_valid_create_snmp_write_community(json_schema_validate, obj):
     json_schema_validate('jsd_6bacb8d14639bdc7_v1_3_3').validate(obj)
     return True
 
@@ -678,8 +702,9 @@ def create_snmp_write_community(api):
 
 
 @pytest.mark.discovery
-def test_create_snmp_write_community(api):
+def test_create_snmp_write_community(api, validator):
     assert is_valid_create_snmp_write_community(
+        validator,
         create_snmp_write_community(api)
     )
 
@@ -693,9 +718,10 @@ def create_snmp_write_community_default(api):
 
 
 @pytest.mark.discovery
-def test_create_snmp_write_community_default(api):
+def test_create_snmp_write_community_default(api, validator):
     try:
         assert is_valid_create_snmp_write_community(
+            validator,
             create_snmp_write_community_default(api)
         )
     except Exception as original_e:
@@ -703,7 +729,7 @@ def test_create_snmp_write_community_default(api):
             raise original_e
 
 
-def is_valid_create_snmp_read_community(obj):
+def is_valid_create_snmp_read_community(json_schema_validate, obj):
     json_schema_validate('jsd_7aa3da9d4e098ef2_v1_3_3').validate(obj)
     return True
 
@@ -717,8 +743,9 @@ def create_snmp_read_community(api):
 
 
 @pytest.mark.discovery
-def test_create_snmp_read_community(api):
+def test_create_snmp_read_community(api, validator):
     assert is_valid_create_snmp_read_community(
+        validator,
         create_snmp_read_community(api)
     )
 
@@ -732,9 +759,10 @@ def create_snmp_read_community_default(api):
 
 
 @pytest.mark.discovery
-def test_create_snmp_read_community_default(api):
+def test_create_snmp_read_community_default(api, validator):
     try:
         assert is_valid_create_snmp_read_community(
+            validator,
             create_snmp_read_community_default(api)
         )
     except Exception as original_e:
@@ -742,7 +770,7 @@ def test_create_snmp_read_community_default(api):
             raise original_e
 
 
-def is_valid_get_discovery_by_id(obj):
+def is_valid_get_discovery_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_63bb88b74f59aa17_v1_3_3').validate(obj)
     return True
 
@@ -755,8 +783,9 @@ def get_discovery_by_id(api):
 
 
 @pytest.mark.discovery
-def test_get_discovery_by_id(api):
+def test_get_discovery_by_id(api, validator):
     assert is_valid_get_discovery_by_id(
+        validator,
         get_discovery_by_id(api)
     )
 
@@ -769,9 +798,10 @@ def get_discovery_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovery_by_id_default(api):
+def test_get_discovery_by_id_default(api, validator):
     try:
         assert is_valid_get_discovery_by_id(
+            validator,
             get_discovery_by_id_default(api)
         )
     except Exception as original_e:
@@ -779,7 +809,7 @@ def test_get_discovery_by_id_default(api):
             raise original_e
 
 
-def is_valid_update_http_read_credential(obj):
+def is_valid_update_http_read_credential(json_schema_validate, obj):
     json_schema_validate('jsd_89b36b4649999d81_v1_3_3').validate(obj)
     return True
 
@@ -803,8 +833,9 @@ def update_http_read_credential(api):
 
 
 @pytest.mark.discovery
-def test_update_http_read_credential(api):
+def test_update_http_read_credential(api, validator):
     assert is_valid_update_http_read_credential(
+        validator,
         update_http_read_credential(api)
     )
 
@@ -828,9 +859,10 @@ def update_http_read_credential_default(api):
 
 
 @pytest.mark.discovery
-def test_update_http_read_credential_default(api):
+def test_update_http_read_credential_default(api, validator):
     try:
         assert is_valid_update_http_read_credential(
+            validator,
             update_http_read_credential_default(api)
         )
     except Exception as original_e:
@@ -838,7 +870,7 @@ def test_update_http_read_credential_default(api):
             raise original_e
 
 
-def is_valid_get_list_of_discoveries_by_discovery_id(obj):
+def is_valid_get_list_of_discoveries_by_discovery_id(json_schema_validate, obj):
     json_schema_validate('jsd_99872a134d0a9fb4_v1_3_3').validate(obj)
     return True
 
@@ -854,8 +886,9 @@ def get_list_of_discoveries_by_discovery_id(api):
 
 
 @pytest.mark.discovery
-def test_get_list_of_discoveries_by_discovery_id(api):
+def test_get_list_of_discoveries_by_discovery_id(api, validator):
     assert is_valid_get_list_of_discoveries_by_discovery_id(
+        validator,
         get_list_of_discoveries_by_discovery_id(api)
     )
 
@@ -871,9 +904,10 @@ def get_list_of_discoveries_by_discovery_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_list_of_discoveries_by_discovery_id_default(api):
+def test_get_list_of_discoveries_by_discovery_id_default(api, validator):
     try:
         assert is_valid_get_list_of_discoveries_by_discovery_id(
+            validator,
             get_list_of_discoveries_by_discovery_id_default(api)
         )
     except Exception as original_e:
@@ -881,7 +915,7 @@ def test_get_list_of_discoveries_by_discovery_id_default(api):
             raise original_e
 
 
-def is_valid_updates_discovery_by_id(obj):
+def is_valid_updates_discovery_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_9788b8fc4418831d_v1_3_3').validate(obj)
     return True
 
@@ -931,8 +965,9 @@ def updates_discovery_by_id(api):
 
 
 @pytest.mark.discovery
-def test_updates_discovery_by_id(api):
+def test_updates_discovery_by_id(api, validator):
     assert is_valid_updates_discovery_by_id(
+        validator,
         updates_discovery_by_id(api)
     )
 
@@ -982,9 +1017,10 @@ def updates_discovery_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_updates_discovery_by_id_default(api):
+def test_updates_discovery_by_id_default(api, validator):
     try:
         assert is_valid_updates_discovery_by_id(
+            validator,
             updates_discovery_by_id_default(api)
         )
     except Exception as original_e:
@@ -992,7 +1028,7 @@ def test_updates_discovery_by_id_default(api):
             raise original_e
 
 
-def is_valid_create_cli_credentials(obj):
+def is_valid_create_cli_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_948ea8194348bc0b_v1_3_3').validate(obj)
     return True
 
@@ -1006,8 +1042,9 @@ def create_cli_credentials(api):
 
 
 @pytest.mark.discovery
-def test_create_cli_credentials(api):
+def test_create_cli_credentials(api, validator):
     assert is_valid_create_cli_credentials(
+        validator,
         create_cli_credentials(api)
     )
 
@@ -1021,9 +1058,10 @@ def create_cli_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_cli_credentials_default(api):
+def test_create_cli_credentials_default(api, validator):
     try:
         assert is_valid_create_cli_credentials(
+            validator,
             create_cli_credentials_default(api)
         )
     except Exception as original_e:
@@ -1031,7 +1069,7 @@ def test_create_cli_credentials_default(api):
             raise original_e
 
 
-def is_valid_get_discovered_devices_by_range(obj):
+def is_valid_get_discovered_devices_by_range(json_schema_validate, obj):
     json_schema_validate('jsd_a6b798ab4acaa34e_v1_3_3').validate(obj)
     return True
 
@@ -1047,8 +1085,9 @@ def get_discovered_devices_by_range(api):
 
 
 @pytest.mark.discovery
-def test_get_discovered_devices_by_range(api):
+def test_get_discovered_devices_by_range(api, validator):
     assert is_valid_get_discovered_devices_by_range(
+        validator,
         get_discovered_devices_by_range(api)
     )
 
@@ -1064,9 +1103,10 @@ def get_discovered_devices_by_range_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovered_devices_by_range_default(api):
+def test_get_discovered_devices_by_range_default(api, validator):
     try:
         assert is_valid_get_discovered_devices_by_range(
+            validator,
             get_discovered_devices_by_range_default(api)
         )
     except Exception as original_e:
@@ -1074,7 +1114,7 @@ def test_get_discovered_devices_by_range_default(api):
             raise original_e
 
 
-def is_valid_get_discovery_jobs_by_ip(obj):
+def is_valid_get_discovery_jobs_by_ip(json_schema_validate, obj):
     json_schema_validate('jsd_a4967be64dfaaa1a_v1_3_3').validate(obj)
     return True
 
@@ -1090,8 +1130,9 @@ def get_discovery_jobs_by_ip(api):
 
 
 @pytest.mark.discovery
-def test_get_discovery_jobs_by_ip(api):
+def test_get_discovery_jobs_by_ip(api, validator):
     assert is_valid_get_discovery_jobs_by_ip(
+        validator,
         get_discovery_jobs_by_ip(api)
     )
 
@@ -1107,9 +1148,10 @@ def get_discovery_jobs_by_ip_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovery_jobs_by_ip_default(api):
+def test_get_discovery_jobs_by_ip_default(api, validator):
     try:
         assert is_valid_get_discovery_jobs_by_ip(
+            validator,
             get_discovery_jobs_by_ip_default(api)
         )
     except Exception as original_e:
@@ -1117,7 +1159,7 @@ def test_get_discovery_jobs_by_ip_default(api):
             raise original_e
 
 
-def is_valid_create_update_snmp_properties(obj):
+def is_valid_create_update_snmp_properties(json_schema_validate, obj):
     json_schema_validate('jsd_a5ac99774c6bb541_v1_3_3').validate(obj)
     return True
 
@@ -1131,8 +1173,9 @@ def create_update_snmp_properties(api):
 
 
 @pytest.mark.discovery
-def test_create_update_snmp_properties(api):
+def test_create_update_snmp_properties(api, validator):
     assert is_valid_create_update_snmp_properties(
+        validator,
         create_update_snmp_properties(api)
     )
 
@@ -1146,9 +1189,10 @@ def create_update_snmp_properties_default(api):
 
 
 @pytest.mark.discovery
-def test_create_update_snmp_properties_default(api):
+def test_create_update_snmp_properties_default(api, validator):
     try:
         assert is_valid_create_update_snmp_properties(
+            validator,
             create_update_snmp_properties_default(api)
         )
     except Exception as original_e:
@@ -1156,7 +1200,7 @@ def test_create_update_snmp_properties_default(api):
             raise original_e
 
 
-def is_valid_create_snmpv3_credentials(obj):
+def is_valid_create_snmpv3_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_979688084b7ba60d_v1_3_3').validate(obj)
     return True
 
@@ -1170,8 +1214,9 @@ def create_snmpv3_credentials(api):
 
 
 @pytest.mark.discovery
-def test_create_snmpv3_credentials(api):
+def test_create_snmpv3_credentials(api, validator):
     assert is_valid_create_snmpv3_credentials(
+        validator,
         create_snmpv3_credentials(api)
     )
 
@@ -1185,9 +1230,10 @@ def create_snmpv3_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_snmpv3_credentials_default(api):
+def test_create_snmpv3_credentials_default(api, validator):
     try:
         assert is_valid_create_snmpv3_credentials(
+            validator,
             create_snmpv3_credentials_default(api)
         )
     except Exception as original_e:
@@ -1195,7 +1241,7 @@ def test_create_snmpv3_credentials_default(api):
             raise original_e
 
 
-def is_valid_update_http_write_credentials(obj):
+def is_valid_update_http_write_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_b68a6bd8473a9a25_v1_3_3').validate(obj)
     return True
 
@@ -1219,8 +1265,9 @@ def update_http_write_credentials(api):
 
 
 @pytest.mark.discovery
-def test_update_http_write_credentials(api):
+def test_update_http_write_credentials(api, validator):
     assert is_valid_update_http_write_credentials(
+        validator,
         update_http_write_credentials(api)
     )
 
@@ -1244,9 +1291,10 @@ def update_http_write_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_http_write_credentials_default(api):
+def test_update_http_write_credentials_default(api, validator):
     try:
         assert is_valid_update_http_write_credentials(
+            validator,
             update_http_write_credentials_default(api)
         )
     except Exception as original_e:
@@ -1254,7 +1302,7 @@ def test_update_http_write_credentials_default(api):
             raise original_e
 
 
-def is_valid_create_http_read_credentials(obj):
+def is_valid_create_http_read_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_bf859ac64a0ba19c_v1_3_3').validate(obj)
     return True
 
@@ -1268,8 +1316,9 @@ def create_http_read_credentials(api):
 
 
 @pytest.mark.discovery
-def test_create_http_read_credentials(api):
+def test_create_http_read_credentials(api, validator):
     assert is_valid_create_http_read_credentials(
+        validator,
         create_http_read_credentials(api)
     )
 
@@ -1283,9 +1332,10 @@ def create_http_read_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_http_read_credentials_default(api):
+def test_create_http_read_credentials_default(api, validator):
     try:
         assert is_valid_create_http_read_credentials(
+            validator,
             create_http_read_credentials_default(api)
         )
     except Exception as original_e:
@@ -1293,7 +1343,7 @@ def test_create_http_read_credentials_default(api):
             raise original_e
 
 
-def is_valid_update_netconf_credentials(obj):
+def is_valid_update_netconf_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_c5acd9fa4c1a8abc_v1_3_3').validate(obj)
     return True
 
@@ -1314,8 +1364,9 @@ def update_netconf_credentials(api):
 
 
 @pytest.mark.discovery
-def test_update_netconf_credentials(api):
+def test_update_netconf_credentials(api, validator):
     assert is_valid_update_netconf_credentials(
+        validator,
         update_netconf_credentials(api)
     )
 
@@ -1336,9 +1387,10 @@ def update_netconf_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_netconf_credentials_default(api):
+def test_update_netconf_credentials_default(api, validator):
     try:
         assert is_valid_update_netconf_credentials(
+            validator,
             update_netconf_credentials_default(api)
         )
     except Exception as original_e:
@@ -1346,7 +1398,7 @@ def test_update_netconf_credentials_default(api):
             raise original_e
 
 
-def is_valid_delete_discovery_by_specified_range(obj):
+def is_valid_delete_discovery_by_specified_range(json_schema_validate, obj):
     json_schema_validate('jsd_c1ba9a424c08a01b_v1_3_3').validate(obj)
     return True
 
@@ -1360,8 +1412,9 @@ def delete_discovery_by_specified_range(api):
 
 
 @pytest.mark.discovery
-def test_delete_discovery_by_specified_range(api):
+def test_delete_discovery_by_specified_range(api, validator):
     assert is_valid_delete_discovery_by_specified_range(
+        validator,
         delete_discovery_by_specified_range(api)
     )
 
@@ -1375,9 +1428,10 @@ def delete_discovery_by_specified_range_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_discovery_by_specified_range_default(api):
+def test_delete_discovery_by_specified_range_default(api, validator):
     try:
         assert is_valid_delete_discovery_by_specified_range(
+            validator,
             delete_discovery_by_specified_range_default(api)
         )
     except Exception as original_e:
@@ -1385,7 +1439,7 @@ def test_delete_discovery_by_specified_range_default(api):
             raise original_e
 
 
-def is_valid_get_devices_discovered_by_id(obj):
+def is_valid_get_devices_discovered_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_a6965b454c9a8663_v1_3_3').validate(obj)
     return True
 
@@ -1399,8 +1453,9 @@ def get_devices_discovered_by_id(api):
 
 
 @pytest.mark.discovery
-def test_get_devices_discovered_by_id(api):
+def test_get_devices_discovered_by_id(api, validator):
     assert is_valid_get_devices_discovered_by_id(
+        validator,
         get_devices_discovered_by_id(api)
     )
 
@@ -1414,9 +1469,10 @@ def get_devices_discovered_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_devices_discovered_by_id_default(api):
+def test_get_devices_discovered_by_id_default(api, validator):
     try:
         assert is_valid_get_devices_discovered_by_id(
+            validator,
             get_devices_discovered_by_id_default(api)
         )
     except Exception as original_e:
@@ -1424,7 +1480,7 @@ def test_get_devices_discovered_by_id_default(api):
             raise original_e
 
 
-def is_valid_delete_all_discovery(obj):
+def is_valid_delete_all_discovery(json_schema_validate, obj):
     json_schema_validate('jsd_db8e09234a988bab_v1_3_3').validate(obj)
     return True
 
@@ -1437,8 +1493,9 @@ def delete_all_discovery(api):
 
 
 @pytest.mark.discovery
-def test_delete_all_discovery(api):
+def test_delete_all_discovery(api, validator):
     assert is_valid_delete_all_discovery(
+        validator,
         delete_all_discovery(api)
     )
 
@@ -1451,9 +1508,10 @@ def delete_all_discovery_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_all_discovery_default(api):
+def test_delete_all_discovery_default(api, validator):
     try:
         assert is_valid_delete_all_discovery(
+            validator,
             delete_all_discovery_default(api)
         )
     except Exception as original_e:
@@ -1461,7 +1519,7 @@ def test_delete_all_discovery_default(api):
             raise original_e
 
 
-def is_valid_delete_global_credentials_by_id(obj):
+def is_valid_delete_global_credentials_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_f5ac590c4ca9975a_v1_3_3').validate(obj)
     return True
 
@@ -1474,8 +1532,9 @@ def delete_global_credentials_by_id(api):
 
 
 @pytest.mark.discovery
-def test_delete_global_credentials_by_id(api):
+def test_delete_global_credentials_by_id(api, validator):
     assert is_valid_delete_global_credentials_by_id(
+        validator,
         delete_global_credentials_by_id(api)
     )
 
@@ -1488,9 +1547,10 @@ def delete_global_credentials_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_global_credentials_by_id_default(api):
+def test_delete_global_credentials_by_id_default(api, validator):
     try:
         assert is_valid_delete_global_credentials_by_id(
+            validator,
             delete_global_credentials_by_id_default(api)
         )
     except Exception as original_e:
@@ -1498,7 +1558,7 @@ def test_delete_global_credentials_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_discovered_network_devices_by_discovery_id(obj):
+def is_valid_get_discovered_network_devices_by_discovery_id(json_schema_validate, obj):
     json_schema_validate('jsd_f6ac994f451ba011_v1_3_3').validate(obj)
     return True
 
@@ -1512,8 +1572,9 @@ def get_discovered_network_devices_by_discovery_id(api):
 
 
 @pytest.mark.discovery
-def test_get_discovered_network_devices_by_discovery_id(api):
+def test_get_discovered_network_devices_by_discovery_id(api, validator):
     assert is_valid_get_discovered_network_devices_by_discovery_id(
+        validator,
         get_discovered_network_devices_by_discovery_id(api)
     )
 
@@ -1527,9 +1588,10 @@ def get_discovered_network_devices_by_discovery_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovered_network_devices_by_discovery_id_default(api):
+def test_get_discovered_network_devices_by_discovery_id_default(api, validator):
     try:
         assert is_valid_get_discovered_network_devices_by_discovery_id(
+            validator,
             get_discovered_network_devices_by_discovery_id_default(api)
         )
     except Exception as original_e:
@@ -1537,7 +1599,7 @@ def test_get_discovered_network_devices_by_discovery_id_default(api):
             raise original_e
 
 
-def is_valid_get_global_credentials(obj):
+def is_valid_get_global_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_ff816b8e435897eb_v1_3_3').validate(obj)
     return True
 
@@ -1552,8 +1614,9 @@ def get_global_credentials(api):
 
 
 @pytest.mark.discovery
-def test_get_global_credentials(api):
+def test_get_global_credentials(api, validator):
     assert is_valid_get_global_credentials(
+        validator,
         get_global_credentials(api)
     )
 
@@ -1568,9 +1631,10 @@ def get_global_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_get_global_credentials_default(api):
+def test_get_global_credentials_default(api, validator):
     try:
         assert is_valid_get_global_credentials(
+            validator,
             get_global_credentials_default(api)
         )
     except Exception as original_e:
@@ -1578,7 +1642,7 @@ def test_get_global_credentials_default(api):
             raise original_e
 
 
-def is_valid_update_cli_credentials(obj):
+def is_valid_update_cli_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_fba0d80747eb82e8_v1_3_3').validate(obj)
     return True
 
@@ -1601,8 +1665,9 @@ def update_cli_credentials(api):
 
 
 @pytest.mark.discovery
-def test_update_cli_credentials(api):
+def test_update_cli_credentials(api, validator):
     assert is_valid_update_cli_credentials(
+        validator,
         update_cli_credentials(api)
     )
 
@@ -1625,9 +1690,10 @@ def update_cli_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_cli_credentials_default(api):
+def test_update_cli_credentials_default(api, validator):
     try:
         assert is_valid_update_cli_credentials(
+            validator,
             update_cli_credentials_default(api)
         )
     except Exception as original_e:

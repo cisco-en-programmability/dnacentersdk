@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
-def is_valid_gets_border_device_detail(obj):
+def is_valid_gets_border_device_detail(json_schema_validate, obj):
     json_schema_validate('jsd_98a39bf4485a9871_v1_2_10').validate(obj)
     return True
 
@@ -43,8 +41,9 @@ def gets_border_device_detail(api):
 
 
 @pytest.mark.fabric_wired
-def test_gets_border_device_detail(api):
+def test_gets_border_device_detail(api, validator):
     assert is_valid_gets_border_device_detail(
+        validator,
         gets_border_device_detail(api)
     )
 
@@ -58,9 +57,10 @@ def gets_border_device_detail_default(api):
 
 
 @pytest.mark.fabric_wired
-def test_gets_border_device_detail_default(api):
+def test_gets_border_device_detail_default(api, validator):
     try:
         assert is_valid_gets_border_device_detail(
+            validator,
             gets_border_device_detail_default(api)
         )
     except Exception as original_e:
@@ -68,7 +68,7 @@ def test_gets_border_device_detail_default(api):
             raise original_e
 
 
-def is_valid_adds_border_device(obj):
+def is_valid_adds_border_device(json_schema_validate, obj):
     json_schema_validate('jsd_bead7b3443b996a7_v1_2_10').validate(obj)
     return True
 
@@ -83,8 +83,9 @@ def adds_border_device(api):
 
 
 @pytest.mark.fabric_wired
-def test_adds_border_device(api):
+def test_adds_border_device(api, validator):
     assert is_valid_adds_border_device(
+        validator,
         adds_border_device(api)
     )
 
@@ -99,9 +100,10 @@ def adds_border_device_default(api):
 
 
 @pytest.mark.fabric_wired
-def test_adds_border_device_default(api):
+def test_adds_border_device_default(api, validator):
     try:
         assert is_valid_adds_border_device(
+            validator,
             adds_border_device_default(api)
         )
     except Exception as original_e:
@@ -109,7 +111,7 @@ def test_adds_border_device_default(api):
             raise original_e
 
 
-def is_valid_deletes_border_device(obj):
+def is_valid_deletes_border_device(json_schema_validate, obj):
     json_schema_validate('jsd_cb81b93540baaab0_v1_2_10').validate(obj)
     return True
 
@@ -123,8 +125,9 @@ def deletes_border_device(api):
 
 
 @pytest.mark.fabric_wired
-def test_deletes_border_device(api):
+def test_deletes_border_device(api, validator):
     assert is_valid_deletes_border_device(
+        validator,
         deletes_border_device(api)
     )
 
@@ -138,9 +141,10 @@ def deletes_border_device_default(api):
 
 
 @pytest.mark.fabric_wired
-def test_deletes_border_device_default(api):
+def test_deletes_border_device_default(api, validator):
     try:
         assert is_valid_deletes_border_device(
+            validator,
             deletes_border_device_default(api)
         )
     except Exception as original_e:

@@ -97,7 +97,7 @@ class PathTrace(object):
             periodic_refresh(bool): Is analysis periodically
                 refreshed?.
             source_ip(basestring): Source IP address.
-            dest_ip(basestring): Destination IP adress.
+            dest_ip(basestring): Destination IP address.
             source_port(basestring): Source port.
             dest_port(basestring): Destination port.
             gt_create_time(basestring): Analyses requested after

@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.0', reason='version does not match')
 
 
-def is_valid_deletes_border_device_from_sda_fabric(obj):
+def is_valid_deletes_border_device_from_sda_fabric(json_schema_validate, obj):
     json_schema_validate('jsd_1e80bb50430b8634_v1_3_0').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def deletes_border_device_from_sda_fabric(api):
 
 
 @pytest.mark.fabric_wired
-def test_deletes_border_device_from_sda_fabric(api):
+def test_deletes_border_device_from_sda_fabric(api, validator):
     assert is_valid_deletes_border_device_from_sda_fabric(
+        validator,
         deletes_border_device_from_sda_fabric(api)
     )
 
@@ -56,9 +55,10 @@ def deletes_border_device_from_sda_fabric_default(api):
 
 
 @pytest.mark.fabric_wired
-def test_deletes_border_device_from_sda_fabric_default(api):
+def test_deletes_border_device_from_sda_fabric_default(api, validator):
     try:
         assert is_valid_deletes_border_device_from_sda_fabric(
+            validator,
             deletes_border_device_from_sda_fabric_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_deletes_border_device_from_sda_fabric_default(api):
             raise original_e
 
 
-def is_valid_adds_border_device_in_sda_fabric(obj):
+def is_valid_adds_border_device_in_sda_fabric(json_schema_validate, obj):
     json_schema_validate('jsd_a4b56a5f478a97dd_v1_3_0').validate(obj)
     return True
 
@@ -80,8 +80,9 @@ def adds_border_device_in_sda_fabric(api):
 
 
 @pytest.mark.fabric_wired
-def test_adds_border_device_in_sda_fabric(api):
+def test_adds_border_device_in_sda_fabric(api, validator):
     assert is_valid_adds_border_device_in_sda_fabric(
+        validator,
         adds_border_device_in_sda_fabric(api)
     )
 
@@ -95,9 +96,10 @@ def adds_border_device_in_sda_fabric_default(api):
 
 
 @pytest.mark.fabric_wired
-def test_adds_border_device_in_sda_fabric_default(api):
+def test_adds_border_device_in_sda_fabric_default(api, validator):
     try:
         assert is_valid_adds_border_device_in_sda_fabric(
+            validator,
             adds_border_device_in_sda_fabric_default(api)
         )
     except Exception as original_e:
@@ -105,7 +107,7 @@ def test_adds_border_device_in_sda_fabric_default(api):
             raise original_e
 
 
-def is_valid_gets_border_device_details_from_sda_fabric(obj):
+def is_valid_gets_border_device_details_from_sda_fabric(json_schema_validate, obj):
     json_schema_validate('jsd_d0b3593c4a7aaf22_v1_3_0').validate(obj)
     return True
 
@@ -118,8 +120,9 @@ def gets_border_device_details_from_sda_fabric(api):
 
 
 @pytest.mark.fabric_wired
-def test_gets_border_device_details_from_sda_fabric(api):
+def test_gets_border_device_details_from_sda_fabric(api, validator):
     assert is_valid_gets_border_device_details_from_sda_fabric(
+        validator,
         gets_border_device_details_from_sda_fabric(api)
     )
 
@@ -132,9 +135,10 @@ def gets_border_device_details_from_sda_fabric_default(api):
 
 
 @pytest.mark.fabric_wired
-def test_gets_border_device_details_from_sda_fabric_default(api):
+def test_gets_border_device_details_from_sda_fabric_default(api, validator):
     try:
         assert is_valid_gets_border_device_details_from_sda_fabric(
+            validator,
             gets_border_device_details_from_sda_fabric_default(api)
         )
     except Exception as original_e:

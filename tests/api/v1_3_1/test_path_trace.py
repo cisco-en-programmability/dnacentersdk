@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
 
 
-def is_valid_deletes_pathtrace_by_id(obj):
+def is_valid_deletes_pathtrace_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_8a9d2b76443b914e_v1_3_1').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def deletes_pathtrace_by_id(api):
 
 
 @pytest.mark.path_trace
-def test_deletes_pathtrace_by_id(api):
+def test_deletes_pathtrace_by_id(api, validator):
     assert is_valid_deletes_pathtrace_by_id(
+        validator,
         deletes_pathtrace_by_id(api)
     )
 
@@ -56,9 +55,10 @@ def deletes_pathtrace_by_id_default(api):
 
 
 @pytest.mark.path_trace
-def test_deletes_pathtrace_by_id_default(api):
+def test_deletes_pathtrace_by_id_default(api, validator):
     try:
         assert is_valid_deletes_pathtrace_by_id(
+            validator,
             deletes_pathtrace_by_id_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_deletes_pathtrace_by_id_default(api):
             raise original_e
 
 
-def is_valid_retrieves_previous_pathtrace(obj):
+def is_valid_retrieves_previous_pathtrace(json_schema_validate, obj):
     json_schema_validate('jsd_7ab9a8bd4f3b86a4_v1_3_1').validate(obj)
     return True
 
@@ -79,8 +79,9 @@ def retrieves_previous_pathtrace(api):
 
 
 @pytest.mark.path_trace
-def test_retrieves_previous_pathtrace(api):
+def test_retrieves_previous_pathtrace(api, validator):
     assert is_valid_retrieves_previous_pathtrace(
+        validator,
         retrieves_previous_pathtrace(api)
     )
 
@@ -93,9 +94,10 @@ def retrieves_previous_pathtrace_default(api):
 
 
 @pytest.mark.path_trace
-def test_retrieves_previous_pathtrace_default(api):
+def test_retrieves_previous_pathtrace_default(api, validator):
     try:
         assert is_valid_retrieves_previous_pathtrace(
+            validator,
             retrieves_previous_pathtrace_default(api)
         )
     except Exception as original_e:
@@ -103,7 +105,7 @@ def test_retrieves_previous_pathtrace_default(api):
             raise original_e
 
 
-def is_valid_retrives_all_previous_pathtraces_summary(obj):
+def is_valid_retrives_all_previous_pathtraces_summary(json_schema_validate, obj):
     json_schema_validate('jsd_55bc3bf94e38b6ff_v1_3_1').validate(obj)
     return True
 
@@ -130,8 +132,9 @@ def retrives_all_previous_pathtraces_summary(api):
 
 
 @pytest.mark.path_trace
-def test_retrives_all_previous_pathtraces_summary(api):
+def test_retrives_all_previous_pathtraces_summary(api, validator):
     assert is_valid_retrives_all_previous_pathtraces_summary(
+        validator,
         retrives_all_previous_pathtraces_summary(api)
     )
 
@@ -158,9 +161,10 @@ def retrives_all_previous_pathtraces_summary_default(api):
 
 
 @pytest.mark.path_trace
-def test_retrives_all_previous_pathtraces_summary_default(api):
+def test_retrives_all_previous_pathtraces_summary_default(api, validator):
     try:
         assert is_valid_retrives_all_previous_pathtraces_summary(
+            validator,
             retrives_all_previous_pathtraces_summary_default(api)
         )
     except Exception as original_e:
@@ -168,7 +172,7 @@ def test_retrives_all_previous_pathtraces_summary_default(api):
             raise original_e
 
 
-def is_valid_initiate_a_new_pathtrace(obj):
+def is_valid_initiate_a_new_pathtrace(json_schema_validate, obj):
     json_schema_validate('jsd_a395fae644ca899c_v1_3_1').validate(obj)
     return True
 
@@ -190,8 +194,9 @@ def initiate_a_new_pathtrace(api):
 
 
 @pytest.mark.path_trace
-def test_initiate_a_new_pathtrace(api):
+def test_initiate_a_new_pathtrace(api, validator):
     assert is_valid_initiate_a_new_pathtrace(
+        validator,
         initiate_a_new_pathtrace(api)
     )
 
@@ -213,9 +218,10 @@ def initiate_a_new_pathtrace_default(api):
 
 
 @pytest.mark.path_trace
-def test_initiate_a_new_pathtrace_default(api):
+def test_initiate_a_new_pathtrace_default(api, validator):
     try:
         assert is_valid_initiate_a_new_pathtrace(
+            validator,
             initiate_a_new_pathtrace_default(api)
         )
     except Exception as original_e:

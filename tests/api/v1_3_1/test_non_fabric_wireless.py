@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
 
 
-def is_valid_retrieve_rf_profiles(obj):
+def is_valid_retrieve_rf_profiles(json_schema_validate, obj):
     json_schema_validate('jsd_098cab9141c9a3fe_v1_3_1').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def retrieve_rf_profiles(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_retrieve_rf_profiles(api):
+def test_retrieve_rf_profiles(api, validator):
     assert is_valid_retrieve_rf_profiles(
+        validator,
         retrieve_rf_profiles(api)
     )
 
@@ -56,9 +55,10 @@ def retrieve_rf_profiles_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_retrieve_rf_profiles_default(api):
+def test_retrieve_rf_profiles_default(api, validator):
     try:
         assert is_valid_retrieve_rf_profiles(
+            validator,
             retrieve_rf_profiles_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_retrieve_rf_profiles_default(api):
             raise original_e
 
 
-def is_valid_create_and_provision_ssid(obj):
+def is_valid_create_and_provision_ssid(json_schema_validate, obj):
     json_schema_validate('jsd_1eb72ad34e098990_v1_3_1').validate(obj)
     return True
 
@@ -85,8 +85,9 @@ def create_and_provision_ssid(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_and_provision_ssid(api):
+def test_create_and_provision_ssid(api, validator):
     assert is_valid_create_and_provision_ssid(
+        validator,
         create_and_provision_ssid(api)
     )
 
@@ -105,9 +106,10 @@ def create_and_provision_ssid_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_and_provision_ssid_default(api):
+def test_create_and_provision_ssid_default(api, validator):
     try:
         assert is_valid_create_and_provision_ssid(
+            validator,
             create_and_provision_ssid_default(api)
         )
     except Exception as original_e:
@@ -115,7 +117,7 @@ def test_create_and_provision_ssid_default(api):
             raise original_e
 
 
-def is_valid_delete_rf_profiles(obj):
+def is_valid_delete_rf_profiles(json_schema_validate, obj):
     json_schema_validate('jsd_28b24a744a9994be_v1_3_1').validate(obj)
     return True
 
@@ -128,8 +130,9 @@ def delete_rf_profiles(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_rf_profiles(api):
+def test_delete_rf_profiles(api, validator):
     assert is_valid_delete_rf_profiles(
+        validator,
         delete_rf_profiles(api)
     )
 
@@ -142,9 +145,10 @@ def delete_rf_profiles_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_rf_profiles_default(api):
+def test_delete_rf_profiles_default(api, validator):
     try:
         assert is_valid_delete_rf_profiles(
+            validator,
             delete_rf_profiles_default(api)
         )
     except Exception as original_e:
@@ -152,7 +156,7 @@ def test_delete_rf_profiles_default(api):
             raise original_e
 
 
-def is_valid_get_wireless_profile(obj):
+def is_valid_get_wireless_profile(json_schema_validate, obj):
     json_schema_validate('jsd_b3a1c8804c8b9b8b_v1_3_1').validate(obj)
     return True
 
@@ -165,8 +169,9 @@ def get_wireless_profile(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_get_wireless_profile(api):
+def test_get_wireless_profile(api, validator):
     assert is_valid_get_wireless_profile(
+        validator,
         get_wireless_profile(api)
     )
 
@@ -179,9 +184,10 @@ def get_wireless_profile_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_get_wireless_profile_default(api):
+def test_get_wireless_profile_default(api, validator):
     try:
         assert is_valid_get_wireless_profile(
+            validator,
             get_wireless_profile_default(api)
         )
     except Exception as original_e:
@@ -189,7 +195,7 @@ def test_get_wireless_profile_default(api):
             raise original_e
 
 
-def is_valid_update_wireless_profile(obj):
+def is_valid_update_wireless_profile(json_schema_validate, obj):
     json_schema_validate('jsd_cfbd3870405aad55_v1_3_1').validate(obj)
     return True
 
@@ -204,8 +210,9 @@ def update_wireless_profile(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_update_wireless_profile(api):
+def test_update_wireless_profile(api, validator):
     assert is_valid_update_wireless_profile(
+        validator,
         update_wireless_profile(api)
     )
 
@@ -220,9 +227,10 @@ def update_wireless_profile_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_update_wireless_profile_default(api):
+def test_update_wireless_profile_default(api, validator):
     try:
         assert is_valid_update_wireless_profile(
+            validator,
             update_wireless_profile_default(api)
         )
     except Exception as original_e:
@@ -230,7 +238,7 @@ def test_update_wireless_profile_default(api):
             raise original_e
 
 
-def is_valid_delete_ssid_and_provision_it_to_devices(obj):
+def is_valid_delete_ssid_and_provision_it_to_devices(json_schema_validate, obj):
     json_schema_validate('jsd_fc9538fe43d9884d_v1_3_1').validate(obj)
     return True
 
@@ -244,8 +252,9 @@ def delete_ssid_and_provision_it_to_devices(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_ssid_and_provision_it_to_devices(api):
+def test_delete_ssid_and_provision_it_to_devices(api, validator):
     assert is_valid_delete_ssid_and_provision_it_to_devices(
+        validator,
         delete_ssid_and_provision_it_to_devices(api)
     )
 
@@ -259,9 +268,10 @@ def delete_ssid_and_provision_it_to_devices_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_ssid_and_provision_it_to_devices_default(api):
+def test_delete_ssid_and_provision_it_to_devices_default(api, validator):
     try:
         assert is_valid_delete_ssid_and_provision_it_to_devices(
+            validator,
             delete_ssid_and_provision_it_to_devices_default(api)
         )
     except Exception as original_e:
@@ -269,7 +279,7 @@ def test_delete_ssid_and_provision_it_to_devices_default(api):
             raise original_e
 
 
-def is_valid_create_wireless_profile(obj):
+def is_valid_create_wireless_profile(json_schema_validate, obj):
     json_schema_validate('jsd_709769624bf988d5_v1_3_1').validate(obj)
     return True
 
@@ -284,8 +294,9 @@ def create_wireless_profile(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_wireless_profile(api):
+def test_create_wireless_profile(api, validator):
     assert is_valid_create_wireless_profile(
+        validator,
         create_wireless_profile(api)
     )
 
@@ -300,9 +311,10 @@ def create_wireless_profile_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_wireless_profile_default(api):
+def test_create_wireless_profile_default(api, validator):
     try:
         assert is_valid_create_wireless_profile(
+            validator,
             create_wireless_profile_default(api)
         )
     except Exception as original_e:
@@ -310,7 +322,7 @@ def test_create_wireless_profile_default(api):
             raise original_e
 
 
-def is_valid_create_enterprise_ssid(obj):
+def is_valid_create_enterprise_ssid(json_schema_validate, obj):
     return True if obj else False
 
 
@@ -332,8 +344,9 @@ def create_enterprise_ssid(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_enterprise_ssid(api):
+def test_create_enterprise_ssid(api, validator):
     assert is_valid_create_enterprise_ssid(
+        validator,
         create_enterprise_ssid(api)
     )
 
@@ -356,9 +369,10 @@ def create_enterprise_ssid_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_enterprise_ssid_default(api):
+def test_create_enterprise_ssid_default(api, validator):
     try:
         assert is_valid_create_enterprise_ssid(
+            validator,
             create_enterprise_ssid_default(api)
         )
     except Exception as original_e:
@@ -366,7 +380,7 @@ def test_create_enterprise_ssid_default(api):
             raise original_e
 
 
-def is_valid_delete_wireless_profile(obj):
+def is_valid_delete_wireless_profile(json_schema_validate, obj):
     json_schema_validate('jsd_e39588a5494982c4_v1_3_1').validate(obj)
     return True
 
@@ -379,8 +393,9 @@ def delete_wireless_profile(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_wireless_profile(api):
+def test_delete_wireless_profile(api, validator):
     assert is_valid_delete_wireless_profile(
+        validator,
         delete_wireless_profile(api)
     )
 
@@ -393,9 +408,10 @@ def delete_wireless_profile_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_wireless_profile_default(api):
+def test_delete_wireless_profile_default(api, validator):
     try:
         assert is_valid_delete_wireless_profile(
+            validator,
             delete_wireless_profile_default(api)
         )
     except Exception as original_e:
@@ -403,7 +419,7 @@ def test_delete_wireless_profile_default(api):
             raise original_e
 
 
-def is_valid_provision_update(obj):
+def is_valid_provision_update(json_schema_validate, obj):
     json_schema_validate('jsd_87a5ab044139862d_v1_3_1').validate(obj)
     return True
 
@@ -417,8 +433,9 @@ def provision_update(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_provision_update(api):
+def test_provision_update(api, validator):
     assert is_valid_provision_update(
+        validator,
         provision_update(api)
     )
 
@@ -432,9 +449,10 @@ def provision_update_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_provision_update_default(api):
+def test_provision_update_default(api, validator):
     try:
         assert is_valid_provision_update(
+            validator,
             provision_update_default(api)
         )
     except Exception as original_e:
@@ -442,7 +460,7 @@ def test_provision_update_default(api):
             raise original_e
 
 
-def is_valid_create_or_update_rf_profile(obj):
+def is_valid_create_or_update_rf_profile(json_schema_validate, obj):
     json_schema_validate('jsd_b78329674878b815_v1_3_1').validate(obj)
     return True
 
@@ -465,8 +483,9 @@ def create_or_update_rf_profile(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_or_update_rf_profile(api):
+def test_create_or_update_rf_profile(api, validator):
     assert is_valid_create_or_update_rf_profile(
+        validator,
         create_or_update_rf_profile(api)
     )
 
@@ -489,9 +508,10 @@ def create_or_update_rf_profile_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_create_or_update_rf_profile_default(api):
+def test_create_or_update_rf_profile_default(api, validator):
     try:
         assert is_valid_create_or_update_rf_profile(
+            validator,
             create_or_update_rf_profile_default(api)
         )
     except Exception as original_e:
@@ -499,7 +519,7 @@ def test_create_or_update_rf_profile_default(api):
             raise original_e
 
 
-def is_valid_provision(obj):
+def is_valid_provision(json_schema_validate, obj):
     json_schema_validate('jsd_d09b08a3447aa3b9_v1_3_1').validate(obj)
     return True
 
@@ -513,8 +533,9 @@ def provision(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_provision(api):
+def test_provision(api, validator):
     assert is_valid_provision(
+        validator,
         provision(api)
     )
 
@@ -528,9 +549,10 @@ def provision_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_provision_default(api):
+def test_provision_default(api, validator):
     try:
         assert is_valid_provision(
+            validator,
             provision_default(api)
         )
     except Exception as original_e:
@@ -538,7 +560,7 @@ def test_provision_default(api):
             raise original_e
 
 
-def is_valid_delete_enterprise_ssid(obj):
+def is_valid_delete_enterprise_ssid(json_schema_validate, obj):
     json_schema_validate('jsd_c7a6592b4b98a369_v1_3_1').validate(obj)
     return True
 
@@ -551,8 +573,9 @@ def delete_enterprise_ssid(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_enterprise_ssid(api):
+def test_delete_enterprise_ssid(api, validator):
     assert is_valid_delete_enterprise_ssid(
+        validator,
         delete_enterprise_ssid(api)
     )
 
@@ -565,9 +588,10 @@ def delete_enterprise_ssid_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_delete_enterprise_ssid_default(api):
+def test_delete_enterprise_ssid_default(api, validator):
     try:
         assert is_valid_delete_enterprise_ssid(
+            validator,
             delete_enterprise_ssid_default(api)
         )
     except Exception as original_e:
@@ -575,7 +599,7 @@ def test_delete_enterprise_ssid_default(api):
             raise original_e
 
 
-def is_valid_get_enterprise_ssid(obj):
+def is_valid_get_enterprise_ssid(json_schema_validate, obj):
     json_schema_validate('jsd_cca519ba45ebb423_v1_3_1').validate(obj)
     return True
 
@@ -588,8 +612,9 @@ def get_enterprise_ssid(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_get_enterprise_ssid(api):
+def test_get_enterprise_ssid(api, validator):
     assert is_valid_get_enterprise_ssid(
+        validator,
         get_enterprise_ssid(api)
     )
 
@@ -602,9 +627,10 @@ def get_enterprise_ssid_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_get_enterprise_ssid_default(api):
+def test_get_enterprise_ssid_default(api, validator):
     try:
         assert is_valid_get_enterprise_ssid(
+            validator,
             get_enterprise_ssid_default(api)
         )
     except Exception as original_e:
@@ -612,7 +638,7 @@ def test_get_enterprise_ssid_default(api):
             raise original_e
 
 
-def is_valid_ap_provision(obj):
+def is_valid_ap_provision(json_schema_validate, obj):
     json_schema_validate('jsd_e9b99b2248c88014_v1_3_1').validate(obj)
     return True
 
@@ -626,8 +652,9 @@ def ap_provision(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_ap_provision(api):
+def test_ap_provision(api, validator):
     assert is_valid_ap_provision(
+        validator,
         ap_provision(api)
     )
 
@@ -641,9 +668,10 @@ def ap_provision_default(api):
 
 
 @pytest.mark.non_fabric_wireless
-def test_ap_provision_default(api):
+def test_ap_provision_default(api, validator):
     try:
         assert is_valid_ap_provision(
+            validator,
             ap_provision_default(api)
         )
     except Exception as original_e:

@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.0', reason='version does not match')
 
 
-def is_valid_get_device_details_by_ip(obj):
+def is_valid_get_device_details_by_ip(json_schema_validate, obj):
     json_schema_validate('jsd_7fbe4b804879baa4_v1_3_0').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_device_details_by_ip(api):
 
 
 @pytest.mark.site_profile
-def test_get_device_details_by_ip(api):
+def test_get_device_details_by_ip(api, validator):
     assert is_valid_get_device_details_by_ip(
+        validator,
         get_device_details_by_ip(api)
     )
 
@@ -56,9 +55,10 @@ def get_device_details_by_ip_default(api):
 
 
 @pytest.mark.site_profile
-def test_get_device_details_by_ip_default(api):
+def test_get_device_details_by_ip_default(api, validator):
     try:
         assert is_valid_get_device_details_by_ip(
+            validator,
             get_device_details_by_ip_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_device_details_by_ip_default(api):
             raise original_e
 
 
-def is_valid_provision_nfv(obj):
+def is_valid_provision_nfv(json_schema_validate, obj):
     json_schema_validate('jsd_828828f44f28bd0d_v1_3_0').validate(obj)
     return True
 
@@ -82,8 +82,9 @@ def provision_nfv(api):
 
 
 @pytest.mark.site_profile
-def test_provision_nfv(api):
+def test_provision_nfv(api, validator):
     assert is_valid_provision_nfv(
+        validator,
         provision_nfv(api)
     )
 
@@ -99,9 +100,10 @@ def provision_nfv_default(api):
 
 
 @pytest.mark.site_profile
-def test_provision_nfv_default(api):
+def test_provision_nfv_default(api, validator):
     try:
         assert is_valid_provision_nfv(
+            validator,
             provision_nfv_default(api)
         )
     except Exception as original_e:
@@ -109,7 +111,7 @@ def test_provision_nfv_default(api):
             raise original_e
 
 
-def is_valid_nfv_provisioning_detail(obj):
+def is_valid_nfv_provisioning_detail(json_schema_validate, obj):
     json_schema_validate('jsd_2f97e8fa45f8b2a3_v1_3_0').validate(obj)
     return True
 
@@ -124,8 +126,9 @@ def nfv_provisioning_detail(api):
 
 
 @pytest.mark.site_profile
-def test_nfv_provisioning_detail(api):
+def test_nfv_provisioning_detail(api, validator):
     assert is_valid_nfv_provisioning_detail(
+        validator,
         nfv_provisioning_detail(api)
     )
 
@@ -140,9 +143,10 @@ def nfv_provisioning_detail_default(api):
 
 
 @pytest.mark.site_profile
-def test_nfv_provisioning_detail_default(api):
+def test_nfv_provisioning_detail_default(api, validator):
     try:
         assert is_valid_nfv_provisioning_detail(
+            validator,
             nfv_provisioning_detail_default(api)
         )
     except Exception as original_e:

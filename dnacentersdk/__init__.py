@@ -46,10 +46,6 @@ from .exceptions import (
 )
 from .models.mydict import mydict_data_factory
 
-from .models.schema_validator import (
-    json_schema_validate
-)
-
 
 # Initialize Package Logging
 logging.basicConfig()

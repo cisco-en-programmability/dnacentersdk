@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.3', reason='version does not match')
 
 
-def is_valid_get_task_count(obj):
+def is_valid_get_task_count(json_schema_validate, obj):
     json_schema_validate('jsd_26b44ab04649a183_v1_3_3').validate(obj)
     return True
 
@@ -51,8 +49,9 @@ def get_task_count(api):
 
 
 @pytest.mark.task
-def test_get_task_count(api):
+def test_get_task_count(api, validator):
     assert is_valid_get_task_count(
+        validator,
         get_task_count(api)
     )
 
@@ -74,9 +73,10 @@ def get_task_count_default(api):
 
 
 @pytest.mark.task
-def test_get_task_count_default(api):
+def test_get_task_count_default(api, validator):
     try:
         assert is_valid_get_task_count(
+            validator,
             get_task_count_default(api)
         )
     except Exception as original_e:
@@ -84,7 +84,7 @@ def test_get_task_count_default(api):
             raise original_e
 
 
-def is_valid_get_task_by_id(obj):
+def is_valid_get_task_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_a1a9387346ba92b1_v1_3_3').validate(obj)
     return True
 
@@ -97,8 +97,9 @@ def get_task_by_id(api):
 
 
 @pytest.mark.task
-def test_get_task_by_id(api):
+def test_get_task_by_id(api, validator):
     assert is_valid_get_task_by_id(
+        validator,
         get_task_by_id(api)
     )
 
@@ -111,9 +112,10 @@ def get_task_by_id_default(api):
 
 
 @pytest.mark.task
-def test_get_task_by_id_default(api):
+def test_get_task_by_id_default(api, validator):
     try:
         assert is_valid_get_task_by_id(
+            validator,
             get_task_by_id_default(api)
         )
     except Exception as original_e:
@@ -121,7 +123,7 @@ def test_get_task_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_task_by_operationid(obj):
+def is_valid_get_task_by_operationid(json_schema_validate, obj):
     json_schema_validate('jsd_e487f8d3481b94f2_v1_3_3').validate(obj)
     return True
 
@@ -136,8 +138,9 @@ def get_task_by_operationid(api):
 
 
 @pytest.mark.task
-def test_get_task_by_operationid(api):
+def test_get_task_by_operationid(api, validator):
     assert is_valid_get_task_by_operationid(
+        validator,
         get_task_by_operationid(api)
     )
 
@@ -152,9 +155,10 @@ def get_task_by_operationid_default(api):
 
 
 @pytest.mark.task
-def test_get_task_by_operationid_default(api):
+def test_get_task_by_operationid_default(api, validator):
     try:
         assert is_valid_get_task_by_operationid(
+            validator,
             get_task_by_operationid_default(api)
         )
     except Exception as original_e:
@@ -162,7 +166,7 @@ def test_get_task_by_operationid_default(api):
             raise original_e
 
 
-def is_valid_get_task_tree(obj):
+def is_valid_get_task_tree(json_schema_validate, obj):
     json_schema_validate('jsd_f5a269c44f2a95fa_v1_3_3').validate(obj)
     return True
 
@@ -175,8 +179,9 @@ def get_task_tree(api):
 
 
 @pytest.mark.task
-def test_get_task_tree(api):
+def test_get_task_tree(api, validator):
     assert is_valid_get_task_tree(
+        validator,
         get_task_tree(api)
     )
 
@@ -189,9 +194,10 @@ def get_task_tree_default(api):
 
 
 @pytest.mark.task
-def test_get_task_tree_default(api):
+def test_get_task_tree_default(api, validator):
     try:
         assert is_valid_get_task_tree(
+            validator,
             get_task_tree_default(api)
         )
     except Exception as original_e:
@@ -199,7 +205,7 @@ def test_get_task_tree_default(api):
             raise original_e
 
 
-def is_valid_get_tasks(obj):
+def is_valid_get_tasks(json_schema_validate, obj):
     json_schema_validate('jsd_e78bb8a2449b9eed_v1_3_3').validate(obj)
     return True
 
@@ -225,8 +231,9 @@ def get_tasks(api):
 
 
 @pytest.mark.task
-def test_get_tasks(api):
+def test_get_tasks(api, validator):
     assert is_valid_get_tasks(
+        validator,
         get_tasks(api)
     )
 
@@ -252,9 +259,10 @@ def get_tasks_default(api):
 
 
 @pytest.mark.task
-def test_get_tasks_default(api):
+def test_get_tasks_default(api, validator):
     try:
         assert is_valid_get_tasks(
+            validator,
             get_tasks_default(api)
         )
     except Exception as original_e:

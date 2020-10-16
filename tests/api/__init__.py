@@ -39,6 +39,7 @@ from tests.mock.mock import (
     get_mock_url,
     start_mock_server
 )
+from tests.models.schema_validator import SchemaValidator
 
 
 # Fixtures
@@ -68,3 +69,8 @@ def api(mock_dnac_server, base_url):
                         wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
                         verify=DEFAULT_VERIFY,
                         version=DNA_CENTER_VERSION)
+
+
+@pytest.fixture(scope="session")
+def validator():
+    return SchemaValidator(DNA_CENTER_VERSION).json_schema_validate

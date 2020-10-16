@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
 
 
-def is_valid_get_issue_enrichment_details(obj):
+def is_valid_get_issue_enrichment_details(json_schema_validate, obj):
     json_schema_validate('jsd_868439bb4e89a6e4_v1_3_1').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_issue_enrichment_details(api):
 
 
 @pytest.mark.issues
-def test_get_issue_enrichment_details(api):
+def test_get_issue_enrichment_details(api, validator):
     assert is_valid_get_issue_enrichment_details(
+        validator,
         get_issue_enrichment_details(api)
     )
 
@@ -56,9 +55,10 @@ def get_issue_enrichment_details_default(api):
 
 
 @pytest.mark.issues
-def test_get_issue_enrichment_details_default(api):
+def test_get_issue_enrichment_details_default(api, validator):
     try:
         assert is_valid_get_issue_enrichment_details(
+            validator,
             get_issue_enrichment_details_default(api)
         )
     except Exception as original_e:

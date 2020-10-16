@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
-def is_valid_get_vlan_details(obj):
+def is_valid_get_vlan_details(json_schema_validate, obj):
     json_schema_validate('jsd_6284db4649aa8d31_v1_2_10').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_vlan_details(api):
 
 
 @pytest.mark.networks
-def test_get_vlan_details(api):
+def test_get_vlan_details(api, validator):
     assert is_valid_get_vlan_details(
+        validator,
         get_vlan_details(api)
     )
 
@@ -56,9 +55,10 @@ def get_vlan_details_default(api):
 
 
 @pytest.mark.networks
-def test_get_vlan_details_default(api):
+def test_get_vlan_details_default(api, validator):
     try:
         assert is_valid_get_vlan_details(
+            validator,
             get_vlan_details_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_vlan_details_default(api):
             raise original_e
 
 
-def is_valid_get_site_topology(obj):
+def is_valid_get_site_topology(json_schema_validate, obj):
     json_schema_validate('jsd_9ba14a9e441b8a60_v1_2_10').validate(obj)
     return True
 
@@ -79,8 +79,9 @@ def get_site_topology(api):
 
 
 @pytest.mark.networks
-def test_get_site_topology(api):
+def test_get_site_topology(api, validator):
     assert is_valid_get_site_topology(
+        validator,
         get_site_topology(api)
     )
 
@@ -93,9 +94,10 @@ def get_site_topology_default(api):
 
 
 @pytest.mark.networks
-def test_get_site_topology_default(api):
+def test_get_site_topology_default(api, validator):
     try:
         assert is_valid_get_site_topology(
+            validator,
             get_site_topology_default(api)
         )
     except Exception as original_e:
@@ -103,7 +105,7 @@ def test_get_site_topology_default(api):
             raise original_e
 
 
-def is_valid_get_physical_topology(obj):
+def is_valid_get_physical_topology(json_schema_validate, obj):
     json_schema_validate('jsd_b2b8cb91459aa58f_v1_2_10').validate(obj)
     return True
 
@@ -116,8 +118,9 @@ def get_physical_topology(api):
 
 
 @pytest.mark.networks
-def test_get_physical_topology(api):
+def test_get_physical_topology(api, validator):
     assert is_valid_get_physical_topology(
+        validator,
         get_physical_topology(api)
     )
 
@@ -130,9 +133,10 @@ def get_physical_topology_default(api):
 
 
 @pytest.mark.networks
-def test_get_physical_topology_default(api):
+def test_get_physical_topology_default(api, validator):
     try:
         assert is_valid_get_physical_topology(
+            validator,
             get_physical_topology_default(api)
         )
     except Exception as original_e:
@@ -140,7 +144,7 @@ def test_get_physical_topology_default(api):
             raise original_e
 
 
-def is_valid_get_l3_topology_details(obj):
+def is_valid_get_l3_topology_details(json_schema_validate, obj):
     json_schema_validate('jsd_c2b5fb764d888375_v1_2_10').validate(obj)
     return True
 
@@ -153,8 +157,9 @@ def get_l3_topology_details(api):
 
 
 @pytest.mark.networks
-def test_get_l3_topology_details(api):
+def test_get_l3_topology_details(api, validator):
     assert is_valid_get_l3_topology_details(
+        validator,
         get_l3_topology_details(api)
     )
 
@@ -167,9 +172,10 @@ def get_l3_topology_details_default(api):
 
 
 @pytest.mark.networks
-def test_get_l3_topology_details_default(api):
+def test_get_l3_topology_details_default(api, validator):
     try:
         assert is_valid_get_l3_topology_details(
+            validator,
             get_l3_topology_details_default(api)
         )
     except Exception as original_e:
@@ -177,7 +183,7 @@ def test_get_l3_topology_details_default(api):
             raise original_e
 
 
-def is_valid_get_topology_details(obj):
+def is_valid_get_topology_details(json_schema_validate, obj):
     json_schema_validate('jsd_b9b48ac8463a8aba_v1_2_10').validate(obj)
     return True
 
@@ -190,8 +196,9 @@ def get_topology_details(api):
 
 
 @pytest.mark.networks
-def test_get_topology_details(api):
+def test_get_topology_details(api, validator):
     assert is_valid_get_topology_details(
+        validator,
         get_topology_details(api)
     )
 
@@ -204,9 +211,10 @@ def get_topology_details_default(api):
 
 
 @pytest.mark.networks
-def test_get_topology_details_default(api):
+def test_get_topology_details_default(api, validator):
     try:
         assert is_valid_get_topology_details(
+            validator,
             get_topology_details_default(api)
         )
     except Exception as original_e:
@@ -214,7 +222,7 @@ def test_get_topology_details_default(api):
             raise original_e
 
 
-def is_valid_get_overall_network_health(obj):
+def is_valid_get_overall_network_health(json_schema_validate, obj):
     json_schema_validate('jsd_ca91da84401abba1_v1_2_10').validate(obj)
     return True
 
@@ -227,8 +235,9 @@ def get_overall_network_health(api):
 
 
 @pytest.mark.networks
-def test_get_overall_network_health(api):
+def test_get_overall_network_health(api, validator):
     assert is_valid_get_overall_network_health(
+        validator,
         get_overall_network_health(api)
     )
 
@@ -241,9 +250,10 @@ def get_overall_network_health_default(api):
 
 
 @pytest.mark.networks
-def test_get_overall_network_health_default(api):
+def test_get_overall_network_health_default(api, validator):
     try:
         assert is_valid_get_overall_network_health(
+            validator,
             get_overall_network_health_default(api)
         )
     except Exception as original_e:

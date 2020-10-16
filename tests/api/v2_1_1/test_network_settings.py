@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.1.1', reason='version does not match')
 
 
-def is_valid_update_global_pool(obj):
+def is_valid_update_global_pool(json_schema_validate, obj):
     json_schema_validate('jsd_03b4c8b44919b964_v2_1_1').validate(obj)
     return True
 
@@ -44,8 +42,9 @@ def update_global_pool(api):
 
 
 @pytest.mark.network_settings
-def test_update_global_pool(api):
+def test_update_global_pool(api, validator):
     assert is_valid_update_global_pool(
+        validator,
         update_global_pool(api)
     )
 
@@ -60,9 +59,10 @@ def update_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_global_pool_default(api):
+def test_update_global_pool_default(api, validator):
     try:
         assert is_valid_update_global_pool(
+            validator,
             update_global_pool_default(api)
         )
     except Exception as original_e:
@@ -70,7 +70,7 @@ def test_update_global_pool_default(api):
             raise original_e
 
 
-def is_valid_get_network(obj):
+def is_valid_get_network(json_schema_validate, obj):
     json_schema_validate('jsd_38b7eb13449b9471_v2_1_1').validate(obj)
     return True
 
@@ -83,8 +83,9 @@ def get_network(api):
 
 
 @pytest.mark.network_settings
-def test_get_network(api):
+def test_get_network(api, validator):
     assert is_valid_get_network(
+        validator,
         get_network(api)
     )
 
@@ -97,9 +98,10 @@ def get_network_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_network_default(api):
+def test_get_network_default(api, validator):
     try:
         assert is_valid_get_network(
+            validator,
             get_network_default(api)
         )
     except Exception as original_e:
@@ -107,7 +109,7 @@ def test_get_network_default(api):
             raise original_e
 
 
-def is_valid_delete_sp_profile(obj):
+def is_valid_delete_sp_profile(json_schema_validate, obj):
     json_schema_validate('jsd_4ca2db1143ebb5d7_v2_1_1').validate(obj)
     return True
 
@@ -120,8 +122,9 @@ def delete_sp_profile(api):
 
 
 @pytest.mark.network_settings
-def test_delete_sp_profile(api):
+def test_delete_sp_profile(api, validator):
     assert is_valid_delete_sp_profile(
+        validator,
         delete_sp_profile(api)
     )
 
@@ -134,9 +137,10 @@ def delete_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_sp_profile_default(api):
+def test_delete_sp_profile_default(api, validator):
     try:
         assert is_valid_delete_sp_profile(
+            validator,
             delete_sp_profile_default(api)
         )
     except Exception as original_e:
@@ -144,7 +148,7 @@ def test_delete_sp_profile_default(api):
             raise original_e
 
 
-def is_valid_delete_global_ip_pool(obj):
+def is_valid_delete_global_ip_pool(json_schema_validate, obj):
     json_schema_validate('jsd_1eaa8b2148ab81de_v2_1_1').validate(obj)
     return True
 
@@ -157,8 +161,9 @@ def delete_global_ip_pool(api):
 
 
 @pytest.mark.network_settings
-def test_delete_global_ip_pool(api):
+def test_delete_global_ip_pool(api, validator):
     assert is_valid_delete_global_ip_pool(
+        validator,
         delete_global_ip_pool(api)
     )
 
@@ -171,9 +176,10 @@ def delete_global_ip_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_global_ip_pool_default(api):
+def test_delete_global_ip_pool_default(api, validator):
     try:
         assert is_valid_delete_global_ip_pool(
+            validator,
             delete_global_ip_pool_default(api)
         )
     except Exception as original_e:
@@ -181,7 +187,7 @@ def test_delete_global_ip_pool_default(api):
             raise original_e
 
 
-def is_valid_update_sp_profile(obj):
+def is_valid_update_sp_profile(json_schema_validate, obj):
     json_schema_validate('jsd_5087daae4cc98566_v2_1_1').validate(obj)
     return True
 
@@ -196,8 +202,9 @@ def update_sp_profile(api):
 
 
 @pytest.mark.network_settings
-def test_update_sp_profile(api):
+def test_update_sp_profile(api, validator):
     assert is_valid_update_sp_profile(
+        validator,
         update_sp_profile(api)
     )
 
@@ -212,9 +219,10 @@ def update_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_sp_profile_default(api):
+def test_update_sp_profile_default(api, validator):
     try:
         assert is_valid_update_sp_profile(
+            validator,
             update_sp_profile_default(api)
         )
     except Exception as original_e:
@@ -222,7 +230,7 @@ def test_update_sp_profile_default(api):
             raise original_e
 
 
-def is_valid_delete_device_credential(obj):
+def is_valid_delete_device_credential(json_schema_validate, obj):
     json_schema_validate('jsd_259eab3045988958_v2_1_1').validate(obj)
     return True
 
@@ -235,8 +243,9 @@ def delete_device_credential(api):
 
 
 @pytest.mark.network_settings
-def test_delete_device_credential(api):
+def test_delete_device_credential(api, validator):
     assert is_valid_delete_device_credential(
+        validator,
         delete_device_credential(api)
     )
 
@@ -249,9 +258,10 @@ def delete_device_credential_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_device_credential_default(api):
+def test_delete_device_credential_default(api, validator):
     try:
         assert is_valid_delete_device_credential(
+            validator,
             delete_device_credential_default(api)
         )
     except Exception as original_e:
@@ -259,7 +269,7 @@ def test_delete_device_credential_default(api):
             raise original_e
 
 
-def is_valid_assign_credential_to_site(obj):
+def is_valid_assign_credential_to_site(json_schema_validate, obj):
     json_schema_validate('jsd_4da91a544e29842d_v2_1_1').validate(obj)
     return True
 
@@ -280,8 +290,9 @@ def assign_credential_to_site(api):
 
 
 @pytest.mark.network_settings
-def test_assign_credential_to_site(api):
+def test_assign_credential_to_site(api, validator):
     assert is_valid_assign_credential_to_site(
+        validator,
         assign_credential_to_site(api)
     )
 
@@ -302,9 +313,10 @@ def assign_credential_to_site_default(api):
 
 
 @pytest.mark.network_settings
-def test_assign_credential_to_site_default(api):
+def test_assign_credential_to_site_default(api, validator):
     try:
         assert is_valid_assign_credential_to_site(
+            validator,
             assign_credential_to_site_default(api)
         )
     except Exception as original_e:
@@ -312,7 +324,7 @@ def test_assign_credential_to_site_default(api):
             raise original_e
 
 
-def is_valid_update_network(obj):
+def is_valid_update_network(json_schema_validate, obj):
     json_schema_validate('jsd_698bfbb44dcb9fca_v2_1_1').validate(obj)
     return True
 
@@ -328,8 +340,9 @@ def update_network(api):
 
 
 @pytest.mark.network_settings
-def test_update_network(api):
+def test_update_network(api, validator):
     assert is_valid_update_network(
+        validator,
         update_network(api)
     )
 
@@ -345,9 +358,10 @@ def update_network_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_network_default(api):
+def test_update_network_default(api, validator):
     try:
         assert is_valid_update_network(
+            validator,
             update_network_default(api)
         )
     except Exception as original_e:
@@ -355,7 +369,7 @@ def test_update_network_default(api):
             raise original_e
 
 
-def is_valid_update_device_credentials(obj):
+def is_valid_update_device_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_4f947a1c4fc884f6_v2_1_1').validate(obj)
     return True
 
@@ -370,8 +384,9 @@ def update_device_credentials(api):
 
 
 @pytest.mark.network_settings
-def test_update_device_credentials(api):
+def test_update_device_credentials(api, validator):
     assert is_valid_update_device_credentials(
+        validator,
         update_device_credentials(api)
     )
 
@@ -386,9 +401,10 @@ def update_device_credentials_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_device_credentials_default(api):
+def test_update_device_credentials_default(api, validator):
     try:
         assert is_valid_update_device_credentials(
+            validator,
             update_device_credentials_default(api)
         )
     except Exception as original_e:
@@ -396,7 +412,7 @@ def test_update_device_credentials_default(api):
             raise original_e
 
 
-def is_valid_get_service_provider_details(obj):
+def is_valid_get_service_provider_details(json_schema_validate, obj):
     json_schema_validate('jsd_70847bdc4d89a437_v2_1_1').validate(obj)
     return True
 
@@ -409,8 +425,9 @@ def get_service_provider_details(api):
 
 
 @pytest.mark.network_settings
-def test_get_service_provider_details(api):
+def test_get_service_provider_details(api, validator):
     assert is_valid_get_service_provider_details(
+        validator,
         get_service_provider_details(api)
     )
 
@@ -423,9 +440,10 @@ def get_service_provider_details_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_service_provider_details_default(api):
+def test_get_service_provider_details_default(api, validator):
     try:
         assert is_valid_get_service_provider_details(
+            validator,
             get_service_provider_details_default(api)
         )
     except Exception as original_e:
@@ -433,7 +451,7 @@ def test_get_service_provider_details_default(api):
             raise original_e
 
 
-def is_valid_get_device_credential_details(obj):
+def is_valid_get_device_credential_details(json_schema_validate, obj):
     json_schema_validate('jsd_899f08e7401b82dd_v2_1_1').validate(obj)
     return True
 
@@ -446,8 +464,9 @@ def get_device_credential_details(api):
 
 
 @pytest.mark.network_settings
-def test_get_device_credential_details(api):
+def test_get_device_credential_details(api, validator):
     assert is_valid_get_device_credential_details(
+        validator,
         get_device_credential_details(api)
     )
 
@@ -460,9 +479,10 @@ def get_device_credential_details_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_device_credential_details_default(api):
+def test_get_device_credential_details_default(api, validator):
     try:
         assert is_valid_get_device_credential_details(
+            validator,
             get_device_credential_details_default(api)
         )
     except Exception as original_e:
@@ -470,7 +490,7 @@ def test_get_device_credential_details_default(api):
             raise original_e
 
 
-def is_valid_create_sp_profile(obj):
+def is_valid_create_sp_profile(json_schema_validate, obj):
     json_schema_validate('jsd_a39a1a214debb781_v2_1_1').validate(obj)
     return True
 
@@ -485,8 +505,9 @@ def create_sp_profile(api):
 
 
 @pytest.mark.network_settings
-def test_create_sp_profile(api):
+def test_create_sp_profile(api, validator):
     assert is_valid_create_sp_profile(
+        validator,
         create_sp_profile(api)
     )
 
@@ -501,9 +522,10 @@ def create_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_sp_profile_default(api):
+def test_create_sp_profile_default(api, validator):
     try:
         assert is_valid_create_sp_profile(
+            validator,
             create_sp_profile_default(api)
         )
     except Exception as original_e:
@@ -511,7 +533,7 @@ def test_create_sp_profile_default(api):
             raise original_e
 
 
-def is_valid_get_global_pool(obj):
+def is_valid_get_global_pool(json_schema_validate, obj):
     json_schema_validate('jsd_c0bca85643c8b58d_v2_1_1').validate(obj)
     return True
 
@@ -525,8 +547,9 @@ def get_global_pool(api):
 
 
 @pytest.mark.network_settings
-def test_get_global_pool(api):
+def test_get_global_pool(api, validator):
     assert is_valid_get_global_pool(
+        validator,
         get_global_pool(api)
     )
 
@@ -540,9 +563,10 @@ def get_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_global_pool_default(api):
+def test_get_global_pool_default(api, validator):
     try:
         assert is_valid_get_global_pool(
+            validator,
             get_global_pool_default(api)
         )
     except Exception as original_e:
@@ -550,7 +574,7 @@ def test_get_global_pool_default(api):
             raise original_e
 
 
-def is_valid_create_network(obj):
+def is_valid_create_network(json_schema_validate, obj):
     json_schema_validate('jsd_be892bd84a78865a_v2_1_1').validate(obj)
     return True
 
@@ -566,8 +590,9 @@ def create_network(api):
 
 
 @pytest.mark.network_settings
-def test_create_network(api):
+def test_create_network(api, validator):
     assert is_valid_create_network(
+        validator,
         create_network(api)
     )
 
@@ -583,9 +608,10 @@ def create_network_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_network_default(api):
+def test_create_network_default(api, validator):
     try:
         assert is_valid_create_network(
+            validator,
             create_network_default(api)
         )
     except Exception as original_e:
@@ -593,7 +619,7 @@ def test_create_network_default(api):
             raise original_e
 
 
-def is_valid_create_device_credentials(obj):
+def is_valid_create_device_credentials(json_schema_validate, obj):
     json_schema_validate('jsd_fbb95b37484a9fce_v2_1_1').validate(obj)
     return True
 
@@ -608,8 +634,9 @@ def create_device_credentials(api):
 
 
 @pytest.mark.network_settings
-def test_create_device_credentials(api):
+def test_create_device_credentials(api, validator):
     assert is_valid_create_device_credentials(
+        validator,
         create_device_credentials(api)
     )
 
@@ -624,9 +651,10 @@ def create_device_credentials_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_device_credentials_default(api):
+def test_create_device_credentials_default(api, validator):
     try:
         assert is_valid_create_device_credentials(
+            validator,
             create_device_credentials_default(api)
         )
     except Exception as original_e:
@@ -634,7 +662,7 @@ def test_create_device_credentials_default(api):
             raise original_e
 
 
-def is_valid_create_global_pool(obj):
+def is_valid_create_global_pool(json_schema_validate, obj):
     json_schema_validate('jsd_f793192a43dabed9_v2_1_1').validate(obj)
     return True
 
@@ -649,8 +677,9 @@ def create_global_pool(api):
 
 
 @pytest.mark.network_settings
-def test_create_global_pool(api):
+def test_create_global_pool(api, validator):
     assert is_valid_create_global_pool(
+        validator,
         create_global_pool(api)
     )
 
@@ -665,9 +694,10 @@ def create_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_global_pool_default(api):
+def test_create_global_pool_default(api, validator):
     try:
         assert is_valid_create_global_pool(
+            validator,
             create_global_pool_default(api)
         )
     except Exception as original_e:

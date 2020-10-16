@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
-def is_valid_get_overall_client_health(obj):
+def is_valid_get_overall_client_health(json_schema_validate, obj):
     json_schema_validate('jsd_149aa93b4ddb80dd_v1_2_10').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_overall_client_health(api):
 
 
 @pytest.mark.clients
-def test_get_overall_client_health(api):
+def test_get_overall_client_health(api, validator):
     assert is_valid_get_overall_client_health(
+        validator,
         get_overall_client_health(api)
     )
 
@@ -56,9 +55,10 @@ def get_overall_client_health_default(api):
 
 
 @pytest.mark.clients
-def test_get_overall_client_health_default(api):
+def test_get_overall_client_health_default(api, validator):
     try:
         assert is_valid_get_overall_client_health(
+            validator,
             get_overall_client_health_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_overall_client_health_default(api):
             raise original_e
 
 
-def is_valid_get_client_detail(obj):
+def is_valid_get_client_detail(json_schema_validate, obj):
     json_schema_validate('jsd_e2adba7943bab3e9_v1_2_10').validate(obj)
     return True
 
@@ -80,8 +80,9 @@ def get_client_detail(api):
 
 
 @pytest.mark.clients
-def test_get_client_detail(api):
+def test_get_client_detail(api, validator):
     assert is_valid_get_client_detail(
+        validator,
         get_client_detail(api)
     )
 
@@ -95,9 +96,10 @@ def get_client_detail_default(api):
 
 
 @pytest.mark.clients
-def test_get_client_detail_default(api):
+def test_get_client_detail_default(api, validator):
     try:
         assert is_valid_get_client_detail(
+            validator,
             get_client_detail_default(api)
         )
     except Exception as original_e:

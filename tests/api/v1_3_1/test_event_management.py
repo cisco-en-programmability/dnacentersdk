@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
 
 
-def is_valid_count_of_event_subscriptions(obj):
+def is_valid_count_of_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_149b7ba04e5890b2_v1_3_1').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def count_of_event_subscriptions(api):
 
 
 @pytest.mark.event_management
-def test_count_of_event_subscriptions(api):
+def test_count_of_event_subscriptions(api, validator):
     assert is_valid_count_of_event_subscriptions(
+        validator,
         count_of_event_subscriptions(api)
     )
 
@@ -56,9 +55,10 @@ def count_of_event_subscriptions_default(api):
 
 
 @pytest.mark.event_management
-def test_count_of_event_subscriptions_default(api):
+def test_count_of_event_subscriptions_default(api, validator):
     try:
         assert is_valid_count_of_event_subscriptions(
+            validator,
             count_of_event_subscriptions_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_count_of_event_subscriptions_default(api):
             raise original_e
 
 
-def is_valid_get_events(obj):
+def is_valid_get_events(json_schema_validate, obj):
     json_schema_validate('jsd_44a39a074a6a82a2_v1_3_1').validate(obj)
     return True
 
@@ -84,8 +84,9 @@ def get_events(api):
 
 
 @pytest.mark.event_management
-def test_get_events(api):
+def test_get_events(api, validator):
     assert is_valid_get_events(
+        validator,
         get_events(api)
     )
 
@@ -103,9 +104,10 @@ def get_events_default(api):
 
 
 @pytest.mark.event_management
-def test_get_events_default(api):
+def test_get_events_default(api, validator):
     try:
         assert is_valid_get_events(
+            validator,
             get_events_default(api)
         )
     except Exception as original_e:
@@ -113,7 +115,7 @@ def test_get_events_default(api):
             raise original_e
 
 
-def is_valid_create_event_subscriptions(obj):
+def is_valid_create_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_4f9f7a7b40f990de_v1_3_1').validate(obj)
     return True
 
@@ -127,8 +129,9 @@ def create_event_subscriptions(api):
 
 
 @pytest.mark.event_management
-def test_create_event_subscriptions(api):
+def test_create_event_subscriptions(api, validator):
     assert is_valid_create_event_subscriptions(
+        validator,
         create_event_subscriptions(api)
     )
 
@@ -142,9 +145,10 @@ def create_event_subscriptions_default(api):
 
 
 @pytest.mark.event_management
-def test_create_event_subscriptions_default(api):
+def test_create_event_subscriptions_default(api, validator):
     try:
         assert is_valid_create_event_subscriptions(
+            validator,
             create_event_subscriptions_default(api)
         )
     except Exception as original_e:
@@ -152,7 +156,7 @@ def test_create_event_subscriptions_default(api):
             raise original_e
 
 
-def is_valid_update_event_subscriptions(obj):
+def is_valid_update_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_579a6a7248cb94cf_v1_3_1').validate(obj)
     return True
 
@@ -166,8 +170,9 @@ def update_event_subscriptions(api):
 
 
 @pytest.mark.event_management
-def test_update_event_subscriptions(api):
+def test_update_event_subscriptions(api, validator):
     assert is_valid_update_event_subscriptions(
+        validator,
         update_event_subscriptions(api)
     )
 
@@ -181,9 +186,10 @@ def update_event_subscriptions_default(api):
 
 
 @pytest.mark.event_management
-def test_update_event_subscriptions_default(api):
+def test_update_event_subscriptions_default(api, validator):
     try:
         assert is_valid_update_event_subscriptions(
+            validator,
             update_event_subscriptions_default(api)
         )
     except Exception as original_e:
@@ -191,7 +197,7 @@ def test_update_event_subscriptions_default(api):
             raise original_e
 
 
-def is_valid_count_of_notifications(obj):
+def is_valid_count_of_notifications(json_schema_validate, obj):
     json_schema_validate('jsd_8f93dbe54b2aa1fd_v1_3_1').validate(obj)
     return True
 
@@ -212,8 +218,9 @@ def count_of_notifications(api):
 
 
 @pytest.mark.event_management
-def test_count_of_notifications(api):
+def test_count_of_notifications(api, validator):
     assert is_valid_count_of_notifications(
+        validator,
         count_of_notifications(api)
     )
 
@@ -234,9 +241,10 @@ def count_of_notifications_default(api):
 
 
 @pytest.mark.event_management
-def test_count_of_notifications_default(api):
+def test_count_of_notifications_default(api, validator):
     try:
         assert is_valid_count_of_notifications(
+            validator,
             count_of_notifications_default(api)
         )
     except Exception as original_e:
@@ -244,7 +252,7 @@ def test_count_of_notifications_default(api):
             raise original_e
 
 
-def is_valid_delete_event_subscriptions(obj):
+def is_valid_delete_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_93981baa40799483_v1_3_1').validate(obj)
     return True
 
@@ -257,8 +265,9 @@ def delete_event_subscriptions(api):
 
 
 @pytest.mark.event_management
-def test_delete_event_subscriptions(api):
+def test_delete_event_subscriptions(api, validator):
     assert is_valid_delete_event_subscriptions(
+        validator,
         delete_event_subscriptions(api)
     )
 
@@ -271,9 +280,10 @@ def delete_event_subscriptions_default(api):
 
 
 @pytest.mark.event_management
-def test_delete_event_subscriptions_default(api):
+def test_delete_event_subscriptions_default(api, validator):
     try:
         assert is_valid_delete_event_subscriptions(
+            validator,
             delete_event_subscriptions_default(api)
         )
     except Exception as original_e:
@@ -281,7 +291,7 @@ def test_delete_event_subscriptions_default(api):
             raise original_e
 
 
-def is_valid_get_notifications(obj):
+def is_valid_get_notifications(json_schema_validate, obj):
     json_schema_validate('jsd_f5a13ab24c5aaa91_v1_3_1').validate(obj)
     return True
 
@@ -306,8 +316,9 @@ def get_notifications(api):
 
 
 @pytest.mark.event_management
-def test_get_notifications(api):
+def test_get_notifications(api, validator):
     assert is_valid_get_notifications(
+        validator,
         get_notifications(api)
     )
 
@@ -332,9 +343,10 @@ def get_notifications_default(api):
 
 
 @pytest.mark.event_management
-def test_get_notifications_default(api):
+def test_get_notifications_default(api, validator):
     try:
         assert is_valid_get_notifications(
+            validator,
             get_notifications_default(api)
         )
     except Exception as original_e:
@@ -342,7 +354,7 @@ def test_get_notifications_default(api):
             raise original_e
 
 
-def is_valid_get_status_api_for_events(obj):
+def is_valid_get_status_api_for_events(json_schema_validate, obj):
     json_schema_validate('jsd_f9bd99c74bba8832_v1_3_1').validate(obj)
     return True
 
@@ -355,8 +367,9 @@ def get_status_api_for_events(api):
 
 
 @pytest.mark.event_management
-def test_get_status_api_for_events(api):
+def test_get_status_api_for_events(api, validator):
     assert is_valid_get_status_api_for_events(
+        validator,
         get_status_api_for_events(api)
     )
 
@@ -369,9 +382,10 @@ def get_status_api_for_events_default(api):
 
 
 @pytest.mark.event_management
-def test_get_status_api_for_events_default(api):
+def test_get_status_api_for_events_default(api, validator):
     try:
         assert is_valid_get_status_api_for_events(
+            validator,
             get_status_api_for_events_default(api)
         )
     except Exception as original_e:
@@ -379,7 +393,7 @@ def test_get_status_api_for_events_default(api):
             raise original_e
 
 
-def is_valid_count_of_events(obj):
+def is_valid_count_of_events(json_schema_validate, obj):
     json_schema_validate('jsd_6a9edac149ba86cf_v1_3_1').validate(obj)
     return True
 
@@ -393,8 +407,9 @@ def count_of_events(api):
 
 
 @pytest.mark.event_management
-def test_count_of_events(api):
+def test_count_of_events(api, validator):
     assert is_valid_count_of_events(
+        validator,
         count_of_events(api)
     )
 
@@ -408,9 +423,10 @@ def count_of_events_default(api):
 
 
 @pytest.mark.event_management
-def test_count_of_events_default(api):
+def test_count_of_events_default(api, validator):
     try:
         assert is_valid_count_of_events(
+            validator,
             count_of_events_default(api)
         )
     except Exception as original_e:
@@ -418,7 +434,7 @@ def test_count_of_events_default(api):
             raise original_e
 
 
-def is_valid_get_event_subscriptions(obj):
+def is_valid_get_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_dcaa6bde4feb9152_v1_3_1').validate(obj)
     return True
 
@@ -435,8 +451,9 @@ def get_event_subscriptions(api):
 
 
 @pytest.mark.event_management
-def test_get_event_subscriptions(api):
+def test_get_event_subscriptions(api, validator):
     assert is_valid_get_event_subscriptions(
+        validator,
         get_event_subscriptions(api)
     )
 
@@ -453,9 +470,10 @@ def get_event_subscriptions_default(api):
 
 
 @pytest.mark.event_management
-def test_get_event_subscriptions_default(api):
+def test_get_event_subscriptions_default(api, validator):
     try:
         assert is_valid_get_event_subscriptions(
+            validator,
             get_event_subscriptions_default(api)
         )
     except Exception as original_e:

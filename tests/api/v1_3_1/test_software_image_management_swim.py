@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
 
 
-def is_valid_get_software_image_details(obj):
+def is_valid_get_software_image_details(json_schema_validate, obj):
     json_schema_validate('jsd_0c8f7a0b49b9aedd_v1_3_1').validate(obj)
     return True
 
@@ -59,8 +57,9 @@ def get_software_image_details(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_get_software_image_details(api):
+def test_get_software_image_details(api, validator):
     assert is_valid_get_software_image_details(
+        validator,
         get_software_image_details(api)
     )
 
@@ -90,9 +89,10 @@ def get_software_image_details_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_get_software_image_details_default(api):
+def test_get_software_image_details_default(api, validator):
     try:
         assert is_valid_get_software_image_details(
+            validator,
             get_software_image_details_default(api)
         )
     except Exception as original_e:
@@ -100,7 +100,7 @@ def test_get_software_image_details_default(api):
             raise original_e
 
 
-def is_valid_import_local_software_image(obj):
+def is_valid_import_local_software_image(json_schema_validate, obj):
     json_schema_validate('jsd_4dbe3bc743a891bc_v1_3_1').validate(obj)
     return True
 
@@ -118,8 +118,9 @@ def import_local_software_image(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_import_local_software_image(api):
+def test_import_local_software_image(api, validator):
     assert is_valid_import_local_software_image(
+        validator,
         import_local_software_image(api)
     )
 
@@ -137,9 +138,10 @@ def import_local_software_image_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_import_local_software_image_default(api):
+def test_import_local_software_image_default(api, validator):
     try:
         assert is_valid_import_local_software_image(
+            validator,
             import_local_software_image_default(api)
         )
     except Exception as original_e:
@@ -147,7 +149,7 @@ def test_import_local_software_image_default(api):
             raise original_e
 
 
-def is_valid_trigger_software_image_distribution(obj):
+def is_valid_trigger_software_image_distribution(json_schema_validate, obj):
     json_schema_validate('jsd_8cb6783b4faba1f4_v1_3_1').validate(obj)
     return True
 
@@ -161,8 +163,9 @@ def trigger_software_image_distribution(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_trigger_software_image_distribution(api):
+def test_trigger_software_image_distribution(api, validator):
     assert is_valid_trigger_software_image_distribution(
+        validator,
         trigger_software_image_distribution(api)
     )
 
@@ -176,9 +179,10 @@ def trigger_software_image_distribution_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_trigger_software_image_distribution_default(api):
+def test_trigger_software_image_distribution_default(api, validator):
     try:
         assert is_valid_trigger_software_image_distribution(
+            validator,
             trigger_software_image_distribution_default(api)
         )
     except Exception as original_e:
@@ -186,7 +190,7 @@ def test_trigger_software_image_distribution_default(api):
             raise original_e
 
 
-def is_valid_import_software_image_via_url(obj):
+def is_valid_import_software_image_via_url(json_schema_validate, obj):
     json_schema_validate('jsd_bc8aab4746ca883d_v1_3_1').validate(obj)
     return True
 
@@ -203,8 +207,9 @@ def import_software_image_via_url(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_import_software_image_via_url(api):
+def test_import_software_image_via_url(api, validator):
     assert is_valid_import_software_image_via_url(
+        validator,
         import_software_image_via_url(api)
     )
 
@@ -221,9 +226,10 @@ def import_software_image_via_url_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_import_software_image_via_url_default(api):
+def test_import_software_image_via_url_default(api, validator):
     try:
         assert is_valid_import_software_image_via_url(
+            validator,
             import_software_image_via_url_default(api)
         )
     except Exception as original_e:
@@ -231,7 +237,7 @@ def test_import_software_image_via_url_default(api):
             raise original_e
 
 
-def is_valid_trigger_software_image_activation(obj):
+def is_valid_trigger_software_image_activation(json_schema_validate, obj):
     json_schema_validate('jsd_fb9beb664f2aba4c_v1_3_1').validate(obj)
     return True
 
@@ -246,8 +252,9 @@ def trigger_software_image_activation(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_trigger_software_image_activation(api):
+def test_trigger_software_image_activation(api, validator):
     assert is_valid_trigger_software_image_activation(
+        validator,
         trigger_software_image_activation(api)
     )
 
@@ -262,9 +269,10 @@ def trigger_software_image_activation_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_trigger_software_image_activation_default(api):
+def test_trigger_software_image_activation_default(api, validator):
     try:
         assert is_valid_trigger_software_image_activation(
+            validator,
             trigger_software_image_activation_default(api)
         )
     except Exception as original_e:

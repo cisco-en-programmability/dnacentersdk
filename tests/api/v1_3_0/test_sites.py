@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.0', reason='version does not match')
 
 
-def is_valid_get_site_health(obj):
+def is_valid_get_site_health(json_schema_validate, obj):
     json_schema_validate('jsd_17a82ac94cf99ab0_v1_3_0').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_site_health(api):
 
 
 @pytest.mark.sites
-def test_get_site_health(api):
+def test_get_site_health(api, validator):
     assert is_valid_get_site_health(
+        validator,
         get_site_health(api)
     )
 
@@ -56,9 +55,10 @@ def get_site_health_default(api):
 
 
 @pytest.mark.sites
-def test_get_site_health_default(api):
+def test_get_site_health_default(api, validator):
     try:
         assert is_valid_get_site_health(
+            validator,
             get_site_health_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_site_health_default(api):
             raise original_e
 
 
-def is_valid_update_site(obj):
+def is_valid_update_site(json_schema_validate, obj):
     json_schema_validate('jsd_33aab9b842388023_v1_3_0').validate(obj)
     return True
 
@@ -83,8 +83,9 @@ def update_site(api):
 
 
 @pytest.mark.sites
-def test_update_site(api):
+def test_update_site(api, validator):
     assert is_valid_update_site(
+        validator,
         update_site(api)
     )
 
@@ -101,9 +102,10 @@ def update_site_default(api):
 
 
 @pytest.mark.sites
-def test_update_site_default(api):
+def test_update_site_default(api, validator):
     try:
         assert is_valid_update_site(
+            validator,
             update_site_default(api)
         )
     except Exception as original_e:
@@ -111,7 +113,7 @@ def test_update_site_default(api):
             raise original_e
 
 
-def is_valid_create_site(obj):
+def is_valid_create_site(json_schema_validate, obj):
     json_schema_validate('jsd_23896b124bd8b9bf_v1_3_0').validate(obj)
     return True
 
@@ -127,8 +129,9 @@ def create_site(api):
 
 
 @pytest.mark.sites
-def test_create_site(api):
+def test_create_site(api, validator):
     assert is_valid_create_site(
+        validator,
         create_site(api)
     )
 
@@ -144,9 +147,10 @@ def create_site_default(api):
 
 
 @pytest.mark.sites
-def test_create_site_default(api):
+def test_create_site_default(api, validator):
     try:
         assert is_valid_create_site(
+            validator,
             create_site_default(api)
         )
     except Exception as original_e:
@@ -154,7 +158,7 @@ def test_create_site_default(api):
             raise original_e
 
 
-def is_valid_get_site(obj):
+def is_valid_get_site(json_schema_validate, obj):
     json_schema_validate('jsd_209509d247599e19_v1_3_0').validate(obj)
     return True
 
@@ -171,8 +175,9 @@ def get_site(api):
 
 
 @pytest.mark.sites
-def test_get_site(api):
+def test_get_site(api, validator):
     assert is_valid_get_site(
+        validator,
         get_site(api)
     )
 
@@ -189,9 +194,10 @@ def get_site_default(api):
 
 
 @pytest.mark.sites
-def test_get_site_default(api):
+def test_get_site_default(api, validator):
     try:
         assert is_valid_get_site(
+            validator,
             get_site_default(api)
         )
     except Exception as original_e:
@@ -199,7 +205,7 @@ def test_get_site_default(api):
             raise original_e
 
 
-def is_valid_delete_site(obj):
+def is_valid_delete_site(json_schema_validate, obj):
     json_schema_validate('jsd_92acda91406aa050_v1_3_0').validate(obj)
     return True
 
@@ -212,8 +218,9 @@ def delete_site(api):
 
 
 @pytest.mark.sites
-def test_delete_site(api):
+def test_delete_site(api, validator):
     assert is_valid_delete_site(
+        validator,
         delete_site(api)
     )
 
@@ -226,9 +233,10 @@ def delete_site_default(api):
 
 
 @pytest.mark.sites
-def test_delete_site_default(api):
+def test_delete_site_default(api, validator):
     try:
         assert is_valid_delete_site(
+            validator,
             delete_site_default(api)
         )
     except Exception as original_e:
@@ -236,7 +244,7 @@ def test_delete_site_default(api):
             raise original_e
 
 
-def is_valid_get_site_count(obj):
+def is_valid_get_site_count(json_schema_validate, obj):
     json_schema_validate('jsd_d9bdb9034df99dba_v1_3_0').validate(obj)
     return True
 
@@ -249,8 +257,9 @@ def get_site_count(api):
 
 
 @pytest.mark.sites
-def test_get_site_count(api):
+def test_get_site_count(api, validator):
     assert is_valid_get_site_count(
+        validator,
         get_site_count(api)
     )
 
@@ -263,9 +272,10 @@ def get_site_count_default(api):
 
 
 @pytest.mark.sites
-def test_get_site_count_default(api):
+def test_get_site_count_default(api, validator):
     try:
         assert is_valid_get_site_count(
+            validator,
             get_site_count_default(api)
         )
     except Exception as original_e:
@@ -273,7 +283,7 @@ def test_get_site_count_default(api):
             raise original_e
 
 
-def is_valid_assign_device_to_site(obj):
+def is_valid_assign_device_to_site(json_schema_validate, obj):
     json_schema_validate('jsd_eeb168eb41988e07_v1_3_0').validate(obj)
     return True
 
@@ -289,8 +299,9 @@ def assign_device_to_site(api):
 
 
 @pytest.mark.sites
-def test_assign_device_to_site(api):
+def test_assign_device_to_site(api, validator):
     assert is_valid_assign_device_to_site(
+        validator,
         assign_device_to_site(api)
     )
 
@@ -306,9 +317,10 @@ def assign_device_to_site_default(api):
 
 
 @pytest.mark.sites
-def test_assign_device_to_site_default(api):
+def test_assign_device_to_site_default(api, validator):
     try:
         assert is_valid_assign_device_to_site(
+            validator,
             assign_device_to_site_default(api)
         )
     except Exception as original_e:
@@ -316,7 +328,7 @@ def test_assign_device_to_site_default(api):
             raise original_e
 
 
-def is_valid_get_membership(obj):
+def is_valid_get_membership(json_schema_validate, obj):
     json_schema_validate('jsd_eba669054e08a60e_v1_3_0').validate(obj)
     return True
 
@@ -329,8 +341,9 @@ def get_membership(api):
 
 
 @pytest.mark.sites
-def test_get_membership(api):
+def test_get_membership(api, validator):
     assert is_valid_get_membership(
+        validator,
         get_membership(api)
     )
 
@@ -343,9 +356,10 @@ def get_membership_default(api):
 
 
 @pytest.mark.sites
-def test_get_membership_default(api):
+def test_get_membership_default(api, validator):
     try:
         assert is_valid_get_membership(
+            validator,
             get_membership_default(api)
         )
     except Exception as original_e:

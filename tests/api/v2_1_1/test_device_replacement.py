@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.1.1', reason='version does not match')
 
 
-def is_valid_deploy_device_replacement_workflow(obj):
+def is_valid_deploy_device_replacement_workflow(json_schema_validate, obj):
     json_schema_validate('jsd_3faaa9944b49bc9f_v2_1_1').validate(obj)
     return True
 
@@ -45,8 +43,9 @@ def deploy_device_replacement_workflow(api):
 
 
 @pytest.mark.device_replacement
-def test_deploy_device_replacement_workflow(api):
+def test_deploy_device_replacement_workflow(api, validator):
     assert is_valid_deploy_device_replacement_workflow(
+        validator,
         deploy_device_replacement_workflow(api)
     )
 
@@ -62,9 +61,10 @@ def deploy_device_replacement_workflow_default(api):
 
 
 @pytest.mark.device_replacement
-def test_deploy_device_replacement_workflow_default(api):
+def test_deploy_device_replacement_workflow_default(api, validator):
     try:
         assert is_valid_deploy_device_replacement_workflow(
+            validator,
             deploy_device_replacement_workflow_default(api)
         )
     except Exception as original_e:
@@ -72,7 +72,7 @@ def test_deploy_device_replacement_workflow_default(api):
             raise original_e
 
 
-def is_valid_unmark_device_for_replacement(obj):
+def is_valid_unmark_device_for_replacement(json_schema_validate, obj):
     json_schema_validate('jsd_4ababa75489ab24b_v2_1_1').validate(obj)
     return True
 
@@ -86,8 +86,9 @@ def unmark_device_for_replacement(api):
 
 
 @pytest.mark.device_replacement
-def test_unmark_device_for_replacement(api):
+def test_unmark_device_for_replacement(api, validator):
     assert is_valid_unmark_device_for_replacement(
+        validator,
         unmark_device_for_replacement(api)
     )
 
@@ -101,9 +102,10 @@ def unmark_device_for_replacement_default(api):
 
 
 @pytest.mark.device_replacement
-def test_unmark_device_for_replacement_default(api):
+def test_unmark_device_for_replacement_default(api, validator):
     try:
         assert is_valid_unmark_device_for_replacement(
+            validator,
             unmark_device_for_replacement_default(api)
         )
     except Exception as original_e:
@@ -111,7 +113,7 @@ def test_unmark_device_for_replacement_default(api):
             raise original_e
 
 
-def is_valid_mark_device_for_replacement(obj):
+def is_valid_mark_device_for_replacement(json_schema_validate, obj):
     json_schema_validate('jsd_64b9dad0403aaca1_v2_1_1').validate(obj)
     return True
 
@@ -125,8 +127,9 @@ def mark_device_for_replacement(api):
 
 
 @pytest.mark.device_replacement
-def test_mark_device_for_replacement(api):
+def test_mark_device_for_replacement(api, validator):
     assert is_valid_mark_device_for_replacement(
+        validator,
         mark_device_for_replacement(api)
     )
 
@@ -140,9 +143,10 @@ def mark_device_for_replacement_default(api):
 
 
 @pytest.mark.device_replacement
-def test_mark_device_for_replacement_default(api):
+def test_mark_device_for_replacement_default(api, validator):
     try:
         assert is_valid_mark_device_for_replacement(
+            validator,
             mark_device_for_replacement_default(api)
         )
     except Exception as original_e:
@@ -150,7 +154,7 @@ def test_mark_device_for_replacement_default(api):
             raise original_e
 
 
-def is_valid_return_replacement_devices_with_details(obj):
+def is_valid_return_replacement_devices_with_details(json_schema_validate, obj):
     json_schema_validate('jsd_809c29564bc997d0_v2_1_1').validate(obj)
     return True
 
@@ -173,8 +177,9 @@ def return_replacement_devices_with_details(api):
 
 
 @pytest.mark.device_replacement
-def test_return_replacement_devices_with_details(api):
+def test_return_replacement_devices_with_details(api, validator):
     assert is_valid_return_replacement_devices_with_details(
+        validator,
         return_replacement_devices_with_details(api)
     )
 
@@ -197,9 +202,10 @@ def return_replacement_devices_with_details_default(api):
 
 
 @pytest.mark.device_replacement
-def test_return_replacement_devices_with_details_default(api):
+def test_return_replacement_devices_with_details_default(api, validator):
     try:
         assert is_valid_return_replacement_devices_with_details(
+            validator,
             return_replacement_devices_with_details_default(api)
         )
     except Exception as original_e:
@@ -207,7 +213,7 @@ def test_return_replacement_devices_with_details_default(api):
             raise original_e
 
 
-def is_valid_return_replacement_devices_count(obj):
+def is_valid_return_replacement_devices_count(json_schema_validate, obj):
     json_schema_validate('jsd_9eb84ba54929a2a2_v2_1_1').validate(obj)
     return True
 
@@ -220,8 +226,9 @@ def return_replacement_devices_count(api):
 
 
 @pytest.mark.device_replacement
-def test_return_replacement_devices_count(api):
+def test_return_replacement_devices_count(api, validator):
     assert is_valid_return_replacement_devices_count(
+        validator,
         return_replacement_devices_count(api)
     )
 
@@ -234,9 +241,10 @@ def return_replacement_devices_count_default(api):
 
 
 @pytest.mark.device_replacement
-def test_return_replacement_devices_count_default(api):
+def test_return_replacement_devices_count_default(api, validator):
     try:
         assert is_valid_return_replacement_devices_count(
+            validator,
             return_replacement_devices_count_default(api)
         )
     except Exception as original_e:

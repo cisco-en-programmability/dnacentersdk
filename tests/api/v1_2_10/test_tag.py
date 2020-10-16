@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.2.10', reason='version does not match')
 
 
-def is_valid_add_members_to_the_tag(obj):
+def is_valid_add_members_to_the_tag(json_schema_validate, obj):
     json_schema_validate('jsd_00a2fa6146089317_v1_2_10').validate(obj)
     return True
 
@@ -44,8 +42,9 @@ def add_members_to_the_tag(api):
 
 
 @pytest.mark.tag
-def test_add_members_to_the_tag(api):
+def test_add_members_to_the_tag(api, validator):
     assert is_valid_add_members_to_the_tag(
+        validator,
         add_members_to_the_tag(api)
     )
 
@@ -60,9 +59,10 @@ def add_members_to_the_tag_default(api):
 
 
 @pytest.mark.tag
-def test_add_members_to_the_tag_default(api):
+def test_add_members_to_the_tag_default(api, validator):
     try:
         assert is_valid_add_members_to_the_tag(
+            validator,
             add_members_to_the_tag_default(api)
         )
     except Exception as original_e:
@@ -70,7 +70,7 @@ def test_add_members_to_the_tag_default(api):
             raise original_e
 
 
-def is_valid_get_tag_member_count(obj):
+def is_valid_get_tag_member_count(json_schema_validate, obj):
     json_schema_validate('jsd_2e9db85840fbb1cf_v1_2_10').validate(obj)
     return True
 
@@ -86,8 +86,9 @@ def get_tag_member_count(api):
 
 
 @pytest.mark.tag
-def test_get_tag_member_count(api):
+def test_get_tag_member_count(api, validator):
     assert is_valid_get_tag_member_count(
+        validator,
         get_tag_member_count(api)
     )
 
@@ -103,9 +104,10 @@ def get_tag_member_count_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_member_count_default(api):
+def test_get_tag_member_count_default(api, validator):
     try:
         assert is_valid_get_tag_member_count(
+            validator,
             get_tag_member_count_default(api)
         )
     except Exception as original_e:
@@ -113,7 +115,7 @@ def test_get_tag_member_count_default(api):
             raise original_e
 
 
-def is_valid_create_tag(obj):
+def is_valid_create_tag(json_schema_validate, obj):
     json_schema_validate('jsd_1399891c42a8be64_v1_2_10').validate(obj)
     return True
 
@@ -133,8 +135,9 @@ def create_tag(api):
 
 
 @pytest.mark.tag
-def test_create_tag(api):
+def test_create_tag(api, validator):
     assert is_valid_create_tag(
+        validator,
         create_tag(api)
     )
 
@@ -154,9 +157,10 @@ def create_tag_default(api):
 
 
 @pytest.mark.tag
-def test_create_tag_default(api):
+def test_create_tag_default(api, validator):
     try:
         assert is_valid_create_tag(
+            validator,
             create_tag_default(api)
         )
     except Exception as original_e:
@@ -164,7 +168,7 @@ def test_create_tag_default(api):
             raise original_e
 
 
-def is_valid_get_tag_resource_types(obj):
+def is_valid_get_tag_resource_types(json_schema_validate, obj):
     json_schema_validate('jsd_4695090d403b8eaa_v1_2_10').validate(obj)
     return True
 
@@ -177,8 +181,9 @@ def get_tag_resource_types(api):
 
 
 @pytest.mark.tag
-def test_get_tag_resource_types(api):
+def test_get_tag_resource_types(api, validator):
     assert is_valid_get_tag_resource_types(
+        validator,
         get_tag_resource_types(api)
     )
 
@@ -191,9 +196,10 @@ def get_tag_resource_types_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_resource_types_default(api):
+def test_get_tag_resource_types_default(api, validator):
     try:
         assert is_valid_get_tag_resource_types(
+            validator,
             get_tag_resource_types_default(api)
         )
     except Exception as original_e:
@@ -201,7 +207,7 @@ def test_get_tag_resource_types_default(api):
             raise original_e
 
 
-def is_valid_updates_tag_membership(obj):
+def is_valid_updates_tag_membership(json_schema_validate, obj):
     return True if obj else False
 
 
@@ -216,8 +222,9 @@ def updates_tag_membership(api):
 
 
 @pytest.mark.tag
-def test_updates_tag_membership(api):
+def test_updates_tag_membership(api, validator):
     assert is_valid_updates_tag_membership(
+        validator,
         updates_tag_membership(api)
     )
 
@@ -233,9 +240,10 @@ def updates_tag_membership_default(api):
 
 
 @pytest.mark.tag
-def test_updates_tag_membership_default(api):
+def test_updates_tag_membership_default(api, validator):
     try:
         assert is_valid_updates_tag_membership(
+            validator,
             updates_tag_membership_default(api)
         )
     except Exception as original_e:
@@ -243,7 +251,7 @@ def test_updates_tag_membership_default(api):
             raise original_e
 
 
-def is_valid_update_tag(obj):
+def is_valid_update_tag(json_schema_validate, obj):
     json_schema_validate('jsd_4d86a993469a9da9_v1_2_10').validate(obj)
     return True
 
@@ -263,8 +271,9 @@ def update_tag(api):
 
 
 @pytest.mark.tag
-def test_update_tag(api):
+def test_update_tag(api, validator):
     assert is_valid_update_tag(
+        validator,
         update_tag(api)
     )
 
@@ -284,9 +293,10 @@ def update_tag_default(api):
 
 
 @pytest.mark.tag
-def test_update_tag_default(api):
+def test_update_tag_default(api, validator):
     try:
         assert is_valid_update_tag(
+            validator,
             update_tag_default(api)
         )
     except Exception as original_e:
@@ -294,7 +304,7 @@ def test_update_tag_default(api):
             raise original_e
 
 
-def is_valid_get_tag_count(obj):
+def is_valid_get_tag_count(json_schema_validate, obj):
     json_schema_validate('jsd_8091a9b84bfba53b_v1_2_10').validate(obj)
     return True
 
@@ -312,8 +322,9 @@ def get_tag_count(api):
 
 
 @pytest.mark.tag
-def test_get_tag_count(api):
+def test_get_tag_count(api, validator):
     assert is_valid_get_tag_count(
+        validator,
         get_tag_count(api)
     )
 
@@ -331,9 +342,10 @@ def get_tag_count_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_count_default(api):
+def test_get_tag_count_default(api, validator):
     try:
         assert is_valid_get_tag_count(
+            validator,
             get_tag_count_default(api)
         )
     except Exception as original_e:
@@ -341,7 +353,7 @@ def test_get_tag_count_default(api):
             raise original_e
 
 
-def is_valid_delete_tag(obj):
+def is_valid_delete_tag(json_schema_validate, obj):
     json_schema_validate('jsd_429c28154bdaa13d_v1_2_10').validate(obj)
     return True
 
@@ -354,8 +366,9 @@ def delete_tag(api):
 
 
 @pytest.mark.tag
-def test_delete_tag(api):
+def test_delete_tag(api, validator):
     assert is_valid_delete_tag(
+        validator,
         delete_tag(api)
     )
 
@@ -368,9 +381,10 @@ def delete_tag_default(api):
 
 
 @pytest.mark.tag
-def test_delete_tag_default(api):
+def test_delete_tag_default(api, validator):
     try:
         assert is_valid_delete_tag(
+            validator,
             delete_tag_default(api)
         )
     except Exception as original_e:
@@ -378,7 +392,7 @@ def test_delete_tag_default(api):
             raise original_e
 
 
-def is_valid_remove_tag_member(obj):
+def is_valid_remove_tag_member(json_schema_validate, obj):
     json_schema_validate('jsd_caa3ea704d78b37e_v1_2_10').validate(obj)
     return True
 
@@ -392,8 +406,9 @@ def remove_tag_member(api):
 
 
 @pytest.mark.tag
-def test_remove_tag_member(api):
+def test_remove_tag_member(api, validator):
     assert is_valid_remove_tag_member(
+        validator,
         remove_tag_member(api)
     )
 
@@ -407,9 +422,10 @@ def remove_tag_member_default(api):
 
 
 @pytest.mark.tag
-def test_remove_tag_member_default(api):
+def test_remove_tag_member_default(api, validator):
     try:
         assert is_valid_remove_tag_member(
+            validator,
             remove_tag_member_default(api)
         )
     except Exception as original_e:
@@ -417,7 +433,7 @@ def test_remove_tag_member_default(api):
             raise original_e
 
 
-def is_valid_get_tag_members_by_id(obj):
+def is_valid_get_tag_members_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_eab7abe048fb99ad_v1_2_10').validate(obj)
     return True
 
@@ -435,8 +451,9 @@ def get_tag_members_by_id(api):
 
 
 @pytest.mark.tag
-def test_get_tag_members_by_id(api):
+def test_get_tag_members_by_id(api, validator):
     assert is_valid_get_tag_members_by_id(
+        validator,
         get_tag_members_by_id(api)
     )
 
@@ -454,9 +471,10 @@ def get_tag_members_by_id_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_members_by_id_default(api):
+def test_get_tag_members_by_id_default(api, validator):
     try:
         assert is_valid_get_tag_members_by_id(
+            validator,
             get_tag_members_by_id_default(api)
         )
     except Exception as original_e:
@@ -464,7 +482,7 @@ def test_get_tag_members_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_tag_by_id(obj):
+def is_valid_get_tag_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_c1a359b14c89b573_v1_2_10').validate(obj)
     return True
 
@@ -477,8 +495,9 @@ def get_tag_by_id(api):
 
 
 @pytest.mark.tag
-def test_get_tag_by_id(api):
+def test_get_tag_by_id(api, validator):
     assert is_valid_get_tag_by_id(
+        validator,
         get_tag_by_id(api)
     )
 
@@ -491,9 +510,10 @@ def get_tag_by_id_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_by_id_default(api):
+def test_get_tag_by_id_default(api, validator):
     try:
         assert is_valid_get_tag_by_id(
+            validator,
             get_tag_by_id_default(api)
         )
     except Exception as original_e:
@@ -501,7 +521,7 @@ def test_get_tag_by_id_default(api):
             raise original_e
 
 
-def is_valid_get_tag(obj):
+def is_valid_get_tag(json_schema_validate, obj):
     json_schema_validate('jsd_ee9aab01487a8896_v1_2_10').validate(obj)
     return True
 
@@ -524,8 +544,9 @@ def get_tag(api):
 
 
 @pytest.mark.tag
-def test_get_tag(api):
+def test_get_tag(api, validator):
     assert is_valid_get_tag(
+        validator,
         get_tag(api)
     )
 
@@ -548,9 +569,10 @@ def get_tag_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_default(api):
+def test_get_tag_default(api, validator):
     try:
         assert is_valid_get_tag(
+            validator,
             get_tag_default(api)
         )
     except Exception as original_e:

@@ -23,13 +23,11 @@ SOFTWARE.
 """
 import pytest
 from tests.environment import DNA_CENTER_VERSION
-from tests.models.schema_validator import json_schema_validate
-
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
 
 
-def is_valid_get_device_credential_details(obj):
+def is_valid_get_device_credential_details(json_schema_validate, obj):
     json_schema_validate('jsd_899f08e7401b82dd_v1_3_1').validate(obj)
     return True
 
@@ -42,8 +40,9 @@ def get_device_credential_details(api):
 
 
 @pytest.mark.network_settings
-def test_get_device_credential_details(api):
+def test_get_device_credential_details(api, validator):
     assert is_valid_get_device_credential_details(
+        validator,
         get_device_credential_details(api)
     )
 
@@ -56,9 +55,10 @@ def get_device_credential_details_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_device_credential_details_default(api):
+def test_get_device_credential_details_default(api, validator):
     try:
         assert is_valid_get_device_credential_details(
+            validator,
             get_device_credential_details_default(api)
         )
     except Exception as original_e:
@@ -66,7 +66,7 @@ def test_get_device_credential_details_default(api):
             raise original_e
 
 
-def is_valid_get_global_pool(obj):
+def is_valid_get_global_pool(json_schema_validate, obj):
     json_schema_validate('jsd_c0bca85643c8b58d_v1_3_1').validate(obj)
     return True
 
@@ -79,8 +79,9 @@ def get_global_pool(api):
 
 
 @pytest.mark.network_settings
-def test_get_global_pool(api):
+def test_get_global_pool(api, validator):
     assert is_valid_get_global_pool(
+        validator,
         get_global_pool(api)
     )
 
@@ -93,9 +94,10 @@ def get_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_global_pool_default(api):
+def test_get_global_pool_default(api, validator):
     try:
         assert is_valid_get_global_pool(
+            validator,
             get_global_pool_default(api)
         )
     except Exception as original_e:
@@ -103,7 +105,7 @@ def test_get_global_pool_default(api):
             raise original_e
 
 
-def is_valid_delete_device_credential(obj):
+def is_valid_delete_device_credential(json_schema_validate, obj):
     json_schema_validate('jsd_259eab3045988958_v1_3_1').validate(obj)
     return True
 
@@ -116,8 +118,9 @@ def delete_device_credential(api):
 
 
 @pytest.mark.network_settings
-def test_delete_device_credential(api):
+def test_delete_device_credential(api, validator):
     assert is_valid_delete_device_credential(
+        validator,
         delete_device_credential(api)
     )
 
@@ -130,9 +133,10 @@ def delete_device_credential_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_device_credential_default(api):
+def test_delete_device_credential_default(api, validator):
     try:
         assert is_valid_delete_device_credential(
+            validator,
             delete_device_credential_default(api)
         )
     except Exception as original_e:
@@ -140,7 +144,7 @@ def test_delete_device_credential_default(api):
             raise original_e
 
 
-def is_valid_delete_sp_profile(obj):
+def is_valid_delete_sp_profile(json_schema_validate, obj):
     json_schema_validate('jsd_4ca2db1143ebb5d7_v1_3_1').validate(obj)
     return True
 
@@ -153,8 +157,9 @@ def delete_sp_profile(api):
 
 
 @pytest.mark.network_settings
-def test_delete_sp_profile(api):
+def test_delete_sp_profile(api, validator):
     assert is_valid_delete_sp_profile(
+        validator,
         delete_sp_profile(api)
     )
 
@@ -167,9 +172,10 @@ def delete_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_sp_profile_default(api):
+def test_delete_sp_profile_default(api, validator):
     try:
         assert is_valid_delete_sp_profile(
+            validator,
             delete_sp_profile_default(api)
         )
     except Exception as original_e:
@@ -177,7 +183,7 @@ def test_delete_sp_profile_default(api):
             raise original_e
 
 
-def is_valid_get_service_provider_details(obj):
+def is_valid_get_service_provider_details(json_schema_validate, obj):
     json_schema_validate('jsd_70847bdc4d89a437_v1_3_1').validate(obj)
     return True
 
@@ -190,8 +196,9 @@ def get_service_provider_details(api):
 
 
 @pytest.mark.network_settings
-def test_get_service_provider_details(api):
+def test_get_service_provider_details(api, validator):
     assert is_valid_get_service_provider_details(
+        validator,
         get_service_provider_details(api)
     )
 
@@ -204,9 +211,10 @@ def get_service_provider_details_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_service_provider_details_default(api):
+def test_get_service_provider_details_default(api, validator):
     try:
         assert is_valid_get_service_provider_details(
+            validator,
             get_service_provider_details_default(api)
         )
     except Exception as original_e:
@@ -214,7 +222,7 @@ def test_get_service_provider_details_default(api):
             raise original_e
 
 
-def is_valid_delete_global_ip_pool(obj):
+def is_valid_delete_global_ip_pool(json_schema_validate, obj):
     json_schema_validate('jsd_1eaa8b2148ab81de_v1_3_1').validate(obj)
     return True
 
@@ -227,8 +235,9 @@ def delete_global_ip_pool(api):
 
 
 @pytest.mark.network_settings
-def test_delete_global_ip_pool(api):
+def test_delete_global_ip_pool(api, validator):
     assert is_valid_delete_global_ip_pool(
+        validator,
         delete_global_ip_pool(api)
     )
 
@@ -241,9 +250,10 @@ def delete_global_ip_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_global_ip_pool_default(api):
+def test_delete_global_ip_pool_default(api, validator):
     try:
         assert is_valid_delete_global_ip_pool(
+            validator,
             delete_global_ip_pool_default(api)
         )
     except Exception as original_e:

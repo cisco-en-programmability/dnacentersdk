@@ -223,6 +223,58 @@ from dnacentersdk.api.v2_1_1.users import \
     Users as Users_v2_1_1
 from dnacentersdk.api.v2_1_1.wireless import \
     Wireless as Wireless_v2_1_1
+from dnacentersdk.api.v2_1_2.application_policy import \
+    ApplicationPolicy as ApplicationPolicy_v2_1_2
+from dnacentersdk.api.v2_1_2.applications import \
+    Applications as Applications_v2_1_2
+from dnacentersdk.api.v2_1_2.clients import \
+    Clients as Clients_v2_1_2
+from dnacentersdk.api.v2_1_2.command_runner import \
+    CommandRunner as CommandRunner_v2_1_2
+from dnacentersdk.api.v2_1_2.configuration_archive import \
+    ConfigurationArchive as ConfigurationArchive_v2_1_2
+from dnacentersdk.api.v2_1_2.configuration_templates import \
+    ConfigurationTemplates as ConfigurationTemplates_v2_1_2
+from dnacentersdk.api.v2_1_2.device_onboarding_pnp import \
+    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_1_2
+from dnacentersdk.api.v2_1_2.device_replacement import \
+    DeviceReplacement as DeviceReplacement_v2_1_2
+from dnacentersdk.api.v2_1_2.devices import \
+    Devices as Devices_v2_1_2
+from dnacentersdk.api.v2_1_2.discovery import \
+    Discovery as Discovery_v2_1_2
+from dnacentersdk.api.v2_1_2.event_management import \
+    EventManagement as EventManagement_v2_1_2
+from dnacentersdk.api.v2_1_2.file import \
+    File as File_v2_1_2
+from dnacentersdk.api.v2_1_2.itsm import \
+    Itsm as Itsm_v2_1_2
+from dnacentersdk.api.v2_1_2.issues import \
+    Issues as Issues_v2_1_2
+from dnacentersdk.api.v2_1_2.network_settings import \
+    NetworkSettings as NetworkSettings_v2_1_2
+from dnacentersdk.api.v2_1_2.path_trace import \
+    PathTrace as PathTrace_v2_1_2
+from dnacentersdk.api.v2_1_2.sda import \
+    Sda as Sda_v2_1_2
+from dnacentersdk.api.v2_1_2.sensors import \
+    Sensors as Sensors_v2_1_2
+from dnacentersdk.api.v2_1_2.site_design import \
+    SiteDesign as SiteDesign_v2_1_2
+from dnacentersdk.api.v2_1_2.sites import \
+    Sites as Sites_v2_1_2
+from dnacentersdk.api.v2_1_2.software_image_management_swim import \
+    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_1_2
+from dnacentersdk.api.v2_1_2.tag import \
+    Tag as Tag_v2_1_2
+from dnacentersdk.api.v2_1_2.task import \
+    Task as Task_v2_1_2
+from dnacentersdk.api.v2_1_2.topology import \
+    Topology as Topology_v2_1_2
+from dnacentersdk.api.v2_1_2.users import \
+    Users as Users_v2_1_2
+from dnacentersdk.api.v2_1_2.wireless import \
+    Wireless as Wireless_v2_1_2
 from dnacentersdk.api.custom_caller import CustomCaller
 
 from tests.config import (
@@ -254,7 +306,6 @@ class TestDNACenterSDK:
 
         # Data Models
         assert hasattr(dnacentersdk, "mydict_data_factory")
-        assert hasattr(dnacentersdk, "json_schema_validate")
 
     @pytest.mark.dnacentersdk
     def test_default_base_url(self, api, base_url):
@@ -411,3 +462,30 @@ class TestDNACenterSDK:
             assert isinstance(api.topology, Topology_v2_1_1)
             assert isinstance(api.users, Users_v2_1_1)
             assert isinstance(api.wireless, Wireless_v2_1_1)
+        if api.version == '2.1.2':
+            assert isinstance(api.application_policy, ApplicationPolicy_v2_1_2)
+            assert isinstance(api.applications, Applications_v2_1_2)
+            assert isinstance(api.clients, Clients_v2_1_2)
+            assert isinstance(api.command_runner, CommandRunner_v2_1_2)
+            assert isinstance(api.configuration_archive, ConfigurationArchive_v2_1_2)
+            assert isinstance(api.configuration_templates, ConfigurationTemplates_v2_1_2)
+            assert isinstance(api.device_onboarding_pnp, DeviceOnboardingPnp_v2_1_2)
+            assert isinstance(api.device_replacement, DeviceReplacement_v2_1_2)
+            assert isinstance(api.devices, Devices_v2_1_2)
+            assert isinstance(api.discovery, Discovery_v2_1_2)
+            assert isinstance(api.event_management, EventManagement_v2_1_2)
+            assert isinstance(api.file, File_v2_1_2)
+            assert isinstance(api.itsm, Itsm_v2_1_2)
+            assert isinstance(api.issues, Issues_v2_1_2)
+            assert isinstance(api.network_settings, NetworkSettings_v2_1_2)
+            assert isinstance(api.path_trace, PathTrace_v2_1_2)
+            assert isinstance(api.sda, Sda_v2_1_2)
+            assert isinstance(api.sensors, Sensors_v2_1_2)
+            assert isinstance(api.site_design, SiteDesign_v2_1_2)
+            assert isinstance(api.sites, Sites_v2_1_2)
+            assert isinstance(api.software_image_management_swim, SoftwareImageManagementSwim_v2_1_2)
+            assert isinstance(api.tag, Tag_v2_1_2)
+            assert isinstance(api.task, Task_v2_1_2)
+            assert isinstance(api.topology, Topology_v2_1_2)
+            assert isinstance(api.users, Users_v2_1_2)
+            assert isinstance(api.wireless, Wireless_v2_1_2)
