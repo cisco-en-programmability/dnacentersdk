@@ -2,8 +2,15 @@
 name = "dnacentersdk"
 version = "2.0.1"
 description = "Cisco DNA Center Platform SDK"
-authors = ["Jose Bogarin Solano <jbogarin@altus.cr>"]
+authors = ["Jose Bogarin Solano <jbogarin@altus.cr>", "William Astorga <wastorga@altus.cr>"]
 license = "MIT"
+homepage = "https://dnacentersdk.readthedocs.io/en/latest/"
+repository = "https://github.com/cisco-en-programmability/dnacentersdk"
+keywords = ["Cisco", "DNA Center", "SDK"]
+classifiers = [
+]
+readme = "README.rst"
+
 
 [tool.poetry.dependencies]
 python = "^3.5"
