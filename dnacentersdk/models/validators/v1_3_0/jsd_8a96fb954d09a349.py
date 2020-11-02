@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Create Enterprise SSID data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -81,8 +81,7 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 "Enter SSID Name",
                 "maxLength": 32,
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "passphrase": {
@@ -121,8 +120,7 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 null
                 ],
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "trafficType": {
@@ -139,6 +137,10 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 ]
                 }
                 },
+                "required": [
+                "name",
+                "securityLevel"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

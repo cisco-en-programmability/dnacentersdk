@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Update HTTP read credential data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -102,14 +102,12 @@ class JSONSchemaValidator89B36B4649999D81(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "port": {
                 "type": [
-                "number",
-                "null"
+                "number"
                 ]
                 },
                 "secure": {
@@ -122,11 +120,15 @@ class JSONSchemaValidator89B36B4649999D81(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 }
                 },
+                "required": [
+                "password",
+                "port",
+                "username"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

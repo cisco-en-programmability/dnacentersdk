@@ -7,7 +7,7 @@ Used to interactively work with the main package contents in IPython.
 
 import dnacentersdk
 
-__copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
+__copyright__ = "Copyright (c) 2019-2020 Cisco and/or its affiliates."
 __license__ = "MIT"
 
 

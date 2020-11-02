@@ -1,0 +1,20 @@
+################################################################################
+# This requirements file has been automatically generated from `Pipfile` with
+# `pipenv-to-requirements`
+#
+#
+# This has been done to maintain backward compatibility with tools and services
+# that do not support `Pipfile` yet.
+#
+# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
+# `Pipfile.lock` and then regenerate `requirements*.txt`.
+################################################################################
+
+certifi==2020.6.20
+chardet==3.0.4
+fastjsonschema==2.14.4
+future==0.18.2
+idna==2.10
+requests-toolbelt==0.9.1
+requests==2.24.0
+urllib3==1.25.9

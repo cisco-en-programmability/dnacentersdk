@@ -36,7 +36,7 @@ By default, dnacentersdk will look for the following environment variables to cr
 
     * ``DNA_CENTER_PASSWORD`` - HTTP Basic Auth password.
 
-    * ``DNA_CENTER_BASE_URL`` - The base URL to be prefixed to the individual API endpoint suffixes. Defaults to 'https://sandboxdnac2.cisco.com:443'.
+    * ``DNA_CENTER_BASE_URL`` - The base URL to be prefixed to the individual API endpoint suffixes. Defaults to 'https://sandboxdnac.cisco.com:443'.
 
     * ``DNA_CENTER_SINGLE_REQUEST_TIMEOUT`` - Timeout (in seconds) for RESTful HTTP requests. Defaults to 60.
 
@@ -124,12 +124,12 @@ If you don't provide a known version and try to create a new :class:`DNACenterAP
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url='https://sandboxdnac2.cisco.com:443', version='0.1.12')
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url='https://sandboxdnac.cisco.com:443', version='0.1.12')
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
       File "dnacentersdk/__init__.py", line 209, in __init__
         raise VersionError(error_message)
-    VersionError: Unknown API version, known versions are 1.2.10 and 1.3.0.
+    VersionError: Unknown API version, known versions are 1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1 and 2.1.2.
 
 
 Use the arguments to manually provide enough information for the HTTP Basic Auth process, 
@@ -138,15 +138,15 @@ when creating a new :class:`DNACenterAPI` connection object.
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 1.2.10
-    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 2.1.2
+    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 1.2.10
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 2.1.2
     >>> # The base_url used by default is `from dnacentersdk.config import DEFAULT_BASE_URL`
-    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
 
 Note that this can be very useful if you are reading authentication credentials
 from a file or database and/or when you want to create more than one connection object.
@@ -156,8 +156,8 @@ from a file or database and/or when you want to create more than one connection 
     >>> from dnacentersdk import DNACenterAPI
     >>> kingston_auth = 'ZG5hY2VudGVydXNlcjpDaXNjbzEyMyEK'
     >>> london_auth = ('london', 'rcx0cf43!')
-    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
-    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='1.3.0')  # * Unpacks tuple
+    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
+    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='2.1.2')  # * Unpacks tuple
 
 
 Certificates
@@ -173,7 +173,7 @@ To avoid getting errors like the following:
 
     >>> from dnacentersdk import DNACenterAPI
     >>> own_dna = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
-    ... base_url="https://128.107.71.199:443", version='1.3.0')
+    ... base_url="https://128.107.71.199:443", version='2.1.2')
     requests.exceptions.SLError: HTTPSConnectionPool(host='128.107.71.199', port=443):
     Max retries exceeded with url: /dna/system/api/v1/auth/token (Caused by
     SSLError (SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate
@@ -221,7 +221,7 @@ ready to start making API calls.
 
 .. code-block:: python
 
-    >>> api.pnp.get_workflows()[0]
+    >>> api.device_onboarding_pnp.get_workflows()[0] # api.pnp.get_workflows()[0] till version 1.3.0 
     {
       'version': 1,
       'name': 'test',
@@ -256,27 +256,41 @@ ready to start making API calls.
 It really is that easy.
 
 All of the calls have been wrapped and represented as native Python method
-calls, like :meth:`DNACenterAPI.pnp.get_workflows() <dnacentersdk.api.v1_2_10.pnp.Pnp.get_workflows>` which gets the workflows details
+calls, like :meth:`DNACenterAPI.device_onboarding_pnp.get_workflows() <dnacentersdk.api.v2_1_2.device_onboarding_pnp.DeviceOnboardingPnp.get_workflows>` which gets the workflows details
 for the pnp - see 
 the `Get Workflows
-<https://pubhub.devnetcloud.com/media/dna-center-api-1210/docs/swagger_dnacp_1210_annotated.html#!/PnP/getWorkflows>`_ API endpoint
+<https://pubhub.devnetcloud.com/media/dnac-api-docs-1-3-3-x/docs/Antman-swagger-v1.annotated.html#/Device%20Onboarding%20(PnP)/getWorkflows>`_ API endpoint
 documentation.
 
 As you can see, we have represented the API endpoints using simple terms
 that are aligned with the API docs; for example, representing the ``/onboarding/pnp-workflow``
-API endpoint as a ``pnp.get_workflows()`` method available underneath the
+API endpoint as a ``device_onboarding_pnp.get_workflows()`` method available underneath the
 :class:`DNACenterAPI` connection object.
 
 A full list of the available API methods, with their descriptions and
-parameters, is available in the :ref:`User API Doc`. A summary of the structure is available 
-for :ref:`v1.2.10 <v1_2_10 summary>` and :ref:`v1.3.0 <v1_3_0 summary>`.
+parameters, is available in the :ref:`User API Doc`. 
+
+A summary of the structure is available for each version supported
+
++ :ref:`v1.2.10 <v1_2_10 summary>`
+
++ :ref:`v1.3.0 <v1_3_0 summary>`
+
++ :ref:`v1.3.1 <v1_3_1 summary>`
+
++ :ref:`v1.3.3 <v1_3_3 summary>`
+
++ :ref:`v2.1.1 <v2_1_1 summary>`
+
++ :ref:`v2.1.2 <v2_1_2 summary>`
+
 
 You can easily access and call any of these methods directly from your
 :class:`DNACenterAPI` connection object:
 
 .. code-block:: python
 
-    >>> api.pnp.get_device_list(limit=1)
+    >>> api.device_onboarding_pnp.get_device_list(limit=1)  # api.pnp.get_device_list(limit=1) till version 1.3.0 
     [{'version': 1,
       'deviceInfo': {'serialNumber': '1234567890s',
       'name': 'Postname-add',
@@ -410,7 +424,7 @@ attributes using '.' notation)? dnacentersdk enables you to do just that:
 
 .. code-block:: python
 
-    >>> pnp_devices = api.pnp.get_device_list()
+    >>> pnp_devices = api.device_onboarding_pnp.get_device_list() # api.device_onboarding_pnp.get_device_list() till version 1.3.0 
     >>> pnp_devices[0].id
     '5cf9bd2b568ecc000779da65'
     >>> pnp_devices[0].deviceInfo.state
@@ -427,11 +441,11 @@ help clean up your code and make coding easier:
         .. code-block:: python
 
             >>> # Do this
-            >>> api.pnp.get_device_history(serial_number=pnp_devices[0].deviceInfo.serialNumber)
+            >>> api.device_onboarding_pnp.get_device_history(serial_number=pnp_devices[0].deviceInfo.serialNumber)
             {'response': [{'timestamp': 1559870763581, 'details': 'User Added Device', 'errorFlag': False}], 'statusCode': 200}
             >>> # Instead of this
             >>> device_serialNumber = pnp_devices[0].deviceInfo.serialNumber
-            >>> api.pnp.get_device_history(serial_number=device_serialNumber)
+            >>> api.device_onboarding_pnp.get_device_history(serial_number=device_serialNumber)
             {'response': [{'timestamp': 1559870763581, 'details': 'User Added Device', 'errorFlag': False}], 'statusCode': 200}
 
     2.  When accessing 'optional' attributes, like ``pnp_devices[0].workflowParameters.configList``
@@ -481,6 +495,45 @@ package update!).  dnacentersdk is written to automatically take advantage
 of new attributes and data as they are returned.
 
 
+Configuring Logging for dnacentersdk
+----------------------------------------
+
+The main dnacentersdk logger is dnacentersdk.
+
+Other loggers are dnacentersdk.exceptions, dnacentersdk.restsession and dnacentersdk.api.custom_caller.
+
+The dnacentersdk adds only the logging.NullHandler following the `logging recommendations for libraries`_
+
+So you can add your logging handlers according to your needs.
+
+.. code-block:: python
+
+    import logging
+    import warnings
+    from dnacentersdk import DNACenterAPI
+
+    # Another way to disable warnings caused by (verify=False)
+    warnings.filterwarnings('ignore', message='Unverified HTTPS request')
+
+    logger = logging.getLogger('simple_example')
+    logger.setLevel(logging.DEBUG)
+    # create console handler and set level to debug
+    ch = logging.StreamHandler()
+    # create formatter
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    # add formatter to ch
+    ch.setFormatter(formatter)
+    # add ch to logger
+    logger.addHandler(ch)
+
+    dna_ch = logging.StreamHandler()
+    api = DNACenterAPI(verify=False, debug=True)
+    logging.getLogger('dnacentersdk').addHandler(dna_ch)
+
+    logger.debug('simple message')
+    api.devices.get_device_list()
+
+
 Adding API call definitions
 -----------------------------
 
@@ -496,12 +549,12 @@ Custom caller functions help you:
     from dnacentersdk import api
 
     # Create a DNACenterAPI connection object;
-    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 1.2.10.,
+    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.1.2.,
     # and requests to verify the server's TLS certificate with verify=True.
     dnac = api.DNACenterAPI(username="devnetuser",
                             password="Cisco123!",
-                            base_url="https://sandboxdnac2.cisco.com:443",
-                            version='1.2.10',
+                            base_url="https://sandboxdnac.cisco.com:443",
+                            version='2.1.2',
                             verify=True)
 
     # Add your custom API call to the connection object.
@@ -599,9 +652,10 @@ Custom caller functions help you:
 Check out the `Custom Caller`_ documentation to begin using it.
 
 
+.. _logging recommendations for libraries: https://docs.python.org/3/howto/logging.html#configuring-logging-for-a-library
 .. _Custom Caller: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#custom-caller
 
 
-*Copyright (c) 2019 Cisco and/or its affiliates.*
+*Copyright (c) 2019-2020 Cisco and/or its affiliates.*
 
 .. _PEP 20: https://www.python.org/dev/peps/pep-0020/

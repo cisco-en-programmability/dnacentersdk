@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Sync Virtual Account Devices data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -132,16 +132,14 @@ class JSONSchemaValidatorA4B6C87A4Ffb9Efa(object):
                 }
                 },
                 "type": [
-                "object",
-                "null"
+                "object"
                 ]
                 },
                 "smartAccountId": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "syncResult": {
@@ -227,8 +225,7 @@ class JSONSchemaValidatorA4B6C87A4Ffb9Efa(object):
                 null
                 ],
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "tenantId": {
@@ -251,11 +248,16 @@ class JSONSchemaValidatorA4B6C87A4Ffb9Efa(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 }
                 },
+                "required": [
+                "profile",
+                "smartAccountId",
+                "syncStatus",
+                "virtualAccountId"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Package configuration.
 
-# Copyright (c) 2019 Cisco and/or its affiliates.
+# Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,10 +27,10 @@
 DEFAULT_DEBUG = 'False'
 
 #: **version** default value.
-DEFAULT_VERSION = '2.1.1'
+DEFAULT_VERSION = '2.1.2'
 
 #: **base_url** default value.
-DEFAULT_BASE_URL = 'https://sandboxdnac2.cisco.com:443'
+DEFAULT_BASE_URL = 'https://sandboxdnac.cisco.com:443'
 
 #: **single_request_timeout** default value.
 #: Timeout (in seconds) for the RESTful HTTP requests.

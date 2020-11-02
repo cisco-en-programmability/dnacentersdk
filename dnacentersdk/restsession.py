@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """RestSession class for creating connections to the DNA Center APIs.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -125,8 +125,7 @@ class RestSession(object):
             logger.setLevel(logging.DEBUG)
             logger.propagate = True
         else:
-            logger.addHandler(logging.NullHandler())
-            logger.propagate = False
+            logger.setLevel(logging.INFO)
 
         # Initialize a new `requests` session
         self._req_session = requests.session()

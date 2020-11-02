@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Sync Devices data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,8 +48,7 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "computeDevice": {
@@ -62,8 +61,7 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "extendedDiscoveryInfo": {
@@ -112,8 +110,7 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 ]
                 },
                 "type": [
-                "array",
-                "null"
+                "array"
                 ]
                 },
                 "merakiOrgId": {
@@ -140,8 +137,7 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "serialNumber": {
@@ -156,76 +152,66 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpAuthProtocol": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpMode": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpPrivPassphrase": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpPrivProtocol": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpROCommunity": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpRWCommunity": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpRetry": {
                 "type": [
-                "number",
-                "null"
+                "number"
                 ]
                 },
                 "snmpTimeout": {
                 "type": [
-                "number",
-                "null"
+                "number"
                 ]
                 },
                 "snmpUserName": {
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "snmpVersion": {
@@ -285,11 +271,27 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 }
                 },
+                "required": [
+                "cliTransport",
+                "enablePassword",
+                "ipAddress",
+                "password",
+                "snmpAuthPassphrase",
+                "snmpAuthProtocol",
+                "snmpMode",
+                "snmpPrivPassphrase",
+                "snmpPrivProtocol",
+                "snmpROCommunity",
+                "snmpRWCommunity",
+                "snmpRetry",
+                "snmpTimeout",
+                "snmpUserName",
+                "userName"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

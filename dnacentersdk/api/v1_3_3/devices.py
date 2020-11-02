@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Devices API wrapper.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -178,52 +178,82 @@ class Devices(object):
         the other request parameters. .
 
         Args:
-            hostname(basestring): hostname query parameter.
+            hostname(basestring): hostname query parameter. Accepts
+                comma separated values.
             management_ip_address(basestring): managementIpAddress
-                query parameter.
+                query parameter. Accepts comma separated
+                values.
             mac_address(basestring): macAddress query parameter.
+                Accepts comma separated values.
             location_name(basestring): locationName query parameter.
+                Accepts comma separated values.
             serial_number(basestring): serialNumber query parameter.
-            location(basestring): location query parameter.
-            family(basestring): family query parameter.
-            type(basestring): type query parameter.
-            series(basestring): series query parameter.
+                Accepts comma separated values.
+            location(basestring): location query parameter. Accepts
+                comma separated values.
+            family(basestring): family query parameter. Accepts
+                comma separated values.
+            type(basestring): type query parameter. Accepts comma
+                separated values.
+            series(basestring): series query parameter. Accepts
+                comma separated values.
             collection_status(basestring): collectionStatus query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             collection_interval(basestring): collectionInterval
-                query parameter.
+                query parameter. Accepts comma separated
+                values.
             not_synced_for_minutes(basestring): notSyncedForMinutes
-                query parameter.
+                query parameter. Accepts comma separated
+                values.
             error_code(basestring): errorCode query parameter.
+                Accepts comma separated values.
             error_description(basestring): errorDescription query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             software_version(basestring): softwareVersion query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             software_type(basestring): softwareType query parameter.
+                Accepts comma separated values.
             platform_id(basestring): platformId query parameter.
-            role(basestring): role query parameter.
+                Accepts comma separated values.
+            role(basestring): role query parameter. Accepts comma
+                separated values.
             reachability_status(basestring): reachabilityStatus
-                query parameter.
-            up_time(basestring): upTime query parameter.
+                query parameter. Accepts comma separated
+                values.
+            up_time(basestring): upTime query parameter. Accepts
+                comma separated values.
             associated_wlc_ip(basestring): associatedWlcIp query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             license_name(basestring): license.name query parameter.
+                Accepts comma separated values.
             license_type(basestring): license.type query parameter.
+                Accepts comma separated values.
             license_status(basestring): license.status query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             module_name(basestring): module+name query parameter.
+                Accepts comma separated values.
             module_equpimenttype(basestring): module+equpimenttype
-                query parameter.
+                query parameter. Accepts comma separated
+                values.
             module_servicestate(basestring): module+servicestate
-                query parameter.
+                query parameter. Accepts comma separated
+                values.
             module_vendorequipmenttype(basestring):
                 module+vendorequipmenttype query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             module_partnumber(basestring): module+partnumber query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             module_operationstatecode(basestring):
                 module+operationstatecode query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             id(basestring): Accepts comma separated id's and return
                 list of network-devices for the given
                 id's. If invalid or not-found id's are
@@ -1485,14 +1515,18 @@ class Devices(object):
 
         Args:
             device_id(basestring): deviceId query parameter.
-            name_list(basestring): nameList query parameter.
+            name_list(basestring): nameList query parameter. Accepts
+                comma separated values.
             vendor_equipment_type_list(basestring):
                 vendorEquipmentTypeList query parameter.
+                Accepts comma separated values.
             part_number_list(basestring): partNumberList query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             operational_state_code_list(basestring):
                 operationalStateCodeList query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2278,14 +2312,18 @@ class Devices(object):
             device_id(basestring): deviceId query parameter.
             limit(basestring): limit query parameter.
             offset(basestring): offset query parameter.
-            name_list(basestring): nameList query parameter.
+            name_list(basestring): nameList query parameter. Accepts
+                comma separated values.
             vendor_equipment_type_list(basestring):
                 vendorEquipmentTypeList query parameter.
+                Accepts comma separated values.
             part_number_list(basestring): partNumberList query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             operational_state_code_list(basestring):
                 operationalStateCodeList query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2367,6 +2405,7 @@ class Devices(object):
                 provided, null entry will be returned in
                 the list.
             function_name(basestring): functionName query parameter.
+                Accepts comma separated values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

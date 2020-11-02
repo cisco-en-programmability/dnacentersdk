@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Device Replacement API wrapper.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -325,9 +325,11 @@ class DeviceReplacement(object):
                 REPLACEMENT-IN-PROGRESS, REPLACEMENT-
                 SCHEDULED, REPLACED, ERROR,
                 NETWORK_READINESS_REQUESTED,
-                NETWORK_READINESS_FAILED].
+                NETWORK_READINESS_FAILED]. Accepts comma
+                separated values.
             family(basestring): List of families[Routers, Switches
-                and Hubs, AP].
+                and Hubs, AP]. Accepts comma separated
+                values.
             sort_by(basestring): SortBy this field. SortBy is
                 mandatory when order is used.
             sort_order(basestring): Order on displayName[ASC,DESC].
@@ -420,7 +422,8 @@ class DeviceReplacement(object):
             replacement_status(basestring): Device Replacement
                 status list[READY-FOR-REPLACEMENT,
                 REPLACEMENT-IN-PROGRESS, REPLACEMENT-
-                SCHEDULED, REPLACED, ERROR].
+                SCHEDULED, REPLACED, ERROR]. Accepts
+                comma separated values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

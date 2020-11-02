@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Start discovery data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,8 +54,7 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "enablePasswordList": {
@@ -268,8 +267,7 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "ipFilterList": {
@@ -295,8 +293,7 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "netconfPort": {
@@ -446,8 +443,7 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 "description":
                  "",
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "timeout": {
@@ -476,6 +472,12 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 }
                 },
+                "required": [
+                "discoveryType",
+                "ipAddressList",
+                "name",
+                "snmpVersion"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

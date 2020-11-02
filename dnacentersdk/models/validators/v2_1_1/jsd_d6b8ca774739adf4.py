@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Run read-only commands on devices data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -52,8 +52,7 @@ class JSONSchemaValidatorD6B8Ca774739Adf4(object):
                 ]
                 },
                 "type": [
-                "array",
-                "null"
+                "array"
                 ]
                 },
                 "description":
@@ -73,8 +72,7 @@ class JSONSchemaValidatorD6B8Ca774739Adf4(object):
                 ]
                 },
                 "type": [
-                "array",
-                "null"
+                "array"
                 ]
                 },
                 "name": {
@@ -92,6 +90,10 @@ class JSONSchemaValidatorD6B8Ca774739Adf4(object):
                 ]
                 }
                 },
+                "required": [
+                "commands",
+                "deviceUuids"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

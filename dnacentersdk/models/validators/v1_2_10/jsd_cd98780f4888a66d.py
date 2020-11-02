@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Export Device list data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -52,8 +52,7 @@ class JSONSchemaValidatorCd98780F4888A66D(object):
                 ]
                 },
                 "type": [
-                "array",
-                "null"
+                "array"
                 ]
                 },
                 "id": {
@@ -98,6 +97,9 @@ class JSONSchemaValidatorCd98780F4888A66D(object):
                 ]
                 }
                 },
+                "required": [
+                "deviceUuids"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

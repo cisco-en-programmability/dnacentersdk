@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Package configuration.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@ SOFTWARE.
 
 
 # Package Constants
-DEFAULT_BASE_URL = 'https://sandboxdnac2.cisco.com:443'
+DEFAULT_BASE_URL = 'https://sandboxdnac.cisco.com:443'
 
 DEFAULT_SINGLE_REQUEST_TIMEOUT = 60
 

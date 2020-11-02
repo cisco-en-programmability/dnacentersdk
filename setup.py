@@ -8,7 +8,7 @@ from codecs import open
 from setuptools import find_packages, setup
 
 
-__copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
+__copyright__ = "Copyright (c) 2019-2020 Cisco and/or its affiliates."
 __license__ = "MIT"
 
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Update Site data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -173,8 +173,7 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 }
                 },
                 "type": [
-                "object",
-                "null"
+                "object"
                 ]
                 },
                 "type": {
@@ -187,11 +186,14 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 null
                 ],
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 }
                 },
+                "required": [
+                "type",
+                "site"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

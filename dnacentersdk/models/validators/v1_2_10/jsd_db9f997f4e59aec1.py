@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Create and Provision SSID data model.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,8 +46,7 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 "properties": {
                 "enableFabric": {
                 "type": [
-                "boolean",
-                "null"
+                "boolean"
                 ]
                 },
                 "flexConnect": {
@@ -83,8 +82,7 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 ]
                 },
                 "type": [
-                "array",
-                "null"
+                "array"
                 ]
                 },
                 "ssidDetails": {
@@ -194,8 +192,7 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 }
                 },
                 "type": [
-                "object",
-                "null"
+                "object"
                 ]
                 },
                 "ssidType": {
@@ -207,8 +204,7 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 null
                 ],
                 "type": [
-                "string",
-                "null"
+                "string"
                 ]
                 },
                 "vlanAndDynamicInterfaceDetails": {
@@ -274,6 +270,12 @@ class JSONSchemaValidatorDb9F997F4E59Aec1(object):
                 ]
                 }
                 },
+                "required": [
+                "managedAPLocations",
+                "ssidDetails",
+                "ssidType",
+                "enableFabric"
+                ],
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

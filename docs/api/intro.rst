@@ -17,7 +17,7 @@ elegantly represented in intuitive JSON.  What could be easier?
 
     import requests
 
-    URL = 'https://sandboxdnac2.cisco.com:443/dna/intent/api/v1/network-device' 
+    URL = 'https://sandboxdnac.cisco.com:443/dna/intent/api/v1/network-device' 
     ACCESS_TOKEN = '<your_access_token>'
 
     family = '<family_name>'
@@ -51,7 +51,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
     from dnacentersdk import api
 
-    dnac = api.DNACenterAPI(base_url='https://sandboxdnac2.cisco.com:443', version='1.3.0')
+    dnac = api.DNACenterAPI(base_url='https://sandboxdnac.cisco.com:443', version='2.1.2')
     # Or even just dnac = api.DNACenterAPI() as base_url and version have those values.
     try:
         devices = dnac.devices.get_device_list(family='Switches and Hubs')
@@ -65,7 +65,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 + Reads your DNA Center credentials from environment variables (DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD)
 
-+ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION. Supported versions: '1.2.10', '1.3.0', '1.3.1', '1.3.3' and '2.1.1'. Now with version and base_url, you have more control.
++ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION. Supported versions: '1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1' and '2.1.2'. Now with version and base_url, you have more control.
 
 + Controls whether to verify the server's TLS certificate or not according to the verify parameter.
 
@@ -99,8 +99,8 @@ All of this, combined, lets you do powerful things simply:
 
     from dnacentersdk import api
 
-    # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 1.2.10.
-    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac2.cisco.com:443", version='1.2.10')
+    # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.1.2.
+    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
 
     # Find all devices that have 'Switches and Hubs' in their family
     devices = dnac.devices.get_device_list(family='Switches and Hubs')
@@ -159,7 +159,7 @@ dnacentersdk License
 .. include:: ../../LICENSE
 
 
-*Copyright (c) 2019 Cisco and/or its affiliates.*
+*Copyright (c) 2019-2020 Cisco and/or its affiliates.*
 
 
 .. _MIT Open Source License: https://opensource.org/licenses/MIT

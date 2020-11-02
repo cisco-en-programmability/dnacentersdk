@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center Network Discovery API wrapper.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -611,12 +611,18 @@ class NetworkDiscovery(object):
             sort_by(basestring): sortBy query parameter.
             sort_order(basestring): sortOrder query parameter.
             ip_address(basestring): ipAddress query parameter.
+                Accepts comma separated values.
             ping_status(basestring): pingStatus query parameter.
+                Accepts comma separated values.
             snmp_status(basestring): snmpStatus query parameter.
+                Accepts comma separated values.
             cli_status(basestring): cliStatus query parameter.
+                Accepts comma separated values.
             netconf_status(basestring): netconfStatus query
-                parameter.
+                parameter. Accepts comma separated
+                values.
             http_status(basestring): httpStatus query parameter.
+                Accepts comma separated values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

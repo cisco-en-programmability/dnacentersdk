@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Community-developed Python SDK for the DNA Center APIs.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,11 +48,9 @@ from .models.mydict import mydict_data_factory
 
 
 # Initialize Package Logging
-logging.basicConfig()
+logging.getLogger(__name__).addHandler(logging.NullHandler())
 logger = logging.getLogger(__name__)
-requests_log = logging.getLogger("urllib3")
-requests_log.addHandler(logging.NullHandler())
-requests_log.propagate = False
+
 
 from pkg_resources import get_distribution
 release = get_distribution('dnacentersdk').version

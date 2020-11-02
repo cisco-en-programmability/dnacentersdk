@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNA Center PnP API wrapper.
 
-Copyright (c) 2019 Cisco and/or its affiliates.
+Copyright (c) 2019-2020 Cisco and/or its affiliates.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1011,7 +1011,8 @@ class Pnp(object):
         """Returns the workflow count.
 
         Args:
-            name(basestring): Workflow Name.
+            name(basestring): Workflow Name. Accepts comma separated
+                values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1758,11 +1759,13 @@ class Pnp(object):
             limit(int): Limits number of results.
             offset(int): Index of first result.
             sort(basestring): Comma seperated lost of fields to sort
-                on.
+                on. Accepts comma separated values.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
-            type(basestring): Workflow Type.
-            name(basestring): Workflow Name.
+            type(basestring): Workflow Type. Accepts comma separated
+                values.
+            name(basestring): Workflow Name. Accepts comma separated
+                values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1902,19 +1905,32 @@ class Pnp(object):
         useful for pagination.
 
         Args:
-            serial_number(basestring): Device Serial Number.
-            state(basestring): Device State.
-            onb_state(basestring): Device Onboarding State.
+            serial_number(basestring): Device Serial Number. Accepts
+                comma separated values.
+            state(basestring): Device State. Accepts comma separated
+                values.
+            onb_state(basestring): Device Onboarding State. Accepts
+                comma separated values.
             cm_state(basestring): Device Connection Manager State.
-            name(basestring): Device Name.
-            pid(basestring): Device ProductId.
-            source(basestring): Device Source.
-            project_id(basestring): Device Project Id.
-            workflow_id(basestring): Device Workflow Id.
-            project_name(basestring): Device Project Name.
-            workflow_name(basestring): Device Workflow Name.
+                Accepts comma separated values.
+            name(basestring): Device Name. Accepts comma separated
+                values.
+            pid(basestring): Device ProductId. Accepts comma
+                separated values.
+            source(basestring): Device Source. Accepts comma
+                separated values.
+            project_id(basestring): Device Project Id. Accepts comma
+                separated values.
+            workflow_id(basestring): Device Workflow Id. Accepts
+                comma separated values.
+            project_name(basestring): Device Project Name. Accepts
+                comma separated values.
+            workflow_name(basestring): Device Workflow Name. Accepts
+                comma separated values.
             smart_account_id(basestring): Device Smart Account.
+                Accepts comma separated values.
             virtual_account_id(basestring): Device Virtual Account.
+                Accepts comma separated values.
             last_contact(bool): Device Has Contacted lastContact >
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2070,7 +2086,7 @@ class Pnp(object):
         Args:
             serial_number(basestring): Device Serial Number.
             sort(basestring): Comma seperated list of fields to sort
-                on.
+                on. Accepts comma separated values.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2157,22 +2173,35 @@ class Pnp(object):
             limit(int): Limits number of results.
             offset(int): Index of first result.
             sort(basestring): Comma seperated list of fields to sort
-                on.
+                on. Accepts comma separated values.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
-            serial_number(basestring): Device Serial Number.
-            state(basestring): Device State.
-            onb_state(basestring): Device Onboarding State.
+            serial_number(basestring): Device Serial Number. Accepts
+                comma separated values.
+            state(basestring): Device State. Accepts comma separated
+                values.
+            onb_state(basestring): Device Onboarding State. Accepts
+                comma separated values.
             cm_state(basestring): Device Connection Manager State.
-            name(basestring): Device Name.
-            pid(basestring): Device ProductId.
-            source(basestring): Device Source.
-            project_id(basestring): Device Project Id.
-            workflow_id(basestring): Device Workflow Id.
-            project_name(basestring): Device Project Name.
-            workflow_name(basestring): Device Workflow Name.
+                Accepts comma separated values.
+            name(basestring): Device Name. Accepts comma separated
+                values.
+            pid(basestring): Device ProductId. Accepts comma
+                separated values.
+            source(basestring): Device Source. Accepts comma
+                separated values.
+            project_id(basestring): Device Project Id. Accepts comma
+                separated values.
+            workflow_id(basestring): Device Workflow Id. Accepts
+                comma separated values.
+            project_name(basestring): Device Project Name. Accepts
+                comma separated values.
+            workflow_name(basestring): Device Workflow Name. Accepts
+                comma separated values.
             smart_account_id(basestring): Device Smart Account.
+                Accepts comma separated values.
             virtual_account_id(basestring): Device Virtual Account.
+                Accepts comma separated values.
             last_contact(bool): Device Has Contacted lastContact >
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
