@@ -506,6 +506,7 @@ class ConfigurationTemplates(object):
                         deviceTypes=None,
                         failurePolicy=None,
                         id=None,
+                        language=None,
                         lastUpdateTime=None,
                         name=None,
                         parentTemplateId=None,
@@ -542,6 +543,7 @@ class ConfigurationTemplates(object):
                 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
             id(string): TemplateDTO's id.
+            language(string): TemplateDOT's language.
             lastUpdateTime(number): TemplateDTO's lastUpdateTime.
             name(string): TemplateDTO's name.
             parentTemplateId(string): TemplateDTO's
@@ -615,6 +617,8 @@ class ConfigurationTemplates(object):
                 failurePolicy,
             'id':
                 id,
+            'language':
+                language,
             'lastUpdateTime':
                 lastUpdateTime,
             'name':
@@ -1142,6 +1146,7 @@ class ConfigurationTemplates(object):
                         deviceTypes=None,
                         failurePolicy=None,
                         id=None,
+                        language=None,
                         lastUpdateTime=None,
                         name=None,
                         parentTemplateId=None,
@@ -1178,6 +1183,7 @@ class ConfigurationTemplates(object):
                 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
             id(string): TemplateDTO's id.
+            language(string): TemplateDOT's language.
             lastUpdateTime(number): TemplateDTO's lastUpdateTime.
             name(string): TemplateDTO's name.
             parentTemplateId(string): TemplateDTO's
@@ -1255,6 +1261,8 @@ class ConfigurationTemplates(object):
                 failurePolicy,
             'id':
                 id,
+            'language':
+                language,
             'lastUpdateTime':
                 lastUpdateTime,
             'name':
