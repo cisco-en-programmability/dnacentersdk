@@ -981,6 +981,9 @@ class TemplateProgrammer(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
+        # avoid name conflict
+        params_arg = params
+
         params = {
         }
         params.update(request_parameters)
@@ -991,7 +994,7 @@ class TemplateProgrammer(object):
 
         _payload = {
             'params':
-                params,
+                params_arg,
             'templateId':
                 templateId,
         }
