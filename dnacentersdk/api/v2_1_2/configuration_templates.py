@@ -1094,8 +1094,9 @@ class ConfigurationTemplates(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
-        }
+        if params is None:
+            params = {
+            }
         params.update(request_parameters)
         params = dict_from_items_with_values(params)
 
