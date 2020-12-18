@@ -409,11 +409,11 @@ class RestSession(object):
                     except Exception as e:
                         raise DownloadFailure(resp, e)
                     logger.debug('Downloaded')
-                # Needed to create a copy of the raw response
-                # if not copied it would not recover data and other properties
-                return HTTPResponse(resp.raw)
+                    # Needed to create a copy of the raw response
+                    # if not copied it would not recover data and other properties
+                    return HTTPResponse(resp.raw)
+                return extract_and_parse_json(resp)
             return extract_and_parse_json(resp)
-        return extract_and_parse_json(resp)
 
     def post(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a POST request.
