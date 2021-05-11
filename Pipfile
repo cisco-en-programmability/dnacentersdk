@@ -16,5 +16,5 @@ pytest = "==5.4.3"
 pytest-rerunfailures = "==9.0"
 flake8 = "*"
 ipython = "*"
-readthedocs-sphinx-search = {git = "https://github.com/readthedocs/readthedocs-sphinx-search",ref = "master"}
+readthedocs-sphinx-search = ">=0.1.0rc3"
 setuptools_scm = "==3.3.3"

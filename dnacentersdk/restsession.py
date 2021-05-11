@@ -413,7 +413,6 @@ class RestSession(object):
                 # if not copied it would not recover data and other properties
                 return HTTPResponse(resp.raw)
             return extract_and_parse_json(resp)
-        return extract_and_parse_json(resp)
 
     def post(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a POST request.

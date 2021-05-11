@@ -114,7 +114,7 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'name':
                 name,
             'siteId':
@@ -126,8 +126,8 @@ class Sites(object):
             'limit':
                 limit,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -141,10 +141,10 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/site')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_6fb4ab3643faa80f_v1_3_1', json_data)
 
@@ -201,10 +201,10 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'siteId': site_id,
@@ -231,11 +231,11 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/site/${siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_eeb7eb4b4bd8a1dd_v1_3_1', json_data)
@@ -270,10 +270,10 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'siteId': site_id,
@@ -288,10 +288,10 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/membership/${siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_eba669054e08a60e_v1_3_1', json_data)
 
@@ -326,16 +326,16 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'timestamp':
                 timestamp,
         }
 
-        if params['timestamp'] is None:
-            params['timestamp'] = ''
+        if _params['timestamp'] is None:
+            _params['timestamp'] = ''
 
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -349,10 +349,10 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/site-health')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_15b7aa0c4dda8e85_v1_3_1', json_data)
 
@@ -386,10 +386,10 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'siteId': site_id,
@@ -404,10 +404,10 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/site/${siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f083cb13484a8fae_v1_3_1', json_data)
 
@@ -461,10 +461,10 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'siteId': site_id,
@@ -489,11 +489,11 @@ class Sites(object):
         e_url = ('/dna/system/api/v1/site/${siteId}/device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_eeb168eb41988e07_v1_3_1', json_data)
@@ -546,10 +546,10 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -575,11 +575,11 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/site')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_50b589fd4c7a930a_v1_3_1', json_data)
@@ -613,12 +613,12 @@ class Sites(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'siteId':
                 site_id,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -632,9 +632,9 @@ class Sites(object):
         e_url = ('/dna/intent/api/v1/site/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_b0b7eabc4f4b9b28_v1_3_1', json_data)

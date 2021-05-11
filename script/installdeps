@@ -35,7 +35,7 @@ elif [ -f "requirements.txt" ]; then
         exit 1
     fi
 
-    pip3 install -r requirements.txt
-    pip3 install -e .
+    pipenv run pip3 install -r requirements.txt
+    pipenv run pip3 install -e .
 
 fi

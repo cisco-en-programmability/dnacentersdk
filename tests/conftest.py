@@ -33,6 +33,7 @@ pytest_plugins = [
     'tests.api.v1_3_3',
     'tests.api.v2_1_1',
     'tests.api.v2_1_2',
+    'tests.api.v2_2_1',
 ]
 
 
@@ -60,6 +61,9 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "command_runner: command_runner wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "compliance: compliance wrapper test"
     )
     config.addinivalue_line(
         "markers", "configuration_archive: configuration_archive wrapper test"
@@ -116,10 +120,16 @@ def pytest_configure(config):
         "markers", "pnp: pnp wrapper test"
     )
     config.addinivalue_line(
+        "markers", "reports: reports wrapper test"
+    )
+    config.addinivalue_line(
         "markers", "sda: sda wrapper test"
     )
     config.addinivalue_line(
         "markers", "swim: swim wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "security_advisories: security_advisories wrapper test"
     )
     config.addinivalue_line(
         "markers", "sensors: sensors wrapper test"

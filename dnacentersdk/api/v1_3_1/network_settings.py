@@ -101,12 +101,12 @@ class NetworkSettings(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'siteId':
                 site_id,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -120,10 +120,10 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/device-credential')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_899f08e7401b82dd_v1_3_1', json_data)
 
@@ -153,10 +153,10 @@ class NetworkSettings(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -170,10 +170,10 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/global-pool')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_c0bca85643c8b58d_v1_3_1', json_data)
 
@@ -207,10 +207,10 @@ class NetworkSettings(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -225,10 +225,10 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/device-credential/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_259eab3045988958_v1_3_1', json_data)
 
@@ -262,10 +262,10 @@ class NetworkSettings(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'sp-profile-name': sp_profile_name,
@@ -280,10 +280,10 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sp-profile/${sp-profile-name}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_4ca2db1143ebb5d7_v1_3_1', json_data)
 
@@ -313,10 +313,10 @@ class NetworkSettings(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -330,10 +330,10 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/service-provider')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_70847bdc4d89a437_v1_3_1', json_data)
 
@@ -367,10 +367,10 @@ class NetworkSettings(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -385,9 +385,9 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/global-pool/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_1eaa8b2148ab81de_v1_3_1', json_data)

@@ -10,7 +10,11 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-fastjsonschema>=2.13
-future
-requests-toolbelt>=0.9.1
-requests>=2.4.2
+certifi==2020.12.5
+chardet==4.0.0
+fastjsonschema==2.15.1
+future==0.18.2
+idna==2.10
+requests-toolbelt==0.9.1
+requests==2.25.1
+urllib3==1.26.4

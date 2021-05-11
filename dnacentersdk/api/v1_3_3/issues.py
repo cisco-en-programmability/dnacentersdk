@@ -76,7 +76,7 @@ class Issues(object):
                                      headers=None,
                                      **request_parameters):
         """Enriches a given network issue context (an issue id or end
-        user’s Mac Address) with details about the issue(s),
+        user's Mac Address) with details about the issue(s),
         impacted hosts and suggested actions for remediation.
 
         Args:
@@ -106,10 +106,10 @@ class Issues(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -123,9 +123,9 @@ class Issues(object):
         e_url = ('/dna/intent/api/v1/issue-enrichment-details')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_868439bb4e89a6e4_v1_3_3', json_data)

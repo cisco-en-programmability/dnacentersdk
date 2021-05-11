@@ -103,12 +103,12 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'eventIds':
                 event_ids,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -122,10 +122,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/subscription/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_149b7ba04e5890b2_v2_1_2', json_data)
 
@@ -180,7 +180,7 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'eventId':
                 event_id,
             'tags':
@@ -194,8 +194,8 @@ class EventManagement(object):
             'order':
                 order,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -209,10 +209,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/events')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_44a39a074a6a82a2_v2_1_2', json_data)
 
@@ -252,10 +252,10 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -274,11 +274,11 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/subscription')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_579a6a7248cb94cf_v2_1_2', json_data)
@@ -319,10 +319,10 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -341,11 +341,11 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/subscription')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_4f9f7a7b40f990de_v2_1_2', json_data)
@@ -386,14 +386,14 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'eventId':
                 event_id,
             'tags':
                 tags,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -407,10 +407,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/events/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_6a9edac149ba86cf_v2_1_2', json_data)
 
@@ -468,7 +468,7 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'eventIds':
                 event_ids,
             'startTime':
@@ -488,8 +488,8 @@ class EventManagement(object):
             'source':
                 source,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -503,10 +503,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/event-series/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_8f93dbe54b2aa1fd_v2_1_2', json_data)
 
@@ -544,12 +544,12 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'subscriptions':
                 subscriptions,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -563,10 +563,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/subscription')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_93981baa40799483_v2_1_2', json_data)
 
@@ -616,7 +616,7 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'eventIds':
                 event_ids,
             'offset':
@@ -628,8 +628,8 @@ class EventManagement(object):
             'order':
                 order,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -643,10 +643,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/subscription')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_dcaa6bde4feb9152_v2_1_2', json_data)
 
@@ -681,10 +681,10 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'executionId': execution_id,
@@ -699,10 +699,10 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/api-status/${executionId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f9bd99c74bba8832_v2_1_2', json_data)
 
@@ -772,7 +772,7 @@ class EventManagement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'eventIds':
                 event_ids,
             'startTime':
@@ -800,8 +800,8 @@ class EventManagement(object):
             'order':
                 order,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -815,9 +815,9 @@ class EventManagement(object):
         e_url = ('/dna/intent/api/v1/event/event-series')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f5a13ab24c5aaa91_v2_1_2', json_data)

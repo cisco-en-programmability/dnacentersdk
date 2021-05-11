@@ -105,10 +105,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -127,11 +127,11 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/wireless/provision')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_07913b7f4e1880de_v1_3_0', json_data)
@@ -174,10 +174,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -201,11 +201,11 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/wireless/profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_20872aec43b9bf50_v1_3_0', json_data)
@@ -241,12 +241,12 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'profileName':
                 profile_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -260,10 +260,10 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/wireless/profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_6896993e41b8bd7a_v1_3_0', json_data)
 
@@ -300,10 +300,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -322,11 +322,11 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/wireless/provision')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_a0be3a2f47ab9f3c_v1_3_0', json_data)
@@ -362,10 +362,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'wirelessProfileName': wireless_profile_name,
@@ -381,10 +381,10 @@ class NonFabricWireless(object):
                  + 'e}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_ae86a8c14b5980b7_v1_3_0', json_data)
 
@@ -425,10 +425,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -452,11 +452,11 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/wireless/profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_47ba59204e0ab742_v1_3_0', json_data)
@@ -514,10 +514,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -549,11 +549,11 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/business/ssid')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_db9f997f4e59aec1_v1_3_0', json_data)
@@ -589,10 +589,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'ssidName': ssid_name,
@@ -607,10 +607,10 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/enterprise-ssid/${ssidName}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_c7a6592b4b98a369_v1_3_0', json_data)
 
@@ -655,10 +655,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'ssidName': ssid_name,
@@ -675,10 +675,10 @@ class NonFabricWireless(object):
                  + 'Locations}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cca098344a489dfa_v1_3_0', json_data)
 
@@ -715,12 +715,12 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'ssidName':
                 ssid_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -734,10 +734,10 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/enterprise-ssid')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cca519ba45ebb423_v1_3_0', json_data)
 
@@ -811,10 +811,10 @@ class NonFabricWireless(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -854,11 +854,11 @@ class NonFabricWireless(object):
         e_url = ('/dna/intent/api/v1/enterprise-ssid')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_8a96fb954d09a349_v1_3_0', json_data)

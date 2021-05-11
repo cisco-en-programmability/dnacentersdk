@@ -118,10 +118,10 @@ class SiteDesign(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -145,11 +145,11 @@ class SiteDesign(object):
         e_url = ('/dna/intent/api/v1/nfv-provision-detail')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_2f97e8fa45f8b2a3_v1_3_3', json_data)
@@ -203,10 +203,10 @@ class SiteDesign(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -232,11 +232,11 @@ class SiteDesign(object):
         e_url = ('/dna/intent/api/v1/business/nfv')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_6f9cda9a465884b4_v1_3_3', json_data)
@@ -273,12 +273,12 @@ class SiteDesign(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIp':
                 device_ip,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -292,9 +292,9 @@ class SiteDesign(object):
         e_url = ('/dna/intent/api/v1/business/nfv/provisioningDetail')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_9cb2cb3f494a824f_v1_3_3', json_data)

@@ -66,6 +66,14 @@ v2.1.2 summary
 .. include:: api_structure_table_v2_1_2.rst
 
 
+.. _v2_2_1 summary:
+
+v2.2.1 summary
+-----------------------------
+
+.. include:: api_structure_table_v2_2_1.rst
+
+
 DNACenterAPI Class
 ========================
 
@@ -1220,6 +1228,271 @@ wireless
 --------
 
 .. autoclass:: dnacentersdk.api.v2_1_2.wireless.Wireless()
+
+
+
+
+DNACenterAPI v2.2.1
+===============================
+
+.. _application_policy_2_2_1:
+
+application_policy
+------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.application_policy.ApplicationPolicy()
+
+
+
+.. _applications_2_2_1:
+
+applications
+------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.applications.Applications()
+
+
+
+.. _clients_2_2_1:
+
+clients
+-------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.clients.Clients()
+
+
+
+.. _command_runner_2_2_1:
+
+command_runner
+--------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.command_runner.CommandRunner()
+
+
+
+.. _compliance_2_2_1:
+
+compliance
+----------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.compliance.Compliance()
+
+
+
+.. _configuration_archive_2_2_1:
+
+configuration_archive
+---------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.configuration_archive.ConfigurationArchive()
+
+
+
+.. _configuration_templates_2_2_1:
+
+configuration_templates
+-----------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.configuration_templates.ConfigurationTemplates()
+
+
+
+.. _device_onboarding_pnp_2_2_1:
+
+device_onboarding_pnp
+---------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.device_onboarding_pnp.DeviceOnboardingPnp()
+
+
+
+.. _device_replacement_2_2_1:
+
+device_replacement
+------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.device_replacement.DeviceReplacement()
+
+
+
+.. _devices_2_2_1:
+
+devices
+-------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.devices.Devices()
+
+
+
+.. _discovery_2_2_1:
+
+discovery
+---------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.discovery.Discovery()
+
+
+
+.. _event_management_2_2_1:
+
+event_management
+----------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.event_management.EventManagement()
+
+
+
+.. _file_2_2_1:
+
+file
+----
+
+.. autoclass:: dnacentersdk.api.v2_2_1.file.File()
+
+
+
+.. _itsm_2_2_1:
+
+itsm
+----
+
+.. autoclass:: dnacentersdk.api.v2_2_1.itsm.Itsm()
+
+
+
+.. _issues_2_2_1:
+
+issues
+------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.issues.Issues()
+
+
+
+.. _network_settings_2_2_1:
+
+network_settings
+----------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.network_settings.NetworkSettings()
+
+
+
+.. _path_trace_2_2_1:
+
+path_trace
+----------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.path_trace.PathTrace()
+
+
+
+.. _reports_2_2_1:
+
+reports
+-------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.reports.Reports()
+
+
+
+.. _sda_2_2_1:
+
+sda
+---
+
+.. autoclass:: dnacentersdk.api.v2_2_1.sda.Sda()
+
+
+
+.. _security_advisories_2_2_1:
+
+security_advisories
+-------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.security_advisories.SecurityAdvisories()
+
+
+
+.. _sensors_2_2_1:
+
+sensors
+-------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.sensors.Sensors()
+
+
+
+.. _site_design_2_2_1:
+
+site_design
+-----------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.site_design.SiteDesign()
+
+
+
+.. _sites_2_2_1:
+
+sites
+-----
+
+.. autoclass:: dnacentersdk.api.v2_2_1.sites.Sites()
+
+
+
+.. _software_image_management_swim_2_2_1:
+
+software_image_management_swim
+------------------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.software_image_management_swim.SoftwareImageManagementSwim()
+
+
+
+.. _tag_2_2_1:
+
+tag
+---
+
+.. autoclass:: dnacentersdk.api.v2_2_1.tag.Tag()
+
+
+
+.. _task_2_2_1:
+
+task
+----
+
+.. autoclass:: dnacentersdk.api.v2_2_1.task.Task()
+
+
+
+.. _topology_2_2_1:
+
+topology
+--------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.topology.Topology()
+
+
+
+.. _users_2_2_1:
+
+users
+-----
+
+.. autoclass:: dnacentersdk.api.v2_2_1.users.Users()
+
+
+
+.. _wireless_2_2_1:
+
+wireless
+--------
+
+.. autoclass:: dnacentersdk.api.v2_2_1.wireless.Wireless()
 
 
 .. _DNA Center Data Object:

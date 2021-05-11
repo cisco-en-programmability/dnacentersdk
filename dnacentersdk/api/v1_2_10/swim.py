@@ -156,7 +156,7 @@ class Swim(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'imageUuid':
                 image_uuid,
             'name':
@@ -194,8 +194,8 @@ class Swim(object):
             'offset':
                 offset,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -209,10 +209,10 @@ class Swim(object):
         e_url = ('/dna/intent/api/v1/image/importation')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_0c8f7a0b49b9aedd_v1_2_10', json_data)
 
@@ -254,10 +254,10 @@ class Swim(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -276,11 +276,11 @@ class Swim(object):
         e_url = ('/dna/intent/api/v1/image/distribution')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_8cb6783b4faba1f4_v1_2_10', json_data)
@@ -366,7 +366,7 @@ class Swim(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'isThirdParty':
                 is_third_party,
             'thirdPartyVendor':
@@ -376,8 +376,8 @@ class Swim(object):
             'thirdPartyApplicationType':
                 third_party_application_type,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -397,11 +397,11 @@ class Swim(object):
                          'Connection': 'keep-alive'})
         with_custom_headers = True
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            data=m_data,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params)
+            json_data = self._session.post(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_4dbe3bc743a891bc_v1_2_10', json_data)
 
@@ -458,7 +458,7 @@ class Swim(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'scheduleAt':
                 schedule_at,
             'scheduleDesc':
@@ -466,8 +466,8 @@ class Swim(object):
             'scheduleOrigin':
                 schedule_origin,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -486,11 +486,11 @@ class Swim(object):
         e_url = ('/dna/intent/api/v1/image/importation/source/url')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_bc8aab4746ca883d_v1_2_10', json_data)
@@ -542,12 +542,12 @@ class Swim(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'scheduleValidate':
                 schedule_validate,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -566,11 +566,11 @@ class Swim(object):
         e_url = ('/dna/intent/api/v1/image/activation/device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_fb9beb664f2aba4c_v1_2_10', json_data)

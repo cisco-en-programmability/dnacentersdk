@@ -288,6 +288,64 @@ from .v2_1_2.users import \
     Users as Users_v2_1_2
 from .v2_1_2.wireless import \
     Wireless as Wireless_v2_1_2
+from .v2_2_1.application_policy import \
+    ApplicationPolicy as ApplicationPolicy_v2_2_1
+from .v2_2_1.applications import \
+    Applications as Applications_v2_2_1
+from .v2_2_1.clients import \
+    Clients as Clients_v2_2_1
+from .v2_2_1.command_runner import \
+    CommandRunner as CommandRunner_v2_2_1
+from .v2_2_1.compliance import \
+    Compliance as Compliance_v2_2_1
+from .v2_2_1.configuration_archive import \
+    ConfigurationArchive as ConfigurationArchive_v2_2_1
+from .v2_2_1.configuration_templates import \
+    ConfigurationTemplates as ConfigurationTemplates_v2_2_1
+from .v2_2_1.device_onboarding_pnp import \
+    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_2_1
+from .v2_2_1.device_replacement import \
+    DeviceReplacement as DeviceReplacement_v2_2_1
+from .v2_2_1.devices import \
+    Devices as Devices_v2_2_1
+from .v2_2_1.discovery import \
+    Discovery as Discovery_v2_2_1
+from .v2_2_1.event_management import \
+    EventManagement as EventManagement_v2_2_1
+from .v2_2_1.file import \
+    File as File_v2_2_1
+from .v2_2_1.itsm import \
+    Itsm as Itsm_v2_2_1
+from .v2_2_1.issues import \
+    Issues as Issues_v2_2_1
+from .v2_2_1.network_settings import \
+    NetworkSettings as NetworkSettings_v2_2_1
+from .v2_2_1.path_trace import \
+    PathTrace as PathTrace_v2_2_1
+from .v2_2_1.reports import \
+    Reports as Reports_v2_2_1
+from .v2_2_1.sda import \
+    Sda as Sda_v2_2_1
+from .v2_2_1.security_advisories import \
+    SecurityAdvisories as SecurityAdvisories_v2_2_1
+from .v2_2_1.sensors import \
+    Sensors as Sensors_v2_2_1
+from .v2_2_1.site_design import \
+    SiteDesign as SiteDesign_v2_2_1
+from .v2_2_1.sites import \
+    Sites as Sites_v2_2_1
+from .v2_2_1.software_image_management_swim import \
+    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_2_1
+from .v2_2_1.tag import \
+    Tag as Tag_v2_2_1
+from .v2_2_1.task import \
+    Task as Task_v2_2_1
+from .v2_2_1.topology import \
+    Topology as Topology_v2_2_1
+from .v2_2_1.users import \
+    Users as Users_v2_2_1
+from .v2_2_1.wireless import \
+    Wireless as Wireless_v2_2_1
 from .custom_caller import CustomCaller
 
 
@@ -383,7 +441,8 @@ class DNACenterAPI(object):
             VersionError: If the version is not provided via the version
                 argument or an environment variable, or it is not a
                 DNA Center API supported version
-                ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1', '2.1.2'].
+                ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1', '2.1.2',
+                '2.2.1'].
 
         """
         check_type(base_url, basestring)
@@ -397,11 +456,11 @@ class DNACenterAPI(object):
         check_type(version, basestring, may_be_none=False)
 
         if version not in ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1',
-                           '2.1.2']:
+                           '2.1.2', '2.2.1']:
             raise VersionError(
                 'Unknown API version, '
                 + 'known versions are {}'.format(
-                    '1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1 and 2.1.2.'
+                    '1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1, 2.1.2 and 2.2.1.'
                 )
             )
 
@@ -947,6 +1006,123 @@ class DNACenterAPI(object):
                 )
             self.wireless = \
                 Wireless_v2_1_2(
+                    self._session, object_factory, _validator
+                )
+        if version == '2.2.1':
+            self.application_policy = \
+                ApplicationPolicy_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.applications = \
+                Applications_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.clients = \
+                Clients_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.command_runner = \
+                CommandRunner_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.compliance = \
+                Compliance_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.configuration_archive = \
+                ConfigurationArchive_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.configuration_templates = \
+                ConfigurationTemplates_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.device_onboarding_pnp = \
+                DeviceOnboardingPnp_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.device_replacement = \
+                DeviceReplacement_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.devices = \
+                Devices_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.discovery = \
+                Discovery_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.event_management = \
+                EventManagement_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.file = \
+                File_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.itsm = \
+                Itsm_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.issues = \
+                Issues_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.network_settings = \
+                NetworkSettings_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.path_trace = \
+                PathTrace_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.reports = \
+                Reports_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.sda = \
+                Sda_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.security_advisories = \
+                SecurityAdvisories_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.sensors = \
+                Sensors_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.site_design = \
+                SiteDesign_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.sites = \
+                Sites_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.software_image_management_swim = \
+                SoftwareImageManagementSwim_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.tag = \
+                Tag_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.task = \
+                Task_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.topology = \
+                Topology_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.users = \
+                Users_v2_2_1(
+                    self._session, object_factory, _validator
+                )
+            self.wireless = \
+                Wireless_v2_2_1(
                     self._session, object_factory, _validator
                 )
         self.custom_caller = \

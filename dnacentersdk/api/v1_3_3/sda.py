@@ -107,14 +107,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'device-ip':
                 device_ip,
             'interfaceName':
                 interface_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -129,10 +129,10 @@ class Sda(object):
                  + 'point')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_07874a4c4c9aabd9_v1_3_3', json_data)
 
@@ -166,12 +166,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'fabricName':
                 fabric_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -185,10 +185,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/fabric')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_16a1bb5d48cb873d_v1_3_3', json_data)
 
@@ -228,14 +228,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'virtualNetworkName':
                 virtual_network_name,
             'siteNameHierarchy':
                 site_name_hierarchy,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -249,10 +249,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/virtual-network')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_2eb1fa1e49caa2b4_v1_3_3', json_data)
 
@@ -286,12 +286,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -305,10 +305,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_138518e14069ab5f_v1_3_3', json_data)
 
@@ -345,10 +345,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -367,11 +367,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/virtualnetwork/ippool')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_208579ea4ed98f4f_v1_3_3', json_data)
@@ -406,12 +406,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -425,10 +425,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/edge-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_1fb8f9f24c998133_v1_3_3', json_data)
 
@@ -463,12 +463,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'siteNameHierarchy':
                 site_name_hierarchy,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -482,10 +482,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/authentication-profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_3ebcda3e4acbafb7_v1_3_3', json_data)
 
@@ -524,14 +524,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'device-ip':
                 device_ip,
             'interfaceName':
                 interface_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -546,10 +546,10 @@ class Sda(object):
                  + 'point')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_5097f8d445f98f51_v1_3_3', json_data)
 
@@ -583,12 +583,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'siteNameHierarchy':
                 site_name_hierarchy,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -602,10 +602,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/fabric-site')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_50864acf4ad8b54d_v1_3_3', json_data)
 
@@ -642,10 +642,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -664,11 +664,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/virtual-network')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_518c59cd441aa9fc_v1_3_3', json_data)
@@ -708,14 +708,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'ipPoolName':
                 ip_pool_name,
             'virtualNetworkName':
                 virtual_network_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -729,10 +729,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/virtualnetwork/ippool')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_549e4aff42bbb52a_v1_3_3', json_data)
 
@@ -769,10 +769,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -791,11 +791,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/fabric')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_6db9292d4f28a26b_v1_3_3', json_data)
@@ -833,10 +833,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -855,11 +855,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/edge-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_87a8ba444ce9bc59_v1_3_3', json_data)
@@ -894,12 +894,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'siteNameHierarchy':
                 site_name_hierarchy,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -913,10 +913,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/fabric-site')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_80b7f8e6406a8701_v1_3_3', json_data)
 
@@ -950,12 +950,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -969,10 +969,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/edge-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_7683f90b4efab090_v1_3_3', json_data)
 
@@ -1007,12 +1007,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'siteNameHierarchy':
                 site_name_hierarchy,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1026,10 +1026,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/authentication-profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_8b908a4e4c5a9a23_v1_3_3', json_data)
 
@@ -1066,10 +1066,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1089,11 +1089,11 @@ class Sda(object):
                  + 'device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_9582ab824ce8b29d_v1_3_3', json_data)
@@ -1128,12 +1128,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1147,10 +1147,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/border-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_98a39bf4485a9871_v1_3_3', json_data)
 
@@ -1187,10 +1187,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1209,11 +1209,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/authentication-profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_8984ea7744d98a54_v1_3_3', json_data)
@@ -1248,12 +1248,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1267,10 +1267,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/control-plane-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_aba4991d4e9b8747_v1_3_3', json_data)
 
@@ -1309,14 +1309,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'device-ip':
                 device_ip,
             'interfaceName':
                 interface_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1331,10 +1331,10 @@ class Sda(object):
                  + 'device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_a4a1e8ed41cb9653_v1_3_3', json_data)
 
@@ -1371,10 +1371,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1393,11 +1393,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/border-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_bead7b3443b996a7_v1_3_3', json_data)
@@ -1438,14 +1438,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'virtualNetworkName':
                 virtual_network_name,
             'siteNameHierarchy':
                 site_name_hierarchy,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1459,10 +1459,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/virtual-network')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_c78c9ad245bb9657_v1_3_3', json_data)
 
@@ -1501,14 +1501,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'device-ip':
                 device_ip,
             'interfaceName':
                 interface_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1523,10 +1523,10 @@ class Sda(object):
                  + 'device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cba5b8b14edb81f4_v1_3_3', json_data)
 
@@ -1563,10 +1563,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1586,11 +1586,11 @@ class Sda(object):
                  + 'point')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_c2a43ad24098baa7_v1_3_3', json_data)
@@ -1628,10 +1628,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1650,11 +1650,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/authentication-profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_bca339d844c8a3c0_v1_3_3', json_data)
@@ -1689,12 +1689,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'fabricName':
                 fabric_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1708,10 +1708,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/fabric')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_d0aafa694f4b9d7b_v1_3_3', json_data)
 
@@ -1745,12 +1745,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1764,10 +1764,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/border-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cb81b93540baaab0_v1_3_3', json_data)
 
@@ -1804,10 +1804,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1826,11 +1826,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/control-plane-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_dd85c91042489a3f_v1_3_3', json_data)
@@ -1865,12 +1865,12 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceIPAddress':
                 device_ipaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1884,10 +1884,10 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/control-plane-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f6bd6bf64e6890be_v1_3_3', json_data)
 
@@ -1924,10 +1924,10 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1946,11 +1946,11 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/fabric-site')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_d2b4d9d04a4b884c_v1_3_3', json_data)
@@ -1990,14 +1990,14 @@ class Sda(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'ipPoolName':
                 ip_pool_name,
             'virtualNetworkName':
                 virtual_network_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2011,9 +2011,9 @@ class Sda(object):
         e_url = ('/dna/intent/api/v1/business/sda/virtualnetwork/ippool')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_fa9219bf45c8b43b_v1_3_3', json_data)

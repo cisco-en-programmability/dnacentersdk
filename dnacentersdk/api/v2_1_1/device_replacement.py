@@ -117,10 +117,10 @@ class DeviceReplacement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -146,11 +146,11 @@ class DeviceReplacement(object):
         e_url = ('/dna/intent/api/v1/device-replacement/workflow')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_3faaa9944b49bc9f_v2_1_1', json_data)
@@ -191,10 +191,10 @@ class DeviceReplacement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -213,11 +213,11 @@ class DeviceReplacement(object):
         e_url = ('/dna/intent/api/v1/device-replacement')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_4ababa75489ab24b_v2_1_1', json_data)
@@ -258,10 +258,10 @@ class DeviceReplacement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -280,11 +280,11 @@ class DeviceReplacement(object):
         e_url = ('/dna/intent/api/v1/device-replacement')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_64b9dad0403aaca1_v2_1_1', json_data)
@@ -325,11 +325,9 @@ class DeviceReplacement(object):
                 REPLACEMENT-IN-PROGRESS, REPLACEMENT-
                 SCHEDULED, REPLACED, ERROR,
                 NETWORK_READINESS_REQUESTED,
-                NETWORK_READINESS_FAILED]. Accepts comma
-                separated values.
+                NETWORK_READINESS_FAILED].
             family(basestring): List of families[Routers, Switches
-                and Hubs, AP]. Accepts comma separated
-                values.
+                and Hubs, AP].
             sort_by(basestring): SortBy this field. SortBy is
                 mandatory when order is used.
             sort_order(basestring): Order on displayName[ASC,DESC].
@@ -366,7 +364,7 @@ class DeviceReplacement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'faultyDeviceName':
                 faulty_device_name,
             'faultyDevicePlatform':
@@ -390,8 +388,8 @@ class DeviceReplacement(object):
             'limit':
                 limit,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -405,10 +403,10 @@ class DeviceReplacement(object):
         e_url = ('/dna/intent/api/v1/device-replacement')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_809c29564bc997d0_v2_1_1', json_data)
 
@@ -422,8 +420,7 @@ class DeviceReplacement(object):
             replacement_status(basestring): Device Replacement
                 status list[READY-FOR-REPLACEMENT,
                 REPLACEMENT-IN-PROGRESS, REPLACEMENT-
-                SCHEDULED, REPLACED, ERROR]. Accepts
-                comma separated values.
+                SCHEDULED, REPLACED, ERROR].
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -445,12 +442,12 @@ class DeviceReplacement(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'replacementStatus':
                 replacement_status,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -464,9 +461,9 @@ class DeviceReplacement(object):
         e_url = ('/dna/intent/api/v1/device-replacement/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_9eb84ba54929a2a2_v2_1_1', json_data)

@@ -98,10 +98,10 @@ class File(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -115,10 +115,10 @@ class File(object):
         e_url = ('/dna/intent/api/v1/file/namespace')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_3f89bbfc4f6b8b50_v1_3_3', json_data)
 
@@ -152,10 +152,10 @@ class File(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'nameSpace': name_space,
@@ -170,10 +170,10 @@ class File(object):
         e_url = ('/dna/intent/api/v1/file/namespace/${nameSpace}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_42b6a86e44b8bdfc_v1_3_3', json_data)
 
@@ -197,8 +197,8 @@ class File(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
+            urllib3.response.HTTPResponse: HTTP Response container. For more
+            information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -215,10 +215,10 @@ class File(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'fileId': file_id,
@@ -233,11 +233,11 @@ class File(object):
         e_url = ('/dna/intent/api/v1/file/${fileId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers,
                                           stream=True, dirpath=dirpath, save_file=save_file)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           stream=True, dirpath=dirpath, save_file=save_file)
 
         return self._object_factory('bpm_9698c8ec4a0b8c1a_v1_3_3', json_data)

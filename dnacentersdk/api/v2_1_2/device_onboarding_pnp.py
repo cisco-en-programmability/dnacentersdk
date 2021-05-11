@@ -111,10 +111,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -138,11 +138,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/unclaim')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_0b836b7b4b6a9fd5_v2_1_2', json_data)
@@ -182,10 +182,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'domain': domain,
@@ -202,10 +202,10 @@ class DeviceOnboardingPnp(object):
                  + 'device/sacct/${domain}/vacct/${name}/sync-result')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_0a9c988445cb91c8_v2_1_2', json_data)
 
@@ -278,10 +278,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -329,11 +329,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/savacct')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_1e962af345b8b59f_v2_1_2', json_data)
@@ -398,10 +398,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -442,11 +442,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_09b0f9ce4239ae10_v2_1_2', json_data)
@@ -487,10 +487,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -509,11 +509,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/import')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_21a6db2540298f55_v2_1_2', json_data)
@@ -557,14 +557,14 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'domain':
                 domain,
             'name':
                 name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -578,10 +578,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/vacct')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_2499e9ad42e8ae5b_v2_1_2', json_data)
 
@@ -666,10 +666,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -730,11 +730,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_3086c9624f498b85_v2_1_2', json_data)
@@ -766,10 +766,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -783,10 +783,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/sacct')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_3cb24acb486b89d2_v2_1_2', json_data)
 
@@ -837,10 +837,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -868,11 +868,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/site-claim')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_5889fb844939a13b_v2_1_2', json_data)
@@ -944,10 +944,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -995,11 +995,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-settings/savacct')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_6f9819e84178870c_v2_1_2', json_data)
@@ -1036,10 +1036,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'domain': domain,
@@ -1055,10 +1055,10 @@ class DeviceOnboardingPnp(object):
                  + 'settings/sacct/${domain}/vacct')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_70a479a6462a9496_v2_1_2', json_data)
 
@@ -1069,8 +1069,7 @@ class DeviceOnboardingPnp(object):
         """Returns the workflow count.
 
         Args:
-            name(basestring): Workflow Name. Accepts comma separated
-                values.
+            name(basestring): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1092,12 +1091,12 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'name':
                 name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1111,10 +1110,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_7989f86846faaf99_v2_1_2', json_data)
 
@@ -1144,10 +1143,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1161,10 +1160,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-settings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_7e92f9eb46db8320_v2_1_2', json_data)
 
@@ -1198,10 +1197,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1216,10 +1215,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_80acb88e4ac9ac6d_v2_1_2', json_data)
 
@@ -1301,10 +1300,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1364,11 +1363,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_848b5a7b4f9b8c12_v2_1_2', json_data)
@@ -1426,10 +1425,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1467,11 +1466,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-settings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_8da0391947088a5a_v2_1_2', json_data)
@@ -1506,10 +1505,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1524,10 +1523,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_af8d7b0e470b8ae2_v2_1_2', json_data)
 
@@ -1574,10 +1573,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1605,11 +1604,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/reset')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_9e857b5a4a0bbcdb_v2_1_2', json_data)
@@ -1632,13 +1631,11 @@ class DeviceOnboardingPnp(object):
             limit(int): Limits number of results.
             offset(int): Index of first result.
             sort(basestring): Comma seperated lost of fields to sort
-                on. Accepts comma separated values.
+                on.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
-            type(basestring): Workflow Type. Accepts comma separated
-                values.
-            name(basestring): Workflow Name. Accepts comma separated
-                values.
+            type(basestring): Workflow Type.
+            name(basestring): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1666,7 +1663,7 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'limit':
                 limit,
             'offset':
@@ -1680,8 +1677,8 @@ class DeviceOnboardingPnp(object):
             'name':
                 name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1695,10 +1692,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-workflow')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_aeb4dad04a99bbe3_v2_1_2', json_data)
 
@@ -1769,10 +1766,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1820,11 +1817,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/vacct-sync')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_a4b6c87a4ffb9efa_v2_1_2', json_data)
@@ -1859,10 +1856,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1877,10 +1874,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_bab6c9e5440885cc_v2_1_2', json_data)
 
@@ -1914,10 +1911,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1932,10 +1929,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cdab9b474899ae06_v2_1_2', json_data)
 
@@ -1984,10 +1981,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2016,11 +2013,11 @@ class DeviceOnboardingPnp(object):
                  + 'preview')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_cf9418234d9ab37e_v2_1_2', json_data)
@@ -2046,32 +2043,19 @@ class DeviceOnboardingPnp(object):
         useful for pagination.
 
         Args:
-            serial_number(basestring): Device Serial Number. Accepts
-                comma separated values.
-            state(basestring): Device State. Accepts comma separated
-                values.
-            onb_state(basestring): Device Onboarding State. Accepts
-                comma separated values.
+            serial_number(basestring): Device Serial Number.
+            state(basestring): Device State.
+            onb_state(basestring): Device Onboarding State.
             cm_state(basestring): Device Connection Manager State.
-                Accepts comma separated values.
-            name(basestring): Device Name. Accepts comma separated
-                values.
-            pid(basestring): Device ProductId. Accepts comma
-                separated values.
-            source(basestring): Device Source. Accepts comma
-                separated values.
-            project_id(basestring): Device Project Id. Accepts comma
-                separated values.
-            workflow_id(basestring): Device Workflow Id. Accepts
-                comma separated values.
-            project_name(basestring): Device Project Name. Accepts
-                comma separated values.
-            workflow_name(basestring): Device Workflow Name. Accepts
-                comma separated values.
+            name(basestring): Device Name.
+            pid(basestring): Device ProductId.
+            source(basestring): Device Source.
+            project_id(basestring): Device Project Id.
+            workflow_id(basestring): Device Workflow Id.
+            project_name(basestring): Device Project Name.
+            workflow_name(basestring): Device Workflow Name.
             smart_account_id(basestring): Device Smart Account.
-                Accepts comma separated values.
             virtual_account_id(basestring): Device Virtual Account.
-                Accepts comma separated values.
             last_contact(bool): Device Has Contacted lastContact >
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2108,7 +2092,7 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'serialNumber':
                 serial_number,
             'state':
@@ -2138,8 +2122,8 @@ class DeviceOnboardingPnp(object):
             'lastContact':
                 last_contact,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2153,10 +2137,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_d9a1fa9c4068b23c_v2_1_2', json_data)
 
@@ -2216,10 +2200,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2259,11 +2243,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_f3b26b5544cabab9_v2_1_2', json_data)
@@ -2326,10 +2310,10 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2369,11 +2353,11 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/claim')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_d8a619974a8a8c48_v2_1_2', json_data)
@@ -2411,35 +2395,22 @@ class DeviceOnboardingPnp(object):
             limit(int): Limits number of results.
             offset(int): Index of first result.
             sort(basestring): Comma seperated list of fields to sort
-                on. Accepts comma separated values.
+                on.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
-            serial_number(basestring): Device Serial Number. Accepts
-                comma separated values.
-            state(basestring): Device State. Accepts comma separated
-                values.
-            onb_state(basestring): Device Onboarding State. Accepts
-                comma separated values.
+            serial_number(basestring): Device Serial Number.
+            state(basestring): Device State.
+            onb_state(basestring): Device Onboarding State.
             cm_state(basestring): Device Connection Manager State.
-                Accepts comma separated values.
-            name(basestring): Device Name. Accepts comma separated
-                values.
-            pid(basestring): Device ProductId. Accepts comma
-                separated values.
-            source(basestring): Device Source. Accepts comma
-                separated values.
-            project_id(basestring): Device Project Id. Accepts comma
-                separated values.
-            workflow_id(basestring): Device Workflow Id. Accepts
-                comma separated values.
-            project_name(basestring): Device Project Name. Accepts
-                comma separated values.
-            workflow_name(basestring): Device Workflow Name. Accepts
-                comma separated values.
+            name(basestring): Device Name.
+            pid(basestring): Device ProductId.
+            source(basestring): Device Source.
+            project_id(basestring): Device Project Id.
+            workflow_id(basestring): Device Workflow Id.
+            project_name(basestring): Device Project Name.
+            workflow_name(basestring): Device Workflow Name.
             smart_account_id(basestring): Device Smart Account.
-                Accepts comma separated values.
             virtual_account_id(basestring): Device Virtual Account.
-                Accepts comma separated values.
             last_contact(bool): Device Has Contacted lastContact >
                 0.
             mac_address(basestring): Device Mac Address.
@@ -2486,7 +2457,7 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'limit':
                 limit,
             'offset':
@@ -2530,8 +2501,8 @@ class DeviceOnboardingPnp(object):
             'siteName':
                 site_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2545,10 +2516,10 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_e6b3db8046c99654_v2_1_2', json_data)
 
@@ -2564,7 +2535,7 @@ class DeviceOnboardingPnp(object):
         Args:
             serial_number(basestring): Device Serial Number.
             sort(basestring): Comma seperated list of fields to sort
-                on. Accepts comma separated values.
+                on.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2591,7 +2562,7 @@ class DeviceOnboardingPnp(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'serialNumber':
                 serial_number,
             'sort':
@@ -2599,8 +2570,8 @@ class DeviceOnboardingPnp(object):
             'sortOrder':
                 sort_order,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2614,9 +2585,9 @@ class DeviceOnboardingPnp(object):
         e_url = ('/dna/intent/api/v1/onboarding/pnp-device/history')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f09319674049a7d4_v2_1_2', json_data)

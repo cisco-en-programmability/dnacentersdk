@@ -102,10 +102,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -120,10 +120,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/module/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_0db7da744c0b83d8_v1_3_3', json_data)
 
@@ -178,82 +178,52 @@ class Devices(object):
         the other request parameters. .
 
         Args:
-            hostname(basestring): hostname query parameter. Accepts
-                comma separated values.
+            hostname(basestring): hostname query parameter.
             management_ip_address(basestring): managementIpAddress
-                query parameter. Accepts comma separated
-                values.
+                query parameter.
             mac_address(basestring): macAddress query parameter.
-                Accepts comma separated values.
             location_name(basestring): locationName query parameter.
-                Accepts comma separated values.
             serial_number(basestring): serialNumber query parameter.
-                Accepts comma separated values.
-            location(basestring): location query parameter. Accepts
-                comma separated values.
-            family(basestring): family query parameter. Accepts
-                comma separated values.
-            type(basestring): type query parameter. Accepts comma
-                separated values.
-            series(basestring): series query parameter. Accepts
-                comma separated values.
+            location(basestring): location query parameter.
+            family(basestring): family query parameter.
+            type(basestring): type query parameter.
+            series(basestring): series query parameter.
             collection_status(basestring): collectionStatus query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             collection_interval(basestring): collectionInterval
-                query parameter. Accepts comma separated
-                values.
+                query parameter.
             not_synced_for_minutes(basestring): notSyncedForMinutes
-                query parameter. Accepts comma separated
-                values.
+                query parameter.
             error_code(basestring): errorCode query parameter.
-                Accepts comma separated values.
             error_description(basestring): errorDescription query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             software_version(basestring): softwareVersion query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             software_type(basestring): softwareType query parameter.
-                Accepts comma separated values.
             platform_id(basestring): platformId query parameter.
-                Accepts comma separated values.
-            role(basestring): role query parameter. Accepts comma
-                separated values.
+            role(basestring): role query parameter.
             reachability_status(basestring): reachabilityStatus
-                query parameter. Accepts comma separated
-                values.
-            up_time(basestring): upTime query parameter. Accepts
-                comma separated values.
+                query parameter.
+            up_time(basestring): upTime query parameter.
             associated_wlc_ip(basestring): associatedWlcIp query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             license_name(basestring): license.name query parameter.
-                Accepts comma separated values.
             license_type(basestring): license.type query parameter.
-                Accepts comma separated values.
             license_status(basestring): license.status query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             module_name(basestring): module+name query parameter.
-                Accepts comma separated values.
             module_equpimenttype(basestring): module+equpimenttype
-                query parameter. Accepts comma separated
-                values.
+                query parameter.
             module_servicestate(basestring): module+servicestate
-                query parameter. Accepts comma separated
-                values.
+                query parameter.
             module_vendorequipmenttype(basestring):
                 module+vendorequipmenttype query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             module_partnumber(basestring): module+partnumber query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             module_operationstatecode(basestring):
                 module+operationstatecode query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             id(basestring): Accepts comma separated id's and return
                 list of network-devices for the given
                 id's. If invalid or not-found id's are
@@ -310,7 +280,7 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'hostname':
                 hostname,
             'managementIpAddress':
@@ -374,8 +344,8 @@ class Devices(object):
             'id':
                 id,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -389,10 +359,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_20b19b52464b8972_v1_3_3', json_data)
 
@@ -429,12 +399,12 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'isForceDelete':
                 is_force_delete,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -449,10 +419,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=params,
+            json_data = self._session.delete(endpoint_full_url, params=_params,
                                              headers=_headers)
         else:
-            json_data = self._session.delete(endpoint_full_url, params=params)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_1c894b5848eab214_v1_3_3', json_data)
 
@@ -490,12 +460,12 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'interfaceType':
                 interface_type,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -510,10 +480,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/${id}/vlan')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_288df9494f2a9746_v1_3_3', json_data)
 
@@ -556,10 +526,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'deviceId': device_id,
@@ -577,10 +547,10 @@ class Devices(object):
                  + 'device/${deviceId}/${startIndex}/${recordsToReturn}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_349c888443b89a58_v1_3_3', json_data)
 
@@ -610,10 +580,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -627,10 +597,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_3d923b184dc9a4ca_v1_3_3', json_data)
 
@@ -677,12 +647,12 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'forceSync':
                 force_sync,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -701,11 +671,11 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/sync')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_3b9ef9674429be4c_v1_3_3', json_data)
@@ -736,10 +706,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -754,10 +724,10 @@ class Devices(object):
                  + 'schedule/global')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_38bd0b884b89a785_v1_3_3', json_data)
 
@@ -872,10 +842,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -951,11 +921,11 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_4bb22af046fa8f08_v1_3_3', json_data)
@@ -994,12 +964,12 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'name':
                 name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'deviceId': device_id,
@@ -1015,10 +985,10 @@ class Devices(object):
                  + 'device/${deviceId}/interface-name')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_4eb56a614cc9a2d2_v1_3_3', json_data)
 
@@ -1050,10 +1020,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1067,10 +1037,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_5db21b8e43fab7d8_v1_3_3', json_data)
 
@@ -1104,10 +1074,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'deviceId': device_id,
@@ -1123,10 +1093,10 @@ class Devices(object):
                  + 'device/${deviceId}/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_5b8639224cd88ea7_v1_3_3', json_data)
 
@@ -1156,10 +1126,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1173,10 +1143,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface/ospf')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_70ad397649e9b4d3_v1_3_3', json_data)
 
@@ -1210,10 +1180,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1229,10 +1199,10 @@ class Devices(object):
                  + 'schedule')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_82918a1b4d289c5c_v1_3_3', json_data)
 
@@ -1267,10 +1237,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1285,10 +1255,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/${id}/brief')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_819f9aa54feab7bf_v1_3_3', json_data)
 
@@ -1322,10 +1292,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1341,10 +1311,10 @@ class Devices(object):
                  + 'organization')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_84b37ae54c59ab28_v1_3_3', json_data)
 
@@ -1374,10 +1344,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1391,10 +1361,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface/isis')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_84ad8b0e42cab48a_v1_3_3', json_data)
 
@@ -1424,10 +1394,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1441,10 +1411,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/config/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_888f585c49b88441_v1_3_3', json_data)
 
@@ -1478,10 +1448,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1496,10 +1466,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_8fa8eb404a4a8d96_v1_3_3', json_data)
 
@@ -1515,18 +1485,14 @@ class Devices(object):
 
         Args:
             device_id(basestring): deviceId query parameter.
-            name_list(basestring): nameList query parameter. Accepts
-                comma separated values.
+            name_list(basestring): nameList query parameter.
             vendor_equipment_type_list(basestring):
                 vendorEquipmentTypeList query parameter.
-                Accepts comma separated values.
             part_number_list(basestring): partNumberList query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             operational_state_code_list(basestring):
                 operationalStateCodeList query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1553,7 +1519,7 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceId':
                 device_id,
             'nameList':
@@ -1565,8 +1531,8 @@ class Devices(object):
             'operationalStateCodeList':
                 operational_state_code_list,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1580,10 +1546,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/module/count')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_8db939744649a782_v1_3_3', json_data)
 
@@ -1617,10 +1583,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -1636,10 +1602,10 @@ class Devices(object):
                  + 'capability/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_81bb4804405a8d2f_v1_3_3', json_data)
 
@@ -1674,10 +1640,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'networkDeviceId': network_device_id,
@@ -1693,10 +1659,10 @@ class Devices(object):
                  + 'device/${networkDeviceId}/config')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_84b33a9e480abcaf_v1_3_3', json_data)
 
@@ -1743,10 +1709,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1774,11 +1740,11 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/brief')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_b9855ad54ae98156_v1_3_3', json_data)
@@ -1809,10 +1775,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1826,10 +1792,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/config')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_b7bcaa084e2b90d0_v1_3_3', json_data)
 
@@ -1863,10 +1829,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'deviceId': device_id,
@@ -1881,10 +1847,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface/network-device/${deviceId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_ba9dc85b4b8a9a17_v1_3_3', json_data)
 
@@ -1938,10 +1904,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -1973,11 +1939,11 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/file')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=params,
+            json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
         return self._object_factory('bpm_cd98780f4888a66d_v1_3_3', json_data)
@@ -2014,14 +1980,14 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'serialNumber':
                 serial_number,
             'macaddress':
                 macaddress,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2035,10 +2001,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/tenantinfo/macaddress')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_c9809b6744f8a502_v1_3_3', json_data)
 
@@ -2153,10 +2119,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2232,11 +2198,11 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=params,
+            json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
         return self._object_factory('bpm_aeb9eb67460b92df_v1_3_3', json_data)
@@ -2271,10 +2237,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -2289,10 +2255,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface/${id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_b888792d43baba46_v1_3_3', json_data)
 
@@ -2312,18 +2278,14 @@ class Devices(object):
             device_id(basestring): deviceId query parameter.
             limit(basestring): limit query parameter.
             offset(basestring): offset query parameter.
-            name_list(basestring): nameList query parameter. Accepts
-                comma separated values.
+            name_list(basestring): nameList query parameter.
             vendor_equipment_type_list(basestring):
                 vendorEquipmentTypeList query parameter.
-                Accepts comma separated values.
             part_number_list(basestring): partNumberList query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             operational_state_code_list(basestring):
                 operationalStateCodeList query
-                parameter. Accepts comma separated
-                values.
+                parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2352,7 +2314,7 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceId':
                 device_id,
             'limit':
@@ -2368,8 +2330,8 @@ class Devices(object):
             'operationalStateCodeList':
                 operational_state_code_list,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2383,10 +2345,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/module')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_eb8249e34f69b0f1_v1_3_3', json_data)
 
@@ -2405,7 +2367,6 @@ class Devices(object):
                 provided, null entry will be returned in
                 the list.
             function_name(basestring): functionName query parameter.
-                Accepts comma separated values.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2429,14 +2390,14 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'deviceId':
                 device_id,
             'functionName':
                 function_name,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2450,10 +2411,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/functional-capability')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_c3b3c9ef4e6b8a09_v1_3_3', json_data)
 
@@ -2487,10 +2448,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'serialNumber': serial_number,
@@ -2506,10 +2467,10 @@ class Devices(object):
                  + 'number/${serialNumber}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_d888ab6d4d59a8c1_v1_3_3', json_data)
 
@@ -2543,10 +2504,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'ipAddress': ip_address,
@@ -2561,10 +2522,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface/ip-address/${ipAddress}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cd8469e647caab0e_v1_3_3', json_data)
 
@@ -2598,10 +2559,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'ipAddress': ip_address,
@@ -2617,10 +2578,10 @@ class Devices(object):
                  + 'address/${ipAddress}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_d0a4b88145aabb51_v1_3_3', json_data)
 
@@ -2657,14 +2618,14 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'offset':
                 offset,
             'limit':
                 limit,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2678,10 +2639,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/interface')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f5947a4c439a8bf0_v1_3_3', json_data)
 
@@ -2720,10 +2681,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'startIndex': start_index,
@@ -2740,10 +2701,10 @@ class Devices(object):
                  + 'device/${startIndex}/${recordsToReturn}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f49548c54be8a3e2_v1_3_3', json_data)
 
@@ -2777,10 +2738,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
@@ -2795,10 +2756,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/${id}/wireless-info')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f6826a8e41bba242_v1_3_3', json_data)
 
@@ -2909,7 +2870,7 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'vrfName':
                 vrf_name,
             'managementIpAddress':
@@ -2955,8 +2916,8 @@ class Devices(object):
             'limit':
                 limit,
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -2970,10 +2931,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/network-device/autocomplete')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_ffa748cc44e9a437_v1_3_3', json_data)
 
@@ -3019,7 +2980,7 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
             'timestamp':
                 timestamp,
             'searchBy':
@@ -3028,11 +2989,11 @@ class Devices(object):
                 identifier,
         }
 
-        if params['timestamp'] is None:
-            params['timestamp'] = ''
+        if _params['timestamp'] is None:
+            _params['timestamp'] = ''
 
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -3046,10 +3007,10 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/device-detail')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_89b2fb144f5bb09b_v1_3_3', json_data)
 
@@ -3088,10 +3049,10 @@ class Devices(object):
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
-        params = {
+        _params = {
         }
-        params.update(request_parameters)
-        params = dict_from_items_with_values(params)
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
 
         path_params = {
         }
@@ -3105,9 +3066,9 @@ class Devices(object):
         e_url = ('/dna/intent/api/v1/device-enrichment-details')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=params,
+            json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=params)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_e0b5599b4f2997b7_v1_3_3', json_data)
