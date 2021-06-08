@@ -146,7 +146,7 @@ Inspiration
 This library is inspired by the webexteamssdk_  library
 
 
-*Copyright (c) 2019-2020 Cisco and/or its affiliates.*
+*Copyright (c) 2019-2021 Cisco Systems.*
 
 .. _Introduction: https://dnacentersdk.readthedocs.io/en/latest/api/intro.html
 .. _dnacentersdk.readthedocs.io: https://dnacentersdk.readthedocs.io
