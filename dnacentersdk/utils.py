@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Package helper functions and classes.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -267,6 +267,7 @@ def apply_path_params(URL, path_params):
     if isinstance(URL, str) and isinstance(path_params, dict):
         for k in path_params:
             URL = URL.replace('${' + k + '}', str(path_params[k]))
+            URL = URL.replace('{' + k + '}', str(path_params[k]))
         return URL
     else:
         raise TypeError(

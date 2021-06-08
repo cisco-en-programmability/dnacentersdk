@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Package exceptions.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -158,7 +158,7 @@ class ApiError(dnacentersdkException):
 
 
 class RateLimitError(ApiError):
-    """DNA Center Rate-Limit exceeded Error.
+    """Cisco DNA Center Rate-Limit exceeded Error.
 
     Raised when a rate-limit exceeded message is received and the request
     **will not** be retried.
@@ -180,7 +180,7 @@ class RateLimitError(ApiError):
 
 
 class RateLimitWarning(UserWarning):
-    """DNA Center rate-limit exceeded warning.
+    """Cisco DNA Center rate-limit exceeded warning.
 
     Raised when a rate-limit exceeded message is received and the request will
     be retried.

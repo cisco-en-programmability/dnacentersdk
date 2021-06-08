@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """RestSession class for creating connections to the DNA Center APIs.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -225,7 +225,6 @@ class RestSession(object):
         """Call the get_access_token method and update the session's
         auth header with the new token.
         """
-
         self._access_token = self._get_access_token()
         self.update_headers({'X-Auth-Token': self.access_token})
 
