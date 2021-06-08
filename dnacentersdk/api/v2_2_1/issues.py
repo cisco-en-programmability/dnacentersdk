@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Issues API wrapper.
+"""Cisco DNA Center Issues API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Issues(object):
-    """DNA Center Issues API (version: 2.2.1).
+    """Cisco DNA Center Issues API (version: 2.2.1).
 
     Wraps the DNA Center Issues
     API and exposes the API as native Python
@@ -88,26 +88,33 @@ class Issues(object):
         address.
 
         Args:
-            start_time(int): Starting epoch time in milliseconds of
-                query time window.
-            end_time(int): Ending epoch time in milliseconds of
-                query time window.
-            site_id(basestring): Assurance UUID value of the site in
+            start_time(int): startTime query parameter. Starting
+                epoch time in milliseconds of query time
+                window.
+            end_time(int): endTime query parameter. Ending epoch
+                time in milliseconds of query time
+                window.
+            site_id(basestring): siteId query parameter. Assurance
+                UUID value of the site in the issue
+                content.
+            device_id(basestring): deviceId query parameter.
+                Assurance UUID value of the device in
                 the issue content.
-            device_id(basestring): Assurance UUID value of the
-                device in the issue content.
-            mac_address(basestring): Client's device MAC address of
-                the issue (format xx:xx:xx:xx:xx:xx).
-            priority(basestring): The issue's priority value (One of
-                P1, P2, P3, or P4)(Use only when
-                macAddress and deviceId are not
-                provided).
-            ai_driven(basestring): The issue's AI driven value (Yes
-                or No)(Use only when macAddress and
+            mac_address(basestring): macAddress query parameter.
+                Client's device MAC address of the issue
+                (format xx:xx:xx:xx:xx:xx).
+            priority(basestring): priority query parameter. The
+                issue's priority value (One of P1, P2,
+                P3, or P4)(Use only when macAddress and
                 deviceId are not provided).
-            issue_status(basestring): The issue's status value (One
-                of ACTIVE, IGNORED, RESOLVED) (Use only
-                when macAddress and deviceId are not
+            ai_driven(basestring): aiDriven query parameter. The
+                issue's AI driven value (Yes or No)(Use
+                only when macAddress and deviceId are
+                not provided).
+            issue_status(basestring): issueStatus query parameter.
+                The issue's status value (One of ACTIVE,
+                IGNORED, RESOLVED) (Use only when
+                macAddress and deviceId are not
                 provided).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -175,7 +182,7 @@ class Issues(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_5e863b7b4a4bb2f9_v2_2_1', json_data)
+        return self._object_factory('bpm_aaef3b519ba8b9fb2cbf43b985_v2_2_1', json_data)
 
     def get_issue_enrichment_details(self,
                                      headers=None,
@@ -207,9 +214,6 @@ class Issues(object):
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
                            basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -233,4 +237,4 @@ class Issues(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_868439bb4e89a6e4_v2_2_1', json_data)
+        return self._object_factory('bpm_f2f039811951c0af53e3381ae91225_v2_2_1', json_data)

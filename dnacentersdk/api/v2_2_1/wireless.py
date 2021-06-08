@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Wireless API wrapper.
+"""Cisco DNA Center Wireless API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Wireless(object):
-    """DNA Center Wireless API (version: 2.2.1).
+    """Cisco DNA Center Wireless API (version: 2.2.1).
 
     Wraps the DNA Center Wireless
     API and exposes the API as native Python
@@ -126,7 +126,111 @@ class Wireless(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_098cab9141c9a3fe_v2_2_1', json_data)
+        return self._object_factory('bpm_ac37d6798c0b593088952123df03bb1b_v2_2_1', json_data)
+
+    def create_or_update_rf_profile(self,
+                                    channelWidth=None,
+                                    defaultRfProfile=None,
+                                    enableBrownField=None,
+                                    enableCustom=None,
+                                    enableRadioTypeA=None,
+                                    enableRadioTypeB=None,
+                                    name=None,
+                                    radioTypeAProperties=None,
+                                    radioTypeBProperties=None,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
+        """Create or Update RF profile.
+
+        Args:
+            channelWidth(string): Wireless's channelWidth.
+            defaultRfProfile(boolean): Wireless's defaultRfProfile.
+            enableBrownField(boolean): Wireless's enableBrownField.
+            enableCustom(boolean): Wireless's enableCustom.
+            enableRadioTypeA(boolean): Wireless's enableRadioTypeA.
+            enableRadioTypeB(boolean): Wireless's enableRadioTypeB.
+            name(string): Wireless's name.
+            radioTypeAProperties(object): Wireless's
+                radioTypeAProperties.
+            radioTypeBProperties(object): Wireless's
+                radioTypeBProperties.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'name':
+                name,
+            'defaultRfProfile':
+                defaultRfProfile,
+            'enableRadioTypeA':
+                enableRadioTypeA,
+            'enableRadioTypeB':
+                enableRadioTypeB,
+            'channelWidth':
+                channelWidth,
+            'enableCustom':
+                enableCustom,
+            'enableBrownField':
+                enableBrownField,
+            'radioTypeAProperties':
+                radioTypeAProperties,
+            'radioTypeBProperties':
+                radioTypeBProperties,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f24f6c07641580ba6ed710e92c2da16_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/wireless/rf-profile')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_f24f6c07641580ba6ed710e92c2da16_v2_2_1', json_data)
 
     def create_and_provision_ssid(self,
                                   enableFabric=None,
@@ -143,19 +247,13 @@ class Wireless(object):
         given sites.
 
         Args:
-            enableFabric(boolean): enableFabric, property of the
-                request body.
-            flexConnect(object): Flex Connect - Applicable for non
-                fabric profile, property of the request
-                body.
-            managedAPLocations(list): Managed AP Locations (Enter
-                entire Site(s) hierarchy), property of
-                the request body (list of strings).
-            ssidDetails(object): SsidDetails, property of the
-                request body.
-            ssidType(string): SSID Type, property of the request
-                body. Available values are 'Guest' and
-                'Enterprise'.
+            enableFabric(boolean): Wireless's enableFabric.
+            flexConnect(object): Wireless's flexConnect.
+            managedAPLocations(list): Wireless's managedAPLocations
+                (list of strings).
+            ssidDetails(object): Wireless's ssidDetails.
+            ssidType(string): Wireless's ssidType. Available values
+                are 'Guest' and 'Enterprise'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -179,10 +277,7 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           bool, may_be_none=False)
 
         _params = {
         }
@@ -191,7 +286,6 @@ class Wireless(object):
 
         path_params = {
         }
-
         _payload = {
             'managedAPLocations':
                 managedAPLocations,
@@ -207,7 +301,7 @@ class Wireless(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_1eb72ad34e098990_v2_2_1')\
+            self._request_validator('jsd_d825ae9a117f5b6bb65b7d78fd42513c_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -226,7 +320,7 @@ class Wireless(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_1eb72ad34e098990_v2_2_1', json_data)
+        return self._object_factory('bpm_d825ae9a117f5b6bb65b7d78fd42513c_v2_2_1', json_data)
 
     def delete_rf_profiles(self,
                            rf_profile_name,
@@ -274,8 +368,7 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/rf-profile/${rf-profile-'
-                 + 'name}')
+        e_url = ('/dna/intent/api/v1/wireless/rf-profile/{rf-profile-name}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -283,171 +376,28 @@ class Wireless(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_28b24a744a9994be_v2_2_1', json_data)
+        return self._object_factory('bpm_aa1e5957ac977603b5cef72f9f_v2_2_1', json_data)
 
-    def create_wireless_profile(self,
-                                profileDetails=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
-        """Creates Wireless Network Profile on DNAC and associates sites
-        and SSIDs to it.
-
-        Args:
-            profileDetails(object): Profile Details, property of the
-                request body.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'profileDetails':
-                profileDetails,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_709769624bf988d5_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/wireless/profile')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_709769624bf988d5_v2_2_1', json_data)
-
-    def provision_update(self,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
-        """Updates wireless provisioning.
-
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(list): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, list)
-        if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = payload or []
-        if active_validation:
-            self._request_validator('jsd_87a5ab044139862d_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/wireless/provision')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
-        else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
-
-        return self._object_factory('bpm_87a5ab044139862d_v2_2_1', json_data)
-
-    def sensor_test_results(self,
-                            end_time=None,
-                            site_id=None,
-                            start_time=None,
-                            test_failure_by='area',
+    def get_enterprise_ssid(self,
+                            ssid_name=None,
                             headers=None,
                             **request_parameters):
-        """Intent API to get SENSOR test result summary.
+        """Gets either one or all the enterprise SSID.
 
         Args:
-            site_id(basestring): Assurance site UUID.
-            start_time(int): The epoch time in milliseconds.
-            end_time(int): The epoch time in milliseconds.
-            test_failure_by(basestring): Obtain failure statistics
-                group by "area", "building", or "floor".
+            ssid_name(basestring): ssidName query parameter. Enter
+                the enterprise SSID name that needs to
+                be retrieved. If not entered, all the
+                enterprise SSIDs will be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -455,24 +405,15 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
-        check_type(start_time, int)
-        check_type(end_time, int)
-        check_type(test_failure_by, basestring)
+        check_type(ssid_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
         _params = {
-            'siteId':
-                site_id,
-            'startTime':
-                start_time,
-            'endTime':
-                end_time,
-            'testFailureBy':
-                test_failure_by,
+            'ssidName':
+                ssid_name,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
@@ -486,7 +427,7 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/AssuranceGetSensorTestResults')
+        e_url = ('/dna/intent/api/v1/enterprise-ssid')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -494,7 +435,7 @@ class Wireless(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_87ae7b214f0ba838_v2_2_1', json_data)
+        return self._object_factory('bpm_fb757e8fce4b51ffa0ba1a8e5ae4d8c0_v2_2_1', json_data)
 
     def create_enterprise_ssid(self,
                                enableBroadcastSSID=None,
@@ -513,34 +454,26 @@ class Wireless(object):
         """Creates enterprise SSID.
 
         Args:
-            enableBroadcastSSID(boolean): enableBroadcastSSID,
-                property of the request body.
-            enableFastLane(boolean): enableFastLane, property of the
-                request body.
-            enableMACFiltering(boolean): enableMACFiltering,
-                property of the request body.
-            fastTransition(string): Fast Transition, property of the
-                request body. Available values are
-                'Adaptive', 'Enable' and 'Disable'.
-            name(string): Enter SSID Name, property of the request
-                body. Constraints: maxLength set to 32.
-            passphrase(string): Pass Phrase (Only applicable for
-                SSID with PERSONAL security level),
-                property of the request body.
-                Constraints: maxLength set to 63 and
-                minLength set to 8.
-            radioPolicy(string): Radio Policy, property of the
-                request body. Available values are 'Dual
-                band operation (2.4GHz and 5GHz)', 'Dual
-                band operation with band select', '5GHz
-                only' and '2.4GHz only'.
-            securityLevel(string): Security Level, property of the
-                request body. Available values are
-                'WPA2_ENTERPRISE', 'WPA2_PERSONAL' and
-                'OPEN'.
-            trafficType(string): Traffic Type, property of the
-                request body. Available values are
-                'voicedata' and 'data'.
+            enableBroadcastSSID(boolean): Wireless's
+                enableBroadcastSSID.
+            enableFastLane(boolean): Wireless's enableFastLane.
+            enableMACFiltering(boolean): Wireless's
+                enableMACFiltering.
+            fastTransition(string): Wireless's fastTransition.
+                Available values are 'Adaptive',
+                'Enable' and 'Disable'.
+            name(string): Wireless's name.
+            passphrase(string): Wireless's passphrase.
+            radioPolicy(string): Wireless's radioPolicy. Available
+                values are 'Dual band operation (2.4GHz
+                and 5GHz)', 'Dual band operation with
+                band select', '5GHz only' and '2.4GHz
+                only'.
+            securityLevel(string): Wireless's securityLevel.
+                Available values are 'WPA2_ENTERPRISE',
+                'WPA2_PERSONAL' and 'OPEN'.
+            trafficType(string): Wireless's trafficType. Available
+                values are 'voicedata' and 'data'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -573,7 +506,6 @@ class Wireless(object):
 
         path_params = {
         }
-
         _payload = {
             'name':
                 name,
@@ -597,7 +529,7 @@ class Wireless(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_8a96fb954d09a349_v2_2_1')\
+            self._request_validator('jsd_bc33daf690ec5399a507829abfc4fe64_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -616,7 +548,7 @@ class Wireless(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_8a96fb954d09a349_v2_2_1', json_data)
+        return self._object_factory('bpm_bc33daf690ec5399a507829abfc4fe64_v2_2_1', json_data)
 
     def get_wireless_profile(self,
                              profile_name=None,
@@ -673,42 +605,20 @@ class Wireless(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b3a1c8804c8b9b8b_v2_2_1', json_data)
+        return self._object_factory('bpm_bbc1866a50505c0695ae243718d51936_v2_2_1', json_data)
 
-    def create_or_update_rf_profile(self,
-                                    channelWidth=None,
-                                    defaultRfProfile=None,
-                                    enableBrownField=None,
-                                    enableCustom=None,
-                                    enableRadioTypeA=None,
-                                    enableRadioTypeB=None,
-                                    name=None,
-                                    radioTypeAProperties=None,
-                                    radioTypeBProperties=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
-        """Create or Update RF profile.
+    def update_wireless_profile(self,
+                                profileDetails=None,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
+        """Updates the wireless Network Profile with updated details
+        provided. All sites to be present in the network profile
+        should be provided.
 
         Args:
-            channelWidth(string): Channel Width, property of the
-                request body.
-            defaultRfProfile(boolean): defaultRfProfile, property of
-                the request body.
-            enableBrownField(boolean): enableBrownField, property of
-                the request body.
-            enableCustom(boolean): enableCustom, property of the
-                request body.
-            enableRadioTypeA(boolean): enableRadioTypeA, property of
-                the request body.
-            enableRadioTypeB(boolean): enableRadioTypeB, property of
-                the request body.
-            name(string): Name, property of the request body.
-            radioTypeAProperties(object): Radio Type AProperties,
-                property of the request body.
-            radioTypeBProperties(object): Radio Type BProperties,
-                property of the request body.
+            profileDetails(object): Wireless's profileDetails.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -741,31 +651,14 @@ class Wireless(object):
 
         path_params = {
         }
-
         _payload = {
-            'name':
-                name,
-            'defaultRfProfile':
-                defaultRfProfile,
-            'enableRadioTypeA':
-                enableRadioTypeA,
-            'enableRadioTypeB':
-                enableRadioTypeB,
-            'channelWidth':
-                channelWidth,
-            'enableCustom':
-                enableCustom,
-            'enableBrownField':
-                enableBrownField,
-            'radioTypeAProperties':
-                radioTypeAProperties,
-            'radioTypeBProperties':
-                radioTypeBProperties,
+            'profileDetails':
+                profileDetails,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_b78329674878b815_v2_2_1')\
+            self._request_validator('jsd_bbf7ce025bc2a291b90c37a6b898_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -774,7 +667,78 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/rf-profile')
+        e_url = ('/dna/intent/api/v1/wireless/profile')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_bbf7ce025bc2a291b90c37a6b898_v2_2_1', json_data)
+
+    def create_wireless_profile(self,
+                                profileDetails=None,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
+        """Creates Wireless Network Profile on DNAC and associates sites
+        and SSIDs to it.
+
+        Args:
+            profileDetails(object): Wireless's profileDetails.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'profileDetails':
+                profileDetails,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_b95201b6a6905a10b463e036bf591166_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/wireless/profile')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
@@ -784,7 +748,208 @@ class Wireless(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_b78329674878b815_v2_2_1', json_data)
+        return self._object_factory('bpm_b95201b6a6905a10b463e036bf591166_v2_2_1', json_data)
+
+    def provision_update(self,
+                         headers=None,
+                         payload=None,
+                         active_validation=True,
+                         **request_parameters):
+        """Updates wireless provisioning.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_d0aab00569b258b481afedc35e6db392_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/wireless/provision')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_d0aab00569b258b481afedc35e6db392_v2_2_1', json_data)
+
+    def provision(self,
+                  headers=None,
+                  payload=None,
+                  active_validation=True,
+                  **request_parameters):
+        """Provision wireless devices.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_e31c795964b3bdf85da1b5a2a5_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/wireless/provision')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_e31c795964b3bdf85da1b5a2a5_v2_2_1', json_data)
+
+    def sensor_test_results(self,
+                            end_time=None,
+                            site_id=None,
+                            start_time=None,
+                            test_failure_by=None,
+                            headers=None,
+                            **request_parameters):
+        """Intent API to get SENSOR test result summary.
+
+        Args:
+            site_id(basestring): siteId query parameter. Assurance
+                site UUID.
+            start_time(int): startTime query parameter. The epoch
+                time in milliseconds.
+            end_time(int): endTime query parameter. The epoch time
+                in milliseconds.
+            test_failure_by(basestring): testFailureBy query
+                parameter. Obtain failure statistics
+                group by "area", "building", or "floor".
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(site_id, basestring)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(test_failure_by, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'siteId':
+                site_id,
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'testFailureBy':
+                test_failure_by,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/AssuranceGetSensorTestResults')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_dde2b077d6d052dcae5a76f4aac09c1d_v2_2_1', json_data)
 
     def delete_enterprise_ssid(self,
                                ssid_name,
@@ -793,8 +958,8 @@ class Wireless(object):
         """Deletes given enterprise SSID.
 
         Args:
-            ssid_name(basestring): Enter the SSID name to be
-                deleted.
+            ssid_name(basestring): ssidName path parameter. Enter
+                the SSID name to be deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -832,7 +997,7 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/enterprise-ssid/${ssidName}')
+        e_url = ('/dna/intent/api/v1/enterprise-ssid/{ssidName}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -840,200 +1005,7 @@ class Wireless(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c7a6592b4b98a369_v2_2_1', json_data)
-
-    def get_enterprise_ssid(self,
-                            ssid_name=None,
-                            headers=None,
-                            **request_parameters):
-        """Gets either one or all the enterprise SSID.
-
-        Args:
-            ssid_name(basestring): Enter the enterprise SSID name
-                that needs to be retrieved. If not
-                entered, all the enterprise SSIDs will
-                be retrieved.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            list: JSON response. A list of MyDict objects.
-            Access the object's properties by using the dot notation
-            or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(ssid_name, basestring)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-            'ssidName':
-                ssid_name,
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/enterprise-ssid')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
-        else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_cca519ba45ebb423_v2_2_1', json_data)
-
-    def provision(self,
-                  headers=None,
-                  payload=None,
-                  active_validation=True,
-                  **request_parameters):
-        """Provision wireless devices.
-
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(list): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, list)
-        if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = payload or []
-        if active_validation:
-            self._request_validator('jsd_d09b08a3447aa3b9_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/wireless/provision')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_d09b08a3447aa3b9_v2_2_1', json_data)
-
-    def ap_provision(self,
-                     headers=None,
-                     payload=None,
-                     active_validation=True,
-                     **request_parameters):
-        """Provision wireless Access points.
-
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(list): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, list)
-        if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           basestring)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = payload or []
-        if active_validation:
-            self._request_validator('jsd_e9b99b2248c88014_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/wireless/ap-provision')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_e9b99b2248c88014_v2_2_1', json_data)
+        return self._object_factory('bpm_a43afa4d91a5043996c682a7a7a2d62_v2_2_1', json_data)
 
     def delete_wireless_profile(self,
                                 wireless_profile_name,
@@ -1082,7 +1054,7 @@ class Wireless(object):
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/wireless-'
-                 + 'profile/${wirelessProfileName}')
+                 + 'profile/{wirelessProfileName}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -1090,24 +1062,19 @@ class Wireless(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e39588a5494982c4_v2_2_1', json_data)
+        return self._object_factory('bpm_a850fb6c5451a7ad20ba76f4ff43_v2_2_1', json_data)
 
-    def update_wireless_profile(self,
-                                profileDetails=None,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
-        """Updates the wireless Network Profile with updated details
-        provided. All sites to be present in the network profile
-        should be provided.
+    def ap_provision(self,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
+        """Provision wireless Access points.
 
         Args:
-            profileDetails(object): Profile Details, property of the
-                request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(dict): A JSON serializable Python object to send in the
+            payload(list): A JSON serializable Python object to send in the
                 body of the Request.
             active_validation(bool): Enable/Disable payload validation.
                 Defaults to True.
@@ -1124,11 +1091,11 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, dict)
+        check_type(payload, list)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool)
 
         _params = {
         }
@@ -1137,15 +1104,9 @@ class Wireless(object):
 
         path_params = {
         }
-
-        _payload = {
-            'profileDetails':
-                profileDetails,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
+        _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_cfbd3870405aad55_v2_2_1')\
+            self._request_validator('jsd_f790a930d452708353c374f5c0f90f_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -1154,17 +1115,17 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/wireless/profile')
+        e_url = ('/dna/intent/api/v1/wireless/ap-provision')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
 
-        return self._object_factory('bpm_cfbd3870405aad55_v2_2_1', json_data)
+        return self._object_factory('bpm_f790a930d452708353c374f5c0f90f_v2_2_1', json_data)
 
     def delete_ssid_and_provision_it_to_devices(self,
                                                 managed_aplocations,
@@ -1200,10 +1161,7 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           bool, may_be_none=False)
 
         _params = {
         }
@@ -1221,8 +1179,8 @@ class Wireless(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/business/ssid/${ssidName}/${managedAP'
-                 + 'Locations}')
+        e_url = ('/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLo'
+                 + 'cations}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -1230,4 +1188,4 @@ class Wireless(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_fc9538fe43d9884d_v2_2_1', json_data)
+        return self._object_factory('bpm_e56eb2c294159d891b7dbe493ddc434_v2_2_1', json_data)

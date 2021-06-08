@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Clients API wrapper.
+"""Cisco DNA Center Clients API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Clients(object):
-    """DNA Center Clients API (version: 2.2.1).
+    """Cisco DNA Center Clients API (version: 2.2.1).
 
     Wraps the DNA Center Clients
     API and exposes the API as native Python
@@ -80,8 +80,9 @@ class Clients(object):
         and Wireless) for any given point of time.
 
         Args:
-            timestamp(int, basestring): Epoch time(in milliseconds)
-                when the Client health data is required.
+            timestamp(basestring): timestamp query parameter. Epoch
+                time(in milliseconds) when the Client
+                health data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -97,7 +98,7 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (int, basestring))
+        check_type(timestamp, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -110,7 +111,6 @@ class Clients(object):
 
         if _params['timestamp'] is None:
             _params['timestamp'] = ''
-
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
@@ -131,12 +131,12 @@ class Clients(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_149aa93b4ddb80dd_v2_2_1', json_data)
+        return self._object_factory('bpm_f58ddf5cee095688aed79a9bb26e21e8_v2_2_1', json_data)
 
     def client_proximity(self,
                          username,
-                         number_days=14,
-                         time_resolution=15,
+                         number_days=None,
+                         time_resolution=None,
                          headers=None,
                          **request_parameters):
         """This intent API will provide client proximity information for a
@@ -148,14 +148,17 @@ class Clients(object):
         NETWORK-CLIENTS-3-506 - Client Proximity Report.
 
         Args:
-            username(basestring): Wireless client username for which
-                proximity information is required.
-            number_days(int): Number of days to track proximity
-                until current date. Defaults and maximum
-                up to 14 days.
-            time_resolution(int): Time interval (in minutes) to
-                measure proximity. Defaults to 15
-                minutes with a minimum 5 minutes.
+            username(basestring): username query parameter. Wireless
+                client username for which proximity
+                information is required.
+            number_days(int): number_days query parameter. Number of
+                days to track proximity until current
+                date. Defaults and maximum up to 14
+                days.
+            time_resolution(int): time_resolution query parameter.
+                Time interval (in minutes) to measure
+                proximity. Defaults to 15 minutes with a
+                minimum 5 minutes.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -208,7 +211,7 @@ class Clients(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_4497ebe24c8884a1_v2_2_1', json_data)
+        return self._object_factory('bpm_c141467ea25ec0aa91cbcaff070354_v2_2_1', json_data)
 
     def get_client_enrichment_details(self,
                                       headers=None,
@@ -245,9 +248,6 @@ class Clients(object):
             if 'issueCategory' in headers:
                 check_type(headers.get('issueCategory'),
                            basestring)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -271,7 +271,7 @@ class Clients(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b199685d4d089a67_v2_2_1', json_data)
+        return self._object_factory('bpm_dfd2751065bfb8c2367dd726df316_v2_2_1', json_data)
 
     def get_client_detail(self,
                           mac_address,
@@ -282,9 +282,11 @@ class Clients(object):
         any given point of time. .
 
         Args:
-            timestamp(int, basestring): Epoch time(in milliseconds)
-                when the Client health data is required.
-            mac_address(basestring): MAC Address of the client.
+            timestamp(basestring): timestamp query parameter. Epoch
+                time(in milliseconds) when the Client
+                health data is required.
+            mac_address(basestring): macAddress query parameter. MAC
+                Address of the client.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -300,7 +302,7 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (int, basestring))
+        check_type(timestamp, basestring)
         check_type(mac_address, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -317,7 +319,6 @@ class Clients(object):
 
         if _params['timestamp'] is None:
             _params['timestamp'] = ''
-
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
@@ -338,4 +339,4 @@ class Clients(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_e2adba7943bab3e9_v2_2_1', json_data)
+        return self._object_factory('bpm_f2c6333d8eb05491a16c2d32095e4352_v2_2_1', json_data)

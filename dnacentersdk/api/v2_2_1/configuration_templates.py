@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Configuration Templates API wrapper.
+"""Cisco DNA Center Configuration Templates API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class ConfigurationTemplates(object):
-    """DNA Center Configuration Templates API (version: 2.2.1).
+    """Cisco DNA Center Configuration Templates API (version: 2.2.1).
 
     Wraps the DNA Center Configuration Templates
     API and exposes the API as native Python
@@ -72,7 +72,64 @@ class ConfigurationTemplates(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def create_project(self,
+    def get_projects(self,
+                     name=None,
+                     headers=None,
+                     **request_parameters):
+        """Returns the projects in the system.
+
+        Args:
+            name(basestring): name query parameter. Name of project
+                to be searched.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'name':
+                name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-programmer/project')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_b942797fc158e3a0fbb5ffb1347962_v2_2_1', json_data)
+
+    def update_project(self,
                        createTime=None,
                        description=None,
                        id=None,
@@ -84,17 +141,20 @@ class ConfigurationTemplates(object):
                        payload=None,
                        active_validation=True,
                        **request_parameters):
-        """Creates a new project.
+        """Updates an existing project.
 
         Args:
-            createTime(number): ProjectDTO's createTime.
-            description(string): ProjectDTO's description.
-            id(string): ProjectDTO's id.
-            lastUpdateTime(number): ProjectDTO's lastUpdateTime.
-            name(string): ProjectDTO's name.
-            tags(list): ProjectDTO's tags (list of string, objects).
-            templates: Part of the JSON serializable Python object
-                to send in the body of the Request.
+            createTime(integer): Configuration Templates's
+                createTime.
+            description(string): Configuration Templates's
+                description.
+            id(string): Configuration Templates's id.
+            lastUpdateTime(integer): Configuration Templates's
+                lastUpdateTime.
+            name(string): Configuration Templates's name.
+            tags(list): Configuration Templates's tags (list of
+                strings).
+            templates(object): Configuration Templates's templates.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -130,7 +190,6 @@ class ConfigurationTemplates(object):
 
         path_params = {
         }
-
         _payload = {
             'createTime':
                 createTime,
@@ -150,7 +209,108 @@ class ConfigurationTemplates(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_00aec9b1422ab27e_v2_2_1')\
+            self._request_validator('jsd_cc19241fd92f586c8986d4d5c99c3a88_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-programmer/project')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_cc19241fd92f586c8986d4d5c99c3a88_v2_2_1', json_data)
+
+    def create_project(self,
+                       createTime=None,
+                       description=None,
+                       id=None,
+                       lastUpdateTime=None,
+                       name=None,
+                       tags=None,
+                       templates=None,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
+        """Creates a new project.
+
+        Args:
+            createTime(integer): Configuration Templates's
+                createTime.
+            description(string): Configuration Templates's
+                description.
+            id(string): Configuration Templates's id.
+            lastUpdateTime(integer): Configuration Templates's
+                lastUpdateTime.
+            name(string): Configuration Templates's name.
+            tags(list): Configuration Templates's tags (list of
+                strings).
+            templates(object): Configuration Templates's templates.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'createTime':
+                createTime,
+            'description':
+                description,
+            'id':
+                id,
+            'lastUpdateTime':
+                lastUpdateTime,
+            'name':
+                name,
+            'tags':
+                tags,
+            'templates':
+                templates,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ecc3258a5c5b8f2267a512820a59_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -169,7 +329,7 @@ class ConfigurationTemplates(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_00aec9b1422ab27e_v2_2_1', json_data)
+        return self._object_factory('bpm_ecc3258a5c5b8f2267a512820a59_v2_2_1', json_data)
 
     def gets_the_templates_available(self,
                                      filter_conflicting_templates=None,
@@ -202,8 +362,9 @@ class ConfigurationTemplates(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -259,243 +420,7 @@ class ConfigurationTemplates(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_01b09a254b9ab259_v2_2_1', json_data)
-
-    def get_projects(self,
-                     name=None,
-                     headers=None,
-                     **request_parameters):
-        """Returns the projects in the system.
-
-        Args:
-            name(basestring): Name of project to be searched.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            list: JSON response. A list of MyDict objects.
-            Access the object's properties by using the dot notation
-            or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(name, basestring)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-            'name':
-                name,
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/template-programmer/project')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
-        else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_109d1b4f4289aecd_v2_2_1', json_data)
-
-    def version_template(self,
-                         comments=None,
-                         templateId=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
-        """Creates Versioning for the current contents of the template.
-
-        Args:
-            comments(string): TemplateVersionRequestDTO's comments.
-            templateId(string): TemplateVersionRequestDTO's
-                templateId.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'comments':
-                comments,
-            'templateId':
-                templateId,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_62b05b2c40a9b216_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/template-programmer/template/version')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_62b05b2c40a9b216_v2_2_1', json_data)
-
-    def deploy_template(self,
-                        forcePushTemplate=None,
-                        isComposite=None,
-                        mainTemplateId=None,
-                        memberTemplateDeploymentInfo=None,
-                        targetInfo=None,
-                        templateId=None,
-                        headers=None,
-                        payload=None,
-                        active_validation=True,
-                        **request_parameters):
-        """Deploys a template.
-
-        Args:
-            forcePushTemplate(boolean): TemplateDeploymentInfo's
-                forcePushTemplate.
-            isComposite(boolean): TemplateDeploymentInfo's
-                isComposite.
-            mainTemplateId(string): TemplateDeploymentInfo's
-                mainTemplateId.
-            memberTemplateDeploymentInfo(list):
-                TemplateDeploymentInfo's
-                memberTemplateDeploymentInfo (list of
-                any objects).
-            targetInfo(list): TemplateDeploymentInfo's targetInfo
-                (list of objects).
-            templateId(string): TemplateDeploymentInfo's templateId.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'forcePushTemplate':
-                forcePushTemplate,
-            'isComposite':
-                isComposite,
-            'mainTemplateId':
-                mainTemplateId,
-            'memberTemplateDeploymentInfo':
-                memberTemplateDeploymentInfo,
-            'targetInfo':
-                targetInfo,
-            'templateId':
-                templateId,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_6099da82477b858a_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/template-programmer/template/deploy')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_6099da82477b858a_v2_2_1', json_data)
+        return self._object_factory('bpm_bdc3bc8a35908aba5858e78805d22_v2_2_1', json_data)
 
     def update_template(self,
                         author=None,
@@ -527,41 +452,49 @@ class ConfigurationTemplates(object):
         """Updates an existing template.
 
         Args:
-            author(string): TemplateDTO's author.
-            composite(boolean): TemplateDTO's composite.
-            containingTemplates(list): TemplateDTO's
+            author(string): Configuration Templates's author.
+            composite(boolean): Configuration Templates's composite.
+            containingTemplates(list): Configuration Templates's
                 containingTemplates (list of objects).
-            createTime(number): TemplateDTO's createTime.
-            description(string): TemplateDTO's description.
-            deviceTypes(list): TemplateDTO's deviceTypes (list of
-                objects).
-            failurePolicy(string): TemplateDTO's failurePolicy.
-                Available values are 'ABORT_ON_ERROR',
-                'CONTINUE_ON_ERROR',
+            createTime(integer): Configuration Templates's
+                createTime.
+            description(string): Configuration Templates's
+                description.
+            deviceTypes(list): Configuration Templates's deviceTypes
+                (list of objects).
+            failurePolicy(string): Configuration Templates's
+                failurePolicy. Available values are
+                'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR',
                 'ROLLBACK_ON_ERROR',
                 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
-            id(string): TemplateDTO's id.
-            lastUpdateTime(number): TemplateDTO's lastUpdateTime.
-            name(string): TemplateDTO's name.
-            parentTemplateId(string): TemplateDTO's
+            id(string): Configuration Templates's id.
+            lastUpdateTime(integer): Configuration Templates's
+                lastUpdateTime.
+            name(string): Configuration Templates's name.
+            parentTemplateId(string): Configuration Templates's
                 parentTemplateId.
-            projectId(string): TemplateDTO's projectId.
-            projectName(string): TemplateDTO's projectName.
-            rollbackTemplateContent(string): TemplateDTO's
-                rollbackTemplateContent.
-            rollbackTemplateParams(list): TemplateDTO's
+            projectId(string): Configuration Templates's projectId.
+            projectName(string): Configuration Templates's
+                projectName.
+            rollbackTemplateContent(string): Configuration
+                Templates's rollbackTemplateContent.
+            rollbackTemplateParams(list): Configuration Templates's
                 rollbackTemplateParams (list of
                 objects).
-            softwareType(string): TemplateDTO's softwareType.
-            softwareVariant(string): TemplateDTO's softwareVariant.
-            softwareVersion(string): TemplateDTO's softwareVersion.
-            tags(list): TemplateDTO's tags (list of string,
-                objects).
-            templateContent(string): TemplateDTO's templateContent.
-            templateParams(list): TemplateDTO's templateParams (list
-                of objects).
-            version(string): TemplateDTO's version.
+            softwareType(string): Configuration Templates's
+                softwareType.
+            softwareVariant(string): Configuration Templates's
+                softwareVariant.
+            softwareVersion(string): Configuration Templates's
+                softwareVersion.
+            tags(list): Configuration Templates's tags (list of
+                strings).
+            templateContent(string): Configuration Templates's
+                templateContent.
+            templateParams(list): Configuration Templates's
+                templateParams (list of objects).
+            version(string): Configuration Templates's version.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -597,7 +530,6 @@ class ConfigurationTemplates(object):
 
         path_params = {
         }
-
         _payload = {
             'author':
                 author,
@@ -647,7 +579,7 @@ class ConfigurationTemplates(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_7781fa0548a98342_v2_2_1')\
+            self._request_validator('jsd_dbea7d7de125cf6b840d5032d3a5c59_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -666,7 +598,185 @@ class ConfigurationTemplates(object):
             json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
-        return self._object_factory('bpm_7781fa0548a98342_v2_2_1', json_data)
+        return self._object_factory('bpm_dbea7d7de125cf6b840d5032d3a5c59_v2_2_1', json_data)
+
+    def deploy_template(self,
+                        forcePushTemplate=None,
+                        isComposite=None,
+                        mainTemplateId=None,
+                        memberTemplateDeploymentInfo=None,
+                        targetInfo=None,
+                        templateId=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
+        """Deploys a template.
+
+        Args:
+            forcePushTemplate(boolean): Configuration Templates's
+                forcePushTemplate.
+            isComposite(boolean): Configuration Templates's
+                isComposite.
+            mainTemplateId(string): Configuration Templates's
+                mainTemplateId.
+            memberTemplateDeploymentInfo(list): Configuration
+                Templates's memberTemplateDeploymentInfo
+                (list of strings).
+            targetInfo(list): Configuration Templates's targetInfo
+                (list of objects).
+            templateId(string): Configuration Templates's
+                templateId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'forcePushTemplate':
+                forcePushTemplate,
+            'isComposite':
+                isComposite,
+            'mainTemplateId':
+                mainTemplateId,
+            'memberTemplateDeploymentInfo':
+                memberTemplateDeploymentInfo,
+            'targetInfo':
+                targetInfo,
+            'templateId':
+                templateId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_efa92557c9a6c8af0a71829c7e_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-programmer/template/deploy')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_efa92557c9a6c8af0a71829c7e_v2_2_1', json_data)
+
+    def version_template(self,
+                         comments=None,
+                         templateId=None,
+                         headers=None,
+                         payload=None,
+                         active_validation=True,
+                         **request_parameters):
+        """Creates Versioning for the current contents of the template.
+
+        Args:
+            comments(string): Configuration Templates's comments.
+            templateId(string): Configuration Templates's
+                templateId.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'comments':
+                comments,
+            'templateId':
+                templateId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e1a76c121857a085149e62e56caadd_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-programmer/template/version')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_e1a76c121857a085149e62e56caadd_v2_2_1', json_data)
 
     def get_template_details(self,
                              template_id,
@@ -719,7 +829,7 @@ class ConfigurationTemplates(object):
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/template-'
-                 + 'programmer/template/${templateId}')
+                 + 'programmer/template/{templateId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -727,162 +837,7 @@ class ConfigurationTemplates(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_83a3b9404cb88787_v2_2_1', json_data)
-
-    def get_template_deployment_status(self,
-                                       deployment_id,
-                                       headers=None,
-                                       **request_parameters):
-        """Returns the status of a deployed template.
-
-        Args:
-            deployment_id(basestring): deploymentId path parameter.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(deployment_id, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'deploymentId': deployment_id,
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/template-'
-                 + 'programmer/template/deploy/status/${deploymentId}')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
-        else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_9c9a785741cbb41f_v2_2_1', json_data)
-
-    def update_project(self,
-                       createTime=None,
-                       description=None,
-                       id=None,
-                       lastUpdateTime=None,
-                       name=None,
-                       tags=None,
-                       templates=None,
-                       headers=None,
-                       payload=None,
-                       active_validation=True,
-                       **request_parameters):
-        """Updates an existing project.
-
-        Args:
-            createTime(number): ProjectDTO's createTime.
-            description(string): ProjectDTO's description.
-            id(string): ProjectDTO's id.
-            lastUpdateTime(number): ProjectDTO's lastUpdateTime.
-            name(string): ProjectDTO's name.
-            tags(list): ProjectDTO's tags (list of string, objects).
-            templates: Part of the JSON serializable Python object
-                to send in the body of the Request.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'createTime':
-                createTime,
-            'description':
-                description,
-            'id':
-                id,
-            'lastUpdateTime':
-                lastUpdateTime,
-            'name':
-                name,
-            'tags':
-                tags,
-            'templates':
-                templates,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_9480fa1f47ca9254_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/template-programmer/project')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
-        else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
-
-        return self._object_factory('bpm_9480fa1f47ca9254_v2_2_1', json_data)
+        return self._object_factory('bpm_d6dbb8874d3150858c1ca6feb7e09edf_v2_2_1', json_data)
 
     def delete_template(self,
                         template_id,
@@ -930,7 +885,7 @@ class ConfigurationTemplates(object):
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/template-'
-                 + 'programmer/template/${templateId}')
+                 + 'programmer/template/{templateId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -938,7 +893,63 @@ class ConfigurationTemplates(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a7b42836408a8e74_v2_2_1', json_data)
+        return self._object_factory('bpm_c311bd3d952757b2a7b98a5bc5aa6137_v2_2_1', json_data)
+
+    def get_template_deployment_status(self,
+                                       deployment_id,
+                                       headers=None,
+                                       **request_parameters):
+        """Returns the status of a deployed template.
+
+        Args:
+            deployment_id(basestring): deploymentId path parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(deployment_id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'deploymentId': deployment_id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-'
+                 + 'programmer/template/deploy/status/{deploymentId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_e1f17b174e955dea2ae9d98264de307_v2_2_1', json_data)
 
     def get_template_versions(self,
                               template_id,
@@ -987,7 +998,7 @@ class ConfigurationTemplates(object):
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/template-'
-                 + 'programmer/template/version/${templateId}')
+                 + 'programmer/template/version/{templateId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -995,7 +1006,7 @@ class ConfigurationTemplates(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c8bf6b65414a9bc7_v2_2_1', json_data)
+        return self._object_factory('bpm_d49f82923bc5dfda63adfd224e1a22f_v2_2_1', json_data)
 
     def delete_project(self,
                        project_id,
@@ -1043,7 +1054,7 @@ class ConfigurationTemplates(object):
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/template-'
-                 + 'programmer/project/${projectId}')
+                 + 'programmer/project/{projectId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -1051,7 +1062,7 @@ class ConfigurationTemplates(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d0a1abfa435b841d_v2_2_1', json_data)
+        return self._object_factory('bpm_a3e0588fa1ac56d4947ae5cfc2e16a8f_v2_2_1', json_data)
 
     def preview_template(self,
                          params=None,
@@ -1063,8 +1074,8 @@ class ConfigurationTemplates(object):
         """Previews an existing template.
 
         Args:
-            params(object): TemplatePreviewRequestDTO's params.
-            templateId(string): TemplatePreviewRequestDTO's
+            params(object): Configuration Templates's params.
+            templateId(string): Configuration Templates's
                 templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1101,7 +1112,6 @@ class ConfigurationTemplates(object):
 
         path_params = {
         }
-
         _payload = {
             'params':
                 params,
@@ -1111,7 +1121,7 @@ class ConfigurationTemplates(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f393abe84989bb48_v2_2_1')\
+            self._request_validator('jsd_ccbf614b4b355cac929f12cc61272c1c_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -1130,7 +1140,7 @@ class ConfigurationTemplates(object):
             json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
-        return self._object_factory('bpm_f393abe84989bb48_v2_2_1', json_data)
+        return self._object_factory('bpm_ccbf614b4b355cac929f12cc61272c1c_v2_2_1', json_data)
 
     def create_template(self,
                         project_id,
@@ -1163,41 +1173,49 @@ class ConfigurationTemplates(object):
         """Creates a new template.
 
         Args:
-            author(string): TemplateDTO's author.
-            composite(boolean): TemplateDTO's composite.
-            containingTemplates(list): TemplateDTO's
+            author(string): Configuration Templates's author.
+            composite(boolean): Configuration Templates's composite.
+            containingTemplates(list): Configuration Templates's
                 containingTemplates (list of objects).
-            createTime(number): TemplateDTO's createTime.
-            description(string): TemplateDTO's description.
-            deviceTypes(list): TemplateDTO's deviceTypes (list of
-                objects).
-            failurePolicy(string): TemplateDTO's failurePolicy.
-                Available values are 'ABORT_ON_ERROR',
-                'CONTINUE_ON_ERROR',
+            createTime(integer): Configuration Templates's
+                createTime.
+            description(string): Configuration Templates's
+                description.
+            deviceTypes(list): Configuration Templates's deviceTypes
+                (list of objects).
+            failurePolicy(string): Configuration Templates's
+                failurePolicy. Available values are
+                'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR',
                 'ROLLBACK_ON_ERROR',
                 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
-            id(string): TemplateDTO's id.
-            lastUpdateTime(number): TemplateDTO's lastUpdateTime.
-            name(string): TemplateDTO's name.
-            parentTemplateId(string): TemplateDTO's
+            id(string): Configuration Templates's id.
+            lastUpdateTime(integer): Configuration Templates's
+                lastUpdateTime.
+            name(string): Configuration Templates's name.
+            parentTemplateId(string): Configuration Templates's
                 parentTemplateId.
-            projectId(string): TemplateDTO's projectId.
-            projectName(string): TemplateDTO's projectName.
-            rollbackTemplateContent(string): TemplateDTO's
-                rollbackTemplateContent.
-            rollbackTemplateParams(list): TemplateDTO's
+            projectId(string): Configuration Templates's projectId.
+            projectName(string): Configuration Templates's
+                projectName.
+            rollbackTemplateContent(string): Configuration
+                Templates's rollbackTemplateContent.
+            rollbackTemplateParams(list): Configuration Templates's
                 rollbackTemplateParams (list of
                 objects).
-            softwareType(string): TemplateDTO's softwareType.
-            softwareVariant(string): TemplateDTO's softwareVariant.
-            softwareVersion(string): TemplateDTO's softwareVersion.
-            tags(list): TemplateDTO's tags (list of string,
-                objects).
-            templateContent(string): TemplateDTO's templateContent.
-            templateParams(list): TemplateDTO's templateParams (list
-                of objects).
-            version(string): TemplateDTO's version.
+            softwareType(string): Configuration Templates's
+                softwareType.
+            softwareVariant(string): Configuration Templates's
+                softwareVariant.
+            softwareVersion(string): Configuration Templates's
+                softwareVersion.
+            tags(list): Configuration Templates's tags (list of
+                strings).
+            templateContent(string): Configuration Templates's
+                templateContent.
+            templateParams(list): Configuration Templates's
+                templateParams (list of objects).
+            version(string): Configuration Templates's version.
             project_id(basestring): projectId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1237,7 +1255,6 @@ class ConfigurationTemplates(object):
         path_params = {
             'projectId': project_id,
         }
-
         _payload = {
             'author':
                 author,
@@ -1287,7 +1304,7 @@ class ConfigurationTemplates(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f6b119ad4d4aaf16_v2_2_1')\
+            self._request_validator('jsd_e3e170003d865b9a8d76cbe1d2f268be_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -1297,7 +1314,7 @@ class ConfigurationTemplates(object):
             with_custom_headers = True
 
         e_url = ('/dna/intent/api/v1/template-'
-                 + 'programmer/project/${projectId}/template')
+                 + 'programmer/project/{projectId}/template')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
@@ -1307,4 +1324,4 @@ class ConfigurationTemplates(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_f6b119ad4d4aaf16_v2_2_1', json_data)
+        return self._object_factory('bpm_e3e170003d865b9a8d76cbe1d2f268be_v2_2_1', json_data)

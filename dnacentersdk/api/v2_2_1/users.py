@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Users API wrapper.
+"""Cisco DNA Center Users API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Users(object):
-    """DNA Center Users API (version: 2.2.1).
+    """Cisco DNA Center Users API (version: 2.2.1).
 
     Wraps the DNA Center Users
     API and exposes the API as native Python
@@ -103,9 +103,6 @@ class Users(object):
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
                            basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -129,4 +126,4 @@ class Users(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_d7a6392845e8969d_v2_2_1', json_data)
+        return self._object_factory('bpm_f9c1d861a051b4a4928f2e6d84b2e3_v2_2_1', json_data)

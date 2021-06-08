@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Configuration Archive API wrapper.
+"""Cisco DNA Center Configuration Archive API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class ConfigurationArchive(object):
-    """DNA Center Configuration Archive API (version: 2.2.1).
+    """Cisco DNA Center Configuration Archive API (version: 2.2.1).
 
     Wraps the DNA Center Configuration Archive
     API and exposes the API as native Python
@@ -82,9 +82,9 @@ class ConfigurationArchive(object):
         """Export Device configurations to an encrypted zip file.
 
         Args:
-            deviceId(list): exportDeviceDTO's Device Id (list of
-                strings).
-            password(string): exportDeviceDTO's Password.
+            deviceId(list): Configuration Archive's deviceId (list
+                of strings).
+            password(string): Configuration Archive's password.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -120,7 +120,6 @@ class ConfigurationArchive(object):
 
         path_params = {
         }
-
         _payload = {
             'deviceId':
                 deviceId,
@@ -130,7 +129,7 @@ class ConfigurationArchive(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_51a40aba4c68ac17_v2_2_1')\
+            self._request_validator('jsd_e85b40c5ca055f4c82281617a8f95644_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -149,4 +148,4 @@ class ConfigurationArchive(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_51a40aba4c68ac17_v2_2_1', json_data)
+        return self._object_factory('bpm_e85b40c5ca055f4c82281617a8f95644_v2_2_1', json_data)

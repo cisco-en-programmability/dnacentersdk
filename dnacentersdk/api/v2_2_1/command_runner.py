@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Command Runner API wrapper.
+"""Cisco DNA Center Command Runner API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class CommandRunner(object):
-    """DNA Center Command Runner API (version: 2.2.1).
+    """Cisco DNA Center Command Runner API (version: 2.2.1).
 
     Wraps the DNA Center Command Runner
     API and exposes the API as native Python
@@ -120,7 +120,7 @@ class CommandRunner(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_33bb2b9d40199e14_v2_2_1', json_data)
+        return self._object_factory('bpm_e946adf864590082fe3111a2a2fa74_v2_2_1', json_data)
 
     def run_read_only_commands_on_devices(self,
                                           commands=None,
@@ -135,13 +135,13 @@ class CommandRunner(object):
         """Submit request for read-only CLIs.
 
         Args:
-            commands(list): CommandRunnerDTO's commands (list of
+            commands(list): Command Runner's commands (list of
                 strings).
-            description(string): CommandRunnerDTO's description.
-            deviceUuids(list): CommandRunnerDTO's deviceUuids (list
-                of strings).
-            name(string): CommandRunnerDTO's name.
-            timeout(number): CommandRunnerDTO's timeout.
+            description(string): Command Runner's description.
+            deviceUuids(list): Command Runner's deviceUuids (list of
+                strings).
+            name(string): Command Runner's name.
+            timeout(integer): Command Runner's timeout.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -177,7 +177,6 @@ class CommandRunner(object):
 
         path_params = {
         }
-
         _payload = {
             'commands':
                 commands,
@@ -193,7 +192,7 @@ class CommandRunner(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_d6b8ca774739adf4_v2_2_1')\
+            self._request_validator('jsd_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -213,4 +212,4 @@ class CommandRunner(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_d6b8ca774739adf4_v2_2_1', json_data)
+        return self._object_factory('bpm_b2dae3b41636596aa02c3ad0a4bcb8d7_v2_2_1', json_data)

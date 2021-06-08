@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center File API wrapper.
+"""Cisco DNA Center File API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class File(object):
-    """DNA Center File API (version: 2.2.1).
+    """Cisco DNA Center File API (version: 2.2.1).
 
     Wraps the DNA Center File
     API and exposes the API as native Python
@@ -120,7 +120,7 @@ class File(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_3f89bbfc4f6b8b50_v2_2_1', json_data)
+        return self._object_factory('bpm_b7fc125c901c5d4488b7a2b75fa292bc_v2_2_1', json_data)
 
     def get_list_of_files(self,
                           name_space,
@@ -129,7 +129,8 @@ class File(object):
         """Returns list of files under a specific namespace.
 
         Args:
-            name_space(basestring): A listing of fileId's.
+            name_space(basestring): nameSpace path parameter. A
+                listing of fileId's.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -167,7 +168,7 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/namespace/${nameSpace}')
+        e_url = ('/dna/intent/api/v1/file/namespace/{nameSpace}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -175,37 +176,30 @@ class File(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_42b6a86e44b8bdfc_v2_2_1', json_data)
+        return self._object_factory('bpm_b7d63a5ae65b59a5a35d43edc58b6db5_v2_2_1', json_data)
 
     def download_a_file_by_fileid(self,
                                   file_id,
-                                  dirpath=None,
-                                  save_file=None,
                                   headers=None,
                                   **request_parameters):
         """Downloads a file specified by fileId.
 
         Args:
-            file_id(basestring): File Identification number.
-            dirpath(basestring): Directory absolute path. Defaults to
-                os.getcwd().
-            save_file(bool): Enable or disable automatic file creation of
-                raw response.
+            file_id(basestring): fileId path parameter. File
+                Identification number.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
-            urllib3.response.HTTPResponse: HTTP Response container. For more
-            information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
 
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-            DownloadFailure: If was not able to download the raw
-            response to a file.
         """
         check_type(headers, dict)
         check_type(file_id, basestring,
@@ -230,14 +224,12 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/${fileId}')
+        e_url = ('/dna/intent/api/v1/file/{fileId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers,
-                                          stream=True, dirpath=dirpath, save_file=save_file)
+                                          headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          stream=True, dirpath=dirpath, save_file=save_file)
+            json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_9698c8ec4a0b8c1a_v2_2_1', json_data)
+        return self._object_factory('bpm_fa4ab7605a75aafa6c7da6ac3f13_v2_2_1', json_data)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Compliance API wrapper.
+"""Cisco DNA Center Compliance API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Compliance(object):
-    """DNA Center Compliance API (version: 2.2.1).
+    """Cisco DNA Center Compliance API (version: 2.2.1).
 
     Wraps the DNA Center Compliance
     API and exposes the API as native Python
@@ -85,16 +85,20 @@ class Compliance(object):
 
         Args:
             device_uuid(basestring): deviceUuid path parameter.
-            category(basestring): complianceCategory can have any
-                value among 'INTENT', 'RUNNING_CONFIG'.
-            compliance_type(basestring): complianceType can have any
+            category(basestring): category query parameter.
+                complianceCategory can have any value
+                among 'INTENT', 'RUNNING_CONFIG'.
+            compliance_type(basestring): complianceType query
+                parameter. complianceType can have any
                 value among 'NETWORK_DESIGN',
                 'NETWORK_PROFILE', 'FABRIC', 'POLICY',
                 'RUNNING_CONFIG'.
-            diff_list(bool): diff list [ pass true to fetch the diff
-                list ].
-            key(basestring): extended attribute key.
-            value(basestring): extended attribute value.
+            diff_list(bool): diffList query parameter. diff list [
+                pass true to fetch the diff list ].
+            key(basestring): key query parameter. extended attribute
+                key.
+            value(basestring): value query parameter. extended
+                attribute value.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -147,7 +151,7 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/${deviceUuid}/detail')
+        e_url = ('/dna/intent/api/v1/compliance/{deviceUuid}/detail')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -155,7 +159,7 @@ class Compliance(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_52bfe90445aab017_v2_2_1', json_data)
+        return self._object_factory('bpm_b70e1b6a2f51a59690669a4b2fd3f0_v2_2_1', json_data)
 
     def device_compliance_status(self,
                                  device_uuid,
@@ -202,7 +206,7 @@ class Compliance(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/compliance/${deviceUuid}')
+        e_url = ('/dna/intent/api/v1/compliance/{deviceUuid}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -210,7 +214,7 @@ class Compliance(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_7aa85ad548ea94a7_v2_2_1', json_data)
+        return self._object_factory('bpm_da8e5cdd435db0b1da1684be8f15b8_v2_2_1', json_data)
 
     def get_compliance_status_(self,
                                compliance_status=None,
@@ -222,12 +226,57 @@ class Compliance(object):
         """Return compliance status of device(s).
 
         Args:
-            compliance_status(basestring): Compliance status can be
-                have value among 'COMPLIANT','NON_COMPLI
-                ANT','IN_PROGRESS', 'ERROR'.
-            device_uuid(basestring): Comma separated deviceUuids.
-            offset(int): offset/starting row.
-            limit(int): Number of records to be retrieved.
+            compliance_status(basestring): complianceStatus query
+                parameter. Compliance status can be have
+                value among 'COMPLIANT','NON_COMPLIANT',
+                'IN_PROGRESS', 'ERROR'.
+            device_uuid(basestring): deviceUuid query parameter.
+                Comma separated deviceUuids.
+            offset(int): offset query parameter. offset/starting
+                row.
+            limit(int): limit query parameter. Number of records to
+                be retrieved.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        return self.get_compliance_status(compliance_status=compliance_status,
+                                          device_uuid=device_uuid,
+                                          limit=limit,
+                                          offset=offset,
+                                          headers=headers,
+                                          **request_parameters)
+
+    def get_compliance_status(self,
+                              compliance_status=None,
+                              device_uuid=None,
+                              limit=None,
+                              offset=None,
+                              headers=None,
+                              **request_parameters):
+        """Return compliance status of device(s).
+
+        Args:
+            compliance_status(basestring): complianceStatus query
+                parameter. Compliance status can be have
+                value among 'COMPLIANT','NON_COMPLIANT',
+                'IN_PROGRESS', 'ERROR'.
+            device_uuid(basestring): deviceUuid query parameter.
+                Comma separated deviceUuids.
+            offset(int): offset query parameter. offset/starting
+                row.
+            limit(int): limit query parameter. Number of records to
+                be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -282,7 +331,7 @@ class Compliance(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_dda5cb9a49aaaef6_v2_2_1', json_data)
+        return self._object_factory('bpm_a1de7ff46fa5da09c5051c06ad07f2c_v2_2_1', json_data)
 
     def run_compliance(self,
                        categories=None,
@@ -295,11 +344,11 @@ class Compliance(object):
         """Run compliance check for device(s).
 
         Args:
-            categories(list): POSTREQUEST's categories (list of
+            categories(list): Compliance's categories (list of
                 strings).
-            deviceUuids(list): POSTREQUEST's deviceUuids (list of
+            deviceUuids(list): Compliance's deviceUuids (list of
                 strings).
-            triggerFull(boolean): POSTREQUEST's triggerFull.
+            triggerFull(boolean): Compliance's triggerFull.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -335,7 +384,6 @@ class Compliance(object):
 
         path_params = {
         }
-
         _payload = {
             'triggerFull':
                 triggerFull,
@@ -347,7 +395,7 @@ class Compliance(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_f6aec8a74428a9ff_v2_2_1')\
+            self._request_validator('jsd_a0a8d545698d1d59a9be90e51_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -366,4 +414,4 @@ class Compliance(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_f6aec8a74428a9ff_v2_2_1', json_data)
+        return self._object_factory('bpm_a0a8d545698d1d59a9be90e51_v2_2_1', json_data)

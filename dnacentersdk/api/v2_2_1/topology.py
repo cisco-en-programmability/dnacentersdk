@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Topology API wrapper.
+"""Cisco DNA Center Topology API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Topology(object):
-    """DNA Center Topology API (version: 2.2.1).
+    """Cisco DNA Center Topology API (version: 2.2.1).
 
     Wraps the DNA Center Topology
     API and exposes the API as native Python
@@ -120,7 +120,57 @@ class Topology(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_6284db4649aa8d31_v2_2_1', json_data)
+        return self._object_factory('bpm_fb6000ce8d8854bc80be3803b8dee1b7_v2_2_1', json_data)
+
+    def get_site_topology(self,
+                          headers=None,
+                          **request_parameters):
+        """Returns site topology.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/topology/site-topology')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_f7abdb7ab46a5918a74e839488ff6ae0_v2_2_1', json_data)
 
     def get_physical_topology(self,
                               node_type=None,
@@ -176,57 +226,7 @@ class Topology(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b2b8cb91459aa58f_v2_2_1', json_data)
-
-    def get_site_topology(self,
-                          headers=None,
-                          **request_parameters):
-        """Returns site topology.
-
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/topology/site-topology')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
-        else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_9ba14a9e441b8a60_v2_2_1', json_data)
+        return self._object_factory('bpm_eb4ab5a978fe8785516c8af42_v2_2_1', json_data)
 
     def get_topology_details(self,
                              vlan_id,
@@ -235,8 +235,8 @@ class Topology(object):
         """Returns Layer 2 network topology by specified VLAN ID.
 
         Args:
-            vlan_id(basestring): Vlan Name for e.g Vlan1, Vlan23
-                etc.
+            vlan_id(basestring): vlanID path parameter. Vlan Name
+                for e.g Vlan1, Vlan23 etc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -274,7 +274,7 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/l2/${vlanID}')
+        e_url = ('/dna/intent/api/v1/topology/l2/{vlanID}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -282,7 +282,7 @@ class Topology(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_b9b48ac8463a8aba_v2_2_1', json_data)
+        return self._object_factory('bpm_b3f79d3b45b98849d9180cc08018e_v2_2_1', json_data)
 
     def get_l3_topology_details(self,
                                 topology_type,
@@ -291,8 +291,8 @@ class Topology(object):
         """Returns the Layer 3 network topology by routing protocol.
 
         Args:
-            topology_type(basestring): Type of
-                topology(OSPF,ISIS,etc).
+            topology_type(basestring): topologyType path parameter.
+                Type of topology(OSPF,ISIS,etc).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -330,7 +330,7 @@ class Topology(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/topology/l3/${topologyType}')
+        e_url = ('/dna/intent/api/v1/topology/l3/{topologyType}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
@@ -338,7 +338,7 @@ class Topology(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_c2b5fb764d888375_v2_2_1', json_data)
+        return self._object_factory('bpm_c7e9c39880735e7684291bc5dc3ba994_v2_2_1', json_data)
 
     def get_overall_network_health(self,
                                    timestamp=None,
@@ -349,9 +349,9 @@ class Topology(object):
         given point of time.
 
         Args:
-            timestamp(int, basestring): Epoch time(in milliseconds)
-                when the Network health data is
-                required.
+            timestamp(basestring): timestamp query parameter. Epoch
+                time(in milliseconds) when the Network
+                health data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -367,7 +367,7 @@ class Topology(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (int, basestring))
+        check_type(timestamp, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -380,7 +380,6 @@ class Topology(object):
 
         if _params['timestamp'] is None:
             _params['timestamp'] = ''
-
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
@@ -401,4 +400,4 @@ class Topology(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_ca91da84401abba1_v2_2_1', json_data)
+        return self._object_factory('bpm_b0753b63045528194f2f5bbf8ae432d_v2_2_1', json_data)

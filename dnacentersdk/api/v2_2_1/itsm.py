@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center ITSM API wrapper.
+"""Cisco DNA Center ITSM API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Itsm(object):
-    """DNA Center ITSM API (version: 2.2.1).
+    """Cisco DNA Center ITSM API (version: 2.2.1).
 
     Wraps the DNA Center ITSM
     API and exposes the API as native Python
@@ -80,8 +80,9 @@ class Itsm(object):
         create tickets in ITSM.
 
         Args:
-            instance_id(basestring): Instance Id of the failed event
-                as in the Runtime Dashboard.
+            instance_id(basestring): instanceId query parameter.
+                Instance Id of the failed event as in
+                the Runtime Dashboard.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -128,7 +129,75 @@ class Itsm(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a293b82a42a8ab15_v2_2_1', json_data)
+        return self._object_factory('bpm_da70082b298a5a908edb780a61bd4ca6_v2_2_1', json_data)
+
+    def retry_integration_events(self,
+                                 headers=None,
+                                 payload=None,
+                                 active_validation=True,
+                                 **request_parameters):
+        """Allows retry of multiple failed ITSM event instances. The retry
+        request payload can be given as a list of strings:
+        ["instance1","instance2","instance3",..] A minimum of
+        one instance Id is mandatory. The list of failed event
+        instance Ids can be retrieved using the 'Get Failed ITSM
+        Events' API in the 'instanceId' attribute.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_cfb1d6e52878d057740de275896_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/integration/events')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_cfb1d6e52878d057740de275896_v2_2_1', json_data)
 
     def get_cmdb_sync_status(self,
                              date=None,
@@ -144,11 +213,13 @@ class Itsm(object):
         parameter filtered detail will be send as response.
 
         Args:
-            status(basestring): Supported values are
-                "Success","Failed" and "Unknown".
-                Providing other values will result in
-                all the available sync job status.
-            date(basestring): Provide date in "YYYY-MM-DD" format.
+            status(basestring): status query parameter. Supported
+                values are "Success","Failed" and
+                "Unknown". Providing other values will
+                result in all the available sync job
+                status.
+            date(basestring): date query parameter. Provide date in
+                "YYYY-MM-DD" format.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -198,73 +269,4 @@ class Itsm(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_a49289934948b86c_v2_2_1', json_data)
-
-    def retry_integration_events(self,
-                                 headers=None,
-                                 payload=None,
-                                 active_validation=True,
-                                 **request_parameters):
-        """Allows retry of multiple failed ITSM event instances. The retry
-        request payload can be given as a list of strings:
-        ["instance1","instance2","instance3",..] A minimum of
-        one instance Id is mandatory. The list of failed event
-        instance Ids can be retrieved using the 'Get Failed ITSM
-        Events' API in the 'instanceId' attribute.
-
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(list): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, list)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = payload or []
-        if active_validation:
-            self._request_validator('jsd_fa9a98174129af50_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/integration/events')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_fa9a98174129af50_v2_2_1', json_data)
+        return self._object_factory('bpm_eb1bf346225a4ba24f18408ffca7c9_v2_2_1', json_data)

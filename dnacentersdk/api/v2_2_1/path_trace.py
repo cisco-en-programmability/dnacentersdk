@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Path Trace API wrapper.
+"""Cisco DNA Center Path Trace API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class PathTrace(object):
-    """DNA Center Path Trace API (version: 2.2.1).
+    """Cisco DNA Center Path Trace API (version: 2.2.1).
 
     Wraps the DNA Center Path Trace
     API and exposes the API as native Python
@@ -94,25 +94,35 @@ class PathTrace(object):
         filtered by specified parameters.
 
         Args:
-            periodic_refresh(bool): Is analysis periodically
-                refreshed?.
-            source_ip(basestring): Source IP address.
-            dest_ip(basestring): Destination IP address.
-            source_port(basestring): Source port.
-            dest_port(basestring): Destination port.
-            gt_create_time(basestring): Analyses requested after
-                this time.
-            lt_create_time(basestring): Analyses requested before
+            periodic_refresh(bool): periodicRefresh query parameter.
+                Is analysis periodically refreshed?.
+            source_ip(basestring): sourceIP query parameter. Source
+                IP address.
+            dest_ip(basestring): destIP query parameter. Destination
+                IP adress.
+            source_port(basestring): sourcePort query parameter.
+                Source port.
+            dest_port(basestring): destPort query parameter.
+                Destination port.
+            gt_create_time(basestring): gtCreateTime query
+                parameter. Analyses requested after this
+                time.
+            lt_create_time(basestring): ltCreateTime query
+                parameter. Analyses requested before
                 this time.
             protocol(basestring): protocol query parameter.
             status(basestring): status query parameter.
-            task_id(basestring): Task ID.
-            last_update_time(basestring): Last update time.
-            limit(basestring): Number of resources returned.
-            offset(basestring): Start index of resources returned
-                (1-based).
-            order(basestring): Order by this field.
-            sort_by(basestring): Sort by this field.
+            task_id(basestring): taskId query parameter. Task ID.
+            last_update_time(basestring): lastUpdateTime query
+                parameter. Last update time.
+            limit(basestring): limit query parameter. Number of
+                resources returned.
+            offset(basestring): offset query parameter. Start index
+                of resources returned (1-based).
+            order(basestring): order query parameter. Order by this
+                field.
+            sort_by(basestring): sortBy query parameter. Sort by
+                this field.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -200,118 +210,7 @@ class PathTrace(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_55bc3bf94e38b6ff_v2_2_1', json_data)
-
-    def retrieves_previous_pathtrace(self,
-                                     flow_analysis_id,
-                                     headers=None,
-                                     **request_parameters):
-        """Returns result of a previously requested flow analysis by its
-        Flow Analysis id.
-
-        Args:
-            flow_analysis_id(basestring): Flow analysis request id.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(flow_analysis_id, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'flowAnalysisId': flow_analysis_id,
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
-        else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_7ab9a8bd4f3b86a4_v2_2_1', json_data)
-
-    def deletes_pathtrace_by_id(self,
-                                flow_analysis_id,
-                                headers=None,
-                                **request_parameters):
-        """Deletes a flow analysis request by its id.
-
-        Args:
-            flow_analysis_id(basestring): Flow analysis request id.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(flow_analysis_id, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'flowAnalysisId': flow_analysis_id,
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/flow-analysis/${flowAnalysisId}')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
-        else:
-            json_data = self._session.delete(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_8a9d2b76443b914e_v2_2_1', json_data)
+        return self._object_factory('bpm_a75e4b27171c5c6782e84f902da9e5be_v2_2_1', json_data)
 
     def initiate_a_new_pathtrace(self,
                                  controlPath=None,
@@ -331,16 +230,15 @@ class PathTrace(object):
         to get results and follow progress.
 
         Args:
-            controlPath(boolean): FlowAnalysisRequest's controlPath.
-            destIP(string): FlowAnalysisRequest's destIP.
-            destPort(string): FlowAnalysisRequest's destPort.
-            inclusions(list): FlowAnalysisRequest's inclusions (list
-                of strings).
-            periodicRefresh(boolean): FlowAnalysisRequest's
-                periodicRefresh.
-            protocol(string): FlowAnalysisRequest's protocol.
-            sourceIP(string): FlowAnalysisRequest's sourceIP.
-            sourcePort(string): FlowAnalysisRequest's sourcePort.
+            controlPath(boolean): Path Trace's controlPath.
+            destIP(string): Path Trace's destIP.
+            destPort(string): Path Trace's destPort.
+            inclusions(list): Path Trace's inclusions (list of
+                strings).
+            periodicRefresh(boolean): Path Trace's periodicRefresh.
+            protocol(string): Path Trace's protocol.
+            sourceIP(string): Path Trace's sourceIP.
+            sourcePort(string): Path Trace's sourcePort.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -376,7 +274,6 @@ class PathTrace(object):
 
         path_params = {
         }
-
         _payload = {
             'controlPath':
                 controlPath,
@@ -398,7 +295,7 @@ class PathTrace(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a395fae644ca899c_v2_2_1')\
+            self._request_validator('jsd_a54fce1a0c305bdabfe91a8a6161e539_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -417,4 +314,117 @@ class PathTrace(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_a395fae644ca899c_v2_2_1', json_data)
+        return self._object_factory('bpm_a54fce1a0c305bdabfe91a8a6161e539_v2_2_1', json_data)
+
+    def retrieves_previous_pathtrace(self,
+                                     flow_analysis_id,
+                                     headers=None,
+                                     **request_parameters):
+        """Returns result of a previously requested flow analysis by its
+        Flow Analysis id.
+
+        Args:
+            flow_analysis_id(basestring): flowAnalysisId path
+                parameter. Flow analysis request id.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(flow_analysis_id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'flowAnalysisId': flow_analysis_id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/flow-analysis/{flowAnalysisId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ed5cbafc332a5efa97547736ba8b6044_v2_2_1', json_data)
+
+    def deletes_pathtrace_by_id(self,
+                                flow_analysis_id,
+                                headers=None,
+                                **request_parameters):
+        """Deletes a flow analysis request by its id.
+
+        Args:
+            flow_analysis_id(basestring): flowAnalysisId path
+                parameter. Flow analysis request id.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(flow_analysis_id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'flowAnalysisId': flow_analysis_id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/flow-analysis/{flowAnalysisId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a7ae984f943507ba621abe155e6e744_v2_2_1', json_data)

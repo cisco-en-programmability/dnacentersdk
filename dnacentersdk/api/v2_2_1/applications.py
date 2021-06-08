@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Applications API wrapper.
+"""Cisco DNA Center Applications API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Applications(object):
-    """DNA Center Applications API (version: 2.2.1).
+    """Cisco DNA Center Applications API (version: 2.2.1).
 
     Wraps the DNA Center Applications
     API and exposes the API as native Python
@@ -87,28 +87,33 @@ class Applications(object):
         device, or a client device's MAC address.
 
         Args:
-            site_id(basestring): Assurance site UUID value (Cannot
-                be submitted together with deviceId and
+            site_id(basestring): siteId query parameter. Assurance
+                site UUID value (Cannot be submitted
+                together with deviceId and clientMac).
+            device_id(basestring): deviceId query parameter.
+                Assurance device UUID value (Cannot be
+                submitted together with siteId and
                 clientMac).
-            device_id(basestring): Assurance device UUID value
-                (Cannot be submitted together with
-                siteId and clientMac).
-            mac_address(basestring): Client device's MAC address
-                (Cannot be submitted together with
-                siteId and deviceId).
-            start_time(int): Starting epoch time in milliseconds of
-                time window.
-            end_time(int): Ending epoch time in milliseconds of time
+            mac_address(basestring): macAddress query parameter.
+                Client device's MAC address (Cannot be
+                submitted together with siteId and
+                deviceId).
+            start_time(int): startTime query parameter. Starting
+                epoch time in milliseconds of time
                 window.
-            application_health(basestring): Application health
-                category (POOR, FAIR, or GOOD.
-                Optionally use with siteId only).
-            offset(int): The offset of the first application in the
-                returned data (optionally used with
-                siteId only).
-            limit(int): The max number of application entries in
-                returned data [1, 1000] (optionally used
+            end_time(int): endTime query parameter. Ending epoch
+                time in milliseconds of time window.
+            application_health(basestring): applicationHealth query
+                parameter. Application health category
+                (POOR, FAIR, or GOOD.  Optionally use
                 with siteId only).
+            offset(int): offset query parameter. The offset of the
+                first application in the returned data
+                (optionally used with siteId only).
+            limit(int): limit query parameter. The max number of
+                application entries in returned data [1,
+                1000] (optionally used with siteId
+                only).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -175,4 +180,4 @@ class Applications(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_2db58a1f4fea9242_v2_2_1', json_data)
+        return self._object_factory('bpm_b85e4ce533d5ff49ddd3b2f9657cfa5_v2_2_1', json_data)

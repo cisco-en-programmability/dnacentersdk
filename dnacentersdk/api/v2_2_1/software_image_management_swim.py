@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Software Image Management (SWIM) API wrapper.
+"""Cisco DNA Center Software Image Management (SWIM) API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class SoftwareImageManagementSwim(object):
-    """DNA Center Software Image Management (SWIM) API (version: 2.2.1).
+    """Cisco DNA Center Software Image Management (SWIM) API (version: 2.2.1).
 
     Wraps the DNA Center Software Image Management (SWIM)
     API and exposes the API as native Python
@@ -89,7 +89,7 @@ class SoftwareImageManagementSwim(object):
                                    name=None,
                                    offset=None,
                                    sort_by=None,
-                                   sort_order='asc',
+                                   sort_order=None,
                                    version=None,
                                    headers=None,
                                    **request_parameters):
@@ -103,19 +103,31 @@ class SoftwareImageManagementSwim(object):
             application_type(basestring): applicationType query
                 parameter.
             image_integrity_status(basestring): imageIntegrityStatus
-                - FAILURE, UNKNOWN, VERIFIED.
-            version(basestring): software Image Version.
-            image_series(basestring): image Series.
-            image_name(basestring): image Name.
-            is_tagged_golden(bool): is Tagged Golden.
-            is_cco_recommended(bool): is recommended from cisco.com.
-            is_cco_latest(bool): is latest from cisco.com.
-            created_time(int): time in milliseconds (epoch format).
-            image_size_greater_than(int): size in bytes.
-            image_size_lesser_than(int): size in bytes.
-            sort_by(basestring): sort results by this field.
-            sort_order(basestring): sort order - 'asc' or 'des'.
-                Default is asc.
+                query parameter. imageIntegrityStatus -
+                FAILURE, UNKNOWN, VERIFIED.
+            version(basestring): version query parameter. software
+                Image Version.
+            image_series(basestring): imageSeries query parameter.
+                image Series.
+            image_name(basestring): imageName query parameter. image
+                Name.
+            is_tagged_golden(bool): isTaggedGolden query parameter.
+                is Tagged Golden.
+            is_cco_recommended(bool): isCCORecommended query
+                parameter. is recommended from
+                cisco.com.
+            is_cco_latest(bool): isCCOLatest query parameter. is
+                latest from cisco.com.
+            created_time(int): createdTime query parameter. time in
+                milliseconds (epoch format).
+            image_size_greater_than(int): imageSizeGreaterThan query
+                parameter. size in bytes.
+            image_size_lesser_than(int): imageSizeLesserThan query
+                parameter. size in bytes.
+            sort_by(basestring): sortBy query parameter. sort
+                results by this field.
+            sort_order(basestring): sortOrder query parameter. sort
+                order - 'asc' or 'des'. Default is asc.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -214,11 +226,9 @@ class SoftwareImageManagementSwim(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_0c8f7a0b49b9aedd_v2_2_1', json_data)
+        return self._object_factory('bpm_f73101d5d5e409f571084ab4c6049_v2_2_1', json_data)
 
     def import_local_software_image(self,
-                                    multipart_fields,
-                                    multipart_monitor_callback,
                                     is_third_party=None,
                                     third_party_application_type=None,
                                     third_party_image_family=None,
@@ -230,44 +240,17 @@ class SoftwareImageManagementSwim(object):
         are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and
         qcow2.
 
-        The following code gives an example of the multipart_fields.
-
-        .. code-block:: python
-
-            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
-            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
-                'text/plain',
-                {'X-My-Header': 'my-value'})}
-            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
-                'image/png')),
-                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
-
-        The following example demonstrates how to use
-        `multipart_monitor_callback=create_callback` to create a progress bar
-        using clint.
-
-        .. code-block:: python
-
-            from clint.textui.progress import Bar
-            def create_callback(encoder):
-                encoder_len = encoder.len
-                bar = Bar(expected_size=encoder_len,
-                          filled_char="=")
-                def callback(monitor):
-                    bar.show(monitor.bytes_read)
-                return callback
-
         Args:
-            is_third_party(bool): Third party Image check.
-            third_party_vendor(basestring): Third Party Vendor.
-            third_party_image_family(basestring): Third Party image
-                family.
-            third_party_application_type(basestring): Third Party
-                Application Type.
-            multipart_fields(dict): Fields from which to create a
-                multipart/form-data body.
-            multipart_monitor_callback(function): function used to monitor
-                the progress of the upload.
+            is_third_party(bool): isThirdParty query parameter.
+                Third party Image check.
+            third_party_vendor(basestring): thirdPartyVendor query
+                parameter. Third Party Vendor.
+            third_party_image_family(basestring):
+                thirdPartyImageFamily query parameter.
+                Third Party image family.
+            third_party_application_type(basestring):
+                thirdPartyApplicationType query
+                parameter. Third Party Application Type.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -281,8 +264,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-            DownloadFailure: If was not able to download the raw
-            response to a file.
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
@@ -321,20 +302,13 @@ class SoftwareImageManagementSwim(object):
 
         e_url = ('/dna/intent/api/v1/image/importation/source/file')
         endpoint_full_url = apply_path_params(e_url, path_params)
-        m_data = self._session.multipart_data(multipart_fields,
-                                              multipart_monitor_callback)
-        _headers.update({'Content-Type': m_data.content_type,
-                         'Content-Length': str(m_data.len),
-                         'Connection': 'keep-alive'})
-        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
-                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_4dbe3bc743a891bc_v2_2_1', json_data)
+        return self._object_factory('bpm_c1cf6d5d5f0fa2e92539134b6c1d_v2_2_1', json_data)
 
     def trigger_software_image_distribution(self,
                                             headers=None,
@@ -381,10 +355,9 @@ class SoftwareImageManagementSwim(object):
 
         path_params = {
         }
-
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_8cb6783b4faba1f4_v2_2_1')\
+            self._request_validator('jsd_c8d11fb9fc752ab8bb8e2b1413ccc92_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -403,7 +376,7 @@ class SoftwareImageManagementSwim(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_8cb6783b4faba1f4_v2_2_1', json_data)
+        return self._object_factory('bpm_c8d11fb9fc752ab8bb8e2b1413ccc92_v2_2_1', json_data)
 
     def import_software_image_via_url(self,
                                       schedule_at=None,
@@ -419,13 +392,15 @@ class SoftwareImageManagementSwim(object):
         ova, tar_gz and qcow2.
 
         Args:
-            schedule_at(basestring): Epoch Time (The number of
-                milli-seconds since January 1 1970 UTC)
-                at which the distribution should be
-                scheduled (Optional) .
-            schedule_desc(basestring): Custom Description
-                (Optional).
-            schedule_origin(basestring): Originator of this call
+            schedule_at(basestring): scheduleAt query parameter.
+                Epoch Time (The number of milli-seconds
+                since January 1 1970 UTC) at which the
+                distribution should be scheduled
+                (Optional) .
+            schedule_desc(basestring): scheduleDesc query parameter.
+                Custom Description (Optional).
+            schedule_origin(basestring): scheduleOrigin query
+                parameter. Originator of this call
                 (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -471,10 +446,9 @@ class SoftwareImageManagementSwim(object):
 
         path_params = {
         }
-
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_bc8aab4746ca883d_v2_2_1')\
+            self._request_validator('jsd_be8cdb967555fcca03a4c1f796eee56_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -493,7 +467,7 @@ class SoftwareImageManagementSwim(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_bc8aab4746ca883d_v2_2_1', json_data)
+        return self._object_factory('bpm_be8cdb967555fcca03a4c1f796eee56_v2_2_1', json_data)
 
     def trigger_software_image_activation(self,
                                           schedule_validate=None,
@@ -505,7 +479,8 @@ class SoftwareImageManagementSwim(object):
         must be present in the device flash.
 
         Args:
-            schedule_validate(bool): scheduleValidate, validates
+            schedule_validate(bool): scheduleValidate query
+                parameter. scheduleValidate, validates
                 data before schedule (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -538,9 +513,6 @@ class SoftwareImageManagementSwim(object):
             if 'Client-Url' in headers:
                 check_type(headers.get('Client-Url'),
                            basestring)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
 
         _params = {
             'scheduleValidate':
@@ -551,10 +523,9 @@ class SoftwareImageManagementSwim(object):
 
         path_params = {
         }
-
         _payload = payload or []
         if active_validation:
-            self._request_validator('jsd_fb9beb664f2aba4c_v2_2_1')\
+            self._request_validator('jsd_a9136d5513985f15e91a19da66c_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -573,4 +544,4 @@ class SoftwareImageManagementSwim(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_fb9beb664f2aba4c_v2_2_1', json_data)
+        return self._object_factory('bpm_a9136d5513985f15e91a19da66c_v2_2_1', json_data)

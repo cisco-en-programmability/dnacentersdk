@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Network Settings API wrapper.
+"""Cisco DNA Center Network Settings API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class NetworkSettings(object):
-    """DNA Center Network Settings API (version: 2.2.1).
+    """Cisco DNA Center Network Settings API (version: 2.2.1).
 
     Wraps the DNA Center Network Settings
     API and exposes the API as native Python
@@ -72,6 +72,68 @@ class NetworkSettings(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def get_global_pool(self,
+                        limit=None,
+                        offset=None,
+                        headers=None,
+                        **request_parameters):
+        """API to get global pool.
+
+        Args:
+            offset(basestring): offset query parameter.
+                offset/starting row.
+            limit(basestring): limit query parameter. No of Global
+                Pools to be retrieved.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(offset, basestring)
+        check_type(limit, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/global-pool')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ebdcd84fc41754a69eaeacf7c0b0731c_v2_2_1', json_data)
+
     def update_global_pool(self,
                            settings=None,
                            headers=None,
@@ -81,8 +143,7 @@ class NetworkSettings(object):
         """API to update global pool.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            settings(object): Network Settings's settings.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -115,7 +176,6 @@ class NetworkSettings(object):
 
         path_params = {
         }
-
         _payload = {
             'settings':
                 settings,
@@ -123,7 +183,7 @@ class NetworkSettings(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_03b4c8b44919b964_v2_2_1')\
+            self._request_validator('jsd_c380301e3e05423bdc1857ff00ae77a_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -142,7 +202,77 @@ class NetworkSettings(object):
             json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
-        return self._object_factory('bpm_03b4c8b44919b964_v2_2_1', json_data)
+        return self._object_factory('bpm_c380301e3e05423bdc1857ff00ae77a_v2_2_1', json_data)
+
+    def create_global_pool(self,
+                           settings=None,
+                           headers=None,
+                           payload=None,
+                           active_validation=True,
+                           **request_parameters):
+        """API to create global pool.
+
+        Args:
+            settings(object): Network Settings's settings.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'settings':
+                settings,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_eecf4323cb285985be72a7e061891059_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/global-pool')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_eecf4323cb285985be72a7e061891059_v2_2_1', json_data)
 
     def delete_global_ip_pool(self,
                               id,
@@ -151,7 +281,7 @@ class NetworkSettings(object):
         """API to delete global IP pool.
 
         Args:
-            id(basestring): global pool id.
+            id(basestring): id path parameter. global pool id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -189,7 +319,7 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool/${id}')
+        e_url = ('/dna/intent/api/v1/global-pool/{id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -197,7 +327,7 @@ class NetworkSettings(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_1eaa8b2148ab81de_v2_2_1', json_data)
+        return self._object_factory('bpm_f9079863c95acd945c51f728cbf81f_v2_2_1', json_data)
 
     def delete_device_credential(self,
                                  id,
@@ -206,7 +336,7 @@ class NetworkSettings(object):
         """Delete device credential.
 
         Args:
-            id(basestring): global credential id.
+            id(basestring): id path parameter. global credential id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -244,7 +374,7 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/device-credential/${id}')
+        e_url = ('/dna/intent/api/v1/device-credential/{id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -252,7 +382,7 @@ class NetworkSettings(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_259eab3045988958_v2_2_1', json_data)
+        return self._object_factory('bpm_e8e021f1c51eeaf0d102084481486_v2_2_1', json_data)
 
     def get_network(self,
                     site_id=None,
@@ -261,8 +391,9 @@ class NetworkSettings(object):
         """API to get  DHCP and DNS center server details.
 
         Args:
-            site_id(basestring): Site id to get the network settings
-                associated with the site.
+            site_id(basestring): siteId query parameter. Site id to
+                get the network settings associated with
+                the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -308,62 +439,7 @@ class NetworkSettings(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_38b7eb13449b9471_v2_2_1', json_data)
-
-    def delete_sp_profile(self,
-                          sp_profile_name,
-                          headers=None,
-                          **request_parameters):
-        """API to delete Service Provider profile (QoS).
-
-        Args:
-            sp_profile_name(basestring): sp profile name.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(sp_profile_name, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'sp-profile-name': sp_profile_name,
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/sp-profile/${sp-profile-name}')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
-        else:
-            json_data = self._session.delete(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_4ca2db1143ebb5d7_v2_2_1', json_data)
+        return self._object_factory('bpm_b199c175281977a7e9e6bd9255b_v2_2_1', json_data)
 
     def get_reserve_ip_subpool(self,
                                limit=None,
@@ -374,10 +450,13 @@ class NetworkSettings(object):
         """API to get the ip subpool info.
 
         Args:
-            site_id(basestring): site id to get the reserve ip
-                associated with the site.
-            offset(basestring): offset/starting row.
-            limit(basestring): No of Global Pools to be retrieved.
+            site_id(basestring): siteId query parameter. site id to
+                get the reserve ip associated with the
+                site.
+            offset(basestring): offset query parameter.
+                offset/starting row.
+            limit(basestring): limit query parameter. No of Global
+                Pools to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -429,255 +508,7 @@ class NetworkSettings(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_458609174fab87e2_v2_2_1', json_data)
-
-    def update_sp_profile(self,
-                          settings=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
-        """API to update SP profile.
-
-        Args:
-            settings(object): Settings, property of the request
-                body.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'settings':
-                settings,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_5087daae4cc98566_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/service-provider')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
-        else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
-
-        return self._object_factory('bpm_5087daae4cc98566_v2_2_1', json_data)
-
-    def assign_credential_to_site(self,
-                                  site_id,
-                                  cliId=None,
-                                  httpRead=None,
-                                  httpWrite=None,
-                                  snmpV2ReadId=None,
-                                  snmpV2WriteId=None,
-                                  snmpV3Id=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
-        """Assign Device Credential To Site .
-
-        Args:
-            cliId(string): Cli Id, property of the request body.
-            httpRead(string): Http Read, property of the request
-                body.
-            httpWrite(string): Http Write, property of the request
-                body.
-            snmpV2ReadId(string): Snmp V2 Read Id, property of the
-                request body.
-            snmpV2WriteId(string): Snmp V2 Write Id, property of the
-                request body.
-            snmpV3Id(string): Snmp V3 Id, property of the request
-                body.
-            site_id(basestring): site id to assign credential.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        check_type(site_id, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'siteId': site_id,
-        }
-
-        _payload = {
-            'cliId':
-                cliId,
-            'snmpV2ReadId':
-                snmpV2ReadId,
-            'snmpV2WriteId':
-                snmpV2WriteId,
-            'httpRead':
-                httpRead,
-            'httpWrite':
-                httpWrite,
-            'snmpV3Id':
-                snmpV3Id,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_4da91a544e29842d_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/credential-to-site/${siteId}')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_4da91a544e29842d_v2_2_1', json_data)
-
-    def update_device_credentials(self,
-                                  settings=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
-        """API to update device credentials.
-
-        Args:
-            settings(object): Settings, property of the request
-                body.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'settings':
-                settings,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_4f947a1c4fc884f6_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/device-credential')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
-        else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
-
-        return self._object_factory('bpm_4f947a1c4fc884f6_v2_2_1', json_data)
+        return self._object_factory('bpm_d84253559e9d3e81881a4bd2fc_v2_2_1', json_data)
 
     def update_reserve_ip_subpool(self,
                                   id,
@@ -702,44 +533,31 @@ class NetworkSettings(object):
         """API to update ip subpool from the global pool.
 
         Args:
-            ipv4DhcpServers(list): IPv4 input for dhcp server ip
-                example: 1.1.1.1, property of the
-                request body (list of strings).
-            ipv4DnsServers(list): IPv4 input for dns server ip
-                example: 4.4.4.4, property of the
-                request body (list of strings).
-            ipv6AddressSpace(boolean): ipv6AddressSpace, property of
-                the request body.
-            ipv6DhcpServers(list): IPv6 format dhcp server as input
-                example : 2001:db8::1234, property of
-                the request body (list of strings).
-            ipv6DnsServers(list): IPv6 format dns server input
-                example: 2001:db8::1234, property of the
-                request body (list of strings).
-            ipv6GateWay(string): Gateway ip address details,
-                example: 2001:db8:85a3:0:100::1,
-                property of the request body.
-            ipv6GlobalPool(string): IP v6 Global pool address with
-                cidr this is required when
-                Ipv6AddressSpace value is true, example:
-                2001:db8:85a3::/64, property of the
-                request body.
-            ipv6Prefix(boolean): ipv6Prefix, property of the request
-                body.
-            ipv6PrefixLength(number): ipv6PrefixLength, property of
-                the request body.
-            ipv6Subnet(string): IPv6 Subnet address, example
-                :2001:db8:85a3:0:100::, property of the
-                request body.
-            ipv6TotalHost(number): ipv6TotalHost, property of the
-                request body.
-            name(string): Name of the reserve ip sub pool, property
-                of the request body.
-            slaacSupport(boolean): slaacSupport, property of the
-                request body.
-            site_id(basestring): Site id of site to update sub pool.
-            id(basestring): Id of subpool to be associated with the
-                site.
+            ipv4DhcpServers(list): Network Settings's
+                ipv4DhcpServers (list of strings).
+            ipv4DnsServers(list): Network Settings's ipv4DnsServers
+                (list of strings).
+            ipv6AddressSpace(boolean): Network Settings's
+                ipv6AddressSpace.
+            ipv6DhcpServers(list): Network Settings's
+                ipv6DhcpServers (list of strings).
+            ipv6DnsServers(list): Network Settings's ipv6DnsServers
+                (list of strings).
+            ipv6GateWay(string): Network Settings's ipv6GateWay.
+            ipv6GlobalPool(string): Network Settings's
+                ipv6GlobalPool.
+            ipv6Prefix(boolean): Network Settings's ipv6Prefix.
+            ipv6PrefixLength(integer): Network Settings's
+                ipv6PrefixLength.
+            ipv6Subnet(string): Network Settings's ipv6Subnet.
+            ipv6TotalHost(integer): Network Settings's
+                ipv6TotalHost.
+            name(string): Network Settings's name.
+            slaacSupport(boolean): Network Settings's slaacSupport.
+            site_id(basestring): siteId path parameter. Site id of
+                site to update sub pool.
+            id(basestring): id query parameter. Id of subpool to be
+                associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -779,7 +597,6 @@ class NetworkSettings(object):
         path_params = {
             'siteId': site_id,
         }
-
         _payload = {
             'name':
                 name,
@@ -811,7 +628,7 @@ class NetworkSettings(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_6992d8ec42cb88f1_v2_2_1')\
+            self._request_validator('jsd_fd6083b0c65d03b2d53f10b3ece59d_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -820,7 +637,7 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/${siteId}')
+        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/{siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.put(endpoint_full_url, params=_params,
@@ -830,89 +647,7 @@ class NetworkSettings(object):
             json_data = self._session.put(endpoint_full_url, params=_params,
                                           json=_payload)
 
-        return self._object_factory('bpm_6992d8ec42cb88f1_v2_2_1', json_data)
-
-    def update_network(self,
-                       site_id,
-                       settings=None,
-                       headers=None,
-                       payload=None,
-                       active_validation=True,
-                       **request_parameters):
-        """API to update network for DHCP and DNS center server settings.
-
-        Args:
-            settings(object): Settings, property of the request
-                body.
-            site_id(basestring): Site id to update the network
-                settings which is associated with the
-                site.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
-        check_type(site_id, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if '__persistbapioutput' in headers:
-                check_type(headers.get('__persistbapioutput'),
-                           bool)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'siteId': site_id,
-        }
-
-        _payload = {
-            'settings':
-                settings,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_698bfbb44dcb9fca_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/network/${siteId}')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload,
-                                          headers=_headers)
-        else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
-                                          json=_payload)
-
-        return self._object_factory('bpm_698bfbb44dcb9fca_v2_2_1', json_data)
+        return self._object_factory('bpm_fd6083b0c65d03b2d53f10b3ece59d_v2_2_1', json_data)
 
     def reserve_ip_subpool(self,
                            site_id,
@@ -943,61 +678,41 @@ class NetworkSettings(object):
         """API to reserve an ip subpool from the global pool.
 
         Args:
-            ipv4DhcpServers(list): IPv4 input for dhcp server ip
-                example: 1.1.1.1, property of the
-                request body (list of strings).
-            ipv4DnsServers(list): IPv4 input for dns server ip
-                example: 4.4.4.4, property of the
-                request body (list of strings).
-            ipv4GateWay(string): Gateway ip address details,
-                example: 175.175.0.1, property of the
-                request body.
-            ipv4GlobalPool(string): IP v4 Global pool address with
-                cidr, example: 175.175.0.0/16, property
-                of the request body.
-            ipv4Prefix(boolean): ipv4Prefix, property of the request
-                body.
-            ipv4PrefixLength(number): ipv4PrefixLength, property of
-                the request body.
-            ipv4Subnet(string): IPv4 Subnet address, example:
-                175.175.0.0, property of the request
-                body.
-            ipv4TotalHost(number): ipv4TotalHost, property of the
-                request body.
-            ipv6AddressSpace(boolean): ipv6AddressSpace, property of
-                the request body.
-            ipv6DhcpServers(list): IPv6 format dhcp server as input
-                example : 2001:db8::1234, property of
-                the request body (list of strings).
-            ipv6DnsServers(list): IPv6 format dns server input
-                example: 2001:db8::1234, property of the
-                request body (list of strings).
-            ipv6GateWay(string): Gateway ip address details,
-                example: 2001:db8:85a3:0:100::1,
-                property of the request body.
-            ipv6GlobalPool(string): IPv6 Global pool address with
-                cidr this is required when
-                Ipv6AddressSpace value is true, example:
-                2001:db8:85a3::/64, property of the
-                request body.
-            ipv6Prefix(boolean): ipv6Prefix, property of the request
-                body.
-            ipv6PrefixLength(number): ipv6PrefixLength, property of
-                the request body.
-            ipv6Subnet(string): IPv6 Subnet address, example
-                :2001:db8:85a3:0:100::, property of the
-                request body.
-            ipv6TotalHost(number): ipv6TotalHost, property of the
-                request body.
-            name(string): Name of the reserve ip sub pool, property
-                of the request body.
-            slaacSupport(boolean): slaacSupport, property of the
-                request body.
-            type(string): Type of the reserve ip sub pool, property
-                of the request body. Available values
+            ipv4DhcpServers(list): Network Settings's
+                ipv4DhcpServers (list of strings).
+            ipv4DnsServers(list): Network Settings's ipv4DnsServers
+                (list of strings).
+            ipv4GateWay(string): Network Settings's ipv4GateWay.
+            ipv4GlobalPool(string): Network Settings's
+                ipv4GlobalPool.
+            ipv4Prefix(boolean): Network Settings's ipv4Prefix.
+            ipv4PrefixLength(integer): Network Settings's
+                ipv4PrefixLength.
+            ipv4Subnet(string): Network Settings's ipv4Subnet.
+            ipv4TotalHost(integer): Network Settings's
+                ipv4TotalHost.
+            ipv6AddressSpace(boolean): Network Settings's
+                ipv6AddressSpace.
+            ipv6DhcpServers(list): Network Settings's
+                ipv6DhcpServers (list of strings).
+            ipv6DnsServers(list): Network Settings's ipv6DnsServers
+                (list of strings).
+            ipv6GateWay(string): Network Settings's ipv6GateWay.
+            ipv6GlobalPool(string): Network Settings's
+                ipv6GlobalPool.
+            ipv6Prefix(boolean): Network Settings's ipv6Prefix.
+            ipv6PrefixLength(integer): Network Settings's
+                ipv6PrefixLength.
+            ipv6Subnet(string): Network Settings's ipv6Subnet.
+            ipv6TotalHost(integer): Network Settings's
+                ipv6TotalHost.
+            name(string): Network Settings's name.
+            slaacSupport(boolean): Network Settings's slaacSupport.
+            type(string): Network Settings's type. Available values
                 are 'Generic', 'LAN', 'WAN',
                 'management' and 'service'.
-            site_id(basestring): Site id to reserve the ip sub pool.
+            site_id(basestring): siteId path parameter. Site id to
+                reserve the ip sub pool.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1033,7 +748,6 @@ class NetworkSettings(object):
         path_params = {
             'siteId': site_id,
         }
-
         _payload = {
             'name':
                 name,
@@ -1079,7 +793,7 @@ class NetworkSettings(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_429faa814d3b960a_v2_2_1')\
+            self._request_validator('jsd_cec6c85d9bb4bcc8f61f31296b_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -1088,7 +802,7 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/${siteId}')
+        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/{siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
@@ -1098,7 +812,7 @@ class NetworkSettings(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_429faa814d3b960a_v2_2_1', json_data)
+        return self._object_factory('bpm_cec6c85d9bb4bcc8f61f31296b_v2_2_1', json_data)
 
     def get_device_credential_details(self,
                                       site_id=None,
@@ -1107,8 +821,9 @@ class NetworkSettings(object):
         """API to get device credential details.
 
         Args:
-            site_id(basestring): Site id to retrieve the credential
-                details associated with the site.
+            site_id(basestring): siteId query parameter. Site id to
+                retrieve the credential details
+                associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1154,16 +869,157 @@ class NetworkSettings(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_899f08e7401b82dd_v2_2_1', json_data)
+        return self._object_factory('bpm_d8cf995d9d99bdc31707817456_v2_2_1', json_data)
 
-    def release_reserve_ip_subpool(self,
-                                   id,
-                                   headers=None,
-                                   **request_parameters):
-        """API to delete the reserved ip subpool.
+    def update_device_credentials(self,
+                                  settings=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
+        """API to update device credentials.
 
         Args:
-            id(basestring): Id of reserve ip subpool to be deleted.
+            settings(object): Network Settings's settings.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'settings':
+                settings,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d7161b33157dba957ba18eda440c2_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/device-credential')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_d7161b33157dba957ba18eda440c2_v2_2_1', json_data)
+
+    def create_device_credentials(self,
+                                  settings=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
+        """API to create device credentials.
+
+        Args:
+            settings(object): Network Settings's settings.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'settings':
+                settings,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_cf2cac6f150c9bee9ade37921b162_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/device-credential')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_cf2cac6f150c9bee9ade37921b162_v2_2_1', json_data)
+
+    def delete_sp_profile(self,
+                          sp_profile_name,
+                          headers=None,
+                          **request_parameters):
+        """API to delete Service Provider profile (QoS).
+
+        Args:
+            sp_profile_name(basestring): sp-profile-name path
+                parameter. sp profile name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1179,7 +1035,7 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(sp_profile_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -1192,7 +1048,7 @@ class NetworkSettings(object):
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id': id,
+            'sp-profile-name': sp_profile_name,
         }
 
         with_custom_headers = False
@@ -1201,7 +1057,7 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/${id}')
+        e_url = ('/dna/intent/api/v1/sp-profile/{sp-profile-name}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.delete(endpoint_full_url, params=_params,
@@ -1209,7 +1065,7 @@ class NetworkSettings(object):
         else:
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_85b289e344899dc1_v2_2_1', json_data)
+        return self._object_factory('bpm_cc405e5a256e56788537e12f91de4029_v2_2_1', json_data)
 
     def get_service_provider_details(self,
                                      headers=None,
@@ -1259,19 +1115,18 @@ class NetworkSettings(object):
         else:
             json_data = self._session.get(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_70847bdc4d89a437_v2_2_1', json_data)
+        return self._object_factory('bpm_dda850a0675b888048adf8d488aec1_v2_2_1', json_data)
 
-    def create_sp_profile(self,
+    def update_sp_profile(self,
                           settings=None,
                           headers=None,
                           payload=None,
                           active_validation=True,
                           **request_parameters):
-        """API to create service provider profile(QOS).
+        """API to update SP profile.
 
         Args:
-            settings(object): settings, property of the request
-                body.
+            settings(object): Network Settings's settings.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1304,7 +1159,6 @@ class NetworkSettings(object):
 
         path_params = {
         }
-
         _payload = {
             'settings':
                 settings,
@@ -1312,7 +1166,77 @@ class NetworkSettings(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_a39a1a214debb781_v2_2_1')\
+            self._request_validator('jsd_e22c99a82f5764828810acb45e7a9e_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/service-provider')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_e22c99a82f5764828810acb45e7a9e_v2_2_1', json_data)
+
+    def create_sp_profile(self,
+                          settings=None,
+                          headers=None,
+                          payload=None,
+                          active_validation=True,
+                          **request_parameters):
+        """API to create service provider profile(QOS).
+
+        Args:
+            settings(object): Network Settings's settings.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'settings':
+                settings,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ffa347eb411567a9c793696795250a5_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -1331,22 +1255,22 @@ class NetworkSettings(object):
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload)
 
-        return self._object_factory('bpm_a39a1a214debb781_v2_2_1', json_data)
+        return self._object_factory('bpm_ffa347eb411567a9c793696795250a5_v2_2_1', json_data)
 
-    def create_network(self,
+    def update_network(self,
                        site_id,
                        settings=None,
                        headers=None,
                        payload=None,
                        active_validation=True,
                        **request_parameters):
-        """API to create a network for DHCP and DNS center server settings.
+        """API to update network for DHCP and DNS center server settings.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
-            site_id(basestring): Site id to which site details to
-                associate with the network settings.
+            settings(object): Network Settings's settings.
+            site_id(basestring): siteId path parameter. Site id to
+                update the network settings which is
+                associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1373,9 +1297,6 @@ class NetworkSettings(object):
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
                            bool)
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1385,7 +1306,6 @@ class NetworkSettings(object):
         path_params = {
             'siteId': site_id,
         }
-
         _payload = {
             'settings':
                 settings,
@@ -1393,7 +1313,7 @@ class NetworkSettings(object):
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
         if active_validation:
-            self._request_validator('jsd_be892bd84a78865a_v2_2_1')\
+            self._request_validator('jsd_e1b8c435195d56368c24a54dcce007d0_v2_2_1')\
                 .validate(_payload)
 
         with_custom_headers = False
@@ -1402,30 +1322,38 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/network/${siteId}')
+        e_url = ('/dna/intent/api/v1/network/{siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
 
-        return self._object_factory('bpm_be892bd84a78865a_v2_2_1', json_data)
+        return self._object_factory('bpm_e1b8c435195d56368c24a54dcce007d0_v2_2_1', json_data)
 
-    def get_global_pool(self,
-                        limit=None,
-                        offset=None,
-                        headers=None,
-                        **request_parameters):
-        """API to get global pool.
+    def create_network(self,
+                       site_id,
+                       settings=None,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
+        """API to create a network for DHCP and DNS center server settings.
 
         Args:
-            offset(basestring): offset/starting row.
-            limit(basestring): No of Global Pools to be retrieved.
+            settings(object): Network Settings's settings.
+            site_id(basestring): siteId path parameter. Site id to
+                which site details to associate with the
+                network settings.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -1439,24 +1367,31 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(payload, dict)
+        check_type(site_id, basestring,
+                   may_be_none=False)
         if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool)
 
         _params = {
-            'offset':
-                offset,
-            'limit':
-                limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
+            'siteId': site_id,
         }
+        _payload = {
+            'settings':
+                settings,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_eca62ef076b5627a85b2a5959613fb8_v2_2_1')\
+                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1464,27 +1399,41 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool')
+        e_url = ('/dna/intent/api/v1/network/{siteId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
         else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
 
-        return self._object_factory('bpm_c0bca85643c8b58d_v2_2_1', json_data)
+        return self._object_factory('bpm_eca62ef076b5627a85b2a5959613fb8_v2_2_1', json_data)
 
-    def create_device_credentials(self,
-                                  settings=None,
+    def assign_credential_to_site(self,
+                                  site_id,
+                                  cliId=None,
+                                  httpRead=None,
+                                  httpWrite=None,
+                                  snmpV2ReadId=None,
+                                  snmpV2WriteId=None,
+                                  snmpV3Id=None,
                                   headers=None,
                                   payload=None,
                                   active_validation=True,
                                   **request_parameters):
-        """API to create device credentials.
+        """Assign Device Credential To Site .
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            cliId(string): Network Settings's cliId.
+            httpRead(string): Network Settings's httpRead.
+            httpWrite(string): Network Settings's httpWrite.
+            snmpV2ReadId(string): Network Settings's snmpV2ReadId.
+            snmpV2WriteId(string): Network Settings's snmpV2WriteId.
+            snmpV3Id(string): Network Settings's snmpV3Id.
+            site_id(basestring): siteId path parameter. site id to
+                assign credential.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1505,82 +1454,86 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-        }
-
-        _payload = {
-            'settings':
-                settings,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_fbb95b37484a9fce_v2_2_1')\
-                .validate(_payload)
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/device-credential')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
-        else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
-
-        return self._object_factory('bpm_fbb95b37484a9fce_v2_2_1', json_data)
-
-    def create_global_pool(self,
-                           settings=None,
-                           headers=None,
-                           payload=None,
-                           active_validation=True,
-                           **request_parameters):
-        """API to create global pool.
-
-        Args:
-            settings(object): Settings, property of the request
-                body.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(payload, dict)
+        check_type(site_id, basestring,
+                   may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring)
+                           bool, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'siteId': site_id,
+        }
+        _payload = {
+            'cliId':
+                cliId,
+            'snmpV2ReadId':
+                snmpV2ReadId,
+            'snmpV2WriteId':
+                snmpV2WriteId,
+            'httpRead':
+                httpRead,
+            'httpWrite':
+                httpWrite,
+            'snmpV3Id':
+                snmpV3Id,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e4f91ea42515ccdbc24549b84ca1e90_v2_2_1')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/credential-to-site/{siteId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_e4f91ea42515ccdbc24549b84ca1e90_v2_2_1', json_data)
+
+    def release_reserve_ip_subpool(self,
+                                   id,
+                                   headers=None,
+                                   **request_parameters):
+        """API to delete the reserved ip subpool.
+
+        Args:
+            id(basestring): id path parameter. Id of reserve ip
+                subpool to be deleted.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
@@ -1591,17 +1544,8 @@ class NetworkSettings(object):
         _params = dict_from_items_with_values(_params)
 
         path_params = {
+            'id': id,
         }
-
-        _payload = {
-            'settings':
-                settings,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_f793192a43dabed9_v2_2_1')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -1609,14 +1553,12 @@ class NetworkSettings(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/global-pool')
+        e_url = ('/dna/intent/api/v1/reserve-ip-subpool/{id}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
-                                           headers=_headers)
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.delete(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_f793192a43dabed9_v2_2_1', json_data)
+        return self._object_factory('bpm_eabbb425255a57578e9db00cda1f303a_v2_2_1', json_data)
