@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Device Replacement API wrapper.
+"""Cisco DNA Center Device Replacement API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class DeviceReplacement(object):
-    """DNA Center Device Replacement API (version: 2.1.2).
+    """Cisco DNA Center Device Replacement API (version: 2.1.2).
 
     Wraps the DNA Center Device Replacement
     API and exposes the API as native Python
@@ -320,14 +320,15 @@ class DeviceReplacement(object):
                 Serial Number.
             replacement_device_serial_number(basestring):
                 Replacement Device Serial Number.
-            replacement_status(basestring): Device Replacement
-                status [READY-FOR-REPLACEMENT,
-                REPLACEMENT-IN-PROGRESS, REPLACEMENT-
-                SCHEDULED, REPLACED, ERROR,
+            replacement_status(basestring, list, set, tuple): Device
+                Replacement status [READY-FOR-
+                REPLACEMENT, REPLACEMENT-IN-PROGRESS,
+                REPLACEMENT-SCHEDULED, REPLACED, ERROR,
                 NETWORK_READINESS_REQUESTED,
                 NETWORK_READINESS_FAILED].
-            family(basestring): List of families[Routers, Switches
-                and Hubs, AP].
+            family(basestring, list, set, tuple): List of
+                families[Routers, Switches and Hubs,
+                AP].
             sort_by(basestring): SortBy this field. SortBy is
                 mandatory when order is used.
             sort_order(basestring): Order on displayName[ASC,DESC].
@@ -353,8 +354,8 @@ class DeviceReplacement(object):
         check_type(replacement_device_platform, basestring)
         check_type(faulty_device_serial_number, basestring)
         check_type(replacement_device_serial_number, basestring)
-        check_type(replacement_status, basestring)
-        check_type(family, basestring)
+        check_type(replacement_status, (basestring, list, set, tuple))
+        check_type(family, (basestring, list, set, tuple))
         check_type(sort_by, basestring)
         check_type(sort_order, basestring)
         check_type(offset, int)
@@ -417,10 +418,10 @@ class DeviceReplacement(object):
         """Get replacement devices count.
 
         Args:
-            replacement_status(basestring): Device Replacement
-                status list[READY-FOR-REPLACEMENT,
-                REPLACEMENT-IN-PROGRESS, REPLACEMENT-
-                SCHEDULED, REPLACED, ERROR].
+            replacement_status(basestring, list, set, tuple): Device
+                Replacement status list[READY-FOR-
+                REPLACEMENT, REPLACEMENT-IN-PROGRESS,
+                REPLACEMENT-SCHEDULED, REPLACED, ERROR].
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -436,7 +437,7 @@ class DeviceReplacement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(replacement_status, basestring)
+        check_type(replacement_status, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

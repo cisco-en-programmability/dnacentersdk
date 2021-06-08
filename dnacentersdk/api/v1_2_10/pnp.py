@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center PnP API wrapper.
+"""Cisco DNA Center PnP API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Pnp(object):
-    """DNA Center PnP API (version: 1.2.10).
+    """Cisco DNA Center PnP API (version: 1.2.10).
 
     Wraps the DNA Center PnP
     API and exposes the API as native Python
@@ -1066,7 +1066,7 @@ class Pnp(object):
         """Returns the workflow count.
 
         Args:
-            name(basestring): Workflow Name.
+            name(basestring, list, set, tuple): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1082,7 +1082,7 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring)
+        check_type(name, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1494,12 +1494,12 @@ class Pnp(object):
         Args:
             limit(int): Limits number of results.
             offset(int): Index of first result.
-            sort(basestring): Comma seperated lost of fields to sort
-                on.
+            sort(basestring, list, set, tuple): Comma seperated lost
+                of fields to sort on.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
-            type(basestring): Workflow Type.
-            name(basestring): Workflow Name.
+            type(basestring, list, set, tuple): Workflow Type.
+            name(basestring, list, set, tuple): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1518,10 +1518,10 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(sort, basestring)
+        check_type(sort, (basestring, list, set, tuple))
         check_type(sort_order, basestring)
-        check_type(type, basestring)
-        check_type(name, basestring)
+        check_type(type, (basestring, list, set, tuple))
+        check_type(name, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1956,23 +1956,32 @@ class Pnp(object):
         Args:
             limit(int): Limits number of results.
             offset(int): Index of first result.
-            sort(basestring): Comma seperated list of fields to sort
-                on.
+            sort(basestring, list, set, tuple): Comma seperated list
+                of fields to sort on.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
-            serial_number(basestring): Device Serial Number.
-            state(basestring): Device State.
-            onb_state(basestring): Device Onboarding State.
-            cm_state(basestring): Device Connection Manager State.
-            name(basestring): Device Name.
-            pid(basestring): Device ProductId.
-            source(basestring): Device Source.
-            project_id(basestring): Device Project Id.
-            workflow_id(basestring): Device Workflow Id.
-            project_name(basestring): Device Project Name.
-            workflow_name(basestring): Device Workflow Name.
-            smart_account_id(basestring): Device Smart Account.
-            virtual_account_id(basestring): Device Virtual Account.
+            serial_number(basestring, list, set, tuple): Device
+                Serial Number.
+            state(basestring, list, set, tuple): Device State.
+            onb_state(basestring, list, set, tuple): Device
+                Onboarding State.
+            cm_state(basestring, list, set, tuple): Device
+                Connection Manager State.
+            name(basestring, list, set, tuple): Device Name.
+            pid(basestring, list, set, tuple): Device ProductId.
+            source(basestring, list, set, tuple): Device Source.
+            project_id(basestring, list, set, tuple): Device Project
+                Id.
+            workflow_id(basestring, list, set, tuple): Device
+                Workflow Id.
+            project_name(basestring, list, set, tuple): Device
+                Project Name.
+            workflow_name(basestring, list, set, tuple): Device
+                Workflow Name.
+            smart_account_id(basestring, list, set, tuple): Device
+                Smart Account.
+            virtual_account_id(basestring, list, set, tuple): Device
+                Virtual Account.
             last_contact(bool): Device Has Contacted lastContact >
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1992,21 +2001,21 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(sort, basestring)
+        check_type(sort, (basestring, list, set, tuple))
         check_type(sort_order, basestring)
-        check_type(serial_number, basestring)
-        check_type(state, basestring)
-        check_type(onb_state, basestring)
-        check_type(cm_state, basestring)
-        check_type(name, basestring)
-        check_type(pid, basestring)
-        check_type(source, basestring)
-        check_type(project_id, basestring)
-        check_type(workflow_id, basestring)
-        check_type(project_name, basestring)
-        check_type(workflow_name, basestring)
-        check_type(smart_account_id, basestring)
-        check_type(virtual_account_id, basestring)
+        check_type(serial_number, (basestring, list, set, tuple))
+        check_type(state, (basestring, list, set, tuple))
+        check_type(onb_state, (basestring, list, set, tuple))
+        check_type(cm_state, (basestring, list, set, tuple))
+        check_type(name, (basestring, list, set, tuple))
+        check_type(pid, (basestring, list, set, tuple))
+        check_type(source, (basestring, list, set, tuple))
+        check_type(project_id, (basestring, list, set, tuple))
+        check_type(workflow_id, (basestring, list, set, tuple))
+        check_type(project_name, (basestring, list, set, tuple))
+        check_type(workflow_name, (basestring, list, set, tuple))
+        check_type(smart_account_id, (basestring, list, set, tuple))
+        check_type(virtual_account_id, (basestring, list, set, tuple))
         check_type(last_contact, bool)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -2244,19 +2253,28 @@ class Pnp(object):
         useful for pagination.
 
         Args:
-            serial_number(basestring): Device Serial Number.
-            state(basestring): Device State.
-            onb_state(basestring): Device Onboarding State.
-            cm_state(basestring): Device Connection Manager State.
-            name(basestring): Device Name.
-            pid(basestring): Device ProductId.
-            source(basestring): Device Source.
-            project_id(basestring): Device Project Id.
-            workflow_id(basestring): Device Workflow Id.
-            project_name(basestring): Device Project Name.
-            workflow_name(basestring): Device Workflow Name.
-            smart_account_id(basestring): Device Smart Account.
-            virtual_account_id(basestring): Device Virtual Account.
+            serial_number(basestring, list, set, tuple): Device
+                Serial Number.
+            state(basestring, list, set, tuple): Device State.
+            onb_state(basestring, list, set, tuple): Device
+                Onboarding State.
+            cm_state(basestring, list, set, tuple): Device
+                Connection Manager State.
+            name(basestring, list, set, tuple): Device Name.
+            pid(basestring, list, set, tuple): Device ProductId.
+            source(basestring, list, set, tuple): Device Source.
+            project_id(basestring, list, set, tuple): Device Project
+                Id.
+            workflow_id(basestring, list, set, tuple): Device
+                Workflow Id.
+            project_name(basestring, list, set, tuple): Device
+                Project Name.
+            workflow_name(basestring, list, set, tuple): Device
+                Workflow Name.
+            smart_account_id(basestring, list, set, tuple): Device
+                Smart Account.
+            virtual_account_id(basestring, list, set, tuple): Device
+                Virtual Account.
             last_contact(bool): Device Has Contacted lastContact >
                 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2274,19 +2292,19 @@ class Pnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(serial_number, basestring)
-        check_type(state, basestring)
-        check_type(onb_state, basestring)
-        check_type(cm_state, basestring)
-        check_type(name, basestring)
-        check_type(pid, basestring)
-        check_type(source, basestring)
-        check_type(project_id, basestring)
-        check_type(workflow_id, basestring)
-        check_type(project_name, basestring)
-        check_type(workflow_name, basestring)
-        check_type(smart_account_id, basestring)
-        check_type(virtual_account_id, basestring)
+        check_type(serial_number, (basestring, list, set, tuple))
+        check_type(state, (basestring, list, set, tuple))
+        check_type(onb_state, (basestring, list, set, tuple))
+        check_type(cm_state, (basestring, list, set, tuple))
+        check_type(name, (basestring, list, set, tuple))
+        check_type(pid, (basestring, list, set, tuple))
+        check_type(source, (basestring, list, set, tuple))
+        check_type(project_id, (basestring, list, set, tuple))
+        check_type(workflow_id, (basestring, list, set, tuple))
+        check_type(project_name, (basestring, list, set, tuple))
+        check_type(workflow_name, (basestring, list, set, tuple))
+        check_type(smart_account_id, (basestring, list, set, tuple))
+        check_type(virtual_account_id, (basestring, list, set, tuple))
         check_type(last_contact, bool)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -2356,8 +2374,8 @@ class Pnp(object):
 
         Args:
             serial_number(basestring): Device Serial Number.
-            sort(basestring): Comma seperated list of fields to sort
-                on.
+            sort(basestring, list, set, tuple): Comma seperated list
+                of fields to sort on.
             sort_order(basestring): Sort Order Ascending (asc) or
                 Descending (des).
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2377,7 +2395,7 @@ class Pnp(object):
         check_type(headers, dict)
         check_type(serial_number, basestring,
                    may_be_none=False)
-        check_type(sort, basestring)
+        check_type(sort, (basestring, list, set, tuple))
         check_type(sort_order, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:

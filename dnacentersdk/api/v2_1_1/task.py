@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Task API wrapper.
+"""Cisco DNA Center Task API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Task(object):
-    """DNA Center Task API (version: 2.1.1).
+    """Cisco DNA Center Task API (version: 2.1.1).
 
     Wraps the DNA Center Task
     API and exposes the API as native Python
@@ -430,7 +430,7 @@ class Task(object):
             operation_id(basestring): operationId path parameter.
             offset(int): Index, minimum value is 0.
             limit(int): The maximum value of {limit} supported is
-                500.              Base 1 indexing for
+                500.               Base 1 indexing for
                 {limit}, minimum value is 1.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

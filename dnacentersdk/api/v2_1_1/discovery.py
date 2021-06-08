@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Discovery API wrapper.
+"""Cisco DNA Center Discovery API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Discovery(object):
-    """DNA Center Discovery API (version: 2.1.1).
+    """Cisco DNA Center Discovery API (version: 2.1.1).
 
     Wraps the DNA Center Discovery
     API and exposes the API as native Python
@@ -505,13 +505,18 @@ class Discovery(object):
             task_id(basestring): taskId query parameter.
             sort_by(basestring): sortBy query parameter.
             sort_order(basestring): sortOrder query parameter.
-            ip_address(basestring): ipAddress query parameter.
-            ping_status(basestring): pingStatus query parameter.
-            snmp_status(basestring): snmpStatus query parameter.
-            cli_status(basestring): cliStatus query parameter.
-            netconf_status(basestring): netconfStatus query
-                parameter.
-            http_status(basestring): httpStatus query parameter.
+            ip_address(basestring, list, set, tuple): ipAddress
+                query parameter.
+            ping_status(basestring, list, set, tuple): pingStatus
+                query parameter.
+            snmp_status(basestring, list, set, tuple): snmpStatus
+                query parameter.
+            cli_status(basestring, list, set, tuple): cliStatus
+                query parameter.
+            netconf_status(basestring, list, set, tuple):
+                netconfStatus query parameter.
+            http_status(basestring, list, set, tuple): httpStatus
+                query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -530,12 +535,12 @@ class Discovery(object):
         check_type(task_id, basestring)
         check_type(sort_by, basestring)
         check_type(sort_order, basestring)
-        check_type(ip_address, basestring)
-        check_type(ping_status, basestring)
-        check_type(snmp_status, basestring)
-        check_type(cli_status, basestring)
-        check_type(netconf_status, basestring)
-        check_type(http_status, basestring)
+        check_type(ip_address, (basestring, list, set, tuple))
+        check_type(ping_status, (basestring, list, set, tuple))
+        check_type(snmp_status, (basestring, list, set, tuple))
+        check_type(cli_status, (basestring, list, set, tuple))
+        check_type(netconf_status, (basestring, list, set, tuple))
+        check_type(http_status, (basestring, list, set, tuple))
         check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:

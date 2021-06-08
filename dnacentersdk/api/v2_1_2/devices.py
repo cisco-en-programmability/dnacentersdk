@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Devices API wrapper.
+"""Cisco DNA Center Devices API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Devices(object):
-    """DNA Center Devices API (version: 2.1.2).
+    """Cisco DNA Center Devices API (version: 2.1.2).
 
     Wraps the DNA Center Devices
     API and exposes the API as native Python
@@ -423,50 +423,66 @@ class Devices(object):
         ids and ignores the other request parameters.
 
         Args:
-            hostname(basestring): hostname query parameter.
-            management_ip_address(basestring): managementIpAddress
+            hostname(basestring, list, set, tuple): hostname query
+                parameter.
+            management_ip_address(basestring, list, set, tuple):
+                managementIpAddress query parameter.
+            mac_address(basestring, list, set, tuple): macAddress
                 query parameter.
-            mac_address(basestring): macAddress query parameter.
-            location_name(basestring): locationName query parameter.
-            serial_number(basestring): serialNumber query parameter.
-            location(basestring): location query parameter.
-            family(basestring): family query parameter.
-            type(basestring): type query parameter.
-            series(basestring): series query parameter.
-            collection_status(basestring): collectionStatus query
+            location_name(basestring, list, set, tuple):
+                locationName query parameter.
+            serial_number(basestring, list, set, tuple):
+                serialNumber query parameter.
+            location(basestring, list, set, tuple): location query
                 parameter.
-            collection_interval(basestring): collectionInterval
+            family(basestring, list, set, tuple): family query
+                parameter.
+            type(basestring, list, set, tuple): type query
+                parameter.
+            series(basestring, list, set, tuple): series query
+                parameter.
+            collection_status(basestring, list, set, tuple):
+                collectionStatus query parameter.
+            collection_interval(basestring, list, set, tuple):
+                collectionInterval query parameter.
+            not_synced_for_minutes(basestring, list, set, tuple):
+                notSyncedForMinutes query parameter.
+            error_code(basestring, list, set, tuple): errorCode
                 query parameter.
-            not_synced_for_minutes(basestring): notSyncedForMinutes
+            error_description(basestring, list, set, tuple):
+                errorDescription query parameter.
+            software_version(basestring, list, set, tuple):
+                softwareVersion query parameter.
+            software_type(basestring, list, set, tuple):
+                softwareType query parameter.
+            platform_id(basestring, list, set, tuple): platformId
                 query parameter.
-            error_code(basestring): errorCode query parameter.
-            error_description(basestring): errorDescription query
+            role(basestring, list, set, tuple): role query
                 parameter.
-            software_version(basestring): softwareVersion query
+            reachability_status(basestring, list, set, tuple):
+                reachabilityStatus query parameter.
+            up_time(basestring, list, set, tuple): upTime query
                 parameter.
-            software_type(basestring): softwareType query parameter.
-            platform_id(basestring): platformId query parameter.
-            role(basestring): role query parameter.
-            reachability_status(basestring): reachabilityStatus
+            associated_wlc_ip(basestring, list, set, tuple):
+                associatedWlcIp query parameter.
+            license_name(basestring, list, set, tuple): license.name
                 query parameter.
-            up_time(basestring): upTime query parameter.
-            associated_wlc_ip(basestring): associatedWlcIp query
-                parameter.
-            license_name(basestring): license.name query parameter.
-            license_type(basestring): license.type query parameter.
-            license_status(basestring): license.status query
-                parameter.
-            module_name(basestring): module+name query parameter.
-            module_equpimenttype(basestring): module+equpimenttype
+            license_type(basestring, list, set, tuple): license.type
                 query parameter.
-            module_servicestate(basestring): module+servicestate
+            license_status(basestring, list, set, tuple):
+                license.status query parameter.
+            module_name(basestring, list, set, tuple): module+name
                 query parameter.
-            module_vendorequipmenttype(basestring):
-                module+vendorequipmenttype query
+            module_equpimenttype(basestring, list, set, tuple):
+                module+equpimenttype query parameter.
+            module_servicestate(basestring, list, set, tuple):
+                module+servicestate query parameter.
+            module_vendorequipmenttype(basestring, list, set,
+                tuple): module+vendorequipmenttype query
                 parameter.
-            module_partnumber(basestring): module+partnumber query
-                parameter.
-            module_operationstatecode(basestring):
+            module_partnumber(basestring, list, set, tuple):
+                module+partnumber query parameter.
+            module_operationstatecode(basestring, list, set, tuple):
                 module+operationstatecode query
                 parameter.
             id(basestring): Accepts comma separated ids and return
@@ -489,36 +505,36 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(hostname, basestring)
-        check_type(management_ip_address, basestring)
-        check_type(mac_address, basestring)
-        check_type(location_name, basestring)
-        check_type(serial_number, basestring)
-        check_type(location, basestring)
-        check_type(family, basestring)
-        check_type(type, basestring)
-        check_type(series, basestring)
-        check_type(collection_status, basestring)
-        check_type(collection_interval, basestring)
-        check_type(not_synced_for_minutes, basestring)
-        check_type(error_code, basestring)
-        check_type(error_description, basestring)
-        check_type(software_version, basestring)
-        check_type(software_type, basestring)
-        check_type(platform_id, basestring)
-        check_type(role, basestring)
-        check_type(reachability_status, basestring)
-        check_type(up_time, basestring)
-        check_type(associated_wlc_ip, basestring)
-        check_type(license_name, basestring)
-        check_type(license_type, basestring)
-        check_type(license_status, basestring)
-        check_type(module_name, basestring)
-        check_type(module_equpimenttype, basestring)
-        check_type(module_servicestate, basestring)
-        check_type(module_vendorequipmenttype, basestring)
-        check_type(module_partnumber, basestring)
-        check_type(module_operationstatecode, basestring)
+        check_type(hostname, (basestring, list, set, tuple))
+        check_type(management_ip_address, (basestring, list, set, tuple))
+        check_type(mac_address, (basestring, list, set, tuple))
+        check_type(location_name, (basestring, list, set, tuple))
+        check_type(serial_number, (basestring, list, set, tuple))
+        check_type(location, (basestring, list, set, tuple))
+        check_type(family, (basestring, list, set, tuple))
+        check_type(type, (basestring, list, set, tuple))
+        check_type(series, (basestring, list, set, tuple))
+        check_type(collection_status, (basestring, list, set, tuple))
+        check_type(collection_interval, (basestring, list, set, tuple))
+        check_type(not_synced_for_minutes, (basestring, list, set, tuple))
+        check_type(error_code, (basestring, list, set, tuple))
+        check_type(error_description, (basestring, list, set, tuple))
+        check_type(software_version, (basestring, list, set, tuple))
+        check_type(software_type, (basestring, list, set, tuple))
+        check_type(platform_id, (basestring, list, set, tuple))
+        check_type(role, (basestring, list, set, tuple))
+        check_type(reachability_status, (basestring, list, set, tuple))
+        check_type(up_time, (basestring, list, set, tuple))
+        check_type(associated_wlc_ip, (basestring, list, set, tuple))
+        check_type(license_name, (basestring, list, set, tuple))
+        check_type(license_type, (basestring, list, set, tuple))
+        check_type(license_status, (basestring, list, set, tuple))
+        check_type(module_name, (basestring, list, set, tuple))
+        check_type(module_equpimenttype, (basestring, list, set, tuple))
+        check_type(module_servicestate, (basestring, list, set, tuple))
+        check_type(module_vendorequipmenttype, (basestring, list, set, tuple))
+        check_type(module_partnumber, (basestring, list, set, tuple))
+        check_type(module_operationstatecode, (basestring, list, set, tuple))
         check_type(id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -1793,13 +1809,15 @@ class Devices(object):
 
         Args:
             device_id(basestring): deviceId query parameter.
-            name_list(basestring): nameList query parameter.
-            vendor_equipment_type_list(basestring):
-                vendorEquipmentTypeList query parameter.
-            part_number_list(basestring): partNumberList query
+            name_list(basestring, list, set, tuple): nameList query
                 parameter.
-            operational_state_code_list(basestring):
-                operationalStateCodeList query
+            vendor_equipment_type_list(basestring, list, set,
+                tuple): vendorEquipmentTypeList query
+                parameter.
+            part_number_list(basestring, list, set, tuple):
+                partNumberList query parameter.
+            operational_state_code_list(basestring, list, set,
+                tuple): operationalStateCodeList query
                 parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1818,10 +1836,10 @@ class Devices(object):
         check_type(headers, dict)
         check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(name_list, basestring)
-        check_type(vendor_equipment_type_list, basestring)
-        check_type(part_number_list, basestring)
-        check_type(operational_state_code_list, basestring)
+        check_type(name_list, (basestring, list, set, tuple))
+        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
+        check_type(part_number_list, (basestring, list, set, tuple))
+        check_type(operational_state_code_list, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2367,7 +2385,8 @@ class Devices(object):
                 id's. If invalid or not-found id's are
                 provided, null entry will be returned in
                 the list.
-            function_name(basestring): functionName query parameter.
+            function_name(basestring, list, set, tuple):
+                functionName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2385,7 +2404,7 @@ class Devices(object):
         check_type(headers, dict)
         check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(function_name, basestring)
+        check_type(function_name, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2752,13 +2771,15 @@ class Devices(object):
             device_id(basestring): deviceId query parameter.
             limit(basestring): limit query parameter.
             offset(basestring): offset query parameter.
-            name_list(basestring): nameList query parameter.
-            vendor_equipment_type_list(basestring):
-                vendorEquipmentTypeList query parameter.
-            part_number_list(basestring): partNumberList query
+            name_list(basestring, list, set, tuple): nameList query
                 parameter.
-            operational_state_code_list(basestring):
-                operationalStateCodeList query
+            vendor_equipment_type_list(basestring, list, set,
+                tuple): vendorEquipmentTypeList query
+                parameter.
+            part_number_list(basestring, list, set, tuple):
+                partNumberList query parameter.
+            operational_state_code_list(basestring, list, set,
+                tuple): operationalStateCodeList query
                 parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2779,10 +2800,10 @@ class Devices(object):
                    may_be_none=False)
         check_type(limit, basestring)
         check_type(offset, basestring)
-        check_type(name_list, basestring)
-        check_type(vendor_equipment_type_list, basestring)
-        check_type(part_number_list, basestring)
-        check_type(operational_state_code_list, basestring)
+        check_type(name_list, (basestring, list, set, tuple))
+        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
+        check_type(part_number_list, (basestring, list, set, tuple))
+        check_type(operational_state_code_list, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -3250,7 +3271,7 @@ class Devices(object):
         time. .
 
         Args:
-            timestamp(int, basestring): Epoch time(in milliseconds)
+            timestamp(basestring, int): Epoch time(in milliseconds)
                 when the device data is required.
             search_by(basestring): MAC Address or Device Name value
                 or UUID of the network device.
@@ -3271,7 +3292,7 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (int, basestring))
+        check_type(timestamp, (basestring, int))
         check_type(search_by, basestring,
                    may_be_none=False)
         check_type(identifier, basestring,

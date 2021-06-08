@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Wireless API wrapper.
+"""Cisco DNA Center Wireless API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Wireless(object):
-    """DNA Center Wireless API (version: 2.1.2).
+    """Cisco DNA Center Wireless API (version: 2.1.2).
 
     Wraps the DNA Center Wireless
     API and exposes the API as native Python

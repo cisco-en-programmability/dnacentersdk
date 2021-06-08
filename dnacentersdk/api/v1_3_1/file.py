@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center File API wrapper.
+"""Cisco DNA Center File API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class File(object):
-    """DNA Center File API (version: 1.3.1).
+    """Cisco DNA Center File API (version: 1.3.1).
 
     Wraps the DNA Center File
     API and exposes the API as native Python

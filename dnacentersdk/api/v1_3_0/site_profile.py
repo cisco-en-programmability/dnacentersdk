@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Site Profile API wrapper.
+"""Cisco DNA Center Site Profile API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class SiteProfile(object):
-    """DNA Center Site Profile API (version: 1.3.0).
+    """Cisco DNA Center Site Profile API (version: 1.3.0).
 
     Wraps the DNA Center Site Profile
     API and exposes the API as native Python

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center API wrappers.
+"""Cisco DNA Center API wrappers.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -350,7 +350,7 @@ from .custom_caller import CustomCaller
 
 
 class DNACenterAPI(object):
-    """DNA Center API wrapper.
+    """Cisco DNA Center API wrapper.
 
     Creates a 'session' for all API calls through a created DNACenterAPI
     object.  The 'session' handles authentication, provides the needed headers,

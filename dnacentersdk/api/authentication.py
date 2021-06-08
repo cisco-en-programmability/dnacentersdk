@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Authentication API wrapper.
+"""Cisco DNA Center Authentication API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -51,12 +51,12 @@ from ..utils import (
 
 __author__ = ""
 __author_email__ = ""
-__copyright__ = "Copyright (c) 2019-2020 Cisco and/or its affiliates."
+__copyright__ = "Copyright (c) 2019-2021 Cisco Systems."
 __license__ = "MIT"
 
 
 class Authentication(object):
-    """DNA Center Authentication API.
+    """Cisco DNA Center Authentication API.
 
     Wraps the DNA Center Authentication API and exposes the API as native
     Python methods that return native Python objects.

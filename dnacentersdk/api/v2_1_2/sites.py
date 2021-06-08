@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Sites API wrapper.
+"""Cisco DNA Center Sites API wrapper.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ from ...utils import (
 
 
 class Sites(object):
-    """DNA Center Sites API (version: 2.1.2).
+    """Cisco DNA Center Sites API (version: 2.1.2).
 
     Wraps the DNA Center Sites
     API and exposes the API as native Python
@@ -166,7 +166,7 @@ class Sites(object):
         """Returns Overall Health information for all sites.
 
         Args:
-            timestamp(int, basestring): Epoch time(in milliseconds)
+            timestamp(basestring, int): Epoch time(in milliseconds)
                 when the Site Hierarchy data is
                 required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -184,7 +184,7 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (int, basestring))
+        check_type(timestamp, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -390,7 +390,7 @@ class Sites(object):
         """API to get site count .
 
         Args:
-            site_id(basestring):  Site id to retrieve site count.
+            site_id(basestring): Site id to retrieve site count.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
