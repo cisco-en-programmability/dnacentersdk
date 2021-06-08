@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create SNMPv3 credentials data model.
+"""Cisco DNA Center Create SNMPv3 credentials data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,16 +46,12 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 "items": {
                 "properties": {
                 "authPassword": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authType": {
-                "description":
-                 "",
                 "enum": [
                 "SHA",
                 "MD5",
@@ -67,16 +63,12 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 ]
                 },
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -89,48 +81,36 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "privacyPassword": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "privacyType": {
-                "description":
-                 "",
                 "enum": [
                 "DES",
                 "AES128",
@@ -142,8 +122,6 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 ]
                 },
                 "snmpMode": {
-                "description":
-                 "",
                 "enum": [
                 "AUTHPRIV",
                 "AUTHNOPRIV",
@@ -156,8 +134,6 @@ class JSONSchemaValidator979688084B7BA60D(object):
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

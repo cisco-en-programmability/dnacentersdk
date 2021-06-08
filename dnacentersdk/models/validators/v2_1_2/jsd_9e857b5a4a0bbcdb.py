@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Reset Device data model.
+"""Cisco DNA Center Reset Device data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -51,8 +51,6 @@ class JSONSchemaValidator9E857B5A4A0BBcdb(object):
                 "items": {
                 "properties": {
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -62,16 +60,12 @@ class JSONSchemaValidator9E857B5A4A0BBcdb(object):
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -101,32 +95,24 @@ class JSONSchemaValidator9E857B5A4A0BBcdb(object):
                 ]
                 },
                 "deviceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseLevel": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "topOfStackSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -144,16 +130,12 @@ class JSONSchemaValidator9E857B5A4A0BBcdb(object):
                 ]
                 },
                 "projectId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workflowId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

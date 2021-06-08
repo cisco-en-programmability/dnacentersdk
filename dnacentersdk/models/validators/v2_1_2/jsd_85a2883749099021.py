@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Duplicate sensor test template data model.
+"""Cisco DNA Center Duplicate sensor test template data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,16 +45,12 @@ class JSONSchemaValidator85A2883749099021(object):
             '''{
                 "properties": {
                 "newTemplateName": {
-                "description":
-                "New Template Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "templateName": {
-                "description":
-                "Template Name",
                 "type": [
                 "string",
                 "null"

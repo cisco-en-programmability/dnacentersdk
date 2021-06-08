@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create HTTP read credentials data model.
+"""Cisco DNA Center Create HTTP read credentials data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,16 +46,12 @@ class JSONSchemaValidatorBf859Ac64A0BA19C(object):
                 "items": {
                 "properties": {
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -68,40 +64,30 @@ class JSONSchemaValidatorBf859Ac64A0BA19C(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -120,8 +106,6 @@ class JSONSchemaValidatorBf859Ac64A0BA19C(object):
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

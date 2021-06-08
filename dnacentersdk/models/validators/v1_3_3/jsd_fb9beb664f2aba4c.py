@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Trigger software image activation data model.
+"""Cisco DNA Center Trigger software image activation data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -52,16 +52,12 @@ class JSONSchemaValidatorFb9BEb664F2ABa4C(object):
                 ]
                 },
                 "deviceUpgradeMode": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "deviceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

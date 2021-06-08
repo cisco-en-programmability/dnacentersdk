@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center AP Provision data model.
+"""Cisco DNA Center AP Provision data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,16 +46,12 @@ class JSONSchemaValidatorE9B99B2248C88014(object):
                 "items": {
                 "properties": {
                 "customApGroupName": {
-                "description":
-                "Custom Ap Group Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "customFlexGroupName": {
-                "description":
-                "Custom Flex Group Name",
                 "items": {
                 "type": [
                 "string",
@@ -68,32 +64,24 @@ class JSONSchemaValidatorE9B99B2248C88014(object):
                 ]
                 },
                 "deviceName": {
-                "description":
-                "Device Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "rfProfile": {
-                "description":
-                "Rf Profile",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteId": {
-                "description":
-                "Site Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"

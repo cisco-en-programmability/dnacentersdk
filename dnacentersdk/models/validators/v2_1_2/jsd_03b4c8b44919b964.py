@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Global Pool data model.
+"""Cisco DNA Center Update Global Pool data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,17 +45,11 @@ class JSONSchemaValidator03B4C8B44919B964(object):
             '''{
                 "properties": {
                 "settings": {
-                "description":
-                "Settings",
                 "properties": {
                 "ippool": {
-                "description":
-                "Ippool",
                 "items": {
                 "properties": {
                 "dhcpServerIps": {
-                "description":
-                "Dhcp Server Ips",
                 "items": {
                 "type": [
                 "string",
@@ -68,8 +62,6 @@ class JSONSchemaValidator03B4C8B44919B964(object):
                 ]
                 },
                 "dnsServerIps": {
-                "description":
-                "Dns Server Ips",
                 "items": {
                 "type": [
                 "string",
@@ -82,24 +74,18 @@ class JSONSchemaValidator03B4C8B44919B964(object):
                 ]
                 },
                 "gateway": {
-                "description":
-                "Gateway",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ipPoolName": {
-                "description":
-                "Ip Pool Name",
                 "type": [
                 "string",
                 "null"

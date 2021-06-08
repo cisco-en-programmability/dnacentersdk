@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center AP provision & Re provision data model.
+"""Cisco DNA Center AP provision & Re provision data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,24 +46,18 @@ class JSONSchemaValidatorD89719B847AaA9C4(object):
                 "items": {
                 "properties": {
                 "executionId": {
-                "description":
-                "Execution Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "executionUrl": {
-                "description":
-                "Execution Url",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "message": {
-                "description":
-                "Message",
                 "type": [
                 "string",
                 "null"

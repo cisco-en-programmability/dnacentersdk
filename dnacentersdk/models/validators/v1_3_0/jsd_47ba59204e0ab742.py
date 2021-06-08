@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create Wireless Profile data model.
+"""Cisco DNA Center Create Wireless Profile data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,20 +45,14 @@ class JSONSchemaValidator47Ba59204E0AB742(object):
             '''{
                 "properties": {
                 "profileDetails": {
-                "description":
-                "Profile Details",
                 "properties": {
                 "name": {
-                "description":
-                "Profile Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sites": {
-                "description":
-                "Sites",
                 "items": {
                 "type": [
                 "string",
@@ -71,8 +65,6 @@ class JSONSchemaValidator47Ba59204E0AB742(object):
                 ]
                 },
                 "ssidDetails": {
-                "description":
-                "Ssid Details",
                 "items": {
                 "properties": {
                 "enableFabric": {
@@ -82,8 +74,6 @@ class JSONSchemaValidator47Ba59204E0AB742(object):
                 ]
                 },
                 "flexConnect": {
-                "description":
-                "Flex Connect",
                 "properties": {
                 "enableFlexConnect": {
                 "type": [
@@ -104,24 +94,18 @@ class JSONSchemaValidator47Ba59204E0AB742(object):
                 ]
                 },
                 "interfaceName": {
-                "description":
-                "Interface Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Ssid Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                "Ssid Type",
                 "enum": [
                 "Guest",
                 "Enterprise",

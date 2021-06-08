@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Site data model.
+"""Cisco DNA Center Update Site data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,24 +45,16 @@ class JSONSchemaValidator33AaB9B842388023(object):
             '''{
                 "properties": {
                 "site": {
-                "description":
-                "Site",
                 "properties": {
                 "area": {
-                "description":
-                "Area",
                 "properties": {
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "parentName": {
-                "description":
-                "Parent Name",
                 "type": [
                 "string",
                 "null"
@@ -75,12 +67,8 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 ]
                 },
                 "building": {
-                "description":
-                "Building",
                 "properties": {
                 "address": {
-                "description":
-                "Address",
                 "type": [
                 "string",
                 "null"
@@ -99,16 +87,12 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "parentName": {
-                "description":
-                "Parent Name",
                 "type": [
                 "string",
                 "null"
@@ -121,8 +105,6 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 ]
                 },
                 "floor": {
-                "description":
-                "Floor",
                 "properties": {
                 "height": {
                 "type": [
@@ -137,16 +119,12 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "rfModel": {
-                "description":
-                "Rf Model",
                 "enum": [
                 "Cubes And Walled Offices",
                 "Drywall Office Only",
@@ -177,8 +155,6 @@ class JSONSchemaValidator33AaB9B842388023(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "enum": [
                 "area",
                 "building",

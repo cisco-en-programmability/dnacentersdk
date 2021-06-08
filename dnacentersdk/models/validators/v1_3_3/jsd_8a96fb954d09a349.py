@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create Enterprise SSID data model.
+"""Cisco DNA Center Create Enterprise SSID data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -63,8 +63,6 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 ]
                 },
                 "fastTransition": {
-                "description":
-                "Fast Transition",
                 "enum": [
                 "Adaptive",
                 "Enable",
@@ -77,17 +75,12 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Enter SSID Name",
                 "maxLength": 32,
                 "type": [
                 "string"
                 ]
                 },
                 "passphrase": {
-                "description":
-                "Pass Phrase (Only applicable for SSID with
-                 PERSONAL security level)",
                 "maxLength": 63,
                 "minLength": 8,
                 "type": [
@@ -96,8 +89,6 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 ]
                 },
                 "radioPolicy": {
-                "description":
-                "Radio Policy",
                 "enum": [
                 "Dual band operation (2.4GHz and 5GHz)",
                 "Dual band operation with band select",
@@ -111,8 +102,6 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 ]
                 },
                 "securityLevel": {
-                "description":
-                "Security Level",
                 "enum": [
                 "WPA2_ENTERPRISE",
                 "WPA2_PERSONAL",
@@ -124,8 +113,6 @@ class JSONSchemaValidator8A96Fb954D09A349(object):
                 ]
                 },
                 "trafficType": {
-                "description":
-                "Traffic Type",
                 "enum": [
                 "voicedata",
                 "data",

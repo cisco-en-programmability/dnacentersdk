@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Mark device for replacement data model.
+"""Cisco DNA Center Mark device for replacement data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -52,88 +52,66 @@ class JSONSchemaValidator64B9Dad0403AAca1(object):
                 ]
                 },
                 "family": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "faultyDeviceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "faultyDeviceName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "faultyDevicePlatform": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "faultyDeviceSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "neighbourDeviceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "networkReadinessTaskId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "replacementDevicePlatform": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "replacementDeviceSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "replacementStatus": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -146,8 +124,6 @@ class JSONSchemaValidator64B9Dad0403AAca1(object):
                 ]
                 },
                 "workflowId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

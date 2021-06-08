@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Network data model.
+"""Cisco DNA Center Update Network data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,16 +45,10 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
             '''{
                 "properties": {
                 "settings": {
-                "description":
-                "Settings",
                 "properties": {
                 "clientAndEndpoint_aaa": {
-                "description":
-                "Client And Endpoint Aaa",
                 "properties": {
                 "ipAddress": {
-                "description":
-                "Ip Address",
                 "enum": [
                 "Mandatory for ISE servers.",
                 null
@@ -65,32 +59,24 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "network": {
-                "description":
-                "Network",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "protocol": {
-                "description":
-                "Protocol",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "servers": {
-                "description":
-                "Servers",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sharedSecret": {
-                "description":
-                "Shared Secret",
                 "enum": [
                 "Supported only by ISE servers",
                 null
@@ -107,8 +93,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "dhcpServer": {
-                "description":
-                "Dhcp Server",
                 "items": {
                 "type": [
                 "string",
@@ -121,12 +105,8 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "dnsServer": {
-                "description":
-                "Dns Server",
                 "properties": {
                 "domainName": {
-                "description":
-                "Domain Name",
                 "enum": [
                 "can only contain alphanumeric characters or hyphen",
                 null
@@ -137,8 +117,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "primaryIpAddress": {
-                "description":
-                "Primary Ip Address",
                 "enum": [
                 "valid range : 1.0.0.0 - 223.255.255.255",
                 null
@@ -149,8 +127,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "secondaryIpAddress": {
-                "description":
-                "Secondary Ipaddress",
                 "enum": [
                 "valid range : 1.0.0.0 - 223.255.255.255",
                 null
@@ -167,12 +143,8 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "messageOfTheday": {
-                "description":
-                "Message Of Theday",
                 "properties": {
                 "bannerMessage": {
-                "description":
-                "Banner Message",
                 "type": [
                 "string",
                 "null"
@@ -191,12 +163,8 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "netflowcollector": {
-                "description":
-                "Netflowcollector",
                 "properties": {
                 "ipAddress": {
-                "description":
-                "Ip Address",
                 "type": [
                 "string",
                 "null"
@@ -215,12 +183,8 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "network_aaa": {
-                "description":
-                "Network Aaa",
                 "properties": {
                 "ipAddress": {
-                "description":
-                "Ip Address",
                 "enum": [
                 "Mandatory for ISE servers and for AAA consider this as additional Ip.",
                 null
@@ -231,8 +195,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "network": {
-                "description":
-                "Network",
                 "enum": [
                 "For AAA server consider it as primary IP and For ISE consider as Network",
                 null
@@ -243,16 +205,12 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "protocol": {
-                "description":
-                "Protocol",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "servers": {
-                "description":
-                "Servers",
                 "enum": [
                 "Server type supported by ISE and AAA",
                 null
@@ -263,8 +221,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "sharedSecret": {
-                "description":
-                "Shared Secret",
                 "enum": [
                 "Supported only by ISE servers",
                 null
@@ -281,8 +237,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "ntpServer": {
-                "description":
-                "Ntp Server",
                 "items": {
                 "type": [
                 "string",
@@ -295,8 +249,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "snmpServer": {
-                "description":
-                "Snmp Server",
                 "properties": {
                 "configureDnacIP": {
                 "type": [
@@ -305,8 +257,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "ipAddresses": {
-                "description":
-                "Ip Addresses",
                 "items": {
                 "type": [
                 "string",
@@ -325,8 +275,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "syslogServer": {
-                "description":
-                "Syslog Server",
                 "properties": {
                 "configureDnacIP": {
                 "type": [
@@ -335,8 +283,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "ipAddresses": {
-                "description":
-                "Ip Addresses",
                 "items": {
                 "type": [
                 "string",
@@ -355,8 +301,6 @@ class JSONSchemaValidator698BFbb44Dcb9Fca(object):
                 ]
                 },
                 "timezone": {
-                "description":
-                "Timezone",
                 "type": [
                 "string",
                 "null"

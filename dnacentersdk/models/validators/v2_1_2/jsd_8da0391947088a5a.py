@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update PnP global settings data model.
+"""Cisco DNA Center Update PnP global settings data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
             '''{
                 "properties": {
                 "_id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -55,16 +53,12 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "aaaCredentials": {
                 "properties": {
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -85,8 +79,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "defaultProfile": {
                 "properties": {
                 "cert": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -144,8 +136,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "ccoUser": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -166,24 +156,18 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 "profile": {
                 "properties": {
                 "addressFqdn": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "addressIpV4": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "cert": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -196,8 +180,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -210,8 +192,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "profileId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -230,8 +210,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "smartAccountId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -256,8 +234,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncType": {
-                "description":
-                 "",
                 "enum": [
                 "Add",
                 "Update",
@@ -282,8 +258,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncMsg": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -296,8 +270,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncResultStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -310,8 +282,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncStatus": {
-                "description":
-                 "",
                 "enum": [
                 "NOT_SYNCED",
                 "SYNCING",
@@ -325,24 +295,18 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "token": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "virtualAccountId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -386,8 +350,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

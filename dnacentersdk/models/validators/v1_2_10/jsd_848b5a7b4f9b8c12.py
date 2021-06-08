@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add a Workflow data model.
+"""Cisco DNA Center Add a Workflow data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
             '''{
                 "properties": {
                 "_id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -65,8 +63,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -80,8 +76,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -100,16 +94,12 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                 "",
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
@@ -128,8 +118,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -142,8 +130,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -165,8 +151,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -179,8 +163,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -199,8 +181,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -210,8 +190,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -224,8 +202,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -238,8 +214,6 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -274,24 +248,18 @@ class JSONSchemaValidator848B5A7B4F9B8C12(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

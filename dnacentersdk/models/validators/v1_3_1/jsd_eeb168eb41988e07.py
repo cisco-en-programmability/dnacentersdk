@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Assign Device To Site data model.
+"""Cisco DNA Center Assign Device To Site data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,13 +45,9 @@ class JSONSchemaValidatorEeb168Eb41988E07(object):
             '''{
                 "properties": {
                 "device": {
-                "description":
-                "Device",
                 "items": {
                 "properties": {
                 "ip": {
-                "description":
-                "Ip",
                 "type": [
                 "string",
                 "null"

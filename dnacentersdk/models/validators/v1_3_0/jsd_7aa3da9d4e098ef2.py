@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create SNMP read community data model.
+"""Cisco DNA Center Create SNMP read community data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,16 +46,12 @@ class JSONSchemaValidator7Aa3Da9D4E098Ef2(object):
                 "items": {
                 "properties": {
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -68,40 +64,30 @@ class JSONSchemaValidator7Aa3Da9D4E098Ef2(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "readCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

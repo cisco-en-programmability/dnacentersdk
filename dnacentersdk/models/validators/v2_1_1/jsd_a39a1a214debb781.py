@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create SP Profile data model.
+"""Cisco DNA Center Create SP Profile data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,33 +45,23 @@ class JSONSchemaValidatorA39A1A214DebB781(object):
             '''{
                 "properties": {
                 "settings": {
-                "description":
-                "settings",
                 "properties": {
                 "qos": {
-                "description":
-                "Qos",
                 "items": {
                 "properties": {
                 "model": {
-                "description":
-                "Model",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "profileName": {
-                "description":
-                "Profile Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "wanProvider": {
-                "description":
-                "Wan Provider",
                 "type": [
                 "string",
                 "null"

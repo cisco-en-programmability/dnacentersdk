@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update PnP Server Profile data model.
+"""Cisco DNA Center Update PnP Server Profile data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -51,8 +51,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "ccoUser": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -73,24 +71,18 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 "profile": {
                 "properties": {
                 "addressFqdn": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "addressIpV4": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "cert": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -103,8 +95,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -117,8 +107,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "profileId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -136,8 +124,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "smartAccountId": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
@@ -161,8 +147,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "syncType": {
-                "description":
-                 "",
                 "enum": [
                 "Add",
                 "Update",
@@ -187,8 +171,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "syncMsg": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -201,8 +183,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "syncResultStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -215,8 +195,6 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "syncStatus": {
-                "description":
-                 "",
                 "enum": [
                 "NOT_SYNCED",
                 "SYNCING",
@@ -229,24 +207,18 @@ class JSONSchemaValidator6F9819E84178870C(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "token": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "virtualAccountId": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]

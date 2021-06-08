@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Assign Credential To Site data model.
+"""Cisco DNA Center Assign Credential To Site data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,48 +45,36 @@ class JSONSchemaValidator4Da91A544E29842D(object):
             '''{
                 "properties": {
                 "cliId": {
-                "description":
-                "Cli Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "httpRead": {
-                "description":
-                "Http Read",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "httpWrite": {
-                "description":
-                "Http Write",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpV2ReadId": {
-                "description":
-                "Snmp V2 Read Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpV2WriteId": {
-                "description":
-                "Snmp V2 Write Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpV3Id": {
-                "description":
-                "Snmp V3 Id",
                 "type": [
                 "string",
                 "null"

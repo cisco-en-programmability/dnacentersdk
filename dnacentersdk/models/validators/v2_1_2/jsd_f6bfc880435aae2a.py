@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Threat Details data model.
+"""Cisco DNA Center Threat Details data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -69,8 +69,6 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 ]
                 },
                 "siteId": {
-                "description":
-                "Site Id",
                 "items": {
                 "type": [
                 "string",
@@ -89,8 +87,6 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 ]
                 },
                 "threatLevel": {
-                "description":
-                "Threat Level",
                 "items": {
                 "type": [
                 "string",
@@ -103,8 +99,6 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 ]
                 },
                 "threatType": {
-                "description":
-                "Threat Type",
                 "items": {
                 "type": [
                 "string",

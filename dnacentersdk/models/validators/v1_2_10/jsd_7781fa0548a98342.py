@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Template data model.
+"""Cisco DNA Center Update Template data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
             '''{
                 "properties": {
                 "author": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -68,24 +66,18 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "version": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -110,8 +102,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -121,24 +111,18 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "items": {
                 "properties": {
                 "productFamily": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "productSeries": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "productType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -156,8 +140,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "failurePolicy": {
-                "description":
-                 "",
                 "enum": [
                 "ABORT_ON_ERROR",
                 "CONTINUE_ON_ERROR",
@@ -172,8 +154,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -186,40 +166,30 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "parentTemplateId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "projectId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "projectName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "rollbackTemplateContent": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -229,16 +199,12 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "items": {
                 "properties": {
                 "binding": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "dataType": {
-                "description":
-                 "",
                 "enum": [
                 "STRING",
                 "INTEGER",
@@ -253,8 +219,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "defaultValue": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -263,48 +227,36 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "displayName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "group": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instructionText": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -329,16 +281,12 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "parameterName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "provider": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -348,8 +296,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "items": {
                 "properties": {
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -387,16 +333,12 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "selection": {
                 "properties": {
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "selectionType": {
-                "description":
-                 "",
                 "enum": [
                 "SINGLE_SELECT",
                 "MULTI_SELECT",
@@ -433,24 +375,18 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "softwareType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "softwareVariant": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "softwareVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -470,8 +406,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "templateContent": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -481,16 +415,12 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "items": {
                 "properties": {
                 "binding": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "dataType": {
-                "description":
-                 "",
                 "enum": [
                 "STRING",
                 "INTEGER",
@@ -505,8 +435,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "defaultValue": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -515,48 +443,36 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "displayName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "group": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instructionText": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -581,16 +497,12 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "parameterName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "provider": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -600,8 +512,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "items": {
                 "properties": {
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -639,16 +549,12 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 "selection": {
                 "properties": {
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "selectionType": {
-                "description":
-                 "",
                 "enum": [
                 "SINGLE_SELECT",
                 "MULTI_SELECT",
@@ -685,8 +591,6 @@ class JSONSchemaValidator7781Fa0548A98342(object):
                 ]
                 },
                 "version": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

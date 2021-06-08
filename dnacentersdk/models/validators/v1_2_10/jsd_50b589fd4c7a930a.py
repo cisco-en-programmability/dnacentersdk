@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create Site data model.
+"""Cisco DNA Center Create Site data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,24 +45,16 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
             '''{
                 "properties": {
                 "site": {
-                "description":
-                "Site",
                 "properties": {
                 "area": {
-                "description":
-                "Area",
                 "properties": {
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "parentName": {
-                "description":
-                "Parent Name",
                 "type": [
                 "string",
                 "null"
@@ -75,20 +67,14 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 ]
                 },
                 "building": {
-                "description":
-                "Building",
                 "properties": {
                 "address": {
-                "description":
-                "Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -101,20 +87,14 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 ]
                 },
                 "floor": {
-                "description":
-                "Floor",
                 "properties": {
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "parentName": {
-                "description":
-                "Parent Name",
                 "type": [
                 "string",
                 "null"
@@ -132,8 +112,6 @@ class JSONSchemaValidator50B589Fd4C7A930A(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "enum": [
                 "area",
                 "building",

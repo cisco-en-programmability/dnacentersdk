@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Device Credentials data model.
+"""Cisco DNA Center Update Device Credentials data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,49 +45,35 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
             '''{
                 "properties": {
                 "settings": {
-                "description":
-                "Settings",
                 "properties": {
                 "cliCredential": {
-                "description":
-                "Cli Credential",
                 "properties": {
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "enablePassword": {
-                "description":
-                "Enable Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                "Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "type": [
                 "string",
                 "null"
@@ -100,44 +86,32 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
                 ]
                 },
                 "httpsRead": {
-                "description":
-                "Https Read",
                 "properties": {
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                "Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "port": {
-                "description":
-                "Port",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "type": [
                 "string",
                 "null"
@@ -150,44 +124,32 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
                 ]
                 },
                 "httpsWrite": {
-                "description":
-                "Https Write",
                 "properties": {
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                "Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "port": {
-                "description":
-                "Port",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "type": [
                 "string",
                 "null"
@@ -200,29 +162,21 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
                 ]
                 },
                 "snmpV2cRead": {
-                "description":
-                "Snmp V2c Read",
                 "properties": {
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "readCommunity": {
-                "description":
-                "Read Community",
                 "type": [
                 "string",
                 "null"
@@ -235,29 +189,21 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
                 ]
                 },
                 "snmpV2cWrite": {
-                "description":
-                "Snmp V2c Write",
                 "properties": {
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "writeCommunity": {
-                "description":
-                "Write Community",
                 "type": [
                 "string",
                 "null"
@@ -270,20 +216,14 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
                 ]
                 },
                 "snmpV3": {
-                "description":
-                "Snmp V3",
                 "properties": {
                 "authPassword": {
-                "description":
-                "Auth Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authType": {
-                "description":
-                "Auth Type",
                 "type": [
                 "string",
                 "null"
@@ -291,48 +231,36 @@ class JSONSchemaValidator4F947A1C4Fc884F6(object):
                 },
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "privacyPassword": {
-                "description":
-                "Privacy Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "privacyType": {
-                "description":
-                "Privacy Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpMode": {
-                "description":
-                "Snmp Mode",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "type": [
                 "string",
                 "null"

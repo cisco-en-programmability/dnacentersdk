@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Claim a Device to a Site data model.
+"""Cisco DNA Center Claim a Device to a Site data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,24 +45,18 @@ class JSONSchemaValidator5889Fb844939A13B(object):
             '''{
                 "properties": {
                 "deviceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "enum": [
                 "Default",
                 "AccessPoint",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Deploy device replacement workflow data model.
+"""Cisco DNA Center Deploy device replacement workflow data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,15 +45,11 @@ class JSONSchemaValidator3FaaA9944B49Bc9F(object):
             '''{
                 "properties": {
                 "faultyDeviceSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "replacementDeviceSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]

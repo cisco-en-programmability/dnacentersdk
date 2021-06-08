@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Import software image via URL data model.
+"""Cisco DNA Center Import software image via URL data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,24 +46,18 @@ class JSONSchemaValidatorBc8AAb4746Ca883D(object):
                 "items": {
                 "properties": {
                 "applicationType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "imageFamily": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sourceURL": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -76,8 +70,6 @@ class JSONSchemaValidatorBc8AAb4746Ca883D(object):
                 ]
                 },
                 "vendor": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

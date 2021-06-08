@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Sync Devices data model.
+"""Cisco DNA Center Sync Devices data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
             '''{
                 "properties": {
                 "cliTransport": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
@@ -58,31 +56,23 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 ]
                 },
                 "enablePassword": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "extendedDiscoveryInfo": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "httpPassword": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "httpPort": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -95,8 +85,6 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 ]
                 },
                 "httpUserName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -126,73 +114,53 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 ]
                 },
                 "netconfPort": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "serialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpAuthPassphrase": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpAuthProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpMode": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpPrivPassphrase": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpPrivProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpROCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpRWCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
@@ -208,23 +176,17 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 ]
                 },
                 "snmpUserName": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "snmpVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "enum": [
                 "COMPUTE_DEVICE",
                 "MERAKI_DASHBOARD",
@@ -241,16 +203,12 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 "items": {
                 "properties": {
                 "existMgmtIpAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "newMgmtIpAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -268,8 +226,6 @@ class JSONSchemaValidatorAeb9Eb67460B92Df(object):
                 ]
                 },
                 "userName": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]

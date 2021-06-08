@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create Application data model.
+"""Cisco DNA Center Create Application data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,12 +46,8 @@ class JSONSchemaValidatorFb9BF80F491A9851(object):
                 "items": {
                 "properties": {
                 "applicationSet": {
-                "description":
-                "Application Set",
                 "properties": {
                 "idRef": {
-                "description":
-                "Id Ref",
                 "type": [
                 "string",
                 "null"
@@ -64,141 +60,105 @@ class JSONSchemaValidatorFb9BF80F491A9851(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "networkApplications": {
-                "description":
-                "Network Applications",
                 "items": {
                 "properties": {
                 "appProtocol": {
-                "description":
-                "App Protocol",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "applicationSubType": {
-                "description":
-                "Application Sub Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "applicationType": {
-                "description":
-                "Application Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "categoryId": {
-                "description":
-                "Category Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "displayName": {
-                "description":
-                "Display Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "dscp": {
-                "description":
-                "Dscp",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "engineId": {
-                "description":
-                "Engine Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "helpString": {
-                "description":
-                "Help String",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ignoreConflict": {
-                "description":
-                "Ignore Conflict",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "longDescription": {
-                "description":
-                "Long Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "popularity": {
-                "description":
-                "Popularity",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "rank": {
-                "description":
-                "Rank",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "serverName": {
-                "description":
-                "Server Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "trafficClass": {
-                "description":
-                "Traffic Class",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "url": {
-                "description":
-                "Url",
                 "type": [
                 "string",
                 "null"
@@ -216,45 +176,33 @@ class JSONSchemaValidatorFb9BF80F491A9851(object):
                 ]
                 },
                 "networkIdentity": {
-                "description":
-                "Network Identity",
                 "items": {
                 "properties": {
                 "displayName": {
-                "description":
-                "Display Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "lowerPort": {
-                "description":
-                "Lower Port",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ports": {
-                "description":
-                "Ports",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "protocol": {
-                "description":
-                "Protocol",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "upperPort": {
-                "description":
-                "Upper Port",
                 "type": [
                 "string",
                 "null"

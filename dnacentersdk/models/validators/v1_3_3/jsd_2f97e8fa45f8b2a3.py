@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center NFV Provisioning Detail data model.
+"""Cisco DNA Center NFV Provisioning Detail data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidator2F97E8Fa45F8B2A3(object):
             '''{
                 "properties": {
                 "device_ip": {
-                "description":
-                "Device Ip",
                 "type": [
                 "string"
                 ]

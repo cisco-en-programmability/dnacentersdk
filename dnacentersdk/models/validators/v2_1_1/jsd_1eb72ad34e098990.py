@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create and Provision SSID data model.
+"""Cisco DNA Center Create and Provision SSID data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -50,8 +50,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "flexConnect": {
-                "description":
-                "Flex Connect - Applicable for non fabric profile",
                 "properties": {
                 "enableFlexConnect": {
                 "type": [
@@ -72,9 +70,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "managedAPLocations": {
-                "description":
-                "Managed AP Locations (Enter entire Site(s)
-                 hierarchy)",
                 "items": {
                 "type": [
                 "string",
@@ -86,8 +81,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "ssidDetails": {
-                "description":
-                "SsidDetails",
                 "properties": {
                 "enableBroadcastSSID": {
                 "type": [
@@ -108,8 +101,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "fastTransition": {
-                "description":
-                "Fast Transition",
                 "enum": [
                 "Adaptive",
                 "Enable",
@@ -122,25 +113,18 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "passphrase": {
-                "description":
-                "Pass Phrase ( Only applicable for SSID with
-                 PERSONAL auth type )",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "radioPolicy": {
-                "description":
-                "Radio Policy",
                 "enum": [
                 "Dual band operation (2.4GHz and 5GHz)",
                 "Dual band operation with band select",
@@ -154,9 +138,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "securityLevel": {
-                "description":
-                "Security Level(For guest SSID OPEN/WEB_AUTH, For
-                 Enterprise SSID ENTERPRISE/PERSONAL/OPEN)",
                 "enum": [
                 "WPA2_ENTERPRISE",
                 "WPA2_PERSONAL",
@@ -170,8 +151,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "trafficType": {
-                "description":
-                "Traffic Type",
                 "enum": [
                 "data",
                 "voicedata",
@@ -183,8 +162,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "webAuthURL": {
-                "description":
-                "Web Auth URL",
                 "type": [
                 "string",
                 "null"
@@ -196,8 +173,6 @@ class JSONSchemaValidator1Eb72Ad34E098990(object):
                 ]
                 },
                 "ssidType": {
-                "description":
-                "SSID Type",
                 "enum": [
                 "Guest",
                 "Enterprise",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Adds border device in SDA Fabric data model.
+"""Cisco DNA Center Adds border device in SDA Fabric data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,8 +46,6 @@ class JSONSchemaValidatorA4B56A5F478A97Dd(object):
                 "items": {
                 "properties": {
                 "borderSessionType": {
-                "description":
-                "Border Session Type",
                 "type": [
                 "string",
                 "null"
@@ -60,54 +58,38 @@ class JSONSchemaValidatorA4B56A5F478A97Dd(object):
                 ]
                 },
                 "deviceManagementIpAddress": {
-                "description":
-                "Device Management Ip Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "externalConnectivityIpPoolName": {
-                "description":
-                "External Connectivity Ip Pool Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "externalConnectivitySettings": {
-                "description":
-                "External Connectivity Settings",
                 "items": {
                 "properties": {
                 "externalAutonomouSystemNumber": {
-                "description":
-                "External Autonomou System Number",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "interfaceName": {
-                "description":
-                "Interface Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "l3Handoff": {
-                "description":
-                "L3 Handoff",
                 "items": {
                 "properties": {
                 "virtualNetwork": {
-                "description":
-                "Virtual Network",
                 "properties": {
                 "virtualNetworkName": {
-                "description":
-                "Virtual Network Name",
                 "type": [
                 "string",
                 "null"
@@ -142,24 +124,18 @@ class JSONSchemaValidatorA4B56A5F478A97Dd(object):
                 ]
                 },
                 "externalDomainRoutingProtocolName": {
-                "description":
-                "External Domain Routing Protocol Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "internalAutonomouSystemNumber": {
-                "description":
-                "Internal Autonomou System Number",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteHierarchy": {
-                "description":
-                "Site Hierarchy",
                 "type": [
                 "string",
                 "null"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update NFV Profile data model.
+"""Cisco DNA Center Update NFV Profile data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,26 +45,18 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
             '''{
                 "properties": {
                 "device": {
-                "description":
-                "Device",
                 "items": {
                 "properties": {
                 "currentDeviceTag": {
-                "description":
-                "Old Device Tag",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "customNetworks": {
-                "description":
-                "Custom Networks",
                 "items": {
                 "properties": {
                 "connectionType": {
-                "description":
-                "Connection Type",
                 "enum": [
                 "wan-net",
                 "wan2-net",
@@ -89,21 +81,15 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "networkName": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "servicesToConnect": {
-                "description":
-                "Services To Connect",
                 "items": {
                 "properties": {
                 "serviceName": {
-                "description":
-                "Service",
                 "type": [
                 "string",
                 "null"
@@ -127,8 +113,6 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "vlanMode": {
-                "description":
-                "Network Mode",
                 "enum": [
                 "trunk",
                 "Access",
@@ -151,13 +135,9 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "customTemplate": {
-                "description":
-                "Custom Template",
                 "items": {
                 "properties": {
                 "deviceType": {
-                "description":
-                "Device Type",
                 "enum": [
                 "Cisco 5400 Enterprise Network Compute System",
                 "Cisco Integrated Services Virtual Router",
@@ -172,16 +152,12 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "template": {
-                "description":
-                "Template",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "templateType": {
-                "description":
-                "Project Name",
                 "enum": [
                 "Onboarding Template(s)",
                 "Day-N-Template(s)",
@@ -204,8 +180,6 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "deviceTag": {
-                "description":
-                "Device Tag",
                 "type": [
                 "string",
                 "null"
@@ -218,13 +192,9 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "services": {
-                "description":
-                "Services",
                 "items": {
                 "properties": {
                 "firewallMode": {
-                "description":
-                "Mode",
                 "enum": [
                 "routed",
                 "transparent",
@@ -236,16 +206,12 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "imageName": {
-                "description":
-                "Image Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "profileType": {
-                "description":
-                "Profile",
                 "enum": [
                 "ASAv5",
                 "ASAv30",
@@ -287,16 +253,12 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "serviceName": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "serviceType": {
-                "description":
-                "Type",
                 "enum": [
                 "isr",
                 "vedge",
@@ -317,21 +279,15 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "vNicMapping": {
-                "description":
-                "Topology",
                 "items": {
                 "properties": {
                 "assignIpAddressToNetwork": {
-                "description":
-                "Assign Ip",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "networkType": {
-                "description":
-                "Type",
                 "enum": [
                 "wan-net",
                 "wan2-net",
@@ -380,13 +336,9 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "vlanForL2": {
-                "description":
-                "Vlan",
                 "items": {
                 "properties": {
                 "vlanDescription": {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
@@ -399,8 +351,6 @@ class JSONSchemaValidator0Fa00Adf48698287(object):
                 ]
                 },
                 "vlanType": {
-                "description":
-                "Type",
                 "enum": [
                 "access",
                 "trunk",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Start discovery data model.
+"""Cisco DNA Center Start discovery data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -51,8 +51,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "discoveryType": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
@@ -86,16 +84,12 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 "httpReadCredential": {
                 "properties": {
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -108,40 +102,30 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -160,8 +144,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -176,16 +158,12 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 "httpWriteCredential": {
                 "properties": {
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -198,40 +176,30 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -250,8 +218,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -264,8 +230,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "ipAddressList": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
@@ -290,15 +254,11 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "netconfPort": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -311,8 +271,6 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "parentDiscoveryId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -332,16 +290,12 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "preferredMgmtIPMethod": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "protocolOrder": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -360,88 +314,66 @@ class JSONSchemaValidator55B439Dc4239B140(object):
                 ]
                 },
                 "snmpAuthPassphrase": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpAuthProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpMode": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpPrivPassphrase": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpPrivProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpROCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpROCommunityDesc": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpRWCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpRWCommunityDesc": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpUserName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpVersion": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]

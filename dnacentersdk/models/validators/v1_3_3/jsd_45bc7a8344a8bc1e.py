@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Updates tag membership data model.
+"""Cisco DNA Center Updates tag membership data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -67,12 +67,11 @@ class JSONSchemaValidator45Bc7A8344A8Bc1E(object):
                 },
                 "type": [
                 "object",
+                "array",
                 "null"
                 ]
                 },
                 "memberType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

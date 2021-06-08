@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Edit sensor test template data model.
+"""Cisco DNA Center Edit sensor test template data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
             '''{
                 "properties": {
                 "locationInfoList": {
-                "description":
-                "Location Info List",
                 "items": {
                 "properties": {
                 "allSensors": {
@@ -56,24 +54,18 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
                 ]
                 },
                 "locationId": {
-                "description":
-                "Location Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "locationType": {
-                "description":
-                "Location Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteHierarchy": {
-                "description":
-                "Site Hierarchy",
                 "type": [
                 "string",
                 "null"
@@ -91,16 +83,10 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
                 ]
                 },
                 "schedule": {
-                "description":
-                "Schedule",
                 "properties": {
                 "frequency": {
-                "description":
-                "Frequency",
                 "properties": {
                 "unit": {
-                "description":
-                "Unit",
                 "type": [
                 "string",
                 "null"
@@ -119,30 +105,20 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
                 ]
                 },
                 "scheduleRange": {
-                "description":
-                "Schedule Range",
                 "items": {
                 "properties": {
                 "day": {
-                "description":
-                "Day",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "timeRange": {
-                "description":
-                "Time Range",
                 "items": {
                 "properties": {
                 "frequency": {
-                "description":
-                "Frequency",
                 "properties": {
                 "unit": {
-                "description":
-                "Unit",
                 "type": [
                 "string",
                 "null"
@@ -161,16 +137,12 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
                 ]
                 },
                 "from": {
-                "description":
-                "From",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "to": {
-                "description":
-                "To",
                 "type": [
                 "string",
                 "null"
@@ -199,8 +171,6 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
                 ]
                 },
                 "testScheduleMode": {
-                "description":
-                "Test Schedule Mode",
                 "type": [
                 "string",
                 "null"
@@ -213,8 +183,6 @@ class JSONSchemaValidatorC085Eaf54F89Ba34(object):
                 ]
                 },
                 "templateName": {
-                "description":
-                "Template Name",
                 "type": [
                 "string",
                 "null"

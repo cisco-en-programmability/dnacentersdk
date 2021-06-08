@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Updates discovery by Id data model.
+"""Cisco DNA Center Updates discovery by Id data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -58,39 +58,29 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "deviceIds": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "discoveryCondition": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "discoveryStatus": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "discoveryType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "enablePasswordList": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -112,16 +102,12 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 "httpReadCredential": {
                 "properties": {
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -134,40 +120,30 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -186,8 +162,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -202,16 +176,12 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 "httpWriteCredential": {
                 "properties": {
                 "comments": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "credentialType": {
-                "description":
-                 "",
                 "enum": [
                 "GLOBAL",
                 "APP",
@@ -224,40 +194,30 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceUuid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -276,8 +236,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -290,23 +248,17 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "id": {
-                "description":
-                 "",
                 "type": [
                 "string"
                 ]
                 },
                 "ipAddressList": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ipFilterList": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -325,16 +277,12 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "netconfPort": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -347,32 +295,24 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "parentDiscoveryId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "passwordList": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "preferredMgmtIPMethod": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "protocolOrder": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -385,80 +325,60 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "snmpAuthPassphrase": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpAuthProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpMode": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpPrivPassphrase": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpPrivProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpRoCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpRoCommunityDesc": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpRwCommunity": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpRwCommunityDesc": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "snmpUserName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -477,8 +397,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "userNameList": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

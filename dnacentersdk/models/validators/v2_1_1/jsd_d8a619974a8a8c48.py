@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Claim Device data model.
+"""Cisco DNA Center Claim Device data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,16 +45,12 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
             '''{
                 "properties": {
                 "configFileUrl": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -67,8 +63,6 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 "items": {
                 "properties": {
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -78,16 +72,12 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -117,32 +107,24 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 ]
                 },
                 "deviceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseLevel": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "topOfStackSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -160,24 +142,18 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 ]
                 },
                 "fileServiceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "imageId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "imageUrl": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -190,16 +166,12 @@ class JSONSchemaValidatorD8A619974A8A8C48(object):
                 ]
                 },
                 "projectId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workflowId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

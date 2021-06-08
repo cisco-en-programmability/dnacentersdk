@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Device data model.
+"""Cisco DNA Center Update Device data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
             '''{
                 "properties": {
                 "_id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -57,16 +55,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "aaaCredentials": {
                 "properties": {
                 "password": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -97,8 +91,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "agentType": {
-                "description":
-                 "",
                 "enum": [
                 "POSIX",
                 "IOS",
@@ -110,16 +102,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "authStatus": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authenticatedSudiSerialNo": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -138,8 +126,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "cmState": {
-                "description":
-                 "",
                 "enum": [
                 "NotContacted",
                 "Contacted",
@@ -158,8 +144,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -178,8 +162,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "deviceType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -207,8 +189,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -227,8 +207,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -258,8 +236,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "hostname": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -269,16 +245,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -297,16 +269,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageFile": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "imageVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -328,24 +296,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "macAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -383,24 +345,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "location": {
                 "properties": {
                 "address": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "altitude": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "latitude": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -408,8 +364,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "longitude": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -417,8 +371,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "siteId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -431,24 +383,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "macAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "mode": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -458,72 +404,54 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "localInterfaceName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "localMacAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "localShortInterfaceName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteDeviceName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteInterfaceName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteMacAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remotePlatform": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteShortInterfaceName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -541,8 +469,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "onbState": {
-                "description":
-                 "",
                 "enum": [
                 "NotContacted",
                 "Connecting",
@@ -567,8 +493,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "pid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -578,8 +502,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "createdBy": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -594,16 +516,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "primaryEndpoint": {
                 "properties": {
                 "certificate": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "fqdn": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -618,8 +536,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "protocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -632,8 +548,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "profileName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -642,16 +556,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "secondaryEndpoint": {
                 "properties": {
                 "certificate": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "fqdn": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -666,8 +576,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "protocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -700,16 +608,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "cli": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "cliOutput": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -727,16 +631,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "projectId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "projectName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -749,24 +649,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "serialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "smartAccountId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "source": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -790,40 +684,30 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "hardwareVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseLevel": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "macAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "pid": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -836,24 +720,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "role": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "serialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "softwareVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -866,16 +744,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sudiSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -893,8 +767,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "stackRingProtocol": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -931,8 +803,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "enum": [
                 "Unclaimed",
                 "Planned",
@@ -967,24 +837,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "virtualAccountId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workflowId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workflowName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -999,8 +863,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "details": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1018,16 +880,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -1046,8 +904,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1060,8 +916,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1071,8 +925,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1085,8 +937,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1099,8 +949,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1149,8 +997,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "systemResetWorkflow": {
                 "properties": {
                 "_id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1169,8 +1015,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1184,8 +1028,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1204,16 +1046,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                 "",
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
@@ -1232,8 +1070,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1246,8 +1082,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1269,8 +1103,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1283,8 +1115,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1303,8 +1133,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1314,8 +1142,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1328,8 +1154,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1342,8 +1166,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1378,24 +1200,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1416,8 +1232,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "systemWorkflow": {
                 "properties": {
                 "_id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1436,8 +1250,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1451,8 +1263,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1471,16 +1281,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                 "",
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
@@ -1499,8 +1305,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1513,8 +1317,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1536,8 +1338,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1550,8 +1350,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1570,8 +1368,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1581,8 +1377,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1595,8 +1389,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1609,8 +1401,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1645,24 +1435,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1681,8 +1465,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1697,8 +1479,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "workflow": {
                 "properties": {
                 "_id": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1717,8 +1497,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1732,8 +1510,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1752,16 +1528,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                 "",
                 "enum": [
                 "SystemWorkflow",
                 "UserWorkflow",
@@ -1780,8 +1552,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1794,8 +1564,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1817,8 +1585,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1831,8 +1597,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1851,8 +1615,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1862,8 +1624,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1876,8 +1636,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1890,8 +1648,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1926,24 +1682,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1967,8 +1717,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "configId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -1978,16 +1726,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -2017,24 +1761,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "licenseLevel": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseType": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "topOfStackSerialNumber": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
