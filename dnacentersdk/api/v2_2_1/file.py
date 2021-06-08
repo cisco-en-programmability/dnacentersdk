@@ -180,26 +180,33 @@ class File(object):
 
     def download_a_file_by_fileid(self,
                                   file_id,
+                                  dirpath=None,
+                                  save_file=None,
                                   headers=None,
                                   **request_parameters):
         """Downloads a file specified by fileId.
 
         Args:
-            file_id(basestring): fileId path parameter. File
-                Identification number.
+            file_id(basestring): File Identification number.
+            dirpath(basestring): Directory absolute path. Defaults to
+                os.getcwd().
+            save_file(bool): Enable or disable automatic file creation of
+                raw response.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
+            urllib3.response.HTTPResponse: HTTP Response container. For more
+            information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+            DownloadFailure: If was not able to download the raw
+            response to a file.
         """
         check_type(headers, dict)
         check_type(file_id, basestring,
@@ -224,12 +231,14 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/{fileId}')
+        e_url = ('/dna/intent/api/v1/file/${fileId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+                                          headers=_headers,
+                                          stream=True, dirpath=dirpath, save_file=save_file)
         else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          stream=True, dirpath=dirpath, save_file=save_file)
 
         return self._object_factory('bpm_fa4ab7605a75aafa6c7da6ac3f13_v2_2_1', json_data)

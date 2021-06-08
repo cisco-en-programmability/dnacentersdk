@@ -229,6 +229,8 @@ class SoftwareImageManagementSwim(object):
         return self._object_factory('bpm_f73101d5d5e409f571084ab4c6049_v2_2_1', json_data)
 
     def import_local_software_image(self,
+                                    multipart_fields,
+                                    multipart_monitor_callback,
                                     is_third_party=None,
                                     third_party_application_type=None,
                                     third_party_image_family=None,
@@ -240,17 +242,44 @@ class SoftwareImageManagementSwim(object):
         are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and
         qcow2.
 
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
+
         Args:
-            is_third_party(bool): isThirdParty query parameter.
-                Third party Image check.
-            third_party_vendor(basestring): thirdPartyVendor query
-                parameter. Third Party Vendor.
-            third_party_image_family(basestring):
-                thirdPartyImageFamily query parameter.
-                Third Party image family.
-            third_party_application_type(basestring):
-                thirdPartyApplicationType query
-                parameter. Third Party Application Type.
+            is_third_party(bool): Third party Image check.
+            third_party_vendor(basestring): Third Party Vendor.
+            third_party_image_family(basestring): Third Party image
+                family.
+            third_party_application_type(basestring): Third Party
+                Application Type.
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -264,6 +293,8 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+            DownloadFailure: If was not able to download the raw
+            response to a file.
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
@@ -302,8 +333,15 @@ class SoftwareImageManagementSwim(object):
 
         e_url = ('/dna/intent/api/v1/image/importation/source/file')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)

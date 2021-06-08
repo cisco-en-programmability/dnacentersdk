@@ -114,9 +114,9 @@ def is_valid_import_local_software_image(json_schema_validate, obj):
 
 def import_local_software_image(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
-        active_validation=True,
+        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
+        multipart_monitor_callback=None,
         is_third_party=True,
-        payload=None,
         third_party_application_type='string',
         third_party_image_family='string',
         third_party_vendor='string'
@@ -139,9 +139,9 @@ def test_import_local_software_image(api, validator):
 
 def import_local_software_image_default(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
-        active_validation=True,
+        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
+        multipart_monitor_callback=None,
         is_third_party=None,
-        payload=None,
         third_party_application_type=None,
         third_party_image_family=None,
         third_party_vendor=None
