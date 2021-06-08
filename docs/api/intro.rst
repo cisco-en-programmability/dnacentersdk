@@ -6,7 +6,7 @@ Introduction
 
 
 Work with the DNA Center APIs in Native Python!
-------------------------------------------------
+-----------------------------------------------
 
 Sure, working with the DNA Center APIs is easy (see
 `api_docs`_).  They are RESTful,  naturally structured,
@@ -51,10 +51,10 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
     from dnacentersdk import api
 
-    dnac = api.DNACenterAPI(base_url='https://sandboxdnac.cisco.com:443', version='2.1.2')
-    # Or even just dnac = api.DNACenterAPI() as base_url and version have those values.
+    api_ = api.DNACenterAPI(base_url='https://sandboxdnac.cisco.com:443', version='2.1.2')
+    # Or even just api_ = api.DNACenterAPI() as base_url and version have those values.
     try:
-        devices = dnac.devices.get_device_list(family='Switches and Hubs')
+        devices = api_.devices.get_device_list(family='Switches and Hubs')
         for device in devices.response:
             print('{:20s}{}'.format(device.hostname, device.upTime))
     except ApiError as e:
@@ -65,7 +65,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 + Reads your DNA Center credentials from environment variables (DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD)
 
-+ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION. Supported versions: '1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1' and '2.1.2'. Now with version and base_url, you have more control.
++ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION. Supported versions: 1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1, 2.1.2 and 2.2.1. Now with version and base_url, you have more control.
 
 + Controls whether to verify the server's TLS certificate or not according to the verify parameter.
 
@@ -100,40 +100,40 @@ All of this, combined, lets you do powerful things simply:
     from dnacentersdk import api
 
     # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.1.2.
-    dnac = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
+    api_ = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
 
     # Find all devices that have 'Switches and Hubs' in their family
-    devices = dnac.devices.get_device_list(family='Switches and Hubs')
+    devices = api_.devices.get_device_list(family='Switches and Hubs')
 
     # Print all of demo devices
     for device in devices.response:
         print('{:20s}{}'.format(device.hostname, device.upTime))
 
     # Find all tags
-    all_tags = dnac.tag.get_tag(sort_by='name', order='des')
+    all_tags = api_.tag.get_tag(sort_by='name', order='des')
     demo_tags = [tag for tag in all_tags.response if 'Demo' in tag.name ]
 
     #  Delete all of the demo tags
     for tag in demo_tags:
-        dnac.tag.delete_tag(tag.id)
+        api_.tag.delete_tag(tag.id)
     
     # Create a new demo tag
-    demo_tag = dnac.tag.create_tag(name='dna Demo')
-    task_demo_tag = dnac.task.get_task_by_id(task_id=demo_tag.response.taskId)
+    demo_tag = api_.tag.create_tag(name='dna Demo')
+    task_demo_tag = api_.task.get_task_by_id(task_id=demo_tag.response.taskId)
 
     if not task_demo_tag.response.isError:
         # Retrieve created tag
-        created_tag = dnac.tag.get_tag(name='dna Demo')
+        created_tag = api_.tag.get_tag(name='dna Demo')
 
         # Update tag
-        update_tag = dnac.tag.update_tag(id=created_tag.response[0].id, 
+        update_tag = api_.tag.update_tag(id=created_tag.response[0].id, 
                                          name='Updated ' + created_tag.response[0].name,
-                                         description='DNA demo tag')
+                                         description='DNA Center demo tag')
         
-        print(dnac.task.get_task_by_id(task_id=update_tag.response.taskId).response.progress)
+        print(api_.task.get_task_by_id(task_id=update_tag.response.taskId).response.progress)
         
         # Retrieved updated
-        updated_tag = dnac.tag.get_tag(name='Updated dna Demo')
+        updated_tag = api_.tag.get_tag(name='Updated dna Demo')
         print(updated_tag)
     else:
         # Get task error details 
@@ -154,15 +154,14 @@ distributed as a source distribution (no binaries) via :ref:`PyPI <Install>`,
 and the complete :ref:`source code <Source Code>` is available on GitHub.
 
 dnacentersdk License
----------------------
+--------------------
 
 .. include:: ../../LICENSE
 
 
-*Copyright (c) 2019-2020 Cisco and/or its affiliates.*
+*Copyright (c) 2019-2021 Cisco Systems.*
 
 
 .. _MIT Open Source License: https://opensource.org/licenses/MIT
 .. _api_docs: https://developer.cisco.com/site/dna-center-rest-api/#
 .. _PyCharm: https://www.jetbrains.com/pycharm/
-

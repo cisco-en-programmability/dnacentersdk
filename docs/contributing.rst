@@ -26,9 +26,9 @@ We have created some scripts to automate everyday actions needed when working on
 Notes on the Test Suite
 -----------------------
 
-The test suite is grouped by DNAC versions supported in the DNAC SDK.
+The test suite is grouped by DNA Center versions supported in the Cisco DNA Center SDK.
 
-The test suite uses a mockup server, instead of calling to a DNAC server directly.
+The test suite uses a mockup server, instead of calling to a DNA Center server directly.
 
 The mockup server is not perfect, that is why it is sometimes necessary to rerun a failed test, we do this by using `pytest-rerunfailures`.
 On the `script/test` file, you can find the `pytest-rerunfailures` settings, adjust them locally if strictly necessary.
@@ -108,7 +108,7 @@ Contributing Code - Running the Test Suite Locally
 
 6. Commit your changes.
 
-7. Ensure your code passes all of the default tests for all the involved DNAC versions.
+7. Ensure your code passes all of the default tests for all the involved DNA Center versions.
 
    Run ``script/test`` and ensure all tests execute successfully.
 

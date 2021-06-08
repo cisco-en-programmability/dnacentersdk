@@ -7,21 +7,21 @@ User API Doc
 ============
 
 
--------------
+------------
 DNACenterAPI
--------------
+------------
 
 The :class:`DNACenterAPI` class creates "connection objects" for working with the DNA Center APIs and hierarchically organizes the DNA Center APIs and their endpoints underneath these connection objects.
 
 
 DNACenterAPI summary structure
-===============================
+==============================
 
 
 .. _v1_2_10 summary:
 
 v1.2.10 summary
------------------------------
+---------------
 
 .. include:: api_structure_table_v1_2_10.rst
 
@@ -29,7 +29,7 @@ v1.2.10 summary
 .. _v1_3_0 summary:
 
 v1.3.0 summary
------------------------------
+--------------
 
 .. include:: api_structure_table_v1_3_0.rst
 
@@ -37,7 +37,7 @@ v1.3.0 summary
 .. _v1_3_1 summary:
 
 v1.3.1 summary
------------------------------
+--------------
 
 .. include:: api_structure_table_v1_3_1.rst
 
@@ -45,7 +45,7 @@ v1.3.1 summary
 .. _v1_3_3 summary:
 
 v1.3.3 summary
------------------------------
+--------------
 
 .. include:: api_structure_table_v1_3_3.rst
 
@@ -53,7 +53,7 @@ v1.3.3 summary
 .. _v2_1_1 summary:
 
 v2.1.1 summary
------------------------------
+--------------
 
 .. include:: api_structure_table_v2_1_1.rst
 
@@ -61,7 +61,7 @@ v2.1.1 summary
 .. _v2_1_2 summary:
 
 v2.1.2 summary
------------------------------
+--------------
 
 .. include:: api_structure_table_v2_1_2.rst
 
@@ -69,13 +69,13 @@ v2.1.2 summary
 .. _v2_2_1 summary:
 
 v2.2.1 summary
------------------------------
+--------------
 
 .. include:: api_structure_table_v2_2_1.rst
 
 
 DNACenterAPI Class
-========================
+==================
 
 .. autoclass:: DNACenterAPI()
     :members:
@@ -102,7 +102,7 @@ custom_caller
 
 
 DNACenterAPI v1.2.10
-===============================
+====================
 
 .. _clients_1_2_10:
 
@@ -250,7 +250,7 @@ template_programmer
 
 
 DNACenterAPI v1.3.0
-===============================
+===================
 
 .. _clients_1_3_0:
 
@@ -398,7 +398,7 @@ template_programmer
 
 
 DNACenterAPI v1.3.1
-===============================
+===================
 
 .. _application_policy_1_3_1:
 
@@ -591,7 +591,7 @@ users
 
 
 DNACenterAPI v1.3.3
-===============================
+===================
 
 .. _application_policy_1_3_3:
 
@@ -784,7 +784,7 @@ wireless
 
 
 DNACenterAPI v2.1.1
-===============================
+===================
 
 .. _application_policy_2_1_1:
 
@@ -995,7 +995,7 @@ wireless
 
 
 DNACenterAPI v2.1.2
-===============================
+===================
 
 .. _application_policy_2_1_2:
 
@@ -1233,7 +1233,7 @@ wireless
 
 
 DNACenterAPI v2.2.1
-===============================
+===================
 
 .. _application_policy_2_2_1:
 
@@ -1498,7 +1498,7 @@ wireless
 .. _DNA Center Data Object:
 
 DNA Center Data Object
-=======================
+======================
 
 
 .. _MyDict:
@@ -1515,19 +1515,19 @@ MyDict
 Exceptions
 ==========
 
+.. autoexception:: dnacentersdkException()
+    :show-inheritance:
+    :members:
+
 .. autoexception:: AccessTokenError()
     :show-inheritance:
     :members:
 
+.. autoexception:: VersionError()
+    :show-inheritance:
+    :members:
+
 .. autoexception:: ApiError()
-    :show-inheritance:
-    :members:
-
-.. autoexception:: DownloadFailure()
-    :show-inheritance:
-    :members:
-
-.. autoexception:: MalformedRequest()
     :show-inheritance:
     :members:
 
@@ -1539,14 +1539,14 @@ Exceptions
     :show-inheritance:
     :members:
 
-.. autoexception:: VersionError()
+.. autoexception:: MalformedRequest()
     :show-inheritance:
     :members:
 
-.. autoexception:: dnacentersdkException()
+.. autoexception:: DownloadFailure()
     :show-inheritance:
     :members:
 
 
 
-*Copyright (c) 2019-2020 Cisco and/or its affiliates.*
+*Copyright (c) 2019-2021 Cisco Systems.*

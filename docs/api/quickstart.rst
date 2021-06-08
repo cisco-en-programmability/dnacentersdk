@@ -14,20 +14,20 @@ Make sure that you have:
 * dnacentersdk :ref:`upgraded to the latest version <Upgrade>`
 
 Get your DNA Center Access Token
----------------------------------
+--------------------------------
 
 To interact with the DNA Center APIs, you must have a **DNA Center Access Token**.
 A DNA Center Access Token is how the DNA Center APIs validate access and identify the
 requesting user.
 
-As a `best practice`__, you can store your DNA 'credentials' as
+As a `best practice`__, you can store your DNA Center 'credentials' as
 an environment variables in your development or production environment. 
 
 By default, dnacentersdk will look for the following environment variables to create new connection objects:
 
     * ``DNA_CENTER_DEBUG`` - Tells the SDK whether to log request and response information. Useful for debugging and seeing what is going on under the hood. Defaults to False.
 
-    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '2.1.1'.
+    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '2.2.1'.
 
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
       For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'
@@ -47,8 +47,8 @@ By default, dnacentersdk will look for the following environment variables to cr
 __ https://12factor.net/config
 
 
-However, you choose to set it, if you have ``VERSION``, ``DNA_CENTER_USERNAME`` and ``DNA_CENTER_PASSWORD``, or
-``VERSION`` and ``DNA_CENTER_ENCODED_AUTH`` environment variables, you are good to go.
+However, you choose to set it, if you have ``DNA_CENTER_VERSION``, ``DNA_CENTER_USERNAME`` and ``DNA_CENTER_PASSWORD``, or
+``DNA_CENTER_VERSION`` and ``DNA_CENTER_ENCODED_AUTH`` environment variables, you are good to go.
 dnacentersdk will use them to create your access token when creating new :class:`DNACenterAPI` objects.
 
 If you don't want to set your credentials as environment variables, you
@@ -85,7 +85,7 @@ shell starts up or before your run a script:
 
 
 Create a DNACenterAPI "Connection Object"
-------------------------------------------
+-----------------------------------------
 
 To make interacting with the DNA Center APIs as simple and intuitive as
 possible, all of the APIs have 'wrapped' underneath a single interface.  To get
@@ -129,7 +129,7 @@ If you don't provide a known version and try to create a new :class:`DNACenterAP
       File "<stdin>", line 1, in <module>
       File "dnacentersdk/__init__.py", line 209, in __init__
         raise VersionError(error_message)
-    VersionError: Unknown API version, known versions are 1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1 and 2.1.2.
+    VersionError: Unknown API version, known versions are 1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1, 2.1.2 and 2.2.1.
 
 
 Use the arguments to manually provide enough information for the HTTP Basic Auth process, 
@@ -138,15 +138,15 @@ when creating a new :class:`DNACenterAPI` connection object.
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 2.1.2
-    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 2.2.1
+    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac.cisco.com:443", version='2.2.1')
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 2.1.2
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 2.2.1
     >>> # The base_url used by default is `from dnacentersdk.config import DEFAULT_BASE_URL`
-    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac.cisco.com:443", version='2.2.1')
 
 Note that this can be very useful if you are reading authentication credentials
 from a file or database and/or when you want to create more than one connection object.
@@ -156,8 +156,8 @@ from a file or database and/or when you want to create more than one connection 
     >>> from dnacentersdk import DNACenterAPI
     >>> kingston_auth = 'ZG5hY2VudGVydXNlcjpDaXNjbzEyMyEK'
     >>> london_auth = ('london', 'rcx0cf43!')
-    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
-    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='2.1.2')  # * Unpacks tuple
+    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac.cisco.com:443", version='2.2.1')
+    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='2.2.1')  # * Unpacks tuple
 
 
 Certificates
@@ -172,8 +172,8 @@ To avoid getting errors like the following:
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> own_dna = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
-    ... base_url="https://128.107.71.199:443", version='2.1.2')
+    >>> own_api = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
+    ... base_url="https://128.107.71.199:443", version='2.2.1')
     requests.exceptions.SLError: HTTPSConnectionPool(host='128.107.71.199', port=443):
     Max retries exceeded with url: /dna/system/api/v1/auth/token (Caused by
     SSLError (SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate
@@ -185,7 +185,7 @@ Include the verify parameter and set it to False:
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> own_dna = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
+    >>> own_api = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
     ... base_url="https://128.107.71.199:443", version='1.3.0',
     ... verify=False)
     InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate
@@ -272,17 +272,27 @@ parameters, is available in the :ref:`User API Doc`.
 
 A summary of the structure is available for each version supported
 
+
 + :ref:`v1.2.10 <v1_2_10 summary>`
+
 
 + :ref:`v1.3.0 <v1_3_0 summary>`
 
+
 + :ref:`v1.3.1 <v1_3_1 summary>`
+
 
 + :ref:`v1.3.3 <v1_3_3 summary>`
 
+
 + :ref:`v2.1.1 <v2_1_1 summary>`
 
+
 + :ref:`v2.1.2 <v2_1_2 summary>`
+
+
++ :ref:`v2.2.1 <v2_2_1 summary>`
+
 
 
 You can easily access and call any of these methods directly from your
@@ -496,7 +506,7 @@ of new attributes and data as they are returned.
 
 
 Configuring Logging for dnacentersdk
-----------------------------------------
+------------------------------------
 
 The main dnacentersdk logger is dnacentersdk.
 
@@ -526,9 +536,9 @@ So you can add your logging handlers according to your needs.
     # add ch to logger
     logger.addHandler(ch)
 
-    dna_ch = logging.StreamHandler()
+    ch_ = logging.StreamHandler()
     api = DNACenterAPI(verify=False, debug=True)
-    logging.getLogger('dnacentersdk').addHandler(dna_ch)
+    logging.getLogger('dnacentersdk').addHandler(ch_)
 
     logger.debug('simple message')
     api.devices.get_device_list()
@@ -549,12 +559,12 @@ Custom caller functions help you:
     from dnacentersdk import api
 
     # Create a DNACenterAPI connection object;
-    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.1.2.,
+    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.2.1.,
     # and requests to verify the server's TLS certificate with verify=True.
-    dnac = api.DNACenterAPI(username="devnetuser",
+    api_ = api.DNACenterAPI(username="devnetuser",
                             password="Cisco123!",
                             base_url="https://sandboxdnac.cisco.com:443",
-                            version='2.1.2',
+                            version='2.2.1',
                             verify=True)
 
     # Add your custom API call to the connection object.
@@ -562,7 +572,7 @@ Custom caller functions help you:
     # Call it with:
     #     get_global_credentials('NETCONF')
     def get_global_credentials(subtype):
-        return dnac.custom_caller.call_api('GET',
+        return api_.custom_caller.call_api('GET',
                                    '/dna/intent/api/v1/global-credential',
                                    params={
                                        'credentialSubType': subtype
@@ -573,10 +583,10 @@ Custom caller functions help you:
     # Define the delete_global_credentials_by_id function
     # under the custom_caller wrapper.
     # Call it with:
-    #     dnac.custom_caller.delete_global_credentials_by_id('be456g16-14fd-4cac-94b7-ac3b8f9f')
-    dnac.custom_caller.add_api('delete_global_credentials_by_id',
+    #     api_.custom_caller.delete_global_credentials_by_id('be456g16-14fd-4cac-94b7-ac3b8f9f')
+    api_.custom_caller.add_api('delete_global_credentials_by_id',
                               lambda global_credential_id:
-                                  dnac.custom_caller.call_api(
+                                  api_.custom_caller.call_api(
                                       'DELETE',
                                       '/dna/intent/api/v1/global-credential/${credentialId}',
                                       path_params={
@@ -592,16 +602,16 @@ Custom caller functions help you:
         in two different ways.
 
         Check that they have been added with
-            'get_global_credentials' in dir(dnac.custom_caller)
-            'create_netconf_credentials' in dir(dnac.custom_caller)
+            'get_global_credentials' in dir(api_.custom_caller)
+            'create_netconf_credentials' in dir(api_.custom_caller)
 
         Quickly check that you indeed have them as functions with
-            type(getattr(dnac.custom_caller, 'create_netconf_credentials'))
-            type(getattr(dnac.custom_caller, 'create_netconf_credentials'))
+            type(getattr(api_.custom_caller, 'create_netconf_credentials'))
+            type(getattr(api_.custom_caller, 'create_netconf_credentials'))
 
         Check the documentation with
-            help(dnac.custom_caller.get_global_credentials)
-            help(dnac.custom_caller.create_netconf_credentials)
+            help(api_.custom_caller.get_global_credentials)
+            help(api_.custom_caller.create_netconf_credentials)
 
         """
 
@@ -619,19 +629,19 @@ Custom caller functions help you:
                     MyDict: JSON response. Access the object's properties by using
                     the dot notation or the bracket notation.
             """
-            return dnac.custom_caller.call_api(
+            return api_.custom_caller.call_api(
                                         'GET',
                                         '/dna/intent/api/v1/global-credential',
                                         params={
                                             'credentialSubType': credential_type
                                         }).response
         # Finally add the function as an attribute.
-        dnac.custom_caller.add_api('get_global_credentials', _get_global_credentials)
+        api_.custom_caller.add_api('get_global_credentials', _get_global_credentials)
 
         # Alternative 2: Definition with lambda function.
-        dnac.custom_caller.add_api('create_netconf_credentials',
+        api_.custom_caller.add_api('create_netconf_credentials',
                                 lambda port:
-                                    dnac.custom_caller.call_api(
+                                    api_.custom_caller.call_api(
                                         'POST',
                                         '/dna/intent/api/v1/global-credential/netconf',
                                         json=[{
@@ -639,7 +649,7 @@ Custom caller functions help you:
                                         }])
                                 )
         # Finally add the documentation
-        dnac.custom_caller.create_netconf_credentials.__doc__ = """
+        api_.custom_caller.create_netconf_credentials.__doc__ = """
             Custom global credential API call to add NETCONF credentials
             
             Receives:
@@ -656,6 +666,6 @@ Check out the `Custom Caller`_ documentation to begin using it.
 .. _Custom Caller: https://dnacentersdk.readthedocs.io/en/latest/api/api.html#custom-caller
 
 
-*Copyright (c) 2019-2020 Cisco and/or its affiliates.*
+*Copyright (c) 2019-2021 Cisco Systems.*
 
 .. _PEP 20: https://www.python.org/dev/peps/pep-0020/
