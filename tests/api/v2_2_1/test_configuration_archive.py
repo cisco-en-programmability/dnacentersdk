@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI configuration_archive API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_export_device_configurations(json_schema_validate, obj):
-    json_schema_validate('jsd_51a40aba4c68ac17_v2_2_1').validate(obj)
+    json_schema_validate('jsd_e85b40c5ca055f4c82281617a8f95644_v2_2_1').validate(obj)
     return True
 
 
@@ -44,10 +46,15 @@ def export_device_configurations(api):
 
 @pytest.mark.configuration_archive
 def test_export_device_configurations(api, validator):
-    assert is_valid_export_device_configurations(
-        validator,
-        export_device_configurations(api)
-    )
+    try:
+        assert is_valid_export_device_configurations(
+            validator,
+            export_device_configurations(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def export_device_configurations_default(api):
@@ -68,5 +75,5 @@ def test_export_device_configurations_default(api, validator):
             export_device_configurations_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

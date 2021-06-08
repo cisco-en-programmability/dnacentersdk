@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Deploy Template data model.
+"""Cisco DNA Center Deploy Template data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,16 +45,12 @@ class JSONSchemaValidator6099Da82477B858A(object):
             '''{
                 "properties": {
                 "deploymentId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "deploymentName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -64,24 +60,18 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 "items": {
                 "properties": {
                 "deviceId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "duration": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "endTime": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -89,24 +79,18 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "ipAddress": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "startTime": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -114,8 +98,6 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "status": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -133,16 +115,12 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "duration": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "endTime": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -150,16 +128,12 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "projectName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "startTime": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null",
@@ -167,24 +141,18 @@ class JSONSchemaValidator6099Da82477B858A(object):
                 ]
                 },
                 "status": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "templateName": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "templateVersion": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI applications API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_applications(json_schema_validate, obj):
-    json_schema_validate('jsd_2db58a1f4fea9242_v2_2_1').validate(obj)
+    json_schema_validate('jsd_1b85e4ce533d5ff49ddd3b2f9657cfa5_v2_2_1').validate(obj)
     return True
 
 
@@ -48,10 +50,15 @@ def applications(api):
 
 @pytest.mark.applications
 def test_applications(api, validator):
-    assert is_valid_applications(
-        validator,
-        applications(api)
-    )
+    try:
+        assert is_valid_applications(
+            validator,
+            applications(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def applications_default(api):
@@ -76,5 +83,5 @@ def test_applications_default(api, validator):
             applications_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

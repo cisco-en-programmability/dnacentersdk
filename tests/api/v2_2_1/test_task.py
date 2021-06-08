@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI task API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_get_task_count(json_schema_validate, obj):
-    json_schema_validate('jsd_26b44ab04649a183_v2_2_1').validate(obj)
+    json_schema_validate('jsd_8d0586946be75e0f9f2c170217d45a28_v2_2_1').validate(obj)
     return True
 
 
@@ -50,10 +52,15 @@ def get_task_count(api):
 
 @pytest.mark.task
 def test_get_task_count(api, validator):
-    assert is_valid_get_task_count(
-        validator,
-        get_task_count(api)
-    )
+    try:
+        assert is_valid_get_task_count(
+            validator,
+            get_task_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_task_count_default(api):
@@ -80,12 +87,12 @@ def test_get_task_count_default(api, validator):
             get_task_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_task_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_a1a9387346ba92b1_v2_2_1').validate(obj)
+    json_schema_validate('jsd_8009857899a75ba5a6bae1d568700bd3_v2_2_1').validate(obj)
     return True
 
 
@@ -98,10 +105,15 @@ def get_task_by_id(api):
 
 @pytest.mark.task
 def test_get_task_by_id(api, validator):
-    assert is_valid_get_task_by_id(
-        validator,
-        get_task_by_id(api)
-    )
+    try:
+        assert is_valid_get_task_by_id(
+            validator,
+            get_task_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_task_by_id_default(api):
@@ -119,12 +131,60 @@ def test_get_task_by_id_default(api, validator):
             get_task_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_task_by_operationid(json_schema_validate, obj):
+    json_schema_validate('jsd_d95c21e41dce5a9dbee07d33eefef2b2_v2_2_1').validate(obj)
+    return True
+
+
+def get_task_by_operationid(api):
+    endpoint_result = api.task.get_task_by_operationid(
+        limit=0,
+        offset=0,
+        operation_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.task
+def test_get_task_by_operationid(api, validator):
+    try:
+        assert is_valid_get_task_by_operationid(
+            validator,
+            get_task_by_operationid(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_task_by_operationid_default(api):
+    endpoint_result = api.task.get_task_by_operationid(
+        limit=0,
+        offset=0,
+        operation_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.task
+def test_get_task_by_operationid_default(api, validator):
+    try:
+        assert is_valid_get_task_by_operationid(
+            validator,
+            get_task_by_operationid_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_tasks(json_schema_validate, obj):
-    json_schema_validate('jsd_e78bb8a2449b9eed_v2_2_1').validate(obj)
+    json_schema_validate('jsd_75ff485556f6504d8443789f42098be7_v2_2_1').validate(obj)
     return True
 
 
@@ -150,10 +210,15 @@ def get_tasks(api):
 
 @pytest.mark.task
 def test_get_tasks(api, validator):
-    assert is_valid_get_tasks(
-        validator,
-        get_tasks(api)
-    )
+    try:
+        assert is_valid_get_tasks(
+            validator,
+            get_tasks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_tasks_default(api):
@@ -184,55 +249,12 @@ def test_get_tasks_default(api, validator):
             get_tasks_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_task_by_operationid(json_schema_validate, obj):
-    json_schema_validate('jsd_e487f8d3481b94f2_v2_2_1').validate(obj)
-    return True
-
-
-def get_task_by_operationid(api):
-    endpoint_result = api.task.get_task_by_operationid(
-        limit=0,
-        offset=0,
-        operation_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.task
-def test_get_task_by_operationid(api, validator):
-    assert is_valid_get_task_by_operationid(
-        validator,
-        get_task_by_operationid(api)
-    )
-
-
-def get_task_by_operationid_default(api):
-    endpoint_result = api.task.get_task_by_operationid(
-        limit=0,
-        offset=0,
-        operation_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.task
-def test_get_task_by_operationid_default(api, validator):
-    try:
-        assert is_valid_get_task_by_operationid(
-            validator,
-            get_task_by_operationid_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_task_tree(json_schema_validate, obj):
-    json_schema_validate('jsd_f5a269c44f2a95fa_v2_2_1').validate(obj)
+    json_schema_validate('jsd_8fa2865e229b536aacd59585a1d29704_v2_2_1').validate(obj)
     return True
 
 
@@ -245,10 +267,15 @@ def get_task_tree(api):
 
 @pytest.mark.task
 def test_get_task_tree(api, validator):
-    assert is_valid_get_task_tree(
-        validator,
-        get_task_tree(api)
-    )
+    try:
+        assert is_valid_get_task_tree(
+            validator,
+            get_task_tree(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_task_tree_default(api):
@@ -266,5 +293,5 @@ def test_get_task_tree_default(api, validator):
             get_task_tree_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

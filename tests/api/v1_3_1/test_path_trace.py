@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI path_trace API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
@@ -62,13 +64,12 @@ def test_deletes_pathtrace_by_id_default(api, validator):
             deletes_pathtrace_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_retrieves_previous_pathtrace(json_schema_validate, obj):
-    json_schema_validate('jsd_7ab9a8bd4f3b86a4_v1_3_1').validate(obj)
-    return True
+    return True if obj else False
 
 
 def retrieves_previous_pathtrace(api):
@@ -101,7 +102,7 @@ def test_retrieves_previous_pathtrace_default(api, validator):
             retrieves_previous_pathtrace_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -168,7 +169,7 @@ def test_retrives_all_previous_pathtraces_summary_default(api, validator):
             retrives_all_previous_pathtraces_summary_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -225,5 +226,5 @@ def test_initiate_a_new_pathtrace_default(api, validator):
             initiate_a_new_pathtrace_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

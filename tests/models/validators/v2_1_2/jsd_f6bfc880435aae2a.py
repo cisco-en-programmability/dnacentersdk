@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Threat Details data model.
+"""Cisco DNA Center Threat Details data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,53 +45,39 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
             '''{
                 "properties": {
                 "response": {
-                "description":
-                "Response",
                 "items": {
                 "properties": {
                 "apName": {
-                "description":
-                "Ap Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "macAddress": {
-                "description":
-                "Mac Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteNameHierarchy": {
-                "description":
-                "Site Name Hierarchy",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ssid": {
-                "description":
-                "Ssid",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "threatLevel": {
-                "description":
-                "Threat Level",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "threatType": {
-                "description":
-                "Threat Type",
                 "type": [
                 "string",
                 "null"
@@ -104,8 +90,6 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 ]
                 },
                 "vendor": {
-                "description":
-                "Vendor",
                 "type": [
                 "string",
                 "null"
@@ -119,8 +103,7 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "totalCount": {
@@ -130,8 +113,6 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 ]
                 },
                 "version": {
-                "description":
-                "Version",
                 "type": [
                 "string",
                 "null"

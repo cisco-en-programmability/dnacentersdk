@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI issues API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_issues(json_schema_validate, obj):
-    json_schema_validate('jsd_5e863b7b4a4bb2f9_v2_2_1').validate(obj)
+    json_schema_validate('jsd_759522aaef3b519ba8b9fb2cbf43b985_v2_2_1').validate(obj)
     return True
 
 
@@ -48,10 +50,15 @@ def issues(api):
 
 @pytest.mark.issues
 def test_issues(api, validator):
-    assert is_valid_issues(
-        validator,
-        issues(api)
-    )
+    try:
+        assert is_valid_issues(
+            validator,
+            issues(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def issues_default(api):
@@ -76,12 +83,12 @@ def test_issues_default(api, validator):
             issues_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_issue_enrichment_details(json_schema_validate, obj):
-    json_schema_validate('jsd_868439bb4e89a6e4_v2_2_1').validate(obj)
+    json_schema_validate('jsd_02f2f039811951c0af53e3381ae91225_v2_2_1').validate(obj)
     return True
 
 
@@ -94,10 +101,15 @@ def get_issue_enrichment_details(api):
 
 @pytest.mark.issues
 def test_get_issue_enrichment_details(api, validator):
-    assert is_valid_get_issue_enrichment_details(
-        validator,
-        get_issue_enrichment_details(api)
-    )
+    try:
+        assert is_valid_get_issue_enrichment_details(
+            validator,
+            get_issue_enrichment_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_issue_enrichment_details_default(api):
@@ -115,5 +127,5 @@ def test_get_issue_enrichment_details_default(api, validator):
             get_issue_enrichment_details_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

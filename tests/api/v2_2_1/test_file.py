@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI file API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_get_list_of_available_namespaces(json_schema_validate, obj):
-    json_schema_validate('jsd_3f89bbfc4f6b8b50_v2_2_1').validate(obj)
+    json_schema_validate('jsd_b7fc125c901c5d4488b7a2b75fa292bc_v2_2_1').validate(obj)
     return True
 
 
@@ -41,10 +43,15 @@ def get_list_of_available_namespaces(api):
 
 @pytest.mark.file
 def test_get_list_of_available_namespaces(api, validator):
-    assert is_valid_get_list_of_available_namespaces(
-        validator,
-        get_list_of_available_namespaces(api)
-    )
+    try:
+        assert is_valid_get_list_of_available_namespaces(
+            validator,
+            get_list_of_available_namespaces(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_list_of_available_namespaces_default(api):
@@ -62,12 +69,12 @@ def test_get_list_of_available_namespaces_default(api, validator):
             get_list_of_available_namespaces_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_list_of_files(json_schema_validate, obj):
-    json_schema_validate('jsd_42b6a86e44b8bdfc_v2_2_1').validate(obj)
+    json_schema_validate('jsd_b7d63a5ae65b59a5a35d43edc58b6db5_v2_2_1').validate(obj)
     return True
 
 
@@ -80,10 +87,15 @@ def get_list_of_files(api):
 
 @pytest.mark.file
 def test_get_list_of_files(api, validator):
-    assert is_valid_get_list_of_files(
-        validator,
-        get_list_of_files(api)
-    )
+    try:
+        assert is_valid_get_list_of_files(
+            validator,
+            get_list_of_files(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_list_of_files_default(api):
@@ -101,19 +113,17 @@ def test_get_list_of_files_default(api, validator):
             get_list_of_files_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_download_a_file_by_fileid(json_schema_validate, obj):
-    json_schema_validate('jsd_9698c8ec4a0b8c1a_v2_2_1').validate(obj)
+    json_schema_validate('jsd_1282fa4ab7605a75aafa6c7da6ac3f13_v2_2_1').validate(obj)
     return True
 
 
 def download_a_file_by_fileid(api):
     endpoint_result = api.file.download_a_file_by_fileid(
-        dirpath=None,
-        save_file=None,
         file_id='string'
     )
     return endpoint_result
@@ -121,16 +131,19 @@ def download_a_file_by_fileid(api):
 
 @pytest.mark.file
 def test_download_a_file_by_fileid(api, validator):
-    assert is_valid_download_a_file_by_fileid(
-        validator,
-        download_a_file_by_fileid(api)
-    )
+    try:
+        assert is_valid_download_a_file_by_fileid(
+            validator,
+            download_a_file_by_fileid(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def download_a_file_by_fileid_default(api):
     endpoint_result = api.file.download_a_file_by_fileid(
-        dirpath=None,
-        save_file=None,
         file_id='string'
     )
     return endpoint_result
@@ -144,5 +157,5 @@ def test_download_a_file_by_fileid_default(api, validator):
             download_a_file_by_fileid_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

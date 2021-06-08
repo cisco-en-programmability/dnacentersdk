@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI wireless API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.3', reason='version does not match')
@@ -62,7 +64,7 @@ def test_retrieve_rf_profiles_default(api, validator):
             retrieve_rf_profiles_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -113,7 +115,7 @@ def test_create_and_provision_ssid_default(api, validator):
             create_and_provision_ssid_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -152,7 +154,7 @@ def test_delete_rf_profiles_default(api, validator):
             delete_rf_profiles_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -195,7 +197,7 @@ def test_create_wireless_profile_default(api, validator):
             create_wireless_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -236,7 +238,7 @@ def test_provision_update_default(api, validator):
             provision_update_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -294,7 +296,7 @@ def test_create_enterprise_ssid_default(api, validator):
             create_enterprise_ssid_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -333,7 +335,7 @@ def test_get_wireless_profile_default(api, validator):
             get_wireless_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -392,7 +394,7 @@ def test_create_or_update_rf_profile_default(api, validator):
             create_or_update_rf_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -431,7 +433,7 @@ def test_delete_enterprise_ssid_default(api, validator):
             delete_enterprise_ssid_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -470,7 +472,7 @@ def test_get_enterprise_ssid_default(api, validator):
             get_enterprise_ssid_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -511,7 +513,7 @@ def test_provision_default(api, validator):
             provision_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -554,7 +556,7 @@ def test_update_wireless_profile_default(api, validator):
             update_wireless_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -595,7 +597,7 @@ def test_ap_provision_default(api, validator):
             ap_provision_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -634,7 +636,7 @@ def test_delete_wireless_profile_default(api, validator):
             delete_wireless_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -675,5 +677,5 @@ def test_delete_ssid_and_provision_it_to_devices_default(api, validator):
             delete_ssid_and_provision_it_to_devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

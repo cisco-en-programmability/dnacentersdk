@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add Virtual Account data model.
+"""Cisco DNA Center Add Virtual Account data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -51,8 +51,6 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "ccoUser": {
-                "description":
-                "Cco User",
                 "type": [
                 "string",
                 "null"
@@ -71,28 +69,20 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "profile": {
-                "description":
-                "Profile",
                 "properties": {
                 "addressFqdn": {
-                "description":
-                "Address Fqdn",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "addressIpV4": {
-                "description":
-                "Address Ip V4",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "cert": {
-                "description":
-                "Cert",
                 "type": [
                 "string",
                 "null"
@@ -105,8 +95,6 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -119,8 +107,6 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "profileId": {
-                "description":
-                "Profile Id",
                 "type": [
                 "string",
                 "null"
@@ -139,25 +125,17 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "smartAccountId": {
-                "description":
-                "Smart Account Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "syncResult": {
-                "description":
-                "Sync Result",
                 "properties": {
                 "syncList": {
-                "description":
-                "Sync List",
                 "items": {
                 "properties": {
                 "deviceSnList": {
-                "description":
-                "Device Sn List",
                 "items": {
                 "type": [
                 "string",
@@ -171,8 +149,6 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "syncType": {
-                "description":
-                "Sync Type",
                 "type": [
                 "string",
                 "null"
@@ -190,8 +166,6 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "syncMsg": {
-                "description":
-                "Sync Msg",
                 "type": [
                 "string",
                 "null"
@@ -204,8 +178,6 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "syncResultStr": {
-                "description":
-                "Sync Result Str",
                 "type": [
                 "string",
                 "null"
@@ -218,32 +190,24 @@ class JSONSchemaValidator1E962Af345B8B59F(object):
                 ]
                 },
                 "syncStatus": {
-                "description":
-                "Sync Status",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "token": {
-                "description":
-                "Token",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "virtualAccountId": {
-                "description":
-                "Virtual Account Id",
                 "type": [
                 "string",
                 "null"

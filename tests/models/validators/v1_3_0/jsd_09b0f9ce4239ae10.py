@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Device data model.
+"""Cisco DNA Center Update Device data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,20 +45,14 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
             '''{
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "dayZeroConfig": {
-                "description":
-                "Day Zero Config",
                 "properties": {
                 "config": {
-                "description":
-                "Config",
                 "type": [
                 "string",
                 "null"
@@ -71,8 +65,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "dayZeroConfigPreview": {
-                "description":
-                "Day Zero Config Preview",
                 "properties": {},
                 "type": [
                 "object",
@@ -80,24 +72,16 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "deviceInfo": {
-                "description":
-                "Device Info",
                 "properties": {
                 "aaaCredentials": {
-                "description":
-                "Aaa Credentials",
                 "properties": {
                 "password": {
-                "description":
-                "Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "type": [
                 "string",
                 "null"
@@ -116,8 +100,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "addnMacAddrs": {
-                "description":
-                "Addn Mac Addrs",
                 "items": {
                 "type": [
                 "string",
@@ -130,40 +112,30 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "agentType": {
-                "description":
-                "Agent Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authStatus": {
-                "description":
-                "Auth Status",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authenticatedMicNumber": {
-                "description":
-                "Authenticated Mic Number",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authenticatedSudiSerialNo": {
-                "description":
-                "Authenticated Sudi Serial No",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "capabilitiesSupported": {
-                "description":
-                "Capabilities Supported",
                 "items": {
                 "type": [
                 "string",
@@ -176,8 +148,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "cmState": {
-                "description":
-                "Cm State",
                 "type": [
                 "string",
                 "null"
@@ -185,16 +155,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "deviceSudiSerialNos": {
-                "description":
-                "Device Sudi Serial Nos",
                 "items": {
                 "type": [
                 "string",
@@ -207,16 +173,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "deviceType": {
-                "description":
-                "Device Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "featuresSupported": {
-                "description":
-                "Features Supported",
                 "items": {
                 "type": [
                 "string",
@@ -229,8 +191,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "fileSystemList": {
-                "description":
-                "File System List",
                 "items": {
                 "properties": {
                 "freespace": {
@@ -240,8 +200,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -260,8 +218,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
@@ -291,29 +247,21 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "hostname": {
-                "description":
-                "Hostname",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "httpHeaders": {
-                "description":
-                "Http Headers",
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                "Key",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                "Value",
                 "type": [
                 "string",
                 "null",
@@ -332,29 +280,21 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageFile": {
-                "description":
-                "Image File",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "imageVersion": {
-                "description":
-                "Image Version",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ipInterfaces": {
-                "description":
-                "Ip Interfaces",
                 "items": {
                 "properties": {
                 "ipv4Address": {
-                "description":
-                "Ipv4 Address",
                 "properties": {},
                 "type": [
                 "object",
@@ -362,8 +302,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "ipv6AddressList": {
-                "description":
-                "Ipv6 Address List",
                 "items": {
                 "properties": {},
                 "type": [
@@ -377,24 +315,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "macAddress": {
-                "description":
-                "Mac Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"
@@ -430,28 +362,20 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "location": {
-                "description":
-                "Location",
                 "properties": {
                 "address": {
-                "description":
-                "Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "altitude": {
-                "description":
-                "Altitude",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "latitude": {
-                "description":
-                "Latitude",
                 "type": [
                 "string",
                 "null",
@@ -459,8 +383,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "longitude": {
-                "description":
-                "Longitude",
                 "type": [
                 "string",
                 "null",
@@ -468,8 +390,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "siteId": {
-                "description":
-                "Site Id",
                 "type": [
                 "string",
                 "null"
@@ -482,101 +402,75 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "macAddress": {
-                "description":
-                "Mac Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "mode": {
-                "description":
-                "Mode",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "neighborLinks": {
-                "description":
-                "Neighbor Links",
                 "items": {
                 "properties": {
                 "localInterfaceName": {
-                "description":
-                "Local Interface Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "localMacAddress": {
-                "description":
-                "Local Mac Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "localShortInterfaceName": {
-                "description":
-                "Local Short Interface Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteDeviceName": {
-                "description":
-                "Remote Device Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteInterfaceName": {
-                "description":
-                "Remote Interface Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteMacAddress": {
-                "description":
-                "Remote Mac Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remotePlatform": {
-                "description":
-                "Remote Platform",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteShortInterfaceName": {
-                "description":
-                "Remote Short Interface Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "remoteVersion": {
-                "description":
-                "Remote Version",
                 "type": [
                 "string",
                 "null"
@@ -594,29 +488,21 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "onbState": {
-                "description":
-                "Onb State",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "pid": {
-                "description":
-                "Pid",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "pnpProfileList": {
-                "description":
-                "Pnp Profile List",
                 "items": {
                 "properties": {
                 "createdBy": {
-                "description":
-                "Created By",
                 "type": [
                 "string",
                 "null"
@@ -629,28 +515,20 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "primaryEndpoint": {
-                "description":
-                "Primary Endpoint",
                 "properties": {
                 "certificate": {
-                "description":
-                "Certificate",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "fqdn": {
-                "description":
-                "Fqdn",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ipv4Address": {
-                "description":
-                "Ipv4 Address",
                 "properties": {},
                 "type": [
                 "object",
@@ -658,8 +536,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "ipv6Address": {
-                "description":
-                "Ipv6 Address",
                 "properties": {},
                 "type": [
                 "object",
@@ -673,8 +549,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "protocol": {
-                "description":
-                "Protocol",
                 "type": [
                 "string",
                 "null"
@@ -687,36 +561,26 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "profileName": {
-                "description":
-                "Profile Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "secondaryEndpoint": {
-                "description":
-                "Secondary Endpoint",
                 "properties": {
                 "certificate": {
-                "description":
-                "Certificate",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "fqdn": {
-                "description":
-                "Fqdn",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "ipv4Address": {
-                "description":
-                "Ipv4 Address",
                 "properties": {},
                 "type": [
                 "object",
@@ -724,8 +588,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "ipv6Address": {
-                "description":
-                "Ipv6 Address",
                 "properties": {},
                 "type": [
                 "object",
@@ -739,8 +601,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "protocol": {
-                "description":
-                "Protocol",
                 "type": [
                 "string",
                 "null"
@@ -770,21 +630,15 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "preWorkflowCliOuputs": {
-                "description":
-                "Pre Workflow Cli Ouputs",
                 "items": {
                 "properties": {
                 "cli": {
-                "description":
-                "Cli",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "cliOutput": {
-                "description":
-                "Cli Output",
                 "type": [
                 "string",
                 "null"
@@ -802,16 +656,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "projectId": {
-                "description":
-                "Project Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "projectName": {
-                "description":
-                "Project Name",
                 "type": [
                 "string",
                 "null"
@@ -824,40 +674,30 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "serialNumber": {
-                "description":
-                "Serial Number",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteId": {
-                "description":
-                "Site Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteName": {
-                "description":
-                "Site Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "smartAccountId": {
-                "description":
-                "Smart Account Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "source": {
-                "description":
-                "Source",
                 "type": [
                 "string",
                 "null"
@@ -870,8 +710,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "stackInfo": {
-                "description":
-                "Stack Info",
                 "properties": {
                 "isFullRing": {
                 "type": [
@@ -880,45 +718,33 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "stackMemberList": {
-                "description":
-                "Stack Member List",
                 "items": {
                 "properties": {
                 "hardwareVersion": {
-                "description":
-                "Hardware Version",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseLevel": {
-                "description":
-                "License Level",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseType": {
-                "description":
-                "License Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "macAddress": {
-                "description":
-                "Mac Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "pid": {
-                "description":
-                "Pid",
                 "type": [
                 "string",
                 "null"
@@ -931,24 +757,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "role": {
-                "description":
-                "Role",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "serialNumber": {
-                "description":
-                "Serial Number",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "softwareVersion": {
-                "description":
-                "Software Version",
                 "type": [
                 "string",
                 "null"
@@ -961,16 +781,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sudiSerialNumber": {
-                "description":
-                "Sudi Serial Number",
                 "type": [
                 "string",
                 "null"
@@ -988,8 +804,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "stackRingProtocol": {
-                "description":
-                "Stack Ring Protocol",
                 "type": [
                 "string",
                 "null"
@@ -1008,8 +822,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "validLicenseLevels": {
-                "description":
-                "Valid License Levels",
                 "items": {
                 "type": [
                 "string",
@@ -1028,8 +840,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1042,8 +852,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tags": {
-                "description":
-                "Tags",
                 "properties": {},
                 "type": [
                 "object",
@@ -1051,8 +859,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "userMicNumbers": {
-                "description":
-                "User Mic Numbers",
                 "items": {
                 "type": [
                 "string",
@@ -1065,8 +871,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "userSudiSerialNos": {
-                "description":
-                "User Sudi Serial Nos",
                 "items": {
                 "type": [
                 "string",
@@ -1079,24 +883,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "virtualAccountId": {
-                "description":
-                "Virtual Account Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workflowId": {
-                "description":
-                "Workflow Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workflowName": {
-                "description":
-                "Workflow Name",
                 "type": [
                 "string",
                 "null"
@@ -1109,13 +907,9 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "runSummaryList": {
-                "description":
-                "Run Summary List",
                 "items": {
                 "properties": {
                 "details": {
-                "description":
-                "Details",
                 "type": [
                 "string",
                 "null"
@@ -1128,25 +922,17 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "historyTaskInfo": {
-                "description":
-                "History Task Info",
                 "properties": {
                 "addnDetails": {
-                "description":
-                "Addn Details",
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                "Key",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                "Value",
                 "type": [
                 "string",
                 "null",
@@ -1165,8 +951,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1179,21 +963,15 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workItemList": {
-                "description":
-                "Work Item List",
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                "Command",
                 "type": [
                 "string",
                 "null"
@@ -1206,8 +984,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                "Output Str",
                 "type": [
                 "string",
                 "null"
@@ -1220,8 +996,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1268,12 +1042,8 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "systemResetWorkflow": {
-                "description":
-                "System Reset Workflow",
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
@@ -1292,8 +1062,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configId": {
-                "description":
-                "Config Id",
                 "type": [
                 "string",
                 "null"
@@ -1307,8 +1075,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
@@ -1327,16 +1093,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                "Image Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                "Instance Type",
                 "type": [
                 "string",
                 "null"
@@ -1349,8 +1111,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1363,16 +1123,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tasks": {
-                "description":
-                "Tasks",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -1388,8 +1144,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1402,8 +1156,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1422,21 +1174,15 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workItemList": {
-                "description":
-                "Work Item List",
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                "Command",
                 "type": [
                 "string",
                 "null"
@@ -1449,8 +1195,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                "Output Str",
                 "type": [
                 "string",
                 "null"
@@ -1463,8 +1207,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1499,24 +1241,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                "Use State",
                 "type": [
                 "string",
                 "null"
@@ -1535,12 +1271,8 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "systemWorkflow": {
-                "description":
-                "System Workflow",
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
@@ -1559,8 +1291,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configId": {
-                "description":
-                "Config Id",
                 "type": [
                 "string",
                 "null"
@@ -1574,8 +1304,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
@@ -1594,16 +1322,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                "Image Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                "Instance Type",
                 "type": [
                 "string",
                 "null"
@@ -1616,8 +1340,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1630,16 +1352,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tasks": {
-                "description":
-                "Tasks",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -1655,8 +1373,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1669,8 +1385,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1689,21 +1403,15 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workItemList": {
-                "description":
-                "Work Item List",
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                "Command",
                 "type": [
                 "string",
                 "null"
@@ -1716,8 +1424,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                "Output Str",
                 "type": [
                 "string",
                 "null"
@@ -1730,8 +1436,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1766,24 +1470,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                "Use State",
                 "type": [
                 "string",
                 "null"
@@ -1802,8 +1500,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
@@ -1816,12 +1512,8 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workflow": {
-                "description":
-                "Workflow",
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
@@ -1840,8 +1532,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "configId": {
-                "description":
-                "Config Id",
                 "type": [
                 "string",
                 "null"
@@ -1855,8 +1545,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 },
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
@@ -1875,16 +1563,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                "Image Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                "Instance Type",
                 "type": [
                 "string",
                 "null"
@@ -1897,8 +1581,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1911,16 +1593,12 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tasks": {
-                "description":
-                "Tasks",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -1936,8 +1614,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -1950,8 +1626,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -1970,21 +1644,15 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workItemList": {
-                "description":
-                "Work Item List",
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                "Command",
                 "type": [
                 "string",
                 "null"
@@ -1997,8 +1665,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                "Output Str",
                 "type": [
                 "string",
                 "null"
@@ -2011,8 +1677,6 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -2047,24 +1711,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                "Use State",
                 "type": [
                 "string",
                 "null"
@@ -2083,38 +1741,26 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "workflowParameters": {
-                "description":
-                "Workflow Parameters",
                 "properties": {
                 "configList": {
-                "description":
-                "Config List",
                 "items": {
                 "properties": {
                 "configId": {
-                "description":
-                "Config Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "configParameters": {
-                "description":
-                "Config Parameters",
                 "items": {
                 "properties": {
                 "key": {
-                "description":
-                "Key",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "value": {
-                "description":
-                "Value",
                 "type": [
                 "string",
                 "null",
@@ -2144,24 +1790,18 @@ class JSONSchemaValidator09B0F9Ce4239Ae10(object):
                 ]
                 },
                 "licenseLevel": {
-                "description":
-                "License Level",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "licenseType": {
-                "description":
-                "License Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "topOfStackSerialNumber": {
-                "description":
-                "Top Of Stack Serial Number",
                 "type": [
                 "string",
                 "null"

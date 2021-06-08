@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Provision data model.
+"""Cisco DNA Center Update Provision data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,28 +45,20 @@ class JSONSchemaValidatorA0Be3A2F47Ab9F3C(object):
             '''{
                 "properties": {
                 "executionId": {
-                "description":
-                "Execution Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "executionUrl": {
-                "description":
-                "Execution Url",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "provisioningTasks": {
-                "description":
-                "Provisioning Tasks",
                 "properties": {
                 "failed": {
-                "description":
-                "Failed",
                 "items": {
                 "type": [
                 "string",
@@ -79,8 +71,6 @@ class JSONSchemaValidatorA0Be3A2F47Ab9F3C(object):
                 ]
                 },
                 "success": {
-                "description":
-                "Success",
                 "items": {
                 "type": [
                 "string",

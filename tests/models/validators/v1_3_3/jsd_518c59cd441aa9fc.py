@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add VN data model.
+"""Cisco DNA Center Add VN data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,32 +46,24 @@ class JSONSchemaValidator518C59Cd441AA9Fc(object):
                 "properties": {
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "deviceManagementIpAddress": {
-                "description":
-                "Device Management Ip Address",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "roles": {
-                "description":
-                "Roles",
                 "items": {
                 "type": [
                 "string",
@@ -84,16 +76,12 @@ class JSONSchemaValidator518C59Cd441AA9Fc(object):
                 ]
                 },
                 "siteHierarchy": {
-                "description":
-                "Site Hierarchy",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"

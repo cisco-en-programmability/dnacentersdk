@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,13 +54,13 @@ def base_url(free_port):
 
 
 @pytest.fixture(scope="session")
-def mock_dnac_server(free_port):
+def mock_dna_center_server(free_port):
     start_mock_server(free_port, DNA_CENTER_VERSION)
     return
 
 
 @pytest.fixture(scope="session")
-def api(mock_dnac_server, base_url):
+def api(mock_dna_center_server, base_url):
     return DNACenterAPI(username=DNA_CENTER_USERNAME,
                         password=DNA_CENTER_PASSWORD,
                         encoded_auth=DNA_CENTER_ENCODED_AUTH,

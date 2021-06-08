@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI device_replacement API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_deploy_device_replacement_workflow(json_schema_validate, obj):
-    json_schema_validate('jsd_3faaa9944b49bc9f_v2_2_1').validate(obj)
+    json_schema_validate('jsd_19f256e33af7501a8bdae2742ca9f6d6_v2_2_1').validate(obj)
     return True
 
 
@@ -44,10 +46,15 @@ def deploy_device_replacement_workflow(api):
 
 @pytest.mark.device_replacement
 def test_deploy_device_replacement_workflow(api, validator):
-    assert is_valid_deploy_device_replacement_workflow(
-        validator,
-        deploy_device_replacement_workflow(api)
-    )
+    try:
+        assert is_valid_deploy_device_replacement_workflow(
+            validator,
+            deploy_device_replacement_workflow(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def deploy_device_replacement_workflow_default(api):
@@ -68,94 +75,12 @@ def test_deploy_device_replacement_workflow_default(api, validator):
             deploy_device_replacement_workflow_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_unmark_device_for_replacement(json_schema_validate, obj):
-    json_schema_validate('jsd_4ababa75489ab24b_v2_2_1').validate(obj)
-    return True
-
-
-def unmark_device_for_replacement(api):
-    endpoint_result = api.device_replacement.unmark_device_for_replacement(
-        active_validation=True,
-        payload=[{'creationTime': 0, 'family': 'string', 'faultyDeviceId': 'string', 'faultyDeviceName': 'string', 'faultyDevicePlatform': 'string', 'faultyDeviceSerialNumber': 'string', 'id': 'string', 'neighbourDeviceId': 'string', 'networkReadinessTaskId': 'string', 'replacementDevicePlatform': 'string', 'replacementDeviceSerialNumber': 'string', 'replacementStatus': 'string', 'replacementTime': 0, 'workflowId': 'string'}]
-    )
-    return endpoint_result
-
-
-@pytest.mark.device_replacement
-def test_unmark_device_for_replacement(api, validator):
-    assert is_valid_unmark_device_for_replacement(
-        validator,
-        unmark_device_for_replacement(api)
-    )
-
-
-def unmark_device_for_replacement_default(api):
-    endpoint_result = api.device_replacement.unmark_device_for_replacement(
-        active_validation=True,
-        payload=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.device_replacement
-def test_unmark_device_for_replacement_default(api, validator):
-    try:
-        assert is_valid_unmark_device_for_replacement(
-            validator,
-            unmark_device_for_replacement_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_mark_device_for_replacement(json_schema_validate, obj):
-    json_schema_validate('jsd_64b9dad0403aaca1_v2_2_1').validate(obj)
-    return True
-
-
-def mark_device_for_replacement(api):
-    endpoint_result = api.device_replacement.mark_device_for_replacement(
-        active_validation=True,
-        payload=[{'creationTime': 0, 'family': 'string', 'faultyDeviceId': 'string', 'faultyDeviceName': 'string', 'faultyDevicePlatform': 'string', 'faultyDeviceSerialNumber': 'string', 'id': 'string', 'neighbourDeviceId': 'string', 'networkReadinessTaskId': 'string', 'replacementDevicePlatform': 'string', 'replacementDeviceSerialNumber': 'string', 'replacementStatus': 'string', 'replacementTime': 0, 'workflowId': 'string'}]
-    )
-    return endpoint_result
-
-
-@pytest.mark.device_replacement
-def test_mark_device_for_replacement(api, validator):
-    assert is_valid_mark_device_for_replacement(
-        validator,
-        mark_device_for_replacement(api)
-    )
-
-
-def mark_device_for_replacement_default(api):
-    endpoint_result = api.device_replacement.mark_device_for_replacement(
-        active_validation=True,
-        payload=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.device_replacement
-def test_mark_device_for_replacement_default(api, validator):
-    try:
-        assert is_valid_mark_device_for_replacement(
-            validator,
-            mark_device_for_replacement_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_return_replacement_devices_with_details(json_schema_validate, obj):
-    json_schema_validate('jsd_809c29564bc997d0_v2_2_1').validate(obj)
+    json_schema_validate('jsd_e89f8ba4965853b3a075c7401c564477_v2_2_1').validate(obj)
     return True
 
 
@@ -178,10 +103,15 @@ def return_replacement_devices_with_details(api):
 
 @pytest.mark.device_replacement
 def test_return_replacement_devices_with_details(api, validator):
-    assert is_valid_return_replacement_devices_with_details(
-        validator,
-        return_replacement_devices_with_details(api)
-    )
+    try:
+        assert is_valid_return_replacement_devices_with_details(
+            validator,
+            return_replacement_devices_with_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def return_replacement_devices_with_details_default(api):
@@ -209,12 +139,104 @@ def test_return_replacement_devices_with_details_default(api, validator):
             return_replacement_devices_with_details_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_unmark_device_for_replacement(json_schema_validate, obj):
+    json_schema_validate('jsd_2b60f9f312235959812d49dc4c469e83_v2_2_1').validate(obj)
+    return True
+
+
+def unmark_device_for_replacement(api):
+    endpoint_result = api.device_replacement.unmark_device_for_replacement(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.device_replacement
+def test_unmark_device_for_replacement(api, validator):
+    try:
+        assert is_valid_unmark_device_for_replacement(
+            validator,
+            unmark_device_for_replacement(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def unmark_device_for_replacement_default(api):
+    endpoint_result = api.device_replacement.unmark_device_for_replacement(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.device_replacement
+def test_unmark_device_for_replacement_default(api, validator):
+    try:
+        assert is_valid_unmark_device_for_replacement(
+            validator,
+            unmark_device_for_replacement_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_mark_device_for_replacement(json_schema_validate, obj):
+    json_schema_validate('jsd_ac6e63199fb05bcf89106a22502c2197_v2_2_1').validate(obj)
+    return True
+
+
+def mark_device_for_replacement(api):
+    endpoint_result = api.device_replacement.mark_device_for_replacement(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.device_replacement
+def test_mark_device_for_replacement(api, validator):
+    try:
+        assert is_valid_mark_device_for_replacement(
+            validator,
+            mark_device_for_replacement(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def mark_device_for_replacement_default(api):
+    endpoint_result = api.device_replacement.mark_device_for_replacement(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.device_replacement
+def test_mark_device_for_replacement_default(api, validator):
+    try:
+        assert is_valid_mark_device_for_replacement(
+            validator,
+            mark_device_for_replacement_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_return_replacement_devices_count(json_schema_validate, obj):
-    json_schema_validate('jsd_9eb84ba54929a2a2_v2_2_1').validate(obj)
+    json_schema_validate('jsd_c2b2882c8fb65284bfc9d781e9ddd07f_v2_2_1').validate(obj)
     return True
 
 
@@ -227,10 +249,15 @@ def return_replacement_devices_count(api):
 
 @pytest.mark.device_replacement
 def test_return_replacement_devices_count(api, validator):
-    assert is_valid_return_replacement_devices_count(
-        validator,
-        return_replacement_devices_count(api)
-    )
+    try:
+        assert is_valid_return_replacement_devices_count(
+            validator,
+            return_replacement_devices_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def return_replacement_devices_count_default(api):
@@ -248,5 +275,5 @@ def test_return_replacement_devices_count_default(api, validator):
             return_replacement_devices_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

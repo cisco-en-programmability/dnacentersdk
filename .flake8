@@ -17,7 +17,11 @@ exclude =
     .vscode/,
     __pycache__,
     dist/,
+    build/,
+    .eggs/,
     docs/conf.py,
     venv/,
     versioneer.py,
     dnacentersdk/_version.py,
+    tests/,
+max-line-length = 140

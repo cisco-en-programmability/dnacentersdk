@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Preview Config data model.
+"""Cisco DNA Center Preview Config data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -53,8 +53,6 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 ]
                 },
                 "config": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -67,8 +65,6 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 ]
                 },
                 "errorMessage": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -81,24 +77,18 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 ]
                 },
                 "rfProfile": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sensorProfile": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "siteId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -111,8 +101,6 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 ]
                 },
                 "taskId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -125,8 +113,6 @@ class JSONSchemaValidatorCf9418234D9AB37E(object):
                 ]
                 },
                 "version": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

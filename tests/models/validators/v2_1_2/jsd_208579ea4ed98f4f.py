@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add IP Pool in SDA Virtual Network data model.
+"""Cisco DNA Center Add IP Pool in SDA Virtual Network data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,24 +46,18 @@ class JSONSchemaValidator208579Ea4Ed98F4F(object):
                 "properties": {
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "executionStatusUrl": {
-                "description":
-                "Execution Status Url",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"

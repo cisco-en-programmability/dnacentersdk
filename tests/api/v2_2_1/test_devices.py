@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI devices API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,195 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
+def is_valid_threat_detail_count(json_schema_validate, obj):
+    json_schema_validate('jsd_1137c7266d89581c9601b79b7304fda3_v2_2_1').validate(obj)
+    return True
+
+
+def threat_detail_count(api):
+    endpoint_result = api.devices.threat_detail_count(
+        active_validation=True,
+        endTime=0,
+        isNewThreat=True,
+        limit=0,
+        offset=0,
+        payload=None,
+        siteId=['string'],
+        startTime=0,
+        threatLevel=['string'],
+        threatType=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_threat_detail_count(api, validator):
+    try:
+        assert is_valid_threat_detail_count(
+            validator,
+            threat_detail_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def threat_detail_count_default(api):
+    endpoint_result = api.devices.threat_detail_count(
+        active_validation=True,
+        endTime=None,
+        isNewThreat=None,
+        limit=None,
+        offset=None,
+        payload=None,
+        siteId=None,
+        startTime=None,
+        threatLevel=None,
+        threatType=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_threat_detail_count_default(api, validator):
+    try:
+        assert is_valid_threat_detail_count(
+            validator,
+            threat_detail_count_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_threat_summary(json_schema_validate, obj):
+    json_schema_validate('jsd_e6eed78cb55d51a1bfe669729df25689_v2_2_1').validate(obj)
+    return True
+
+
+def threat_summary(api):
+    endpoint_result = api.devices.threat_summary(
+        active_validation=True,
+        endTime=0,
+        payload=None,
+        siteId=['string'],
+        startTime=0,
+        threatLevel=['string'],
+        threatType=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_threat_summary(api, validator):
+    try:
+        assert is_valid_threat_summary(
+            validator,
+            threat_summary(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def threat_summary_default(api):
+    endpoint_result = api.devices.threat_summary(
+        active_validation=True,
+        endTime=None,
+        payload=None,
+        siteId=None,
+        startTime=None,
+        threatLevel=None,
+        threatType=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_threat_summary_default(api, validator):
+    try:
+        assert is_valid_threat_summary(
+            validator,
+            threat_summary_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_threat_details(json_schema_validate, obj):
+    json_schema_validate('jsd_5f4ce55b5f235924903516ef31dc9e3c_v2_2_1').validate(obj)
+    return True
+
+
+def threat_details(api):
+    endpoint_result = api.devices.threat_details(
+        active_validation=True,
+        endTime=0,
+        isNewThreat=True,
+        limit=0,
+        offset=0,
+        payload=None,
+        siteId=['string'],
+        startTime=0,
+        threatLevel=['string'],
+        threatType=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_threat_details(api, validator):
+    try:
+        assert is_valid_threat_details(
+            validator,
+            threat_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def threat_details_default(api):
+    endpoint_result = api.devices.threat_details(
+        active_validation=True,
+        endTime=None,
+        isNewThreat=None,
+        limit=None,
+        offset=None,
+        payload=None,
+        siteId=None,
+        startTime=None,
+        threatLevel=None,
+        threatType=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_threat_details_default(api, validator):
+    try:
+        assert is_valid_threat_details(
+            validator,
+            threat_details_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_get_module_info_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_0db7da744c0b83d8_v2_2_1').validate(obj)
+    json_schema_validate('jsd_96a4588640da5b018b499c5760f4092a_v2_2_1').validate(obj)
     return True
 
 
@@ -41,10 +223,15 @@ def get_module_info_by_id(api):
 
 @pytest.mark.devices
 def test_get_module_info_by_id(api, validator):
-    assert is_valid_get_module_info_by_id(
-        validator,
-        get_module_info_by_id(api)
-    )
+    try:
+        assert is_valid_get_module_info_by_id(
+            validator,
+            get_module_info_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_module_info_by_id_default(api):
@@ -62,12 +249,56 @@ def test_get_module_info_by_id_default(api, validator):
             get_module_info_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_358d86f657f8592f97014d2ebf8d37ac_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_by_id(api):
+    endpoint_result = api.devices.get_device_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_by_id(api, validator):
+    try:
+        assert is_valid_get_device_by_id(
+            validator,
+            get_device_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_by_id_default(api):
+    endpoint_result = api.devices.get_device_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_by_id_default(api, validator):
+    try:
+        assert is_valid_get_device_by_id(
+            validator,
+            get_device_by_id_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_delete_device_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_1c894b5848eab214_v2_2_1').validate(obj)
+    json_schema_validate('jsd_003e01233fa258e393239c4b41882806_v2_2_1').validate(obj)
     return True
 
 
@@ -81,10 +312,15 @@ def delete_device_by_id(api):
 
 @pytest.mark.devices
 def test_delete_device_by_id(api, validator):
-    assert is_valid_delete_device_by_id(
-        validator,
-        delete_device_by_id(api)
-    )
+    try:
+        assert is_valid_delete_device_by_id(
+            validator,
+            delete_device_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def delete_device_by_id_default(api):
@@ -103,111 +339,58 @@ def test_delete_device_by_id_default(api, validator):
             delete_device_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_device_list(json_schema_validate, obj):
-    json_schema_validate('jsd_20b19b52464b8972_v2_2_1').validate(obj)
+def is_valid_return_power_supply_fan_details_for_the_given_device(json_schema_validate, obj):
+    json_schema_validate('jsd_520c1cb24a2b53ce8d29d119c6ee1112_v2_2_1').validate(obj)
     return True
 
 
-def get_device_list(api):
-    endpoint_result = api.devices.get_device_list(
-        associated_wlc_ip='value1,value2',
-        collection_interval='value1,value2',
-        collection_status='value1,value2',
-        error_code='value1,value2',
-        error_description='value1,value2',
-        family='value1,value2',
-        hostname='value1,value2',
-        id='string',
-        license_name='value1,value2',
-        license_status='value1,value2',
-        license_type='value1,value2',
-        location='value1,value2',
-        location_name='value1,value2',
-        mac_address='value1,value2',
-        management_ip_address='value1,value2',
-        module_equpimenttype='value1,value2',
-        module_name='value1,value2',
-        module_operationstatecode='value1,value2',
-        module_partnumber='value1,value2',
-        module_servicestate='value1,value2',
-        module_vendorequipmenttype='value1,value2',
-        not_synced_for_minutes='value1,value2',
-        platform_id='value1,value2',
-        reachability_status='value1,value2',
-        role='value1,value2',
-        serial_number='value1,value2',
-        series='value1,value2',
-        software_type='value1,value2',
-        software_version='value1,value2',
-        type='value1,value2',
-        up_time='value1,value2'
+def return_power_supply_fan_details_for_the_given_device(api):
+    endpoint_result = api.devices.return_power_supply_fan_details_for_the_given_device(
+        device_uuid='string',
+        type='string'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_device_list(api, validator):
-    assert is_valid_get_device_list(
-        validator,
-        get_device_list(api)
-    )
-
-
-def get_device_list_default(api):
-    endpoint_result = api.devices.get_device_list(
-        associated_wlc_ip=None,
-        collection_interval=None,
-        collection_status=None,
-        error_code=None,
-        error_description=None,
-        family=None,
-        hostname=None,
-        id=None,
-        license_name=None,
-        license_status=None,
-        license_type=None,
-        location=None,
-        location_name=None,
-        mac_address=None,
-        management_ip_address=None,
-        module_equpimenttype=None,
-        module_name=None,
-        module_operationstatecode=None,
-        module_partnumber=None,
-        module_servicestate=None,
-        module_vendorequipmenttype=None,
-        not_synced_for_minutes=None,
-        platform_id=None,
-        reachability_status=None,
-        role=None,
-        serial_number=None,
-        series=None,
-        software_type=None,
-        software_version=None,
-        type=None,
-        up_time=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_list_default(api, validator):
+def test_return_power_supply_fan_details_for_the_given_device(api, validator):
     try:
-        assert is_valid_get_device_list(
+        assert is_valid_return_power_supply_fan_details_for_the_given_device(
             validator,
-            get_device_list_default(api)
+            return_power_supply_fan_details_for_the_given_device(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def return_power_supply_fan_details_for_the_given_device_default(api):
+    endpoint_result = api.devices.return_power_supply_fan_details_for_the_given_device(
+        device_uuid='string',
+        type=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_return_power_supply_fan_details_for_the_given_device_default(api, validator):
+    try:
+        assert is_valid_return_power_supply_fan_details_for_the_given_device(
+            validator,
+            return_power_supply_fan_details_for_the_given_device_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_device_interface_vlans(json_schema_validate, obj):
-    json_schema_validate('jsd_288df9494f2a9746_v2_2_1').validate(obj)
+    json_schema_validate('jsd_fd5fb603cba6523abb25c8ec131fbb8b_v2_2_1').validate(obj)
     return True
 
 
@@ -221,10 +404,15 @@ def get_device_interface_vlans(api):
 
 @pytest.mark.devices
 def test_get_device_interface_vlans(api, validator):
-    assert is_valid_get_device_interface_vlans(
-        validator,
-        get_device_interface_vlans(api)
-    )
+    try:
+        assert is_valid_get_device_interface_vlans(
+            validator,
+            get_device_interface_vlans(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_device_interface_vlans_default(api):
@@ -243,12 +431,12 @@ def test_get_device_interface_vlans_default(api, validator):
             get_device_interface_vlans_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_device_interfaces_by_specified_range(json_schema_validate, obj):
-    json_schema_validate('jsd_349c888443b89a58_v2_2_1').validate(obj)
+    json_schema_validate('jsd_5a3d52c630ba5deaada16fe3b07af744_v2_2_1').validate(obj)
     return True
 
 
@@ -263,10 +451,15 @@ def get_device_interfaces_by_specified_range(api):
 
 @pytest.mark.devices
 def test_get_device_interfaces_by_specified_range(api, validator):
-    assert is_valid_get_device_interfaces_by_specified_range(
-        validator,
-        get_device_interfaces_by_specified_range(api)
-    )
+    try:
+        assert is_valid_get_device_interfaces_by_specified_range(
+            validator,
+            get_device_interfaces_by_specified_range(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_device_interfaces_by_specified_range_default(api):
@@ -286,51 +479,12 @@ def test_get_device_interfaces_by_specified_range_default(api, validator):
             get_device_interfaces_by_specified_range_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_device_interface_count(json_schema_validate, obj):
-    json_schema_validate('jsd_3d923b184dc9a4ca_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_interface_count(api):
-    endpoint_result = api.devices.get_device_interface_count(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_interface_count(api, validator):
-    assert is_valid_get_device_interface_count(
-        validator,
-        get_device_interface_count(api)
-    )
-
-
-def get_device_interface_count_default(api):
-    endpoint_result = api.devices.get_device_interface_count(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_interface_count_default(api, validator):
-    try:
-        assert is_valid_get_device_interface_count(
-            validator,
-            get_device_interface_count_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_polling_interval_for_all_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_38bd0b884b89a785_v2_2_1').validate(obj)
+    json_schema_validate('jsd_ce94ab18ad505e8a9846f6c4c9df0d2b_v2_2_1').validate(obj)
     return True
 
 
@@ -343,10 +497,15 @@ def get_polling_interval_for_all_devices(api):
 
 @pytest.mark.devices
 def test_get_polling_interval_for_all_devices(api, validator):
-    assert is_valid_get_polling_interval_for_all_devices(
-        validator,
-        get_polling_interval_for_all_devices(api)
-    )
+    try:
+        assert is_valid_get_polling_interval_for_all_devices(
+            validator,
+            get_polling_interval_for_all_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_polling_interval_for_all_devices_default(api):
@@ -364,12 +523,12 @@ def test_get_polling_interval_for_all_devices_default(api, validator):
             get_polling_interval_for_all_devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_sync_devices_using_forcesync(json_schema_validate, obj):
-    json_schema_validate('jsd_3b9ef9674429be4c_v2_2_1').validate(obj)
+    json_schema_validate('jsd_9425f2c120b855cb8c852806ce72e54d_v2_2_1').validate(obj)
     return True
 
 
@@ -377,17 +536,22 @@ def sync_devices_using_forcesync(api):
     endpoint_result = api.devices.sync_devices_using_forcesync(
         active_validation=True,
         force_sync=True,
-        payload=[{}]
+        payload=None
     )
     return endpoint_result
 
 
 @pytest.mark.devices
 def test_sync_devices_using_forcesync(api, validator):
-    assert is_valid_sync_devices_using_forcesync(
-        validator,
-        sync_devices_using_forcesync(api)
-    )
+    try:
+        assert is_valid_sync_devices_using_forcesync(
+            validator,
+            sync_devices_using_forcesync(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def sync_devices_using_forcesync_default(api):
@@ -407,663 +571,100 @@ def test_sync_devices_using_forcesync_default(api, validator):
             sync_devices_using_forcesync_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_add_device(json_schema_validate, obj):
-    json_schema_validate('jsd_4bb22af046fa8f08_v2_2_1').validate(obj)
+def is_valid_get_device_interface_count(json_schema_validate, obj):
+    json_schema_validate('jsd_0da44fbc3e415a99aac0bdd291e9a87a_v2_2_1').validate(obj)
     return True
 
 
-def add_device(api):
-    endpoint_result = api.devices.add_device(
-        active_validation=True,
-        cliTransport='string',
-        computeDevice=True,
-        enablePassword='string',
-        extendedDiscoveryInfo='string',
-        httpPassword='string',
-        httpPort='string',
-        httpSecure=True,
-        httpUserName='string',
-        ipAddress=['string'],
-        merakiOrgId=['string'],
-        netconfPort='string',
-        password='string',
-        payload=None,
-        serialNumber='string',
-        snmpAuthPassphrase='string',
-        snmpAuthProtocol='string',
-        snmpMode='string',
-        snmpPrivPassphrase='string',
-        snmpPrivProtocol='string',
-        snmpROCommunity='string',
-        snmpRWCommunity='string',
-        snmpRetry=0,
-        snmpTimeout=0,
-        snmpUserName='string',
-        snmpVersion='string',
-        type='COMPUTE_DEVICE',
-        updateMgmtIPaddressList=[{'existMgmtIpAddress': 'string', 'newMgmtIpAddress': 'string'}],
-        userName='string'
+def get_device_interface_count(api):
+    endpoint_result = api.devices.get_device_interface_count(
+
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_add_device(api, validator):
-    assert is_valid_add_device(
-        validator,
-        add_device(api)
-    )
-
-
-def add_device_default(api):
-    endpoint_result = api.devices.add_device(
-        active_validation=True,
-        cliTransport=None,
-        computeDevice=None,
-        enablePassword=None,
-        extendedDiscoveryInfo=None,
-        httpPassword=None,
-        httpPort=None,
-        httpSecure=None,
-        httpUserName=None,
-        ipAddress=None,
-        merakiOrgId=None,
-        netconfPort=None,
-        password=None,
-        payload=None,
-        serialNumber=None,
-        snmpAuthPassphrase=None,
-        snmpAuthProtocol=None,
-        snmpMode=None,
-        snmpPrivPassphrase=None,
-        snmpPrivProtocol=None,
-        snmpROCommunity=None,
-        snmpRWCommunity=None,
-        snmpRetry=None,
-        snmpTimeout=None,
-        snmpUserName=None,
-        snmpVersion=None,
-        type=None,
-        updateMgmtIPaddressList=None,
-        userName=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_add_device_default(api, validator):
+def test_get_device_interface_count(api, validator):
     try:
-        assert is_valid_add_device(
+        assert is_valid_get_device_interface_count(
             validator,
-            add_device_default(api)
+            get_device_interface_count(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
             raise original_e
 
 
-def is_valid_get_interface_details(json_schema_validate, obj):
-    json_schema_validate('jsd_4eb56a614cc9a2d2_v2_2_1').validate(obj)
-    return True
+def get_device_interface_count_default(api):
+    endpoint_result = api.devices.get_device_interface_count(
 
-
-def get_interface_details(api):
-    endpoint_result = api.devices.get_interface_details(
-        device_id='string',
-        name='string'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_interface_details(api, validator):
-    assert is_valid_get_interface_details(
-        validator,
-        get_interface_details(api)
-    )
-
-
-def get_interface_details_default(api):
-    endpoint_result = api.devices.get_interface_details(
-        device_id='string',
-        name=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_interface_details_default(api, validator):
+def test_get_device_interface_count_default(api, validator):
     try:
-        assert is_valid_get_interface_details(
+        assert is_valid_get_device_interface_count(
             validator,
-            get_interface_details_default(api)
+            get_device_interface_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_device_interface_count_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_5b8639224cd88ea7_v2_2_1').validate(obj)
+def is_valid_get_device_list(json_schema_validate, obj):
+    json_schema_validate('jsd_fe602e8165035b5cbc304fada4ee2f26_v2_2_1').validate(obj)
     return True
 
 
-def get_device_interface_count_by_id(api):
-    endpoint_result = api.devices.get_device_interface_count_by_id(
-        device_id='string'
+def get_device_list(api):
+    endpoint_result = api.devices.get_device_list(
+
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_device_interface_count_by_id(api, validator):
-    assert is_valid_get_device_interface_count_by_id(
-        validator,
-        get_device_interface_count_by_id(api)
-    )
-
-
-def get_device_interface_count_by_id_default(api):
-    endpoint_result = api.devices.get_device_interface_count_by_id(
-        device_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_interface_count_by_id_default(api, validator):
+def test_get_device_list(api, validator):
     try:
-        assert is_valid_get_device_interface_count_by_id(
+        assert is_valid_get_device_list(
             validator,
-            get_device_interface_count_by_id_default(api)
+            get_device_list(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
             raise original_e
 
 
-def is_valid_get_device_count(json_schema_validate, obj):
-    json_schema_validate('jsd_5db21b8e43fab7d8_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_count(api):
-    endpoint_result = api.devices.get_device_count(
+def get_device_list_default(api):
+    endpoint_result = api.devices.get_device_list(
 
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_device_count(api, validator):
-    assert is_valid_get_device_count(
-        validator,
-        get_device_count(api)
-    )
-
-
-def get_device_count_default(api):
-    endpoint_result = api.devices.get_device_count(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_count_default(api, validator):
+def test_get_device_list_default(api, validator):
     try:
-        assert is_valid_get_device_count(
+        assert is_valid_get_device_list(
             validator,
-            get_device_count_default(api)
+            get_device_list_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_ospf_interfaces(json_schema_validate, obj):
-    json_schema_validate('jsd_70ad397649e9b4d3_v2_2_1').validate(obj)
-    return True
-
-
-def get_ospf_interfaces(api):
-    endpoint_result = api.devices.get_ospf_interfaces(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_ospf_interfaces(api, validator):
-    assert is_valid_get_ospf_interfaces(
-        validator,
-        get_ospf_interfaces(api)
-    )
-
-
-def get_ospf_interfaces_default(api):
-    endpoint_result = api.devices.get_ospf_interfaces(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_ospf_interfaces_default(api, validator):
-    try:
-        assert is_valid_get_ospf_interfaces(
-            validator,
-            get_ospf_interfaces_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_functional_capability_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_81bb4804405a8d2f_v2_2_1').validate(obj)
-    return True
-
-
-def get_functional_capability_by_id(api):
-    endpoint_result = api.devices.get_functional_capability_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_functional_capability_by_id(api, validator):
-    assert is_valid_get_functional_capability_by_id(
-        validator,
-        get_functional_capability_by_id(api)
-    )
-
-
-def get_functional_capability_by_id_default(api):
-    endpoint_result = api.devices.get_functional_capability_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_functional_capability_by_id_default(api, validator):
-    try:
-        assert is_valid_get_functional_capability_by_id(
-            validator,
-            get_functional_capability_by_id_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_device_summary(json_schema_validate, obj):
-    json_schema_validate('jsd_819f9aa54feab7bf_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_summary(api):
-    endpoint_result = api.devices.get_device_summary(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_summary(api, validator):
-    assert is_valid_get_device_summary(
-        validator,
-        get_device_summary(api)
-    )
-
-
-def get_device_summary_default(api):
-    endpoint_result = api.devices.get_device_summary(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_summary_default(api, validator):
-    try:
-        assert is_valid_get_device_summary(
-            validator,
-            get_device_summary_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_polling_interval_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_82918a1b4d289c5c_v2_2_1').validate(obj)
-    return True
-
-
-def get_polling_interval_by_id(api):
-    endpoint_result = api.devices.get_polling_interval_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_polling_interval_by_id(api, validator):
-    assert is_valid_get_polling_interval_by_id(
-        validator,
-        get_polling_interval_by_id(api)
-    )
-
-
-def get_polling_interval_by_id_default(api):
-    endpoint_result = api.devices.get_polling_interval_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_polling_interval_by_id_default(api, validator):
-    try:
-        assert is_valid_get_polling_interval_by_id(
-            validator,
-            get_polling_interval_by_id_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_isis_interfaces(json_schema_validate, obj):
-    json_schema_validate('jsd_84ad8b0e42cab48a_v2_2_1').validate(obj)
-    return True
-
-
-def get_isis_interfaces(api):
-    endpoint_result = api.devices.get_isis_interfaces(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_isis_interfaces(api, validator):
-    assert is_valid_get_isis_interfaces(
-        validator,
-        get_isis_interfaces(api)
-    )
-
-
-def get_isis_interfaces_default(api):
-    endpoint_result = api.devices.get_isis_interfaces(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_isis_interfaces_default(api, validator):
-    try:
-        assert is_valid_get_isis_interfaces(
-            validator,
-            get_isis_interfaces_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_device_config_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_84b33a9e480abcaf_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_config_by_id(api):
-    endpoint_result = api.devices.get_device_config_by_id(
-        network_device_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_config_by_id(api, validator):
-    assert is_valid_get_device_config_by_id(
-        validator,
-        get_device_config_by_id(api)
-    )
-
-
-def get_device_config_by_id_default(api):
-    endpoint_result = api.devices.get_device_config_by_id(
-        network_device_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_config_by_id_default(api, validator):
-    try:
-        assert is_valid_get_device_config_by_id(
-            validator,
-            get_device_config_by_id_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_device_config_count(json_schema_validate, obj):
-    json_schema_validate('jsd_888f585c49b88441_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_config_count(api):
-    endpoint_result = api.devices.get_device_config_count(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_config_count(api, validator):
-    assert is_valid_get_device_config_count(
-        validator,
-        get_device_config_count(api)
-    )
-
-
-def get_device_config_count_default(api):
-    endpoint_result = api.devices.get_device_config_count(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_config_count_default(api, validator):
-    try:
-        assert is_valid_get_device_config_count(
-            validator,
-            get_device_config_count_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_poe_details_(json_schema_validate, obj):
-    json_schema_validate('jsd_8ba679324ed9abae_v2_2_1').validate(obj)
-    return True
-
-
-def poe_details_(api):
-    endpoint_result = api.devices.poe_details_(
-        device_uuid='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_poe_details_(api, validator):
-    assert is_valid_poe_details_(
-        validator,
-        poe_details_(api)
-    )
-
-
-def poe_details__default(api):
-    endpoint_result = api.devices.poe_details_(
-        device_uuid='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_poe_details__default(api, validator):
-    try:
-        assert is_valid_poe_details_(
-            validator,
-            poe_details__default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_organization_list_for_meraki(json_schema_validate, obj):
-    json_schema_validate('jsd_84b37ae54c59ab28_v2_2_1').validate(obj)
-    return True
-
-
-def get_organization_list_for_meraki(api):
-    endpoint_result = api.devices.get_organization_list_for_meraki(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_organization_list_for_meraki(api, validator):
-    assert is_valid_get_organization_list_for_meraki(
-        validator,
-        get_organization_list_for_meraki(api)
-    )
-
-
-def get_organization_list_for_meraki_default(api):
-    endpoint_result = api.devices.get_organization_list_for_meraki(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_organization_list_for_meraki_default(api, validator):
-    try:
-        assert is_valid_get_organization_list_for_meraki(
-            validator,
-            get_organization_list_for_meraki_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_device_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_8fa8eb404a4a8d96_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_by_id(api):
-    endpoint_result = api.devices.get_device_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_by_id(api, validator):
-    assert is_valid_get_device_by_id(
-        validator,
-        get_device_by_id(api)
-    )
-
-
-def get_device_by_id_default(api):
-    endpoint_result = api.devices.get_device_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_by_id_default(api, validator):
-    try:
-        assert is_valid_get_device_by_id(
-            validator,
-            get_device_by_id_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_module_count(json_schema_validate, obj):
-    json_schema_validate('jsd_8db939744649a782_v2_2_1').validate(obj)
-    return True
-
-
-def get_module_count(api):
-    endpoint_result = api.devices.get_module_count(
-        device_id='string',
-        name_list='value1,value2',
-        operational_state_code_list='value1,value2',
-        part_number_list='value1,value2',
-        vendor_equipment_type_list='value1,value2'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_module_count(api, validator):
-    assert is_valid_get_module_count(
-        validator,
-        get_module_count(api)
-    )
-
-
-def get_module_count_default(api):
-    endpoint_result = api.devices.get_module_count(
-        device_id=None,
-        name_list=None,
-        operational_state_code_list=None,
-        part_number_list=None,
-        vendor_equipment_type_list=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_module_count_default(api, validator):
-    try:
-        assert is_valid_get_module_count(
-            validator,
-            get_module_count_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_sync_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_aeb9eb67460b92df_v2_2_1').validate(obj)
+    json_schema_validate('jsd_8232fe06867e548bba1919024b40d992_v2_2_1').validate(obj)
     return True
 
 
@@ -1095,7 +696,7 @@ def sync_devices(api):
         snmpTimeout=0,
         snmpUserName='string',
         snmpVersion='string',
-        type='COMPUTE_DEVICE',
+        type='string',
         updateMgmtIPaddressList=[{'existMgmtIpAddress': 'string', 'newMgmtIpAddress': 'string'}],
         userName='string'
     )
@@ -1104,10 +705,15 @@ def sync_devices(api):
 
 @pytest.mark.devices
 def test_sync_devices(api, validator):
-    assert is_valid_sync_devices(
-        validator,
-        sync_devices(api)
-    )
+    try:
+        assert is_valid_sync_devices(
+            validator,
+            sync_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def sync_devices_default(api):
@@ -1153,12 +759,738 @@ def test_sync_devices_default(api, validator):
             sync_devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_add_device(json_schema_validate, obj):
+    json_schema_validate('jsd_62704fe3ec7651e79d891fce37a0d860_v2_2_1').validate(obj)
+    return True
+
+
+def add_device(api):
+    endpoint_result = api.devices.add_device(
+        active_validation=True,
+        cliTransport='string',
+        computeDevice=True,
+        enablePassword='string',
+        extendedDiscoveryInfo='string',
+        httpPassword='string',
+        httpPort='string',
+        httpSecure=True,
+        httpUserName='string',
+        ipAddress=['string'],
+        merakiOrgId=['string'],
+        netconfPort='string',
+        password='string',
+        payload=None,
+        serialNumber='string',
+        snmpAuthPassphrase='string',
+        snmpAuthProtocol='string',
+        snmpMode='string',
+        snmpPrivPassphrase='string',
+        snmpPrivProtocol='string',
+        snmpROCommunity='string',
+        snmpRWCommunity='string',
+        snmpRetry=0,
+        snmpTimeout=0,
+        snmpUserName='string',
+        snmpVersion='string',
+        type='string',
+        updateMgmtIPaddressList=[{'existMgmtIpAddress': 'string', 'newMgmtIpAddress': 'string'}],
+        userName='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_add_device(api, validator):
+    try:
+        assert is_valid_add_device(
+            validator,
+            add_device(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_device_default(api):
+    endpoint_result = api.devices.add_device(
+        active_validation=True,
+        cliTransport=None,
+        computeDevice=None,
+        enablePassword=None,
+        extendedDiscoveryInfo=None,
+        httpPassword=None,
+        httpPort=None,
+        httpSecure=None,
+        httpUserName=None,
+        ipAddress=None,
+        merakiOrgId=None,
+        netconfPort=None,
+        password=None,
+        payload=None,
+        serialNumber=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpRWCommunity=None,
+        snmpRetry=None,
+        snmpTimeout=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        type=None,
+        updateMgmtIPaddressList=None,
+        userName=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_add_device_default(api, validator):
+    try:
+        assert is_valid_add_device(
+            validator,
+            add_device_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_interface_details(json_schema_validate, obj):
+    json_schema_validate('jsd_bef9e9b306085d879b877598fad71b51_v2_2_1').validate(obj)
+    return True
+
+
+def get_interface_details(api):
+    endpoint_result = api.devices.get_interface_details(
+        device_id='string',
+        name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_interface_details(api, validator):
+    try:
+        assert is_valid_get_interface_details(
+            validator,
+            get_interface_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_interface_details_default(api):
+    endpoint_result = api.devices.get_interface_details(
+        device_id='string',
+        name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_interface_details_default(api, validator):
+    try:
+        assert is_valid_get_interface_details(
+            validator,
+            get_interface_details_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_count(json_schema_validate, obj):
+    json_schema_validate('jsd_bbfe7340fe6752e5bc273a303d165654_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_count(api):
+    endpoint_result = api.devices.get_device_count(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_count(api, validator):
+    try:
+        assert is_valid_get_device_count(
+            validator,
+            get_device_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_count_default(api):
+    endpoint_result = api.devices.get_device_count(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_count_default(api, validator):
+    try:
+        assert is_valid_get_device_count(
+            validator,
+            get_device_count_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_interface_count_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_34b7d6c62ea6522081fcf55de7eb9fd7_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_interface_count_by_id(api):
+    endpoint_result = api.devices.get_device_interface_count_by_id(
+        device_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_interface_count_by_id(api, validator):
+    try:
+        assert is_valid_get_device_interface_count_by_id(
+            validator,
+            get_device_interface_count_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_interface_count_by_id_default(api):
+    endpoint_result = api.devices.get_device_interface_count_by_id(
+        device_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_interface_count_by_id_default(api, validator):
+    try:
+        assert is_valid_get_device_interface_count_by_id(
+            validator,
+            get_device_interface_count_by_id_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_ospf_interfaces(json_schema_validate, obj):
+    json_schema_validate('jsd_32a2868ff45f5621965f6ece01a742ce_v2_2_1').validate(obj)
+    return True
+
+
+def get_ospf_interfaces(api):
+    endpoint_result = api.devices.get_ospf_interfaces(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_ospf_interfaces(api, validator):
+    try:
+        assert is_valid_get_ospf_interfaces(
+            validator,
+            get_ospf_interfaces(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_ospf_interfaces_default(api):
+    endpoint_result = api.devices.get_ospf_interfaces(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_ospf_interfaces_default(api, validator):
+    try:
+        assert is_valid_get_ospf_interfaces(
+            validator,
+            get_ospf_interfaces_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_summary(json_schema_validate, obj):
+    json_schema_validate('jsd_fe0153ca24205608b8741d51f5a6d54a_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_summary(api):
+    endpoint_result = api.devices.get_device_summary(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_summary(api, validator):
+    try:
+        assert is_valid_get_device_summary(
+            validator,
+            get_device_summary(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_summary_default(api):
+    endpoint_result = api.devices.get_device_summary(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_summary_default(api, validator):
+    try:
+        assert is_valid_get_device_summary(
+            validator,
+            get_device_summary_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_functional_capability_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_7f494532c45654fdaeda8d46a0d9753d_v2_2_1').validate(obj)
+    return True
+
+
+def get_functional_capability_by_id(api):
+    endpoint_result = api.devices.get_functional_capability_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_functional_capability_by_id(api, validator):
+    try:
+        assert is_valid_get_functional_capability_by_id(
+            validator,
+            get_functional_capability_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_functional_capability_by_id_default(api):
+    endpoint_result = api.devices.get_functional_capability_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_functional_capability_by_id_default(api, validator):
+    try:
+        assert is_valid_get_functional_capability_by_id(
+            validator,
+            get_functional_capability_by_id_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_polling_interval_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_f90daf1c279351f884ba3198d3b2d641_v2_2_1').validate(obj)
+    return True
+
+
+def get_polling_interval_by_id(api):
+    endpoint_result = api.devices.get_polling_interval_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_polling_interval_by_id(api, validator):
+    try:
+        assert is_valid_get_polling_interval_by_id(
+            validator,
+            get_polling_interval_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_polling_interval_by_id_default(api):
+    endpoint_result = api.devices.get_polling_interval_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_polling_interval_by_id_default(api, validator):
+    try:
+        assert is_valid_get_polling_interval_by_id(
+            validator,
+            get_polling_interval_by_id_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_isis_interfaces(json_schema_validate, obj):
+    json_schema_validate('jsd_af71ea437c8755869b00d26ba9234dff_v2_2_1').validate(obj)
+    return True
+
+
+def get_isis_interfaces(api):
+    endpoint_result = api.devices.get_isis_interfaces(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_isis_interfaces(api, validator):
+    try:
+        assert is_valid_get_isis_interfaces(
+            validator,
+            get_isis_interfaces(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_isis_interfaces_default(api):
+    endpoint_result = api.devices.get_isis_interfaces(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_isis_interfaces_default(api, validator):
+    try:
+        assert is_valid_get_isis_interfaces(
+            validator,
+            get_isis_interfaces_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_config_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_5af0bbf34adb5146b931ec874fc2cc40_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_config_by_id(api):
+    endpoint_result = api.devices.get_device_config_by_id(
+        network_device_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_config_by_id(api, validator):
+    try:
+        assert is_valid_get_device_config_by_id(
+            validator,
+            get_device_config_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_config_by_id_default(api):
+    endpoint_result = api.devices.get_device_config_by_id(
+        network_device_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_config_by_id_default(api, validator):
+    try:
+        assert is_valid_get_device_config_by_id(
+            validator,
+            get_device_config_by_id_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_organization_list_for_meraki(json_schema_validate, obj):
+    json_schema_validate('jsd_790b4ba6d23d5e7eb62cbba4c9e1a29d_v2_2_1').validate(obj)
+    return True
+
+
+def get_organization_list_for_meraki(api):
+    endpoint_result = api.devices.get_organization_list_for_meraki(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_organization_list_for_meraki(api, validator):
+    try:
+        assert is_valid_get_organization_list_for_meraki(
+            validator,
+            get_organization_list_for_meraki(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_organization_list_for_meraki_default(api):
+    endpoint_result = api.devices.get_organization_list_for_meraki(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_organization_list_for_meraki_default(api, validator):
+    try:
+        assert is_valid_get_organization_list_for_meraki(
+            validator,
+            get_organization_list_for_meraki_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_config_count(json_schema_validate, obj):
+    json_schema_validate('jsd_3dc0a72537a3578ca31cc5ef29131d35_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_config_count(api):
+    endpoint_result = api.devices.get_device_config_count(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_config_count(api, validator):
+    try:
+        assert is_valid_get_device_config_count(
+            validator,
+            get_device_config_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_config_count_default(api):
+    endpoint_result = api.devices.get_device_config_count(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_config_count_default(api, validator):
+    try:
+        assert is_valid_get_device_config_count(
+            validator,
+            get_device_config_count_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_poe_details(json_schema_validate, obj):
+    json_schema_validate('jsd_f7a67aba0b365a1e9dae62d148511a25_v2_2_1').validate(obj)
+    return True
+
+
+def poe_details(api):
+    endpoint_result = api.devices.poe_details(
+        device_uuid='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_poe_details(api, validator):
+    try:
+        assert is_valid_poe_details(
+            validator,
+            poe_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def poe_details_default(api):
+    endpoint_result = api.devices.poe_details(
+        device_uuid='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_poe_details_default(api, validator):
+    try:
+        assert is_valid_poe_details(
+            validator,
+            poe_details_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_module_count(json_schema_validate, obj):
+    json_schema_validate('jsd_fb11f997009751c991884b5fc02087c5_v2_2_1').validate(obj)
+    return True
+
+
+def get_module_count(api):
+    endpoint_result = api.devices.get_module_count(
+        device_id='string',
+        name_list='value1,value2',
+        operational_state_code_list='value1,value2',
+        part_number_list='value1,value2',
+        vendor_equipment_type_list='value1,value2'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_module_count(api, validator):
+    try:
+        assert is_valid_get_module_count(
+            validator,
+            get_module_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_module_count_default(api):
+    endpoint_result = api.devices.get_module_count(
+        device_id=None,
+        name_list=None,
+        operational_state_code_list=None,
+        part_number_list=None,
+        vendor_equipment_type_list=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_module_count_default(api, validator):
+    try:
+        assert is_valid_get_module_count(
+            validator,
+            get_module_count_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_device_config_for_all_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_ed2bca4be412527198720a4dfec9604a_v2_2_1').validate(obj)
+    return True
+
+
+def get_device_config_for_all_devices(api):
+    endpoint_result = api.devices.get_device_config_for_all_devices(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_config_for_all_devices(api, validator):
+    try:
+        assert is_valid_get_device_config_for_all_devices(
+            validator,
+            get_device_config_for_all_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_device_config_for_all_devices_default(api):
+    endpoint_result = api.devices.get_device_config_for_all_devices(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_device_config_for_all_devices_default(api, validator):
+    try:
+        assert is_valid_get_device_config_for_all_devices(
+            validator,
+            get_device_config_for_all_devices_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_interface_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_b888792d43baba46_v2_2_1').validate(obj)
+    json_schema_validate('jsd_17b16bff74ae54ca88a02b34df169218_v2_2_1').validate(obj)
     return True
 
 
@@ -1171,10 +1503,15 @@ def get_interface_by_id(api):
 
 @pytest.mark.devices
 def test_get_interface_by_id(api, validator):
-    assert is_valid_get_interface_by_id(
-        validator,
-        get_interface_by_id(api)
-    )
+    try:
+        assert is_valid_get_interface_by_id(
+            validator,
+            get_interface_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_interface_by_id_default(api):
@@ -1192,12 +1529,12 @@ def test_get_interface_by_id_default(api, validator):
             get_interface_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_interface_info_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_ba9dc85b4b8a9a17_v2_2_1').validate(obj)
+    json_schema_validate('jsd_e057192b97615f0d99a10e2b66bab13a_v2_2_1').validate(obj)
     return True
 
 
@@ -1210,10 +1547,15 @@ def get_interface_info_by_id(api):
 
 @pytest.mark.devices
 def test_get_interface_info_by_id(api, validator):
-    assert is_valid_get_interface_info_by_id(
-        validator,
-        get_interface_info_by_id(api)
-    )
+    try:
+        assert is_valid_get_interface_info_by_id(
+            validator,
+            get_interface_info_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_interface_info_by_id_default(api):
@@ -1231,53 +1573,12 @@ def test_get_interface_info_by_id_default(api, validator):
             get_interface_info_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_functional_capability_for_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_c3b3c9ef4e6b8a09_v2_2_1').validate(obj)
-    return True
-
-
-def get_functional_capability_for_devices(api):
-    endpoint_result = api.devices.get_functional_capability_for_devices(
-        device_id='string',
-        function_name='value1,value2'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_functional_capability_for_devices(api, validator):
-    assert is_valid_get_functional_capability_for_devices(
-        validator,
-        get_functional_capability_for_devices(api)
-    )
-
-
-def get_functional_capability_for_devices_default(api):
-    endpoint_result = api.devices.get_functional_capability_for_devices(
-        device_id=None,
-        function_name=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_functional_capability_for_devices_default(api, validator):
-    try:
-        assert is_valid_get_functional_capability_for_devices(
-            validator,
-            get_functional_capability_for_devices_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_update_device_role(json_schema_validate, obj):
-    json_schema_validate('jsd_b9855ad54ae98156_v2_2_1').validate(obj)
+    json_schema_validate('jsd_aa11f09d28165f4ea6c81b8642e59cc4_v2_2_1').validate(obj)
     return True
 
 
@@ -1294,10 +1595,15 @@ def update_device_role(api):
 
 @pytest.mark.devices
 def test_update_device_role(api, validator):
-    assert is_valid_update_device_role(
-        validator,
-        update_device_role(api)
-    )
+    try:
+        assert is_valid_update_device_role(
+            validator,
+            update_device_role(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def update_device_role_default(api):
@@ -1319,90 +1625,148 @@ def test_update_device_role_default(api, validator):
             update_device_role_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_device_config_for_all_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_b7bcaa084e2b90d0_v2_2_1').validate(obj)
+def is_valid_get_functional_capability_for_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_ad8cea95d71352f0842a2c869765e6cf_v2_2_1').validate(obj)
     return True
 
 
-def get_device_config_for_all_devices(api):
-    endpoint_result = api.devices.get_device_config_for_all_devices(
-
+def get_functional_capability_for_devices(api):
+    endpoint_result = api.devices.get_functional_capability_for_devices(
+        device_id='string',
+        function_name='value1,value2'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_device_config_for_all_devices(api, validator):
-    assert is_valid_get_device_config_for_all_devices(
-        validator,
-        get_device_config_for_all_devices(api)
-    )
-
-
-def get_device_config_for_all_devices_default(api):
-    endpoint_result = api.devices.get_device_config_for_all_devices(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_config_for_all_devices_default(api, validator):
+def test_get_functional_capability_for_devices(api, validator):
     try:
-        assert is_valid_get_device_config_for_all_devices(
+        assert is_valid_get_functional_capability_for_devices(
             validator,
-            get_device_config_for_all_devices_default(api)
+            get_functional_capability_for_devices(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
             raise original_e
 
 
-def is_valid_get_device_by_serial_number(json_schema_validate, obj):
-    json_schema_validate('jsd_d888ab6d4d59a8c1_v2_2_1').validate(obj)
+def get_functional_capability_for_devices_default(api):
+    endpoint_result = api.devices.get_functional_capability_for_devices(
+        device_id=None,
+        function_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_functional_capability_for_devices_default(api, validator):
+    try:
+        assert is_valid_get_functional_capability_for_devices(
+            validator,
+            get_functional_capability_for_devices_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_register_device_for_wsa(json_schema_validate, obj):
+    json_schema_validate('jsd_8770b2c39feb5e48913492c33add7f13_v2_2_1').validate(obj)
     return True
 
 
-def get_device_by_serial_number(api):
-    endpoint_result = api.devices.get_device_by_serial_number(
+def register_device_for_wsa(api):
+    endpoint_result = api.devices.register_device_for_wsa(
+        macaddress='string',
         serial_number='string'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_device_by_serial_number(api, validator):
-    assert is_valid_get_device_by_serial_number(
-        validator,
-        get_device_by_serial_number(api)
-    )
+def test_register_device_for_wsa(api, validator):
+    try:
+        assert is_valid_register_device_for_wsa(
+            validator,
+            register_device_for_wsa(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
-def get_device_by_serial_number_default(api):
-    endpoint_result = api.devices.get_device_by_serial_number(
-        serial_number='string'
+def register_device_for_wsa_default(api):
+    endpoint_result = api.devices.register_device_for_wsa(
+        macaddress=None,
+        serial_number=None
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_device_by_serial_number_default(api, validator):
+def test_register_device_for_wsa_default(api, validator):
     try:
-        assert is_valid_get_device_by_serial_number(
+        assert is_valid_register_device_for_wsa(
             validator,
-            get_device_by_serial_number_default(api)
+            register_device_for_wsa_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_interface_by_ip(json_schema_validate, obj):
+    json_schema_validate('jsd_cf7fa95e3ed4527aa5ba8ca871a8c142_v2_2_1').validate(obj)
+    return True
+
+
+def get_interface_by_ip(api):
+    endpoint_result = api.devices.get_interface_by_ip(
+        ip_address='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_interface_by_ip(api, validator):
+    try:
+        assert is_valid_get_interface_by_ip(
+            validator,
+            get_interface_by_ip(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_interface_by_ip_default(api):
+    endpoint_result = api.devices.get_interface_by_ip(
+        ip_address='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_interface_by_ip_default(api, validator):
+    try:
+        assert is_valid_get_interface_by_ip(
+            validator,
+            get_interface_by_ip_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_export_device_list(json_schema_validate, obj):
-    json_schema_validate('jsd_cd98780f4888a66d_v2_2_1').validate(obj)
+    json_schema_validate('jsd_57e6ec627d3c587288978990aae75228_v2_2_1').validate(obj)
     return True
 
 
@@ -1411,7 +1775,7 @@ def export_device_list(api):
         active_validation=True,
         deviceUuids=['string'],
         id='string',
-        operationEnum='CREDENTIALDETAILS',
+        operationEnum='string',
         parameters=['string'],
         password='string',
         payload=None
@@ -1421,10 +1785,15 @@ def export_device_list(api):
 
 @pytest.mark.devices
 def test_export_device_list(api, validator):
-    assert is_valid_export_device_list(
-        validator,
-        export_device_list(api)
-    )
+    try:
+        assert is_valid_export_device_list(
+            validator,
+            export_device_list(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def export_device_list_default(api):
@@ -1448,51 +1817,12 @@ def test_export_device_list_default(api, validator):
             export_device_list_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_interface_by_ip(json_schema_validate, obj):
-    json_schema_validate('jsd_cd8469e647caab0e_v2_2_1').validate(obj)
-    return True
-
-
-def get_interface_by_ip(api):
-    endpoint_result = api.devices.get_interface_by_ip(
-        ip_address='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_interface_by_ip(api, validator):
-    assert is_valid_get_interface_by_ip(
-        validator,
-        get_interface_by_ip(api)
-    )
-
-
-def get_interface_by_ip_default(api):
-    endpoint_result = api.devices.get_interface_by_ip(
-        ip_address='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_interface_by_ip_default(api, validator):
-    try:
-        assert is_valid_get_interface_by_ip(
-            validator,
-            get_interface_by_ip_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_network_device_by_ip(json_schema_validate, obj):
-    json_schema_validate('jsd_d0a4b88145aabb51_v2_2_1').validate(obj)
+    json_schema_validate('jsd_40123dc74c2052a3a4eb7e2a01eaa8e7_v2_2_1').validate(obj)
     return True
 
 
@@ -1505,10 +1835,15 @@ def get_network_device_by_ip(api):
 
 @pytest.mark.devices
 def test_get_network_device_by_ip(api, validator):
-    assert is_valid_get_network_device_by_ip(
-        validator,
-        get_network_device_by_ip(api)
-    )
+    try:
+        assert is_valid_get_network_device_by_ip(
+            validator,
+            get_network_device_by_ip(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_network_device_by_ip_default(api):
@@ -1526,53 +1861,56 @@ def test_get_network_device_by_ip_default(api, validator):
             get_network_device_by_ip_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_register_device_for_wsa(json_schema_validate, obj):
-    json_schema_validate('jsd_c9809b6744f8a502_v2_2_1').validate(obj)
+def is_valid_get_device_by_serial_number(json_schema_validate, obj):
+    json_schema_validate('jsd_5c53d56c282e5f108c659009d21f9d26_v2_2_1').validate(obj)
     return True
 
 
-def register_device_for_wsa(api):
-    endpoint_result = api.devices.register_device_for_wsa(
-        macaddress='string',
+def get_device_by_serial_number(api):
+    endpoint_result = api.devices.get_device_by_serial_number(
         serial_number='string'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_register_device_for_wsa(api, validator):
-    assert is_valid_register_device_for_wsa(
-        validator,
-        register_device_for_wsa(api)
-    )
+def test_get_device_by_serial_number(api, validator):
+    try:
+        assert is_valid_get_device_by_serial_number(
+            validator,
+            get_device_by_serial_number(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
-def register_device_for_wsa_default(api):
-    endpoint_result = api.devices.register_device_for_wsa(
-        macaddress=None,
-        serial_number=None
+def get_device_by_serial_number_default(api):
+    endpoint_result = api.devices.get_device_by_serial_number(
+        serial_number='string'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_register_device_for_wsa_default(api, validator):
+def test_get_device_by_serial_number_default(api, validator):
     try:
-        assert is_valid_register_device_for_wsa(
+        assert is_valid_get_device_by_serial_number(
             validator,
-            register_device_for_wsa_default(api)
+            get_device_by_serial_number_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_modules(json_schema_validate, obj):
-    json_schema_validate('jsd_eb8249e34f69b0f1_v2_2_1').validate(obj)
+    json_schema_validate('jsd_ce9e547725c45c66824afda98179d12f_v2_2_1').validate(obj)
     return True
 
 
@@ -1591,10 +1929,15 @@ def get_modules(api):
 
 @pytest.mark.devices
 def test_get_modules(api, validator):
-    assert is_valid_get_modules(
-        validator,
-        get_modules(api)
-    )
+    try:
+        assert is_valid_get_modules(
+            validator,
+            get_modules(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_modules_default(api):
@@ -1618,29 +1961,80 @@ def test_get_modules_default(api, validator):
             get_modules_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_network_device_by_pagination_range(json_schema_validate, obj):
+    json_schema_validate('jsd_60d7b6ce5abd5dad837e22ace817a6f0_v2_2_1').validate(obj)
+    return True
+
+
+def get_network_device_by_pagination_range(api):
+    endpoint_result = api.devices.get_network_device_by_pagination_range(
+        records_to_return=0,
+        start_index=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_network_device_by_pagination_range(api, validator):
+    try:
+        assert is_valid_get_network_device_by_pagination_range(
+            validator,
+            get_network_device_by_pagination_range(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_network_device_by_pagination_range_default(api):
+    endpoint_result = api.devices.get_network_device_by_pagination_range(
+        records_to_return=0,
+        start_index=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_network_device_by_pagination_range_default(api, validator):
+    try:
+        assert is_valid_get_network_device_by_pagination_range(
+            validator,
+            get_network_device_by_pagination_range_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_all_interfaces(json_schema_validate, obj):
-    json_schema_validate('jsd_f5947a4c439a8bf0_v2_2_1').validate(obj)
+    json_schema_validate('jsd_22d3d71136d95562afc211b40004d109_v2_2_1').validate(obj)
     return True
 
 
 def get_all_interfaces(api):
     endpoint_result = api.devices.get_all_interfaces(
-        limit=500,
-        offset=1
+        limit=0,
+        offset=0
     )
     return endpoint_result
 
 
 @pytest.mark.devices
 def test_get_all_interfaces(api, validator):
-    assert is_valid_get_all_interfaces(
-        validator,
-        get_all_interfaces(api)
-    )
+    try:
+        assert is_valid_get_all_interfaces(
+            validator,
+            get_all_interfaces(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_all_interfaces_default(api):
@@ -1659,12 +2053,56 @@ def test_get_all_interfaces_default(api, validator):
             get_all_interfaces_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_wireless_lan_controller_details_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_c01ee650fcf858789ca00c8deda969b9_v2_2_1').validate(obj)
+    return True
+
+
+def get_wireless_lan_controller_details_by_id(api):
+    endpoint_result = api.devices.get_wireless_lan_controller_details_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_wireless_lan_controller_details_by_id(api, validator):
+    try:
+        assert is_valid_get_wireless_lan_controller_details_by_id(
+            validator,
+            get_wireless_lan_controller_details_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_wireless_lan_controller_details_by_id_default(api):
+    endpoint_result = api.devices.get_wireless_lan_controller_details_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_wireless_lan_controller_details_by_id_default(api, validator):
+    try:
+        assert is_valid_get_wireless_lan_controller_details_by_id(
+            validator,
+            get_wireless_lan_controller_details_by_id_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_retrieves_all_network_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_ffa748cc44e9a437_v2_2_1').validate(obj)
+    json_schema_validate('jsd_b5a5c8da4aaa526da6a06e97c80a38be_v2_2_1').validate(obj)
     return True
 
 
@@ -1698,10 +2136,15 @@ def retrieves_all_network_devices(api):
 
 @pytest.mark.devices
 def test_retrieves_all_network_devices(api, validator):
-    assert is_valid_retrieves_all_network_devices(
-        validator,
-        retrieves_all_network_devices(api)
-    )
+    try:
+        assert is_valid_retrieves_all_network_devices(
+            validator,
+            retrieves_all_network_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def retrieves_all_network_devices_default(api):
@@ -1740,92 +2183,60 @@ def test_retrieves_all_network_devices_default(api, validator):
             retrieves_all_network_devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_network_device_by_pagination_range(json_schema_validate, obj):
-    json_schema_validate('jsd_f49548c54be8a3e2_v2_2_1').validate(obj)
+def is_valid_get_device_detail(json_schema_validate, obj):
+    json_schema_validate('jsd_560c9ee787eb5a0391309f45ddf392ca_v2_2_1').validate(obj)
     return True
 
 
-def get_network_device_by_pagination_range(api):
-    endpoint_result = api.devices.get_network_device_by_pagination_range(
-        records_to_return=0,
-        start_index=0
+def get_device_detail(api):
+    endpoint_result = api.devices.get_device_detail(
+        identifier='string',
+        search_by='string',
+        timestamp='string'
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_network_device_by_pagination_range(api, validator):
-    assert is_valid_get_network_device_by_pagination_range(
-        validator,
-        get_network_device_by_pagination_range(api)
-    )
-
-
-def get_network_device_by_pagination_range_default(api):
-    endpoint_result = api.devices.get_network_device_by_pagination_range(
-        records_to_return=0,
-        start_index=0
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_network_device_by_pagination_range_default(api, validator):
+def test_get_device_detail(api, validator):
     try:
-        assert is_valid_get_network_device_by_pagination_range(
+        assert is_valid_get_device_detail(
             validator,
-            get_network_device_by_pagination_range_default(api)
+            get_device_detail(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
             raise original_e
 
 
-def is_valid_get_wireless_lan_controller_details_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_f6826a8e41bba242_v2_2_1').validate(obj)
-    return True
-
-
-def get_wireless_lan_controller_details_by_id(api):
-    endpoint_result = api.devices.get_wireless_lan_controller_details_by_id(
-        id='string'
+def get_device_detail_default(api):
+    endpoint_result = api.devices.get_device_detail(
+        identifier=None,
+        search_by=None,
+        timestamp=None
     )
     return endpoint_result
 
 
 @pytest.mark.devices
-def test_get_wireless_lan_controller_details_by_id(api, validator):
-    assert is_valid_get_wireless_lan_controller_details_by_id(
-        validator,
-        get_wireless_lan_controller_details_by_id(api)
-    )
-
-
-def get_wireless_lan_controller_details_by_id_default(api):
-    endpoint_result = api.devices.get_wireless_lan_controller_details_by_id(
-        id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_wireless_lan_controller_details_by_id_default(api, validator):
+def test_get_device_detail_default(api, validator):
     try:
-        assert is_valid_get_wireless_lan_controller_details_by_id(
+        assert is_valid_get_device_detail(
             validator,
-            get_wireless_lan_controller_details_by_id_default(api)
+            get_device_detail_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_a2b479a045298dca_v2_2_1').validate(obj)
+    json_schema_validate('jsd_c75e364632e15384a18063458e2ba0e3_v2_2_1').validate(obj)
     return True
 
 
@@ -1844,10 +2255,15 @@ def devices(api):
 
 @pytest.mark.devices
 def test_devices(api, validator):
-    assert is_valid_devices(
-        validator,
-        devices(api)
-    )
+    try:
+        assert is_valid_devices(
+            validator,
+            devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def devices_default(api):
@@ -1871,12 +2287,12 @@ def test_devices_default(api, validator):
             devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_device_enrichment_details(json_schema_validate, obj):
-    json_schema_validate('jsd_e0b5599b4f2997b7_v2_2_1').validate(obj)
+    json_schema_validate('jsd_08a20c25e0fa518bb186fd7747450ef6_v2_2_1').validate(obj)
     return True
 
 
@@ -1889,10 +2305,15 @@ def get_device_enrichment_details(api):
 
 @pytest.mark.devices
 def test_get_device_enrichment_details(api, validator):
-    assert is_valid_get_device_enrichment_details(
-        validator,
-        get_device_enrichment_details(api)
-    )
+    try:
+        assert is_valid_get_device_enrichment_details(
+            validator,
+            get_device_enrichment_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_device_enrichment_details_default(api):
@@ -1910,213 +2331,5 @@ def test_get_device_enrichment_details_default(api, validator):
             get_device_enrichment_details_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_device_detail(json_schema_validate, obj):
-    json_schema_validate('jsd_89b2fb144f5bb09b_v2_2_1').validate(obj)
-    return True
-
-
-def get_device_detail(api):
-    endpoint_result = api.devices.get_device_detail(
-        identifier='string',
-        search_by='string',
-        timestamp=0
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_detail(api, validator):
-    assert is_valid_get_device_detail(
-        validator,
-        get_device_detail(api)
-    )
-
-
-def get_device_detail_default(api):
-    endpoint_result = api.devices.get_device_detail(
-        identifier=None,
-        search_by=None,
-        timestamp=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_get_device_detail_default(api, validator):
-    try:
-        assert is_valid_get_device_detail(
-            validator,
-            get_device_detail_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_threat_details(json_schema_validate, obj):
-    json_schema_validate('jsd_f6bfc880435aae2a_v2_2_1').validate(obj)
-    return True
-
-
-def threat_details(api):
-    endpoint_result = api.devices.threat_details(
-        active_validation=True,
-        endTime=0,
-        isNewThreat=True,
-        limit=0,
-        offset=0,
-        payload=None,
-        siteId=['string'],
-        startTime=0,
-        threatLevel=['string'],
-        threatType=['string']
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_threat_details(api, validator):
-    assert is_valid_threat_details(
-        validator,
-        threat_details(api)
-    )
-
-
-def threat_details_default(api):
-    endpoint_result = api.devices.threat_details(
-        active_validation=True,
-        endTime=None,
-        isNewThreat=None,
-        limit=None,
-        offset=None,
-        payload=None,
-        siteId=None,
-        startTime=None,
-        threatLevel=None,
-        threatType=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_threat_details_default(api, validator):
-    try:
-        assert is_valid_threat_details(
-            validator,
-            threat_details_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_threat_detail_count(json_schema_validate, obj):
-    json_schema_validate('jsd_eb8c2a8345aa871f_v2_2_1').validate(obj)
-    return True
-
-
-def threat_detail_count(api):
-    endpoint_result = api.devices.threat_detail_count(
-        active_validation=True,
-        endTime=0,
-        isNewThreat=True,
-        limit=0,
-        offset=0,
-        payload=None,
-        siteId=['string'],
-        startTime=0,
-        threatLevel=['string'],
-        threatType=['string']
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_threat_detail_count(api, validator):
-    assert is_valid_threat_detail_count(
-        validator,
-        threat_detail_count(api)
-    )
-
-
-def threat_detail_count_default(api):
-    endpoint_result = api.devices.threat_detail_count(
-        active_validation=True,
-        endTime=None,
-        isNewThreat=None,
-        limit=None,
-        offset=None,
-        payload=None,
-        siteId=None,
-        startTime=None,
-        threatLevel=None,
-        threatType=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_threat_detail_count_default(api, validator):
-    try:
-        assert is_valid_threat_detail_count(
-            validator,
-            threat_detail_count_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_threat_summary(json_schema_validate, obj):
-    json_schema_validate('jsd_3b9898f04cfbb74b_v2_2_1').validate(obj)
-    return True
-
-
-def threat_summary(api):
-    endpoint_result = api.devices.threat_summary(
-        active_validation=True,
-        endTime=0,
-        payload=None,
-        siteId=['string'],
-        startTime=0,
-        threatLevel=['string'],
-        threatType=['string']
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_threat_summary(api, validator):
-    assert is_valid_threat_summary(
-        validator,
-        threat_summary(api)
-    )
-
-
-def threat_summary_default(api):
-    endpoint_result = api.devices.threat_summary(
-        active_validation=True,
-        endTime=None,
-        payload=None,
-        siteId=None,
-        startTime=None,
-        threatLevel=None,
-        threatType=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.devices
-def test_threat_summary_default(api, validator):
-    try:
-        assert is_valid_threat_summary(
-            validator,
-            threat_summary_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Add Fabric data model.
+"""Cisco DNA Center Add Fabric data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -46,24 +46,18 @@ class JSONSchemaValidator6Db9292D4F28A26B(object):
                 "properties": {
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "executionStatusUrl": {
-                "description":
-                "Execution Status Url",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"

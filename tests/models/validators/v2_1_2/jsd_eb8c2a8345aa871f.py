@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Threat Detail Count data model.
+"""Cisco DNA Center Threat Detail Count data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -51,8 +51,6 @@ class JSONSchemaValidatorEb8C2A8345Aa871F(object):
                 ]
                 },
                 "version": {
-                "description":
-                "Version",
                 "type": [
                 "string",
                 "null"

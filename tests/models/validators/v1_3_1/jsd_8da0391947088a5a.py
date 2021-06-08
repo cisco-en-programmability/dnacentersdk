@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update PnP global settings data model.
+"""Cisco DNA Center Update PnP global settings data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,28 +45,20 @@ class JSONSchemaValidator8Da0391947088A5A(object):
             '''{
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "aaaCredentials": {
-                "description":
-                "Aaa Credentials",
                 "properties": {
                 "password": {
-                "description":
-                "Password",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "type": [
                 "string",
                 "null"
@@ -85,20 +77,14 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "defaultProfile": {
-                "description":
-                "Default Profile",
                 "properties": {
                 "cert": {
-                "description":
-                "Cert",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "fqdnAddresses": {
-                "description":
-                "Fqdn Addresses",
                 "items": {
                 "type": [
                 "string",
@@ -111,8 +97,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "ipAddresses": {
-                "description":
-                "Ip Addresses",
                 "items": {
                 "type": [
                 "string",
@@ -143,16 +127,12 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "savaMappingList": {
-                "description":
-                "Sava Mapping List",
                 "items": {
                 "properties": {
                 "autoSyncPeriod": {
@@ -162,8 +142,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "ccoUser": {
-                "description":
-                "Cco User",
                 "type": [
                 "string",
                 "null"
@@ -182,28 +160,20 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "profile": {
-                "description":
-                "Profile",
                 "properties": {
                 "addressFqdn": {
-                "description":
-                "Address Fqdn",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "addressIpV4": {
-                "description":
-                "Address Ip V4",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "cert": {
-                "description":
-                "Cert",
                 "type": [
                 "string",
                 "null"
@@ -216,8 +186,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -230,8 +198,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "profileId": {
-                "description":
-                "Profile Id",
                 "type": [
                 "string",
                 "null"
@@ -250,25 +216,17 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "smartAccountId": {
-                "description":
-                "Smart Account Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "syncResult": {
-                "description":
-                "Sync Result",
                 "properties": {
                 "syncList": {
-                "description":
-                "Sync List",
                 "items": {
                 "properties": {
                 "deviceSnList": {
-                "description":
-                "Device Sn List",
                 "items": {
                 "type": [
                 "string",
@@ -282,8 +240,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncType": {
-                "description":
-                "Sync Type",
                 "type": [
                 "string",
                 "null"
@@ -301,8 +257,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncMsg": {
-                "description":
-                "Sync Msg",
                 "type": [
                 "string",
                 "null"
@@ -315,8 +269,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncResultStr": {
-                "description":
-                "Sync Result Str",
                 "type": [
                 "string",
                 "null"
@@ -329,32 +281,24 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "syncStatus": {
-                "description":
-                "Sync Status",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "token": {
-                "description":
-                "Token",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "virtualAccountId": {
-                "description":
-                "Virtual Account Id",
                 "type": [
                 "string",
                 "null"
@@ -372,8 +316,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "taskTimeOuts": {
-                "description":
-                "Task Time Outs",
                 "properties": {
                 "configTimeOut": {
                 "type": [
@@ -400,8 +342,6 @@ class JSONSchemaValidator8Da0391947088A5A(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"

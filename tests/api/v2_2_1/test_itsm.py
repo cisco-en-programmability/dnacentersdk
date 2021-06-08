@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI itsm API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_get_failed_itsm_events(json_schema_validate, obj):
-    json_schema_validate('jsd_a293b82a42a8ab15_v2_2_1').validate(obj)
+    json_schema_validate('jsd_da70082b298a5a908edb780a61bd4ca6_v2_2_1').validate(obj)
     return True
 
 
@@ -41,10 +43,15 @@ def get_failed_itsm_events(api):
 
 @pytest.mark.itsm
 def test_get_failed_itsm_events(api, validator):
-    assert is_valid_get_failed_itsm_events(
-        validator,
-        get_failed_itsm_events(api)
-    )
+    try:
+        assert is_valid_get_failed_itsm_events(
+            validator,
+            get_failed_itsm_events(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_failed_itsm_events_default(api):
@@ -62,70 +69,34 @@ def test_get_failed_itsm_events_default(api, validator):
             get_failed_itsm_events_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_cmdb_sync_status(json_schema_validate, obj):
-    json_schema_validate('jsd_a49289934948b86c_v2_2_1').validate(obj)
-    return True
-
-
-def get_cmdb_sync_status(api):
-    endpoint_result = api.itsm.get_cmdb_sync_status(
-        date='string',
-        status='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.itsm
-def test_get_cmdb_sync_status(api, validator):
-    assert is_valid_get_cmdb_sync_status(
-        validator,
-        get_cmdb_sync_status(api)
-    )
-
-
-def get_cmdb_sync_status_default(api):
-    endpoint_result = api.itsm.get_cmdb_sync_status(
-        date=None,
-        status=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.itsm
-def test_get_cmdb_sync_status_default(api, validator):
-    try:
-        assert is_valid_get_cmdb_sync_status(
-            validator,
-            get_cmdb_sync_status_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_retry_integration_events(json_schema_validate, obj):
-    json_schema_validate('jsd_fa9a98174129af50_v2_2_1').validate(obj)
+    json_schema_validate('jsd_25624cfb1d6e52878d057740de275896_v2_2_1').validate(obj)
     return True
 
 
 def retry_integration_events(api):
     endpoint_result = api.itsm.retry_integration_events(
         active_validation=True,
-        payload=['string']
+        payload=None
     )
     return endpoint_result
 
 
 @pytest.mark.itsm
 def test_retry_integration_events(api, validator):
-    assert is_valid_retry_integration_events(
-        validator,
-        retry_integration_events(api)
-    )
+    try:
+        assert is_valid_retry_integration_events(
+            validator,
+            retry_integration_events(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def retry_integration_events_default(api):
@@ -144,5 +115,51 @@ def test_retry_integration_events_default(api, validator):
             retry_integration_events_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_cmdb_sync_status(json_schema_validate, obj):
+    json_schema_validate('jsd_46eb1bf346225a4ba24f18408ffca7c9_v2_2_1').validate(obj)
+    return True
+
+
+def get_cmdb_sync_status(api):
+    endpoint_result = api.itsm.get_cmdb_sync_status(
+        date='string',
+        status='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.itsm
+def test_get_cmdb_sync_status(api, validator):
+    try:
+        assert is_valid_get_cmdb_sync_status(
+            validator,
+            get_cmdb_sync_status(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_cmdb_sync_status_default(api):
+    endpoint_result = api.itsm.get_cmdb_sync_status(
+        date=None,
+        status=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.itsm
+def test_get_cmdb_sync_status_default(api, validator):
+    try:
+        assert is_valid_get_cmdb_sync_status(
+            validator,
+            get_cmdb_sync_status_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

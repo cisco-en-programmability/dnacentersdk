@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI device_onboarding_pnp API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.1.1', reason='version does not match')
@@ -66,7 +68,7 @@ def test_un_claim_device_default(api, validator):
             un_claim_device_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -107,7 +109,7 @@ def test_get_sync_result_for_virtual_account_default(api, validator):
             get_sync_result_for_virtual_account_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -168,7 +170,7 @@ def test_update_device_default(api, validator):
             update_device_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -235,7 +237,7 @@ def test_add_virtual_account_default(api, validator):
             add_virtual_account_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -276,7 +278,7 @@ def test_import_devices_in_bulk_default(api, validator):
             import_devices_in_bulk_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -317,7 +319,7 @@ def test_deregister_virtual_account_default(api, validator):
             deregister_virtual_account_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -398,7 +400,7 @@ def test_update_workflow_default(api, validator):
             update_workflow_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -437,7 +439,7 @@ def test_get_smart_account_list_default(api, validator):
             get_smart_account_list_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -483,7 +485,7 @@ def test_claim_a_device_to_a_site_default(api, validator):
             claim_a_device_to_a_site_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -522,7 +524,7 @@ def test_get_pnp_global_settings_default(api, validator):
             get_pnp_global_settings_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -561,7 +563,7 @@ def test_get_virtual_account_list_default(api, validator):
             get_virtual_account_list_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -628,7 +630,7 @@ def test_update_pnp_server_profile_default(api, validator):
             update_pnp_server_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -667,13 +669,12 @@ def test_get_workflow_count_default(api, validator):
             get_workflow_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_workflow_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_80acb88e4ac9ac6d_v2_1_1').validate(obj)
-    return True
+    return True if obj else False
 
 
 def get_workflow_by_id(api):
@@ -706,7 +707,7 @@ def test_get_workflow_by_id_default(api, validator):
             get_workflow_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -763,7 +764,7 @@ def test_update_pnp_global_settings_default(api, validator):
             update_pnp_global_settings_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -842,7 +843,7 @@ def test_add_a_workflow_default(api, validator):
             add_a_workflow_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -891,7 +892,7 @@ def test_get_workflows_default(api, validator):
             get_workflows_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -938,7 +939,7 @@ def test_reset_device_default(api, validator):
             reset_device_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -977,7 +978,7 @@ def test_delete_workflow_by_id_default(api, validator):
             delete_workflow_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1016,7 +1017,7 @@ def test_get_device_by_id_default(api, validator):
             get_device_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1083,7 +1084,7 @@ def test_sync_virtual_account_devices_default(api, validator):
             sync_virtual_account_devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1148,7 +1149,7 @@ def test_get_device_count_default(api, validator):
             get_device_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1187,7 +1188,7 @@ def test_delete_device_by_id_from_pnp_default(api, validator):
             delete_device_by_id_from_pnp_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1233,7 +1234,7 @@ def test_preview_config_default(api, validator):
             preview_config_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1276,7 +1277,7 @@ def test_get_device_history_default(api, validator):
             get_device_history_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1335,7 +1336,7 @@ def test_claim_device_default(api, validator):
             claim_device_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1394,7 +1395,7 @@ def test_add_device_default(api, validator):
             add_device_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -1467,5 +1468,5 @@ def test_get_device_list_default(api, validator):
             get_device_list_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

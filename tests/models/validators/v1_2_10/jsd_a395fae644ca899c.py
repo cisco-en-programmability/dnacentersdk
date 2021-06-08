@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Initiate a new Pathtrace data model.
+"""Cisco DNA Center Initiate a new Pathtrace data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -47,24 +47,18 @@ class JSONSchemaValidatorA395Fae644Ca899C(object):
                 "response": {
                 "properties": {
                 "flowAnalysisId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "taskId": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "url": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -77,8 +71,6 @@ class JSONSchemaValidatorA395Fae644Ca899C(object):
                 ]
                 },
                 "version": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

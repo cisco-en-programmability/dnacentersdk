@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Workflow data model.
+"""Cisco DNA Center Update Workflow data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
             '''{
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
@@ -65,8 +63,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "configId": {
-                "description":
-                "Config Id",
                 "type": [
                 "string",
                 "null"
@@ -80,8 +76,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 },
                 "description":
                  {
-                "description":
-                "Description",
                 "type": [
                 "string",
                 "null"
@@ -100,16 +94,12 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "imageId": {
-                "description":
-                "Image Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceType": {
-                "description":
-                "Instance Type",
                 "type": [
                 "string",
                 "null"
@@ -122,8 +112,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -136,16 +124,12 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tasks": {
-                "description":
-                "Tasks",
                 "items": {
                 "properties": {
                 "currWorkItemIdx": {
@@ -161,8 +145,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -175,8 +157,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -195,21 +175,15 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "workItemList": {
-                "description":
-                "Work Item List",
                 "items": {
                 "properties": {
                 "command": {
-                "description":
-                "Command",
                 "type": [
                 "string",
                 "null"
@@ -222,8 +196,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "outputStr": {
-                "description":
-                "Output Str",
                 "type": [
                 "string",
                 "null"
@@ -236,8 +208,6 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "state": {
-                "description":
-                "State",
                 "type": [
                 "string",
                 "null"
@@ -272,24 +242,18 @@ class JSONSchemaValidator3086C9624F498B85(object):
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "type": {
-                "description":
-                "Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "useState": {
-                "description":
-                "Use State",
                 "type": [
                 "string",
                 "null"

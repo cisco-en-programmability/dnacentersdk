@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Update Site data model.
+"""Cisco DNA Center Update Site data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,20 +45,14 @@ class JSONSchemaValidatorEeb7Eb4B4Bd8A1Dd(object):
             '''{
                 "properties": {
                 "response": {
-                "description":
-                "Response",
                 "properties": {
                 "data": {
-                "description":
-                "Data",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "endTime": {
-                "description":
-                "End Time",
                 "type": [
                 "string",
                 "null",
@@ -66,32 +60,24 @@ class JSONSchemaValidatorEeb7Eb4B4Bd8A1Dd(object):
                 ]
                 },
                 "id": {
-                "description":
-                "Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "instanceTenantId": {
-                "description":
-                "Instance Tenant Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "isError": {
-                "description":
-                "Is Error",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "operationIdList": {
-                "description":
-                "Operation Id List",
                 "items": {
                 "type": [
                 "string",
@@ -105,32 +91,24 @@ class JSONSchemaValidatorEeb7Eb4B4Bd8A1Dd(object):
                 ]
                 },
                 "progress": {
-                "description":
-                "Progress",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "rootId": {
-                "description":
-                "Root Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "serviceType": {
-                "description":
-                "Service Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "startTime": {
-                "description":
-                "Start Time",
                 "type": [
                 "string",
                 "null",
@@ -138,8 +116,6 @@ class JSONSchemaValidatorEeb7Eb4B4Bd8A1Dd(object):
                 ]
                 },
                 "version": {
-                "description":
-                "Version",
                 "type": [
                 "string",
                 "null"
@@ -152,16 +128,12 @@ class JSONSchemaValidatorEeb7Eb4B4Bd8A1Dd(object):
                 ]
                 },
                 "result": {
-                "description":
-                "Result",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"

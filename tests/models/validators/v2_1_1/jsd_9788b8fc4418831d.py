@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Updates discovery by Id data model.
+"""Cisco DNA Center Updates discovery by Id data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,8 +48,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 "properties": {
                 "taskId": {},
                 "url": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"
@@ -62,8 +60,6 @@ class JSONSchemaValidator9788B8Fc4418831D(object):
                 ]
                 },
                 "version": {
-                "description":
-                 "",
                 "type": [
                 "string",
                 "null"

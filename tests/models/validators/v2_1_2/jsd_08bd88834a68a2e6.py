@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""DNA Center Create sensor test template data model.
+"""Cisco DNA Center Create sensor test template data model.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -45,25 +45,17 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
             '''{
                 "properties": {
                 "response": {
-                "description":
-                "Response",
                 "properties": {
                 "_id": {
-                "description":
-                " Id",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "apCoverage": {
-                "description":
-                "Ap Coverage",
                 "items": {
                 "properties": {
                 "bands": {
-                "description":
-                "Bands",
                 "type": [
                 "string",
                 "null"
@@ -93,24 +85,18 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "connection": {
-                "description":
-                "Connection",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "encryptionMode": {
-                "description":
-                "Encryption Mode",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "frequency": {
-                "description":
-                "Frequency",
                 "properties": {},
                 "type": [
                 "object",
@@ -130,8 +116,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "location": {
-                "description":
-                "Location",
                 "properties": {},
                 "type": [
                 "object",
@@ -139,8 +123,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "locationInfoList": {
-                "description":
-                "Location Info List",
                 "items": {
                 "type": [
                 "object"
@@ -158,8 +140,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -190,16 +170,12 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "runNow": {
-                "description":
-                "Run Now",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "schedule": {
-                "description":
-                "Schedule",
                 "properties": {},
                 "type": [
                 "object",
@@ -213,8 +189,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "sensors": {
-                "description":
-                "Sensors",
                 "items": {},
                 "type": [
                 "array",
@@ -228,8 +202,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "siteHierarchy": {
-                "description":
-                "Site Hierarchy",
                 "properties": {},
                 "type": [
                 "object",
@@ -237,13 +209,9 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "ssids": {
-                "description":
-                "Ssids",
                 "items": {
                 "properties": {
                 "authProtocol": {
-                "description":
-                "Auth Protocol",
                 "properties": {},
                 "type": [
                 "object",
@@ -251,16 +219,12 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "authType": {
-                "description":
-                "Auth Type",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "authTypeRcvd": {
-                "description":
-                "Auth Type Rcvd",
                 "properties": {},
                 "type": [
                 "object",
@@ -268,8 +232,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "bands": {
-                "description":
-                "Bands",
                 "properties": {},
                 "type": [
                 "object",
@@ -277,8 +239,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "certdownloadurl": {
-                "description":
-                "Certdownloadurl",
                 "properties": {},
                 "type": [
                 "object",
@@ -286,8 +246,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "certfilename": {
-                "description":
-                "Certfilename",
                 "properties": {},
                 "type": [
                 "object",
@@ -295,8 +253,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "certpassphrase": {
-                "description":
-                "Certpassphrase",
                 "properties": {},
                 "type": [
                 "object",
@@ -304,24 +260,18 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "certstatus": {
-                "description":
-                "Certstatus",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "certxferprotocol": {
-                "description":
-                "Certxferprotocol",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "eapMethod": {
-                "description":
-                "Eap Method",
                 "properties": {},
                 "type": [
                 "object",
@@ -335,8 +285,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "extWebAuthAccessUrl": {
-                "description":
-                "Ext Web Auth Access Url",
                 "properties": {},
                 "type": [
                 "object",
@@ -344,8 +292,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "extWebAuthHtmlTag": {
-                "description":
-                "Ext Web Auth Html Tag",
                 "items": {},
                 "type": [
                 "array",
@@ -353,8 +299,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "extWebAuthPortal": {
-                "description":
-                "Ext Web Auth Portal",
                 "properties": {},
                 "type": [
                 "object",
@@ -362,8 +306,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "extWebAuthVirtualIp": {
-                "description":
-                "Ext Web Auth Virtual Ip",
                 "properties": {},
                 "type": [
                 "object",
@@ -377,8 +319,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "layer3webAuthEmailAddress": {
-                "description":
-                "Layer3web Auth Email Address",
                 "properties": {},
                 "type": [
                 "object",
@@ -386,8 +326,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "layer3webAuthpassword": {
-                "description":
-                "Layer3web Authpassword",
                 "properties": {},
                 "type": [
                 "object",
@@ -395,8 +333,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "layer3webAuthsecurity": {
-                "description":
-                "Layer3web Authsecurity",
                 "properties": {},
                 "type": [
                 "object",
@@ -404,8 +340,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "layer3webAuthuserName": {
-                "description":
-                "Layer3web Authuser Name",
                 "properties": {},
                 "type": [
                 "object",
@@ -425,8 +359,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "password": {
-                "description":
-                "Password",
                 "properties": {},
                 "type": [
                 "object",
@@ -434,24 +366,18 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "profileName": {
-                "description":
-                "Profile Name",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "psk": {
-                "description":
-                "Psk",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "qosPolicy": {
-                "description":
-                "Qos Policy",
                 "type": [
                 "string",
                 "null"
@@ -464,29 +390,21 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "ssid": {
-                "description":
-                "Ssid",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tests": {
-                "description":
-                "Tests",
                 "items": {
                 "properties": {
                 "config": {
-                "description":
-                "Config",
                 "items": {
                 "properties": {},
                 "type": [
@@ -500,8 +418,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "name": {
-                "description":
-                "Name",
                 "type": [
                 "string",
                 "null"
@@ -519,8 +435,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "thirdParty": {
-                "description":
-                "Third Party",
                 "properties": {
                 "selected": {
                 "type": [
@@ -535,8 +449,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "username": {
-                "description":
-                "Username",
                 "properties": {},
                 "type": [
                 "object",
@@ -568,8 +480,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "wlc": {
-                "description":
-                "Wlc",
                 "properties": {},
                 "type": [
                 "object",
@@ -594,16 +504,12 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "status": {
-                "description":
-                "Status",
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "tenantId": {
-                "description":
-                "Tenant Id",
                 "properties": {},
                 "type": [
                 "object",
@@ -617,8 +523,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "testScheduleMode": {
-                "description":
-                "Test Schedule Mode",
                 "type": [
                 "string",
                 "null"
@@ -631,8 +535,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "tests": {
-                "description":
-                "Tests",
                 "properties": {},
                 "type": [
                 "object",
@@ -646,8 +548,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "wlans": {
-                "description":
-                "Wlans",
                 "items": {},
                 "type": [
                 "array",
@@ -661,8 +561,6 @@ class JSONSchemaValidator08Bd88834A68A2E6(object):
                 ]
                 },
                 "version": {
-                "description":
-                "Version",
                 "type": [
                 "string",
                 "null"

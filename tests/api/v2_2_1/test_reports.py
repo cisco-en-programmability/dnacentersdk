@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI reports API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_get_views_for_a_given_view_group(json_schema_validate, obj):
-    json_schema_validate('jsd_03b6aa2b4ddaa555_v2_2_1').validate(obj)
+    json_schema_validate('jsd_c5879612ddc05cd0a0de09d29da4907e_v2_2_1').validate(obj)
     return True
 
 
@@ -41,10 +43,15 @@ def get_views_for_a_given_view_group(api):
 
 @pytest.mark.reports
 def test_get_views_for_a_given_view_group(api, validator):
-    assert is_valid_get_views_for_a_given_view_group(
-        validator,
-        get_views_for_a_given_view_group(api)
-    )
+    try:
+        assert is_valid_get_views_for_a_given_view_group(
+            validator,
+            get_views_for_a_given_view_group(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_views_for_a_given_view_group_default(api):
@@ -62,12 +69,12 @@ def test_get_views_for_a_given_view_group_default(api, validator):
             get_views_for_a_given_view_group_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_view_details_for_a_given_view_group_and_view(json_schema_validate, obj):
-    json_schema_validate('jsd_1d9aba2f4f89ae51_v2_2_1').validate(obj)
+    json_schema_validate('jsd_3d1944177c95598ebd1986582dc8069a_v2_2_1').validate(obj)
     return True
 
 
@@ -81,10 +88,15 @@ def get_view_details_for_a_given_view_group_and_view(api):
 
 @pytest.mark.reports
 def test_get_view_details_for_a_given_view_group_and_view(api, validator):
-    assert is_valid_get_view_details_for_a_given_view_group_and_view(
-        validator,
-        get_view_details_for_a_given_view_group_and_view(api)
-    )
+    try:
+        assert is_valid_get_view_details_for_a_given_view_group_and_view(
+            validator,
+            get_view_details_for_a_given_view_group_and_view(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_view_details_for_a_given_view_group_and_view_default(api):
@@ -103,12 +115,56 @@ def test_get_view_details_for_a_given_view_group_and_view_default(api, validator
             get_view_details_for_a_given_view_group_and_view_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_a_scheduled_report(json_schema_validate, obj):
+    json_schema_validate('jsd_76f9cb7c424b5502b4ad54ccbb1ca4f4_v2_2_1').validate(obj)
+    return True
+
+
+def get_a_scheduled_report(api):
+    endpoint_result = api.reports.get_a_scheduled_report(
+        report_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.reports
+def test_get_a_scheduled_report(api, validator):
+    try:
+        assert is_valid_get_a_scheduled_report(
+            validator,
+            get_a_scheduled_report(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_a_scheduled_report_default(api):
+    endpoint_result = api.reports.get_a_scheduled_report(
+        report_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.reports
+def test_get_a_scheduled_report_default(api, validator):
+    try:
+        assert is_valid_get_a_scheduled_report(
+            validator,
+            get_a_scheduled_report_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_delete_a_scheduled_report(json_schema_validate, obj):
-    json_schema_validate('jsd_239c69214f9bb12e_v2_2_1').validate(obj)
+    json_schema_validate('jsd_8a6a151b68d450dfaf1e8a92e0f5cc68_v2_2_1').validate(obj)
     return True
 
 
@@ -121,10 +177,15 @@ def delete_a_scheduled_report(api):
 
 @pytest.mark.reports
 def test_delete_a_scheduled_report(api, validator):
-    assert is_valid_delete_a_scheduled_report(
-        validator,
-        delete_a_scheduled_report(api)
-    )
+    try:
+        assert is_valid_delete_a_scheduled_report(
+            validator,
+            delete_a_scheduled_report(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def delete_a_scheduled_report_default(api):
@@ -142,51 +203,12 @@ def test_delete_a_scheduled_report_default(api, validator):
             delete_a_scheduled_report_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_all_view_groups(json_schema_validate, obj):
-    json_schema_validate('jsd_2f904a3544abb1c9_v2_2_1').validate(obj)
-    return True
-
-
-def get_all_view_groups(api):
-    endpoint_result = api.reports.get_all_view_groups(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.reports
-def test_get_all_view_groups(api, validator):
-    assert is_valid_get_all_view_groups(
-        validator,
-        get_all_view_groups(api)
-    )
-
-
-def get_all_view_groups_default(api):
-    endpoint_result = api.reports.get_all_view_groups(
-
-    )
-    return endpoint_result
-
-
-@pytest.mark.reports
-def test_get_all_view_groups_default(api, validator):
-    try:
-        assert is_valid_get_all_view_groups(
-            validator,
-            get_all_view_groups_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_list_of_scheduled_reports(json_schema_validate, obj):
-    json_schema_validate('jsd_2ab4b80d49caae42_v2_2_1').validate(obj)
+    json_schema_validate('jsd_095d89e1c3e150ef9faaff44fa483de5_v2_2_1').validate(obj)
     return True
 
 
@@ -200,10 +222,15 @@ def get_list_of_scheduled_reports(api):
 
 @pytest.mark.reports
 def test_get_list_of_scheduled_reports(api, validator):
-    assert is_valid_get_list_of_scheduled_reports(
-        validator,
-        get_list_of_scheduled_reports(api)
-    )
+    try:
+        assert is_valid_get_list_of_scheduled_reports(
+            validator,
+            get_list_of_scheduled_reports(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_list_of_scheduled_reports_default(api):
@@ -222,12 +249,12 @@ def test_get_list_of_scheduled_reports_default(api, validator):
             get_list_of_scheduled_reports_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_create_or_schedule_a_report(json_schema_validate, obj):
-    json_schema_validate('jsd_8abf291a42aa8860_v2_2_1').validate(obj)
+    json_schema_validate('jsd_220fa310ab095148bdb00d7d3d5e1676_v2_2_1').validate(obj)
     return True
 
 
@@ -237,7 +264,7 @@ def create_or_schedule_a_report(api):
         deliveries=[{}],
         name='string',
         payload=None,
-        schedule='string',
+        schedule={},
         tags=['string'],
         view={'fieldGroups': [{'fieldGroupDisplayName': 'string', 'fieldGroupName': 'string', 'fields': [{'displayName': 'string', 'name': 'string'}]}], 'filters': [{'displayName': 'string', 'name': 'string', 'type': 'string', 'value': {}}], 'format': {'formatType': 'string', 'name': 'string'}, 'name': 'string', 'viewId': 'string'},
         viewGroupId='string',
@@ -248,10 +275,15 @@ def create_or_schedule_a_report(api):
 
 @pytest.mark.reports
 def test_create_or_schedule_a_report(api, validator):
-    assert is_valid_create_or_schedule_a_report(
-        validator,
-        create_or_schedule_a_report(api)
-    )
+    try:
+        assert is_valid_create_or_schedule_a_report(
+            validator,
+            create_or_schedule_a_report(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def create_or_schedule_a_report_default(api):
@@ -277,12 +309,56 @@ def test_create_or_schedule_a_report_default(api, validator):
             create_or_schedule_a_report_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_all_view_groups(json_schema_validate, obj):
+    json_schema_validate('jsd_bbff833d5d5756698f4764a9d488cc98_v2_2_1').validate(obj)
+    return True
+
+
+def get_all_view_groups(api):
+    endpoint_result = api.reports.get_all_view_groups(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.reports
+def test_get_all_view_groups(api, validator):
+    try:
+        assert is_valid_get_all_view_groups(
+            validator,
+            get_all_view_groups(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_all_view_groups_default(api):
+    endpoint_result = api.reports.get_all_view_groups(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.reports
+def test_get_all_view_groups_default(api, validator):
+    try:
+        assert is_valid_get_all_view_groups(
+            validator,
+            get_all_view_groups_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_all_execution_details_for_a_given_report(json_schema_validate, obj):
-    json_schema_validate('jsd_91b9d8304679a273_v2_2_1').validate(obj)
+    json_schema_validate('jsd_a4b1ca0320185570bc12da238f0e88bb_v2_2_1').validate(obj)
     return True
 
 
@@ -295,10 +371,15 @@ def get_all_execution_details_for_a_given_report(api):
 
 @pytest.mark.reports
 def test_get_all_execution_details_for_a_given_report(api, validator):
-    assert is_valid_get_all_execution_details_for_a_given_report(
-        validator,
-        get_all_execution_details_for_a_given_report(api)
-    )
+    try:
+        assert is_valid_get_all_execution_details_for_a_given_report(
+            validator,
+            get_all_execution_details_for_a_given_report(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_all_execution_details_for_a_given_report_default(api):
@@ -316,51 +397,12 @@ def test_get_all_execution_details_for_a_given_report_default(api, validator):
             get_all_execution_details_for_a_given_report_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_a_scheduled_report(json_schema_validate, obj):
-    json_schema_validate('jsd_b79a39104e189251_v2_2_1').validate(obj)
-    return True
-
-
-def get_a_scheduled_report(api):
-    endpoint_result = api.reports.get_a_scheduled_report(
-        report_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.reports
-def test_get_a_scheduled_report(api, validator):
-    assert is_valid_get_a_scheduled_report(
-        validator,
-        get_a_scheduled_report(api)
-    )
-
-
-def get_a_scheduled_report_default(api):
-    endpoint_result = api.reports.get_a_scheduled_report(
-        report_id='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.reports
-def test_get_a_scheduled_report_default(api, validator):
-    try:
-        assert is_valid_get_a_scheduled_report(
-            validator,
-            get_a_scheduled_report_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_download_report_content(json_schema_validate, obj):
-    json_schema_validate('jsd_d6bbebd74a4887bd_v2_2_1').validate(obj)
+    json_schema_validate('jsd_2921b2790cdb5abf98c8e00011de86a4_v2_2_1').validate(obj)
     return True
 
 
@@ -374,10 +416,15 @@ def download_report_content(api):
 
 @pytest.mark.reports
 def test_download_report_content(api, validator):
-    assert is_valid_download_report_content(
-        validator,
-        download_report_content(api)
-    )
+    try:
+        assert is_valid_download_report_content(
+            validator,
+            download_report_content(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def download_report_content_default(api):
@@ -396,5 +443,5 @@ def test_download_report_content_default(api, validator):
             download_report_content_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

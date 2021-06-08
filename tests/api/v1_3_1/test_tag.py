@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI tag API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '1.3.1', reason='version does not match')
@@ -66,7 +68,7 @@ def test_add_members_to_the_tag_default(api, validator):
             add_members_to_the_tag_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -119,7 +121,7 @@ def test_create_tag_default(api, validator):
             create_tag_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -164,7 +166,7 @@ def test_get_tag_member_count_default(api, validator):
             get_tag_member_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -175,7 +177,7 @@ def is_valid_updates_tag_membership(json_schema_validate, obj):
 def updates_tag_membership(api):
     endpoint_result = api.tag.updates_tag_membership(
         active_validation=True,
-        memberToTags={'key': ['string']},
+        memberToTags=[{'key': ['string']}],
         memberType='string',
         payload=None
     )
@@ -208,7 +210,7 @@ def test_updates_tag_membership_default(api, validator):
             updates_tag_membership_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -261,7 +263,7 @@ def test_update_tag_default(api, validator):
             update_tag_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -310,7 +312,7 @@ def test_get_tag_count_default(api, validator):
             get_tag_count_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -349,7 +351,7 @@ def test_get_tag_by_id_default(api, validator):
             get_tag_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -390,13 +392,12 @@ def test_remove_tag_member_default(api, validator):
             remove_tag_member_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_tag_members_by_id(json_schema_validate, obj):
-    json_schema_validate('jsd_eab7abe048fb99ad_v1_3_1').validate(obj)
-    return True
+    return True if obj else False
 
 
 def get_tag_members_by_id(api):
@@ -439,7 +440,7 @@ def test_get_tag_members_by_id_default(api, validator):
             get_tag_members_by_id_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -498,7 +499,7 @@ def test_get_tag_default(api, validator):
             get_tag_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
@@ -537,13 +538,12 @@ def test_delete_tag_default(api, validator):
             delete_tag_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_tag_resource_types(json_schema_validate, obj):
-    json_schema_validate('jsd_4695090d403b8eaa_v1_3_1').validate(obj)
-    return True
+    return True if obj else False
 
 
 def get_tag_resource_types(api):
@@ -576,5 +576,5 @@ def test_get_tag_resource_types_default(api, validator):
             get_tag_resource_types_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

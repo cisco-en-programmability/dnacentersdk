@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI wireless API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_retrieve_rf_profiles(json_schema_validate, obj):
-    json_schema_validate('jsd_098cab9141c9a3fe_v2_2_1').validate(obj)
+    json_schema_validate('jsd_ac37d6798c0b593088952123df03bb1b_v2_2_1').validate(obj)
     return True
 
 
@@ -41,10 +43,15 @@ def retrieve_rf_profiles(api):
 
 @pytest.mark.wireless
 def test_retrieve_rf_profiles(api, validator):
-    assert is_valid_retrieve_rf_profiles(
-        validator,
-        retrieve_rf_profiles(api)
-    )
+    try:
+        assert is_valid_retrieve_rf_profiles(
+            validator,
+            retrieve_rf_profiles(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def retrieve_rf_profiles_default(api):
@@ -62,328 +69,12 @@ def test_retrieve_rf_profiles_default(api, validator):
             retrieve_rf_profiles_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_create_and_provision_ssid(json_schema_validate, obj):
-    json_schema_validate('jsd_1eb72ad34e098990_v2_2_1').validate(obj)
-    return True
-
-
-def create_and_provision_ssid(api):
-    endpoint_result = api.wireless.create_and_provision_ssid(
-        active_validation=True,
-        enableFabric=True,
-        flexConnect={'enableFlexConnect': True, 'localToVlan': 0},
-        managedAPLocations=['string'],
-        payload=None,
-        ssidDetails={'name': 'string', 'securityLevel': 'WPA2_ENTERPRISE', 'enableFastLane': True, 'passphrase': 'string', 'trafficType': 'data', 'enableBroadcastSSID': True, 'radioPolicy': 'Dual band operation (2.4GHz and 5GHz)', 'enableMACFiltering': True, 'fastTransition': 'Adaptive', 'webAuthURL': 'string'},
-        ssidType='Guest'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_create_and_provision_ssid(api, validator):
-    assert is_valid_create_and_provision_ssid(
-        validator,
-        create_and_provision_ssid(api)
-    )
-
-
-def create_and_provision_ssid_default(api):
-    endpoint_result = api.wireless.create_and_provision_ssid(
-        active_validation=True,
-        enableFabric=None,
-        flexConnect=None,
-        managedAPLocations=None,
-        payload=None,
-        ssidDetails=None,
-        ssidType=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_create_and_provision_ssid_default(api, validator):
-    try:
-        assert is_valid_create_and_provision_ssid(
-            validator,
-            create_and_provision_ssid_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_delete_rf_profiles(json_schema_validate, obj):
-    json_schema_validate('jsd_28b24a744a9994be_v2_2_1').validate(obj)
-    return True
-
-
-def delete_rf_profiles(api):
-    endpoint_result = api.wireless.delete_rf_profiles(
-        rf_profile_name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_delete_rf_profiles(api, validator):
-    assert is_valid_delete_rf_profiles(
-        validator,
-        delete_rf_profiles(api)
-    )
-
-
-def delete_rf_profiles_default(api):
-    endpoint_result = api.wireless.delete_rf_profiles(
-        rf_profile_name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_delete_rf_profiles_default(api, validator):
-    try:
-        assert is_valid_delete_rf_profiles(
-            validator,
-            delete_rf_profiles_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_create_wireless_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_709769624bf988d5_v2_2_1').validate(obj)
-    return True
-
-
-def create_wireless_profile(api):
-    endpoint_result = api.wireless.create_wireless_profile(
-        active_validation=True,
-        payload=None,
-        profileDetails={'name': 'string', 'sites': ['string'], 'ssidDetails': [{'name': 'string', 'type': 'Guest', 'enableFabric': True, 'flexConnect': {'enableFlexConnect': True, 'localToVlan': 0}, 'interfaceName': 'string'}]}
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_create_wireless_profile(api, validator):
-    assert is_valid_create_wireless_profile(
-        validator,
-        create_wireless_profile(api)
-    )
-
-
-def create_wireless_profile_default(api):
-    endpoint_result = api.wireless.create_wireless_profile(
-        active_validation=True,
-        payload=None,
-        profileDetails=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_create_wireless_profile_default(api, validator):
-    try:
-        assert is_valid_create_wireless_profile(
-            validator,
-            create_wireless_profile_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_provision_update(json_schema_validate, obj):
-    json_schema_validate('jsd_87a5ab044139862d_v2_2_1').validate(obj)
-    return True
-
-
-def provision_update(api):
-    endpoint_result = api.wireless.provision_update(
-        active_validation=True,
-        payload=[{'deviceName': 'string', 'managedAPLocations': ['string'], 'dynamicInterfaces': [{'interfaceIPAddress': 'string', 'interfaceNetmaskInCIDR': 0, 'interfaceGateway': 'string', 'lagOrPortNumber': 0, 'vlanId': 0, 'interfaceName': 'string'}]}]
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_provision_update(api, validator):
-    assert is_valid_provision_update(
-        validator,
-        provision_update(api)
-    )
-
-
-def provision_update_default(api):
-    endpoint_result = api.wireless.provision_update(
-        active_validation=True,
-        payload=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_provision_update_default(api, validator):
-    try:
-        assert is_valid_provision_update(
-            validator,
-            provision_update_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_sensor_test_results(json_schema_validate, obj):
-    json_schema_validate('jsd_87ae7b214f0ba838_v2_2_1').validate(obj)
-    return True
-
-
-def sensor_test_results(api):
-    endpoint_result = api.wireless.sensor_test_results(
-        end_time=0,
-        site_id='string',
-        start_time=0,
-        test_failure_by='area'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_sensor_test_results(api, validator):
-    assert is_valid_sensor_test_results(
-        validator,
-        sensor_test_results(api)
-    )
-
-
-def sensor_test_results_default(api):
-    endpoint_result = api.wireless.sensor_test_results(
-        end_time=None,
-        site_id=None,
-        start_time=None,
-        test_failure_by=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_sensor_test_results_default(api, validator):
-    try:
-        assert is_valid_sensor_test_results(
-            validator,
-            sensor_test_results_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_create_enterprise_ssid(json_schema_validate, obj):
-    return True if obj else False
-
-
-def create_enterprise_ssid(api):
-    endpoint_result = api.wireless.create_enterprise_ssid(
-        active_validation=True,
-        enableBroadcastSSID=True,
-        enableFastLane=True,
-        enableMACFiltering=True,
-        fastTransition='Adaptive',
-        name='********************************',
-        passphrase='********',
-        payload=None,
-        radioPolicy='Dual band operation (2.4GHz and 5GHz)',
-        securityLevel='WPA2_ENTERPRISE',
-        trafficType='voicedata'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_create_enterprise_ssid(api, validator):
-    assert is_valid_create_enterprise_ssid(
-        validator,
-        create_enterprise_ssid(api)
-    )
-
-
-def create_enterprise_ssid_default(api):
-    endpoint_result = api.wireless.create_enterprise_ssid(
-        active_validation=True,
-        enableBroadcastSSID=None,
-        enableFastLane=None,
-        enableMACFiltering=None,
-        fastTransition=None,
-        name=None,
-        passphrase=None,
-        payload=None,
-        radioPolicy=None,
-        securityLevel=None,
-        trafficType=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_create_enterprise_ssid_default(api, validator):
-    try:
-        assert is_valid_create_enterprise_ssid(
-            validator,
-            create_enterprise_ssid_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_get_wireless_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_b3a1c8804c8b9b8b_v2_2_1').validate(obj)
-    return True
-
-
-def get_wireless_profile(api):
-    endpoint_result = api.wireless.get_wireless_profile(
-        profile_name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_get_wireless_profile(api, validator):
-    assert is_valid_get_wireless_profile(
-        validator,
-        get_wireless_profile(api)
-    )
-
-
-def get_wireless_profile_default(api):
-    endpoint_result = api.wireless.get_wireless_profile(
-        profile_name=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_get_wireless_profile_default(api, validator):
-    try:
-        assert is_valid_get_wireless_profile(
-            validator,
-            get_wireless_profile_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_create_or_update_rf_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_b78329674878b815_v2_2_1').validate(obj)
+    json_schema_validate('jsd_5f24f6c07641580ba6ed710e92c2da16_v2_2_1').validate(obj)
     return True
 
 
@@ -406,10 +97,15 @@ def create_or_update_rf_profile(api):
 
 @pytest.mark.wireless
 def test_create_or_update_rf_profile(api, validator):
-    assert is_valid_create_or_update_rf_profile(
-        validator,
-        create_or_update_rf_profile(api)
-    )
+    try:
+        assert is_valid_create_or_update_rf_profile(
+            validator,
+            create_or_update_rf_profile(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def create_or_update_rf_profile_default(api):
@@ -437,51 +133,112 @@ def test_create_or_update_rf_profile_default(api, validator):
             create_or_update_rf_profile_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_enterprise_ssid(json_schema_validate, obj):
-    json_schema_validate('jsd_c7a6592b4b98a369_v2_2_1').validate(obj)
+def is_valid_create_and_provision_ssid(json_schema_validate, obj):
+    json_schema_validate('jsd_d825ae9a117f5b6bb65b7d78fd42513c_v2_2_1').validate(obj)
     return True
 
 
-def delete_enterprise_ssid(api):
-    endpoint_result = api.wireless.delete_enterprise_ssid(
-        ssid_name='string'
+def create_and_provision_ssid(api):
+    endpoint_result = api.wireless.create_and_provision_ssid(
+        active_validation=True,
+        enableFabric=True,
+        flexConnect={'enableFlexConnect': True, 'localToVlan': 0},
+        managedAPLocations=['string'],
+        payload=None,
+        ssidDetails={'name': 'string', 'securityLevel': 'string', 'enableFastLane': True, 'passphrase': 'string', 'trafficType': 'string', 'enableBroadcastSSID': True, 'radioPolicy': 'string', 'enableMACFiltering': True, 'fastTransition': 'string', 'webAuthURL': 'string'},
+        ssidType='string'
     )
     return endpoint_result
 
 
 @pytest.mark.wireless
-def test_delete_enterprise_ssid(api, validator):
-    assert is_valid_delete_enterprise_ssid(
-        validator,
-        delete_enterprise_ssid(api)
-    )
-
-
-def delete_enterprise_ssid_default(api):
-    endpoint_result = api.wireless.delete_enterprise_ssid(
-        ssid_name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_delete_enterprise_ssid_default(api, validator):
+def test_create_and_provision_ssid(api, validator):
     try:
-        assert is_valid_delete_enterprise_ssid(
+        assert is_valid_create_and_provision_ssid(
             validator,
-            delete_enterprise_ssid_default(api)
+            create_and_provision_ssid(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def create_and_provision_ssid_default(api):
+    endpoint_result = api.wireless.create_and_provision_ssid(
+        active_validation=True,
+        enableFabric=None,
+        flexConnect=None,
+        managedAPLocations=None,
+        payload=None,
+        ssidDetails=None,
+        ssidType=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_create_and_provision_ssid_default(api, validator):
+    try:
+        assert is_valid_create_and_provision_ssid(
+            validator,
+            create_and_provision_ssid_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_rf_profiles(json_schema_validate, obj):
+    json_schema_validate('jsd_008288aa1e5957ac977603b5cef72f9f_v2_2_1').validate(obj)
+    return True
+
+
+def delete_rf_profiles(api):
+    endpoint_result = api.wireless.delete_rf_profiles(
+        rf_profile_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_delete_rf_profiles(api, validator):
+    try:
+        assert is_valid_delete_rf_profiles(
+            validator,
+            delete_rf_profiles(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_rf_profiles_default(api):
+    endpoint_result = api.wireless.delete_rf_profiles(
+        rf_profile_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_delete_rf_profiles_default(api, validator):
+    try:
+        assert is_valid_delete_rf_profiles(
+            validator,
+            delete_rf_profiles_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_get_enterprise_ssid(json_schema_validate, obj):
-    json_schema_validate('jsd_cca519ba45ebb423_v2_2_1').validate(obj)
+    json_schema_validate('jsd_fb757e8fce4b51ffa0ba1a8e5ae4d8c0_v2_2_1').validate(obj)
     return True
 
 
@@ -494,10 +251,15 @@ def get_enterprise_ssid(api):
 
 @pytest.mark.wireless
 def test_get_enterprise_ssid(api, validator):
-    assert is_valid_get_enterprise_ssid(
-        validator,
-        get_enterprise_ssid(api)
-    )
+    try:
+        assert is_valid_get_enterprise_ssid(
+            validator,
+            get_enterprise_ssid(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_enterprise_ssid_default(api):
@@ -515,29 +277,292 @@ def test_get_enterprise_ssid_default(api, validator):
             get_enterprise_ssid_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_create_enterprise_ssid(json_schema_validate, obj):
+    json_schema_validate('jsd_bc33daf690ec5399a507829abfc4fe64_v2_2_1').validate(obj)
+    return True
+
+
+def create_enterprise_ssid(api):
+    endpoint_result = api.wireless.create_enterprise_ssid(
+        active_validation=True,
+        enableBroadcastSSID=True,
+        enableFastLane=True,
+        enableMACFiltering=True,
+        fastTransition='string',
+        name='string',
+        passphrase='string',
+        payload=None,
+        radioPolicy='string',
+        securityLevel='string',
+        trafficType='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_create_enterprise_ssid(api, validator):
+    try:
+        assert is_valid_create_enterprise_ssid(
+            validator,
+            create_enterprise_ssid(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def create_enterprise_ssid_default(api):
+    endpoint_result = api.wireless.create_enterprise_ssid(
+        active_validation=True,
+        enableBroadcastSSID=None,
+        enableFastLane=None,
+        enableMACFiltering=None,
+        fastTransition=None,
+        name=None,
+        passphrase=None,
+        payload=None,
+        radioPolicy=None,
+        securityLevel=None,
+        trafficType=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_create_enterprise_ssid_default(api, validator):
+    try:
+        assert is_valid_create_enterprise_ssid(
+            validator,
+            create_enterprise_ssid_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_wireless_profile(json_schema_validate, obj):
+    json_schema_validate('jsd_bbc1866a50505c0695ae243718d51936_v2_2_1').validate(obj)
+    return True
+
+
+def get_wireless_profile(api):
+    endpoint_result = api.wireless.get_wireless_profile(
+        profile_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_get_wireless_profile(api, validator):
+    try:
+        assert is_valid_get_wireless_profile(
+            validator,
+            get_wireless_profile(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_wireless_profile_default(api):
+    endpoint_result = api.wireless.get_wireless_profile(
+        profile_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_get_wireless_profile_default(api, validator):
+    try:
+        assert is_valid_get_wireless_profile(
+            validator,
+            get_wireless_profile_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_wireless_profile(json_schema_validate, obj):
+    json_schema_validate('jsd_5135bbf7ce025bc2a291b90c37a6b898_v2_2_1').validate(obj)
+    return True
+
+
+def update_wireless_profile(api):
+    endpoint_result = api.wireless.update_wireless_profile(
+        active_validation=True,
+        name={'type': 'string'},
+        payload=None,
+        sites={'type': 'array', 'items': {'type': 'string'}},
+        ssidDetails={'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Guest', 'Enterprise']}, 'enableFabric': {'type': 'boolean'}, 'flexConnect': {'type': 'object', 'properties': {'enableFlexConnect': {'type': 'boolean'}, 'localToVlan': {'type': 'integer'}}}, 'interfaceName': {'type': 'string'}}}}
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_update_wireless_profile(api, validator):
+    try:
+        assert is_valid_update_wireless_profile(
+            validator,
+            update_wireless_profile(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_wireless_profile_default(api):
+    endpoint_result = api.wireless.update_wireless_profile(
+        active_validation=True,
+        name=None,
+        payload=None,
+        sites=None,
+        ssidDetails=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_update_wireless_profile_default(api, validator):
+    try:
+        assert is_valid_update_wireless_profile(
+            validator,
+            update_wireless_profile_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_create_wireless_profile(json_schema_validate, obj):
+    json_schema_validate('jsd_b95201b6a6905a10b463e036bf591166_v2_2_1').validate(obj)
+    return True
+
+
+def create_wireless_profile(api):
+    endpoint_result = api.wireless.create_wireless_profile(
+        active_validation=True,
+        name={'type': 'string'},
+        payload=None,
+        sites={'type': 'array', 'items': {'type': 'string'}},
+        ssidDetails={'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Guest', 'Enterprise']}, 'enableFabric': {'type': 'boolean'}, 'flexConnect': {'type': 'object', 'properties': {'enableFlexConnect': {'type': 'boolean'}, 'localToVlan': {'type': 'integer'}}}, 'interfaceName': {'type': 'string'}}}}
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_create_wireless_profile(api, validator):
+    try:
+        assert is_valid_create_wireless_profile(
+            validator,
+            create_wireless_profile(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def create_wireless_profile_default(api):
+    endpoint_result = api.wireless.create_wireless_profile(
+        active_validation=True,
+        name=None,
+        payload=None,
+        sites=None,
+        ssidDetails=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_create_wireless_profile_default(api, validator):
+    try:
+        assert is_valid_create_wireless_profile(
+            validator,
+            create_wireless_profile_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_provision_update(json_schema_validate, obj):
+    json_schema_validate('jsd_d0aab00569b258b481afedc35e6db392_v2_2_1').validate(obj)
+    return True
+
+
+def provision_update(api):
+    endpoint_result = api.wireless.provision_update(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_provision_update(api, validator):
+    try:
+        assert is_valid_provision_update(
+            validator,
+            provision_update(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def provision_update_default(api):
+    endpoint_result = api.wireless.provision_update(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_provision_update_default(api, validator):
+    try:
+        assert is_valid_provision_update(
+            validator,
+            provision_update_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_provision(json_schema_validate, obj):
-    json_schema_validate('jsd_d09b08a3447aa3b9_v2_2_1').validate(obj)
+    json_schema_validate('jsd_359718e31c795964b3bdf85da1b5a2a5_v2_2_1').validate(obj)
     return True
 
 
 def provision(api):
     endpoint_result = api.wireless.provision(
         active_validation=True,
-        payload=[{'deviceName': 'string', 'site': 'string', 'managedAPLocations': ['string'], 'dynamicInterfaces': [{'interfaceIPAddress': 'string', 'interfaceNetmaskInCIDR': 0, 'interfaceGateway': 'string', 'lagOrPortNumber': 0, 'vlanId': 0, 'interfaceName': 'string'}]}]
+        payload=None
     )
     return endpoint_result
 
 
 @pytest.mark.wireless
 def test_provision(api, validator):
-    assert is_valid_provision(
-        validator,
-        provision(api)
-    )
+    try:
+        assert is_valid_provision(
+            validator,
+            provision(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def provision_default(api):
@@ -556,29 +581,172 @@ def test_provision_default(api, validator):
             provision_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_sensor_test_results(json_schema_validate, obj):
+    json_schema_validate('jsd_dde2b077d6d052dcae5a76f4aac09c1d_v2_2_1').validate(obj)
+    return True
+
+
+def sensor_test_results(api):
+    endpoint_result = api.wireless.sensor_test_results(
+        end_time=0,
+        site_id='string',
+        start_time=0,
+        test_failure_by='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_sensor_test_results(api, validator):
+    try:
+        assert is_valid_sensor_test_results(
+            validator,
+            sensor_test_results(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def sensor_test_results_default(api):
+    endpoint_result = api.wireless.sensor_test_results(
+        end_time=None,
+        site_id=None,
+        start_time=None,
+        test_failure_by=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_sensor_test_results_default(api, validator):
+    try:
+        assert is_valid_sensor_test_results(
+            validator,
+            sensor_test_results_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_enterprise_ssid(json_schema_validate, obj):
+    json_schema_validate('jsd_6a43afa4d91a5043996c682a7a7a2d62_v2_2_1').validate(obj)
+    return True
+
+
+def delete_enterprise_ssid(api):
+    endpoint_result = api.wireless.delete_enterprise_ssid(
+        ssid_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_delete_enterprise_ssid(api, validator):
+    try:
+        assert is_valid_delete_enterprise_ssid(
+            validator,
+            delete_enterprise_ssid(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_enterprise_ssid_default(api):
+    endpoint_result = api.wireless.delete_enterprise_ssid(
+        ssid_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_delete_enterprise_ssid_default(api, validator):
+    try:
+        assert is_valid_delete_enterprise_ssid(
+            validator,
+            delete_enterprise_ssid_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_wireless_profile(json_schema_validate, obj):
+    json_schema_validate('jsd_9610a850fb6c5451a7ad20ba76f4ff43_v2_2_1').validate(obj)
+    return True
+
+
+def delete_wireless_profile(api):
+    endpoint_result = api.wireless.delete_wireless_profile(
+        wireless_profile_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_delete_wireless_profile(api, validator):
+    try:
+        assert is_valid_delete_wireless_profile(
+            validator,
+            delete_wireless_profile(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_wireless_profile_default(api):
+    endpoint_result = api.wireless.delete_wireless_profile(
+        wireless_profile_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.wireless
+def test_delete_wireless_profile_default(api, validator):
+    try:
+        assert is_valid_delete_wireless_profile(
+            validator,
+            delete_wireless_profile_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_ap_provision(json_schema_validate, obj):
-    json_schema_validate('jsd_e9b99b2248c88014_v2_2_1').validate(obj)
+    json_schema_validate('jsd_09f790a930d452708353c374f5c0f90f_v2_2_1').validate(obj)
     return True
 
 
 def ap_provision(api):
     endpoint_result = api.wireless.ap_provision(
         active_validation=True,
-        payload=[{'rfProfile': 'string', 'siteId': 'string', 'type': 'string', 'deviceName': 'string', 'customFlexGroupName': ['string'], 'customApGroupName': 'string'}]
+        payload=None
     )
     return endpoint_result
 
 
 @pytest.mark.wireless
 def test_ap_provision(api, validator):
-    assert is_valid_ap_provision(
-        validator,
-        ap_provision(api)
-    )
+    try:
+        assert is_valid_ap_provision(
+            validator,
+            ap_provision(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def ap_provision_default(api):
@@ -597,94 +765,12 @@ def test_ap_provision_default(api, validator):
             ap_provision_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_delete_wireless_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_e39588a5494982c4_v2_2_1').validate(obj)
-    return True
-
-
-def delete_wireless_profile(api):
-    endpoint_result = api.wireless.delete_wireless_profile(
-        wireless_profile_name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_delete_wireless_profile(api, validator):
-    assert is_valid_delete_wireless_profile(
-        validator,
-        delete_wireless_profile(api)
-    )
-
-
-def delete_wireless_profile_default(api):
-    endpoint_result = api.wireless.delete_wireless_profile(
-        wireless_profile_name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_delete_wireless_profile_default(api, validator):
-    try:
-        assert is_valid_delete_wireless_profile(
-            validator,
-            delete_wireless_profile_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
-            raise original_e
-
-
-def is_valid_update_wireless_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_cfbd3870405aad55_v2_2_1').validate(obj)
-    return True
-
-
-def update_wireless_profile(api):
-    endpoint_result = api.wireless.update_wireless_profile(
-        active_validation=True,
-        payload=None,
-        profileDetails={'name': 'string', 'sites': ['string'], 'ssidDetails': [{'name': 'string', 'type': 'Guest', 'enableFabric': True, 'flexConnect': {'enableFlexConnect': True, 'localToVlan': 0}, 'interfaceName': 'string'}]}
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_update_wireless_profile(api, validator):
-    assert is_valid_update_wireless_profile(
-        validator,
-        update_wireless_profile(api)
-    )
-
-
-def update_wireless_profile_default(api):
-    endpoint_result = api.wireless.update_wireless_profile(
-        active_validation=True,
-        payload=None,
-        profileDetails=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.wireless
-def test_update_wireless_profile_default(api, validator):
-    try:
-        assert is_valid_update_wireless_profile(
-            validator,
-            update_wireless_profile_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_delete_ssid_and_provision_it_to_devices(json_schema_validate, obj):
-    json_schema_validate('jsd_fc9538fe43d9884d_v2_2_1').validate(obj)
+    json_schema_validate('jsd_8e56eb2c294159d891b7dbe493ddc434_v2_2_1').validate(obj)
     return True
 
 
@@ -698,10 +784,15 @@ def delete_ssid_and_provision_it_to_devices(api):
 
 @pytest.mark.wireless
 def test_delete_ssid_and_provision_it_to_devices(api, validator):
-    assert is_valid_delete_ssid_and_provision_it_to_devices(
-        validator,
-        delete_ssid_and_provision_it_to_devices(api)
-    )
+    try:
+        assert is_valid_delete_ssid_and_provision_it_to_devices(
+            validator,
+            delete_ssid_and_provision_it_to_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def delete_ssid_and_provision_it_to_devices_default(api):
@@ -720,5 +811,5 @@ def test_delete_ssid_and_provision_it_to_devices_default(api, validator):
             delete_ssid_and_provision_it_to_devices_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e

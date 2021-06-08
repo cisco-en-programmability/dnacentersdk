@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI software_image_management_swim API fixtures and tests.
 
-Copyright (c) 2019-2020 Cisco and/or its affiliates.
+Copyright (c) 2019-2021 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 import pytest
+from fastjsonschema.exceptions import JsonSchemaException
+from dnacentersdk.exceptions import MalformedRequest
 from tests.environment import DNA_CENTER_VERSION
 
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.2.1', reason='version does not match')
 
 
 def is_valid_get_software_image_details(json_schema_validate, obj):
-    json_schema_validate('jsd_0c8f7a0b49b9aedd_v2_2_1').validate(obj)
+    json_schema_validate('jsd_039f73101d5d5e409f571084ab4c6049_v2_2_1').validate(obj)
     return True
 
 
@@ -50,7 +52,7 @@ def get_software_image_details(api):
         name='string',
         offset=0,
         sort_by='string',
-        sort_order='asc',
+        sort_order='string',
         version='string'
     )
     return endpoint_result
@@ -58,10 +60,15 @@ def get_software_image_details(api):
 
 @pytest.mark.software_image_management_swim
 def test_get_software_image_details(api, validator):
-    assert is_valid_get_software_image_details(
-        validator,
-        get_software_image_details(api)
-    )
+    try:
+        assert is_valid_get_software_image_details(
+            validator,
+            get_software_image_details(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def get_software_image_details_default(api):
@@ -96,20 +103,20 @@ def test_get_software_image_details_default(api, validator):
             get_software_image_details_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_import_local_software_image(json_schema_validate, obj):
-    json_schema_validate('jsd_4dbe3bc743a891bc_v2_2_1').validate(obj)
+    json_schema_validate('jsd_2399c1cf6d5d5f0fa2e92539134b6c1d_v2_2_1').validate(obj)
     return True
 
 
 def import_local_software_image(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
-        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
-        multipart_monitor_callback=None,
+        active_validation=True,
         is_third_party=True,
+        payload=None,
         third_party_application_type='string',
         third_party_image_family='string',
         third_party_vendor='string'
@@ -119,17 +126,22 @@ def import_local_software_image(api):
 
 @pytest.mark.software_image_management_swim
 def test_import_local_software_image(api, validator):
-    assert is_valid_import_local_software_image(
-        validator,
-        import_local_software_image(api)
-    )
+    try:
+        assert is_valid_import_local_software_image(
+            validator,
+            import_local_software_image(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def import_local_software_image_default(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
-        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
-        multipart_monitor_callback=None,
+        active_validation=True,
         is_third_party=None,
+        payload=None,
         third_party_application_type=None,
         third_party_image_family=None,
         third_party_vendor=None
@@ -145,29 +157,34 @@ def test_import_local_software_image_default(api, validator):
             import_local_software_image_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_trigger_software_image_distribution(json_schema_validate, obj):
-    json_schema_validate('jsd_8cb6783b4faba1f4_v2_2_1').validate(obj)
+    json_schema_validate('jsd_6c8d11fb9fc752ab8bb8e2b1413ccc92_v2_2_1').validate(obj)
     return True
 
 
 def trigger_software_image_distribution(api):
     endpoint_result = api.software_image_management_swim.trigger_software_image_distribution(
         active_validation=True,
-        payload=[{'deviceUuid': 'string', 'imageUuid': 'string'}]
+        payload=None
     )
     return endpoint_result
 
 
 @pytest.mark.software_image_management_swim
 def test_trigger_software_image_distribution(api, validator):
-    assert is_valid_trigger_software_image_distribution(
-        validator,
-        trigger_software_image_distribution(api)
-    )
+    try:
+        assert is_valid_trigger_software_image_distribution(
+            validator,
+            trigger_software_image_distribution(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def trigger_software_image_distribution_default(api):
@@ -186,19 +203,19 @@ def test_trigger_software_image_distribution_default(api, validator):
             trigger_software_image_distribution_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_import_software_image_via_url(json_schema_validate, obj):
-    json_schema_validate('jsd_bc8aab4746ca883d_v2_2_1').validate(obj)
+    json_schema_validate('jsd_7be8cdb967555fcca03a4c1f796eee56_v2_2_1').validate(obj)
     return True
 
 
 def import_software_image_via_url(api):
     endpoint_result = api.software_image_management_swim.import_software_image_via_url(
         active_validation=True,
-        payload=[{'applicationType': 'string', 'imageFamily': 'string', 'sourceURL': 'string', 'thirdParty': True, 'vendor': 'string'}],
+        payload=None,
         schedule_at='string',
         schedule_desc='string',
         schedule_origin='string'
@@ -208,10 +225,15 @@ def import_software_image_via_url(api):
 
 @pytest.mark.software_image_management_swim
 def test_import_software_image_via_url(api, validator):
-    assert is_valid_import_software_image_via_url(
-        validator,
-        import_software_image_via_url(api)
-    )
+    try:
+        assert is_valid_import_software_image_via_url(
+            validator,
+            import_software_image_via_url(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def import_software_image_via_url_default(api):
@@ -233,19 +255,19 @@ def test_import_software_image_via_url_default(api, validator):
             import_software_image_via_url_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
 def is_valid_trigger_software_image_activation(json_schema_validate, obj):
-    json_schema_validate('jsd_fb9beb664f2aba4c_v2_2_1').validate(obj)
+    json_schema_validate('jsd_22891a9136d5513985f15e91a19da66c_v2_2_1').validate(obj)
     return True
 
 
 def trigger_software_image_activation(api):
     endpoint_result = api.software_image_management_swim.trigger_software_image_activation(
         active_validation=True,
-        payload=[{'activateLowerImageVersion': True, 'deviceUpgradeMode': 'string', 'deviceUuid': 'string', 'distributeIfNeeded': True, 'imageUuidList': ['string'], 'smuImageUuidList': ['string']}],
+        payload=None,
         schedule_validate=True
     )
     return endpoint_result
@@ -253,10 +275,15 @@ def trigger_software_image_activation(api):
 
 @pytest.mark.software_image_management_swim
 def test_trigger_software_image_activation(api, validator):
-    assert is_valid_trigger_software_image_activation(
-        validator,
-        trigger_software_image_activation(api)
-    )
+    try:
+        assert is_valid_trigger_software_image_activation(
+            validator,
+            trigger_software_image_activation(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
 
 
 def trigger_software_image_activation_default(api):
@@ -276,5 +303,5 @@ def test_trigger_software_image_activation_default(api, validator):
             trigger_software_image_activation_default(api)
         )
     except Exception as original_e:
-        with pytest.raises(TypeError, match="but instead we received None"):
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
