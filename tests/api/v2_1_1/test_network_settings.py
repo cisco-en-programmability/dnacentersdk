@@ -335,7 +335,7 @@ def update_network(api):
     endpoint_result = api.network_settings.update_network(
         active_validation=True,
         payload=None,
-        settings={'dhcpServer': ['string'], 'dnsServer': {'domainName': 'can only contain alphanumeric characters or hyphen', 'primaryIpAddress': 'valid range : 1.0.0.0 - 223.255.255.255', 'secondaryIpAddress': 'valid range : 1.0.0.0 - 223.255.255.255'}, 'syslogServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'snmpServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'netflowcollector': {'ipAddress': 'string', 'port': 0}, 'ntpServer': ['string'], 'timezone': 'string', 'messageOfTheday': {'bannerMessage': 'string', 'retainExistingBanner': True}, 'network_aaa': {'servers': 'Server type supported by ISE and AAA', 'ipAddress': 'Mandatory for ISE servers and for AAA consider this as additional Ip.', 'network': 'For AAA server consider it as primary IP and For ISE consider as Network', 'protocol': 'string', 'sharedSecret': 'Supported only by ISE servers'}, 'clientAndEndpoint_aaa': {'servers': 'string', 'ipAddress': 'Mandatory for ISE servers.', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'Supported only by ISE servers'}},
+        settings={'dhcpServer': ['string'], 'dnsServer': {'domainName': 'string', 'primaryIpAddress': 'string', 'secondaryIpAddress': 'string'}, 'syslogServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'snmpServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'netflowcollector': {'ipAddress': 'string', 'port': 0}, 'ntpServer': ['string'], 'timezone': 'string', 'messageOfTheday': {'bannerMessage': 'string', 'retainExistingBanner': True}, 'network_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string'}, 'clientAndEndpoint_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string'}},
         site_id='string'
     )
     return endpoint_result
@@ -585,7 +585,7 @@ def create_network(api):
     endpoint_result = api.network_settings.create_network(
         active_validation=True,
         payload=None,
-        settings={'dhcpServer': ['string'], 'dnsServer': {'domainName': 'can only contain alphanumeric characters or hyphen', 'primaryIpAddress': 'valid range : 1.0.0.0 - 223.255.255.255', 'secondaryIpAddress': 'valid range : 1.0.0.0 - 223.255.255.255'}, 'syslogServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'snmpServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'netflowcollector': {'ipAddress': 'string', 'port': 0}, 'ntpServer': ['string'], 'timezone': 'string', 'messageOfTheday': {'bannerMessage': 'string', 'retainExistingBanner': True}, 'network_aaa': {'servers': 'Server type supported by ISE and AAA', 'ipAddress': 'Mandatory for ISE servers and for AAA consider this as additional Ip.', 'network': 'For AAA server consider it as primary IP and For ISE consider as Network', 'protocol': 'string', 'sharedSecret': 'Supported only by ISE servers'}, 'clientAndEndpoint_aaa': {'servers': 'string', 'ipAddress': 'Mandatory for ISE servers.', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'Supported only by ISE servers'}},
+        settings={'dhcpServer': ['string'], 'dnsServer': {'domainName': 'string', 'primaryIpAddress': 'string', 'secondaryIpAddress': 'string'}, 'syslogServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'snmpServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'netflowcollector': {'ipAddress': 'string', 'port': 0}, 'ntpServer': ['string'], 'timezone': 'string', 'messageOfTheday': {'bannerMessage': 'string', 'retainExistingBanner': True}, 'network_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string'}, 'clientAndEndpoint_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string'}},
         site_id='string'
     )
     return endpoint_result
@@ -673,7 +673,7 @@ def create_global_pool(api):
     endpoint_result = api.network_settings.create_global_pool(
         active_validation=True,
         payload=None,
-        settings={'ippool': [{'ipPoolName': 'string', 'type': 'Generic', 'ipPoolCidr': 'string', 'gateway': 'string', 'dhcpServerIps': ['string'], 'dnsServerIps': ['string'], 'IpAddressSpace': 'IPv6 or IPv4'}]}
+        settings={'ippool': [{'ipPoolName': 'string', 'type': 'Generic', 'ipPoolCidr': 'string', 'gateway': 'string', 'dhcpServerIps': ['string'], 'dnsServerIps': ['string'], 'IpAddressSpace': 'string'}]}
     )
     return endpoint_result
 

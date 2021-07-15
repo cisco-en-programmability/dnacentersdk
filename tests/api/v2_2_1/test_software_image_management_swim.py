@@ -116,7 +116,9 @@ def import_local_software_image(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
         multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
         multipart_monitor_callback=None,
+        active_validation=True,
         is_third_party=True,
+        payload=None,
         third_party_application_type='string',
         third_party_image_family='string',
         third_party_vendor='string'
@@ -141,7 +143,9 @@ def import_local_software_image_default(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
         multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
         multipart_monitor_callback=None,
+        active_validation=True,
         is_third_party=None,
+        payload=None,
         third_party_application_type=None,
         third_party_image_family=None,
         third_party_vendor=None

@@ -397,10 +397,8 @@ def is_valid_update_wireless_profile(json_schema_validate, obj):
 def update_wireless_profile(api):
     endpoint_result = api.wireless.update_wireless_profile(
         active_validation=True,
-        name={'type': 'string'},
         payload=None,
-        sites={'type': 'array', 'items': {'type': 'string'}},
-        ssidDetails={'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Guest', 'Enterprise']}, 'enableFabric': {'type': 'boolean'}, 'flexConnect': {'type': 'object', 'properties': {'enableFlexConnect': {'type': 'boolean'}, 'localToVlan': {'type': 'integer'}}}, 'interfaceName': {'type': 'string'}}}}
+        profileDetails={'name': 'string', 'sites': ['string'], 'ssidDetails': [{'name': 'string', 'type': 'string', 'enableFabric': True, 'flexConnect': {'enableFlexConnect': True, 'localToVlan': 0}, 'interfaceName': 'string'}]}
     )
     return endpoint_result
 
@@ -421,10 +419,8 @@ def test_update_wireless_profile(api, validator):
 def update_wireless_profile_default(api):
     endpoint_result = api.wireless.update_wireless_profile(
         active_validation=True,
-        name=None,
         payload=None,
-        sites=None,
-        ssidDetails=None
+        profileDetails=None
     )
     return endpoint_result
 
@@ -449,10 +445,8 @@ def is_valid_create_wireless_profile(json_schema_validate, obj):
 def create_wireless_profile(api):
     endpoint_result = api.wireless.create_wireless_profile(
         active_validation=True,
-        name={'type': 'string'},
         payload=None,
-        sites={'type': 'array', 'items': {'type': 'string'}},
-        ssidDetails={'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Guest', 'Enterprise']}, 'enableFabric': {'type': 'boolean'}, 'flexConnect': {'type': 'object', 'properties': {'enableFlexConnect': {'type': 'boolean'}, 'localToVlan': {'type': 'integer'}}}, 'interfaceName': {'type': 'string'}}}}
+        profileDetails={'name': 'string', 'sites': ['string'], 'ssidDetails': [{'name': 'string', 'type': 'string', 'enableFabric': True, 'flexConnect': {'enableFlexConnect': True, 'localToVlan': 0}, 'interfaceName': 'string'}]}
     )
     return endpoint_result
 
@@ -473,10 +467,8 @@ def test_create_wireless_profile(api, validator):
 def create_wireless_profile_default(api):
     endpoint_result = api.wireless.create_wireless_profile(
         active_validation=True,
-        name=None,
         payload=None,
-        sites=None,
-        ssidDetails=None
+        profileDetails=None
     )
     return endpoint_result
 

@@ -83,8 +83,8 @@ def is_valid_update_global_pool(json_schema_validate, obj):
 def update_global_pool(api):
     endpoint_result = api.network_settings.update_global_pool(
         active_validation=True,
-        ippool={'type': 'array', 'items': {'type': 'object', 'properties': {'ipPoolName': {'type': 'string'}, 'gateway': {'type': 'string'}, 'dhcpServerIps': {'type': 'array', 'items': {'type': 'string'}}, 'dnsServerIps': {'type': 'array', 'items': {'type': 'string'}}, 'id': {'type': 'string'}}}},
-        payload=None
+        payload=None,
+        settings={'ippool': [{'ipPoolName': 'string', 'gateway': 'string', 'dhcpServerIps': ['string'], 'dnsServerIps': ['string'], 'id': 'string'}]}
     )
     return endpoint_result
 
@@ -105,8 +105,8 @@ def test_update_global_pool(api, validator):
 def update_global_pool_default(api):
     endpoint_result = api.network_settings.update_global_pool(
         active_validation=True,
-        ippool=None,
-        payload=None
+        payload=None,
+        settings=None
     )
     return endpoint_result
 
@@ -131,8 +131,8 @@ def is_valid_create_global_pool(json_schema_validate, obj):
 def create_global_pool(api):
     endpoint_result = api.network_settings.create_global_pool(
         active_validation=True,
-        ippool={'type': 'array', 'items': {'type': 'object', 'properties': {'ipPoolName': {'type': 'string'}, 'type': {'type': 'string', 'enum': ['Generic', 'Tunnel']}, 'ipPoolCidr': {'type': 'string'}, 'gateway': {'type': 'string'}, 'dhcpServerIps': {'type': 'array', 'items': {'type': 'string'}}, 'dnsServerIps': {'type': 'array', 'items': {'type': 'string'}}, 'IpAddressSpace': {'type': 'string', 'enum': ['IPv6 or IPv4']}}}},
-        payload=None
+        payload=None,
+        settings={'ippool': [{'ipPoolName': 'string', 'type': 'string', 'ipPoolCidr': 'string', 'gateway': 'string', 'dhcpServerIps': ['string'], 'dnsServerIps': ['string'], 'IpAddressSpace': 'string'}]}
     )
     return endpoint_result
 
@@ -153,8 +153,8 @@ def test_create_global_pool(api, validator):
 def create_global_pool_default(api):
     endpoint_result = api.network_settings.create_global_pool(
         active_validation=True,
-        ippool=None,
-        payload=None
+        payload=None,
+        settings=None
     )
     return endpoint_result
 
@@ -567,13 +567,8 @@ def is_valid_update_device_credentials(json_schema_validate, obj):
 def update_device_credentials(api):
     endpoint_result = api.network_settings.update_device_credentials(
         active_validation=True,
-        cliCredential={'type': 'object', 'properties': {'description': {'type': 'string'}, 'username': {'type': 'string'}, 'password': {'type': 'string'}, 'enablePassword': {'type': 'string'}, 'id': {'type': 'string'}}},
-        httpsRead={'type': 'object', 'properties': {'name': {'type': 'string'}, 'username': {'type': 'string'}, 'password': {'type': 'string'}, 'port': {'type': 'string'}, 'id': {'type': 'string'}}},
-        httpsWrite={'type': 'object', 'properties': {'name': {'type': 'string'}, 'username': {'type': 'string'}, 'password': {'type': 'string'}, 'port': {'type': 'string'}, 'id': {'type': 'string'}}},
         payload=None,
-        snmpV2cRead={'type': 'object', 'properties': {'description': {'type': 'string'}, 'readCommunity': {'type': 'string'}, 'id': {'type': 'string'}}},
-        snmpV2cWrite={'type': 'object', 'properties': {'description': {'type': 'string'}, 'writeCommunity': {'type': 'string'}, 'id': {'type': 'string'}}},
-        snmpV3={'type': 'object', 'properties': {'authPassword': {'type': 'string'}, 'authType': {'type': 'string'}, 'snmpMode': {'type': 'string'}, 'privacyPassword': {'type': 'string'}, 'privacyType': {'type': 'string'}, 'username': {'type': 'string'}, 'description': {'type': 'string'}, 'id': {'type': 'string'}}}
+        settings={'cliCredential': {'description': 'string', 'username': 'string', 'password': 'string', 'enablePassword': 'string', 'id': 'string'}, 'snmpV2cRead': {'description': 'string', 'readCommunity': 'string', 'id': 'string'}, 'snmpV2cWrite': {'description': 'string', 'writeCommunity': 'string', 'id': 'string'}, 'snmpV3': {'authPassword': 'string', 'authType': 'string', 'snmpMode': 'string', 'privacyPassword': 'string', 'privacyType': 'string', 'username': 'string', 'description': 'string', 'id': 'string'}, 'httpsRead': {'name': 'string', 'username': 'string', 'password': 'string', 'port': 'string', 'id': 'string'}, 'httpsWrite': {'name': 'string', 'username': 'string', 'password': 'string', 'port': 'string', 'id': 'string'}}
     )
     return endpoint_result
 
@@ -594,13 +589,8 @@ def test_update_device_credentials(api, validator):
 def update_device_credentials_default(api):
     endpoint_result = api.network_settings.update_device_credentials(
         active_validation=True,
-        cliCredential=None,
-        httpsRead=None,
-        httpsWrite=None,
         payload=None,
-        snmpV2cRead=None,
-        snmpV2cWrite=None,
-        snmpV3=None
+        settings=None
     )
     return endpoint_result
 
@@ -625,13 +615,8 @@ def is_valid_create_device_credentials(json_schema_validate, obj):
 def create_device_credentials(api):
     endpoint_result = api.network_settings.create_device_credentials(
         active_validation=True,
-        cliCredential={'type': 'array', 'items': {'type': 'object', 'properties': {'description': {'type': 'string'}, 'username': {'type': 'string'}, 'password': {'type': 'string'}, 'enablePassword': {'type': 'string'}}}},
-        httpsRead={'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'username': {'type': 'string'}, 'password': {'type': 'string'}, 'port': {'type': 'number'}}}},
-        httpsWrite={'type': 'array', 'items': {'type': 'object', 'properties': {'name': {'type': 'string'}, 'username': {'type': 'string'}, 'password': {'type': 'string'}, 'port': {'type': 'number'}}}},
         payload=None,
-        snmpV2cRead={'type': 'array', 'items': {'type': 'object', 'properties': {'description': {'type': 'string'}, 'readCommunity': {'type': 'string'}}}},
-        snmpV2cWrite={'type': 'array', 'items': {'type': 'object', 'properties': {'description': {'type': 'string'}, 'writeCommunity': {'type': 'string'}}}},
-        snmpV3={'type': 'array', 'items': {'type': 'object', 'properties': {'description': {'type': 'string'}, 'username': {'type': 'string'}, 'privacyType': {'type': 'string', 'enum': ['AES128', 'DES']}, 'privacyPassword': {'type': 'string'}, 'authType': {'type': 'string', 'enum': ['SHA', 'MD5']}, 'authPassword': {'type': 'string'}, 'snmpMode': {'type': 'string', 'enum': ['AUTHPRIV', 'AUTHNOPRIV', 'NOAUTHNOPRIV']}}}}
+        settings={'cliCredential': [{'description': 'string', 'username': 'string', 'password': 'string', 'enablePassword': 'string'}], 'snmpV2cRead': [{'description': 'string', 'readCommunity': 'string'}], 'snmpV2cWrite': [{'description': 'string', 'writeCommunity': 'string'}], 'snmpV3': [{'description': 'string', 'username': 'string', 'privacyType': 'string', 'privacyPassword': 'string', 'authType': 'string', 'authPassword': 'string', 'snmpMode': 'string'}], 'httpsRead': [{'name': 'string', 'username': 'string', 'password': 'string', 'port': 0}], 'httpsWrite': [{'name': 'string', 'username': 'string', 'password': 'string', 'port': 0}]}
     )
     return endpoint_result
 
@@ -652,13 +637,8 @@ def test_create_device_credentials(api, validator):
 def create_device_credentials_default(api):
     endpoint_result = api.network_settings.create_device_credentials(
         active_validation=True,
-        cliCredential=None,
-        httpsRead=None,
-        httpsWrite=None,
         payload=None,
-        snmpV2cRead=None,
-        snmpV2cWrite=None,
-        snmpV3=None
+        settings=None
     )
     return endpoint_result
 
@@ -772,7 +752,7 @@ def update_sp_profile(api):
     endpoint_result = api.network_settings.update_sp_profile(
         active_validation=True,
         payload=None,
-        qos={'type': 'array', 'items': {'type': 'object', 'properties': {'profileName': {'type': 'string'}, 'model': {'type': 'string'}, 'wanProvider': {'type': 'string'}, 'oldProfileName': {'type': 'string'}}}}
+        settings={'qos': [{'profileName': 'string', 'model': 'string', 'wanProvider': 'string', 'oldProfileName': 'string'}]}
     )
     return endpoint_result
 
@@ -794,7 +774,7 @@ def update_sp_profile_default(api):
     endpoint_result = api.network_settings.update_sp_profile(
         active_validation=True,
         payload=None,
-        qos=None
+        settings=None
     )
     return endpoint_result
 
@@ -820,7 +800,7 @@ def create_sp_profile(api):
     endpoint_result = api.network_settings.create_sp_profile(
         active_validation=True,
         payload=None,
-        qos={'type': 'array', 'items': {'type': 'object', 'properties': {'profileName': {'type': 'string'}, 'model': {'type': 'string'}, 'wanProvider': {'type': 'string'}}}}
+        settings={'qos': [{'profileName': 'string', 'model': 'string', 'wanProvider': 'string'}]}
     )
     return endpoint_result
 
@@ -842,7 +822,7 @@ def create_sp_profile_default(api):
     endpoint_result = api.network_settings.create_sp_profile(
         active_validation=True,
         payload=None,
-        qos=None
+        settings=None
     )
     return endpoint_result
 
@@ -867,18 +847,9 @@ def is_valid_update_network(json_schema_validate, obj):
 def update_network(api):
     endpoint_result = api.network_settings.update_network(
         active_validation=True,
-        clientAndEndpoint_aaa={'type': 'object', 'properties': {'servers': {'type': 'string'}, 'ipAddress': {'type': 'string', 'enum': ['Mandatory for ISE servers.']}, 'network': {'type': 'string'}, 'protocol': {'type': 'string'}, 'sharedSecret': {'type': 'string', 'enum': ['Supported only by ISE servers']}, 'additionalIp': {'type': 'array', 'items': {'type': 'string'}}}},
-        dhcpServer={'type': 'array', 'items': {'type': 'string'}},
-        dnsServer={'type': 'object', 'properties': {'domainName': {'type': 'string', 'enum': ['can only contain alphanumeric characters or hyphen']}, 'primaryIpAddress': {'type': 'string', 'enum': ['valid range : 1.0.0.0 - 223.255.255.255']}, 'secondaryIpAddress': {'type': 'string', 'enum': ['valid range : 1.0.0.0 - 223.255.255.255']}}},
-        messageOfTheday={'type': 'object', 'properties': {'bannerMessage': {'type': 'string'}, 'retainExistingBanner': {'type': 'boolean'}}},
-        netflowcollector={'type': 'object', 'properties': {'ipAddress': {'type': 'string'}, 'port': {'type': 'number'}}},
-        network_aaa={'type': 'object', 'properties': {'servers': {'type': 'string', 'enum': ['Server type supported by ISE and AAA']}, 'ipAddress': {'type': 'string', 'enum': ['Mandatory for ISE servers and for AAA consider this as additional Ip.']}, 'network': {'type': 'string', 'enum': ['For AAA server consider it as primary IP and For ISE consider as Network']}, 'protocol': {'type': 'string'}, 'sharedSecret': {'type': 'string', 'enum': ['Supported only by ISE servers']}, 'additionalIp': {'type': 'array', 'items': {'type': 'string'}}}},
-        ntpServer={'type': 'array', 'items': {'type': 'string'}},
         payload=None,
-        site_id='string',
-        snmpServer={'type': 'object', 'properties': {'ipAddresses': {'type': 'array', 'items': {'type': 'string'}}, 'configureDnacIP': {'type': 'boolean'}}},
-        syslogServer={'type': 'object', 'properties': {'ipAddresses': {'type': 'array', 'items': {'type': 'string'}}, 'configureDnacIP': {'type': 'boolean'}}},
-        timezone={'type': 'string'}
+        settings={'dhcpServer': ['string'], 'dnsServer': {'domainName': 'string', 'primaryIpAddress': 'string', 'secondaryIpAddress': 'string'}, 'syslogServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'snmpServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'netflowcollector': {'ipAddress': 'string', 'port': 0}, 'ntpServer': ['string'], 'timezone': 'string', 'messageOfTheday': {'bannerMessage': 'string', 'retainExistingBanner': True}, 'network_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string', 'additionalIp': ['string']}, 'clientAndEndpoint_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string', 'additionalIp': ['string']}},
+        site_id='string'
     )
     return endpoint_result
 
@@ -899,18 +870,9 @@ def test_update_network(api, validator):
 def update_network_default(api):
     endpoint_result = api.network_settings.update_network(
         active_validation=True,
-        clientAndEndpoint_aaa=None,
-        dhcpServer=None,
-        dnsServer=None,
-        messageOfTheday=None,
-        netflowcollector=None,
-        network_aaa=None,
-        ntpServer=None,
         payload=None,
-        site_id='string',
-        snmpServer=None,
-        syslogServer=None,
-        timezone=None
+        settings=None,
+        site_id='string'
     )
     return endpoint_result
 
@@ -935,18 +897,9 @@ def is_valid_create_network(json_schema_validate, obj):
 def create_network(api):
     endpoint_result = api.network_settings.create_network(
         active_validation=True,
-        clientAndEndpoint_aaa={'type': 'object', 'properties': {'servers': {'type': 'string'}, 'ipAddress': {'type': 'string', 'enum': ['Mandatory for ISE servers.']}, 'network': {'type': 'string'}, 'protocol': {'type': 'string'}, 'sharedSecret': {'type': 'string', 'enum': ['Supported only by ISE servers']}, 'additionalIp': {'type': 'array', 'items': {'type': 'string'}}}},
-        dhcpServer={'type': 'array', 'items': {'type': 'string'}},
-        dnsServer={'type': 'object', 'properties': {'domainName': {'type': 'string', 'enum': ['can only contain alphanumeric characters or hyphen']}, 'primaryIpAddress': {'type': 'string', 'enum': ['valid range : 1.0.0.0 - 223.255.255.255']}, 'secondaryIpAddress': {'type': 'string', 'enum': ['valid range : 1.0.0.0 - 223.255.255.255']}}},
-        messageOfTheday={'type': 'object', 'properties': {'bannerMessage': {'type': 'string'}, 'retainExistingBanner': {'type': 'boolean'}}},
-        netflowcollector={'type': 'object', 'properties': {'ipAddress': {'type': 'string'}, 'port': {'type': 'number'}}},
-        network_aaa={'type': 'object', 'properties': {'servers': {'type': 'string', 'enum': ['Server type supported by ISE and AAA']}, 'ipAddress': {'type': 'string', 'enum': ['Mandatory for ISE servers and for AAA consider this as additional Ip.']}, 'network': {'type': 'string', 'enum': ['For AAA server consider it as primary IP and For ISE consider as Network']}, 'protocol': {'type': 'string'}, 'sharedSecret': {'type': 'string', 'enum': ['Supported only by ISE servers']}, 'additionalIp': {'type': 'array', 'items': {'type': 'string'}}}},
-        ntpServer={'type': 'array', 'items': {'type': 'string'}},
         payload=None,
-        site_id='string',
-        snmpServer={'type': 'object', 'properties': {'ipAddresses': {'type': 'array', 'items': {'type': 'string'}}, 'configureDnacIP': {'type': 'boolean'}}},
-        syslogServer={'type': 'object', 'properties': {'ipAddresses': {'type': 'array', 'items': {'type': 'string'}}, 'configureDnacIP': {'type': 'boolean'}}},
-        timezone={'type': 'string'}
+        settings={'dhcpServer': ['string'], 'dnsServer': {'domainName': 'string', 'primaryIpAddress': 'string', 'secondaryIpAddress': 'string'}, 'syslogServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'snmpServer': {'ipAddresses': ['string'], 'configureDnacIP': True}, 'netflowcollector': {'ipAddress': 'string', 'port': 0}, 'ntpServer': ['string'], 'timezone': 'string', 'messageOfTheday': {'bannerMessage': 'string', 'retainExistingBanner': True}, 'network_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string', 'additionalIp': ['string']}, 'clientAndEndpoint_aaa': {'servers': 'string', 'ipAddress': 'string', 'network': 'string', 'protocol': 'string', 'sharedSecret': 'string', 'additionalIp': ['string']}},
+        site_id='string'
     )
     return endpoint_result
 
@@ -967,18 +920,9 @@ def test_create_network(api, validator):
 def create_network_default(api):
     endpoint_result = api.network_settings.create_network(
         active_validation=True,
-        clientAndEndpoint_aaa=None,
-        dhcpServer=None,
-        dnsServer=None,
-        messageOfTheday=None,
-        netflowcollector=None,
-        network_aaa=None,
-        ntpServer=None,
         payload=None,
-        site_id='string',
-        snmpServer=None,
-        syslogServer=None,
-        timezone=None
+        settings=None,
+        site_id='string'
     )
     return endpoint_result
 
