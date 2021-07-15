@@ -66,8 +66,8 @@ class JSONSchemaValidator45Bc7A8344A8Bc1E(object):
                 ]
                 },
                 "type": [
-                "object",
                 "array",
+                "object",
                 "null"
                 ]
                 },

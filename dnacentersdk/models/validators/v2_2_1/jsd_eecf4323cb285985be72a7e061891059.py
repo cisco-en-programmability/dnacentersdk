@@ -51,9 +51,6 @@ class JSONSchemaValidatorEecf4323Cb285985Be72A7E061891059(object):
                 "items": {
                 "properties": {
                 "IpAddressSpace": {
-                "enum": [
-                "IPv6 or IPv4"
-                ],
                 "type": "string"
                 },
                 "dhcpServerIps": {

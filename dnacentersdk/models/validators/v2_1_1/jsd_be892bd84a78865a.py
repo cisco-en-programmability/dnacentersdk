@@ -49,10 +49,6 @@ class JSONSchemaValidatorBe892Bd84A78865A(object):
                 "clientAndEndpoint_aaa": {
                 "properties": {
                 "ipAddress": {
-                "enum": [
-                "Mandatory for ISE servers.",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
@@ -77,10 +73,6 @@ class JSONSchemaValidatorBe892Bd84A78865A(object):
                 ]
                 },
                 "sharedSecret": {
-                "enum": [
-                "Supported only by ISE servers",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
@@ -107,30 +99,18 @@ class JSONSchemaValidatorBe892Bd84A78865A(object):
                 "dnsServer": {
                 "properties": {
                 "domainName": {
-                "enum": [
-                "can only contain alphanumeric characters or hyphen",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "primaryIpAddress": {
-                "enum": [
-                "valid range : 1.0.0.0 - 223.255.255.255",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "secondaryIpAddress": {
-                "enum": [
-                "valid range : 1.0.0.0 - 223.255.255.255",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
@@ -185,20 +165,12 @@ class JSONSchemaValidatorBe892Bd84A78865A(object):
                 "network_aaa": {
                 "properties": {
                 "ipAddress": {
-                "enum": [
-                "Mandatory for ISE servers and for AAA consider this as additional Ip.",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "network": {
-                "enum": [
-                "For AAA server consider it as primary IP and For ISE consider as Network",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
@@ -211,20 +183,12 @@ class JSONSchemaValidatorBe892Bd84A78865A(object):
                 ]
                 },
                 "servers": {
-                "enum": [
-                "Server type supported by ISE and AAA",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
                 ]
                 },
                 "sharedSecret": {
-                "enum": [
-                "Supported only by ISE servers",
-                null
-                ],
                 "type": [
                 "string",
                 "null"

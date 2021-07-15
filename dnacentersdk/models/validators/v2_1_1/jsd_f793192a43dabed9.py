@@ -50,10 +50,6 @@ class JSONSchemaValidatorF793192A43DaBed9(object):
                 "items": {
                 "properties": {
                 "IpAddressSpace": {
-                "enum": [
-                "IPv6 or IPv4",
-                null
-                ],
                 "type": [
                 "string",
                 "null"
