@@ -103,7 +103,7 @@ class SoftwareImageManagementSwim(object):
             application_type(basestring): applicationType query
                 parameter.
             image_integrity_status(basestring): imageIntegrityStatus
-                - FAILURE, UNKNOWN, VERIFIED.
+                FAILURE, UNKNOWN, VERIFIED.
             version(basestring): software Image Version.
             image_series(basestring): image Series.
             image_name(basestring): image Name.
@@ -114,7 +114,7 @@ class SoftwareImageManagementSwim(object):
             image_size_greater_than(int): size in bytes.
             image_size_lesser_than(int): size in bytes.
             sort_by(basestring): sort results by this field.
-            sort_order(basestring): sort order - 'asc' or 'des'.
+            sort_order(basestring): sort order 'asc' or 'des'.
                 Default is asc.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
@@ -281,8 +281,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-            DownloadFailure: If was not able to download the raw
-            response to a file.
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)

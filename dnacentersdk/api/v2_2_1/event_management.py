@@ -742,8 +742,8 @@ class EventManagement(object):
                 parameter. Audit Log notification's
                 event eventHierarchy. Example:
                 "US.CA.San Jose" OR "US.CA" OR "CA.San
-                Jose" - Delimiter for hierarchy
-                separation is ".".
+                Jose" Delimiter for hierarchy separation
+                is ".".
             site_id(basestring): siteId query parameter. Audit Log
                 notification's siteId.
             device_id(basestring): deviceId query parameter. Audit
@@ -752,7 +752,7 @@ class EventManagement(object):
                 Parameter to filter system generated
                 audit-logs.
             description(basestring): description query parameter.
-                String full/partial search - (Provided
+                String full/partial search (Provided
                 input string is case insensitively
                 matched for records).
             start_time(int): startTime query parameter. Start Time
@@ -1699,8 +1699,8 @@ class EventManagement(object):
                 parameter. Audit Log notification's
                 event eventHierarchy. Example:
                 "US.CA.San Jose" OR "US.CA" OR "CA.San
-                Jose" - Delimiter for hierarchy
-                separation is ".".
+                Jose" Delimiter for hierarchy separation
+                is ".".
             site_id(basestring): siteId query parameter. Audit Log
                 notification's siteId.
             device_id(basestring): deviceId query parameter. Audit
@@ -1709,7 +1709,7 @@ class EventManagement(object):
                 Parameter to filter system generated
                 audit-logs.
             description(basestring): description query parameter.
-                String full/partial search - (Provided
+                String full/partial search (Provided
                 input string is case insensitively
                 matched for records).
             offset(int): offset query parameter. Position of a
@@ -2118,8 +2118,8 @@ class EventManagement(object):
                 parameter. Audit Log notification's
                 event eventHierarchy. Example:
                 "US.CA.San Jose" OR "US.CA" OR "CA.San
-                Jose" - Delimiter for hierarchy
-                separation is ".".
+                Jose" Delimiter for hierarchy separation
+                is ".".
             site_id(basestring): siteId query parameter. Audit Log
                 notification's siteId.
             device_id(basestring): deviceId query parameter. Audit
@@ -2128,7 +2128,7 @@ class EventManagement(object):
                 Parameter to filter system generated
                 audit-logs.
             description(basestring): description query parameter.
-                String full/partial search - (Provided
+                String full/partial search (Provided
                 input string is case insensitively
                 matched for records).
             offset(int): offset query parameter. Position of a

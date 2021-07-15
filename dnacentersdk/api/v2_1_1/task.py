@@ -276,7 +276,7 @@ class Task(object):
             offset(basestring): offset query parameter.
             limit(basestring): limit query parameter.
             sort_by(basestring): Sort results by this field.
-            order(basestring): Sort order - asc or dsc.
+            order(basestring): Sort order asc or dsc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

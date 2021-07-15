@@ -103,7 +103,7 @@ class SoftwareImageManagementSwim(object):
             application_type(basestring): applicationType query
                 parameter.
             image_integrity_status(basestring): imageIntegrityStatus
-                query parameter. imageIntegrityStatus -
+                query parameter. imageIntegrityStatus
                 FAILURE, UNKNOWN, VERIFIED.
             version(basestring): version query parameter. software
                 Image Version.
@@ -127,7 +127,7 @@ class SoftwareImageManagementSwim(object):
             sort_by(basestring): sortBy query parameter. sort
                 results by this field.
             sort_order(basestring): sortOrder query parameter. sort
-                order - 'asc' or 'des'. Default is asc.
+                order 'asc' or 'des'. Default is asc.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -270,12 +270,16 @@ class SoftwareImageManagementSwim(object):
                 return callback
 
         Args:
-            is_third_party(bool): Third party Image check.
-            third_party_vendor(basestring): Third Party Vendor.
-            third_party_image_family(basestring): Third Party image
-                family.
-            third_party_application_type(basestring): Third Party
-                Application Type.
+            is_third_party(bool): isThirdParty query parameter.
+                Third party Image check.
+            third_party_vendor(basestring): thirdPartyVendor query
+                parameter. Third Party Vendor.
+            third_party_image_family(basestring):
+                thirdPartyImageFamily query parameter.
+                Third Party image family.
+            third_party_application_type(basestring):
+                thirdPartyApplicationType query
+                parameter. Third Party Application Type.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -293,8 +297,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-            DownloadFailure: If was not able to download the raw
-            response to a file.
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
@@ -551,6 +553,9 @@ class SoftwareImageManagementSwim(object):
             if 'Client-Url' in headers:
                 check_type(headers.get('Client-Url'),
                            basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
             'scheduleValidate':

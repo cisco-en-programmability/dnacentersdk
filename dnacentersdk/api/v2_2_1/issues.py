@@ -214,6 +214,9 @@ class Issues(object):
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
                            basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
         }

@@ -269,6 +269,9 @@ class SiteDesign(object):
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
                            bool, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -350,6 +353,9 @@ class SiteDesign(object):
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
                            bool, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
         }

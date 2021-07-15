@@ -187,7 +187,8 @@ class File(object):
         """Downloads a file specified by fileId.
 
         Args:
-            file_id(basestring): File Identification number.
+            file_id(basestring): fileId path parameter. File
+                Identification number.
             dirpath(basestring): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
@@ -231,7 +232,7 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/file/${fileId}')
+        e_url = ('/dna/intent/api/v1/file/{fileId}')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,

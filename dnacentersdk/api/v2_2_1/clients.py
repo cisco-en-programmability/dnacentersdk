@@ -145,7 +145,7 @@ class Clients(object):
         wireless user. The Proximity workflow requires the
         subscription to the following event (via the Event
         Notification workflow) prior to making this API call:
-        NETWORK-CLIENTS-3-506 - Client Proximity Report.
+        NETWORK-CLIENTS-3-506 Client Proximity Report.
 
         Args:
             username(basestring): username query parameter. Wireless
@@ -248,6 +248,9 @@ class Clients(object):
             if 'issueCategory' in headers:
                 check_type(headers.get('issueCategory'),
                            basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
         }

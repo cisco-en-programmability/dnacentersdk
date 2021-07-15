@@ -1957,7 +1957,8 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
         """
-        return self.poe_details(device_uuid, headers=headers,
+        return self.poe_details(device_uuid,
+                                headers=headers,
                                 **request_parameters)
 
     def poe_details(self,
@@ -3385,6 +3386,9 @@ class Devices(object):
                            basestring, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
 
         _params = {

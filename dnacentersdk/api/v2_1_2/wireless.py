@@ -145,7 +145,7 @@ class Wireless(object):
         Args:
             enableFabric(boolean): enableFabric, property of the
                 request body.
-            flexConnect(object): Flex Connect - Applicable for non
+            flexConnect(object): Flex Connect Applicable for non
                 fabric profile, property of the request
                 body.
             managedAPLocations(list): Managed AP Locations (Enter

@@ -360,8 +360,8 @@ class Task(object):
             limit(basestring): limit query parameter.
             sort_by(basestring): sortBy query parameter. Sort
                 results by this field.
-            order(basestring): order query parameter. Sort order -
-                asc or dsc.
+            order(basestring): order query parameter. Sort order asc
+                or dsc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
