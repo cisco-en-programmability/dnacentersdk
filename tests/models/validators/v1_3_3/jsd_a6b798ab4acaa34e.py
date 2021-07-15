@@ -334,7 +334,8 @@ class JSONSchemaValidatorA6B798Ab4AcaA34E(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "version": {

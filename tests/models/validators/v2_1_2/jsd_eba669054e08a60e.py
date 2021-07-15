@@ -57,7 +57,8 @@ class JSONSchemaValidatorEba669054E08A60E(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "siteId": {
@@ -95,7 +96,8 @@ class JSONSchemaValidatorEba669054E08A60E(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "version": {

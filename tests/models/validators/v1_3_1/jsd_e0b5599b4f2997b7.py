@@ -261,7 +261,8 @@ class JSONSchemaValidatorE0B5599B4F2997B7(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "description":

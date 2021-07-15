@@ -128,7 +128,8 @@ class JSONSchemaValidatorB199685D4D089A67(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "inventoryStatusDetail": {
@@ -154,7 +155,8 @@ class JSONSchemaValidatorB199685D4D089A67(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "lineCardId": {
@@ -265,7 +267,8 @@ class JSONSchemaValidatorB199685D4D089A67(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "description":

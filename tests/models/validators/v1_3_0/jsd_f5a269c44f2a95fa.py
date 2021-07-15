@@ -161,7 +161,8 @@ class JSONSchemaValidatorF5A269C44F2A95Fa(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "version": {

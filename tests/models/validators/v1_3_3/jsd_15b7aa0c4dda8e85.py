@@ -65,14 +65,16 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "applicationGoodCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "applicationHealth": {
@@ -86,7 +88,8 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "clientHealthWired": {
@@ -106,14 +109,16 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "clientNumberOfIssues": {
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "coreGoodCount": {
@@ -162,14 +167,16 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "longitude": {
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "networkHealthAccess": {
@@ -183,7 +190,8 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "networkHealthCore": {
@@ -204,7 +212,8 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "networkHealthRouter": {
@@ -218,14 +227,16 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "networkNumberOfIssues": {
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "numberOfClients": {
@@ -253,7 +264,8 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "overallGoodDevices": {
@@ -341,7 +353,8 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 }
                 },

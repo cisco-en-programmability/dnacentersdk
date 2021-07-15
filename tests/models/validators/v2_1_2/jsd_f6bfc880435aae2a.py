@@ -103,7 +103,8 @@ class JSONSchemaValidatorF6BfC880435AAe2A(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "totalCount": {

@@ -124,7 +124,8 @@ class JSONSchemaValidator38B7Eb13449B9471(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "number"
                 ]
                 },
                 "version": {
@@ -141,7 +142,8 @@ class JSONSchemaValidator38B7Eb13449B9471(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "version": {

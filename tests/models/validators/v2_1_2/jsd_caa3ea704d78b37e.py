@@ -50,7 +50,8 @@ class JSONSchemaValidatorCaa3Ea704D78B37E(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null"
+                "null",
+                "string"
                 ]
                 },
                 "url": {

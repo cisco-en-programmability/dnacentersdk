@@ -87,7 +87,8 @@ class JSONSchemaValidatorCb868B2142898159(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 }
                 },

@@ -234,7 +234,8 @@ class JSONSchemaValidatorCa91Da84401ABba1(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "unMonitoredDevices": {

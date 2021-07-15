@@ -193,7 +193,8 @@ class JSONSchemaValidator098CAb9141C9A3Fe(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 }
                 },

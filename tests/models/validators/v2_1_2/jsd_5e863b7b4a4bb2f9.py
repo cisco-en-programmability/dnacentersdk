@@ -127,7 +127,8 @@ class JSONSchemaValidator5E863B7B4A4BB2F9(object):
                 },
                 "type": [
                 "array",
-                "null"
+                "null",
+                "object"
                 ]
                 },
                 "totalCount": {
