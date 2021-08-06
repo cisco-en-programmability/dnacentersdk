@@ -143,8 +143,7 @@ class Clients(object):
         and Wireless) for any given point of time.
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds)
-                when the Client health data is required.
+            timestamp(basestring, int): Epoch time(in milliseconds) when the Client health data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -205,8 +204,7 @@ class Clients(object):
         any given point of time. .
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds)
-                when the Client health data is required.
+            timestamp(basestring, int): Epoch time(in milliseconds) when the Client health data is required.
             mac_address(basestring): MAC Address of the client.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

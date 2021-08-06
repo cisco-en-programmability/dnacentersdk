@@ -81,15 +81,11 @@ class ConfigurationTemplates(object):
         """API to clone template .
 
         Args:
-            name(basestring): name path parameter. Template name to
-                clone template(Name should be different
-                than existing template name within same
-                project) .
-            template_id(basestring): templateId path parameter. UUID
-                of the template to clone it .
-            project_id(basestring): projectId path parameter. UUID
-                of the project in which the template
-                needs to be created .
+            name(basestring): name path parameter. Template name to clone template(Name should be different than
+                existing template name within same project) .
+            template_id(basestring): templateId path parameter. UUID of the template to clone it .
+            project_id(basestring): projectId path parameter. UUID of the project in which the template needs to be
+                created .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -162,19 +158,13 @@ class ConfigurationTemplates(object):
         """This API is used to create a new project. .
 
         Args:
-            createTime(integer): Configuration Templates's Create
-                time of project .
-            description(string): Configuration Templates's
-                Description of project .
+            createTime(integer): Configuration Templates's Create time of project .
+            description(string): Configuration Templates's Description of project .
             id(string): Configuration Templates's UUID of project .
-            lastUpdateTime(integer): Configuration Templates's
-                Update time of project .
-            name(string): Configuration Templates's Name of project
-                .
-            tags(list): Configuration Templates's tags (list of
-                objects).
-            templates(object): Configuration Templates's List of
-                templates within the project .
+            lastUpdateTime(integer): Configuration Templates's Update time of project .
+            name(string): Configuration Templates's Name of project .
+            tags(list): Configuration Templates's tags (list of objects).
+            templates(object): Configuration Templates's List of templates within the project .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -265,19 +255,13 @@ class ConfigurationTemplates(object):
         """This API is used to update an existing project. .
 
         Args:
-            createTime(integer): Configuration Templates's Create
-                time of project .
-            description(string): Configuration Templates's
-                Description of project .
+            createTime(integer): Configuration Templates's Create time of project .
+            description(string): Configuration Templates's Description of project .
             id(string): Configuration Templates's UUID of project .
-            lastUpdateTime(integer): Configuration Templates's
-                Update time of project .
-            name(string): Configuration Templates's Name of project
-                .
-            tags(list): Configuration Templates's tags (list of
-                objects).
-            templates(object): Configuration Templates's List of
-                templates within the project .
+            lastUpdateTime(integer): Configuration Templates's Update time of project .
+            name(string): Configuration Templates's Name of project .
+            tags(list): Configuration Templates's tags (list of objects).
+            templates(object): Configuration Templates's List of templates within the project .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -358,11 +342,8 @@ class ConfigurationTemplates(object):
         """List the projects .
 
         Args:
-            name(basestring): name query parameter. Name of project
-                to be searched .
-            sort_order(basestring): sortOrder query parameter. Sort
-                Order Ascending (asc) or Descending
-                (des) .
+            name(basestring): name query parameter. Name of project to be searched .
+            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -423,13 +404,9 @@ class ConfigurationTemplates(object):
         """Imports the Projects provided in the DTO .
 
         Args:
-            do_version(bool): doVersion query parameter. If this
-                flag is true then it creates a new
-                version of the template with the
-                imported contents in case if the
-                templates already exists. " If this flag
-                is false and if template already exists,
-                then operation fails with 'Template
+            do_version(bool): doVersion query parameter. If this flag is true then it creates a new version of the
+                template with the imported contents in case if the templates already exists. " If this
+                flag is false and if template already exists, then operation fails with 'Template
                 already exists' error .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -570,16 +547,11 @@ class ConfigurationTemplates(object):
         """Imports the templates provided in the DTO by project Name .
 
         Args:
-            project_name(basestring): projectName path parameter.
-                Project name to create template under
-                the project .
-            do_version(bool): doVersion query parameter. If this
-                flag is true then it creates a new
-                version of the template with the
-                imported contents in case if the
-                templates already exists. " If this flag
-                is false and if template already exists,
-                then operation fails with 'Template
+            project_name(basestring): projectName path parameter. Project name to create template under the project
+                .
+            do_version(bool): doVersion query parameter. If this flag is true then it creates a new version of the
+                template with the imported contents in case if the templates already exists. " If this
+                flag is false and if template already exists, then operation fails with 'Template
                 already exists' error .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -653,9 +625,7 @@ class ConfigurationTemplates(object):
         """Get the details of the given project by its id. .
 
         Args:
-            project_id(basestring): projectId path parameter.
-                projectId(UUID) of project to get
-                project details .
+            project_id(basestring): projectId path parameter. projectId(UUID) of project to get project details .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -711,9 +681,7 @@ class ConfigurationTemplates(object):
         """Deletes the project by its id .
 
         Args:
-            project_id(basestring): projectId path parameter.
-                projectId(UUID) of project to be deleted
-                .
+            project_id(basestring): projectId path parameter. projectId(UUID) of project to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -797,66 +765,36 @@ class ConfigurationTemplates(object):
         """API to create a template by project id. .
 
         Args:
-            author(string): Configuration Templates's Author of
-                template .
-            composite(boolean): Configuration Templates's Is it
-                composite template .
-            containingTemplates(list): Configuration Templates's
-                containingTemplates (list of objects).
-            createTime(integer): Configuration Templates's Create
-                time of template .
-            customParamsOrder(boolean): Configuration Templates's
-                Custom Params Order .
-            description(string): Configuration Templates's
-                Description of template .
-            deviceTypes(list): Configuration Templates's deviceTypes
-                (list of objects).
-            failurePolicy(string): Configuration Templates's Define
-                failure policy if template provisioning
-                fails . Available values are
-                'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR',
-                'ROLLBACK_ON_ERROR',
-                'ROLLBACK_TARGET_ON_ERROR' and
-                'ABORT_TARGET_ON_ERROR'.
+            author(string): Configuration Templates's Author of template .
+            composite(boolean): Configuration Templates's Is it composite template .
+            containingTemplates(list): Configuration Templates's containingTemplates (list of objects).
+            createTime(integer): Configuration Templates's Create time of template .
+            customParamsOrder(boolean): Configuration Templates's Custom Params Order .
+            description(string): Configuration Templates's Description of template .
+            deviceTypes(list): Configuration Templates's deviceTypes (list of objects).
+            failurePolicy(string): Configuration Templates's Define failure policy if template provisioning fails .
+                Available values are 'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR',
+                'ROLLBACK_TARGET_ON_ERROR' and 'ABORT_TARGET_ON_ERROR'.
             id(string): Configuration Templates's UUID of template .
-            language(string): Configuration Templates's Template
-                language (JINJA or VELOCITY) .
-            lastUpdateTime(integer): Configuration Templates's
-                Update time of template .
-            latestVersionTime(integer): Configuration Templates's
-                Latest versioned template time .
-            name(string): Configuration Templates's Name of template
-                .
-            parentTemplateId(string): Configuration Templates's
-                Parent templateID .
-            projectId(string): Configuration Templates's Project
-                UUID .
-            projectName(string): Configuration Templates's Project
-                name .
-            rollbackTemplateContent(string): Configuration
-                Templates's Rollback template content .
-            rollbackTemplateParams(list): Configuration Templates's
-                rollbackTemplateParams (list of
-                objects).
-            softwareType(string): Configuration Templates's
-                Applicable device software type .
-            softwareVariant(string): Configuration Templates's
-                Applicable device software variant .
-            softwareVersion(string): Configuration Templates's
-                Applicable device software version .
-            tags(list): Configuration Templates's tags (list of
-                objects).
-            templateContent(string): Configuration Templates's
-                Template content .
-            templateParams(list): Configuration Templates's
-                templateParams (list of objects).
-            validationErrors(object): Configuration Templates's
-                validationErrors.
-            version(string): Configuration Templates's Current
-                version of template .
-            project_id(basestring): projectId path parameter. UUID
-                of the project in which the template
-                needs to be created .
+            language(string): Configuration Templates's Template language (JINJA or VELOCITY) .
+            lastUpdateTime(integer): Configuration Templates's Update time of template .
+            latestVersionTime(integer): Configuration Templates's Latest versioned template time .
+            name(string): Configuration Templates's Name of template .
+            parentTemplateId(string): Configuration Templates's Parent templateID .
+            projectId(string): Configuration Templates's Project UUID .
+            projectName(string): Configuration Templates's Project name .
+            rollbackTemplateContent(string): Configuration Templates's Rollback template content .
+            rollbackTemplateParams(list): Configuration Templates's rollbackTemplateParams (list of objects).
+            softwareType(string): Configuration Templates's Applicable device software type .
+            softwareVariant(string): Configuration Templates's Applicable device software variant .
+            softwareVersion(string): Configuration Templates's Applicable device software version .
+            tags(list): Configuration Templates's tags (list of objects).
+            templateContent(string): Configuration Templates's Template content .
+            templateParams(list): Configuration Templates's templateParams (list of objects).
+            validationErrors(object): Configuration Templates's validationErrors.
+            version(string): Configuration Templates's Current version of template .
+            project_id(basestring): projectId path parameter. UUID of the project in which the template needs to be
+                created .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -991,39 +929,20 @@ class ConfigurationTemplates(object):
         """List the templates available .
 
         Args:
-            project_id(basestring): projectId query parameter.
-                Filter template(s) based on project UUID
+            project_id(basestring): projectId query parameter. Filter template(s) based on project UUID .
+            software_type(basestring): softwareType query parameter. Filter template(s) based software type .
+            software_version(basestring): softwareVersion query parameter. Filter template(s) based softwareVersion
                 .
-            software_type(basestring): softwareType query parameter.
-                Filter template(s) based software type .
-            software_version(basestring): softwareVersion query
-                parameter. Filter template(s) based
-                softwareVersion .
-            product_family(basestring): productFamily query
-                parameter. Filter template(s) based on
-                device family .
-            product_series(basestring): productSeries query
-                parameter. Filter template(s) based on
-                device series .
-            product_type(basestring): productType query parameter.
-                Filter template(s) based on device type
-                .
-            filter_conflicting_templates(bool):
-                filterConflictingTemplates query
-                parameter. Filter template(s) based on
-                confliting templates .
-            tags(basestring, list, set, tuple): tags query
-                parameter. Filter template(s) based on
-                tags .
-            project_names(basestring, list, set, tuple):
-                projectNames query parameter. Filter
-                template(s) based on project names .
-            un_committed(bool): unCommitted query parameter. Filter
-                template(s) based on template commited
-                or not .
-            sort_order(basestring): sortOrder query parameter. Sort
-                Order Ascending (asc) or Descending
-                (des) .
+            product_family(basestring): productFamily query parameter. Filter template(s) based on device family .
+            product_series(basestring): productSeries query parameter. Filter template(s) based on device series .
+            product_type(basestring): productType query parameter. Filter template(s) based on device type .
+            filter_conflicting_templates(bool): filterConflictingTemplates query parameter. Filter template(s) based
+                on confliting templates .
+            tags(basestring, list, set, tuple): tags query parameter. Filter template(s) based on tags .
+            project_names(basestring, list, set, tuple): projectNames query parameter. Filter template(s) based on
+                project names .
+            un_committed(bool): unCommitted query parameter. Filter template(s) based on template commited or not .
+            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1136,63 +1055,34 @@ class ConfigurationTemplates(object):
         """API to update a template. .
 
         Args:
-            author(string): Configuration Templates's Author of
-                template .
-            composite(boolean): Configuration Templates's Is it
-                composite template .
-            containingTemplates(list): Configuration Templates's
-                containingTemplates (list of objects).
-            createTime(integer): Configuration Templates's Create
-                time of template .
-            customParamsOrder(boolean): Configuration Templates's
-                Custom Params Order .
-            description(string): Configuration Templates's
-                Description of template .
-            deviceTypes(list): Configuration Templates's deviceTypes
-                (list of objects).
-            failurePolicy(string): Configuration Templates's Define
-                failure policy if template provisioning
-                fails . Available values are
-                'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR',
-                'ROLLBACK_ON_ERROR',
-                'ROLLBACK_TARGET_ON_ERROR' and
-                'ABORT_TARGET_ON_ERROR'.
+            author(string): Configuration Templates's Author of template .
+            composite(boolean): Configuration Templates's Is it composite template .
+            containingTemplates(list): Configuration Templates's containingTemplates (list of objects).
+            createTime(integer): Configuration Templates's Create time of template .
+            customParamsOrder(boolean): Configuration Templates's Custom Params Order .
+            description(string): Configuration Templates's Description of template .
+            deviceTypes(list): Configuration Templates's deviceTypes (list of objects).
+            failurePolicy(string): Configuration Templates's Define failure policy if template provisioning fails .
+                Available values are 'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR',
+                'ROLLBACK_TARGET_ON_ERROR' and 'ABORT_TARGET_ON_ERROR'.
             id(string): Configuration Templates's UUID of template .
-            language(string): Configuration Templates's Template
-                language (JINJA or VELOCITY) .
-            lastUpdateTime(integer): Configuration Templates's
-                Update time of template .
-            latestVersionTime(integer): Configuration Templates's
-                Latest versioned template time .
-            name(string): Configuration Templates's Name of template
-                .
-            parentTemplateId(string): Configuration Templates's
-                Parent templateID .
-            projectId(string): Configuration Templates's Project
-                UUID .
-            projectName(string): Configuration Templates's Project
-                name .
-            rollbackTemplateContent(string): Configuration
-                Templates's Rollback template content .
-            rollbackTemplateParams(list): Configuration Templates's
-                rollbackTemplateParams (list of
-                objects).
-            softwareType(string): Configuration Templates's
-                Applicable device software type .
-            softwareVariant(string): Configuration Templates's
-                Applicable device software variant .
-            softwareVersion(string): Configuration Templates's
-                Applicable device software version .
-            tags(list): Configuration Templates's tags (list of
-                objects).
-            templateContent(string): Configuration Templates's
-                Template content .
-            templateParams(list): Configuration Templates's
-                templateParams (list of objects).
-            validationErrors(object): Configuration Templates's
-                validationErrors.
-            version(string): Configuration Templates's Current
-                version of template .
+            language(string): Configuration Templates's Template language (JINJA or VELOCITY) .
+            lastUpdateTime(integer): Configuration Templates's Update time of template .
+            latestVersionTime(integer): Configuration Templates's Latest versioned template time .
+            name(string): Configuration Templates's Name of template .
+            parentTemplateId(string): Configuration Templates's Parent templateID .
+            projectId(string): Configuration Templates's Project UUID .
+            projectName(string): Configuration Templates's Project name .
+            rollbackTemplateContent(string): Configuration Templates's Rollback template content .
+            rollbackTemplateParams(list): Configuration Templates's rollbackTemplateParams (list of objects).
+            softwareType(string): Configuration Templates's Applicable device software type .
+            softwareVariant(string): Configuration Templates's Applicable device software variant .
+            softwareVersion(string): Configuration Templates's Applicable device software version .
+            tags(list): Configuration Templates's tags (list of objects).
+            templateContent(string): Configuration Templates's Template content .
+            templateParams(list): Configuration Templates's templateParams (list of objects).
+            validationErrors(object): Configuration Templates's validationErrors.
+            version(string): Configuration Templates's Current version of template .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1317,19 +1207,13 @@ class ConfigurationTemplates(object):
         """API to deploy a template. .
 
         Args:
-            forcePushTemplate(boolean): Configuration Templates's
-                forcePushTemplate.
-            isComposite(boolean): Configuration Templates's
-                Composite template flag .
-            mainTemplateId(string): Configuration Templates's Main
-                template UUID of versioned template .
-            memberTemplateDeploymentInfo(list): Configuration
-                Templates's memberTemplateDeploymentInfo
-                (list of any objects).
-            targetInfo(list): Configuration Templates's targetInfo
-                (list of objects).
-            templateId(string): Configuration Templates's UUID of
-                template to be provisioned .
+            forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
+            isComposite(boolean): Configuration Templates's Composite template flag .
+            mainTemplateId(string): Configuration Templates's Main template UUID of versioned template .
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of any
+                objects).
+            targetInfo(list): Configuration Templates's targetInfo (list of objects).
+            templateId(string): Configuration Templates's UUID of template to be provisioned .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1410,8 +1294,7 @@ class ConfigurationTemplates(object):
         """API to retrieve the status of template deployment. .
 
         Args:
-            deployment_id(basestring): deploymentId path parameter.
-                UUID of deployment to retrieve template
+            deployment_id(basestring): deploymentId path parameter. UUID of deployment to retrieve template
                 deployment status .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1540,14 +1423,10 @@ class ConfigurationTemplates(object):
         """API to preview a template. .
 
         Args:
-            deviceId(string): Configuration Templates's UUID of
-                device to get template preview .
-            params(object): Configuration Templates's Params to
-                render preview .
-            resourceParams(object): Configuration Templates's
-                Resource params to render preview .
-            templateId(string): Configuration Templates's UUID of
-                template to get template preview .
+            deviceId(string): Configuration Templates's UUID of device to get template preview .
+            params(object): Configuration Templates's Params to render preview .
+            resourceParams(object): Configuration Templates's Resource params to render preview .
+            templateId(string): Configuration Templates's UUID of template to get template preview .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1627,10 +1506,8 @@ class ConfigurationTemplates(object):
         """API to version the current contents of the template. .
 
         Args:
-            comments(string): Configuration Templates's Template
-                version comments .
-            templateId(string): Configuration Templates's UUID of
-                template .
+            comments(string): Configuration Templates's Template version comments .
+            templateId(string): Configuration Templates's UUID of template .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1703,9 +1580,8 @@ class ConfigurationTemplates(object):
         """Get all the versions of template by its id .
 
         Args:
-            template_id(basestring): templateId path parameter.
-                templateId(UUID) to get list of
-                versioned templates .
+            template_id(basestring): templateId path parameter. templateId(UUID) to get list of versioned templates
+                .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1762,9 +1638,7 @@ class ConfigurationTemplates(object):
         """Deletes the template by its id .
 
         Args:
-            template_id(basestring): templateId path parameter.
-                templateId(UUID) of template to be
-                deleted .
+            template_id(basestring): templateId path parameter. templateId(UUID) of template to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1821,12 +1695,9 @@ class ConfigurationTemplates(object):
         """Details of the template by its id .
 
         Args:
-            template_id(basestring): templateId path parameter.
-                TemplateId(UUID) to get details of the
+            template_id(basestring): templateId path parameter. TemplateId(UUID) to get details of the template .
+            latest_version(bool): latestVersion query parameter. latestVersion flag to get the latest versioned
                 template .
-            latest_version(bool): latestVersion query parameter.
-                latestVersion flag to get the latest
-                versioned template .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1892,19 +1763,13 @@ class ConfigurationTemplates(object):
         """V2 API to deploy a template. .
 
         Args:
-            forcePushTemplate(boolean): Configuration Templates's
-                forcePushTemplate.
-            isComposite(boolean): Configuration Templates's
-                Composite template flag .
-            mainTemplateId(string): Configuration Templates's Main
-                template UUID of versioned template .
-            memberTemplateDeploymentInfo(list): Configuration
-                Templates's memberTemplateDeploymentInfo
-                (list of any objects).
-            targetInfo(list): Configuration Templates's targetInfo
-                (list of objects).
-            templateId(string): Configuration Templates's UUID of
-                template to be provisioned .
+            forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
+            isComposite(boolean): Configuration Templates's Composite template flag .
+            mainTemplateId(string): Configuration Templates's Main template UUID of versioned template .
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of any
+                objects).
+            targetInfo(list): Configuration Templates's targetInfo (list of objects).
+            templateId(string): Configuration Templates's UUID of template to be provisioned .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

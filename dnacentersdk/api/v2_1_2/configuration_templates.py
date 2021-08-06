@@ -93,8 +93,7 @@ class ConfigurationTemplates(object):
             lastUpdateTime(number): ProjectDTO's lastUpdateTime.
             name(string): ProjectDTO's name.
             tags(list): ProjectDTO's tags (list of string, objects).
-            templates: Part of the JSON serializable Python object
-                to send in the body of the Request.
+            templates: Part of the JSON serializable Python object to send in the body of the Request.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -186,16 +185,11 @@ class ConfigurationTemplates(object):
         Args:
             project_id(basestring): projectId query parameter.
             software_type(basestring): softwareType query parameter.
-            software_version(basestring): softwareVersion query
-                parameter.
-            product_family(basestring): productFamily query
-                parameter.
-            product_series(basestring): productSeries query
-                parameter.
+            software_version(basestring): softwareVersion query parameter.
+            product_family(basestring): productFamily query parameter.
+            product_series(basestring): productSeries query parameter.
             product_type(basestring): productType query parameter.
-            filter_conflicting_templates(bool):
-                filterConflictingTemplates query
-                parameter.
+            filter_conflicting_templates(bool): filterConflictingTemplates query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -331,18 +325,12 @@ class ConfigurationTemplates(object):
         """Deploys a template.
 
         Args:
-            forcePushTemplate(boolean): TemplateDeploymentInfo's
-                forcePushTemplate.
-            isComposite(boolean): TemplateDeploymentInfo's
-                isComposite.
-            mainTemplateId(string): TemplateDeploymentInfo's
-                mainTemplateId.
-            memberTemplateDeploymentInfo(list):
-                TemplateDeploymentInfo's
-                memberTemplateDeploymentInfo (list of
-                any objects).
-            targetInfo(list): TemplateDeploymentInfo's targetInfo
-                (list of objects).
+            forcePushTemplate(boolean): TemplateDeploymentInfo's forcePushTemplate.
+            isComposite(boolean): TemplateDeploymentInfo's isComposite.
+            mainTemplateId(string): TemplateDeploymentInfo's mainTemplateId.
+            memberTemplateDeploymentInfo(list): TemplateDeploymentInfo's memberTemplateDeploymentInfo (list of any
+                objects).
+            targetInfo(list): TemplateDeploymentInfo's targetInfo (list of objects).
             templateId(string): TemplateDeploymentInfo's templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -429,8 +417,7 @@ class ConfigurationTemplates(object):
 
         Args:
             comments(string): TemplateVersionRequestDTO's comments.
-            templateId(string): TemplateVersionRequestDTO's
-                templateId.
+            templateId(string): TemplateVersionRequestDTO's templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -529,38 +516,27 @@ class ConfigurationTemplates(object):
         Args:
             author(string): TemplateDTO's author.
             composite(boolean): TemplateDTO's composite.
-            containingTemplates(list): TemplateDTO's
-                containingTemplates (list of objects).
+            containingTemplates(list): TemplateDTO's containingTemplates (list of objects).
             createTime(number): TemplateDTO's createTime.
             description(string): TemplateDTO's description.
-            deviceTypes(list): TemplateDTO's deviceTypes (list of
-                objects).
-            failurePolicy(string): TemplateDTO's failurePolicy.
-                Available values are 'ABORT_ON_ERROR',
-                'CONTINUE_ON_ERROR',
-                'ROLLBACK_ON_ERROR',
-                'ROLLBACK_TARGET_ON_ERROR' and
+            deviceTypes(list): TemplateDTO's deviceTypes (list of objects).
+            failurePolicy(string): TemplateDTO's failurePolicy. Available values are 'ABORT_ON_ERROR',
+                'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR', 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
             id(string): TemplateDTO's id.
             lastUpdateTime(number): TemplateDTO's lastUpdateTime.
             name(string): TemplateDTO's name.
-            parentTemplateId(string): TemplateDTO's
-                parentTemplateId.
+            parentTemplateId(string): TemplateDTO's parentTemplateId.
             projectId(string): TemplateDTO's projectId.
             projectName(string): TemplateDTO's projectName.
-            rollbackTemplateContent(string): TemplateDTO's
-                rollbackTemplateContent.
-            rollbackTemplateParams(list): TemplateDTO's
-                rollbackTemplateParams (list of
-                objects).
+            rollbackTemplateContent(string): TemplateDTO's rollbackTemplateContent.
+            rollbackTemplateParams(list): TemplateDTO's rollbackTemplateParams (list of objects).
             softwareType(string): TemplateDTO's softwareType.
             softwareVariant(string): TemplateDTO's softwareVariant.
             softwareVersion(string): TemplateDTO's softwareVersion.
-            tags(list): TemplateDTO's tags (list of string,
-                objects).
+            tags(list): TemplateDTO's tags (list of string, objects).
             templateContent(string): TemplateDTO's templateContent.
-            templateParams(list): TemplateDTO's templateParams (list
-                of objects).
+            templateParams(list): TemplateDTO's templateParams (list of objects).
             version(string): TemplateDTO's version.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -750,8 +726,7 @@ class ConfigurationTemplates(object):
             lastUpdateTime(number): ProjectDTO's lastUpdateTime.
             name(string): ProjectDTO's name.
             tags(list): ProjectDTO's tags (list of string, objects).
-            templates: Part of the JSON serializable Python object
-                to send in the body of the Request.
+            templates: Part of the JSON serializable Python object to send in the body of the Request.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1064,8 +1039,7 @@ class ConfigurationTemplates(object):
 
         Args:
             params(object): TemplatePreviewRequestDTO's params.
-            templateId(string): TemplatePreviewRequestDTO's
-                templateId.
+            templateId(string): TemplatePreviewRequestDTO's templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1165,38 +1139,27 @@ class ConfigurationTemplates(object):
         Args:
             author(string): TemplateDTO's author.
             composite(boolean): TemplateDTO's composite.
-            containingTemplates(list): TemplateDTO's
-                containingTemplates (list of objects).
+            containingTemplates(list): TemplateDTO's containingTemplates (list of objects).
             createTime(number): TemplateDTO's createTime.
             description(string): TemplateDTO's description.
-            deviceTypes(list): TemplateDTO's deviceTypes (list of
-                objects).
-            failurePolicy(string): TemplateDTO's failurePolicy.
-                Available values are 'ABORT_ON_ERROR',
-                'CONTINUE_ON_ERROR',
-                'ROLLBACK_ON_ERROR',
-                'ROLLBACK_TARGET_ON_ERROR' and
+            deviceTypes(list): TemplateDTO's deviceTypes (list of objects).
+            failurePolicy(string): TemplateDTO's failurePolicy. Available values are 'ABORT_ON_ERROR',
+                'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR', 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
             id(string): TemplateDTO's id.
             lastUpdateTime(number): TemplateDTO's lastUpdateTime.
             name(string): TemplateDTO's name.
-            parentTemplateId(string): TemplateDTO's
-                parentTemplateId.
+            parentTemplateId(string): TemplateDTO's parentTemplateId.
             projectId(string): TemplateDTO's projectId.
             projectName(string): TemplateDTO's projectName.
-            rollbackTemplateContent(string): TemplateDTO's
-                rollbackTemplateContent.
-            rollbackTemplateParams(list): TemplateDTO's
-                rollbackTemplateParams (list of
-                objects).
+            rollbackTemplateContent(string): TemplateDTO's rollbackTemplateContent.
+            rollbackTemplateParams(list): TemplateDTO's rollbackTemplateParams (list of objects).
             softwareType(string): TemplateDTO's softwareType.
             softwareVariant(string): TemplateDTO's softwareVariant.
             softwareVersion(string): TemplateDTO's softwareVersion.
-            tags(list): TemplateDTO's tags (list of string,
-                objects).
+            tags(list): TemplateDTO's tags (list of string, objects).
             templateContent(string): TemplateDTO's templateContent.
-            templateParams(list): TemplateDTO's templateParams (list
-                of objects).
+            templateParams(list): TemplateDTO's templateParams (list of objects).
             version(string): TemplateDTO's version.
             project_id(basestring): projectId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request

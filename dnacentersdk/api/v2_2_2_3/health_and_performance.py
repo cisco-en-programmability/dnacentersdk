@@ -43,7 +43,7 @@ from ...utils import (
 )
 
 
-class HealthandPerformance(object):
+class HealthAndPerformance(object):
     """Cisco DNA Center Health and Performance API (version: 2.2.2.3).
 
     Wraps the DNA Center Health and Performance
@@ -53,7 +53,7 @@ class HealthandPerformance(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new HealthandPerformance
+        """Initialize a new HealthAndPerformance
         object with the provided RestSession.
 
         Args:
@@ -66,7 +66,7 @@ class HealthandPerformance(object):
         """
         check_type(session, RestSession)
 
-        super(HealthandPerformance, self).__init__()
+        super(HealthAndPerformance, self).__init__()
 
         self._session = session
         self._object_factory = object_factory
@@ -83,18 +83,12 @@ class HealthandPerformance(object):
         """This API retrieves the latest system events  .
 
         Args:
-            summary(bool): summary query parameter. Fetch the latest
-                high severity event .
-            domain(basestring): domain query parameter. Fetch system
-                events with this domain. Possible values
-                of domain are listed here :
-                /dna/platform/app/consumer-
-                portal/developer-toolkit/events .
-            subdomain(basestring): subdomain query parameter. Fetch
-                system events with this subdomain.
-                Possible values of subdomain are listed
-                here : /dna/platform/app/consumer-
-                portal/developer-toolkit/events .
+            summary(bool): summary query parameter. Fetch the latest high severity event .
+            domain(basestring): domain query parameter. Fetch system events with this domain. Possible values of
+                domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
+            subdomain(basestring): subdomain query parameter. Fetch system events with this subdomain. Possible
+                values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
+                toolkit/events .
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -167,16 +161,11 @@ class HealthandPerformance(object):
         """This API gives the count of the latest system events .
 
         Args:
-            domain(basestring): domain query parameter. Fetch system
-                events with this domain. Possible values
-                of domain are listed here :
-                /dna/platform/app/consumer-
-                portal/developer-toolkit/events .
-            subdomain(basestring): subdomain query parameter. Fetch
-                system events with this subdomain.
-                Possible values of subdomain are listed
-                here : /dna/platform/app/consumer-
-                portal/developer-toolkit/events .
+            domain(basestring): domain query parameter. Fetch system events with this domain. Possible values of
+                domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
+            subdomain(basestring): subdomain query parameter. Fetch system events with this subdomain. Possible
+                values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
+                toolkit/events .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -237,22 +226,15 @@ class HealthandPerformance(object):
                            start_time=None,
                            headers=None,
                            **request_parameters):
-        """This API gives the aggregated performance indicators. The data
-        can be retrieved for the last 3 months. .
+        """This API gives the aggregated performance indicators. The data can be retrieved for the last 3 months. .
 
         Args:
-            kpi(basestring): kpi query parameter. Valid values:
-                cpu,memory,network .
-            function(basestring): function query parameter. Valid
-                values: sum,average,max .
-            start_time(int): startTime query parameter. This is the
-                epoch start time in milliseconds from
-                which performance indicator need to be
-                fetched .
-            end_time(int): endTime query parameter. This is the
-                epoch end time in milliseconds upto
-                which performance indicator need to be
-                fetched .
+            kpi(basestring): kpi query parameter. Valid values: cpu,memory,network .
+            function(basestring): function query parameter. Valid values: sum,average,max .
+            start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
+                performance indicator need to be fetched .
+            end_time(int): endTime query parameter. This is the epoch end time in milliseconds upto which
+                performance indicator need to be fetched .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -318,21 +300,15 @@ class HealthandPerformance(object):
                                       start_time=None,
                                       headers=None,
                                       **request_parameters):
-        """This API retrieves the historical performance indicators . The
-        data can be retrieved for the last 3 months. .
+        """This API retrieves the historical performance indicators . The data can be retrieved for the last 3 months. .
 
         Args:
-            kpi(basestring): kpi query parameter. Fetch historical
-                data for this kpi. Valid values:
+            kpi(basestring): kpi query parameter. Fetch historical data for this kpi. Valid values:
                 cpu,memory,network .
-            start_time(int): startTime query parameter. This is the
-                epoch start time in milliseconds from
-                which performance indicator need to be
-                fetched .
-            end_time(int): endTime query parameter. This is the
-                epoch end time in milliseconds upto
-                which performance indicator need to be
-                fetched .
+            start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
+                performance indicator need to be fetched .
+            end_time(int): endTime query parameter. This is the epoch end time in milliseconds upto which
+                performance indicator need to be fetched .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

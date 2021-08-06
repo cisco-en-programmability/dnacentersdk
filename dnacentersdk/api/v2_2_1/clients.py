@@ -76,13 +76,11 @@ class Clients(object):
                                   timestamp=None,
                                   headers=None,
                                   **request_parameters):
-        """Returns Overall Client Health information by Client type (Wired
-        and Wireless) for any given point of time.
+        """Returns Overall Client Health information by Client type (Wired and Wireless) for any given point of time.
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch
-                time(in milliseconds) when the Client
-                health data is required.
+            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Client health
+                data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -139,26 +137,18 @@ class Clients(object):
                          time_resolution=None,
                          headers=None,
                          **request_parameters):
-        """This intent API will provide client proximity information for a
-        specific wireless user. Proximity is defined as presence
-        on the same floor at the same time as the specified
-        wireless user. The Proximity workflow requires the
-        subscription to the following event (via the Event
-        Notification workflow) prior to making this API call:
-        NETWORK-CLIENTS-3-506 Client Proximity Report.
+        """This intent API will provide client proximity information for a specific wireless user. Proximity is defined as
+        presence on the same floor at the same time as the specified wireless user. The Proximity workflow
+        requires the subscription to the following event (via the Event Notification workflow) prior to making
+        this API call: NETWORK-CLIENTS-3-506 Client Proximity Report.
 
         Args:
-            username(basestring): username query parameter. Wireless
-                client username for which proximity
-                information is required.
-            number_days(int): number_days query parameter. Number of
-                days to track proximity until current
-                date. Defaults and maximum up to 14
-                days.
-            time_resolution(int): time_resolution query parameter.
-                Time interval (in minutes) to measure
-                proximity. Defaults to 15 minutes with a
-                minimum 5 minutes.
+            username(basestring): username query parameter. Wireless client username for which proximity information
+                is required.
+            number_days(int): number_days query parameter. Number of days to track proximity until current date.
+                Defaults and maximum up to 14 days.
+            time_resolution(int): time_resolution query parameter. Time interval (in minutes) to measure proximity.
+                Defaults to 15 minutes with a minimum 5 minutes.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -216,10 +206,9 @@ class Clients(object):
     def get_client_enrichment_details(self,
                                       headers=None,
                                       **request_parameters):
-        """Enriches a given network End User context (a network user-id or
-        end user’s device Mac Address) with details about the
-        user, the devices that the user is connected to and the
-        assurance issues that the user is impacted by.
+        """Enriches a given network End User context (a network user-id or end user’s device Mac Address) with details
+        about the user, the devices that the user is connected to and the assurance issues that the user is
+        impacted by.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -281,15 +270,12 @@ class Clients(object):
                           timestamp=None,
                           headers=None,
                           **request_parameters):
-        """Returns detailed Client information retrieved by Mac Address for
-        any given point of time. .
+        """Returns detailed Client information retrieved by Mac Address for any given point of time. .
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch
-                time(in milliseconds) when the Client
-                health data is required.
-            mac_address(basestring): macAddress query parameter. MAC
-                Address of the client.
+            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Client health
+                data is required.
+            mac_address(basestring): macAddress query parameter. MAC Address of the client.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

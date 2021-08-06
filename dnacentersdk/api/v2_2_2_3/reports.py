@@ -84,22 +84,17 @@ class Reports(object):
                                     payload=None,
                                     active_validation=True,
                                     **request_parameters):
-        """Create/Schedule a report configuration. Use "Get view details
-        for a given view group & view" API to get the metadata
-        required to configure a report. .
+        """Create/Schedule a report configuration. Use "Get view details for a given view group & view" API to get the
+        metadata required to configure a report. .
 
         Args:
-            deliveries(list): Reports's Array of available delivery
-                channels  (list of any objects).
+            deliveries(list): Reports's Array of available delivery channels  (list of any objects).
             name(string): Reports's report name .
             schedule(object): Reports's schedule.
-            tags(list): Reports's array of tags for report  (list of
-                strings).
+            tags(list): Reports's array of tags for report  (list of strings).
             view(object): Reports's view.
-            viewGroupId(string): Reports's viewGroupId of the
-                viewgroup for the report .
-            viewGroupVersion(string): Reports's version of viewgroup
-                for the report .
+            viewGroupId(string): Reports's viewGroupId of the viewgroup for the report .
+            viewGroupVersion(string): Reports's version of viewgroup for the report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -183,10 +178,8 @@ class Reports(object):
         """Get list of scheduled report configurations. .
 
         Args:
-            view_group_id(basestring): viewGroupId query parameter.
-                viewGroupId of viewgroup for report .
-            view_id(basestring): viewId query parameter. viewId of
-                view for report .
+            view_group_id(basestring): viewGroupId query parameter. viewGroupId of viewgroup for report .
+            view_id(basestring): viewId query parameter. viewId of view for report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -245,8 +238,7 @@ class Reports(object):
         """Get scheduled report configuration by reportId .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report .
+            report_id(basestring): reportId path parameter. reportId of report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -298,12 +290,10 @@ class Reports(object):
                                   report_id,
                                   headers=None,
                                   **request_parameters):
-        """Delete a scheduled report configuration. Deletes the report
-        executions also. .
+        """Delete a scheduled report configuration. Deletes the report executions also. .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report .
+            report_id(basestring): reportId path parameter. reportId of report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -358,8 +348,7 @@ class Reports(object):
         """Get details of all executions for a given report .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report .
+            report_id(basestring): reportId path parameter. reportId of report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -412,16 +401,12 @@ class Reports(object):
                                 report_id,
                                 headers=None,
                                 **request_parameters):
-        """Returns report content. Save the response to a file by
-        converting the response data as a blob and setting the
-        file format available from content-disposition response
-        header. .
+        """Returns report content. Save the response to a file by converting the response data as a blob and setting the
+        file format available from content-disposition response header. .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report .
-            execution_id(basestring): executionId path parameter.
-                executionId of report execution .
+            report_id(basestring): reportId path parameter. reportId of report .
+            execution_id(basestring): executionId path parameter. executionId of report execution .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -529,14 +514,11 @@ class Reports(object):
                                          view_group_id,
                                          headers=None,
                                          **request_parameters):
-        """Gives a list of summary of all views in a viewgroup. Use "Get
-        all view groups" API to get the viewGroupIds (required
-        as a query param for this API) for available viewgroups.
-        .
+        """Gives a list of summary of all views in a viewgroup. Use "Get all view groups" API to get the viewGroupIds
+        (required as a query param for this API) for available viewgroups. .
 
         Args:
-            view_group_id(basestring): viewGroupId path parameter.
-                viewGroupId of viewgroup. .
+            view_group_id(basestring): viewGroupId path parameter. viewGroupId of viewgroup. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -589,16 +571,12 @@ class Reports(object):
                                                          view_id,
                                                          headers=None,
                                                          **request_parameters):
-        """Gives complete information of the view that is required to
-        configure a report. Use "Get views for a given view
-        group" API to get the viewIds  (required as a query
-        param for this API) for available views. .
+        """Gives complete information of the view that is required to configure a report. Use "Get views for a given view
+        group" API to get the viewIds  (required as a query param for this API) for available views. .
 
         Args:
-            view_group_id(basestring): viewGroupId path parameter.
-                viewGroupId of viewgroup .
-            view_id(basestring): viewId path parameter. view id of
-                view .
+            view_group_id(basestring): viewGroupId path parameter. viewGroupId of viewgroup .
+            view_id(basestring): viewId path parameter. view id of view .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

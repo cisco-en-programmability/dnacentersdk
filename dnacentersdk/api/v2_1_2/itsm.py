@@ -80,8 +80,7 @@ class Itsm(object):
         create tickets in ITSM.
 
         Args:
-            instance_id(basestring): Instance Id of the failed event
-                as in the Runtime Dashboard.
+            instance_id(basestring): Instance Id of the failed event as in the Runtime Dashboard.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

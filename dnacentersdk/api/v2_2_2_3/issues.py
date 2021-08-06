@@ -75,8 +75,7 @@ class Issues(object):
     def get_issue_enrichment_details(self,
                                      headers=None,
                                      **request_parameters):
-        """Enriches a given network issue context (an issue id or end
-        user’s Mac Address) with details about the issue(s),
+        """Enriches a given network issue context (an issue id or end user’s Mac Address) with details about the issue(s),
         impacted hosts and suggested actions for remediation .
 
         Args:
@@ -141,37 +140,23 @@ class Issues(object):
                start_time=None,
                headers=None,
                **request_parameters):
-        """Intent API to get a list of global issues, issues for a specific
-        device, or issue for a specific client device's MAC
-        address. .
+        """Intent API to get a list of global issues, issues for a specific device, or issue for a specific client device's
+        MAC address. .
 
         Args:
-            start_time(int): startTime query parameter. Starting
-                epoch time in milliseconds of query time
-                window .
-            end_time(int): endTime query parameter. Ending epoch
-                time in milliseconds of query time
-                window .
-            site_id(basestring): siteId query parameter. Assurance
-                UUID value of the site in the issue
-                content .
-            device_id(basestring): deviceId query parameter.
-                Assurance UUID value of the device in
-                the issue content .
-            mac_address(basestring): macAddress query parameter.
-                Client's device MAC address of the issue
-                (format xx:xx:xx:xx:xx:xx) .
-            priority(basestring): priority query parameter. The
-                issue's priority value (One of P1, P2,
-                P3, or P4)(Use only when macAddress and
-                deviceId are not provided) .
-            ai_driven(basestring): aiDriven query parameter. The
-                issue's AI driven value (Yes or No)(Use
-                only when macAddress and deviceId are
-                not provided) .
-            issue_status(basestring): issueStatus query parameter.
-                The issue's status value (One of ACTIVE,
-                IGNORED, RESOLVED) .
+            start_time(int): startTime query parameter. Starting epoch time in milliseconds of query time window .
+            end_time(int): endTime query parameter. Ending epoch time in milliseconds of query time window .
+            site_id(basestring): siteId query parameter. Assurance UUID value of the site in the issue content .
+            device_id(basestring): deviceId query parameter. Assurance UUID value of the device in the issue content
+                .
+            mac_address(basestring): macAddress query parameter. Client's device MAC address of the issue (format
+                xx:xx:xx:xx:xx:xx) .
+            priority(basestring): priority query parameter. The issue's priority value (One of P1, P2, P3, or
+                P4)(Use only when macAddress and deviceId are not provided) .
+            ai_driven(basestring): aiDriven query parameter. The issue's AI driven value (Yes or No)(Use only when
+                macAddress and deviceId are not provided) .
+            issue_status(basestring): issueStatus query parameter. The issue's status value (One of ACTIVE, IGNORED,
+                RESOLVED) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

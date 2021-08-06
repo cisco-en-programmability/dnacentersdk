@@ -159,8 +159,7 @@ class Tag(object):
         Args:
             id(basestring): Tag ID.
             member_type(basestring): memberType query parameter.
-            member_association_type(basestring):
-                memberAssociationType query parameter.
+            member_association_type(basestring): memberAssociationType query parameter.
             level(basestring): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -234,8 +233,7 @@ class Tag(object):
 
         Args:
             description(string): TagDTO's description.
-            dynamicRules(list): TagDTO's dynamicRules (list of
-                objects).
+            dynamicRules(list): TagDTO's dynamicRules (list of objects).
             id(string): TagDTO's id.
             instanceTenantId(string): TagDTO's instanceTenantId.
             name(string): TagDTO's name.
@@ -378,8 +376,7 @@ class Tag(object):
         queried by using the /tag/member/type API.
 
         Args:
-            memberToTags(array, object): TagMemberDTO's
-                memberToTags.
+            memberToTags(array, object): TagMemberDTO's memberToTags.
             memberType(string): TagMemberDTO's memberType.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -462,8 +459,7 @@ class Tag(object):
 
         Args:
             description(string): TagDTO's description.
-            dynamicRules(list): TagDTO's dynamicRules (list of
-                objects).
+            dynamicRules(list): TagDTO's dynamicRules (list of objects).
             id(string): TagDTO's id.
             instanceTenantId(string): TagDTO's instanceTenantId.
             name(string): TagDTO's name.
@@ -556,8 +552,7 @@ class Tag(object):
         Args:
             name(basestring): name query parameter.
             name_space(basestring): nameSpace query parameter.
-            attribute_name(basestring): attributeName query
-                parameter.
+            attribute_name(basestring): attributeName query parameter.
             level(basestring): level query parameter.
             size(basestring): size in kilobytes(KB).
             system_tag(basestring): systemTag query parameter.
@@ -687,8 +682,7 @@ class Tag(object):
 
         Args:
             id(basestring): Tag ID.
-            member_id(basestring): TagMember id to be removed from
-                tag.
+            member_id(basestring): TagMember id to be removed from tag.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -752,23 +746,15 @@ class Tag(object):
 
         Args:
             id(basestring): Tag ID.
-            member_type(basestring): Entity type of the member.
-                Possible values can be retrieved by
-                using /tag/member/type API.
-            offset(basestring): Used for pagination. It indicates
-                the starting row number out of available
-                member records.
-            limit(basestring): Used to Number of maximum members to
-                return in the result.
-            member_association_type(basestring): Indicates how the
-                member is associated with the tag.
-                Possible values and description. 1)
-                DYNAMIC : The member is associated to
-                the tag through rules. 2) STATIC – The
-                member is associated to the tag
-                manually. 3) MIXED – The member is
-                associated manually and also satisfies
-                the rule defined for the tag.
+            member_type(basestring): Entity type of the member. Possible values can be retrieved by using
+                /tag/member/type API.
+            offset(basestring): Used for pagination. It indicates the starting row number out of available member
+                records.
+            limit(basestring): Used to Number of maximum members to return in the result.
+            member_association_type(basestring): Indicates how the member is associated with the tag. Possible
+                values and description. 1) DYNAMIC : The member is associated to the tag through rules.
+                2) STATIC – The member is associated to the tag manually. 3) MIXED – The member is
+                associated manually and also satisfies the rule defined for the tag.
             level(basestring): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -905,23 +891,16 @@ class Tag(object):
         """Returns the tags for given filter criteria.
 
         Args:
-            name(basestring): Tag name is mandatory when filter
-                operation is used.
-            additional_info_name_space(basestring):
-                additionalInfo.nameSpace query
-                parameter.
-            additional_info_attributes(basestring):
-                additionalInfo.attributes query
-                parameter.
+            name(basestring): Tag name is mandatory when filter operation is used.
+            additional_info_name_space(basestring): additionalInfo.nameSpace query parameter.
+            additional_info_attributes(basestring): additionalInfo.attributes query parameter.
             level(basestring): level query parameter.
             offset(basestring): offset query parameter.
             limit(basestring): limit query parameter.
             size(basestring): size in kilobytes(KB).
-            field(basestring): Available field names are :'name,id,p
-                arentId,type,additionalInfo.nameSpace,ad
-                ditionalInfo.attributes'.
-            sort_by(basestring): Only supported attribute is name.
-                SortyBy is mandatory when order is used.
+            field(basestring): Available field names are
+                :'name,id,parentId,type,additionalInfo.nameSpace,additionalInfo.attributes'.
+            sort_by(basestring): Only supported attribute is name. SortyBy is mandatory when order is used.
             order(basestring): Available values are asc and des.
             system_tag(basestring): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request

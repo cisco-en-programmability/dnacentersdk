@@ -205,18 +205,13 @@ class NetworkDiscovery(object):
 
         Args:
             comments(string): SNMPv2WriteCommunityDTO's comments.
-            credentialType(string): SNMPv2WriteCommunityDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
-            description(string): SNMPv2WriteCommunityDTO's
-                description.
+            credentialType(string): SNMPv2WriteCommunityDTO's credentialType. Available values are 'GLOBAL' and
+                'APP'.
+            description(string): SNMPv2WriteCommunityDTO's description.
             id(string): SNMPv2WriteCommunityDTO's id.
-            instanceTenantId(string): SNMPv2WriteCommunityDTO's
-                instanceTenantId.
-            instanceUuid(string): SNMPv2WriteCommunityDTO's
-                instanceUuid.
-            writeCommunity(string): SNMPv2WriteCommunityDTO's
-                writeCommunity.
+            instanceTenantId(string): SNMPv2WriteCommunityDTO's instanceTenantId.
+            instanceUuid(string): SNMPv2WriteCommunityDTO's instanceUuid.
+            writeCommunity(string): SNMPv2WriteCommunityDTO's writeCommunity.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -314,27 +309,18 @@ class NetworkDiscovery(object):
         """Updates global SNMPv3 credential.
 
         Args:
-            authPassword(string): SNMPv3CredentialDTO's
-                authPassword.
-            authType(string): SNMPv3CredentialDTO's authType.
-                Available values are 'SHA' and 'MD5'.
+            authPassword(string): SNMPv3CredentialDTO's authPassword.
+            authType(string): SNMPv3CredentialDTO's authType. Available values are 'SHA' and 'MD5'.
             comments(string): SNMPv3CredentialDTO's comments.
-            credentialType(string): SNMPv3CredentialDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
+            credentialType(string): SNMPv3CredentialDTO's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): SNMPv3CredentialDTO's description.
             id(string): SNMPv3CredentialDTO's id.
-            instanceTenantId(string): SNMPv3CredentialDTO's
-                instanceTenantId.
-            instanceUuid(string): SNMPv3CredentialDTO's
-                instanceUuid.
-            privacyPassword(string): SNMPv3CredentialDTO's
-                privacyPassword.
-            privacyType(string): SNMPv3CredentialDTO's privacyType.
-                Available values are 'DES' and 'AES128'.
-            snmpMode(string): SNMPv3CredentialDTO's snmpMode.
-                Available values are 'AUTHPRIV',
-                'AUTHNOPRIV' and 'NOAUTHNOPRIV'.
+            instanceTenantId(string): SNMPv3CredentialDTO's instanceTenantId.
+            instanceUuid(string): SNMPv3CredentialDTO's instanceUuid.
+            privacyPassword(string): SNMPv3CredentialDTO's privacyPassword.
+            privacyType(string): SNMPv3CredentialDTO's privacyType. Available values are 'DES' and 'AES128'.
+            snmpMode(string): SNMPv3CredentialDTO's snmpMode. Available values are 'AUTHPRIV', 'AUTHNOPRIV' and
+                'NOAUTHNOPRIV'.
             username(string): SNMPv3CredentialDTO's username.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -571,56 +557,36 @@ class NetworkDiscovery(object):
         Args:
             cdpLevel(number): InventoryRequest's cdpLevel.
             discoveryType(string): InventoryRequest's discoveryType.
-            enablePasswordList(list): InventoryRequest's
-                enablePasswordList (list of string,
-                objects).
-            globalCredentialIdList(list): InventoryRequest's
-                globalCredentialIdList (list of string,
-                objects).
-            httpReadCredential(object): InventoryRequest's
-                httpReadCredential.
-            httpWriteCredential(object): InventoryRequest's
-                httpWriteCredential.
+            enablePasswordList(list): InventoryRequest's enablePasswordList (list of string, objects).
+            globalCredentialIdList(list): InventoryRequest's globalCredentialIdList (list of string, objects).
+            httpReadCredential(object): InventoryRequest's httpReadCredential.
+            httpWriteCredential(object): InventoryRequest's httpWriteCredential.
             ipAddressList(string): InventoryRequest's ipAddressList.
-            ipFilterList(list): InventoryRequest's ipFilterList
-                (list of string, objects).
+            ipFilterList(list): InventoryRequest's ipFilterList (list of string, objects).
             lldpLevel(number): InventoryRequest's lldpLevel.
             name(string): InventoryRequest's name.
             netconfPort(string): InventoryRequest's netconfPort.
-            noAddNewDevice(boolean): InventoryRequest's
-                noAddNewDevice.
-            parentDiscoveryId(string): InventoryRequest's
-                parentDiscoveryId.
-            passwordList(list): InventoryRequest's passwordList
-                (list of string, objects).
-            preferredMgmtIPMethod(string): InventoryRequest's
-                preferredMgmtIPMethod.
+            noAddNewDevice(boolean): InventoryRequest's noAddNewDevice.
+            parentDiscoveryId(string): InventoryRequest's parentDiscoveryId.
+            passwordList(list): InventoryRequest's passwordList (list of string, objects).
+            preferredMgmtIPMethod(string): InventoryRequest's preferredMgmtIPMethod.
             protocolOrder(string): InventoryRequest's protocolOrder.
             reDiscovery(boolean): InventoryRequest's reDiscovery.
             retry(number): InventoryRequest's retry.
-            snmpAuthPassphrase(string): InventoryRequest's
-                snmpAuthPassphrase.
-            snmpAuthProtocol(string): InventoryRequest's
-                snmpAuthProtocol.
+            snmpAuthPassphrase(string): InventoryRequest's snmpAuthPassphrase.
+            snmpAuthProtocol(string): InventoryRequest's snmpAuthProtocol.
             snmpMode(string): InventoryRequest's snmpMode.
-            snmpPrivPassphrase(string): InventoryRequest's
-                snmpPrivPassphrase.
-            snmpPrivProtocol(string): InventoryRequest's
-                snmpPrivProtocol.
-            snmpROCommunity(string): InventoryRequest's
-                snmpROCommunity.
-            snmpROCommunityDesc(string): InventoryRequest's
-                snmpROCommunityDesc.
-            snmpRWCommunity(string): InventoryRequest's
-                snmpRWCommunity.
-            snmpRWCommunityDesc(string): InventoryRequest's
-                snmpRWCommunityDesc.
+            snmpPrivPassphrase(string): InventoryRequest's snmpPrivPassphrase.
+            snmpPrivProtocol(string): InventoryRequest's snmpPrivProtocol.
+            snmpROCommunity(string): InventoryRequest's snmpROCommunity.
+            snmpROCommunityDesc(string): InventoryRequest's snmpROCommunityDesc.
+            snmpRWCommunity(string): InventoryRequest's snmpRWCommunity.
+            snmpRWCommunityDesc(string): InventoryRequest's snmpRWCommunityDesc.
             snmpUserName(string): InventoryRequest's snmpUserName.
             snmpVersion(string): InventoryRequest's snmpVersion.
             timeout(number): InventoryRequest's timeout.
             updateMgmtIp(boolean): InventoryRequest's updateMgmtIp.
-            userNameList(list): InventoryRequest's userNameList
-                (list of string, objects).
+            userNameList(list): InventoryRequest's userNameList (list of string, objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -904,18 +870,12 @@ class NetworkDiscovery(object):
             task_id(basestring): taskId query parameter.
             sort_by(basestring): sortBy query parameter.
             sort_order(basestring): sortOrder query parameter.
-            ip_address(basestring, list, set, tuple): ipAddress
-                query parameter.
-            ping_status(basestring, list, set, tuple): pingStatus
-                query parameter.
-            snmp_status(basestring, list, set, tuple): snmpStatus
-                query parameter.
-            cli_status(basestring, list, set, tuple): cliStatus
-                query parameter.
-            netconf_status(basestring, list, set, tuple):
-                netconfStatus query parameter.
-            http_status(basestring, list, set, tuple): httpStatus
-                query parameter.
+            ip_address(basestring, list, set, tuple): ipAddress query parameter.
+            ping_status(basestring, list, set, tuple): pingStatus query parameter.
+            snmp_status(basestring, list, set, tuple): snmpStatus query parameter.
+            cli_status(basestring, list, set, tuple): cliStatus query parameter.
+            netconf_status(basestring, list, set, tuple): netconfStatus query parameter.
+            http_status(basestring, list, set, tuple): httpStatus query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1000,10 +960,8 @@ class NetworkDiscovery(object):
         """Update global credential for network devices in site(s).
 
         Args:
-            siteUuids(list): SitesInfoDTO's siteUuids (list of
-                strings).
-            global_credential_id(basestring): Global credential
-                Uuid.
+            siteUuids(list): SitesInfoDTO's siteUuids (list of strings).
+            global_credential_id(basestring): Global credential Uuid.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1304,19 +1262,13 @@ class NetworkDiscovery(object):
             attributeInfo(object): DiscoveryNIO's attributeInfo.
             cdpLevel(number): DiscoveryNIO's cdpLevel.
             deviceIds(string): DiscoveryNIO's deviceIds.
-            discoveryCondition(string): DiscoveryNIO's
-                discoveryCondition.
+            discoveryCondition(string): DiscoveryNIO's discoveryCondition.
             discoveryStatus(string): DiscoveryNIO's discoveryStatus.
             discoveryType(string): DiscoveryNIO's discoveryType.
-            enablePasswordList(string): DiscoveryNIO's
-                enablePasswordList.
-            globalCredentialIdList(list): DiscoveryNIO's
-                globalCredentialIdList (list of string,
-                objects).
-            httpReadCredential(object): DiscoveryNIO's
-                httpReadCredential.
-            httpWriteCredential(object): DiscoveryNIO's
-                httpWriteCredential.
+            enablePasswordList(string): DiscoveryNIO's enablePasswordList.
+            globalCredentialIdList(list): DiscoveryNIO's globalCredentialIdList (list of string, objects).
+            httpReadCredential(object): DiscoveryNIO's httpReadCredential.
+            httpWriteCredential(object): DiscoveryNIO's httpWriteCredential.
             id(string): DiscoveryNIO's id.
             ipAddressList(string): DiscoveryNIO's ipAddressList.
             ipFilterList(string): DiscoveryNIO's ipFilterList.
@@ -1325,28 +1277,20 @@ class NetworkDiscovery(object):
             name(string): DiscoveryNIO's name.
             netconfPort(string): DiscoveryNIO's netconfPort.
             numDevices(number): DiscoveryNIO's numDevices.
-            parentDiscoveryId(string): DiscoveryNIO's
-                parentDiscoveryId.
+            parentDiscoveryId(string): DiscoveryNIO's parentDiscoveryId.
             passwordList(string): DiscoveryNIO's passwordList.
-            preferredMgmtIPMethod(string): DiscoveryNIO's
-                preferredMgmtIPMethod.
+            preferredMgmtIPMethod(string): DiscoveryNIO's preferredMgmtIPMethod.
             protocolOrder(string): DiscoveryNIO's protocolOrder.
             retryCount(number): DiscoveryNIO's retryCount.
-            snmpAuthPassphrase(string): DiscoveryNIO's
-                snmpAuthPassphrase.
-            snmpAuthProtocol(string): DiscoveryNIO's
-                snmpAuthProtocol.
+            snmpAuthPassphrase(string): DiscoveryNIO's snmpAuthPassphrase.
+            snmpAuthProtocol(string): DiscoveryNIO's snmpAuthProtocol.
             snmpMode(string): DiscoveryNIO's snmpMode.
-            snmpPrivPassphrase(string): DiscoveryNIO's
-                snmpPrivPassphrase.
-            snmpPrivProtocol(string): DiscoveryNIO's
-                snmpPrivProtocol.
+            snmpPrivPassphrase(string): DiscoveryNIO's snmpPrivPassphrase.
+            snmpPrivProtocol(string): DiscoveryNIO's snmpPrivProtocol.
             snmpRoCommunity(string): DiscoveryNIO's snmpRoCommunity.
-            snmpRoCommunityDesc(string): DiscoveryNIO's
-                snmpRoCommunityDesc.
+            snmpRoCommunityDesc(string): DiscoveryNIO's snmpRoCommunityDesc.
             snmpRwCommunity(string): DiscoveryNIO's snmpRwCommunity.
-            snmpRwCommunityDesc(string): DiscoveryNIO's
-                snmpRwCommunityDesc.
+            snmpRwCommunityDesc(string): DiscoveryNIO's snmpRwCommunityDesc.
             snmpUserName(string): DiscoveryNIO's snmpUserName.
             timeOut(number): DiscoveryNIO's timeOut.
             updateMgmtIp(boolean): DiscoveryNIO's updateMgmtIp.
@@ -1568,18 +1512,13 @@ class NetworkDiscovery(object):
 
         Args:
             comments(string): SNMPv2ReadCommunityDTO's comments.
-            credentialType(string): SNMPv2ReadCommunityDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
-            description(string): SNMPv2ReadCommunityDTO's
-                description.
+            credentialType(string): SNMPv2ReadCommunityDTO's credentialType. Available values are 'GLOBAL' and
+                'APP'.
+            description(string): SNMPv2ReadCommunityDTO's description.
             id(string): SNMPv2ReadCommunityDTO's id.
-            instanceTenantId(string): SNMPv2ReadCommunityDTO's
-                instanceTenantId.
-            instanceUuid(string): SNMPv2ReadCommunityDTO's
-                instanceUuid.
-            readCommunity(string): SNMPv2ReadCommunityDTO's
-                readCommunity.
+            instanceTenantId(string): SNMPv2ReadCommunityDTO's instanceTenantId.
+            instanceUuid(string): SNMPv2ReadCommunityDTO's instanceUuid.
+            readCommunity(string): SNMPv2ReadCommunityDTO's readCommunity.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2016,16 +1955,12 @@ class NetworkDiscovery(object):
 
         Args:
             comments(string): HTTPWriteCredentialDTO's comments.
-            credentialType(string): HTTPWriteCredentialDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
-            description(string): HTTPWriteCredentialDTO's
-                description.
+            credentialType(string): HTTPWriteCredentialDTO's credentialType. Available values are 'GLOBAL' and
+                'APP'.
+            description(string): HTTPWriteCredentialDTO's description.
             id(string): HTTPWriteCredentialDTO's id.
-            instanceTenantId(string): HTTPWriteCredentialDTO's
-                instanceTenantId.
-            instanceUuid(string): HTTPWriteCredentialDTO's
-                instanceUuid.
+            instanceTenantId(string): HTTPWriteCredentialDTO's instanceTenantId.
+            instanceUuid(string): HTTPWriteCredentialDTO's instanceUuid.
             password(string): HTTPWriteCredentialDTO's password.
             port(number): HTTPWriteCredentialDTO's port.
             secure(boolean): HTTPWriteCredentialDTO's secure.
@@ -2256,15 +2191,11 @@ class NetworkDiscovery(object):
 
         Args:
             comments(string): NetconfCredentialDTO's comments.
-            credentialType(string): NetconfCredentialDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
+            credentialType(string): NetconfCredentialDTO's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): NetconfCredentialDTO's description.
             id(string): NetconfCredentialDTO's id.
-            instanceTenantId(string): NetconfCredentialDTO's
-                instanceTenantId.
-            instanceUuid(string): NetconfCredentialDTO's
-                instanceUuid.
+            instanceTenantId(string): NetconfCredentialDTO's instanceTenantId.
+            instanceUuid(string): NetconfCredentialDTO's instanceUuid.
             netconfPort(string): NetconfCredentialDTO's netconfPort.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2399,8 +2330,7 @@ class NetworkDiscovery(object):
         """Deletes global credential for the given ID.
 
         Args:
-            global_credential_id(basestring): ID of global-
-                credential.
+            global_credential_id(basestring): ID of global-credential.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2468,16 +2398,11 @@ class NetworkDiscovery(object):
 
         Args:
             comments(string): HTTPReadCredentialDTO's comments.
-            credentialType(string): HTTPReadCredentialDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
-            description(string): HTTPReadCredentialDTO's
-                description.
+            credentialType(string): HTTPReadCredentialDTO's credentialType. Available values are 'GLOBAL' and 'APP'.
+            description(string): HTTPReadCredentialDTO's description.
             id(string): HTTPReadCredentialDTO's id.
-            instanceTenantId(string): HTTPReadCredentialDTO's
-                instanceTenantId.
-            instanceUuid(string): HTTPReadCredentialDTO's
-                instanceUuid.
+            instanceTenantId(string): HTTPReadCredentialDTO's instanceTenantId.
+            instanceUuid(string): HTTPReadCredentialDTO's instanceUuid.
             password(string): HTTPReadCredentialDTO's password.
             port(number): HTTPReadCredentialDTO's port.
             secure(boolean): HTTPReadCredentialDTO's secure.
@@ -2582,15 +2507,11 @@ class NetworkDiscovery(object):
 
         Args:
             comments(string): CLICredentialDTO's comments.
-            credentialType(string): CLICredentialDTO's
-                credentialType. Available values are
-                'GLOBAL' and 'APP'.
+            credentialType(string): CLICredentialDTO's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): CLICredentialDTO's description.
-            enablePassword(string): CLICredentialDTO's
-                enablePassword.
+            enablePassword(string): CLICredentialDTO's enablePassword.
             id(string): CLICredentialDTO's id.
-            instanceTenantId(string): CLICredentialDTO's
-                instanceTenantId.
+            instanceTenantId(string): CLICredentialDTO's instanceTenantId.
             instanceUuid(string): CLICredentialDTO's instanceUuid.
             password(string): CLICredentialDTO's password.
             username(string): CLICredentialDTO's username.
@@ -2874,10 +2795,8 @@ class NetworkDiscovery(object):
         """Returns global credential for the given credential sub type.
 
         Args:
-            credential_sub_type(basestring): Credential type as CLI
-                / SNMPV2_READ_COMMUNITY /
-                SNMPV2_WRITE_COMMUNITY / SNMPV3 /
-                HTTP_WRITE / HTTP_READ / NETCONF.
+            credential_sub_type(basestring): Credential type as CLI / SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY
+                / SNMPV3 / HTTP_WRITE / HTTP_READ / NETCONF.
             sort_by(basestring): sortBy query parameter.
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request

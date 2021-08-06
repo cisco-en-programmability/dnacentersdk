@@ -88,27 +88,17 @@ class Issues(object):
         address.
 
         Args:
-            start_time(int): Starting epoch time in milliseconds of
-                query time window.
-            end_time(int): Ending epoch time in milliseconds of
-                query time window.
-            site_id(basestring): Assurance UUID value of the site in
-                the issue content.
-            device_id(basestring): Assurance UUID value of the
-                device in the issue content.
-            mac_address(basestring): Client's device MAC address of
-                the issue (format xx:xx:xx:xx:xx:xx).
-            priority(basestring): The issue's priority value (One of
-                P1, P2, P3, or P4)(Use only when
-                macAddress and deviceId are not
-                provided).
-            ai_driven(basestring): The issue's AI driven value (Yes
-                or No)(Use only when macAddress and
+            start_time(int): Starting epoch time in milliseconds of query time window.
+            end_time(int): Ending epoch time in milliseconds of query time window.
+            site_id(basestring): Assurance UUID value of the site in the issue content.
+            device_id(basestring): Assurance UUID value of the device in the issue content.
+            mac_address(basestring): Client's device MAC address of the issue (format xx:xx:xx:xx:xx:xx).
+            priority(basestring): The issue's priority value (One of P1, P2, P3, or P4)(Use only when macAddress and
                 deviceId are not provided).
-            issue_status(basestring): The issue's status value (One
-                of ACTIVE, IGNORED, RESOLVED) (Use only
-                when macAddress and deviceId are not
-                provided).
+            ai_driven(basestring): The issue's AI driven value (Yes or No)(Use only when macAddress and deviceId are
+                not provided).
+            issue_status(basestring): The issue's status value (One of ACTIVE, IGNORED, RESOLVED) (Use only when
+                macAddress and deviceId are not provided).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

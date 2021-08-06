@@ -80,8 +80,7 @@ class SiteProfile(object):
         specified IP address.
 
         Args:
-            device_ip(basestring): Device to which the provisioning
-                detail has to be retrieved.
+            device_ip(basestring): Device to which the provisioning detail has to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -142,12 +141,9 @@ class SiteProfile(object):
         site/area/building/floor .
 
         Args:
-            callbackUrl(string): Callback Url, property of the
-                request body.
-            provisioning(list): Provisioning, property of the
-                request body (list of objects).
-            siteProfile(list): Site Profile, property of the request
-                body (list of objects).
+            callbackUrl(string): Callback Url, property of the request body.
+            provisioning(list): Provisioning, property of the request body (list of objects).
+            siteProfile(list): Site Profile, property of the request body (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

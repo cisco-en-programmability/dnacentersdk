@@ -75,10 +75,8 @@ class PlatformConfiguration(object):
     def release_summary(self,
                         headers=None,
                         **request_parameters):
-        """Provides information such as API version, mandatory core
-        packages for installation or upgrade, optional packages,
-        Cisco DNA Center name and version, supported direct
-        updates, and tenant ID.  .
+        """Provides information such as API version, mandatory core packages for installation or upgrade, optional
+        packages, Cisco DNA Center name and version, supported direct updates, and tenant ID.  .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -128,10 +126,8 @@ class PlatformConfiguration(object):
     def nodes_configuration_summary(self,
                                     headers=None,
                                     **request_parameters):
-        """Provides details about the current Cisco DNA Center node
-        configuration, such as API version, node name, NTP
-        server, intracluster link, LACP mode, network static
-        routes, DNS server, subnet mask, host IP, default
+        """Provides details about the current Cisco DNA Center node configuration, such as API version, node name, NTP
+        server, intracluster link, LACP mode, network static routes, DNS server, subnet mask, host IP, default
         gateway, and interface information.  .
 
         Args:

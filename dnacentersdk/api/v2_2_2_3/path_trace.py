@@ -90,39 +90,24 @@ class PathTrace(object):
                                                  task_id=None,
                                                  headers=None,
                                                  **request_parameters):
-        """Returns a summary of all flow analyses stored. Results can be
-        filtered by specified parameters. .
+        """Returns a summary of all flow analyses stored. Results can be filtered by specified parameters. .
 
         Args:
-            periodic_refresh(bool): periodicRefresh query parameter.
-                Is analysis periodically refreshed? .
-            source_ip(basestring): sourceIP query parameter. Source
-                IP address .
-            dest_ip(basestring): destIP query parameter. Destination
-                IP adress .
-            source_port(basestring): sourcePort query parameter.
-                Source port .
-            dest_port(basestring): destPort query parameter.
-                Destination port .
-            gt_create_time(basestring): gtCreateTime query
-                parameter. Analyses requested after this
-                time .
-            lt_create_time(basestring): ltCreateTime query
-                parameter. Analyses requested before
-                this time .
+            periodic_refresh(bool): periodicRefresh query parameter. Is analysis periodically refreshed? .
+            source_ip(basestring): sourceIP query parameter. Source IP address .
+            dest_ip(basestring): destIP query parameter. Destination IP adress .
+            source_port(basestring): sourcePort query parameter. Source port .
+            dest_port(basestring): destPort query parameter. Destination port .
+            gt_create_time(basestring): gtCreateTime query parameter. Analyses requested after this time .
+            lt_create_time(basestring): ltCreateTime query parameter. Analyses requested before this time .
             protocol(basestring): protocol query parameter.
             status(basestring): status query parameter.
             task_id(basestring): taskId query parameter. Task ID .
-            last_update_time(basestring): lastUpdateTime query
-                parameter. Last update time .
-            limit(basestring): limit query parameter. Number of
-                resources returned .
-            offset(basestring): offset query parameter. Start index
-                of resources returned (1-based) .
-            order(basestring): order query parameter. Order by this
-                field .
-            sort_by(basestring): sortBy query parameter. Sort by
-                this field .
+            last_update_time(basestring): lastUpdateTime query parameter. Last update time .
+            limit(basestring): limit query parameter. Number of resources returned .
+            offset(basestring): offset query parameter. Start index of resources returned (1-based) .
+            order(basestring): order query parameter. Order by this field .
+            sort_by(basestring): sortBy query parameter. Sort by this field .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -225,16 +210,14 @@ class PathTrace(object):
                                  payload=None,
                                  active_validation=True,
                                  **request_parameters):
-        """Initiates a new flow analysis with periodic refresh and stat
-        collection options. Returns a request id and a task id
-        to get results and follow progress. .
+        """Initiates a new flow analysis with periodic refresh and stat collection options. Returns a request id and a task
+        id to get results and follow progress. .
 
         Args:
             controlPath(boolean): Path Trace's controlPath.
             destIP(string): Path Trace's destIP.
             destPort(string): Path Trace's destPort.
-            inclusions(list): Path Trace's inclusions (list of
-                strings).
+            inclusions(list): Path Trace's inclusions (list of strings).
             periodicRefresh(boolean): Path Trace's periodicRefresh.
             protocol(string): Path Trace's protocol.
             sourceIP(string): Path Trace's sourceIP.
@@ -317,12 +300,10 @@ class PathTrace(object):
                                      flow_analysis_id,
                                      headers=None,
                                      **request_parameters):
-        """Returns result of a previously requested flow analysis by its
-        Flow Analysis id .
+        """Returns result of a previously requested flow analysis by its Flow Analysis id .
 
         Args:
-            flow_analysis_id(basestring): flowAnalysisId path
-                parameter. Flow analysis request id .
+            flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -377,8 +358,7 @@ class PathTrace(object):
         """Deletes a flow analysis request by its id .
 
         Args:
-            flow_analysis_id(basestring): flowAnalysisId path
-                parameter. Flow analysis request id .
+            flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

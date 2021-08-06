@@ -86,44 +86,27 @@ class DeviceReplacement(object):
                                                 sort_order=None,
                                                 headers=None,
                                                 **request_parameters):
-        """Get list of replacement devices with replacement details and it
-        can filter replacement devices based on Faulty Device
-        Name,Faulty Device Platform, Replacement Device
-        Platform, Faulty Device Serial Number,Replacement Device
-        Serial Number, Device Replacement status, Product
-        Family. .
+        """Get list of replacement devices with replacement details and it can filter replacement devices based on Faulty
+        Device Name,Faulty Device Platform, Replacement Device Platform, Faulty Device Serial Number,Replacement
+        Device Serial Number, Device Replacement status, Product Family. .
 
         Args:
-            faulty_device_name(basestring): faultyDeviceName query
-                parameter. Faulty Device Name .
-            faulty_device_platform(basestring): faultyDevicePlatform
-                query parameter. Faulty Device Platform
-                .
-            replacement_device_platform(basestring):
-                replacementDevicePlatform query
-                parameter. Replacement Device Platform .
-            faulty_device_serial_number(basestring):
-                faultyDeviceSerialNumber query
-                parameter. Faulty Device Serial Number .
-            replacement_device_serial_number(basestring):
-                replacementDeviceSerialNumber query
-                parameter. Replacement Device Serial
+            faulty_device_name(basestring): faultyDeviceName query parameter. Faulty Device Name .
+            faulty_device_platform(basestring): faultyDevicePlatform query parameter. Faulty Device Platform .
+            replacement_device_platform(basestring): replacementDevicePlatform query parameter. Replacement Device
+                Platform .
+            faulty_device_serial_number(basestring): faultyDeviceSerialNumber query parameter. Faulty Device Serial
                 Number .
-            replacement_status(basestring, list, set, tuple):
-                replacementStatus query parameter.
-                Device Replacement status [READY-FOR-
-                REPLACEMENT, REPLACEMENT-IN-PROGRESS,
-                REPLACEMENT-SCHEDULED, REPLACED, ERROR,
-                NETWORK_READINESS_REQUESTED,
-                NETWORK_READINESS_FAILED] .
-            family(basestring, list, set, tuple): family query
-                parameter. List of families[Routers,
-                Switches and Hubs, AP] .
-            sort_by(basestring): sortBy query parameter. SortBy this
-                field. SortBy is mandatory when order is
-                used. .
-            sort_order(basestring): sortOrder query parameter. Order
-                on displayName[ASC,DESC] .
+            replacement_device_serial_number(basestring): replacementDeviceSerialNumber query parameter. Replacement
+                Device Serial Number .
+            replacement_status(basestring, list, set, tuple): replacementStatus query parameter. Device Replacement
+                status [READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED,
+                ERROR, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED] .
+            family(basestring, list, set, tuple): family query parameter. List of families[Routers, Switches and
+                Hubs, AP] .
+            sort_by(basestring): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
+                .
+            sort_order(basestring): sortOrder query parameter. Order on displayName[ASC,DESC] .
             offset(int): offset query parameter.
             limit(int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -336,11 +319,8 @@ class DeviceReplacement(object):
         """Get replacement devices count .
 
         Args:
-            replacement_status(basestring, list, set, tuple):
-                replacementStatus query parameter.
-                Device Replacement status list[READY-
-                FOR-REPLACEMENT, REPLACEMENT-IN-
-                PROGRESS, REPLACEMENT-SCHEDULED,
+            replacement_status(basestring, list, set, tuple): replacementStatus query parameter. Device Replacement
+                status list[READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED,
                 REPLACED, ERROR] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -396,15 +376,12 @@ class DeviceReplacement(object):
                                            payload=None,
                                            active_validation=True,
                                            **request_parameters):
-        """API to trigger RMA workflow that will replace faulty device with
-        replacement device with same configuration and images .
+        """API to trigger RMA workflow that will replace faulty device with replacement device with same configuration and
+        images .
 
         Args:
-            faultyDeviceSerialNumber(string): Device Replacement's
-                faultyDeviceSerialNumber.
-            replacementDeviceSerialNumber(string): Device
-                Replacement's
-                replacementDeviceSerialNumber.
+            faultyDeviceSerialNumber(string): Device Replacement's faultyDeviceSerialNumber.
+            replacementDeviceSerialNumber(string): Device Replacement's replacementDeviceSerialNumber.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

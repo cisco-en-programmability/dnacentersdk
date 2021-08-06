@@ -78,20 +78,16 @@ class Devices(object):
                           timestamp=None,
                           headers=None,
                           **request_parameters):
-        """Returns detailed Network Device information retrieved by Mac
-        Address, Device Name or UUID for any given point of
+        """Returns detailed Network Device information retrieved by Mac Address, Device Name or UUID for any given point of
         time.  .
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch
-                time(in milliseconds) when the device
-                data is required .
-            search_by(basestring): searchBy query parameter. MAC
-                Address or Device Name value or UUID of
-                the network device .
-            identifier(basestring): identifier query parameter. One
-                of keywords : macAddress or uuid or
-                nwDeviceName .
+            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the device data is
+                required .
+            search_by(basestring): searchBy query parameter. MAC Address or Device Name value or UUID of the network
+                device .
+            identifier(basestring): identifier query parameter. One of keywords : macAddress or uuid or nwDeviceName
+                .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -153,9 +149,8 @@ class Devices(object):
     def get_device_enrichment_details(self,
                                       headers=None,
                                       **request_parameters):
-        """Enriches a given network device context (device id or device Mac
-        Address or device management IP address) with details
-        about the device and neighbor topology .
+        """Enriches a given network device context (device id or device Mac Address or device management IP address) with
+        details about the device and neighbor topology .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -219,28 +214,19 @@ class Devices(object):
                 start_time=None,
                 headers=None,
                 **request_parameters):
-        """Intent API for accessing DNA Assurance Device object for
-        generating reports, creating dashboards or creating
+        """Intent API for accessing DNA Assurance Device object for generating reports, creating dashboards or creating
         additional value added services. .
 
         Args:
-            device_role(basestring): deviceRole query parameter. The
-                device role (One of CORE, ACCESS,
-                DISTRIBUTION, ROUTER, WLC, AP) .
-            site_id(basestring): siteId query parameter. Assurance
-                site UUID value .
-            health(basestring): health query parameter. The device
-                overall health (One of POOR, FAIR, GOOD)
-                .
-            start_time(int): startTime query parameter. UTC epoch
-                time in milliseconds .
-            end_time(int): endTime query parameter. UTC epoch time
-                in miliseconds .
-            limit(int): limit query parameter. Max number of device
-                entries in the response (default to 50.
-                Max at 1000) .
-            offset(int): offset query parameter. The offset of the
-                first device in the returned data .
+            device_role(basestring): deviceRole query parameter. The device role (One of CORE, ACCESS, DISTRIBUTION,
+                ROUTER, WLC, AP) .
+            site_id(basestring): siteId query parameter. Assurance site UUID value .
+            health(basestring): health query parameter. The device overall health (One of POOR, FAIR, GOOD) .
+            start_time(int): startTime query parameter. UTC epoch time in milliseconds .
+            end_time(int): endTime query parameter. UTC epoch time in miliseconds .
+            limit(int): limit query parameter. Max number of device entries in the response (default to 50.  Max at
+                1000) .
+            offset(int): offset query parameter. The offset of the first device in the returned data .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -311,8 +297,7 @@ class Devices(object):
                            offset=None,
                            headers=None,
                            **request_parameters):
-        """Returns all available interfaces. This endpoint can return a
-        maximum of 500 interfaces .
+        """Returns all available interfaces. This endpoint can return a maximum of 500 interfaces .
 
         Args:
             offset(int): offset query parameter.
@@ -421,12 +406,10 @@ class Devices(object):
                             ip_address,
                             headers=None,
                             **request_parameters):
-        """Returns list of interfaces for specified device management IP
-        address .
+        """Returns list of interfaces for specified device management IP address .
 
         Args:
-            ip_address(basestring): ipAddress path parameter. IP
-                address of the interface .
+            ip_address(basestring): ipAddress path parameter. IP address of the interface .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -531,8 +514,7 @@ class Devices(object):
         """Returns list of interfaces by specified device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -587,8 +569,7 @@ class Devices(object):
         """Returns the interface count for the given device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -645,8 +626,7 @@ class Devices(object):
         """Returns interface by specified device Id and interface name .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             name(basestring): name query parameter. Interface name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -706,16 +686,12 @@ class Devices(object):
                                                  start_index,
                                                  headers=None,
                                                  **request_parameters):
-        """Returns the list of interfaces for the device for the specified
-        range .
+        """Returns the list of interfaces for the device for the specified range .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                ID .
-            start_index(int): startIndex path parameter. Start index
-                .
-            records_to_return(int): recordsToReturn path parameter.
-                Number of records to return .
+            device_id(basestring): deviceId path parameter. Device ID .
+            start_index(int): startIndex path parameter. Start index .
+            records_to_return(int): recordsToReturn path parameter. Number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -910,88 +886,48 @@ class Devices(object):
                         up_time=None,
                         headers=None,
                         **request_parameters):
-        """Returns list of network devices based on filter criteria such as
-        management IP address, mac address, hostname, etc. You
-        can use the .* in any value to conduct a wildcard
-        search. For example, to find all hostnames beginning
-        with myhost in the IP address range 192.25.18.n, issue
-        the following request: GET /dna/intent/api/v1/network-de
-        vice?hostname=myhost.*&managementIpAddress=192.25.18..*
-        If id parameter is provided with comma separated ids, it
-        will return the list of network-devices for the given
-        ids and ignores the other request parameters. .
+        """Returns list of network devices based on filter criteria such as management IP address, mac address, hostname,
+        etc. You can use the .* in any value to conduct a wildcard search. For example, to find all hostnames
+        beginning with myhost in the IP address range 192.25.18.n, issue the following request: GET
+        /dna/intent/api/v1/network-device?hostname=myhost.*&managementIpAddress=192.25.18..* If id parameter is
+        provided with comma separated ids, it will return the list of network-devices for the given ids and
+        ignores the other request parameters. .
 
         Args:
-            hostname(basestring, list, set, tuple): hostname query
-                parameter.
-            management_ip_address(basestring, list, set, tuple):
-                managementIpAddress query parameter.
-            mac_address(basestring, list, set, tuple): macAddress
-                query parameter.
-            location_name(basestring, list, set, tuple):
-                locationName query parameter.
-            serial_number(basestring, list, set, tuple):
-                serialNumber query parameter.
-            location(basestring, list, set, tuple): location query
-                parameter.
-            family(basestring, list, set, tuple): family query
-                parameter.
-            type(basestring, list, set, tuple): type query
-                parameter.
-            series(basestring, list, set, tuple): series query
-                parameter.
-            collection_status(basestring, list, set, tuple):
-                collectionStatus query parameter.
-            collection_interval(basestring, list, set, tuple):
-                collectionInterval query parameter.
-            not_synced_for_minutes(basestring, list, set, tuple):
-                notSyncedForMinutes query parameter.
-            error_code(basestring, list, set, tuple): errorCode
-                query parameter.
-            error_description(basestring, list, set, tuple):
-                errorDescription query parameter.
-            software_version(basestring, list, set, tuple):
-                softwareVersion query parameter.
-            software_type(basestring, list, set, tuple):
-                softwareType query parameter.
-            platform_id(basestring, list, set, tuple): platformId
-                query parameter.
-            role(basestring, list, set, tuple): role query
-                parameter.
-            reachability_status(basestring, list, set, tuple):
-                reachabilityStatus query parameter.
-            up_time(basestring, list, set, tuple): upTime query
-                parameter.
-            associated_wlc_ip(basestring, list, set, tuple):
-                associatedWlcIp query parameter.
-            license_name(basestring, list, set, tuple): license.name
-                query parameter.
-            license_type(basestring, list, set, tuple): license.type
-                query parameter.
-            license_status(basestring, list, set, tuple):
-                license.status query parameter.
-            module_name(basestring, list, set, tuple): module+name
-                query parameter.
-            module_equpimenttype(basestring, list, set, tuple):
-                module+equpimenttype query parameter.
-            module_servicestate(basestring, list, set, tuple):
-                module+servicestate query parameter.
-            module_vendorequipmenttype(basestring, list, set,
-                tuple): module+vendorequipmenttype query
-                parameter.
-            module_partnumber(basestring, list, set, tuple):
-                module+partnumber query parameter.
-            module_operationstatecode(basestring, list, set, tuple):
-                module+operationstatecode query
-                parameter.
-            id(basestring): id query parameter. Accepts comma
-                separated ids and return list of
-                network-devices for the given ids. If
-                invalid or not-found ids are provided,
-                null entry will be returned in the list.
-                .
-            device_support_level(basestring): deviceSupportLevel
-                query parameter.
+            hostname(basestring, list, set, tuple): hostname query parameter.
+            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
+            mac_address(basestring, list, set, tuple): macAddress query parameter.
+            location_name(basestring, list, set, tuple): locationName query parameter.
+            serial_number(basestring, list, set, tuple): serialNumber query parameter.
+            location(basestring, list, set, tuple): location query parameter.
+            family(basestring, list, set, tuple): family query parameter.
+            type(basestring, list, set, tuple): type query parameter.
+            series(basestring, list, set, tuple): series query parameter.
+            collection_status(basestring, list, set, tuple): collectionStatus query parameter.
+            collection_interval(basestring, list, set, tuple): collectionInterval query parameter.
+            not_synced_for_minutes(basestring, list, set, tuple): notSyncedForMinutes query parameter.
+            error_code(basestring, list, set, tuple): errorCode query parameter.
+            error_description(basestring, list, set, tuple): errorDescription query parameter.
+            software_version(basestring, list, set, tuple): softwareVersion query parameter.
+            software_type(basestring, list, set, tuple): softwareType query parameter.
+            platform_id(basestring, list, set, tuple): platformId query parameter.
+            role(basestring, list, set, tuple): role query parameter.
+            reachability_status(basestring, list, set, tuple): reachabilityStatus query parameter.
+            up_time(basestring, list, set, tuple): upTime query parameter.
+            associated_wlc_ip(basestring, list, set, tuple): associatedWlcIp query parameter.
+            license_name(basestring, list, set, tuple): license.name query parameter.
+            license_type(basestring, list, set, tuple): license.type query parameter.
+            license_status(basestring, list, set, tuple): license.status query parameter.
+            module_name(basestring, list, set, tuple): module+name query parameter.
+            module_equpimenttype(basestring, list, set, tuple): module+equpimenttype query parameter.
+            module_servicestate(basestring, list, set, tuple): module+servicestate query parameter.
+            module_vendorequipmenttype(basestring, list, set, tuple): module+vendorequipmenttype query parameter.
+            module_partnumber(basestring, list, set, tuple): module+partnumber query parameter.
+            module_operationstatecode(basestring, list, set, tuple): module+operationstatecode query parameter.
+            id(basestring): id query parameter. Accepts comma separated ids and return list of network-devices for
+                the given ids. If invalid or not-found ids are provided, null entry will be returned in
+                the list. .
+            device_support_level(basestring): deviceSupportLevel query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1151,16 +1087,13 @@ class Devices(object):
         Args:
             _id(string): Devices's _id.
             deviceInfo(object): Devices's deviceInfo.
-            runSummaryList(list): Devices's runSummaryList (list of
-                objects).
-            systemResetWorkflow(object): Devices's
-                systemResetWorkflow.
+            runSummaryList(list): Devices's runSummaryList (list of objects).
+            systemResetWorkflow(object): Devices's systemResetWorkflow.
             systemWorkflow(object): Devices's systemWorkflow.
             tenantId(string): Devices's tenantId.
             version(integer): Devices's version.
             workflow(object): Devices's workflow.
-            workflowParameters(object): Devices's
-                workflowParameters.
+            workflowParameters(object): Devices's workflowParameters.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1325,34 +1258,23 @@ class Devices(object):
                                       vrf_name=None,
                                       headers=None,
                                       **request_parameters):
-        """Gets the list of first 500 network devices sorted
-        lexicographically based on host name. It can be filtered
-        using management IP address, mac address, hostname and
-        location name. If id param is provided, it will be
-        returning the list of network-devices for the given id's
-        and other request params will be ignored. In case of
-        autocomplete request, returns the list of specified
-        attributes. .
+        """Gets the list of first 500 network devices sorted lexicographically based on host name. It can be filtered using
+        management IP address, mac address, hostname and location name. If id param is provided, it will be
+        returning the list of network-devices for the given id's and other request params will be ignored. In
+        case of autocomplete request, returns the list of specified attributes. .
 
         Args:
             vrf_name(basestring): vrfName query parameter.
-            management_ip_address(basestring): managementIpAddress
-                query parameter.
+            management_ip_address(basestring): managementIpAddress query parameter.
             hostname(basestring): hostname query parameter.
             mac_address(basestring): macAddress query parameter.
             family(basestring): family query parameter.
-            collection_status(basestring): collectionStatus query
-                parameter.
-            collection_interval(basestring): collectionInterval
-                query parameter.
-            software_version(basestring): softwareVersion query
-                parameter.
+            collection_status(basestring): collectionStatus query parameter.
+            collection_interval(basestring): collectionInterval query parameter.
+            software_version(basestring): softwareVersion query parameter.
             software_type(basestring): softwareType query parameter.
-            reachability_status(basestring): reachabilityStatus
-                query parameter.
-            reachability_failure_reason(basestring):
-                reachabilityFailureReason query
-                parameter.
+            reachability_status(basestring): reachabilityStatus query parameter.
+            reachability_failure_reason(basestring): reachabilityFailureReason query parameter.
             error_code(basestring): errorCode query parameter.
             platform_id(basestring): platformId query parameter.
             series(basestring): series query parameter.
@@ -1361,8 +1283,7 @@ class Devices(object):
             up_time(basestring): upTime query parameter.
             role(basestring): role query parameter.
             role_source(basestring): roleSource query parameter.
-            associated_wlc_ip(basestring): associatedWlcIp query
-                parameter.
+            associated_wlc_ip(basestring): associatedWlcIp query parameter.
             offset(basestring): offset query parameter.
             limit(basestring): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1483,8 +1404,7 @@ class Devices(object):
                            payload=None,
                            active_validation=True,
                            **request_parameters):
-        """Updates the role of the device as access, core, distribution,
-        border router .
+        """Updates the role of the device as access, core, distribution, border router .
 
         Args:
             id(string): Devices's id.
@@ -1711,9 +1631,8 @@ class Devices(object):
     def get_device_count(self,
                          headers=None,
                          **request_parameters):
-        """Returns the count of network devices based on the filter
-        criteria by management IP address, mac address, hostname
-        and location name .
+        """Returns the count of network devices based on the filter criteria by management IP address, mac address,
+        hostname and location name .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1773,14 +1692,11 @@ class Devices(object):
         """Exports the selected network device to a file .
 
         Args:
-            deviceUuids(list): Devices's deviceUuids (list of
-                strings).
+            deviceUuids(list): Devices's deviceUuids (list of strings).
             id(string): Devices's id.
-            operationEnum(string): Devices's operationEnum.
-                Available values are 'CREDENTIALDETAILS'
-                and 'DEVICEDETAILS'.
-            parameters(list): Devices's parameters (list of
-                strings).
+            operationEnum(string): Devices's operationEnum. Available values are 'CREDENTIALDETAILS' and
+                'DEVICEDETAILS'.
+            parameters(list): Devices's parameters (list of strings).
             password(string): Devices's password.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1861,14 +1777,10 @@ class Devices(object):
         """Returns the functional-capability for given devices .
 
         Args:
-            device_id(basestring): deviceId query parameter. Accepts
-                comma separated deviceid's and return
-                list of functional-capabilities for the
-                given id's. If invalid or not-found id's
-                are provided, null entry will be
-                returned in the list. .
-            function_name(basestring, list, set, tuple):
-                functionName query parameter.
+            device_id(basestring): deviceId query parameter. Accepts comma separated deviceid's and return list of
+                functional-capabilities for the given id's. If invalid or not-found id's are provided,
+                null entry will be returned in the list. .
+            function_name(basestring, list, set, tuple): functionName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1927,8 +1839,7 @@ class Devices(object):
         """Returns functional capability with given Id .
 
         Args:
-            id(basestring): id path parameter. Functional Capability
-                UUID .
+            id(basestring): id path parameter. Functional Capability UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1990,17 +1901,12 @@ class Devices(object):
 
         Args:
             site_id(basestring): siteId path parameter.
-            offset(basestring): offset query parameter. Row Number.
-                Default value is 1 .
-            limit(basestring): limit query parameter. Default value
-                is 500 .
-            category(basestring): category query parameter. Links
-                mismatch category.  Value can be speed-
-                duplex or vlan. .
+            offset(basestring): offset query parameter. Row Number.  Default value is 1 .
+            limit(basestring): limit query parameter. Default value is 500 .
+            category(basestring): category query parameter. Links mismatch category.  Value can be speed-duplex or
+                vlan. .
             sort_by(basestring): sortBy query parameter. Sort By .
-            order(basestring): order query parameter. Order.  Value
-                can be asc or desc.  Default value is
-                asc .
+            order(basestring): order query parameter. Order.  Value can be asc or desc.  Default value is asc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2073,16 +1979,13 @@ class Devices(object):
                                     sort_by=None,
                                     headers=None,
                                     **request_parameters):
-        """Returns devices added to DNAC with snmp v3 DES, where siteId is
-        mandatory & accepts offset, limit, sortby, order which
-        are optional. .
+        """Returns devices added to DNAC with snmp v3 DES, where siteId is mandatory & accepts offset, limit, sortby, order
+        which are optional. .
 
         Args:
             site_id(basestring): siteId path parameter.
-            offset(basestring): offset query parameter. Row Number.
-                Default value is 1 .
-            limit(basestring): limit query parameter. Default value
-                is 500 .
+            offset(basestring): offset query parameter. Row Number.  Default value is 1 .
+            limit(basestring): limit query parameter. Default value is 500 .
             sort_by(basestring): sortBy query parameter. Sort By .
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2152,8 +2055,7 @@ class Devices(object):
         """Returns the network device by specified IP address .
 
         Args:
-            ip_address(basestring): ipAddress path parameter. Device
-                IP address .
+            ip_address(basestring): ipAddress path parameter. Device IP address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2217,16 +2119,10 @@ class Devices(object):
             device_id(basestring): deviceId query parameter.
             limit(basestring): limit query parameter.
             offset(basestring): offset query parameter.
-            name_list(basestring, list, set, tuple): nameList query
-                parameter.
-            vendor_equipment_type_list(basestring, list, set,
-                tuple): vendorEquipmentTypeList query
-                parameter.
-            part_number_list(basestring, list, set, tuple):
-                partNumberList query parameter.
-            operational_state_code_list(basestring, list, set,
-                tuple): operationalStateCodeList query
-                parameter.
+            name_list(basestring, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2305,16 +2201,10 @@ class Devices(object):
 
         Args:
             device_id(basestring): deviceId query parameter.
-            name_list(basestring, list, set, tuple): nameList query
-                parameter.
-            vendor_equipment_type_list(basestring, list, set,
-                tuple): vendorEquipmentTypeList query
-                parameter.
-            part_number_list(basestring, list, set, tuple):
-                partNumberList query parameter.
-            operational_state_code_list(basestring, list, set,
-                tuple): operationalStateCodeList query
-                parameter.
+            name_list(basestring, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2437,8 +2327,7 @@ class Devices(object):
         """Returns the network device with given serial number .
 
         Args:
-            serial_number(basestring): serialNumber path parameter.
-                Device serial number .
+            serial_number(basestring): serialNumber path parameter. Device serial number .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2493,11 +2382,9 @@ class Devices(object):
                                      payload=None,
                                      active_validation=True,
                                      **request_parameters):
-        """Synchronizes the devices. If forceSync param is false (default)
-        then the sync would run in normal priority thread. If
-        forceSync param is true then the sync would run in high
-        priority thread if available, else the sync will fail.
-        Result can be seen in the child task of each device .
+        """Synchronizes the devices. If forceSync param is false (default) then the sync would run in normal priority
+        thread. If forceSync param is true then the sync would run in high priority thread if available, else
+        the sync will fail. Result can be seen in the child task of each device .
 
         Args:
             force_sync(bool): forceSync query parameter.
@@ -2570,10 +2457,8 @@ class Devices(object):
         """Registers a device for WSA notification .
 
         Args:
-            serial_number(basestring): serialNumber query parameter.
-                Serial number of the device .
-            macaddress(basestring): macaddress query parameter. Mac
-                addres of the device .
+            serial_number(basestring): serialNumber query parameter. Serial number of the device .
+            macaddress(basestring): macaddress query parameter. Mac addres of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2631,8 +2516,7 @@ class Devices(object):
         """Returns chassis details for given device ID .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2687,8 +2571,7 @@ class Devices(object):
         """Retrieves complete stack details for given device ID .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2745,8 +2628,7 @@ class Devices(object):
 
         Args:
             device_uuid(basestring): deviceUuid path parameter.
-            type(basestring): type query parameter. Type value
-                should be PowerSupply or Fan .
+            type(basestring): type query parameter. Type value should be PowerSupply or Fan .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2803,18 +2685,13 @@ class Devices(object):
                               interface_name_list=None,
                               headers=None,
                               **request_parameters):
-        """Returns POE interface details for the device, where deviceuuid
-        is mandatory & accepts comma seperated interface names
-        which is optional and returns information for that
-        particular interfaces where(operStatus =
+        """Returns POE interface details for the device, where deviceuuid is mandatory & accepts comma seperated interface
+        names which is optional and returns information for that particular interfaces where(operStatus =
         operationalStatus) .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. uuid
-                of the device .
-            interface_name_list(basestring): interfaceNameList query
-                parameter. comma seperated interface
-                names .
+            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
+            interface_name_list(basestring): interfaceNameList query parameter. comma seperated interface names .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2870,12 +2747,10 @@ class Devices(object):
                              device_uuid,
                              headers=None,
                              **request_parameters):
-        """Get line card detail for a given deviceuuid.  Response will
-        contain serial no, part no, switch no and slot no. .
+        """Get line card detail for a given deviceuuid.  Response will contain serial no, part no, switch no and slot no. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter.
-                instanceuuid of device .
+            device_uuid(basestring): deviceUuid path parameter. instanceuuid of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2930,8 +2805,7 @@ class Devices(object):
         """Returns POE details for device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. uuid
-                of the device .
+            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2957,8 +2831,7 @@ class Devices(object):
         """Returns POE details for device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. uuid
-                of the device .
+            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3010,12 +2883,11 @@ class Devices(object):
                                    device_uuid,
                                    headers=None,
                                    **request_parameters):
-        """Get supervisor card detail for a given deviceuuid. Response will
-        contain serial no, part no, switch no and slot no. .
+        """Get supervisor card detail for a given deviceuuid. Response will contain serial no, part no, switch no and slot
+        no. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter.
-                instanceuuid of device .
+            device_uuid(basestring): deviceUuid path parameter. instanceuuid of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3183,8 +3055,7 @@ class Devices(object):
                            id,
                            headers=None,
                            **request_parameters):
-        """Returns brief summary of device info such as hostname,
-        management IP address for the given device Id .
+        """Returns brief summary of device info such as hostname, management IP address for the given device Id .
 
         Args:
             id(basestring): id path parameter. Device ID .
@@ -3356,9 +3227,7 @@ class Devices(object):
 
         Args:
             id(basestring): id path parameter.
-            interface_type(basestring): interfaceType query
-                parameter. Vlan assocaited with sub-
-                interface .
+            interface_type(basestring): interfaceType query parameter. Vlan assocaited with sub-interface .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3471,8 +3340,7 @@ class Devices(object):
         """Returns the device config by specified device ID .
 
         Args:
-            network_device_id(basestring): networkDeviceId path
-                parameter.
+            network_device_id(basestring): networkDeviceId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3526,14 +3394,11 @@ class Devices(object):
                                                start_index,
                                                headers=None,
                                                **request_parameters):
-        """Returns the list of network devices for the given pagination
-        range .
+        """Returns the list of network devices for the given pagination range .
 
         Args:
-            start_index(int): startIndex path parameter. Start index
-                .
-            records_to_return(int): recordsToReturn path parameter.
-                Number of records to return .
+            start_index(int): startIndex path parameter. Start index .
+            records_to_return(int): recordsToReturn path parameter. Number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3607,10 +3472,8 @@ class Devices(object):
             offset(integer): Devices's Offset.
             siteId(list): Devices's Site Id (list of strings).
             startTime(integer): Devices's Start Time.
-            threatLevel(list): Devices's Threat Level (list of
-                strings).
-            threatType(list): Devices's Threat Type (list of
-                strings).
+            threatLevel(list): Devices's Threat Level (list of strings).
+            threatType(list): Devices's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -3710,10 +3573,8 @@ class Devices(object):
             offset(integer): Devices's Offset.
             siteId(list): Devices's Site Id (list of strings).
             startTime(integer): Devices's Start Time.
-            threatLevel(list): Devices's Threat Level (list of
-                strings).
-            threatType(list): Devices's Threat Type (list of
-                strings).
+            threatLevel(list): Devices's Threat Level (list of strings).
+            threatType(list): Devices's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -3807,10 +3668,8 @@ class Devices(object):
             endTime(integer): Devices's End Time.
             siteId(list): Devices's Site Id (list of strings).
             startTime(integer): Devices's Start Time.
-            threatLevel(list): Devices's Threat Level (list of
-                strings).
-            threatType(list): Devices's Threat Type (list of
-                strings).
+            threatLevel(list): Devices's Threat Level (list of strings).
+            threatType(list): Devices's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

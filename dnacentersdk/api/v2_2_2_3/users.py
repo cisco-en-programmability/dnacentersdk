@@ -75,9 +75,8 @@ class Users(object):
     def get_user_enrichment_details(self,
                                     headers=None,
                                     **request_parameters):
-        """Enriches a given network End User context (a network user-id or
-        end user’s device Mac Address) with details about the
-        user and devices that the user is connected to .
+        """Enriches a given network End User context (a network user-id or end user’s device Mac Address) with details
+        about the user and devices that the user is connected to .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request

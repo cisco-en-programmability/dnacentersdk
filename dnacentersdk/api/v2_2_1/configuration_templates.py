@@ -79,8 +79,7 @@ class ConfigurationTemplates(object):
         """Returns the projects in the system.
 
         Args:
-            name(basestring): name query parameter. Name of project
-                to be searched.
+            name(basestring): name query parameter. Name of project to be searched.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -144,16 +143,12 @@ class ConfigurationTemplates(object):
         """Updates an existing project.
 
         Args:
-            createTime(integer): Configuration Templates's
-                createTime.
-            description(string): Configuration Templates's
-                description.
+            createTime(integer): Configuration Templates's createTime.
+            description(string): Configuration Templates's description.
             id(string): Configuration Templates's id.
-            lastUpdateTime(integer): Configuration Templates's
-                lastUpdateTime.
+            lastUpdateTime(integer): Configuration Templates's lastUpdateTime.
             name(string): Configuration Templates's name.
-            tags(list): Configuration Templates's tags (list of
-                strings).
+            tags(list): Configuration Templates's tags (list of strings).
             templates(object): Configuration Templates's templates.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -245,16 +240,12 @@ class ConfigurationTemplates(object):
         """Creates a new project.
 
         Args:
-            createTime(integer): Configuration Templates's
-                createTime.
-            description(string): Configuration Templates's
-                description.
+            createTime(integer): Configuration Templates's createTime.
+            description(string): Configuration Templates's description.
             id(string): Configuration Templates's id.
-            lastUpdateTime(integer): Configuration Templates's
-                lastUpdateTime.
+            lastUpdateTime(integer): Configuration Templates's lastUpdateTime.
             name(string): Configuration Templates's name.
-            tags(list): Configuration Templates's tags (list of
-                strings).
+            tags(list): Configuration Templates's tags (list of strings).
             templates(object): Configuration Templates's templates.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -346,16 +337,11 @@ class ConfigurationTemplates(object):
         Args:
             project_id(basestring): projectId query parameter.
             software_type(basestring): softwareType query parameter.
-            software_version(basestring): softwareVersion query
-                parameter.
-            product_family(basestring): productFamily query
-                parameter.
-            product_series(basestring): productSeries query
-                parameter.
+            software_version(basestring): softwareVersion query parameter.
+            product_family(basestring): productFamily query parameter.
+            product_series(basestring): productSeries query parameter.
             product_type(basestring): productType query parameter.
-            filter_conflicting_templates(bool):
-                filterConflictingTemplates query
-                parameter.
+            filter_conflicting_templates(bool): filterConflictingTemplates query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -454,46 +440,27 @@ class ConfigurationTemplates(object):
         Args:
             author(string): Configuration Templates's author.
             composite(boolean): Configuration Templates's composite.
-            containingTemplates(list): Configuration Templates's
-                containingTemplates (list of objects).
-            createTime(integer): Configuration Templates's
-                createTime.
-            description(string): Configuration Templates's
-                description.
-            deviceTypes(list): Configuration Templates's deviceTypes
-                (list of objects).
-            failurePolicy(string): Configuration Templates's
-                failurePolicy. Available values are
-                'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR',
-                'ROLLBACK_ON_ERROR',
-                'ROLLBACK_TARGET_ON_ERROR' and
+            containingTemplates(list): Configuration Templates's containingTemplates (list of objects).
+            createTime(integer): Configuration Templates's createTime.
+            description(string): Configuration Templates's description.
+            deviceTypes(list): Configuration Templates's deviceTypes (list of objects).
+            failurePolicy(string): Configuration Templates's failurePolicy. Available values are 'ABORT_ON_ERROR',
+                'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR', 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
             id(string): Configuration Templates's id.
-            lastUpdateTime(integer): Configuration Templates's
-                lastUpdateTime.
+            lastUpdateTime(integer): Configuration Templates's lastUpdateTime.
             name(string): Configuration Templates's name.
-            parentTemplateId(string): Configuration Templates's
-                parentTemplateId.
+            parentTemplateId(string): Configuration Templates's parentTemplateId.
             projectId(string): Configuration Templates's projectId.
-            projectName(string): Configuration Templates's
-                projectName.
-            rollbackTemplateContent(string): Configuration
-                Templates's rollbackTemplateContent.
-            rollbackTemplateParams(list): Configuration Templates's
-                rollbackTemplateParams (list of
-                objects).
-            softwareType(string): Configuration Templates's
-                softwareType.
-            softwareVariant(string): Configuration Templates's
-                softwareVariant.
-            softwareVersion(string): Configuration Templates's
-                softwareVersion.
-            tags(list): Configuration Templates's tags (list of
-                strings).
-            templateContent(string): Configuration Templates's
-                templateContent.
-            templateParams(list): Configuration Templates's
-                templateParams (list of objects).
+            projectName(string): Configuration Templates's projectName.
+            rollbackTemplateContent(string): Configuration Templates's rollbackTemplateContent.
+            rollbackTemplateParams(list): Configuration Templates's rollbackTemplateParams (list of objects).
+            softwareType(string): Configuration Templates's softwareType.
+            softwareVariant(string): Configuration Templates's softwareVariant.
+            softwareVersion(string): Configuration Templates's softwareVersion.
+            tags(list): Configuration Templates's tags (list of strings).
+            templateContent(string): Configuration Templates's templateContent.
+            templateParams(list): Configuration Templates's templateParams (list of objects).
             version(string): Configuration Templates's version.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -614,19 +581,13 @@ class ConfigurationTemplates(object):
         """Deploys a template.
 
         Args:
-            forcePushTemplate(boolean): Configuration Templates's
-                forcePushTemplate.
-            isComposite(boolean): Configuration Templates's
-                isComposite.
-            mainTemplateId(string): Configuration Templates's
-                mainTemplateId.
-            memberTemplateDeploymentInfo(list): Configuration
-                Templates's memberTemplateDeploymentInfo
-                (list of strings).
-            targetInfo(list): Configuration Templates's targetInfo
-                (list of objects).
-            templateId(string): Configuration Templates's
-                templateId.
+            forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
+            isComposite(boolean): Configuration Templates's isComposite.
+            mainTemplateId(string): Configuration Templates's mainTemplateId.
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo (list of
+                strings).
+            targetInfo(list): Configuration Templates's targetInfo (list of objects).
+            templateId(string): Configuration Templates's templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -711,8 +672,7 @@ class ConfigurationTemplates(object):
 
         Args:
             comments(string): Configuration Templates's comments.
-            templateId(string): Configuration Templates's
-                templateId.
+            templateId(string): Configuration Templates's templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1075,8 +1035,7 @@ class ConfigurationTemplates(object):
 
         Args:
             params(object): Configuration Templates's params.
-            templateId(string): Configuration Templates's
-                templateId.
+            templateId(string): Configuration Templates's templateId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1175,46 +1134,27 @@ class ConfigurationTemplates(object):
         Args:
             author(string): Configuration Templates's author.
             composite(boolean): Configuration Templates's composite.
-            containingTemplates(list): Configuration Templates's
-                containingTemplates (list of objects).
-            createTime(integer): Configuration Templates's
-                createTime.
-            description(string): Configuration Templates's
-                description.
-            deviceTypes(list): Configuration Templates's deviceTypes
-                (list of objects).
-            failurePolicy(string): Configuration Templates's
-                failurePolicy. Available values are
-                'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR',
-                'ROLLBACK_ON_ERROR',
-                'ROLLBACK_TARGET_ON_ERROR' and
+            containingTemplates(list): Configuration Templates's containingTemplates (list of objects).
+            createTime(integer): Configuration Templates's createTime.
+            description(string): Configuration Templates's description.
+            deviceTypes(list): Configuration Templates's deviceTypes (list of objects).
+            failurePolicy(string): Configuration Templates's failurePolicy. Available values are 'ABORT_ON_ERROR',
+                'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR', 'ROLLBACK_TARGET_ON_ERROR' and
                 'ABORT_TARGET_ON_ERROR'.
             id(string): Configuration Templates's id.
-            lastUpdateTime(integer): Configuration Templates's
-                lastUpdateTime.
+            lastUpdateTime(integer): Configuration Templates's lastUpdateTime.
             name(string): Configuration Templates's name.
-            parentTemplateId(string): Configuration Templates's
-                parentTemplateId.
+            parentTemplateId(string): Configuration Templates's parentTemplateId.
             projectId(string): Configuration Templates's projectId.
-            projectName(string): Configuration Templates's
-                projectName.
-            rollbackTemplateContent(string): Configuration
-                Templates's rollbackTemplateContent.
-            rollbackTemplateParams(list): Configuration Templates's
-                rollbackTemplateParams (list of
-                objects).
-            softwareType(string): Configuration Templates's
-                softwareType.
-            softwareVariant(string): Configuration Templates's
-                softwareVariant.
-            softwareVersion(string): Configuration Templates's
-                softwareVersion.
-            tags(list): Configuration Templates's tags (list of
-                strings).
-            templateContent(string): Configuration Templates's
-                templateContent.
-            templateParams(list): Configuration Templates's
-                templateParams (list of objects).
+            projectName(string): Configuration Templates's projectName.
+            rollbackTemplateContent(string): Configuration Templates's rollbackTemplateContent.
+            rollbackTemplateParams(list): Configuration Templates's rollbackTemplateParams (list of objects).
+            softwareType(string): Configuration Templates's softwareType.
+            softwareVariant(string): Configuration Templates's softwareVariant.
+            softwareVersion(string): Configuration Templates's softwareVersion.
+            tags(list): Configuration Templates's tags (list of strings).
+            templateContent(string): Configuration Templates's templateContent.
+            templateParams(list): Configuration Templates's templateParams (list of objects).
             version(string): Configuration Templates's version.
             project_id(basestring): projectId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request

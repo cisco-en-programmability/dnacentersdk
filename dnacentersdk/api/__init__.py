@@ -373,7 +373,7 @@ from .v2_2_2_3.event_management import \
 from .v2_2_2_3.file import \
     File as File_v2_2_2_3
 from .v2_2_2_3.health_and_performance import \
-    HealthandPerformance as HealthandPerformance_v2_2_2_3
+    HealthAndPerformance as HealthAndPerformance_v2_2_2_3
 from .v2_2_2_3.itsm import \
     Itsm as Itsm_v2_2_2_3
 from .v2_2_2_3.issues import \
@@ -1245,7 +1245,7 @@ class DNACenterAPI(object):
                     self._session, object_factory, _validator
                 )
             self.health_and_performance = \
-                HealthandPerformance_v2_2_2_3(
+                HealthAndPerformance_v2_2_2_3(
                     self._session, object_factory, _validator
                 )
             self.itsm = \

@@ -129,8 +129,7 @@ class File(object):
         """Returns list of files under a specific namespace.
 
         Args:
-            name_space(basestring): nameSpace path parameter. A
-                listing of fileId's.
+            name_space(basestring): nameSpace path parameter. A listing of fileId's.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -187,8 +186,7 @@ class File(object):
         """Downloads a file specified by fileId.
 
         Args:
-            file_id(basestring): fileId path parameter. File
-                Identification number.
+            file_id(basestring): fileId path parameter. File Identification number.
             dirpath(basestring): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of

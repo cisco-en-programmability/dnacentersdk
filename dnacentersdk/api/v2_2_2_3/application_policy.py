@@ -498,12 +498,9 @@ class ApplicationPolicy(object):
         """Get applications by offset/limit or by name .
 
         Args:
-            offset(int): offset query parameter. The offset of the
-                first application to be returned .
-            limit(int): limit query parameter. The maximum number of
-                applications to be returned .
-            name(basestring): name query parameter. Application's
-                name .
+            offset(int): offset query parameter. The offset of the first application to be returned .
+            limit(int): limit query parameter. The maximum number of applications to be returned .
+            name(basestring): name query parameter. Application's name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

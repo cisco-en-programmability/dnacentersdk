@@ -83,18 +83,12 @@ class Licenses(object):
         """Get total number of managed device(s). .
 
         Args:
-            device_type(basestring): device_type query parameter.
-                Type of device .
-            registration_status(basestring): registration_status
-                query parameter. Smart license
-                registration status of device .
-            dna_level(basestring): dna_level query parameter. Device
-                Cisco DNA license level .
-            virtual_account_name(basestring): virtual_account_name
-                query parameter. Name of virtual account
-                .
-            smart_account_id(basestring): smart_account_id query
-                parameter. Id of smart account .
+            device_type(basestring): device_type query parameter. Type of device .
+            registration_status(basestring): registration_status query parameter. Smart license registration status
+                of device .
+            dna_level(basestring): dna_level query parameter. Device Cisco DNA license level .
+            virtual_account_name(basestring): virtual_account_name query parameter. Name of virtual account .
+            smart_account_id(basestring): smart_account_id query parameter. Id of smart account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -170,27 +164,17 @@ class Licenses(object):
         """Show license summary of device(s). .
 
         Args:
-            page_number(int): page_number query parameter. Page
-                number of response .
-            order(basestring): order query parameter. Sorting order
-                .
-            sort_by(basestring): sort_by query parameter. Sort
-                result by field .
-            dna_level(basestring): dna_level query parameter. Device
-                Cisco DNA license level .
-            device_type(basestring): device_type query parameter.
-                Type of device .
+            page_number(int): page_number query parameter. Page number of response .
+            order(basestring): order query parameter. Sorting order .
+            sort_by(basestring): sort_by query parameter. Sort result by field .
+            dna_level(basestring): dna_level query parameter. Device Cisco DNA license level .
+            device_type(basestring): device_type query parameter. Type of device .
             limit(int): limit query parameter.
-            registration_status(basestring): registration_status
-                query parameter. Smart license
-                registration status of device .
-            virtual_account_name(basestring): virtual_account_name
-                query parameter. Name of virtual account
-                .
-            smart_account_id(int): smart_account_id query parameter.
-                Id of smart account .
-            device_uuid(basestring): device_uuid query parameter. Id
+            registration_status(basestring): registration_status query parameter. Smart license registration status
                 of device .
+            virtual_account_name(basestring): virtual_account_name query parameter. Name of virtual account .
+            smart_account_id(int): smart_account_id query parameter. Id of smart account .
+            device_uuid(basestring): device_uuid query parameter. Id of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -276,8 +260,7 @@ class Licenses(object):
         """Get detailed license information of a device. .
 
         Args:
-            device_uuid(basestring): device_uuid path parameter. Id
-                of device .
+            device_uuid(basestring): device_uuid path parameter. Id of device .
             details(basestring): details path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -338,8 +321,7 @@ class Licenses(object):
         """Deregister device(s) from CSSM(Cisco Smart Software Manager). .
 
         Args:
-            device_uuids(list): Licenses's Comma separated device
-                ids  (list of strings).
+            device_uuids(list): Licenses's Comma separated device ids  (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -415,11 +397,8 @@ class Licenses(object):
         """Register device(s) in CSSM(Cisco Smart Software Manager). .
 
         Args:
-            device_uuids(list): Licenses's Comma separated device
-                ids  (list of strings).
-            virtual_account_name(basestring): virtual_account_name
-                path parameter. Name of virtual account
-                .
+            device_uuids(list): Licenses's Comma separated device ids  (list of strings).
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account .
             register(basestring): register path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -503,20 +482,14 @@ class Licenses(object):
                                payload=None,
                                active_validation=True,
                                **request_parameters):
-        """Transfer device(s) from one virtual account to another within
-        same smart account. .
+        """Transfer device(s) from one virtual account to another within same smart account. .
 
         Args:
-            device_uuids(list): Licenses's Comma separated device
-                ids  (list of strings).
+            device_uuids(list): Licenses's Comma separated device ids  (list of strings).
             smart_account(basestring): smartAccount path parameter.
-            smart_account_id(basestring): smart_account_id path
-                parameter. Id of smart account .
-            virtual_account(basestring): virtualAccount path
-                parameter.
-            virtual_account_name(basestring): virtual_account_name
-                path parameter. Name of target virtual
-                account .
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_account(basestring): virtualAccount path parameter.
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of target virtual account .
             device(basestring): device path parameter.
             transfer(basestring): transfer path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -610,10 +583,8 @@ class Licenses(object):
         """Get virtual account details of a smart account. .
 
         Args:
-            smart_account_id(basestring): smart_account_id path
-                parameter. Id of smart account .
-            virtual_accounts(basestring): virtualAccounts path
-                parameter. Virtual Accounts .
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_accounts(basestring): virtualAccounts path parameter. Virtual Accounts .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -727,17 +698,12 @@ class Licenses(object):
 
         Args:
             smart_account(basestring): smartAccount path parameter.
-            smart_account_id(basestring): smart_account_id path
-                parameter. Id of smart account .
-            virtual_account(basestring): virtualAccount path
-                parameter.
-            virtual_account_name(basestring): virtual_account_name
-                path parameter. Name of virtual account.
-                Putting "All" will give license term
-                detail for all virtual accounts. .
-            device_type(basestring): device_type query parameter.
-                Type of device like router, switch,
-                wireless or ise .
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_account(basestring): virtualAccount path parameter.
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
+                "All" will give license term detail for all virtual accounts. .
+            device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
+                ise .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -809,17 +775,12 @@ class Licenses(object):
         """Get count of purchased and in use DNA and Network licenses. .
 
         Args:
-            smart_account_id(basestring): smart_account_id path
-                parameter. Id of smart account .
-            virtual_account(basestring): virtualAccount path
-                parameter.
-            virtual_account_name(basestring): virtual_account_name
-                path parameter. Name of virtual account.
-                Putting "All" will give license usage
-                detail for all virtual accounts. .
-            device_type(basestring): device_type query parameter.
-                Type of device like router, switch,
-                wireless or ise .
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_account(basestring): virtualAccount path parameter.
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
+                "All" will give license usage detail for all virtual accounts. .
+            device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
+                ise .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

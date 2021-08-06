@@ -85,8 +85,7 @@ class SiteDesign(object):
             id(basestring): ID of network profile to retrieve.
             offset(basestring): offset/starting row.
             limit(basestring): Number of profile to be retrieved.
-            name(basestring): Name of network profile to be
-                retrieved.
+            name(basestring): Name of network profile to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -154,8 +153,7 @@ class SiteDesign(object):
         """API to update a NFV Network profile.
 
         Args:
-            device(list): Device, property of the request body (list
-                of objects).
+            device(list): Device, property of the request body (list of objects).
             id(basestring): Id of the NFV profile to be updated.
             name(basestring): Name of the profile to be updated.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -235,8 +233,7 @@ class SiteDesign(object):
         information.
 
         Args:
-            device_ip(string): Device Ip, property of the request
-                body.
+            device_ip(string): Device Ip, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -316,8 +313,7 @@ class SiteDesign(object):
 
         Args:
             id(basestring): Id of nfv network profile to delete. .
-            name(basestring): Nameof nfv network profile to delete.
-                .
+            name(basestring): Nameof nfv network profile to delete. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -378,10 +374,8 @@ class SiteDesign(object):
         """API to create network profile for different NFV topologies.
 
         Args:
-            device(list): Device, property of the request body (list
-                of objects).
-            profileName(string): Site Profile Name, property of the
-                request body.
+            device(list): Device, property of the request body (list of objects).
+            profileName(string): Site Profile Name, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -456,10 +450,8 @@ class SiteDesign(object):
         site/area/building/floor .
 
         Args:
-            provisioning(list): Provisioning, property of the
-                request body (list of objects).
-            siteProfile(list): Site Profile, property of the request
-                body (list of objects).
+            provisioning(list): Provisioning, property of the request body (list of objects).
+            siteProfile(list): Site Profile, property of the request body (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -540,8 +532,7 @@ class SiteDesign(object):
         address.
 
         Args:
-            device_ip(basestring): Device to which the provisioning
-                detail has to be retrieved.
+            device_ip(basestring): Device to which the provisioning detail has to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

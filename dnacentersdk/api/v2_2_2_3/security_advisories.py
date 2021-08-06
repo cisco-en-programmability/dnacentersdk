@@ -179,8 +179,7 @@ class SecurityAdvisories(object):
         """Retrieves list of devices for an advisory .
 
         Args:
-            advisory_id(basestring): advisoryId path parameter.
-                Advisory ID .
+            advisory_id(basestring): advisoryId path parameter. Advisory ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -236,8 +235,7 @@ class SecurityAdvisories(object):
         """Retrieves list of advisory IDs for a device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                instance UUID .
+            device_id(basestring): deviceId path parameter. Device instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -292,8 +290,7 @@ class SecurityAdvisories(object):
         """Retrieves list of advisories for a device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device
-                instance UUID .
+            device_id(basestring): deviceId path parameter. Device instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

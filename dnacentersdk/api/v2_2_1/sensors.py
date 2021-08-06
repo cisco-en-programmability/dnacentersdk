@@ -137,12 +137,10 @@ class Sensors(object):
                                     payload=None,
                                     active_validation=True,
                                     **request_parameters):
-        """Intent API to create a SENSOR test template with a new SSID,
-        existing SSID, or both new and existing SSID.
+        """Intent API to create a SENSOR test template with a new SSID, existing SSID, or both new and existing SSID.
 
         Args:
-            apCoverage(list): Sensors's apCoverage (list of
-                objects).
+            apCoverage(list): Sensors's apCoverage (list of objects).
             connection(string): Sensors's connection.
             modelVersion(integer): Sensors's modelVersion.
             name(string): Sensors's name.
@@ -352,12 +350,10 @@ class Sensors(object):
                                   payload=None,
                                   active_validation=True,
                                   **request_parameters):
-        """Intent API to deploy, schedule, or edit and existing SENSOR test
-        template.
+        """Intent API to deploy, schedule, or edit and existing SENSOR test template.
 
         Args:
-            locationInfoList(list): Sensors's locationInfoList (list
-                of objects).
+            locationInfoList(list): Sensors's locationInfoList (list of objects).
             schedule(object): Sensors's schedule.
             templateName(string): Sensors's templateName.
             headers(dict): Dictionary of HTTP Headers to send with the Request

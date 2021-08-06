@@ -83,8 +83,7 @@ class Sites(object):
 
         Args:
             device(list): Sites's device (list of objects).
-            site_id(basestring): siteId path parameter. Site id to
-                which site the device to assign.
+            site_id(basestring): siteId path parameter. Site id to which site the device to assign.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -164,9 +163,8 @@ class Sites(object):
         """Returns Overall Health information for all sites.
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch
-                time(in milliseconds) when the Site
-                Hierarchy data is required.
+            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Site Hierarchy
+                data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -225,21 +223,14 @@ class Sites(object):
                  type=None,
                  headers=None,
                  **request_parameters):
-        """Get site using siteNameHierarchy/siteId/type ,return all sites
-        if these parameters are not given as input.
+        """Get site using siteNameHierarchy/siteId/type ,return all sites if these parameters are not given as input.
 
         Args:
-            name(basestring): name query parameter.
-                siteNameHierarchy (ex:
-                global/groupName).
-            site_id(basestring): siteId query parameter. Site id to
-                which site details to retrieve.
-            type(basestring): type query parameter. type (ex: area,
-                building, floor).
-            offset(basestring): offset query parameter.
-                offset/starting row.
-            limit(basestring): limit query parameter. Number of
-                sites to be retrieved.
+            name(basestring): name query parameter. siteNameHierarchy (ex: global/groupName).
+            site_id(basestring): siteId query parameter. Site id to which site details to retrieve.
+            type(basestring): type query parameter. type (ex: area, building, floor).
+            offset(basestring): offset query parameter. offset/starting row.
+            limit(basestring): limit query parameter. Number of sites to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -310,8 +301,7 @@ class Sites(object):
 
         Args:
             site(object): Sites's site.
-            type(string): Sites's type. Available values are 'area',
-                'building' and 'floor'.
+            type(string): Sites's type. Available values are 'area', 'building' and 'floor'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -390,8 +380,7 @@ class Sites(object):
         """API to get site count .
 
         Args:
-            site_id(basestring): siteId query parameter.  Site id to
-                retrieve site count.
+            site_id(basestring): siteId query parameter.  Site id to retrieve site count.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -447,15 +436,12 @@ class Sites(object):
                     payload=None,
                     active_validation=True,
                     **request_parameters):
-        """Update site area/building/floor with specified hierarchy and new
-        values.
+        """Update site area/building/floor with specified hierarchy and new values.
 
         Args:
             site(object): Sites's site.
-            type(string): Sites's type. Available values are 'area',
-                'building' and 'floor'.
-            site_id(basestring): siteId path parameter. Site id to
-                which site details to be updated.
+            type(string): Sites's type. Available values are 'area', 'building' and 'floor'.
+            site_id(basestring): siteId path parameter. Site id to which site details to be updated.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -537,8 +523,7 @@ class Sites(object):
         """Delete site with area/building/floor by siteId.
 
         Args:
-            site_id(basestring): siteId path parameter. Site id to
-                which site details to be deleted.
+            site_id(basestring): siteId path parameter. Site id to which site details to be deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -597,17 +582,11 @@ class Sites(object):
         """Getting the site children details and device details.
 
         Args:
-            site_id(basestring): siteId path parameter. Site id to
-                retrieve device associated with the
-                site.
-            offset(basestring): offset query parameter.
-                offset/starting row.
-            limit(basestring): limit query parameter. Number of
-                sites to be retrieved.
-            device_family(basestring): deviceFamily query parameter.
-                Device family name .
-            serial_number(basestring): serialNumber query parameter.
-                Device serial number.
+            site_id(basestring): siteId path parameter. Site id to retrieve device associated with the site.
+            offset(basestring): offset query parameter. offset/starting row.
+            limit(basestring): limit query parameter. Number of sites to be retrieved.
+            device_family(basestring): deviceFamily query parameter. Device family name .
+            serial_number(basestring): serialNumber query parameter. Device serial number.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

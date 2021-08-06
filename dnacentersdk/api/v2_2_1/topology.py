@@ -176,8 +176,7 @@ class Topology(object):
                               node_type=None,
                               headers=None,
                               **request_parameters):
-        """Returns the raw physical topology by specified criteria of
-        nodeType.
+        """Returns the raw physical topology by specified criteria of nodeType.
 
         Args:
             node_type(basestring): nodeType query parameter.
@@ -235,8 +234,7 @@ class Topology(object):
         """Returns Layer 2 network topology by specified VLAN ID.
 
         Args:
-            vlan_id(basestring): vlanID path parameter. Vlan Name
-                for e.g Vlan1, Vlan23 etc.
+            vlan_id(basestring): vlanID path parameter. Vlan Name for e.g Vlan1, Vlan23 etc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -291,8 +289,7 @@ class Topology(object):
         """Returns the Layer 3 network topology by routing protocol.
 
         Args:
-            topology_type(basestring): topologyType path parameter.
-                Type of topology(OSPF,ISIS,etc).
+            topology_type(basestring): topologyType path parameter. Type of topology(OSPF,ISIS,etc).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -344,14 +341,12 @@ class Topology(object):
                                    timestamp=None,
                                    headers=None,
                                    **request_parameters):
-        """Returns Overall Network Health information by Device category
-        (Access, Distribution, Core, Router, Wireless) for any
-        given point of time.
+        """Returns Overall Network Health information by Device category (Access, Distribution, Core, Router, Wireless) for
+        any given point of time.
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch
-                time(in milliseconds) when the Network
-                health data is required.
+            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Network health
+                data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

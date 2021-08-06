@@ -77,22 +77,15 @@ class Itsm(object):
                              status=None,
                              headers=None,
                              **request_parameters):
-        """This API allows to retrieve the detail of CMDB sync status.It
-        accepts two query parameter "status","date".The
-        supported values for status field are
-        "Success","Failed","Unknown" and date field should be in
-        "YYYY-MM-DD" format. By default all the cmdb sync status
-        will be send as response and based on the query
+        """This API allows to retrieve the detail of CMDB sync status.It accepts two query parameter "status","date".The
+        supported values for status field are "Success","Failed","Unknown" and date field should be in "YYYY-MM-
+        DD" format. By default all the cmdb sync status will be send as response and based on the query
         parameter filtered detail will be send as response. .
 
         Args:
-            status(basestring): status query parameter. Supported
-                values are "Success","Failed" and
-                "Unknown". Providing other values will
-                result in all the available sync job
-                status. .
-            date(basestring): date query parameter. Provide date in
-                "YYYY-MM-DD" format .
+            status(basestring): status query parameter. Supported values are "Success","Failed" and "Unknown".
+                Providing other values will result in all the available sync job status. .
+            date(basestring): date query parameter. Provide date in "YYYY-MM-DD" format .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -148,13 +141,11 @@ class Itsm(object):
                                instance_id=None,
                                headers=None,
                                **request_parameters):
-        """Used to retrieve the list of integration events that failed to
-        create tickets in ITSM .
+        """Used to retrieve the list of integration events that failed to create tickets in ITSM .
 
         Args:
-            instance_id(basestring): instanceId query parameter.
-                Instance Id of the failed event as in
-                the Runtime Dashboard .
+            instance_id(basestring): instanceId query parameter. Instance Id of the failed event as in the Runtime
+                Dashboard .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -208,12 +199,10 @@ class Itsm(object):
                                  payload=None,
                                  active_validation=True,
                                  **request_parameters):
-        """Allows retry of multiple failed ITSM event instances. The retry
-        request payload can be given as a list of strings:
-        ["instance1","instance2","instance3",..] A minimum of
-        one instance Id is mandatory. The list of failed event
-        instance Ids can be retrieved using the 'Get Failed ITSM
-        Events' API in the 'instanceId' attribute. .
+        """Allows retry of multiple failed ITSM event instances. The retry request payload can be given as a list of
+        strings: ["instance1","instance2","instance3",..] A minimum of one instance Id is mandatory. The list of
+        failed event instance Ids can be retrieved using the 'Get Failed ITSM Events' API in the 'instanceId'
+        attribute. .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request

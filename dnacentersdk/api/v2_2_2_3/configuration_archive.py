@@ -82,8 +82,7 @@ class ConfigurationArchive(object):
         """Export Device configurations to an encrypted zip file. .
 
         Args:
-            deviceId(list): Configuration Archive's Device Id (list
-                of strings).
+            deviceId(list): Configuration Archive's Device Id (list of strings).
             password(string): Configuration Archive's Password.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

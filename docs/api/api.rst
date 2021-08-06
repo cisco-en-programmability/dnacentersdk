@@ -1628,9 +1628,9 @@ file
 .. _health_and_performance_2_2_2_3:
 
 health_and_performance
----------------------
+----------------------
 
-.. autoclass:: dnacentersdk.api.v2_2_2_3.health_and_performance.HealthandPerformance()
+.. autoclass:: dnacentersdk.api.v2_2_2_3.health_and_performance.HealthAndPerformance()
 
 
 

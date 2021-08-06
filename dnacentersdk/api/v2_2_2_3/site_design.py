@@ -79,14 +79,11 @@ class SiteDesign(object):
                       payload=None,
                       active_validation=True,
                       **request_parameters):
-        """Design and Provision single/multi NFV device with given
-        site/area/building/floor . .
+        """Design and Provision single/multi NFV device with given site/area/building/floor . .
 
         Args:
-            provisioning(list): Site Design's provisioning (list of
-                objects).
-            siteProfile(list): Site Design's siteProfile (list of
-                objects).
+            provisioning(list): Site Design's provisioning (list of objects).
+            siteProfile(list): Site Design's siteProfile (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -162,13 +159,11 @@ class SiteDesign(object):
                                  device_ip,
                                  headers=None,
                                  **request_parameters):
-        """Returns provisioning device information for the specified IP
-        address. .
+        """Returns provisioning device information for the specified IP address. .
 
         Args:
-            device_ip(basestring): deviceIp query parameter. Device
-                to which the provisioning detail has to
-                be retrieved .
+            device_ip(basestring): deviceIp query parameter. Device to which the provisioning detail has to be
+                retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -223,8 +218,7 @@ class SiteDesign(object):
                                 payload=None,
                                 active_validation=True,
                                 **request_parameters):
-        """Checks the provisioning detail of an ENCS device including log
-        information. .
+        """Checks the provisioning detail of an ENCS device including log information. .
 
         Args:
             device_ip(string): Site Design's Device Ip.
@@ -308,8 +302,7 @@ class SiteDesign(object):
 
         Args:
             device(list): Site Design's device (list of objects).
-            profileName(string): Site Design's Name of the profile
-                to create NFV profile .
+            profileName(string): Site Design's Name of the profile to create NFV profile .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -384,10 +377,8 @@ class SiteDesign(object):
 
         Args:
             device(list): Site Design's device (list of objects).
-            id(basestring): id path parameter. Id of the NFV profile
-                to be updated .
-            name(basestring): name query parameter. Name of the
-                profile to be updated .
+            id(basestring): id path parameter. Id of the NFV profile to be updated .
+            name(basestring): name query parameter. Name of the profile to be updated .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -464,14 +455,10 @@ class SiteDesign(object):
         """API to get NFV network profile. .
 
         Args:
-            id(basestring): id path parameter. ID of network profile
-                to retrieve. .
-            offset(basestring): offset query parameter.
-                offset/starting row .
-            limit(basestring): limit query parameter. Number of
-                profile to be retrieved .
-            name(basestring): name query parameter. Name of network
-                profile to be retrieved .
+            id(basestring): id path parameter. ID of network profile to retrieve. .
+            offset(basestring): offset query parameter. offset/starting row .
+            limit(basestring): limit query parameter. Number of profile to be retrieved .
+            name(basestring): name query parameter. Name of network profile to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -536,10 +523,8 @@ class SiteDesign(object):
         """API to delete nfv network profile. .
 
         Args:
-            id(basestring): id path parameter. Id of nfv network
-                profile to delete.  .
-            name(basestring): name query parameter. Nameof nfv
-                network profile to delete.  .
+            id(basestring): id path parameter. Id of nfv network profile to delete.  .
+            name(basestring): name query parameter. Nameof nfv network profile to delete.  .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -713,8 +698,7 @@ class SiteDesign(object):
         """Service to delete an (empty) floor map with callback .
 
         Args:
-            floor_id(basestring): floorId path parameter. Group ID
-                of floor to be deleted .
+            floor_id(basestring): floorId path parameter. Group ID of floor to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -771,8 +755,7 @@ class SiteDesign(object):
         """Service to create a floor map with callback .
 
         Args:
-            floor_id(basestring): floorId path parameter. Group ID
-                of the floor to be modified .
+            floor_id(basestring): floorId path parameter. Group ID of the floor to be modified .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -841,8 +824,7 @@ class SiteDesign(object):
         """List specified floor map(s) .
 
         Args:
-            floor_id(basestring): floorId path parameter. Group Id
-                of the specified floormap .
+            floor_id(basestring): floorId path parameter. Group Id of the specified floormap .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

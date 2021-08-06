@@ -80,10 +80,8 @@ class NetworkSettings(object):
         """API to get global pool.
 
         Args:
-            offset(basestring): offset query parameter.
-                offset/starting row.
-            limit(basestring): limit query parameter. No of Global
-                Pools to be retrieved.
+            offset(basestring): offset query parameter. offset/starting row.
+            limit(basestring): limit query parameter. No of Global Pools to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -394,9 +392,8 @@ class NetworkSettings(object):
         """API to get  DHCP and DNS center server details.
 
         Args:
-            site_id(basestring): siteId query parameter. Site id to
-                get the network settings associated with
-                the site.
+            site_id(basestring): siteId query parameter. Site id to get the network settings associated with the
+                site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -453,13 +450,9 @@ class NetworkSettings(object):
         """API to get the ip subpool info.
 
         Args:
-            site_id(basestring): siteId query parameter. site id to
-                get the reserve ip associated with the
-                site.
-            offset(basestring): offset query parameter.
-                offset/starting row.
-            limit(basestring): limit query parameter. No of Global
-                Pools to be retrieved.
+            site_id(basestring): siteId query parameter. site id to get the reserve ip associated with the site.
+            offset(basestring): offset query parameter. offset/starting row.
+            limit(basestring): limit query parameter. No of Global Pools to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -536,31 +529,21 @@ class NetworkSettings(object):
         """API to update ip subpool from the global pool.
 
         Args:
-            ipv4DhcpServers(list): Network Settings's
-                ipv4DhcpServers (list of strings).
-            ipv4DnsServers(list): Network Settings's ipv4DnsServers
-                (list of strings).
-            ipv6AddressSpace(boolean): Network Settings's
-                ipv6AddressSpace.
-            ipv6DhcpServers(list): Network Settings's
-                ipv6DhcpServers (list of strings).
-            ipv6DnsServers(list): Network Settings's ipv6DnsServers
-                (list of strings).
+            ipv4DhcpServers(list): Network Settings's ipv4DhcpServers (list of strings).
+            ipv4DnsServers(list): Network Settings's ipv4DnsServers (list of strings).
+            ipv6AddressSpace(boolean): Network Settings's ipv6AddressSpace.
+            ipv6DhcpServers(list): Network Settings's ipv6DhcpServers (list of strings).
+            ipv6DnsServers(list): Network Settings's ipv6DnsServers (list of strings).
             ipv6GateWay(string): Network Settings's ipv6GateWay.
-            ipv6GlobalPool(string): Network Settings's
-                ipv6GlobalPool.
+            ipv6GlobalPool(string): Network Settings's ipv6GlobalPool.
             ipv6Prefix(boolean): Network Settings's ipv6Prefix.
-            ipv6PrefixLength(integer): Network Settings's
-                ipv6PrefixLength.
+            ipv6PrefixLength(integer): Network Settings's ipv6PrefixLength.
             ipv6Subnet(string): Network Settings's ipv6Subnet.
-            ipv6TotalHost(integer): Network Settings's
-                ipv6TotalHost.
+            ipv6TotalHost(integer): Network Settings's ipv6TotalHost.
             name(string): Network Settings's name.
             slaacSupport(boolean): Network Settings's slaacSupport.
-            site_id(basestring): siteId path parameter. Site id of
-                site to update sub pool.
-            id(basestring): id query parameter. Id of subpool to be
-                associated with the site.
+            site_id(basestring): siteId path parameter. Site id of site to update sub pool.
+            id(basestring): id query parameter. Id of subpool to be associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -681,41 +664,28 @@ class NetworkSettings(object):
         """API to reserve an ip subpool from the global pool.
 
         Args:
-            ipv4DhcpServers(list): Network Settings's
-                ipv4DhcpServers (list of strings).
-            ipv4DnsServers(list): Network Settings's ipv4DnsServers
-                (list of strings).
+            ipv4DhcpServers(list): Network Settings's ipv4DhcpServers (list of strings).
+            ipv4DnsServers(list): Network Settings's ipv4DnsServers (list of strings).
             ipv4GateWay(string): Network Settings's ipv4GateWay.
-            ipv4GlobalPool(string): Network Settings's
-                ipv4GlobalPool.
+            ipv4GlobalPool(string): Network Settings's ipv4GlobalPool.
             ipv4Prefix(boolean): Network Settings's ipv4Prefix.
-            ipv4PrefixLength(integer): Network Settings's
-                ipv4PrefixLength.
+            ipv4PrefixLength(integer): Network Settings's ipv4PrefixLength.
             ipv4Subnet(string): Network Settings's ipv4Subnet.
-            ipv4TotalHost(integer): Network Settings's
-                ipv4TotalHost.
-            ipv6AddressSpace(boolean): Network Settings's
-                ipv6AddressSpace.
-            ipv6DhcpServers(list): Network Settings's
-                ipv6DhcpServers (list of strings).
-            ipv6DnsServers(list): Network Settings's ipv6DnsServers
-                (list of strings).
+            ipv4TotalHost(integer): Network Settings's ipv4TotalHost.
+            ipv6AddressSpace(boolean): Network Settings's ipv6AddressSpace.
+            ipv6DhcpServers(list): Network Settings's ipv6DhcpServers (list of strings).
+            ipv6DnsServers(list): Network Settings's ipv6DnsServers (list of strings).
             ipv6GateWay(string): Network Settings's ipv6GateWay.
-            ipv6GlobalPool(string): Network Settings's
-                ipv6GlobalPool.
+            ipv6GlobalPool(string): Network Settings's ipv6GlobalPool.
             ipv6Prefix(boolean): Network Settings's ipv6Prefix.
-            ipv6PrefixLength(integer): Network Settings's
-                ipv6PrefixLength.
+            ipv6PrefixLength(integer): Network Settings's ipv6PrefixLength.
             ipv6Subnet(string): Network Settings's ipv6Subnet.
-            ipv6TotalHost(integer): Network Settings's
-                ipv6TotalHost.
+            ipv6TotalHost(integer): Network Settings's ipv6TotalHost.
             name(string): Network Settings's name.
             slaacSupport(boolean): Network Settings's slaacSupport.
-            type(string): Network Settings's type. Available values
-                are 'Generic', 'LAN', 'WAN',
-                'management' and 'service'.
-            site_id(basestring): siteId path parameter. Site id to
-                reserve the ip sub pool.
+            type(string): Network Settings's type. Available values are 'Generic', 'LAN', 'WAN', 'management' and
+                'service'.
+            site_id(basestring): siteId path parameter. Site id to reserve the ip sub pool.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -824,9 +794,8 @@ class NetworkSettings(object):
         """API to get device credential details.
 
         Args:
-            site_id(basestring): siteId query parameter. Site id to
-                retrieve the credential details
-                associated with the site.
+            site_id(basestring): siteId query parameter. Site id to retrieve the credential details associated with
+                the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1021,8 +990,7 @@ class NetworkSettings(object):
         """API to delete Service Provider profile (QoS).
 
         Args:
-            sp_profile_name(basestring): sp-profile-name path
-                parameter. sp profile name.
+            sp_profile_name(basestring): sp-profile-name path parameter. sp profile name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1271,9 +1239,8 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(basestring): siteId path parameter. Site id to
-                update the network settings which is
-                associated with the site.
+            site_id(basestring): siteId path parameter. Site id to update the network settings which is associated
+                with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1351,9 +1318,8 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(basestring): siteId path parameter. Site id to
-                which site details to associate with the
-                network settings.
+            site_id(basestring): siteId path parameter. Site id to which site details to associate with the network
+                settings.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1441,8 +1407,7 @@ class NetworkSettings(object):
             snmpV2ReadId(string): Network Settings's snmpV2ReadId.
             snmpV2WriteId(string): Network Settings's snmpV2WriteId.
             snmpV3Id(string): Network Settings's snmpV3Id.
-            site_id(basestring): siteId path parameter. site id to
-                assign credential.
+            site_id(basestring): siteId path parameter. site id to assign credential.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1526,8 +1491,7 @@ class NetworkSettings(object):
         """API to delete the reserved ip subpool.
 
         Args:
-            id(basestring): id path parameter. Id of reserve ip
-                subpool to be deleted.
+            id(basestring): id path parameter. Id of reserve ip subpool to be deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
