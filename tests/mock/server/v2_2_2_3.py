@@ -201,10 +201,10 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
     FILE_b7fc125c901c5d4488b7a2b75fa292bc_PATTERN = re.compile(r"/dna/intent/api/v1/file/namespace")
     FILE_b7d63a5ae65b59a5a35d43edc58b6db5_PATTERN = re.compile(r"/dna/intent/api/v1/file/namespace/string")
     FILE_1282fa4ab7605a75aafa6c7da6ac3f13_PATTERN = re.compile(r"/dna/intent/api/v1/file/string")
-    HEALTHAND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/health")
-    HEALTHAND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/health/count")
-    HEALTHAND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/performance")
-    HEALTHAND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/performance/history")
+    HEALTH_AND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/health")
+    HEALTH_AND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/health/count")
+    HEALTH_AND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/performance")
+    HEALTH_AND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/performance/history")
     ITSM_46eb1bf346225a4ba24f18408ffca7c9_PATTERN = re.compile(r"/dna/intent/api/v1/cmdb-sync/detail")
     ITSM_da70082b298a5a908edb780a61bd4ca6_PATTERN = re.compile(r"/dna/intent/api/v1/integration/events")
     ITSM_25624cfb1d6e52878d057740de275896_PATTERN = re.compile(r"/dna/intent/api/v1/integration/events")
@@ -3713,13 +3713,13 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_HEALTHAND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1(self):
+    def matches_HEALTH_AND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1(self):
         return re.search(
-            self.HEALTHAND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1_PATTERN,
+            self.HEALTH_AND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1_PATTERN,
             self.path
         )
 
-    def healthand_performance_system_health_response(self):
+    def health_and_performance_system_health_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -3730,13 +3730,13 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_HEALTHAND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647(self):
+    def matches_HEALTH_AND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647(self):
         return re.search(
-            self.HEALTHAND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647_PATTERN,
+            self.HEALTH_AND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647_PATTERN,
             self.path
         )
 
-    def healthand_performance_system_health_count_response(self):
+    def health_and_performance_system_health_count_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -3747,13 +3747,13 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_HEALTHAND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6(self):
+    def matches_HEALTH_AND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6(self):
         return re.search(
-            self.HEALTHAND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6_PATTERN,
+            self.HEALTH_AND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6_PATTERN,
             self.path
         )
 
-    def healthand_performance_system_performance_response(self):
+    def health_and_performance_system_performance_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -3764,13 +3764,13 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_HEALTHAND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6(self):
+    def matches_HEALTH_AND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6(self):
         return re.search(
-            self.HEALTHAND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6_PATTERN,
+            self.HEALTH_AND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6_PATTERN,
             self.path
         )
 
-    def healthand_performance_system_performance_historical_response(self):
+    def health_and_performance_system_performance_historical_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7206,20 +7206,20 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
             self.file_download_a_file_by_fileid_response()
             return
 
-        if self.matches_HEALTHAND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1():
-            self.healthand_performance_system_health_response()
+        if self.matches_HEALTH_AND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1():
+            self.health_and_performance_system_health_response()
             return
 
-        if self.matches_HEALTHAND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647():
-            self.healthand_performance_system_health_count_response()
+        if self.matches_HEALTH_AND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647():
+            self.health_and_performance_system_health_count_response()
             return
 
-        if self.matches_HEALTHAND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6():
-            self.healthand_performance_system_performance_response()
+        if self.matches_HEALTH_AND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6():
+            self.health_and_performance_system_performance_response()
             return
 
-        if self.matches_HEALTHAND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6():
-            self.healthand_performance_system_performance_historical_response()
+        if self.matches_HEALTH_AND_PERFORMANCE_0f131d712dc253dca528c0298b3e41c6():
+            self.health_and_performance_system_performance_historical_response()
             return
 
         if self.matches_ITSM_46eb1bf346225a4ba24f18408ffca7c9():

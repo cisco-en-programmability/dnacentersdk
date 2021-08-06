@@ -97,7 +97,7 @@ def pytest_configure(config):
         "markers", "file: file wrapper test"
     )
     config.addinivalue_line(
-        "markers", "healthand_performance: healthand_performance wrapper test"
+        "markers", "health_and_performance: health_and_performance wrapper test"
     )
     config.addinivalue_line(
         "markers", "itsm: itsm wrapper test"

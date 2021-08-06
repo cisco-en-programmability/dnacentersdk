@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNACenterAPI healthand_performance API fixtures and tests.
+"""DNACenterAPI health_and_performance API fixtures and tests.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -35,7 +35,7 @@ def is_valid_system_health(json_schema_validate, obj):
 
 
 def system_health(api):
-    endpoint_result = api.healthand_performance.system_health(
+    endpoint_result = api.health_and_performance.system_health(
         domain='string',
         limit=0,
         offset=0,
@@ -45,7 +45,7 @@ def system_health(api):
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_health(api, validator):
     try:
         assert is_valid_system_health(
@@ -59,7 +59,7 @@ def test_system_health(api, validator):
 
 
 def system_health_default(api):
-    endpoint_result = api.healthand_performance.system_health(
+    endpoint_result = api.health_and_performance.system_health(
         domain=None,
         limit=None,
         offset=None,
@@ -69,7 +69,7 @@ def system_health_default(api):
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_health_default(api, validator):
     try:
         assert is_valid_system_health(
@@ -87,14 +87,14 @@ def is_valid_system_health_count(json_schema_validate, obj):
 
 
 def system_health_count(api):
-    endpoint_result = api.healthand_performance.system_health_count(
+    endpoint_result = api.health_and_performance.system_health_count(
         domain='string',
         subdomain='string'
     )
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_health_count(api, validator):
     try:
         assert is_valid_system_health_count(
@@ -108,14 +108,14 @@ def test_system_health_count(api, validator):
 
 
 def system_health_count_default(api):
-    endpoint_result = api.healthand_performance.system_health_count(
+    endpoint_result = api.health_and_performance.system_health_count(
         domain=None,
         subdomain=None
     )
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_health_count_default(api, validator):
     try:
         assert is_valid_system_health_count(
@@ -133,7 +133,7 @@ def is_valid_system_performance(json_schema_validate, obj):
 
 
 def system_performance(api):
-    endpoint_result = api.healthand_performance.system_performance(
+    endpoint_result = api.health_and_performance.system_performance(
         end_time=0,
         function='string',
         kpi='string',
@@ -142,7 +142,7 @@ def system_performance(api):
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_performance(api, validator):
     try:
         assert is_valid_system_performance(
@@ -156,7 +156,7 @@ def test_system_performance(api, validator):
 
 
 def system_performance_default(api):
-    endpoint_result = api.healthand_performance.system_performance(
+    endpoint_result = api.health_and_performance.system_performance(
         end_time=None,
         function=None,
         kpi=None,
@@ -165,7 +165,7 @@ def system_performance_default(api):
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_performance_default(api, validator):
     try:
         assert is_valid_system_performance(
@@ -183,7 +183,7 @@ def is_valid_system_performance_historical(json_schema_validate, obj):
 
 
 def system_performance_historical(api):
-    endpoint_result = api.healthand_performance.system_performance_historical(
+    endpoint_result = api.health_and_performance.system_performance_historical(
         end_time=0,
         kpi='string',
         start_time=0
@@ -191,7 +191,7 @@ def system_performance_historical(api):
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_performance_historical(api, validator):
     try:
         assert is_valid_system_performance_historical(
@@ -205,7 +205,7 @@ def test_system_performance_historical(api, validator):
 
 
 def system_performance_historical_default(api):
-    endpoint_result = api.healthand_performance.system_performance_historical(
+    endpoint_result = api.health_and_performance.system_performance_historical(
         end_time=None,
         kpi=None,
         start_time=None
@@ -213,7 +213,7 @@ def system_performance_historical_default(api):
     return endpoint_result
 
 
-@pytest.mark.healthand_performance
+@pytest.mark.health_and_performance
 def test_system_performance_historical_default(api, validator):
     try:
         assert is_valid_system_performance_historical(

@@ -1625,12 +1625,12 @@ file
 
 
 
-.. _healthand_performance_2_2_2_3:
+.. _health_and_performance_2_2_2_3:
 
-healthand_performance
+health_and_performance
 ---------------------
 
-.. autoclass:: dnacentersdk.api.v2_2_2_3.healthand_performance.HealthandPerformance()
+.. autoclass:: dnacentersdk.api.v2_2_2_3.health_and_performance.HealthandPerformance()
 
 
 

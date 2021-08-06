@@ -360,7 +360,7 @@ from dnacentersdk.api.v2_2_2_3.event_management import \
     EventManagement as EventManagement_v2_2_2_3
 from dnacentersdk.api.v2_2_2_3.file import \
     File as File_v2_2_2_3
-from dnacentersdk.api.v2_2_2_3.healthand_performance import \
+from dnacentersdk.api.v2_2_2_3.health_and_performance import \
     HealthandPerformance as HealthandPerformance_v2_2_2_3
 from dnacentersdk.api.v2_2_2_3.itsm import \
     Itsm as Itsm_v2_2_2_3
@@ -656,7 +656,7 @@ class TestDNACenterSDK:
             assert isinstance(api.discovery, Discovery_v2_2_2_3)
             assert isinstance(api.event_management, EventManagement_v2_2_2_3)
             assert isinstance(api.file, File_v2_2_2_3)
-            assert isinstance(api.healthand_performance, HealthandPerformance_v2_2_2_3)
+            assert isinstance(api.health_and_performance, HealthandPerformance_v2_2_2_3)
             assert isinstance(api.itsm, Itsm_v2_2_2_3)
             assert isinstance(api.issues, Issues_v2_2_2_3)
             assert isinstance(api.licenses, Licenses_v2_2_2_3)
