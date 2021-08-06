@@ -9,6 +9,7 @@ from tests.mock.server.v1_3_3 import MockServerRequestHandler_v1_3_3
 from tests.mock.server.v2_1_1 import MockServerRequestHandler_v2_1_1
 from tests.mock.server.v2_1_2 import MockServerRequestHandler_v2_1_2
 from tests.mock.server.v2_2_1 import MockServerRequestHandler_v2_2_1
+from tests.mock.server.v2_2_2_3 import MockServerRequestHandler_v2_2_2_3
 
 HOST = 'localhost'
 
@@ -43,6 +44,8 @@ def start_mock_server(port, version):
         mockServerHandler = MockServerRequestHandler_v2_1_2
     if version == '2.2.1':
         mockServerHandler = MockServerRequestHandler_v2_2_1
+    if version == '2.2.2.3':
+        mockServerHandler = MockServerRequestHandler_v2_2_2_3
 
     if mockServerHandler is None:
         raise Exception('Could not create MockServer for version {}'.format(version))

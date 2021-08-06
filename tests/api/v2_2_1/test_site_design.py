@@ -131,6 +131,52 @@ def test_update_nfv_profile_default(api, validator):
             raise original_e
 
 
+def is_valid_delete_nfv_profile(json_schema_validate, obj):
+    json_schema_validate('jsd_89252bcefb205d26b9aced6dc6d8c269_v2_2_1').validate(obj)
+    return True
+
+
+def delete_nfv_profile(api):
+    endpoint_result = api.site_design.delete_nfv_profile(
+        id='string',
+        name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.site_design
+def test_delete_nfv_profile(api, validator):
+    try:
+        assert is_valid_delete_nfv_profile(
+            validator,
+            delete_nfv_profile(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_nfv_profile_default(api):
+    endpoint_result = api.site_design.delete_nfv_profile(
+        id='string',
+        name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.site_design
+def test_delete_nfv_profile_default(api, validator):
+    try:
+        assert is_valid_delete_nfv_profile(
+            validator,
+            delete_nfv_profile_default(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_nfv_provisioning_detail(json_schema_validate, obj):
     json_schema_validate('jsd_497d9ccfce8451809129ec5de42c5048_v2_2_1').validate(obj)
     return True
@@ -273,52 +319,6 @@ def test_create_nfv_profile_default(api, validator):
         assert is_valid_create_nfv_profile(
             validator,
             create_nfv_profile_default(api)
-        )
-    except Exception as original_e:
-        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
-            raise original_e
-
-
-def is_valid_delete_nfv_profile(json_schema_validate, obj):
-    json_schema_validate('jsd_a800a1bd8d7856f99608de210c0dae60_v2_2_1').validate(obj)
-    return True
-
-
-def delete_nfv_profile(api):
-    endpoint_result = api.site_design.delete_nfv_profile(
-        id='string',
-        name='string'
-    )
-    return endpoint_result
-
-
-@pytest.mark.site_design
-def test_delete_nfv_profile(api, validator):
-    try:
-        assert is_valid_delete_nfv_profile(
-            validator,
-            delete_nfv_profile(api)
-        )
-    except Exception as original_e:
-        with pytest.raises((JsonSchemaException, MalformedRequest)):
-            print(original_e)
-            raise original_e
-
-
-def delete_nfv_profile_default(api):
-    endpoint_result = api.site_design.delete_nfv_profile(
-        id='string',
-        name=None
-    )
-    return endpoint_result
-
-
-@pytest.mark.site_design
-def test_delete_nfv_profile_default(api, validator):
-    try:
-        assert is_valid_delete_nfv_profile(
-            validator,
-            delete_nfv_profile_default(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

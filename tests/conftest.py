@@ -34,6 +34,7 @@ pytest_plugins = [
     'tests.api.v2_1_1',
     'tests.api.v2_1_2',
     'tests.api.v2_2_1',
+    'tests.api.v2_2_2_3',
 ]
 
 
@@ -96,10 +97,16 @@ def pytest_configure(config):
         "markers", "file: file wrapper test"
     )
     config.addinivalue_line(
+        "markers", "healthand_performance: healthand_performance wrapper test"
+    )
+    config.addinivalue_line(
         "markers", "itsm: itsm wrapper test"
     )
     config.addinivalue_line(
         "markers", "issues: issues wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "licenses: licenses wrapper test"
     )
     config.addinivalue_line(
         "markers", "network_discovery: network_discovery wrapper test"
@@ -115,6 +122,9 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "path_trace: path_trace wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "platform_configuration: platform_configuration wrapper test"
     )
     config.addinivalue_line(
         "markers", "pnp: pnp wrapper test"

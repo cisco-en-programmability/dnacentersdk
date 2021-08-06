@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center deleteNFVProfile data model.
+"""Cisco DNA Center DeployDeviceReplacementWorkflow data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -37,21 +37,26 @@ from dnacentersdk.exceptions import MalformedRequest
 from builtins import *
 
 
-class JSONSchemaValidatorA800A1Bd8D7856F99608De210C0Dae60(object):
-    """deleteNFVProfile request schema definition."""
+class JSONSchemaValidatorF256E33Af7501A8BdaE2742Ca9F6D6(object):
+    """DeployDeviceReplacementWorkflow request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidatorA800A1Bd8D7856F99608De210C0Dae60, self).__init__()
+        super(JSONSchemaValidatorF256E33Af7501A8BdaE2742Ca9F6D6, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "executionId": {
+                "response": {
+                "properties": {
+                "taskId": {
                 "type": "string"
                 },
-                "executionStatusUrl": {
+                "url": {
                 "type": "string"
+                }
                 },
-                "message": {
+                "type": "object"
+                },
+                "version": {
                 "type": "string"
                 }
                 },
