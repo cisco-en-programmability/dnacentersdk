@@ -89,18 +89,13 @@ class Devices(object):
 
         Args:
             endTime(number): endTime, property of the request body.
-            isNewThreat(boolean): isNewThreat, property of the
-                request body.
+            isNewThreat(boolean): isNewThreat, property of the request body.
             limit(number): limit, property of the request body.
             offset(number): offset, property of the request body.
-            siteId(list): Site Id, property of the request body
-                (list of strings).
-            startTime(number): startTime, property of the request
-                body.
-            threatLevel(list): Threat Level, property of the request
-                body (list of strings).
-            threatType(list): Threat Type, property of the request
-                body (list of strings).
+            siteId(list): Site Id, property of the request body (list of strings).
+            startTime(number): startTime, property of the request body.
+            threatLevel(list): Threat Level, property of the request body (list of strings).
+            threatType(list): Threat Type, property of the request body (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -193,13 +188,10 @@ class Devices(object):
 
         Args:
             endTime(number): Threat Parameters's endTime.
-            siteId(list): Threat Parameters's Site Id (list of
-                strings).
+            siteId(list): Threat Parameters's Site Id (list of strings).
             startTime(number): Threat Parameters's startTime.
-            threatLevel(list): Threat Parameters's Threat Level
-                (list of strings).
-            threatType(list): Threat Parameters's Threat Type (list
-                of strings).
+            threatLevel(list): Threat Parameters's Threat Level (list of strings).
+            threatType(list): Threat Parameters's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -292,13 +284,10 @@ class Devices(object):
             isNewThreat(boolean): Threat Parameters's isNewThreat.
             limit(number): Threat Parameters's limit.
             offset(number): Threat Parameters's offset.
-            siteId(list): Threat Parameters's Site Id (list of
-                strings).
+            siteId(list): Threat Parameters's Site Id (list of strings).
             startTime(number): Threat Parameters's startTime.
-            threatLevel(list): Threat Parameters's Threat Level
-                (list of strings).
-            threatType(list): Threat Parameters's Threat Type (list
-                of strings).
+            threatLevel(list): Threat Parameters's Threat Level (list of strings).
+            threatType(list): Threat Parameters's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -423,73 +412,38 @@ class Devices(object):
         ids and ignores the other request parameters.
 
         Args:
-            hostname(basestring, list, set, tuple): hostname query
-                parameter.
-            management_ip_address(basestring, list, set, tuple):
-                managementIpAddress query parameter.
-            mac_address(basestring, list, set, tuple): macAddress
-                query parameter.
-            location_name(basestring, list, set, tuple):
-                locationName query parameter.
-            serial_number(basestring, list, set, tuple):
-                serialNumber query parameter.
-            location(basestring, list, set, tuple): location query
-                parameter.
-            family(basestring, list, set, tuple): family query
-                parameter.
-            type(basestring, list, set, tuple): type query
-                parameter.
-            series(basestring, list, set, tuple): series query
-                parameter.
-            collection_status(basestring, list, set, tuple):
-                collectionStatus query parameter.
-            collection_interval(basestring, list, set, tuple):
-                collectionInterval query parameter.
-            not_synced_for_minutes(basestring, list, set, tuple):
-                notSyncedForMinutes query parameter.
-            error_code(basestring, list, set, tuple): errorCode
-                query parameter.
-            error_description(basestring, list, set, tuple):
-                errorDescription query parameter.
-            software_version(basestring, list, set, tuple):
-                softwareVersion query parameter.
-            software_type(basestring, list, set, tuple):
-                softwareType query parameter.
-            platform_id(basestring, list, set, tuple): platformId
-                query parameter.
-            role(basestring, list, set, tuple): role query
-                parameter.
-            reachability_status(basestring, list, set, tuple):
-                reachabilityStatus query parameter.
-            up_time(basestring, list, set, tuple): upTime query
-                parameter.
-            associated_wlc_ip(basestring, list, set, tuple):
-                associatedWlcIp query parameter.
-            license_name(basestring, list, set, tuple): license.name
-                query parameter.
-            license_type(basestring, list, set, tuple): license.type
-                query parameter.
-            license_status(basestring, list, set, tuple):
-                license.status query parameter.
-            module_name(basestring, list, set, tuple): module+name
-                query parameter.
-            module_equpimenttype(basestring, list, set, tuple):
-                module+equpimenttype query parameter.
-            module_servicestate(basestring, list, set, tuple):
-                module+servicestate query parameter.
-            module_vendorequipmenttype(basestring, list, set,
-                tuple): module+vendorequipmenttype query
-                parameter.
-            module_partnumber(basestring, list, set, tuple):
-                module+partnumber query parameter.
-            module_operationstatecode(basestring, list, set, tuple):
-                module+operationstatecode query
-                parameter.
-            id(basestring): Accepts comma separated ids and return
-                list of network-devices for the given
-                ids. If invalid or not-found ids are
-                provided, null entry will be returned in
-                the list.
+            hostname(basestring, list, set, tuple): hostname query parameter.
+            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
+            mac_address(basestring, list, set, tuple): macAddress query parameter.
+            location_name(basestring, list, set, tuple): locationName query parameter.
+            serial_number(basestring, list, set, tuple): serialNumber query parameter.
+            location(basestring, list, set, tuple): location query parameter.
+            family(basestring, list, set, tuple): family query parameter.
+            type(basestring, list, set, tuple): type query parameter.
+            series(basestring, list, set, tuple): series query parameter.
+            collection_status(basestring, list, set, tuple): collectionStatus query parameter.
+            collection_interval(basestring, list, set, tuple): collectionInterval query parameter.
+            not_synced_for_minutes(basestring, list, set, tuple): notSyncedForMinutes query parameter.
+            error_code(basestring, list, set, tuple): errorCode query parameter.
+            error_description(basestring, list, set, tuple): errorDescription query parameter.
+            software_version(basestring, list, set, tuple): softwareVersion query parameter.
+            software_type(basestring, list, set, tuple): softwareType query parameter.
+            platform_id(basestring, list, set, tuple): platformId query parameter.
+            role(basestring, list, set, tuple): role query parameter.
+            reachability_status(basestring, list, set, tuple): reachabilityStatus query parameter.
+            up_time(basestring, list, set, tuple): upTime query parameter.
+            associated_wlc_ip(basestring, list, set, tuple): associatedWlcIp query parameter.
+            license_name(basestring, list, set, tuple): license.name query parameter.
+            license_type(basestring, list, set, tuple): license.type query parameter.
+            license_status(basestring, list, set, tuple): license.status query parameter.
+            module_name(basestring, list, set, tuple): module+name query parameter.
+            module_equpimenttype(basestring, list, set, tuple): module+equpimenttype query parameter.
+            module_servicestate(basestring, list, set, tuple): module+servicestate query parameter.
+            module_vendorequipmenttype(basestring, list, set, tuple): module+vendorequipmenttype query parameter.
+            module_partnumber(basestring, list, set, tuple): module+partnumber query parameter.
+            module_operationstatecode(basestring, list, set, tuple): module+operationstatecode query parameter.
+            id(basestring): Accepts comma separated ids and return list of network-devices for the given ids. If
+                invalid or not-found ids are provided, null entry will be returned in the list.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -636,8 +590,7 @@ class Devices(object):
 
         Args:
             id(basestring): id path parameter.
-            interface_type(basestring): Vlan assocaited with sub-
-                interface.
+            interface_type(basestring): Vlan assocaited with sub-interface.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1082,53 +1035,33 @@ class Devices(object):
         """Adds the device with given credential.
 
         Args:
-            cliTransport(string): InventoryDeviceInfo's
-                cliTransport.
-            computeDevice(boolean): InventoryDeviceInfo's
-                computeDevice.
-            enablePassword(string): InventoryDeviceInfo's
-                enablePassword.
-            extendedDiscoveryInfo(string): InventoryDeviceInfo's
-                extendedDiscoveryInfo.
-            httpPassword(string): InventoryDeviceInfo's
-                httpPassword.
+            cliTransport(string): InventoryDeviceInfo's cliTransport.
+            computeDevice(boolean): InventoryDeviceInfo's computeDevice.
+            enablePassword(string): InventoryDeviceInfo's enablePassword.
+            extendedDiscoveryInfo(string): InventoryDeviceInfo's extendedDiscoveryInfo.
+            httpPassword(string): InventoryDeviceInfo's httpPassword.
             httpPort(string): InventoryDeviceInfo's httpPort.
             httpSecure(boolean): InventoryDeviceInfo's httpSecure.
-            httpUserName(string): InventoryDeviceInfo's
-                httpUserName.
-            ipAddress(list): InventoryDeviceInfo's ipAddress (list
-                of strings).
-            merakiOrgId(list): InventoryDeviceInfo's merakiOrgId
-                (list of strings).
+            httpUserName(string): InventoryDeviceInfo's httpUserName.
+            ipAddress(list): InventoryDeviceInfo's ipAddress (list of strings).
+            merakiOrgId(list): InventoryDeviceInfo's merakiOrgId (list of strings).
             netconfPort(string): InventoryDeviceInfo's netconfPort.
             password(string): InventoryDeviceInfo's password.
-            serialNumber(string): InventoryDeviceInfo's
-                serialNumber.
-            snmpAuthPassphrase(string): InventoryDeviceInfo's
-                snmpAuthPassphrase.
-            snmpAuthProtocol(string): InventoryDeviceInfo's
-                snmpAuthProtocol.
+            serialNumber(string): InventoryDeviceInfo's serialNumber.
+            snmpAuthPassphrase(string): InventoryDeviceInfo's snmpAuthPassphrase.
+            snmpAuthProtocol(string): InventoryDeviceInfo's snmpAuthProtocol.
             snmpMode(string): InventoryDeviceInfo's snmpMode.
-            snmpPrivPassphrase(string): InventoryDeviceInfo's
-                snmpPrivPassphrase.
-            snmpPrivProtocol(string): InventoryDeviceInfo's
-                snmpPrivProtocol.
-            snmpROCommunity(string): InventoryDeviceInfo's
-                snmpROCommunity.
-            snmpRWCommunity(string): InventoryDeviceInfo's
-                snmpRWCommunity.
+            snmpPrivPassphrase(string): InventoryDeviceInfo's snmpPrivPassphrase.
+            snmpPrivProtocol(string): InventoryDeviceInfo's snmpPrivProtocol.
+            snmpROCommunity(string): InventoryDeviceInfo's snmpROCommunity.
+            snmpRWCommunity(string): InventoryDeviceInfo's snmpRWCommunity.
             snmpRetry(number): InventoryDeviceInfo's snmpRetry.
             snmpTimeout(number): InventoryDeviceInfo's snmpTimeout.
-            snmpUserName(string): InventoryDeviceInfo's
-                snmpUserName.
+            snmpUserName(string): InventoryDeviceInfo's snmpUserName.
             snmpVersion(string): InventoryDeviceInfo's snmpVersion.
-            type(string): InventoryDeviceInfo's type. Available
-                values are 'COMPUTE_DEVICE',
-                'MERAKI_DASHBOARD', 'NETWORK_DEVICE' and
-                'NODATACHANGE'.
-            updateMgmtIPaddressList(list): InventoryDeviceInfo's
-                updateMgmtIPaddressList (list of
-                objects).
+            type(string): InventoryDeviceInfo's type. Available values are 'COMPUTE_DEVICE', 'MERAKI_DASHBOARD',
+                'NETWORK_DEVICE' and 'NODATACHANGE'.
+            updateMgmtIPaddressList(list): InventoryDeviceInfo's updateMgmtIPaddressList (list of objects).
             userName(string): InventoryDeviceInfo's userName.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1691,8 +1624,7 @@ class Devices(object):
         """Returns the device config by specified device ID.
 
         Args:
-            network_device_id(basestring): networkDeviceId path
-                parameter.
+            network_device_id(basestring): networkDeviceId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1809,16 +1741,10 @@ class Devices(object):
 
         Args:
             device_id(basestring): deviceId query parameter.
-            name_list(basestring, list, set, tuple): nameList query
-                parameter.
-            vendor_equipment_type_list(basestring, list, set,
-                tuple): vendorEquipmentTypeList query
-                parameter.
-            part_number_list(basestring, list, set, tuple):
-                partNumberList query parameter.
-            operational_state_code_list(basestring, list, set,
-                tuple): operationalStateCodeList query
-                parameter.
+            name_list(basestring, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2019,53 +1945,33 @@ class Devices(object):
         """Sync the devices provided as input.
 
         Args:
-            cliTransport(string): InventoryDeviceInfo's
-                cliTransport.
-            computeDevice(boolean): InventoryDeviceInfo's
-                computeDevice.
-            enablePassword(string): InventoryDeviceInfo's
-                enablePassword.
-            extendedDiscoveryInfo(string): InventoryDeviceInfo's
-                extendedDiscoveryInfo.
-            httpPassword(string): InventoryDeviceInfo's
-                httpPassword.
+            cliTransport(string): InventoryDeviceInfo's cliTransport.
+            computeDevice(boolean): InventoryDeviceInfo's computeDevice.
+            enablePassword(string): InventoryDeviceInfo's enablePassword.
+            extendedDiscoveryInfo(string): InventoryDeviceInfo's extendedDiscoveryInfo.
+            httpPassword(string): InventoryDeviceInfo's httpPassword.
             httpPort(string): InventoryDeviceInfo's httpPort.
             httpSecure(boolean): InventoryDeviceInfo's httpSecure.
-            httpUserName(string): InventoryDeviceInfo's
-                httpUserName.
-            ipAddress(list): InventoryDeviceInfo's ipAddress (list
-                of strings).
-            merakiOrgId(list): InventoryDeviceInfo's merakiOrgId
-                (list of strings).
+            httpUserName(string): InventoryDeviceInfo's httpUserName.
+            ipAddress(list): InventoryDeviceInfo's ipAddress (list of strings).
+            merakiOrgId(list): InventoryDeviceInfo's merakiOrgId (list of strings).
             netconfPort(string): InventoryDeviceInfo's netconfPort.
             password(string): InventoryDeviceInfo's password.
-            serialNumber(string): InventoryDeviceInfo's
-                serialNumber.
-            snmpAuthPassphrase(string): InventoryDeviceInfo's
-                snmpAuthPassphrase.
-            snmpAuthProtocol(string): InventoryDeviceInfo's
-                snmpAuthProtocol.
+            serialNumber(string): InventoryDeviceInfo's serialNumber.
+            snmpAuthPassphrase(string): InventoryDeviceInfo's snmpAuthPassphrase.
+            snmpAuthProtocol(string): InventoryDeviceInfo's snmpAuthProtocol.
             snmpMode(string): InventoryDeviceInfo's snmpMode.
-            snmpPrivPassphrase(string): InventoryDeviceInfo's
-                snmpPrivPassphrase.
-            snmpPrivProtocol(string): InventoryDeviceInfo's
-                snmpPrivProtocol.
-            snmpROCommunity(string): InventoryDeviceInfo's
-                snmpROCommunity.
-            snmpRWCommunity(string): InventoryDeviceInfo's
-                snmpRWCommunity.
+            snmpPrivPassphrase(string): InventoryDeviceInfo's snmpPrivPassphrase.
+            snmpPrivProtocol(string): InventoryDeviceInfo's snmpPrivProtocol.
+            snmpROCommunity(string): InventoryDeviceInfo's snmpROCommunity.
+            snmpRWCommunity(string): InventoryDeviceInfo's snmpRWCommunity.
             snmpRetry(number): InventoryDeviceInfo's snmpRetry.
             snmpTimeout(number): InventoryDeviceInfo's snmpTimeout.
-            snmpUserName(string): InventoryDeviceInfo's
-                snmpUserName.
+            snmpUserName(string): InventoryDeviceInfo's snmpUserName.
             snmpVersion(string): InventoryDeviceInfo's snmpVersion.
-            type(string): InventoryDeviceInfo's type. Available
-                values are 'COMPUTE_DEVICE',
-                'MERAKI_DASHBOARD', 'NETWORK_DEVICE' and
-                'NODATACHANGE'.
-            updateMgmtIPaddressList(list): InventoryDeviceInfo's
-                updateMgmtIPaddressList (list of
-                objects).
+            type(string): InventoryDeviceInfo's type. Available values are 'COMPUTE_DEVICE', 'MERAKI_DASHBOARD',
+                'NETWORK_DEVICE' and 'NODATACHANGE'.
+            updateMgmtIPaddressList(list): InventoryDeviceInfo's updateMgmtIPaddressList (list of objects).
             userName(string): InventoryDeviceInfo's userName.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2379,14 +2285,10 @@ class Devices(object):
         """Returns the functional-capability for given devices.
 
         Args:
-            device_id(basestring): Accepts comma separated
-                deviceid's and return list of
-                functional-capabilities for the given
-                id's. If invalid or not-found id's are
-                provided, null entry will be returned in
-                the list.
-            function_name(basestring, list, set, tuple):
-                functionName query parameter.
+            device_id(basestring): Accepts comma separated deviceid's and return list of functional-capabilities for
+                the given id's. If invalid or not-found id's are provided, null entry will be returned
+                in the list.
+            function_name(basestring, list, set, tuple): functionName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2451,14 +2353,11 @@ class Devices(object):
         """Exports the selected network device to a file.
 
         Args:
-            deviceUuids(list): ExportDeviceDTO's deviceUuids (list
-                of strings).
+            deviceUuids(list): ExportDeviceDTO's deviceUuids (list of strings).
             id(string): ExportDeviceDTO's id.
-            operationEnum(string): ExportDeviceDTO's operationEnum.
-                Available values are 'CREDENTIALDETAILS'
-                and 'DEVICEDETAILS'.
-            parameters(list): ExportDeviceDTO's parameters (list of
-                strings).
+            operationEnum(string): ExportDeviceDTO's operationEnum. Available values are 'CREDENTIALDETAILS' and
+                'DEVICEDETAILS'.
+            parameters(list): ExportDeviceDTO's parameters (list of strings).
             password(string): ExportDeviceDTO's password.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2771,16 +2670,10 @@ class Devices(object):
             device_id(basestring): deviceId query parameter.
             limit(basestring): limit query parameter.
             offset(basestring): offset query parameter.
-            name_list(basestring, list, set, tuple): nameList query
-                parameter.
-            vendor_equipment_type_list(basestring, list, set,
-                tuple): vendorEquipmentTypeList query
-                parameter.
-            part_number_list(basestring, list, set, tuple):
-                partNumberList query parameter.
-            operational_state_code_list(basestring, list, set,
-                tuple): operationalStateCodeList query
-                parameter.
+            name_list(basestring, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3121,23 +3014,16 @@ class Devices(object):
 
         Args:
             vrf_name(basestring): vrfName query parameter.
-            management_ip_address(basestring): managementIpAddress
-                query parameter.
+            management_ip_address(basestring): managementIpAddress query parameter.
             hostname(basestring): hostname query parameter.
             mac_address(basestring): macAddress query parameter.
             family(basestring): family query parameter.
-            collection_status(basestring): collectionStatus query
-                parameter.
-            collection_interval(basestring): collectionInterval
-                query parameter.
-            software_version(basestring): softwareVersion query
-                parameter.
+            collection_status(basestring): collectionStatus query parameter.
+            collection_interval(basestring): collectionInterval query parameter.
+            software_version(basestring): softwareVersion query parameter.
             software_type(basestring): softwareType query parameter.
-            reachability_status(basestring): reachabilityStatus
-                query parameter.
-            reachability_failure_reason(basestring):
-                reachabilityFailureReason query
-                parameter.
+            reachability_status(basestring): reachabilityStatus query parameter.
+            reachability_failure_reason(basestring): reachabilityFailureReason query parameter.
             error_code(basestring): errorCode query parameter.
             platform_id(basestring): platformId query parameter.
             series(basestring): series query parameter.
@@ -3146,8 +3032,7 @@ class Devices(object):
             up_time(basestring): upTime query parameter.
             role(basestring): role query parameter.
             role_source(basestring): roleSource query parameter.
-            associated_wlc_ip(basestring): associatedWlcIp query
-                parameter.
+            associated_wlc_ip(basestring): associatedWlcIp query parameter.
             offset(basestring): offset query parameter.
             limit(basestring): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3271,12 +3156,9 @@ class Devices(object):
         time. .
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds)
-                when the device data is required.
-            search_by(basestring): MAC Address or Device Name value
-                or UUID of the network device.
-            identifier(basestring): One of keywords : macAddress or
-                uuid or nwDeviceName.
+            timestamp(basestring, int): Epoch time(in milliseconds) when the device data is required.
+            search_by(basestring): MAC Address or Device Name value or UUID of the network device.
+            identifier(basestring): One of keywords : macAddress or uuid or nwDeviceName.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3351,17 +3233,13 @@ class Devices(object):
         additional value added services.
 
         Args:
-            device_role(basestring): The device role (One of CORE,
-                ACCESS, DISTRIBUTION, ROUTER, WLC, AP).
+            device_role(basestring): The device role (One of CORE, ACCESS, DISTRIBUTION, ROUTER, WLC, AP).
             site_id(basestring): Assurance site UUID value.
-            health(basestring): The device overall health (One of
-                POOR, FAIR, GOOD).
+            health(basestring): The device overall health (One of POOR, FAIR, GOOD).
             start_time(int): UTC epoch time in milliseconds.
             end_time(int): UTC epoch time in miliseconds.
-            limit(int): Max number of device entries in the response
-                (default to 50.  Max at 1000).
-            offset(int): The offset of the first device in the
-                returned data.
+            limit(int): Max number of device entries in the response (default to 50.  Max at 1000).
+            offset(int): The offset of the first device in the returned data.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

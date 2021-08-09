@@ -83,10 +83,8 @@ class SiteDesign(object):
         site/area/building/floor .
 
         Args:
-            provisioning(list): Provisioning, property of the
-                request body (list of objects).
-            siteProfile(list): Site Profile, property of the request
-                body (list of objects).
+            provisioning(list): Provisioning, property of the request body (list of objects).
+            siteProfile(list): Site Profile, property of the request body (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -169,8 +167,7 @@ class SiteDesign(object):
         information.
 
         Args:
-            device_ip(string): Device Ip, property of the request
-                body.
+            device_ip(string): Device Ip, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -249,8 +246,7 @@ class SiteDesign(object):
         address.
 
         Args:
-            device_ip(basestring): Device to which the site has to
-                be assigned.
+            device_ip(basestring): Device to which the site has to be assigned.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

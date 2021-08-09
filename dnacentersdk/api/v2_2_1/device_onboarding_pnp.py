@@ -77,14 +77,11 @@ class DeviceOnboardingPnp(object):
                                             name,
                                             headers=None,
                                             **request_parameters):
-        """Returns the summary of devices synced from the given smart
-        account & virtual account with PnP.
+        """Returns the summary of devices synced from the given smart account & virtual account with PnP.
 
         Args:
-            domain(basestring): domain path parameter. Smart Account
-                Domain.
-            name(basestring): name path parameter. Virtual Account
-                Name.
+            domain(basestring): domain path parameter. Smart Account Domain.
+            name(basestring): name path parameter. Virtual Account Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -212,23 +209,16 @@ class DeviceOnboardingPnp(object):
 
         Args:
             _id(string): Device Onboarding (PnP)'s _id.
-            dayZeroConfig(object): Device Onboarding (PnP)'s
-                dayZeroConfig.
-            dayZeroConfigPreview(object): Device Onboarding (PnP)'s
-                dayZeroConfigPreview.
-            deviceInfo(object): Device Onboarding (PnP)'s
-                deviceInfo.
-            runSummaryList(list): Device Onboarding (PnP)'s
-                runSummaryList (list of objects).
-            systemResetWorkflow(object): Device Onboarding (PnP)'s
-                systemResetWorkflow.
-            systemWorkflow(object): Device Onboarding (PnP)'s
-                systemWorkflow.
+            dayZeroConfig(object): Device Onboarding (PnP)'s dayZeroConfig.
+            dayZeroConfigPreview(object): Device Onboarding (PnP)'s dayZeroConfigPreview.
+            deviceInfo(object): Device Onboarding (PnP)'s deviceInfo.
+            runSummaryList(list): Device Onboarding (PnP)'s runSummaryList (list of objects).
+            systemResetWorkflow(object): Device Onboarding (PnP)'s systemResetWorkflow.
+            systemWorkflow(object): Device Onboarding (PnP)'s systemWorkflow.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             version(number): Device Onboarding (PnP)'s version.
             workflow(object): Device Onboarding (PnP)'s workflow.
-            workflowParameters(object): Device Onboarding (PnP)'s
-                workflowParameters.
+            workflowParameters(object): Device Onboarding (PnP)'s workflowParameters.
             id(basestring): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -380,8 +370,7 @@ class DeviceOnboardingPnp(object):
         """Un-Claims one of more devices with specified workflow.
 
         Args:
-            deviceIdList(list): Device Onboarding (PnP)'s
-                deviceIdList (list of strings).
+            deviceIdList(list): Device Onboarding (PnP)'s deviceIdList (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -463,33 +452,24 @@ class DeviceOnboardingPnp(object):
                                   payload=None,
                                   active_validation=True,
                                   **request_parameters):
-        """Updates the PnP Server profile in a registered Virtual Account
-        in the PnP database. The response payload returns the
-        updated smart & virtual account info.
+        """Updates the PnP Server profile in a registered Virtual Account in the PnP database. The response payload returns
+        the updated smart & virtual account info.
 
         Args:
-            autoSyncPeriod(integer): Device Onboarding (PnP)'s
-                autoSyncPeriod.
+            autoSyncPeriod(integer): Device Onboarding (PnP)'s autoSyncPeriod.
             ccoUser(string): Device Onboarding (PnP)'s ccoUser.
             expiry(integer): Device Onboarding (PnP)'s expiry.
             lastSync(integer): Device Onboarding (PnP)'s lastSync.
             profile(object): Device Onboarding (PnP)'s profile.
-            smartAccountId(string): Device Onboarding (PnP)'s
-                smartAccountId.
-            syncResult(object): Device Onboarding (PnP)'s
-                syncResult.
-            syncResultStr(string): Device Onboarding (PnP)'s
-                syncResultStr.
-            syncStartTime(integer): Device Onboarding (PnP)'s
-                syncStartTime.
-            syncStatus(string): Device Onboarding (PnP)'s
-                syncStatus. Available values are
-                'NOT_SYNCED', 'SYNCING', 'SUCCESS' and
-                'FAILURE'.
+            smartAccountId(string): Device Onboarding (PnP)'s smartAccountId.
+            syncResult(object): Device Onboarding (PnP)'s syncResult.
+            syncResultStr(string): Device Onboarding (PnP)'s syncResultStr.
+            syncStartTime(integer): Device Onboarding (PnP)'s syncStartTime.
+            syncStatus(string): Device Onboarding (PnP)'s syncStatus. Available values are 'NOT_SYNCED', 'SYNCING',
+                'SUCCESS' and 'FAILURE'.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             token(string): Device Onboarding (PnP)'s token.
-            virtualAccountId(string): Device Onboarding (PnP)'s
-                virtualAccountId.
+            virtualAccountId(string): Device Onboarding (PnP)'s virtualAccountId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -595,35 +575,25 @@ class DeviceOnboardingPnp(object):
                             payload=None,
                             active_validation=True,
                             **request_parameters):
-        """Registers a Smart Account, Virtual Account and the relevant
-        server profile info with the PnP System & database. The
-        devices present in the registered virtual account are
-        synced with the PnP database as well. The response
-        payload returns the new profile.
+        """Registers a Smart Account, Virtual Account and the relevant server profile info with the PnP System & database.
+        The devices present in the registered virtual account are synced with the PnP database as well. The
+        response payload returns the new profile.
 
         Args:
-            autoSyncPeriod(integer): Device Onboarding (PnP)'s
-                autoSyncPeriod.
+            autoSyncPeriod(integer): Device Onboarding (PnP)'s autoSyncPeriod.
             ccoUser(string): Device Onboarding (PnP)'s ccoUser.
             expiry(integer): Device Onboarding (PnP)'s expiry.
             lastSync(integer): Device Onboarding (PnP)'s lastSync.
             profile(object): Device Onboarding (PnP)'s profile.
-            smartAccountId(string): Device Onboarding (PnP)'s
-                smartAccountId.
-            syncResult(object): Device Onboarding (PnP)'s
-                syncResult.
-            syncResultStr(string): Device Onboarding (PnP)'s
-                syncResultStr.
-            syncStartTime(integer): Device Onboarding (PnP)'s
-                syncStartTime.
-            syncStatus(string): Device Onboarding (PnP)'s
-                syncStatus. Available values are
-                'NOT_SYNCED', 'SYNCING', 'SUCCESS' and
-                'FAILURE'.
+            smartAccountId(string): Device Onboarding (PnP)'s smartAccountId.
+            syncResult(object): Device Onboarding (PnP)'s syncResult.
+            syncResultStr(string): Device Onboarding (PnP)'s syncResultStr.
+            syncStartTime(integer): Device Onboarding (PnP)'s syncStartTime.
+            syncStatus(string): Device Onboarding (PnP)'s syncStatus. Available values are 'NOT_SYNCED', 'SYNCING',
+                'SUCCESS' and 'FAILURE'.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             token(string): Device Onboarding (PnP)'s token.
-            virtualAccountId(string): Device Onboarding (PnP)'s
-                virtualAccountId.
+            virtualAccountId(string): Device Onboarding (PnP)'s virtualAccountId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -731,23 +701,16 @@ class DeviceOnboardingPnp(object):
 
         Args:
             _id(string): Device Onboarding (PnP)'s _id.
-            dayZeroConfig(object): Device Onboarding (PnP)'s
-                dayZeroConfig.
-            dayZeroConfigPreview(object): Device Onboarding (PnP)'s
-                dayZeroConfigPreview.
-            deviceInfo(object): Device Onboarding (PnP)'s
-                deviceInfo.
-            runSummaryList(list): Device Onboarding (PnP)'s
-                runSummaryList (list of objects).
-            systemResetWorkflow(object): Device Onboarding (PnP)'s
-                systemResetWorkflow.
-            systemWorkflow(object): Device Onboarding (PnP)'s
-                systemWorkflow.
+            dayZeroConfig(object): Device Onboarding (PnP)'s dayZeroConfig.
+            dayZeroConfigPreview(object): Device Onboarding (PnP)'s dayZeroConfigPreview.
+            deviceInfo(object): Device Onboarding (PnP)'s deviceInfo.
+            runSummaryList(list): Device Onboarding (PnP)'s runSummaryList (list of objects).
+            systemResetWorkflow(object): Device Onboarding (PnP)'s systemResetWorkflow.
+            systemWorkflow(object): Device Onboarding (PnP)'s systemWorkflow.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             version(number): Device Onboarding (PnP)'s version.
             workflow(object): Device Onboarding (PnP)'s workflow.
-            workflowParameters(object): Device Onboarding (PnP)'s
-                workflowParameters.
+            workflowParameters(object): Device Onboarding (PnP)'s workflowParameters.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -836,18 +799,14 @@ class DeviceOnboardingPnp(object):
                                    name,
                                    headers=None,
                                    **request_parameters):
-        """Deregisters the specified smart account & virtual account info
-        and the associated device information from the PnP
-        System & database. The devices associated with the
-        deregistered virtual account are removed from the PnP
-        database as well. The response payload contains the
-        deregistered smart & virtual account information.
+        """Deregisters the specified smart account & virtual account info and the associated device information from the
+        PnP System & database. The devices associated with the deregistered virtual account are removed from the
+        PnP database as well. The response payload contains the deregistered smart & virtual account
+        information.
 
         Args:
-            domain(basestring): domain query parameter. Smart
-                Account Domain.
-            name(basestring): name query parameter. Virtual Account
-                Name.
+            domain(basestring): domain query parameter. Smart Account Domain.
+            name(basestring): name query parameter. Virtual Account Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -984,28 +943,21 @@ class DeviceOnboardingPnp(object):
 
         Args:
             _id(string): Device Onboarding (PnP)'s _id.
-            addToInventory(boolean): Device Onboarding (PnP)'s
-                addToInventory.
+            addToInventory(boolean): Device Onboarding (PnP)'s addToInventory.
             addedOn(integer): Device Onboarding (PnP)'s addedOn.
             configId(string): Device Onboarding (PnP)'s configId.
-            currTaskIdx(integer): Device Onboarding (PnP)'s
-                currTaskIdx.
-            description(string): Device Onboarding (PnP)'s
-                description.
+            currTaskIdx(integer): Device Onboarding (PnP)'s currTaskIdx.
+            description(string): Device Onboarding (PnP)'s description.
             endTime(integer): Device Onboarding (PnP)'s endTime.
             execTime(integer): Device Onboarding (PnP)'s execTime.
             imageId(string): Device Onboarding (PnP)'s imageId.
-            instanceType(string): Device Onboarding (PnP)'s
-                instanceType. Available values are
-                'SystemWorkflow', 'UserWorkflow' and
-                'SystemResetWorkflow'.
-            lastupdateOn(integer): Device Onboarding (PnP)'s
-                lastupdateOn.
+            instanceType(string): Device Onboarding (PnP)'s instanceType. Available values are 'SystemWorkflow',
+                'UserWorkflow' and 'SystemResetWorkflow'.
+            lastupdateOn(integer): Device Onboarding (PnP)'s lastupdateOn.
             name(string): Device Onboarding (PnP)'s name.
             startTime(integer): Device Onboarding (PnP)'s startTime.
             state(string): Device Onboarding (PnP)'s state.
-            tasks(list): Device Onboarding (PnP)'s tasks (list of
-                objects).
+            tasks(list): Device Onboarding (PnP)'s tasks (list of objects).
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             type(string): Device Onboarding (PnP)'s type.
             useState(string): Device Onboarding (PnP)'s useState.
@@ -1227,17 +1179,14 @@ class DeviceOnboardingPnp(object):
                                  payload=None,
                                  active_validation=True,
                                  **request_parameters):
-        """Claim a device based on DNA-C Site based design process.
-        Different parameters are required for different device
+        """Claim a device based on DNA-C Site based design process. Different parameters are required for different device
         platforms.
 
         Args:
             deviceId(string): Device Onboarding (PnP)'s deviceId.
             siteId(string): Device Onboarding (PnP)'s siteId.
-            type(string): Device Onboarding (PnP)'s type. Available
-                values are 'Default', 'AccessPoint',
-                'StackSwitch', 'Sensor' and
-                'MobilityExpress'.
+            type(string): Device Onboarding (PnP)'s type. Available values are 'Default', 'AccessPoint',
+                'StackSwitch', 'Sensor' and 'MobilityExpress'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1309,12 +1258,10 @@ class DeviceOnboardingPnp(object):
                                  domain,
                                  headers=None,
                                  **request_parameters):
-        """Returns list of virtual accounts associated with the specified
-        smart account.
+        """Returns list of virtual accounts associated with the specified smart account.
 
         Args:
-            domain(basestring): domain path parameter. Smart Account
-                Domain.
+            domain(basestring): domain path parameter. Smart Account Domain.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1371,8 +1318,7 @@ class DeviceOnboardingPnp(object):
         """Returns the workflow count.
 
         Args:
-            name(basestring, list, set, tuple): name query
-                parameter. Workflow Name.
+            name(basestring, list, set, tuple): name query parameter. Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1487,16 +1433,11 @@ class DeviceOnboardingPnp(object):
 
         Args:
             _id(string): Device Onboarding (PnP)'s _id.
-            aaaCredentials(object): Device Onboarding (PnP)'s
-                aaaCredentials.
-            acceptEula(boolean): Device Onboarding (PnP)'s
-                acceptEula.
-            defaultProfile(object): Device Onboarding (PnP)'s
-                defaultProfile.
-            savaMappingList(list): Device Onboarding (PnP)'s
-                savaMappingList (list of objects).
-            taskTimeOuts(object): Device Onboarding (PnP)'s
-                taskTimeOuts.
+            aaaCredentials(object): Device Onboarding (PnP)'s aaaCredentials.
+            acceptEula(boolean): Device Onboarding (PnP)'s acceptEula.
+            defaultProfile(object): Device Onboarding (PnP)'s defaultProfile.
+            savaMappingList(list): Device Onboarding (PnP)'s savaMappingList (list of objects).
+            taskTimeOuts(object): Device Onboarding (PnP)'s taskTimeOuts.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             version(integer): Device Onboarding (PnP)'s version.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1585,26 +1526,16 @@ class DeviceOnboardingPnp(object):
                       type=None,
                       headers=None,
                       **request_parameters):
-        """Returns the list of workflows based on filter criteria. If a
-        limit is not specified, it will default to return 50
-        workflows. Pagination and sorting are also supported by
-        this endpoint.
+        """Returns the list of workflows based on filter criteria. If a limit is not specified, it will default to return
+        50 workflows. Pagination and sorting are also supported by this endpoint.
 
         Args:
-            limit(int): limit query parameter. Limits number of
-                results.
-            offset(int): offset query parameter. Index of first
-                result.
-            sort(basestring, list, set, tuple): sort query
-                parameter. Comma seperated lost of
-                fields to sort on.
-            sort_order(basestring): sortOrder query parameter. Sort
-                Order Ascending (asc) or Descending
-                (des).
-            type(basestring, list, set, tuple): type query
-                parameter. Workflow Type.
-            name(basestring, list, set, tuple): name query
-                parameter. Workflow Name.
+            limit(int): limit query parameter. Limits number of results.
+            offset(int): offset query parameter. Index of first result.
+            sort(basestring, list, set, tuple): sort query parameter. Comma seperated lost of fields to sort on.
+            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des).
+            type(basestring, list, set, tuple): type query parameter. Workflow Type.
+            name(basestring, list, set, tuple): name query parameter. Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1692,33 +1623,25 @@ class DeviceOnboardingPnp(object):
                        payload=None,
                        active_validation=True,
                        **request_parameters):
-        """Adds a PnP Workflow along with the relevant tasks in the
-        workflow into the PnP database.
+        """Adds a PnP Workflow along with the relevant tasks in the workflow into the PnP database.
 
         Args:
             _id(string): Device Onboarding (PnP)'s _id.
-            addToInventory(boolean): Device Onboarding (PnP)'s
-                addToInventory.
+            addToInventory(boolean): Device Onboarding (PnP)'s addToInventory.
             addedOn(integer): Device Onboarding (PnP)'s addedOn.
             configId(string): Device Onboarding (PnP)'s configId.
-            currTaskIdx(integer): Device Onboarding (PnP)'s
-                currTaskIdx.
-            description(string): Device Onboarding (PnP)'s
-                description.
+            currTaskIdx(integer): Device Onboarding (PnP)'s currTaskIdx.
+            description(string): Device Onboarding (PnP)'s description.
             endTime(integer): Device Onboarding (PnP)'s endTime.
             execTime(integer): Device Onboarding (PnP)'s execTime.
             imageId(string): Device Onboarding (PnP)'s imageId.
-            instanceType(string): Device Onboarding (PnP)'s
-                instanceType. Available values are
-                'SystemWorkflow', 'UserWorkflow' and
-                'SystemResetWorkflow'.
-            lastupdateOn(integer): Device Onboarding (PnP)'s
-                lastupdateOn.
+            instanceType(string): Device Onboarding (PnP)'s instanceType. Available values are 'SystemWorkflow',
+                'UserWorkflow' and 'SystemResetWorkflow'.
+            lastupdateOn(integer): Device Onboarding (PnP)'s lastupdateOn.
             name(string): Device Onboarding (PnP)'s name.
             startTime(integer): Device Onboarding (PnP)'s startTime.
             state(string): Device Onboarding (PnP)'s state.
-            tasks(list): Device Onboarding (PnP)'s tasks (list of
-                objects).
+            tasks(list): Device Onboarding (PnP)'s tasks (list of objects).
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             type(string): Device Onboarding (PnP)'s type.
             useState(string): Device Onboarding (PnP)'s useState.
@@ -1833,11 +1756,9 @@ class DeviceOnboardingPnp(object):
         """Recovers a device from a Workflow Execution Error state.
 
         Args:
-            deviceResetList(list): Device Onboarding (PnP)'s
-                deviceResetList (list of objects).
+            deviceResetList(list): Device Onboarding (PnP)'s deviceResetList (list of objects).
             projectId(string): Device Onboarding (PnP)'s projectId.
-            workflowId(string): Device Onboarding (PnP)'s
-                workflowId.
+            workflowId(string): Device Onboarding (PnP)'s workflowId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1923,33 +1844,24 @@ class DeviceOnboardingPnp(object):
                                      payload=None,
                                      active_validation=True,
                                      **request_parameters):
-        """Synchronizes the device info from the given smart account &
-        virtual account with the PnP database. The response
+        """Synchronizes the device info from the given smart account & virtual account with the PnP database. The response
         payload returns a list of synced devices.
 
         Args:
-            autoSyncPeriod(integer): Device Onboarding (PnP)'s
-                autoSyncPeriod.
+            autoSyncPeriod(integer): Device Onboarding (PnP)'s autoSyncPeriod.
             ccoUser(string): Device Onboarding (PnP)'s ccoUser.
             expiry(integer): Device Onboarding (PnP)'s expiry.
             lastSync(integer): Device Onboarding (PnP)'s lastSync.
             profile(object): Device Onboarding (PnP)'s profile.
-            smartAccountId(string): Device Onboarding (PnP)'s
-                smartAccountId.
-            syncResult(object): Device Onboarding (PnP)'s
-                syncResult.
-            syncResultStr(string): Device Onboarding (PnP)'s
-                syncResultStr.
-            syncStartTime(integer): Device Onboarding (PnP)'s
-                syncStartTime.
-            syncStatus(string): Device Onboarding (PnP)'s
-                syncStatus. Available values are
-                'NOT_SYNCED', 'SYNCING', 'SUCCESS' and
-                'FAILURE'.
+            smartAccountId(string): Device Onboarding (PnP)'s smartAccountId.
+            syncResult(object): Device Onboarding (PnP)'s syncResult.
+            syncResultStr(string): Device Onboarding (PnP)'s syncResultStr.
+            syncStartTime(integer): Device Onboarding (PnP)'s syncStartTime.
+            syncStatus(string): Device Onboarding (PnP)'s syncStatus. Available values are 'NOT_SYNCED', 'SYNCING',
+                'SUCCESS' and 'FAILURE'.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             token(string): Device Onboarding (PnP)'s token.
-            virtualAccountId(string): Device Onboarding (PnP)'s
-                virtualAccountId.
+            virtualAccountId(string): Device Onboarding (PnP)'s virtualAccountId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2050,10 +1962,8 @@ class DeviceOnboardingPnp(object):
         Args:
             deviceId(string): Device Onboarding (PnP)'s deviceId.
             siteId(string): Device Onboarding (PnP)'s siteId.
-            type(string): Device Onboarding (PnP)'s type. Available
-                values are 'Default', 'AccessPoint',
-                'StackSwitch', 'Sensor' and
-                'MobilityExpress'.
+            type(string): Device Onboarding (PnP)'s type. Available values are 'Default', 'AccessPoint',
+                'StackSwitch', 'Sensor' and 'MobilityExpress'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2139,20 +2049,15 @@ class DeviceOnboardingPnp(object):
         """Claims one of more devices with specified workflow.
 
         Args:
-            configFileUrl(string): Device Onboarding (PnP)'s
-                configFileUrl.
+            configFileUrl(string): Device Onboarding (PnP)'s configFileUrl.
             configId(string): Device Onboarding (PnP)'s configId.
-            deviceClaimList(list): Device Onboarding (PnP)'s
-                deviceClaimList (list of objects).
-            fileServiceId(string): Device Onboarding (PnP)'s
-                fileServiceId.
+            deviceClaimList(list): Device Onboarding (PnP)'s deviceClaimList (list of objects).
+            fileServiceId(string): Device Onboarding (PnP)'s fileServiceId.
             imageId(string): Device Onboarding (PnP)'s imageId.
             imageUrl(string): Device Onboarding (PnP)'s imageUrl.
-            populateInventory(boolean): Device Onboarding (PnP)'s
-                populateInventory.
+            populateInventory(boolean): Device Onboarding (PnP)'s populateInventory.
             projectId(string): Device Onboarding (PnP)'s projectId.
-            workflowId(string): Device Onboarding (PnP)'s
-                workflowId.
+            workflowId(string): Device Onboarding (PnP)'s workflowId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2249,43 +2154,24 @@ class DeviceOnboardingPnp(object):
                          workflow_name=None,
                          headers=None,
                          **request_parameters):
-        """Returns the device count based on filter criteria. This is
-        useful for pagination.
+        """Returns the device count based on filter criteria. This is useful for pagination.
 
         Args:
-            serial_number(basestring, list, set, tuple):
-                serialNumber query parameter. Device
-                Serial Number.
-            state(basestring, list, set, tuple): state query
-                parameter. Device State.
-            onb_state(basestring, list, set, tuple): onbState query
-                parameter. Device Onboarding State.
-            cm_state(basestring, list, set, tuple): cmState query
-                parameter. Device Connection Manager
-                State.
-            name(basestring, list, set, tuple): name query
-                parameter. Device Name.
-            pid(basestring, list, set, tuple): pid query parameter.
-                Device ProductId.
-            source(basestring, list, set, tuple): source query
-                parameter. Device Source.
-            project_id(basestring, list, set, tuple): projectId
-                query parameter. Device Project Id.
-            workflow_id(basestring, list, set, tuple): workflowId
-                query parameter. Device Workflow Id.
-            project_name(basestring, list, set, tuple): projectName
-                query parameter. Device Project Name.
-            workflow_name(basestring, list, set, tuple):
-                workflowName query parameter. Device
-                Workflow Name.
-            smart_account_id(basestring, list, set, tuple):
-                smartAccountId query parameter. Device
-                Smart Account.
-            virtual_account_id(basestring, list, set, tuple):
-                virtualAccountId query parameter. Device
-                Virtual Account.
-            last_contact(bool): lastContact query parameter. Device
-                Has Contacted lastContact > 0.
+            serial_number(basestring, list, set, tuple): serialNumber query parameter. Device Serial Number.
+            state(basestring, list, set, tuple): state query parameter. Device State.
+            onb_state(basestring, list, set, tuple): onbState query parameter. Device Onboarding State.
+            cm_state(basestring, list, set, tuple): cmState query parameter. Device Connection Manager State.
+            name(basestring, list, set, tuple): name query parameter. Device Name.
+            pid(basestring, list, set, tuple): pid query parameter. Device ProductId.
+            source(basestring, list, set, tuple): source query parameter. Device Source.
+            project_id(basestring, list, set, tuple): projectId query parameter. Device Project Id.
+            workflow_id(basestring, list, set, tuple): workflowId query parameter. Device Workflow Id.
+            project_name(basestring, list, set, tuple): projectName query parameter. Device Project Name.
+            workflow_name(basestring, list, set, tuple): workflowName query parameter. Device Workflow Name.
+            smart_account_id(basestring, list, set, tuple): smartAccountId query parameter. Device Smart Account.
+            virtual_account_id(basestring, list, set, tuple): virtualAccountId query parameter. Device Virtual
+                Account.
+            last_contact(bool): lastContact query parameter. Device Has Contacted lastContact > 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2396,61 +2282,32 @@ class DeviceOnboardingPnp(object):
                         workflow_name=None,
                         headers=None,
                         **request_parameters):
-        """Returns list of devices based on filter crieteria. If a limit is
-        not specified, it will default to return 50 devices.
-        Pagination and sorting are also supported by this
-        endpoint.
+        """Returns list of devices based on filter crieteria. If a limit is not specified, it will default to return 50
+        devices. Pagination and sorting are also supported by this endpoint.
 
         Args:
-            limit(int): limit query parameter. Limits number of
-                results.
-            offset(int): offset query parameter. Index of first
-                result.
-            sort(basestring, list, set, tuple): sort query
-                parameter. Comma seperated list of
-                fields to sort on.
-            sort_order(basestring): sortOrder query parameter. Sort
-                Order Ascending (asc) or Descending
-                (des).
-            serial_number(basestring, list, set, tuple):
-                serialNumber query parameter. Device
-                Serial Number.
-            state(basestring, list, set, tuple): state query
-                parameter. Device State.
-            onb_state(basestring, list, set, tuple): onbState query
-                parameter. Device Onboarding State.
-            cm_state(basestring, list, set, tuple): cmState query
-                parameter. Device Connection Manager
-                State.
-            name(basestring, list, set, tuple): name query
-                parameter. Device Name.
-            pid(basestring, list, set, tuple): pid query parameter.
-                Device ProductId.
-            source(basestring, list, set, tuple): source query
-                parameter. Device Source.
-            project_id(basestring, list, set, tuple): projectId
-                query parameter. Device Project Id.
-            workflow_id(basestring, list, set, tuple): workflowId
-                query parameter. Device Workflow Id.
-            project_name(basestring, list, set, tuple): projectName
-                query parameter. Device Project Name.
-            workflow_name(basestring, list, set, tuple):
-                workflowName query parameter. Device
-                Workflow Name.
-            smart_account_id(basestring, list, set, tuple):
-                smartAccountId query parameter. Device
-                Smart Account.
-            virtual_account_id(basestring, list, set, tuple):
-                virtualAccountId query parameter. Device
-                Virtual Account.
-            last_contact(bool): lastContact query parameter. Device
-                Has Contacted lastContact > 0.
-            mac_address(basestring): macAddress query parameter.
-                Device Mac Address.
-            hostname(basestring): hostname query parameter. Device
-                Hostname.
-            site_name(basestring): siteName query parameter. Device
-                Site Name.
+            limit(int): limit query parameter. Limits number of results.
+            offset(int): offset query parameter. Index of first result.
+            sort(basestring, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on.
+            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des).
+            serial_number(basestring, list, set, tuple): serialNumber query parameter. Device Serial Number.
+            state(basestring, list, set, tuple): state query parameter. Device State.
+            onb_state(basestring, list, set, tuple): onbState query parameter. Device Onboarding State.
+            cm_state(basestring, list, set, tuple): cmState query parameter. Device Connection Manager State.
+            name(basestring, list, set, tuple): name query parameter. Device Name.
+            pid(basestring, list, set, tuple): pid query parameter. Device ProductId.
+            source(basestring, list, set, tuple): source query parameter. Device Source.
+            project_id(basestring, list, set, tuple): projectId query parameter. Device Project Id.
+            workflow_id(basestring, list, set, tuple): workflowId query parameter. Device Workflow Id.
+            project_name(basestring, list, set, tuple): projectName query parameter. Device Project Name.
+            workflow_name(basestring, list, set, tuple): workflowName query parameter. Device Workflow Name.
+            smart_account_id(basestring, list, set, tuple): smartAccountId query parameter. Device Smart Account.
+            virtual_account_id(basestring, list, set, tuple): virtualAccountId query parameter. Device Virtual
+                Account.
+            last_contact(bool): lastContact query parameter. Device Has Contacted lastContact > 0.
+            mac_address(basestring): macAddress query parameter. Device Mac Address.
+            hostname(basestring): hostname query parameter. Device Hostname.
+            site_name(basestring): siteName query parameter. Device Site Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2578,23 +2435,16 @@ class DeviceOnboardingPnp(object):
 
         Args:
             _id(string): Device Onboarding (PnP)'s _id.
-            dayZeroConfig(object): Device Onboarding (PnP)'s
-                dayZeroConfig.
-            dayZeroConfigPreview(object): Device Onboarding (PnP)'s
-                dayZeroConfigPreview.
-            deviceInfo(object): Device Onboarding (PnP)'s
-                deviceInfo.
-            runSummaryList(list): Device Onboarding (PnP)'s
-                runSummaryList (list of objects).
-            systemResetWorkflow(object): Device Onboarding (PnP)'s
-                systemResetWorkflow.
-            systemWorkflow(object): Device Onboarding (PnP)'s
-                systemWorkflow.
+            dayZeroConfig(object): Device Onboarding (PnP)'s dayZeroConfig.
+            dayZeroConfigPreview(object): Device Onboarding (PnP)'s dayZeroConfigPreview.
+            deviceInfo(object): Device Onboarding (PnP)'s deviceInfo.
+            runSummaryList(list): Device Onboarding (PnP)'s runSummaryList (list of objects).
+            systemResetWorkflow(object): Device Onboarding (PnP)'s systemResetWorkflow.
+            systemWorkflow(object): Device Onboarding (PnP)'s systemWorkflow.
             tenantId(string): Device Onboarding (PnP)'s tenantId.
             version(number): Device Onboarding (PnP)'s version.
             workflow(object): Device Onboarding (PnP)'s workflow.
-            workflowParameters(object): Device Onboarding (PnP)'s
-                workflowParameters.
+            workflowParameters(object): Device Onboarding (PnP)'s workflowParameters.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2684,18 +2534,12 @@ class DeviceOnboardingPnp(object):
                            sort_order=None,
                            headers=None,
                            **request_parameters):
-        """Returns history for a specific device. Serial number is a
-        required parameter.
+        """Returns history for a specific device. Serial number is a required parameter.
 
         Args:
-            serial_number(basestring): serialNumber query parameter.
-                Device Serial Number.
-            sort(basestring, list, set, tuple): sort query
-                parameter. Comma seperated list of
-                fields to sort on.
-            sort_order(basestring): sortOrder query parameter. Sort
-                Order Ascending (asc) or Descending
-                (des).
+            serial_number(basestring): serialNumber query parameter. Device Serial Number.
+            sort(basestring, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on.
+            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

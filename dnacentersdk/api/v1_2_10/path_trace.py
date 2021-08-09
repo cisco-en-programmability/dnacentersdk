@@ -94,23 +94,19 @@ class PathTrace(object):
         filtered by specified parameters.
 
         Args:
-            periodic_refresh(bool): Is analysis periodically
-                refreshed?.
+            periodic_refresh(bool): Is analysis periodically refreshed?.
             source_ip(basestring): Source IP address.
             dest_ip(basestring): Destination IP address.
             source_port(basestring): Source port.
             dest_port(basestring): Destination port.
-            gt_create_time(basestring): Analyses requested after
-                this time.
-            lt_create_time(basestring): Analyses requested before
-                this time.
+            gt_create_time(basestring): Analyses requested after this time.
+            lt_create_time(basestring): Analyses requested before this time.
             protocol(basestring): protocol query parameter.
             status(basestring): status query parameter.
             task_id(basestring): Task ID.
             last_update_time(basestring): Last update time.
             limit(basestring): Number of resources returned.
-            offset(basestring): Start index of resources returned
-                (1-based).
+            offset(basestring): Start index of resources returned (1-based).
             order(basestring): Order by this field.
             sort_by(basestring): Sort by this field.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -278,10 +274,8 @@ class PathTrace(object):
             controlPath(boolean): FlowAnalysisRequest's controlPath.
             destIP(string): FlowAnalysisRequest's destIP.
             destPort(string): FlowAnalysisRequest's destPort.
-            inclusions(list): FlowAnalysisRequest's inclusions (list
-                of strings).
-            periodicRefresh(boolean): FlowAnalysisRequest's
-                periodicRefresh.
+            inclusions(list): FlowAnalysisRequest's inclusions (list of strings).
+            periodicRefresh(boolean): FlowAnalysisRequest's periodicRefresh.
             protocol(string): FlowAnalysisRequest's protocol.
             sourceIP(string): FlowAnalysisRequest's sourceIP.
             sourcePort(string): FlowAnalysisRequest's sourcePort.

@@ -83,37 +83,23 @@ class Applications(object):
                      start_time=None,
                      headers=None,
                      **request_parameters):
-        """Intent API to get a list of applications for a specific site, a
-        device, or a client device's MAC address.
+        """Intent API to get a list of applications for a specific site, a device, or a client device's MAC address.
 
         Args:
-            site_id(basestring): siteId query parameter. Assurance
-                site UUID value (Cannot be submitted
-                together with deviceId and clientMac).
-            device_id(basestring): deviceId query parameter.
-                Assurance device UUID value (Cannot be
-                submitted together with siteId and
-                clientMac).
-            mac_address(basestring): macAddress query parameter.
-                Client device's MAC address (Cannot be
-                submitted together with siteId and
-                deviceId).
-            start_time(int): startTime query parameter. Starting
-                epoch time in milliseconds of time
-                window.
-            end_time(int): endTime query parameter. Ending epoch
-                time in milliseconds of time window.
-            application_health(basestring): applicationHealth query
-                parameter. Application health category
-                (POOR, FAIR, or GOOD.  Optionally use
-                with siteId only).
-            offset(int): offset query parameter. The offset of the
-                first application in the returned data
+            site_id(basestring): siteId query parameter. Assurance site UUID value (Cannot be submitted together
+                with deviceId and clientMac).
+            device_id(basestring): deviceId query parameter. Assurance device UUID value (Cannot be submitted
+                together with siteId and clientMac).
+            mac_address(basestring): macAddress query parameter. Client device's MAC address (Cannot be submitted
+                together with siteId and deviceId).
+            start_time(int): startTime query parameter. Starting epoch time in milliseconds of time window.
+            end_time(int): endTime query parameter. Ending epoch time in milliseconds of time window.
+            application_health(basestring): applicationHealth query parameter. Application health category (POOR,
+                FAIR, or GOOD.  Optionally use with siteId only).
+            offset(int): offset query parameter. The offset of the first application in the returned data
                 (optionally used with siteId only).
-            limit(int): limit query parameter. The max number of
-                application entries in returned data [1,
-                1000] (optionally used with siteId
-                only).
+            limit(int): limit query parameter. The max number of application entries in returned data [1, 1000]
+                (optionally used with siteId only).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

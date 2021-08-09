@@ -100,10 +100,8 @@ class Swim(object):
             image_uuid(basestring): imageUuid query parameter.
             name(basestring): name query parameter.
             family(basestring): family query parameter.
-            application_type(basestring): applicationType query
-                parameter.
-            image_integrity_status(basestring): imageIntegrityStatus
-                FAILURE, UNKNOWN, VERIFIED.
+            application_type(basestring): applicationType query parameter.
+            image_integrity_status(basestring): imageIntegrityStatus FAILURE, UNKNOWN, VERIFIED.
             version(basestring): software Image Version.
             image_series(basestring): image Series.
             image_name(basestring): image Name.
@@ -114,8 +112,7 @@ class Swim(object):
             image_size_greater_than(int): size in bytes.
             image_size_lesser_than(int): size in bytes.
             sort_by(basestring): sort results by this field.
-            sort_order(basestring): sort order 'asc' or 'des'.
-                Default is asc.
+            sort_order(basestring): sort order 'asc' or 'des'. Default is asc.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -299,7 +296,10 @@ class Swim(object):
         are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and
         qcow2.
 
-        The following code gives an example of the multipart_fields.
+        The following code gives an **example** of the multipart_fields,
+        using `file` and `images` as form data field.
+
+        Use the appropiate form data field for the function.
 
         .. code-block:: python
 
@@ -329,10 +329,8 @@ class Swim(object):
         Args:
             is_third_party(bool): Third party Image check.
             third_party_vendor(basestring): Third Party Vendor.
-            third_party_image_family(basestring): Third Party image
-                family.
-            third_party_application_type(basestring): Third Party
-                Application Type.
+            third_party_image_family(basestring): Third Party image family.
+            third_party_application_type(basestring): Third Party Application Type.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -413,8 +411,7 @@ class Swim(object):
         must be present in the device flash.
 
         Args:
-            schedule_validate(bool): scheduleValidate, validates
-                data before schedule (Optional).
+            schedule_validate(bool): scheduleValidate, validates data before schedule (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -497,14 +494,10 @@ class Swim(object):
         ova, tar_gz and qcow2.
 
         Args:
-            schedule_at(basestring): Epoch Time (The number of
-                milli-seconds since January 1 1970 UTC)
-                at which the distribution should be
-                scheduled (Optional) .
-            schedule_desc(basestring): Custom Description
-                (Optional).
-            schedule_origin(basestring): Originator of this call
-                (Optional).
+            schedule_at(basestring): Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the
+                distribution should be scheduled (Optional) .
+            schedule_desc(basestring): Custom Description (Optional).
+            schedule_origin(basestring): Originator of this call (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the

@@ -81,8 +81,7 @@ class NetworkSettings(object):
         """API to update global pool.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            settings(object): Settings, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -261,8 +260,7 @@ class NetworkSettings(object):
         """API to get  DHCP and DNS center server details.
 
         Args:
-            site_id(basestring): Site id to get the network settings
-                associated with the site.
+            site_id(basestring): Site id to get the network settings associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -374,8 +372,7 @@ class NetworkSettings(object):
         """API to update SP profile.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            settings(object): Settings, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -496,8 +493,7 @@ class NetworkSettings(object):
         """API to update device credentials.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            settings(object): Settings, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -575,16 +571,11 @@ class NetworkSettings(object):
 
         Args:
             cliId(string): Cli Id, property of the request body.
-            httpRead(string): Http Read, property of the request
-                body.
-            httpWrite(string): Http Write, property of the request
-                body.
-            snmpV2ReadId(string): Snmp V2 Read Id, property of the
-                request body.
-            snmpV2WriteId(string): Snmp V2 Write Id, property of the
-                request body.
-            snmpV3Id(string): Snmp V3 Id, property of the request
-                body.
+            httpRead(string): Http Read, property of the request body.
+            httpWrite(string): Http Write, property of the request body.
+            snmpV2ReadId(string): Snmp V2 Read Id, property of the request body.
+            snmpV2WriteId(string): Snmp V2 Write Id, property of the request body.
+            snmpV3Id(string): Snmp V3 Id, property of the request body.
             site_id(basestring): site id to assign credential.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -673,11 +664,8 @@ class NetworkSettings(object):
         """API to update network for DHCP and DNS center server settings.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
-            site_id(basestring): Site id to update the network
-                settings which is associated with the
-                site.
+            settings(object): Settings, property of the request body.
+            site_id(basestring): Site id to update the network settings which is associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -754,8 +742,7 @@ class NetworkSettings(object):
         """API to create service provider profile(QOS).
 
         Args:
-            settings(object): settings, property of the request
-                body.
+            settings(object): settings, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -884,8 +871,7 @@ class NetworkSettings(object):
         """API to get device credential details.
 
         Args:
-            site_id(basestring): Site id to retrieve the credential
-                details associated with the site.
+            site_id(basestring): Site id to retrieve the credential details associated with the site.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -943,10 +929,8 @@ class NetworkSettings(object):
         """API to create a network for DHCP and DNS center server settings.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
-            site_id(basestring): Site id to which site details to
-                associate with the network settings.
+            settings(object): Settings, property of the request body.
+            site_id(basestring): Site id to which site details to associate with the network settings.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1023,8 +1007,7 @@ class NetworkSettings(object):
         """API to create device credentials.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            settings(object): Settings, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1095,8 +1078,7 @@ class NetworkSettings(object):
         """API to create global pool.
 
         Args:
-            settings(object): Settings, property of the request
-                body.
+            settings(object): Settings, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

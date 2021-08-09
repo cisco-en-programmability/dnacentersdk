@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center getProjects data model.
+"""Cisco DNA Center GetProjects data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -38,7 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorB942797Fc158E3A0FbB5Ffb1347962(object):
-    """getProjects request schema definition."""
+    """GetProjects request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB942797Fc158E3A0FbB5Ffb1347962, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

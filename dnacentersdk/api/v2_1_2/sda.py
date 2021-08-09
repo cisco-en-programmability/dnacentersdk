@@ -81,8 +81,7 @@ class Sda(object):
 
         Args:
             device_ip(basestring): device-ip query parameter.
-            interface_name(basestring): interfaceName query
-                parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -320,10 +319,8 @@ class Sda(object):
         """Get virtual network (VN) from SDA Fabric.
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName
-                query parameter.
-            site_name_hierarchy(basestring): siteNameHierarchy query
-                parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -441,8 +438,7 @@ class Sda(object):
 
         Args:
             device_ip(basestring): device-ip query parameter.
-            interface_name(basestring): interfaceName query
-                parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -505,8 +501,7 @@ class Sda(object):
 
         Args:
             ip_pool_name(basestring): ipPoolName query parameter.
-            virtual_network_name(basestring): virtualNetworkName
-                query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -686,8 +681,7 @@ class Sda(object):
         """Add default authentication profile in SDA Fabric.
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query
-                parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -983,8 +977,7 @@ class Sda(object):
         """Get device role in SDA Fabric.
 
         Args:
-            device_management_ip_address(basestring): Device
-                Management IP Address.
+            device_management_ip_address(basestring): Device Management IP Address.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1340,10 +1333,8 @@ class Sda(object):
         """Delete virtual network (VN) from SDA Fabric     .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName
-                query parameter.
-            site_name_hierarchy(basestring): siteNameHierarchy query
-                parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1403,8 +1394,7 @@ class Sda(object):
         """Get default authentication profile from SDA Fabric.
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query
-                parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1518,8 +1508,7 @@ class Sda(object):
 
         Args:
             device_ip(basestring): device-ip query parameter.
-            interface_name(basestring): interfaceName query
-                parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1702,8 +1691,7 @@ class Sda(object):
 
         Args:
             device_ip(basestring): device-ip query parameter.
-            interface_name(basestring): interfaceName query
-                parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1766,8 +1754,7 @@ class Sda(object):
 
         Args:
             ip_pool_name(basestring): ipPoolName query parameter.
-            virtual_network_name(basestring): virtualNetworkName
-                query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

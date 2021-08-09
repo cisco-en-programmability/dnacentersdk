@@ -76,13 +76,11 @@ class Reports(object):
                                          view_group_id,
                                          headers=None,
                                          **request_parameters):
-        """Gives a list of summary of all views in a viewgroup. Use "Get
-        all view groups" API to get the viewGroupIds (required
-        as a query param for this API) for available viewgroups.
+        """Gives a list of summary of all views in a viewgroup. Use "Get all view groups" API to get the viewGroupIds
+        (required as a query param for this API) for available viewgroups.
 
         Args:
-            view_group_id(basestring): viewGroupId path parameter.
-                viewGroupId of viewgroup.
+            view_group_id(basestring): viewGroupId path parameter. viewGroupId of viewgroup.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -135,16 +133,12 @@ class Reports(object):
                                                          view_id,
                                                          headers=None,
                                                          **request_parameters):
-        """Gives complete information of the view that is required to
-        configure a report. Use "Get views for a given view
-        group" API to get the viewIds  (required as a query
-        param for this API) for available views.
+        """Gives complete information of the view that is required to configure a report. Use "Get views for a given view
+        group" API to get the viewIds  (required as a query param for this API) for available views.
 
         Args:
-            view_group_id(basestring): viewGroupId path parameter.
-                viewGroupId of viewgroup.
-            view_id(basestring): viewId path parameter. view id of
-                view.
+            view_group_id(basestring): viewGroupId path parameter. viewGroupId of viewgroup.
+            view_id(basestring): viewId path parameter. view id of view.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -203,8 +197,7 @@ class Reports(object):
         """Get scheduled report configuration by reportId.
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report.
+            report_id(basestring): reportId path parameter. reportId of report.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -256,12 +249,10 @@ class Reports(object):
                                   report_id,
                                   headers=None,
                                   **request_parameters):
-        """Delete a scheduled report configuration. Deletes the report
-        executions also.
+        """Delete a scheduled report configuration. Deletes the report executions also.
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report.
+            report_id(basestring): reportId path parameter. reportId of report.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -317,10 +308,8 @@ class Reports(object):
         """Get list of scheduled report configurations.
 
         Args:
-            view_group_id(basestring): viewGroupId query parameter.
-                viewGroupId of viewgroup for report.
-            view_id(basestring): viewId query parameter. viewId of
-                view for report.
+            view_group_id(basestring): viewGroupId query parameter. viewGroupId of viewgroup for report.
+            view_id(basestring): viewId query parameter. viewId of view for report.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -383,13 +372,11 @@ class Reports(object):
                                     payload=None,
                                     active_validation=True,
                                     **request_parameters):
-        """Create/Schedule a report configuration. Use "Get view details
-        for a given view group & view" API to get the metadata
-        required to configure a report.
+        """Create/Schedule a report configuration. Use "Get view details for a given view group & view" API to get the
+        metadata required to configure a report.
 
         Args:
-            deliveries(list): Reports's deliveries (list of
-                objects).
+            deliveries(list): Reports's deliveries (list of objects).
             name(string): Reports's name.
             schedule(object): Reports's schedule.
             tags(list): Reports's tags (list of strings).
@@ -529,8 +516,7 @@ class Reports(object):
         """Get details of all executions for a given report.
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report.
+            report_id(basestring): reportId path parameter. reportId of report.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -581,32 +567,35 @@ class Reports(object):
     def download_report_content(self,
                                 execution_id,
                                 report_id,
+                                dirpath=None,
+                                save_file=None,
                                 headers=None,
                                 **request_parameters):
-        """Returns report content. Save the response to a file by
-        converting the response data as a blob and setting the
-        file format available from content-disposition response
-        header.
+        """Returns report content. Save the response to a file by converting the response data as a blob and setting the
+        file format available from content-disposition response header.
 
         Args:
-            report_id(basestring): reportId path parameter. reportId
-                of report.
-            execution_id(basestring): executionId path parameter.
-                executionId of report execution.
+            report_id(basestring): reportId path parameter. reportId of report.
+            execution_id(basestring): executionId path parameter. executionId of report execution.
+            dirpath(basestring): Directory absolute path. Defaults to
+                os.getcwd().
+            save_file(bool): Enable or disable automatic file creation of
+                raw response.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
-            list: JSON response. A list of MyDict objects.
-            Access the object's properties by using the dot notation
-            or the bracket notation.
+            urllib3.response.HTTPResponse: HTTP Response container. For more
+            information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+            DownloadFailure: If was not able to download the raw
+            response to a file.
         """
         check_type(headers, dict)
         check_type(report_id, basestring,
@@ -639,8 +628,10 @@ class Reports(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+                                          headers=_headers,
+                                          stream=True, dirpath=dirpath, save_file=save_file)
         else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          stream=True, dirpath=dirpath, save_file=save_file)
 
         return self._object_factory('bpm_b2790cdb5abf98c8e00011de86a4_v2_2_1', json_data)

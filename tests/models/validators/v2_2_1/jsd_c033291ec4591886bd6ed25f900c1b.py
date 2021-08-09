@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center getDeviceList data model.
+"""Cisco DNA Center GetDeviceList data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -38,7 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorC033291Ec4591886Bd6Ed25F900C1B(object):
-    """getDeviceList request schema definition."""
+    """GetDeviceList request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC033291Ec4591886Bd6Ed25F900C1B, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -79,8 +79,7 @@ class Wireless(object):
         """Retrieve all RF profiles.
 
         Args:
-            rf_profile_name(basestring): rf-profile-name query
-                parameter.
+            rf_profile_name(basestring): rf-profile-name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -152,10 +151,8 @@ class Wireless(object):
             enableRadioTypeA(boolean): Wireless's enableRadioTypeA.
             enableRadioTypeB(boolean): Wireless's enableRadioTypeB.
             name(string): Wireless's name.
-            radioTypeAProperties(object): Wireless's
-                radioTypeAProperties.
-            radioTypeBProperties(object): Wireless's
-                radioTypeBProperties.
+            radioTypeAProperties(object): Wireless's radioTypeAProperties.
+            radioTypeBProperties(object): Wireless's radioTypeBProperties.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -242,18 +239,15 @@ class Wireless(object):
                                   payload=None,
                                   active_validation=True,
                                   **request_parameters):
-        """Creates SSID, updates the SSID to the corresponding site
-        profiles and provision it to the devices matching the
+        """Creates SSID, updates the SSID to the corresponding site profiles and provision it to the devices matching the
         given sites.
 
         Args:
             enableFabric(boolean): Wireless's enableFabric.
             flexConnect(object): Wireless's flexConnect.
-            managedAPLocations(list): Wireless's managedAPLocations
-                (list of strings).
+            managedAPLocations(list): Wireless's managedAPLocations (list of strings).
             ssidDetails(object): Wireless's ssidDetails.
-            ssidType(string): Wireless's ssidType. Available values
-                are 'Guest' and 'Enterprise'.
+            ssidType(string): Wireless's ssidType. Available values are 'Guest' and 'Enterprise'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -332,8 +326,7 @@ class Wireless(object):
         """Delete RF profile(s).
 
         Args:
-            rf_profile_name(basestring): rf-profile-name path
-                parameter.
+            rf_profile_name(basestring): rf-profile-name path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -388,10 +381,8 @@ class Wireless(object):
         """Gets either one or all the enterprise SSID.
 
         Args:
-            ssid_name(basestring): ssidName query parameter. Enter
-                the enterprise SSID name that needs to
-                be retrieved. If not entered, all the
-                enterprise SSIDs will be retrieved.
+            ssid_name(basestring): ssidName query parameter. Enter the enterprise SSID name that needs to be
+                retrieved. If not entered, all the enterprise SSIDs will be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -457,26 +448,18 @@ class Wireless(object):
         """Creates enterprise SSID.
 
         Args:
-            enableBroadcastSSID(boolean): Wireless's
-                enableBroadcastSSID.
+            enableBroadcastSSID(boolean): Wireless's enableBroadcastSSID.
             enableFastLane(boolean): Wireless's enableFastLane.
-            enableMACFiltering(boolean): Wireless's
-                enableMACFiltering.
-            fastTransition(string): Wireless's fastTransition.
-                Available values are 'Adaptive',
-                'Enable' and 'Disable'.
+            enableMACFiltering(boolean): Wireless's enableMACFiltering.
+            fastTransition(string): Wireless's fastTransition. Available values are 'Adaptive', 'Enable' and
+                'Disable'.
             name(string): Wireless's name.
             passphrase(string): Wireless's passphrase.
-            radioPolicy(string): Wireless's radioPolicy. Available
-                values are 'Dual band operation (2.4GHz
-                and 5GHz)', 'Dual band operation with
-                band select', '5GHz only' and '2.4GHz
-                only'.
-            securityLevel(string): Wireless's securityLevel.
-                Available values are 'WPA2_ENTERPRISE',
-                'WPA2_PERSONAL' and 'OPEN'.
-            trafficType(string): Wireless's trafficType. Available
-                values are 'voicedata' and 'data'.
+            radioPolicy(string): Wireless's radioPolicy. Available values are 'Dual band operation (2.4GHz and
+                5GHz)', 'Dual band operation with band select', '5GHz only' and '2.4GHz only'.
+            securityLevel(string): Wireless's securityLevel. Available values are 'WPA2_ENTERPRISE', 'WPA2_PERSONAL'
+                and 'OPEN'.
+            trafficType(string): Wireless's trafficType. Available values are 'voicedata' and 'data'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -557,8 +540,7 @@ class Wireless(object):
                              profile_name=None,
                              headers=None,
                              **request_parameters):
-        """Gets either one or all the wireless network profiles if no name
-        is provided for network-profile.
+        """Gets either one or all the wireless network profiles if no name is provided for network-profile.
 
         Args:
             profile_name(basestring): profileName query parameter.
@@ -616,9 +598,8 @@ class Wireless(object):
                                 payload=None,
                                 active_validation=True,
                                 **request_parameters):
-        """Updates the wireless Network Profile with updated details
-        provided. All sites to be present in the network profile
-        should be provided.
+        """Updates the wireless Network Profile with updated details provided. All sites to be present in the network
+        profile should be provided.
 
         Args:
             profileDetails(object): Wireless's profileDetails.
@@ -688,8 +669,7 @@ class Wireless(object):
                                 payload=None,
                                 active_validation=True,
                                 **request_parameters):
-        """Creates Wireless Network Profile on DNAC and associates sites
-        and SSIDs to it.
+        """Creates Wireless Network Profile on DNAC and associates sites and SSIDs to it.
 
         Args:
             profileDetails(object): Wireless's profileDetails.
@@ -895,15 +875,11 @@ class Wireless(object):
         """Intent API to get SENSOR test result summary.
 
         Args:
-            site_id(basestring): siteId query parameter. Assurance
-                site UUID.
-            start_time(int): startTime query parameter. The epoch
-                time in milliseconds.
-            end_time(int): endTime query parameter. The epoch time
-                in milliseconds.
-            test_failure_by(basestring): testFailureBy query
-                parameter. Obtain failure statistics
-                group by "area", "building", or "floor".
+            site_id(basestring): siteId query parameter. Assurance site UUID.
+            start_time(int): startTime query parameter. The epoch time in milliseconds.
+            end_time(int): endTime query parameter. The epoch time in milliseconds.
+            test_failure_by(basestring): testFailureBy query parameter. Obtain failure statistics group by "area",
+                "building", or "floor".
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -967,8 +943,7 @@ class Wireless(object):
         """Deletes given enterprise SSID.
 
         Args:
-            ssid_name(basestring): ssidName path parameter. Enter
-                the SSID name to be deleted.
+            ssid_name(basestring): ssidName path parameter. Enter the SSID name to be deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1023,8 +998,7 @@ class Wireless(object):
         """Delete the Wireless Profile from DNAC whose name is provided.
 
         Args:
-            wireless_profile_name(basestring): wirelessProfileName
-                path parameter.
+            wireless_profile_name(basestring): wirelessProfileName path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1144,13 +1118,12 @@ class Wireless(object):
                                                 ssid_name,
                                                 headers=None,
                                                 **request_parameters):
-        """Removes SSID or WLAN from the network profile, reprovision the
-        device(s) and deletes the SSID or WLAN from DNA Center.
+        """Removes SSID or WLAN from the network profile, reprovision the device(s) and deletes the SSID or WLAN from DNA
+        Center.
 
         Args:
             ssid_name(basestring): ssidName path parameter.
-            managed_aplocations(basestring): managedAPLocations path
-                parameter.
+            managed_aplocations(basestring): managedAPLocations path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

@@ -1122,7 +1122,7 @@ class MockServerRequestHandler_v1_3_1(BaseHTTPRequestHandler):
             self.path
         )
 
-    def command_runner_getallkeywordsof_clisaccepted_response(self):
+    def command_runner_getallkeywordsof_cli_saccepted_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -4169,7 +4169,7 @@ class MockServerRequestHandler_v1_3_1(BaseHTTPRequestHandler):
             return
 
         if self.matches_COMMAND_RUNNER_33bb2b9d40199e14():
-            self.command_runner_getallkeywordsof_clisaccepted_response()
+            self.command_runner_getallkeywordsof_cli_saccepted_response()
             return
 
         if self.matches_FILE_3f89bbfc4f6b8b50():

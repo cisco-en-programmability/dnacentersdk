@@ -81,8 +81,7 @@ class FabricWired(object):
 
         Args:
             ip_pool_name(basestring): ipPoolName query parameter.
-            virtual_network_name(basestring): virtualNetworkName
-                query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -198,8 +197,7 @@ class FabricWired(object):
         """Delete default authentication profile from SDA Fabric.
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query
-                parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -626,8 +624,7 @@ class FabricWired(object):
 
         Args:
             device_ip(basestring): device-ip query parameter.
-            interface_name(basestring): interfaceName query
-                parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -810,8 +807,7 @@ class FabricWired(object):
 
         Args:
             device_ip(basestring): device-ip query parameter.
-            interface_name(basestring): interfaceName query
-                parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -872,8 +868,7 @@ class FabricWired(object):
         """Get default authentication profile from SDA Fabric.
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query
-                parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -995,8 +990,7 @@ class FabricWired(object):
 
         Args:
             ip_pool_name(basestring): ipPoolName query parameter.
-            virtual_network_name(basestring): virtualNetworkName
-                query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

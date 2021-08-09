@@ -235,8 +235,7 @@ class Topology(object):
         """Returns Layer 2 network topology by specified VLAN ID.
 
         Args:
-            vlan_id(basestring): Vlan Name for e.g Vlan1, Vlan23
-                etc.
+            vlan_id(basestring): Vlan Name for e.g Vlan1, Vlan23 etc.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -291,8 +290,7 @@ class Topology(object):
         """Returns the Layer 3 network topology by routing protocol.
 
         Args:
-            topology_type(basestring): Type of
-                topology(OSPF,ISIS,etc).
+            topology_type(basestring): Type of topology(OSPF,ISIS,etc).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -349,9 +347,7 @@ class Topology(object):
         given point of time.
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds)
-                when the Network health data is
-                required.
+            timestamp(basestring, int): Epoch time(in milliseconds) when the Network health data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

@@ -82,14 +82,10 @@ class SiteDesign(object):
         """API to get NFV network profile.
 
         Args:
-            id(basestring): id path parameter. ID of network profile
-                to retrieve.
-            offset(basestring): offset query parameter.
-                offset/starting row.
-            limit(basestring): limit query parameter. Number of
-                profile to be retrieved.
-            name(basestring): name query parameter. Name of network
-                profile to be retrieved.
+            id(basestring): id path parameter. ID of network profile to retrieve.
+            offset(basestring): offset query parameter. offset/starting row.
+            limit(basestring): limit query parameter. Number of profile to be retrieved.
+            name(basestring): name query parameter. Name of network profile to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -158,10 +154,8 @@ class SiteDesign(object):
 
         Args:
             device(list): Site Design's device (list of objects).
-            id(basestring): id path parameter. Id of the NFV profile
-                to be updated.
-            name(basestring): name query parameter. Name of the
-                profile to be updated.
+            id(basestring): id path parameter. Id of the NFV profile to be updated.
+            name(basestring): name query parameter. Name of the profile to be updated.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -228,14 +222,73 @@ class SiteDesign(object):
 
         return self._object_factory('bpm_e2202e5f7586e68778ed7772b1_v2_2_1', json_data)
 
+    def delete_nfv_profile(self,
+                           id,
+                           name=None,
+                           headers=None,
+                           **request_parameters):
+        """API to delete nfv network profile.
+
+        Args:
+            id(basestring): id path parameter. Id of nfv network profile to delete. .
+            name(basestring): name query parameter. Nameof nfv network profile to delete. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(name, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'name':
+                name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/nfv/network-profile/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_bcefb205d26b9aced6dc6d8c269_v2_2_1', json_data)
+
     def nfv_provisioning_detail(self,
                                 device_ip=None,
                                 headers=None,
                                 payload=None,
                                 active_validation=True,
                                 **request_parameters):
-        """Checks the provisioning detail of an ENCS device including log
-        information.
+        """Checks the provisioning detail of an ENCS device including log information.
 
         Args:
             device_ip(string): Site Design's device_ip.
@@ -315,14 +368,11 @@ class SiteDesign(object):
                       payload=None,
                       active_validation=True,
                       **request_parameters):
-        """Design and Provision single/multi NFV device with given
-        site/area/building/floor .
+        """Design and Provision single/multi NFV device with given site/area/building/floor .
 
         Args:
-            provisioning(list): Site Design's provisioning (list of
-                objects).
-            siteProfile(list): Site Design's siteProfile (list of
-                objects).
+            provisioning(list): Site Design's provisioning (list of objects).
+            siteProfile(list): Site Design's siteProfile (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -468,79 +518,15 @@ class SiteDesign(object):
 
         return self._object_factory('bpm_d2a712eb315650618d475db5de0aabec_v2_2_1', json_data)
 
-    def delete_nfv_profile(self,
-                           id,
-                           name=None,
-                           headers=None,
-                           **request_parameters):
-        """API to delete nfv network profile.
-
-        Args:
-            id(basestring): id  path parameter. Id of nfv network
-                profile to delete. .
-            name(basestring): name query parameter. Nameof nfv
-                network profile to delete. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            MyDict: JSON response. Access the object's properties by using
-            the dot notation or the bracket notation.
-
-        Raises:
-            TypeError: If the parameter types are incorrect.
-            MalformedRequest: If the request body created is invalid.
-            ApiError: If the DNA Center cloud returns an error.
-        """
-        check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(id, basestring,
-                   may_be_none=False)
-        if headers is not None:
-            if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
-
-        _params = {
-            'name':
-                name,
-        }
-        _params.update(request_parameters)
-        _params = dict_from_items_with_values(_params)
-
-        path_params = {
-            'id ': id,
-        }
-
-        with_custom_headers = False
-        _headers = self._session.headers or {}
-        if headers:
-            _headers.update(dict_of_str(headers))
-            with_custom_headers = True
-
-        e_url = ('/dna/intent/api/v1/nfv/network-profile/{id }')
-        endpoint_full_url = apply_path_params(e_url, path_params)
-        if with_custom_headers:
-            json_data = self._session.delete(endpoint_full_url, params=_params,
-                                             headers=_headers)
-        else:
-            json_data = self._session.delete(endpoint_full_url, params=_params)
-
-        return self._object_factory('bpm_a800a1bd8d7856f99608de210c0dae60_v2_2_1', json_data)
-
     def get_device_details_by_ip(self,
                                  device_ip,
                                  headers=None,
                                  **request_parameters):
-        """Returns provisioning device information for the specified IP
-        address.
+        """Returns provisioning device information for the specified IP address.
 
         Args:
-            device_ip(basestring): deviceIp query parameter. Device
-                to which the provisioning detail has to
-                be retrieved.
+            device_ip(basestring): deviceIp query parameter. Device to which the provisioning detail has to be
+                retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

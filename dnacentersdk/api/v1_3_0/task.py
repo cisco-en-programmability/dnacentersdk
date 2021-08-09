@@ -88,24 +88,16 @@ class Task(object):
         """Returns Task count.
 
         Args:
-            start_time(basestring): This is the epoch start time
-                from which tasks need to be fetched.
-            end_time(basestring): This is the epoch end time upto
-                which audit records need to be fetched.
+            start_time(basestring): This is the epoch start time from which tasks need to be fetched.
+            end_time(basestring): This is the epoch end time upto which audit records need to be fetched.
             data(basestring): Fetch tasks that contains this data.
-            error_code(basestring): Fetch tasks that have this error
-                code.
-            service_type(basestring): Fetch tasks with this service
-                type.
+            error_code(basestring): Fetch tasks that have this error code.
+            service_type(basestring): Fetch tasks with this service type.
             username(basestring): Fetch tasks with this username.
-            progress(basestring): Fetch tasks that contains this
-                progress.
-            is_error(basestring): Fetch tasks ended as success or
-                failure. Valid values: true, false.
-            failure_reason(basestring): Fetch tasks that contains
-                this failure reason.
-            parent_id(basestring): Fetch tasks that have this parent
-                Id.
+            progress(basestring): Fetch tasks that contains this progress.
+            is_error(basestring): Fetch tasks ended as success or failure. Valid values: true, false.
+            failure_reason(basestring): Fetch tasks that contains this failure reason.
+            parent_id(basestring): Fetch tasks that have this parent Id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -255,24 +247,16 @@ class Task(object):
         """Returns task(s) based on filter criteria.
 
         Args:
-            start_time(basestring): This is the epoch start time
-                from which tasks need to be fetched.
-            end_time(basestring): This is the epoch end time upto
-                which audit records need to be fetched.
+            start_time(basestring): This is the epoch start time from which tasks need to be fetched.
+            end_time(basestring): This is the epoch end time upto which audit records need to be fetched.
             data(basestring): Fetch tasks that contains this data.
-            error_code(basestring): Fetch tasks that have this error
-                code.
-            service_type(basestring): Fetch tasks with this service
-                type.
+            error_code(basestring): Fetch tasks that have this error code.
+            service_type(basestring): Fetch tasks with this service type.
             username(basestring): Fetch tasks with this username.
-            progress(basestring): Fetch tasks that contains this
-                progress.
-            is_error(basestring): Fetch tasks ended as success or
-                failure. Valid values: true, false.
-            failure_reason(basestring): Fetch tasks that contains
-                this failure reason.
-            parent_id(basestring): Fetch tasks that have this parent
-                Id.
+            progress(basestring): Fetch tasks that contains this progress.
+            is_error(basestring): Fetch tasks ended as success or failure. Valid values: true, false.
+            failure_reason(basestring): Fetch tasks that contains this failure reason.
+            parent_id(basestring): Fetch tasks that have this parent Id.
             offset(basestring): offset query parameter.
             limit(basestring): limit query parameter.
             sort_by(basestring): Sort results by this field.
@@ -429,9 +413,8 @@ class Task(object):
         Args:
             operation_id(basestring): operationId path parameter.
             offset(int): Index, minimum value is 0.
-            limit(int): The maximum value of {limit} supported is
-                500.               Base 1 indexing for
-                {limit}, minimum value is 1.
+            limit(int): The maximum value of {limit} supported is 500.               Base 1 indexing for {limit},
+                minimum value is 1.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

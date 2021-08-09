@@ -79,8 +79,7 @@ class NonFabricWireless(object):
         """Retrieve all RF profiles.
 
         Args:
-            rf_profile_name(basestring): rf-profile-name query
-                parameter.
+            rf_profile_name(basestring): rf-profile-name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -143,18 +142,12 @@ class NonFabricWireless(object):
         given sites.
 
         Args:
-            enableFabric(boolean): enableFabric, property of the
-                request body.
-            flexConnect(object): Flex Connect Applicable for non
-                fabric profile, property of the request
-                body.
-            managedAPLocations(list): Managed AP Locations (Enter
-                entire Site(s) hierarchy), property of
-                the request body (list of strings).
-            ssidDetails(object): SsidDetails, property of the
-                request body.
-            ssidType(string): SSID Type, property of the request
-                body. Available values are 'Guest' and
+            enableFabric(boolean): enableFabric, property of the request body.
+            flexConnect(object): Flex Connect Applicable for non fabric profile, property of the request body.
+            managedAPLocations(list): Managed AP Locations (Enter entire Site(s) hierarchy), property of the request
+                body (list of strings).
+            ssidDetails(object): SsidDetails, property of the request body.
+            ssidType(string): SSID Type, property of the request body. Available values are 'Guest' and
                 'Enterprise'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -235,8 +228,7 @@ class NonFabricWireless(object):
         """Delete RF profile(s).
 
         Args:
-            rf_profile_name(basestring): rf-profile-name path
-                parameter.
+            rf_profile_name(basestring): rf-profile-name path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -353,8 +345,7 @@ class NonFabricWireless(object):
         should be provided.
 
         Args:
-            profileDetails(object): Profile Details, property of the
-                request body.
+            profileDetails(object): Profile Details, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -426,8 +417,7 @@ class NonFabricWireless(object):
 
         Args:
             ssid_name(basestring): ssidName path parameter.
-            managed_aplocations(basestring): managedAPLocations path
-                parameter.
+            managed_aplocations(basestring): managedAPLocations path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -492,8 +482,7 @@ class NonFabricWireless(object):
         and SSIDs to it.
 
         Args:
-            profileDetails(object): Profile Details, property of the
-                request body.
+            profileDetails(object): Profile Details, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -572,34 +561,21 @@ class NonFabricWireless(object):
         """Creates enterprise SSID.
 
         Args:
-            enableBroadcastSSID(boolean): enableBroadcastSSID,
-                property of the request body.
-            enableFastLane(boolean): enableFastLane, property of the
-                request body.
-            enableMACFiltering(boolean): enableMACFiltering,
-                property of the request body.
-            fastTransition(string): Fast Transition, property of the
-                request body. Available values are
-                'Adaptive', 'Enable' and 'Disable'.
-            name(string): Enter SSID Name, property of the request
-                body. Constraints: maxLength set to 32.
-            passphrase(string): Pass Phrase (Only applicable for
-                SSID with PERSONAL security level),
-                property of the request body.
-                Constraints: maxLength set to 63 and
-                minLength set to 8.
-            radioPolicy(string): Radio Policy, property of the
-                request body. Available values are 'Dual
-                band operation (2.4GHz and 5GHz)', 'Dual
-                band operation with band select', '5GHz
-                only' and '2.4GHz only'.
-            securityLevel(string): Security Level, property of the
-                request body. Available values are
-                'WPA2_ENTERPRISE', 'WPA2_PERSONAL' and
-                'OPEN'.
-            trafficType(string): Traffic Type, property of the
-                request body. Available values are
-                'voicedata' and 'data'.
+            enableBroadcastSSID(boolean): enableBroadcastSSID, property of the request body.
+            enableFastLane(boolean): enableFastLane, property of the request body.
+            enableMACFiltering(boolean): enableMACFiltering, property of the request body.
+            fastTransition(string): Fast Transition, property of the request body. Available values are 'Adaptive',
+                'Enable' and 'Disable'.
+            name(string): Enter SSID Name, property of the request body. Constraints: maxLength set to 32.
+            passphrase(string): Pass Phrase (Only applicable for SSID with PERSONAL security level), property of the
+                request body. Constraints: maxLength set to 63 and minLength set to 8.
+            radioPolicy(string): Radio Policy, property of the request body. Available values are 'Dual band
+                operation (2.4GHz and 5GHz)', 'Dual band operation with band select', '5GHz only' and
+                '2.4GHz only'.
+            securityLevel(string): Security Level, property of the request body. Available values are
+                'WPA2_ENTERPRISE', 'WPA2_PERSONAL' and 'OPEN'.
+            trafficType(string): Traffic Type, property of the request body. Available values are 'voicedata' and
+                'data'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -684,8 +660,7 @@ class NonFabricWireless(object):
         """Delete the Wireless Profile from DNAC whose name is provided.
 
         Args:
-            wireless_profile_name(basestring): wirelessProfileName
-                path parameter.
+            wireless_profile_name(basestring): wirelessProfileName path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -818,23 +793,15 @@ class NonFabricWireless(object):
         """Create or Update RF profile.
 
         Args:
-            channelWidth(string): Channel Width, property of the
-                request body.
-            defaultRfProfile(boolean): defaultRfProfile, property of
-                the request body.
-            enableBrownField(boolean): enableBrownField, property of
-                the request body.
-            enableCustom(boolean): enableCustom, property of the
-                request body.
-            enableRadioTypeA(boolean): enableRadioTypeA, property of
-                the request body.
-            enableRadioTypeB(boolean): enableRadioTypeB, property of
-                the request body.
+            channelWidth(string): Channel Width, property of the request body.
+            defaultRfProfile(boolean): defaultRfProfile, property of the request body.
+            enableBrownField(boolean): enableBrownField, property of the request body.
+            enableCustom(boolean): enableCustom, property of the request body.
+            enableRadioTypeA(boolean): enableRadioTypeA, property of the request body.
+            enableRadioTypeB(boolean): enableRadioTypeB, property of the request body.
             name(string): Name, property of the request body.
-            radioTypeAProperties(object): Radio Type AProperties,
-                property of the request body.
-            radioTypeBProperties(object): Radio Type BProperties,
-                property of the request body.
+            radioTypeAProperties(object): Radio Type AProperties, property of the request body.
+            radioTypeBProperties(object): Radio Type BProperties, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -986,8 +953,7 @@ class NonFabricWireless(object):
         """Deletes given enterprise SSID.
 
         Args:
-            ssid_name(basestring): Enter the SSID name to be
-                deleted.
+            ssid_name(basestring): Enter the SSID name to be deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1042,10 +1008,8 @@ class NonFabricWireless(object):
         """Gets either one or all the enterprise SSID.
 
         Args:
-            ssid_name(basestring): Enter the enterprise SSID name
-                that needs to be retrieved. If not
-                entered, all the enterprise SSIDs will
-                be retrieved.
+            ssid_name(basestring): Enter the enterprise SSID name that needs to be retrieved. If not entered, all
+                the enterprise SSIDs will be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

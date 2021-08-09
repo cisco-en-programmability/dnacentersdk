@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center getTemplateDeploymentStatus data model.
+"""Cisco DNA Center GetTemplateDeploymentStatus data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -38,7 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorE1F17B174E955DeA2Ae9D98264De307(object):
-    """getTemplateDeploymentStatus request schema definition."""
+    """GetTemplateDeploymentStatus request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE1F17B174E955DeA2Ae9D98264De307, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

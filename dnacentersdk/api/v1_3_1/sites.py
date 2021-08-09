@@ -83,8 +83,7 @@ class Sites(object):
         """Get site with area/building/floor with specified hierarchy.
 
         Args:
-            name(basestring): siteNameHierarchy (ex:
-                global/groupName).
+            name(basestring): siteNameHierarchy (ex: global/groupName).
             site_id(basestring): site id.
             type(basestring): type (ex: area, building, floor).
             offset(basestring): offset/starting row.
@@ -161,9 +160,7 @@ class Sites(object):
 
         Args:
             site(object): Site, property of the request body.
-            type(string): Type, property of the request body.
-                Available values are 'area', 'building'
-                and 'floor'.
+            type(string): Type, property of the request body. Available values are 'area', 'building' and 'floor'.
             site_id(basestring): site id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -302,9 +299,7 @@ class Sites(object):
         """Returns Overall Health information for all sites.
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds)
-                when the Site Hierarchy data is
-                required.
+            timestamp(basestring, int): Epoch time(in milliseconds) when the Site Hierarchy data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -421,10 +416,8 @@ class Sites(object):
         """Assigns list of devices to a site.
 
         Args:
-            device(list): Device, property of the request body (list
-                of objects).
-            site_id(basestring): Site id to which the device is
-                assigned.
+            device(list): Device, property of the request body (list of objects).
+            site_id(basestring): Site id to which the device is assigned.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -509,9 +502,7 @@ class Sites(object):
 
         Args:
             site(object): Site, property of the request body.
-            type(string): Type, property of the request body.
-                Available values are 'area', 'building'
-                and 'floor'.
+            type(string): Type, property of the request body. Available values are 'area', 'building' and 'floor'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

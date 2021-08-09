@@ -85,20 +85,13 @@ class Compliance(object):
 
         Args:
             device_uuid(basestring): deviceUuid path parameter.
-            category(basestring): category query parameter.
-                complianceCategory can have any value
-                among 'INTENT', 'RUNNING_CONFIG'.
-            compliance_type(basestring): complianceType query
-                parameter. complianceType can have any
-                value among 'NETWORK_DESIGN',
-                'NETWORK_PROFILE', 'FABRIC', 'POLICY',
+            category(basestring): category query parameter. complianceCategory can have any value among 'INTENT',
                 'RUNNING_CONFIG'.
-            diff_list(bool): diffList query parameter. diff list [
-                pass true to fetch the diff list ].
-            key(basestring): key query parameter. extended attribute
-                key.
-            value(basestring): value query parameter. extended
-                attribute value.
+            compliance_type(basestring): complianceType query parameter. complianceType can have any value among
+                'NETWORK_DESIGN', 'NETWORK_PROFILE', 'FABRIC', 'POLICY', 'RUNNING_CONFIG'.
+            diff_list(bool): diffList query parameter. diff list [ pass true to fetch the diff list ].
+            key(basestring): key query parameter. extended attribute key.
+            value(basestring): value query parameter. extended attribute value.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -226,16 +219,11 @@ class Compliance(object):
         """Return compliance status of device(s).
 
         Args:
-            compliance_status(basestring): complianceStatus query
-                parameter. Compliance status can be have
-                value among 'COMPLIANT','NON_COMPLIANT',
-                'IN_PROGRESS', 'ERROR'.
-            device_uuid(basestring): deviceUuid query parameter.
-                Comma separated deviceUuids.
-            offset(int): offset query parameter. offset/starting
-                row.
-            limit(int): limit query parameter. Number of records to
-                be retrieved.
+            compliance_status(basestring): complianceStatus query parameter. Compliance status can be have value
+                among 'COMPLIANT','NON_COMPLIANT','IN_PROGRESS', 'ERROR'.
+            device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids.
+            offset(int): offset query parameter. offset/starting row.
+            limit(int): limit query parameter. Number of records to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -267,16 +255,11 @@ class Compliance(object):
         """Return compliance status of device(s).
 
         Args:
-            compliance_status(basestring): complianceStatus query
-                parameter. Compliance status can be have
-                value among 'COMPLIANT','NON_COMPLIANT',
-                'IN_PROGRESS', 'ERROR'.
-            device_uuid(basestring): deviceUuid query parameter.
-                Comma separated deviceUuids.
-            offset(int): offset query parameter. offset/starting
-                row.
-            limit(int): limit query parameter. Number of records to
-                be retrieved.
+            compliance_status(basestring): complianceStatus query parameter. Compliance status can be have value
+                among 'COMPLIANT','NON_COMPLIANT','IN_PROGRESS', 'ERROR'.
+            device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids.
+            offset(int): offset query parameter. offset/starting row.
+            limit(int): limit query parameter. Number of records to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -344,10 +327,8 @@ class Compliance(object):
         """Run compliance check for device(s).
 
         Args:
-            categories(list): Compliance's categories (list of
-                strings).
-            deviceUuids(list): Compliance's deviceUuids (list of
-                strings).
+            categories(list): Compliance's categories (list of strings).
+            deviceUuids(list): Compliance's deviceUuids (list of strings).
             triggerFull(boolean): Compliance's triggerFull.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

@@ -93,41 +93,26 @@ class SoftwareImageManagementSwim(object):
                                    version=None,
                                    headers=None,
                                    **request_parameters):
-        """Returns software image list based on a filter criteria. For
-        example: "filterbyName = cat3k%".
+        """Returns software image list based on a filter criteria. For example: "filterbyName = cat3k%".
 
         Args:
             image_uuid(basestring): imageUuid query parameter.
             name(basestring): name query parameter.
             family(basestring): family query parameter.
-            application_type(basestring): applicationType query
-                parameter.
-            image_integrity_status(basestring): imageIntegrityStatus
-                query parameter. imageIntegrityStatus
-                FAILURE, UNKNOWN, VERIFIED.
-            version(basestring): version query parameter. software
-                Image Version.
-            image_series(basestring): imageSeries query parameter.
-                image Series.
-            image_name(basestring): imageName query parameter. image
-                Name.
-            is_tagged_golden(bool): isTaggedGolden query parameter.
-                is Tagged Golden.
-            is_cco_recommended(bool): isCCORecommended query
-                parameter. is recommended from
-                cisco.com.
-            is_cco_latest(bool): isCCOLatest query parameter. is
-                latest from cisco.com.
-            created_time(int): createdTime query parameter. time in
-                milliseconds (epoch format).
-            image_size_greater_than(int): imageSizeGreaterThan query
-                parameter. size in bytes.
-            image_size_lesser_than(int): imageSizeLesserThan query
-                parameter. size in bytes.
-            sort_by(basestring): sortBy query parameter. sort
-                results by this field.
-            sort_order(basestring): sortOrder query parameter. sort
-                order 'asc' or 'des'. Default is asc.
+            application_type(basestring): applicationType query parameter.
+            image_integrity_status(basestring): imageIntegrityStatus query parameter. imageIntegrityStatus FAILURE,
+                UNKNOWN, VERIFIED.
+            version(basestring): version query parameter. software Image Version.
+            image_series(basestring): imageSeries query parameter. image Series.
+            image_name(basestring): imageName query parameter. image Name.
+            is_tagged_golden(bool): isTaggedGolden query parameter. is Tagged Golden.
+            is_cco_recommended(bool): isCCORecommended query parameter. is recommended from cisco.com.
+            is_cco_latest(bool): isCCOLatest query parameter. is latest from cisco.com.
+            created_time(int): createdTime query parameter. time in milliseconds (epoch format).
+            image_size_greater_than(int): imageSizeGreaterThan query parameter. size in bytes.
+            image_size_lesser_than(int): imageSizeLesserThan query parameter. size in bytes.
+            sort_by(basestring): sortBy query parameter. sort results by this field.
+            sort_order(basestring): sortOrder query parameter. sort order 'asc' or 'des'. Default is asc.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -237,12 +222,13 @@ class SoftwareImageManagementSwim(object):
                                     third_party_vendor=None,
                                     headers=None,
                                     **request_parameters):
-        """Fetches a software image from local file system and uploads to
-        DNA Center. Supported software image files extensions
-        are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and
-        qcow2.
+        """Fetches a software image from local file system and uploads to DNA Center. Supported software image files
+        extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2.
 
-        The following code gives an example of the multipart_fields.
+        The following code gives an **example** of the multipart_fields,
+        using `file` and `images` as form data field.
+
+        Use the appropiate form data field for the function.
 
         .. code-block:: python
 
@@ -270,16 +256,11 @@ class SoftwareImageManagementSwim(object):
                 return callback
 
         Args:
-            is_third_party(bool): isThirdParty query parameter.
-                Third party Image check.
-            third_party_vendor(basestring): thirdPartyVendor query
-                parameter. Third Party Vendor.
-            third_party_image_family(basestring):
-                thirdPartyImageFamily query parameter.
-                Third Party image family.
-            third_party_application_type(basestring):
-                thirdPartyApplicationType query
-                parameter. Third Party Application Type.
+            is_third_party(bool): isThirdParty query parameter. Third party Image check.
+            third_party_vendor(basestring): thirdPartyVendor query parameter. Third Party Vendor.
+            third_party_image_family(basestring): thirdPartyImageFamily query parameter. Third Party image family.
+            third_party_application_type(basestring): thirdPartyApplicationType query parameter. Third Party
+                Application Type.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -355,9 +336,8 @@ class SoftwareImageManagementSwim(object):
                                             payload=None,
                                             active_validation=True,
                                             **request_parameters):
-        """Distributes a software image on a given device. Software image
-        must be imported successfully into DNA Center before it
-        can be distributed.
+        """Distributes a software image on a given device. Software image must be imported successfully into DNA Center
+        before it can be distributed.
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -426,22 +406,14 @@ class SoftwareImageManagementSwim(object):
                                       payload=None,
                                       active_validation=True,
                                       **request_parameters):
-        """Fetches a software image from remote file system (using URL for
-        HTTP/FTP) and uploads to DNA Center. Supported image
-        files extensions are bin, img, tar, smu, pie, aes, iso,
-        ova, tar_gz and qcow2.
+        """Fetches a software image from remote file system (using URL for HTTP/FTP) and uploads to DNA Center. Supported
+        image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2.
 
         Args:
-            schedule_at(basestring): scheduleAt query parameter.
-                Epoch Time (The number of milli-seconds
-                since January 1 1970 UTC) at which the
-                distribution should be scheduled
-                (Optional) .
-            schedule_desc(basestring): scheduleDesc query parameter.
-                Custom Description (Optional).
-            schedule_origin(basestring): scheduleOrigin query
-                parameter. Originator of this call
-                (Optional).
+            schedule_at(basestring): scheduleAt query parameter. Epoch Time (The number of milli-seconds since
+                January 1 1970 UTC) at which the distribution should be scheduled (Optional) .
+            schedule_desc(basestring): scheduleDesc query parameter. Custom Description (Optional).
+            schedule_origin(basestring): scheduleOrigin query parameter. Originator of this call (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -515,13 +487,11 @@ class SoftwareImageManagementSwim(object):
                                           payload=None,
                                           active_validation=True,
                                           **request_parameters):
-        """Activates a software image on a given device. Software image
-        must be present in the device flash.
+        """Activates a software image on a given device. Software image must be present in the device flash.
 
         Args:
-            schedule_validate(bool): scheduleValidate query
-                parameter. scheduleValidate, validates
-                data before schedule (Optional).
+            schedule_validate(bool): scheduleValidate query parameter. scheduleValidate, validates data before
+                schedule (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the

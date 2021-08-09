@@ -86,15 +86,11 @@ class Sensors(object):
         existing SSID, or both new and existing SSID.
 
         Args:
-            apCoverage(list): Ap Coverage, property of the request
-                body (list of objects).
-            connection(string): Connection, property of the request
-                body.
-            modelVersion(number): modelVersion, property of the
-                request body.
+            apCoverage(list): Ap Coverage, property of the request body (list of objects).
+            connection(string): Connection, property of the request body.
+            modelVersion(number): modelVersion, property of the request body.
             name(string): Name, property of the request body.
-            ssids(list): Ssids, property of the request body (list
-                of objects).
+            ssids(list): Ssids, property of the request body (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -229,10 +225,8 @@ class Sensors(object):
         """Intent API to duplicate an existing SENSOR test template.
 
         Args:
-            newTemplateName(string): New Template Name, property of
-                the request body.
-            templateName(string): Template Name, property of the
-                request body.
+            newTemplateName(string): New Template Name, property of the request body.
+            templateName(string): Template Name, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -363,12 +357,9 @@ class Sensors(object):
         template.
 
         Args:
-            locationInfoList(list): Location Info List, property of
-                the request body (list of objects).
-            schedule(object): Schedule, property of the request
-                body.
-            templateName(string): Template Name, property of the
-                request body.
+            locationInfoList(list): Location Info List, property of the request body (list of objects).
+            schedule(object): Schedule, property of the request body.
+            templateName(string): Template Name, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -443,8 +434,7 @@ class Sensors(object):
         """Intent API to run a deployed SENSOR test.
 
         Args:
-            templateName(string): Template Name, property of the
-                request body.
+            templateName(string): Template Name, property of the request body.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

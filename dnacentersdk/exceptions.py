@@ -136,7 +136,7 @@ class ApiError(dnacentersdkException):
 
         self.message = self.details.get("message") or\
             self.details.get("response", {}).get("message")\
-            if self.details else None
+            if self.details and isinstance(self.details, dict) else None
         """The error message from the parsed API response."""
 
         self.description = RESPONSE_CODES.get(self.status_code)

@@ -79,8 +79,7 @@ class EventManagement(object):
         """Returns the Count of EventSubscriptions.
 
         Args:
-            event_ids(basestring): List of subscriptions related to
-                the respective eventIds.
+            event_ids(basestring): List of subscriptions related to the respective eventIds.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -142,14 +141,10 @@ class EventManagement(object):
         tags as mandatory.
 
         Args:
-            event_id(basestring): The registered EventId should be
-                provided.
-            tags(basestring): The registered Tags should be
-                provided.
-            offset(int): The number of Registries to offset in the
-                resultset whose default value 0.
-            limit(int): The number of Registries to limit in the
-                resultset whose default value 10.
+            event_id(basestring): The registered EventId should be provided.
+            tags(basestring): The registered Tags should be provided.
+            offset(int): The number of Registries to offset in the resultset whose default value 0.
+            limit(int): The number of Registries to limit in the resultset whose default value 10.
             sort_by(basestring): SortBy field name.
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -292,10 +287,8 @@ class EventManagement(object):
         tags as mandatory.
 
         Args:
-            event_id(basestring): The registered EventId should be
-                provided.
-            tags(basestring): The registered Tags should be
-                provided.
+            event_id(basestring): The registered EventId should be provided.
+            tags(basestring): The registered Tags should be provided.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -421,8 +414,7 @@ class EventManagement(object):
         """Delete EventSubscriptions.
 
         Args:
-            subscriptions(basestring): List of EventSubscriptionId's
-                for removal.
+            subscriptions(basestring): List of EventSubscriptionId's for removal.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -489,8 +481,7 @@ class EventManagement(object):
         """Get the Count of Published Notifications.
 
         Args:
-            event_ids(basestring): The registered EventIds should be
-                provided.
+            event_ids(basestring): The registered EventIds should be provided.
             start_time(basestring): StartTime .
             end_time(basestring): endTime .
             category(basestring): category .
@@ -582,12 +573,9 @@ class EventManagement(object):
         limit.
 
         Args:
-            event_ids(basestring): List of subscriptions related to
-                the respective eventIds.
-            offset(int): The number of Subscriptions's to offset in
-                the resultset whose default value 0.
-            limit(int): The number of Subscriptions's to limit in
-                the resultset whose default value 10.
+            event_ids(basestring): List of subscriptions related to the respective eventIds.
+            offset(int): The number of Subscriptions's to offset in the resultset whose default value 0.
+            limit(int): The number of Subscriptions's to limit in the resultset whose default value 10.
             sort_by(basestring): SortBy field name.
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -725,8 +713,7 @@ class EventManagement(object):
         """Get the list of Published Notifications.
 
         Args:
-            event_ids(basestring): The registered EventIds should be
-                provided.
+            event_ids(basestring): The registered EventIds should be provided.
             start_time(basestring): StartTime .
             end_time(basestring): endTime .
             category(basestring): category .

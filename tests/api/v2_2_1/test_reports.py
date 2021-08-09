@@ -408,6 +408,8 @@ def is_valid_download_report_content(json_schema_validate, obj):
 
 def download_report_content(api):
     endpoint_result = api.reports.download_report_content(
+        dirpath=None,
+        save_file=None,
         execution_id='string',
         report_id='string'
     )
@@ -429,6 +431,8 @@ def test_download_report_content(api, validator):
 
 def download_report_content_default(api):
     endpoint_result = api.reports.download_report_content(
+        dirpath=None,
+        save_file=None,
         execution_id='string',
         report_id='string'
     )

@@ -34,6 +34,7 @@ from future import standard_library
 standard_library.install_aliases()
 
 import os
+import re
 import time
 import urllib.parse
 import warnings
@@ -246,6 +247,35 @@ class RestSession(object):
             # url is already an absolute URL; return as is
             return url
 
+    def download(self, method, url, erc, custom_refresh, **kwargs):
+        dirpath = kwargs.pop('dirpath', None)
+        if not(dirpath) or not(os.path.isdir(dirpath)):
+            dirpath = os.getcwd()
+
+        save_file = kwargs.pop('save_file', False)
+        with self.request(method, url, erc, 0, **kwargs) as resp:
+            if save_file and resp.headers and resp.headers.get('Content-Disposition'):
+                try:
+                    content = resp.headers.get('Content-Disposition')
+                    content_file_list = re.findall('filename=(.*)', content)
+                    if len(content_file_list) > 0:
+                        content_file_name = content_file_list[0].replace('"', '')
+                    else:
+                        content_file_name = 'result_file'
+                    file_name = os.path.join(dirpath,
+                                             content_file_name)
+                    with open(file_name, 'wb') as f:
+                        logger.debug('Downloading {}'.format(file_name))
+                        for chunk in resp.iter_content(chunk_size=1024):
+                            if chunk:
+                                f.write(chunk)
+                except Exception as e:
+                    raise DownloadFailure(resp, e)
+                logger.debug('Downloaded')
+            # Needed to create a copy of the raw response
+            # if not copied it would not recover data and other properties
+            return HTTPResponse(resp.raw)
+
     def request(self, method, url, erc, custom_refresh, **kwargs):
         """Abstract base method for making requests to the DNA Center APIs.
 
@@ -388,30 +418,11 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['GET'])
         stream = kwargs.get('stream', None)
-
-        dirpath = kwargs.pop('dirpath', None)
-        if not(dirpath) or not(os.path.isdir(dirpath)):
-            dirpath = os.getcwd()
-
-        save_file = kwargs.pop('save_file', False)
-        with self.request('GET', url, erc, 0, params=params, **kwargs) as resp:
-            if stream:
-                if save_file and resp.headers and resp.headers.get('fileName'):
-                    try:
-                        file_name = os.path.join(dirpath,
-                                                 resp.headers.get('fileName'))
-                        with open(file_name, 'wb') as f:
-                            logger.debug('Downloading {}'.format(file_name))
-                            for chunk in resp.iter_content(chunk_size=1024):
-                                if chunk:
-                                    f.write(chunk)
-                    except Exception as e:
-                        raise DownloadFailure(resp, e)
-                    logger.debug('Downloaded')
-                # Needed to create a copy of the raw response
-                # if not copied it would not recover data and other properties
-                return HTTPResponse(resp.raw)
-            return extract_and_parse_json(resp)
+        if stream:
+            return self.download('GET', url, erc, 0, params=params, **kwargs)
+        else:
+            response = self.request('GET', url, erc, 0, params=params, **kwargs)
+            return extract_and_parse_json(response)
 
     def post(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a POST request.
@@ -435,9 +446,14 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['POST'])
 
-        response = self.request('POST', url, erc, 0, params=params,
-                                json=json, data=data, **kwargs)
-        return extract_and_parse_json(response)
+        stream = kwargs.get('stream', None)
+        if stream:
+            return self.download('POST', url, erc, 0, params=params,
+                                 json=json, data=data, **kwargs)
+        else:
+            response = self.request('POST', url, erc, 0, params=params,
+                                    json=json, data=data, **kwargs)
+            return extract_and_parse_json(response)
 
     def put(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a PUT request.
@@ -461,9 +477,14 @@ class RestSession(object):
         # Expected response code
         erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['PUT'])
 
-        response = self.request('PUT', url, erc, 0, params=params,
-                                json=json, data=data, **kwargs)
-        return extract_and_parse_json(response)
+        stream = kwargs.get('stream', None)
+        if stream:
+            return self.download('PUT', url, erc, 0, params=params,
+                                 json=json, data=data, **kwargs)
+        else:
+            response = self.request('PUT', url, erc, 0, params=params,
+                                    json=json, data=data, **kwargs)
+            return extract_and_parse_json(response)
 
     def delete(self, url, params=None, **kwargs):
         """Sends a DELETE request.

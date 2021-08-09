@@ -80,10 +80,8 @@ class FabricWired(object):
         """**Beta** - Gets border device detail from SDA Fabric.
 
         Args:
-            sda_border_device(basestring): sda/border-device path
-                parameter.
-            device_ip_address(basestring): device-ip-address path
-                parameter.
+            sda_border_device(basestring): sda/border-device path parameter.
+            device_ip_address(basestring): device-ip-address path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -144,8 +142,7 @@ class FabricWired(object):
         """Adds border device in SDA Fabric.
 
         Args:
-            sda_border_device(basestring): sda/border-device path
-                parameter.
+            sda_border_device(basestring): sda/border-device path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -219,10 +216,8 @@ class FabricWired(object):
         """Deletes border device from SDA Fabric.
 
         Args:
-            sda_border_device(basestring): sda/border-device path
-                parameter.
-            device_ip_address(basestring): device-ip-address path
-                parameter.
+            sda_border_device(basestring): sda/border-device path parameter.
+            device_ip_address(basestring): device-ip-address path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

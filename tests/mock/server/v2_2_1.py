@@ -269,10 +269,10 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
     SENSORS_cfadc5e4c912588389f4f63d2fb6e4ed_PATTERN = re.compile(r"/dna/intent/api/v1/sensor-run-now")
     SITE_DESIGN_f50579d855255df89ab3545de9745545_PATTERN = re.compile(r"/dna/intent/api/v1/nfv/network-profile/string")
     SITE_DESIGN_159612e2202e5f7586e68778ed7772b1_PATTERN = re.compile(r"/dna/intent/api/v1/nfv/network-profile/string")
+    SITE_DESIGN_89252bcefb205d26b9aced6dc6d8c269_PATTERN = re.compile(r"/dna/intent/api/v1/nfv/network-profile/string")
     SITE_DESIGN_497d9ccfce8451809129ec5de42c5048_PATTERN = re.compile(r"/dna/intent/api/v1/nfv-provision-detail")
     SITE_DESIGN_cc72e307e5df50c48ce57370f27395a0_PATTERN = re.compile(r"/dna/intent/api/v1/business/nfv")
     SITE_DESIGN_d2a712eb315650618d475db5de0aabec_PATTERN = re.compile(r"/dna/intent/api/v1/nfv/network-profile")
-    SITE_DESIGN_a800a1bd8d7856f99608de210c0dae60_PATTERN = re.compile(r"/dna/intent/api/v1/nfv/network-profile/string")
     SITE_DESIGN_2bfde206eb445821a5722511f138814a_PATTERN = re.compile(r"/dna/intent/api/v1/business/nfv/provisioningDetail")
     SITES_ada372b978e253228bdf7d3eab24b7a2_PATTERN = re.compile(r"/dna/system/api/v1/site/string/device")
     SITES_ae4b592f66035f24b55028f79c1b7290_PATTERN = re.compile(r"/dna/intent/api/v1/site-health")
@@ -4816,6 +4816,23 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
+    def matches_SITE_DESIGN_89252bcefb205d26b9aced6dc6d8c269(self):
+        return re.search(
+            self.SITE_DESIGN_89252bcefb205d26b9aced6dc6d8c269_PATTERN,
+            self.path
+        )
+
+    def site_design_delete_nfv_profile_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'executionId': 'string', 'executionStatusUrl': 'string', 'message': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
     def matches_SITE_DESIGN_497d9ccfce8451809129ec5de42c5048(self):
         return re.search(
             self.SITE_DESIGN_497d9ccfce8451809129ec5de42c5048_PATTERN,
@@ -4857,23 +4874,6 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
         )
 
     def site_design_create_nfv_profile_response(self):
-        # Add response status code.
-        self.send_response(requests.codes.ok)
-        # Add response headers.
-        self.send_header('Content-Type', 'application/json; charset=utf-8')
-        self.end_headers()
-        # Add response content.
-        response_content = json.dumps({'executionId': 'string', 'executionStatusUrl': 'string', 'message': 'string'})
-        self.wfile.write(response_content.encode('utf-8'))
-        return
-
-    def matches_SITE_DESIGN_a800a1bd8d7856f99608de210c0dae60(self):
-        return re.search(
-            self.SITE_DESIGN_a800a1bd8d7856f99608de210c0dae60_PATTERN,
-            self.path
-        )
-
-    def site_design_delete_nfv_profile_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7065,7 +7065,7 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
             self.sensors_delete_sensor_test_response()
             return
 
-        if self.matches_SITE_DESIGN_a800a1bd8d7856f99608de210c0dae60():
+        if self.matches_SITE_DESIGN_89252bcefb205d26b9aced6dc6d8c269():
             self.site_design_delete_nfv_profile_response()
             return
 

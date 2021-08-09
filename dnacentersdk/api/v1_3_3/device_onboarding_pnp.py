@@ -143,8 +143,7 @@ class DeviceOnboardingPnp(object):
         """Un-Claims one of more devices with specified workflow.
 
         Args:
-            deviceIdList(list): UnclaimRequest's deviceIdList (list
-                of string, objects).
+            deviceIdList(list): UnclaimRequest's deviceIdList (list of string, objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -229,10 +228,8 @@ class DeviceOnboardingPnp(object):
         Args:
             _id(string): Device's _id.
             deviceInfo(object): Device's deviceInfo.
-            runSummaryList(list): Device's runSummaryList (list of
-                objects).
-            systemResetWorkflow(object): Device's
-                systemResetWorkflow.
+            runSummaryList(list): Device's runSummaryList (list of objects).
+            systemResetWorkflow(object): Device's systemResetWorkflow.
             systemWorkflow(object): Device's systemWorkflow.
             tenantId(string): Device's tenantId.
             version(number): Device's version.
@@ -423,13 +420,11 @@ class DeviceOnboardingPnp(object):
             syncResult(object): SAVAMapping's syncResult.
             syncResultStr(string): SAVAMapping's syncResultStr.
             syncStartTime(number): SAVAMapping's syncStartTime.
-            syncStatus(string): SAVAMapping's syncStatus. Available
-                values are 'NOT_SYNCED', 'SYNCING',
-                'SUCCESS' and 'FAILURE'.
+            syncStatus(string): SAVAMapping's syncStatus. Available values are 'NOT_SYNCED', 'SYNCING', 'SUCCESS'
+                and 'FAILURE'.
             tenantId(string): SAVAMapping's tenantId.
             token(string): SAVAMapping's token.
-            virtualAccountId(string): SAVAMapping's
-                virtualAccountId.
+            virtualAccountId(string): SAVAMapping's virtualAccountId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -555,9 +550,7 @@ class DeviceOnboardingPnp(object):
             endTime(number): Workflow's endTime.
             execTime(number): Workflow's execTime.
             imageId(string): Workflow's imageId.
-            instanceType(string): Workflow's instanceType. Available
-                values are 'SystemWorkflow',
-                'UserWorkflow' and
+            instanceType(string): Workflow's instanceType. Available values are 'SystemWorkflow', 'UserWorkflow' and
                 'SystemResetWorkflow'.
             lastupdateOn(number): Workflow's lastupdateOn.
             name(string): Workflow's name.
@@ -805,10 +798,8 @@ class DeviceOnboardingPnp(object):
         Args:
             deviceId(string): SiteProvisionRequest's deviceId.
             siteId(string): SiteProvisionRequest's siteId.
-            type(string): SiteProvisionRequest's type. Available
-                values are 'Default', 'AccessPoint',
-                'StackSwitch', 'Sensor' and
-                'MobilityExpress'.
+            type(string): SiteProvisionRequest's type. Available values are 'Default', 'AccessPoint', 'StackSwitch',
+                'Sensor' and 'MobilityExpress'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -909,13 +900,11 @@ class DeviceOnboardingPnp(object):
             syncResult(object): SAVAMapping's syncResult.
             syncResultStr(string): SAVAMapping's syncResultStr.
             syncStartTime(number): SAVAMapping's syncStartTime.
-            syncStatus(string): SAVAMapping's syncStatus. Available
-                values are 'NOT_SYNCED', 'SYNCING',
-                'SUCCESS' and 'FAILURE'.
+            syncStatus(string): SAVAMapping's syncStatus. Available values are 'NOT_SYNCED', 'SYNCING', 'SUCCESS'
+                and 'FAILURE'.
             tenantId(string): SAVAMapping's tenantId.
             token(string): SAVAMapping's token.
-            virtualAccountId(string): SAVAMapping's
-                virtualAccountId.
+            virtualAccountId(string): SAVAMapping's virtualAccountId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1259,9 +1248,7 @@ class DeviceOnboardingPnp(object):
             endTime(number): Workflow's endTime.
             execTime(number): Workflow's execTime.
             imageId(string): Workflow's imageId.
-            instanceType(string): Workflow's instanceType. Available
-                values are 'SystemWorkflow',
-                'UserWorkflow' and
+            instanceType(string): Workflow's instanceType. Available values are 'SystemWorkflow', 'UserWorkflow' and
                 'SystemResetWorkflow'.
             lastupdateOn(number): Workflow's lastupdateOn.
             name(string): Workflow's name.
@@ -1392,8 +1379,7 @@ class DeviceOnboardingPnp(object):
             aaaCredentials(object): Settings's aaaCredentials.
             acceptEula(boolean): Settings's acceptEula.
             defaultProfile(object): Settings's defaultProfile.
-            savaMappingList(list): Settings's savaMappingList (list
-                of objects).
+            savaMappingList(list): Settings's savaMappingList (list of objects).
             taskTimeOuts(object): Settings's taskTimeOuts.
             tenantId(string): Settings's tenantId.
             version(number): Settings's version.
@@ -1486,8 +1472,7 @@ class DeviceOnboardingPnp(object):
         """Recovers a device from a Workflow Execution Error state.
 
         Args:
-            deviceResetList(list): ResetRequest's deviceResetList
-                (list of objects).
+            deviceResetList(list): ResetRequest's deviceResetList (list of objects).
             projectId(string): ResetRequest's projectId.
             workflowId(string): ResetRequest's workflowId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1590,13 +1575,11 @@ class DeviceOnboardingPnp(object):
             syncResult(object): SAVAMapping's syncResult.
             syncResultStr(string): SAVAMapping's syncResultStr.
             syncStartTime(number): SAVAMapping's syncStartTime.
-            syncStatus(string): SAVAMapping's syncStatus. Available
-                values are 'NOT_SYNCED', 'SYNCING',
-                'SUCCESS' and 'FAILURE'.
+            syncStatus(string): SAVAMapping's syncStatus. Available values are 'NOT_SYNCED', 'SYNCING', 'SUCCESS'
+                and 'FAILURE'.
             tenantId(string): SAVAMapping's tenantId.
             token(string): SAVAMapping's token.
-            virtualAccountId(string): SAVAMapping's
-                virtualAccountId.
+            virtualAccountId(string): SAVAMapping's virtualAccountId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1757,10 +1740,8 @@ class DeviceOnboardingPnp(object):
         Args:
             limit(int): Limits number of results.
             offset(int): Index of first result.
-            sort(basestring, list, set, tuple): Comma seperated lost
-                of fields to sort on.
-            sort_order(basestring): Sort Order Ascending (asc) or
-                Descending (des).
+            sort(basestring, list, set, tuple): Comma seperated lost of fields to sort on.
+            sort_order(basestring): Sort Order Ascending (asc) or Descending (des).
             type(basestring, list, set, tuple): Workflow Type.
             name(basestring, list, set, tuple): Workflow Name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1839,10 +1820,8 @@ class DeviceOnboardingPnp(object):
         Args:
             deviceId(string): SiteProvisionRequest's deviceId.
             siteId(string): SiteProvisionRequest's siteId.
-            type(string): SiteProvisionRequest's type. Available
-                values are 'Default', 'AccessPoint',
-                'StackSwitch', 'Sensor' and
-                'MobilityExpress'.
+            type(string): SiteProvisionRequest's type. Available values are 'Default', 'AccessPoint', 'StackSwitch',
+                'Sensor' and 'MobilityExpress'.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1984,17 +1963,13 @@ class DeviceOnboardingPnp(object):
         """Claims one of more devices with specified workflow.
 
         Args:
-            configFileUrl(string): ClaimDeviceRequest's
-                configFileUrl.
+            configFileUrl(string): ClaimDeviceRequest's configFileUrl.
             configId(string): ClaimDeviceRequest's configId.
-            deviceClaimList(list): ClaimDeviceRequest's
-                deviceClaimList (list of objects).
-            fileServiceId(string): ClaimDeviceRequest's
-                fileServiceId.
+            deviceClaimList(list): ClaimDeviceRequest's deviceClaimList (list of objects).
+            fileServiceId(string): ClaimDeviceRequest's fileServiceId.
             imageId(string): ClaimDeviceRequest's imageId.
             imageUrl(string): ClaimDeviceRequest's imageUrl.
-            populateInventory(boolean): ClaimDeviceRequest's
-                populateInventory.
+            populateInventory(boolean): ClaimDeviceRequest's populateInventory.
             projectId(string): ClaimDeviceRequest's projectId.
             workflowId(string): ClaimDeviceRequest's workflowId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2161,34 +2136,22 @@ class DeviceOnboardingPnp(object):
         Args:
             limit(int): Limits number of results.
             offset(int): Index of first result.
-            sort(basestring, list, set, tuple): Comma seperated list
-                of fields to sort on.
-            sort_order(basestring): Sort Order Ascending (asc) or
-                Descending (des).
-            serial_number(basestring, list, set, tuple): Device
-                Serial Number.
+            sort(basestring, list, set, tuple): Comma seperated list of fields to sort on.
+            sort_order(basestring): Sort Order Ascending (asc) or Descending (des).
+            serial_number(basestring, list, set, tuple): Device Serial Number.
             state(basestring, list, set, tuple): Device State.
-            onb_state(basestring, list, set, tuple): Device
-                Onboarding State.
-            cm_state(basestring, list, set, tuple): Device
-                Connection Manager State.
+            onb_state(basestring, list, set, tuple): Device Onboarding State.
+            cm_state(basestring, list, set, tuple): Device Connection Manager State.
             name(basestring, list, set, tuple): Device Name.
             pid(basestring, list, set, tuple): Device ProductId.
             source(basestring, list, set, tuple): Device Source.
-            project_id(basestring, list, set, tuple): Device Project
-                Id.
-            workflow_id(basestring, list, set, tuple): Device
-                Workflow Id.
-            project_name(basestring, list, set, tuple): Device
-                Project Name.
-            workflow_name(basestring, list, set, tuple): Device
-                Workflow Name.
-            smart_account_id(basestring, list, set, tuple): Device
-                Smart Account.
-            virtual_account_id(basestring, list, set, tuple): Device
-                Virtual Account.
-            last_contact(bool): Device Has Contacted lastContact >
-                0.
+            project_id(basestring, list, set, tuple): Device Project Id.
+            workflow_id(basestring, list, set, tuple): Device Workflow Id.
+            project_name(basestring, list, set, tuple): Device Project Name.
+            workflow_name(basestring, list, set, tuple): Device Workflow Name.
+            smart_account_id(basestring, list, set, tuple): Device Smart Account.
+            virtual_account_id(basestring, list, set, tuple): Device Virtual Account.
+            last_contact(bool): Device Has Contacted lastContact > 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2306,10 +2269,8 @@ class DeviceOnboardingPnp(object):
         Args:
             _id(string): Device's _id.
             deviceInfo(object): Device's deviceInfo.
-            runSummaryList(list): Device's runSummaryList (list of
-                objects).
-            systemResetWorkflow(object): Device's
-                systemResetWorkflow.
+            runSummaryList(list): Device's runSummaryList (list of objects).
+            systemResetWorkflow(object): Device's systemResetWorkflow.
             systemWorkflow(object): Device's systemWorkflow.
             tenantId(string): Device's tenantId.
             version(number): Device's version.
@@ -2416,30 +2377,20 @@ class DeviceOnboardingPnp(object):
         useful for pagination.
 
         Args:
-            serial_number(basestring, list, set, tuple): Device
-                Serial Number.
+            serial_number(basestring, list, set, tuple): Device Serial Number.
             state(basestring, list, set, tuple): Device State.
-            onb_state(basestring, list, set, tuple): Device
-                Onboarding State.
-            cm_state(basestring, list, set, tuple): Device
-                Connection Manager State.
+            onb_state(basestring, list, set, tuple): Device Onboarding State.
+            cm_state(basestring, list, set, tuple): Device Connection Manager State.
             name(basestring, list, set, tuple): Device Name.
             pid(basestring, list, set, tuple): Device ProductId.
             source(basestring, list, set, tuple): Device Source.
-            project_id(basestring, list, set, tuple): Device Project
-                Id.
-            workflow_id(basestring, list, set, tuple): Device
-                Workflow Id.
-            project_name(basestring, list, set, tuple): Device
-                Project Name.
-            workflow_name(basestring, list, set, tuple): Device
-                Workflow Name.
-            smart_account_id(basestring, list, set, tuple): Device
-                Smart Account.
-            virtual_account_id(basestring, list, set, tuple): Device
-                Virtual Account.
-            last_contact(bool): Device Has Contacted lastContact >
-                0.
+            project_id(basestring, list, set, tuple): Device Project Id.
+            workflow_id(basestring, list, set, tuple): Device Workflow Id.
+            project_name(basestring, list, set, tuple): Device Project Name.
+            workflow_name(basestring, list, set, tuple): Device Workflow Name.
+            smart_account_id(basestring, list, set, tuple): Device Smart Account.
+            virtual_account_id(basestring, list, set, tuple): Device Virtual Account.
+            last_contact(bool): Device Has Contacted lastContact > 0.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2537,10 +2488,8 @@ class DeviceOnboardingPnp(object):
 
         Args:
             serial_number(basestring): Device Serial Number.
-            sort(basestring, list, set, tuple): Comma seperated list
-                of fields to sort on.
-            sort_order(basestring): Sort Order Ascending (asc) or
-                Descending (des).
+            sort(basestring, list, set, tuple): Comma seperated list of fields to sort on.
+            sort_order(basestring): Sort Order Ascending (asc) or Descending (des).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

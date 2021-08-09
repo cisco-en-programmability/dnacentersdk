@@ -138,8 +138,7 @@ class Discovery(object):
 
         Args:
             comments(string): Discovery's comments.
-            credentialType(string): Discovery's credentialType.
-                Available values are 'GLOBAL' and 'APP'.
+            credentialType(string): Discovery's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): Discovery's description.
             id(string): Discovery's id.
             instanceTenantId(string): Discovery's instanceTenantId.
@@ -236,8 +235,7 @@ class Discovery(object):
 
         Args:
             comments(string): Discovery's comments.
-            credentialType(string): Discovery's credentialType.
-                Available values are 'GLOBAL' and 'APP'.
+            credentialType(string): Discovery's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): Discovery's description.
             id(string): Discovery's id.
             instanceTenantId(string): Discovery's instanceTenantId.
@@ -592,10 +590,8 @@ class Discovery(object):
         """Returns the discovery by specified range.
 
         Args:
-            start_index(int): startIndex path parameter. Start
-                index.
-            records_to_return(int): recordsToReturn path parameter.
-                Number of records to return.
+            start_index(int): startIndex path parameter. Start index.
+            records_to_return(int): recordsToReturn path parameter. Number of records to return.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -660,27 +656,20 @@ class Discovery(object):
                                            task_id=None,
                                            headers=None,
                                            **request_parameters):
-        """Returns the network devices from a discovery job based on given
-        filters. Discovery ID can be obtained using the "Get
-        Discoveries by range" API.
+        """Returns the network devices from a discovery job based on given filters. Discovery ID can be obtained using the
+        "Get Discoveries by range" API.
 
         Args:
             id(basestring): id path parameter. Discovery ID.
             task_id(basestring): taskId query parameter.
             sort_by(basestring): sortBy query parameter.
             sort_order(basestring): sortOrder query parameter.
-            ip_address(basestring, list, set, tuple): ipAddress
-                query parameter.
-            ping_status(basestring, list, set, tuple): pingStatus
-                query parameter.
-            snmp_status(basestring, list, set, tuple): snmpStatus
-                query parameter.
-            cli_status(basestring, list, set, tuple): cliStatus
-                query parameter.
-            netconf_status(basestring, list, set, tuple):
-                netconfStatus query parameter.
-            http_status(basestring, list, set, tuple): httpStatus
-                query parameter.
+            ip_address(basestring, list, set, tuple): ipAddress query parameter.
+            ping_status(basestring, list, set, tuple): pingStatus query parameter.
+            snmp_status(basestring, list, set, tuple): snmpStatus query parameter.
+            cli_status(basestring, list, set, tuple): cliStatus query parameter.
+            netconf_status(basestring, list, set, tuple): netconfStatus query parameter.
+            http_status(basestring, list, set, tuple): httpStatus query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1009,8 +998,7 @@ class Discovery(object):
                             id,
                             headers=None,
                             **request_parameters):
-        """Returns discovery by Discovery ID. Discovery ID can be obtained
-        using the "Get Discoveries by range" API.
+        """Returns discovery by Discovery ID. Discovery ID can be obtained using the "Get Discoveries by range" API.
 
         Args:
             id(basestring): id path parameter. Discovery ID.
@@ -1065,9 +1053,8 @@ class Discovery(object):
                                id,
                                headers=None,
                                **request_parameters):
-        """Stops the discovery for the given Discovery ID and removes it.
-        Discovery ID can be obtained using the "Get Discoveries
-        by range" API.
+        """Stops the discovery for the given Discovery ID and removes it. Discovery ID can be obtained using the "Get
+        Discoveries by range" API.
 
         Args:
             id(basestring): id path parameter. Discovery ID.
@@ -1137,8 +1124,7 @@ class Discovery(object):
 
         Args:
             comments(string): Discovery's comments.
-            credentialType(string): Discovery's credentialType.
-                Available values are 'GLOBAL' and 'APP'.
+            credentialType(string): Discovery's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): Discovery's description.
             id(string): Discovery's id.
             instanceTenantId(string): Discovery's instanceTenantId.
@@ -1247,8 +1233,7 @@ class Discovery(object):
 
         Args:
             comments(string): Discovery's comments.
-            credentialType(string): Discovery's credentialType.
-                Available values are 'GLOBAL' and 'APP'.
+            credentialType(string): Discovery's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): Discovery's description.
             id(string): Discovery's id.
             instanceTenantId(string): Discovery's instanceTenantId.
@@ -1385,19 +1370,13 @@ class Discovery(object):
             attributeInfo(object): Discovery's attributeInfo.
             cdpLevel(integer): Discovery's cdpLevel.
             deviceIds(string): Discovery's deviceIds.
-            discoveryCondition(string): Discovery's
-                discoveryCondition.
+            discoveryCondition(string): Discovery's discoveryCondition.
             discoveryStatus(string): Discovery's discoveryStatus.
             discoveryType(string): Discovery's discoveryType.
-            enablePasswordList(string): Discovery's
-                enablePasswordList.
-            globalCredentialIdList(list): Discovery's
-                globalCredentialIdList (list of
-                strings).
-            httpReadCredential(object): Discovery's
-                httpReadCredential.
-            httpWriteCredential(object): Discovery's
-                httpWriteCredential.
+            enablePasswordList(string): Discovery's enablePasswordList.
+            globalCredentialIdList(list): Discovery's globalCredentialIdList (list of strings).
+            httpReadCredential(object): Discovery's httpReadCredential.
+            httpWriteCredential(object): Discovery's httpWriteCredential.
             id(string): Discovery's id.
             ipAddressList(string): Discovery's ipAddressList.
             ipFilterList(string): Discovery's ipFilterList.
@@ -1406,26 +1385,20 @@ class Discovery(object):
             name(string): Discovery's name.
             netconfPort(string): Discovery's netconfPort.
             numDevices(integer): Discovery's numDevices.
-            parentDiscoveryId(string): Discovery's
-                parentDiscoveryId.
+            parentDiscoveryId(string): Discovery's parentDiscoveryId.
             passwordList(string): Discovery's passwordList.
-            preferredMgmtIPMethod(string): Discovery's
-                preferredMgmtIPMethod.
+            preferredMgmtIPMethod(string): Discovery's preferredMgmtIPMethod.
             protocolOrder(string): Discovery's protocolOrder.
             retryCount(integer): Discovery's retryCount.
-            snmpAuthPassphrase(string): Discovery's
-                snmpAuthPassphrase.
+            snmpAuthPassphrase(string): Discovery's snmpAuthPassphrase.
             snmpAuthProtocol(string): Discovery's snmpAuthProtocol.
             snmpMode(string): Discovery's snmpMode.
-            snmpPrivPassphrase(string): Discovery's
-                snmpPrivPassphrase.
+            snmpPrivPassphrase(string): Discovery's snmpPrivPassphrase.
             snmpPrivProtocol(string): Discovery's snmpPrivProtocol.
             snmpRoCommunity(string): Discovery's snmpRoCommunity.
-            snmpRoCommunityDesc(string): Discovery's
-                snmpRoCommunityDesc.
+            snmpRoCommunityDesc(string): Discovery's snmpRoCommunityDesc.
             snmpRwCommunity(string): Discovery's snmpRwCommunity.
-            snmpRwCommunityDesc(string): Discovery's
-                snmpRwCommunityDesc.
+            snmpRwCommunityDesc(string): Discovery's snmpRwCommunityDesc.
             snmpUserName(string): Discovery's snmpUserName.
             timeOut(integer): Discovery's timeOut.
             updateMgmtIp(boolean): Discovery's updateMgmtIp.
@@ -1601,45 +1574,32 @@ class Discovery(object):
         Args:
             cdpLevel(integer): Discovery's cdpLevel.
             discoveryType(string): Discovery's discoveryType.
-            enablePasswordList(list): Discovery's enablePasswordList
-                (list of strings).
-            globalCredentialIdList(list): Discovery's
-                globalCredentialIdList (list of
-                strings).
-            httpReadCredential(object): Discovery's
-                httpReadCredential.
-            httpWriteCredential(object): Discovery's
-                httpWriteCredential.
+            enablePasswordList(list): Discovery's enablePasswordList (list of strings).
+            globalCredentialIdList(list): Discovery's globalCredentialIdList (list of strings).
+            httpReadCredential(object): Discovery's httpReadCredential.
+            httpWriteCredential(object): Discovery's httpWriteCredential.
             ipAddressList(string): Discovery's ipAddressList.
-            ipFilterList(list): Discovery's ipFilterList (list of
-                strings).
+            ipFilterList(list): Discovery's ipFilterList (list of strings).
             lldpLevel(integer): Discovery's lldpLevel.
             name(string): Discovery's name.
             netconfPort(string): Discovery's netconfPort.
-            passwordList(list): Discovery's passwordList (list of
-                strings).
-            preferredMgmtIPMethod(string): Discovery's
-                preferredMgmtIPMethod.
+            passwordList(list): Discovery's passwordList (list of strings).
+            preferredMgmtIPMethod(string): Discovery's preferredMgmtIPMethod.
             protocolOrder(string): Discovery's protocolOrder.
             retry(integer): Discovery's retry.
-            snmpAuthPassphrase(string): Discovery's
-                snmpAuthPassphrase.
+            snmpAuthPassphrase(string): Discovery's snmpAuthPassphrase.
             snmpAuthProtocol(string): Discovery's snmpAuthProtocol.
             snmpMode(string): Discovery's snmpMode.
-            snmpPrivPassphrase(string): Discovery's
-                snmpPrivPassphrase.
+            snmpPrivPassphrase(string): Discovery's snmpPrivPassphrase.
             snmpPrivProtocol(string): Discovery's snmpPrivProtocol.
             snmpROCommunity(string): Discovery's snmpROCommunity.
-            snmpROCommunityDesc(string): Discovery's
-                snmpROCommunityDesc.
+            snmpROCommunityDesc(string): Discovery's snmpROCommunityDesc.
             snmpRWCommunity(string): Discovery's snmpRWCommunity.
-            snmpRWCommunityDesc(string): Discovery's
-                snmpRWCommunityDesc.
+            snmpRWCommunityDesc(string): Discovery's snmpRWCommunityDesc.
             snmpUserName(string): Discovery's snmpUserName.
             snmpVersion(string): Discovery's snmpVersion.
             timeout(integer): Discovery's timeout.
-            userNameList(list): Discovery's userNameList (list of
-                strings).
+            userNameList(list): Discovery's userNameList (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1872,10 +1832,8 @@ class Discovery(object):
         """Update global credential for network devices in site(s).
 
         Args:
-            siteUuids(list): Discovery's siteUuids (list of
-                strings).
-            global_credential_id(basestring): globalCredentialId
-                path parameter. Global credential Uuid.
+            siteUuids(list): Discovery's siteUuids (list of strings).
+            global_credential_id(basestring): globalCredentialId path parameter. Global credential Uuid.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1950,8 +1908,7 @@ class Discovery(object):
         """Deletes global credential for the given ID.
 
         Args:
-            global_credential_id(basestring): globalCredentialId
-                path parameter. ID of global-credential.
+            global_credential_id(basestring): globalCredentialId path parameter. ID of global-credential.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2150,8 +2107,7 @@ class Discovery(object):
 
         Args:
             comments(string): Discovery's comments.
-            credentialType(string): Discovery's credentialType.
-                Available values are 'GLOBAL' and 'APP'.
+            credentialType(string): Discovery's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): Discovery's description.
             enablePassword(string): Discovery's enablePassword.
             id(string): Discovery's id.
@@ -2256,8 +2212,7 @@ class Discovery(object):
 
         Args:
             comments(string): Discovery's comments.
-            credentialType(string): Discovery's credentialType.
-                Available values are 'GLOBAL' and 'APP'.
+            credentialType(string): Discovery's credentialType. Available values are 'GLOBAL' and 'APP'.
             description(string): Discovery's description.
             enablePassword(string): Discovery's enablePassword.
             id(string): Discovery's id.
@@ -2351,10 +2306,8 @@ class Discovery(object):
                                                 offset=None,
                                                 headers=None,
                                                 **request_parameters):
-        """Returns the list of discovery jobs for the given Discovery ID.
-        The results can be optionally filtered based on IP.
-        Discovery ID can be obtained using the "Get Discoveries
-        by range" API.
+        """Returns the list of discovery jobs for the given Discovery ID. The results can be optionally filtered based on
+        IP. Discovery ID can be obtained using the "Get Discoveries by range" API.
 
         Args:
             id(basestring): id path parameter. Discovery ID.
@@ -2493,9 +2446,8 @@ class Discovery(object):
                                      task_id=None,
                                      headers=None,
                                      **request_parameters):
-        """Returns the count of network devices discovered in the given
-        discovery. Discovery ID can be obtained using the "Get
-        Discoveries by range" API.
+        """Returns the count of network devices discovered in the given discovery. Discovery ID can be obtained using the
+        "Get Discoveries by range" API.
 
         Args:
             id(basestring): id path parameter. Discovery ID.
@@ -2557,17 +2509,14 @@ class Discovery(object):
                                         task_id=None,
                                         headers=None,
                                         **request_parameters):
-        """Returns the network devices discovered for the given discovery
-        and for the given range. The maximum number of records
-        that can be retrieved is 500. Discovery ID can be
-        obtained using the "Get Discoveries by range" API.
+        """Returns the network devices discovered for the given discovery and for the given range. The maximum number of
+        records that can be retrieved is 500. Discovery ID can be obtained using the "Get Discoveries by range"
+        API.
 
         Args:
             id(basestring): id path parameter. Discovery ID.
-            start_index(int): startIndex path parameter. Start
-                index.
-            records_to_return(int): recordsToReturn path parameter.
-                Number of records to return.
+            start_index(int): startIndex path parameter. Start index.
+            records_to_return(int): recordsToReturn path parameter. Number of records to return.
             task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2634,10 +2583,8 @@ class Discovery(object):
         """Stops discovery for the given range and removes them.
 
         Args:
-            start_index(int): startIndex path parameter. Start
-                index.
-            records_to_delete(int): recordsToDelete path parameter.
-                Number of records to delete.
+            start_index(int): startIndex path parameter. Start index.
+            records_to_delete(int): recordsToDelete path parameter. Number of records to delete.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2694,8 +2641,7 @@ class Discovery(object):
                                                        task_id=None,
                                                        headers=None,
                                                        **request_parameters):
-        """Returns the network devices discovered for the given Discovery
-        ID. Discovery ID can be obtained using the "Get
+        """Returns the network devices discovered for the given Discovery ID. Discovery ID can be obtained using the "Get
         Discoveries by range" API.
 
         Args:
@@ -2760,11 +2706,9 @@ class Discovery(object):
         """Returns global credential for the given credential sub type.
 
         Args:
-            credential_sub_type(basestring): credentialSubType query
-                parameter. Credential type as CLI /
-                SNMPV2_READ_COMMUNITY /
-                SNMPV2_WRITE_COMMUNITY / SNMPV3 /
-                HTTP_WRITE / HTTP_READ / NETCONF.
+            credential_sub_type(basestring): credentialSubType query parameter. Credential type as CLI /
+                SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 / HTTP_WRITE / HTTP_READ /
+                NETCONF.
             sort_by(basestring): sortBy query parameter.
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request

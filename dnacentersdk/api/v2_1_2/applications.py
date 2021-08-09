@@ -87,28 +87,20 @@ class Applications(object):
         device, or a client device's MAC address.
 
         Args:
-            site_id(basestring): Assurance site UUID value (Cannot
-                be submitted together with deviceId and
+            site_id(basestring): Assurance site UUID value (Cannot be submitted together with deviceId and
                 clientMac).
-            device_id(basestring): Assurance device UUID value
-                (Cannot be submitted together with
-                siteId and clientMac).
-            mac_address(basestring): Client device's MAC address
-                (Cannot be submitted together with
-                siteId and deviceId).
-            start_time(int): Starting epoch time in milliseconds of
-                time window.
-            end_time(int): Ending epoch time in milliseconds of time
-                window.
-            application_health(basestring): Application health
-                category (POOR, FAIR, or GOOD.
-                Optionally use with siteId only).
-            offset(int): The offset of the first application in the
-                returned data (optionally used with
+            device_id(basestring): Assurance device UUID value (Cannot be submitted together with siteId and
+                clientMac).
+            mac_address(basestring): Client device's MAC address (Cannot be submitted together with siteId and
+                deviceId).
+            start_time(int): Starting epoch time in milliseconds of time window.
+            end_time(int): Ending epoch time in milliseconds of time window.
+            application_health(basestring): Application health category (POOR, FAIR, or GOOD.  Optionally use with
                 siteId only).
-            limit(int): The max number of application entries in
-                returned data [1, 1000] (optionally used
-                with siteId only).
+            offset(int): The offset of the first application in the returned data (optionally used with siteId
+                only).
+            limit(int): The max number of application entries in returned data [1, 1000] (optionally used with
+                siteId only).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

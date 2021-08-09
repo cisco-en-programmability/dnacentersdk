@@ -150,12 +150,8 @@ class DeviceReplacement(object):
         replacement device with same configuration and images.
 
         Args:
-            faultyDeviceSerialNumber(string):
-                DeviceReplacementWorkflowDTO's
-                faultyDeviceSerialNumber.
-            replacementDeviceSerialNumber(string):
-                DeviceReplacementWorkflowDTO's
-                replacementDeviceSerialNumber.
+            faultyDeviceSerialNumber(string): DeviceReplacementWorkflowDTO's faultyDeviceSerialNumber.
+            replacementDeviceSerialNumber(string): DeviceReplacementWorkflowDTO's replacementDeviceSerialNumber.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -312,25 +308,15 @@ class DeviceReplacement(object):
 
         Args:
             faulty_device_name(basestring): Faulty Device Name.
-            faulty_device_platform(basestring): Faulty Device
-                Platform.
-            replacement_device_platform(basestring): Replacement
-                Device Platform.
-            faulty_device_serial_number(basestring): Faulty Device
-                Serial Number.
-            replacement_device_serial_number(basestring):
-                Replacement Device Serial Number.
-            replacement_status(basestring, list, set, tuple): Device
-                Replacement status [READY-FOR-
-                REPLACEMENT, REPLACEMENT-IN-PROGRESS,
-                REPLACEMENT-SCHEDULED, REPLACED, ERROR,
-                NETWORK_READINESS_REQUESTED,
-                NETWORK_READINESS_FAILED].
-            family(basestring, list, set, tuple): List of
-                families[Routers, Switches and Hubs,
-                AP].
-            sort_by(basestring): SortBy this field. SortBy is
-                mandatory when order is used.
+            faulty_device_platform(basestring): Faulty Device Platform.
+            replacement_device_platform(basestring): Replacement Device Platform.
+            faulty_device_serial_number(basestring): Faulty Device Serial Number.
+            replacement_device_serial_number(basestring): Replacement Device Serial Number.
+            replacement_status(basestring, list, set, tuple): Device Replacement status [READY-FOR-REPLACEMENT,
+                REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED, ERROR,
+                NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED].
+            family(basestring, list, set, tuple): List of families[Routers, Switches and Hubs, AP].
+            sort_by(basestring): SortBy this field. SortBy is mandatory when order is used.
             sort_order(basestring): Order on displayName[ASC,DESC].
             offset(int): offset query parameter.
             limit(int): limit query parameter.
@@ -418,10 +404,8 @@ class DeviceReplacement(object):
         """Get replacement devices count.
 
         Args:
-            replacement_status(basestring, list, set, tuple): Device
-                Replacement status list[READY-FOR-
-                REPLACEMENT, REPLACEMENT-IN-PROGRESS,
-                REPLACEMENT-SCHEDULED, REPLACED, ERROR].
+            replacement_status(basestring, list, set, tuple): Device Replacement status list[READY-FOR-REPLACEMENT,
+                REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED, ERROR].
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides

@@ -79,8 +79,7 @@ class FabricWired(object):
         """Deletes border device from sda Fabric.
 
         Args:
-            device_ip_address(basestring): device-ip-address path
-                parameter.
+            device_ip_address(basestring): device-ip-address path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -200,8 +199,7 @@ class FabricWired(object):
         """Gets border device detail from SDA Fabric.
 
         Args:
-            device_ip_address(basestring): device-ip-address path
-                parameter.
+            device_ip_address(basestring): device-ip-address path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
