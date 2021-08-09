@@ -4229,9 +4229,6 @@ from .validators.v2_2_1.jsd_bd26b08b64545bae20f60c56891576 \
 from .validators.v2_2_1.jsd_df9908ad265e83ab77d73803925678 \
     import JSONSchemaValidatorDf9908Ad265E83Ab77D73803925678 \
     as JSONSchemaValidatorDf9908Ad265E83Ab77D73803925678_v2_2_1
-from .validators.v2_2_1.jsd_b2790cdb5abf98c8e00011de86a4 \
-    import JSONSchemaValidatorB2790Cdb5Abf98C8E00011De86A4 \
-    as JSONSchemaValidatorB2790Cdb5Abf98C8E00011De86A4_v2_2_1
 from .validators.v2_2_1.jsd_a3a1bf404bf5772828f66f1e10f074d \
     import JSONSchemaValidatorA3A1Bf404Bf5772828F66F1E10F074D \
     as JSONSchemaValidatorA3A1Bf404Bf5772828F66F1E10F074D_v2_2_1
@@ -8984,8 +8981,6 @@ class SchemaValidator:
                 JSONSchemaValidatorBd26B08B64545BAe20F60C56891576_v2_2_1()
             self.json_schema_validators['jsd_df9908ad265e83ab77d73803925678_v2_2_1'] =\
                 JSONSchemaValidatorDf9908Ad265E83Ab77D73803925678_v2_2_1()
-            self.json_schema_validators['jsd_b2790cdb5abf98c8e00011de86a4_v2_2_1'] =\
-                JSONSchemaValidatorB2790Cdb5Abf98C8E00011De86A4_v2_2_1()
             self.json_schema_validators['jsd_a3a1bf404bf5772828f66f1e10f074d_v2_2_1'] =\
                 JSONSchemaValidatorA3A1Bf404Bf5772828F66F1E10F074D_v2_2_1()
             self.json_schema_validators['jsd_b60f9f312235959812d49dc4c469e83_v2_2_1'] =\
