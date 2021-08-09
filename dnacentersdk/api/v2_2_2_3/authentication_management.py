@@ -79,9 +79,12 @@ class AuthenticationManagement(object):
                            pk_password=None,
                            headers=None,
                            **request_parameters):
-        """This method is used to upload a certificate .
+        """This method is used to upload a certificate. Upload the file to the **certFileUpload** form data field .
 
-        The following code gives an example of the multipart_fields.
+        The following code gives an **example** of the multipart_fields,
+        using `file` and `images` as form data field.
+
+        Use the appropiate form data field for the function.
 
         .. code-block:: python
 
@@ -183,9 +186,12 @@ class AuthenticationManagement(object):
                                pk_password=None,
                                headers=None,
                                **request_parameters):
-        """This method is used to upload a PKCS#12 file .
+        """This method is used to upload a PKCS#12 file. Upload the file to the **p12FileUpload** form data field .
 
-        The following code gives an example of the multipart_fields.
+        The following code gives an **example** of the multipart_fields,
+        using `file` and `images` as form data field.
+
+        Use the appropiate form data field for the function.
 
         .. code-block:: python
 
