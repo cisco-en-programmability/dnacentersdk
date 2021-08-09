@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DownloadReportContent data model.
+"""Cisco DNA Center ImportCertificate data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -37,14 +37,30 @@ from dnacentersdk.exceptions import MalformedRequest
 from builtins import *
 
 
-class JSONSchemaValidatorB2790Cdb5Abf98C8E00011De86A4(object):
-    """DownloadReportContent request schema definition."""
+class JSONSchemaValidatorB19D7E8DE2Ca5329930D06F041A4A173(object):
+    """ImportCertificate request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidatorB2790Cdb5Abf98C8E00011De86A4, self).__init__()
+        super(JSONSchemaValidatorB19D7E8DE2Ca5329930D06F041A4A173, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "properties": {
+                "response": {
+                "properties": {
+                "taskId": {
                 "type": "string"
+                },
+                "url": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "version": {
+                "type": "string"
+                }
+                },
+                "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

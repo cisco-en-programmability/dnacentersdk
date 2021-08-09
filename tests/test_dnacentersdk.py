@@ -338,6 +338,8 @@ from dnacentersdk.api.v2_2_2_3.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_2_2_3
 from dnacentersdk.api.v2_2_2_3.applications import \
     Applications as Applications_v2_2_2_3
+from dnacentersdk.api.v2_2_2_3.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_2_2_3
 from dnacentersdk.api.v2_2_2_3.clients import \
     Clients as Clients_v2_2_2_3
 from dnacentersdk.api.v2_2_2_3.command_runner import \
@@ -645,6 +647,7 @@ class TestDNACenterSDK:
         if api.version == '2.2.2.3':
             assert isinstance(api.application_policy, ApplicationPolicy_v2_2_2_3)
             assert isinstance(api.applications, Applications_v2_2_2_3)
+            assert isinstance(api.authentication_management, AuthenticationManagement_v2_2_2_3)
             assert isinstance(api.clients, Clients_v2_2_2_3)
             assert isinstance(api.command_runner, CommandRunner_v2_2_2_3)
             assert isinstance(api.compliance, Compliance_v2_2_2_3)

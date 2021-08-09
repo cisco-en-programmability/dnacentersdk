@@ -16,6 +16,8 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
     APPLICATION_POLICY_5b12cdd3a75c51258c9e051e84189f92_PATTERN = re.compile(r"/dna/intent/api/v1/applications")
     APPLICATION_POLICY_30af5f0aa1ed56ab9b98eb602dbd8366_PATTERN = re.compile(r"/dna/intent/api/v1/applications-count")
     APPLICATIONS_1b85e4ce533d5ff49ddd3b2f9657cfa5_PATTERN = re.compile(r"/dna/intent/api/v1/application-health")
+    AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
+    AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
     CLIENTS_f2c6333d8eb05491a16c2d32095e4352_PATTERN = re.compile(r"/dna/intent/api/v1/client-detail")
     CLIENTS_991dfd2751065bfb8c2367dd726df316_PATTERN = re.compile(r"/dna/intent/api/v1/client-enrichment-details")
     CLIENTS_f58ddf5cee095688aed79a9bb26e21e8_PATTERN = re.compile(r"/dna/intent/api/v1/client-health")
@@ -565,6 +567,40 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.end_headers()
         # Add response content.
         response_content = json.dumps({'version': 'string', 'totalCount': 0, 'response': [{'name': 'string', 'health': {}, 'businessRelevance': 'string', 'trafficClass': 'string', 'usageBytes': 0, 'averageThroughput': 0, 'packetLossPercent': {}, 'networkLatency': {}, 'jitter': {}, 'applicationServerLatency': {}, 'clientNetworkLatency': {}, 'serverNetworkLatency': {}}]})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173(self):
+        return re.search(
+            self.AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN,
+            self.path
+        )
+
+    def authentication_management_import_certificate_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22(self):
+        return re.search(
+            self.AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN,
+            self.path
+        )
+
+    def authentication_management_import_certificate_p12_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7557,6 +7593,14 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
 
         if self.matches_APPLICATION_POLICY_e1781a990c6b5a4b895d56bcfda2b7cb():
             self.application_policy_create_application_response()
+            return
+
+        if self.matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173():
+            self.authentication_management_import_certificate_response()
+            return
+
+        if self.matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22():
+            self.authentication_management_import_certificate_p12_response()
             return
 
         if self.matches_COMMAND_RUNNER_b2dae3b41636596aa02c3ad0a4bcb8d7():

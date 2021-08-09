@@ -58,6 +58,9 @@ def pytest_configure(config):
         "markers", "authentication: authentication wrapper test"
     )
     config.addinivalue_line(
+        "markers", "authentication_management: authentication_management wrapper test"
+    )
+    config.addinivalue_line(
         "markers", "clients: clients wrapper test"
     )
     config.addinivalue_line(

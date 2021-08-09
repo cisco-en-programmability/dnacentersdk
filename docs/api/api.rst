@@ -1526,6 +1526,15 @@ applications
 
 
 
+.. _authentication_management_2_2_2_3:
+
+authentication_management
+-------------------------
+
+.. autoclass:: dnacentersdk.api.v2_2_2_3.authentication_management.AuthenticationManagement()
+
+
+
 .. _clients_2_2_2_3:
 
 clients
