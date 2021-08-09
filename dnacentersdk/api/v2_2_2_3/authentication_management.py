@@ -79,7 +79,8 @@ class AuthenticationManagement(object):
                            pk_password=None,
                            headers=None,
                            **request_parameters):
-        """This method is used to upload a certificate. Upload the file to the **certFileUpload** form data field .
+        """This method is used to upload a certificate. Upload the files to the **certFileUpload** and **pkFileUpload**
+        form data fields .
 
         The following code gives an **example** of the multipart_fields,
         using `file` and `images` as form data field.
