@@ -13,12 +13,12 @@ dnacentersdk
     from dnacentersdk import api
 
     # Create a DNACenterAPI connection object;
-    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.1.2.
+    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.2.2.3.
     # and requests to verify the server's TLS certificate with verify=True.
     dnac = api.DNACenterAPI(username="devnetuser",
                             password="Cisco123!",
                             base_url="https://sandboxdnac.cisco.com:443",
-                            version='2.1.2',
+                            version='2.2.2.3',
                             verify=True)
 
     # Find all devices that have 'Switches and Hubs' in their family

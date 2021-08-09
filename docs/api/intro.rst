@@ -51,7 +51,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
     from dnacentersdk import api
 
-    api_ = api.DNACenterAPI(base_url='https://sandboxdnac.cisco.com:443', version='2.1.2')
+    api_ = api.DNACenterAPI(base_url='https://sandboxdnac.cisco.com:443', version='2.2.2.3')
     # Or even just api_ = api.DNACenterAPI() as base_url and version have those values.
     try:
         devices = api_.devices.get_device_list(family='Switches and Hubs')
@@ -99,8 +99,8 @@ All of this, combined, lets you do powerful things simply:
 
     from dnacentersdk import api
 
-    # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.1.2.
-    api_ = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac.cisco.com:443", version='2.1.2')
+    # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.2.2.3.
+    api_ = api.DNACenterAPI(username="devnetuser", password="Cisco123!", base_url="https://sandboxdnac.cisco.com:443", version='2.2.2.3')
 
     # Find all devices that have 'Switches and Hubs' in their family
     devices = api_.devices.get_device_list(family='Switches and Hubs')

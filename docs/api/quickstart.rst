@@ -186,7 +186,7 @@ Include the verify parameter and set it to False:
 
     >>> from dnacentersdk import DNACenterAPI
     >>> own_api = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
-    ... base_url="https://128.107.71.199:443", version='1.3.0',
+    ... base_url="https://128.107.71.199:443", version='2.2.2.3',
     ... verify=False)
     InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate
      verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
@@ -256,7 +256,7 @@ ready to start making API calls.
 It really is that easy.
 
 All of the calls have been wrapped and represented as native Python method
-calls, like :meth:`DNACenterAPI.device_onboarding_pnp.get_workflows() <dnacentersdk.api.v2_1_2.device_onboarding_pnp.DeviceOnboardingPnp.get_workflows>` which gets the workflows details
+calls, like :meth:`DNACenterAPI.device_onboarding_pnp.get_workflows() <dnacentersdk.api.v2_2_2_3.device_onboarding_pnp.DeviceOnboardingPnp.get_workflows>` which gets the workflows details
 for the pnp - see 
 the `Get Workflows
 <https://pubhub.devnetcloud.com/media/dnac-api-docs-1-3-3-x/docs/Antman-swagger-v1.annotated.html#/Device%20Onboarding%20(PnP)/getWorkflows>`_ API endpoint
