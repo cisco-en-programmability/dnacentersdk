@@ -738,17 +738,35 @@ def is_valid_add_device(json_schema_validate, obj):
 
 def add_device(api):
     endpoint_result = api.devices.add_device(
-        _id='string',
         active_validation=True,
-        deviceInfo={'aaaCredentials': {'password': 'string', 'username': 'string'}, 'addedOn': 0, 'addnMacAddrs': ['string'], 'agentType': 'string', 'authStatus': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'cmState': 'string', 'description': 'string', 'deviceSudiSerialNos': ['string'], 'deviceType': 'string', 'featuresSupported': ['string'], 'fileSystemList': [{'freespace': 0, 'name': 'string', 'readable': True, 'size': 0, 'type': 'string', 'writeable': True}], 'firstContact': 0, 'hostname': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'imageFile': 'string', 'imageVersion': 'string', 'ipInterfaces': [{'ipv4Address': {}, 'ipv6AddressList': [], 'macAddress': 'string', 'name': 'string', 'status': 'string'}], 'lastContact': 0, 'lastSyncTime': 0, 'lastUpdateOn': 0, 'location': {'address': 'string', 'altitude': 'string', 'latitude': 'string', 'longitude': 'string', 'siteId': 'string'}, 'macAddress': 'string', 'mode': 'string', 'name': 'string', 'neighborLinks': [{'localInterfaceName': 'string', 'localMacAddress': 'string', 'localShortInterfaceName': 'string', 'remoteDeviceName': 'string', 'remoteInterfaceName': 'string', 'remoteMacAddress': 'string', 'remotePlatform': 'string', 'remoteShortInterfaceName': 'string', 'remoteVersion': 'string'}], 'onbState': 'string', 'pid': 'string', 'pnpProfileList': [{'createdBy': 'string', 'discoveryCreated': True, 'primaryEndpoint': {'certificate': 'string', 'fqdn': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'port': 0, 'protocol': 'string'}, 'profileName': 'string', 'secondaryEndpoint': {'certificate': 'string', 'fqdn': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'port': 0, 'protocol': 'string'}}], 'populateInventory': True, 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'projectId': 'string', 'projectName': 'string', 'reloadRequested': True, 'serialNumber': 'string', 'smartAccountId': 'string', 'source': 'string', 'stack': True, 'stackInfo': {'isFullRing': True, 'stackMemberList': [{'hardwareVersion': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'macAddress': 'string', 'pid': 'string', 'priority': 0, 'role': 'string', 'serialNumber': 'string', 'softwareVersion': 'string', 'stackNumber': 0, 'state': 'string', 'sudiSerialNumber': 'string'}], 'stackRingProtocol': 'string', 'supportsStackWorkflows': True, 'totalMemberCount': 0, 'validLicenseLevels': ['string']}, 'state': 'string', 'sudiRequired': True, 'tags': {}, 'userSudiSerialNos': ['string'], 'virtualAccountId': 'string', 'workflowId': 'string', 'workflowName': 'string'},
+        cliTransport='string',
+        computeDevice=True,
+        enablePassword='string',
+        extendedDiscoveryInfo='string',
+        httpPassword='string',
+        httpPort='string',
+        httpSecure=True,
+        httpUserName='string',
+        ipAddress=['string'],
+        merakiOrgId=['string'],
+        netconfPort='string',
+        password='string',
         payload=None,
-        runSummaryList=[{'details': 'string', 'errorFlag': True, 'historyTaskInfo': {'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string', 'timeTaken': 0, 'type': 'string', 'workItemList': [{'command': 'string', 'endTime': 0, 'outputStr': 'string', 'startTime': 0, 'state': 'string', 'timeTaken': 0}]}, 'timestamp': 0}],
-        systemResetWorkflow={'_id': 'string', 'addToInventory': True, 'addedOn': 0, 'configId': 'string', 'currTaskIdx': 0, 'description': 'string', 'endTime': 0, 'execTime': 0, 'imageId': 'string', 'instanceType': 'string', 'lastupdateOn': 0, 'name': 'string', 'startTime': 0, 'state': 'string', 'tasks': [{'currWorkItemIdx': 0, 'endTime': 0, 'name': 'string', 'startTime': 0, 'state': 'string', 'taskSeqNo': 0, 'timeTaken': 0, 'type': 'string', 'workItemList': [{'command': 'string', 'endTime': 0, 'outputStr': 'string', 'startTime': 0, 'state': 'string', 'timeTaken': 0}]}], 'tenantId': 'string', 'type': 'string', 'useState': 'string', 'version': 0},
-        systemWorkflow={'_id': 'string', 'addToInventory': True, 'addedOn': 0, 'configId': 'string', 'currTaskIdx': 0, 'description': 'string', 'endTime': 0, 'execTime': 0, 'imageId': 'string', 'instanceType': 'string', 'lastupdateOn': 0, 'name': 'string', 'startTime': 0, 'state': 'string', 'tasks': [{'currWorkItemIdx': 0, 'endTime': 0, 'name': 'string', 'startTime': 0, 'state': 'string', 'taskSeqNo': 0, 'timeTaken': 0, 'type': 'string', 'workItemList': [{'command': 'string', 'endTime': 0, 'outputStr': 'string', 'startTime': 0, 'state': 'string', 'timeTaken': 0}]}], 'tenantId': 'string', 'type': 'string', 'useState': 'string', 'version': 0},
-        tenantId='string',
-        version=0,
-        workflow={'_id': 'string', 'addToInventory': True, 'addedOn': 0, 'configId': 'string', 'currTaskIdx': 0, 'description': 'string', 'endTime': 0, 'execTime': 0, 'imageId': 'string', 'instanceType': 'string', 'lastupdateOn': 0, 'name': 'string', 'startTime': 0, 'state': 'string', 'tasks': [{'currWorkItemIdx': 0, 'endTime': 0, 'name': 'string', 'startTime': 0, 'state': 'string', 'taskSeqNo': 0, 'timeTaken': 0, 'type': 'string', 'workItemList': [{'command': 'string', 'endTime': 0, 'outputStr': 'string', 'startTime': 0, 'state': 'string', 'timeTaken': 0}]}], 'tenantId': 'string', 'type': 'string', 'useState': 'string', 'version': 0},
-        workflowParameters={'configList': [{'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]}], 'licenseLevel': 'string', 'licenseType': 'string', 'topOfStackSerialNumber': 'string'}
+        serialNumber='string',
+        snmpAuthPassphrase='string',
+        snmpAuthProtocol='string',
+        snmpMode='string',
+        snmpPrivPassphrase='string',
+        snmpPrivProtocol='string',
+        snmpROCommunity='string',
+        snmpRWCommunity='string',
+        snmpRetry=0,
+        snmpTimeout=0,
+        snmpUserName='string',
+        snmpVersion='string',
+        type='string',
+        updateMgmtIPaddressList=[{'existMgmtIpAddress': 'string', 'newMgmtIpAddress': 'string'}],
+        userName='string'
     )
     return endpoint_result
 
@@ -768,17 +786,35 @@ def test_add_device(api, validator):
 
 def add_device_default(api):
     endpoint_result = api.devices.add_device(
-        _id=None,
         active_validation=True,
-        deviceInfo=None,
+        cliTransport=None,
+        computeDevice=None,
+        enablePassword=None,
+        extendedDiscoveryInfo=None,
+        httpPassword=None,
+        httpPort=None,
+        httpSecure=None,
+        httpUserName=None,
+        ipAddress=None,
+        merakiOrgId=None,
+        netconfPort=None,
+        password=None,
         payload=None,
-        runSummaryList=None,
-        systemResetWorkflow=None,
-        systemWorkflow=None,
-        tenantId=None,
-        version=None,
-        workflow=None,
-        workflowParameters=None
+        serialNumber=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpRWCommunity=None,
+        snmpRetry=None,
+        snmpTimeout=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        type=None,
+        updateMgmtIPaddressList=None,
+        userName=None
     )
     return endpoint_result
 
@@ -803,7 +839,34 @@ def is_valid_sync_devices(json_schema_validate, obj):
 def sync_devices(api):
     endpoint_result = api.devices.sync_devices(
         active_validation=True,
-        payload=None
+        cliTransport='string',
+        computeDevice=True,
+        enablePassword='string',
+        extendedDiscoveryInfo='string',
+        httpPassword='string',
+        httpPort='string',
+        httpSecure=True,
+        httpUserName='string',
+        ipAddress=['string'],
+        merakiOrgId=['string'],
+        netconfPort='string',
+        password='string',
+        payload=None,
+        serialNumber='string',
+        snmpAuthPassphrase='string',
+        snmpAuthProtocol='string',
+        snmpMode='string',
+        snmpPrivPassphrase='string',
+        snmpPrivProtocol='string',
+        snmpROCommunity='string',
+        snmpRWCommunity='string',
+        snmpRetry=0,
+        snmpTimeout=0,
+        snmpUserName='string',
+        snmpVersion='string',
+        type='string',
+        updateMgmtIPaddressList=[{'existMgmtIpAddress': 'string', 'newMgmtIpAddress': 'string'}],
+        userName='string'
     )
     return endpoint_result
 
@@ -824,7 +887,34 @@ def test_sync_devices(api, validator):
 def sync_devices_default(api):
     endpoint_result = api.devices.sync_devices(
         active_validation=True,
-        payload=None
+        cliTransport=None,
+        computeDevice=None,
+        enablePassword=None,
+        extendedDiscoveryInfo=None,
+        httpPassword=None,
+        httpPort=None,
+        httpSecure=None,
+        httpUserName=None,
+        ipAddress=None,
+        merakiOrgId=None,
+        netconfPort=None,
+        password=None,
+        payload=None,
+        serialNumber=None,
+        snmpAuthPassphrase=None,
+        snmpAuthProtocol=None,
+        snmpMode=None,
+        snmpPrivPassphrase=None,
+        snmpPrivProtocol=None,
+        snmpROCommunity=None,
+        snmpRWCommunity=None,
+        snmpRetry=None,
+        snmpTimeout=None,
+        snmpUserName=None,
+        snmpVersion=None,
+        type=None,
+        updateMgmtIPaddressList=None,
+        userName=None
     )
     return endpoint_result
 

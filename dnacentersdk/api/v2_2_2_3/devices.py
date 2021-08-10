@@ -1069,15 +1069,33 @@ class Devices(object):
         return self._object_factory('bpm_fe602e8165035b5cbc304fada4ee2f26_v2_2_2_3', json_data)
 
     def add_device(self,
-                   _id=None,
-                   deviceInfo=None,
-                   runSummaryList=None,
-                   systemResetWorkflow=None,
-                   systemWorkflow=None,
-                   tenantId=None,
-                   version=None,
-                   workflow=None,
-                   workflowParameters=None,
+                   cliTransport=None,
+                   computeDevice=None,
+                   enablePassword=None,
+                   extendedDiscoveryInfo=None,
+                   httpPassword=None,
+                   httpPort=None,
+                   httpSecure=None,
+                   httpUserName=None,
+                   ipAddress=None,
+                   merakiOrgId=None,
+                   netconfPort=None,
+                   password=None,
+                   serialNumber=None,
+                   snmpAuthPassphrase=None,
+                   snmpAuthProtocol=None,
+                   snmpMode=None,
+                   snmpPrivPassphrase=None,
+                   snmpPrivProtocol=None,
+                   snmpROCommunity=None,
+                   snmpRWCommunity=None,
+                   snmpRetry=None,
+                   snmpTimeout=None,
+                   snmpUserName=None,
+                   snmpVersion=None,
+                   type=None,
+                   updateMgmtIPaddressList=None,
+                   userName=None,
                    headers=None,
                    payload=None,
                    active_validation=True,
@@ -1085,15 +1103,34 @@ class Devices(object):
         """Adds the device with given credential .
 
         Args:
-            _id(string): Devices's _id.
-            deviceInfo(object): Devices's deviceInfo.
-            runSummaryList(list): Devices's runSummaryList (list of objects).
-            systemResetWorkflow(object): Devices's systemResetWorkflow.
-            systemWorkflow(object): Devices's systemWorkflow.
-            tenantId(string): Devices's tenantId.
-            version(integer): Devices's version.
-            workflow(object): Devices's workflow.
-            workflowParameters(object): Devices's workflowParameters.
+            cliTransport(string): Devices's cliTransport.
+            computeDevice(boolean): Devices's computeDevice.
+            enablePassword(string): Devices's enablePassword.
+            extendedDiscoveryInfo(string): Devices's extendedDiscoveryInfo.
+            httpPassword(string): Devices's httpPassword.
+            httpPort(string): Devices's httpPort.
+            httpSecure(boolean): Devices's httpSecure.
+            httpUserName(string): Devices's httpUserName.
+            ipAddress(list): Devices's ipAddress (list of strings).
+            merakiOrgId(list): Devices's merakiOrgId (list of strings).
+            netconfPort(string): Devices's netconfPort.
+            password(string): Devices's password.
+            serialNumber(string): Devices's serialNumber.
+            snmpAuthPassphrase(string): Devices's snmpAuthPassphrase.
+            snmpAuthProtocol(string): Devices's snmpAuthProtocol.
+            snmpMode(string): Devices's snmpMode.
+            snmpPrivPassphrase(string): Devices's snmpPrivPassphrase.
+            snmpPrivProtocol(string): Devices's snmpPrivProtocol.
+            snmpROCommunity(string): Devices's snmpROCommunity.
+            snmpRWCommunity(string): Devices's snmpRWCommunity.
+            snmpRetry(integer): Devices's snmpRetry.
+            snmpTimeout(integer): Devices's snmpTimeout.
+            snmpUserName(string): Devices's snmpUserName.
+            snmpVersion(string): Devices's snmpVersion.
+            type(string): Devices's type. Available values are 'COMPUTE_DEVICE', 'MERAKI_DASHBOARD',
+                'NETWORK_DEVICE' and 'NODATACHANGE'.
+            updateMgmtIPaddressList(list): Devices's updateMgmtIPaddressList (list of objects).
+            userName(string): Devices's userName.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1127,24 +1164,60 @@ class Devices(object):
         path_params = {
         }
         _payload = {
-            '_id':
-                _id,
-            'deviceInfo':
-                deviceInfo,
-            'runSummaryList':
-                runSummaryList,
-            'systemResetWorkflow':
-                systemResetWorkflow,
-            'systemWorkflow':
-                systemWorkflow,
-            'tenantId':
-                tenantId,
-            'version':
-                version,
-            'workflow':
-                workflow,
-            'workflowParameters':
-                workflowParameters,
+            'cliTransport':
+                cliTransport,
+            'computeDevice':
+                computeDevice,
+            'enablePassword':
+                enablePassword,
+            'extendedDiscoveryInfo':
+                extendedDiscoveryInfo,
+            'httpPassword':
+                httpPassword,
+            'httpPort':
+                httpPort,
+            'httpSecure':
+                httpSecure,
+            'httpUserName':
+                httpUserName,
+            'ipAddress':
+                ipAddress,
+            'merakiOrgId':
+                merakiOrgId,
+            'netconfPort':
+                netconfPort,
+            'password':
+                password,
+            'serialNumber':
+                serialNumber,
+            'snmpAuthPassphrase':
+                snmpAuthPassphrase,
+            'snmpAuthProtocol':
+                snmpAuthProtocol,
+            'snmpMode':
+                snmpMode,
+            'snmpPrivPassphrase':
+                snmpPrivPassphrase,
+            'snmpPrivProtocol':
+                snmpPrivProtocol,
+            'snmpROCommunity':
+                snmpROCommunity,
+            'snmpRWCommunity':
+                snmpRWCommunity,
+            'snmpRetry':
+                snmpRetry,
+            'snmpTimeout':
+                snmpTimeout,
+            'snmpUserName':
+                snmpUserName,
+            'snmpVersion':
+                snmpVersion,
+            'type':
+                type,
+            'updateMgmtIPaddressList':
+                updateMgmtIPaddressList,
+            'userName':
+                userName,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
@@ -1171,6 +1244,33 @@ class Devices(object):
         return self._object_factory('bpm_fe3ec7651e79d891fce37a0d860_v2_2_2_3', json_data)
 
     def sync_devices(self,
+                     cliTransport=None,
+                     computeDevice=None,
+                     enablePassword=None,
+                     extendedDiscoveryInfo=None,
+                     httpPassword=None,
+                     httpPort=None,
+                     httpSecure=None,
+                     httpUserName=None,
+                     ipAddress=None,
+                     merakiOrgId=None,
+                     netconfPort=None,
+                     password=None,
+                     serialNumber=None,
+                     snmpAuthPassphrase=None,
+                     snmpAuthProtocol=None,
+                     snmpMode=None,
+                     snmpPrivPassphrase=None,
+                     snmpPrivProtocol=None,
+                     snmpROCommunity=None,
+                     snmpRWCommunity=None,
+                     snmpRetry=None,
+                     snmpTimeout=None,
+                     snmpUserName=None,
+                     snmpVersion=None,
+                     type=None,
+                     updateMgmtIPaddressList=None,
+                     userName=None,
                      headers=None,
                      payload=None,
                      active_validation=True,
@@ -1178,9 +1278,37 @@ class Devices(object):
         """Sync the devices provided as input .
 
         Args:
+            cliTransport(string): Devices's cliTransport.
+            computeDevice(boolean): Devices's computeDevice.
+            enablePassword(string): Devices's enablePassword.
+            extendedDiscoveryInfo(string): Devices's extendedDiscoveryInfo.
+            httpPassword(string): Devices's httpPassword.
+            httpPort(string): Devices's httpPort.
+            httpSecure(boolean): Devices's httpSecure.
+            httpUserName(string): Devices's httpUserName.
+            ipAddress(list): Devices's ipAddress (list of strings).
+            merakiOrgId(list): Devices's merakiOrgId (list of strings).
+            netconfPort(string): Devices's netconfPort.
+            password(string): Devices's password.
+            serialNumber(string): Devices's serialNumber.
+            snmpAuthPassphrase(string): Devices's snmpAuthPassphrase.
+            snmpAuthProtocol(string): Devices's snmpAuthProtocol.
+            snmpMode(string): Devices's snmpMode.
+            snmpPrivPassphrase(string): Devices's snmpPrivPassphrase.
+            snmpPrivProtocol(string): Devices's snmpPrivProtocol.
+            snmpROCommunity(string): Devices's snmpROCommunity.
+            snmpRWCommunity(string): Devices's snmpRWCommunity.
+            snmpRetry(integer): Devices's snmpRetry.
+            snmpTimeout(integer): Devices's snmpTimeout.
+            snmpUserName(string): Devices's snmpUserName.
+            snmpVersion(string): Devices's snmpVersion.
+            type(string): Devices's type. Available values are 'COMPUTE_DEVICE', 'MERAKI_DASHBOARD',
+                'NETWORK_DEVICE' and 'NODATACHANGE'.
+            updateMgmtIPaddressList(list): Devices's updateMgmtIPaddressList (list of objects).
+            userName(string): Devices's userName.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(list): A JSON serializable Python object to send in the
+            payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
             active_validation(bool): Enable/Disable payload validation.
                 Defaults to True.
@@ -1197,7 +1325,7 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, list)
+        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1210,7 +1338,64 @@ class Devices(object):
 
         path_params = {
         }
-        _payload = payload or []
+        _payload = {
+            'cliTransport':
+                cliTransport,
+            'computeDevice':
+                computeDevice,
+            'enablePassword':
+                enablePassword,
+            'extendedDiscoveryInfo':
+                extendedDiscoveryInfo,
+            'httpPassword':
+                httpPassword,
+            'httpPort':
+                httpPort,
+            'httpSecure':
+                httpSecure,
+            'httpUserName':
+                httpUserName,
+            'ipAddress':
+                ipAddress,
+            'merakiOrgId':
+                merakiOrgId,
+            'netconfPort':
+                netconfPort,
+            'password':
+                password,
+            'serialNumber':
+                serialNumber,
+            'snmpAuthPassphrase':
+                snmpAuthPassphrase,
+            'snmpAuthProtocol':
+                snmpAuthProtocol,
+            'snmpMode':
+                snmpMode,
+            'snmpPrivPassphrase':
+                snmpPrivPassphrase,
+            'snmpPrivProtocol':
+                snmpPrivProtocol,
+            'snmpROCommunity':
+                snmpROCommunity,
+            'snmpRWCommunity':
+                snmpRWCommunity,
+            'snmpRetry':
+                snmpRetry,
+            'snmpTimeout':
+                snmpTimeout,
+            'snmpUserName':
+                snmpUserName,
+            'snmpVersion':
+                snmpVersion,
+            'type':
+                type,
+            'updateMgmtIPaddressList':
+                updateMgmtIPaddressList,
+            'userName':
+                userName,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
         if active_validation:
             self._request_validator('jsd_fe06867e548bba1919024b40d992_v2_2_2_3')\
                 .validate(_payload)

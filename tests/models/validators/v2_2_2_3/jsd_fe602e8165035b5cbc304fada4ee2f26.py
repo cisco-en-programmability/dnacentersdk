@@ -45,909 +45,152 @@ class JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "dayZeroConfig": {
-                "properties": {
-                "config": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "dayZeroConfigPreview": {
-                "type": "object"
-                },
-                "deviceInfo": {
-                "properties": {
-                "aaaCredentials": {
-                "properties": {
-                "password": {
-                "type": "string"
-                },
-                "username": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "addedOn": {
-                "type": "number"
-                },
-                "addnMacAddrs": {
+                "response": {
                 "items": {
+                "properties": {
+                "apEthernetMacAddress": {
+                "type": "object"
+                },
+                "apManagerInterfaceIp": {
                 "type": "string"
                 },
-                "type": "array"
-                },
-                "agentType": {
+                "associatedWlcIp": {
                 "type": "string"
                 },
-                "authStatus": {
+                "bootDateTime": {
                 "type": "string"
                 },
-                "authenticatedMicNumber": {
+                "collectionInterval": {
                 "type": "string"
                 },
-                "authenticatedSudiSerialNo": {
-                "type": "string"
-                },
-                "capabilitiesSupported": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "cmState": {
+                "collectionStatus": {
                 "type": "string"
                 },
                 "description":
                  {
                 "type": "string"
                 },
-                "deviceSudiSerialNos": {
-                "items": {
+                "deviceSupportLevel": {
                 "type": "string"
                 },
-                "type": "array"
-                },
-                "deviceType": {
+                "errorCode": {
                 "type": "string"
                 },
-                "featuresSupported": {
-                "items": {
+                "errorDescription": {
                 "type": "string"
                 },
-                "type": "array"
-                },
-                "fileSystemList": {
-                "items": {
-                "properties": {
-                "freespace": {
-                "type": "number"
-                },
-                "name": {
+                "family": {
                 "type": "string"
-                },
-                "readable": {
-                "type": "boolean"
-                },
-                "size": {
-                "type": "number"
-                },
-                "type": {
-                "type": "string"
-                },
-                "writeable": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "firstContact": {
-                "type": "number"
                 },
                 "hostname": {
                 "type": "string"
                 },
-                "httpHeaders": {
-                "items": {
-                "properties": {
-                "key": {
+                "id": {
                 "type": "string"
                 },
-                "value": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "imageFile": {
+                "instanceTenantId": {
                 "type": "string"
                 },
-                "imageVersion": {
+                "instanceUuid": {
                 "type": "string"
                 },
-                "ipInterfaces": {
-                "items": {
-                "properties": {
-                "ipv4Address": {
-                "type": "object"
-                },
-                "ipv6AddressList": {
-                "type": "array"
-                },
-                "macAddress": {
+                "interfaceCount": {
                 "type": "string"
                 },
-                "name": {
+                "inventoryStatusDetail": {
                 "type": "string"
                 },
-                "status": {
+                "lastUpdateTime": {
+                "type": "integer"
+                },
+                "lastUpdated": {
                 "type": "string"
-                }
                 },
-                "type": "object"
+                "lineCardCount": {
+                "type": "string"
                 },
-                "type": "array"
-                },
-                "lastContact": {
-                "type": "number"
-                },
-                "lastSyncTime": {
-                "type": "number"
-                },
-                "lastUpdateOn": {
-                "type": "number"
+                "lineCardId": {
+                "type": "string"
                 },
                 "location": {
-                "properties": {
-                "address": {
-                "type": "string"
+                "type": "object"
                 },
-                "altitude": {
-                "type": "string"
-                },
-                "latitude": {
-                "type": "string"
-                },
-                "longitude": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                }
-                },
+                "locationName": {
                 "type": "object"
                 },
                 "macAddress": {
                 "type": "string"
                 },
-                "mode": {
-                "type": "string"
-                },
-                "name": {
-                "type": "string"
-                },
-                "neighborLinks": {
-                "items": {
-                "properties": {
-                "localInterfaceName": {
-                "type": "string"
-                },
-                "localMacAddress": {
-                "type": "string"
-                },
-                "localShortInterfaceName": {
-                "type": "string"
-                },
-                "remoteDeviceName": {
-                "type": "string"
-                },
-                "remoteInterfaceName": {
-                "type": "string"
-                },
-                "remoteMacAddress": {
-                "type": "string"
-                },
-                "remotePlatform": {
-                "type": "string"
-                },
-                "remoteShortInterfaceName": {
-                "type": "string"
-                },
-                "remoteVersion": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "onbState": {
-                "type": "string"
-                },
-                "pid": {
-                "type": "string"
-                },
-                "pnpProfileList": {
-                "items": {
-                "properties": {
-                "createdBy": {
-                "type": "string"
-                },
-                "discoveryCreated": {
+                "managedAtleastOnce": {
                 "type": "boolean"
                 },
-                "primaryEndpoint": {
-                "properties": {
-                "certificate": {
+                "managementIpAddress": {
                 "type": "string"
                 },
-                "fqdn": {
+                "managementState": {
                 "type": "string"
                 },
-                "ipv4Address": {
-                "type": "object"
-                },
-                "ipv6Address": {
-                "type": "object"
-                },
-                "port": {
-                "type": "number"
-                },
-                "protocol": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "profileName": {
+                "memorySize": {
                 "type": "string"
                 },
-                "secondaryEndpoint": {
-                "properties": {
-                "certificate": {
+                "platformId": {
                 "type": "string"
                 },
-                "fqdn": {
+                "reachabilityFailureReason": {
                 "type": "string"
                 },
-                "ipv4Address": {
-                "type": "object"
-                },
-                "ipv6Address": {
-                "type": "object"
-                },
-                "port": {
-                "type": "number"
-                },
-                "protocol": {
+                "reachabilityStatus": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "populateInventory": {
-                "type": "boolean"
-                },
-                "preWorkflowCliOuputs": {
-                "items": {
-                "properties": {
-                "cli": {
-                "type": "string"
-                },
-                "cliOutput": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "projectId": {
-                "type": "string"
-                },
-                "projectName": {
-                "type": "string"
-                },
-                "reloadRequested": {
-                "type": "boolean"
-                },
-                "serialNumber": {
-                "type": "string"
-                },
-                "siteId": {
-                "type": "string"
-                },
-                "siteName": {
-                "type": "string"
-                },
-                "smartAccountId": {
-                "type": "string"
-                },
-                "source": {
-                "type": "string"
-                },
-                "stack": {
-                "type": "boolean"
-                },
-                "stackInfo": {
-                "properties": {
-                "isFullRing": {
-                "type": "boolean"
-                },
-                "stackMemberList": {
-                "items": {
-                "properties": {
-                "hardwareVersion": {
-                "type": "string"
-                },
-                "licenseLevel": {
-                "type": "string"
-                },
-                "licenseType": {
-                "type": "string"
-                },
-                "macAddress": {
-                "type": "string"
-                },
-                "pid": {
-                "type": "string"
-                },
-                "priority": {
-                "type": "number"
                 },
                 "role": {
                 "type": "string"
                 },
+                "roleSource": {
+                "type": "string"
+                },
                 "serialNumber": {
+                "type": "string"
+                },
+                "series": {
+                "type": "string"
+                },
+                "snmpContact": {
+                "type": "string"
+                },
+                "snmpLocation": {
+                "type": "string"
+                },
+                "softwareType": {
                 "type": "string"
                 },
                 "softwareVersion": {
                 "type": "string"
                 },
-                "stackNumber": {
-                "type": "number"
-                },
-                "state": {
+                "tagCount": {
                 "type": "string"
                 },
-                "sudiSerialNumber": {
-                "type": "string"
-                }
-                },
+                "tunnelUdpPort": {
                 "type": "object"
-                },
-                "type": "array"
-                },
-                "stackRingProtocol": {
-                "type": "string"
-                },
-                "supportsStackWorkflows": {
-                "type": "boolean"
-                },
-                "totalMemberCount": {
-                "type": "number"
-                },
-                "validLicenseLevels": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "state": {
-                "type": "string"
-                },
-                "sudiRequired": {
-                "type": "boolean"
-                },
-                "tags": {
-                "type": "object"
-                },
-                "userMicNumbers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "userSudiSerialNos": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "virtualAccountId": {
-                "type": "string"
-                },
-                "workflowId": {
-                "type": "string"
-                },
-                "workflowName": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "runSummaryList": {
-                "items": {
-                "properties": {
-                "details": {
-                "type": "string"
-                },
-                "errorFlag": {
-                "type": "boolean"
-                },
-                "historyTaskInfo": {
-                "properties": {
-                "addnDetails": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "name": {
-                "type": "string"
-                },
-                "timeTaken": {
-                "type": "number"
                 },
                 "type": {
                 "type": "string"
                 },
-                "workItemList": {
-                "items": {
-                "properties": {
-                "command": {
+                "upTime": {
                 "type": "string"
                 },
-                "endTime": {
-                "type": "number"
+                "uptimeSeconds": {
+                "type": "integer"
                 },
-                "outputStr": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "timeTaken": {
-                "type": "number"
+                "waasDeviceMode": {
+                "type": "object"
                 }
                 },
                 "type": "object"
                 },
                 "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "timestamp": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "systemResetWorkflow": {
-                "properties": {
-                "_id": {
-                "type": "string"
-                },
-                "addToInventory": {
-                "type": "boolean"
-                },
-                "addedOn": {
-                "type": "number"
-                },
-                "configId": {
-                "type": "string"
-                },
-                "currTaskIdx": {
-                "type": "number"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "execTime": {
-                "type": "number"
-                },
-                "imageId": {
-                "type": "string"
-                },
-                "instanceType": {
-                "type": "string"
-                },
-                "lastupdateOn": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "tasks": {
-                "items": {
-                "properties": {
-                "currWorkItemIdx": {
-                "type": "number"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "taskSeqNo": {
-                "type": "number"
-                },
-                "timeTaken": {
-                "type": "number"
-                },
-                "type": {
-                "type": "string"
-                },
-                "workItemList": {
-                "items": {
-                "properties": {
-                "command": {
-                "type": "string"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "outputStr": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "timeTaken": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "tenantId": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                },
-                "useState": {
-                "type": "string"
                 },
                 "version": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "systemWorkflow": {
-                "properties": {
-                "_id": {
                 "type": "string"
-                },
-                "addToInventory": {
-                "type": "boolean"
-                },
-                "addedOn": {
-                "type": "number"
-                },
-                "configId": {
-                "type": "string"
-                },
-                "currTaskIdx": {
-                "type": "number"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "execTime": {
-                "type": "number"
-                },
-                "imageId": {
-                "type": "string"
-                },
-                "instanceType": {
-                "type": "string"
-                },
-                "lastupdateOn": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "tasks": {
-                "items": {
-                "properties": {
-                "currWorkItemIdx": {
-                "type": "number"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "taskSeqNo": {
-                "type": "number"
-                },
-                "timeTaken": {
-                "type": "number"
-                },
-                "type": {
-                "type": "string"
-                },
-                "workItemList": {
-                "items": {
-                "properties": {
-                "command": {
-                "type": "string"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "outputStr": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "timeTaken": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "tenantId": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                },
-                "useState": {
-                "type": "string"
-                },
-                "version": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "tenantId": {
-                "type": "string"
-                },
-                "version": {
-                "type": "number"
-                },
-                "workflow": {
-                "properties": {
-                "_id": {
-                "type": "string"
-                },
-                "addToInventory": {
-                "type": "boolean"
-                },
-                "addedOn": {
-                "type": "number"
-                },
-                "configId": {
-                "type": "string"
-                },
-                "currTaskIdx": {
-                "type": "number"
-                },
-                "description":
-                 {
-                "type": "string"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "execTime": {
-                "type": "number"
-                },
-                "imageId": {
-                "type": "string"
-                },
-                "instanceType": {
-                "type": "string"
-                },
-                "lastupdateOn": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "tasks": {
-                "items": {
-                "properties": {
-                "currWorkItemIdx": {
-                "type": "number"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "name": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "taskSeqNo": {
-                "type": "number"
-                },
-                "timeTaken": {
-                "type": "number"
-                },
-                "type": {
-                "type": "string"
-                },
-                "workItemList": {
-                "items": {
-                "properties": {
-                "command": {
-                "type": "string"
-                },
-                "endTime": {
-                "type": "number"
-                },
-                "outputStr": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "number"
-                },
-                "state": {
-                "type": "string"
-                },
-                "timeTaken": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "tenantId": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                },
-                "useState": {
-                "type": "string"
-                },
-                "version": {
-                "type": "number"
-                }
-                },
-                "type": "object"
-                },
-                "workflowParameters": {
-                "properties": {
-                "configList": {
-                "items": {
-                "properties": {
-                "configId": {
-                "type": "string"
-                },
-                "configParameters": {
-                "items": {
-                "properties": {
-                "key": {
-                "type": "string"
-                },
-                "value": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "licenseLevel": {
-                "type": "string"
-                },
-                "licenseType": {
-                "type": "string"
-                },
-                "topOfStackSerialNumber": {
-                "type": "string"
-                }
-                },
-                "type": "object"
                 }
                 },
                 "type": "object"
