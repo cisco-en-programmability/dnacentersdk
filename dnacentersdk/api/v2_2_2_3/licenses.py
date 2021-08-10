@@ -253,7 +253,6 @@ class Licenses(object):
         return self._object_factory('bpm_f4ba64eef4085d518a612835e128fe3c_v2_2_2_3', json_data)
 
     def device_license_details(self,
-                               details,
                                device_uuid,
                                headers=None,
                                **request_parameters):
@@ -261,7 +260,6 @@ class Licenses(object):
 
         Args:
             device_uuid(basestring): device_uuid path parameter. Id of device .
-            details(basestring): details path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -279,8 +277,6 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(device_uuid, basestring,
                    may_be_none=False)
-        check_type(details, basestring,
-                   may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -293,7 +289,6 @@ class Licenses(object):
 
         path_params = {
             'device_uuid': device_uuid,
-            'details': details,
         }
 
         with_custom_headers = False
@@ -387,7 +382,6 @@ class Licenses(object):
         return self._object_factory('bpm_b2f15d0c54c2862a60a904289ddd_v2_2_2_3', json_data)
 
     def device_registration(self,
-                            register,
                             virtual_account_name,
                             device_uuids=None,
                             headers=None,
@@ -399,7 +393,6 @@ class Licenses(object):
         Args:
             device_uuids(list): Licenses's Comma separated device ids  (list of strings).
             virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account .
-            register(basestring): register path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -422,8 +415,6 @@ class Licenses(object):
         check_type(payload, dict)
         check_type(virtual_account_name, basestring,
                    may_be_none=False)
-        check_type(register, basestring,
-                   may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
@@ -439,7 +430,6 @@ class Licenses(object):
 
         path_params = {
             'virtual_account_name': virtual_account_name,
-            'register': register,
         }
         _payload = {
             'device_uuids':
@@ -471,11 +461,7 @@ class Licenses(object):
         return self._object_factory('bpm_df26f516755a50b5b5477324cf5cb649_v2_2_2_3', json_data)
 
     def change_virtual_account(self,
-                               device,
-                               smart_account,
                                smart_account_id,
-                               transfer,
-                               virtual_account,
                                virtual_account_name,
                                device_uuids=None,
                                headers=None,
@@ -486,12 +472,8 @@ class Licenses(object):
 
         Args:
             device_uuids(list): Licenses's Comma separated device ids  (list of strings).
-            smart_account(basestring): smartAccount path parameter.
             smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_account(basestring): virtualAccount path parameter.
             virtual_account_name(basestring): virtual_account_name path parameter. Name of target virtual account .
-            device(basestring): device path parameter.
-            transfer(basestring): transfer path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -512,17 +494,9 @@ class Licenses(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(smart_account, basestring,
-                   may_be_none=False)
         check_type(smart_account_id, basestring,
                    may_be_none=False)
-        check_type(virtual_account, basestring,
-                   may_be_none=False)
         check_type(virtual_account_name, basestring,
-                   may_be_none=False)
-        check_type(device, basestring,
-                   may_be_none=False)
-        check_type(transfer, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
@@ -538,12 +512,8 @@ class Licenses(object):
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'smartAccount': smart_account,
             'smart_account_id': smart_account_id,
-            'virtualAccount': virtual_account,
             'virtual_account_name': virtual_account_name,
-            'device': device,
-            'transfer': transfer,
         }
         _payload = {
             'device_uuids':
@@ -577,14 +547,12 @@ class Licenses(object):
 
     def virtual_account_details(self,
                                 smart_account_id,
-                                virtual_accounts,
                                 headers=None,
                                 **request_parameters):
         """Get virtual account details of a smart account. .
 
         Args:
             smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_accounts(basestring): virtualAccounts path parameter. Virtual Accounts .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -602,8 +570,6 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(smart_account_id, basestring,
                    may_be_none=False)
-        check_type(virtual_accounts, basestring,
-                   may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -616,7 +582,6 @@ class Licenses(object):
 
         path_params = {
             'smart_account_id': smart_account_id,
-            'virtualAccounts': virtual_accounts,
         }
 
         with_custom_headers = False
@@ -688,18 +653,14 @@ class Licenses(object):
 
     def license_term_details(self,
                              device_type,
-                             smart_account,
                              smart_account_id,
-                             virtual_account,
                              virtual_account_name,
                              headers=None,
                              **request_parameters):
         """Get license term details. .
 
         Args:
-            smart_account(basestring): smartAccount path parameter.
             smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_account(basestring): virtualAccount path parameter.
             virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
                 "All" will give license term detail for all virtual accounts. .
             device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
@@ -721,11 +682,7 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(device_type, basestring,
                    may_be_none=False)
-        check_type(smart_account, basestring,
-                   may_be_none=False)
         check_type(smart_account_id, basestring,
-                   may_be_none=False)
-        check_type(virtual_account, basestring,
                    may_be_none=False)
         check_type(virtual_account_name, basestring,
                    may_be_none=False)
@@ -742,9 +699,7 @@ class Licenses(object):
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'smartAccount': smart_account,
             'smart_account_id': smart_account_id,
-            'virtualAccount': virtual_account,
             'virtual_account_name': virtual_account_name,
         }
 
@@ -768,7 +723,6 @@ class Licenses(object):
     def license_usage_details(self,
                               device_type,
                               smart_account_id,
-                              virtual_account,
                               virtual_account_name,
                               headers=None,
                               **request_parameters):
@@ -776,7 +730,6 @@ class Licenses(object):
 
         Args:
             smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_account(basestring): virtualAccount path parameter.
             virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
                 "All" will give license usage detail for all virtual accounts. .
             device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
@@ -800,8 +753,6 @@ class Licenses(object):
                    may_be_none=False)
         check_type(smart_account_id, basestring,
                    may_be_none=False)
-        check_type(virtual_account, basestring,
-                   may_be_none=False)
         check_type(virtual_account_name, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -818,7 +769,6 @@ class Licenses(object):
 
         path_params = {
             'smart_account_id': smart_account_id,
-            'virtualAccount': virtual_account,
             'virtual_account_name': virtual_account_name,
         }
 

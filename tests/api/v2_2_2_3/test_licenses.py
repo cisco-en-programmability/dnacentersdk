@@ -150,7 +150,6 @@ def is_valid_device_license_details(json_schema_validate, obj):
 
 def device_license_details(api):
     endpoint_result = api.licenses.device_license_details(
-        details='string',
         device_uuid='string'
     )
     return endpoint_result
@@ -171,7 +170,6 @@ def test_device_license_details(api, validator):
 
 def device_license_details_default(api):
     endpoint_result = api.licenses.device_license_details(
-        details='string',
         device_uuid='string'
     )
     return endpoint_result
@@ -247,7 +245,6 @@ def device_registration(api):
         active_validation=True,
         device_uuids=['string'],
         payload=None,
-        register='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -271,7 +268,6 @@ def device_registration_default(api):
         active_validation=True,
         device_uuids=None,
         payload=None,
-        register='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -297,13 +293,9 @@ def is_valid_change_virtual_account(json_schema_validate, obj):
 def change_virtual_account(api):
     endpoint_result = api.licenses.change_virtual_account(
         active_validation=True,
-        device='string',
         device_uuids=['string'],
         payload=None,
-        smart_account='string',
         smart_account_id='string',
-        transfer='string',
-        virtual_account='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -325,13 +317,9 @@ def test_change_virtual_account(api, validator):
 def change_virtual_account_default(api):
     endpoint_result = api.licenses.change_virtual_account(
         active_validation=True,
-        device='string',
         device_uuids=None,
         payload=None,
-        smart_account='string',
         smart_account_id='string',
-        transfer='string',
-        virtual_account='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -356,8 +344,7 @@ def is_valid_virtual_account_details(json_schema_validate, obj):
 
 def virtual_account_details(api):
     endpoint_result = api.licenses.virtual_account_details(
-        smart_account_id='string',
-        virtual_accounts='string'
+        smart_account_id='string'
     )
     return endpoint_result
 
@@ -377,8 +364,7 @@ def test_virtual_account_details(api, validator):
 
 def virtual_account_details_default(api):
     endpoint_result = api.licenses.virtual_account_details(
-        smart_account_id='string',
-        virtual_accounts='string'
+        smart_account_id='string'
     )
     return endpoint_result
 
@@ -447,9 +433,7 @@ def is_valid_license_term_details(json_schema_validate, obj):
 def license_term_details(api):
     endpoint_result = api.licenses.license_term_details(
         device_type='string',
-        smart_account='string',
         smart_account_id='string',
-        virtual_account='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -471,9 +455,7 @@ def test_license_term_details(api, validator):
 def license_term_details_default(api):
     endpoint_result = api.licenses.license_term_details(
         device_type=None,
-        smart_account='string',
         smart_account_id='string',
-        virtual_account='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -500,7 +482,6 @@ def license_usage_details(api):
     endpoint_result = api.licenses.license_usage_details(
         device_type='string',
         smart_account_id='string',
-        virtual_account='string',
         virtual_account_name='string'
     )
     return endpoint_result
@@ -523,7 +504,6 @@ def license_usage_details_default(api):
     endpoint_result = api.licenses.license_usage_details(
         device_type=None,
         smart_account_id='string',
-        virtual_account='string',
         virtual_account_name='string'
     )
     return endpoint_result
