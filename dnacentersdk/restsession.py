@@ -128,6 +128,9 @@ class RestSession(object):
         else:
             logger.setLevel(logging.INFO)
 
+        if verify is False:
+            requests.packages.urllib3.disable_warnings()
+
         # Initialize a new `requests` session
         self._req_session = requests.session()
 

@@ -96,6 +96,9 @@ class Authentication(object):
                                 "verify": verify}
         self._object_factory = object_factory
 
+        if verify is False:
+            requests.packages.urllib3.disable_warnings()
+
     @property
     def verify(self):
         """The verify (TLS Certificate) for the API endpoints."""
