@@ -24,6 +24,14 @@ SOFTWARE.
 
 from past.types import basestring
 
+from dnacentersdk.config import (
+    DEFAULT_DEBUG,
+    DEFAULT_VERSION,
+    DEFAULT_BASE_URL,
+    DEFAULT_SINGLE_REQUEST_TIMEOUT,
+    DEFAULT_WAIT_ON_RATE_LIMIT,
+    DEFAULT_VERIFY,
+)
 import dnacentersdk.environment as dnacenter_environment
 from dnacentersdk.exceptions import AccessTokenError, VersionError
 from dnacentersdk.models.mydict import mydict_data_factory
@@ -501,25 +509,24 @@ class DNACenterAPI(object):
                 '2.2.1', '2.2.2.3'].
 
         """
-
         username = username or dnacenter_environment.get_env_username()
         password = password or dnacenter_environment.get_env_password()
         encoded_auth = encoded_auth or dnacenter_environment.get_env_encoded_auth()
-        base_url = base_url or dnacenter_environment.get_env_base_url()
+        base_url = base_url or dnacenter_environment.get_env_base_url() or DEFAULT_BASE_URL
 
         if single_request_timeout is None:
-            single_request_timeout = dnacenter_environment.get_env_single_request_timeout()
+            single_request_timeout = dnacenter_environment.get_env_single_request_timeout() or DEFAULT_SINGLE_REQUEST_TIMEOUT
 
         if wait_on_rate_limit is None:
-            wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit()
+            wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
 
         if verify is None:
-            verify = dnacenter_environment.get_env_verify()
+            verify = dnacenter_environment.get_env_verify() or DEFAULT_VERIFY
 
-        version = version or dnacenter_environment.get_env_version()
+        version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
 
         if debug is None:
-            debug = dnacenter_environment.get_env_debug()
+            debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG
 
         check_type(base_url, basestring)
         check_type(single_request_timeout, int)
