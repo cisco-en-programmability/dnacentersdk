@@ -24,7 +24,6 @@ SOFTWARE.
 
 import pytest
 
-from dnacentersdk import DNACenterAPI
 from tests.environment import (
     DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
     DNA_CENTER_ENCODED_AUTH, DNA_CENTER_VERSION,
@@ -61,6 +60,7 @@ def mock_dna_center_server(free_port):
 
 @pytest.fixture(scope="session")
 def api(mock_dna_center_server, base_url):
+    from dnacentersdk import DNACenterAPI
     return DNACenterAPI(username=DNA_CENTER_USERNAME,
                         password=DNA_CENTER_PASSWORD,
                         encoded_auth=DNA_CENTER_ENCODED_AUTH,

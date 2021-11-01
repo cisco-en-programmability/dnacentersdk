@@ -408,6 +408,7 @@ from tests.config import (
     DEFAULT_WAIT_ON_RATE_LIMIT
 )
 import pytest
+import requests
 
 
 @pytest.mark.dnacentersdk
@@ -439,7 +440,7 @@ class TestDNACenterSDK:
     @pytest.mark.dnacentersdk
     def test_custom_base_url(self):
         custom_url = "https://custom.domain.com/v1/"
-        with pytest.raises(dnacentersdk.exceptions.ApiError):
+        with pytest.raises((dnacentersdk.exceptions.ApiError, requests.exceptions.RequestException)):
             dnacentersdk.DNACenterAPI(username=DNA_CENTER_USERNAME,
                                       password=DNA_CENTER_PASSWORD,
                                       encoded_auth=DNA_CENTER_ENCODED_AUTH,
