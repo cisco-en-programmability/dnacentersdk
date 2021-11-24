@@ -52,7 +52,13 @@ class JSONSchemaValidatorD8F10868C21856EaB31776F109Aba2Bb(object):
                 "deviceManagementIpAddress": {
                 "type": "string"
                 },
+                "executionId": {
+                "type": "string"
+                },
                 "executionStatusUrl": {
+                "type": "string"
+                },
+                "siteId": {
                 "type": "string"
                 },
                 "siteNameHierarchy": {

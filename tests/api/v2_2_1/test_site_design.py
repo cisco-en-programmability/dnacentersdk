@@ -57,7 +57,7 @@ def test_get_nfv_profile(api, validator):
             raise original_e
 
 
-def get_nfv_profile_default(api):
+def get_nfv_profile_default_val(api):
     endpoint_result = api.site_design.get_nfv_profile(
         id='string',
         limit=None,
@@ -68,11 +68,11 @@ def get_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_get_nfv_profile_default(api, validator):
+def test_get_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_get_nfv_profile(
             validator,
-            get_nfv_profile_default(api)
+            get_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -108,7 +108,7 @@ def test_update_nfv_profile(api, validator):
             raise original_e
 
 
-def update_nfv_profile_default(api):
+def update_nfv_profile_default_val(api):
     endpoint_result = api.site_design.update_nfv_profile(
         active_validation=True,
         device=None,
@@ -120,11 +120,11 @@ def update_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_update_nfv_profile_default(api, validator):
+def test_update_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_update_nfv_profile(
             validator,
-            update_nfv_profile_default(api)
+            update_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -157,7 +157,7 @@ def test_delete_nfv_profile(api, validator):
             raise original_e
 
 
-def delete_nfv_profile_default(api):
+def delete_nfv_profile_default_val(api):
     endpoint_result = api.site_design.delete_nfv_profile(
         id='string',
         name=None
@@ -166,11 +166,11 @@ def delete_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_delete_nfv_profile_default(api, validator):
+def test_delete_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_delete_nfv_profile(
             validator,
-            delete_nfv_profile_default(api)
+            delete_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -204,7 +204,7 @@ def test_nfv_provisioning_detail(api, validator):
             raise original_e
 
 
-def nfv_provisioning_detail_default(api):
+def nfv_provisioning_detail_default_val(api):
     endpoint_result = api.site_design.nfv_provisioning_detail(
         active_validation=True,
         device_ip=None,
@@ -214,11 +214,11 @@ def nfv_provisioning_detail_default(api):
 
 
 @pytest.mark.site_design
-def test_nfv_provisioning_detail_default(api, validator):
+def test_nfv_provisioning_detail_default_val(api, validator):
     try:
         assert is_valid_nfv_provisioning_detail(
             validator,
-            nfv_provisioning_detail_default(api)
+            nfv_provisioning_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -253,7 +253,7 @@ def test_provision_nfv(api, validator):
             raise original_e
 
 
-def provision_nfv_default(api):
+def provision_nfv_default_val(api):
     endpoint_result = api.site_design.provision_nfv(
         active_validation=True,
         payload=None,
@@ -264,11 +264,11 @@ def provision_nfv_default(api):
 
 
 @pytest.mark.site_design
-def test_provision_nfv_default(api, validator):
+def test_provision_nfv_default_val(api, validator):
     try:
         assert is_valid_provision_nfv(
             validator,
-            provision_nfv_default(api)
+            provision_nfv_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -303,7 +303,7 @@ def test_create_nfv_profile(api, validator):
             raise original_e
 
 
-def create_nfv_profile_default(api):
+def create_nfv_profile_default_val(api):
     endpoint_result = api.site_design.create_nfv_profile(
         active_validation=True,
         device=None,
@@ -314,11 +314,11 @@ def create_nfv_profile_default(api):
 
 
 @pytest.mark.site_design
-def test_create_nfv_profile_default(api, validator):
+def test_create_nfv_profile_default_val(api, validator):
     try:
         assert is_valid_create_nfv_profile(
             validator,
-            create_nfv_profile_default(api)
+            create_nfv_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -350,7 +350,7 @@ def test_get_device_details_by_ip(api, validator):
             raise original_e
 
 
-def get_device_details_by_ip_default(api):
+def get_device_details_by_ip_default_val(api):
     endpoint_result = api.site_design.get_device_details_by_ip(
         device_ip=None
     )
@@ -358,11 +358,11 @@ def get_device_details_by_ip_default(api):
 
 
 @pytest.mark.site_design
-def test_get_device_details_by_ip_default(api, validator):
+def test_get_device_details_by_ip_default_val(api, validator):
     try:
         assert is_valid_get_device_details_by_ip(
             validator,
-            get_device_details_by_ip_default(api)
+            get_device_details_by_ip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

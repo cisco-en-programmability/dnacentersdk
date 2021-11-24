@@ -88,7 +88,7 @@ class Reports(object):
         metadata required to configure a report. .
 
         Args:
-            deliveries(list): Reports's Array of available delivery channels  (list of any objects).
+            deliveries(list): Reports's Array of available delivery channels  (list of objects).
             name(string): Reports's report name .
             schedule(object): Reports's schedule.
             tags(list): Reports's array of tags for report  (list of strings).

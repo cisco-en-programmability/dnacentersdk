@@ -49,6 +49,9 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "type": "string"
                 },
                 "deliveries": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "executionCount": {
@@ -114,9 +117,15 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "type": "string"
                 },
                 "fieldGroups": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "filters": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "format": {

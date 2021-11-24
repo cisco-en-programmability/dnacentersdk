@@ -59,7 +59,7 @@ def test_import_certificate(api, validator):
             raise original_e
 
 
-def import_certificate_default(api):
+def import_certificate_default_val(api):
     endpoint_result = api.authentication_management.import_certificate(
         multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
         multipart_monitor_callback=None,
@@ -72,11 +72,11 @@ def import_certificate_default(api):
 
 
 @pytest.mark.authentication_management
-def test_import_certificate_default(api, validator):
+def test_import_certificate_default_val(api, validator):
     try:
         assert is_valid_import_certificate(
             validator,
-            import_certificate_default(api)
+            import_certificate_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -114,7 +114,7 @@ def test_import_certificate_p12(api, validator):
             raise original_e
 
 
-def import_certificate_p12_default(api):
+def import_certificate_p12_default_val(api):
     endpoint_result = api.authentication_management.import_certificate_p12(
         multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
         multipart_monitor_callback=None,
@@ -128,11 +128,11 @@ def import_certificate_p12_default(api):
 
 
 @pytest.mark.authentication_management
-def test_import_certificate_p12_default(api, validator):
+def test_import_certificate_p12_default_val(api, validator):
     try:
         assert is_valid_import_certificate_p12(
             validator,
-            import_certificate_p12_default(api)
+            import_certificate_p12_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

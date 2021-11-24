@@ -52,6 +52,9 @@ class JSONSchemaValidatorF2E8552Eabc5E5F97E1F40Bcc4B4C75(object):
                 "executionId": {
                 "type": "string"
                 },
+                "executionStatusUrl": {
+                "type": "string"
+                },
                 "status": {
                 "enum": [
                 "success",

@@ -86,6 +86,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "type": "object"
                 },
                 "locationInfoList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "modelVersion": {
@@ -116,6 +119,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "type": "number"
                 },
                 "sensors": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "showWlcUpgradeBanner": {
@@ -164,6 +170,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "type": "object"
                 },
                 "extWebAuthHtmlTag": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "extWebAuthPortal": {
@@ -218,6 +227,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "items": {
                 "properties": {
                 "config": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "name": {
@@ -284,6 +296,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "type": "number"
                 },
                 "wlans": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },

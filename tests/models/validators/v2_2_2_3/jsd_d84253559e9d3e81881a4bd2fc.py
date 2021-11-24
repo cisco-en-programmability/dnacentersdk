@@ -87,9 +87,15 @@ class JSONSchemaValidatorD84253559E9D3E81881A4Bd2Fc(object):
                 "type": "integer"
                 },
                 "dhcpServerIps": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "dnsServerIps": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "gateways": {

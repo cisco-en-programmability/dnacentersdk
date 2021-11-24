@@ -54,7 +54,7 @@ def test_get_list_of_available_namespaces(api, validator):
             raise original_e
 
 
-def get_list_of_available_namespaces_default(api):
+def get_list_of_available_namespaces_default_val(api):
     endpoint_result = api.file.get_list_of_available_namespaces(
 
     )
@@ -62,11 +62,11 @@ def get_list_of_available_namespaces_default(api):
 
 
 @pytest.mark.file
-def test_get_list_of_available_namespaces_default(api, validator):
+def test_get_list_of_available_namespaces_default_val(api, validator):
     try:
         assert is_valid_get_list_of_available_namespaces(
             validator,
-            get_list_of_available_namespaces_default(api)
+            get_list_of_available_namespaces_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -98,7 +98,7 @@ def test_get_list_of_files(api, validator):
             raise original_e
 
 
-def get_list_of_files_default(api):
+def get_list_of_files_default_val(api):
     endpoint_result = api.file.get_list_of_files(
         name_space='string'
     )
@@ -106,11 +106,11 @@ def get_list_of_files_default(api):
 
 
 @pytest.mark.file
-def test_get_list_of_files_default(api, validator):
+def test_get_list_of_files_default_val(api, validator):
     try:
         assert is_valid_get_list_of_files(
             validator,
-            get_list_of_files_default(api)
+            get_list_of_files_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -144,7 +144,7 @@ def test_download_a_file_by_fileid(api, validator):
             raise original_e
 
 
-def download_a_file_by_fileid_default(api):
+def download_a_file_by_fileid_default_val(api):
     endpoint_result = api.file.download_a_file_by_fileid(
         dirpath=None,
         save_file=None,
@@ -154,11 +154,11 @@ def download_a_file_by_fileid_default(api):
 
 
 @pytest.mark.file
-def test_download_a_file_by_fileid_default(api, validator):
+def test_download_a_file_by_fileid_default_val(api, validator):
     try:
         assert is_valid_download_a_file_by_fileid(
             validator,
-            download_a_file_by_fileid_default(api)
+            download_a_file_by_fileid_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

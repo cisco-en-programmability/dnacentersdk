@@ -2114,7 +2114,7 @@ class Sda(object):
                   virtual_network_name,
                   headers=None,
                   **request_parameters):
-        """Delete virtual network (VN) from SDA Fabric      .
+        """Delete virtual network (VN) from SDA Fabric  .
 
         Args:
             virtual_network_name(basestring): virtualNetworkName query parameter.
@@ -2484,6 +2484,7 @@ class Sda(object):
         return self._object_factory('bpm_b07f187b7456c8bbb6088a2f24dcee_v2_2_2_3', json_data)
 
     def add_virtual_network_with_scalable_groups(self,
+                                                 isGuestVirtualNetwork=None,
                                                  scalableGroupNames=None,
                                                  virtualNetworkName=None,
                                                  virtualNetworkType=None,
@@ -2494,6 +2495,7 @@ class Sda(object):
         """Add virtual network with scalable groups at global level .
 
         Args:
+            isGuestVirtualNetwork(boolean): SDA's isGuestVirtualNetwork.
             scalableGroupNames(list): SDA's Scalable Group Names (list of strings).
             virtualNetworkName(string): SDA's Virtual Network Name.
             virtualNetworkType(string): SDA's Virtual Network Type.
@@ -2536,6 +2538,8 @@ class Sda(object):
                 virtualNetworkType,
             'scalableGroupNames':
                 scalableGroupNames,
+            'isGuestVirtualNetwork':
+                isGuestVirtualNetwork,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
@@ -2674,6 +2678,7 @@ class Sda(object):
         return self._object_factory('bpm_ea4b1c052b855bd9a0e99f803e6185a5_v2_2_2_3', json_data)
 
     def update_virtual_network_with_scalable_groups(self,
+                                                    isGuestVirtualNetwork=None,
                                                     scalableGroupNames=None,
                                                     virtualNetworkName=None,
                                                     virtualNetworkType=None,
@@ -2684,6 +2689,7 @@ class Sda(object):
         """Update virtual network with scalable groups .
 
         Args:
+            isGuestVirtualNetwork(boolean): SDA's Is Guest Virtual Network.
             scalableGroupNames(list): SDA's Scalable Group Names (list of strings).
             virtualNetworkName(string): SDA's Virtual Network Name.
             virtualNetworkType(string): SDA's Virtual Network Type.
@@ -2726,6 +2732,8 @@ class Sda(object):
                 virtualNetworkType,
             'scalableGroupNames':
                 scalableGroupNames,
+            'isGuestVirtualNetwork':
+                isGuestVirtualNetwork,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)

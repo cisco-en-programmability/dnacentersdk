@@ -58,7 +58,7 @@ def test_system_health(api, validator):
             raise original_e
 
 
-def system_health_default(api):
+def system_health_default_val(api):
     endpoint_result = api.health_and_performance.system_health(
         domain=None,
         limit=None,
@@ -70,11 +70,11 @@ def system_health_default(api):
 
 
 @pytest.mark.health_and_performance
-def test_system_health_default(api, validator):
+def test_system_health_default_val(api, validator):
     try:
         assert is_valid_system_health(
             validator,
-            system_health_default(api)
+            system_health_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -107,7 +107,7 @@ def test_system_health_count(api, validator):
             raise original_e
 
 
-def system_health_count_default(api):
+def system_health_count_default_val(api):
     endpoint_result = api.health_and_performance.system_health_count(
         domain=None,
         subdomain=None
@@ -116,11 +116,11 @@ def system_health_count_default(api):
 
 
 @pytest.mark.health_and_performance
-def test_system_health_count_default(api, validator):
+def test_system_health_count_default_val(api, validator):
     try:
         assert is_valid_system_health_count(
             validator,
-            system_health_count_default(api)
+            system_health_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -155,7 +155,7 @@ def test_system_performance(api, validator):
             raise original_e
 
 
-def system_performance_default(api):
+def system_performance_default_val(api):
     endpoint_result = api.health_and_performance.system_performance(
         end_time=None,
         function=None,
@@ -166,11 +166,11 @@ def system_performance_default(api):
 
 
 @pytest.mark.health_and_performance
-def test_system_performance_default(api, validator):
+def test_system_performance_default_val(api, validator):
     try:
         assert is_valid_system_performance(
             validator,
-            system_performance_default(api)
+            system_performance_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -204,7 +204,7 @@ def test_system_performance_historical(api, validator):
             raise original_e
 
 
-def system_performance_historical_default(api):
+def system_performance_historical_default_val(api):
     endpoint_result = api.health_and_performance.system_performance_historical(
         end_time=None,
         kpi=None,
@@ -214,11 +214,11 @@ def system_performance_historical_default(api):
 
 
 @pytest.mark.health_and_performance
-def test_system_performance_historical_default(api, validator):
+def test_system_performance_historical_default_val(api, validator):
     try:
         assert is_valid_system_performance_historical(
             validator,
-            system_performance_historical_default(api)
+            system_performance_historical_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

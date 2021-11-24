@@ -37,7 +37,7 @@ def is_valid_create_or_schedule_a_report(json_schema_validate, obj):
 def create_or_schedule_a_report(api):
     endpoint_result = api.reports.create_or_schedule_a_report(
         active_validation=True,
-        deliveries=[],
+        deliveries=[{}],
         name='string',
         payload=None,
         schedule={},
@@ -62,7 +62,7 @@ def test_create_or_schedule_a_report(api, validator):
             raise original_e
 
 
-def create_or_schedule_a_report_default(api):
+def create_or_schedule_a_report_default_val(api):
     endpoint_result = api.reports.create_or_schedule_a_report(
         active_validation=True,
         deliveries=None,
@@ -78,11 +78,11 @@ def create_or_schedule_a_report_default(api):
 
 
 @pytest.mark.reports
-def test_create_or_schedule_a_report_default(api, validator):
+def test_create_or_schedule_a_report_default_val(api, validator):
     try:
         assert is_valid_create_or_schedule_a_report(
             validator,
-            create_or_schedule_a_report_default(api)
+            create_or_schedule_a_report_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -115,7 +115,7 @@ def test_get_list_of_scheduled_reports(api, validator):
             raise original_e
 
 
-def get_list_of_scheduled_reports_default(api):
+def get_list_of_scheduled_reports_default_val(api):
     endpoint_result = api.reports.get_list_of_scheduled_reports(
         view_group_id=None,
         view_id=None
@@ -124,11 +124,11 @@ def get_list_of_scheduled_reports_default(api):
 
 
 @pytest.mark.reports
-def test_get_list_of_scheduled_reports_default(api, validator):
+def test_get_list_of_scheduled_reports_default_val(api, validator):
     try:
         assert is_valid_get_list_of_scheduled_reports(
             validator,
-            get_list_of_scheduled_reports_default(api)
+            get_list_of_scheduled_reports_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -160,7 +160,7 @@ def test_get_a_scheduled_report(api, validator):
             raise original_e
 
 
-def get_a_scheduled_report_default(api):
+def get_a_scheduled_report_default_val(api):
     endpoint_result = api.reports.get_a_scheduled_report(
         report_id='string'
     )
@@ -168,11 +168,11 @@ def get_a_scheduled_report_default(api):
 
 
 @pytest.mark.reports
-def test_get_a_scheduled_report_default(api, validator):
+def test_get_a_scheduled_report_default_val(api, validator):
     try:
         assert is_valid_get_a_scheduled_report(
             validator,
-            get_a_scheduled_report_default(api)
+            get_a_scheduled_report_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -204,7 +204,7 @@ def test_delete_a_scheduled_report(api, validator):
             raise original_e
 
 
-def delete_a_scheduled_report_default(api):
+def delete_a_scheduled_report_default_val(api):
     endpoint_result = api.reports.delete_a_scheduled_report(
         report_id='string'
     )
@@ -212,11 +212,11 @@ def delete_a_scheduled_report_default(api):
 
 
 @pytest.mark.reports
-def test_delete_a_scheduled_report_default(api, validator):
+def test_delete_a_scheduled_report_default_val(api, validator):
     try:
         assert is_valid_delete_a_scheduled_report(
             validator,
-            delete_a_scheduled_report_default(api)
+            delete_a_scheduled_report_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -248,7 +248,7 @@ def test_get_all_execution_details_for_a_given_report(api, validator):
             raise original_e
 
 
-def get_all_execution_details_for_a_given_report_default(api):
+def get_all_execution_details_for_a_given_report_default_val(api):
     endpoint_result = api.reports.get_all_execution_details_for_a_given_report(
         report_id='string'
     )
@@ -256,11 +256,11 @@ def get_all_execution_details_for_a_given_report_default(api):
 
 
 @pytest.mark.reports
-def test_get_all_execution_details_for_a_given_report_default(api, validator):
+def test_get_all_execution_details_for_a_given_report_default_val(api, validator):
     try:
         assert is_valid_get_all_execution_details_for_a_given_report(
             validator,
-            get_all_execution_details_for_a_given_report_default(api)
+            get_all_execution_details_for_a_given_report_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -295,7 +295,7 @@ def test_download_report_content(api, validator):
             raise original_e
 
 
-def download_report_content_default(api):
+def download_report_content_default_val(api):
     endpoint_result = api.reports.download_report_content(
         dirpath=None,
         save_file=None,
@@ -306,11 +306,11 @@ def download_report_content_default(api):
 
 
 @pytest.mark.reports
-def test_download_report_content_default(api, validator):
+def test_download_report_content_default_val(api, validator):
     try:
         assert is_valid_download_report_content(
             validator,
-            download_report_content_default(api)
+            download_report_content_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -342,7 +342,7 @@ def test_get_all_view_groups(api, validator):
             raise original_e
 
 
-def get_all_view_groups_default(api):
+def get_all_view_groups_default_val(api):
     endpoint_result = api.reports.get_all_view_groups(
 
     )
@@ -350,11 +350,11 @@ def get_all_view_groups_default(api):
 
 
 @pytest.mark.reports
-def test_get_all_view_groups_default(api, validator):
+def test_get_all_view_groups_default_val(api, validator):
     try:
         assert is_valid_get_all_view_groups(
             validator,
-            get_all_view_groups_default(api)
+            get_all_view_groups_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -386,7 +386,7 @@ def test_get_views_for_a_given_view_group(api, validator):
             raise original_e
 
 
-def get_views_for_a_given_view_group_default(api):
+def get_views_for_a_given_view_group_default_val(api):
     endpoint_result = api.reports.get_views_for_a_given_view_group(
         view_group_id='string'
     )
@@ -394,11 +394,11 @@ def get_views_for_a_given_view_group_default(api):
 
 
 @pytest.mark.reports
-def test_get_views_for_a_given_view_group_default(api, validator):
+def test_get_views_for_a_given_view_group_default_val(api, validator):
     try:
         assert is_valid_get_views_for_a_given_view_group(
             validator,
-            get_views_for_a_given_view_group_default(api)
+            get_views_for_a_given_view_group_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -431,7 +431,7 @@ def test_get_view_details_for_a_given_view_group_and_view(api, validator):
             raise original_e
 
 
-def get_view_details_for_a_given_view_group_and_view_default(api):
+def get_view_details_for_a_given_view_group_and_view_default_val(api):
     endpoint_result = api.reports.get_view_details_for_a_given_view_group_and_view(
         view_group_id='string',
         view_id='string'
@@ -440,11 +440,11 @@ def get_view_details_for_a_given_view_group_and_view_default(api):
 
 
 @pytest.mark.reports
-def test_get_view_details_for_a_given_view_group_and_view_default(api, validator):
+def test_get_view_details_for_a_given_view_group_and_view_default_val(api, validator):
     try:
         assert is_valid_get_view_details_for_a_given_view_group_and_view(
             validator,
-            get_view_details_for_a_given_view_group_and_view_default(api)
+            get_view_details_for_a_given_view_group_and_view_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

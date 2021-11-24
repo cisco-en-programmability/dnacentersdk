@@ -157,6 +157,9 @@ class JSONSchemaValidatorF4Ba64EeF4085D518A612835E128Fe3C(object):
                 "type": "object"
                 },
                 "type": "array"
+                },
+                "version": {
+                "type": "string"
                 }
                 },
                 "type": "object"

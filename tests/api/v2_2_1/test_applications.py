@@ -61,7 +61,7 @@ def test_applications(api, validator):
             raise original_e
 
 
-def applications_default(api):
+def applications_default_val(api):
     endpoint_result = api.applications.applications(
         application_health=None,
         device_id=None,
@@ -76,11 +76,11 @@ def applications_default(api):
 
 
 @pytest.mark.applications
-def test_applications_default(api, validator):
+def test_applications_default_val(api, validator):
     try:
         assert is_valid_applications(
             validator,
-            applications_default(api)
+            applications_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

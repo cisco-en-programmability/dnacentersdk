@@ -77,6 +77,8 @@ class ConfigurationTemplates(object):
                              project_id,
                              template_id,
                              headers=None,
+                             payload=None,
+                             active_validation=True,
                              **request_parameters):
         """API to clone template .
 
@@ -88,6 +90,10 @@ class ConfigurationTemplates(object):
                 created .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -101,6 +107,7 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
+        check_type(payload, dict)
         check_type(name, basestring,
                    may_be_none=False)
         check_type(template_id, basestring,
@@ -125,6 +132,13 @@ class ConfigurationTemplates(object):
             'templateId': template_id,
             'projectId': project_id,
         }
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_feb800c6888f5b13972467f0e3416ec2_v2_2_2_3')\
+                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -137,9 +151,11 @@ class ConfigurationTemplates(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params)
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
 
         return self._object_factory('bpm_feb800c6888f5b13972467f0e3416ec2_v2_2_2_3', json_data)
 
@@ -164,7 +180,7 @@ class ConfigurationTemplates(object):
             lastUpdateTime(integer): Configuration Templates's Update time of project .
             name(string): Configuration Templates's Name of project .
             tags(list): Configuration Templates's tags (list of objects).
-            templates(object): Configuration Templates's List of templates within the project .
+            templates(list): Configuration Templates's List of templates within the project  (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -261,7 +277,7 @@ class ConfigurationTemplates(object):
             lastUpdateTime(integer): Configuration Templates's Update time of project .
             name(string): Configuration Templates's Name of project .
             tags(list): Configuration Templates's tags (list of objects).
-            templates(object): Configuration Templates's List of templates within the project .
+            templates(list): Configuration Templates's List of templates within the project  (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -399,7 +415,6 @@ class ConfigurationTemplates(object):
                                       do_version=None,
                                       headers=None,
                                       payload=None,
-                                      active_validation=True,
                                       **request_parameters):
         """Imports the Projects provided in the DTO .
 
@@ -410,10 +425,8 @@ class ConfigurationTemplates(object):
                 already exists' error .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload((list, dict)): A JSON serializable Python object to send in the
+            payload(basestring): A string object to send in the
                 body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -427,7 +440,7 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, (list, dict))
+        check_type(payload, basestring)
         check_type(do_version, bool)
         if headers is not None:
             if 'Content-Type' in headers:
@@ -446,10 +459,7 @@ class ConfigurationTemplates(object):
 
         path_params = {
         }
-        _payload = payload or {}
-        if active_validation:
-            self._request_validator('jsd_dec1857f1585557eb39e12a9c93ef985_v2_2_2_3')\
-                .validate(_payload)
+        _payload = payload or ''
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -462,11 +472,10 @@ class ConfigurationTemplates(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload,
+                                           data=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+            json_data = self._session.post(endpoint_full_url, params=_params, data=_payload)
 
         return self._object_factory('bpm_dec1857f1585557eb39e12a9c93ef985_v2_2_2_3', json_data)
 
@@ -1210,7 +1219,7 @@ class ConfigurationTemplates(object):
             forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
             isComposite(boolean): Configuration Templates's Composite template flag .
             mainTemplateId(string): Configuration Templates's Main template UUID of versioned template .
-            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of any
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of
                 objects).
             targetInfo(list): Configuration Templates's targetInfo (list of objects).
             templateId(string): Configuration Templates's UUID of template to be provisioned .
@@ -1425,7 +1434,7 @@ class ConfigurationTemplates(object):
         Args:
             deviceId(string): Configuration Templates's UUID of device to get template preview .
             params(object): Configuration Templates's Params to render preview .
-            resourceParams(object): Configuration Templates's Resource params to render preview .
+            resourceParams(list): Configuration Templates's Resource params to render preview  (list of objects).
             templateId(string): Configuration Templates's UUID of template to get template preview .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1766,7 +1775,7 @@ class ConfigurationTemplates(object):
             forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
             isComposite(boolean): Configuration Templates's Composite template flag .
             mainTemplateId(string): Configuration Templates's Main template UUID of versioned template .
-            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of any
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of
                 objects).
             targetInfo(list): Configuration Templates's targetInfo (list of objects).
             templateId(string): Configuration Templates's UUID of template to be provisioned .

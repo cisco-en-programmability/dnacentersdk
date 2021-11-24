@@ -54,7 +54,7 @@ def test_get_user_enrichment_details(api, validator):
             raise original_e
 
 
-def get_user_enrichment_details_default(api):
+def get_user_enrichment_details_default_val(api):
     endpoint_result = api.users.get_user_enrichment_details(
 
     )
@@ -62,11 +62,11 @@ def get_user_enrichment_details_default(api):
 
 
 @pytest.mark.users
-def test_get_user_enrichment_details_default(api, validator):
+def test_get_user_enrichment_details_default_val(api, validator):
     try:
         assert is_valid_get_user_enrichment_details(
             validator,
-            get_user_enrichment_details_default(api)
+            get_user_enrichment_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -46,6 +46,9 @@ class JSONSchemaValidatorE722E05046D5262B55C125237E9B67D(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "jsonArrayResponse": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "jsonResponse": {

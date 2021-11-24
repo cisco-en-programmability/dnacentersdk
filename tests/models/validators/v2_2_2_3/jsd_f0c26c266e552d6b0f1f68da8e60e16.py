@@ -62,6 +62,9 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "inet": {
                 "properties": {
                 "dns_servers": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "gateway": {
@@ -74,6 +77,9 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "type": "string"
                 },
                 "routes": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },

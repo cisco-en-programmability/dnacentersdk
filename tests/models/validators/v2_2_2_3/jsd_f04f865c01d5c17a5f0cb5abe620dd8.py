@@ -45,10 +45,8 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "response": {
-                "items": {
-                "properties": {
                 "access_points": {
+                "items": {
                 "items": {
                 "properties": {
                 "ap_type": {
@@ -62,12 +60,15 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
                 },
                 "type": "array"
                 },
+                "type": "array"
+                },
                 "chassis_details": {
                 "properties": {
                 "board_serial_number": {
                 "type": "string"
                 },
                 "modules": {
+                "items": {
                 "items": {
                 "properties": {
                 "id": {
@@ -87,10 +88,13 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
                 },
                 "type": "array"
                 },
+                "type": "array"
+                },
                 "port": {
                 "type": "integer"
                 },
                 "supervisor_cards": {
+                "items": {
                 "items": {
                 "properties": {
                 "serial_number": {
@@ -104,6 +108,8 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
                 }
                 },
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "type": "array"
                 }
@@ -166,6 +172,7 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
                 },
                 "stacked_devices": {
                 "items": {
+                "items": {
                 "properties": {
                 "id": {
                 "type": "string"
@@ -184,16 +191,13 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
                 },
                 "type": "array"
                 },
+                "type": "array"
+                },
                 "udi": {
                 "type": "string"
                 },
                 "virtual_account_name": {
                 "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
                 }
                 },
                 "type": "object"

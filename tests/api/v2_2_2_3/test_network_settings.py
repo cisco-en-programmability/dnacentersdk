@@ -62,7 +62,7 @@ def test_assign_credential_to_site(api, validator):
             raise original_e
 
 
-def assign_credential_to_site_default(api):
+def assign_credential_to_site_default_val(api):
     endpoint_result = api.network_settings.assign_credential_to_site(
         active_validation=True,
         cliId=None,
@@ -78,11 +78,11 @@ def assign_credential_to_site_default(api):
 
 
 @pytest.mark.network_settings
-def test_assign_credential_to_site_default(api, validator):
+def test_assign_credential_to_site_default_val(api, validator):
     try:
         assert is_valid_assign_credential_to_site(
             validator,
-            assign_credential_to_site_default(api)
+            assign_credential_to_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -116,7 +116,7 @@ def test_create_device_credentials(api, validator):
             raise original_e
 
 
-def create_device_credentials_default(api):
+def create_device_credentials_default_val(api):
     endpoint_result = api.network_settings.create_device_credentials(
         active_validation=True,
         payload=None,
@@ -126,11 +126,11 @@ def create_device_credentials_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_device_credentials_default(api, validator):
+def test_create_device_credentials_default_val(api, validator):
     try:
         assert is_valid_create_device_credentials(
             validator,
-            create_device_credentials_default(api)
+            create_device_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -164,7 +164,7 @@ def test_update_device_credentials(api, validator):
             raise original_e
 
 
-def update_device_credentials_default(api):
+def update_device_credentials_default_val(api):
     endpoint_result = api.network_settings.update_device_credentials(
         active_validation=True,
         payload=None,
@@ -174,11 +174,11 @@ def update_device_credentials_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_device_credentials_default(api, validator):
+def test_update_device_credentials_default_val(api, validator):
     try:
         assert is_valid_update_device_credentials(
             validator,
-            update_device_credentials_default(api)
+            update_device_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -210,7 +210,7 @@ def test_get_device_credential_details(api, validator):
             raise original_e
 
 
-def get_device_credential_details_default(api):
+def get_device_credential_details_default_val(api):
     endpoint_result = api.network_settings.get_device_credential_details(
         site_id=None
     )
@@ -218,11 +218,11 @@ def get_device_credential_details_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_device_credential_details_default(api, validator):
+def test_get_device_credential_details_default_val(api, validator):
     try:
         assert is_valid_get_device_credential_details(
             validator,
-            get_device_credential_details_default(api)
+            get_device_credential_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -254,7 +254,7 @@ def test_delete_device_credential(api, validator):
             raise original_e
 
 
-def delete_device_credential_default(api):
+def delete_device_credential_default_val(api):
     endpoint_result = api.network_settings.delete_device_credential(
         id='string'
     )
@@ -262,11 +262,11 @@ def delete_device_credential_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_device_credential_default(api, validator):
+def test_delete_device_credential_default_val(api, validator):
     try:
         assert is_valid_delete_device_credential(
             validator,
-            delete_device_credential_default(api)
+            delete_device_credential_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -299,7 +299,7 @@ def test_get_global_pool(api, validator):
             raise original_e
 
 
-def get_global_pool_default(api):
+def get_global_pool_default_val(api):
     endpoint_result = api.network_settings.get_global_pool(
         limit=None,
         offset=None
@@ -308,11 +308,11 @@ def get_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_global_pool_default(api, validator):
+def test_get_global_pool_default_val(api, validator):
     try:
         assert is_valid_get_global_pool(
             validator,
-            get_global_pool_default(api)
+            get_global_pool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -346,7 +346,7 @@ def test_update_global_pool(api, validator):
             raise original_e
 
 
-def update_global_pool_default(api):
+def update_global_pool_default_val(api):
     endpoint_result = api.network_settings.update_global_pool(
         active_validation=True,
         payload=None,
@@ -356,11 +356,11 @@ def update_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_global_pool_default(api, validator):
+def test_update_global_pool_default_val(api, validator):
     try:
         assert is_valid_update_global_pool(
             validator,
-            update_global_pool_default(api)
+            update_global_pool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -394,7 +394,7 @@ def test_create_global_pool(api, validator):
             raise original_e
 
 
-def create_global_pool_default(api):
+def create_global_pool_default_val(api):
     endpoint_result = api.network_settings.create_global_pool(
         active_validation=True,
         payload=None,
@@ -404,11 +404,11 @@ def create_global_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_global_pool_default(api, validator):
+def test_create_global_pool_default_val(api, validator):
     try:
         assert is_valid_create_global_pool(
             validator,
-            create_global_pool_default(api)
+            create_global_pool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -440,7 +440,7 @@ def test_delete_global_ip_pool(api, validator):
             raise original_e
 
 
-def delete_global_ip_pool_default(api):
+def delete_global_ip_pool_default_val(api):
     endpoint_result = api.network_settings.delete_global_ip_pool(
         id='string'
     )
@@ -448,11 +448,11 @@ def delete_global_ip_pool_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_global_ip_pool_default(api, validator):
+def test_delete_global_ip_pool_default_val(api, validator):
     try:
         assert is_valid_delete_global_ip_pool(
             validator,
-            delete_global_ip_pool_default(api)
+            delete_global_ip_pool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -484,7 +484,7 @@ def test_get_network(api, validator):
             raise original_e
 
 
-def get_network_default(api):
+def get_network_default_val(api):
     endpoint_result = api.network_settings.get_network(
         site_id=None
     )
@@ -492,11 +492,11 @@ def get_network_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_network_default(api, validator):
+def test_get_network_default_val(api, validator):
     try:
         assert is_valid_get_network(
             validator,
-            get_network_default(api)
+            get_network_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -531,7 +531,7 @@ def test_create_network(api, validator):
             raise original_e
 
 
-def create_network_default(api):
+def create_network_default_val(api):
     endpoint_result = api.network_settings.create_network(
         active_validation=True,
         payload=None,
@@ -542,11 +542,11 @@ def create_network_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_network_default(api, validator):
+def test_create_network_default_val(api, validator):
     try:
         assert is_valid_create_network(
             validator,
-            create_network_default(api)
+            create_network_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -581,7 +581,7 @@ def test_update_network(api, validator):
             raise original_e
 
 
-def update_network_default(api):
+def update_network_default_val(api):
     endpoint_result = api.network_settings.update_network(
         active_validation=True,
         payload=None,
@@ -592,11 +592,11 @@ def update_network_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_network_default(api, validator):
+def test_update_network_default_val(api, validator):
     try:
         assert is_valid_update_network(
             validator,
-            update_network_default(api)
+            update_network_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -630,7 +630,7 @@ def test_get_reserve_ip_subpool(api, validator):
             raise original_e
 
 
-def get_reserve_ip_subpool_default(api):
+def get_reserve_ip_subpool_default_val(api):
     endpoint_result = api.network_settings.get_reserve_ip_subpool(
         limit=None,
         offset=None,
@@ -640,11 +640,11 @@ def get_reserve_ip_subpool_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_reserve_ip_subpool_default(api, validator):
+def test_get_reserve_ip_subpool_default_val(api, validator):
     try:
         assert is_valid_get_reserve_ip_subpool(
             validator,
-            get_reserve_ip_subpool_default(api)
+            get_reserve_ip_subpool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -676,7 +676,7 @@ def test_release_reserve_ip_subpool(api, validator):
             raise original_e
 
 
-def release_reserve_ip_subpool_default(api):
+def release_reserve_ip_subpool_default_val(api):
     endpoint_result = api.network_settings.release_reserve_ip_subpool(
         id='string'
     )
@@ -684,11 +684,11 @@ def release_reserve_ip_subpool_default(api):
 
 
 @pytest.mark.network_settings
-def test_release_reserve_ip_subpool_default(api, validator):
+def test_release_reserve_ip_subpool_default_val(api, validator):
     try:
         assert is_valid_release_reserve_ip_subpool(
             validator,
-            release_reserve_ip_subpool_default(api)
+            release_reserve_ip_subpool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -742,7 +742,7 @@ def test_reserve_ip_subpool(api, validator):
             raise original_e
 
 
-def reserve_ip_subpool_default(api):
+def reserve_ip_subpool_default_val(api):
     endpoint_result = api.network_settings.reserve_ip_subpool(
         active_validation=True,
         ipv4DhcpServers=None,
@@ -772,11 +772,11 @@ def reserve_ip_subpool_default(api):
 
 
 @pytest.mark.network_settings
-def test_reserve_ip_subpool_default(api, validator):
+def test_reserve_ip_subpool_default_val(api, validator):
     try:
         assert is_valid_reserve_ip_subpool(
             validator,
-            reserve_ip_subpool_default(api)
+            reserve_ip_subpool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -824,7 +824,7 @@ def test_update_reserve_ip_subpool(api, validator):
             raise original_e
 
 
-def update_reserve_ip_subpool_default(api):
+def update_reserve_ip_subpool_default_val(api):
     endpoint_result = api.network_settings.update_reserve_ip_subpool(
         active_validation=True,
         id=None,
@@ -848,11 +848,11 @@ def update_reserve_ip_subpool_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_reserve_ip_subpool_default(api, validator):
+def test_update_reserve_ip_subpool_default_val(api, validator):
     try:
         assert is_valid_update_reserve_ip_subpool(
             validator,
-            update_reserve_ip_subpool_default(api)
+            update_reserve_ip_subpool_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -884,7 +884,7 @@ def test_get_service_provider_details(api, validator):
             raise original_e
 
 
-def get_service_provider_details_default(api):
+def get_service_provider_details_default_val(api):
     endpoint_result = api.network_settings.get_service_provider_details(
 
     )
@@ -892,11 +892,11 @@ def get_service_provider_details_default(api):
 
 
 @pytest.mark.network_settings
-def test_get_service_provider_details_default(api, validator):
+def test_get_service_provider_details_default_val(api, validator):
     try:
         assert is_valid_get_service_provider_details(
             validator,
-            get_service_provider_details_default(api)
+            get_service_provider_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -930,7 +930,7 @@ def test_create_sp_profile(api, validator):
             raise original_e
 
 
-def create_sp_profile_default(api):
+def create_sp_profile_default_val(api):
     endpoint_result = api.network_settings.create_sp_profile(
         active_validation=True,
         payload=None,
@@ -940,11 +940,11 @@ def create_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_create_sp_profile_default(api, validator):
+def test_create_sp_profile_default_val(api, validator):
     try:
         assert is_valid_create_sp_profile(
             validator,
-            create_sp_profile_default(api)
+            create_sp_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -978,7 +978,7 @@ def test_update_sp_profile(api, validator):
             raise original_e
 
 
-def update_sp_profile_default(api):
+def update_sp_profile_default_val(api):
     endpoint_result = api.network_settings.update_sp_profile(
         active_validation=True,
         payload=None,
@@ -988,11 +988,11 @@ def update_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_update_sp_profile_default(api, validator):
+def test_update_sp_profile_default_val(api, validator):
     try:
         assert is_valid_update_sp_profile(
             validator,
-            update_sp_profile_default(api)
+            update_sp_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1024,7 +1024,7 @@ def test_delete_sp_profile(api, validator):
             raise original_e
 
 
-def delete_sp_profile_default(api):
+def delete_sp_profile_default_val(api):
     endpoint_result = api.network_settings.delete_sp_profile(
         sp_profile_name='string'
     )
@@ -1032,11 +1032,11 @@ def delete_sp_profile_default(api):
 
 
 @pytest.mark.network_settings
-def test_delete_sp_profile_default(api, validator):
+def test_delete_sp_profile_default_val(api, validator):
     try:
         assert is_valid_delete_sp_profile(
             validator,
-            delete_sp_profile_default(api)
+            delete_sp_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

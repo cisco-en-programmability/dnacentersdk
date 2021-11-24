@@ -54,7 +54,7 @@ def test_release_summary(api, validator):
             raise original_e
 
 
-def release_summary_default(api):
+def release_summary_default_val(api):
     endpoint_result = api.platform_configuration.release_summary(
 
     )
@@ -62,11 +62,11 @@ def release_summary_default(api):
 
 
 @pytest.mark.platform_configuration
-def test_release_summary_default(api, validator):
+def test_release_summary_default_val(api, validator):
     try:
         assert is_valid_release_summary(
             validator,
-            release_summary_default(api)
+            release_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -98,7 +98,7 @@ def test_nodes_configuration_summary(api, validator):
             raise original_e
 
 
-def nodes_configuration_summary_default(api):
+def nodes_configuration_summary_default_val(api):
     endpoint_result = api.platform_configuration.nodes_configuration_summary(
 
     )
@@ -106,11 +106,11 @@ def nodes_configuration_summary_default(api):
 
 
 @pytest.mark.platform_configuration
-def test_nodes_configuration_summary_default(api, validator):
+def test_nodes_configuration_summary_default_val(api, validator):
     try:
         assert is_valid_nodes_configuration_summary(
             validator,
-            nodes_configuration_summary_default(api)
+            nodes_configuration_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

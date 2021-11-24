@@ -628,10 +628,16 @@ class JSONSchemaValidatorE3E170003D865B9A8D76Cbe1D2F268Be(object):
                 "validationErrors": {
                 "properties": {
                 "rollbackTemplateErrors": {
+                "items": {
                 "type": "object"
                 },
+                "type": "array"
+                },
                 "templateErrors": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "templateId": {
                 "type": "string"

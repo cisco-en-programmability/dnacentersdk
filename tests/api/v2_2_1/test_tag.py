@@ -59,7 +59,7 @@ def test_get_tag_members_by_id(api, validator):
             raise original_e
 
 
-def get_tag_members_by_id_default(api):
+def get_tag_members_by_id_default_val(api):
     endpoint_result = api.tag.get_tag_members_by_id(
         id='string',
         level=None,
@@ -72,11 +72,11 @@ def get_tag_members_by_id_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_members_by_id_default(api, validator):
+def test_get_tag_members_by_id_default_val(api, validator):
     try:
         assert is_valid_get_tag_members_by_id(
             validator,
-            get_tag_members_by_id_default(api)
+            get_tag_members_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -110,7 +110,7 @@ def test_add_members_to_the_tag(api, validator):
             raise original_e
 
 
-def add_members_to_the_tag_default(api):
+def add_members_to_the_tag_default_val(api):
     endpoint_result = api.tag.add_members_to_the_tag(
         active_validation=True,
         id='string',
@@ -120,11 +120,11 @@ def add_members_to_the_tag_default(api):
 
 
 @pytest.mark.tag
-def test_add_members_to_the_tag_default(api, validator):
+def test_add_members_to_the_tag_default_val(api, validator):
     try:
         assert is_valid_add_members_to_the_tag(
             validator,
-            add_members_to_the_tag_default(api)
+            add_members_to_the_tag_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -166,7 +166,7 @@ def test_get_tag(api, validator):
             raise original_e
 
 
-def get_tag_default(api):
+def get_tag_default_val(api):
     endpoint_result = api.tag.get_tag(
         additional_info_attributes=None,
         additional_info_name_space=None,
@@ -184,11 +184,11 @@ def get_tag_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_default(api, validator):
+def test_get_tag_default_val(api, validator):
     try:
         assert is_valid_get_tag(
             validator,
-            get_tag_default(api)
+            get_tag_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -227,7 +227,7 @@ def test_update_tag(api, validator):
             raise original_e
 
 
-def update_tag_default(api):
+def update_tag_default_val(api):
     endpoint_result = api.tag.update_tag(
         active_validation=True,
         description=None,
@@ -242,11 +242,11 @@ def update_tag_default(api):
 
 
 @pytest.mark.tag
-def test_update_tag_default(api, validator):
+def test_update_tag_default_val(api, validator):
     try:
         assert is_valid_update_tag(
             validator,
-            update_tag_default(api)
+            update_tag_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -285,7 +285,7 @@ def test_create_tag(api, validator):
             raise original_e
 
 
-def create_tag_default(api):
+def create_tag_default_val(api):
     endpoint_result = api.tag.create_tag(
         active_validation=True,
         description=None,
@@ -300,11 +300,11 @@ def create_tag_default(api):
 
 
 @pytest.mark.tag
-def test_create_tag_default(api, validator):
+def test_create_tag_default_val(api, validator):
     try:
         assert is_valid_create_tag(
             validator,
-            create_tag_default(api)
+            create_tag_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -339,7 +339,7 @@ def test_get_tag_member_count(api, validator):
             raise original_e
 
 
-def get_tag_member_count_default(api):
+def get_tag_member_count_default_val(api):
     endpoint_result = api.tag.get_tag_member_count(
         id='string',
         level=None,
@@ -350,11 +350,11 @@ def get_tag_member_count_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_member_count_default(api, validator):
+def test_get_tag_member_count_default_val(api, validator):
     try:
         assert is_valid_get_tag_member_count(
             validator,
-            get_tag_member_count_default(api)
+            get_tag_member_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -386,7 +386,7 @@ def test_get_tag_by_id(api, validator):
             raise original_e
 
 
-def get_tag_by_id_default(api):
+def get_tag_by_id_default_val(api):
     endpoint_result = api.tag.get_tag_by_id(
         id='string'
     )
@@ -394,11 +394,11 @@ def get_tag_by_id_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_by_id_default(api, validator):
+def test_get_tag_by_id_default_val(api, validator):
     try:
         assert is_valid_get_tag_by_id(
             validator,
-            get_tag_by_id_default(api)
+            get_tag_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -430,7 +430,7 @@ def test_delete_tag(api, validator):
             raise original_e
 
 
-def delete_tag_default(api):
+def delete_tag_default_val(api):
     endpoint_result = api.tag.delete_tag(
         id='string'
     )
@@ -438,11 +438,11 @@ def delete_tag_default(api):
 
 
 @pytest.mark.tag
-def test_delete_tag_default(api, validator):
+def test_delete_tag_default_val(api, validator):
     try:
         assert is_valid_delete_tag(
             validator,
-            delete_tag_default(api)
+            delete_tag_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -477,7 +477,7 @@ def test_updates_tag_membership(api, validator):
             raise original_e
 
 
-def updates_tag_membership_default(api):
+def updates_tag_membership_default_val(api):
     endpoint_result = api.tag.updates_tag_membership(
         active_validation=True,
         memberToTags=None,
@@ -488,11 +488,11 @@ def updates_tag_membership_default(api):
 
 
 @pytest.mark.tag
-def test_updates_tag_membership_default(api, validator):
+def test_updates_tag_membership_default_val(api, validator):
     try:
         assert is_valid_updates_tag_membership(
             validator,
-            updates_tag_membership_default(api)
+            updates_tag_membership_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -524,7 +524,7 @@ def test_get_tag_resource_types(api, validator):
             raise original_e
 
 
-def get_tag_resource_types_default(api):
+def get_tag_resource_types_default_val(api):
     endpoint_result = api.tag.get_tag_resource_types(
 
     )
@@ -532,11 +532,11 @@ def get_tag_resource_types_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_resource_types_default(api, validator):
+def test_get_tag_resource_types_default_val(api, validator):
     try:
         assert is_valid_get_tag_resource_types(
             validator,
-            get_tag_resource_types_default(api)
+            get_tag_resource_types_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -573,7 +573,7 @@ def test_get_tag_count(api, validator):
             raise original_e
 
 
-def get_tag_count_default(api):
+def get_tag_count_default_val(api):
     endpoint_result = api.tag.get_tag_count(
         attribute_name=None,
         level=None,
@@ -586,11 +586,11 @@ def get_tag_count_default(api):
 
 
 @pytest.mark.tag
-def test_get_tag_count_default(api, validator):
+def test_get_tag_count_default_val(api, validator):
     try:
         assert is_valid_get_tag_count(
             validator,
-            get_tag_count_default(api)
+            get_tag_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -623,7 +623,7 @@ def test_remove_tag_member(api, validator):
             raise original_e
 
 
-def remove_tag_member_default(api):
+def remove_tag_member_default_val(api):
     endpoint_result = api.tag.remove_tag_member(
         id='string',
         member_id='string'
@@ -632,11 +632,11 @@ def remove_tag_member_default(api):
 
 
 @pytest.mark.tag
-def test_remove_tag_member_default(api, validator):
+def test_remove_tag_member_default_val(api, validator):
     try:
         assert is_valid_remove_tag_member(
             validator,
-            remove_tag_member_default(api)
+            remove_tag_member_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

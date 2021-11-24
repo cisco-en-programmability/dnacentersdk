@@ -58,7 +58,7 @@ def test_device_count_details(api, validator):
             raise original_e
 
 
-def device_count_details_default(api):
+def device_count_details_default_val(api):
     endpoint_result = api.licenses.device_count_details(
         device_type=None,
         dna_level=None,
@@ -70,11 +70,11 @@ def device_count_details_default(api):
 
 
 @pytest.mark.licenses
-def test_device_count_details_default(api, validator):
+def test_device_count_details_default_val(api, validator):
     try:
         assert is_valid_device_count_details(
             validator,
-            device_count_details_default(api)
+            device_count_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -115,7 +115,7 @@ def test_device_license_summary(api, validator):
             raise original_e
 
 
-def device_license_summary_default(api):
+def device_license_summary_default_val(api):
     endpoint_result = api.licenses.device_license_summary(
         device_type=None,
         device_uuid=None,
@@ -132,11 +132,11 @@ def device_license_summary_default(api):
 
 
 @pytest.mark.licenses
-def test_device_license_summary_default(api, validator):
+def test_device_license_summary_default_val(api, validator):
     try:
         assert is_valid_device_license_summary(
             validator,
-            device_license_summary_default(api)
+            device_license_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -168,7 +168,7 @@ def test_device_license_details(api, validator):
             raise original_e
 
 
-def device_license_details_default(api):
+def device_license_details_default_val(api):
     endpoint_result = api.licenses.device_license_details(
         device_uuid='string'
     )
@@ -176,11 +176,11 @@ def device_license_details_default(api):
 
 
 @pytest.mark.licenses
-def test_device_license_details_default(api, validator):
+def test_device_license_details_default_val(api, validator):
     try:
         assert is_valid_device_license_details(
             validator,
-            device_license_details_default(api)
+            device_license_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -214,7 +214,7 @@ def test_device_deregistration(api, validator):
             raise original_e
 
 
-def device_deregistration_default(api):
+def device_deregistration_default_val(api):
     endpoint_result = api.licenses.device_deregistration(
         active_validation=True,
         device_uuids=None,
@@ -224,11 +224,11 @@ def device_deregistration_default(api):
 
 
 @pytest.mark.licenses
-def test_device_deregistration_default(api, validator):
+def test_device_deregistration_default_val(api, validator):
     try:
         assert is_valid_device_deregistration(
             validator,
-            device_deregistration_default(api)
+            device_deregistration_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -263,7 +263,7 @@ def test_device_registration(api, validator):
             raise original_e
 
 
-def device_registration_default(api):
+def device_registration_default_val(api):
     endpoint_result = api.licenses.device_registration(
         active_validation=True,
         device_uuids=None,
@@ -274,11 +274,11 @@ def device_registration_default(api):
 
 
 @pytest.mark.licenses
-def test_device_registration_default(api, validator):
+def test_device_registration_default_val(api, validator):
     try:
         assert is_valid_device_registration(
             validator,
-            device_registration_default(api)
+            device_registration_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -314,7 +314,7 @@ def test_change_virtual_account(api, validator):
             raise original_e
 
 
-def change_virtual_account_default(api):
+def change_virtual_account_default_val(api):
     endpoint_result = api.licenses.change_virtual_account(
         active_validation=True,
         device_uuids=None,
@@ -326,11 +326,11 @@ def change_virtual_account_default(api):
 
 
 @pytest.mark.licenses
-def test_change_virtual_account_default(api, validator):
+def test_change_virtual_account_default_val(api, validator):
     try:
         assert is_valid_change_virtual_account(
             validator,
-            change_virtual_account_default(api)
+            change_virtual_account_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -362,7 +362,7 @@ def test_virtual_account_details(api, validator):
             raise original_e
 
 
-def virtual_account_details_default(api):
+def virtual_account_details_default_val(api):
     endpoint_result = api.licenses.virtual_account_details(
         smart_account_id='string'
     )
@@ -370,11 +370,11 @@ def virtual_account_details_default(api):
 
 
 @pytest.mark.licenses
-def test_virtual_account_details_default(api, validator):
+def test_virtual_account_details_default_val(api, validator):
     try:
         assert is_valid_virtual_account_details(
             validator,
-            virtual_account_details_default(api)
+            virtual_account_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -406,7 +406,7 @@ def test_smart_account_details(api, validator):
             raise original_e
 
 
-def smart_account_details_default(api):
+def smart_account_details_default_val(api):
     endpoint_result = api.licenses.smart_account_details(
 
     )
@@ -414,11 +414,11 @@ def smart_account_details_default(api):
 
 
 @pytest.mark.licenses
-def test_smart_account_details_default(api, validator):
+def test_smart_account_details_default_val(api, validator):
     try:
         assert is_valid_smart_account_details(
             validator,
-            smart_account_details_default(api)
+            smart_account_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -452,7 +452,7 @@ def test_license_term_details(api, validator):
             raise original_e
 
 
-def license_term_details_default(api):
+def license_term_details_default_val(api):
     endpoint_result = api.licenses.license_term_details(
         device_type=None,
         smart_account_id='string',
@@ -462,11 +462,11 @@ def license_term_details_default(api):
 
 
 @pytest.mark.licenses
-def test_license_term_details_default(api, validator):
+def test_license_term_details_default_val(api, validator):
     try:
         assert is_valid_license_term_details(
             validator,
-            license_term_details_default(api)
+            license_term_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -500,7 +500,7 @@ def test_license_usage_details(api, validator):
             raise original_e
 
 
-def license_usage_details_default(api):
+def license_usage_details_default_val(api):
     endpoint_result = api.licenses.license_usage_details(
         device_type=None,
         smart_account_id='string',
@@ -510,11 +510,11 @@ def license_usage_details_default(api):
 
 
 @pytest.mark.licenses
-def test_license_usage_details_default(api, validator):
+def test_license_usage_details_default_val(api, validator):
     try:
         assert is_valid_license_usage_details(
             validator,
-            license_usage_details_default(api)
+            license_usage_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

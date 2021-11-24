@@ -52,6 +52,9 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "payload": {
                 "properties": {
                 "akcSettingsCfs": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "authEntityClass": {
@@ -61,15 +64,24 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "integer"
                 },
                 "cfsChangeInfo": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "configs": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "createTime": {
                 "type": "integer"
                 },
                 "customProvisions": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "deployPending": {
@@ -79,11 +91,17 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "boolean"
                 },
                 "deviceInterfaceInfo": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "deviceSettings": {
                 "properties": {
                 "connectedTo": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "cpu": {
@@ -126,6 +144,9 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "string"
                 },
                 "l2Handoff": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "l3Handoff": {
@@ -243,6 +264,9 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "integer"
                 },
                 "managedSites": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "name": {
@@ -257,9 +281,15 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "networkWideSettings": {
                 "properties": {
                 "aaa": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "cmx": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "deployPending": {
@@ -340,27 +370,48 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "integer"
                 },
                 "ldap": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "nativeVlan": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "netflow": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "ntp": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "snmp": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "syslogs": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },
                 "type": "object"
                 },
                 "otherDevice": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "provisioningState": {
@@ -382,6 +433,9 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "string"
                 },
                 "targetIdList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "transitNetworks": {
@@ -399,9 +453,15 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "type": "string"
                 },
                 "virtualNetwork": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "wlan": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },
