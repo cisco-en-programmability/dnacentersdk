@@ -54,7 +54,7 @@ def test_get_all_keywords_of_clis_accepted(api, validator):
             raise original_e
 
 
-def get_all_keywords_of_clis_accepted_default(api):
+def get_all_keywords_of_clis_accepted_default_val(api):
     endpoint_result = api.command_runner.get_all_keywords_of_clis_accepted(
 
     )
@@ -62,11 +62,11 @@ def get_all_keywords_of_clis_accepted_default(api):
 
 
 @pytest.mark.command_runner
-def test_get_all_keywords_of_clis_accepted_default(api, validator):
+def test_get_all_keywords_of_clis_accepted_default_val(api, validator):
     try:
         assert is_valid_get_all_keywords_of_clis_accepted(
             validator,
-            get_all_keywords_of_clis_accepted_default(api)
+            get_all_keywords_of_clis_accepted_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -104,7 +104,7 @@ def test_run_read_only_commands_on_devices(api, validator):
             raise original_e
 
 
-def run_read_only_commands_on_devices_default(api):
+def run_read_only_commands_on_devices_default_val(api):
     endpoint_result = api.command_runner.run_read_only_commands_on_devices(
         active_validation=True,
         commands=None,
@@ -118,11 +118,11 @@ def run_read_only_commands_on_devices_default(api):
 
 
 @pytest.mark.command_runner
-def test_run_read_only_commands_on_devices_default(api, validator):
+def test_run_read_only_commands_on_devices_default_val(api, validator):
     try:
         assert is_valid_run_read_only_commands_on_devices(
             validator,
-            run_read_only_commands_on_devices_default(api)
+            run_read_only_commands_on_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

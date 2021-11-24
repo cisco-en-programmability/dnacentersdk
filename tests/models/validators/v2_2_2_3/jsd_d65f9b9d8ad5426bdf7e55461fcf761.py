@@ -60,6 +60,9 @@ class JSONSchemaValidatorD65F9B9D8Ad5426Bdf7E55461Fcf761(object):
                 "rules": {
                 "properties": {
                 "items": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "name": {

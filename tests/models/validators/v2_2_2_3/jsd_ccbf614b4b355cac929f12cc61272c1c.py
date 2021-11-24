@@ -55,7 +55,10 @@ class JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C(object):
                 "type": "string"
                 },
                 "validationErrors": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

@@ -54,7 +54,7 @@ def test_get_failed_itsm_events(api, validator):
             raise original_e
 
 
-def get_failed_itsm_events_default(api):
+def get_failed_itsm_events_default_val(api):
     endpoint_result = api.itsm.get_failed_itsm_events(
         instance_id=None
     )
@@ -62,11 +62,11 @@ def get_failed_itsm_events_default(api):
 
 
 @pytest.mark.itsm
-def test_get_failed_itsm_events_default(api, validator):
+def test_get_failed_itsm_events_default_val(api, validator):
     try:
         assert is_valid_get_failed_itsm_events(
             validator,
-            get_failed_itsm_events_default(api)
+            get_failed_itsm_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -99,7 +99,7 @@ def test_retry_integration_events(api, validator):
             raise original_e
 
 
-def retry_integration_events_default(api):
+def retry_integration_events_default_val(api):
     endpoint_result = api.itsm.retry_integration_events(
         active_validation=True,
         payload=None
@@ -108,11 +108,11 @@ def retry_integration_events_default(api):
 
 
 @pytest.mark.itsm
-def test_retry_integration_events_default(api, validator):
+def test_retry_integration_events_default_val(api, validator):
     try:
         assert is_valid_retry_integration_events(
             validator,
-            retry_integration_events_default(api)
+            retry_integration_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -145,7 +145,7 @@ def test_get_cmdb_sync_status(api, validator):
             raise original_e
 
 
-def get_cmdb_sync_status_default(api):
+def get_cmdb_sync_status_default_val(api):
     endpoint_result = api.itsm.get_cmdb_sync_status(
         date=None,
         status=None
@@ -154,11 +154,11 @@ def get_cmdb_sync_status_default(api):
 
 
 @pytest.mark.itsm
-def test_get_cmdb_sync_status_default(api, validator):
+def test_get_cmdb_sync_status_default_val(api, validator):
     try:
         assert is_valid_get_cmdb_sync_status(
             validator,
-            get_cmdb_sync_status_default(api)
+            get_cmdb_sync_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -56,7 +56,7 @@ def test_get_device_detail(api, validator):
             raise original_e
 
 
-def get_device_detail_default(api):
+def get_device_detail_default_val(api):
     endpoint_result = api.devices.get_device_detail(
         identifier=None,
         search_by=None,
@@ -66,11 +66,11 @@ def get_device_detail_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_detail_default(api, validator):
+def test_get_device_detail_default_val(api, validator):
     try:
         assert is_valid_get_device_detail(
             validator,
-            get_device_detail_default(api)
+            get_device_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -102,7 +102,7 @@ def test_get_device_enrichment_details(api, validator):
             raise original_e
 
 
-def get_device_enrichment_details_default(api):
+def get_device_enrichment_details_default_val(api):
     endpoint_result = api.devices.get_device_enrichment_details(
 
     )
@@ -110,11 +110,11 @@ def get_device_enrichment_details_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_enrichment_details_default(api, validator):
+def test_get_device_enrichment_details_default_val(api, validator):
     try:
         assert is_valid_get_device_enrichment_details(
             validator,
-            get_device_enrichment_details_default(api)
+            get_device_enrichment_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -152,7 +152,7 @@ def test_devices(api, validator):
             raise original_e
 
 
-def devices_default(api):
+def devices_default_val(api):
     endpoint_result = api.devices.devices(
         device_role=None,
         end_time=None,
@@ -166,11 +166,11 @@ def devices_default(api):
 
 
 @pytest.mark.devices
-def test_devices_default(api, validator):
+def test_devices_default_val(api, validator):
     try:
         assert is_valid_devices(
             validator,
-            devices_default(api)
+            devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -203,7 +203,7 @@ def test_get_all_interfaces(api, validator):
             raise original_e
 
 
-def get_all_interfaces_default(api):
+def get_all_interfaces_default_val(api):
     endpoint_result = api.devices.get_all_interfaces(
         limit=None,
         offset=None
@@ -212,11 +212,11 @@ def get_all_interfaces_default(api):
 
 
 @pytest.mark.devices
-def test_get_all_interfaces_default(api, validator):
+def test_get_all_interfaces_default_val(api, validator):
     try:
         assert is_valid_get_all_interfaces(
             validator,
-            get_all_interfaces_default(api)
+            get_all_interfaces_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -248,7 +248,7 @@ def test_get_device_interface_count(api, validator):
             raise original_e
 
 
-def get_device_interface_count_default(api):
+def get_device_interface_count_default_val(api):
     endpoint_result = api.devices.get_device_interface_count(
 
     )
@@ -256,11 +256,11 @@ def get_device_interface_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_count_default(api, validator):
+def test_get_device_interface_count_default_val(api, validator):
     try:
         assert is_valid_get_device_interface_count(
             validator,
-            get_device_interface_count_default(api)
+            get_device_interface_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -292,7 +292,7 @@ def test_get_interface_by_ip(api, validator):
             raise original_e
 
 
-def get_interface_by_ip_default(api):
+def get_interface_by_ip_default_val(api):
     endpoint_result = api.devices.get_interface_by_ip(
         ip_address='string'
     )
@@ -300,11 +300,11 @@ def get_interface_by_ip_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_by_ip_default(api, validator):
+def test_get_interface_by_ip_default_val(api, validator):
     try:
         assert is_valid_get_interface_by_ip(
             validator,
-            get_interface_by_ip_default(api)
+            get_interface_by_ip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -336,7 +336,7 @@ def test_get_isis_interfaces(api, validator):
             raise original_e
 
 
-def get_isis_interfaces_default(api):
+def get_isis_interfaces_default_val(api):
     endpoint_result = api.devices.get_isis_interfaces(
 
     )
@@ -344,11 +344,11 @@ def get_isis_interfaces_default(api):
 
 
 @pytest.mark.devices
-def test_get_isis_interfaces_default(api, validator):
+def test_get_isis_interfaces_default_val(api, validator):
     try:
         assert is_valid_get_isis_interfaces(
             validator,
-            get_isis_interfaces_default(api)
+            get_isis_interfaces_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -380,7 +380,7 @@ def test_get_interface_info_by_id(api, validator):
             raise original_e
 
 
-def get_interface_info_by_id_default(api):
+def get_interface_info_by_id_default_val(api):
     endpoint_result = api.devices.get_interface_info_by_id(
         device_id='string'
     )
@@ -388,11 +388,11 @@ def get_interface_info_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_info_by_id_default(api, validator):
+def test_get_interface_info_by_id_default_val(api, validator):
     try:
         assert is_valid_get_interface_info_by_id(
             validator,
-            get_interface_info_by_id_default(api)
+            get_interface_info_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -424,7 +424,7 @@ def test_get_device_interface_count_by_id(api, validator):
             raise original_e
 
 
-def get_device_interface_count_by_id_default(api):
+def get_device_interface_count_by_id_default_val(api):
     endpoint_result = api.devices.get_device_interface_count_by_id(
         device_id='string'
     )
@@ -432,11 +432,11 @@ def get_device_interface_count_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_count_by_id_default(api, validator):
+def test_get_device_interface_count_by_id_default_val(api, validator):
     try:
         assert is_valid_get_device_interface_count_by_id(
             validator,
-            get_device_interface_count_by_id_default(api)
+            get_device_interface_count_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -469,7 +469,7 @@ def test_get_interface_details(api, validator):
             raise original_e
 
 
-def get_interface_details_default(api):
+def get_interface_details_default_val(api):
     endpoint_result = api.devices.get_interface_details(
         device_id='string',
         name=None
@@ -478,11 +478,11 @@ def get_interface_details_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_details_default(api, validator):
+def test_get_interface_details_default_val(api, validator):
     try:
         assert is_valid_get_interface_details(
             validator,
-            get_interface_details_default(api)
+            get_interface_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -516,7 +516,7 @@ def test_get_device_interfaces_by_specified_range(api, validator):
             raise original_e
 
 
-def get_device_interfaces_by_specified_range_default(api):
+def get_device_interfaces_by_specified_range_default_val(api):
     endpoint_result = api.devices.get_device_interfaces_by_specified_range(
         device_id='string',
         records_to_return=0,
@@ -526,11 +526,11 @@ def get_device_interfaces_by_specified_range_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interfaces_by_specified_range_default(api, validator):
+def test_get_device_interfaces_by_specified_range_default_val(api, validator):
     try:
         assert is_valid_get_device_interfaces_by_specified_range(
             validator,
-            get_device_interfaces_by_specified_range_default(api)
+            get_device_interfaces_by_specified_range_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -562,7 +562,7 @@ def test_get_ospf_interfaces(api, validator):
             raise original_e
 
 
-def get_ospf_interfaces_default(api):
+def get_ospf_interfaces_default_val(api):
     endpoint_result = api.devices.get_ospf_interfaces(
 
     )
@@ -570,11 +570,11 @@ def get_ospf_interfaces_default(api):
 
 
 @pytest.mark.devices
-def test_get_ospf_interfaces_default(api, validator):
+def test_get_ospf_interfaces_default_val(api, validator):
     try:
         assert is_valid_get_ospf_interfaces(
             validator,
-            get_ospf_interfaces_default(api)
+            get_ospf_interfaces_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -606,7 +606,7 @@ def test_get_interface_by_id(api, validator):
             raise original_e
 
 
-def get_interface_by_id_default(api):
+def get_interface_by_id_default_val(api):
     endpoint_result = api.devices.get_interface_by_id(
         id='string'
     )
@@ -614,11 +614,11 @@ def get_interface_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_interface_by_id_default(api, validator):
+def test_get_interface_by_id_default_val(api, validator):
     try:
         assert is_valid_get_interface_by_id(
             validator,
-            get_interface_by_id_default(api)
+            get_interface_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -681,7 +681,7 @@ def test_get_device_list(api, validator):
             raise original_e
 
 
-def get_device_list_default(api):
+def get_device_list_default_val(api):
     endpoint_result = api.devices.get_device_list(
         associated_wlc_ip=None,
         collection_interval=None,
@@ -720,11 +720,11 @@ def get_device_list_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_list_default(api, validator):
+def test_get_device_list_default_val(api, validator):
     try:
         assert is_valid_get_device_list(
             validator,
-            get_device_list_default(api)
+            get_device_list_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -784,7 +784,7 @@ def test_add_device(api, validator):
             raise original_e
 
 
-def add_device_default(api):
+def add_device_default_val(api):
     endpoint_result = api.devices.add_device(
         active_validation=True,
         cliTransport=None,
@@ -820,11 +820,11 @@ def add_device_default(api):
 
 
 @pytest.mark.devices
-def test_add_device_default(api, validator):
+def test_add_device_default_val(api, validator):
     try:
         assert is_valid_add_device(
             validator,
-            add_device_default(api)
+            add_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -884,7 +884,7 @@ def test_sync_devices(api, validator):
             raise original_e
 
 
-def sync_devices_default(api):
+def sync_devices_default_val(api):
     endpoint_result = api.devices.sync_devices(
         active_validation=True,
         cliTransport=None,
@@ -920,11 +920,11 @@ def sync_devices_default(api):
 
 
 @pytest.mark.devices
-def test_sync_devices_default(api, validator):
+def test_sync_devices_default_val(api, validator):
     try:
         assert is_valid_sync_devices(
             validator,
-            sync_devices_default(api)
+            sync_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -977,7 +977,7 @@ def test_retrieves_all_network_devices(api, validator):
             raise original_e
 
 
-def retrieves_all_network_devices_default(api):
+def retrieves_all_network_devices_default_val(api):
     endpoint_result = api.devices.retrieves_all_network_devices(
         associated_wlc_ip=None,
         collection_interval=None,
@@ -1006,11 +1006,11 @@ def retrieves_all_network_devices_default(api):
 
 
 @pytest.mark.devices
-def test_retrieves_all_network_devices_default(api, validator):
+def test_retrieves_all_network_devices_default_val(api, validator):
     try:
         assert is_valid_retrieves_all_network_devices(
             validator,
-            retrieves_all_network_devices_default(api)
+            retrieves_all_network_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1046,7 +1046,7 @@ def test_update_device_role(api, validator):
             raise original_e
 
 
-def update_device_role_default(api):
+def update_device_role_default_val(api):
     endpoint_result = api.devices.update_device_role(
         active_validation=True,
         id=None,
@@ -1058,11 +1058,11 @@ def update_device_role_default(api):
 
 
 @pytest.mark.devices
-def test_update_device_role_default(api, validator):
+def test_update_device_role_default_val(api, validator):
     try:
         assert is_valid_update_device_role(
             validator,
-            update_device_role_default(api)
+            update_device_role_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1094,7 +1094,7 @@ def test_get_polling_interval_for_all_devices(api, validator):
             raise original_e
 
 
-def get_polling_interval_for_all_devices_default(api):
+def get_polling_interval_for_all_devices_default_val(api):
     endpoint_result = api.devices.get_polling_interval_for_all_devices(
 
     )
@@ -1102,11 +1102,11 @@ def get_polling_interval_for_all_devices_default(api):
 
 
 @pytest.mark.devices
-def test_get_polling_interval_for_all_devices_default(api, validator):
+def test_get_polling_interval_for_all_devices_default_val(api, validator):
     try:
         assert is_valid_get_polling_interval_for_all_devices(
             validator,
-            get_polling_interval_for_all_devices_default(api)
+            get_polling_interval_for_all_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1138,7 +1138,7 @@ def test_get_device_config_for_all_devices(api, validator):
             raise original_e
 
 
-def get_device_config_for_all_devices_default(api):
+def get_device_config_for_all_devices_default_val(api):
     endpoint_result = api.devices.get_device_config_for_all_devices(
 
     )
@@ -1146,11 +1146,11 @@ def get_device_config_for_all_devices_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_for_all_devices_default(api, validator):
+def test_get_device_config_for_all_devices_default_val(api, validator):
     try:
         assert is_valid_get_device_config_for_all_devices(
             validator,
-            get_device_config_for_all_devices_default(api)
+            get_device_config_for_all_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1182,7 +1182,7 @@ def test_get_device_config_count(api, validator):
             raise original_e
 
 
-def get_device_config_count_default(api):
+def get_device_config_count_default_val(api):
     endpoint_result = api.devices.get_device_config_count(
 
     )
@@ -1190,11 +1190,11 @@ def get_device_config_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_count_default(api, validator):
+def test_get_device_config_count_default_val(api, validator):
     try:
         assert is_valid_get_device_config_count(
             validator,
-            get_device_config_count_default(api)
+            get_device_config_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1226,7 +1226,7 @@ def test_get_device_count(api, validator):
             raise original_e
 
 
-def get_device_count_default(api):
+def get_device_count_default_val(api):
     endpoint_result = api.devices.get_device_count(
 
     )
@@ -1234,11 +1234,11 @@ def get_device_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_count_default(api, validator):
+def test_get_device_count_default_val(api, validator):
     try:
         assert is_valid_get_device_count(
             validator,
-            get_device_count_default(api)
+            get_device_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1276,7 +1276,7 @@ def test_export_device_list(api, validator):
             raise original_e
 
 
-def export_device_list_default(api):
+def export_device_list_default_val(api):
     endpoint_result = api.devices.export_device_list(
         active_validation=True,
         deviceUuids=None,
@@ -1290,11 +1290,11 @@ def export_device_list_default(api):
 
 
 @pytest.mark.devices
-def test_export_device_list_default(api, validator):
+def test_export_device_list_default_val(api, validator):
     try:
         assert is_valid_export_device_list(
             validator,
-            export_device_list_default(api)
+            export_device_list_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1327,7 +1327,7 @@ def test_get_functional_capability_for_devices(api, validator):
             raise original_e
 
 
-def get_functional_capability_for_devices_default(api):
+def get_functional_capability_for_devices_default_val(api):
     endpoint_result = api.devices.get_functional_capability_for_devices(
         device_id=None,
         function_name=None
@@ -1336,11 +1336,11 @@ def get_functional_capability_for_devices_default(api):
 
 
 @pytest.mark.devices
-def test_get_functional_capability_for_devices_default(api, validator):
+def test_get_functional_capability_for_devices_default_val(api, validator):
     try:
         assert is_valid_get_functional_capability_for_devices(
             validator,
-            get_functional_capability_for_devices_default(api)
+            get_functional_capability_for_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1372,7 +1372,7 @@ def test_get_functional_capability_by_id(api, validator):
             raise original_e
 
 
-def get_functional_capability_by_id_default(api):
+def get_functional_capability_by_id_default_val(api):
     endpoint_result = api.devices.get_functional_capability_by_id(
         id='string'
     )
@@ -1380,11 +1380,11 @@ def get_functional_capability_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_functional_capability_by_id_default(api, validator):
+def test_get_functional_capability_by_id_default_val(api, validator):
     try:
         assert is_valid_get_functional_capability_by_id(
             validator,
-            get_functional_capability_by_id_default(api)
+            get_functional_capability_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1421,7 +1421,7 @@ def test_inventory_insight_device_link_mismatch(api, validator):
             raise original_e
 
 
-def inventory_insight_device_link_mismatch_default(api):
+def inventory_insight_device_link_mismatch_default_val(api):
     endpoint_result = api.devices.inventory_insight_device_link_mismatch(
         category=None,
         limit=None,
@@ -1434,11 +1434,11 @@ def inventory_insight_device_link_mismatch_default(api):
 
 
 @pytest.mark.devices
-def test_inventory_insight_device_link_mismatch_default(api, validator):
+def test_inventory_insight_device_link_mismatch_default_val(api, validator):
     try:
         assert is_valid_inventory_insight_device_link_mismatch(
             validator,
-            inventory_insight_device_link_mismatch_default(api)
+            inventory_insight_device_link_mismatch_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1474,7 +1474,7 @@ def test_get_devices_with_snmpv3_des(api, validator):
             raise original_e
 
 
-def get_devices_with_snmpv3_des_default(api):
+def get_devices_with_snmpv3_des_default_val(api):
     endpoint_result = api.devices.get_devices_with_snmpv3_des(
         limit=None,
         offset=None,
@@ -1486,11 +1486,11 @@ def get_devices_with_snmpv3_des_default(api):
 
 
 @pytest.mark.devices
-def test_get_devices_with_snmpv3_des_default(api, validator):
+def test_get_devices_with_snmpv3_des_default_val(api, validator):
     try:
         assert is_valid_get_devices_with_snmpv3_des(
             validator,
-            get_devices_with_snmpv3_des_default(api)
+            get_devices_with_snmpv3_des_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1522,7 +1522,7 @@ def test_get_network_device_by_ip(api, validator):
             raise original_e
 
 
-def get_network_device_by_ip_default(api):
+def get_network_device_by_ip_default_val(api):
     endpoint_result = api.devices.get_network_device_by_ip(
         ip_address='string'
     )
@@ -1530,11 +1530,11 @@ def get_network_device_by_ip_default(api):
 
 
 @pytest.mark.devices
-def test_get_network_device_by_ip_default(api, validator):
+def test_get_network_device_by_ip_default_val(api, validator):
     try:
         assert is_valid_get_network_device_by_ip(
             validator,
-            get_network_device_by_ip_default(api)
+            get_network_device_by_ip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1572,7 +1572,7 @@ def test_get_modules(api, validator):
             raise original_e
 
 
-def get_modules_default(api):
+def get_modules_default_val(api):
     endpoint_result = api.devices.get_modules(
         device_id=None,
         limit=None,
@@ -1586,11 +1586,11 @@ def get_modules_default(api):
 
 
 @pytest.mark.devices
-def test_get_modules_default(api, validator):
+def test_get_modules_default_val(api, validator):
     try:
         assert is_valid_get_modules(
             validator,
-            get_modules_default(api)
+            get_modules_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1626,7 +1626,7 @@ def test_get_module_count(api, validator):
             raise original_e
 
 
-def get_module_count_default(api):
+def get_module_count_default_val(api):
     endpoint_result = api.devices.get_module_count(
         device_id=None,
         name_list=None,
@@ -1638,11 +1638,11 @@ def get_module_count_default(api):
 
 
 @pytest.mark.devices
-def test_get_module_count_default(api, validator):
+def test_get_module_count_default_val(api, validator):
     try:
         assert is_valid_get_module_count(
             validator,
-            get_module_count_default(api)
+            get_module_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1674,7 +1674,7 @@ def test_get_module_info_by_id(api, validator):
             raise original_e
 
 
-def get_module_info_by_id_default(api):
+def get_module_info_by_id_default_val(api):
     endpoint_result = api.devices.get_module_info_by_id(
         id='string'
     )
@@ -1682,11 +1682,11 @@ def get_module_info_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_module_info_by_id_default(api, validator):
+def test_get_module_info_by_id_default_val(api, validator):
     try:
         assert is_valid_get_module_info_by_id(
             validator,
-            get_module_info_by_id_default(api)
+            get_module_info_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1718,7 +1718,7 @@ def test_get_device_by_serial_number(api, validator):
             raise original_e
 
 
-def get_device_by_serial_number_default(api):
+def get_device_by_serial_number_default_val(api):
     endpoint_result = api.devices.get_device_by_serial_number(
         serial_number='string'
     )
@@ -1726,11 +1726,11 @@ def get_device_by_serial_number_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_by_serial_number_default(api, validator):
+def test_get_device_by_serial_number_default_val(api, validator):
     try:
         assert is_valid_get_device_by_serial_number(
             validator,
-            get_device_by_serial_number_default(api)
+            get_device_by_serial_number_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1764,7 +1764,7 @@ def test_sync_devices_using_forcesync(api, validator):
             raise original_e
 
 
-def sync_devices_using_forcesync_default(api):
+def sync_devices_using_forcesync_default_val(api):
     endpoint_result = api.devices.sync_devices_using_forcesync(
         active_validation=True,
         force_sync=None,
@@ -1774,11 +1774,11 @@ def sync_devices_using_forcesync_default(api):
 
 
 @pytest.mark.devices
-def test_sync_devices_using_forcesync_default(api, validator):
+def test_sync_devices_using_forcesync_default_val(api, validator):
     try:
         assert is_valid_sync_devices_using_forcesync(
             validator,
-            sync_devices_using_forcesync_default(api)
+            sync_devices_using_forcesync_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1811,7 +1811,7 @@ def test_register_device_for_wsa(api, validator):
             raise original_e
 
 
-def register_device_for_wsa_default(api):
+def register_device_for_wsa_default_val(api):
     endpoint_result = api.devices.register_device_for_wsa(
         macaddress=None,
         serial_number=None
@@ -1820,11 +1820,11 @@ def register_device_for_wsa_default(api):
 
 
 @pytest.mark.devices
-def test_register_device_for_wsa_default(api, validator):
+def test_register_device_for_wsa_default_val(api, validator):
     try:
         assert is_valid_register_device_for_wsa(
             validator,
-            register_device_for_wsa_default(api)
+            register_device_for_wsa_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1856,7 +1856,7 @@ def test_get_chassis_details_for_device(api, validator):
             raise original_e
 
 
-def get_chassis_details_for_device_default(api):
+def get_chassis_details_for_device_default_val(api):
     endpoint_result = api.devices.get_chassis_details_for_device(
         device_id='string'
     )
@@ -1864,11 +1864,11 @@ def get_chassis_details_for_device_default(api):
 
 
 @pytest.mark.devices
-def test_get_chassis_details_for_device_default(api, validator):
+def test_get_chassis_details_for_device_default_val(api, validator):
     try:
         assert is_valid_get_chassis_details_for_device(
             validator,
-            get_chassis_details_for_device_default(api)
+            get_chassis_details_for_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1900,7 +1900,7 @@ def test_get_stack_details_for_device(api, validator):
             raise original_e
 
 
-def get_stack_details_for_device_default(api):
+def get_stack_details_for_device_default_val(api):
     endpoint_result = api.devices.get_stack_details_for_device(
         device_id='string'
     )
@@ -1908,11 +1908,11 @@ def get_stack_details_for_device_default(api):
 
 
 @pytest.mark.devices
-def test_get_stack_details_for_device_default(api, validator):
+def test_get_stack_details_for_device_default_val(api, validator):
     try:
         assert is_valid_get_stack_details_for_device(
             validator,
-            get_stack_details_for_device_default(api)
+            get_stack_details_for_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1945,7 +1945,7 @@ def test_return_power_supply_fan_details_for_the_given_device(api, validator):
             raise original_e
 
 
-def return_power_supply_fan_details_for_the_given_device_default(api):
+def return_power_supply_fan_details_for_the_given_device_default_val(api):
     endpoint_result = api.devices.return_power_supply_fan_details_for_the_given_device(
         device_uuid='string',
         type=None
@@ -1954,11 +1954,11 @@ def return_power_supply_fan_details_for_the_given_device_default(api):
 
 
 @pytest.mark.devices
-def test_return_power_supply_fan_details_for_the_given_device_default(api, validator):
+def test_return_power_supply_fan_details_for_the_given_device_default_val(api, validator):
     try:
         assert is_valid_return_power_supply_fan_details_for_the_given_device(
             validator,
-            return_power_supply_fan_details_for_the_given_device_default(api)
+            return_power_supply_fan_details_for_the_given_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1991,7 +1991,7 @@ def test_poe_interface_details(api, validator):
             raise original_e
 
 
-def poe_interface_details_default(api):
+def poe_interface_details_default_val(api):
     endpoint_result = api.devices.poe_interface_details(
         device_uuid='string',
         interface_name_list=None
@@ -2000,11 +2000,11 @@ def poe_interface_details_default(api):
 
 
 @pytest.mark.devices
-def test_poe_interface_details_default(api, validator):
+def test_poe_interface_details_default_val(api, validator):
     try:
         assert is_valid_poe_interface_details(
             validator,
-            poe_interface_details_default(api)
+            poe_interface_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2036,7 +2036,7 @@ def test_get_linecard_details(api, validator):
             raise original_e
 
 
-def get_linecard_details_default(api):
+def get_linecard_details_default_val(api):
     endpoint_result = api.devices.get_linecard_details(
         device_uuid='string'
     )
@@ -2044,11 +2044,11 @@ def get_linecard_details_default(api):
 
 
 @pytest.mark.devices
-def test_get_linecard_details_default(api, validator):
+def test_get_linecard_details_default_val(api, validator):
     try:
         assert is_valid_get_linecard_details(
             validator,
-            get_linecard_details_default(api)
+            get_linecard_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2080,7 +2080,7 @@ def test_poe_details(api, validator):
             raise original_e
 
 
-def poe_details_default(api):
+def poe_details_default_val(api):
     endpoint_result = api.devices.poe_details(
         device_uuid='string'
     )
@@ -2088,11 +2088,11 @@ def poe_details_default(api):
 
 
 @pytest.mark.devices
-def test_poe_details_default(api, validator):
+def test_poe_details_default_val(api, validator):
     try:
         assert is_valid_poe_details(
             validator,
-            poe_details_default(api)
+            poe_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2124,7 +2124,7 @@ def test_get_supervisor_card_detail(api, validator):
             raise original_e
 
 
-def get_supervisor_card_detail_default(api):
+def get_supervisor_card_detail_default_val(api):
     endpoint_result = api.devices.get_supervisor_card_detail(
         device_uuid='string'
     )
@@ -2132,11 +2132,11 @@ def get_supervisor_card_detail_default(api):
 
 
 @pytest.mark.devices
-def test_get_supervisor_card_detail_default(api, validator):
+def test_get_supervisor_card_detail_default_val(api, validator):
     try:
         assert is_valid_get_supervisor_card_detail(
             validator,
-            get_supervisor_card_detail_default(api)
+            get_supervisor_card_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2168,7 +2168,7 @@ def test_get_device_by_id(api, validator):
             raise original_e
 
 
-def get_device_by_id_default(api):
+def get_device_by_id_default_val(api):
     endpoint_result = api.devices.get_device_by_id(
         id='string'
     )
@@ -2176,11 +2176,11 @@ def get_device_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_by_id_default(api, validator):
+def test_get_device_by_id_default_val(api, validator):
     try:
         assert is_valid_get_device_by_id(
             validator,
-            get_device_by_id_default(api)
+            get_device_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2213,7 +2213,7 @@ def test_delete_device_by_id(api, validator):
             raise original_e
 
 
-def delete_device_by_id_default(api):
+def delete_device_by_id_default_val(api):
     endpoint_result = api.devices.delete_device_by_id(
         id='string',
         is_force_delete=None
@@ -2222,11 +2222,11 @@ def delete_device_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_delete_device_by_id_default(api, validator):
+def test_delete_device_by_id_default_val(api, validator):
     try:
         assert is_valid_delete_device_by_id(
             validator,
-            delete_device_by_id_default(api)
+            delete_device_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2258,7 +2258,7 @@ def test_get_device_summary(api, validator):
             raise original_e
 
 
-def get_device_summary_default(api):
+def get_device_summary_default_val(api):
     endpoint_result = api.devices.get_device_summary(
         id='string'
     )
@@ -2266,11 +2266,11 @@ def get_device_summary_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_summary_default(api, validator):
+def test_get_device_summary_default_val(api, validator):
     try:
         assert is_valid_get_device_summary(
             validator,
-            get_device_summary_default(api)
+            get_device_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2302,7 +2302,7 @@ def test_get_polling_interval_by_id(api, validator):
             raise original_e
 
 
-def get_polling_interval_by_id_default(api):
+def get_polling_interval_by_id_default_val(api):
     endpoint_result = api.devices.get_polling_interval_by_id(
         id='string'
     )
@@ -2310,11 +2310,11 @@ def get_polling_interval_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_polling_interval_by_id_default(api, validator):
+def test_get_polling_interval_by_id_default_val(api, validator):
     try:
         assert is_valid_get_polling_interval_by_id(
             validator,
-            get_polling_interval_by_id_default(api)
+            get_polling_interval_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2346,7 +2346,7 @@ def test_get_organization_list_for_meraki(api, validator):
             raise original_e
 
 
-def get_organization_list_for_meraki_default(api):
+def get_organization_list_for_meraki_default_val(api):
     endpoint_result = api.devices.get_organization_list_for_meraki(
         id='string'
     )
@@ -2354,11 +2354,11 @@ def get_organization_list_for_meraki_default(api):
 
 
 @pytest.mark.devices
-def test_get_organization_list_for_meraki_default(api, validator):
+def test_get_organization_list_for_meraki_default_val(api, validator):
     try:
         assert is_valid_get_organization_list_for_meraki(
             validator,
-            get_organization_list_for_meraki_default(api)
+            get_organization_list_for_meraki_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2391,7 +2391,7 @@ def test_get_device_interface_vlans(api, validator):
             raise original_e
 
 
-def get_device_interface_vlans_default(api):
+def get_device_interface_vlans_default_val(api):
     endpoint_result = api.devices.get_device_interface_vlans(
         id='string',
         interface_type=None
@@ -2400,11 +2400,11 @@ def get_device_interface_vlans_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_vlans_default(api, validator):
+def test_get_device_interface_vlans_default_val(api, validator):
     try:
         assert is_valid_get_device_interface_vlans(
             validator,
-            get_device_interface_vlans_default(api)
+            get_device_interface_vlans_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2436,7 +2436,7 @@ def test_get_wireless_lan_controller_details_by_id(api, validator):
             raise original_e
 
 
-def get_wireless_lan_controller_details_by_id_default(api):
+def get_wireless_lan_controller_details_by_id_default_val(api):
     endpoint_result = api.devices.get_wireless_lan_controller_details_by_id(
         id='string'
     )
@@ -2444,11 +2444,11 @@ def get_wireless_lan_controller_details_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_wireless_lan_controller_details_by_id_default(api, validator):
+def test_get_wireless_lan_controller_details_by_id_default_val(api, validator):
     try:
         assert is_valid_get_wireless_lan_controller_details_by_id(
             validator,
-            get_wireless_lan_controller_details_by_id_default(api)
+            get_wireless_lan_controller_details_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2480,7 +2480,7 @@ def test_get_device_config_by_id(api, validator):
             raise original_e
 
 
-def get_device_config_by_id_default(api):
+def get_device_config_by_id_default_val(api):
     endpoint_result = api.devices.get_device_config_by_id(
         network_device_id='string'
     )
@@ -2488,11 +2488,11 @@ def get_device_config_by_id_default(api):
 
 
 @pytest.mark.devices
-def test_get_device_config_by_id_default(api, validator):
+def test_get_device_config_by_id_default_val(api, validator):
     try:
         assert is_valid_get_device_config_by_id(
             validator,
-            get_device_config_by_id_default(api)
+            get_device_config_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2525,7 +2525,7 @@ def test_get_network_device_by_pagination_range(api, validator):
             raise original_e
 
 
-def get_network_device_by_pagination_range_default(api):
+def get_network_device_by_pagination_range_default_val(api):
     endpoint_result = api.devices.get_network_device_by_pagination_range(
         records_to_return=0,
         start_index=0
@@ -2534,11 +2534,11 @@ def get_network_device_by_pagination_range_default(api):
 
 
 @pytest.mark.devices
-def test_get_network_device_by_pagination_range_default(api, validator):
+def test_get_network_device_by_pagination_range_default_val(api, validator):
     try:
         assert is_valid_get_network_device_by_pagination_range(
             validator,
-            get_network_device_by_pagination_range_default(api)
+            get_network_device_by_pagination_range_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2579,7 +2579,7 @@ def test_threat_details(api, validator):
             raise original_e
 
 
-def threat_details_default(api):
+def threat_details_default_val(api):
     endpoint_result = api.devices.threat_details(
         active_validation=True,
         endTime=None,
@@ -2596,11 +2596,11 @@ def threat_details_default(api):
 
 
 @pytest.mark.devices
-def test_threat_details_default(api, validator):
+def test_threat_details_default_val(api, validator):
     try:
         assert is_valid_threat_details(
             validator,
-            threat_details_default(api)
+            threat_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2641,7 +2641,7 @@ def test_threat_detail_count(api, validator):
             raise original_e
 
 
-def threat_detail_count_default(api):
+def threat_detail_count_default_val(api):
     endpoint_result = api.devices.threat_detail_count(
         active_validation=True,
         endTime=None,
@@ -2658,11 +2658,11 @@ def threat_detail_count_default(api):
 
 
 @pytest.mark.devices
-def test_threat_detail_count_default(api, validator):
+def test_threat_detail_count_default_val(api, validator):
     try:
         assert is_valid_threat_detail_count(
             validator,
-            threat_detail_count_default(api)
+            threat_detail_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2700,7 +2700,7 @@ def test_threat_summary(api, validator):
             raise original_e
 
 
-def threat_summary_default(api):
+def threat_summary_default_val(api):
     endpoint_result = api.devices.threat_summary(
         active_validation=True,
         endTime=None,
@@ -2714,11 +2714,11 @@ def threat_summary_default(api):
 
 
 @pytest.mark.devices
-def test_threat_summary_default(api, validator):
+def test_threat_summary_default_val(api, validator):
     try:
         assert is_valid_threat_summary(
             validator,
-            threat_summary_default(api)
+            threat_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -58,7 +58,7 @@ def test_get_membership(api, validator):
             raise original_e
 
 
-def get_membership_default(api):
+def get_membership_default_val(api):
     endpoint_result = api.sites.get_membership(
         device_family=None,
         limit=None,
@@ -70,11 +70,11 @@ def get_membership_default(api):
 
 
 @pytest.mark.sites
-def test_get_membership_default(api, validator):
+def test_get_membership_default_val(api, validator):
     try:
         assert is_valid_get_membership(
             validator,
-            get_membership_default(api)
+            get_membership_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -109,7 +109,7 @@ def test_create_site(api, validator):
             raise original_e
 
 
-def create_site_default(api):
+def create_site_default_val(api):
     endpoint_result = api.sites.create_site(
         active_validation=True,
         payload=None,
@@ -120,11 +120,11 @@ def create_site_default(api):
 
 
 @pytest.mark.sites
-def test_create_site_default(api, validator):
+def test_create_site_default_val(api, validator):
     try:
         assert is_valid_create_site(
             validator,
-            create_site_default(api)
+            create_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -160,7 +160,7 @@ def test_get_site(api, validator):
             raise original_e
 
 
-def get_site_default(api):
+def get_site_default_val(api):
     endpoint_result = api.sites.get_site(
         limit=None,
         name=None,
@@ -172,11 +172,11 @@ def get_site_default(api):
 
 
 @pytest.mark.sites
-def test_get_site_default(api, validator):
+def test_get_site_default_val(api, validator):
     try:
         assert is_valid_get_site(
             validator,
-            get_site_default(api)
+            get_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -208,7 +208,7 @@ def test_get_site_health(api, validator):
             raise original_e
 
 
-def get_site_health_default(api):
+def get_site_health_default_val(api):
     endpoint_result = api.sites.get_site_health(
         timestamp=None
     )
@@ -216,11 +216,11 @@ def get_site_health_default(api):
 
 
 @pytest.mark.sites
-def test_get_site_health_default(api, validator):
+def test_get_site_health_default_val(api, validator):
     try:
         assert is_valid_get_site_health(
             validator,
-            get_site_health_default(api)
+            get_site_health_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -252,7 +252,7 @@ def test_get_site_count(api, validator):
             raise original_e
 
 
-def get_site_count_default(api):
+def get_site_count_default_val(api):
     endpoint_result = api.sites.get_site_count(
         site_id=None
     )
@@ -260,11 +260,11 @@ def get_site_count_default(api):
 
 
 @pytest.mark.sites
-def test_get_site_count_default(api, validator):
+def test_get_site_count_default_val(api, validator):
     try:
         assert is_valid_get_site_count(
             validator,
-            get_site_count_default(api)
+            get_site_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -300,7 +300,7 @@ def test_update_site(api, validator):
             raise original_e
 
 
-def update_site_default(api):
+def update_site_default_val(api):
     endpoint_result = api.sites.update_site(
         active_validation=True,
         payload=None,
@@ -312,11 +312,11 @@ def update_site_default(api):
 
 
 @pytest.mark.sites
-def test_update_site_default(api, validator):
+def test_update_site_default_val(api, validator):
     try:
         assert is_valid_update_site(
             validator,
-            update_site_default(api)
+            update_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -348,7 +348,7 @@ def test_delete_site(api, validator):
             raise original_e
 
 
-def delete_site_default(api):
+def delete_site_default_val(api):
     endpoint_result = api.sites.delete_site(
         site_id='string'
     )
@@ -356,11 +356,11 @@ def delete_site_default(api):
 
 
 @pytest.mark.sites
-def test_delete_site_default(api, validator):
+def test_delete_site_default_val(api, validator):
     try:
         assert is_valid_delete_site(
             validator,
-            delete_site_default(api)
+            delete_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -395,7 +395,7 @@ def test_assign_device_to_site(api, validator):
             raise original_e
 
 
-def assign_device_to_site_default(api):
+def assign_device_to_site_default_val(api):
     endpoint_result = api.sites.assign_device_to_site(
         active_validation=True,
         device=None,
@@ -406,11 +406,11 @@ def assign_device_to_site_default(api):
 
 
 @pytest.mark.sites
-def test_assign_device_to_site_default(api, validator):
+def test_assign_device_to_site_default_val(api, validator):
     try:
         assert is_valid_assign_device_to_site(
             validator,
-            assign_device_to_site_default(api)
+            assign_device_to_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

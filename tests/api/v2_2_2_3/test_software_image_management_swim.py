@@ -56,7 +56,7 @@ def test_trigger_software_image_activation(api, validator):
             raise original_e
 
 
-def trigger_software_image_activation_default(api):
+def trigger_software_image_activation_default_val(api):
     endpoint_result = api.software_image_management_swim.trigger_software_image_activation(
         active_validation=True,
         payload=None,
@@ -66,11 +66,11 @@ def trigger_software_image_activation_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_trigger_software_image_activation_default(api, validator):
+def test_trigger_software_image_activation_default_val(api, validator):
     try:
         assert is_valid_trigger_software_image_activation(
             validator,
-            trigger_software_image_activation_default(api)
+            trigger_software_image_activation_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -103,7 +103,7 @@ def test_trigger_software_image_distribution(api, validator):
             raise original_e
 
 
-def trigger_software_image_distribution_default(api):
+def trigger_software_image_distribution_default_val(api):
     endpoint_result = api.software_image_management_swim.trigger_software_image_distribution(
         active_validation=True,
         payload=None
@@ -112,11 +112,11 @@ def trigger_software_image_distribution_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_trigger_software_image_distribution_default(api, validator):
+def test_trigger_software_image_distribution_default_val(api, validator):
     try:
         assert is_valid_trigger_software_image_distribution(
             validator,
-            trigger_software_image_distribution_default(api)
+            trigger_software_image_distribution_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -165,7 +165,7 @@ def test_get_software_image_details(api, validator):
             raise original_e
 
 
-def get_software_image_details_default(api):
+def get_software_image_details_default_val(api):
     endpoint_result = api.software_image_management_swim.get_software_image_details(
         application_type=None,
         created_time=None,
@@ -190,11 +190,11 @@ def get_software_image_details_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_get_software_image_details_default(api, validator):
+def test_get_software_image_details_default_val(api, validator):
     try:
         assert is_valid_get_software_image_details(
             validator,
-            get_software_image_details_default(api)
+            get_software_image_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -233,7 +233,7 @@ def test_import_local_software_image(api, validator):
             raise original_e
 
 
-def import_local_software_image_default(api):
+def import_local_software_image_default_val(api):
     endpoint_result = api.software_image_management_swim.import_local_software_image(
         multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
         multipart_monitor_callback=None,
@@ -248,11 +248,11 @@ def import_local_software_image_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_import_local_software_image_default(api, validator):
+def test_import_local_software_image_default_val(api, validator):
     try:
         assert is_valid_import_local_software_image(
             validator,
-            import_local_software_image_default(api)
+            import_local_software_image_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -288,7 +288,7 @@ def test_import_software_image_via_url(api, validator):
             raise original_e
 
 
-def import_software_image_via_url_default(api):
+def import_software_image_via_url_default_val(api):
     endpoint_result = api.software_image_management_swim.import_software_image_via_url(
         active_validation=True,
         payload=None,
@@ -300,11 +300,11 @@ def import_software_image_via_url_default(api):
 
 
 @pytest.mark.software_image_management_swim
-def test_import_software_image_via_url_default(api, validator):
+def test_import_software_image_via_url_default_val(api, validator):
     try:
         assert is_valid_import_software_image_via_url(
             validator,
-            import_software_image_via_url_default(api)
+            import_software_image_via_url_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

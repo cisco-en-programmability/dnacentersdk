@@ -98,6 +98,9 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
                 "type": "string"
                 },
                 "macAddressList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "siteHierarchy": {
@@ -191,6 +194,9 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
                 "type": "number"
                 },
                 "sensors": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "showWlcUpgradeBanner": {
@@ -239,6 +245,9 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
                 "type": "object"
                 },
                 "extWebAuthHtmlTag": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "extWebAuthPortal": {
@@ -293,6 +302,9 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
                 "items": {
                 "properties": {
                 "config": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "name": {
@@ -359,6 +371,9 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
                 "type": "number"
                 },
                 "wlans": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },

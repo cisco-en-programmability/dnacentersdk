@@ -56,6 +56,9 @@ class JSONSchemaValidatorC9B144B5Dc2Ba26E51798F8Bede(object):
                 "installedVersion": {
                 "type": "string"
                 },
+                "modified": {
+                "type": "number"
+                },
                 "name": {
                 "type": "string"
                 },
@@ -66,6 +69,9 @@ class JSONSchemaValidatorC9B144B5Dc2Ba26E51798F8Bede(object):
                 "type": "array"
                 },
                 "supportedDirectUpdates": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "systemVersion": {

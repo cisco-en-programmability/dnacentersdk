@@ -99,6 +99,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "items": {
                 "properties": {
                 "config": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "name": {

@@ -180,6 +180,9 @@ class JSONSchemaValidatorF04B76067507B9384E409E9431Ef3(object):
                 "type": "object"
                 },
                 "ipv6AddressList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "macAddress": {
@@ -389,6 +392,7 @@ class JSONSchemaValidatorF04B76067507B9384E409E9431Ef3(object):
                 },
                 "stackMemberList": {
                 "items": {
+                "items": {
                 "properties": {
                 "hardwareVersion": {
                 "type": "string"
@@ -428,6 +432,8 @@ class JSONSchemaValidatorF04B76067507B9384E409E9431Ef3(object):
                 }
                 },
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "type": "array"
                 },

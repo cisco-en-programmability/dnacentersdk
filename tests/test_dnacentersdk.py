@@ -24,6 +24,7 @@ SOFTWARE.
 """
 
 import dnacentersdk
+import requests
 from tests.environment import (
     DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
     DNA_CENTER_ENCODED_AUTH, DNA_CENTER_VERSION,
@@ -439,7 +440,7 @@ class TestDNACenterSDK:
     @pytest.mark.dnacentersdk
     def test_custom_base_url(self):
         custom_url = "https://custom.domain.com/v1/"
-        with pytest.raises(dnacentersdk.exceptions.ApiError):
+        with pytest.raises((dnacentersdk.exceptions.ApiError, requests.exceptions.ConnectionError)):
             dnacentersdk.DNACenterAPI(username=DNA_CENTER_USERNAME,
                                       password=DNA_CENTER_PASSWORD,
                                       encoded_auth=DNA_CENTER_ENCODED_AUTH,

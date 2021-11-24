@@ -52,7 +52,10 @@ class JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C(object):
                 "type": "object"
                 },
                 "resourceParams": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "templateId": {
                 "type": "string"

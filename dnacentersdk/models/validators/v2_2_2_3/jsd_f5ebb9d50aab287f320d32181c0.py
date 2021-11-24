@@ -45,6 +45,9 @@ class JSONSchemaValidatorF5EBb9D50AaB287F320D32181C0(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
+                "isGuestVirtualNetwork": {
+                "type": "boolean"
+                },
                 "scalableGroupNames": {
                 "items": {
                 "type": "string"

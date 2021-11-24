@@ -54,7 +54,7 @@ def test_get_default_authentication_profile(api, validator):
             raise original_e
 
 
-def get_default_authentication_profile_default(api):
+def get_default_authentication_profile_default_val(api):
     endpoint_result = api.sda.get_default_authentication_profile(
         site_name_hierarchy=None
     )
@@ -62,11 +62,11 @@ def get_default_authentication_profile_default(api):
 
 
 @pytest.mark.sda
-def test_get_default_authentication_profile_default(api, validator):
+def test_get_default_authentication_profile_default_val(api, validator):
     try:
         assert is_valid_get_default_authentication_profile(
             validator,
-            get_default_authentication_profile_default(api)
+            get_default_authentication_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -99,7 +99,7 @@ def test_add_default_authentication_profile(api, validator):
             raise original_e
 
 
-def add_default_authentication_profile_default(api):
+def add_default_authentication_profile_default_val(api):
     endpoint_result = api.sda.add_default_authentication_profile(
         active_validation=True,
         payload=None
@@ -108,11 +108,11 @@ def add_default_authentication_profile_default(api):
 
 
 @pytest.mark.sda
-def test_add_default_authentication_profile_default(api, validator):
+def test_add_default_authentication_profile_default_val(api, validator):
     try:
         assert is_valid_add_default_authentication_profile(
             validator,
-            add_default_authentication_profile_default(api)
+            add_default_authentication_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -145,7 +145,7 @@ def test_update_default_authentication_profile(api, validator):
             raise original_e
 
 
-def update_default_authentication_profile_default(api):
+def update_default_authentication_profile_default_val(api):
     endpoint_result = api.sda.update_default_authentication_profile(
         active_validation=True,
         payload=None
@@ -154,11 +154,11 @@ def update_default_authentication_profile_default(api):
 
 
 @pytest.mark.sda
-def test_update_default_authentication_profile_default(api, validator):
+def test_update_default_authentication_profile_default_val(api, validator):
     try:
         assert is_valid_update_default_authentication_profile(
             validator,
-            update_default_authentication_profile_default(api)
+            update_default_authentication_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -190,7 +190,7 @@ def test_delete_default_authentication_profile(api, validator):
             raise original_e
 
 
-def delete_default_authentication_profile_default(api):
+def delete_default_authentication_profile_default_val(api):
     endpoint_result = api.sda.delete_default_authentication_profile(
         site_name_hierarchy=None
     )
@@ -198,11 +198,11 @@ def delete_default_authentication_profile_default(api):
 
 
 @pytest.mark.sda
-def test_delete_default_authentication_profile_default(api, validator):
+def test_delete_default_authentication_profile_default_val(api, validator):
     try:
         assert is_valid_delete_default_authentication_profile(
             validator,
-            delete_default_authentication_profile_default(api)
+            delete_default_authentication_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -235,7 +235,7 @@ def test_adds_border_device(api, validator):
             raise original_e
 
 
-def adds_border_device_default(api):
+def adds_border_device_default_val(api):
     endpoint_result = api.sda.adds_border_device(
         active_validation=True,
         payload=None
@@ -244,11 +244,11 @@ def adds_border_device_default(api):
 
 
 @pytest.mark.sda
-def test_adds_border_device_default(api, validator):
+def test_adds_border_device_default_val(api, validator):
     try:
         assert is_valid_adds_border_device(
             validator,
-            adds_border_device_default(api)
+            adds_border_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -280,7 +280,7 @@ def test_gets_border_device_detail(api, validator):
             raise original_e
 
 
-def gets_border_device_detail_default(api):
+def gets_border_device_detail_default_val(api):
     endpoint_result = api.sda.gets_border_device_detail(
         device_ipaddress=None
     )
@@ -288,11 +288,11 @@ def gets_border_device_detail_default(api):
 
 
 @pytest.mark.sda
-def test_gets_border_device_detail_default(api, validator):
+def test_gets_border_device_detail_default_val(api, validator):
     try:
         assert is_valid_gets_border_device_detail(
             validator,
-            gets_border_device_detail_default(api)
+            gets_border_device_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -324,7 +324,7 @@ def test_deletes_border_device(api, validator):
             raise original_e
 
 
-def deletes_border_device_default(api):
+def deletes_border_device_default_val(api):
     endpoint_result = api.sda.deletes_border_device(
         device_ipaddress=None
     )
@@ -332,11 +332,11 @@ def deletes_border_device_default(api):
 
 
 @pytest.mark.sda
-def test_deletes_border_device_default(api, validator):
+def test_deletes_border_device_default_val(api, validator):
     try:
         assert is_valid_deletes_border_device(
             validator,
-            deletes_border_device_default(api)
+            deletes_border_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -368,7 +368,7 @@ def test_delete_control_plane_device(api, validator):
             raise original_e
 
 
-def delete_control_plane_device_default(api):
+def delete_control_plane_device_default_val(api):
     endpoint_result = api.sda.delete_control_plane_device(
         device_ipaddress=None
     )
@@ -376,11 +376,11 @@ def delete_control_plane_device_default(api):
 
 
 @pytest.mark.sda
-def test_delete_control_plane_device_default(api, validator):
+def test_delete_control_plane_device_default_val(api, validator):
     try:
         assert is_valid_delete_control_plane_device(
             validator,
-            delete_control_plane_device_default(api)
+            delete_control_plane_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -412,7 +412,7 @@ def test_get_control_plane_device(api, validator):
             raise original_e
 
 
-def get_control_plane_device_default(api):
+def get_control_plane_device_default_val(api):
     endpoint_result = api.sda.get_control_plane_device(
         device_ipaddress=None
     )
@@ -420,11 +420,11 @@ def get_control_plane_device_default(api):
 
 
 @pytest.mark.sda
-def test_get_control_plane_device_default(api, validator):
+def test_get_control_plane_device_default_val(api, validator):
     try:
         assert is_valid_get_control_plane_device(
             validator,
-            get_control_plane_device_default(api)
+            get_control_plane_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -457,7 +457,7 @@ def test_add_control_plane_device(api, validator):
             raise original_e
 
 
-def add_control_plane_device_default(api):
+def add_control_plane_device_default_val(api):
     endpoint_result = api.sda.add_control_plane_device(
         active_validation=True,
         payload=None
@@ -466,11 +466,11 @@ def add_control_plane_device_default(api):
 
 
 @pytest.mark.sda
-def test_add_control_plane_device_default(api, validator):
+def test_add_control_plane_device_default_val(api, validator):
     try:
         assert is_valid_add_control_plane_device(
             validator,
-            add_control_plane_device_default(api)
+            add_control_plane_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -502,7 +502,7 @@ def test_get_device_info(api, validator):
             raise original_e
 
 
-def get_device_info_default(api):
+def get_device_info_default_val(api):
     endpoint_result = api.sda.get_device_info(
         device_ipaddress=None
     )
@@ -510,11 +510,11 @@ def get_device_info_default(api):
 
 
 @pytest.mark.sda
-def test_get_device_info_default(api, validator):
+def test_get_device_info_default_val(api, validator):
     try:
         assert is_valid_get_device_info(
             validator,
-            get_device_info_default(api)
+            get_device_info_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -546,7 +546,7 @@ def test_get_device_role_in_sda_fabric(api, validator):
             raise original_e
 
 
-def get_device_role_in_sda_fabric_default(api):
+def get_device_role_in_sda_fabric_default_val(api):
     endpoint_result = api.sda.get_device_role_in_sda_fabric(
         device_management_ip_address=None
     )
@@ -554,11 +554,11 @@ def get_device_role_in_sda_fabric_default(api):
 
 
 @pytest.mark.sda
-def test_get_device_role_in_sda_fabric_default(api, validator):
+def test_get_device_role_in_sda_fabric_default_val(api, validator):
     try:
         assert is_valid_get_device_role_in_sda_fabric(
             validator,
-            get_device_role_in_sda_fabric_default(api)
+            get_device_role_in_sda_fabric_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -591,7 +591,7 @@ def test_add_edge_device(api, validator):
             raise original_e
 
 
-def add_edge_device_default(api):
+def add_edge_device_default_val(api):
     endpoint_result = api.sda.add_edge_device(
         active_validation=True,
         payload=None
@@ -600,11 +600,11 @@ def add_edge_device_default(api):
 
 
 @pytest.mark.sda
-def test_add_edge_device_default(api, validator):
+def test_add_edge_device_default_val(api, validator):
     try:
         assert is_valid_add_edge_device(
             validator,
-            add_edge_device_default(api)
+            add_edge_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -636,7 +636,7 @@ def test_delete_edge_device(api, validator):
             raise original_e
 
 
-def delete_edge_device_default(api):
+def delete_edge_device_default_val(api):
     endpoint_result = api.sda.delete_edge_device(
         device_ipaddress=None
     )
@@ -644,11 +644,11 @@ def delete_edge_device_default(api):
 
 
 @pytest.mark.sda
-def test_delete_edge_device_default(api, validator):
+def test_delete_edge_device_default_val(api, validator):
     try:
         assert is_valid_delete_edge_device(
             validator,
-            delete_edge_device_default(api)
+            delete_edge_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -680,7 +680,7 @@ def test_get_edge_device(api, validator):
             raise original_e
 
 
-def get_edge_device_default(api):
+def get_edge_device_default_val(api):
     endpoint_result = api.sda.get_edge_device(
         device_ipaddress=None
     )
@@ -688,11 +688,11 @@ def get_edge_device_default(api):
 
 
 @pytest.mark.sda
-def test_get_edge_device_default(api, validator):
+def test_get_edge_device_default_val(api, validator):
     try:
         assert is_valid_get_edge_device(
             validator,
-            get_edge_device_default(api)
+            get_edge_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -724,7 +724,7 @@ def test_delete_sda_fabric(api, validator):
             raise original_e
 
 
-def delete_sda_fabric_default(api):
+def delete_sda_fabric_default_val(api):
     endpoint_result = api.sda.delete_sda_fabric(
         fabric_name=None
     )
@@ -732,11 +732,11 @@ def delete_sda_fabric_default(api):
 
 
 @pytest.mark.sda
-def test_delete_sda_fabric_default(api, validator):
+def test_delete_sda_fabric_default_val(api, validator):
     try:
         assert is_valid_delete_sda_fabric(
             validator,
-            delete_sda_fabric_default(api)
+            delete_sda_fabric_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -768,7 +768,7 @@ def test_get_sda_fabric_info(api, validator):
             raise original_e
 
 
-def get_sda_fabric_info_default(api):
+def get_sda_fabric_info_default_val(api):
     endpoint_result = api.sda.get_sda_fabric_info(
         fabric_name=None
     )
@@ -776,11 +776,11 @@ def get_sda_fabric_info_default(api):
 
 
 @pytest.mark.sda
-def test_get_sda_fabric_info_default(api, validator):
+def test_get_sda_fabric_info_default_val(api, validator):
     try:
         assert is_valid_get_sda_fabric_info(
             validator,
-            get_sda_fabric_info_default(api)
+            get_sda_fabric_info_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -813,7 +813,7 @@ def test_add_fabric(api, validator):
             raise original_e
 
 
-def add_fabric_default(api):
+def add_fabric_default_val(api):
     endpoint_result = api.sda.add_fabric(
         active_validation=True,
         payload=None
@@ -822,11 +822,11 @@ def add_fabric_default(api):
 
 
 @pytest.mark.sda
-def test_add_fabric_default(api, validator):
+def test_add_fabric_default_val(api, validator):
     try:
         assert is_valid_add_fabric(
             validator,
-            add_fabric_default(api)
+            add_fabric_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -858,7 +858,7 @@ def test_get_site(api, validator):
             raise original_e
 
 
-def get_site_default(api):
+def get_site_default_val(api):
     endpoint_result = api.sda.get_site(
         site_name_hierarchy=None
     )
@@ -866,11 +866,11 @@ def get_site_default(api):
 
 
 @pytest.mark.sda
-def test_get_site_default(api, validator):
+def test_get_site_default_val(api, validator):
     try:
         assert is_valid_get_site(
             validator,
-            get_site_default(api)
+            get_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -902,7 +902,7 @@ def test_delete_site(api, validator):
             raise original_e
 
 
-def delete_site_default(api):
+def delete_site_default_val(api):
     endpoint_result = api.sda.delete_site(
         site_name_hierarchy=None
     )
@@ -910,11 +910,11 @@ def delete_site_default(api):
 
 
 @pytest.mark.sda
-def test_delete_site_default(api, validator):
+def test_delete_site_default_val(api, validator):
     try:
         assert is_valid_delete_site(
             validator,
-            delete_site_default(api)
+            delete_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -947,7 +947,7 @@ def test_add_site(api, validator):
             raise original_e
 
 
-def add_site_default(api):
+def add_site_default_val(api):
     endpoint_result = api.sda.add_site(
         active_validation=True,
         payload=None
@@ -956,11 +956,11 @@ def add_site_default(api):
 
 
 @pytest.mark.sda
-def test_add_site_default(api, validator):
+def test_add_site_default_val(api, validator):
     try:
         assert is_valid_add_site(
             validator,
-            add_site_default(api)
+            add_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -992,7 +992,7 @@ def test_get_sda_fabric_count(api, validator):
             raise original_e
 
 
-def get_sda_fabric_count_default(api):
+def get_sda_fabric_count_default_val(api):
     endpoint_result = api.sda.get_sda_fabric_count(
 
     )
@@ -1000,11 +1000,11 @@ def get_sda_fabric_count_default(api):
 
 
 @pytest.mark.sda
-def test_get_sda_fabric_count_default(api, validator):
+def test_get_sda_fabric_count_default_val(api, validator):
     try:
         assert is_valid_get_sda_fabric_count(
             validator,
-            get_sda_fabric_count_default(api)
+            get_sda_fabric_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1037,7 +1037,7 @@ def test_add_port_assignment_for_access_point(api, validator):
             raise original_e
 
 
-def add_port_assignment_for_access_point_default(api):
+def add_port_assignment_for_access_point_default_val(api):
     endpoint_result = api.sda.add_port_assignment_for_access_point(
         active_validation=True,
         payload=None
@@ -1046,11 +1046,11 @@ def add_port_assignment_for_access_point_default(api):
 
 
 @pytest.mark.sda
-def test_add_port_assignment_for_access_point_default(api, validator):
+def test_add_port_assignment_for_access_point_default_val(api, validator):
     try:
         assert is_valid_add_port_assignment_for_access_point(
             validator,
-            add_port_assignment_for_access_point_default(api)
+            add_port_assignment_for_access_point_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1083,7 +1083,7 @@ def test_delete_port_assignment_for_access_point(api, validator):
             raise original_e
 
 
-def delete_port_assignment_for_access_point_default(api):
+def delete_port_assignment_for_access_point_default_val(api):
     endpoint_result = api.sda.delete_port_assignment_for_access_point(
         device_ip=None,
         interface_name=None
@@ -1092,11 +1092,11 @@ def delete_port_assignment_for_access_point_default(api):
 
 
 @pytest.mark.sda
-def test_delete_port_assignment_for_access_point_default(api, validator):
+def test_delete_port_assignment_for_access_point_default_val(api, validator):
     try:
         assert is_valid_delete_port_assignment_for_access_point(
             validator,
-            delete_port_assignment_for_access_point_default(api)
+            delete_port_assignment_for_access_point_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1129,7 +1129,7 @@ def test_get_port_assignment_for_access_point(api, validator):
             raise original_e
 
 
-def get_port_assignment_for_access_point_default(api):
+def get_port_assignment_for_access_point_default_val(api):
     endpoint_result = api.sda.get_port_assignment_for_access_point(
         device_ip=None,
         interface_name=None
@@ -1138,11 +1138,11 @@ def get_port_assignment_for_access_point_default(api):
 
 
 @pytest.mark.sda
-def test_get_port_assignment_for_access_point_default(api, validator):
+def test_get_port_assignment_for_access_point_default_val(api, validator):
     try:
         assert is_valid_get_port_assignment_for_access_point(
             validator,
-            get_port_assignment_for_access_point_default(api)
+            get_port_assignment_for_access_point_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1175,7 +1175,7 @@ def test_delete_port_assignment_for_user_device(api, validator):
             raise original_e
 
 
-def delete_port_assignment_for_user_device_default(api):
+def delete_port_assignment_for_user_device_default_val(api):
     endpoint_result = api.sda.delete_port_assignment_for_user_device(
         device_ip=None,
         interface_name=None
@@ -1184,11 +1184,11 @@ def delete_port_assignment_for_user_device_default(api):
 
 
 @pytest.mark.sda
-def test_delete_port_assignment_for_user_device_default(api, validator):
+def test_delete_port_assignment_for_user_device_default_val(api, validator):
     try:
         assert is_valid_delete_port_assignment_for_user_device(
             validator,
-            delete_port_assignment_for_user_device_default(api)
+            delete_port_assignment_for_user_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1221,7 +1221,7 @@ def test_add_port_assignment_for_user_device(api, validator):
             raise original_e
 
 
-def add_port_assignment_for_user_device_default(api):
+def add_port_assignment_for_user_device_default_val(api):
     endpoint_result = api.sda.add_port_assignment_for_user_device(
         active_validation=True,
         payload=None
@@ -1230,11 +1230,11 @@ def add_port_assignment_for_user_device_default(api):
 
 
 @pytest.mark.sda
-def test_add_port_assignment_for_user_device_default(api, validator):
+def test_add_port_assignment_for_user_device_default_val(api, validator):
     try:
         assert is_valid_add_port_assignment_for_user_device(
             validator,
-            add_port_assignment_for_user_device_default(api)
+            add_port_assignment_for_user_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1267,7 +1267,7 @@ def test_get_port_assignment_for_user_device(api, validator):
             raise original_e
 
 
-def get_port_assignment_for_user_device_default(api):
+def get_port_assignment_for_user_device_default_val(api):
     endpoint_result = api.sda.get_port_assignment_for_user_device(
         device_ip=None,
         interface_name=None
@@ -1276,11 +1276,11 @@ def get_port_assignment_for_user_device_default(api):
 
 
 @pytest.mark.sda
-def test_get_port_assignment_for_user_device_default(api, validator):
+def test_get_port_assignment_for_user_device_default_val(api, validator):
     try:
         assert is_valid_get_port_assignment_for_user_device(
             validator,
-            get_port_assignment_for_user_device_default(api)
+            get_port_assignment_for_user_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1317,7 +1317,7 @@ def test_add_multicast_in_sda_fabric(api, validator):
             raise original_e
 
 
-def add_multicast_in_sda_fabric_default(api):
+def add_multicast_in_sda_fabric_default_val(api):
     endpoint_result = api.sda.add_multicast_in_sda_fabric(
         active_validation=True,
         fabricSiteNameHierarchy=None,
@@ -1330,11 +1330,11 @@ def add_multicast_in_sda_fabric_default(api):
 
 
 @pytest.mark.sda
-def test_add_multicast_in_sda_fabric_default(api, validator):
+def test_add_multicast_in_sda_fabric_default_val(api, validator):
     try:
         assert is_valid_add_multicast_in_sda_fabric(
             validator,
-            add_multicast_in_sda_fabric_default(api)
+            add_multicast_in_sda_fabric_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1366,7 +1366,7 @@ def test_get_multicast_details_from_sda_fabric(api, validator):
             raise original_e
 
 
-def get_multicast_details_from_sda_fabric_default(api):
+def get_multicast_details_from_sda_fabric_default_val(api):
     endpoint_result = api.sda.get_multicast_details_from_sda_fabric(
         fabric_site_name_hierarchy=None
     )
@@ -1374,11 +1374,11 @@ def get_multicast_details_from_sda_fabric_default(api):
 
 
 @pytest.mark.sda
-def test_get_multicast_details_from_sda_fabric_default(api, validator):
+def test_get_multicast_details_from_sda_fabric_default_val(api, validator):
     try:
         assert is_valid_get_multicast_details_from_sda_fabric(
             validator,
-            get_multicast_details_from_sda_fabric_default(api)
+            get_multicast_details_from_sda_fabric_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1410,7 +1410,7 @@ def test_delete_multicast_from_sda_fabric(api, validator):
             raise original_e
 
 
-def delete_multicast_from_sda_fabric_default(api):
+def delete_multicast_from_sda_fabric_default_val(api):
     endpoint_result = api.sda.delete_multicast_from_sda_fabric(
         fabric_site_name_hierarchy=None
     )
@@ -1418,11 +1418,11 @@ def delete_multicast_from_sda_fabric_default(api):
 
 
 @pytest.mark.sda
-def test_delete_multicast_from_sda_fabric_default(api, validator):
+def test_delete_multicast_from_sda_fabric_default_val(api, validator):
     try:
         assert is_valid_delete_multicast_from_sda_fabric(
             validator,
-            delete_multicast_from_sda_fabric_default(api)
+            delete_multicast_from_sda_fabric_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1454,7 +1454,7 @@ def test_delete_provisioned_wired_device(api, validator):
             raise original_e
 
 
-def delete_provisioned_wired_device_default(api):
+def delete_provisioned_wired_device_default_val(api):
     endpoint_result = api.sda.delete_provisioned_wired_device(
         device_management_ip_address=None
     )
@@ -1462,11 +1462,11 @@ def delete_provisioned_wired_device_default(api):
 
 
 @pytest.mark.sda
-def test_delete_provisioned_wired_device_default(api, validator):
+def test_delete_provisioned_wired_device_default_val(api, validator):
     try:
         assert is_valid_delete_provisioned_wired_device(
             validator,
-            delete_provisioned_wired_device_default(api)
+            delete_provisioned_wired_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1501,7 +1501,7 @@ def test_provision_wired_device(api, validator):
             raise original_e
 
 
-def provision_wired_device_default(api):
+def provision_wired_device_default_val(api):
     endpoint_result = api.sda.provision_wired_device(
         active_validation=True,
         deviceManagementIpAddress=None,
@@ -1512,11 +1512,11 @@ def provision_wired_device_default(api):
 
 
 @pytest.mark.sda
-def test_provision_wired_device_default(api, validator):
+def test_provision_wired_device_default_val(api, validator):
     try:
         assert is_valid_provision_wired_device(
             validator,
-            provision_wired_device_default(api)
+            provision_wired_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1548,7 +1548,7 @@ def test_get_provisioned_wired_device(api, validator):
             raise original_e
 
 
-def get_provisioned_wired_device_default(api):
+def get_provisioned_wired_device_default_val(api):
     endpoint_result = api.sda.get_provisioned_wired_device(
         device_management_ip_address=None
     )
@@ -1556,11 +1556,11 @@ def get_provisioned_wired_device_default(api):
 
 
 @pytest.mark.sda
-def test_get_provisioned_wired_device_default(api, validator):
+def test_get_provisioned_wired_device_default_val(api, validator):
     try:
         assert is_valid_get_provisioned_wired_device(
             validator,
-            get_provisioned_wired_device_default(api)
+            get_provisioned_wired_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1593,7 +1593,7 @@ def test_delete_vn(api, validator):
             raise original_e
 
 
-def delete_vn_default(api):
+def delete_vn_default_val(api):
     endpoint_result = api.sda.delete_vn(
         site_name_hierarchy=None,
         virtual_network_name=None
@@ -1602,11 +1602,11 @@ def delete_vn_default(api):
 
 
 @pytest.mark.sda
-def test_delete_vn_default(api, validator):
+def test_delete_vn_default_val(api, validator):
     try:
         assert is_valid_delete_vn(
             validator,
-            delete_vn_default(api)
+            delete_vn_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1639,7 +1639,7 @@ def test_get_vn(api, validator):
             raise original_e
 
 
-def get_vn_default(api):
+def get_vn_default_val(api):
     endpoint_result = api.sda.get_vn(
         site_name_hierarchy=None,
         virtual_network_name=None
@@ -1648,11 +1648,11 @@ def get_vn_default(api):
 
 
 @pytest.mark.sda
-def test_get_vn_default(api, validator):
+def test_get_vn_default_val(api, validator):
     try:
         assert is_valid_get_vn(
             validator,
-            get_vn_default(api)
+            get_vn_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1685,7 +1685,7 @@ def test_add_vn(api, validator):
             raise original_e
 
 
-def add_vn_default(api):
+def add_vn_default_val(api):
     endpoint_result = api.sda.add_vn(
         active_validation=True,
         payload=None
@@ -1694,11 +1694,11 @@ def add_vn_default(api):
 
 
 @pytest.mark.sda
-def test_add_vn_default(api, validator):
+def test_add_vn_default_val(api, validator):
     try:
         assert is_valid_add_vn(
             validator,
-            add_vn_default(api)
+            add_vn_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1731,7 +1731,7 @@ def test_get_ip_pool_from_sda_virtual_network(api, validator):
             raise original_e
 
 
-def get_ip_pool_from_sda_virtual_network_default(api):
+def get_ip_pool_from_sda_virtual_network_default_val(api):
     endpoint_result = api.sda.get_ip_pool_from_sda_virtual_network(
         ip_pool_name=None,
         virtual_network_name=None
@@ -1740,11 +1740,11 @@ def get_ip_pool_from_sda_virtual_network_default(api):
 
 
 @pytest.mark.sda
-def test_get_ip_pool_from_sda_virtual_network_default(api, validator):
+def test_get_ip_pool_from_sda_virtual_network_default_val(api, validator):
     try:
         assert is_valid_get_ip_pool_from_sda_virtual_network(
             validator,
-            get_ip_pool_from_sda_virtual_network_default(api)
+            get_ip_pool_from_sda_virtual_network_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1777,7 +1777,7 @@ def test_delete_ip_pool_from_sda_virtual_network(api, validator):
             raise original_e
 
 
-def delete_ip_pool_from_sda_virtual_network_default(api):
+def delete_ip_pool_from_sda_virtual_network_default_val(api):
     endpoint_result = api.sda.delete_ip_pool_from_sda_virtual_network(
         ip_pool_name=None,
         virtual_network_name=None
@@ -1786,11 +1786,11 @@ def delete_ip_pool_from_sda_virtual_network_default(api):
 
 
 @pytest.mark.sda
-def test_delete_ip_pool_from_sda_virtual_network_default(api, validator):
+def test_delete_ip_pool_from_sda_virtual_network_default_val(api, validator):
     try:
         assert is_valid_delete_ip_pool_from_sda_virtual_network(
             validator,
-            delete_ip_pool_from_sda_virtual_network_default(api)
+            delete_ip_pool_from_sda_virtual_network_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1823,7 +1823,7 @@ def test_add_ip_pool_in_sda_virtual_network(api, validator):
             raise original_e
 
 
-def add_ip_pool_in_sda_virtual_network_default(api):
+def add_ip_pool_in_sda_virtual_network_default_val(api):
     endpoint_result = api.sda.add_ip_pool_in_sda_virtual_network(
         active_validation=True,
         payload=None
@@ -1832,11 +1832,11 @@ def add_ip_pool_in_sda_virtual_network_default(api):
 
 
 @pytest.mark.sda
-def test_add_ip_pool_in_sda_virtual_network_default(api, validator):
+def test_add_ip_pool_in_sda_virtual_network_default_val(api, validator):
     try:
         assert is_valid_add_ip_pool_in_sda_virtual_network(
             validator,
-            add_ip_pool_in_sda_virtual_network_default(api)
+            add_ip_pool_in_sda_virtual_network_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1851,6 +1851,7 @@ def is_valid_add_virtual_network_with_scalable_groups(json_schema_validate, obj)
 def add_virtual_network_with_scalable_groups(api):
     endpoint_result = api.sda.add_virtual_network_with_scalable_groups(
         active_validation=True,
+        isGuestVirtualNetwork=True,
         payload=None,
         scalableGroupNames=['string'],
         virtualNetworkName='string',
@@ -1872,9 +1873,10 @@ def test_add_virtual_network_with_scalable_groups(api, validator):
             raise original_e
 
 
-def add_virtual_network_with_scalable_groups_default(api):
+def add_virtual_network_with_scalable_groups_default_val(api):
     endpoint_result = api.sda.add_virtual_network_with_scalable_groups(
         active_validation=True,
+        isGuestVirtualNetwork=None,
         payload=None,
         scalableGroupNames=None,
         virtualNetworkName=None,
@@ -1884,11 +1886,11 @@ def add_virtual_network_with_scalable_groups_default(api):
 
 
 @pytest.mark.sda
-def test_add_virtual_network_with_scalable_groups_default(api, validator):
+def test_add_virtual_network_with_scalable_groups_default_val(api, validator):
     try:
         assert is_valid_add_virtual_network_with_scalable_groups(
             validator,
-            add_virtual_network_with_scalable_groups_default(api)
+            add_virtual_network_with_scalable_groups_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1920,7 +1922,7 @@ def test_delete_virtual_network_with_scalable_groups(api, validator):
             raise original_e
 
 
-def delete_virtual_network_with_scalable_groups_default(api):
+def delete_virtual_network_with_scalable_groups_default_val(api):
     endpoint_result = api.sda.delete_virtual_network_with_scalable_groups(
         virtual_network_name=None
     )
@@ -1928,11 +1930,11 @@ def delete_virtual_network_with_scalable_groups_default(api):
 
 
 @pytest.mark.sda
-def test_delete_virtual_network_with_scalable_groups_default(api, validator):
+def test_delete_virtual_network_with_scalable_groups_default_val(api, validator):
     try:
         assert is_valid_delete_virtual_network_with_scalable_groups(
             validator,
-            delete_virtual_network_with_scalable_groups_default(api)
+            delete_virtual_network_with_scalable_groups_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1964,7 +1966,7 @@ def test_get_virtual_network_with_scalable_groups(api, validator):
             raise original_e
 
 
-def get_virtual_network_with_scalable_groups_default(api):
+def get_virtual_network_with_scalable_groups_default_val(api):
     endpoint_result = api.sda.get_virtual_network_with_scalable_groups(
         virtual_network_name=None
     )
@@ -1972,11 +1974,11 @@ def get_virtual_network_with_scalable_groups_default(api):
 
 
 @pytest.mark.sda
-def test_get_virtual_network_with_scalable_groups_default(api, validator):
+def test_get_virtual_network_with_scalable_groups_default_val(api, validator):
     try:
         assert is_valid_get_virtual_network_with_scalable_groups(
             validator,
-            get_virtual_network_with_scalable_groups_default(api)
+            get_virtual_network_with_scalable_groups_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1991,6 +1993,7 @@ def is_valid_update_virtual_network_with_scalable_groups(json_schema_validate, o
 def update_virtual_network_with_scalable_groups(api):
     endpoint_result = api.sda.update_virtual_network_with_scalable_groups(
         active_validation=True,
+        isGuestVirtualNetwork=True,
         payload=None,
         scalableGroupNames=['string'],
         virtualNetworkName='string',
@@ -2012,9 +2015,10 @@ def test_update_virtual_network_with_scalable_groups(api, validator):
             raise original_e
 
 
-def update_virtual_network_with_scalable_groups_default(api):
+def update_virtual_network_with_scalable_groups_default_val(api):
     endpoint_result = api.sda.update_virtual_network_with_scalable_groups(
         active_validation=True,
+        isGuestVirtualNetwork=None,
         payload=None,
         scalableGroupNames=None,
         virtualNetworkName=None,
@@ -2024,11 +2028,11 @@ def update_virtual_network_with_scalable_groups_default(api):
 
 
 @pytest.mark.sda
-def test_update_virtual_network_with_scalable_groups_default(api, validator):
+def test_update_virtual_network_with_scalable_groups_default_val(api, validator):
     try:
         assert is_valid_update_virtual_network_with_scalable_groups(
             validator,
-            update_virtual_network_with_scalable_groups_default(api)
+            update_virtual_network_with_scalable_groups_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

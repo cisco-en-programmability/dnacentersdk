@@ -97,6 +97,9 @@ class JSONSchemaValidatorC0E0D76B2561B8F2EFd0220F02267(object):
                 "type": "object"
                 },
                 "eventTemplates": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "isPrivate": {

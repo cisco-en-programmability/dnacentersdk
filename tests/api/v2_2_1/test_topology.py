@@ -54,7 +54,7 @@ def test_get_vlan_details(api, validator):
             raise original_e
 
 
-def get_vlan_details_default(api):
+def get_vlan_details_default_val(api):
     endpoint_result = api.topology.get_vlan_details(
 
     )
@@ -62,11 +62,11 @@ def get_vlan_details_default(api):
 
 
 @pytest.mark.topology
-def test_get_vlan_details_default(api, validator):
+def test_get_vlan_details_default_val(api, validator):
     try:
         assert is_valid_get_vlan_details(
             validator,
-            get_vlan_details_default(api)
+            get_vlan_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -98,7 +98,7 @@ def test_get_site_topology(api, validator):
             raise original_e
 
 
-def get_site_topology_default(api):
+def get_site_topology_default_val(api):
     endpoint_result = api.topology.get_site_topology(
 
     )
@@ -106,11 +106,11 @@ def get_site_topology_default(api):
 
 
 @pytest.mark.topology
-def test_get_site_topology_default(api, validator):
+def test_get_site_topology_default_val(api, validator):
     try:
         assert is_valid_get_site_topology(
             validator,
-            get_site_topology_default(api)
+            get_site_topology_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -142,7 +142,7 @@ def test_get_physical_topology(api, validator):
             raise original_e
 
 
-def get_physical_topology_default(api):
+def get_physical_topology_default_val(api):
     endpoint_result = api.topology.get_physical_topology(
         node_type=None
     )
@@ -150,11 +150,11 @@ def get_physical_topology_default(api):
 
 
 @pytest.mark.topology
-def test_get_physical_topology_default(api, validator):
+def test_get_physical_topology_default_val(api, validator):
     try:
         assert is_valid_get_physical_topology(
             validator,
-            get_physical_topology_default(api)
+            get_physical_topology_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -186,7 +186,7 @@ def test_get_topology_details(api, validator):
             raise original_e
 
 
-def get_topology_details_default(api):
+def get_topology_details_default_val(api):
     endpoint_result = api.topology.get_topology_details(
         vlan_id='string'
     )
@@ -194,11 +194,11 @@ def get_topology_details_default(api):
 
 
 @pytest.mark.topology
-def test_get_topology_details_default(api, validator):
+def test_get_topology_details_default_val(api, validator):
     try:
         assert is_valid_get_topology_details(
             validator,
-            get_topology_details_default(api)
+            get_topology_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -230,7 +230,7 @@ def test_get_l3_topology_details(api, validator):
             raise original_e
 
 
-def get_l3_topology_details_default(api):
+def get_l3_topology_details_default_val(api):
     endpoint_result = api.topology.get_l3_topology_details(
         topology_type='string'
     )
@@ -238,11 +238,11 @@ def get_l3_topology_details_default(api):
 
 
 @pytest.mark.topology
-def test_get_l3_topology_details_default(api, validator):
+def test_get_l3_topology_details_default_val(api, validator):
     try:
         assert is_valid_get_l3_topology_details(
             validator,
-            get_l3_topology_details_default(api)
+            get_l3_topology_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -274,7 +274,7 @@ def test_get_overall_network_health(api, validator):
             raise original_e
 
 
-def get_overall_network_health_default(api):
+def get_overall_network_health_default_val(api):
     endpoint_result = api.topology.get_overall_network_health(
         timestamp=None
     )
@@ -282,11 +282,11 @@ def get_overall_network_health_default(api):
 
 
 @pytest.mark.topology
-def test_get_overall_network_health_default(api, validator):
+def test_get_overall_network_health_default_val(api, validator):
     try:
         assert is_valid_get_overall_network_health(
             validator,
-            get_overall_network_health_default(api)
+            get_overall_network_health_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

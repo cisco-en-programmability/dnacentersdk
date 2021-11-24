@@ -58,7 +58,7 @@ def test_clone_given_template(api, validator):
             raise original_e
 
 
-def clone_given_template_default(api):
+def clone_given_template_default_val(api):
     endpoint_result = api.configuration_templates.clone_given_template(
         active_validation=True,
         name='string',
@@ -70,11 +70,11 @@ def clone_given_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_clone_given_template_default(api, validator):
+def test_clone_given_template_default_val(api, validator):
     try:
         assert is_valid_clone_given_template(
             validator,
-            clone_given_template_default(api)
+            clone_given_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -96,7 +96,7 @@ def create_project(api):
         name='string',
         payload=None,
         tags=[{'id': 'string', 'name': 'string'}],
-        templates={}
+        templates=[{'tags': [{'id': 'string', 'name': 'string'}], 'author': 'string', 'composite': True, 'containingTemplates': [{'tags': [{'id': 'string', 'name': 'string'}], 'composite': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'id': 'string', 'language': 'string', 'name': 'string', 'projectName': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'version': 'string'}], 'createTime': 0, 'customParamsOrder': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'failurePolicy': 'string', 'id': 'string', 'language': 'string', 'lastUpdateTime': 0, 'latestVersionTime': 0, 'name': 'string', 'parentTemplateId': 'string', 'projectId': 'string', 'projectName': 'string', 'rollbackTemplateContent': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'softwareType': 'string', 'softwareVariant': 'string', 'softwareVersion': 'string', 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'validationErrors': {'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'}, 'version': 'string'}]
     )
     return endpoint_result
 
@@ -114,7 +114,7 @@ def test_create_project(api, validator):
             raise original_e
 
 
-def create_project_default(api):
+def create_project_default_val(api):
     endpoint_result = api.configuration_templates.create_project(
         active_validation=True,
         createTime=None,
@@ -130,11 +130,11 @@ def create_project_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_create_project_default(api, validator):
+def test_create_project_default_val(api, validator):
     try:
         assert is_valid_create_project(
             validator,
-            create_project_default(api)
+            create_project_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -156,7 +156,7 @@ def update_project(api):
         name='string',
         payload=None,
         tags=[{'id': 'string', 'name': 'string'}],
-        templates={}
+        templates=[{'tags': [{'id': 'string', 'name': 'string'}], 'author': 'string', 'composite': True, 'containingTemplates': [{'tags': [{'id': 'string', 'name': 'string'}], 'composite': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'id': 'string', 'language': 'string', 'name': 'string', 'projectName': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'version': 'string'}], 'createTime': 0, 'customParamsOrder': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'failurePolicy': 'string', 'id': 'string', 'language': 'string', 'lastUpdateTime': 0, 'latestVersionTime': 0, 'name': 'string', 'parentTemplateId': 'string', 'projectId': 'string', 'projectName': 'string', 'rollbackTemplateContent': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'softwareType': 'string', 'softwareVariant': 'string', 'softwareVersion': 'string', 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'validationErrors': {'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'}, 'version': 'string'}]
     )
     return endpoint_result
 
@@ -174,7 +174,7 @@ def test_update_project(api, validator):
             raise original_e
 
 
-def update_project_default(api):
+def update_project_default_val(api):
     endpoint_result = api.configuration_templates.update_project(
         active_validation=True,
         createTime=None,
@@ -190,11 +190,11 @@ def update_project_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_update_project_default(api, validator):
+def test_update_project_default_val(api, validator):
     try:
         assert is_valid_update_project(
             validator,
-            update_project_default(api)
+            update_project_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -227,7 +227,7 @@ def test_get_projects(api, validator):
             raise original_e
 
 
-def get_projects_default(api):
+def get_projects_default_val(api):
     endpoint_result = api.configuration_templates.get_projects(
         name=None,
         sort_order=None
@@ -236,11 +236,11 @@ def get_projects_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_projects_default(api, validator):
+def test_get_projects_default_val(api, validator):
     try:
         assert is_valid_get_projects(
             validator,
-            get_projects_default(api)
+            get_projects_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -274,7 +274,7 @@ def test_imports_the_projects_provided(api, validator):
             raise original_e
 
 
-def imports_the_projects_provided_default(api):
+def imports_the_projects_provided_default_val(api):
     endpoint_result = api.configuration_templates.imports_the_projects_provided(
         active_validation=True,
         do_version=None,
@@ -284,11 +284,11 @@ def imports_the_projects_provided_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_imports_the_projects_provided_default(api, validator):
+def test_imports_the_projects_provided_default_val(api, validator):
     try:
         assert is_valid_imports_the_projects_provided(
             validator,
-            imports_the_projects_provided_default(api)
+            imports_the_projects_provided_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -321,7 +321,7 @@ def test_export_projects(api, validator):
             raise original_e
 
 
-def export_projects_default(api):
+def export_projects_default_val(api):
     endpoint_result = api.configuration_templates.export_projects(
         active_validation=True,
         payload=None
@@ -330,11 +330,11 @@ def export_projects_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_export_projects_default(api, validator):
+def test_export_projects_default_val(api, validator):
     try:
         assert is_valid_export_projects(
             validator,
-            export_projects_default(api)
+            export_projects_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -369,7 +369,7 @@ def test_imports_the_templates_provided(api, validator):
             raise original_e
 
 
-def imports_the_templates_provided_default(api):
+def imports_the_templates_provided_default_val(api):
     endpoint_result = api.configuration_templates.imports_the_templates_provided(
         active_validation=True,
         do_version=None,
@@ -380,11 +380,11 @@ def imports_the_templates_provided_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_imports_the_templates_provided_default(api, validator):
+def test_imports_the_templates_provided_default_val(api, validator):
     try:
         assert is_valid_imports_the_templates_provided(
             validator,
-            imports_the_templates_provided_default(api)
+            imports_the_templates_provided_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -416,7 +416,7 @@ def test_get_project_details(api, validator):
             raise original_e
 
 
-def get_project_details_default(api):
+def get_project_details_default_val(api):
     endpoint_result = api.configuration_templates.get_project_details(
         project_id='string'
     )
@@ -424,11 +424,11 @@ def get_project_details_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_project_details_default(api, validator):
+def test_get_project_details_default_val(api, validator):
     try:
         assert is_valid_get_project_details(
             validator,
-            get_project_details_default(api)
+            get_project_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -460,7 +460,7 @@ def test_deletes_the_project(api, validator):
             raise original_e
 
 
-def deletes_the_project_default(api):
+def deletes_the_project_default_val(api):
     endpoint_result = api.configuration_templates.deletes_the_project(
         project_id='string'
     )
@@ -468,11 +468,11 @@ def deletes_the_project_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_deletes_the_project_default(api, validator):
+def test_deletes_the_project_default_val(api, validator):
     try:
         assert is_valid_deletes_the_project(
             validator,
-            deletes_the_project_default(api)
+            deletes_the_project_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -513,7 +513,7 @@ def create_template(api):
         tags=[{'id': 'string', 'name': 'string'}],
         templateContent='string',
         templateParams=[{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}],
-        validationErrors={'rollbackTemplateErrors': {}, 'templateErrors': {}, 'templateId': 'string', 'templateVersion': 'string'},
+        validationErrors={'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'},
         version='string'
     )
     return endpoint_result
@@ -532,7 +532,7 @@ def test_create_template(api, validator):
             raise original_e
 
 
-def create_template_default(api):
+def create_template_default_val(api):
     endpoint_result = api.configuration_templates.create_template(
         active_validation=True,
         author=None,
@@ -568,11 +568,11 @@ def create_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_create_template_default(api, validator):
+def test_create_template_default_val(api, validator):
     try:
         assert is_valid_create_template(
             validator,
-            create_template_default(api)
+            create_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -614,7 +614,7 @@ def test_gets_the_templates_available(api, validator):
             raise original_e
 
 
-def gets_the_templates_available_default(api):
+def gets_the_templates_available_default_val(api):
     endpoint_result = api.configuration_templates.gets_the_templates_available(
         filter_conflicting_templates=None,
         product_family=None,
@@ -632,11 +632,11 @@ def gets_the_templates_available_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_gets_the_templates_available_default(api, validator):
+def test_gets_the_templates_available_default_val(api, validator):
     try:
         assert is_valid_gets_the_templates_available(
             validator,
-            gets_the_templates_available_default(api)
+            gets_the_templates_available_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -676,7 +676,7 @@ def update_template(api):
         tags=[{'id': 'string', 'name': 'string'}],
         templateContent='string',
         templateParams=[{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}],
-        validationErrors={'rollbackTemplateErrors': {}, 'templateErrors': {}, 'templateId': 'string', 'templateVersion': 'string'},
+        validationErrors={'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'},
         version='string'
     )
     return endpoint_result
@@ -695,7 +695,7 @@ def test_update_template(api, validator):
             raise original_e
 
 
-def update_template_default(api):
+def update_template_default_val(api):
     endpoint_result = api.configuration_templates.update_template(
         active_validation=True,
         author=None,
@@ -730,11 +730,11 @@ def update_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_update_template_default(api, validator):
+def test_update_template_default_val(api, validator):
     try:
         assert is_valid_update_template(
             validator,
-            update_template_default(api)
+            update_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -752,9 +752,9 @@ def deploy_template(api):
         forcePushTemplate=True,
         isComposite=True,
         mainTemplateId='string',
-        memberTemplateDeploymentInfo=[],
+        memberTemplateDeploymentInfo=[{}],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': {}, 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result
@@ -773,7 +773,7 @@ def test_deploy_template(api, validator):
             raise original_e
 
 
-def deploy_template_default(api):
+def deploy_template_default_val(api):
     endpoint_result = api.configuration_templates.deploy_template(
         active_validation=True,
         forcePushTemplate=None,
@@ -788,11 +788,11 @@ def deploy_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_deploy_template_default(api, validator):
+def test_deploy_template_default_val(api, validator):
     try:
         assert is_valid_deploy_template(
             validator,
-            deploy_template_default(api)
+            deploy_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -824,7 +824,7 @@ def test_get_template_deployment_status(api, validator):
             raise original_e
 
 
-def get_template_deployment_status_default(api):
+def get_template_deployment_status_default_val(api):
     endpoint_result = api.configuration_templates.get_template_deployment_status(
         deployment_id='string'
     )
@@ -832,11 +832,11 @@ def get_template_deployment_status_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_template_deployment_status_default(api, validator):
+def test_get_template_deployment_status_default_val(api, validator):
     try:
         assert is_valid_get_template_deployment_status(
             validator,
-            get_template_deployment_status_default(api)
+            get_template_deployment_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -869,7 +869,7 @@ def test_export_templates(api, validator):
             raise original_e
 
 
-def export_templates_default(api):
+def export_templates_default_val(api):
     endpoint_result = api.configuration_templates.export_templates(
         active_validation=True,
         payload=None
@@ -878,11 +878,11 @@ def export_templates_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_export_templates_default(api, validator):
+def test_export_templates_default_val(api, validator):
     try:
         assert is_valid_export_templates(
             validator,
-            export_templates_default(api)
+            export_templates_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -900,7 +900,7 @@ def preview_template(api):
         deviceId='string',
         params={},
         payload=None,
-        resourceParams={},
+        resourceParams=[{}],
         templateId='string'
     )
     return endpoint_result
@@ -919,7 +919,7 @@ def test_preview_template(api, validator):
             raise original_e
 
 
-def preview_template_default(api):
+def preview_template_default_val(api):
     endpoint_result = api.configuration_templates.preview_template(
         active_validation=True,
         deviceId=None,
@@ -932,11 +932,11 @@ def preview_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_preview_template_default(api, validator):
+def test_preview_template_default_val(api, validator):
     try:
         assert is_valid_preview_template(
             validator,
-            preview_template_default(api)
+            preview_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -971,7 +971,7 @@ def test_version_template(api, validator):
             raise original_e
 
 
-def version_template_default(api):
+def version_template_default_val(api):
     endpoint_result = api.configuration_templates.version_template(
         active_validation=True,
         comments=None,
@@ -982,11 +982,11 @@ def version_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_version_template_default(api, validator):
+def test_version_template_default_val(api, validator):
     try:
         assert is_valid_version_template(
             validator,
-            version_template_default(api)
+            version_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1017,7 +1017,7 @@ def test_get_template_versions(api, validator):
             raise original_e
 
 
-def get_template_versions_default(api):
+def get_template_versions_default_val(api):
     endpoint_result = api.configuration_templates.get_template_versions(
         template_id='string'
     )
@@ -1025,11 +1025,11 @@ def get_template_versions_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_template_versions_default(api, validator):
+def test_get_template_versions_default_val(api, validator):
     try:
         assert is_valid_get_template_versions(
             validator,
-            get_template_versions_default(api)
+            get_template_versions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1061,7 +1061,7 @@ def test_deletes_the_template(api, validator):
             raise original_e
 
 
-def deletes_the_template_default(api):
+def deletes_the_template_default_val(api):
     endpoint_result = api.configuration_templates.deletes_the_template(
         template_id='string'
     )
@@ -1069,11 +1069,11 @@ def deletes_the_template_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_deletes_the_template_default(api, validator):
+def test_deletes_the_template_default_val(api, validator):
     try:
         assert is_valid_deletes_the_template(
             validator,
-            deletes_the_template_default(api)
+            deletes_the_template_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1106,7 +1106,7 @@ def test_get_template_details(api, validator):
             raise original_e
 
 
-def get_template_details_default(api):
+def get_template_details_default_val(api):
     endpoint_result = api.configuration_templates.get_template_details(
         latest_version=None,
         template_id='string'
@@ -1115,11 +1115,11 @@ def get_template_details_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_template_details_default(api, validator):
+def test_get_template_details_default_val(api, validator):
     try:
         assert is_valid_get_template_details(
             validator,
-            get_template_details_default(api)
+            get_template_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1137,9 +1137,9 @@ def deploy_template_v2(api):
         forcePushTemplate=True,
         isComposite=True,
         mainTemplateId='string',
-        memberTemplateDeploymentInfo=[],
+        memberTemplateDeploymentInfo=[{}],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': {}, 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result
@@ -1158,7 +1158,7 @@ def test_deploy_template_v2(api, validator):
             raise original_e
 
 
-def deploy_template_v2_default(api):
+def deploy_template_v2_default_val(api):
     endpoint_result = api.configuration_templates.deploy_template_v2(
         active_validation=True,
         forcePushTemplate=None,
@@ -1173,11 +1173,11 @@ def deploy_template_v2_default(api):
 
 
 @pytest.mark.configuration_templates
-def test_deploy_template_v2_default(api, validator):
+def test_deploy_template_v2_default_val(api, validator):
     try:
         assert is_valid_deploy_template_v2(
             validator,
-            deploy_template_v2_default(api)
+            deploy_template_v2_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

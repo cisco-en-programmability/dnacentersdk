@@ -57,7 +57,7 @@ def test_export_device_configurations(api, validator):
             raise original_e
 
 
-def export_device_configurations_default(api):
+def export_device_configurations_default_val(api):
     endpoint_result = api.configuration_archive.export_device_configurations(
         active_validation=True,
         deviceId=None,
@@ -68,11 +68,11 @@ def export_device_configurations_default(api):
 
 
 @pytest.mark.configuration_archive
-def test_export_device_configurations_default(api, validator):
+def test_export_device_configurations_default_val(api, validator):
     try:
         assert is_valid_export_device_configurations(
             validator,
-            export_device_configurations_default(api)
+            export_device_configurations_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

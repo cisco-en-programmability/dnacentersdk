@@ -49,6 +49,9 @@ class JSONSchemaValidatorEa4B1C052B855Bd9A0E99F803E6185A5(object):
                  {
                 "type": "string"
                 },
+                "executionId": {
+                "type": "string"
+                },
                 "executionStatusUrl": {
                 "type": "string"
                 },

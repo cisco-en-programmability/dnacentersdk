@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center ImportsTheProjectsProvided data model.
+"""Cisco DNA Center CloneGivenTemplate data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -37,14 +37,14 @@ from dnacentersdk.exceptions import MalformedRequest
 from builtins import *
 
 
-class JSONSchemaValidatorDec1857F1585557EB39E12A9C93Ef985(object):
-    """ImportsTheProjectsProvided request schema definition."""
+class JSONSchemaValidatorFeb800C6888F5B13972467F0E3416Ec2(object):
+    """CloneGivenTemplate request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidatorDec1857F1585557EB39E12A9C93Ef985, self).__init__()
+        super(JSONSchemaValidatorFeb800C6888F5B13972467F0E3416Ec2, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "string"
+                "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

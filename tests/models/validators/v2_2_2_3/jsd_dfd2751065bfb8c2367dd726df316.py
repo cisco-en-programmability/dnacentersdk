@@ -130,6 +130,9 @@ class JSONSchemaValidatorDfd2751065Bfb8C2367Dd726Df316(object):
                 "type": "object"
                 },
                 "label": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "linkStatus": {
@@ -293,6 +296,9 @@ class JSONSchemaValidatorDfd2751065Bfb8C2367Dd726Df316(object):
                 "location": {
                 "properties": {
                 "apsImpacted": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "area": {
@@ -367,6 +373,9 @@ class JSONSchemaValidatorDfd2751065Bfb8C2367Dd726Df316(object):
                 "type": "string"
                 },
                 "steps": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },
@@ -391,6 +400,9 @@ class JSONSchemaValidatorDfd2751065Bfb8C2367Dd726Df316(object):
                 "type": "string"
                 },
                 "connectedDevice": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "connectionStatus": {
@@ -420,6 +432,9 @@ class JSONSchemaValidatorDfd2751065Bfb8C2367Dd726Df316(object):
                 "type": "string"
                 },
                 "hostIpV6": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "hostMac": {

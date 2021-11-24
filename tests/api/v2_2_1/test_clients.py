@@ -54,7 +54,7 @@ def test_get_overall_client_health(api, validator):
             raise original_e
 
 
-def get_overall_client_health_default(api):
+def get_overall_client_health_default_val(api):
     endpoint_result = api.clients.get_overall_client_health(
         timestamp=None
     )
@@ -62,11 +62,11 @@ def get_overall_client_health_default(api):
 
 
 @pytest.mark.clients
-def test_get_overall_client_health_default(api, validator):
+def test_get_overall_client_health_default_val(api, validator):
     try:
         assert is_valid_get_overall_client_health(
             validator,
-            get_overall_client_health_default(api)
+            get_overall_client_health_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -100,7 +100,7 @@ def test_client_proximity(api, validator):
             raise original_e
 
 
-def client_proximity_default(api):
+def client_proximity_default_val(api):
     endpoint_result = api.clients.client_proximity(
         number_days=None,
         time_resolution=None,
@@ -110,11 +110,11 @@ def client_proximity_default(api):
 
 
 @pytest.mark.clients
-def test_client_proximity_default(api, validator):
+def test_client_proximity_default_val(api, validator):
     try:
         assert is_valid_client_proximity(
             validator,
-            client_proximity_default(api)
+            client_proximity_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -146,7 +146,7 @@ def test_get_client_enrichment_details(api, validator):
             raise original_e
 
 
-def get_client_enrichment_details_default(api):
+def get_client_enrichment_details_default_val(api):
     endpoint_result = api.clients.get_client_enrichment_details(
 
     )
@@ -154,11 +154,11 @@ def get_client_enrichment_details_default(api):
 
 
 @pytest.mark.clients
-def test_get_client_enrichment_details_default(api, validator):
+def test_get_client_enrichment_details_default_val(api, validator):
     try:
         assert is_valid_get_client_enrichment_details(
             validator,
-            get_client_enrichment_details_default(api)
+            get_client_enrichment_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -191,7 +191,7 @@ def test_get_client_detail(api, validator):
             raise original_e
 
 
-def get_client_detail_default(api):
+def get_client_detail_default_val(api):
     endpoint_result = api.clients.get_client_detail(
         mac_address=None,
         timestamp=None
@@ -200,11 +200,11 @@ def get_client_detail_default(api):
 
 
 @pytest.mark.clients
-def test_get_client_detail_default(api, validator):
+def test_get_client_detail_default_val(api, validator):
     try:
         assert is_valid_get_client_detail(
             validator,
-            get_client_detail_default(api)
+            get_client_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

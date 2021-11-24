@@ -50,6 +50,9 @@ class JSONSchemaValidatorD89E1C3E150Ef9FaaFf44Fa483De5(object):
                 "type": "string"
                 },
                 "deliveries": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "executionCount": {

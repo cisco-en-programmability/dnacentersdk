@@ -58,7 +58,7 @@ class JSONSchemaValidatorB0753B63045528194F2F5Bbf8Ae432D(object):
                 "type": "string"
                 },
                 "fairCount": {
-                "type": "number"
+                "type": "integer"
                 },
                 "fairPercentage": {
                 "type": "number"
@@ -67,19 +67,30 @@ class JSONSchemaValidatorB0753B63045528194F2F5Bbf8Ae432D(object):
                 "type": "integer"
                 },
                 "goodPercentage": {
-                "type": "integer"
+                "type": "number"
                 },
                 "healthScore": {
                 "type": "integer"
                 },
                 "kpiMetrics": {
+                "items": {
+                "properties": {
+                "key": {
+                "type": "string"
+                },
+                "value": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "totalCount": {
                 "type": "integer"
                 },
                 "unmonCount": {
-                "type": "number"
+                "type": "integer"
                 },
                 "unmonPercentage": {
                 "type": "number"
@@ -111,7 +122,7 @@ class JSONSchemaValidatorB0753B63045528194F2F5Bbf8Ae432D(object):
                 "items": {
                 "properties": {
                 "badCount": {
-                "type": "number"
+                "type": "integer"
                 },
                 "entity": {
                 "type": "object"

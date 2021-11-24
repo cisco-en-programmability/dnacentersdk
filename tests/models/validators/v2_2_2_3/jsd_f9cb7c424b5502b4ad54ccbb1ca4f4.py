@@ -49,6 +49,9 @@ class JSONSchemaValidatorF9Cb7C424B5502B4Ad54Ccbb1Ca4F4(object):
                 "type": "string"
                 },
                 "deliveries": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "executionCount": {

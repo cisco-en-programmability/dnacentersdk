@@ -57,7 +57,7 @@ def test_get_compliance_status(api, validator):
             raise original_e
 
 
-def get_compliance_status_default(api):
+def get_compliance_status_default_val(api):
     endpoint_result = api.compliance.get_compliance_status(
         compliance_status=None,
         device_uuid=None,
@@ -68,11 +68,11 @@ def get_compliance_status_default(api):
 
 
 @pytest.mark.compliance
-def test_get_compliance_status_default(api, validator):
+def test_get_compliance_status_default_val(api, validator):
     try:
         assert is_valid_get_compliance_status(
             validator,
-            get_compliance_status_default(api)
+            get_compliance_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -108,7 +108,7 @@ def test_run_compliance(api, validator):
             raise original_e
 
 
-def run_compliance_default(api):
+def run_compliance_default_val(api):
     endpoint_result = api.compliance.run_compliance(
         active_validation=True,
         categories=None,
@@ -120,11 +120,11 @@ def run_compliance_default(api):
 
 
 @pytest.mark.compliance
-def test_run_compliance_default(api, validator):
+def test_run_compliance_default_val(api, validator):
     try:
         assert is_valid_run_compliance(
             validator,
-            run_compliance_default(api)
+            run_compliance_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -156,7 +156,7 @@ def test_get_compliance_status_count(api, validator):
             raise original_e
 
 
-def get_compliance_status_count_default(api):
+def get_compliance_status_count_default_val(api):
     endpoint_result = api.compliance.get_compliance_status_count(
         compliance_status=None
     )
@@ -164,11 +164,11 @@ def get_compliance_status_count_default(api):
 
 
 @pytest.mark.compliance
-def test_get_compliance_status_count_default(api, validator):
+def test_get_compliance_status_count_default_val(api, validator):
     try:
         assert is_valid_get_compliance_status_count(
             validator,
-            get_compliance_status_count_default(api)
+            get_compliance_status_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -204,7 +204,7 @@ def test_get_compliance_detail(api, validator):
             raise original_e
 
 
-def get_compliance_detail_default(api):
+def get_compliance_detail_default_val(api):
     endpoint_result = api.compliance.get_compliance_detail(
         compliance_status=None,
         compliance_type=None,
@@ -216,11 +216,11 @@ def get_compliance_detail_default(api):
 
 
 @pytest.mark.compliance
-def test_get_compliance_detail_default(api, validator):
+def test_get_compliance_detail_default_val(api, validator):
     try:
         assert is_valid_get_compliance_detail(
             validator,
-            get_compliance_detail_default(api)
+            get_compliance_detail_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -253,7 +253,7 @@ def test_get_compliance_detail_count(api, validator):
             raise original_e
 
 
-def get_compliance_detail_count_default(api):
+def get_compliance_detail_count_default_val(api):
     endpoint_result = api.compliance.get_compliance_detail_count(
         compliance_status=None,
         compliance_type=None
@@ -262,11 +262,11 @@ def get_compliance_detail_count_default(api):
 
 
 @pytest.mark.compliance
-def test_get_compliance_detail_count_default(api, validator):
+def test_get_compliance_detail_count_default_val(api, validator):
     try:
         assert is_valid_get_compliance_detail_count(
             validator,
-            get_compliance_detail_count_default(api)
+            get_compliance_detail_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -298,7 +298,7 @@ def test_device_compliance_status(api, validator):
             raise original_e
 
 
-def device_compliance_status_default(api):
+def device_compliance_status_default_val(api):
     endpoint_result = api.compliance.device_compliance_status(
         device_uuid='string'
     )
@@ -306,11 +306,11 @@ def device_compliance_status_default(api):
 
 
 @pytest.mark.compliance
-def test_device_compliance_status_default(api, validator):
+def test_device_compliance_status_default_val(api, validator):
     try:
         assert is_valid_device_compliance_status(
             validator,
-            device_compliance_status_default(api)
+            device_compliance_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -347,7 +347,7 @@ def test_compliance_details_of_device(api, validator):
             raise original_e
 
 
-def compliance_details_of_device_default(api):
+def compliance_details_of_device_default_val(api):
     endpoint_result = api.compliance.compliance_details_of_device(
         category=None,
         compliance_type=None,
@@ -360,11 +360,11 @@ def compliance_details_of_device_default(api):
 
 
 @pytest.mark.compliance
-def test_compliance_details_of_device_default(api, validator):
+def test_compliance_details_of_device_default_val(api, validator):
     try:
         assert is_valid_compliance_details_of_device(
             validator,
-            compliance_details_of_device_default(api)
+            compliance_details_of_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -61,7 +61,7 @@ def test_issues(api, validator):
             raise original_e
 
 
-def issues_default(api):
+def issues_default_val(api):
     endpoint_result = api.issues.issues(
         ai_driven=None,
         device_id=None,
@@ -76,11 +76,11 @@ def issues_default(api):
 
 
 @pytest.mark.issues
-def test_issues_default(api, validator):
+def test_issues_default_val(api, validator):
     try:
         assert is_valid_issues(
             validator,
-            issues_default(api)
+            issues_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -112,7 +112,7 @@ def test_get_issue_enrichment_details(api, validator):
             raise original_e
 
 
-def get_issue_enrichment_details_default(api):
+def get_issue_enrichment_details_default_val(api):
     endpoint_result = api.issues.get_issue_enrichment_details(
 
     )
@@ -120,11 +120,11 @@ def get_issue_enrichment_details_default(api):
 
 
 @pytest.mark.issues
-def test_get_issue_enrichment_details_default(api, validator):
+def test_get_issue_enrichment_details_default_val(api, validator):
     try:
         assert is_valid_get_issue_enrichment_details(
             validator,
-            get_issue_enrichment_details_default(api)
+            get_issue_enrichment_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

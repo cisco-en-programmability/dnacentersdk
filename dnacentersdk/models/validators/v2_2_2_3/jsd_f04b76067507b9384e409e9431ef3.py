@@ -180,6 +180,9 @@ class JSONSchemaValidatorF04B76067507B9384E409E9431Ef3(object):
                 "type": "object"
                 },
                 "ipv6AddressList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "macAddress": {

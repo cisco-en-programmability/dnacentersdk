@@ -107,6 +107,9 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "type": "string"
                 },
                 "connectedDevice": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "connectionStatus": {
@@ -183,6 +186,9 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "onboarding": {
                 "properties": {
                 "aaaRootcauseList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "aaaServerIp": {
@@ -192,6 +198,9 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "type": "object"
                 },
                 "assocRootcauseList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "authDoneTime": {
@@ -213,6 +222,9 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "type": "object"
                 },
                 "dhcpRootcauseList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "dhcpServerIp": {
@@ -231,6 +243,9 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "type": "object"
                 },
                 "otherRootcauseList": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 }
                 },

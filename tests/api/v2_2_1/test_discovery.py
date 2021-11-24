@@ -54,7 +54,7 @@ def test_get_count_of_all_discovery_jobs(api, validator):
             raise original_e
 
 
-def get_count_of_all_discovery_jobs_default(api):
+def get_count_of_all_discovery_jobs_default_val(api):
     endpoint_result = api.discovery.get_count_of_all_discovery_jobs(
 
     )
@@ -62,11 +62,11 @@ def get_count_of_all_discovery_jobs_default(api):
 
 
 @pytest.mark.discovery
-def test_get_count_of_all_discovery_jobs_default(api, validator):
+def test_get_count_of_all_discovery_jobs_default_val(api, validator):
     try:
         assert is_valid_get_count_of_all_discovery_jobs(
             validator,
-            get_count_of_all_discovery_jobs_default(api)
+            get_count_of_all_discovery_jobs_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -106,7 +106,7 @@ def test_update_netconf_credentials(api, validator):
             raise original_e
 
 
-def update_netconf_credentials_default(api):
+def update_netconf_credentials_default_val(api):
     endpoint_result = api.discovery.update_netconf_credentials(
         active_validation=True,
         comments=None,
@@ -122,11 +122,11 @@ def update_netconf_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_netconf_credentials_default(api, validator):
+def test_update_netconf_credentials_default_val(api, validator):
     try:
         assert is_valid_update_netconf_credentials(
             validator,
-            update_netconf_credentials_default(api)
+            update_netconf_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -166,7 +166,7 @@ def test_create_netconf_credentials(api, validator):
             raise original_e
 
 
-def create_netconf_credentials_default(api):
+def create_netconf_credentials_default_val(api):
     endpoint_result = api.discovery.create_netconf_credentials(
         active_validation=True,
         comments=None,
@@ -182,11 +182,11 @@ def create_netconf_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_netconf_credentials_default(api, validator):
+def test_create_netconf_credentials_default_val(api, validator):
     try:
         assert is_valid_create_netconf_credentials(
             validator,
-            create_netconf_credentials_default(api)
+            create_netconf_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -219,7 +219,7 @@ def test_update_snmpv3_credentials(api, validator):
             raise original_e
 
 
-def update_snmpv3_credentials_default(api):
+def update_snmpv3_credentials_default_val(api):
     endpoint_result = api.discovery.update_snmpv3_credentials(
         active_validation=True,
         payload=None
@@ -228,11 +228,11 @@ def update_snmpv3_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_snmpv3_credentials_default(api, validator):
+def test_update_snmpv3_credentials_default_val(api, validator):
     try:
         assert is_valid_update_snmpv3_credentials(
             validator,
-            update_snmpv3_credentials_default(api)
+            update_snmpv3_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -265,7 +265,7 @@ def test_create_snmpv3_credentials(api, validator):
             raise original_e
 
 
-def create_snmpv3_credentials_default(api):
+def create_snmpv3_credentials_default_val(api):
     endpoint_result = api.discovery.create_snmpv3_credentials(
         active_validation=True,
         payload=None
@@ -274,11 +274,11 @@ def create_snmpv3_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_snmpv3_credentials_default(api, validator):
+def test_create_snmpv3_credentials_default_val(api, validator):
     try:
         assert is_valid_create_snmpv3_credentials(
             validator,
-            create_snmpv3_credentials_default(api)
+            create_snmpv3_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -311,7 +311,7 @@ def test_update_snmp_write_community(api, validator):
             raise original_e
 
 
-def update_snmp_write_community_default(api):
+def update_snmp_write_community_default_val(api):
     endpoint_result = api.discovery.update_snmp_write_community(
         active_validation=True,
         payload=None
@@ -320,11 +320,11 @@ def update_snmp_write_community_default(api):
 
 
 @pytest.mark.discovery
-def test_update_snmp_write_community_default(api, validator):
+def test_update_snmp_write_community_default_val(api, validator):
     try:
         assert is_valid_update_snmp_write_community(
             validator,
-            update_snmp_write_community_default(api)
+            update_snmp_write_community_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -357,7 +357,7 @@ def test_create_snmp_write_community(api, validator):
             raise original_e
 
 
-def create_snmp_write_community_default(api):
+def create_snmp_write_community_default_val(api):
     endpoint_result = api.discovery.create_snmp_write_community(
         active_validation=True,
         payload=None
@@ -366,11 +366,11 @@ def create_snmp_write_community_default(api):
 
 
 @pytest.mark.discovery
-def test_create_snmp_write_community_default(api, validator):
+def test_create_snmp_write_community_default_val(api, validator):
     try:
         assert is_valid_create_snmp_write_community(
             validator,
-            create_snmp_write_community_default(api)
+            create_snmp_write_community_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -403,7 +403,7 @@ def test_get_discoveries_by_range(api, validator):
             raise original_e
 
 
-def get_discoveries_by_range_default(api):
+def get_discoveries_by_range_default_val(api):
     endpoint_result = api.discovery.get_discoveries_by_range(
         records_to_return=0,
         start_index=0
@@ -412,11 +412,11 @@ def get_discoveries_by_range_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discoveries_by_range_default(api, validator):
+def test_get_discoveries_by_range_default_val(api, validator):
     try:
         assert is_valid_get_discoveries_by_range(
             validator,
-            get_discoveries_by_range_default(api)
+            get_discoveries_by_range_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -457,7 +457,7 @@ def test_get_network_devices_from_discovery(api, validator):
             raise original_e
 
 
-def get_network_devices_from_discovery_default(api):
+def get_network_devices_from_discovery_default_val(api):
     endpoint_result = api.discovery.get_network_devices_from_discovery(
         cli_status=None,
         http_status=None,
@@ -474,11 +474,11 @@ def get_network_devices_from_discovery_default(api):
 
 
 @pytest.mark.discovery
-def test_get_network_devices_from_discovery_default(api, validator):
+def test_get_network_devices_from_discovery_default_val(api, validator):
     try:
         assert is_valid_get_network_devices_from_discovery(
             validator,
-            get_network_devices_from_discovery_default(api)
+            get_network_devices_from_discovery_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -510,7 +510,7 @@ def test_get_snmp_properties(api, validator):
             raise original_e
 
 
-def get_snmp_properties_default(api):
+def get_snmp_properties_default_val(api):
     endpoint_result = api.discovery.get_snmp_properties(
 
     )
@@ -518,11 +518,11 @@ def get_snmp_properties_default(api):
 
 
 @pytest.mark.discovery
-def test_get_snmp_properties_default(api, validator):
+def test_get_snmp_properties_default_val(api, validator):
     try:
         assert is_valid_get_snmp_properties(
             validator,
-            get_snmp_properties_default(api)
+            get_snmp_properties_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -555,7 +555,7 @@ def test_create_update_snmp_properties(api, validator):
             raise original_e
 
 
-def create_update_snmp_properties_default(api):
+def create_update_snmp_properties_default_val(api):
     endpoint_result = api.discovery.create_update_snmp_properties(
         active_validation=True,
         payload=None
@@ -564,11 +564,11 @@ def create_update_snmp_properties_default(api):
 
 
 @pytest.mark.discovery
-def test_create_update_snmp_properties_default(api, validator):
+def test_create_update_snmp_properties_default_val(api, validator):
     try:
         assert is_valid_create_update_snmp_properties(
             validator,
-            create_update_snmp_properties_default(api)
+            create_update_snmp_properties_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -601,7 +601,7 @@ def test_update_snmp_read_community(api, validator):
             raise original_e
 
 
-def update_snmp_read_community_default(api):
+def update_snmp_read_community_default_val(api):
     endpoint_result = api.discovery.update_snmp_read_community(
         active_validation=True,
         payload=None
@@ -610,11 +610,11 @@ def update_snmp_read_community_default(api):
 
 
 @pytest.mark.discovery
-def test_update_snmp_read_community_default(api, validator):
+def test_update_snmp_read_community_default_val(api, validator):
     try:
         assert is_valid_update_snmp_read_community(
             validator,
-            update_snmp_read_community_default(api)
+            update_snmp_read_community_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -647,7 +647,7 @@ def test_create_snmp_read_community(api, validator):
             raise original_e
 
 
-def create_snmp_read_community_default(api):
+def create_snmp_read_community_default_val(api):
     endpoint_result = api.discovery.create_snmp_read_community(
         active_validation=True,
         payload=None
@@ -656,11 +656,11 @@ def create_snmp_read_community_default(api):
 
 
 @pytest.mark.discovery
-def test_create_snmp_read_community_default(api, validator):
+def test_create_snmp_read_community_default_val(api, validator):
     try:
         assert is_valid_create_snmp_read_community(
             validator,
-            create_snmp_read_community_default(api)
+            create_snmp_read_community_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -692,7 +692,7 @@ def test_get_discovery_by_id(api, validator):
             raise original_e
 
 
-def get_discovery_by_id_default(api):
+def get_discovery_by_id_default_val(api):
     endpoint_result = api.discovery.get_discovery_by_id(
         id='string'
     )
@@ -700,11 +700,11 @@ def get_discovery_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovery_by_id_default(api, validator):
+def test_get_discovery_by_id_default_val(api, validator):
     try:
         assert is_valid_get_discovery_by_id(
             validator,
-            get_discovery_by_id_default(api)
+            get_discovery_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -736,7 +736,7 @@ def test_delete_discovery_by_id(api, validator):
             raise original_e
 
 
-def delete_discovery_by_id_default(api):
+def delete_discovery_by_id_default_val(api):
     endpoint_result = api.discovery.delete_discovery_by_id(
         id='string'
     )
@@ -744,11 +744,11 @@ def delete_discovery_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_discovery_by_id_default(api, validator):
+def test_delete_discovery_by_id_default_val(api, validator):
     try:
         assert is_valid_delete_discovery_by_id(
             validator,
-            delete_discovery_by_id_default(api)
+            delete_discovery_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -791,7 +791,7 @@ def test_update_http_write_credentials(api, validator):
             raise original_e
 
 
-def update_http_write_credentials_default(api):
+def update_http_write_credentials_default_val(api):
     endpoint_result = api.discovery.update_http_write_credentials(
         active_validation=True,
         comments=None,
@@ -810,11 +810,11 @@ def update_http_write_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_http_write_credentials_default(api, validator):
+def test_update_http_write_credentials_default_val(api, validator):
     try:
         assert is_valid_update_http_write_credentials(
             validator,
-            update_http_write_credentials_default(api)
+            update_http_write_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -857,7 +857,7 @@ def test_create_http_write_credentials(api, validator):
             raise original_e
 
 
-def create_http_write_credentials_default(api):
+def create_http_write_credentials_default_val(api):
     endpoint_result = api.discovery.create_http_write_credentials(
         active_validation=True,
         comments=None,
@@ -876,11 +876,11 @@ def create_http_write_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_http_write_credentials_default(api, validator):
+def test_create_http_write_credentials_default_val(api, validator):
     try:
         assert is_valid_create_http_write_credentials(
             validator,
-            create_http_write_credentials_default(api)
+            create_http_write_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -949,7 +949,7 @@ def test_updates_discovery_by_id(api, validator):
             raise original_e
 
 
-def updates_discovery_by_id_default(api):
+def updates_discovery_by_id_default_val(api):
     endpoint_result = api.discovery.updates_discovery_by_id(
         active_validation=True,
         attributeInfo=None,
@@ -994,11 +994,11 @@ def updates_discovery_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_updates_discovery_by_id_default(api, validator):
+def test_updates_discovery_by_id_default_val(api, validator):
     try:
         assert is_valid_updates_discovery_by_id(
             validator,
-            updates_discovery_by_id_default(api)
+            updates_discovery_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1059,7 +1059,7 @@ def test_start_discovery(api, validator):
             raise original_e
 
 
-def start_discovery_default(api):
+def start_discovery_default_val(api):
     endpoint_result = api.discovery.start_discovery(
         active_validation=True,
         cdpLevel=None,
@@ -1096,11 +1096,11 @@ def start_discovery_default(api):
 
 
 @pytest.mark.discovery
-def test_start_discovery_default(api, validator):
+def test_start_discovery_default_val(api, validator):
     try:
         assert is_valid_start_discovery(
             validator,
-            start_discovery_default(api)
+            start_discovery_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1132,7 +1132,7 @@ def test_delete_all_discovery(api, validator):
             raise original_e
 
 
-def delete_all_discovery_default(api):
+def delete_all_discovery_default_val(api):
     endpoint_result = api.discovery.delete_all_discovery(
 
     )
@@ -1140,11 +1140,11 @@ def delete_all_discovery_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_all_discovery_default(api, validator):
+def test_delete_all_discovery_default_val(api, validator):
     try:
         assert is_valid_delete_all_discovery(
             validator,
-            delete_all_discovery_default(api)
+            delete_all_discovery_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1176,7 +1176,7 @@ def test_get_credential_sub_type_by_credential_id(api, validator):
             raise original_e
 
 
-def get_credential_sub_type_by_credential_id_default(api):
+def get_credential_sub_type_by_credential_id_default_val(api):
     endpoint_result = api.discovery.get_credential_sub_type_by_credential_id(
         id='string'
     )
@@ -1184,11 +1184,11 @@ def get_credential_sub_type_by_credential_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_credential_sub_type_by_credential_id_default(api, validator):
+def test_get_credential_sub_type_by_credential_id_default_val(api, validator):
     try:
         assert is_valid_get_credential_sub_type_by_credential_id(
             validator,
-            get_credential_sub_type_by_credential_id_default(api)
+            get_credential_sub_type_by_credential_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1223,7 +1223,7 @@ def test_update_global_credentials(api, validator):
             raise original_e
 
 
-def update_global_credentials_default(api):
+def update_global_credentials_default_val(api):
     endpoint_result = api.discovery.update_global_credentials(
         active_validation=True,
         global_credential_id='string',
@@ -1234,11 +1234,11 @@ def update_global_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_global_credentials_default(api, validator):
+def test_update_global_credentials_default_val(api, validator):
     try:
         assert is_valid_update_global_credentials(
             validator,
-            update_global_credentials_default(api)
+            update_global_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1270,7 +1270,7 @@ def test_delete_global_credentials_by_id(api, validator):
             raise original_e
 
 
-def delete_global_credentials_by_id_default(api):
+def delete_global_credentials_by_id_default_val(api):
     endpoint_result = api.discovery.delete_global_credentials_by_id(
         global_credential_id='string'
     )
@@ -1278,11 +1278,11 @@ def delete_global_credentials_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_global_credentials_by_id_default(api, validator):
+def test_delete_global_credentials_by_id_default_val(api, validator):
     try:
         assert is_valid_delete_global_credentials_by_id(
             validator,
-            delete_global_credentials_by_id_default(api)
+            delete_global_credentials_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1315,7 +1315,7 @@ def test_update_http_read_credential(api, validator):
             raise original_e
 
 
-def update_http_read_credential_default(api):
+def update_http_read_credential_default_val(api):
     endpoint_result = api.discovery.update_http_read_credential(
         active_validation=True,
         payload=None
@@ -1324,11 +1324,11 @@ def update_http_read_credential_default(api):
 
 
 @pytest.mark.discovery
-def test_update_http_read_credential_default(api, validator):
+def test_update_http_read_credential_default_val(api, validator):
     try:
         assert is_valid_update_http_read_credential(
             validator,
-            update_http_read_credential_default(api)
+            update_http_read_credential_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1361,7 +1361,7 @@ def test_create_http_read_credentials(api, validator):
             raise original_e
 
 
-def create_http_read_credentials_default(api):
+def create_http_read_credentials_default_val(api):
     endpoint_result = api.discovery.create_http_read_credentials(
         active_validation=True,
         payload=None
@@ -1370,11 +1370,11 @@ def create_http_read_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_http_read_credentials_default(api, validator):
+def test_create_http_read_credentials_default_val(api, validator):
     try:
         assert is_valid_create_http_read_credentials(
             validator,
-            create_http_read_credentials_default(api)
+            create_http_read_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1416,7 +1416,7 @@ def test_update_cli_credentials(api, validator):
             raise original_e
 
 
-def update_cli_credentials_default(api):
+def update_cli_credentials_default_val(api):
     endpoint_result = api.discovery.update_cli_credentials(
         active_validation=True,
         comments=None,
@@ -1434,11 +1434,11 @@ def update_cli_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_update_cli_credentials_default(api, validator):
+def test_update_cli_credentials_default_val(api, validator):
     try:
         assert is_valid_update_cli_credentials(
             validator,
-            update_cli_credentials_default(api)
+            update_cli_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1480,7 +1480,7 @@ def test_create_cli_credentials(api, validator):
             raise original_e
 
 
-def create_cli_credentials_default(api):
+def create_cli_credentials_default_val(api):
     endpoint_result = api.discovery.create_cli_credentials(
         active_validation=True,
         comments=None,
@@ -1498,11 +1498,11 @@ def create_cli_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_create_cli_credentials_default(api, validator):
+def test_create_cli_credentials_default_val(api, validator):
     try:
         assert is_valid_create_cli_credentials(
             validator,
-            create_cli_credentials_default(api)
+            create_cli_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1537,7 +1537,7 @@ def test_get_list_of_discoveries_by_discovery_id(api, validator):
             raise original_e
 
 
-def get_list_of_discoveries_by_discovery_id_default(api):
+def get_list_of_discoveries_by_discovery_id_default_val(api):
     endpoint_result = api.discovery.get_list_of_discoveries_by_discovery_id(
         id='string',
         ip_address=None,
@@ -1548,11 +1548,11 @@ def get_list_of_discoveries_by_discovery_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_list_of_discoveries_by_discovery_id_default(api, validator):
+def test_get_list_of_discoveries_by_discovery_id_default_val(api, validator):
     try:
         assert is_valid_get_list_of_discoveries_by_discovery_id(
             validator,
-            get_list_of_discoveries_by_discovery_id_default(api)
+            get_list_of_discoveries_by_discovery_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1587,7 +1587,7 @@ def test_get_discovery_jobs_by_ip(api, validator):
             raise original_e
 
 
-def get_discovery_jobs_by_ip_default(api):
+def get_discovery_jobs_by_ip_default_val(api):
     endpoint_result = api.discovery.get_discovery_jobs_by_ip(
         ip_address=None,
         limit=None,
@@ -1598,11 +1598,11 @@ def get_discovery_jobs_by_ip_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovery_jobs_by_ip_default(api, validator):
+def test_get_discovery_jobs_by_ip_default_val(api, validator):
     try:
         assert is_valid_get_discovery_jobs_by_ip(
             validator,
-            get_discovery_jobs_by_ip_default(api)
+            get_discovery_jobs_by_ip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1635,7 +1635,7 @@ def test_get_devices_discovered_by_id(api, validator):
             raise original_e
 
 
-def get_devices_discovered_by_id_default(api):
+def get_devices_discovered_by_id_default_val(api):
     endpoint_result = api.discovery.get_devices_discovered_by_id(
         id='string',
         task_id=None
@@ -1644,11 +1644,11 @@ def get_devices_discovered_by_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_devices_discovered_by_id_default(api, validator):
+def test_get_devices_discovered_by_id_default_val(api, validator):
     try:
         assert is_valid_get_devices_discovered_by_id(
             validator,
-            get_devices_discovered_by_id_default(api)
+            get_devices_discovered_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1683,7 +1683,7 @@ def test_get_discovered_devices_by_range(api, validator):
             raise original_e
 
 
-def get_discovered_devices_by_range_default(api):
+def get_discovered_devices_by_range_default_val(api):
     endpoint_result = api.discovery.get_discovered_devices_by_range(
         id='string',
         records_to_return=0,
@@ -1694,11 +1694,11 @@ def get_discovered_devices_by_range_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovered_devices_by_range_default(api, validator):
+def test_get_discovered_devices_by_range_default_val(api, validator):
     try:
         assert is_valid_get_discovered_devices_by_range(
             validator,
-            get_discovered_devices_by_range_default(api)
+            get_discovered_devices_by_range_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1731,7 +1731,7 @@ def test_delete_discovery_by_specified_range(api, validator):
             raise original_e
 
 
-def delete_discovery_by_specified_range_default(api):
+def delete_discovery_by_specified_range_default_val(api):
     endpoint_result = api.discovery.delete_discovery_by_specified_range(
         records_to_delete=0,
         start_index=0
@@ -1740,11 +1740,11 @@ def delete_discovery_by_specified_range_default(api):
 
 
 @pytest.mark.discovery
-def test_delete_discovery_by_specified_range_default(api, validator):
+def test_delete_discovery_by_specified_range_default_val(api, validator):
     try:
         assert is_valid_delete_discovery_by_specified_range(
             validator,
-            delete_discovery_by_specified_range_default(api)
+            delete_discovery_by_specified_range_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1777,7 +1777,7 @@ def test_get_discovered_network_devices_by_discovery_id(api, validator):
             raise original_e
 
 
-def get_discovered_network_devices_by_discovery_id_default(api):
+def get_discovered_network_devices_by_discovery_id_default_val(api):
     endpoint_result = api.discovery.get_discovered_network_devices_by_discovery_id(
         id='string',
         task_id=None
@@ -1786,11 +1786,11 @@ def get_discovered_network_devices_by_discovery_id_default(api):
 
 
 @pytest.mark.discovery
-def test_get_discovered_network_devices_by_discovery_id_default(api, validator):
+def test_get_discovered_network_devices_by_discovery_id_default_val(api, validator):
     try:
         assert is_valid_get_discovered_network_devices_by_discovery_id(
             validator,
-            get_discovered_network_devices_by_discovery_id_default(api)
+            get_discovered_network_devices_by_discovery_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1824,7 +1824,7 @@ def test_get_global_credentials(api, validator):
             raise original_e
 
 
-def get_global_credentials_default(api):
+def get_global_credentials_default_val(api):
     endpoint_result = api.discovery.get_global_credentials(
         credential_sub_type=None,
         order=None,
@@ -1834,11 +1834,11 @@ def get_global_credentials_default(api):
 
 
 @pytest.mark.discovery
-def test_get_global_credentials_default(api, validator):
+def test_get_global_credentials_default_val(api, validator):
     try:
         assert is_valid_get_global_credentials(
             validator,
-            get_global_credentials_default(api)
+            get_global_credentials_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

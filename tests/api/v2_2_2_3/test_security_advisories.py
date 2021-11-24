@@ -54,7 +54,7 @@ def test_get_advisories_list(api, validator):
             raise original_e
 
 
-def get_advisories_list_default(api):
+def get_advisories_list_default_val(api):
     endpoint_result = api.security_advisories.get_advisories_list(
 
     )
@@ -62,11 +62,11 @@ def get_advisories_list_default(api):
 
 
 @pytest.mark.security_advisories
-def test_get_advisories_list_default(api, validator):
+def test_get_advisories_list_default_val(api, validator):
     try:
         assert is_valid_get_advisories_list(
             validator,
-            get_advisories_list_default(api)
+            get_advisories_list_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -98,7 +98,7 @@ def test_get_advisories_summary(api, validator):
             raise original_e
 
 
-def get_advisories_summary_default(api):
+def get_advisories_summary_default_val(api):
     endpoint_result = api.security_advisories.get_advisories_summary(
 
     )
@@ -106,11 +106,11 @@ def get_advisories_summary_default(api):
 
 
 @pytest.mark.security_advisories
-def test_get_advisories_summary_default(api, validator):
+def test_get_advisories_summary_default_val(api, validator):
     try:
         assert is_valid_get_advisories_summary(
             validator,
-            get_advisories_summary_default(api)
+            get_advisories_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -142,7 +142,7 @@ def test_get_devices_per_advisory(api, validator):
             raise original_e
 
 
-def get_devices_per_advisory_default(api):
+def get_devices_per_advisory_default_val(api):
     endpoint_result = api.security_advisories.get_devices_per_advisory(
         advisory_id='string'
     )
@@ -150,11 +150,11 @@ def get_devices_per_advisory_default(api):
 
 
 @pytest.mark.security_advisories
-def test_get_devices_per_advisory_default(api, validator):
+def test_get_devices_per_advisory_default_val(api, validator):
     try:
         assert is_valid_get_devices_per_advisory(
             validator,
-            get_devices_per_advisory_default(api)
+            get_devices_per_advisory_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -186,7 +186,7 @@ def test_get_advisory_ids_per_device(api, validator):
             raise original_e
 
 
-def get_advisory_ids_per_device_default(api):
+def get_advisory_ids_per_device_default_val(api):
     endpoint_result = api.security_advisories.get_advisory_ids_per_device(
         device_id='string'
     )
@@ -194,11 +194,11 @@ def get_advisory_ids_per_device_default(api):
 
 
 @pytest.mark.security_advisories
-def test_get_advisory_ids_per_device_default(api, validator):
+def test_get_advisory_ids_per_device_default_val(api, validator):
     try:
         assert is_valid_get_advisory_ids_per_device(
             validator,
-            get_advisory_ids_per_device_default(api)
+            get_advisory_ids_per_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -230,7 +230,7 @@ def test_get_advisories_per_device(api, validator):
             raise original_e
 
 
-def get_advisories_per_device_default(api):
+def get_advisories_per_device_default_val(api):
     endpoint_result = api.security_advisories.get_advisories_per_device(
         device_id='string'
     )
@@ -238,11 +238,11 @@ def get_advisories_per_device_default(api):
 
 
 @pytest.mark.security_advisories
-def test_get_advisories_per_device_default(api, validator):
+def test_get_advisories_per_device_default_val(api, validator):
     try:
         assert is_valid_get_advisories_per_device(
             validator,
-            get_advisories_per_device_default(api)
+            get_advisories_per_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

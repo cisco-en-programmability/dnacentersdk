@@ -49,6 +49,9 @@ class JSONSchemaValidatorCa11E0B5F8D91395E2462A9Cfdc(object):
                 "items": {
                 "properties": {
                 "response": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "siteId": {
@@ -65,6 +68,9 @@ class JSONSchemaValidatorCa11E0B5F8D91395E2462A9Cfdc(object):
                 "site": {
                 "properties": {
                 "response": {
+                "items": {
+                "type": "object"
+                },
                 "type": "array"
                 },
                 "version": {

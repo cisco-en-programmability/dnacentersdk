@@ -44,6 +44,142 @@ class JSONSchemaValidatorC78410E9Dcf52E4A1E686811904597E(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "properties": {
+                "items": {
+                "items": {
+                "properties": {
+                "apCount": {
+                "type": "integer"
+                },
+                "buildingName": {
+                "type": "string"
+                },
+                "contact": {
+                "type": "object"
+                },
+                "criticalRadioCount": {
+                "type": "string"
+                },
+                "floorIndex": {
+                "type": "number"
+                },
+                "geometry": {
+                "properties": {
+                "height": {
+                "type": "number"
+                },
+                "length": {
+                "type": "number"
+                },
+                "offsetX": {
+                "type": "number"
+                },
+                "offsetY": {
+                "type": "number"
+                },
+                "type": {
+                "type": "object"
+                },
+                "width": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "groupInstanceUuid": {
+                "type": "string"
+                },
+                "id": {
+                "type": "integer"
+                },
+                "imageInfo": {
+                "properties": {
+                "categories": {
+                "type": "object"
+                },
+                "enteredImageName": {
+                "type": "object"
+                },
+                "features": {
+                "type": "object"
+                },
+                "generatedRasterImage": {
+                "type": "object"
+                },
+                "image": {
+                "type": "object"
+                },
+                "isCadFile": {
+                "type": "boolean"
+                },
+                "shapes": {
+                "type": "object"
+                },
+                "thumbnail": {
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "instanceUuid": {
+                "type": "string"
+                },
+                "items": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "location": {
+                "properties": {
+                "address": {
+                "type": "string"
+                },
+                "country": {
+                "type": "string"
+                },
+                "height": {
+                "type": "number"
+                },
+                "lat": {
+                "type": "number"
+                },
+                "lon": {
+                "type": "number"
+                }
+                },
+                "type": "object"
+                },
+                "maintainAspectRatio": {
+                "type": "boolean"
+                },
+                "metrics": {
+                "type": "object"
+                },
+                "name": {
+                "type": "string"
+                },
+                "parentGroupUuid": {
+                "type": "string"
+                },
+                "siteName": {
+                "type": "string"
+                },
+                "type": {
+                "type": "integer"
+                },
+                "wirelessClientsCount": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "total": {
+                "type": "integer"
+                }
+                },
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
