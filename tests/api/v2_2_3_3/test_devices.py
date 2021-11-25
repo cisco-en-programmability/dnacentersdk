@@ -731,13 +731,13 @@ def test_get_device_list_default_val(api, validator):
             raise original_e
 
 
-def is_valid_add_device2(json_schema_validate, obj):
+def is_valid_add_device(json_schema_validate, obj):
     json_schema_validate('jsd_62704fe3ec7651e79d891fce37a0d860_v2_2_3_3').validate(obj)
     return True
 
 
-def add_device2(api):
-    endpoint_result = api.devices.add_device2(
+def add_device(api):
+    endpoint_result = api.devices.add_device(
         active_validation=True,
         cliTransport='string',
         computeDevice=True,
@@ -772,11 +772,11 @@ def add_device2(api):
 
 
 @pytest.mark.devices
-def test_add_device2(api, validator):
+def test_add_device(api, validator):
     try:
-        assert is_valid_add_device2(
+        assert is_valid_add_device(
             validator,
-            add_device2(api)
+            add_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -784,8 +784,8 @@ def test_add_device2(api, validator):
             raise original_e
 
 
-def add_device2_default_val(api):
-    endpoint_result = api.devices.add_device2(
+def add_device_default_val(api):
+    endpoint_result = api.devices.add_device(
         active_validation=True,
         cliTransport=None,
         computeDevice=None,
@@ -820,11 +820,11 @@ def add_device2_default_val(api):
 
 
 @pytest.mark.devices
-def test_add_device2_default_val(api, validator):
+def test_add_device_default_val(api, validator):
     try:
-        assert is_valid_add_device2(
+        assert is_valid_add_device(
             validator,
-            add_device2_default_val(api)
+            add_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

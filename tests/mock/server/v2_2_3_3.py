@@ -2260,7 +2260,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
             self.path
         )
 
-    def devices_add_device2_response(self):
+    def devices_add_device_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -8406,7 +8406,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
             return
 
         if self.matches_DEVICES_62704fe3ec7651e79d891fce37a0d860():
-            self.devices_add_device2_response()
+            self.devices_add_device_response()
             return
 
         if self.matches_DEVICES_57e6ec627d3c587288978990aae75228():
