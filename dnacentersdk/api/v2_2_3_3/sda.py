@@ -2859,6 +2859,7 @@ class Sda(object):
                                                  isGuestVirtualNetwork=None,
                                                  scalableGroupNames=None,
                                                  virtualNetworkName=None,
+                                                 virtualNetworkType=None,
                                                  headers=None,
                                                  payload=None,
                                                  active_validation=True,
@@ -2869,6 +2870,7 @@ class Sda(object):
             isGuestVirtualNetwork(boolean): SDA's To create guest virtual network .
             scalableGroupNames(list): SDA's Scalable Group to be associated to virtual network  (list of strings).
             virtualNetworkName(string): SDA's Virtual Network Name to be assigned  global level .
+            virtualNetworkType(string): SDA's Virtual Network Type.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2908,6 +2910,8 @@ class Sda(object):
                 isGuestVirtualNetwork,
             'scalableGroupNames':
                 scalableGroupNames,
+            'virtualNetworkType':
+                virtualNetworkType,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
@@ -3049,6 +3053,7 @@ class Sda(object):
                                                     isGuestVirtualNetwork=None,
                                                     scalableGroupNames=None,
                                                     virtualNetworkName=None,
+                                                    virtualNetworkType=None,
                                                     headers=None,
                                                     payload=None,
                                                     active_validation=True,
@@ -3059,6 +3064,7 @@ class Sda(object):
             isGuestVirtualNetwork(boolean): SDA's To create guest virtual network .
             scalableGroupNames(list): SDA's Scalable Group to be associated to virtual network  (list of strings).
             virtualNetworkName(string): SDA's Virtual Network Name to be assigned global level .
+            virtualNetworkType(string): SDA's Virtual Network Type.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -3094,6 +3100,8 @@ class Sda(object):
         _payload = {
             'virtualNetworkName':
                 virtualNetworkName,
+            'virtualNetworkType':
+                virtualNetworkType,
             'isGuestVirtualNetwork':
                 isGuestVirtualNetwork,
             'scalableGroupNames':

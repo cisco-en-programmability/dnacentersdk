@@ -6295,7 +6295,7 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 'string', 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}, 'version': 'string'})
+        response_content = json.dumps({'response': {'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 

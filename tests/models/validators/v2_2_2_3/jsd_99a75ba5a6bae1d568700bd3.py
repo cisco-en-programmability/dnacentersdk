@@ -75,7 +75,7 @@ class JSONSchemaValidator99A75Ba5A6BaE1D568700Bd3(object):
                 "type": "boolean"
                 },
                 "lastUpdate": {
-                "type": "string"
+                "type": "integer"
                 },
                 "operationIdList": {
                 "type": "object"

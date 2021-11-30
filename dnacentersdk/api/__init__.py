@@ -416,6 +416,8 @@ from .v2_2_3_3.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_2_3_3
 from .v2_2_3_3.applications import \
     Applications as Applications_v2_2_3_3
+from .v2_2_3_3.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_2_3_3
 from .v2_2_3_3.clients import \
     Clients as Clients_v2_2_3_3
 from .v2_2_3_3.command_runner import \
@@ -1403,6 +1405,10 @@ class DNACenterAPI(object):
                 )
             self.applications = \
                 Applications_v2_2_3_3(
+                    self._session, object_factory, _validator
+                )
+            self.authentication_management = \
+                AuthenticationManagement_v2_2_3_3(
                     self._session, object_factory, _validator
                 )
             self.clients = \

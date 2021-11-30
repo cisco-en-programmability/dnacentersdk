@@ -67,10 +67,10 @@ class JSONSchemaValidatorB70E1B6A2F51A59690669A4B2Fd3F0(object):
                 "type": "string"
                 },
                 "lastSyncTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "lastUpdateTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "message": {
                 "type": "string"

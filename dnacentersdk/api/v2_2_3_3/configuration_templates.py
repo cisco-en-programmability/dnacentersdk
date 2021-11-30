@@ -164,7 +164,7 @@ class ConfigurationTemplates(object):
             lastUpdateTime(integer): Configuration Templates's Update time of project .
             name(string): Configuration Templates's Name of project .
             tags(list): Configuration Templates's tags (list of objects).
-            templates(object): Configuration Templates's List of templates within the project .
+            templates(list): Configuration Templates's List of templates within the project  (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -261,7 +261,7 @@ class ConfigurationTemplates(object):
             lastUpdateTime(integer): Configuration Templates's Update time of project .
             name(string): Configuration Templates's Name of project .
             tags(list): Configuration Templates's tags (list of objects).
-            templates(object): Configuration Templates's List of templates within the project .
+            templates(list): Configuration Templates's List of templates within the project  (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1418,7 +1418,7 @@ class ConfigurationTemplates(object):
         Args:
             deviceId(string): Configuration Templates's UUID of device to get template preview .
             params(object): Configuration Templates's Params to render preview .
-            resourceParams(object): Configuration Templates's Resource params to render preview .
+            resourceParams(list): Configuration Templates's Resource params to render preview  (list of objects).
             templateId(string): Configuration Templates's UUID of template to get template preview .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

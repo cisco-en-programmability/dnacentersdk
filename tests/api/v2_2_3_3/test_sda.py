@@ -2018,7 +2018,8 @@ def add_virtual_network_with_scalable_groups(api):
         isGuestVirtualNetwork=True,
         payload=None,
         scalableGroupNames=['string'],
-        virtualNetworkName='string'
+        virtualNetworkName='string',
+        virtualNetworkType='string'
     )
     return endpoint_result
 
@@ -2042,7 +2043,8 @@ def add_virtual_network_with_scalable_groups_default_val(api):
         isGuestVirtualNetwork=None,
         payload=None,
         scalableGroupNames=None,
-        virtualNetworkName=None
+        virtualNetworkName=None,
+        virtualNetworkType=None
     )
     return endpoint_result
 
@@ -2158,7 +2160,8 @@ def update_virtual_network_with_scalable_groups(api):
         isGuestVirtualNetwork=True,
         payload=None,
         scalableGroupNames=['string'],
-        virtualNetworkName='string'
+        virtualNetworkName='string',
+        virtualNetworkType='string'
     )
     return endpoint_result
 
@@ -2182,7 +2185,8 @@ def update_virtual_network_with_scalable_groups_default_val(api):
         isGuestVirtualNetwork=None,
         payload=None,
         scalableGroupNames=None,
-        virtualNetworkName=None
+        virtualNetworkName=None,
+        virtualNetworkType=None
     )
     return endpoint_result
 

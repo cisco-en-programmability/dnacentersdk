@@ -55,7 +55,7 @@ class JSONSchemaValidatorFf485556F6504D8443789F42098Be7(object):
                 "type": "string"
                 },
                 "endTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "errorCode": {
                 "type": "string"
@@ -94,7 +94,7 @@ class JSONSchemaValidatorFf485556F6504D8443789F42098Be7(object):
                 "type": "string"
                 },
                 "startTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "username": {
                 "type": "string"

@@ -29,6 +29,8 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
     APPLICATION_POLICY_6349b98fe15b531dbb7e20c0f5fa61ab_PATTERN = re.compile(r"/dna/intent/api/v1/qos-device-interface-info-count")
     APPLICATION_POLICY_629a6a5bb5935709b03d0fc37a1d47d4_PATTERN = re.compile(r"/dna/intent/api/v1/qos-device-interface-info/string")
     APPLICATIONS_1b85e4ce533d5ff49ddd3b2f9657cfa5_PATTERN = re.compile(r"/dna/intent/api/v1/application-health")
+    AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
+    AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
     CLIENTS_f2c6333d8eb05491a16c2d32095e4352_PATTERN = re.compile(r"/dna/intent/api/v1/client-detail")
     CLIENTS_991dfd2751065bfb8c2367dd726df316_PATTERN = re.compile(r"/dna/intent/api/v1/client-enrichment-details")
     CLIENTS_f58ddf5cee095688aed79a9bb26e21e8_PATTERN = re.compile(r"/dna/intent/api/v1/client-health")
@@ -720,7 +722,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': 'string', 'version': 'string'})
+        response_content = json.dumps({'response': 0, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -823,6 +825,40 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.end_headers()
         # Add response content.
         response_content = json.dumps({'version': 'string', 'totalCount': 0, 'response': [{'name': 'string', 'health': 0, 'businessRelevance': 'string', 'trafficClass': 'string', 'usageBytes': 0, 'averageThroughput': 0, 'packetLossPercent': {}, 'networkLatency': {}, 'jitter': {}, 'applicationServerLatency': {}, 'clientNetworkLatency': {}, 'serverNetworkLatency': {}, 'exporterIpAddress': 'string', 'exporterName': 'string', 'exporterUUID': 'string', 'exporterFamily': 'string', 'clientName': 'string', 'clientIp': 'string', 'location': 'string', 'operatingSystem': 'string', 'deviceType': 'string', 'clientMacAddress': 'string', 'issueId': 'string', 'issueName': 'string', 'application': 'string', 'severity': 'string', 'summary': 'string', 'rootCause': 'string', 'timestamp': 0, 'occurrences': 0, 'priority': 'string'}]})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173(self):
+        return re.search(
+            self.AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN,
+            self.path
+        )
+
+    def authentication_management_import_certificate_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22(self):
+        return re.search(
+            self.AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN,
+            self.path
+        )
+
+    def authentication_management_import_certificate_p12_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -992,7 +1028,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': [{'complianceType': 'string', 'lastSyncTime': 'string', 'deviceUuid': 'string', 'displayName': 'string', 'status': 'string', 'category': 'string', 'lastUpdateTime': 'string', 'state': 'string'}]})
+        response_content = json.dumps({'version': 'string', 'response': [{'complianceType': 'string', 'lastSyncTime': 0, 'deviceUuid': 'string', 'displayName': 'string', 'status': 'string', 'category': 'string', 'lastUpdateTime': 0, 'state': 'string'}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1043,7 +1079,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'deviceUuid': 'string', 'version': 'string', 'response': [{'displayName': 'string', 'complianceType': 'string', 'lastSyncTime': 'string', 'additionalDataURL': 'string', 'sourceInfoList': [{'count': 0, 'displayName': 'string', 'diffList': [{'displayName': 'string', 'moveFromPath': 'string', 'op': 'string', 'configuredValue': 'string', 'intendedValue': 'string', 'path': 'string', 'businessKey': 'string', 'extendedAttributes': 'string'}], 'sourceEnum': 'string', 'licenseAppName': 'string', 'provisioningArea': 'string', 'networkProfileName': 'string', 'nameWithBusinessKey': 'string', 'appName': 'string', 'name': 'string', 'type': 'string', 'businessKey': {'otherAttributes': {'cfsAttributes': 'string', 'name': 'string'}, 'resourceName': 'string', 'businessKeyAttributes': 'string'}}], 'deviceUuid': 'string', 'message': 'string', 'state': 'string', 'status': 'string', 'category': 'string', 'lastUpdateTime': 'string'}]})
+        response_content = json.dumps({'deviceUuid': 'string', 'version': 'string', 'response': [{'displayName': 'string', 'complianceType': 'string', 'lastSyncTime': 0, 'additionalDataURL': 'string', 'sourceInfoList': [{'count': 0, 'displayName': 'string', 'diffList': [{'displayName': 'string', 'moveFromPath': 'string', 'op': 'string', 'configuredValue': 'string', 'intendedValue': 'string', 'path': 'string', 'businessKey': 'string', 'extendedAttributes': 'string'}], 'sourceEnum': 'string', 'licenseAppName': 'string', 'provisioningArea': 'string', 'networkProfileName': 'string', 'nameWithBusinessKey': 'string', 'appName': 'string', 'name': 'string', 'type': 'string', 'businessKey': {'otherAttributes': {'cfsAttributes': 'string', 'name': 'string'}, 'resourceName': 'string', 'businessKeyAttributes': 'string'}}], 'deviceUuid': 'string', 'message': 'string', 'state': 'string', 'status': 'string', 'category': 'string', 'lastUpdateTime': 0}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1128,7 +1164,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps([{'tags': [{'id': 'string', 'name': 'string'}], 'createTime': 0, 'description': 'string', 'id': 'string', 'lastUpdateTime': 0, 'name': 'string', 'templates': {}}])
+        response_content = json.dumps([{'tags': [{'id': 'string', 'name': 'string'}], 'createTime': 0, 'description': 'string', 'id': 'string', 'lastUpdateTime': 0, 'name': 'string', 'templates': [{'tags': [{'id': 'string', 'name': 'string'}], 'author': 'string', 'composite': True, 'containingTemplates': [{'tags': [{'id': 'string', 'name': 'string'}], 'composite': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'id': 'string', 'language': 'string', 'name': 'string', 'projectName': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'version': 'string'}], 'createTime': 0, 'customParamsOrder': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'failurePolicy': 'string', 'id': 'string', 'language': 'string', 'lastUpdateTime': 0, 'latestVersionTime': 0, 'name': 'string', 'parentTemplateId': 'string', 'projectId': 'string', 'projectName': 'string', 'rollbackTemplateContent': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'softwareType': 'string', 'softwareVariant': 'string', 'softwareVersion': 'string', 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'validationErrors': {'rollbackTemplateErrors': {}, 'templateErrors': {}, 'templateId': 'string', 'templateVersion': 'string'}, 'version': 'string'}]}])
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1196,7 +1232,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'tags': [{'id': 'string', 'name': 'string'}], 'createTime': 0, 'description': 'string', 'id': 'string', 'lastUpdateTime': 0, 'name': 'string', 'templates': {}})
+        response_content = json.dumps({'tags': [{'id': 'string', 'name': 'string'}], 'createTime': 0, 'description': 'string', 'id': 'string', 'lastUpdateTime': 0, 'name': 'string', 'templates': [{'tags': [{'id': 'string', 'name': 'string'}], 'author': 'string', 'composite': True, 'containingTemplates': [{'tags': [{'id': 'string', 'name': 'string'}], 'composite': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'id': 'string', 'language': 'string', 'name': 'string', 'projectName': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'version': 'string'}], 'createTime': 0, 'customParamsOrder': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'failurePolicy': 'string', 'id': 'string', 'language': 'string', 'lastUpdateTime': 0, 'latestVersionTime': 0, 'name': 'string', 'parentTemplateId': 'string', 'projectId': 'string', 'projectName': 'string', 'rollbackTemplateContent': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'softwareType': 'string', 'softwareVariant': 'string', 'softwareVersion': 'string', 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'validationErrors': {'rollbackTemplateErrors': {}, 'templateErrors': {}, 'templateId': 'string', 'templateVersion': 'string'}, 'version': 'string'}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2726,7 +2762,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'apManagerInterfaceIp': 'string', 'associatedWlcIp': 'string', 'bootDateTime': 'string', 'collectionInterval': 'string', 'collectionStatus': 'string', 'errorCode': 'string', 'errorDescription': 'string', 'family': 'string', 'hostname': 'string', 'id': 'string', 'instanceTenantId': 'string', 'instanceUuid': 'string', 'interfaceCount': 'string', 'inventoryStatusDetail': 'string', 'lastUpdateTime': 'string', 'lastUpdated': 'string', 'lineCardCount': 'string', 'lineCardId': 'string', 'location': 'string', 'locationName': 'string', 'macAddress': 'string', 'managementIpAddress': 'string', 'memorySize': 'string', 'platformId': 'string', 'reachabilityFailureReason': 'string', 'reachabilityStatus': 'string', 'role': 'string', 'roleSource': 'string', 'serialNumber': 'string', 'series': 'string', 'snmpContact': 'string', 'snmpLocation': 'string', 'softwareType': 'string', 'softwareVersion': 'string', 'tagCount': 'string', 'tunnelUdpPort': 'string', 'type': 'string', 'upTime': 'string', 'waasDeviceMode': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'apManagerInterfaceIp': 'string', 'associatedWlcIp': 'string', 'bootDateTime': 'string', 'collectionInterval': 'string', 'collectionStatus': 'string', 'errorCode': 'string', 'errorDescription': 'string', 'family': 'string', 'hostname': 'string', 'id': 'string', 'instanceTenantId': 'string', 'instanceUuid': 'string', 'interfaceCount': 'string', 'inventoryStatusDetail': 'string', 'lastUpdateTime': 0, 'lastUpdated': 'string', 'lineCardCount': 'string', 'lineCardId': 'string', 'location': 'string', 'locationName': 'string', 'macAddress': 'string', 'managementIpAddress': 'string', 'memorySize': 'string', 'platformId': 'string', 'reachabilityFailureReason': 'string', 'reachabilityStatus': 'string', 'role': 'string', 'roleSource': 'string', 'serialNumber': 'string', 'series': 'string', 'snmpContact': 'string', 'snmpLocation': 'string', 'softwareType': 'string', 'softwareVersion': 'string', 'tagCount': 'string', 'tunnelUdpPort': 'string', 'type': 'string', 'upTime': 'string', 'waasDeviceMode': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6874,7 +6910,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 'string', 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 'string', 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 'string', 'username': 'string', 'version': 0}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 'string', 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6925,7 +6961,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'additionalStatusURL': 'string', 'data': 'string', 'endTime': 'string', 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 'string', 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 'string', 'username': 'string', 'version': 0}, 'version': 'string'})
+        response_content = json.dumps({'response': {'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -8303,6 +8339,14 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
 
         if self.matches_APPLICATION_POLICY_d045d18062ad5ae59c6f446beb17d675():
             self.application_policy_create_qos_device_interface_info_response()
+            return
+
+        if self.matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173():
+            self.authentication_management_import_certificate_response()
+            return
+
+        if self.matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22():
+            self.authentication_management_import_certificate_p12_response()
             return
 
         if self.matches_COMMAND_RUNNER_b2dae3b41636596aa02c3ad0a4bcb8d7():
