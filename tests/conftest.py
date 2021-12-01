@@ -35,6 +35,7 @@ pytest_plugins = [
     'tests.api.v2_1_2',
     'tests.api.v2_2_1',
     'tests.api.v2_2_2_3',
+    'tests.api.v2_2_3_3',
 ]
 
 
@@ -88,6 +89,9 @@ def pytest_configure(config):
         "markers", "devices: devices wrapper test"
     )
     config.addinivalue_line(
+        "markers", "disaster_recovery: disaster_recovery wrapper test"
+    )
+    config.addinivalue_line(
         "markers", "discovery: discovery wrapper test"
     )
     config.addinivalue_line(
@@ -95,6 +99,9 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "fabric_wired: fabric_wired wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "fabric_wireless: fabric_wireless wrapper test"
     )
     config.addinivalue_line(
         "markers", "file: file wrapper test"
@@ -131,6 +138,9 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "pnp: pnp wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "policy: policy wrapper test"
     )
     config.addinivalue_line(
         "markers", "reports: reports wrapper test"
