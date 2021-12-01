@@ -386,6 +386,9 @@ class JSONSchemaValidatorB942797Fc158E3A0FbB5Ffb1347962(object):
                 },
                 "type": "array"
                 },
+                "documentDatabase": {
+                "type": "boolean"
+                },
                 "failurePolicy": {
                 "enum": [
                 "ABORT_ON_ERROR",
@@ -413,6 +416,9 @@ class JSONSchemaValidatorB942797Fc158E3A0FbB5Ffb1347962(object):
                 },
                 "parentTemplateId": {
                 "type": "string"
+                },
+                "projectAssociated": {
+                "type": "boolean"
                 },
                 "projectId": {
                 "type": "string"
@@ -662,10 +668,16 @@ class JSONSchemaValidatorB942797Fc158E3A0FbB5Ffb1347962(object):
                 "validationErrors": {
                 "properties": {
                 "rollbackTemplateErrors": {
+                "items": {
                 "type": "object"
                 },
+                "type": "array"
+                },
                 "templateErrors": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "templateId": {
                 "type": "string"

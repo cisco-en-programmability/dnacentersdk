@@ -45,6 +45,9 @@ class JSONSchemaValidatorC55B3C31568294840B4B6Fd8Bc0A(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
+                "response": {
+                "items": {
+                "properties": {
                 "author": {
                 "type": "string"
                 },
@@ -352,6 +355,9 @@ class JSONSchemaValidatorC55B3C31568294840B4B6Fd8Bc0A(object):
                 },
                 "type": "array"
                 },
+                "documentDatabase": {
+                "type": "boolean"
+                },
                 "failurePolicy": {
                 "enum": [
                 "ABORT_ON_ERROR",
@@ -631,10 +637,16 @@ class JSONSchemaValidatorC55B3C31568294840B4B6Fd8Bc0A(object):
                 "validationErrors": {
                 "properties": {
                 "rollbackTemplateErrors": {
+                "items": {
                 "type": "object"
                 },
+                "type": "array"
+                },
                 "templateErrors": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "templateId": {
                 "type": "string"
@@ -674,6 +686,14 @@ class JSONSchemaValidatorC55B3C31568294840B4B6Fd8Bc0A(object):
                 "type": "object"
                 },
                 "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "version": {
+                "type": "string"
                 }
                 },
                 "type": "object"

@@ -385,6 +385,9 @@ class JSONSchemaValidatorC1B2C35764F2518182B3F271A29A574C(object):
                 },
                 "type": "array"
                 },
+                "documentDatabase": {
+                "type": "boolean"
+                },
                 "failurePolicy": {
                 "enum": [
                 "ABORT_ON_ERROR",
@@ -412,6 +415,9 @@ class JSONSchemaValidatorC1B2C35764F2518182B3F271A29A574C(object):
                 },
                 "parentTemplateId": {
                 "type": "string"
+                },
+                "projectAssociated": {
+                "type": "boolean"
                 },
                 "projectId": {
                 "type": "string"
@@ -661,10 +667,16 @@ class JSONSchemaValidatorC1B2C35764F2518182B3F271A29A574C(object):
                 "validationErrors": {
                 "properties": {
                 "rollbackTemplateErrors": {
+                "items": {
                 "type": "object"
                 },
+                "type": "array"
+                },
                 "templateErrors": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "templateId": {
                 "type": "string"
