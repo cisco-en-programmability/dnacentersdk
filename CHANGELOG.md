@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.4.1] - 2021-12-01
+
+### Changed
+- Update to match checksum
+
 ## [2.4.0] - 2021-12-01
 
 ### Added
@@ -163,4 +168,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.3.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.1...v2.3.2
 [2.3.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.2...v2.3.3
 [2.4.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.3...v2.4.0
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.0...master
+[2.4.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.0...v2.4.1
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.1...master
