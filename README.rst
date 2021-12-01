@@ -146,6 +146,14 @@ Inspiration
 This library is inspired by the webexteamssdk_  library
 
 
+Changelog
+---------
+
+All notable changes to this project will be documented in the CHANGELOG_ file.
+
+The development team may make additional name changes as the library evolves with the Cisco DNA Center APIs.
+
+
 *Copyright (c) 2019-2020 Cisco Systems.*
 
 .. _Introduction: https://dnacentersdk.readthedocs.io/en/latest/api/intro.html
@@ -159,4 +167,4 @@ This library is inspired by the webexteamssdk_  library
 .. _pull request: `pull requests`_
 .. _Contributing: https://github.com/cisco-en-programmability/dnacentersdk/blob/master/docs/contributing.rst
 .. _webexteamssdk: https://github.com/CiscoDevNet/webexteamssdk
-
+.. _CHANGELOG: https://github.com/cisco-en-programmability/dnacentersdk/blob/main/CHANGELOG.md
