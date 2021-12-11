@@ -531,32 +531,28 @@ class JSONSchemaValidatorD7A6392845E8969D(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "averageAuthDuration": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "averageDhcpDuration": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "averageRunDuration": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "dhcpServerIp": {

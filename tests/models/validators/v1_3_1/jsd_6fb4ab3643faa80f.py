@@ -122,8 +122,7 @@ class JSONSchemaValidator6Fb4Ab3643FaA80F(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "status": {

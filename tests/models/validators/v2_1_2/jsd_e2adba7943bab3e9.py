@@ -365,32 +365,28 @@ class JSONSchemaValidatorE2AdBa7943BaB3E9(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "averageAuthDuration": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "averageDhcpDuration": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "averageRunDuration": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "dhcpDoneTime": {
@@ -619,8 +615,7 @@ class JSONSchemaValidatorE2AdBa7943BaB3E9(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "description":

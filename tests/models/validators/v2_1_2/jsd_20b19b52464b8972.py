@@ -294,8 +294,7 @@ class JSONSchemaValidator20B19B52464B8972(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "version": {

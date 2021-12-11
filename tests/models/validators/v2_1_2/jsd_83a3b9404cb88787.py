@@ -353,8 +353,7 @@ class JSONSchemaValidator83A3B9404Cb88787(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 }
                 },
@@ -569,8 +568,7 @@ class JSONSchemaValidator83A3B9404Cb88787(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 }
                 },

@@ -51,32 +51,28 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "accessTotalCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "applicationBytesTotalCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "applicationGoodCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "applicationHealth": {
@@ -117,8 +113,7 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 },
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "businessRelevantAppCount": {
@@ -144,8 +139,7 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 },
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "defaultHealthAppCount": {
@@ -171,8 +165,7 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 },
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 }
                 },
@@ -185,8 +178,7 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "clientHealthWired": {
@@ -207,32 +199,28 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "coreTotalCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "distributionGoodCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "distributionTotalCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "dnacInfo": {
@@ -246,16 +234,14 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "healthyNetworkDevicePercentage": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "latitude": {
@@ -274,88 +260,77 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "networkHealthAverage": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "networkHealthCore": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "networkHealthDistribution": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "networkHealthOthers": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "networkHealthRouter": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "networkHealthWireless": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "numberOfClients": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "numberOfNetworkDevice": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "numberOfWiredClients": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "numberOfWirelessClients": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "overallGoodDevices": {
@@ -381,16 +356,14 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "routerTotalCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "siteId": {
@@ -415,16 +388,14 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "totalNumberOfConnectedWiredClients": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "wiredGoodClients": {
@@ -438,16 +409,14 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "wirelessDeviceTotalCount": {
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "wirelessGoodClients": {
@@ -465,8 +434,7 @@ class JSONSchemaValidator15B7Aa0C4Dda8E85(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 }
                 },
