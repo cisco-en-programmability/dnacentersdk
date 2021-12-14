@@ -46,7 +46,13 @@ class JSONSchemaValidatorB5A5C8Da4Aaa526DA6A06E97C80A38Be(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "object": {
+                "response": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "version": {
                 "type": "string"
                 }
                 },

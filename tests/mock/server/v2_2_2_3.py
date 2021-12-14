@@ -2045,7 +2045,7 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'object': 'string'})
+        response_content = json.dumps({'response': ['string'], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 

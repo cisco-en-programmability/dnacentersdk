@@ -44,11 +44,6 @@ class JSONSchemaValidatorDcc43Be0514E50FeA80CFa827F13Ee5C(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "object": {
-                "type": "string"
-                }
-                },
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
