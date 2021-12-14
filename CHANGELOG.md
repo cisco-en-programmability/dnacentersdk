@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.4.2] - 2021-12-14
+
+### Fixed
+- Fix add_members_to_the_tag and retrieves_all_network_devices json schemas.
+### Updated
+- Update json schemas for models/validators and tests/models/models/validators
+
 ## [2.4.1] - 2021-12-01
 
 ### Changed

@@ -296,10 +296,7 @@ class Swim(object):
         are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and
         qcow2.
 
-        The following code gives an **example** of the multipart_fields,
-        using `file` and `images` as form data field.
-
-        Use the appropiate form data field for the function.
+        The following code gives an example of the multipart_fields.
 
         .. code-block:: python
 

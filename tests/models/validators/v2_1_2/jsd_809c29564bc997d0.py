@@ -139,8 +139,7 @@ class JSONSchemaValidator809C29564Bc997D0(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "version": {

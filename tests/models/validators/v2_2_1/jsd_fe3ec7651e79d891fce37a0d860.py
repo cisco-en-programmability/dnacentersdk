@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center addDevice data model.
+"""Cisco DNA Center AddDevice data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -38,7 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860(object):
-    """addDevice request schema definition."""
+    """AddDevice request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

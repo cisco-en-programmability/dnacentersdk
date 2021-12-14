@@ -108,8 +108,7 @@ class JSONSchemaValidatorA2B479A045298Dca(object):
                 },
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "cpuHealth": {
@@ -306,8 +305,7 @@ class JSONSchemaValidatorA2B479A045298Dca(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "totalCount": {

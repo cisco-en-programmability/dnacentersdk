@@ -176,8 +176,7 @@ class JSONSchemaValidatorF09319674049A7D4(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "statusCode": {

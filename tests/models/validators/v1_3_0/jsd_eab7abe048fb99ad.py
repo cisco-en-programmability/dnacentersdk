@@ -61,8 +61,7 @@ class JSONSchemaValidatorEab7Abe048Fb99Ad(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 },
                 "version": {

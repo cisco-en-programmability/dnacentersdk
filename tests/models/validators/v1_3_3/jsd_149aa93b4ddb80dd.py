@@ -144,8 +144,7 @@ class JSONSchemaValidator149AA93B4Ddb80Dd(object):
                 "properties": {},
                 "type": [
                 "object",
-                "null",
-                "number"
+                "null"
                 ]
                 },
                 "endtime": {
@@ -258,8 +257,7 @@ class JSONSchemaValidator149AA93B4Ddb80Dd(object):
                 },
                 "type": [
                 "array",
-                "null",
-                "object"
+                "null"
                 ]
                 }
                 },
