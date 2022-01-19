@@ -24,35 +24,48 @@ SOFTWARE.
 
 import os
 
-from .config import (
-    USERNAME_ENVIRONMENT_VARIABLE,
-    PASSWORD_ENVIRONMENT_VARIABLE,
-    ENCODED_AUTH_ENVIRONMENT_VARIABLE,
-    DEBUG_ENVIRONMENT_VARIABLE,
-    VERSION_ENVIRONMENT_VARIABLE,
-    BASE_URL_ENVIRONMENT_VARIABLE,
-    SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE,
-    WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
-    VERIFY_ENVIRONMENT_VARIABLE,
-    VERIFY_STRING_ENVIRONMENT_VARIABLE,
-    DEFAULT_DEBUG,
-    DEFAULT_VERSION,
-    DEFAULT_BASE_URL,
-    DEFAULT_SINGLE_REQUEST_TIMEOUT,
-    DEFAULT_WAIT_ON_RATE_LIMIT,
-    DEFAULT_VERIFY,
-)
+#: name of the environment debug variable
+DEBUG_ENVIRONMENT_VARIABLE = 'DNA_CENTER_DEBUG'
+
+# DNA Center API version. Format: MAJOR.MINOR.PATCH
+#: name of the environment version variable
+VERSION_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERSION'
+
+#: name of the environment username variable
+USERNAME_ENVIRONMENT_VARIABLE = 'DNA_CENTER_USERNAME'
+
+#: name of the environment password variable
+PASSWORD_ENVIRONMENT_VARIABLE = 'DNA_CENTER_PASSWORD'
+
+#: name of the environment encoded_auth variable
+ENCODED_AUTH_ENVIRONMENT_VARIABLE = 'DNA_CENTER_ENCODED_AUTH'
+
+#: name of the environment base_url variable
+BASE_URL_ENVIRONMENT_VARIABLE = 'DNA_CENTER_BASE_URL'
+
+#: name of the environment single_request_timeout variable
+SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE = \
+    'DNA_CENTER_SINGLE_REQUEST_TIMEOUT'
+
+#: name of the environment wait_on_rate_limit variable
+WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_WAIT_ON_RATE_LIMIT'
+
+#: name of the environment verify variable
+VERIFY_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY'
+
+#: name of the environment verify variable
+VERIFY_STRING_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY_STRING'
 
 
-def is_bool(value):
+def _is_bool(value):
     if isinstance(value, str):
         return 'true' in value.lower()
     else:
         return bool(value)
 
 
-def _get_env_value(env_var, default_value, env_type, cast_func):
-    env_var_value = os.getenv(env_var, default_value)
+def _get_env_value(env_var, env_type, cast_func):
+    env_var_value = os.getenv(env_var)
     if isinstance(env_var_value, env_type):
         return env_var_value
     elif env_var_value is not None:
@@ -61,23 +74,56 @@ def _get_env_value(env_var, default_value, env_type, cast_func):
         return env_var_value
 
 
-DNA_CENTER_USERNAME = os.getenv(USERNAME_ENVIRONMENT_VARIABLE)
-DNA_CENTER_PASSWORD = os.getenv(PASSWORD_ENVIRONMENT_VARIABLE)
-DNA_CENTER_ENCODED_AUTH = os.getenv(ENCODED_AUTH_ENVIRONMENT_VARIABLE)
+def get_env_username():
+    DNA_CENTER_USERNAME = os.getenv(USERNAME_ENVIRONMENT_VARIABLE)
+    return DNA_CENTER_USERNAME
 
-DNA_CENTER_DEBUG = _get_env_value(
-    DEBUG_ENVIRONMENT_VARIABLE, DEFAULT_DEBUG,
-    str, is_bool)
-DNA_CENTER_VERSION = _get_env_value(
-    VERSION_ENVIRONMENT_VARIABLE, DEFAULT_VERSION, str, str)
-DNA_CENTER_BASE_URL = _get_env_value(
-    BASE_URL_ENVIRONMENT_VARIABLE, DEFAULT_BASE_URL, str, str)
-DNA_CENTER_SINGLE_REQUEST_TIMEOUT = _get_env_value(
-    SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE,
-    DEFAULT_SINGLE_REQUEST_TIMEOUT, int, int)
-DNA_CENTER_WAIT_ON_RATE_LIMIT = _get_env_value(
-    WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
-    DEFAULT_WAIT_ON_RATE_LIMIT, bool, is_bool)
-DNA_CENTER_VERIFY = _get_env_value(
-    VERIFY_STRING_ENVIRONMENT_VARIABLE, None, str, str) or \
-    _get_env_value(VERIFY_ENVIRONMENT_VARIABLE, DEFAULT_VERIFY, bool, is_bool)
+
+def get_env_password():
+    DNA_CENTER_PASSWORD = os.getenv(PASSWORD_ENVIRONMENT_VARIABLE)
+    return DNA_CENTER_PASSWORD
+
+
+def get_env_encoded_auth():
+    DNA_CENTER_ENCODED_AUTH = os.getenv(ENCODED_AUTH_ENVIRONMENT_VARIABLE)
+    return DNA_CENTER_ENCODED_AUTH
+
+
+def get_env_debug():
+    DNA_CENTER_DEBUG = _get_env_value(
+        DEBUG_ENVIRONMENT_VARIABLE,
+        str, _is_bool)
+    return DNA_CENTER_DEBUG
+
+
+def get_env_version():
+    DNA_CENTER_VERSION = _get_env_value(
+        VERSION_ENVIRONMENT_VARIABLE, str, str)
+    return DNA_CENTER_VERSION
+
+
+def get_env_base_url():
+    DNA_CENTER_BASE_URL = _get_env_value(
+        BASE_URL_ENVIRONMENT_VARIABLE, str, str)
+    return DNA_CENTER_BASE_URL
+
+
+def get_env_single_request_timeout():
+    DNA_CENTER_SINGLE_REQUEST_TIMEOUT = _get_env_value(
+        SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE,
+        int, int)
+    return DNA_CENTER_SINGLE_REQUEST_TIMEOUT
+
+
+def get_env_wait_on_rate_limit():
+    DNA_CENTER_WAIT_ON_RATE_LIMIT = _get_env_value(
+        WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
+        bool, _is_bool)
+    return DNA_CENTER_WAIT_ON_RATE_LIMIT
+
+
+def get_env_verify():
+    DNA_CENTER_VERIFY = _get_env_value(
+        VERIFY_STRING_ENVIRONMENT_VARIABLE, None, str, str) or \
+        _get_env_value(VERIFY_ENVIRONMENT_VARIABLE, bool, _is_bool)
+    return DNA_CENTER_VERIFY
