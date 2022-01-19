@@ -1,25 +1,23 @@
 import pytest
-from tests.environment import (
-    DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD,
-    DNA_CENTER_ENCODED_AUTH, DNA_CENTER_VERSION,
-)
 
 
 class TestImportSDK:
     """Set the sdk-level variables."""
-    def __init__(self, base_url):
-        self.username = DNA_CENTER_USERNAME
-        self.password = DNA_CENTER_PASSWORD
-        self.encoded_auth = DNA_CENTER_ENCODED_AUTH
+    def setup(self, base_url):
+        self.username = "username"
+        self.password = "password"
+        self.encoded_auth = "dXNlcm5hbWU6cGFzc3dvcmQ="
         self.base_url = base_url
         self.verify = False
         self.debug = True
-        self.version = DNA_CENTER_VERSION
+        self.version = "2.2.3.3"
 
 
 @pytest.fixture
 def import_fixture(mock_dna_center_server, base_url):
-    return TestImportSDK(base_url)
+    sdk_sample_values = TestImportSDK()
+    sdk_sample_values.setup(base_url)
+    return sdk_sample_values
 
 
 @pytest.fixture

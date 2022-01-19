@@ -481,7 +481,6 @@ from tests.config import (
     DEFAULT_WAIT_ON_RATE_LIMIT
 )
 import pytest
-import requests
 
 
 @pytest.mark.dnacentersdk
