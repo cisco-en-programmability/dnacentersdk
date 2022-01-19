@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.4.3] - 2021-01-19
+
+### Fixed
+- DNACenterAPI constructor allows for optional arguments [#37](https://github.com/cisco-en-programmability/dnacentersdk/issues/37)
+
+### Changed
+- Update requirements
+- Adds env variables support for import before/after importing DNACenterAPI
+- Adds tests for env variables before/after DNACenterAPI import 
+
 ## [2.4.2] - 2021-12-14
 
 ### Fixed
@@ -177,4 +187,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.3...v2.4.0
 [2.4.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.0...v2.4.1
 [2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.1...v2.4.2
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...master
+[2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...master
