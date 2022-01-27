@@ -1626,7 +1626,7 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
             self.path
         )
 
-    def devices_get_device_interface_vlans_response(self):
+    def devices_get_device_interface_v_lans_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -5417,7 +5417,7 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
             self.path
         )
 
-    def topology_get_vlan_details_response(self):
+    def topology_get_v_lan_details_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -5941,7 +5941,7 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
             return
 
         if self.matches_DEVICES_fd5fb603cba6523abb25c8ec131fbb8b():
-            self.devices_get_device_interface_vlans_response()
+            self.devices_get_device_interface_v_lans_response()
             return
 
         if self.matches_DEVICES_5a3d52c630ba5deaada16fe3b07af744():
@@ -6429,7 +6429,7 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
             return
 
         if self.matches_TOPOLOGY_fb6000ce8d8854bc80be3803b8dee1b7():
-            self.topology_get_vlan_details_response()
+            self.topology_get_v_lan_details_response()
             return
 
         if self.matches_TOPOLOGY_f7abdb7ab46a5918a74e839488ff6ae0():

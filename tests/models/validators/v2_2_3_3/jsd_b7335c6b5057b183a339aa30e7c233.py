@@ -49,7 +49,16 @@ class JSONSchemaValidatorB7335C6B5057B183A339Aa30E7C233(object):
                  {
                 "type": "string"
                 },
-                "executionStatusUrl": {
+                "executionId": {
+                "type": "string"
+                },
+                "fabricDomainType": {
+                "type": "string"
+                },
+                "fabricName": {
+                "type": "string"
+                },
+                "fabricType": {
                 "type": "string"
                 },
                 "status": {

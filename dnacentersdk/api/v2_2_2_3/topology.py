@@ -347,9 +347,9 @@ class Topology(object):
 
         return self._object_factory('bpm_f7abdb7ab46a5918a74e839488ff6ae0_v2_2_2_3', json_data)
 
-    def get_vlan_details(self,
-                         headers=None,
-                         **request_parameters):
+    def get_v_lan_details(self,
+                          headers=None,
+                          **request_parameters):
         """Returns the list of VLAN names .
 
         Args:

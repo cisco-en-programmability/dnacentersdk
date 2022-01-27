@@ -46,7 +46,7 @@ class JSONSchemaValidatorE7A025FbE2C452Fc82EeDd5C50104Aba(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "response": {
-                "type": "string"
+                "type": "integer"
                 },
                 "version": {
                 "type": "string"

@@ -61,6 +61,9 @@ class JSONSchemaValidatorD7D4E55D6BBb21C34Ce863A131(object):
                 },
                 "type": "object"
                 },
+                "isPrivate": {
+                "type": "string"
+                },
                 "name": {
                 "type": "string"
                 },
@@ -94,6 +97,12 @@ class JSONSchemaValidatorD7D4E55D6BBb21C34Ce863A131(object):
                 "type": "object"
                 },
                 "type": "array"
+                },
+                "subscriptionId": {
+                "type": "string"
+                },
+                "tenantId": {
+                "type": "string"
                 },
                 "version": {
                 "type": "string"

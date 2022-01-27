@@ -25,7 +25,6 @@ SOFTWARE.
 import pytest
 
 pytest_plugins = [
-    'tests.test_importsdk',
     'tests.test_dnacentersdk',
     'tests.api',
     'tests.api.v1_2_10',
@@ -37,6 +36,7 @@ pytest_plugins = [
     'tests.api.v2_2_1',
     'tests.api.v2_2_2_3',
     'tests.api.v2_2_3_3',
+    'tests.api.v2_3_2_0',
 ]
 
 
@@ -115,6 +115,9 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "issues: issues wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "lan_automation: lan_automation wrapper test"
     )
     config.addinivalue_line(
         "markers", "licenses: licenses wrapper test"

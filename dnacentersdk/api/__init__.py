@@ -24,15 +24,17 @@ SOFTWARE.
 
 from past.types import basestring
 
-from dnacentersdk.config import (
-    DEFAULT_DEBUG,
-    DEFAULT_VERSION,
-    DEFAULT_BASE_URL,
-    DEFAULT_SINGLE_REQUEST_TIMEOUT,
-    DEFAULT_WAIT_ON_RATE_LIMIT,
-    DEFAULT_VERIFY,
+from dnacentersdk.environment import (
+    DNA_CENTER_USERNAME,
+    DNA_CENTER_PASSWORD,
+    DNA_CENTER_ENCODED_AUTH,
+    DNA_CENTER_DEBUG,
+    DNA_CENTER_VERSION,
+    DNA_CENTER_BASE_URL,
+    DNA_CENTER_SINGLE_REQUEST_TIMEOUT,
+    DNA_CENTER_WAIT_ON_RATE_LIMIT,
+    DNA_CENTER_VERIFY,
 )
-import dnacentersdk.environment as dnacenter_environment
 from dnacentersdk.exceptions import AccessTokenError, VersionError
 from dnacentersdk.models.mydict import mydict_data_factory
 from dnacentersdk.models.schema_validator import SchemaValidator
@@ -482,6 +484,78 @@ from .v2_2_3_3.users import \
     Users as Users_v2_2_3_3
 from .v2_2_3_3.wireless import \
     Wireless as Wireless_v2_2_3_3
+from .v2_3_2_0.application_policy import \
+    ApplicationPolicy as ApplicationPolicy_v2_3_2_0
+from .v2_3_2_0.applications import \
+    Applications as Applications_v2_3_2_0
+from .v2_3_2_0.clients import \
+    Clients as Clients_v2_3_2_0
+from .v2_3_2_0.command_runner import \
+    CommandRunner as CommandRunner_v2_3_2_0
+from .v2_3_2_0.compliance import \
+    Compliance as Compliance_v2_3_2_0
+from .v2_3_2_0.configuration_archive import \
+    ConfigurationArchive as ConfigurationArchive_v2_3_2_0
+from .v2_3_2_0.configuration_templates import \
+    ConfigurationTemplates as ConfigurationTemplates_v2_3_2_0
+from .v2_3_2_0.device_onboarding_pnp import \
+    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_3_2_0
+from .v2_3_2_0.device_replacement import \
+    DeviceReplacement as DeviceReplacement_v2_3_2_0
+from .v2_3_2_0.devices import \
+    Devices as Devices_v2_3_2_0
+from .v2_3_2_0.disaster_recovery import \
+    DisasterRecovery as DisasterRecovery_v2_3_2_0
+from .v2_3_2_0.discovery import \
+    Discovery as Discovery_v2_3_2_0
+from .v2_3_2_0.event_management import \
+    EventManagement as EventManagement_v2_3_2_0
+from .v2_3_2_0.fabric_wireless import \
+    FabricWireless as FabricWireless_v2_3_2_0
+from .v2_3_2_0.file import \
+    File as File_v2_3_2_0
+from .v2_3_2_0.health_and_performance import \
+    HealthAndPerformance as HealthAndPerformance_v2_3_2_0
+from .v2_3_2_0.itsm import \
+    Itsm as Itsm_v2_3_2_0
+from .v2_3_2_0.issues import \
+    Issues as Issues_v2_3_2_0
+from .v2_3_2_0.lan_automation import \
+    LanAutomation as LanAutomation_v2_3_2_0
+from .v2_3_2_0.licenses import \
+    Licenses as Licenses_v2_3_2_0
+from .v2_3_2_0.network_settings import \
+    NetworkSettings as NetworkSettings_v2_3_2_0
+from .v2_3_2_0.path_trace import \
+    PathTrace as PathTrace_v2_3_2_0
+from .v2_3_2_0.platform_configuration import \
+    PlatformConfiguration as PlatformConfiguration_v2_3_2_0
+from .v2_3_2_0.policy import \
+    Policy as Policy_v2_3_2_0
+from .v2_3_2_0.reports import \
+    Reports as Reports_v2_3_2_0
+from .v2_3_2_0.sda import \
+    Sda as Sda_v2_3_2_0
+from .v2_3_2_0.security_advisories import \
+    SecurityAdvisories as SecurityAdvisories_v2_3_2_0
+from .v2_3_2_0.sensors import \
+    Sensors as Sensors_v2_3_2_0
+from .v2_3_2_0.site_design import \
+    SiteDesign as SiteDesign_v2_3_2_0
+from .v2_3_2_0.sites import \
+    Sites as Sites_v2_3_2_0
+from .v2_3_2_0.software_image_management_swim import \
+    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_3_2_0
+from .v2_3_2_0.tag import \
+    Tag as Tag_v2_3_2_0
+from .v2_3_2_0.task import \
+    Task as Task_v2_3_2_0
+from .v2_3_2_0.topology import \
+    Topology as Topology_v2_3_2_0
+from .v2_3_2_0.users import \
+    Users as Users_v2_3_2_0
+from .v2_3_2_0.wireless import \
+    Wireless as Wireless_v2_3_2_0
 from .custom_caller import CustomCaller
 
 
@@ -496,15 +570,15 @@ class DNACenterAPI(object):
     them in a simple hierarchical structure.
     """
 
-    def __init__(self, username=None,
-                 password=None,
-                 encoded_auth=None,
-                 base_url=None,
-                 single_request_timeout=None,
-                 wait_on_rate_limit=None,
-                 verify=None,
-                 version=None,
-                 debug=None,
+    def __init__(self, username=DNA_CENTER_USERNAME,
+                 password=DNA_CENTER_PASSWORD,
+                 encoded_auth=DNA_CENTER_ENCODED_AUTH,
+                 base_url=DNA_CENTER_BASE_URL,
+                 single_request_timeout=DNA_CENTER_SINGLE_REQUEST_TIMEOUT,
+                 wait_on_rate_limit=DNA_CENTER_WAIT_ON_RATE_LIMIT,
+                 verify=DNA_CENTER_VERIFY,
+                 version=DNA_CENTER_VERSION,
+                 debug=DNA_CENTER_DEBUG,
                  object_factory=mydict_data_factory,
                  validator=SchemaValidator):
         """Create a new DNACenterAPI object.
@@ -578,28 +652,10 @@ class DNACenterAPI(object):
                 argument or an environment variable, or it is not a
                 DNA Center API supported version
                 ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1', '2.1.2',
-                '2.2.1', '2.2.2.3', '2.2.3.3'].
+                '2.2.1', '2.2.2.3', '2.2.3.3',
+                '2.3.2.0'].
 
         """
-        username = username or dnacenter_environment.get_env_username()
-        password = password or dnacenter_environment.get_env_password()
-        encoded_auth = encoded_auth or dnacenter_environment.get_env_encoded_auth()
-        base_url = base_url or dnacenter_environment.get_env_base_url() or DEFAULT_BASE_URL
-
-        if single_request_timeout is None:
-            single_request_timeout = dnacenter_environment.get_env_single_request_timeout() or DEFAULT_SINGLE_REQUEST_TIMEOUT
-
-        if wait_on_rate_limit is None:
-            wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
-
-        if verify is None:
-            verify = dnacenter_environment.get_env_verify() or DEFAULT_VERIFY
-
-        version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
-
-        if debug is None:
-            debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG
-
         check_type(base_url, basestring)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool)
@@ -612,12 +668,13 @@ class DNACenterAPI(object):
 
         if version not in ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1',
                            '2.1.2', '2.2.1',
-                           '2.2.2.3', '2.2.3.3']:
+                           '2.2.2.3', '2.2.3.3',
+                           '2.3.2.0']:
             raise VersionError(
                 'Unknown API version, '
                 + 'known versions are {}'.format(
-                    '1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1, 2.1.2, 2.2.1, 2.2.2.3'
-                    + 'and 2.2.3.3.'
+                    '1.2.10, 1.3.0, 1.3.1, 1.3.3, 2.1.1, 2.1.2, 2.2.1, 2.2.2.3,'
+                    + '2.2.3.3 and 2.3.2.0.'
                 )
             )
 
@@ -1558,6 +1615,151 @@ class DNACenterAPI(object):
                 )
             self.wireless = \
                 Wireless_v2_2_3_3(
+                    self._session, object_factory, _validator
+                )
+        if version == '2.3.2.0':
+            self.application_policy = \
+                ApplicationPolicy_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.applications = \
+                Applications_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.clients = \
+                Clients_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.command_runner = \
+                CommandRunner_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.compliance = \
+                Compliance_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.configuration_archive = \
+                ConfigurationArchive_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.configuration_templates = \
+                ConfigurationTemplates_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.device_onboarding_pnp = \
+                DeviceOnboardingPnp_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.device_replacement = \
+                DeviceReplacement_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.devices = \
+                Devices_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.disaster_recovery = \
+                DisasterRecovery_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.discovery = \
+                Discovery_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.event_management = \
+                EventManagement_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.fabric_wireless = \
+                FabricWireless_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.file = \
+                File_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.health_and_performance = \
+                HealthAndPerformance_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.itsm = \
+                Itsm_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.issues = \
+                Issues_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.lan_automation = \
+                LanAutomation_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.licenses = \
+                Licenses_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.network_settings = \
+                NetworkSettings_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.path_trace = \
+                PathTrace_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.platform_configuration = \
+                PlatformConfiguration_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.policy = \
+                Policy_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.reports = \
+                Reports_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.sda = \
+                Sda_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.security_advisories = \
+                SecurityAdvisories_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.sensors = \
+                Sensors_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.site_design = \
+                SiteDesign_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.sites = \
+                Sites_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.software_image_management_swim = \
+                SoftwareImageManagementSwim_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.tag = \
+                Tag_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.task = \
+                Task_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.topology = \
+                Topology_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.users = \
+                Users_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.wireless = \
+                Wireless_v2_3_2_0(
                     self._session, object_factory, _validator
                 )
         self.custom_caller = \

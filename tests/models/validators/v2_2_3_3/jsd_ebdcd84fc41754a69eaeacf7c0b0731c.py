@@ -72,7 +72,7 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "array"
                 },
                 "createTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "dhcpServerIps": {
                 "items": {
@@ -105,7 +105,7 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "string"
                 },
                 "lastUpdateTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "overlapping": {
                 "type": "string"
@@ -120,10 +120,10 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "string"
                 },
                 "totalIpAddressCount": {
-                "type": "string"
+                "type": "integer"
                 },
                 "usedIpAddressCount": {
-                "type": "string"
+                "type": "integer"
                 },
                 "usedPercentage": {
                 "type": "string"

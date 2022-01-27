@@ -56,6 +56,7 @@ if [ ${ratelimiting} ]; then
 fi
 
 # Run only one module test
+
 if [ ${#module[@]} -gt 1 ]; then
     temp=${module[@]}
     # Join array elements with ' or '
@@ -65,9 +66,9 @@ if [ ${#module[@]} -gt 1 ]; then
     exit 0
 fi
 
+
 # Run the test suite
 if [ ${default} ] || [ ${tests} ]; then
     echo "==> Running the test suite"
     pytest -s -m "not ratelimit" --reruns $reruns --reruns-delay $delay
 fi
-

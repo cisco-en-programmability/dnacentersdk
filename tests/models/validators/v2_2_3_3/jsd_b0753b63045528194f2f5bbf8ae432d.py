@@ -67,7 +67,7 @@ class JSONSchemaValidatorB0753B63045528194F2F5Bbf8Ae432D(object):
                 "type": "integer"
                 },
                 "goodPercentage": {
-                "type": "integer"
+                "type": "number"
                 },
                 "healthScore": {
                 "type": "integer"

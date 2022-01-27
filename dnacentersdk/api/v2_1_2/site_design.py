@@ -380,14 +380,14 @@ class SiteDesign(object):
         return self._object_factory('bpm_2f97e8fa45f8b2a3_v2_1_2', json_data)
 
     def delete_nfv_profile(self,
-                           id,
+                           id_,
                            name=None,
                            headers=None,
                            **request_parameters):
         """API to delete nfv network profile.
 
         Args:
-            id(basestring): Id of nfv network profile to delete. .
+            id_(basestring): Id of nfv network profile to delete. .
             name(basestring): Nameof nfv network profile to delete. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -405,7 +405,7 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(id_, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -420,7 +420,7 @@ class SiteDesign(object):
         _params = dict_from_items_with_values(_params)
 
         path_params = {
-            'id ': id,
+            'id ': id_,
         }
 
         with_custom_headers = False

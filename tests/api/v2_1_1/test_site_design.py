@@ -171,7 +171,7 @@ def is_valid_delete_nfv_profile(json_schema_validate, obj):
 
 def delete_nfv_profile(api):
     endpoint_result = api.site_design.delete_nfv_profile(
-        id='string',
+        id_='string',
         name='string'
     )
     return endpoint_result
@@ -187,7 +187,7 @@ def test_delete_nfv_profile(api, validator):
 
 def delete_nfv_profile_default(api):
     endpoint_result = api.site_design.delete_nfv_profile(
-        id='string',
+        id_='string',
         name=None
     )
     return endpoint_result

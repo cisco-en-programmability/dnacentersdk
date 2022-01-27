@@ -705,7 +705,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps([{'id': 'string', 'name': 'string', 'networkApplications': [{'id': 'string', 'appProtocol': 'string', 'applicationSubType': 'string', 'applicationType': 'string', 'categoryId': 'string', 'displayName': 'string', 'engineId': 'string', 'helpString': 'string', 'longDescription': 'string', 'name': 'string', 'popularity': 'string', 'rank': 'string', 'trafficClass': 'string', 'serverName': 'string', 'url': 'string', 'dscp': 'string', 'ignoreConflict': 'string'}], 'networkIdentity': [{'id': 'string', 'displayName': 'string', 'lowerPort': 'string', 'ports': 'string', 'protocol': 'string', 'upperPort': 'string'}], 'applicationSet': {'idRef': 'string'}}])
+        response_content = json.dumps({'response': [{'id': 'string', 'name': 'string', 'indicativeNetworkIdentity': [{'id': 'string', 'displayName': 'string', 'lowerPort': 0, 'ports': 'string', 'protocol': 'string', 'upperPort': 0}], 'networkApplications': [{'id': 'string', 'appProtocol': 'string', 'applicationSubType': 'string', 'applicationType': 'string', 'categoryId': 'string', 'displayName': 'string', 'engineId': 'string', 'helpString': 'string', 'longDescription': 'string', 'name': 'string', 'popularity': 0, 'rank': 0, 'trafficClass': 'string', 'serverName': 'string', 'url': 'string', 'dscp': 'string', 'ignoreConflict': 'string'}], 'networkIdentity': [{'id': 'string', 'displayName': 'string', 'lowerPort': 0, 'ports': 'string', 'protocol': 'string', 'upperPort': 0}], 'applicationSet': {'idRef': 'string'}}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2840,7 +2840,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
             self.path
         )
 
-    def devices_get_device_interface_vlans_response(self):
+    def devices_get_device_interface_v_lans_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -3680,7 +3680,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps([{'version': 'string', 'name': 'string', 'description': 'string', 'subscriptionEndpoints': [{'instanceId': 'string', 'id': 'string', 'subscriptionDetails': {'name': 'string', 'url': 'string', 'method': 'string', 'connectorType': 'string'}}], 'filter': {'eventIds': ['string']}}])
+        response_content = json.dumps([{'subscriptionId': 'string', 'isPrivate': 'string', 'tenantId': 'string', 'version': 'string', 'name': 'string', 'description': 'string', 'subscriptionEndpoints': [{'instanceId': 'string', 'id': 'string', 'subscriptionDetails': {'name': 'string', 'url': 'string', 'method': 'string', 'connectorType': 'string'}}], 'filter': {'eventIds': ['string']}}])
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -4156,7 +4156,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({})
+        response_content = json.dumps('string')
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -4581,7 +4581,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'ipPoolName': 'string', 'dhcpServerIps': ['string'], 'gateways': ['string'], 'createTime': 'string', 'lastUpdateTime': 'string', 'totalIpAddressCount': 'string', 'usedIpAddressCount': 'string', 'parentUuid': 'string', 'owner': 'string', 'shared': 'string', 'overlapping': 'string', 'configureExternalDhcp': 'string', 'usedPercentage': 'string', 'clientOptions': {}, 'dnsServerIps': ['string'], 'context': [{'owner': 'string', 'contextKey': 'string', 'contextValue': 'string'}], 'ipv6': 'string', 'id': 'string', 'ipPoolCidr': 'string'}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'ipPoolName': 'string', 'dhcpServerIps': ['string'], 'gateways': ['string'], 'createTime': 0, 'lastUpdateTime': 0, 'totalIpAddressCount': 0, 'usedIpAddressCount': 0, 'parentUuid': 'string', 'owner': 'string', 'shared': 'string', 'overlapping': 'string', 'configureExternalDhcp': 'string', 'usedPercentage': 'string', 'clientOptions': {}, 'dnsServerIps': ['string'], 'context': [{'owner': 'string', 'contextKey': 'string', 'contextValue': 'string'}], 'ipv6': 'string', 'id': 'string', 'ipPoolCidr': 'string'}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -5482,7 +5482,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'status': 'string', 'description': 'string', 'executionStatusUrl': 'string'})
+        response_content = json.dumps({'status': 'string', 'description': 'string', 'executionId': 'string', 'fabricName': 'string', 'fabricType': 'string', 'fabricDomainType': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6468,7 +6468,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': 'string', 'version': 'string'})
+        response_content = json.dumps({'response': 0, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7073,7 +7073,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
             self.path
         )
 
-    def topology_get_vlan_details_response(self):
+    def topology_get_v_lan_details_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7793,7 +7793,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
             return
 
         if self.matches_DEVICES_fd5fb603cba6523abb25c8ec131fbb8b():
-            self.devices_get_device_interface_vlans_response()
+            self.devices_get_device_interface_v_lans_response()
             return
 
         if self.matches_DEVICES_c01ee650fcf858789ca00c8deda969b9():
@@ -8289,7 +8289,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
             return
 
         if self.matches_TOPOLOGY_fb6000ce8d8854bc80be3803b8dee1b7():
-            self.topology_get_vlan_details_response()
+            self.topology_get_v_lan_details_response()
             return
 
         if self.matches_USERS_70f9c1d861a051b4a4928f2e6d84b2e3():

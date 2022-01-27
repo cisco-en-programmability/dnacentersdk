@@ -249,24 +249,24 @@ def test_get_site_topology_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_vlan_details(json_schema_validate, obj):
+def is_valid_get_v_lan_details(json_schema_validate, obj):
     json_schema_validate('jsd_fb6000ce8d8854bc80be3803b8dee1b7_v2_2_3_3').validate(obj)
     return True
 
 
-def get_vlan_details(api):
-    endpoint_result = api.topology.get_vlan_details(
+def get_v_lan_details(api):
+    endpoint_result = api.topology.get_v_lan_details(
 
     )
     return endpoint_result
 
 
 @pytest.mark.topology
-def test_get_vlan_details(api, validator):
+def test_get_v_lan_details(api, validator):
     try:
-        assert is_valid_get_vlan_details(
+        assert is_valid_get_v_lan_details(
             validator,
-            get_vlan_details(api)
+            get_v_lan_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -274,19 +274,19 @@ def test_get_vlan_details(api, validator):
             raise original_e
 
 
-def get_vlan_details_default_val(api):
-    endpoint_result = api.topology.get_vlan_details(
+def get_v_lan_details_default_val(api):
+    endpoint_result = api.topology.get_v_lan_details(
 
     )
     return endpoint_result
 
 
 @pytest.mark.topology
-def test_get_vlan_details_default_val(api, validator):
+def test_get_v_lan_details_default_val(api, validator):
     try:
-        assert is_valid_get_vlan_details(
+        assert is_valid_get_v_lan_details(
             validator,
-            get_vlan_details_default_val(api)
+            get_v_lan_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -473,6 +473,78 @@ from dnacentersdk.api.v2_2_3_3.users import \
     Users as Users_v2_2_3_3
 from dnacentersdk.api.v2_2_3_3.wireless import \
     Wireless as Wireless_v2_2_3_3
+from dnacentersdk.api.v2_3_2_0.application_policy import \
+    ApplicationPolicy as ApplicationPolicy_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.applications import \
+    Applications as Applications_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.clients import \
+    Clients as Clients_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.command_runner import \
+    CommandRunner as CommandRunner_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.compliance import \
+    Compliance as Compliance_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.configuration_archive import \
+    ConfigurationArchive as ConfigurationArchive_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.configuration_templates import \
+    ConfigurationTemplates as ConfigurationTemplates_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.device_onboarding_pnp import \
+    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.device_replacement import \
+    DeviceReplacement as DeviceReplacement_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.devices import \
+    Devices as Devices_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.disaster_recovery import \
+    DisasterRecovery as DisasterRecovery_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.discovery import \
+    Discovery as Discovery_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.event_management import \
+    EventManagement as EventManagement_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.fabric_wireless import \
+    FabricWireless as FabricWireless_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.file import \
+    File as File_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.health_and_performance import \
+    HealthAndPerformance as HealthAndPerformance_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.itsm import \
+    Itsm as Itsm_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.issues import \
+    Issues as Issues_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.lan_automation import \
+    LanAutomation as LanAutomation_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.licenses import \
+    Licenses as Licenses_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.network_settings import \
+    NetworkSettings as NetworkSettings_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.path_trace import \
+    PathTrace as PathTrace_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.platform_configuration import \
+    PlatformConfiguration as PlatformConfiguration_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.policy import \
+    Policy as Policy_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.reports import \
+    Reports as Reports_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.sda import \
+    Sda as Sda_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.security_advisories import \
+    SecurityAdvisories as SecurityAdvisories_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.sensors import \
+    Sensors as Sensors_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.site_design import \
+    SiteDesign as SiteDesign_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.sites import \
+    Sites as Sites_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.software_image_management_swim import \
+    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.tag import \
+    Tag as Tag_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.task import \
+    Task as Task_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.topology import \
+    Topology as Topology_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.users import \
+    Users as Users_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.wireless import \
+    Wireless as Wireless_v2_3_2_0
 from dnacentersdk.api.custom_caller import CustomCaller
 
 from tests.config import (
@@ -512,7 +584,7 @@ class TestDNACenterSDK:
     @pytest.mark.dnacentersdk
     def test_custom_base_url(self):
         custom_url = "https://custom.domain.com/v1/"
-        with pytest.raises((dnacentersdk.exceptions.ApiError, requests.exceptions.RequestException)):
+        with pytest.raises((dnacentersdk.exceptions.ApiError, requests.exceptions.ConnectionError)):
             dnacentersdk.DNACenterAPI(username=DNA_CENTER_USERNAME,
                                       password=DNA_CENTER_PASSWORD,
                                       encoded_auth=DNA_CENTER_ENCODED_AUTH,
@@ -788,3 +860,40 @@ class TestDNACenterSDK:
             assert isinstance(api.topology, Topology_v2_2_3_3)
             assert isinstance(api.users, Users_v2_2_3_3)
             assert isinstance(api.wireless, Wireless_v2_2_3_3)
+        if api.version == '2.3.2.0':
+            assert isinstance(api.application_policy, ApplicationPolicy_v2_3_2_0)
+            assert isinstance(api.applications, Applications_v2_3_2_0)
+            assert isinstance(api.clients, Clients_v2_3_2_0)
+            assert isinstance(api.command_runner, CommandRunner_v2_3_2_0)
+            assert isinstance(api.compliance, Compliance_v2_3_2_0)
+            assert isinstance(api.configuration_archive, ConfigurationArchive_v2_3_2_0)
+            assert isinstance(api.configuration_templates, ConfigurationTemplates_v2_3_2_0)
+            assert isinstance(api.device_onboarding_pnp, DeviceOnboardingPnp_v2_3_2_0)
+            assert isinstance(api.device_replacement, DeviceReplacement_v2_3_2_0)
+            assert isinstance(api.devices, Devices_v2_3_2_0)
+            assert isinstance(api.disaster_recovery, DisasterRecovery_v2_3_2_0)
+            assert isinstance(api.discovery, Discovery_v2_3_2_0)
+            assert isinstance(api.event_management, EventManagement_v2_3_2_0)
+            assert isinstance(api.fabric_wireless, FabricWireless_v2_3_2_0)
+            assert isinstance(api.file, File_v2_3_2_0)
+            assert isinstance(api.health_and_performance, HealthAndPerformance_v2_3_2_0)
+            assert isinstance(api.itsm, Itsm_v2_3_2_0)
+            assert isinstance(api.issues, Issues_v2_3_2_0)
+            assert isinstance(api.lan_automation, LanAutomation_v2_3_2_0)
+            assert isinstance(api.licenses, Licenses_v2_3_2_0)
+            assert isinstance(api.network_settings, NetworkSettings_v2_3_2_0)
+            assert isinstance(api.path_trace, PathTrace_v2_3_2_0)
+            assert isinstance(api.platform_configuration, PlatformConfiguration_v2_3_2_0)
+            assert isinstance(api.policy, Policy_v2_3_2_0)
+            assert isinstance(api.reports, Reports_v2_3_2_0)
+            assert isinstance(api.sda, Sda_v2_3_2_0)
+            assert isinstance(api.security_advisories, SecurityAdvisories_v2_3_2_0)
+            assert isinstance(api.sensors, Sensors_v2_3_2_0)
+            assert isinstance(api.site_design, SiteDesign_v2_3_2_0)
+            assert isinstance(api.sites, Sites_v2_3_2_0)
+            assert isinstance(api.software_image_management_swim, SoftwareImageManagementSwim_v2_3_2_0)
+            assert isinstance(api.tag, Tag_v2_3_2_0)
+            assert isinstance(api.task, Task_v2_3_2_0)
+            assert isinstance(api.topology, Topology_v2_3_2_0)
+            assert isinstance(api.users, Users_v2_3_2_0)
+            assert isinstance(api.wireless, Wireless_v2_3_2_0)
