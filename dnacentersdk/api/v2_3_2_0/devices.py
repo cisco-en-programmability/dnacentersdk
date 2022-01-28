@@ -1147,9 +1147,9 @@ class Devices(object):
                                 interface_uuid,
                                 deployement_mode=None,
                                 operation=None,
-                                payload=None,
-                                headers=None,
                                 operation_payload=None,
+                                headers=None,
+                                payload=None,
                                 active_validation=True,
                                 **request_parameters):
         """Clear mac-address on an individual port. In request body, operation needs to be specified as 'ClearMacAddress'.
@@ -1157,7 +1157,7 @@ class Devices(object):
 
         Args:
             operation(string): Devices's Operation.
-            payload(object): Devices's Payload.
+            operation_payload(object): Devices's Payload.
             interface_uuid(basestring): interfaceUuid path parameter. Interface Id .
             deployement_mode(basestring): deployementMode query parameter. Preview/Deploy ['Preview' means the
                 configuration is not pushed to the device. 'Deploy' makes the configuration pushed to

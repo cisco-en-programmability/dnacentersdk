@@ -48,7 +48,7 @@ class JSONSchemaValidatorA3E0588FA1Ac56D4947AE5Cfc2E16A8F(object):
                 "response": {
                 "properties": {
                 "taskId": {
-                "type": "object"
+                "type": "string"
                 },
                 "url": {
                 "type": "string"

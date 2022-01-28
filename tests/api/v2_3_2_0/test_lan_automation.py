@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.2.0', reason='version does not match')
 
 
-def is_valid_lan_automation2(json_schema_validate, obj):
+def is_valid_lan_automation_start(json_schema_validate, obj):
     json_schema_validate('jsd_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_2_0').validate(obj)
     return True
 
 
-def lan_automation2(api):
-    endpoint_result = api.lan_automation.lan_automation2(
+def lan_automation_start(api):
+    endpoint_result = api.lan_automation.lan_automation_start(
         active_validation=True,
         payload=None
     )
@@ -43,11 +43,11 @@ def lan_automation2(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation2(api, validator):
+def test_lan_automation_start(api, validator):
     try:
-        assert is_valid_lan_automation2(
+        assert is_valid_lan_automation_start(
             validator,
-            lan_automation2(api)
+            lan_automation_start(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,8 +55,8 @@ def test_lan_automation2(api, validator):
             raise original_e
 
 
-def lan_automation2_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation2(
+def lan_automation_start_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_start(
         active_validation=True,
         payload=None
     )
@@ -64,11 +64,11 @@ def lan_automation2_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation2_default_val(api, validator):
+def test_lan_automation_start_default_val(api, validator):
     try:
-        assert is_valid_lan_automation2(
+        assert is_valid_lan_automation_start(
             validator,
-            lan_automation2_default_val(api)
+            lan_automation_start_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -299,24 +299,24 @@ def test_lan_automation_status_by_id_default_val(api, validator):
             raise original_e
 
 
-def is_valid_lan_automation(json_schema_validate, obj):
+def is_valid_lan_automation_stop(json_schema_validate, obj):
     json_schema_validate('jsd_ed815ca3e5ab5ae48720795217ec776b_v2_3_2_0').validate(obj)
     return True
 
 
-def lan_automation(api):
-    endpoint_result = api.lan_automation.lan_automation(
+def lan_automation_stop(api):
+    endpoint_result = api.lan_automation.lan_automation_stop(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation(api, validator):
+def test_lan_automation_stop(api, validator):
     try:
-        assert is_valid_lan_automation(
+        assert is_valid_lan_automation_stop(
             validator,
-            lan_automation(api)
+            lan_automation_stop(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -324,19 +324,19 @@ def test_lan_automation(api, validator):
             raise original_e
 
 
-def lan_automation_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation(
+def lan_automation_stop_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_stop(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_default_val(api, validator):
+def test_lan_automation_stop_default_val(api, validator):
     try:
-        assert is_valid_lan_automation(
+        assert is_valid_lan_automation_stop(
             validator,
-            lan_automation_default_val(api)
+            lan_automation_stop_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

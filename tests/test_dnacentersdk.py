@@ -477,6 +477,8 @@ from dnacentersdk.api.v2_3_2_0.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_2_0
 from dnacentersdk.api.v2_3_2_0.applications import \
     Applications as Applications_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_3_2_0
 from dnacentersdk.api.v2_3_2_0.clients import \
     Clients as Clients_v2_3_2_0
 from dnacentersdk.api.v2_3_2_0.command_runner import \
@@ -535,6 +537,8 @@ from dnacentersdk.api.v2_3_2_0.sites import \
     Sites as Sites_v2_3_2_0
 from dnacentersdk.api.v2_3_2_0.software_image_management_swim import \
     SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_3_2_0
+from dnacentersdk.api.v2_3_2_0.system_settings import \
+    SystemSettings as SystemSettings_v2_3_2_0
 from dnacentersdk.api.v2_3_2_0.tag import \
     Tag as Tag_v2_3_2_0
 from dnacentersdk.api.v2_3_2_0.task import \
@@ -863,6 +867,7 @@ class TestDNACenterSDK:
         if api.version == '2.3.2.0':
             assert isinstance(api.application_policy, ApplicationPolicy_v2_3_2_0)
             assert isinstance(api.applications, Applications_v2_3_2_0)
+            assert isinstance(api.authentication_management, AuthenticationManagement_v2_3_2_0)
             assert isinstance(api.clients, Clients_v2_3_2_0)
             assert isinstance(api.command_runner, CommandRunner_v2_3_2_0)
             assert isinstance(api.compliance, Compliance_v2_3_2_0)
@@ -892,6 +897,7 @@ class TestDNACenterSDK:
             assert isinstance(api.site_design, SiteDesign_v2_3_2_0)
             assert isinstance(api.sites, Sites_v2_3_2_0)
             assert isinstance(api.software_image_management_swim, SoftwareImageManagementSwim_v2_3_2_0)
+            assert isinstance(api.system_settings, SystemSettings_v2_3_2_0)
             assert isinstance(api.tag, Tag_v2_3_2_0)
             assert isinstance(api.task, Task_v2_3_2_0)
             assert isinstance(api.topology, Topology_v2_3_2_0)

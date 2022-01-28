@@ -243,13 +243,46 @@ class File(object):
         return self._object_factory('bpm_fa4ab7605a75aafa6c7da6ac3f13_v2_3_2_0', json_data)
 
     def upload_file(self,
+                    multipart_fields,
+                    multipart_monitor_callback,
                     name_space,
                     headers=None,
                     **request_parameters):
         """Uploads a new file within a specific nameSpace .
 
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
+
         Args:
             name_space(basestring): nameSpace path parameter.
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -290,12 +323,19 @@ class File(object):
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
 
-        e_url = ('/dna/intent/api/v1/v1/file/{nameSpace}')
+        e_url = ('/dna/intent/api/v1/file/{nameSpace}')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
-        return self._object_factory('bpm_da92eb483645b8ca9bbfef92cbac857_v2_3_2_0', json_data)
+        return self._object_factory('bpm_e7fb3df05906b8cd6077d4d9cc5c_v2_3_2_0', json_data)

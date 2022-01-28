@@ -176,7 +176,9 @@ class JSONSchemaValidatorCec8139F6B1C5E5991D12197206029A0(object):
                 "type": "object"
                 },
                 "ipv6AddressList": {
-                "items": {}
+                "items": {
+                "type": "object"
+                }
                 },
                 "macAddress": {
                 "type": "string"

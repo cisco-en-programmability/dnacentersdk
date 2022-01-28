@@ -50,12 +50,7 @@ class JSONSchemaValidatorB887C55FaAca726Bbe4Ac2564(object):
                 "properties": {
                 "properties": {
                 "taskId": {
-                "properties": {
-                "type": {
                 "type": "string"
-                }
-                },
-                "type": "object"
                 },
                 "url": {
                 "properties": {

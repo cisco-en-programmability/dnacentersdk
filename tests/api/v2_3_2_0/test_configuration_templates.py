@@ -753,7 +753,7 @@ def deploy_template(api):
         forcePushTemplate=True,
         isComposite=True,
         mainTemplateId='string',
-        memberTemplateDeploymentInfo={},
+        memberTemplateDeploymentInfo=[{}],
         payload=None,
         targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': {}, 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
@@ -1266,7 +1266,7 @@ def deploy_template_v2(api):
         forcePushTemplate=True,
         isComposite=True,
         mainTemplateId='string',
-        memberTemplateDeploymentInfo={},
+        memberTemplateDeploymentInfo=[{}],
         payload=None,
         targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': {}, 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'

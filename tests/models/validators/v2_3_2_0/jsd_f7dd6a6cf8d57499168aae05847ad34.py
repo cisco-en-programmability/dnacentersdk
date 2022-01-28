@@ -224,7 +224,9 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "items": {
                 "properties": {
                 "config": {
-                "items": {}
+                "items": {
+                "type": "object"
+                }
                 },
                 "name": {
                 "type": "string"

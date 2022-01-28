@@ -2171,6 +2171,15 @@ applications
 
 
 
+.. _authentication_management_2_3_2_0:
+
+authentication_management
+-------------------------
+
+.. autoclass:: dnacentersdk.api.v2_3_2_0.authentication_management.AuthenticationManagement()
+
+
+
 .. _clients_2_3_2_0:
 
 clients
@@ -2429,6 +2438,15 @@ software_image_management_swim
 ------------------------------
 
 .. autoclass:: dnacentersdk.api.v2_3_2_0.software_image_management_swim.SoftwareImageManagementSwim()
+
+
+
+.. _system_settings_2_3_2_0:
+
+system_settings
+---------------
+
+.. autoclass:: dnacentersdk.api.v2_3_2_0.system_settings.SystemSettings()
 
 
 

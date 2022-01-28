@@ -1213,7 +1213,8 @@ class ConfigurationTemplates(object):
             forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
             isComposite(boolean): Configuration Templates's Composite template flag .
             mainTemplateId(string): Configuration Templates's Main template UUID of versioned template .
-            memberTemplateDeploymentInfo(): Configuration Templates's memberTemplateDeploymentInfo .
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo (list of
+                objects).
             targetInfo(list): Configuration Templates's targetInfo (list of objects).
             templateId(string): Configuration Templates's UUID of template to be provisioned .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1980,7 +1981,8 @@ class ConfigurationTemplates(object):
             forcePushTemplate(boolean): Configuration Templates's forcePushTemplate.
             isComposite(boolean): Configuration Templates's Composite template flag .
             mainTemplateId(string): Configuration Templates's Main template UUID of versioned template .
-            memberTemplateDeploymentInfo(): Configuration Templates's memberTemplateDeploymentInfo .
+            memberTemplateDeploymentInfo(list): Configuration Templates's memberTemplateDeploymentInfo  (list of
+                objects).
             targetInfo(list): Configuration Templates's targetInfo (list of objects).
             templateId(string): Configuration Templates's UUID of template to be provisioned .
             headers(dict): Dictionary of HTTP Headers to send with the Request

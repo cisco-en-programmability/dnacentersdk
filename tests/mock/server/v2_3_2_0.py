@@ -29,6 +29,8 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
     APPLICATION_POLICY_6349b98fe15b531dbb7e20c0f5fa61ab_PATTERN = re.compile(r"/dna/intent/api/v1/qos-device-interface-info-count")
     APPLICATION_POLICY_629a6a5bb5935709b03d0fc37a1d47d4_PATTERN = re.compile(r"/dna/intent/api/v1/qos-device-interface-info/string")
     APPLICATIONS_1b85e4ce533d5ff49ddd3b2f9657cfa5_PATTERN = re.compile(r"/dna/intent/api/v1/application-health")
+    AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
+    AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
     CLIENTS_f2c6333d8eb05491a16c2d32095e4352_PATTERN = re.compile(r"/dna/intent/api/v1/client-detail")
     CLIENTS_991dfd2751065bfb8c2367dd726df316_PATTERN = re.compile(r"/dna/intent/api/v1/client-enrichment-details")
     CLIENTS_f58ddf5cee095688aed79a9bb26e21e8_PATTERN = re.compile(r"/dna/intent/api/v1/client-health")
@@ -236,7 +238,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
     FILE_b7fc125c901c5d4488b7a2b75fa292bc_PATTERN = re.compile(r"/dna/intent/api/v1/file/namespace")
     FILE_b7d63a5ae65b59a5a35d43edc58b6db5_PATTERN = re.compile(r"/dna/intent/api/v1/file/namespace/string")
     FILE_1282fa4ab7605a75aafa6c7da6ac3f13_PATTERN = re.compile(r"/dna/intent/api/v1/file/string")
-    FILE_8da92eb483645b8ca9bbfef92cbac857_PATTERN = re.compile(r"/dna/intent/api/v1/v1/file/string")
+    FILE_3113e7fb3df05906b8cd6077d4d9cc5c_PATTERN = re.compile(r"/dna/intent/api/v1/file/string")
     HEALTH_AND_PERFORMANCE_d0acccfae6885bc28f8f39c67f4acfc1_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/health")
     HEALTH_AND_PERFORMANCE_96f6dd603bc35db1948f31c782a37647_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/health/count")
     HEALTH_AND_PERFORMANCE_cfcb7a875f215cb4ba59be38abb871e6_PATTERN = re.compile(r"/dna/intent/api/v1/diagnostics/system/performance")
@@ -387,6 +389,8 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
     SOFTWARE_IMAGE_MANAGEMENT_SWIM_97ab6266cac654d394cf943a161fcc7b_PATTERN = re.compile(r"/dna/intent/api/v1/image/importation/golden/site/string/family/string/role/string/image/string")
     SOFTWARE_IMAGE_MANAGEMENT_SWIM_2399c1cf6d5d5f0fa2e92539134b6c1d_PATTERN = re.compile(r"/dna/intent/api/v1/image/importation/source/file")
     SOFTWARE_IMAGE_MANAGEMENT_SWIM_7be8cdb967555fcca03a4c1f796eee56_PATTERN = re.compile(r"/dna/intent/api/v1/image/importation/source/url")
+    SYSTEM_SETTINGS_ada20dc4915d5901b50634628392e79f_PATTERN = re.compile(r"/dna/intent/api/v1/network-device/custom-prompt")
+    SYSTEM_SETTINGS_d2ea814bfae85da1b77872d095fc8221_PATTERN = re.compile(r"/dna/intent/api/v1/network-device/custom-prompt")
     TAG_c9f995abc21b54e7860f66aef2ffbc85_PATTERN = re.compile(r"/dna/intent/api/v1/tag")
     TAG_983979a4185f5b40aabe991f8cdb2816_PATTERN = re.compile(r"/dna/intent/api/v1/tag")
     TAG_e8271b05b62c54609f74b4f2f373ad5a_PATTERN = re.compile(r"/dna/intent/api/v1/tag")
@@ -842,6 +846,40 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
+    def matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173(self):
+        return re.search(
+            self.AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN,
+            self.path
+        )
+
+    def authentication_management_import_certificate_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22(self):
+        return re.search(
+            self.AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN,
+            self.path
+        )
+
+    def authentication_management_import_certificate_p12_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
     def matches_CLIENTS_f2c6333d8eb05491a16c2d32095e4352(self):
         return re.search(
             self.CLIENTS_f2c6333d8eb05491a16c2d32095e4352_PATTERN,
@@ -940,7 +978,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -974,7 +1012,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1093,7 +1131,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1110,7 +1148,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1127,7 +1165,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1161,7 +1199,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1178,7 +1216,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1195,7 +1233,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1229,7 +1267,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1246,7 +1284,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1280,7 +1318,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1331,7 +1369,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1365,7 +1403,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1399,7 +1437,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1467,7 +1505,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1484,7 +1522,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': {}, 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
+        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': [{}], 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1501,7 +1539,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': {}, 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
+        response_content = json.dumps({'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': [{}], 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1569,7 +1607,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'successList': [{'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': {}, 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'}], 'failureList': [{'index': 0, 'serialNum': 'string', 'id': 'string', 'msg': 'string'}]})
+        response_content = json.dumps({'successList': [{'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': [{}], 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'}], 'failureList': [{'index': 0, 'serialNum': 'string', 'id': 'string', 'msg': 'string'}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1688,7 +1726,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': {}, 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
+        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': [{}], 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1705,7 +1743,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': {}, 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
+        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': [{}], 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1722,7 +1760,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': {}, 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
+        response_content = json.dumps({'_id': 'string', 'deviceInfo': {'source': 'string', 'serialNumber': 'string', 'stack': True, 'mode': 'string', 'state': 'string', 'location': {'siteId': 'string', 'address': 'string', 'latitude': 'string', 'longitude': 'string', 'altitude': 'string'}, 'description': 'string', 'onbState': 'string', 'authenticatedMicNumber': 'string', 'authenticatedSudiSerialNo': 'string', 'capabilitiesSupported': ['string'], 'featuresSupported': ['string'], 'cmState': 'string', 'firstContact': 0, 'lastContact': 0, 'macAddress': 'string', 'pid': 'string', 'deviceSudiSerialNos': ['string'], 'lastUpdateOn': 0, 'workflowId': 'string', 'workflowName': 'string', 'projectId': 'string', 'projectName': 'string', 'deviceType': 'string', 'agentType': 'string', 'imageVersion': 'string', 'fileSystemList': [{'type': 'string', 'writeable': True, 'freespace': 0, 'name': 'string', 'readable': True, 'size': 0}], 'pnpProfileList': [{'profileName': 'string', 'discoveryCreated': True, 'createdBy': 'string', 'primaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}, 'secondaryEndpoint': {'port': 0, 'protocol': 'string', 'ipv4Address': {}, 'ipv6Address': {}, 'fqdn': 'string', 'certificate': 'string'}}], 'imageFile': 'string', 'httpHeaders': [{'key': 'string', 'value': 'string'}], 'neighborLinks': [{'localInterfaceName': 'string', 'localShortInterfaceName': 'string', 'localMacAddress': 'string', 'remoteInterfaceName': 'string', 'remoteShortInterfaceName': 'string', 'remoteMacAddress': 'string', 'remoteDeviceName': 'string', 'remotePlatform': 'string', 'remoteVersion': 'string'}], 'lastSyncTime': 0, 'ipInterfaces': [{'status': 'string', 'macAddress': 'string', 'ipv4Address': {}, 'ipv6AddressList': [{}], 'name': 'string'}], 'hostname': 'string', 'authStatus': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}, 'reloadRequested': True, 'addedOn': 0, 'siteId': 'string', 'aaaCredentials': {'password': 'string', 'username': 'string'}, 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'addnMacAddrs': ['string'], 'preWorkflowCliOuputs': [{'cli': 'string', 'cliOutput': 'string'}], 'tags': {}, 'sudiRequired': True, 'smartAccountId': 'string', 'virtualAccountId': 'string', 'populateInventory': True, 'siteName': 'string', 'name': 'string'}, 'systemResetWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'systemWorkflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'workflow': {'_id': 'string', 'state': 'string', 'type': 'string', 'description': 'string', 'lastupdateOn': 0, 'imageId': 'string', 'currTaskIdx': 0, 'addedOn': 0, 'tasks': [{'state': 'string', 'type': 'string', 'currWorkItemIdx': 0, 'taskSeqNo': 0, 'endTime': 0, 'startTime': 0, 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'name': 'string'}], 'addToInventory': True, 'instanceType': 'string', 'endTime': 0, 'execTime': 0, 'startTime': 0, 'useState': 'string', 'configId': 'string', 'name': 'string', 'version': 0, 'tenantId': 'string'}, 'runSummaryList': [{'details': 'string', 'historyTaskInfo': {'type': 'string', 'workItemList': [{'state': 'string', 'command': 'string', 'outputStr': 'string', 'endTime': 0, 'startTime': 0, 'timeTaken': 0}], 'timeTaken': 0, 'addnDetails': [{'key': 'string', 'value': 'string'}], 'name': 'string'}, 'errorFlag': True, 'timestamp': 0}], 'workflowParameters': {'topOfStackSerialNumber': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'configList': [{'configParameters': [{'key': 'string', 'value': 'string'}], 'configId': 'string'}]}, 'dayZeroConfig': {'config': 'string'}, 'dayZeroConfigPreview': {}, 'version': 0, 'tenantId': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1977,7 +2015,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -1994,7 +2032,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2028,7 +2066,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2300,7 +2338,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'type': 'string', 'properties': {'taskId': {'type': 'string'}, 'url': {'type': 'string'}}, 'required': ['string']}, 'version': {'type': 'string'}})
+        response_content = json.dumps({'response': {'type': 'string', 'properties': {'taskId': 'string', 'url': {'type': 'string'}}, 'required': ['string']}, 'version': {'type': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2368,7 +2406,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2385,7 +2423,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2402,7 +2440,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'object': 'string'})
+        response_content = json.dumps({})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2419,7 +2457,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2504,7 +2542,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2674,7 +2712,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -2861,7 +2899,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3082,7 +3120,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3099,7 +3137,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3116,7 +3154,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3167,7 +3205,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3286,7 +3324,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3337,7 +3375,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3354,7 +3392,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3371,7 +3409,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3388,7 +3426,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3405,7 +3443,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3422,7 +3460,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3439,7 +3477,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3456,7 +3494,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3473,7 +3511,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3490,7 +3528,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3507,7 +3545,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3524,7 +3562,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3541,7 +3579,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3558,7 +3596,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3575,7 +3613,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3592,7 +3630,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3643,7 +3681,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -4340,7 +4378,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'attributeInfo': {}, 'downloadPath': 'string', 'encrypted': True, 'fileFormat': 'string', 'fileSize': 'string', 'id': 'string', 'md5Checksum': 'string', 'name': 'string', 'nameSpace': 'string', 'sftpServerList': [{}], 'sha1Checksum': 'string', 'taskId': {}}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'attributeInfo': {}, 'downloadPath': 'string', 'encrypted': True, 'fileFormat': 'string', 'fileSize': 'string', 'id': 'string', 'md5Checksum': 'string', 'name': 'string', 'nameSpace': 'string', 'sftpServerList': [{}], 'sha1Checksum': 'string', 'taskId': 'string'}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -4361,9 +4399,9 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_FILE_8da92eb483645b8ca9bbfef92cbac857(self):
+    def matches_FILE_3113e7fb3df05906b8cd6077d4d9cc5c(self):
         return re.search(
-            self.FILE_8da92eb483645b8ca9bbfef92cbac857_PATTERN,
+            self.FILE_3113e7fb3df05906b8cd6077d4d9cc5c_PATTERN,
             self.path
         )
 
@@ -4537,7 +4575,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             self.path
         )
 
-    def lan_automation_lan_automation2_response(self):
+    def lan_automation_lan_automation_start_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -4639,7 +4677,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             self.path
         )
 
-    def lan_automation_lan_automation_response(self):
+    def lan_automation_lan_automation_stop_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -5224,7 +5262,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6125,7 +6163,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'deviceManagementIpAddress': 'string', 'siteNameHierarchy': 'string', 'status': 'string', 'description': 'string', 'taskId': {}, 'taskStatusUrl': 'string', 'executionStatusUrl': 'string'})
+        response_content = json.dumps({'deviceManagementIpAddress': 'string', 'siteNameHierarchy': 'string', 'status': 'string', 'description': 'string', 'taskId': 'string', 'taskStatusUrl': 'string', 'executionStatusUrl': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6278,7 +6316,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'virtualNetworkName': 'string', 'isGuestVirtualNetwork': True, 'scalableGroupNames': ['string'], 'status': 'string', 'description': 'string', 'taskId': {}, 'taskStatusUrl': 'string', 'executionStatusUrl': 'string'})
+        response_content = json.dumps({'virtualNetworkName': 'string', 'isGuestVirtualNetwork': True, 'scalableGroupNames': ['string'], 'status': 'string', 'description': 'string', 'taskId': 'string', 'taskStatusUrl': 'string', 'executionStatusUrl': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6397,7 +6435,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'_id': 'string', 'name': 'string', 'version': 0, 'modelVersion': 0, 'startTime': 0, 'lastModifiedTime': 0, 'numAssociatedSensor': 0, 'location': {}, 'siteHierarchy': {}, 'status': 'string', 'connection': 'string', 'frequency': {}, 'rssiThreshold': 0, 'numNeighborAPThreshold': 0, 'scheduleInDays': 0, 'wlans': [{}], 'ssids': [{'bands': {}, 'ssid': 'string', 'profileName': 'string', 'authType': 'string', 'authTypeRcvd': {}, 'psk': 'string', 'username': {}, 'password': {}, 'eapMethod': {}, 'scep': True, 'authProtocol': {}, 'certfilename': {}, 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': {}, 'certdownloadurl': {}, 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': {}, 'layer3webAuthuserName': {}, 'layer3webAuthpassword': {}, 'extWebAuthVirtualIp': {}, 'layer3webAuthEmailAddress': {}, 'qosPolicy': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': {}, 'extWebAuthAccessUrl': {}, 'extWebAuthHtmlTag': [{}], 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': {}, 'validFrom': 0, 'validTo': 0, 'status': 'string', 'tests': [{'name': 'string', 'config': {}}]}], 'testScheduleMode': 'string', 'showWlcUpgradeBanner': True, 'radioAsSensorRemoved': True, 'encryptionMode': 'string', 'runNow': 'string', 'locationInfoList': [{'locationId': 'string', 'locationType': 'string', 'allSensors': True, 'siteHierarchy': 'string', 'macAddressList': [{}]}], 'schedule': {'testScheduleMode': 'string', 'scheduleRange': [{'timeRange': [{'from': 'string', 'to': 'string', 'frequency': {'value': 0, 'unit': 'string'}}], 'day': 'string'}], 'startTime': 0, 'frequency': {'value': 0, 'unit': 'string'}}, 'tests': {}, 'sensors': [{}], 'apCoverage': [{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}], 'testDurationEstimate': 0, 'testTemplate': True, 'legacyTestSuite': True, 'tenantId': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'_id': 'string', 'name': 'string', 'version': 0, 'modelVersion': 0, 'startTime': 0, 'lastModifiedTime': 0, 'numAssociatedSensor': 0, 'location': {}, 'siteHierarchy': {}, 'status': 'string', 'connection': 'string', 'frequency': {}, 'rssiThreshold': 0, 'numNeighborAPThreshold': 0, 'scheduleInDays': 0, 'wlans': [{}], 'ssids': [{'bands': {}, 'ssid': 'string', 'profileName': 'string', 'authType': 'string', 'authTypeRcvd': {}, 'psk': 'string', 'username': {}, 'password': {}, 'eapMethod': {}, 'scep': True, 'authProtocol': {}, 'certfilename': {}, 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': {}, 'certdownloadurl': {}, 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': {}, 'layer3webAuthuserName': {}, 'layer3webAuthpassword': {}, 'extWebAuthVirtualIp': {}, 'layer3webAuthEmailAddress': {}, 'qosPolicy': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': {}, 'extWebAuthAccessUrl': {}, 'extWebAuthHtmlTag': [{}], 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': {}, 'validFrom': 0, 'validTo': 0, 'status': 'string', 'tests': [{'name': 'string', 'config': [{}]}]}], 'testScheduleMode': 'string', 'showWlcUpgradeBanner': True, 'radioAsSensorRemoved': True, 'encryptionMode': 'string', 'runNow': 'string', 'locationInfoList': [{'locationId': 'string', 'locationType': 'string', 'allSensors': True, 'siteHierarchy': 'string', 'macAddressList': [{}]}], 'schedule': {'testScheduleMode': 'string', 'scheduleRange': [{'timeRange': [{'from': 'string', 'to': 'string', 'frequency': {'value': 0, 'unit': 'string'}}], 'day': 'string'}], 'startTime': 0, 'frequency': {'value': 0, 'unit': 'string'}}, 'tests': {}, 'sensors': [{}], 'apCoverage': [{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}], 'testDurationEstimate': 0, 'testTemplate': True, 'legacyTestSuite': True, 'tenantId': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6414,7 +6452,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'_id': 'string', 'name': 'string', 'version': 0, 'modelVersion': 0, 'startTime': 0, 'lastModifiedTime': 0, 'numAssociatedSensor': 0, 'location': {}, 'siteHierarchy': {}, 'status': 'string', 'connection': 'string', 'frequency': {}, 'rssiThreshold': 0, 'numNeighborAPThreshold': 0, 'scheduleInDays': 0, 'wlans': [{}], 'ssids': [{'bands': {}, 'ssid': 'string', 'profileName': 'string', 'authType': 'string', 'authTypeRcvd': {}, 'psk': 'string', 'username': {}, 'password': {}, 'eapMethod': {}, 'scep': True, 'authProtocol': {}, 'certfilename': {}, 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': {}, 'certdownloadurl': {}, 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': {}, 'layer3webAuthuserName': {}, 'layer3webAuthpassword': {}, 'extWebAuthVirtualIp': {}, 'layer3webAuthEmailAddress': {}, 'qosPolicy': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': {}, 'extWebAuthAccessUrl': {}, 'extWebAuthHtmlTag': [{}], 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': {}, 'validFrom': 0, 'validTo': 0, 'status': 'string', 'tests': [{'name': 'string', 'config': {}}]}], 'testScheduleMode': 'string', 'showWlcUpgradeBanner': True, 'radioAsSensorRemoved': True, 'encryptionMode': 'string', 'runNow': 'string', 'locationInfoList': [{}], 'schedule': {}, 'tests': {}, 'sensors': [{}], 'apCoverage': [{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}], 'testDurationEstimate': 0, 'testTemplate': True, 'legacyTestSuite': True, 'tenantId': {}}})
+        response_content = json.dumps({'version': 'string', 'response': {'_id': 'string', 'name': 'string', 'version': 0, 'modelVersion': 0, 'startTime': 0, 'lastModifiedTime': 0, 'numAssociatedSensor': 0, 'location': {}, 'siteHierarchy': {}, 'status': 'string', 'connection': 'string', 'frequency': {}, 'rssiThreshold': 0, 'numNeighborAPThreshold': 0, 'scheduleInDays': 0, 'wlans': [{}], 'ssids': [{'bands': {}, 'ssid': 'string', 'profileName': 'string', 'authType': 'string', 'authTypeRcvd': {}, 'psk': 'string', 'username': {}, 'password': {}, 'eapMethod': {}, 'scep': True, 'authProtocol': {}, 'certfilename': {}, 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': {}, 'certdownloadurl': {}, 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': {}, 'layer3webAuthuserName': {}, 'layer3webAuthpassword': {}, 'extWebAuthVirtualIp': {}, 'layer3webAuthEmailAddress': {}, 'qosPolicy': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': {}, 'extWebAuthAccessUrl': {}, 'extWebAuthHtmlTag': [{}], 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': {}, 'validFrom': 0, 'validTo': 0, 'status': 'string', 'tests': [{'name': 'string', 'config': [{}]}]}], 'testScheduleMode': 'string', 'showWlcUpgradeBanner': True, 'radioAsSensorRemoved': True, 'encryptionMode': 'string', 'runNow': 'string', 'locationInfoList': [{}], 'schedule': {}, 'tests': {}, 'sensors': [{}], 'apCoverage': [{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}], 'testDurationEstimate': 0, 'testTemplate': True, 'legacyTestSuite': True, 'tenantId': {}}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6482,7 +6520,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'_id': 'string', 'name': 'string', 'version': 0, 'modelVersion': 0, 'startTime': 0, 'lastModifiedTime': 0, 'numAssociatedSensor': 0, 'location': {}, 'siteHierarchy': {}, 'status': 'string', 'connection': 'string', 'frequency': {}, 'rssiThreshold': 0, 'numNeighborAPThreshold': 0, 'scheduleInDays': 0, 'wlans': [{}], 'ssids': [{'bands': {}, 'ssid': 'string', 'profileName': 'string', 'authType': 'string', 'authTypeRcvd': {}, 'psk': 'string', 'username': {}, 'password': {}, 'eapMethod': {}, 'scep': True, 'authProtocol': {}, 'certfilename': {}, 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': {}, 'certdownloadurl': {}, 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': {}, 'layer3webAuthuserName': {}, 'layer3webAuthpassword': {}, 'extWebAuthVirtualIp': {}, 'layer3webAuthEmailAddress': {}, 'qosPolicy': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': {}, 'extWebAuthAccessUrl': {}, 'extWebAuthHtmlTag': [{}], 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': {}, 'validFrom': 0, 'validTo': 0, 'status': 'string', 'tests': [{'name': 'string', 'config': {}}]}], 'testScheduleMode': 'string', 'showWlcUpgradeBanner': True, 'radioAsSensorRemoved': True, 'encryptionMode': 'string', 'runNow': 'string', 'locationInfoList': [{'locationId': 'string', 'locationType': 'string', 'allSensors': True, 'siteHierarchy': 'string', 'macAddressList': [{}]}], 'schedule': {'testScheduleMode': 'string', 'scheduleRange': [{'timeRange': [{'from': 'string', 'to': 'string', 'frequency': {'value': 0, 'unit': 'string'}}], 'day': 'string'}], 'startTime': 0, 'frequency': {'value': 0, 'unit': 'string'}}, 'tests': {}, 'sensors': [{}], 'apCoverage': [{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}], 'testDurationEstimate': 0, 'testTemplate': True, 'legacyTestSuite': True, 'tenantId': {}}})
+        response_content = json.dumps({'version': 'string', 'response': {'_id': 'string', 'name': 'string', 'version': 0, 'modelVersion': 0, 'startTime': 0, 'lastModifiedTime': 0, 'numAssociatedSensor': 0, 'location': {}, 'siteHierarchy': {}, 'status': 'string', 'connection': 'string', 'frequency': {}, 'rssiThreshold': 0, 'numNeighborAPThreshold': 0, 'scheduleInDays': 0, 'wlans': [{}], 'ssids': [{'bands': {}, 'ssid': 'string', 'profileName': 'string', 'authType': 'string', 'authTypeRcvd': {}, 'psk': 'string', 'username': {}, 'password': {}, 'eapMethod': {}, 'scep': True, 'authProtocol': {}, 'certfilename': {}, 'certxferprotocol': 'string', 'certstatus': 'string', 'certpassphrase': {}, 'certdownloadurl': {}, 'numAps': 0, 'numSensors': 0, 'layer3webAuthsecurity': {}, 'layer3webAuthuserName': {}, 'layer3webAuthpassword': {}, 'extWebAuthVirtualIp': {}, 'layer3webAuthEmailAddress': {}, 'qosPolicy': 'string', 'extWebAuth': True, 'whiteList': True, 'extWebAuthPortal': {}, 'extWebAuthAccessUrl': {}, 'extWebAuthHtmlTag': [{}], 'thirdParty': {'selected': True}, 'id': 0, 'wlanId': 0, 'wlc': {}, 'validFrom': 0, 'validTo': 0, 'status': 'string', 'tests': [{'name': 'string', 'config': [{}]}]}], 'testScheduleMode': 'string', 'showWlcUpgradeBanner': True, 'radioAsSensorRemoved': True, 'encryptionMode': 'string', 'runNow': 'string', 'locationInfoList': [{'locationId': 'string', 'locationType': 'string', 'allSensors': True, 'siteHierarchy': 'string', 'macAddressList': [{}]}], 'schedule': {'testScheduleMode': 'string', 'scheduleRange': [{'timeRange': [{'from': 'string', 'to': 'string', 'frequency': {'value': 0, 'unit': 'string'}}], 'day': 'string'}], 'startTime': 0, 'frequency': {'value': 0, 'unit': 'string'}}, 'tests': {}, 'sensors': [{}], 'apCoverage': [{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}], 'testDurationEstimate': 0, 'testTemplate': True, 'legacyTestSuite': True, 'tenantId': {}}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6533,7 +6571,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6550,7 +6588,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6652,7 +6690,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'site': {'response': {}, 'version': 'string'}, 'device': [{'response': {}, 'version': 'string', 'siteId': 'string'}]})
+        response_content = json.dumps({'site': {'response': [{}], 'version': 'string'}, 'device': [{'response': [{}], 'version': 'string', 'siteId': 'string'}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6788,7 +6826,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6805,7 +6843,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6907,7 +6945,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6924,7 +6962,41 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'taskId': {}, 'url': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_SYSTEM_SETTINGS_ada20dc4915d5901b50634628392e79f(self):
+        return re.search(
+            self.SYSTEM_SETTINGS_ada20dc4915d5901b50634628392e79f_PATTERN,
+            self.path
+        )
+
+    def system_settings_custom_prompt_support_g_e_t_ap_i_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'customUsernamePrompt': 'string', 'customPasswordPrompt': 'string', 'defaultUsernamePrompt': 'string', 'defaultPasswordPrompt': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_SYSTEM_SETTINGS_d2ea814bfae85da1b77872d095fc8221(self):
+        return re.search(
+            self.SYSTEM_SETTINGS_d2ea814bfae85da1b77872d095fc8221_PATTERN,
+            self.path
+        )
+
+    def system_settings_custom_prompt_p_o_s_t_ap_i_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6941,7 +7013,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6975,7 +7047,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7009,7 +7081,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7043,7 +7115,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7094,7 +7166,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7128,7 +7200,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'version': 'string', 'response': {'taskId': {}, 'url': 'string'}})
+        response_content = json.dumps({'version': 'string', 'response': {'taskId': 'string', 'url': 'string'}})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -8504,6 +8576,10 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             self.software_image_management_swim_get_golden_tag_status_of_an_image_response()
             return
 
+        if self.matches_SYSTEM_SETTINGS_ada20dc4915d5901b50634628392e79f():
+            self.system_settings_custom_prompt_support_g_e_t_ap_i_response()
+            return
+
         if self.matches_TAG_983979a4185f5b40aabe991f8cdb2816():
             self.tag_get_tag_response()
             return
@@ -8623,6 +8699,14 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
 
         if self.matches_APPLICATION_POLICY_d045d18062ad5ae59c6f446beb17d675():
             self.application_policy_create_qos_device_interface_info_response()
+            return
+
+        if self.matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173():
+            self.authentication_management_import_certificate_response()
+            return
+
+        if self.matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22():
+            self.authentication_management_import_certificate_p12_response()
             return
 
         if self.matches_COMMAND_RUNNER_b2dae3b41636596aa02c3ad0a4bcb8d7():
@@ -8821,7 +8905,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             self.fabric_wireless_add_w_l_c_to_fabric_domain_response()
             return
 
-        if self.matches_FILE_8da92eb483645b8ca9bbfef92cbac857():
+        if self.matches_FILE_3113e7fb3df05906b8cd6077d4d9cc5c():
             self.file_upload_file_response()
             return
 
@@ -8830,7 +8914,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             return
 
         if self.matches_LAN_AUTOMATION_b119a4d455e35cc3b2cc6695a045cbfa():
-            self.lan_automation_lan_automation2_response()
+            self.lan_automation_lan_automation_start_response()
             return
 
         if self.matches_LICENSES_4bd5b507f58a50aab614e3d7409eec4c():
@@ -8975,6 +9059,10 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
 
         if self.matches_SOFTWARE_IMAGE_MANAGEMENT_SWIM_7be8cdb967555fcca03a4c1f796eee56():
             self.software_image_management_swim_import_software_image_via_url_response()
+            return
+
+        if self.matches_SYSTEM_SETTINGS_d2ea814bfae85da1b77872d095fc8221():
+            self.system_settings_custom_prompt_p_o_s_t_ap_i_response()
             return
 
         if self.matches_TAG_e8271b05b62c54609f74b4f2f373ad5a():
@@ -9298,7 +9386,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             return
 
         if self.matches_LAN_AUTOMATION_ed815ca3e5ab5ae48720795217ec776b():
-            self.lan_automation_lan_automation_response()
+            self.lan_automation_lan_automation_stop_response()
             return
 
         if self.matches_NETWORK_SETTINGS_598e8e021f1c51eeaf0d102084481486():

@@ -166,12 +166,14 @@ def test_download_a_file_by_fileid_default_val(api, validator):
 
 
 def is_valid_upload_file(json_schema_validate, obj):
-    json_schema_validate('jsd_8da92eb483645b8ca9bbfef92cbac857_v2_3_2_0').validate(obj)
+    json_schema_validate('jsd_3113e7fb3df05906b8cd6077d4d9cc5c_v2_3_2_0').validate(obj)
     return True
 
 
 def upload_file(api):
     endpoint_result = api.file.upload_file(
+        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
+        multipart_monitor_callback=None,
         active_validation=True,
         name_space='string',
         payload=None
@@ -194,6 +196,8 @@ def test_upload_file(api, validator):
 
 def upload_file_default_val(api):
     endpoint_result = api.file.upload_file(
+        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
+        multipart_monitor_callback=None,
         active_validation=True,
         name_space='string',
         payload=None

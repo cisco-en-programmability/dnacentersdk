@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center LANAutomation2 data model.
+"""Cisco DNA Center LANAutomationStart data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -38,7 +38,7 @@ from builtins import *
 
 
 class JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa(object):
-    """LANAutomation2 request schema definition."""
+    """LANAutomationStart request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -508,7 +508,6 @@ def add_members_to_the_tag(api):
     endpoint_result = api.tag.add_members_to_the_tag(
         active_validation=True,
         id='string',
-        object='string',
         payload=None
     )
     return endpoint_result
@@ -531,7 +530,6 @@ def add_members_to_the_tag_default_val(api):
     endpoint_result = api.tag.add_members_to_the_tag(
         active_validation=True,
         id='string',
-        object=None,
         payload=None
     )
     return endpoint_result

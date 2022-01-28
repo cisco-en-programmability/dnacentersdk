@@ -299,7 +299,9 @@ class JSONSchemaValidatorA352F6280E445075B3Ea7Cbf868C2D94(object):
                 "items": {
                 "properties": {
                 "config": {
-                "items": {}
+                "items": {
+                "type": "object"
+                }
                 },
                 "name": {
                 "type": "string"

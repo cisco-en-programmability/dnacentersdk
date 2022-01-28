@@ -770,7 +770,6 @@ class Tag(object):
 
     def add_members_to_the_tag(self,
                                id,
-                               object=None,
                                headers=None,
                                payload=None,
                                active_validation=True,
@@ -778,7 +777,6 @@ class Tag(object):
         """Adds members to the tag specified by id .
 
         Args:
-            object(string): Tag's object.
             id(basestring): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -816,8 +814,6 @@ class Tag(object):
             'id': id,
         }
         _payload = {
-            'object':
-                object,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)

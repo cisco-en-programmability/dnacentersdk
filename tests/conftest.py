@@ -174,6 +174,9 @@ def pytest_configure(config):
         "markers", "software_image_management_swim: software_image_management_swim wrapper test"
     )
     config.addinivalue_line(
+        "markers", "system_settings: system_settings wrapper test"
+    )
+    config.addinivalue_line(
         "markers", "tag: tag wrapper test"
     )
     config.addinivalue_line(

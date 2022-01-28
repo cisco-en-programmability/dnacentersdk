@@ -2443,13 +2443,13 @@ class EventManagement(object):
 
     def create_webhook_destination(self,
                                    description=None,
-                                   headers=None,
+                                   operation_headers=None,
                                    method=None,
                                    name=None,
                                    trustCert=None,
                                    url=None,
                                    webhookId=None,
-                                   operation_headers=None,
+                                   headers=None,
                                    payload=None,
                                    active_validation=True,
                                    **request_parameters):
@@ -2457,7 +2457,7 @@ class EventManagement(object):
 
         Args:
             description(string): Event Management's Description.
-            headers(list): Event Management's headers (list of objects).
+            operation_headers(list): Event Management's headers (list of objects).
             method(string): Event Management's Method. Available values are 'POST' and 'PUT'.
             name(string): Event Management's Name.
             trustCert(boolean): Event Management's Trust Cert.
@@ -2484,9 +2484,6 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
                            basestring, may_be_none=False)
@@ -2540,13 +2537,13 @@ class EventManagement(object):
 
     def update_webhook_destination(self,
                                    description=None,
-                                   headers=None,
+                                   operation_headers=None,
                                    method=None,
                                    name=None,
                                    trustCert=None,
                                    url=None,
                                    webhookId=None,
-                                   operation_headers=None,
+                                   headers=None,
                                    payload=None,
                                    active_validation=True,
                                    **request_parameters):
@@ -2554,7 +2551,7 @@ class EventManagement(object):
 
         Args:
             description(string): Event Management's Description.
-            headers(list): Event Management's headers (list of objects).
+            operation_headers(list): Event Management's headers (list of objects).
             method(string): Event Management's Method. Available values are 'POST' and 'PUT'.
             name(string): Event Management's Name.
             trustCert(boolean): Event Management's Trust Cert.

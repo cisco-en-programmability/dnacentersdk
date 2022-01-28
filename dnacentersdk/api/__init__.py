@@ -488,6 +488,8 @@ from .v2_3_2_0.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_2_0
 from .v2_3_2_0.applications import \
     Applications as Applications_v2_3_2_0
+from .v2_3_2_0.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_3_2_0
 from .v2_3_2_0.clients import \
     Clients as Clients_v2_3_2_0
 from .v2_3_2_0.command_runner import \
@@ -546,6 +548,8 @@ from .v2_3_2_0.sites import \
     Sites as Sites_v2_3_2_0
 from .v2_3_2_0.software_image_management_swim import \
     SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_3_2_0
+from .v2_3_2_0.system_settings import \
+    SystemSettings as SystemSettings_v2_3_2_0
 from .v2_3_2_0.tag import \
     Tag as Tag_v2_3_2_0
 from .v2_3_2_0.task import \
@@ -1626,6 +1630,10 @@ class DNACenterAPI(object):
                 Applications_v2_3_2_0(
                     self._session, object_factory, _validator
                 )
+            self.authentication_management = \
+                AuthenticationManagement_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
             self.clients = \
                 Clients_v2_3_2_0(
                     self._session, object_factory, _validator
@@ -1740,6 +1748,10 @@ class DNACenterAPI(object):
                 )
             self.software_image_management_swim = \
                 SoftwareImageManagementSwim_v2_3_2_0(
+                    self._session, object_factory, _validator
+                )
+            self.system_settings = \
+                SystemSettings_v2_3_2_0(
                     self._session, object_factory, _validator
                 )
             self.tag = \

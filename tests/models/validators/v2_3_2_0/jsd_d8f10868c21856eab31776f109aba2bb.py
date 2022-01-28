@@ -62,7 +62,7 @@ class JSONSchemaValidatorD8F10868C21856EaB31776F109Aba2Bb(object):
                 "type": "string"
                 },
                 "taskId": {
-                "type": "object"
+                "type": "string"
                 },
                 "taskStatusUrl": {
                 "type": "string"

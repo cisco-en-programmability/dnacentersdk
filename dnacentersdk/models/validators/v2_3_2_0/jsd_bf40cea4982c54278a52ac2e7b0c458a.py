@@ -54,7 +54,12 @@ class JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A(object):
                 "mainTemplateId": {
                 "type": "string"
                 },
-                "memberTemplateDeploymentInfo": {},
+                "memberTemplateDeploymentInfo": {
+                "items": {
+                "type": "object"
+                },
+                "type": "array"
+                },
                 "targetInfo": {
                 "items": {
                 "properties": {
