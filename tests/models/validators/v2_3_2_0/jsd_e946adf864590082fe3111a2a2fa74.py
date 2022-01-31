@@ -48,7 +48,8 @@ class JSONSchemaValidatorE946AdF864590082Fe3111A2A2Fa74(object):
                 "response": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "version": {
                 "type": "string"

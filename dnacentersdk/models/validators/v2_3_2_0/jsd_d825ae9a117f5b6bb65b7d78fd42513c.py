@@ -62,7 +62,8 @@ class JSONSchemaValidatorD825Ae9A117F5B6BB65B7D78Fd42513C(object):
                 "managedAPLocations": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ssidDetails": {
                 "properties": {

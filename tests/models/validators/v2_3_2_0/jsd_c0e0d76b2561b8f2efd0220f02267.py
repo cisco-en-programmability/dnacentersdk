@@ -99,7 +99,8 @@ class JSONSchemaValidatorC0E0D76B2561B8F2EFd0220F02267(object):
                 "eventTemplates": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "isPrivate": {
                 "type": "string"
@@ -125,12 +126,14 @@ class JSONSchemaValidatorC0E0D76B2561B8F2EFd0220F02267(object):
                 "supportedConnectorTypes": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "tags": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "tenantId": {
                 "type": "string"

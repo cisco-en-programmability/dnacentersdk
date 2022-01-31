@@ -94,7 +94,8 @@ class JSONSchemaValidatorFe6D62EdCec25921926043Ca25F75Bed(object):
                 "required": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"
@@ -147,7 +148,8 @@ class JSONSchemaValidatorFe6D62EdCec25921926043Ca25F75Bed(object):
                 "required": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"
@@ -169,7 +171,8 @@ class JSONSchemaValidatorFe6D62EdCec25921926043Ca25F75Bed(object):
                 "required": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

@@ -60,7 +60,8 @@ class JSONSchemaValidatorD5727C4BDb1056308Cd10E99Dff2Acb8(object):
                 "ipAddressInUseList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "name": {
                 "type": "string"
@@ -105,7 +106,8 @@ class JSONSchemaValidatorD5727C4BDb1056308Cd10E99Dff2Acb8(object):
                 "primaryDeviceInterfaceNames": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "primaryDeviceManagmentIPAddress": {
                 "type": "string"

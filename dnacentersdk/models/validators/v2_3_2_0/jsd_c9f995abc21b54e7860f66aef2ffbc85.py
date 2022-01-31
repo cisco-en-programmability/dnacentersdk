@@ -75,7 +75,8 @@ class JSONSchemaValidatorC9F995AbC21B54E7860F66Aef2Ffbc85(object):
                 "values": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

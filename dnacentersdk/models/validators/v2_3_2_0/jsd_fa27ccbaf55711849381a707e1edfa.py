@@ -56,12 +56,14 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "groupId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ssid": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -178,7 +180,8 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "deleteList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "updateList": {
                 "items": {
@@ -191,7 +194,8 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "groupId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -199,7 +203,8 @@ class JSONSchemaValidatorFa27CcBaf55711849381A707E1Edfa(object):
                 "ssid": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

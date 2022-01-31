@@ -51,7 +51,8 @@ class JSONSchemaValidatorF5EBb9D50AaB287F320D32181C0(object):
                 "scalableGroupNames": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "virtualNetworkName": {
                 "type": "string"

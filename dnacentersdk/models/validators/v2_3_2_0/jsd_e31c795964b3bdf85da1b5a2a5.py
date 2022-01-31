@@ -78,7 +78,8 @@ class JSONSchemaValidatorE31C795964B3BdF85Da1B5A2A5(object):
                 "managedAPLocations": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "site": {
                 "type": "string"

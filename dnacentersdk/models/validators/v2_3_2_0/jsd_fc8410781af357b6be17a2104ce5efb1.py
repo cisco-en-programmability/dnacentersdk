@@ -70,12 +70,14 @@ class JSONSchemaValidatorFc8410781Af357B6Be17A2104Ce5Efb1(object):
                 "fqdnAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "port": {
                 "type": "integer"
@@ -141,7 +143,8 @@ class JSONSchemaValidatorFc8410781Af357B6Be17A2104Ce5Efb1(object):
                 "deviceSnList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "syncType": {
                 "enum": [

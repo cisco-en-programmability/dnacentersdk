@@ -68,7 +68,8 @@ class JSONSchemaValidatorD420225889Bb16F99Ec7Ba099A(object):
                 "toEmailAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

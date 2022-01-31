@@ -72,12 +72,14 @@ class JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860(object):
                 "ipAddress": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "merakiOrgId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "netconfPort": {
                 "type": "string"

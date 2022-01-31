@@ -55,7 +55,8 @@ class JSONSchemaValidatorF131D712Dc253DcA528C0298B3E41C6(object):
                 "t1": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

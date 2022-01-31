@@ -76,7 +76,8 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "dhcpServer": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "dnsServer": {
                 "properties": {
@@ -158,7 +159,8 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "ntpServer": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "snmpServer": {
                 "properties": {
@@ -168,7 +170,8 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "ipAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -181,7 +184,8 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "ipAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

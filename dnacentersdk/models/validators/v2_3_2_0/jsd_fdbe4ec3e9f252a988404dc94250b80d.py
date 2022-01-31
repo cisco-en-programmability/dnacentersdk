@@ -54,12 +54,14 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "enablePasswordList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "globalCredentialIdList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "httpReadCredential": {
                 "properties": {
@@ -101,7 +103,8 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "ipFilterList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "lldpLevel": {
                 "type": "integer"
@@ -115,7 +118,8 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "passwordList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "preferredMgmtIPMethod": {
                 "type": "string"
@@ -165,7 +169,8 @@ class JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D(object):
                 "userNameList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

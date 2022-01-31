@@ -48,7 +48,8 @@ class JSONSchemaValidator97E350A7A690Cdfeffa5Eaca(object):
                 "deviceIdList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

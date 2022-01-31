@@ -59,7 +59,8 @@ class JSONSchemaValidatorFae4378EF4E2503F9Fef4F3A4Ddd4De4(object):
                 "groupId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -79,7 +80,8 @@ class JSONSchemaValidatorFae4378EF4E2503F9Fef4F3A4Ddd4De4(object):
                 "ssid": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -113,7 +115,8 @@ class JSONSchemaValidatorFae4378EF4E2503F9Fef4F3A4Ddd4De4(object):
                 "cfsChangeInfo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "consumer": {
                 "properties": {
@@ -152,7 +155,8 @@ class JSONSchemaValidatorFae4378EF4E2503F9Fef4F3A4Ddd4De4(object):
                 "contractList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "createTime": {
                 "type": "integer"
@@ -160,7 +164,8 @@ class JSONSchemaValidatorFae4378EF4E2503F9Fef4F3A4Ddd4De4(object):
                 "customProvisions": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deletePolicyStatus": {
                 "enum": [
@@ -411,7 +416,8 @@ class JSONSchemaValidatorFae4378EF4E2503F9Fef4F3A4Ddd4De4(object):
                 "targetIdList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

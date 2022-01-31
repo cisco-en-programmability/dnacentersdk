@@ -48,7 +48,8 @@ class JSONSchemaValidatorE722E05046D5262B55C125237E9B67D(object):
                 "jsonArrayResponse": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "jsonResponse": {
                 "type": "object"

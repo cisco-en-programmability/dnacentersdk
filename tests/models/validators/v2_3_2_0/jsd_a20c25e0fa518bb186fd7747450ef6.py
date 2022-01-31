@@ -126,7 +126,8 @@ class JSONSchemaValidatorA20C25E0Fa518BB186Fd7747450Ef6(object):
                 "label": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "linkStatus": {
                 "type": "string"

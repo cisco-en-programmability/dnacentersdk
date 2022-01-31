@@ -77,17 +77,20 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "dhcpServerIps": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "dnsServerIps": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "gateways": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"

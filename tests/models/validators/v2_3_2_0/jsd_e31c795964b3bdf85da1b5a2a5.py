@@ -56,12 +56,14 @@ class JSONSchemaValidatorE31C795964B3BdF85Da1B5A2A5(object):
                 "failed": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "success": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

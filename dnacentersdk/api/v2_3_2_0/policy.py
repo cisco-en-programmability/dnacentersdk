@@ -114,8 +114,8 @@ class Policy(object):
                 Default - Dynamic', 'Custom Rule' and 'ML Rule'.
             ruleVersion(integer): Policy's Version of the rule. .
             sourcePriority(integer): Policy's Source priority for the rule. .
-            usedAttributes(): Policy's List of attributes used in the rule. Only applicable for 'Cisco Default'
-                rules. .
+            usedAttributes(list): Policy's List of attributes used in the rule. Only applicable for 'Cisco Default'
+                rules.  (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -485,8 +485,8 @@ class Policy(object):
                 Default - Dynamic', 'Custom Rule' and 'ML Rule'.
             ruleVersion(integer): Policy's Version of the rule. .
             sourcePriority(integer): Policy's Source priority for the rule. .
-            usedAttributes(): Policy's List of attributes used in the rule. Only applicable for 'Cisco Default'
-                rules. .
+            usedAttributes(list): Policy's List of attributes used in the rule. Only applicable for 'Cisco Default'
+                rules.  (list of strings).
             rule_id(basestring): ruleId path parameter. Unique rule identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

@@ -55,7 +55,8 @@ class JSONSchemaValidatorFb5A8C0075563491622171958074Bf(object):
                 "categories": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "domainsSubdomains": {
                 "items": {
@@ -66,7 +67,8 @@ class JSONSchemaValidatorFb5A8C0075563491622171958074Bf(object):
                 "subDomains": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -76,27 +78,32 @@ class JSONSchemaValidatorFb5A8C0075563491622171958074Bf(object):
                 "eventIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "severities": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "siteIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sources": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "types": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

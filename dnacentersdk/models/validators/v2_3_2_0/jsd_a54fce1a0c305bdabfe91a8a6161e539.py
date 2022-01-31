@@ -57,7 +57,8 @@ class JSONSchemaValidatorA54Fce1A0C305BdaBfe91A8A6161E539(object):
                 "inclusions": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "periodicRefresh": {
                 "type": "boolean"

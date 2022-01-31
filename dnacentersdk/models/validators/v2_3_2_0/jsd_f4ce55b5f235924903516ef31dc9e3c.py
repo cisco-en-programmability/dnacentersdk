@@ -60,7 +60,8 @@ class JSONSchemaValidatorF4Ce55B5F235924903516Ef31Dc9E3C(object):
                 "siteId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "startTime": {
                 "type": "integer"
@@ -68,12 +69,14 @@ class JSONSchemaValidatorF4Ce55B5F235924903516Ef31Dc9E3C(object):
                 "threatLevel": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "threatType": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

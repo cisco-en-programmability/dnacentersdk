@@ -48,12 +48,14 @@ class JSONSchemaValidatorA0A8D545698D1D59A9Be90E51(object):
                 "categories": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "deviceUuids": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "triggerFull": {
                 "type": "boolean"

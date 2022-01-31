@@ -88,7 +88,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "locationInfoList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "modelVersion": {
                 "type": "integer"
@@ -120,7 +121,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "sensors": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "showWlcUpgradeBanner": {
                 "type": "boolean"
@@ -170,7 +172,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "extWebAuthHtmlTag": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "extWebAuthPortal": {
                 "type": "object"
@@ -226,7 +229,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "config": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "name": {
                 "type": "string"
@@ -294,7 +298,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "wlans": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

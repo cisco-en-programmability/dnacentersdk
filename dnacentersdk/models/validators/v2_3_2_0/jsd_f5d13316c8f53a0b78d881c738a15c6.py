@@ -48,7 +48,8 @@ class JSONSchemaValidatorF5D13316C8F53A0B78D881C738A15C6(object):
                 "siteUuids": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

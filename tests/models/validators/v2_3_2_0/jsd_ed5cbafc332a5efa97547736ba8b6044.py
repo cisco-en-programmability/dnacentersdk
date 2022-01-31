@@ -153,12 +153,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -361,12 +363,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -583,12 +587,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -637,12 +643,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -705,12 +713,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -913,12 +923,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -1185,7 +1197,8 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "tunnels": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"
@@ -1292,12 +1305,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -1501,12 +1516,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -1728,12 +1745,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -1782,12 +1801,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -1852,12 +1873,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -2061,12 +2084,14 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "destPorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sourcePorts": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -2338,7 +2363,8 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "tunnels": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"
@@ -2354,7 +2380,8 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "properties": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "request": {
                 "properties": {
@@ -2379,7 +2406,8 @@ class JSONSchemaValidatorEd5Cbafc332A5Efa97547736Ba8B6044(object):
                 "inclusions": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "lastUpdateTime": {
                 "type": "integer"

@@ -97,7 +97,8 @@ class JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068(object):
                 "deviceSnList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "syncType": {
                 "type": "string"

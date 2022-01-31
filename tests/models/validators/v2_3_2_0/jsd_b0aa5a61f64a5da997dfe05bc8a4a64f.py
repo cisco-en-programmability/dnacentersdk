@@ -116,7 +116,8 @@ class JSONSchemaValidatorB0Aa5A61F64A5Da997DfE05Bc8A4A64F(object):
                 "tags": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "tenantId": {
                 "type": "string"

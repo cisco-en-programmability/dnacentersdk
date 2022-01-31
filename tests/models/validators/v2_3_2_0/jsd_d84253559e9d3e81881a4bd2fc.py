@@ -89,17 +89,20 @@ class JSONSchemaValidatorD84253559E9D3E81881A4Bd2Fc(object):
                 "dhcpServerIps": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "dnsServerIps": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "gateways": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "groupUuid": {
                 "type": "string"

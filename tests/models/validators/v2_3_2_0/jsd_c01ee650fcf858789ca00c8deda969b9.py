@@ -50,7 +50,8 @@ class JSONSchemaValidatorC01Ee650Fcf858789Ca00C8Deda969B9(object):
                 "adminEnabledPorts": {
                 "items": {
                 "type": "integer"
-                }
+                },
+                "type": "array"
                 },
                 "apGroupName": {
                 "type": "string"

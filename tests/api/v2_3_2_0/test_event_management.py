@@ -1536,7 +1536,7 @@ def create_webhook_destination(api):
     endpoint_result = api.event_management.create_webhook_destination(
         active_validation=True,
         description='string',
-        headers=[{'name': 'string', 'value': 'string', 'defaultValue': 'string', 'encrypt': True}],
+        operation_headers=[{'name': 'string', 'value': 'string', 'defaultValue': 'string', 'encrypt': True}],
         method='string',
         name='string',
         payload=None,
@@ -1564,7 +1564,7 @@ def create_webhook_destination_default_val(api):
     endpoint_result = api.event_management.create_webhook_destination(
         active_validation=True,
         description=None,
-        headers=None,
+        operation_headers=None,
         method=None,
         name=None,
         payload=None,
@@ -1596,7 +1596,7 @@ def update_webhook_destination(api):
     endpoint_result = api.event_management.update_webhook_destination(
         active_validation=True,
         description='string',
-        headers=[{'name': 'string', 'value': 'string', 'defaultValue': 'string', 'encrypt': True}],
+        operation_headers=[{'name': 'string', 'value': 'string', 'defaultValue': 'string', 'encrypt': True}],
         method='string',
         name='string',
         payload=None,
@@ -1624,7 +1624,7 @@ def update_webhook_destination_default_val(api):
     endpoint_result = api.event_management.update_webhook_destination(
         active_validation=True,
         description=None,
-        headers=None,
+        operation_headers=None,
         method=None,
         name=None,
         payload=None,

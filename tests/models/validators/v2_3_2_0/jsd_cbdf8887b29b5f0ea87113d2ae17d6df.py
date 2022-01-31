@@ -48,7 +48,8 @@ class JSONSchemaValidatorCbdf8887B29B5F0EA87113D2Ae17D6Df(object):
                 "response": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "version": {
                 "type": "string"

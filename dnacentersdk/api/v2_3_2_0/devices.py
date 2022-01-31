@@ -1504,8 +1504,8 @@ class Devices(object):
             httpPort(string): Devices's httpPort.
             httpSecure(boolean): Devices's httpSecure.
             httpUserName(string): Devices's httpUserName.
-            ipAddress(): Devices's ipAddress.
-            merakiOrgId(): Devices's merakiOrgId.
+            ipAddress(list): Devices's ipAddress (list of strings).
+            merakiOrgId(list): Devices's merakiOrgId (list of strings).
             netconfPort(string): Devices's netconfPort.
             password(string): Devices's password.
             serialNumber(string): Devices's serialNumber.
@@ -1679,8 +1679,8 @@ class Devices(object):
             httpPort(string): Devices's httpPort.
             httpSecure(boolean): Devices's httpSecure.
             httpUserName(string): Devices's httpUserName.
-            ipAddress(): Devices's ipAddress.
-            merakiOrgId(): Devices's merakiOrgId.
+            ipAddress(list): Devices's ipAddress (list of strings).
+            merakiOrgId(list): Devices's merakiOrgId (list of strings).
             netconfPort(string): Devices's netconfPort.
             password(string): Devices's password.
             serialNumber(string): Devices's serialNumber.
@@ -2271,11 +2271,11 @@ class Devices(object):
         """Exports the selected network device to a file .
 
         Args:
-            deviceUuids(): Devices's deviceUuids.
+            deviceUuids(list): Devices's deviceUuids (list of strings).
             id(string): Devices's id.
             operationEnum(string): Devices's operationEnum. Available values are 'CREDENTIALDETAILS' and
                 'DEVICEDETAILS'.
-            parameters(): Devices's parameters.
+            parameters(list): Devices's parameters (list of strings).
             password(string): Devices's password.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3858,11 +3858,11 @@ class Devices(object):
 
         return self._object_factory('bpm_b4ba6d23d5e7eb62cbba4c9e1a29d_v2_3_2_0', json_data)
 
-    def get_device_interface_v_lans(self,
-                                    id,
-                                    interface_type=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_device_interface_vlans(self,
+                                   id,
+                                   interface_type=None,
+                                   headers=None,
+                                   **request_parameters):
         """Returns Device Interface VLANs .
 
         Args:
@@ -4110,10 +4110,10 @@ class Devices(object):
             isNewThreat(boolean): Devices's Is New Threat.
             limit(integer): Devices's Limit.
             offset(integer): Devices's Offset.
-            siteId(): Devices's Site Id.
+            siteId(list): Devices's Site Id (list of strings).
             startTime(integer): Devices's Start Time.
-            threatLevel(): Devices's Threat Level.
-            threatType(): Devices's Threat Type.
+            threatLevel(list): Devices's Threat Level (list of strings).
+            threatType(list): Devices's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -4211,10 +4211,10 @@ class Devices(object):
             isNewThreat(boolean): Devices's Is New Threat.
             limit(integer): Devices's Limit.
             offset(integer): Devices's Offset.
-            siteId(): Devices's Site Id.
+            siteId(list): Devices's Site Id (list of strings).
             startTime(integer): Devices's Start Time.
-            threatLevel(): Devices's Threat Level.
-            threatType(): Devices's Threat Type.
+            threatLevel(list): Devices's Threat Level (list of strings).
+            threatType(list): Devices's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -4306,10 +4306,10 @@ class Devices(object):
 
         Args:
             endTime(integer): Devices's End Time.
-            siteId(): Devices's Site Id.
+            siteId(list): Devices's Site Id (list of strings).
             startTime(integer): Devices's Start Time.
-            threatLevel(): Devices's Threat Level.
-            threatType(): Devices's Threat Type.
+            threatLevel(list): Devices's Threat Level (list of strings).
+            threatType(list): Devices's Threat Type (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

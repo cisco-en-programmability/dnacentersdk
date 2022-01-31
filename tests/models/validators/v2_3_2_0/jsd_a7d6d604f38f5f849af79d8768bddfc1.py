@@ -101,7 +101,8 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "addnMacAddrs": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "agentType": {
                 "type": "string"
@@ -118,7 +119,8 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "capabilitiesSupported": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "cmState": {
                 "type": "string"
@@ -130,7 +132,8 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "deviceSudiSerialNos": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "deviceType": {
                 "type": "string"
@@ -138,7 +141,8 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "featuresSupported": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "fileSystemList": {
                 "items": {
@@ -201,7 +205,8 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "ipv6AddressList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "macAddress": {
                 "type": "string"
@@ -464,7 +469,8 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "validLicenseLevels": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -481,12 +487,14 @@ class JSONSchemaValidatorA7D6D604F38F5F849Af79D8768Bddfc1(object):
                 "userMicNumbers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "userSudiSerialNos": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "virtualAccountId": {
                 "type": "string"

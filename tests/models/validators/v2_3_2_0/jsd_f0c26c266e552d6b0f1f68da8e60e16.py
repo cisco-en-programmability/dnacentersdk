@@ -64,7 +64,8 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "dns_servers": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "gateway": {
                 "type": "string"
@@ -78,7 +79,8 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "routes": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -109,7 +111,8 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "slave": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -121,7 +124,8 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "servers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -157,7 +161,8 @@ class JSONSchemaValidatorF0C26C266E552D6B0F1F68Da8E60E16(object):
                 "no_proxy": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

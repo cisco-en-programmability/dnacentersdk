@@ -48,7 +48,8 @@ class JSONSchemaValidatorB2F15D0C54C2862A60A904289Ddd(object):
                 "device_uuids": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

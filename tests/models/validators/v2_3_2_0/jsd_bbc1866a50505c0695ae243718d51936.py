@@ -54,7 +54,8 @@ class JSONSchemaValidatorBbc1866A50505C0695Ae243718D51936(object):
                 "sites": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ssidDetails": {
                 "items": {

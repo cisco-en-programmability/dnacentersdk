@@ -51,7 +51,8 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "deliveries": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "executionCount": {
                 "type": "integer"
@@ -65,7 +66,8 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "errors": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "executionId": {
                 "type": "string"
@@ -82,7 +84,8 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "warnings": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -104,7 +107,8 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
                 "tags": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "view": {
                 "properties": {

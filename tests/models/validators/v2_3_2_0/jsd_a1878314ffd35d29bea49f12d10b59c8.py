@@ -50,7 +50,8 @@ class JSONSchemaValidatorA1878314Ffd35D29Bea49F12D10B59C8(object):
                 "capabilities": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "neighborDevice": {
                 "type": "string"

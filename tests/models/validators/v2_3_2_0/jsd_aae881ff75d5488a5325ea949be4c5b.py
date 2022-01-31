@@ -54,7 +54,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "akcSettingsCfs": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "authEntityClass": {
                 "type": "integer"
@@ -65,12 +66,14 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "cfsChangeInfo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "configs": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "createTime": {
                 "type": "integer"
@@ -78,7 +81,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "customProvisions": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deployPending": {
                 "type": "string"
@@ -89,14 +93,16 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "deviceInterfaceInfo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deviceSettings": {
                 "properties": {
                 "connectedTo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "cpu": {
                 "type": "number"
@@ -140,7 +146,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "l2Handoff": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "l3Handoff": {
                 "items": {
@@ -223,7 +230,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "nodeType": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "storage": {
                 "type": "number"
@@ -258,7 +266,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "managedSites": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "name": {
                 "type": "string"
@@ -274,12 +283,14 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "aaa": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "cmx": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deployPending": {
                 "type": "string"
@@ -361,32 +372,38 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "ldap": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "nativeVlan": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "netflow": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "ntp": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "snmp": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "syslogs": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -394,7 +411,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "otherDevice": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "provisioningState": {
                 "type": "string"
@@ -405,7 +423,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "roles": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "saveWanConnectivityDetailsOnly": {
                 "type": "boolean"
@@ -416,7 +435,8 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "targetIdList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "transitNetworks": {
                 "items": {
@@ -435,12 +455,14 @@ class JSONSchemaValidatorAae881FF75D5488A5325Ea949Be4C5B(object):
                 "virtualNetwork": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "wlan": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

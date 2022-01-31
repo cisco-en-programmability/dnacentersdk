@@ -86,7 +86,7 @@ class FabricWireless(object):
         Args:
             scalableGroupName(string): Fabric Wireless's Scalable Group Name .
             siteNameHierarchy(string): Fabric Wireless's Site Name Hierarchy .
-            ssidNames(): Fabric Wireless's List of SSIDs .
+            ssidNames(list): Fabric Wireless's List of SSIDs  (list of strings).
             vlanName(string): Fabric Wireless's VLAN Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -170,7 +170,7 @@ class FabricWireless(object):
         Args:
             scalableGroupName(string): Fabric Wireless's Scalable Group Name .
             siteNameHierarchy(string): Fabric Wireless's Site Name Hierarchy .
-            ssidNames(): Fabric Wireless's List of SSIDs .
+            ssidNames(list): Fabric Wireless's List of SSIDs  (list of strings).
             vlanName(string): Fabric Wireless's VLAN Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

@@ -66,7 +66,8 @@ class JSONSchemaValidatorB887C55FaAca726Bbe4Ac2564(object):
                 "required": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

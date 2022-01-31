@@ -54,7 +54,8 @@ class JSONSchemaValidatorF90Ae8599C8A21C98B7A1Ca804(object):
                 "ssidNames": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "vlanName": {
                 "type": "string"

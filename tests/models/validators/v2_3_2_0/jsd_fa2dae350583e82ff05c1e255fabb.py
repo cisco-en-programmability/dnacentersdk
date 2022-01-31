@@ -53,7 +53,8 @@ class JSONSchemaValidatorFa2DaE350583E82Ff05C1E255Fabb(object):
                 "errors": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

@@ -217,7 +217,7 @@ class PathTrace(object):
             controlPath(boolean): Path Trace's controlPath.
             destIP(string): Path Trace's destIP.
             destPort(string): Path Trace's destPort.
-            inclusions(): Path Trace's inclusions.
+            inclusions(list): Path Trace's inclusions (list of strings).
             periodicRefresh(boolean): Path Trace's periodicRefresh.
             protocol(string): Path Trace's protocol.
             sourceIP(string): Path Trace's sourceIP.

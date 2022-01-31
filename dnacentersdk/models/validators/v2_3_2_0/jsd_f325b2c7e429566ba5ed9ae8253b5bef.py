@@ -69,7 +69,8 @@ class JSONSchemaValidatorF325B2C7E429566BA5Ed9Ae8253B5Bef(object):
                 "globalCredentialIdList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "httpReadCredential": {
                 "properties": {

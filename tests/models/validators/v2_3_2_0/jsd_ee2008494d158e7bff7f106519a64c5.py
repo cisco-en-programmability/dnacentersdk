@@ -55,7 +55,8 @@ class JSONSchemaValidatorEe2008494D158E7Bff7F106519A64C5(object):
                 "categories": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "domainsSubdomains": {
                 "items": {
@@ -66,7 +67,8 @@ class JSONSchemaValidatorEe2008494D158E7Bff7F106519A64C5(object):
                 "subDomains": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -76,32 +78,38 @@ class JSONSchemaValidatorEe2008494D158E7Bff7F106519A64C5(object):
                 "eventIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "others": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "severities": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "siteIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sources": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "types": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

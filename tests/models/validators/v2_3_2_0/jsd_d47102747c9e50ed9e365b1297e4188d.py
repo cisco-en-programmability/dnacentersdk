@@ -51,7 +51,8 @@ class JSONSchemaValidatorD47102747C9E50Ed9E365B1297E4188D(object):
                 "cfsChangeInfo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "clause": {
                 "items": {
@@ -225,7 +226,8 @@ class JSONSchemaValidatorD47102747C9E50Ed9E365B1297E4188D(object):
                 "contractClassifier": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "createTime": {
                 "type": "integer"
@@ -233,7 +235,8 @@ class JSONSchemaValidatorD47102747C9E50Ed9E365B1297E4188D(object):
                 "customProvisions": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deployed": {
                 "type": "boolean"
@@ -313,7 +316,8 @@ class JSONSchemaValidatorD47102747C9E50Ed9E365B1297E4188D(object):
                 "targetIdList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

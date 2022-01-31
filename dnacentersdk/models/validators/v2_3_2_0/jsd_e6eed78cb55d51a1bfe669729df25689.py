@@ -51,7 +51,8 @@ class JSONSchemaValidatorE6Eed78CB55D51A1Bfe669729Df25689(object):
                 "siteId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "startTime": {
                 "type": "integer"
@@ -59,12 +60,14 @@ class JSONSchemaValidatorE6Eed78CB55D51A1Bfe669729Df25689(object):
                 "threatLevel": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "threatType": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

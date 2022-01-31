@@ -51,7 +51,8 @@ class JSONSchemaValidatorDbdd6074Bedc59B9A3EdD6477897D659(object):
                 "additionalInfo": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"

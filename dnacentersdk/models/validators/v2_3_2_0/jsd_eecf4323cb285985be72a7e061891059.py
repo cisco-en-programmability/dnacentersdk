@@ -59,12 +59,14 @@ class JSONSchemaValidatorEecf4323Cb285985Be72A7E061891059(object):
                 "dhcpServerIps": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "dnsServerIps": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "gateway": {
                 "type": "string"

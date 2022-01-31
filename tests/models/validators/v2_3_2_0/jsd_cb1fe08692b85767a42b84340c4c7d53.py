@@ -58,7 +58,8 @@ class JSONSchemaValidatorCb1Fe08692B85767A42B84340C4C7D53(object):
                 "roles": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "siteHierarchy": {
                 "type": "string"

@@ -128,7 +128,8 @@ class JSONSchemaValidatorF04F865C01D5C17A5F0Cb5Abe620Dd8(object):
                 "feature_license": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "has_sup_cards": {
                 "type": "boolean"

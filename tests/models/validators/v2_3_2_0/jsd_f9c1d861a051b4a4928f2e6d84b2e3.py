@@ -210,7 +210,8 @@ class JSONSchemaValidatorF9C1D861A051B4A4928F2E6D84B2E3(object):
                 "connectedDevice": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "connectionStatus": {
                 "type": "string"
@@ -250,7 +251,8 @@ class JSONSchemaValidatorF9C1D861A051B4A4928F2E6D84B2E3(object):
                 "hostIpV6": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "hostMac": {
                 "type": "string"

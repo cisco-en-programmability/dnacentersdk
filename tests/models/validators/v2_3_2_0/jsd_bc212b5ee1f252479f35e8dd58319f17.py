@@ -55,7 +55,8 @@ class JSONSchemaValidatorBc212B5EE1F252479F35E8Dd58319F17(object):
                 "categories": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "domainsSubdomains": {
                 "items": {
@@ -66,7 +67,8 @@ class JSONSchemaValidatorBc212B5EE1F252479F35E8Dd58319F17(object):
                 "subDomains": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -76,32 +78,38 @@ class JSONSchemaValidatorBc212B5EE1F252479F35E8Dd58319F17(object):
                 "eventIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "others": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "severities": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "siteIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "sources": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "types": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -145,7 +153,8 @@ class JSONSchemaValidatorBc212B5EE1F252479F35E8Dd58319F17(object):
                 "toEmailAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

@@ -172,7 +172,8 @@ class JSONSchemaValidatorDb7B6C4F0542AAb9FE7Cf5C995F83(object):
                 "defaultSelectedValues": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -293,7 +294,8 @@ class JSONSchemaValidatorDb7B6C4F0542AAb9FE7Cf5C995F83(object):
                 "defaultSelectedValues": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -469,7 +471,8 @@ class JSONSchemaValidatorDb7B6C4F0542AAb9FE7Cf5C995F83(object):
                 "defaultSelectedValues": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -599,7 +602,8 @@ class JSONSchemaValidatorDb7B6C4F0542AAb9FE7Cf5C995F83(object):
                 "defaultSelectedValues": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"

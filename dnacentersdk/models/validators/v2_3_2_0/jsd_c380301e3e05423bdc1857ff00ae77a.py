@@ -53,12 +53,14 @@ class JSONSchemaValidatorC380301E3E05423Bdc1857Ff00Ae77A(object):
                 "dhcpServerIps": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "dnsServerIps": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "gateway": {
                 "type": "string"

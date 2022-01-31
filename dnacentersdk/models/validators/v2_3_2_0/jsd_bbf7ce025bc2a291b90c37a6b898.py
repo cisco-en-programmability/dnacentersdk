@@ -53,7 +53,8 @@ class JSONSchemaValidatorBbf7Ce025Bc2A291B90C37A6B898(object):
                 "sites": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ssidDetails": {
                 "items": {

@@ -57,7 +57,8 @@ class JSONSchemaValidatorF73101D5D5E409F571084Ab4C6049(object):
                 "productId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "productName": {
                 "type": "string"
@@ -97,7 +98,8 @@ class JSONSchemaValidatorF73101D5D5E409F571084Ab4C6049(object):
                 "imageSeries": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "imageSource": {
                 "type": "string"

@@ -79,12 +79,14 @@ class JSONSchemaValidatorF278C72555E9A56F554B2A21C85(object):
                 "pathParams": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "queryParams": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "trustCert": {
                 "type": "string"

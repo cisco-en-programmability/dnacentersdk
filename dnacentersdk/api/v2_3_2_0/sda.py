@@ -2743,7 +2743,7 @@ class Sda(object):
 
         Args:
             isGuestVirtualNetwork(boolean): SDA's To create guest virtual network .
-            scalableGroupNames(): SDA's Scalable Group to be associated to virtual network .
+            scalableGroupNames(list): SDA's Scalable Group to be associated to virtual network  (list of strings).
             virtualNetworkName(string): SDA's Virtual Network Name to be assigned at global level .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2933,7 +2933,8 @@ class Sda(object):
 
         Args:
             isGuestVirtualNetwork(boolean): SDA's To create guest virtual network .
-            scalableGroupNames(): SDA's Scalable Group Name to be associated to virtual network .
+            scalableGroupNames(list): SDA's Scalable Group Name to be associated to virtual network  (list of
+                strings).
             virtualNetworkName(string): SDA's Virtual Network Name to be assigned global level .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

@@ -71,7 +71,8 @@ class JSONSchemaValidatorC4370F0A57D85355A7061D7671F1B613(object):
                 "globalCredentialIdList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "httpReadCredential": {
                 "properties": {

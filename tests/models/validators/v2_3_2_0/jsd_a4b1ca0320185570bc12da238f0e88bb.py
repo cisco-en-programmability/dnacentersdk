@@ -51,7 +51,8 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "deliveries": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "executionCount": {
                 "type": "integer"
@@ -65,7 +66,8 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "errors": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "executionId": {
                 "type": "string"
@@ -82,7 +84,8 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "warnings": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -104,7 +107,8 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "tags": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "view": {
                 "properties": {
@@ -115,12 +119,14 @@ class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
                 "fieldGroups": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "filters": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "format": {
                 "type": "object"

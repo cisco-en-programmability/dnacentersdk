@@ -48,7 +48,8 @@ class JSONSchemaValidatorE85B40C5Ca055F4C82281617A8F95644(object):
                 "deviceId": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "password": {
                 "type": "string"

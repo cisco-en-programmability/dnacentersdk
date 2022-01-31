@@ -1007,7 +1007,7 @@ class DeviceOnboardingPnp(object):
         """Un-Claims one of more devices with specified workflow .
 
         Args:
-            deviceIdList(): Device Onboarding (PnP)'s deviceIdList.
+            deviceIdList(list): Device Onboarding (PnP)'s deviceIdList (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

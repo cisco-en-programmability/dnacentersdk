@@ -51,7 +51,8 @@ class JSONSchemaValidatorB1C03688485B44B1547C428A887C5D(object):
                 "advisoryIds": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "deviceId": {
                 "type": "string"

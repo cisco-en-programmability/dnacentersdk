@@ -1036,8 +1036,10 @@ class NetworkSettings(object):
         """API to reserve an ip subpool from the global pool .
 
         Args:
-            ipv4DhcpServers(): Network Settings's IPv4 input for dhcp server ip example: 1.1.1.1 .
-            ipv4DnsServers(): Network Settings's IPv4 input for dns server ip example: 4.4.4.4 .
+            ipv4DhcpServers(list): Network Settings's IPv4 input for dhcp server ip example: 1.1.1.1  (list of
+                strings).
+            ipv4DnsServers(list): Network Settings's IPv4 input for dns server ip example: 4.4.4.4  (list of
+                strings).
             ipv4GateWay(string): Network Settings's Gateway ip address details, example: 175.175.0.1 .
             ipv4GlobalPool(string): Network Settings's IP v4 Global pool address with cidr, example: 175.175.0.0/16
                 .
@@ -1049,8 +1051,10 @@ class NetworkSettings(object):
             ipv4TotalHost(integer): Network Settings's IPv4 total host is required when ipv4prefix value is false. .
             ipv6AddressSpace(boolean): Network Settings's If the value is false only ipv4 input are required,
                 otherwise both ipv6 and ipv4 are required .
-            ipv6DhcpServers(): Network Settings's IPv6 format dhcp server as input example : 2001:db8::1234 .
-            ipv6DnsServers(): Network Settings's IPv6 format dns server input example: 2001:db8::1234 .
+            ipv6DhcpServers(list): Network Settings's IPv6 format dhcp server as input example : 2001:db8::1234
+                (list of strings).
+            ipv6DnsServers(list): Network Settings's IPv6 format dns server input example: 2001:db8::1234  (list of
+                strings).
             ipv6GateWay(string): Network Settings's Gateway ip address details, example: 2001:db8:85a3:0:100::1 .
             ipv6GlobalPool(string): Network Settings's IPv6 Global pool address with cidr this is required when
                 Ipv6AddressSpace value is true, example: 2001:db8:85a3::/64 .
@@ -1190,13 +1194,17 @@ class NetworkSettings(object):
         """API to update ip subpool from the global pool .
 
         Args:
-            ipv4DhcpServers(): Network Settings's IPv4 input for dhcp server ip example: 1.1.1.1 .
-            ipv4DnsServers(): Network Settings's IPv4 input for dns server ip  example: 4.4.4.4 .
+            ipv4DhcpServers(list): Network Settings's IPv4 input for dhcp server ip example: 1.1.1.1  (list of
+                strings).
+            ipv4DnsServers(list): Network Settings's IPv4 input for dns server ip  example: 4.4.4.4  (list of
+                strings).
             ipv4GateWay(string): Network Settings's Ipv4 Gate Way.
             ipv6AddressSpace(boolean): Network Settings's If the value is false only ipv4 input are required,
                 otherwise both ipv6 and ipv4 are required .
-            ipv6DhcpServers(): Network Settings's IPv6 format dhcp server as input example : 2001:db8::1234 .
-            ipv6DnsServers(): Network Settings's IPv6 format dns server input example: 2001:db8::1234 .
+            ipv6DhcpServers(list): Network Settings's IPv6 format dhcp server as input example : 2001:db8::1234
+                (list of strings).
+            ipv6DnsServers(list): Network Settings's IPv6 format dns server input example: 2001:db8::1234  (list of
+                strings).
             ipv6GateWay(string): Network Settings's Gateway ip address details, example: 2001:db8:85a3:0:100::1 .
             ipv6GlobalPool(string): Network Settings's IP v6 Global pool address with cidr this is required when
                 Ipv6AddressSpace value is true, example: 2001:db8:85a3::/64 .

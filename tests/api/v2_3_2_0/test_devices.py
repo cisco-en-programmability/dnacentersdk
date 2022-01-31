@@ -836,8 +836,8 @@ def clear_mac_address_table(api):
         deployement_mode='string',
         interface_uuid='string',
         operation='string',
+        operation_payload={}
         payload=None,
-        payload={}
     )
     return endpoint_result
 
@@ -861,6 +861,7 @@ def clear_mac_address_table_default_val(api):
         deployement_mode=None,
         interface_uuid='string',
         operation=None,
+        operation_payload=None
         payload=None
     )
     return endpoint_result
@@ -2668,13 +2669,13 @@ def test_get_organization_list_for_meraki_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_device_interface_v_lans(json_schema_validate, obj):
+def is_valid_get_device_interface_vlans(json_schema_validate, obj):
     json_schema_validate('jsd_fd5fb603cba6523abb25c8ec131fbb8b_v2_3_2_0').validate(obj)
     return True
 
 
-def get_device_interface_v_lans(api):
-    endpoint_result = api.devices.get_device_interface_v_lans(
+def get_device_interface_vlans(api):
+    endpoint_result = api.devices.get_device_interface_vlans(
         id='string',
         interface_type='string'
     )
@@ -2682,11 +2683,11 @@ def get_device_interface_v_lans(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_v_lans(api, validator):
+def test_get_device_interface_vlans(api, validator):
     try:
-        assert is_valid_get_device_interface_v_lans(
+        assert is_valid_get_device_interface_vlans(
             validator,
-            get_device_interface_v_lans(api)
+            get_device_interface_vlans(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -2694,8 +2695,8 @@ def test_get_device_interface_v_lans(api, validator):
             raise original_e
 
 
-def get_device_interface_v_lans_default_val(api):
-    endpoint_result = api.devices.get_device_interface_v_lans(
+def get_device_interface_vlans_default_val(api):
+    endpoint_result = api.devices.get_device_interface_vlans(
         id='string',
         interface_type=None
     )
@@ -2703,11 +2704,11 @@ def get_device_interface_v_lans_default_val(api):
 
 
 @pytest.mark.devices
-def test_get_device_interface_v_lans_default_val(api, validator):
+def test_get_device_interface_vlans_default_val(api, validator):
     try:
-        assert is_valid_get_device_interface_v_lans(
+        assert is_valid_get_device_interface_vlans(
             validator,
-            get_device_interface_v_lans_default_val(api)
+            get_device_interface_vlans_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -53,7 +53,8 @@ class JSONSchemaValidatorD5C229546Dc755F796DfCf34F1C2E290(object):
                 "errors": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

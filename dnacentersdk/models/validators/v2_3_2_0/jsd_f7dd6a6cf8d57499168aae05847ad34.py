@@ -80,7 +80,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "categories": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "profileName": {
                 "type": "string"
@@ -100,7 +101,8 @@ class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
                 "config": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "name": {
                 "type": "string"

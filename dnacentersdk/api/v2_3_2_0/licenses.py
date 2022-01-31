@@ -316,7 +316,7 @@ class Licenses(object):
         """Deregister device(s) from CSSM(Cisco Smart Software Manager). .
 
         Args:
-            device_uuids(): Licenses's Comma separated device ids .
+            device_uuids(list): Licenses's Comma separated device ids  (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -391,7 +391,7 @@ class Licenses(object):
         """Register device(s) in CSSM(Cisco Smart Software Manager). .
 
         Args:
-            device_uuids(): Licenses's Comma separated device ids .
+            device_uuids(list): Licenses's Comma separated device ids  (list of strings).
             virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -471,7 +471,7 @@ class Licenses(object):
         """Transfer device(s) from one virtual account to another within same smart account. .
 
         Args:
-            device_uuids(): Licenses's Comma separated device ids .
+            device_uuids(list): Licenses's Comma separated device ids  (list of strings).
             smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
             virtual_account_name(basestring): virtual_account_name path parameter. Name of target virtual account .
             headers(dict): Dictionary of HTTP Headers to send with the Request

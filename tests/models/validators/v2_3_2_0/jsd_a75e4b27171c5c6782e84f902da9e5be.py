@@ -69,7 +69,8 @@ class JSONSchemaValidatorA75E4B27171C5C6782E84F902Da9E5Be(object):
                 "inclusions": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "lastUpdateTime": {
                 "type": "integer"

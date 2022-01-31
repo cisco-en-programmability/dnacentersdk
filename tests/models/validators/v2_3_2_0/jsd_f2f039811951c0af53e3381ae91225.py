@@ -53,7 +53,8 @@ class JSONSchemaValidatorF2F039811951C0Af53E3381Ae91225(object):
                 "impactedHosts": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "issueCategory": {
                 "type": "string"
@@ -97,7 +98,8 @@ class JSONSchemaValidatorF2F039811951C0Af53E3381Ae91225(object):
                 "steps": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

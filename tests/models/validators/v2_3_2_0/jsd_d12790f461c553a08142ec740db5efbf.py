@@ -58,7 +58,8 @@ class JSONSchemaValidatorD12790F461C553A08142Ec740Db5Efbf(object):
                 "roles": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "siteHierarchy": {
                 "type": "string"

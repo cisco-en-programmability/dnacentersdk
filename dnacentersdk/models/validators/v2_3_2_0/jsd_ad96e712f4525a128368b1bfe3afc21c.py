@@ -54,7 +54,8 @@ class JSONSchemaValidatorAd96E712F4525A128368B1Bfe3Afc21C(object):
                 "ssidNames": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "vlanName": {
                 "type": "string"

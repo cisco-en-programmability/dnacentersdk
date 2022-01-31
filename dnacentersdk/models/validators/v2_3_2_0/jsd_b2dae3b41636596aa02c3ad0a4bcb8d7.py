@@ -48,7 +48,8 @@ class JSONSchemaValidatorB2Dae3B41636596AA02C3Ad0A4Bcb8D7(object):
                 "commands": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "description":
                  {
@@ -57,7 +58,8 @@ class JSONSchemaValidatorB2Dae3B41636596AA02C3Ad0A4Bcb8D7(object):
                 "deviceUuids": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "name": {
                 "type": "string"

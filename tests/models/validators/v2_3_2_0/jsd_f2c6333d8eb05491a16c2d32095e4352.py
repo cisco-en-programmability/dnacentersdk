@@ -109,7 +109,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "connectedDevice": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "connectionStatus": {
                 "type": "string"
@@ -149,7 +150,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "hostIpV6": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "hostMac": {
                 "type": "string"
@@ -186,7 +188,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "aaaRootcauseList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "aaaServerIp": {
                 "type": "string"
@@ -197,7 +200,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "assocRootcauseList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "authDoneTime": {
                 "type": "object"
@@ -220,7 +224,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "dhcpRootcauseList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "dhcpServerIp": {
                 "type": "object"
@@ -240,7 +245,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "otherRootcauseList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -292,7 +298,8 @@ class JSONSchemaValidatorF2C6333D8Eb05491A16C2D32095E4352(object):
                 "label": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "linkStatus": {
                 "type": "string"

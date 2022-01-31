@@ -135,9 +135,9 @@ class CommandRunner(object):
         """Submit request for read-only CLIs .
 
         Args:
-            commands(): Command Runner's commands.
+            commands(list): Command Runner's commands (list of strings).
             description(string): Command Runner's description.
-            deviceUuids(): Command Runner's deviceUuids.
+            deviceUuids(list): Command Runner's deviceUuids (list of strings).
             name(string): Command Runner's name.
             timeout(integer): Command Runner's timeout.
             headers(dict): Dictionary of HTTP Headers to send with the Request

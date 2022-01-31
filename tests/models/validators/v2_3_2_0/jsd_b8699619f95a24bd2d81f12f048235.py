@@ -53,7 +53,8 @@ class JSONSchemaValidatorB8699619F95A24Bd2D81F12F048235(object):
                 "errors": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

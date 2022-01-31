@@ -81,7 +81,8 @@ class JSONSchemaValidatorB119A4D455E35Cc3B2Cc6695A045Cbfa(object):
                 "primaryDeviceInterfaceNames": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "primaryDeviceManagmentIPAddress": {
                 "type": "string"

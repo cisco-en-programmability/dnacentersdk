@@ -65,7 +65,8 @@ class JSONSchemaValidatorDf9908Ad265E83Ab77D73803925678(object):
                 "operationIdList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "progress": {
                 "type": "string"

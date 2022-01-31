@@ -88,10 +88,10 @@ class Reports(object):
         metadata required to configure a report. .
 
         Args:
-            deliveries(): Reports's Array of available delivery channels .
+            deliveries(list): Reports's Array of available delivery channels  (list of objects).
             name(string): Reports's report name .
             schedule(object): Reports's schedule.
-            tags(): Reports's array of tags for report .
+            tags(list): Reports's array of tags for report  (list of strings).
             view(object): Reports's view.
             viewGroupId(string): Reports's viewGroupId of the viewgroup for the report .
             viewGroupVersion(string): Reports's version of viewgroup for the report .

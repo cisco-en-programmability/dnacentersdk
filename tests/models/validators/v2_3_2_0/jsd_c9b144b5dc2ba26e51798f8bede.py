@@ -50,7 +50,8 @@ class JSONSchemaValidatorC9B144B5Dc2Ba26E51798F8Bede(object):
                 "corePackages": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "installedVersion": {
                 "type": "string"
@@ -61,12 +62,14 @@ class JSONSchemaValidatorC9B144B5Dc2Ba26E51798F8Bede(object):
                 "packages": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "supportedDirectUpdates": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "systemVersion": {
                 "type": "string"

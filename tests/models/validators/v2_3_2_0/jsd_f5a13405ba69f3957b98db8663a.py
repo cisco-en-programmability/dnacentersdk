@@ -48,7 +48,8 @@ class JSONSchemaValidatorF5A13405Ba69F3957B98Db8663A(object):
                 "jsonArrayResponse": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "jsonResponse": {
                 "type": "object"

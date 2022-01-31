@@ -189,7 +189,7 @@ class ApplicationPolicy(object):
 
         Args:
             createList(list): Application Policy's createList (list of objects).
-            deleteList(): Application Policy's Delete list of Group Based Policy ids .
+            deleteList(list): Application Policy's Delete list of Group Based Policy ids  (list of strings).
             updateList(list): Application Policy's updateList (list of objects).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

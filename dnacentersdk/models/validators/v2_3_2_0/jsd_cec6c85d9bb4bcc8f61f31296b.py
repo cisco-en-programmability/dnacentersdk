@@ -48,12 +48,14 @@ class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
                 "ipv4DhcpServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv4DnsServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv4GateWay": {
                 "type": "string"
@@ -79,12 +81,14 @@ class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
                 "ipv6DhcpServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv6DnsServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv6GateWay": {
                 "type": "string"

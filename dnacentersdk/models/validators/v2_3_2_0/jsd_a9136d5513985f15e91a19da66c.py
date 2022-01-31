@@ -61,12 +61,14 @@ class JSONSchemaValidatorA9136D5513985F15E91A19Da66C(object):
                 "imageUuidList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "smuImageUuidList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

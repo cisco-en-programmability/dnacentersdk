@@ -81,7 +81,8 @@ class JSONSchemaValidatorB199C175281977A7E9E6Bd9255B(object):
                 "ipAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

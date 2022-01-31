@@ -119,22 +119,26 @@ class JSONSchemaValidatorA4571194A9E05664Ad348F72D7651Bb0(object):
                 "deviceType": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "hardwareManufacturer": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "hardwareModel": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "operatingSystem": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"
@@ -166,7 +170,8 @@ class JSONSchemaValidatorA4571194A9E05664Ad348F72D7651Bb0(object):
                 "usedAttributes": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

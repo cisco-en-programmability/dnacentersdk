@@ -189,7 +189,8 @@ class JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E(object):
                 "tags": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "upperNode": {
                 "type": "string"

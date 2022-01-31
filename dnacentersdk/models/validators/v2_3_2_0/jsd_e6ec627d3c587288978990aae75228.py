@@ -48,7 +48,8 @@ class JSONSchemaValidatorE6Ec627D3C587288978990Aae75228(object):
                 "deviceUuids": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -63,7 +64,8 @@ class JSONSchemaValidatorE6Ec627D3C587288978990Aae75228(object):
                 "parameters": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "password": {
                 "type": "string"

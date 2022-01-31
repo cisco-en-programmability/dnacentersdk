@@ -189,7 +189,8 @@ class JSONSchemaValidatorEB4Ab5A978Fe8785516C8Af42(object):
                 "tags": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "upperNode": {
                 "type": "string"

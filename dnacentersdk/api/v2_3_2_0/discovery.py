@@ -173,7 +173,7 @@ class Discovery(object):
             discoveryStatus(string): Discovery's discoveryStatus.
             discoveryType(string): Discovery's discoveryType.
             enablePasswordList(string): Discovery's enablePasswordList.
-            globalCredentialIdList(): Discovery's globalCredentialIdList.
+            globalCredentialIdList(list): Discovery's globalCredentialIdList (list of strings).
             httpReadCredential(object): Discovery's httpReadCredential.
             httpWriteCredential(object): Discovery's httpWriteCredential.
             id(string): Discovery's id.
@@ -370,18 +370,21 @@ class Discovery(object):
         Args:
             cdpLevel(integer): Discovery's CDP level to which neighbor devices to be discovered .
             discoveryType(string): Discovery's Type of Discovery. 'SINGLE', 'RANGE', 'MULTI RANGE', 'CDP', 'LLDP' .
-            enablePasswordList(): Discovery's Enable Password of the devices to be discovered .
-            globalCredentialIdList(): Discovery's Global Credential Ids to be used for discovery .
+            enablePasswordList(list): Discovery's Enable Password of the devices to be discovered  (list of
+                strings).
+            globalCredentialIdList(list): Discovery's Global Credential Ids to be used for discovery  (list of
+                strings).
             httpReadCredential(object): Discovery's httpReadCredential.
             httpWriteCredential(object): Discovery's httpWriteCredential.
             ipAddressList(string): Discovery's IP Address of devices to be discovered. Ex: '172.30.0.1' for SINGLE,
                 CDP and LLDP; '72.30.0.1-172.30.0.4' for RANGE;
                 '72.30.0.1-172.30.0.4,172.31.0.1-172.31.0.4' for MULTI RANGE .
-            ipFilterList(): Discovery's IP Addresses of the devices to be filtered out during discovery .
+            ipFilterList(list): Discovery's IP Addresses of the devices to be filtered out during discovery  (list
+                of strings).
             lldpLevel(integer): Discovery's LLDP level to which neighbor devices to be discovered .
             name(string): Discovery's Name of the discovery .
             netconfPort(string): Discovery's Netconf Port. It will need valid SSH credentials to work .
-            passwordList(): Discovery's Password of the devices to be discovered .
+            passwordList(list): Discovery's Password of the devices to be discovered  (list of strings).
             preferredMgmtIPMethod(string): Discovery's Preferred Management IP Method.'None' or 'UseLoopBack'.
                 Default is 'None' .
             protocolOrder(string): Discovery's Order of protocol (ssh/telnet) in which device connection will be
@@ -399,7 +402,7 @@ class Discovery(object):
             snmpUserName(string): Discovery's SNMP username of the device .
             snmpVersion(string): Discovery's Version of SNMP. v2 or v3 .
             timeout(integer): Discovery's Time to wait for device response in seconds .
-            userNameList(): Discovery's Username of the devices to be discovered .
+            userNameList(list): Discovery's Username of the devices to be discovered  (list of strings).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2532,7 +2535,7 @@ class Discovery(object):
         """Update global credential for network devices in site(s) .
 
         Args:
-            siteUuids(): Discovery's siteUuids.
+            siteUuids(list): Discovery's siteUuids (list of strings).
             global_credential_id(basestring): globalCredentialId path parameter. Global credential Uuid .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

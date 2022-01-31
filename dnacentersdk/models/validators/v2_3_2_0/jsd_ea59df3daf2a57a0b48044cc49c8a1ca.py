@@ -49,7 +49,8 @@ class JSONSchemaValidatorEa59Df3DAf2A57A0B48044Cc49C8A1Ca(object):
                 "excludedInterfaces": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -66,7 +67,8 @@ class JSONSchemaValidatorEa59Df3DAf2A57A0B48044Cc49C8A1Ca(object):
                 "dmvpnRemoteSitesBw": {
                 "items": {
                 "type": "integer"
-                }
+                },
+                "type": "array"
                 },
                 "instanceId": {
                 "type": "integer"

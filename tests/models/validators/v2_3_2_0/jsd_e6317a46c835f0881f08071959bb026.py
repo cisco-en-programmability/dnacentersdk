@@ -54,7 +54,8 @@ class JSONSchemaValidatorE6317A46C835F0881F08071959Bb026(object):
                 "cves": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "defaultConfigMatchPattern": {
                 "type": "string"

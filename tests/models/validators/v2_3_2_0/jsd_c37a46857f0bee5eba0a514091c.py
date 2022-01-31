@@ -51,7 +51,8 @@ class JSONSchemaValidatorC37A46857F0Bee5Eba0A514091C(object):
                 "cfsChangeInfo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "createTime": {
                 "type": "integer"
@@ -59,7 +60,8 @@ class JSONSchemaValidatorC37A46857F0Bee5Eba0A514091C(object):
                 "customProvisions": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deployed": {
                 "type": "boolean"
@@ -70,7 +72,8 @@ class JSONSchemaValidatorC37A46857F0Bee5Eba0A514091C(object):
                 "excludedInterfaces": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "id": {
                 "type": "string"
@@ -131,7 +134,8 @@ class JSONSchemaValidatorC37A46857F0Bee5Eba0A514091C(object):
                 "dmvpnRemoteSitesBw": {
                 "items": {
                 "type": "integer"
-                }
+                },
+                "type": "array"
                 },
                 "downloadBW": {
                 "type": "number"
@@ -185,7 +189,8 @@ class JSONSchemaValidatorC37A46857F0Bee5Eba0A514091C(object):
                 "targetIdList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

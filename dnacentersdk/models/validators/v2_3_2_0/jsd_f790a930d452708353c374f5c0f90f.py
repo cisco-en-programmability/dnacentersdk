@@ -52,7 +52,8 @@ class JSONSchemaValidatorF790A930D452708353C374F5C0F90F(object):
                 "customFlexGroupName": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "deviceName": {
                 "type": "string"

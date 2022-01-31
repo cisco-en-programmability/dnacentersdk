@@ -56,12 +56,14 @@ class JSONSchemaValidatorD0Aab00569B258B481AfEdc35E6Db392(object):
                 "failed": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "success": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

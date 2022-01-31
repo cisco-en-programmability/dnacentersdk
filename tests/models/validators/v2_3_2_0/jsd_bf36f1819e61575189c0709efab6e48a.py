@@ -77,12 +77,14 @@ class JSONSchemaValidatorBf36F1819E61575189C0709Efab6E48A(object):
                 "subscriptionTypes": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "tags": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

@@ -70,12 +70,14 @@ class JSONSchemaValidatorB37Eb826A4Ad5283Ae85Dc4628045B40(object):
                 "fqdnAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipAddresses": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "port": {
                 "type": "number"
@@ -144,7 +146,8 @@ class JSONSchemaValidatorB37Eb826A4Ad5283Ae85Dc4628045B40(object):
                 "deviceSnList": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "syncType": {
                 "type": "string"

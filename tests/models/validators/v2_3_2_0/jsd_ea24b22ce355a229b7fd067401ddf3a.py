@@ -54,7 +54,8 @@ class JSONSchemaValidatorEa24B22Ce355A229B7FD067401Ddf3A(object):
                 "roles": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "status": {
                 "type": "string"

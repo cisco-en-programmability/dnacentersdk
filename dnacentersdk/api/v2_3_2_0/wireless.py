@@ -159,7 +159,8 @@ class Wireless(object):
         Args:
             enableFabric(boolean): Wireless's Enable SSID for Fabric .
             flexConnect(object): Wireless's flexConnect.
-            managedAPLocations(): Wireless's Managed AP Locations (Enter entire Site(s) hierarchy) .
+            managedAPLocations(list): Wireless's Managed AP Locations (Enter entire Site(s) hierarchy)  (list of
+                strings).
             ssidDetails(object): Wireless's ssidDetails.
             ssidType(string): Wireless's SSID Type . Available values are 'Guest' and 'Enterprise'.
             headers(dict): Dictionary of HTTP Headers to send with the Request

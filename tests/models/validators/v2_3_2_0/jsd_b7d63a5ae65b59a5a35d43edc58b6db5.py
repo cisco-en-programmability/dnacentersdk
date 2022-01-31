@@ -78,7 +78,8 @@ class JSONSchemaValidatorB7D63A5AE65B59A5A35D43Edc58B6Db5(object):
                 "sftpServerList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "sha1Checksum": {
                 "type": "string"

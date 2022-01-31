@@ -48,12 +48,14 @@ class JSONSchemaValidatorFd6083B0C65D03B2D53F10B3Ece59D(object):
                 "ipv4DhcpServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv4DnsServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv4GateWay": {
                 "type": "string"
@@ -64,12 +66,14 @@ class JSONSchemaValidatorFd6083B0C65D03B2D53F10B3Ece59D(object):
                 "ipv6DhcpServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv6DnsServers": {
                 "items": {
                 "type": "string"
-                }
+                },
+                "type": "array"
                 },
                 "ipv6GateWay": {
                 "type": "string"

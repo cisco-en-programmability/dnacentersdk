@@ -51,12 +51,14 @@ class JSONSchemaValidatorD1B2E541Bb85Dea8192Cd474Be4E3Ad(object):
                 "cfsChangeInfo": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "contractList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "createTime": {
                 "type": "integer"
@@ -64,7 +66,8 @@ class JSONSchemaValidatorD1B2E541Bb85Dea8192Cd474Be4E3Ad(object):
                 "customProvisions": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "deletePolicyStatus": {
                 "enum": [
@@ -300,7 +303,8 @@ class JSONSchemaValidatorD1B2E541Bb85Dea8192Cd474Be4E3Ad(object):
                 "targetIdList": {
                 "items": {
                 "type": "object"
-                }
+                },
+                "type": "array"
                 },
                 "type": {
                 "type": "string"

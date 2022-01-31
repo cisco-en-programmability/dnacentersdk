@@ -190,8 +190,8 @@ class Compliance(object):
         """Run compliance check for device(s). .
 
         Args:
-            categories(): Compliance's categories.
-            deviceUuids(): Compliance's deviceUuids.
+            categories(list): Compliance's categories (list of strings).
+            deviceUuids(list): Compliance's deviceUuids (list of strings).
             triggerFull(boolean): Compliance's triggerFull.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
