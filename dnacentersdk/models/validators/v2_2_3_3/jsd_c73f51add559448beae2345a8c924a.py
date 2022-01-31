@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetSDAFabricInfo data model.
+"""Cisco DNA Center UpdateFloormap data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -37,34 +37,13 @@ from dnacentersdk.exceptions import MalformedRequest
 from builtins import *
 
 
-class JSONSchemaValidatorB7335C6B5057B183A339Aa30E7C233(object):
-    """GetSDAFabricInfo request schema definition."""
+class JSONSchemaValidatorC73F51Add559448BeaE2345A8C924A(object):
+    """UpdateFloormap request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidatorB7335C6B5057B183A339Aa30E7C233, self).__init__()
+        super(JSONSchemaValidatorC73F51Add559448BeaE2345A8C924A, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "description":
-                 {
-                "type": "string"
-                },
-                "executionId": {
-                "type": "string"
-                },
-                "fabricDomainType": {
-                "type": "string"
-                },
-                "fabricName": {
-                "type": "string"
-                },
-                "fabricType": {
-                "type": "string"
-                },
-                "status": {
-                "type": "string"
-                }
-                },
                 "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))

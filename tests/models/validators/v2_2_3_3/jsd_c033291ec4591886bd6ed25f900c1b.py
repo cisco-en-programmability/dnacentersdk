@@ -44,6 +44,7 @@ class JSONSchemaValidatorC033291Ec4591886Bd6Ed25F900C1B(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "items": {
                 "properties": {
                 "dayZeroConfig": {
                 "properties": {
@@ -954,6 +955,8 @@ class JSONSchemaValidatorC033291Ec4591886Bd6Ed25F900C1B(object):
                 }
                 },
                 "type": "object"
+                },
+                "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

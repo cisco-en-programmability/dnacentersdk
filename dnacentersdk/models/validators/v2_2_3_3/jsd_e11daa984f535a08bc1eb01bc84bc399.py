@@ -45,8 +45,44 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
+                "configInfo": {
+                "properties": {
+                "configId": {
+                "type": "string"
+                },
+                "configParameters": {
+                "items": {
+                "properties": {
+                "key": {
+                "type": "string"
+                },
+                "value": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
                 "deviceId": {
                 "type": "string"
+                },
+                "hostname": {
+                "type": "string"
+                },
+                "imageInfo": {
+                "properties": {
+                "imageId": {
+                "type": "string"
+                },
+                "skip": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
                 },
                 "siteId": {
                 "type": "string"
