@@ -25,6 +25,7 @@ SOFTWARE.
 import pytest
 
 pytest_plugins = [
+    'tests.test_importsdk',
     'tests.test_dnacentersdk',
     'tests.api',
     'tests.api.v1_2_10',
