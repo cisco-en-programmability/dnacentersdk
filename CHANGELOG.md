@@ -6,6 +6,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Add support of DNA Center API version ('2.3.2.0')
+
+### Changed
+- Update requirements files.
+
+- Update response documentation of DNA Center API v2.2.3.3 files
+  + application_policy.get_applications
+  + device_onboarding_pnp.get_device_list
+
+- Adds parameters `payload` and `active_validation` to the following functions:
+  + site_design.create_floormap
+  + site_design.update_floormap
+
+- Update models validators of DNA Center API v2.2.3.3 files for the following functions:
+  + site_design.create_floormap
+  + site_design.update_floormap
+  + application_policy.create_application
+
+- Major changes between versions 2.2.3.3 and 2.3.2.0
+  + Removed functions in v2.3.2.0
+    * site_design.create_floormap
+    * site_design.delete_floormap
+    * site_design.get_floormap
+    * site_design.get_floormaps
+    * site_design.update_floormap
+  + New modules `lan_automation` and `system_settings` in v2.3.2.0, and their new functions
+    * lan_automation.lan_automation_log
+    * lan_automation.lan_automation_log_by_id
+    * lan_automation.lan_automation_session_count
+    * lan_automation.lan_automation_start
+    * lan_automation.lan_automation_status
+    * lan_automation.lan_automation_status_by_id
+    * lan_automation.lan_automation_stop
+    * system_settings.custom_prompt_post_api
+    * system_settings.custom_prompt_support_get_api
+  + New functions for existent modules in v2.3.2.0
+    * devices.clear_mac_address_table
+    * devices.get_connected_device_detail
+    * devices.get_planned_access_points_for_building
+    * devices.get_planned_access_points_for_floor
+    * devices.legit_operations_for_interface
+    * devices.update_interface_details
+    * event_management.create_email_destination
+    * event_management.create_syslog_destination
+    * event_management.create_webhook_destination
+    * event_management.get_connector_types
+    * event_management.update_email_destination
+    * event_management.update_syslog_destination
+    * event_management.update_webhook_destination
+    * file.upload_file
 
 ## [2.4.3] - 2021-01-19
 
