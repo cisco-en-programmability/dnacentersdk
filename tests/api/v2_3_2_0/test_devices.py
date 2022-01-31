@@ -836,8 +836,8 @@ def clear_mac_address_table(api):
         deployement_mode='string',
         interface_uuid='string',
         operation='string',
-        operation_payload={}
-        payload=None,
+        operation_payload={},
+        payload=None
     )
     return endpoint_result
 
@@ -861,7 +861,7 @@ def clear_mac_address_table_default_val(api):
         deployement_mode=None,
         interface_uuid='string',
         operation=None,
-        operation_payload=None
+        operation_payload=None,
         payload=None
     )
     return endpoint_result
