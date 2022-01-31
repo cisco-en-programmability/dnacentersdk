@@ -44,6 +44,8 @@ class JSONSchemaValidatorB12Cdd3A75C51258C9E051E84189F92(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "properties": {
+                "response": {
                 "items": {
                 "properties": {
                 "applicationSet": {
@@ -56,6 +58,32 @@ class JSONSchemaValidatorB12Cdd3A75C51258C9E051E84189F92(object):
                 },
                 "id": {
                 "type": "string"
+                },
+                "indicativeNetworkIdentity": {
+                "items": {
+                "properties": {
+                "displayName": {
+                "type": "string"
+                },
+                "id": {
+                "type": "string"
+                },
+                "lowerPort": {
+                "type": "integer"
+                },
+                "ports": {
+                "type": "string"
+                },
+                "protocol": {
+                "type": "string"
+                },
+                "upperPort": {
+                "type": "integer"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
                 },
                 "name": {
                 "type": "string"
@@ -100,10 +128,10 @@ class JSONSchemaValidatorB12Cdd3A75C51258C9E051E84189F92(object):
                 "type": "string"
                 },
                 "popularity": {
-                "type": "string"
+                "type": "integer"
                 },
                 "rank": {
-                "type": "string"
+                "type": "integer"
                 },
                 "serverName": {
                 "type": "string"
@@ -129,7 +157,7 @@ class JSONSchemaValidatorB12Cdd3A75C51258C9E051E84189F92(object):
                 "type": "string"
                 },
                 "lowerPort": {
-                "type": "string"
+                "type": "integer"
                 },
                 "ports": {
                 "type": "string"
@@ -138,7 +166,7 @@ class JSONSchemaValidatorB12Cdd3A75C51258C9E051E84189F92(object):
                 "type": "string"
                 },
                 "upperPort": {
-                "type": "string"
+                "type": "integer"
                 }
                 },
                 "type": "object"
@@ -149,6 +177,9 @@ class JSONSchemaValidatorB12Cdd3A75C51258C9E051E84189F92(object):
                 "type": "object"
                 },
                 "type": "array"
+                }
+                },
+                "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

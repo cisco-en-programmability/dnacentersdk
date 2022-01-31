@@ -7,7 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
-## [2.4.3] - 2021-01-19
+## [2.4.4] - 2022-01-31
+### Changed
+- Update response documentation of DNA Center API v2.2.3.3 files
+  + application_policy.get_applications
+  + device_onboarding_pnp.get_device_list
+
+- Adds parameters `payload` and `active_validation` to the following functions:
+  + site_design.create_floormap
+  + site_design.update_floormap
+
+- Update models validators of DNA Center API v2.2.3.3 files for the following functions:
+  + site_design.create_floormap
+  + site_design.update_floormap
+  + application_policy.create_application
+
+### Fixed
+- Removed an extra parameter in the call of `VERIFY_STRING_ENVIRONMENT_VARIABLE`
+
+### Added
+- Adds parameters `hostname`, `imageInfo` and `configInfo` to device_onboarding_pnp.pnp_device_claim_to_site
+
+## [2.4.3] - 2022-01-19
 
 ### Fixed
 - DNACenterAPI constructor allows for optional arguments [#37](https://github.com/cisco-en-programmability/dnacentersdk/issues/37)
@@ -187,5 +208,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.3...v2.4.0
 [2.4.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.0...v2.4.1
 [2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.1...v2.4.2
-[2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...master
+[2.4.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
+[2.4.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...v2.4.4
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.4...master

@@ -1571,7 +1571,7 @@ class Wireless(object):
         """Delete RF profile(s) .
 
         Args:
-            rf_profile_name(basestring): rfProfileName path parameter. RF profile name to be deleted(required) *non-
+            rf_profile_name(basestring): rfProfileName path parameter. RF profile name to be deleted(required) non-
                 custom RF profile cannot be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

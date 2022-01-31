@@ -511,7 +511,10 @@ def is_valid_claim_a_device_to_a_site(json_schema_validate, obj):
 def claim_a_device_to_a_site(api):
     endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site(
         active_validation=True,
+        configInfo={'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]},
         deviceId='string',
+        hostname='string',
+        imageInfo={'imageId': 'string', 'skip': True},
         payload=None,
         siteId='string',
         type='string'
@@ -535,7 +538,10 @@ def test_claim_a_device_to_a_site(api, validator):
 def claim_a_device_to_a_site_default_val(api):
     endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site(
         active_validation=True,
+        configInfo=None,
         deviceId=None,
+        hostname=None,
+        imageInfo=None,
         payload=None,
         siteId=None,
         type=None
