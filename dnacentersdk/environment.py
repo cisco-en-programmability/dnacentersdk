@@ -124,6 +124,6 @@ def get_env_wait_on_rate_limit():
 
 def get_env_verify():
     DNA_CENTER_VERIFY = _get_env_value(
-        VERIFY_STRING_ENVIRONMENT_VARIABLE, None, str, str) or \
+        VERIFY_STRING_ENVIRONMENT_VARIABLE, str, str) or \
         _get_env_value(VERIFY_ENVIRONMENT_VARIABLE, bool, _is_bool)
     return DNA_CENTER_VERIFY
