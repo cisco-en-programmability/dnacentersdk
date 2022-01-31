@@ -3404,11 +3404,11 @@ class Devices(object):
 
         return self._object_factory('bpm_b4ba6d23d5e7eb62cbba4c9e1a29d_v2_2_3_3', json_data)
 
-    def get_device_interface_v_lans(self,
-                                    id,
-                                    interface_type=None,
-                                    headers=None,
-                                    **request_parameters):
+    def get_device_interface_vlans(self,
+                                   id,
+                                   interface_type=None,
+                                   headers=None,
+                                   **request_parameters):
         """Returns Device Interface VLANs .
 
         Args:

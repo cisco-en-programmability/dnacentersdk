@@ -72,9 +72,9 @@ class Topology(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_v_lan_details(self,
-                          headers=None,
-                          **request_parameters):
+    def get_vlan_details(self,
+                         headers=None,
+                         **request_parameters):
         """Returns the list of VLAN names.
 
         Args:
