@@ -138,6 +138,22 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_2_0', json_data)
 
+    def start(self,
+              headers=None,
+              payload=None,
+              active_validation=True,
+              **query_parameters):
+        """Alias for `lan_automation_start <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_start>`_
+        """
+        return self.lan_automation_start(
+            payload=payload,
+            active_validation=active_validation,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_session_count(self,
                                      headers=None,
                                      **request_parameters):
@@ -187,6 +203,18 @@ class LanAutomation(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_eea014edd5807925df3a414a92ed4_v2_3_2_0', json_data)
+
+    def session_count(self,
+                      headers=None,
+                      **query_parameters):
+        """Alias for `lan_automation_session_count <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_session_count>`_
+        """
+        return self.lan_automation_session_count(
+            headers=headers,
+            **query_parameters
+        )
 
     def lan_automation_log(self,
                            limit=None,
@@ -249,6 +277,22 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_e37f6c9650b68e0aaac866a162cf_v2_3_2_0', json_data)
 
+    def log(self,
+            limit=None,
+            offset=None,
+            headers=None,
+            **query_parameters):
+        """Alias for `lan_automation_log <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_log>`_
+        """
+        return self.lan_automation_log(
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_log_by_id(self,
                                  id,
                                  headers=None,
@@ -303,6 +347,20 @@ class LanAutomation(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_e98b744fde50a1b53761251c43bfb0_v2_3_2_0', json_data)
+
+    def log_by_id(self,
+                  id,
+                  headers=None,
+                  **query_parameters):
+        """Alias for `lan_automation_log_by_id <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_log_by_id>`_
+        """
+        return self.lan_automation_log_by_id(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
 
     def lan_automation_status(self,
                               limit=None,
@@ -365,6 +423,22 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_c56a6c58fd5b71b7949036855ee25b_v2_3_2_0', json_data)
 
+    def status(self,
+               limit=None,
+               offset=None,
+               headers=None,
+               **query_parameters):
+        """Alias for `lan_automation_status <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_status>`_
+        """
+        return self.lan_automation_status(
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_status_by_id(self,
                                     id,
                                     headers=None,
@@ -419,6 +493,20 @@ class LanAutomation(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_d5727c4bdb1056308cd10e99dff2acb8_v2_3_2_0', json_data)
+
+    def status_by_id(self,
+                     id,
+                     headers=None,
+                     **query_parameters):
+        """Alias for `lan_automation_status_by_id <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_status_by_id>`_
+        """
+        return self.lan_automation_status_by_id(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
 
     def lan_automation_stop(self,
                             id,
@@ -477,3 +565,17 @@ class LanAutomation(object):
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_ed815ca3e5ab5ae48720795217ec776b_v2_3_2_0', json_data)
+
+    def stop(self,
+             id,
+             headers=None,
+             **query_parameters):
+        """Alias for `lan_automation_stop <#dnacentersdk.
+        api.v2_3_2_0.lan_automation.
+        LanAutomation.lan_automation_stop>`_
+        """
+        return self.lan_automation_stop(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
