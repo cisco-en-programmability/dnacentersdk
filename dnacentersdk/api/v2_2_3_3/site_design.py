@@ -702,12 +702,18 @@ class SiteDesign(object):
 
     def create_floormap(self,
                         headers=None,
+                        payload=None,
+                        active_validation=True,
                         **request_parameters):
         """Service to create a floor map with callback .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -721,6 +727,7 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
+        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -733,6 +740,13 @@ class SiteDesign(object):
 
         path_params = {
         }
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_c1c51662f583485311df0a0c29a3f_v2_2_3_3')\
+                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -744,9 +758,11 @@ class SiteDesign(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
                                            headers=_headers)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params)
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
 
         return self._object_factory('bpm_c1c51662f583485311df0a0c29a3f_v2_2_3_3', json_data)
 
@@ -858,6 +874,8 @@ class SiteDesign(object):
     def update_floormap(self,
                         floor_id,
                         headers=None,
+                        payload=None,
+                        active_validation=True,
                         **request_parameters):
         """Service to create a floor map with callback .
 
@@ -865,6 +883,10 @@ class SiteDesign(object):
             floor_id(basestring): floorId path parameter. Group ID of the floor to be modified .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -878,6 +900,7 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
+        check_type(payload, dict)
         check_type(floor_id, basestring,
                    may_be_none=False)
         if headers is not None:
@@ -893,6 +916,13 @@ class SiteDesign(object):
         path_params = {
             'floorId': floor_id,
         }
+        _payload = {
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_c73f51add559448beae2345a8c924a_v2_2_3_3')\
+                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -904,9 +934,11 @@ class SiteDesign(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params)
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
 
         return self._object_factory('bpm_c73f51add559448beae2345a8c924a_v2_2_3_3', json_data)
 
