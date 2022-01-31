@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.5.0] - 2022-mm-dd
 
 ### Added
 - Add support of DNA Center API version ('2.3.2.0')
@@ -58,7 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     * event_management.update_webhook_destination
     * file.upload_file
 
-## [2.4.3] - 2021-01-19
+## [2.4.3] - 2022-01-19
 
 ### Fixed
 - DNACenterAPI constructor allows for optional arguments [#37](https://github.com/cisco-en-programmability/dnacentersdk/issues/37)
@@ -238,5 +239,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.3...v2.4.0
 [2.4.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.0...v2.4.1
 [2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.1...v2.4.2
-[2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...master
+[2.4.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
+[2.5.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...v2.5.0
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...master
