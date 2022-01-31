@@ -72,9 +72,9 @@ class SystemSettings(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def custom_prompt_support_g_e_t_ap_i(self,
-                                         headers=None,
-                                         **request_parameters):
+    def custom_prompt_support_get_api(self,
+                                      headers=None,
+                                      **request_parameters):
         """Returns supported custom prompts by DNAC .
 
         Args:
@@ -122,13 +122,13 @@ class SystemSettings(object):
 
         return self._object_factory('bpm_ada20dc4915d5901b50634628392e79f_v2_3_2_0', json_data)
 
-    def custom_prompt_p_o_s_t_ap_i(self,
-                                   passwordPrompt=None,
-                                   usernamePrompt=None,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def custom_prompt_post_api(self,
+                               passwordPrompt=None,
+                               usernamePrompt=None,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
         """Save custom prompt added by user in DNAC . API will always override the existing prompts. User should provide
         all the custom prompt in case of any update .
 

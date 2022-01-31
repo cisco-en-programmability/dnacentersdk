@@ -6972,7 +6972,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             self.path
         )
 
-    def system_settings_custom_prompt_support_g_e_t_ap_i_response(self):
+    def system_settings_custom_prompt_support_get_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -6989,7 +6989,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             self.path
         )
 
-    def system_settings_custom_prompt_p_o_s_t_ap_i_response(self):
+    def system_settings_custom_prompt_post_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -8577,7 +8577,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             return
 
         if self.matches_SYSTEM_SETTINGS_ada20dc4915d5901b50634628392e79f():
-            self.system_settings_custom_prompt_support_g_e_t_ap_i_response()
+            self.system_settings_custom_prompt_support_get_api_response()
             return
 
         if self.matches_TAG_983979a4185f5b40aabe991f8cdb2816():
@@ -9062,7 +9062,7 @@ class MockServerRequestHandler_v2_3_2_0(BaseHTTPRequestHandler):
             return
 
         if self.matches_SYSTEM_SETTINGS_d2ea814bfae85da1b77872d095fc8221():
-            self.system_settings_custom_prompt_p_o_s_t_ap_i_response()
+            self.system_settings_custom_prompt_post_api_response()
             return
 
         if self.matches_TAG_e8271b05b62c54609f74b4f2f373ad5a():
