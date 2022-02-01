@@ -1252,6 +1252,7 @@ class Devices(object):
                      httpPort=None,
                      httpSecure=None,
                      httpUserName=None,
+                     id=None,
                      ipAddress=None,
                      merakiOrgId=None,
                      netconfPort=None,
@@ -1286,6 +1287,7 @@ class Devices(object):
             httpPort(string): Devices's httpPort.
             httpSecure(boolean): Devices's httpSecure.
             httpUserName(string): Devices's httpUserName.
+            id(string): Devices's id.
             ipAddress(list): Devices's ipAddress (list of strings).
             merakiOrgId(list): Devices's merakiOrgId (list of strings).
             netconfPort(string): Devices's netconfPort.
@@ -1393,6 +1395,8 @@ class Devices(object):
                 updateMgmtIPaddressList,
             'userName':
                 userName,
+            'id':
+                id,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
