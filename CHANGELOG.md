@@ -45,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     * event_management.update_syslog_destination
     * event_management.update_webhook_destination
     * file.upload_file
+
 ## [2.4.5] - 2022-02-01
 
 ### Changed
@@ -75,6 +76,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   + site_design.update_floormap
   + application_policy.create_application
 
+### Fixed
+- Removed an extra parameter in the call of `VERIFY_STRING_ENVIRONMENT_VARIABLE`
+
+### Added
+- Adds parameters `hostname`, `imageInfo` and `configInfo` to device_onboarding_pnp.claim_a_device_to_a_site (DNAC v2.2.3.3)
 
 ## [2.4.3] - 2022-01-19
 
