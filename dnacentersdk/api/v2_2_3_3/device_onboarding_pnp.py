@@ -836,7 +836,10 @@ class DeviceOnboardingPnp(object):
         return self._object_factory('bpm_b34f9daa98735533a61287ce30d216b6_v2_2_3_3', json_data)
 
     def claim_a_device_to_a_site(self,
+                                 configInfo=None,
                                  deviceId=None,
+                                 hostname=None,
+                                 imageInfo=None,
                                  siteId=None,
                                  type=None,
                                  headers=None,
@@ -847,7 +850,10 @@ class DeviceOnboardingPnp(object):
         platforms. .
 
         Args:
+            configInfo(object): Device Onboarding (PnP)'s configInfo.
             deviceId(string): Device Onboarding (PnP)'s deviceId.
+            hostname(string): Device Onboarding (PnP)'s hostname.
+            imageInfo(object): Device Onboarding (PnP)'s imageInfo.
             siteId(string): Device Onboarding (PnP)'s siteId.
             type(string): Device Onboarding (PnP)'s type. Available values are 'Default', 'AccessPoint',
                 'StackSwitch', 'Sensor' and 'MobilityExpress'.
@@ -893,6 +899,12 @@ class DeviceOnboardingPnp(object):
                 siteId,
             'type':
                 type,
+            'imageInfo':
+                imageInfo,
+            'configInfo':
+                configInfo,
+            'hostname':
+                hostname,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
