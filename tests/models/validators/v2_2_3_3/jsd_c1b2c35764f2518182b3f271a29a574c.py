@@ -55,6 +55,9 @@ class JSONSchemaValidatorC1B2C35764F2518182B3F271A29A574C(object):
                 "id": {
                 "type": "string"
                 },
+                "isDeletable": {
+                "type": "boolean"
+                },
                 "lastUpdateTime": {
                 "type": "integer"
                 },

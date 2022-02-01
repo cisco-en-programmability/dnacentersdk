@@ -69,6 +69,9 @@ class JSONSchemaValidatorFe06867E548BBa1919024B40D992(object):
                 "httpUserName": {
                 "type": "string"
                 },
+                "id": {
+                "type": "string"
+                },
                 "ipAddress": {
                 "items": {
                 "type": "string"

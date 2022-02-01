@@ -135,10 +135,10 @@ class JSONSchemaValidatorD84253559E9D3E81881A4Bd2Fc(object):
                 "type": "boolean"
                 },
                 "totalIpAddressCount": {
-                "type": "integer"
+                "type": "number"
                 },
                 "usedIpAddressCount": {
-                "type": "integer"
+                "type": "number"
                 },
                 "usedPercentage": {
                 "type": "string"
