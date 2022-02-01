@@ -483,6 +483,9 @@ class JSONSchemaValidatorC033291Ec4591886Bd6Ed25F900C1B(object):
                 },
                 "type": "object"
                 },
+                "id": {
+                "type": "string"
+                },
                 "runSummaryList": {
                 "items": {
                 "properties": {
