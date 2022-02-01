@@ -7,17 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [2.4.5] - 2022-02-01
+
+### Changed
+- Adds parameter `id` to devices.sync_devices for Cisco DNA Center API v2.2.3.3
+
+- Update response documentation of Cisco DNA Center API v2.2.3.3 files
+  + fabric_wireless.add_ssid_to_ip_pool_mapping
+  + fabric_wireless.update_ssid_to_ip_pool_mapping
+  + fabric_wireless.add_w_l_c_to_fabric_domain
+  + wireless.ap_provision
+  + wireless.create_update_dynamic_interface
+
+- Update models validators of Cisco DNA Center API v2.2.3.3 files for the following functions:
+  + devices.sync_devices
+
 ## [2.4.4] - 2022-01-31
 ### Changed
-- Update response documentation of DNA Center API v2.2.3.3 files
+- Update response documentation of Cisco DNA Center API v2.2.3.3 files
   + application_policy.get_applications
   + device_onboarding_pnp.get_device_list
 
-- Adds parameters `payload` and `active_validation` to the following functions:
+- Adds parameters `payload` and `active_validation` to the following functions for Cisco DNA Center API v2.2.3.3:
   + site_design.create_floormap
   + site_design.update_floormap
 
-- Update models validators of DNA Center API v2.2.3.3 files for the following functions:
+- Update models validators of Cisco DNA Center API v2.2.3.3 files for the following functions:
   + site_design.create_floormap
   + site_design.update_floormap
   + application_policy.create_application
@@ -210,4 +225,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.1...v2.4.2
 [2.4.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
 [2.4.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...v2.4.4
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.4...master
+[2.4.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.4...v2.4.5
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.5...master

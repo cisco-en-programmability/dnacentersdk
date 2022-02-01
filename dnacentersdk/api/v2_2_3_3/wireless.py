@@ -769,9 +769,8 @@ class Wireless(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            list: JSON response. A list of MyDict objects.
-            Access the object's properties by using the dot notation
-            or the bracket notation.
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -840,9 +839,8 @@ class Wireless(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            list: JSON response. A list of MyDict objects.
-            Access the object's properties by using the dot notation
-            or the bracket notation.
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
 
         Raises:
             TypeError: If the parameter types are incorrect.

@@ -98,7 +98,7 @@ class JSONSchemaValidatorC7Bed4B4148753E6Bc9912E3Be135217(object):
                 "type": "object"
                 },
                 "isPrivate": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "name": {
                 "type": "string"
