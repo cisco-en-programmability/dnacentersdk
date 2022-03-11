@@ -372,17 +372,11 @@ class Sda(object):
                            borderSessionType=None,
                            connectedToInternet=None,
                            deviceManagementIpAddress=None,
-                           externalAutonomouSystemNumber=None,
                            externalConnectivityIpPoolName=None,
                            externalConnectivitySettings=None,
                            externalDomainRoutingProtocolName=None,
-                           interfaceName=None,
                            internalAutonomouSystemNumber=None,
-                           l3Handoff=None,
                            siteNameHierarchy=None,
-                           virtualNetwork=None,
-                           virtualNetworkName=None,
-                           vlanId=None,
                            headers=None,
                            payload=None,
                            active_validation=True,
@@ -395,21 +389,14 @@ class Sda(object):
             connectedToInternet(boolean): SDA's Connected to Internet .
             deviceManagementIpAddress(string): SDA's Management Ip Address of the Device which is provisioned
                 successfully .
-            externalAutonomouSystemNumber(string): SDA's External Autonomous System Number  will be used to automate
-                IP routing between Border Node and remote peer (e.g.,1-65535) .
             externalConnectivityIpPoolName(string): SDA's IP pool to use to automate IP routing between the border
                 node and remote peer. .
-            externalConnectivitySettings(object): SDA's External Connectivity Settings information of L3 Handoff .
+            externalConnectivitySettings(list): SDA's externalConnectivitySettings (list of objects).
             externalDomainRoutingProtocolName(string): SDA's External Domain Routing Protocol  Name. (Example: BGP)
                 .
-            interfaceName(string): SDA's Interface Name .
             internalAutonomouSystemNumber(string): SDA's Internal Autonomouns System Number used by border node to
                 communicate with remote peer (e.g.,1-65535) .
-            l3Handoff(object): SDA's L3 Handoff information .
             siteNameHierarchy(string): SDA's Site Name Hierarchy for device location(site should be fabric site) .
-            virtualNetwork(object): SDA's Virtual Network information of L3 Hand off .
-            virtualNetworkName(string): SDA's Virtual Network Name assigned to site .
-            vlanId(string): SDA's Vlan Id (e.g.,2-4096 except for reserved VLANs (1002-1005, 2046, 4095)) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -459,18 +446,6 @@ class Sda(object):
                 connectedToInternet,
             'externalConnectivitySettings':
                 externalConnectivitySettings,
-            'interfaceName':
-                interfaceName,
-            'externalAutonomouSystemNumber':
-                externalAutonomouSystemNumber,
-            'l3Handoff':
-                l3Handoff,
-            'virtualNetwork':
-                virtualNetwork,
-            'virtualNetworkName':
-                virtualNetworkName,
-            'vlanId':
-                vlanId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
