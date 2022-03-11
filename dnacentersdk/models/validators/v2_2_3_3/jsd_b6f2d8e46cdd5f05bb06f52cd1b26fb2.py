@@ -59,37 +59,49 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "deviceManagementIpAddress": {
                 "type": "string"
                 },
-                "externalAutonomouSystemNumber": {
-                "type": "string"
-                },
                 "externalConnectivityIpPoolName": {
                 "type": "string"
                 },
                 "externalConnectivitySettings": {
-                "type": "object"
-                },
-                "externalDomainRoutingProtocolName": {
+                "items": {
+                "properties": {
+                "externalAutonomouSystemNumber": {
                 "type": "string"
                 },
                 "interfaceName": {
                 "type": "string"
                 },
-                "internalAutonomouSystemNumber": {
-                "type": "string"
-                },
                 "l3Handoff": {
-                "type": "object"
-                },
-                "siteNameHierarchy": {
-                "type": "string"
-                },
+                "items": {
+                "properties": {
                 "virtualNetwork": {
-                "type": "object"
-                },
+                "properties": {
                 "virtualNetworkName": {
                 "type": "string"
                 },
                 "vlanId": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "externalDomainRoutingProtocolName": {
+                "type": "string"
+                },
+                "internalAutonomouSystemNumber": {
+                "type": "string"
+                },
+                "siteNameHierarchy": {
                 "type": "string"
                 }
                 },
