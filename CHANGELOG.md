@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
-## [2.4.6] - 2022-03-11
+## [2.4.6] - 2022-03-14
 ### Changed
 - Update the type of the `externalConnectivitySettings`from object to list in sda.adds_border_device
 - `interfaceName` is now part of the structure of `externalConnectivitySettings` in sda.adds_border_device
