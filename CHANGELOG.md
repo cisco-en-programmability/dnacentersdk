@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
-## [2.5.0] - 2022-03-11
+## [2.4.6] - 2022-03-11
 ### Changed
 - Update the type of the `externalConnectivitySettings`from object to list in sda.adds_border_device
 - `interfaceName` is now part of the structure of `externalConnectivitySettings` in sda.adds_border_device
@@ -239,5 +239,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.2...v2.4.3
 [2.4.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.3...v2.4.4
 [2.4.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.4...v2.4.5
-[2.5.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.5...v2.5.0
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...master
+[2.4.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.5...v2.4.6
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.6...master
