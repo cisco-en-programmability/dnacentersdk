@@ -84,6 +84,9 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 },
                 "type": "object"
                 },
+                "rfProfile": {
+                "type": "string"
+                },
                 "siteId": {
                 "type": "string"
                 },
