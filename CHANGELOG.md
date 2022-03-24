@@ -5,9 +5,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.4.8] - 2022-03-23
+
+### Added
+- Add `DownloadResponse` class that wraps the `urllib3.response.HTTPResponse`.
+- Add `filename` optional parameter to the following functions:
+  + dnacentersdk.api.v1_2_10.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v1_3_0.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v1_3_1.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v1_3_3.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_1_1.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_1_2.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_1_2.reports.Reports.download_report_content
+  + dnacentersdk.api.v2_2_2_3.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_2_2_3.reports.Reports.download_report_content
+  + dnacentersdk.api.v2_2_3_3.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_2_3_3.reports.Reports.download_report_content
+
+### Changed
+- Change the response of the following funtions from `urllib3.response.HTTPResponse` to a wrapper `DownloadResponse`.
+  + dnacentersdk.api.v1_2_10.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v1_3_0.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v1_3_1.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v1_3_3.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_1_1.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_1_2.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_1_2.reports.Reports.download_report_content
+  + dnacentersdk.api.v2_2_2_3.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_2_2_3.reports.Reports.download_report_content
+  + dnacentersdk.api.v2_2_3_3.file.File.download_a_file_by_fileid
+  + dnacentersdk.api.v2_2_3_3.reports.Reports.download_report_content
+
 ## [2.4.7] - 2022-03-22
+
+### Added
 - Add `rfProfile` parameter for request body struct of `claim_a_device_to_a_site`.
+
 ## [2.4.6] - 2022-03-14
+
 ### Changed
 - Update the type of the `externalConnectivitySettings`from object to list in sda.adds_border_device
 - `interfaceName` is now part of the structure of `externalConnectivitySettings` in sda.adds_border_device
@@ -241,4 +277,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.4...v2.4.5
 [2.4.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.5...v2.4.6
 [2.4.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.6...v2.4.7
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.7...master
+[2.4.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.7...v2.4.8
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.8...master
