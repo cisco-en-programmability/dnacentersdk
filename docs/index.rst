@@ -47,6 +47,7 @@ Interested in contributing to the project?  Please review our community's Code o
 
     code_of_conduct
     contributing
+    CHANGELOG
 
 
 
