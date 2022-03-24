@@ -410,6 +410,7 @@ def download_report_content(api):
     endpoint_result = api.reports.download_report_content(
         dirpath=None,
         save_file=None,
+        filename=None,
         execution_id='string',
         report_id='string'
     )
@@ -433,6 +434,7 @@ def download_report_content_default_val(api):
     endpoint_result = api.reports.download_report_content(
         dirpath=None,
         save_file=None,
+        filename=None,
         execution_id='string',
         report_id='string'
     )
