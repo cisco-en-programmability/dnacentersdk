@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
@@ -36,9 +30,9 @@ from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
+    apply_path_params,
     check_type,
     dict_from_items_with_values,
-    apply_path_params,
     dict_of_str,
 )
 
@@ -401,6 +395,7 @@ class Reports(object):
                                 report_id,
                                 dirpath=None,
                                 save_file=None,
+                                filename=None,
                                 headers=None,
                                 **request_parameters):
         """Returns report content. Save the response to a file by converting the response data as a blob and setting the
@@ -413,13 +408,15 @@ class Reports(object):
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
                 raw response.
+            filename(basestring): The filename used to save the download
+                file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
-            urllib3.response.HTTPResponse: HTTP Response container. For more
+            DownloadResponse: The DownloadResponse wrapper. Wraps the urllib3.response.HTTPResponse. For more
             information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
         Raises:
@@ -461,10 +458,10 @@ class Reports(object):
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
                                           headers=_headers,
-                                          stream=True, dirpath=dirpath, save_file=save_file)
+                                          stream=True, dirpath=dirpath, save_file=save_file, filename=filename)
         else:
             json_data = self._session.get(endpoint_full_url, params=_params,
-                                          stream=True, dirpath=dirpath, save_file=save_file)
+                                          stream=True, dirpath=dirpath, save_file=save_file, filename=filename)
 
         return self._object_factory('bpm_b2790cdb5abf98c8e00011de86a4_v2_2_3_3', json_data)
 

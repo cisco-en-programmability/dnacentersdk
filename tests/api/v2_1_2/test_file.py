@@ -115,6 +115,7 @@ def download_a_file_by_fileid(api):
     endpoint_result = api.file.download_a_file_by_fileid(
         dirpath=None,
         save_file=None,
+        filename=None,
         file_id='string'
     )
     return endpoint_result
@@ -132,6 +133,7 @@ def download_a_file_by_fileid_default(api):
     endpoint_result = api.file.download_a_file_by_fileid(
         dirpath=None,
         save_file=None,
+        filename=None,
         file_id='string'
     )
     return endpoint_result

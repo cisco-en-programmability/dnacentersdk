@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
 from builtins import *
@@ -36,7 +30,6 @@ from builtins import *
 import requests
 
 from .response_codes import RESPONSE_CODES
-
 
 logger = logging.getLogger(__name__)
 

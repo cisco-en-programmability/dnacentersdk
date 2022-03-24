@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
@@ -36,9 +30,9 @@ from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
+    apply_path_params,
     check_type,
     dict_from_items_with_values,
-    apply_path_params,
     dict_of_str,
 )
 
@@ -840,7 +834,6 @@ class DeviceOnboardingPnp(object):
                                  deviceId=None,
                                  hostname=None,
                                  imageInfo=None,
-                                 rfProfile=None,
                                  siteId=None,
                                  type=None,
                                  headers=None,
@@ -855,7 +848,6 @@ class DeviceOnboardingPnp(object):
             deviceId(string): Device Onboarding (PnP)'s deviceId.
             hostname(string): Device Onboarding (PnP)'s hostname.
             imageInfo(object): Device Onboarding (PnP)'s imageInfo.
-            rfProfile(string): Device Onboarding (PnP)'s rfProfile.
             siteId(string): Device Onboarding (PnP)'s siteId.
             type(string): Device Onboarding (PnP)'s type. Available values are 'Default', 'AccessPoint',
                 'StackSwitch', 'Sensor' and 'MobilityExpress'.
@@ -907,8 +899,6 @@ class DeviceOnboardingPnp(object):
                 configInfo,
             'hostname':
                 hostname,
-            'rfProfile':
-                rfProfile,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)

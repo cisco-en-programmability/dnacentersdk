@@ -2155,6 +2155,16 @@ MyDict
     :members:
     :exclude-members: get_dict, clear, fromkeys, pop, popitem, setdefault, update, values
 
+
+.. _DownloadResponse:
+
+DownloadResponse
+----------------
+
+.. autoclass:: dnacentersdk.restsession.DownloadResponse()
+    :members:
+
+
 .. _Exceptions:
 
 Exceptions
