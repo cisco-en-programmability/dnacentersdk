@@ -71,7 +71,8 @@ logger = logging.getLogger(__name__)
 class DownloadResponse(HTTPResponse):
     """Download Response wrapper.
 
-    Bases: urllib3.response.HTTPResponse
+    Bases: urllib3.response.HTTPResponse. For more
+    information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
     HTTP Response container.
     """
