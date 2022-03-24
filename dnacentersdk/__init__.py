@@ -22,13 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
 
@@ -37,15 +31,14 @@ from .api import DNACenterAPI
 from .exceptions import (
     AccessTokenError,
     ApiError,
-    dnacentersdkException,
     DownloadFailure,
     MalformedRequest,
     RateLimitError,
     RateLimitWarning,
     VersionError,
+    dnacentersdkException,
 )
 from .models.mydict import mydict_data_factory
-
 
 # Initialize Package Logging
 logging.getLogger(__name__).addHandler(logging.NullHandler())

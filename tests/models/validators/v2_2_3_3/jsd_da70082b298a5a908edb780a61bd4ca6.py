@@ -22,19 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+import json
+from builtins import *
 
 import fastjsonschema
-import json
-from dnacentersdk.exceptions import MalformedRequest
 
-from builtins import *
+from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDa70082B298A5A908Edb780A61Bd4Ca6(object):

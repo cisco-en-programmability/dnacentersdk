@@ -22,19 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+import json
+from builtins import *
 
 import fastjsonschema
-import json
-from dnacentersdk.exceptions import MalformedRequest
 
-from builtins import *
+from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
@@ -59,49 +54,37 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "deviceManagementIpAddress": {
                 "type": "string"
                 },
+                "externalAutonomouSystemNumber": {
+                "type": "string"
+                },
                 "externalConnectivityIpPoolName": {
                 "type": "string"
                 },
                 "externalConnectivitySettings": {
-                "items": {
-                "properties": {
-                "externalAutonomouSystemNumber": {
+                "type": "object"
+                },
+                "externalDomainRoutingProtocolName": {
                 "type": "string"
                 },
                 "interfaceName": {
                 "type": "string"
                 },
+                "internalAutonomouSystemNumber": {
+                "type": "string"
+                },
                 "l3Handoff": {
-                "items": {
-                "properties": {
+                "type": "object"
+                },
+                "siteNameHierarchy": {
+                "type": "string"
+                },
                 "virtualNetwork": {
-                "properties": {
+                "type": "object"
+                },
                 "virtualNetworkName": {
                 "type": "string"
                 },
                 "vlanId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "externalDomainRoutingProtocolName": {
-                "type": "string"
-                },
-                "internalAutonomouSystemNumber": {
-                "type": "string"
-                },
-                "siteNameHierarchy": {
                 "type": "string"
                 }
                 },

@@ -22,14 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
 import logging
 import warnings
 
-import pytest
-
 import dnacentersdk
-
+import pytest
 
 logging.captureWarnings(True)
 
