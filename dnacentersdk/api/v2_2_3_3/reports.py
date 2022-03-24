@@ -416,7 +416,7 @@ class Reports(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            urllib3.response.HTTPResponse: HTTP Response container. For more
+            DownloadResponse: The DownloadResponse wrapper. Wraps the urllib3.response.HTTPResponse. For more
             information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
 
         Raises:
