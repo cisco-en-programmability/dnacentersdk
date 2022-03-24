@@ -22,19 +22,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from future import standard_library
+
 standard_library.install_aliases()
 
+import errno
+import logging
 import os
 import re
+import socket
 import time
 import urllib.parse
 import warnings
@@ -42,27 +40,96 @@ from builtins import *
 
 import requests
 from past.builtins import basestring
+from requests.packages.urllib3.response import HTTPResponse
+from requests_toolbelt.multipart import encoder
 
 from .config import (
-    DEFAULT_SINGLE_REQUEST_TIMEOUT, DEFAULT_WAIT_ON_RATE_LIMIT, DEFAULT_VERIFY
+    DEFAULT_SINGLE_REQUEST_TIMEOUT,
+    DEFAULT_VERIFY,
+    DEFAULT_WAIT_ON_RATE_LIMIT,
 )
 from .exceptions import (
-    dnacentersdkException, RateLimitError, RateLimitWarning, ApiError,
+    ApiError,
     DownloadFailure,
+    RateLimitError,
+    RateLimitWarning,
+    dnacentersdkException,
 )
 from .response_codes import EXPECTED_RESPONSE_CODE
 from .utils import (
-    check_response_code, check_type, extract_and_parse_json, validate_base_url,
-    pprint_request_info, pprint_response_info,
+    check_response_code,
+    check_type,
+    extract_and_parse_json,
+    pprint_request_info,
+    pprint_response_info,
+    validate_base_url,
 )
-from requests_toolbelt.multipart import encoder
-import socket
-import errno
-import logging
-from requests.packages.urllib3.response import HTTPResponse
-
 
 logger = logging.getLogger(__name__)
+
+
+class DownloadResponse(HTTPResponse):
+    """Download Response wrapper.
+
+    Bases: urllib3.response.HTTPResponse
+
+    HTTP Response container.
+    """
+
+    def __init__(self, response, path, filename, dirpath, collected_data):
+        """
+        Creates a new DownloadResponse object.
+
+        By calling urllib3.response.HTTPResponse __init__ method
+        with the raw property of requests.Response,
+        it recovers data from the API response
+
+        It adds properties regarding the download: filename, dirpath and path
+
+        Args:
+            response(requests.Response): The Response object, which contains a server's
+                response to an HTTP request.
+            path(basestring): The downloaded file path.
+            filename(basestring): The downloaded filename.
+            dirpath(basestring): The download directory path.
+            collected_data(bytes): HTTP response's data.
+        """
+        super(DownloadResponse, self).__init__(
+            body=response.raw,
+            headers=response.headers,
+            status=response.status_code,
+            reason=response.reason,
+            request_method=response.request.method,
+            request_url=response.request.url,
+        )
+        # adds additional and important information
+        self._filename = filename
+        self._dirpath = dirpath
+        self._path = path
+        self._collected_data = collected_data
+
+    @property
+    def data(self):
+        """The HTTPResponse's data"""
+        # Call HTTPResponse's data property
+        original_data = super(DownloadResponse, self).data
+        # It uses the one that has value prioritizing the HTTPResponse's data
+        return original_data or self._collected_data
+
+    @property
+    def filename(self):
+        """The downloaded filename"""
+        return self._filename
+
+    @property
+    def dirpath(self):
+        """The downloaded directory path"""
+        return self._dirpath
+
+    @property
+    def path(self):
+        """The download file path"""
+        return self._path
 
 
 # Main module interface
@@ -250,34 +317,82 @@ class RestSession(object):
             # url is already an absolute URL; return as is
             return url
 
+    def get_filename(self, content):
+        """Get the filename from the Content-Disposition's header
+
+        Args:
+            content(basestring): the Content-Disposition's header
+
+        Returns:
+            str: the filename from the Content-Disposition's header
+
+        Raises:
+            Exception: If was not able to find the header's filename value.
+        """
+        content_file_list = re.findall('filename=(.*)', content)
+        if len(content_file_list) > 0:
+            content_file_name = content_file_list[0].replace('"', '')
+        else:
+            raise Exception("Could not find the header's filename value")
+        return content_file_name
+
     def download(self, method, url, erc, custom_refresh, **kwargs):
+        """It immediately downloads the response content.
+
+        Args:
+            method(basestring): The request-method type ('GET', 'POST', etc.).
+            url(basestring): The URL of the API endpoint to be called.
+            erc(int): The expected response code that should be returned by the
+                DNA Center API endpoint to indicate success.
+            **kwargs: Passed on to the requests package.
+
+        To download it to a file use the `save_file` kwarg equal to True.
+        It defaults to False. If False is only 'downloaded' to a data property.
+
+        To specify the downloaded file use the `filename` kwarg.
+        It defaults to the value of the Content-Disposition header's filename.
+
+        To specify the downloaded directory path use the `dirpath` kwarg.
+        It defaults to the os.getcwd() result.
+
+        Returns:
+            DownloadResponse: The DownloadResponse wrapper. Wraps the urllib3.response.HTTPResponse. For more
+            information check the `urlib3 documentation <https://urllib3.readthedocs.io/en/latest/reference/urllib3.response.html>`_
+
+        Raises:
+            DownloadFailure: If was not able to download the raw
+            response to a file.
+        """
+        save_file = kwargs.pop('save_file', False)
         dirpath = kwargs.pop('dirpath', None)
+        filename = kwargs.pop('filename', None)
+        filepath = None
+        collected_data = bytes()
+
         if not(dirpath) or not(os.path.isdir(dirpath)):
             dirpath = os.getcwd()
 
-        save_file = kwargs.pop('save_file', False)
         with self.request(method, url, erc, 0, **kwargs) as resp:
-            if save_file and resp.headers and resp.headers.get('Content-Disposition'):
+            if resp.headers and resp.headers.get('Content-Disposition'):
                 try:
                     content = resp.headers.get('Content-Disposition')
-                    content_file_list = re.findall('filename=(.*)', content)
-                    if len(content_file_list) > 0:
-                        content_file_name = content_file_list[0].replace('"', '')
-                    else:
-                        content_file_name = 'result_file'
-                    file_name = os.path.join(dirpath,
-                                             content_file_name)
-                    with open(file_name, 'wb') as f:
-                        logger.debug('Downloading {}'.format(file_name))
+                    filename = filename or self.get_filename(content)
+                    filepath = os.path.join(dirpath, filename)
+                except Exception as e:
+                    raise DownloadFailure(resp, e)
+            if save_file and filepath:
+                try:
+                    with open(filepath, 'wb') as f:
+                        logger.debug('Downloading {0}'.format(filepath))
                         for chunk in resp.iter_content(chunk_size=1024):
                             if chunk:
+                                collected_data += chunk
                                 f.write(chunk)
                 except Exception as e:
                     raise DownloadFailure(resp, e)
-                logger.debug('Downloaded')
-            # Needed to create a copy of the raw response
-            # if not copied it would not recover data and other properties
-            return HTTPResponse(resp.raw)
+                logger.debug('Downloaded {0}'.format(filepath))
+            final_response = DownloadResponse(resp, filepath, filename, dirpath, collected_data)
+            return final_response
 
     def request(self, method, url, erc, custom_refresh, **kwargs):
         """Abstract base method for making requests to the DNA Center APIs.
@@ -296,6 +411,9 @@ class RestSession(object):
             erc(int): The expected response code that should be returned by the
                 DNA Center API endpoint to indicate success.
             **kwargs: Passed on to the requests package.
+
+        Returns:
+            requests.Response: The Response object, which contains a server's response to an HTTP request.
 
         Raises:
             ApiError: If anything other than the expected response code is
@@ -410,6 +528,10 @@ class RestSession(object):
                 erc(int): The expected (success) response code for the request.
                 others: Passed on to the requests package.
 
+        Returns:
+            DownloadResponse: If it has `stream` kwarg with a True value.
+            Any: Result of the `json.loads` of the server's response to an HTTP request.
+
         Raises:
             ApiError: If anything other than the expected response code is
                 returned by the DNA Center API endpoint.
@@ -437,6 +559,10 @@ class RestSession(object):
             **kwargs:
                 erc(int): The expected (success) response code for the request.
                 others: Passed on to the requests package.
+
+        Returns:
+            DownloadResponse: If it has `stream` kwarg with a True value.
+            Any: Result of the `json.loads` of the server's response to an HTTP request.
 
         Raises:
             ApiError: If anything other than the expected response code is
@@ -468,6 +594,11 @@ class RestSession(object):
             **kwargs:
                 erc(int): The expected (success) response code for the request.
                 others: Passed on to the requests package.
+
+
+        Returns:
+            DownloadResponse: If it has `stream` kwarg with a True value.
+            Any: Result of the `json.loads` of the server's response to an HTTP request.
 
         Raises:
             ApiError: If anything other than the expected response code is
