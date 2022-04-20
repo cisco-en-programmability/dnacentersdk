@@ -22,14 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
-import json
-from builtins import *
+from __future__ import (
+    absolute_import,
+    division,
+    print_function,
+    unicode_literals,
+)
 
 import fastjsonschema
-
+import json
 from dnacentersdk.exceptions import MalformedRequest
+
+from builtins import *
 
 
 class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
@@ -65,7 +70,13 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 "deviceId": {
                 "type": "string"
                 },
+                "gateway": {
+                "type": "string"
+                },
                 "hostname": {
+                "type": "string"
+                },
+                "imageId": {
                 "type": "string"
                 },
                 "imageInfo": {
@@ -73,23 +84,34 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 "imageId": {
                 "type": "string"
                 },
+                "removeInactive": {
+                "type": "boolean"
+                },
                 "skip": {
                 "type": "boolean"
                 }
                 },
                 "type": "object"
                 },
+                "ipInterfaceName": {
+                "type": "string"
+                },
+                "rfProfile": {
+                "type": "string"
+                },
                 "siteId": {
                 "type": "string"
                 },
+                "staticIP": {
+                "type": "string"
+                },
+                "subnetMask": {
+                "type": "string"
+                },
                 "type": {
-                "enum": [
-                "Default",
-                "AccessPoint",
-                "StackSwitch",
-                "Sensor",
-                "MobilityExpress"
-                ],
+                "type": "string"
+                },
+                "vlanId": {
                 "type": "string"
                 }
                 },
