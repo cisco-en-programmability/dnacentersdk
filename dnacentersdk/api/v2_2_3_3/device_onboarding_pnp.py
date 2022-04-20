@@ -22,7 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
+from __future__ import (
+    absolute_import,
+    division,
+    print_function,
+    unicode_literals,
+)
 
 from builtins import *
 
@@ -30,9 +36,9 @@ from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
-    apply_path_params,
     check_type,
     dict_from_items_with_values,
+    apply_path_params,
     dict_of_str,
 )
 
@@ -832,10 +838,17 @@ class DeviceOnboardingPnp(object):
     def claim_a_device_to_a_site(self,
                                  configInfo=None,
                                  deviceId=None,
+                                 gateway=None,
                                  hostname=None,
+                                 imageId=None,
                                  imageInfo=None,
+                                 ipInterfaceName=None,
+                                 rfProfile=None,
                                  siteId=None,
+                                 staticIP=None,
+                                 subnetMask=None,
                                  type=None,
+                                 vlanId=None,
                                  headers=None,
                                  payload=None,
                                  active_validation=True,
@@ -846,11 +859,18 @@ class DeviceOnboardingPnp(object):
         Args:
             configInfo(object): Device Onboarding (PnP)'s configInfo.
             deviceId(string): Device Onboarding (PnP)'s deviceId.
+            gateway(string): Device Onboarding (PnP)'s gateway.
             hostname(string): Device Onboarding (PnP)'s hostname.
+            imageId(string): Device Onboarding (PnP)'s imageId.
             imageInfo(object): Device Onboarding (PnP)'s imageInfo.
+            ipInterfaceName(string): Device Onboarding (PnP)'s ipInterfaceName.
+            rfProfile(string): Device Onboarding (PnP)'s rfProfile.
             siteId(string): Device Onboarding (PnP)'s siteId.
+            staticIP(string): Device Onboarding (PnP)'s staticIP.
+            subnetMask(string): Device Onboarding (PnP)'s subnetMask.
             type(string): Device Onboarding (PnP)'s type. Available values are 'Default', 'AccessPoint',
                 'StackSwitch', 'Sensor' and 'MobilityExpress'.
+            vlanId(string): Device Onboarding (PnP)'s vlanId.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -899,6 +919,20 @@ class DeviceOnboardingPnp(object):
                 configInfo,
             'hostname':
                 hostname,
+            'rfProfile':
+                rfProfile,
+            'gateway':
+                gateway,
+            'imageId':
+                imageId,
+            'ipInterfaceName':
+                ipInterfaceName,
+            'staticIP':
+                staticIP,
+            'subnetMask':
+                subnetMask,
+            'vlanId':
+                vlanId,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
