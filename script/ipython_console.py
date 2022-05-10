@@ -42,7 +42,7 @@ api = DNACenterAPI(verify=False, debug=True)
 logging.getLogger('dnacentersdk').addHandler(logging.StreamHandler())
 # logging.getLogger('dnacentersdk').addHandler(ch)
 
-api.devices.get_device_list()
+# api.devices.get_device_list()
 
 # CONFIGURE logger correctly following
 # https://docs.python.org/3.7/howto/logging.html#configuring-logging

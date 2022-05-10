@@ -1,6 +1,7 @@
-from http.server import BaseHTTPRequestHandler
-import re
 import json
+import re
+from http.server import BaseHTTPRequestHandler
+
 import requests
 
 
@@ -5043,6 +5044,10 @@ class MockServerRequestHandler_v1_3_3(BaseHTTPRequestHandler):
         if self.matches_APPLICATION_POLICY_cfa049a644bb8a07():
             self.application_policy_get_application_sets_count_response()
             return
+
+    def do_PATCH(self):
+
+        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():

@@ -37,6 +37,7 @@ pytest_plugins = [
     'tests.api.v2_2_1',
     'tests.api.v2_2_2_3',
     'tests.api.v2_2_3_3',
+    'tests.api.v2_3_3_0',
 ]
 
 
@@ -62,6 +63,10 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "authentication_management: authentication_management wrapper test"
     )
+    config.addinivalue_line(
+        "markers", "cisco_dna_center_system: cisco_dna_center_system wrapper test"
+    )
+    
     config.addinivalue_line(
         "markers", "clients: clients wrapper test"
     )
@@ -144,6 +149,21 @@ def pytest_configure(config):
         "markers", "policy: policy wrapper test"
     )
     config.addinivalue_line(
+        "markers", "lan_automation: lan_automation wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "licenses: licenses wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "network_settings: network_settings wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "path_trace: path_trace wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "platform_configuration: platform_configuration wrapper test"
+    )
+    config.addinivalue_line(
         "markers", "reports: reports wrapper test"
     )
     config.addinivalue_line(
@@ -169,6 +189,15 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "software_image_management_swim: software_image_management_swim wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "sites: sites wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "software_image_management_swim: software_image_management_swim wrapper test"
+    )
+    config.addinivalue_line(
+        "markers", "system_settings: system_settings wrapper test"
     )
     config.addinivalue_line(
         "markers", "tag: tag wrapper test"

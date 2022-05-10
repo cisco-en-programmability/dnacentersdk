@@ -1,6 +1,7 @@
-from http.server import BaseHTTPRequestHandler
-import re
 import json
+import re
+from http.server import BaseHTTPRequestHandler
+
 import requests
 
 
@@ -6471,6 +6472,10 @@ class MockServerRequestHandler_v2_2_1(BaseHTTPRequestHandler):
         if self.matches_WIRELESS_dde2b077d6d052dcae5a76f4aac09c1d():
             self.wireless_sensor_test_results_response()
             return
+
+    def do_PATCH(self):
+
+        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():
