@@ -1,7 +1,6 @@
-import json
-import re
 from http.server import BaseHTTPRequestHandler
-
+import re
+import json
 import requests
 
 
@@ -3396,10 +3395,6 @@ class MockServerRequestHandler_v1_2_10(BaseHTTPRequestHandler):
         if self.matches_FABRIC_WIRED_98a39bf4485a9871():
             self.fabric_wired_getsborderdevicedetail_response()
             return
-
-    def do_PATCH(self):
-
-        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():

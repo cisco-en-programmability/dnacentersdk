@@ -1,7 +1,6 @@
-import json
-import re
 from http.server import BaseHTTPRequestHandler
-
+import re
+import json
 import requests
 
 
@@ -5276,10 +5275,6 @@ class MockServerRequestHandler_v2_1_1(BaseHTTPRequestHandler):
         if self.matches_ITSM_a293b82a42a8ab15():
             self.itsm_get_failed_itsm_events_response()
             return
-
-    def do_PATCH(self):
-
-        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():

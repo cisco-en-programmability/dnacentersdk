@@ -1,7 +1,6 @@
-import json
-import re
 from http.server import BaseHTTPRequestHandler
-
+import re
+import json
 import requests
 
 
@@ -7582,10 +7581,6 @@ class MockServerRequestHandler_v2_2_2_3(BaseHTTPRequestHandler):
         if self.matches_WIRELESS_ac37d6798c0b593088952123df03bb1b():
             self.wireless_retrieve_rf_profiles_response()
             return
-
-    def do_PATCH(self):
-
-        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():

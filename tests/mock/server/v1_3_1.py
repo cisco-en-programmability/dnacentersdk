@@ -1,7 +1,6 @@
-import json
-import re
 from http.server import BaseHTTPRequestHandler
-
+import re
+import json
 import requests
 
 
@@ -4548,10 +4547,6 @@ class MockServerRequestHandler_v1_3_1(BaseHTTPRequestHandler):
         if self.matches_APPLICATION_POLICY_8893b834445bb29c():
             self.application_policy_get_applications_response()
             return
-
-    def do_PATCH(self):
-
-        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():

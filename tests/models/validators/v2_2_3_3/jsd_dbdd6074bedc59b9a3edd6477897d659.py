@@ -45,56 +45,7 @@ class JSONSchemaValidatorDbdd6074Bedc59B9A3EdD6477897D659(object):
                 "properties": {
                 "additionalInfo": {
                 "items": {
-                "properties": {
-                "attributes": {
-                "properties": {
-                "address": {
                 "type": "string"
-                },
-                "addressInheritedFrom": {
-                "type": "string"
-                },
-                "country": {
-                "type": "string"
-                },
-                "floorIndex": {
-                "type": "string"
-                },
-                "height": {
-                "type": "string"
-                },
-                "latitude": {
-                "type": "string"
-                },
-                "length": {
-                "type": "string"
-                },
-                "longitude": {
-                "type": "string"
-                },
-                "offsetX": {
-                "type": "string"
-                },
-                "offsetY": {
-                "type": "string"
-                },
-                "rfModel": {
-                "type": "string"
-                },
-                "type": {
-                "type": "string"
-                },
-                "width": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "nameSpace": {
-                "type": "string"
-                }
-                },
-                "type": "object"
                 },
                 "type": "array"
                 },
