@@ -2615,12 +2615,14 @@ class Sda(object):
 
     def get_ip_pool_from_sda_virtual_network(self,
                                              ip_pool_name,
+                                             site_name_hierarchy,
                                              virtual_network_name,
                                              headers=None,
                                              **request_parameters):
         """Get IP Pool from SDA Virtual Network .
 
         Args:
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             ip_pool_name(basestring): ipPoolName query parameter.
             virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2638,6 +2640,8 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
+        check_type(site_name_hierarchy, basestring,
+                   may_be_none=False)
         check_type(ip_pool_name, basestring,
                    may_be_none=False)
         check_type(virtual_network_name, basestring,
@@ -2648,6 +2652,8 @@ class Sda(object):
                            basestring, may_be_none=False)
 
         _params = {
+            'siteNameHierarchy':
+                site_name_hierarchy,
             'ipPoolName':
                 ip_pool_name,
             'virtualNetworkName':
@@ -2677,6 +2683,7 @@ class Sda(object):
 
     def delete_ip_pool_from_sda_virtual_network(self,
                                                 ip_pool_name,
+                                                site_name_hierarchy,
                                                 virtual_network_name,
                                                 headers=None,
                                                 **request_parameters):
@@ -2685,6 +2692,7 @@ class Sda(object):
         Args:
             ip_pool_name(basestring): ipPoolName query parameter.
             virtual_network_name(basestring): virtualNetworkName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2704,6 +2712,8 @@ class Sda(object):
                    may_be_none=False)
         check_type(virtual_network_name, basestring,
                    may_be_none=False)
+        check_type(site_name_hierarchy, basestring,
+                   may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2714,6 +2724,8 @@ class Sda(object):
                 ip_pool_name,
             'virtualNetworkName':
                 virtual_network_name,
+            'siteNameHierarchy':
+                site_name_hierarchy,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
