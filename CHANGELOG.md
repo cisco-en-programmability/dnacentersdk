@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.4.10] - 2022-05-12
+### Added
+- Add following parameters to `delete_ip_pool_from_sda_virtual_network` and `get_ip_pool_from_sda_virtual_network`:
+    + site_name_hierarchy
+  
 ## [2.4.9] - 2022-04-20
 ### Added
 - Add following parameters to `claim_a_device_to_a_site`:
@@ -289,4 +295,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.6...v2.4.7
 [2.4.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.7...v2.4.8
 [2.4.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.8...v2.4.9
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...master
+[2.4.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...v2.4.10
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...master
