@@ -40,20 +40,73 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
+                "configInfo": {
+                "properties": {
+                "configId": {
+                "type": "string"
+                },
+                "configParameters": {
+                "items": {
+                "properties": {
+                "key": {
+                "type": "string"
+                },
+                "value": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
                 "deviceId": {
+                "type": "string"
+                },
+                "gateway": {
+                "type": "string"
+                },
+                "hostname": {
+                "type": "string"
+                },
+                "imageId": {
+                "type": "string"
+                },
+                "imageInfo": {
+                "properties": {
+                "imageId": {
+                "type": "string"
+                },
+                "skip": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "ipInterfaceName": {
+                "type": "string"
+                },
+                "removeInactive": {
+                "type": "boolean"
+                },
+                "rfProfile": {
                 "type": "string"
                 },
                 "siteId": {
                 "type": "string"
                 },
+                "staticIP": {
+                "type": "string"
+                },
+                "subnetMask": {
+                "type": "string"
+                },
                 "type": {
-                "enum": [
-                "Default",
-                "AccessPoint",
-                "StackSwitch",
-                "Sensor",
-                "MobilityExpress"
-                ],
+                "type": "string"
+                },
+                "vlanId": {
                 "type": "string"
                 }
                 },

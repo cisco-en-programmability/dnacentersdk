@@ -658,7 +658,8 @@ class SoftwareImageManagementSwim(object):
                                     headers=None,
                                     **request_parameters):
         """Fetches a software image from local file system and uploads to DNA Center. Supported software image files
-        extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
+        extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2. Upload the file to the **file**
+        form data field .
 
         The following code gives an example of the multipart_fields.
 

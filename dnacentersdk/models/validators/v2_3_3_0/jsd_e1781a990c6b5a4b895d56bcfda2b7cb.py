@@ -49,6 +49,32 @@ class JSONSchemaValidatorE1781A990C6B5A4B895D56Bcfda2B7Cb(object):
                 },
                 "type": "object"
                 },
+                "indicativeNetworkIdentity": {
+                "items": {
+                "properties": {
+                "displayName": {
+                "type": "string"
+                },
+                "id": {
+                "type": "string"
+                },
+                "lowerPort": {
+                "type": "integer"
+                },
+                "ports": {
+                "type": "string"
+                },
+                "protocol": {
+                "type": "string"
+                },
+                "upperPort": {
+                "type": "integer"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
                 "name": {
                 "type": "string"
                 },

@@ -623,10 +623,16 @@ class JSONSchemaValidatorDbea7D7De125Cf6B840D5032D3A5C59(object):
                 "validationErrors": {
                 "properties": {
                 "rollbackTemplateErrors": {
+                "items": {
                 "type": "object"
                 },
+                "type": "array"
+                },
                 "templateErrors": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "templateId": {
                 "type": "string"

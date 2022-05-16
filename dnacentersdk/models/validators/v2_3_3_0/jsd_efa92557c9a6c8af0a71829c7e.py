@@ -68,7 +68,10 @@ class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
                 "type": "object"
                 },
                 "resourceParams": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "type": {
                 "enum": [

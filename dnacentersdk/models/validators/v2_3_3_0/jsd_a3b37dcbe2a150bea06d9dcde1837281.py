@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeployTemplateV2 data model.
+"""Cisco DNA Center EditApplication data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -32,71 +32,118 @@ import fastjsonschema
 from dnacentersdk.exceptions import MalformedRequest
 
 
-class JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A(object):
-    """DeployTemplateV2 request schema definition."""
+class JSONSchemaValidatorA3B37DcbE2A150BeA06D9Dcde1837281(object):
+    """EditApplication request schema definition."""
     def __init__(self):
-        super(JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A, self).__init__()
+        super(JSONSchemaValidatorA3B37DcbE2A150BeA06D9Dcde1837281, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "properties": {
-                "forcePushTemplate": {
-                "type": "boolean"
-                },
-                "isComposite": {
-                "type": "boolean"
-                },
-                "mainTemplateId": {
-                "type": "string"
-                },
-                "memberTemplateDeploymentInfo": {
                 "items": {
+                "properties": {
+                "applicationSet": {
+                "properties": {
+                "idRef": {
+                "type": "string"
+                }
+                },
                 "type": "object"
                 },
-                "type": "array"
+                "id": {
+                "type": "string"
                 },
-                "targetInfo": {
+                "name": {
+                "type": "string"
+                },
+                "networkApplications": {
                 "items": {
                 "properties": {
-                "hostName": {
+                "appProtocol": {
+                "type": "string"
+                },
+                "applicationSubType": {
+                "type": "string"
+                },
+                "applicationType": {
+                "type": "string"
+                },
+                "categoryId": {
+                "type": "string"
+                },
+                "displayName": {
+                "type": "string"
+                },
+                "dscp": {
+                "type": "string"
+                },
+                "engineId": {
+                "type": "string"
+                },
+                "helpString": {
                 "type": "string"
                 },
                 "id": {
                 "type": "string"
                 },
-                "params": {
+                "ignoreConflict": {
+                "type": "string"
+                },
+                "longDescription": {
+                "type": "string"
+                },
+                "name": {
+                "type": "string"
+                },
+                "popularity": {
+                "type": "string"
+                },
+                "rank": {
+                "type": "string"
+                },
+                "serverName": {
+                "type": "string"
+                },
+                "trafficClass": {
+                "type": "string"
+                },
+                "url": {
+                "type": "string"
+                }
+                },
                 "type": "object"
                 },
-                "resourceParams": {
+                "type": "array"
+                },
+                "networkIdentity": {
                 "items": {
+                "properties": {
+                "displayName": {
+                "type": "string"
+                },
+                "id": {
+                "type": "string"
+                },
+                "lowerPort": {
+                "type": "string"
+                },
+                "ports": {
+                "type": "string"
+                },
+                "protocol": {
+                "type": "string"
+                },
+                "upperPort": {
+                "type": "string"
+                }
+                },
                 "type": "object"
                 },
                 "type": "array"
-                },
-                "type": {
-                "enum": [
-                "MANAGED_DEVICE_IP",
-                "MANAGED_DEVICE_UUID",
-                "PRE_PROVISIONED_SERIAL",
-                "PRE_PROVISIONED_MAC",
-                "DEFAULT",
-                "MANAGED_DEVICE_HOSTNAME"
-                ],
-                "type": "string"
-                },
-                "versionedTemplateId": {
-                "type": "string"
                 }
                 },
                 "type": "object"
                 },
                 "type": "array"
-                },
-                "templateId": {
-                "type": "string"
-                }
-                },
-                "type": "object"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 
