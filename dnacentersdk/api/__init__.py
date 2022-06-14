@@ -590,15 +590,18 @@ class DNACenterAPI(object):
             single_request_timeout = dnacenter_environment.get_env_single_request_timeout() or DEFAULT_SINGLE_REQUEST_TIMEOUT
 
         if wait_on_rate_limit is None:
-            wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
+            w = dnacenter_environment.get_env_wait_on_rate_limit()
+            wait_on_rate_limit = w if w is not None else DEFAULT_WAIT_ON_RATE_LIMIT
 
         if verify is None:
-            verify = dnacenter_environment.get_env_verify() or DEFAULT_VERIFY
+            v = dnacenter_environment.get_env_verify()
+            verify = v if v is not None else DEFAULT_VERIFY
 
         version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
 
         if debug is None:
-            debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG
+            d = dnacenter_environment.get_env_debug()
+            debug = d if d is not None else DEFAULT_DEBUG
 
         check_type(base_url, basestring)
         check_type(single_request_timeout, int)
