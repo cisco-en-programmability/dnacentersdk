@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.4.11] - 2022-06-15
+### Fixed
+-  Improved the way of reading the following env variables:
+    + wait_on_rate_limit
+    + verify
+    + debug
+
 ## [2.4.10] - 2022-05-12
 ### Added
 - Add following parameters to `delete_ip_pool_from_sda_virtual_network` and `get_ip_pool_from_sda_virtual_network`:
@@ -296,4 +303,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.7...v2.4.8
 [2.4.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.8...v2.4.9
 [2.4.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...v2.4.10
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...master
+[2.4.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...v2.4.11
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...master
