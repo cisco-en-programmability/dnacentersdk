@@ -97,7 +97,7 @@ def create_project(api):
         name='string',
         payload=None,
         tags=[{'id': 'string', 'name': 'string'}],
-        templates={}
+        templates=[{'tags': [{'id': 'string', 'name': 'string'}], 'author': 'string', 'composite': True, 'containingTemplates': [{'tags': [{'id': 'string', 'name': 'string'}], 'composite': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'id': 'string', 'language': 'string', 'name': 'string', 'projectName': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'version': 'string'}], 'createTime': 0, 'customParamsOrder': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'failurePolicy': 'string', 'id': 'string', 'language': 'string', 'lastUpdateTime': 0, 'latestVersionTime': 0, 'name': 'string', 'parentTemplateId': 'string', 'projectId': 'string', 'projectName': 'string', 'rollbackTemplateContent': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'softwareType': 'string', 'softwareVariant': 'string', 'softwareVersion': 'string', 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'validationErrors': {'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'}, 'version': 'string'}]
     )
     return endpoint_result
 
@@ -157,7 +157,7 @@ def update_project(api):
         name='string',
         payload=None,
         tags=[{'id': 'string', 'name': 'string'}],
-        templates={}
+        templates=[{'tags': [{'id': 'string', 'name': 'string'}], 'author': 'string', 'composite': True, 'containingTemplates': [{'tags': [{'id': 'string', 'name': 'string'}], 'composite': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'id': 'string', 'language': 'string', 'name': 'string', 'projectName': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'version': 'string'}], 'createTime': 0, 'customParamsOrder': True, 'description': 'string', 'deviceTypes': [{'productFamily': 'string', 'productSeries': 'string', 'productType': 'string'}], 'failurePolicy': 'string', 'id': 'string', 'language': 'string', 'lastUpdateTime': 0, 'latestVersionTime': 0, 'name': 'string', 'parentTemplateId': 'string', 'projectId': 'string', 'projectName': 'string', 'rollbackTemplateContent': 'string', 'rollbackTemplateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'softwareType': 'string', 'softwareVariant': 'string', 'softwareVersion': 'string', 'templateContent': 'string', 'templateParams': [{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}], 'validationErrors': {'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'}, 'version': 'string'}]
     )
     return endpoint_result
 
@@ -514,7 +514,7 @@ def create_template(api):
         tags=[{'id': 'string', 'name': 'string'}],
         templateContent='string',
         templateParams=[{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}],
-        validationErrors={'rollbackTemplateErrors': {}, 'templateErrors': {}, 'templateId': 'string', 'templateVersion': 'string'},
+        validationErrors={'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'},
         version='string'
     )
     return endpoint_result
@@ -677,7 +677,7 @@ def update_template(api):
         tags=[{'id': 'string', 'name': 'string'}],
         templateContent='string',
         templateParams=[{'binding': 'string', 'customOrder': 0, 'dataType': 'string', 'defaultValue': 'string', 'description': 'string', 'displayName': 'string', 'group': 'string', 'id': 'string', 'instructionText': 'string', 'key': 'string', 'notParam': True, 'order': 0, 'paramArray': True, 'parameterName': 'string', 'provider': 'string', 'range': [{'id': 'string', 'maxValue': 0, 'minValue': 0}], 'required': True, 'selection': {'defaultSelectedValues': ['string'], 'id': 'string', 'selectionType': 'string', 'selectionValues': {}}}],
-        validationErrors={'rollbackTemplateErrors': {}, 'templateErrors': {}, 'templateId': 'string', 'templateVersion': 'string'},
+        validationErrors={'rollbackTemplateErrors': [{}], 'templateErrors': [{}], 'templateId': 'string', 'templateVersion': 'string'},
         version='string'
     )
     return endpoint_result
@@ -755,7 +755,7 @@ def deploy_template(api):
         mainTemplateId='string',
         memberTemplateDeploymentInfo=[{}],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': {}, 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result
@@ -901,7 +901,7 @@ def preview_template(api):
         deviceId='string',
         params={},
         payload=None,
-        resourceParams={},
+        resourceParams=[{}],
         templateId='string'
     )
     return endpoint_result
@@ -1268,7 +1268,7 @@ def deploy_template_v2(api):
         mainTemplateId='string',
         memberTemplateDeploymentInfo=[{}],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': {}, 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result

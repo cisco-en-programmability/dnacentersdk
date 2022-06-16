@@ -511,10 +511,21 @@ def is_valid_claim_a_device_to_a_site(json_schema_validate, obj):
 def claim_a_device_to_a_site(api):
     endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site(
         active_validation=True,
+        configInfo={'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]},
         deviceId='string',
+        gateway='string',
+        hostname='string',
+        imageId='string',
+        imageInfo={'imageId': 'string', 'skip': True},
+        ipInterfaceName='string',
         payload=None,
+        removeInactive=True,
+        rfProfile='string',
         siteId='string',
-        type='string'
+        staticIP='string',
+        subnetMask='string',
+        type='string',
+        vlanId='string'
     )
     return endpoint_result
 
@@ -535,10 +546,21 @@ def test_claim_a_device_to_a_site(api, validator):
 def claim_a_device_to_a_site_default_val(api):
     endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site(
         active_validation=True,
+        configInfo=None,
         deviceId=None,
+        gateway=None,
+        hostname=None,
+        imageId=None,
+        imageInfo=None,
+        ipInterfaceName=None,
         payload=None,
+        removeInactive=None,
+        rfProfile=None,
         siteId=None,
-        type=None
+        staticIP=None,
+        subnetMask=None,
+        type=None,
+        vlanId=None
     )
     return endpoint_result
 
