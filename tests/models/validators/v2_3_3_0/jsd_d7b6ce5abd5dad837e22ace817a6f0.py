@@ -86,7 +86,7 @@ class JSONSchemaValidatorD7B6Ce5Abd5Dad837E22Ace817A6F0(object):
                 "type": "string"
                 },
                 "lastUpdateTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "lastUpdated": {
                 "type": "string"

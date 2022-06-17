@@ -51,7 +51,7 @@ class JSONSchemaValidatorF8E3A0674C15Fd58Cd78F42Dca37C7C(object):
                 "type": "number"
                 },
                 "ciscoDnaEventLink": {
-                "type": "string"
+                "type": "object"
                 },
                 "context": {
                 "type": "string"
@@ -67,7 +67,7 @@ class JSONSchemaValidatorF8E3A0674C15Fd58Cd78F42Dca37C7C(object):
                 "type": "string"
                 },
                 "eventHierarchy": {
-                "type": "string"
+                "type": "object"
                 },
                 "eventId": {
                 "type": "string"
@@ -82,7 +82,7 @@ class JSONSchemaValidatorF8E3A0674C15Fd58Cd78F42Dca37C7C(object):
                 "type": "string"
                 },
                 "messageParams": {
-                "type": "string"
+                "type": "object"
                 },
                 "name": {
                 "type": "string"
@@ -91,13 +91,13 @@ class JSONSchemaValidatorF8E3A0674C15Fd58Cd78F42Dca37C7C(object):
                 "type": "string"
                 },
                 "network": {
-                "type": "string"
+                "type": "object"
                 },
                 "note": {
-                "type": "string"
+                "type": "object"
                 },
                 "parentInstanceId": {
-                "type": "string"
+                "type": "object"
                 },
                 "severity": {
                 "type": "integer"

@@ -110,7 +110,7 @@ class JSONSchemaValidatorBc212B5EE1F252479F35E8Dd58319F17(object):
                 "type": "object"
                 },
                 "isPrivate": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "name": {
                 "type": "string"

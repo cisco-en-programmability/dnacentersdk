@@ -47,7 +47,7 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "object"
                 },
                 "configureExternalDhcp": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "context": {
                 "items": {
@@ -67,7 +67,7 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "array"
                 },
                 "createTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "dhcpServerIps": {
                 "items": {
@@ -97,13 +97,13 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "string"
                 },
                 "ipv6": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "lastUpdateTime": {
-                "type": "string"
+                "type": "integer"
                 },
                 "overlapping": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "owner": {
                 "type": "string"
@@ -112,13 +112,13 @@ class JSONSchemaValidatorEbdcd84FC41754A69EaeAcf7C0B0731C(object):
                 "type": "string"
                 },
                 "shared": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "totalIpAddressCount": {
-                "type": "string"
+                "type": "number"
                 },
                 "usedIpAddressCount": {
-                "type": "string"
+                "type": "number"
                 },
                 "usedPercentage": {
                 "type": "string"

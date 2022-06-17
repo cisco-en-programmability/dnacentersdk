@@ -42,146 +42,42 @@ class JSONSchemaValidatorFe6D62EdCec25921926043Ca25F75Bed(object):
                 "properties": {
                 "response": {
                 "properties": {
-                "properties": {
-                "properties": {
                 "interfaceUuid": {
-                "properties": {
-                "type": {
                 "type": "string"
-                }
-                },
-                "type": "object"
                 },
                 "operations": {
                 "properties": {
-                "items": {
-                "items": {
-                "properties": {
-                "properties": {
-                "properties": {
                 "applicable": {
-                "properties": {
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                "type": "boolean"
                 },
                 "failureReason": {
-                "properties": {
-                "type": {
-                "type": "string"
-                }
-                },
                 "type": "object"
                 },
                 "name": {
-                "properties": {
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "required": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "type": {
                 "type": "string"
                 }
                 },
                 "type": "object"
                 },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "properties": {
-                "properties": {
-                "items": {
-                "items": {
-                "properties": {
                 "properties": {
                 "properties": {
                 "applicable": {
-                "properties": {
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
+                "type": "boolean"
                 },
                 "failureReason": {
-                "properties": {
-                "type": {
-                "type": "string"
-                }
-                },
                 "type": "object"
                 },
                 "name": {
-                "properties": {
-                "type": {
                 "type": "string"
                 }
                 },
                 "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "required": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                },
-                "required": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "type": {
-                "type": "string"
                 }
                 },
                 "type": "object"
                 },
                 "version": {
-                "properties": {
-                "type": {
                 "type": "string"
-                }
-                },
-                "type": "object"
                 }
                 },
                 "type": "object"

@@ -76,12 +76,7 @@ class JSONSchemaValidatorB887C55FaAca726Bbe4Ac2564(object):
                 "type": "object"
                 },
                 "version": {
-                "properties": {
-                "type": {
                 "type": "string"
-                }
-                },
-                "type": "object"
                 }
                 },
                 "type": "object"

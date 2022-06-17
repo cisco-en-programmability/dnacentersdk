@@ -40,6 +40,9 @@ class JSONSchemaValidatorFfc19DdEa705526B7D9Db01Baf4997E(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
+                "bapiError": {
+                "type": "string"
+                },
                 "bapiExecutionId": {
                 "type": "string"
                 },

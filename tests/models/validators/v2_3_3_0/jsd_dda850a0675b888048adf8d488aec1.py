@@ -85,7 +85,7 @@ class JSONSchemaValidatorDda850A0675B888048Adf8D488Aec1(object):
                 "type": "array"
                 },
                 "version": {
-                "type": "string"
+                "type": "integer"
                 }
                 },
                 "type": "object"

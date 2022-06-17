@@ -98,13 +98,13 @@ class JSONSchemaValidatorC0E0D76B2561B8F2EFd0220F02267(object):
                 "type": "array"
                 },
                 "isPrivate": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "isTemplateEnabled": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "isTenantAware": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "name": {
                 "type": "string"

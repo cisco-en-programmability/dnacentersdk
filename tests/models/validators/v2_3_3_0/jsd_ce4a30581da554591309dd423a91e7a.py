@@ -65,6 +65,27 @@ class JSONSchemaValidatorCe4A30581Da554591309Dd423A91E7A(object):
                 },
                 "instanceUuid": {
                 "type": "string"
+                },
+                "netconfPort": {
+                "type": "string"
+                },
+                "password": {
+                "type": "string"
+                },
+                "port": {
+                "type": "integer"
+                },
+                "readCommunity": {
+                "type": "string"
+                },
+                "secure": {
+                "type": "integer"
+                },
+                "username": {
+                "type": "string"
+                },
+                "writeCommunity": {
+                "type": "string"
                 }
                 },
                 "type": "object"

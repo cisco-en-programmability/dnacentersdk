@@ -48,10 +48,10 @@ class JSONSchemaValidatorB94Cfb5Af084C1A65D8E51Df71(object):
                 "type": "string"
                 },
                 "isCustomConnector": {
-                "type": "string"
+                "type": "boolean"
                 },
                 "isDefaultSupported": {
-                "type": "string"
+                "type": "boolean"
                 }
                 },
                 "type": "object"
