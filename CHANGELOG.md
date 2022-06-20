@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.0] - 2022-06-20
+### Added
+- Add support of DNA Center versions ('2.3.3.0')
+- Adds modules for v2_3_3_0
+
 ## [2.4.11] - 2022-06-15
 ### Fixed
 -  Improved the way of reading the following env variables:
@@ -304,4 +309,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.8...v2.4.9
 [2.4.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...v2.4.10
 [2.4.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...v2.4.11
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...master
+[2.5.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...v2.5.0
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...master

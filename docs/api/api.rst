@@ -16,6 +16,8 @@ The :class:`DNACenterAPI` class creates "connection objects" for working with th
 
 DNACenterAPI summary structure
 ==============================
+
+
 .. _v1_2_10 summary:
 
 v1.2.10 summary
@@ -2146,39 +2148,6 @@ wireless
 .. autoclass:: dnacentersdk.api.v2_2_3_3.wireless.Wireless()
 
 
-.. _v2_3_3_0 summary:
-
-v2.3.3.0 summary
-----------------
-
-.. include:: api_structure_table_v2_3_3_0.rst
-
-
-DNACenterAPI Class
-==================
-
-.. autoclass:: DNACenterAPI()
-    :members:
-
-    .. automethod:: DNACenterAPI.__init__
-
-
-
-.. _authentication:
-
-authentication
---------------
-
-.. autoclass:: dnacentersdk.api.authentication.Authentication()
-
-
-
-.. _custom_caller:
-
-custom_caller
--------------
-
-.. autoclass:: dnacentersdk.api.custom_caller.CustomCaller()
 
 
 DNACenterAPI v2.3.3.0
