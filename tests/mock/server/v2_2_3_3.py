@@ -1,6 +1,7 @@
-from http.server import BaseHTTPRequestHandler
-import re
 import json
+import re
+from http.server import BaseHTTPRequestHandler
+
 import requests
 
 
@@ -2592,7 +2593,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'apManagerInterfaceIp': 'string', 'associatedWlcIp': 'string', 'bootDateTime': 'string', 'collectionInterval': 'string', 'collectionStatus': 'string', 'errorCode': 'string', 'errorDescription': 'string', 'family': 'string', 'hostname': 'string', 'id': 'string', 'instanceTenantId': 'string', 'instanceUuid': 'string', 'interfaceCount': 'string', 'inventoryStatusDetail': 'string', 'lastUpdateTime': 'string', 'lastUpdated': 'string', 'lineCardCount': 'string', 'lineCardId': 'string', 'location': 'string', 'locationName': 'string', 'macAddress': 'string', 'managementIpAddress': 'string', 'memorySize': 'string', 'platformId': 'string', 'reachabilityFailureReason': 'string', 'reachabilityStatus': 'string', 'role': 'string', 'roleSource': 'string', 'serialNumber': 'string', 'series': 'string', 'snmpContact': 'string', 'snmpLocation': 'string', 'softwareType': 'string', 'softwareVersion': 'string', 'tagCount': 'string', 'tunnelUdpPort': 'string', 'type': 'string', 'upTime': 'string', 'waasDeviceMode': 'string'}, 'version': 'string'})
+        response_content = json.dumps({'response': {'apManagerInterfaceIp': 'string', 'associatedWlcIp': 'string', 'bootDateTime': 'string', 'collectionInterval': 'string', 'collectionStatus': 'string', 'errorCode': 'string', 'errorDescription': 'string', 'family': 'string', 'hostname': 'string', 'id': 'string', 'instanceTenantId': 'string', 'instanceUuid': 'string', 'interfaceCount': 'string', 'inventoryStatusDetail': 'string', 'lastUpdateTime': 0, 'lastUpdated': 'string', 'lineCardCount': 'string', 'lineCardId': 'string', 'location': 'string', 'locationName': 'string', 'macAddress': 'string', 'managementIpAddress': 'string', 'memorySize': 'string', 'platformId': 'string', 'reachabilityFailureReason': 'string', 'reachabilityStatus': 'string', 'role': 'string', 'roleSource': 'string', 'serialNumber': 'string', 'series': 'string', 'snmpContact': 'string', 'snmpLocation': 'string', 'softwareType': 'string', 'softwareVersion': 'string', 'tagCount': 'string', 'tunnelUdpPort': 'string', 'type': 'string', 'upTime': 'string', 'waasDeviceMode': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -3238,7 +3239,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'comments': 'string', 'credentialType': 'string', 'description': 'string', 'id': 'string', 'instanceTenantId': 'string', 'instanceUuid': 'string'}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'comments': 'string', 'credentialType': 'string', 'description': 'string', 'id': 'string', 'instanceTenantId': 'string', 'instanceUuid': 'string', 'password': 'string', 'port': 0, 'secure': True, 'username': 'string', 'netconfPort': 'string', 'readCommunity': 'string', 'writeCommunity': 'string'}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -4768,7 +4769,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'instanceType': 'string', 'instanceUuid': 'string', 'namespace': 'string', 'type': 'string', 'key': 'string', 'version': 'string', 'value': [{'wanProvider': 'string', 'spProfileName': 'string', 'slaProfileName': 'string'}], 'groupUuid': 'string', 'inheritedGroupUuid': 'string', 'inheritedGroupName': 'string'}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'instanceType': 'string', 'instanceUuid': 'string', 'namespace': 'string', 'type': 'string', 'key': 'string', 'version': 0, 'value': [{'wanProvider': 'string', 'spProfileName': 'string', 'slaProfileName': 'string'}], 'groupUuid': 'string', 'inheritedGroupUuid': 'string', 'inheritedGroupName': 'string'}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -6434,7 +6435,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'parentId': 'string', 'name': 'string', 'additionalInfo': ['string'], 'siteHierarchy': 'string', 'siteNameHierarchy': 'string', 'instanceTenantId': 'string', 'id': 'string'}]})
+        response_content = json.dumps({'response': [{'parentId': 'string', 'name': 'string', 'additionalInfo': [{'nameSpace': 'string', 'attributes': {'country': 'string', 'address': 'string', 'latitude': 'string', 'addressInheritedFrom': 'string', 'type': 'string', 'longitude': 'string', 'offsetX': 'string', 'offsetY': 'string', 'length': 'string', 'width': 'string', 'height': 'string', 'rfModel': 'string', 'floorIndex': 'string'}}], 'siteHierarchy': 'string', 'siteNameHierarchy': 'string', 'instanceTenantId': 'string', 'id': 'string'}]})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -7403,7 +7404,7 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({})
+        response_content = json.dumps({'executionId': 'string', 'executionStatusUrl': 'string', 'message': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -8315,6 +8316,10 @@ class MockServerRequestHandler_v2_2_3_3(BaseHTTPRequestHandler):
         if self.matches_WIRELESS_ac37d6798c0b593088952123df03bb1b():
             self.wireless_retrieve_rf_profiles_response()
             return
+
+    def do_PATCH(self):
+
+        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():

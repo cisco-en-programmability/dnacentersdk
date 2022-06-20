@@ -550,6 +550,41 @@ class RestSession(object):
             response = self.request('GET', url, erc, 0, params=params, **kwargs)
             return extract_and_parse_json(response)
 
+    def patch(self, url, params=None, json=None, data=None, **kwargs):
+        """Sends a PATCH request.
+
+        Args:
+            url(basestring): The URL of the API endpoint.
+            json: Data to be sent in JSON format in tbe body of the request.
+            data: Data to be sent in the body of the request.
+            **kwargs:
+                erc(int): The expected (success) response code for the request.
+                others: Passed on to the requests package.
+
+        Returns:
+            DownloadResponse: If it has `stream` kwarg with a True value.
+            Any: Result of the `json.loads` of the server's response to an HTTP request.
+
+        Raises:
+            ApiError: If anything other than the expected response code is
+                returned by the DNA Center API endpoint.
+
+        """
+        check_type(url, basestring, may_be_none=False)
+        check_type(params, dict)
+
+        # Expected response code
+        erc = kwargs.pop('erc', EXPECTED_RESPONSE_CODE['PATCH'])
+
+        stream = kwargs.get('stream', None)
+        if stream:
+            return self.download('PATCH', url, erc, 0, params=params,
+                                 json=json, data=data, **kwargs)
+        else:
+            response = self.request('PATCH', url, erc, 0, params=params,
+                                    json=json, data=data, **kwargs)
+            return extract_and_parse_json(response)
+
     def post(self, url, params=None, json=None, data=None, **kwargs):
         """Sends a POST request.
 

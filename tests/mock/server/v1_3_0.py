@@ -1,6 +1,7 @@
-from http.server import BaseHTTPRequestHandler
-import re
 import json
+import re
+from http.server import BaseHTTPRequestHandler
+
 import requests
 
 
@@ -3627,6 +3628,10 @@ class MockServerRequestHandler_v1_3_0(BaseHTTPRequestHandler):
         if self.matches_SITE_PROFILE_7fbe4b804879baa4():
             self.site_profile_get_devicedetailsby_ip_response()
             return
+
+    def do_PATCH(self):
+
+        return
 
     def do_POST(self):
         if self.matches_AUTHENTICATION_ac8ae94c4e69a09d():
