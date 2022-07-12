@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.1] - 2022-07-12
+
+### Fixed
+- Fixed enum in `network_global`.`create_global_pool`:
+    + IpAddressSpace
+
 ## [2.5.0] - 2022-06-20
 ### Added
 - Add support of DNA Center versions ('2.3.3.0')
@@ -310,4 +316,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...v2.4.10
 [2.4.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...v2.4.11
 [2.5.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...v2.5.0
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...master
+[2.5.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...v2.5.1
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.1...master
