@@ -121,9 +121,7 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "type": "array"
                 },
                 "externalDomainRoutingProtocolName": {
-                "enum": [
-                "BGP"
-                ],
+                
                 "type": "string"
                 },
                 "internalAutonomouSystemNumber": {

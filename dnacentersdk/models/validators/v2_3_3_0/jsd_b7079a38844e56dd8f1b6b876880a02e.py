@@ -41,9 +41,7 @@ class JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "multicastMethod": {
-                "enum": [
-                "native_multicast"
-                ],
+                
                 "type": "string"
                 },
                 "multicastType": {

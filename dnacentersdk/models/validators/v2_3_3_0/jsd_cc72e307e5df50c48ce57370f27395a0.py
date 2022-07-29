@@ -387,9 +387,7 @@ class JSONSchemaValidatorCc72E307E5Df50C48Ce57370F27395A0(object):
                 "type": "boolean"
                 },
                 "linkType": {
-                "enum": [
-                "GigabitEthernet"
-                ],
+                
                 "type": "string"
                 },
                 "serviceProvider": {
