@@ -45,9 +45,7 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "clientAndEndpoint_aaa": {
                 "properties": {
                 "ipAddress": {
-                "enum": [
-                "Mandatory for ISE servers."
-                ],
+                
                 "type": "string"
                 },
                 "network": {
@@ -60,9 +58,7 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "type": "string"
                 },
                 "sharedSecret": {
-                "enum": [
-                "Supported only by ISE servers"
-                ],
+                
                 "type": "string"
                 }
                 },
@@ -77,21 +73,15 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "dnsServer": {
                 "properties": {
                 "domainName": {
-                "enum": [
-                "can only contain alphanumeric characters or hyphen"
-                ],
+                
                 "type": "string"
                 },
                 "primaryIpAddress": {
-                "enum": [
-                "valid range : 1.0.0.0 - 223.255.255.255"
-                ],
+                
                 "type": "string"
                 },
                 "secondaryIpAddress": {
-                "enum": [
-                "valid range : 1.0.0.0 - 223.255.255.255"
-                ],
+                
                 "type": "string"
                 }
                 },
@@ -122,30 +112,22 @@ class JSONSchemaValidatorE1B8C435195D56368C24A54Dcce007D0(object):
                 "network_aaa": {
                 "properties": {
                 "ipAddress": {
-                "enum": [
-                "Mandatory for ISE servers and for AAA consider this as additional Ip."
-                ],
+                
                 "type": "string"
                 },
                 "network": {
-                "enum": [
-                "For AAA server consider it as primary IP and For ISE consider as Network"
-                ],
+                
                 "type": "string"
                 },
                 "protocol": {
                 "type": "string"
                 },
                 "servers": {
-                "enum": [
-                "Server type supported by ISE and AAA"
-                ],
+                
                 "type": "string"
                 },
                 "sharedSecret": {
-                "enum": [
-                "Supported only by ISE servers"
-                ],
+                
                 "type": "string"
                 }
                 },

@@ -46,9 +46,7 @@ class JSONSchemaValidatorD39E10793A45D3DB229D6D3820C665A(object):
                 "type": "string"
                 },
                 "routingProtocolName": {
-                "enum": [
-                "BGP"
-                ],
+                
                 "type": "string"
                 }
                 },

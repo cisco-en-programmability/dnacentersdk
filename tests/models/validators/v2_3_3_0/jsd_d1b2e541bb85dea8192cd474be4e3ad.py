@@ -113,9 +113,7 @@ class JSONSchemaValidatorD1B2E541Bb85Dea8192Cd474Be4E3Ad(object):
                 "type": "string"
                 },
                 "type": {
-                "enum": [
-                "BUSINESS_RELEVANCE"
-                ],
+                
                 "type": "string"
                 }
                 },

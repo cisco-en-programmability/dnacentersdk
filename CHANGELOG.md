@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.2] - 2022-07-29
+
+### Fixed
+- Removed enum in `sda`.`adds_border_device`:
+    + externalDomainRoutingProtocolName
+- Removed enum in `sda`.`add_multicast_in_sda_fabric`:
+    + multicastMethod
+- Removed enum in `site_design`.`provision_nfv`:
+    + linkType
+- Removed enum in `sda`.`add_transit_peer_network`:
+    + routingProtocolName
+- Removed enum in `network_settings`.`update_network` and `network_settings`.`create_network`:
+    + ipAddress
+    + sharedSecret
+    + domainName
+    + primaryIpAddress
+    + secondaryIpAddress
+    + network
+    + servers
+
 ## [2.5.1] - 2022-07-12
 
 ### Fixed
@@ -317,4 +337,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.4.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.10...v2.4.11
 [2.5.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...v2.5.0
 [2.5.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...v2.5.1
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.1...master
+[2.5.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.1...v2.5.2
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.2...master
