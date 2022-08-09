@@ -50,10 +50,10 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "type": "string"
                 },
                 "borderWithExternalConnectivity": {
-                "type": "boolean"
+                "type": "string"
                 },
                 "connectedToInternet": {
-                "type": "boolean"
+                "type": "string"
                 },
                 "deviceManagementIpAddress": {
                 "type": "string"
@@ -97,7 +97,6 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 "items": {
                 "properties": {
                 "virtualNetwork": {
-                "items": {
                 "properties": {
                 "virtualNetworkName": {
                 "type": "string"
@@ -107,8 +106,6 @@ class JSONSchemaValidatorB6F2D8E46Cdd5F05Bb06F52Cd1B26Fb2(object):
                 }
                 },
                 "type": "object"
-                },
-                "type": "array"
                 }
                 },
                 "type": "object"

@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.3] - 2022-08-09
+
+### Fixed
+- `virtualNetwork` on `sda.adds_border_device` parameter comes from `array` to `object`.
+-  Parameters `borderWithExternalConnectivity` and `connectedToInternet` on `sda.adds_border_device` comes from `boolean` to `string`.
+
 ## [2.5.2] - 2022-07-29
 
 ### Fixed
@@ -338,4 +344,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.5.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...v2.5.0
 [2.5.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.0...v2.5.1
 [2.5.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.1...v2.5.2
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.2...master
+[2.5.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.2...v2.5.3
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.3...master
