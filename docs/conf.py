@@ -12,7 +12,7 @@ release = get_distribution('dnacentersdk').version
 version = '.'.join(release.split('.')[:2])
 
 project = u'dnacentersdk'
-copyright = u'Copyright (c) 2019-2021 Cisco Systems.'
+copyright = u'Copyright (c) 2019-2022 Cisco Systems.'
 author = u''
 language = None
 

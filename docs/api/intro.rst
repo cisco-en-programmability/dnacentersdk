@@ -159,7 +159,7 @@ dnacentersdk License
 .. include:: ../../LICENSE
 
 
-*Copyright (c) 2019-2021 Cisco Systems.*
+*Copyright (c) 2019-2022 Cisco Systems.*
 
 
 .. _MIT Open Source License: https://opensource.org/licenses/MIT

@@ -58,7 +58,7 @@ command:
     $ python setup.py install
 
 
-*Copyright (c) 2019-2021 Cisco Systems.*
+*Copyright (c) 2019-2022 Cisco Systems.*
 
 
 .. _Python Package Index (PyPI): https://pypi.python.org/pypi/dnacentersdk
