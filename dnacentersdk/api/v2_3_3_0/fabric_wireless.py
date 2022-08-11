@@ -66,6 +66,90 @@ class FabricWireless(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def add_ssid_to_ip_pool_mapping(self,
+                                    scalableGroupName=None,
+                                    siteNameHierarchy=None,
+                                    ssidNames=None,
+                                    vlanName=None,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
+        """Add SSID to IP Pool Mapping. .
+
+        Args:
+            scalableGroupName(string): Fabric Wireless's Scalable Group Name .
+            siteNameHierarchy(string): Fabric Wireless's Site Name Hierarchy .
+            ssidNames(list): Fabric Wireless's List of SSIDs  (list of strings).
+            vlanName(string): Fabric Wireless's VLAN Name .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'vlanName':
+                vlanName,
+            'scalableGroupName':
+                scalableGroupName,
+            'ssidNames':
+                ssidNames,
+            'siteNameHierarchy':
+                siteNameHierarchy,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ad96e712f4525a128368b1bfe3afc21c_v2_3_3_0')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/business/sda/hostonboarding/ssid-'
+                 + 'ippool')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ad96e712f4525a128368b1bfe3afc21c_v2_3_3_0', json_data)
+
     def update_ssid_to_ip_pool_mapping2(self,
                                         scalableGroupName=None,
                                         siteNameHierarchy=None,
