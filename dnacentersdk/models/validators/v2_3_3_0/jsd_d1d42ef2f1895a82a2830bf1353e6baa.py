@@ -42,12 +42,6 @@ class JSONSchemaValidatorD1D42Ef2F1895A82A2830Bf1353E6Baa(object):
                 "items": {
                 "properties": {
                 "authenticateTemplateName": {
-                "enum": [
-                "No Authentication ",
-                "Open Authentication",
-                "Closed Authentication",
-                "Low Impact"
-                ],
                 "type": "string"
                 },
                 "siteNameHierarchy": {
