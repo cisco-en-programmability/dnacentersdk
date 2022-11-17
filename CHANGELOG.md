@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.5] - 2022-11-17
+
+### Fixed
+- Removed enum in `dnacentersdk.api.v2_3_3_0.sda.add_default_authentication_profile`:
+  + authenticateTemplateName
+- Added Dict_of_str function call in custom_caller headers
+
 ## [2.5.4] - 2022-08-11
 
 ### Added
@@ -352,4 +359,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.5.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.1...v2.5.2
 [2.5.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.2...v2.5.3
 [2.5.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.3...v2.5.4
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.4...master
+[2.5.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.4...v2.5.5
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.5...master
