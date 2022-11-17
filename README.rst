@@ -109,7 +109,7 @@ Check out the complete Introduction_
 + Wraps and represents all DNA Center API calls as a simple hierarchical tree of
   native-Python methods
 
-+ If your Python IDE supports **auto-completion** (like PyCharm_), you can
++ If your Python IDE supports **auto-completion** (like `PyCharm_`), you can
   navigate the available methods and object attributes right within your IDE
 
 + Represents all returned JSON objects as native Python objects - you can
