@@ -89,6 +89,8 @@ With dnacentersdk, the above Python code can be consolidated to the following:
   your script will continue to run as normal.  Handling all of this requires
   zero (0) changes to your code - you're welcome.  😎
 
++ **Refresh token** Each time the token becomes invalid, the SDK will generate a new valid token for you.
+
   Just know that if you are are sending a lot of requests, your script might
   take longer to run if your requests are getting rate limited.
 

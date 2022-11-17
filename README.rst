@@ -92,8 +92,34 @@ dnacentersdk
     print(dnac.custom_caller.get_global_credentials('NETCONF'))
 
 
-Introduction_
+Introduction
+------------
+Check out the complete Introduction_
 
+**dnacentersdk handles all of this for you:**
+
++ Reads your DNA Center credentials from environment variables.
+
++ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION.
+
++ Controls whether to verify the server's TLS certificate or not according to the verify parameter.
+
++ Reads your DNA Center debug from environment variable DNA_CENTER_DEBUG. Boolean.
+
++ Wraps and represents all DNA Center API calls as a simple hierarchical tree of
+  native-Python methods
+
++ If your Python IDE supports **auto-completion** (like PyCharm_), you can
+  navigate the available methods and object attributes right within your IDE
+
++ Represents all returned JSON objects as native Python objects - you can
+  access all of the object's attributes using native *dot.syntax*
+
++ **Automatic Rate-Limit Handling**  Sending a lot of requests to DNA Center?
+  Don't worry; we have you covered.  DNA Center will respond with a rate-limit
+  response, which will automatically be caught and "handled" for you.
+
++ **Refresh token** Each time the token becomes invalid, the SDK will generate a new valid token for you.
 
 Installation
 ------------
