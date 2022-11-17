@@ -37,6 +37,7 @@ from ..utils import (
     extract_and_parse_json,
     pprint_request_info,
     pprint_response_info,
+    dict_of_str,
 )
 
 logger = logging.getLogger(__name__)
@@ -146,7 +147,7 @@ class CustomCaller(object):
         headers = self._session.headers
 
         if 'headers' in kwargs:
-            headers.update(kwargs.pop('headers'))
+            headers.update(dict_of_str(kwargs.pop('headers')))
 
         verify = kwargs.pop("verify", self._session.verify)
 
