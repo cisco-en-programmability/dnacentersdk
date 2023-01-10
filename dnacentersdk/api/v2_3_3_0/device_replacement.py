@@ -101,8 +101,8 @@ class DeviceReplacement(object):
             sort_by(basestring): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
                 .
             sort_order(basestring): sortOrder query parameter. Order on displayName[ASC,DESC] .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(basestring, int): offset query parameter.
+            limit(basestring, int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -127,8 +127,8 @@ class DeviceReplacement(object):
         check_type(family, (basestring, list, set, tuple))
         check_type(sort_by, basestring)
         check_type(sort_order, basestring)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

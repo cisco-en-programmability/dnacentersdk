@@ -139,6 +139,28 @@ Installing and upgrading dnacentersdk is easy:
     $ pip install dnacentersdk --upgrade
 
 
+Compatibility matrix
+--------------------
+The following table shows the supported versions.
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Cisco DNA Center version
+     - Python "dnacentersdk" version
+   * - 2.1.1
+     - 2.2.5
+   * - 2.2.2.3
+     - 2.3.3
+   * - 2.2.3.3
+     - 2.4.11
+   * - 2.3.3.0
+     - 2.5.6
+   
+
+If your SDK is older please consider updating it first.
+
 Documentation
 -------------
 

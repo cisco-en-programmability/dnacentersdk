@@ -199,8 +199,8 @@ class DeviceOnboardingPnp(object):
         devices. Pagination and sorting are also supported by this endpoint .
 
         Args:
-            limit(int): limit query parameter. Limits number of results .
-            offset(int): offset query parameter. Index of first result .
+            limit(basestring, int): limit query parameter. Limits number of results .
+            offset(basestring, int): offset query parameter. Index of first result .
             sort(basestring, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on .
             sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             serial_number(basestring, list, set, tuple): serialNumber query parameter. Device Serial Number .
@@ -237,8 +237,8 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(sort, (basestring, list, set, tuple))
         check_type(sort_order, basestring)
         check_type(serial_number, (basestring, list, set, tuple))
@@ -2035,8 +2035,8 @@ class DeviceOnboardingPnp(object):
         50 workflows. Pagination and sorting are also supported by this endpoint .
 
         Args:
-            limit(int): limit query parameter. Limits number of results .
-            offset(int): offset query parameter. Index of first result .
+            limit(basestring, int): limit query parameter. Limits number of results .
+            offset(basestring, int): offset query parameter. Index of first result .
             sort(basestring, list, set, tuple): sort query parameter. Comma seperated lost of fields to sort on .
             sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             type(basestring, list, set, tuple): type query parameter. Workflow Type .
@@ -2057,8 +2057,8 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(sort, (basestring, list, set, tuple))
         check_type(sort_order, basestring)
         check_type(type, (basestring, list, set, tuple))

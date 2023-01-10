@@ -98,8 +98,8 @@ class PathTrace(object):
             status(basestring): status query parameter.
             task_id(basestring): taskId query parameter. Task ID .
             last_update_time(basestring): lastUpdateTime query parameter. Last update time .
-            limit(basestring): limit query parameter. Number of resources returned .
-            offset(basestring): offset query parameter. Start index of resources returned (1-based) .
+            limit(basestring, int): limit query parameter. Number of resources returned .
+            offset(basestring, int): offset query parameter. Start index of resources returned (1-based) .
             order(basestring): order query parameter. Order by this field .
             sort_by(basestring): sortBy query parameter. Sort by this field .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -128,8 +128,8 @@ class PathTrace(object):
         check_type(status, basestring)
         check_type(task_id, basestring)
         check_type(last_update_time, basestring)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(order, basestring)
         check_type(sort_by, basestring)
         if headers is not None:

@@ -1760,8 +1760,8 @@ class ConfigurationTemplates(object):
         Args:
             id(basestring): id query parameter. Id of project to be searched .
             name(basestring): name query parameter. Name of project to be searched .
-            offset(int): offset query parameter. Index of first result .
-            limit(int): limit query parameter. Limits number of results .
+            offset(basestring, int): offset query parameter. Index of first result .
+            limit(basestring, int): limit query parameter. Limits number of results .
             sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1780,8 +1780,8 @@ class ConfigurationTemplates(object):
         check_type(headers, dict)
         check_type(id, basestring)
         check_type(name, basestring)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(sort_order, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -1862,8 +1862,8 @@ class ConfigurationTemplates(object):
             sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
             all_template_attributes(bool): allTemplateAttributes query parameter. Return all template attributes .
             include_version_details(bool): includeVersionDetails query parameter. Include template version details .
-            offset(int): offset query parameter. Index of first result .
-            limit(int): limit query parameter. Limits number of results .
+            offset(basestring, int): offset query parameter. Index of first result .
+            limit(basestring, int): limit query parameter. Limits number of results .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1894,8 +1894,8 @@ class ConfigurationTemplates(object):
         check_type(sort_order, basestring)
         check_type(all_template_attributes, bool)
         check_type(include_version_details, bool)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

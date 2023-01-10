@@ -79,8 +79,8 @@ class Compliance(object):
             compliance_status(basestring): complianceStatus query parameter. Compliance status can be have value
                 among 'COMPLIANT','NON_COMPLIANT','IN_PROGRESS', 'ERROR' .
             device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids .
-            offset(int): offset query parameter. offset/starting row .
-            limit(int): limit query parameter. Number of records to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -115,8 +115,8 @@ class Compliance(object):
             compliance_status(basestring): complianceStatus query parameter. Compliance status can be have value
                 among 'COMPLIANT','NON_COMPLIANT','IN_PROGRESS', 'ERROR' .
             device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids .
-            offset(int): offset query parameter. offset/starting row .
-            limit(int): limit query parameter. Number of records to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -134,8 +134,8 @@ class Compliance(object):
         check_type(headers, dict)
         check_type(compliance_status, basestring)
         check_type(device_uuid, basestring)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -329,8 +329,8 @@ class Compliance(object):
                 'COMPLIANT', 'NON_COMPLIANT', 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'
                 .
             device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids .
-            offset(basestring): offset query parameter. offset/starting row .
-            limit(basestring): limit query parameter. Number of records to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -349,8 +349,8 @@ class Compliance(object):
         check_type(compliance_type, basestring)
         check_type(compliance_status, basestring)
         check_type(device_uuid, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
