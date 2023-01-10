@@ -83,8 +83,8 @@ class HealthAndPerformance(object):
             subdomain(basestring): subdomain query parameter. Fetch system events with this subdomain. Possible
                 values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
                 toolkit/events .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(basestring, int): limit query parameter.
+            offset(basestring, int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -103,8 +103,8 @@ class HealthAndPerformance(object):
         check_type(summary, bool)
         check_type(domain, basestring)
         check_type(subdomain, basestring)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

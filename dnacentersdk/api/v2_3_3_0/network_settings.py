@@ -423,8 +423,8 @@ class NetworkSettings(object):
         """API to get global pool. .
 
         Args:
-            offset(basestring): offset query parameter. offset/starting row .
-            limit(basestring): limit query parameter. No of Global Pools to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. No of Global Pools to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -440,8 +440,8 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -892,8 +892,8 @@ class NetworkSettings(object):
 
         Args:
             site_id(basestring): siteId query parameter. site id to get the reserve ip associated with the site .
-            offset(basestring): offset query parameter. offset/starting row .
-            limit(basestring): limit query parameter. No of Global Pools to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. No of Global Pools to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -910,8 +910,8 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

@@ -575,8 +575,8 @@ class SiteDesign(object):
 
         Args:
             id(basestring): id path parameter. ID of network profile to retrieve. .
-            offset(basestring): offset query parameter. offset/starting row .
-            limit(basestring): limit query parameter. Number of profile to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. Number of profile to be retrieved .
             name(basestring): name query parameter. Name of network profile to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -593,8 +593,8 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(name, basestring)
         check_type(id, basestring,
                    may_be_none=False)

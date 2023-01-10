@@ -162,8 +162,8 @@ class Sites(object):
 
         Args:
             site_id(basestring): siteId path parameter. Site id to retrieve device associated with the site. .
-            offset(basestring): offset query parameter. offset/starting row .
-            limit(basestring): limit query parameter. Number of sites to be retrieved .
+            offset(basestring, int): offset query parameter. offset/starting row .
+            limit(basestring, int): limit query parameter. Number of sites to be retrieved .
             device_family(basestring): deviceFamily query parameter. Device family name  .
             serial_number(basestring): serialNumber query parameter. Device serial number .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -181,8 +181,8 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(device_family, basestring)
         check_type(serial_number, basestring)
         check_type(site_id, basestring,
@@ -323,8 +323,8 @@ class Sites(object):
             name(basestring): name query parameter. siteNameHierarchy (ex: global/groupName) .
             site_id(basestring): siteId query parameter. Site id to which site details to retrieve. .
             type(basestring): type query parameter. type (ex: area, building, floor) .
-            offset(basestring): offset query parameter. offset/starting row. The default value is 1 .
-            limit(basestring): limit query parameter. Number of sites to be retrieved. The default value is 500 .
+            offset(basestring, int): offset query parameter. offset/starting row. The default value is 1 .
+            limit(basestring, int): limit query parameter. Number of sites to be retrieved. The default value is 500 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -343,8 +343,8 @@ class Sites(object):
         check_type(name, basestring)
         check_type(site_id, basestring)
         check_type(type, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -398,9 +398,9 @@ class Sites(object):
                 data is required .
             site_type(basestring): siteType query parameter. Type of the site to return.  AREA or BUILDING.  Default
                 to AREA .
-            offset(int): offset query parameter. The offset value, starting from 1, of the first returned site
+            offset(basestring, int): offset query parameter. The offset value, starting from 1, of the first returned site
                 entry.  Default is 1. .
-            limit(int): limit query parameter. The max number of sites in the returned data set.  Default is 25, and
+            limit(basestring, int): limit query parameter. The max number of sites in the returned data set.  Default is 25, and
                 max at 50 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -419,8 +419,8 @@ class Sites(object):
         check_type(headers, dict)
         check_type(timestamp, basestring)
         check_type(site_type, basestring)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

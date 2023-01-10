@@ -77,8 +77,8 @@ class Devices(object):
 
         Args:
             building_id(basestring): buildingId path parameter. Building Id .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(basestring, int): limit query parameter.
+            offset(basestring, int): offset query parameter.
             radios(bool): radios query parameter. inlcude planned radio details .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -95,8 +95,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(radios, bool)
         check_type(building_id, basestring,
                    may_be_none=False)
@@ -289,9 +289,9 @@ class Devices(object):
             health(basestring): health query parameter. The device overall health (One of POOR, FAIR, GOOD) .
             start_time(int): startTime query parameter. UTC epoch time in milliseconds .
             end_time(int): endTime query parameter. UTC epoch time in miliseconds .
-            limit(int): limit query parameter. Max number of device entries in the response (default to 50.  Max at
+            limit(basestring, int): limit query parameter. Max number of device entries in the response (default to 50.  Max at
                 1000) .
-            offset(int): offset query parameter. The offset of the first device in the returned data .
+            offset(basestring, int): offset query parameter. The offset of the first device in the returned data .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -312,8 +312,8 @@ class Devices(object):
         check_type(health, basestring)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -368,8 +368,8 @@ class Devices(object):
 
         Args:
             floor_id(basestring): floorId path parameter. Floor Id .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(basestring, int): limit query parameter.
+            offset(basestring, int): offset query parameter.
             radios(bool): radios query parameter. inlcude planned radio details .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -386,8 +386,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(radios, bool)
         check_type(floor_id, basestring,
                    may_be_none=False)
@@ -436,8 +436,8 @@ class Devices(object):
         """Returns all available interfaces. This endpoint can return a maximum of 500 interfaces .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(basestring, int): offset query parameter.
+            limit(basestring, int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -453,8 +453,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1309,8 +1309,8 @@ class Devices(object):
                 the given ids. If invalid or not-found ids are provided, null entry will be returned in
                 the list. .
             device_support_level(basestring): deviceSupportLevel query parameter.
-            offset(int): offset query parameter. offset >= 1 [X gives results from Xth device onwards] .
-            limit(int): limit query parameter. 1 <= limit <= 500 [max. no. of devices to be returned in the result]
+            offset(basestring, int): offset query parameter. offset >= 1 [X gives results from Xth device onwards] .
+            limit(basestring, int): limit query parameter. 1 <= limit <= 500 [max. no. of devices to be returned in the result]
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1359,8 +1359,8 @@ class Devices(object):
         check_type(module_operationstatecode, (basestring, list, set, tuple))
         check_type(id, basestring)
         check_type(device_support_level, basestring)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1860,8 +1860,8 @@ class Devices(object):
             role(basestring): role query parameter.
             role_source(basestring): roleSource query parameter.
             associated_wlc_ip(basestring): associatedWlcIp query parameter.
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(basestring, int): offset query parameter.
+            limit(basestring, int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1897,8 +1897,8 @@ class Devices(object):
         check_type(role, basestring)
         check_type(role_source, basestring)
         check_type(associated_wlc_ip, basestring)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2477,8 +2477,8 @@ class Devices(object):
 
         Args:
             site_id(basestring): siteId path parameter.
-            offset(basestring): offset query parameter. Row Number.  Default value is 1 .
-            limit(basestring): limit query parameter. Default value is 500 .
+            offset(basestring, int): offset query parameter. Row Number.  Default value is 1 .
+            limit(basestring, int): limit query parameter. Default value is 500 .
             category(basestring): category query parameter. Links mismatch category.  Value can be speed-duplex or
                 vlan. .
             sort_by(basestring): sortBy query parameter. Sort By .
@@ -2498,8 +2498,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(category, basestring,
                    may_be_none=False)
         check_type(sort_by, basestring)
@@ -2560,8 +2560,8 @@ class Devices(object):
 
         Args:
             site_id(basestring): siteId path parameter.
-            offset(basestring): offset query parameter. Row Number.  Default value is 1 .
-            limit(basestring): limit query parameter. Default value is 500 .
+            offset(basestring, int): offset query parameter. Row Number.  Default value is 1 .
+            limit(basestring, int): limit query parameter. Default value is 500 .
             sort_by(basestring): sortBy query parameter. Sort By .
             order(basestring): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2579,8 +2579,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(sort_by, basestring)
         check_type(order, basestring)
         check_type(site_id, basestring,
@@ -2693,8 +2693,8 @@ class Devices(object):
 
         Args:
             device_id(basestring): deviceId query parameter.
-            limit(basestring): limit query parameter.
-            offset(basestring): offset query parameter.
+            limit(basestring, int): limit query parameter.
+            offset(basestring, int): offset query parameter.
             name_list(basestring, list, set, tuple): nameList query parameter.
             vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
             part_number_list(basestring, list, set, tuple): partNumberList query parameter.
@@ -2716,8 +2716,8 @@ class Devices(object):
         check_type(headers, dict)
         check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(name_list, (basestring, list, set, tuple))
         check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
         check_type(part_number_list, (basestring, list, set, tuple))

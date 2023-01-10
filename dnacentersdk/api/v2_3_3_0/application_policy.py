@@ -547,8 +547,8 @@ class ApplicationPolicy(object):
         """Get appllication-sets by offset/limit or by name .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(basestring, int): offset query parameter.
+            limit(basestring, int): limit query parameter.
             name(basestring): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -565,8 +565,8 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -964,8 +964,8 @@ class ApplicationPolicy(object):
         """Get applications by offset/limit or by name .
 
         Args:
-            offset(int): offset query parameter. The offset of the first application to be returned .
-            limit(int): limit query parameter. The maximum number of applications to be returned .
+            offset(basestring, int): offset query parameter. The offset of the first application to be returned .
+            limit(basestring, int): limit query parameter. The maximum number of applications to be returned .
             name(basestring): name query parameter. Application's name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -982,8 +982,8 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:

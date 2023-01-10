@@ -571,8 +571,8 @@ class Discovery(object):
         """Returns the list of discovery jobs for the given IP .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(basestring, int): offset query parameter.
+            limit(basestring, int): limit query parameter.
             ip_address(basestring): ipAddress query parameter.
             name(basestring): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -590,8 +590,8 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(ip_address, basestring,
                    may_be_none=False)
         check_type(name, basestring)
@@ -755,8 +755,8 @@ class Discovery(object):
 
         Args:
             id(basestring): id path parameter. Discovery ID .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(basestring, int): offset query parameter.
+            limit(basestring, int): limit query parameter.
             ip_address(basestring): ipAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -773,8 +773,8 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(ip_address, basestring)
         check_type(id, basestring,
                    may_be_none=False)
