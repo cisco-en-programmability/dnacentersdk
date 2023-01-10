@@ -6,6 +6,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.6] - 2023-01-10
+
+### Added
+- Compatibility matrix added in `readme.rst`
+
+### Fixed
+- Offset and limit now support basestring and int
+  + dnacentersdk.api.v2_3_3_0.application_policy
+  + dnacentersdk.api.v2_3_3_0.applications
+  + dnacentersdk.api.v2_3_3_0.compliance
+  + dnacentersdk.api.v2_3_3_0.configuration_templates
+  + dnacentersdk.api.v2_3_3_0.device_onboarding_pnp
+  + dnacentersdk.api.v2_3_3_0.device_replacement
+  + dnacentersdk.api.v2_3_3_0.devices
+  + dnacentersdk.api.v2_3_3_0.discovery
+  + dnacentersdk.api.v2_3_3_0.event_management
+  + dnacentersdk.api.v2_3_3_0.health_and_performance
+  + dnacentersdk.api.v2_3_3_0.lan_automation
+  + dnacentersdk.api.v2_3_3_0.licenses
+  + dnacentersdk.api.v2_3_3_0.network_settings
+  + dnacentersdk.api.v2_3_3_0.path_trace
+  + dnacentersdk.api.v2_3_3_0.site_design
+  + dnacentersdk.api.v2_3_3_0.sites
+  + dnacentersdk.api.v2_3_3_0.software_image_management_swim
+  + dnacentersdk.api.v2_3_3_0.tag
+  + dnacentersdk.api.v2_3_3_0.task
+
 ## [2.5.5] - 2022-11-17
 
 ### Fixed
@@ -360,4 +387,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.5.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.2...v2.5.3
 [2.5.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.3...v2.5.4
 [2.5.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.4...v2.5.5
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.5...master
+[2.5.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.5...v2.5.6
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.6...master
