@@ -106,6 +106,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-or-schedule-a-report
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -188,6 +191,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-scheduled-reports
         """
         check_type(headers, dict)
         check_type(view_group_id, basestring)
@@ -246,6 +252,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-a-scheduled-report
         """
         check_type(headers, dict)
         check_type(report_id, basestring,
@@ -301,6 +310,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-a-scheduled-report
         """
         check_type(headers, dict)
         check_type(report_id, basestring,
@@ -356,6 +368,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-execution-details-for-a-given-report
         """
         check_type(headers, dict)
         check_type(report_id, basestring,
@@ -425,6 +440,9 @@ class Reports(object):
             ApiError: If the DNA Center cloud returns an error.
             DownloadFailure: If was not able to download the raw
             response to a file.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!download-report-content
         """
         check_type(headers, dict)
         check_type(report_id, basestring,
@@ -485,6 +503,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-view-groups
         """
         check_type(headers, dict)
         if headers is not None:
@@ -538,6 +559,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-views-for-a-given-view-group
         """
         check_type(headers, dict)
         check_type(view_group_id, basestring,
@@ -596,6 +620,9 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-view-details-for-a-given-view-group-view
         """
         check_type(headers, dict)
         check_type(view_group_id, basestring,

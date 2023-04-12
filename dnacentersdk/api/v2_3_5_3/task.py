@@ -87,6 +87,9 @@ class Task(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-business-api-execution-details
         """
         check_type(headers, dict)
         check_type(execution_id, basestring,
@@ -173,6 +176,9 @@ class Task(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tasks
         """
         check_type(headers, dict)
         check_type(start_time, basestring)
@@ -289,6 +295,9 @@ class Task(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-task-count
         """
         check_type(headers, dict)
         check_type(start_time, basestring)
@@ -376,6 +385,9 @@ class Task(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-task-by-operation-id
         """
         check_type(headers, dict)
         check_type(operation_id, basestring,
@@ -438,6 +450,9 @@ class Task(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-task-by-id
         """
         check_type(headers, dict)
         check_type(task_id, basestring,
@@ -493,6 +508,9 @@ class Task(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-task-tree
         """
         check_type(headers, dict)
         check_type(task_id, basestring,

@@ -94,6 +94,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+        https://developer.cisco.com/docs/dna-center/#!get-compliance-status
         """
         return self.get_compliance_status(compliance_status=compliance_status,
                                           device_uuid=device_uuid,
@@ -130,6 +133,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-status
         """
         check_type(headers, dict)
         check_type(compliance_status, basestring)
@@ -204,6 +210,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!run-compliance
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -277,6 +286,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-status-count
         """
         check_type(headers, dict)
         check_type(compliance_status, basestring)
@@ -344,6 +356,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail
         """
         check_type(headers, dict)
         check_type(compliance_type, basestring)
@@ -417,6 +432,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail-count
         """
         check_type(headers, dict)
         check_type(compliance_type, basestring)
@@ -475,6 +493,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-compliance-status
         """
         check_type(headers, dict)
         check_type(device_uuid, basestring,
@@ -542,6 +563,9 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!compliance-details-of-device
         """
         check_type(headers, dict)
         check_type(category, basestring)

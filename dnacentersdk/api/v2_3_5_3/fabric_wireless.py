@@ -100,6 +100,9 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-ssid-to-ip-pool-mapping
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -186,6 +189,9 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-ssid-to-ip-pool-mapping
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -259,6 +265,9 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-ssid-to-ip-pool-mapping
         """
         check_type(headers, dict)
         check_type(vlan_name, basestring,
@@ -320,6 +329,9 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!remove-w-l-c-from-fabric-domain
         """
         check_type(headers, dict)
         check_type(device_ipaddress, basestring,
@@ -387,6 +399,9 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-w-l-c-to-fabric-domain
         """
         check_type(headers, dict)
         check_type(payload, dict)

@@ -101,6 +101,9 @@ class Issues(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!execute-suggested-actions-commands
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -166,6 +169,9 @@ class Issues(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-issue-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -244,6 +250,9 @@ class Issues(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!issues
         """
         check_type(headers, dict)
         check_type(start_time, int)

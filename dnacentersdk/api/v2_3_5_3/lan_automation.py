@@ -91,6 +91,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-start
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -167,6 +170,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-session-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -234,6 +240,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-log
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -308,6 +317,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-log-by-id
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -385,6 +397,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-logs-for-individual-devices
         """
         check_type(headers, dict)
         check_type(log_level, basestring)
@@ -445,6 +460,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-active-sessions
         """
         check_type(headers, dict)
         if headers is not None:
@@ -500,6 +518,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-status
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -574,6 +595,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-status-by-id
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -644,6 +668,9 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!lan-automation-stop
         """
         check_type(headers, dict)
         check_type(id, basestring,

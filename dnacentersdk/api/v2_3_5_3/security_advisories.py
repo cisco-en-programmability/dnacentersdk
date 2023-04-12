@@ -85,6 +85,9 @@ class SecurityAdvisories(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-advisories-list
         """
         check_type(headers, dict)
         if headers is not None:
@@ -135,6 +138,9 @@ class SecurityAdvisories(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-advisories-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -187,6 +193,9 @@ class SecurityAdvisories(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-devices-per-advisory
         """
         check_type(headers, dict)
         check_type(advisory_id, basestring,
@@ -243,6 +252,9 @@ class SecurityAdvisories(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-advisory-ids-per-device
         """
         check_type(headers, dict)
         check_type(device_id, basestring,
@@ -298,6 +310,9 @@ class SecurityAdvisories(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-advisories-per-device
         """
         check_type(headers, dict)
         check_type(device_id, basestring,

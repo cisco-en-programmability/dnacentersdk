@@ -109,6 +109,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -235,6 +238,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-list2
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -372,6 +378,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!claim-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -482,6 +491,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-count
         """
         check_type(headers, dict)
         check_type(serial_number, (basestring, list, set, tuple))
@@ -580,6 +592,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-history
         """
         check_type(headers, dict)
         check_type(serial_number, basestring,
@@ -646,6 +661,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!import-devices-in-bulk
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -718,6 +736,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!reset-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -791,6 +812,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-sync-result-for-virtual-account
         """
         check_type(headers, dict)
         check_type(domain, basestring,
@@ -882,6 +906,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!claim-a-device-to-a-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -982,6 +1009,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!preview-config
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1060,6 +1090,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!un-claim-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1159,6 +1192,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!sync-virtual-account-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1274,6 +1310,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1360,6 +1399,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-device-by-id-from-pn-p
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -1415,6 +1457,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-by-id
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -1490,6 +1535,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-pn-p-global-settings
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1569,6 +1617,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-pn-p-global-settings
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1620,6 +1671,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-smart-account-list
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1673,6 +1727,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-account-list
         """
         check_type(headers, dict)
         check_type(domain, basestring,
@@ -1762,6 +1819,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-virtual-account
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1885,6 +1945,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-pn-p-server-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1978,6 +2041,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deregister-virtual-account
         """
         check_type(headers, dict)
         check_type(domain, basestring,
@@ -2050,6 +2116,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-workflows
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -2163,6 +2232,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-a-workflow
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2263,6 +2335,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-workflow-count
         """
         check_type(headers, dict)
         check_type(name, (basestring, list, set, tuple))
@@ -2318,6 +2393,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-workflow-by-id
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -2373,6 +2451,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-workflow-by-id
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -2473,6 +2554,9 @@ class DeviceOnboardingPnp(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-workflow
         """
         check_type(headers, dict)
         check_type(payload, dict)

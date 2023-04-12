@@ -95,6 +95,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!assign-devices-to-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -179,6 +182,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-membership
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -255,6 +261,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -338,6 +347,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-site
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -415,6 +427,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-site-health
         """
         check_type(headers, dict)
         check_type(timestamp, basestring)
@@ -482,6 +497,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-site-count
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -547,6 +565,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -625,6 +646,9 @@ class Sites(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-site
         """
         check_type(headers, dict)
         check_type(site_id, basestring,

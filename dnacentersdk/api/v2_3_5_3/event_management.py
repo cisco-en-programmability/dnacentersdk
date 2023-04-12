@@ -139,6 +139,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-audit-log-parent-records
         """
         check_type(headers, dict)
         check_type(instance_id, basestring)
@@ -302,6 +305,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-audit-log-summary
         """
         check_type(headers, dict)
         check_type(parent_instance_id, basestring)
@@ -466,6 +472,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-audit-log-records
         """
         check_type(headers, dict)
         check_type(parent_instance_id, basestring)
@@ -584,6 +593,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-status-api-for-events
         """
         check_type(headers, dict)
         check_type(execution_id, basestring,
@@ -655,6 +667,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-email-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -731,6 +746,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-email-destination
         """
         check_type(headers, dict)
         if headers is not None:
@@ -799,6 +817,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-email-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -904,6 +925,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-notifications
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -1020,6 +1044,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!count-of-notifications
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -1109,6 +1136,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-destination
         """
         check_type(headers, dict)
         check_type(config_id, basestring)
@@ -1188,6 +1218,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -1255,6 +1288,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-event-subscriptions
         """
         check_type(headers, dict)
         check_type(subscriptions, basestring,
@@ -1315,6 +1351,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-event-subscriptions
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1378,6 +1417,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-event-subscriptions
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1450,6 +1492,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-email-subscription-details
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -1533,6 +1578,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-subscription-details
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -1616,6 +1664,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-syslog-subscription-details
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -1687,6 +1738,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!count-of-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, basestring,
@@ -1747,6 +1801,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-email-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1813,6 +1870,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-email-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1897,6 +1957,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-email-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -1983,6 +2046,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-rest-webhook-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2069,6 +2135,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -2155,6 +2224,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-rest-webhook-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2218,6 +2290,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-syslog-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2284,6 +2359,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-syslog-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2367,6 +2445,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-syslog-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -2465,6 +2546,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-syslog-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2556,6 +2640,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-syslog-destination
         """
         check_type(headers, dict)
         check_type(config_id, basestring)
@@ -2645,6 +2732,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-syslog-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2737,6 +2827,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-webhook-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2834,6 +2927,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-webhook-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2920,6 +3016,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-webhook-destination
         """
         check_type(headers, dict)
         check_type(webhook_ids, basestring)
@@ -3000,6 +3099,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-events
         """
         check_type(headers, dict)
         check_type(event_id, basestring)
@@ -3073,6 +3175,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!count-of-events
         """
         check_type(headers, dict)
         check_type(event_id, basestring)
@@ -3146,6 +3251,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-event-artifacts
         """
         check_type(headers, dict)
         check_type(event_ids, basestring)
@@ -3217,6 +3325,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!event-artifact-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -3268,6 +3379,9 @@ class EventManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-connector-types
         """
         check_type(headers, dict)
         if headers is not None:

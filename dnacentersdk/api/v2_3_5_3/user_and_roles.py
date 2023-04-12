@@ -85,6 +85,9 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-permissions-api
         """
         check_type(headers, dict)
         if headers is not None:
@@ -135,6 +138,9 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-roles-api
         """
         check_type(headers, dict)
         if headers is not None:
@@ -190,6 +196,9 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-users-api
         """
         check_type(headers, dict)
         check_type(invoke_source, basestring,
@@ -262,6 +271,9 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-user-api
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -352,6 +364,9 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-user-api
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -426,6 +441,9 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-api
         """
         check_type(headers, dict)
         check_type(invoke_source, basestring,

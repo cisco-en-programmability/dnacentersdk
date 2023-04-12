@@ -122,6 +122,9 @@ class AuthenticationManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!import-certificate
         """
         check_type(headers, dict)
         check_type(pk_password, basestring)
@@ -227,6 +230,9 @@ class AuthenticationManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!import-certificate-p12
         """
         check_type(headers, dict)
         check_type(p12_password, basestring)
@@ -297,6 +303,9 @@ class AuthenticationManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!authentication-api
         """
         check_type(headers, dict)
         if headers is not None:

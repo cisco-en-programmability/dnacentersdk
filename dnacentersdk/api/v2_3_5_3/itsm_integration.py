@@ -99,6 +99,9 @@ class ItsmIntegration(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-itsm-integration-setting
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -183,6 +186,9 @@ class ItsmIntegration(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-itsm-integration-setting
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -257,6 +263,9 @@ class ItsmIntegration(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-itsm-integration-setting-by-id
         """
         check_type(headers, dict)
         check_type(instance_id, basestring,
@@ -313,6 +322,9 @@ class ItsmIntegration(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-itsm-integration-setting
         """
         check_type(headers, dict)
         check_type(instance_id, basestring,
@@ -368,6 +380,9 @@ class ItsmIntegration(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-itsm-integration-settings
         """
         check_type(headers, dict)
         if headers is not None:

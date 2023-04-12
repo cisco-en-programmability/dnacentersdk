@@ -90,6 +90,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-default-authentication-profile-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -153,6 +156,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-default-authentication-template-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -216,6 +222,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-default-authentication-profile-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -275,6 +284,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-default-authentication-profile-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -335,6 +347,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-border-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -394,6 +409,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-border-device-detail-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -450,6 +468,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-border-device-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -506,6 +527,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-control-plane-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -562,6 +586,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-control-plane-device-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -631,6 +658,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-control-plane-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -699,6 +729,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-info-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -756,6 +789,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-role-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -822,6 +858,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-edge-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -888,6 +927,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-edge-device-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -944,6 +986,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-edge-device-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -1000,6 +1045,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-site-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -1056,6 +1104,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-site-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -1126,6 +1177,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-site-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1212,6 +1266,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-access-point-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1289,6 +1346,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-access-point-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -1352,6 +1412,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-access-point-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -1415,6 +1478,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-user-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -1503,6 +1569,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-user-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1586,6 +1655,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-user-device-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -1660,6 +1732,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-multicast-in-sda-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1730,6 +1805,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-details-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -1786,6 +1864,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-multicast-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -1843,6 +1924,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-wired-device
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -1907,6 +1991,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!re-provision-wired-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1981,6 +2068,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!provision-wired-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2047,6 +2137,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-wired-device
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, basestring,
@@ -2104,6 +2197,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-transit-peer-network
         """
         check_type(headers, dict)
         check_type(transit_peer_network_name, basestring,
@@ -2161,6 +2257,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-transit-peer-network-info
         """
         check_type(headers, dict)
         check_type(transit_peer_network_name, basestring,
@@ -2230,6 +2329,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-transit-peer-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2302,6 +2404,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-v-n-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(virtual_network_name, basestring,
@@ -2364,6 +2469,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-v-n-from-sda-fabric
         """
         check_type(headers, dict)
         check_type(virtual_network_name, basestring,
@@ -2432,6 +2540,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-v-n-in-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2499,6 +2610,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-summary
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -2559,6 +2673,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-ip-pool-from-sda-virtual-network
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -2627,6 +2744,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-ip-pool-from-sda-virtual-network
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, basestring,
@@ -2737,6 +2857,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-ip-pool-in-sda-virtual-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2843,6 +2966,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2913,6 +3039,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(virtual_network_name, basestring,
@@ -2969,6 +3098,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(virtual_network_name, basestring,
@@ -3039,6 +3171,9 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(payload, dict)

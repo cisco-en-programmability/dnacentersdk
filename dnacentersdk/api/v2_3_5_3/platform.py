@@ -85,6 +85,9 @@ class Platform(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!cisco-d-n-a-center-packages-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -136,6 +139,9 @@ class Platform(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!cisco-d-n-a-center-release-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -188,6 +194,9 @@ class Platform(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!cisco-d-n-a-center-nodes-configuration-summary
         """
         check_type(headers, dict)
         if headers is not None:

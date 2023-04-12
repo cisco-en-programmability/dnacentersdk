@@ -112,6 +112,9 @@ class Applications(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!applications
         """
         check_type(headers, dict)
         check_type(site_id, basestring)

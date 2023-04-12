@@ -93,6 +93,9 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-authentication-and-policy-servers
         """
         check_type(headers, dict)
         check_type(is_ise_enabled, bool)
@@ -152,6 +155,9 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-support-get-api
         """
         check_type(headers, dict)
         if headers is not None:
@@ -213,6 +219,9 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-p-o-s-t-api
         """
         check_type(headers, dict)
         check_type(payload, dict)

@@ -94,6 +94,9 @@ class Itsm(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-c-m-d-b-sync-status
         """
         check_type(headers, dict)
         check_type(status, basestring)
@@ -154,6 +157,9 @@ class Itsm(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-failed-itsm-events
         """
         check_type(headers, dict)
         check_type(instance_id, basestring)
@@ -216,6 +222,9 @@ class Itsm(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retry-integration-events
         """
         check_type(headers, dict)
         check_type(payload, list)

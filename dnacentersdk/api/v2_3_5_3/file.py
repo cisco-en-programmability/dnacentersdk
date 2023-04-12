@@ -85,6 +85,9 @@ class File(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-available-namespaces
         """
         check_type(headers, dict)
         if headers is not None:
@@ -137,6 +140,9 @@ class File(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-files
         """
         check_type(headers, dict)
         check_type(name_space, basestring,
@@ -203,6 +209,9 @@ class File(object):
             ApiError: If the DNA Center cloud returns an error.
             DownloadFailure: If was not able to download the raw
             response to a file.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!download-a-file-by-file-id
         """
         check_type(headers, dict)
         check_type(file_id, basestring,
@@ -293,6 +302,9 @@ class File(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!upload-file
         """
         check_type(headers, dict)
         check_type(name_space, basestring,

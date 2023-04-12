@@ -105,6 +105,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!assign-device-credential-to-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -191,6 +194,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-device-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -261,6 +267,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -326,6 +335,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-credential-details
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -381,6 +393,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-device-credential
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -438,6 +453,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-global-pool
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -502,6 +520,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-global-pool
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -572,6 +593,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-global-pool
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -636,6 +660,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-global-ip-pool
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -692,6 +719,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -757,6 +787,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -837,6 +870,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -908,6 +944,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-reserve-ip-subpool
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -969,6 +1008,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!release-reserve-ip-subpool
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -1082,6 +1124,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!reserve-ip-subpool
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1231,6 +1276,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-reserve-ip-subpool
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1326,6 +1374,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-service-provider-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1384,6 +1435,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-p-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1454,6 +1508,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-p-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1518,6 +1575,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-s-p-profile
         """
         check_type(headers, dict)
         check_type(sp_profile_name, basestring,
@@ -1591,6 +1651,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!assign-device-credential-to-site-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1669,6 +1732,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network-v2
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -1734,6 +1800,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-network-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1811,6 +1880,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-network-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1884,6 +1956,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-p-profile-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1954,6 +2029,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-p-profile-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2016,6 +2094,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-service-provider-details-v2
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2068,6 +2149,9 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-s-p-profile-v2
         """
         check_type(headers, dict)
         check_type(sp_profile_name, basestring,

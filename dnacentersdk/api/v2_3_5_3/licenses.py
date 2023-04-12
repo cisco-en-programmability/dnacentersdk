@@ -96,6 +96,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-count-details2
         """
         check_type(headers, dict)
         check_type(device_type, basestring)
@@ -182,6 +185,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-license-summary2
         """
         check_type(headers, dict)
         check_type(page_number, int,
@@ -267,6 +273,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-license-details2
         """
         check_type(headers, dict)
         check_type(device_uuid, basestring,
@@ -328,6 +337,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-deregistration2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -401,6 +413,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-registration2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -479,6 +494,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!change-virtual-account2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -551,6 +569,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!virtual-account-details2
         """
         check_type(headers, dict)
         check_type(smart_account_id, basestring,
@@ -605,6 +626,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!smart-account-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -663,6 +687,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!license-term-details2
         """
         check_type(headers, dict)
         check_type(device_type, basestring,
@@ -732,6 +759,9 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!license-usage-details2
         """
         check_type(headers, dict)
         check_type(device_type, basestring,

@@ -103,6 +103,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -202,6 +205,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -303,6 +309,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -387,6 +396,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-count
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -467,6 +479,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!updates-tag-membership
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -534,6 +549,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-resource-types
         """
         check_type(headers, dict)
         if headers is not None:
@@ -586,6 +604,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-tag
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -641,6 +662,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-by-id
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -712,6 +736,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-members-by-id
         """
         check_type(headers, dict)
         check_type(member_type, basestring,
@@ -791,6 +818,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-members-to-the-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -864,6 +894,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-member-count
         """
         check_type(headers, dict)
         check_type(member_type, basestring,
@@ -931,6 +964,9 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!remove-tag-member
         """
         check_type(headers, dict)
         check_type(id, basestring,

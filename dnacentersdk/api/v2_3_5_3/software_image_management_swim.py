@@ -94,6 +94,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!trigger-software-image-activation
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -170,6 +173,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!trigger-software-image-distribution
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -267,6 +273,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-software-image-details
         """
         check_type(headers, dict)
         check_type(image_uuid, basestring)
@@ -371,6 +380,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-family-identifiers
         """
         check_type(headers, dict)
         if headers is not None:
@@ -442,6 +454,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!tag-as-golden-image
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -526,6 +541,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!remove-golden-tag-for-image
         """
         check_type(headers, dict)
         check_type(site_id, basestring,
@@ -603,6 +621,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-golden-tag-status-of-an-image
         """
         check_type(headers, dict)
         check_type(site_id, basestring,
@@ -710,6 +731,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!import-local-software-image
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
@@ -796,6 +820,9 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!import-software-image-via-url
         """
         check_type(headers, dict)
         check_type(payload, list)

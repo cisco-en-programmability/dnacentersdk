@@ -115,6 +115,9 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrives-all-previous-pathtraces-summary
         """
         check_type(headers, dict)
         check_type(periodic_refresh, bool)
@@ -234,6 +237,9 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!initiate-a-new-pathtrace
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -312,6 +318,9 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-previous-pathtrace
         """
         check_type(headers, dict)
         check_type(flow_analysis_id, basestring,
@@ -367,6 +376,9 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deletes-pathtrace-by-id
         """
         check_type(headers, dict)
         check_type(flow_analysis_id, basestring,

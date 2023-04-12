@@ -97,6 +97,9 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!edit-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -179,6 +182,9 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -251,6 +257,9 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-sensor-test
         """
         check_type(headers, dict)
         check_type(template_name, basestring)
@@ -306,6 +315,9 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!sensors
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -367,6 +379,9 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!run-now-sensor-test
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -439,6 +454,9 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!duplicate-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)

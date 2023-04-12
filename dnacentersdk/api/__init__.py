@@ -384,8 +384,6 @@ from .v2_2_2_3.network_settings import \
     NetworkSettings as NetworkSettings_v2_2_2_3
 from .v2_2_2_3.path_trace import \
     PathTrace as PathTrace_v2_2_2_3
-from .v2_2_2_3.platform_configuration import \
-    PlatformConfiguration as PlatformConfiguration_v2_2_2_3
 from .v2_2_2_3.reports import \
     Reports as Reports_v2_2_2_3
 from .v2_2_2_3.sda import \
@@ -454,8 +452,6 @@ from .v2_2_3_3.network_settings import \
     NetworkSettings as NetworkSettings_v2_2_3_3
 from .v2_2_3_3.path_trace import \
     PathTrace as PathTrace_v2_2_3_3
-from .v2_2_3_3.platform_configuration import \
-    PlatformConfiguration as PlatformConfiguration_v2_2_3_3
 from .v2_2_3_3.policy import \
     Policy as Policy_v2_2_3_3
 from .v2_2_3_3.reports import \
@@ -486,6 +482,8 @@ from .v2_3_3_0.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_3_0
 from .v2_3_3_0.applications import \
     Applications as Applications_v2_3_3_0
+from .v2_3_3_0.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_3_3_0
 from .v2_3_3_0.cisco_dna_center_system import \
     CiscoDnaCenterSystem as CiscoDnaCenterSystem_v2_3_3_0
 from .v2_3_3_0.clients import \
@@ -506,6 +504,8 @@ from .v2_3_3_0.devices import \
     Devices as Devices_v2_3_3_0
 from .v2_3_3_0.discovery import \
     Discovery as Discovery_v2_3_3_0
+from .v2_3_3_0.eo_x import \
+    EoX as EoX_v2_3_3_0
 from .v2_3_3_0.event_management import \
     EventManagement as EventManagement_v2_3_3_0
 from .v2_3_3_0.fabric_wireless import \
@@ -516,6 +516,8 @@ from .v2_3_3_0.health_and_performance import \
     HealthAndPerformance as HealthAndPerformance_v2_3_3_0
 from .v2_3_3_0.itsm import \
     Itsm as Itsm_v2_3_3_0
+from .v2_3_3_0.itsm_integration import \
+    ItsmIntegration as ItsmIntegration_v2_3_3_0
 from .v2_3_3_0.issues import \
     Issues as Issues_v2_3_3_0
 from .v2_3_3_0.lan_automation import \
@@ -526,8 +528,8 @@ from .v2_3_3_0.network_settings import \
     NetworkSettings as NetworkSettings_v2_3_3_0
 from .v2_3_3_0.path_trace import \
     PathTrace as PathTrace_v2_3_3_0
-from .v2_3_3_0.platform_configuration import \
-    PlatformConfiguration as PlatformConfiguration_v2_3_3_0
+from .v2_3_3_0.platform import \
+    Platform as Platform_v2_3_3_0
 from .v2_3_3_0.reports import \
     Reports as Reports_v2_3_3_0
 from .v2_3_3_0.sda import \
@@ -550,6 +552,8 @@ from .v2_3_3_0.task import \
     Task as Task_v2_3_3_0
 from .v2_3_3_0.topology import \
     Topology as Topology_v2_3_3_0
+from .v2_3_3_0.userand_roles import \
+    UserandRoles as UserandRoles_v2_3_3_0
 from .v2_3_3_0.users import \
     Users as Users_v2_3_3_0
 from .v2_3_3_0.wireless import \
@@ -580,6 +584,8 @@ from .v2_3_5_3.devices import \
     Devices as Devices_v2_3_5_3
 from .v2_3_5_3.discovery import \
     Discovery as Discovery_v2_3_5_3
+from .v2_3_5_3.eo_x import \
+    EoX as EoX_v2_3_5_3
 from .v2_3_5_3.event_management import \
     EventManagement as EventManagement_v2_3_5_3
 from .v2_3_5_3.fabric_wireless import \
@@ -626,7 +632,7 @@ from .v2_3_5_3.task import \
     Task as Task_v2_3_5_3
 from .v2_3_5_3.topology import \
     Topology as Topology_v2_3_5_3
-from .v2_3_5_3.user_and_roles import \
+from .v2_3_5_3.userand_roles import \
     UserandRoles as UserandRoles_v2_3_5_3
 from .v2_3_5_3.users import \
     Users as Users_v2_3_5_3
@@ -728,7 +734,8 @@ class DNACenterAPI(object):
                 argument or an environment variable, or it is not a
                 DNA Center API supported version
                 ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1', '2.1.2',
-                '2.2.1', '2.2.2.3', '2.2.3.3', '2.3.3.0', '2.3.5.3'].
+                '2.2.1', '2.2.2.3', '2.2.3.3',
+                '2.3.3.0', '2.3.5.3'].
 
         """
         username = username or dnacenter_environment.get_env_username()
@@ -762,8 +769,8 @@ class DNACenterAPI(object):
 
         if version not in ['1.2.10', '1.3.0', '1.3.1', '1.3.3', '2.1.1',
                            '2.1.2', '2.2.1',
-                           '2.2.2.3', '2.2.3.3', '2.3.3.0',
-                           '2.3.5.3']:
+                           '2.2.2.3', '2.2.3.3',
+                           '2.3.3.0', '2.3.5.3']:
             raise VersionError(
                 'Unknown API version, '
                 + 'known versions are {}'.format(
@@ -1514,10 +1521,6 @@ class DNACenterAPI(object):
                 PathTrace_v2_2_2_3(
                     self._session, object_factory, _validator
                 )
-            self.platform_configuration = \
-                PlatformConfiguration_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
             self.reports = \
                 Reports_v2_2_2_3(
                     self._session, object_factory, _validator
@@ -1655,10 +1658,6 @@ class DNACenterAPI(object):
                 PathTrace_v2_2_3_3(
                     self._session, object_factory, _validator
                 )
-            self.platform_configuration = \
-                PlatformConfiguration_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
             self.policy = \
                 Policy_v2_2_3_3(
                     self._session, object_factory, _validator
@@ -1720,6 +1719,10 @@ class DNACenterAPI(object):
                 Applications_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
+            self.authentication_management = \
+                AuthenticationManagement_v2_3_3_0(
+                    self._session, object_factory, _validator
+                )
             self.cisco_dna_center_system = \
                 CiscoDnaCenterSystem_v2_3_3_0(
                     self._session, object_factory, _validator
@@ -1760,6 +1763,10 @@ class DNACenterAPI(object):
                 Discovery_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
+            self.eo_x = \
+                EoX_v2_3_3_0(
+                    self._session, object_factory, _validator
+                )
             self.event_management = \
                 EventManagement_v2_3_3_0(
                     self._session, object_factory, _validator
@@ -1778,6 +1785,10 @@ class DNACenterAPI(object):
                 )
             self.itsm = \
                 Itsm_v2_3_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.itsm_integration = \
+                ItsmIntegration_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
             self.issues = \
@@ -1800,8 +1811,8 @@ class DNACenterAPI(object):
                 PathTrace_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
-            self.platform_configuration = \
-                PlatformConfiguration_v2_3_3_0(
+            self.platform = \
+                Platform_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
             self.reports = \
@@ -1846,6 +1857,10 @@ class DNACenterAPI(object):
                 )
             self.topology = \
                 Topology_v2_3_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.userand_roles = \
+                UserandRoles_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
             self.users = \

@@ -90,6 +90,9 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-client-detail
         """
         check_type(headers, dict)
         check_type(timestamp, basestring)
@@ -153,6 +156,9 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-client-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -215,6 +221,9 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-overall-client-health
         """
         check_type(headers, dict)
         check_type(timestamp, basestring)
@@ -283,6 +292,9 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!client-proximity
         """
         check_type(headers, dict)
         check_type(username, basestring,

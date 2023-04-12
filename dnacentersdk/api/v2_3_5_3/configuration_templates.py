@@ -94,6 +94,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!creates-a-clone-of-the-given-template
         """
         check_type(headers, dict)
         check_type(project_id, basestring)
@@ -180,6 +183,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-project
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -277,6 +283,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-project
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -356,6 +365,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-a-list-of-projects
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -423,6 +435,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!imports-the-projects-provided
         """
         check_type(headers, dict)
         check_type(payload, (list, dict))
@@ -493,6 +508,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!exports-the-projects-for-a-given-criteria
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -568,6 +586,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!imports-the-templates-provided
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -637,6 +658,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-details-of-a-given-project
         """
         check_type(headers, dict)
         check_type(project_id, basestring,
@@ -693,6 +717,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deletes-the-project
         """
         check_type(headers, dict)
         check_type(project_id, basestring,
@@ -810,6 +837,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -955,6 +985,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-templates-available
         """
         check_type(headers, dict)
         check_type(project_id, basestring)
@@ -1098,6 +1131,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1228,6 +1264,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deploy-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1306,6 +1345,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!status-of-template-deployment
         """
         check_type(headers, dict)
         check_type(deployment_id, basestring,
@@ -1366,6 +1408,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!exports-the-templates-for-a-given-criteria
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1441,6 +1486,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!preview-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1522,6 +1570,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!version-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1593,6 +1644,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-all-the-versions-of-a-given-template
         """
         check_type(headers, dict)
         check_type(template_id, basestring,
@@ -1649,6 +1703,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deletes-the-template
         """
         check_type(headers, dict)
         check_type(template_id, basestring,
@@ -1708,6 +1765,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-details-of-a-given-template
         """
         check_type(headers, dict)
         check_type(latest_version, bool)
@@ -1775,6 +1835,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-projects-details
         """
         check_type(headers, dict)
         check_type(id, basestring)
@@ -1876,6 +1939,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-templates-details
         """
         check_type(headers, dict)
         check_type(id, basestring)
@@ -1995,6 +2061,9 @@ class ConfigurationTemplates(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deploy-template-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)

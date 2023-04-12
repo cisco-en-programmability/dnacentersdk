@@ -89,6 +89,9 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-overall-network-health
         """
         check_type(headers, dict)
         check_type(timestamp, basestring)
@@ -147,6 +150,9 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-topology-details
         """
         check_type(headers, dict)
         check_type(vlan_id, basestring,
@@ -202,6 +208,9 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-l3-topology-details
         """
         check_type(headers, dict)
         check_type(topology_type, basestring,
@@ -257,6 +266,9 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-physical-topology
         """
         check_type(headers, dict)
         check_type(node_type, basestring)
@@ -310,6 +322,9 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-site-topology
         """
         check_type(headers, dict)
         if headers is not None:
@@ -360,6 +375,9 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-v-lan-details
         """
         check_type(headers, dict)
         if headers is not None:

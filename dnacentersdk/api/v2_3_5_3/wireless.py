@@ -94,6 +94,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!sensor-test-results
         """
         check_type(headers, dict)
         check_type(site_id, basestring)
@@ -174,6 +177,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-and-provision-ssid
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -252,6 +258,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-ssid-and-provision-it-to-devices
         """
         check_type(headers, dict)
         check_type(ssid_name, basestring,
@@ -320,6 +329,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!reboot-access-points
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -388,6 +400,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-reboot-task-result
         """
         check_type(headers, dict)
         check_type(parent_task_id, basestring)
@@ -445,6 +460,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-enterprise-ssid
         """
         check_type(headers, dict)
         check_type(ssid_name, basestring)
@@ -550,6 +568,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-enterprise-ssid
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -700,6 +721,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-enterprise-ssid
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -800,6 +824,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-enterprise-ssid
         """
         check_type(headers, dict)
         check_type(ssid_name, basestring,
@@ -855,6 +882,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile
         """
         check_type(headers, dict)
         check_type(wireless_profile_name, basestring,
@@ -979,6 +1009,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!configure-access-points
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1091,6 +1124,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-task-result
         """
         check_type(headers, dict)
         check_type(task_id, basestring,
@@ -1147,6 +1183,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration
         """
         check_type(headers, dict)
         check_type(key, basestring,
@@ -1201,14 +1240,16 @@ class Wireless(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            list: JSON response. A list of MyDict objects.
-            Access the object's properties by using the dot notation
-            or the bracket notation.
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
 
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!a-p-provision
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1280,6 +1321,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-update-dynamic-interface
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1354,6 +1398,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-dynamic-interface
         """
         check_type(headers, dict)
         check_type(interface_name, basestring)
@@ -1409,6 +1456,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-dynamic-interface
         """
         check_type(headers, dict)
         check_type(interface_name, basestring,
@@ -1478,6 +1528,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1548,6 +1601,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1613,6 +1669,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-profile
         """
         check_type(headers, dict)
         check_type(profile_name, basestring)
@@ -1672,6 +1731,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!provision-update
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1738,6 +1800,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!provision
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1801,6 +1866,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!p-s-k-override
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1860,6 +1928,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-rf-profiles
         """
         check_type(headers, dict)
         check_type(rf_profile_name, basestring)
@@ -1941,6 +2012,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-or-update-r-f-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2026,6 +2100,9 @@ class Wireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-r-f-profiles
         """
         check_type(headers, dict)
         check_type(rf_profile_name, basestring,

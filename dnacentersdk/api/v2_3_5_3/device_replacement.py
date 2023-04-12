@@ -116,6 +116,9 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!return-list-of-replacement-devices-with-replacement-details
         """
         check_type(headers, dict)
         check_type(faulty_device_name, basestring)
@@ -205,6 +208,9 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!un-mark-device-for-replacement
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -268,6 +274,9 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!mark-device-for-replacement
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -329,6 +338,9 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!return-replacement-devices-count
         """
         check_type(headers, dict)
         check_type(replacement_status, (basestring, list, set, tuple))
@@ -393,6 +405,9 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deploy-device-replacement-workflow
         """
         check_type(headers, dict)
         check_type(payload, dict)

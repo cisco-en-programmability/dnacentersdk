@@ -87,6 +87,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy
         """
         check_type(headers, dict)
         check_type(policy_scope, basestring)
@@ -140,6 +143,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy-default
         """
         check_type(headers, dict)
         if headers is not None:
@@ -202,6 +208,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!application-policy-intent
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -273,6 +282,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(name, basestring)
@@ -332,6 +344,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -395,6 +410,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -452,6 +470,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -504,6 +525,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -563,6 +587,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-application-sets
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -624,6 +651,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-application-set
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -684,6 +714,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-application-set
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -741,6 +774,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-application-sets-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -798,6 +834,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-application
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -861,6 +900,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!edit-application
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -920,6 +962,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-application
         """
         check_type(headers, dict)
         check_type(id, basestring,
@@ -980,6 +1025,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-applications
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -1039,6 +1087,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-applications-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1091,6 +1142,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(network_device_id, basestring)
@@ -1150,6 +1204,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1215,6 +1272,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1272,6 +1332,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1325,6 +1388,9 @@ class ApplicationPolicy(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(id, basestring,

@@ -85,6 +85,9 @@ class CommandRunner(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-keywords-of-c-l-is-accepted-by-command-runner
         """
         check_type(headers, dict)
         if headers is not None:
@@ -151,6 +154,9 @@ class CommandRunner(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!run-read-only-commands-on-devices-to-get-their-real-time-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
