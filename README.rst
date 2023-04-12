@@ -18,7 +18,7 @@ dnacentersdk
     dnac = api.DNACenterAPI(username="devnetuser",
                             password="Cisco123!",
                             base_url="https://sandboxdnac.cisco.com:443",
-                            version='2.3.3.0',
+                            version='2.3.5.3',
                             verify=True)
 
     # Find all devices that have 'Switches and Hubs' in their family
