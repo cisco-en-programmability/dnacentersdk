@@ -2796,7 +2796,6 @@ class EventManagement(object):
                                    trustCert=None,
                                    url=None,
                                    webhookId=None,
-                                   headers=None,
                                    payload=None,
                                    active_validation=True,
                                    **request_parameters):
@@ -2804,7 +2803,6 @@ class EventManagement(object):
 
         Args:
             description(string): Event Management's Description.
-            headers(list): Event Management's headers (list of objects).
             method(string): Event Management's Method. Available values are 'POST' and 'PUT'.
             name(string): Event Management's Name.
             trustCert(boolean): Event Management's Trust Cert.
@@ -2896,7 +2894,6 @@ class EventManagement(object):
                                    trustCert=None,
                                    url=None,
                                    webhookId=None,
-                                   headers=None,
                                    payload=None,
                                    active_validation=True,
                                    **request_parameters):
@@ -2904,7 +2901,6 @@ class EventManagement(object):
 
         Args:
             description(string): Event Management's Description.
-            headers(list): Event Management's headers (list of objects).
             method(string): Event Management's Method. Available values are 'POST' and 'PUT'.
             name(string): Event Management's Name.
             trustCert(boolean): Event Management's Trust Cert.
