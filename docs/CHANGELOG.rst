@@ -11,8 +11,16 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 `Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.6...master>`__
 -------------------------------------------------------------------------------------------------
 
+Added
+~~~~~
+
+-  Add support of DNA Center versions (‘2.3.5.3’)
+-  Adds modules for v2_3_5_3
+
 `2.5.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.5...v2.5.6>`__ - 2023-01-10
 ---------------------------------------------------------------------------------------------------------
+
+.. _added-1:
 
 Added
 ~~~~~
@@ -66,7 +74,7 @@ Fixed
 `2.5.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.3...v2.5.4>`__ - 2022-08-11
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-1:
+.. _added-2:
 
 Added
 ~~~~~
@@ -147,7 +155,7 @@ Fixed
 `2.5.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.11...v2.5.0>`__ - 2022-06-20
 ----------------------------------------------------------------------------------------------------------
 
-.. _added-2:
+.. _added-3:
 
 Added
 ~~~~~
@@ -176,7 +184,7 @@ Fixed
 `2.4.10 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.9...v2.4.10>`__ - 2022-05-12
 -----------------------------------------------------------------------------------------------------------
 
-.. _added-3:
+.. _added-4:
 
 Added
 ~~~~~
@@ -192,7 +200,7 @@ Added
 `2.4.9 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.8...v2.4.9>`__ - 2022-04-20
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-4:
+.. _added-5:
 
 Added
 ~~~~~
@@ -212,7 +220,7 @@ Added
 `2.4.8 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.7...v2.4.8>`__ - 2022-03-23
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-5:
+.. _added-6:
 
 Added
 ~~~~~
@@ -256,7 +264,7 @@ Changed
 `2.4.7 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.4.6...v2.4.7>`__ - 2022-03-22
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-6:
+.. _added-7:
 
 Added
 ~~~~~
@@ -357,7 +365,7 @@ Fixed
 -  Removed an extra parameter in the call of
    ``VERIFY_STRING_ENVIRONMENT_VARIABLE``
 
-.. _added-7:
+.. _added-8:
 
 Added
 ~~~~~
@@ -420,7 +428,7 @@ Changed
 `2.4.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.3.3...v2.4.0>`__ - 2021-12-01
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-8:
+.. _added-9:
 
 Added
 ~~~~~
@@ -508,7 +516,7 @@ Fixed
 `2.3.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.2.5...v2.3.0>`__ - 2021-08-09
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-9:
+.. _added-10:
 
 Added
 ~~~~~
@@ -588,7 +596,7 @@ Changed
 `2.2.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.0.2...v2.2.2>`__ - 2021-05-10
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-10:
+.. _added-11:
 
 Added
 ~~~~~
@@ -607,7 +615,7 @@ Changed
 `2.0.2 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.0.0...v2.0.2>`__ - 2020-11-01
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-11:
+.. _added-12:
 
 Added
 ~~~~~
@@ -636,7 +644,7 @@ Removed
 `2.0.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v1.3.0...v2.0.0>`__ - 2020-07-17
 ---------------------------------------------------------------------------------------------------------
 
-.. _added-12:
+.. _added-13:
 
 Added
 ~~~~~
@@ -676,7 +684,7 @@ Removed
 `1.3.0 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v1.2.10...v1.3.0>`__ - 2019-08-19
 ----------------------------------------------------------------------------------------------------------
 
-.. _added-13:
+.. _added-14:
 
 Added
 ~~~~~
@@ -697,7 +705,7 @@ Fixed
 `1.2.10 <https://github.com/cisco-en-programmability/dnacentersdk/releases/v1.2.10>`__ - 2019-07-18
 ---------------------------------------------------------------------------------------------------
 
-.. _added-14:
+.. _added-15:
 
 Added
 ~~~~~
