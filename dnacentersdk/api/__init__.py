@@ -1769,6 +1769,10 @@ class DNACenterAPI(object):
                 Itsm_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
+            self.issues = \
+                Issues_v2_3_3_0(
+                    self._session, object_factory, _validator
+                )
             self.lan_automation = \
                 LanAutomation_v2_3_3_0(
                     self._session, object_factory, _validator
