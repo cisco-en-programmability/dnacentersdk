@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.6.2] - 2023-04-28
+### Changed
+- SDK implementation for API Add Edge Device to Sda fabric on DNAC Version 2.3.3.0 inconsistent with previous DNAC versions implementation #90
+- Actual error message was not being used in case of exceptions #98
+- SDA :: add_default_authentication_profile #97
+- DNA_CENTER_VERIFY not being imported correctly from the environment #92, now you can export this as:
+  ```zsh
+    export DNA_CENTER_VERIFY=false
+    export DNA_CENTER_VERIFY=true
+  ```
+
 ## [2.6.1] - 2023-04-12
 ### Changed
 - Remove some families bug in 2.3.3.0
