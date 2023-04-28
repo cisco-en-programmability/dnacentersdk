@@ -696,8 +696,8 @@ class DNACenterAPI(object):
                 if the environment variable is not set.
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
-                to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY
-                (or DNA_CENTER_VERIFY_STRING) environment variable or
+                to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY 
+                environment variable or
                 dnacentersdk.config.DEFAULT_VERIFY if the environment
                 variables are not set.
             version(basestring): Controls which version of DNA_CENTER to use.
@@ -740,7 +740,7 @@ class DNACenterAPI(object):
             wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
 
         if verify is None:
-            verify = dnacenter_environment.get_env_verify() or DEFAULT_VERIFY
+            verify = dnacenter_environment.get_env_verify() if dnacenter_environment.get_env_verify() != None else DEFAULT_VERIFY
 
         version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
 

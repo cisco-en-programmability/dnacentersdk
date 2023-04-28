@@ -39,7 +39,6 @@ class JSONSchemaValidatorE0C7B28D55C85D49A84C1403Ca14Bd5F(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "items": {
                 "properties": {
                 "deviceManagementIpAddress": {
                 "type": "string"
@@ -49,8 +48,6 @@ class JSONSchemaValidatorE0C7B28D55C85D49A84C1403Ca14Bd5F(object):
                 }
                 },
                 "type": "object"
-                },
-                "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

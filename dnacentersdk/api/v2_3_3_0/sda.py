@@ -773,6 +773,8 @@ class Sda(object):
         return self._object_factory('bpm_ea24b22ce355a229b7fd067401ddf3a_v2_3_3_0', json_data)
 
     def add_edge_device(self,
+                        deviceManagementIpAddress=None,
+                        siteNameHierarchy=None,
                         headers=None,
                         payload=None,
                         active_validation=True,
@@ -780,9 +782,13 @@ class Sda(object):
         """Add edge device in SDA Fabric .
 
         Args:
+            deviceManagementIpAddress(string): SDA's Management Ip Address of the Device which is provisioned
+                successfully .
+            siteNameHierarchy(string): SDA's siteNameHierarchy of the Provisioned Device(site should be part of
+                Fabric Site) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(list): A JSON serializable Python object to send in the
+            payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
             active_validation(bool): Enable/Disable payload validation.
                 Defaults to True.
@@ -799,7 +805,7 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(payload, list)
+        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -812,7 +818,14 @@ class Sda(object):
 
         path_params = {
         }
-        _payload = payload or []
+        _payload = {
+            'deviceManagementIpAddress':
+                deviceManagementIpAddress,
+            'siteNameHierarchy':
+                siteNameHierarchy,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
         if active_validation:
             self._request_validator('jsd_e0c7b28d55c85d49a84c1403ca14bd5f_v2_3_3_0')\
                 .validate(_payload)

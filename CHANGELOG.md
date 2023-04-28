@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.3] - 2023-04-28
+### Changed
+- SDK implementation for API Add Edge Device to Sda fabric on DNAC Version 2.3.3.0 inconsistent with previous DNAC versions implementation #90
+- Actual error message was not being used in case of exceptions #98
+- SDA :: add_default_authentication_profile #97
+- DNA_CENTER_VERIFY not being imported correctly from the environment #92, now you can export this as:
+  ```zsh
+    export DNA_CENTER_VERIFY=false
+    export DNA_CENTER_VERIFY=true
+  ```
 ## [2.6.2] - 2023-04-25
 ### Changed
 - Add `issue` family on 2.3.3.0
@@ -404,4 +414,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.5.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.4...v2.5.5
 [2.5.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.5...v2.5.6
 [2.6.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.5.6...v2.6.0
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.0...master
+[2.6.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.0...v2.6.1
+[2.6.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.1...v2.6.2
+[2.6.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.2...v2.6.3
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.3...master
