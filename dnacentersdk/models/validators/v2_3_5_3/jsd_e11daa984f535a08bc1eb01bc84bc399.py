@@ -47,6 +47,7 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 "type": "string"
                 },
                 "configParameters": {
+                "items": {
                 "properties": {
                 "key": {
                 "type": "string"
@@ -56,6 +57,8 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 }
                 },
                 "type": "object"
+                },
+                "type": "array"
                 }
                 },
                 "type": "object"

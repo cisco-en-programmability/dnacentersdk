@@ -37,7 +37,7 @@ from ...utils import (
 )
 
 
-class EoX(object):
+class Eox(object):
     """Cisco DNA Center EoX API (version: 2.3.5.3).
 
     Wraps the DNA Center EoX
@@ -47,7 +47,7 @@ class EoX(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new EoX
+        """Initialize a new Eox
         object with the provided RestSession.
 
         Args:
@@ -60,15 +60,15 @@ class EoX(object):
         """
         check_type(session, RestSession)
 
-        super(EoX, self).__init__()
+        super(Eox, self).__init__()
 
         self._session = session
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_eo_x_status_for_all_devices(self,
-                                        headers=None,
-                                        **request_parameters):
+    def get_eox_status_for_all_devices(self,
+                                       headers=None,
+                                       **request_parameters):
         """Retrieves EoX status for all devices in the network .
 
         Args:
@@ -85,9 +85,8 @@ class EoX(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-eo-x-status-for-all-devices
+            https://developer.cisco.com/docs/dna-center/#!get-eox-status-for-all-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -119,10 +118,10 @@ class EoX(object):
 
         return self._object_factory('bpm_d5d27a53ac53258fa2183b7e93a7d5_v2_3_5_3', json_data)
 
-    def get_eo_x_details_per_device(self,
-                                    device_id,
-                                    headers=None,
-                                    **request_parameters):
+    def get_eox_details_per_device(self,
+                                   device_id,
+                                   headers=None,
+                                   **request_parameters):
         """Retrieves EoX details for a device  .
 
         Args:
@@ -140,9 +139,8 @@ class EoX(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-eo-x-details-per-device
+            https://developer.cisco.com/docs/dna-center/#!get-eox-details-per-device
         """
         check_type(headers, dict)
         check_type(device_id, basestring,
@@ -177,9 +175,9 @@ class EoX(object):
 
         return self._object_factory('bpm_ec048832853f8a63f34415d0e6fce_v2_3_5_3', json_data)
 
-    def get_eo_x_summary(self,
-                         headers=None,
-                         **request_parameters):
+    def get_eox_summary(self,
+                        headers=None,
+                        **request_parameters):
         """Retrieves EoX summary for all devices in the network .
 
         Args:
@@ -196,9 +194,8 @@ class EoX(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-eo-x-summary
+            https://developer.cisco.com/docs/dna-center/#!get-eox-summary
         """
         check_type(headers, dict)
         if headers is not None:

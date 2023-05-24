@@ -106,7 +106,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-or-schedule-a-report
         """
@@ -191,7 +190,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-list-of-scheduled-reports
         """
@@ -252,7 +250,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-a-scheduled-report
         """
@@ -310,7 +307,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-a-scheduled-report
         """
@@ -368,7 +364,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-all-execution-details-for-a-given-report
         """
@@ -440,7 +435,6 @@ class Reports(object):
             ApiError: If the DNA Center cloud returns an error.
             DownloadFailure: If was not able to download the raw
             response to a file.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!download-report-content
         """
@@ -503,7 +497,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-all-view-groups
         """
@@ -559,7 +552,6 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-views-for-a-given-view-group
         """
@@ -620,9 +612,8 @@ class Reports(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-view-details-for-a-given-view-group-view
+            https://developer.cisco.com/docs/dna-center/#!get-view-details-for-a-given-view-group-and-view
         """
         check_type(headers, dict)
         check_type(view_group_id, basestring,

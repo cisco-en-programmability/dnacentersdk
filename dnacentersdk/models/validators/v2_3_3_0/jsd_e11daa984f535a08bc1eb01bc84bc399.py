@@ -68,12 +68,6 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 "gateway": {
                 "type": "string"
                 },
-                "hostname": {
-                "type": "string"
-                },
-                "imageId": {
-                "type": "string"
-                },
                 "imageInfo": {
                 "properties": {
                 "imageId": {
@@ -87,9 +81,6 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 },
                 "ipInterfaceName": {
                 "type": "string"
-                },
-                "removeInactive": {
-                "type": "boolean"
                 },
                 "rfProfile": {
                 "type": "string"
@@ -106,7 +97,7 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 "type": {
                 "type": "string"
                 },
-                "vlanId": {
+                "vlanID": {
                 "type": "string"
                 }
                 },

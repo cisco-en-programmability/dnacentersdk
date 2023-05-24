@@ -575,7 +575,7 @@ from .v2_3_5_3.devices import \
 from .v2_3_5_3.discovery import \
     Discovery as Discovery_v2_3_5_3
 from .v2_3_5_3.eox import \
-    EoX as EoX_v2_3_5_3
+    Eox as Eox_v2_3_5_3
 from .v2_3_5_3.event_management import \
     EventManagement as EventManagement_v2_3_5_3
 from .v2_3_5_3.fabric_wireless import \
@@ -1895,7 +1895,7 @@ class DNACenterAPI(object):
                     self._session, object_factory, _validator
                 )
             self.eox = \
-                EoX_v2_3_5_3(
+                Eox_v2_3_5_3(
                     self._session, object_factory, _validator
                 )
             self.event_management = \

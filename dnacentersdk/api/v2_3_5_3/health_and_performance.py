@@ -98,9 +98,8 @@ class HealthAndPerformance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-health-api
+            https://developer.cisco.com/docs/dna-center/#!system-health
         """
         check_type(headers, dict)
         check_type(summary, bool)
@@ -173,9 +172,8 @@ class HealthAndPerformance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-health-count-api
+            https://developer.cisco.com/docs/dna-center/#!system-health-count
         """
         check_type(headers, dict)
         check_type(domain, basestring)
@@ -242,9 +240,8 @@ class HealthAndPerformance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-performance-api
+            https://developer.cisco.com/docs/dna-center/#!system-performance
         """
         check_type(headers, dict)
         check_type(kpi, basestring)
@@ -316,9 +313,8 @@ class HealthAndPerformance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-performance-historical-api
+            https://developer.cisco.com/docs/dna-center/#!system-performance-historical
         """
         check_type(headers, dict)
         check_type(kpi, basestring)

@@ -94,7 +94,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!trigger-software-image-activation
         """
@@ -173,7 +172,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!trigger-software-image-distribution
         """
@@ -273,7 +271,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-software-image-details
         """
@@ -380,7 +377,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-family-identifiers
         """
@@ -454,7 +450,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!tag-as-golden-image
         """
@@ -541,7 +536,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!remove-golden-tag-for-image
         """
@@ -621,7 +615,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-golden-tag-status-of-an-image
         """
@@ -731,7 +724,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!import-local-software-image
         """
@@ -820,7 +812,6 @@ class SoftwareImageManagementSwim(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!import-software-image-via-url
         """
