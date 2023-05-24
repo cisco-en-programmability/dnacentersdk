@@ -233,6 +233,24 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_f90ae8599c8a21c98b7a1ca804_v2_3_3_0', json_data)
 
+    def update_ssid_to_ip_pool_mapping(self,
+                                        scalableGroupName=None,
+                                        siteNameHierarchy=None,
+                                        ssidNames=None,
+                                        vlanName=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
+        return self.update_ssid_to_ip_pool_mapping2(self,
+                                        scalableGroupName=None,
+                                        siteNameHierarchy=None,
+                                        ssidNames=None,
+                                        vlanName=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters)
     def get_ssid_to_ip_pool_mapping(self,
                                     site_name_hierarchy,
                                     vlan_name,
