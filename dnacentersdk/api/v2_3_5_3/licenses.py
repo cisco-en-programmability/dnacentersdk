@@ -96,7 +96,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!device-count-details2
         """
@@ -145,6 +144,23 @@ class Licenses(object):
 
         return self._object_factory('bpm_c0cf04bdc758b29bb11abbdacbd921_v2_3_5_3', json_data)
 
+    def device_count_details(self,
+                            device_type=None,
+                            dna_level=None,
+                            registration_status=None,
+                            smart_account_id=None,
+                            virtual_account_name=None,
+                            headers=None,
+                            **request_parameters):
+        return self.device_count_details2(self,
+                              device_type=None,
+                              dna_level=None,
+                              registration_status=None,
+                              smart_account_id=None,
+                              virtual_account_name=None,
+                              headers=None,
+                              **request_parameters)
+
     def device_license_summary2(self,
                                 limit,
                                 order,
@@ -185,7 +201,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!device-license-summary2
         """
@@ -252,6 +267,32 @@ class Licenses(object):
 
         return self._object_factory('bpm_f4ba64eef4085d518a612835e128fe3c_v2_3_5_3', json_data)
 
+    def device_license_summary(self,
+                                limit,
+                                order,
+                                page_number,
+                                device_type=None,
+                                device_uuid=None,
+                                dna_level=None,
+                                registration_status=None,
+                                smart_account_id=None,
+                                sort_by=None,
+                                virtual_account_name=None,
+                                headers=None,
+                                **request_parameters):
+        self.device_license_summary2(limit,
+                                order,
+                                page_number,
+                                device_type=None,
+                                device_uuid=None,
+                                dna_level=None,
+                                registration_status=None,
+                                smart_account_id=None,
+                                sort_by=None,
+                                virtual_account_name=None,
+                                headers=None,
+                                **request_parameters)
+    
     def device_license_details2(self,
                                 device_uuid,
                                 headers=None,
@@ -273,7 +314,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!device-license-details2
         """
@@ -310,6 +350,15 @@ class Licenses(object):
 
         return self._object_factory('bpm_f04f865c01d5c17a5f0cb5abe620dd8_v2_3_5_3', json_data)
 
+    def device_license_details(self,
+                                device_uuid,
+                                headers=None,
+                                **request_parameters):
+        return self.device_license_details2(self,
+                                device_uuid,
+                                headers=None,
+                                **request_parameters)
+
     def device_deregistration2(self,
                                device_uuids=None,
                                headers=None,
@@ -337,7 +386,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!device-deregistration2
         """
@@ -413,7 +461,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!device-registration2
         """
@@ -494,7 +541,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!change-virtual-account2
         """
@@ -569,7 +615,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!virtual-account-details2
         """
@@ -626,7 +671,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!smart-account-details
         """
@@ -687,7 +731,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!license-term-details2
         """
@@ -759,7 +802,6 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!license-usage-details2
         """
