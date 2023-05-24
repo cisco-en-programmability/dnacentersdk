@@ -122,7 +122,6 @@ class AuthenticationManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!import-certificate
         """
@@ -230,7 +229,6 @@ class AuthenticationManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!import-certificate-p12
         """
@@ -283,9 +281,9 @@ class AuthenticationManagement(object):
 
         return self._object_factory('bpm_c80e660c2e36582f939a7403ef15de22_v2_3_5_3', json_data)
 
-    def authentication_ap_i(self,
-                            headers=None,
-                            **request_parameters):
+    def authentication_api(self,
+                           headers=None,
+                           **request_parameters):
         """API to obtain an access token, which remains valid for 1 hour. The token obtained using this API is required to
         be set as value to the X-Auth-Token HTTP Header for all API calls to Cisco DNA Center. .
 
@@ -303,7 +301,6 @@ class AuthenticationManagement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!authentication-api
         """
