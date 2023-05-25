@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.4] - 2023-05-25
+### Changed
+- SDK implementation for API Add Edge Device to Sda fabric on DNAC Version 2.3.3.0 inconsistent with previous DNAC versions implementation #90
+- Documentatin links updated.
+- EoX turns to Eox
+- SDK function for version 2.3.3.x (v2_3_3_0 /device_onboarding_pnp.py) input requirment does not match with API schema from dnac, 
+#103
+- Function name changed to assign_device_credential_to_site in DNAC2.3.5.0(dnacentersdk/api/v2_3_5_3/network_settings.py) #107
+- Function names changed in v2.3.5.0 libs all function got added with 2 though no change in DNAC APIs #106
+- 2.3.3.0 LAN Automation function names are incorrect #105
+- Function name changed in 2.3.3.0 from update_ssid_to_ip_pool_mapping to update_ssid_to_ip_pool_mapping2 #104
+- SDK function for version 2.3.3.x (v2_3_3_0 /device_onboarding_pnp.py) input requirment does not match with API schema from dnac, 
+#103
+- Poor naming of function: v2_3_5_3/authentication_management.py : `authentication_ap_i( #102`
+
 ## [2.6.3] - 2023-04-28
 ### Changed
 - SDK implementation for API Add Edge Device to Sda fabric on DNAC Version 2.3.3.0 inconsistent with previous DNAC versions implementation #90
