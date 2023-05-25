@@ -1946,6 +1946,10 @@ class DNACenterAPI(object):
                 Platform_v2_3_5_3(
                     self._session, object_factory, _validator
                 )
+            self.platform_configuration = \
+                Platform_v2_3_5_3(
+                    self._session, object_factory, _validator
+                )
             self.reports = \
                 Reports_v2_3_5_3(
                     self._session, object_factory, _validator
