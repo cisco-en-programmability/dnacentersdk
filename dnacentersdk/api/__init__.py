@@ -390,6 +390,8 @@ from .v2_2_2_3.sda import \
     Sda as Sda_v2_2_2_3
 from .v2_2_2_3.security_advisories import \
     SecurityAdvisories as SecurityAdvisories_v2_2_2_3
+from .v2_2_2_3.platform_configuration import \
+    PlatformConfiguration as PlatformConfiguration_v2_2_2_3
 from .v2_2_2_3.sensors import \
     Sensors as Sensors_v2_2_2_3
 from .v2_2_2_3.site_design import \
@@ -412,6 +414,8 @@ from .v2_2_3_3.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_2_3_3
 from .v2_2_3_3.applications import \
     Applications as Applications_v2_2_3_3
+from .v2_2_3_3.platform_configuration import \
+    PlatformConfiguration as PlatformConfiguration_v2_2_3_3
 from .v2_2_3_3.authentication_management import \
     AuthenticationManagement as AuthenticationManagement_v2_2_3_3
 from .v2_2_3_3.clients import \
@@ -500,6 +504,8 @@ from .v2_3_3_0.device_replacement import \
     DeviceReplacement as DeviceReplacement_v2_3_3_0
 from .v2_3_3_0.devices import \
     Devices as Devices_v2_3_3_0
+from .v2_3_3_0.platform_configuration import \
+    PlatformConfiguration as PlatformConfiguration_v2_3_3_0
 from .v2_3_3_0.discovery import \
     Discovery as Discovery_v2_3_3_0
 from .v2_3_3_0.event_management import \
@@ -1511,6 +1517,10 @@ class DNACenterAPI(object):
                 PathTrace_v2_2_2_3(
                     self._session, object_factory, _validator
                 )
+            self.platform_configuration = \
+                PlatformConfiguration_v2_2_2_3(
+                    self._session, object_factory, _validator
+                )
             self.reports = \
                 Reports_v2_2_2_3(
                     self._session, object_factory, _validator
@@ -1646,6 +1656,10 @@ class DNACenterAPI(object):
                 )
             self.path_trace = \
                 PathTrace_v2_2_3_3(
+                    self._session, object_factory, _validator
+                )
+            self.platform_configuration = \
+                PlatformConfiguration_v2_2_3_3(
                     self._session, object_factory, _validator
                 )
             self.policy = \
@@ -1787,6 +1801,10 @@ class DNACenterAPI(object):
                 )
             self.path_trace = \
                 PathTrace_v2_3_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.platform_configuration = \
+                PlatformConfiguration_v2_3_3_0(
                     self._session, object_factory, _validator
                 )
             self.reports = \
