@@ -97,7 +97,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-count-details2
+            https://developer.cisco.com/docs/dna-center/#!device-count-details
         """
         check_type(headers, dict)
         check_type(device_type, basestring)
@@ -152,13 +152,13 @@ class Licenses(object):
                             virtual_account_name=None,
                             headers=None,
                             **request_parameters):
-        return self.device_count_details2(self,
-                              device_type=None,
-                              dna_level=None,
-                              registration_status=None,
-                              smart_account_id=None,
-                              virtual_account_name=None,
-                              headers=None,
+        return self.device_count_details2(
+                              device_type=device_type,
+                              dna_level=dna_level,
+                              registration_status=registration_status,
+                              smart_account_id=smart_account_id,
+                              virtual_account_name=virtual_account_name,
+                              headers=headers,
                               **request_parameters)
 
     def device_license_summary2(self,
@@ -283,14 +283,14 @@ class Licenses(object):
         self.device_license_summary2(limit,
                                 order,
                                 page_number,
-                                device_type=None,
-                                device_uuid=None,
-                                dna_level=None,
-                                registration_status=None,
-                                smart_account_id=None,
-                                sort_by=None,
-                                virtual_account_name=None,
-                                headers=None,
+                                device_type=device_type,
+                                device_uuid=device_uuid,
+                                dna_level=dna_level,
+                                registration_status=registration_status,
+                                smart_account_id=smart_account_id,
+                                sort_by=sort_by,
+                                virtual_account_name=virtual_account_name,
+                                headers=headers,
                                 **request_parameters)
     
     def device_license_details2(self,
@@ -356,7 +356,7 @@ class Licenses(object):
                                 **request_parameters):
         return self.device_license_details2(self,
                                 device_uuid,
-                                headers=None,
+                                headers=headers,
                                 **request_parameters)
 
     def device_deregistration2(self,

@@ -125,3 +125,6 @@ dmypy.json
 
 # DS Store
 .DS_Store
+
+# Custom
+test.py

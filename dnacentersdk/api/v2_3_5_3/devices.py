@@ -1191,7 +1191,6 @@ class Devices(object):
                                 operation=None,
                                 payload=None,
                                 headers=None,
-                                payload=None,
                                 active_validation=True,
                                 **request_parameters):
         """Clear mac-address on an individual port. In request body, operation needs to be specified as 'ClearMacAddress'.
