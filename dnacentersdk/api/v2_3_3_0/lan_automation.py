@@ -66,7 +66,7 @@ class LanAutomation(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def lan_automation2(self,
+    def lan_automation(self,
                         headers=None,
                         payload=None,
                         active_validation=True,
@@ -131,6 +131,7 @@ class LanAutomation(object):
                                            json=_payload)
 
         return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_3_0', json_data)
+
 
     def lan_automation_session_count(self,
                                      headers=None,
@@ -416,10 +417,10 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_d5727c4bdb1056308cd10e99dff2acb8_v2_3_3_0', json_data)
 
-    def lan_automation(self,
-                       id,
-                       headers=None,
-                       **request_parameters):
+    def lan_automation_stop(self,
+                            id,
+                            headers=None,
+                            **request_parameters):
         """Invoke this API to stop LAN Automation for the given site.  .
 
         Args:

@@ -66,9 +66,9 @@ class UserandRoles(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_permissions_ap_i(self,
-                             headers=None,
-                             **request_parameters):
+    def get_permissions_api(self,
+                            headers=None,
+                            **request_parameters):
         """Get permissions for a role from Cisco DNA Center System .
 
         Args:
@@ -85,7 +85,6 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-permissions-api
         """
@@ -119,9 +118,9 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ec0b30eca9d540a845848cffd7c602a_v2_3_5_3', json_data)
 
-    def get_roles_ap_i(self,
-                       headers=None,
-                       **request_parameters):
+    def get_roles_api(self,
+                      headers=None,
+                      **request_parameters):
         """Get all roles for the Cisco DNA Center system .
 
         Args:
@@ -138,7 +137,6 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-roles-api
         """
@@ -175,10 +173,10 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_bef02e8f6f8354dc99e375826a87c88c_v2_3_5_3', json_data)
 
-    def get_users_ap_i(self,
-                       invoke_source,
-                       headers=None,
-                       **request_parameters):
+    def get_users_api(self,
+                      invoke_source,
+                      headers=None,
+                      **request_parameters):
         """Get all users for the Cisco DNA Center system .
 
         Args:
@@ -196,7 +194,6 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-users-api
         """
@@ -234,17 +231,17 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_fa405b6d1be56739f2dfeea63212015_v2_3_5_3', json_data)
 
-    def add_user_ap_i(self,
-                      email=None,
-                      firstName=None,
-                      lastName=None,
-                      password=None,
-                      roleList=None,
-                      username=None,
-                      headers=None,
-                      payload=None,
-                      active_validation=True,
-                      **request_parameters):
+    def add_user_api(self,
+                     email=None,
+                     firstName=None,
+                     lastName=None,
+                     password=None,
+                     roleList=None,
+                     username=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
         """Add a new user for Cisco DNA Center system .
 
         Args:
@@ -271,7 +268,6 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!add-user-api
         """
@@ -327,17 +323,17 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_d82755e5e03510daf0951c1f42c2702_v2_3_5_3', json_data)
 
-    def update_user_ap_i(self,
-                         email=None,
-                         firstName=None,
-                         lastName=None,
-                         roleList=None,
-                         userId=None,
-                         username=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def update_user_api(self,
+                        email=None,
+                        firstName=None,
+                        lastName=None,
+                        roleList=None,
+                        userId=None,
+                        username=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
         """Update a user for Cisco DNA Center system .
 
         Args:
@@ -364,7 +360,6 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-user-api
         """
@@ -420,10 +415,10 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_d2bd5f05bd535a89ebadb30e2ede9e_v2_3_5_3', json_data)
 
-    def get_external_authentication_servers_ap_i(self,
-                                                 invoke_source,
-                                                 headers=None,
-                                                 **request_parameters):
+    def get_external_authentication_servers_api(self,
+                                                invoke_source,
+                                                headers=None,
+                                                **request_parameters):
         """Get external users authentication servers .
 
         Args:
@@ -441,7 +436,6 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-api
         """

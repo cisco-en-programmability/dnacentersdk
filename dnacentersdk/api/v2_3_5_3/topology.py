@@ -89,7 +89,6 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-overall-network-health
         """
@@ -150,7 +149,6 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-topology-details
         """
@@ -208,7 +206,6 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-l3-topology-details
         """
@@ -266,7 +263,6 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-physical-topology
         """
@@ -322,7 +318,6 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-site-topology
         """
@@ -375,9 +370,8 @@ class Topology(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-v-lan-details
+            https://developer.cisco.com/docs/dna-center/#!get-vlan-details
         """
         check_type(headers, dict)
         if headers is not None:

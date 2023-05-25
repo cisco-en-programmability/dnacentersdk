@@ -93,7 +93,6 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-authentication-and-policy-servers
         """
@@ -136,9 +135,9 @@ class SystemSettings(object):
 
         return self._object_factory('bpm_f7cc2592721f5b9b9f99795a26130147_v2_3_5_3', json_data)
 
-    def custom_prompt_support_get_api(self,
-                                      headers=None,
-                                      **request_parameters):
+    def custom_prompt_support_g_e_t_api(self,
+                                        headers=None,
+                                        **request_parameters):
         """Returns supported custom prompts by Cisco DNA Center .
 
         Args:
@@ -155,9 +154,8 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!custom-prompt-support-get-api
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-support-g-e-t-api
         """
         check_type(headers, dict)
         if headers is not None:
@@ -189,13 +187,13 @@ class SystemSettings(object):
 
         return self._object_factory('bpm_ada20dc4915d5901b50634628392e79f_v2_3_5_3', json_data)
 
-    def custom_prompt_post_api(self,
-                               passwordPrompt=None,
-                               usernamePrompt=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def custom_prompt_p_o_s_t_api(self,
+                                  passwordPrompt=None,
+                                  usernamePrompt=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
         """Save custom prompt added by user in Cisco DNA Center. API will always override the existing prompts. User should
         provide all the custom prompt in case of any update .
 
@@ -219,7 +217,6 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!custom-prompt-p-o-s-t-api
         """

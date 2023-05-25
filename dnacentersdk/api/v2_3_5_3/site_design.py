@@ -95,7 +95,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!provision-nfv
         """
@@ -174,7 +173,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-details-by-ip
         """
@@ -235,7 +233,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!associate
         """
@@ -302,7 +299,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!disassociate
         """
@@ -370,7 +366,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!nfv-provisioning-detail
         """
@@ -454,7 +449,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-nfv-profile
         """
@@ -533,7 +527,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-nfv-profile
         """
@@ -612,7 +605,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-nfv-profile
         """
@@ -681,7 +673,6 @@ class SiteDesign(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-nfv-profile
         """

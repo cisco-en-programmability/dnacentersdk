@@ -101,7 +101,6 @@ class Issues(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!execute-suggested-actions-commands
         """
@@ -169,7 +168,6 @@ class Issues(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-issue-enrichment-details
         """
@@ -250,7 +248,6 @@ class Issues(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!issues
         """

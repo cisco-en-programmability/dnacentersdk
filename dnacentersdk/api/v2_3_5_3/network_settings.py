@@ -105,7 +105,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!assign-device-credential-to-site
         """
@@ -167,6 +166,30 @@ class NetworkSettings(object):
 
         return self._object_factory('bpm_e4f91ea42515ccdbc24549b84ca1e90_v2_3_5_3', json_data)
 
+    def assign_credential_to_site(self,
+                                site_id,
+                                cliId=None,
+                                httpRead=None,
+                                httpWrite=None,
+                                snmpV2ReadId=None,
+                                snmpV2WriteId=None,
+                                snmpV3Id=None,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                 **request_parameters):
+        return self.assign_device_credential_to_site(site_id,
+                                cliId=cliId,
+                                httpRead=httpRead,
+                                httpWrite=httpWrite,
+                                snmpV2ReadId=snmpV2ReadId,
+                                snmpV2WriteId=snmpV2WriteId,
+                                snmpV3Id=snmpV3Id,
+                                headers=headers,
+                                payload=payload,
+                                active_validation=active_validation,
+                                 **request_parameters)
+
     def create_device_credentials(self,
                                   settings=None,
                                   headers=None,
@@ -194,7 +217,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-device-credentials
         """
@@ -267,7 +289,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-device-credentials
         """
@@ -335,7 +356,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-credential-details
         """
@@ -393,7 +413,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-device-credential
         """
@@ -453,7 +472,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-global-pool
         """
@@ -520,7 +538,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-global-pool
         """
@@ -593,7 +610,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-global-pool
         """
@@ -660,7 +676,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-global-ip-pool
         """
@@ -719,7 +734,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-network
         """
@@ -787,7 +801,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-network
         """
@@ -870,7 +883,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-network
         """
@@ -944,7 +956,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-reserve-ip-subpool
         """
@@ -1008,7 +1019,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!release-reserve-ip-subpool
         """
@@ -1124,7 +1134,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!reserve-ip-subpool
         """
@@ -1276,7 +1285,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-reserve-ip-subpool
         """
@@ -1374,7 +1382,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-service-provider-details
         """
@@ -1435,9 +1442,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-p-profile
+            https://developer.cisco.com/docs/dna-center/#!create-sp-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1508,9 +1514,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-p-profile
+            https://developer.cisco.com/docs/dna-center/#!update-sp-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1575,9 +1580,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-s-p-profile
+            https://developer.cisco.com/docs/dna-center/#!delete-sp-profile
         """
         check_type(headers, dict)
         check_type(sp_profile_name, basestring,
@@ -1651,7 +1655,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!assign-device-credential-to-site-v2
         """
@@ -1732,7 +1735,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-network-v2
         """
@@ -1800,7 +1802,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-network-v2
         """
@@ -1880,7 +1881,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-network-v2
         """
@@ -1956,9 +1956,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-p-profile-v2
+            https://developer.cisco.com/docs/dna-center/#!create-sp-profile-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2029,9 +2028,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-p-profile-v2
+            https://developer.cisco.com/docs/dna-center/#!update-sp-profile-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2094,7 +2092,6 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-service-provider-details-v2
         """
@@ -2149,9 +2146,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-s-p-profile-v2
+            https://developer.cisco.com/docs/dna-center/#!delete-sp-profile-v2
         """
         check_type(headers, dict)
         check_type(sp_profile_name, basestring,

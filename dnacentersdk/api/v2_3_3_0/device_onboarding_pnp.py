@@ -833,17 +833,14 @@ class DeviceOnboardingPnp(object):
                                  configInfo=None,
                                  deviceId=None,
                                  gateway=None,
-                                 hostname=None,
-                                 imageId=None,
                                  imageInfo=None,
                                  ipInterfaceName=None,
-                                 removeInactive=None,
                                  rfProfile=None,
                                  siteId=None,
                                  staticIP=None,
                                  subnetMask=None,
                                  type=None,
-                                 vlanId=None,
+                                 vlanID=None,
                                  headers=None,
                                  payload=None,
                                  active_validation=True,
@@ -855,17 +852,14 @@ class DeviceOnboardingPnp(object):
             configInfo(object): Device Onboarding (PnP)'s configInfo.
             deviceId(string): Device Onboarding (PnP)'s deviceId.
             gateway(string): Device Onboarding (PnP)'s gateway.
-            hostname(string): Device Onboarding (PnP)'s hostname.
-            imageId(string): Device Onboarding (PnP)'s imageId.
             imageInfo(object): Device Onboarding (PnP)'s imageInfo.
             ipInterfaceName(string): Device Onboarding (PnP)'s ipInterfaceName.
-            removeInactive(boolean): Device Onboarding (PnP)'s removeInactive.
             rfProfile(string): Device Onboarding (PnP)'s rfProfile.
             siteId(string): Device Onboarding (PnP)'s siteId.
             staticIP(string): Device Onboarding (PnP)'s staticIP.
             subnetMask(string): Device Onboarding (PnP)'s subnetMask.
             type(string): Device Onboarding (PnP)'s type.
-            vlanId(string): Device Onboarding (PnP)'s vlanId.
+            vlanID(string): Device Onboarding (PnP)'s vlanID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -912,14 +906,8 @@ class DeviceOnboardingPnp(object):
                 imageInfo,
             'configInfo':
                 configInfo,
-            'hostname':
-                hostname,
             'gateway':
                 gateway,
-            'imageId':
-                imageId,
-            'removeInactive':
-                removeInactive,
             'ipInterfaceName':
                 ipInterfaceName,
             'rfProfile':
@@ -928,8 +916,8 @@ class DeviceOnboardingPnp(object):
                 staticIP,
             'subnetMask':
                 subnetMask,
-            'vlanId':
-                vlanId,
+            'vlanID':
+                vlanID,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)

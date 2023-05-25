@@ -93,7 +93,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-building
         """
@@ -169,7 +168,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-detail
         """
@@ -238,7 +236,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-enrichment-details
         """
@@ -314,7 +311,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!devices
         """
@@ -396,7 +392,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-floor
         """
@@ -470,7 +465,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-all-interfaces
         """
@@ -535,7 +529,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-interface-count
         """
@@ -590,7 +583,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-ip
         """
@@ -646,9 +638,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-i-s-i-s-interfaces
+            https://developer.cisco.com/docs/dna-center/#!get-isis-interfaces
         """
         check_type(headers, dict)
         if headers is not None:
@@ -701,7 +692,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-interface-info-by-id
         """
@@ -759,9 +749,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count2
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count-by-id
         """
         check_type(headers, dict)
         check_type(device_id, basestring,
@@ -820,9 +809,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interface-details-by-device-id-and-interface-name
+            https://developer.cisco.com/docs/dna-center/#!get-interface-details
         """
         check_type(headers, dict)
         check_type(name, basestring,
@@ -887,7 +875,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-interfaces-by-specified-range
         """
@@ -950,9 +937,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-o-s-p-f-interfaces
+            https://developer.cisco.com/docs/dna-center/#!get-ospf-interfaces
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1005,7 +991,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-id
         """
@@ -1082,7 +1067,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-interface-details
         """
@@ -1164,7 +1148,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!legit-operations-for-interface
         """
@@ -1215,6 +1198,7 @@ class Devices(object):
 
         Args:
             operation(string): Devices's Operation.
+            payload(object): Devices's Payload.
             interface_uuid(basestring): interfaceUuid path parameter. Interface Id .
             deployment_mode(basestring): deploymentMode query parameter. Preview/Deploy ['Preview' means the
                 configuration is not pushed to the device. 'Deploy' makes the configuration pushed to
@@ -1236,7 +1220,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!clear-mac-address-table
         """
@@ -1388,7 +1371,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-list
         """
@@ -1604,9 +1586,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-device2
+            https://developer.cisco.com/docs/dna-center/#!add-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1782,9 +1763,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!sync-devices2
+            https://developer.cisco.com/docs/dna-center/#!sync-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1947,7 +1927,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-values-that-match-fully-or-partially-an-attribute
         """
@@ -2078,7 +2057,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-device-role
         """
@@ -2150,7 +2128,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-polling-interval-for-all-devices
         """
@@ -2204,7 +2181,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-config-for-all-devices
         """
@@ -2257,7 +2233,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-config-count
         """
@@ -2311,9 +2286,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-count2
+            https://developer.cisco.com/docs/dna-center/#!get-device-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2381,7 +2355,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!export-device-list
         """
@@ -2463,7 +2436,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-functional-capability-for-devices
         """
@@ -2525,7 +2497,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-functional-capability-by-id
         """
@@ -2595,9 +2566,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!inventory-insight-device-link-mismatch-api
+            https://developer.cisco.com/docs/dna-center/#!inventory-insight-device-link-mismatch
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -2679,9 +2649,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-devices-added-to-cisco-d-n-a-center-with-snmp-v3-des
+            https://developer.cisco.com/docs/dna-center/#!get-devices-with-snmpv3-des
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -2750,7 +2719,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-network-device-by-ip
         """
@@ -2820,7 +2788,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-modules
         """
@@ -2905,7 +2872,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-module-count
         """
@@ -2976,7 +2942,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-module-info-by-id
         """
@@ -3034,7 +2999,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-by-serial-number
         """
@@ -3101,9 +3065,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!sync-devices
+            https://developer.cisco.com/docs/dna-center/#!sync-devices-using-forcesync
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -3172,7 +3135,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-devices-registered-for-wsa-notification
         """
@@ -3236,7 +3198,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-all-user-defined-fields
         """
@@ -3305,7 +3266,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-user-defined-field
         """
@@ -3384,7 +3344,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-user-defined-field
         """
@@ -3457,7 +3416,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-user-defined-field
         """
@@ -3516,7 +3474,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-chassis-details-for-device
         """
@@ -3574,7 +3531,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-stack-details-for-device
         """
@@ -3635,7 +3591,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!remove-user-defined-field-from-device
         """
@@ -3706,7 +3661,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!add-user-defined-field-to-device
         """
@@ -3776,7 +3730,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!return-power-supply-fan-details-for-the-given-device
         """
@@ -3841,9 +3794,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-p-o-e-interface-details-for-the-device
+            https://developer.cisco.com/docs/dna-center/#!poe-interface-details
         """
         check_type(headers, dict)
         check_type(interface_name_list, basestring)
@@ -3905,7 +3857,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-connected-device-detail
         """
@@ -3967,7 +3918,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-linecard-details
         """
@@ -4025,9 +3975,9 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
+        //{'summary': 'POE details  - 8ba6-7932-4ed9-abae', 'operationId': 'POEDetails', 'tags': ['Devices'], 'description': 'Returns POE details for device.\n', 'parameters': [{'name': 'deviceUuid', 'in': 'path', 'description': 'uuid of the device\n', 'required': True, 'schema': {'type': 'string'}}], 'responses': [{'code': '200', 'content_type': 'application/json', 'schema': '#/components/schemas/POEDetailsResponse', 'data': {'title': 'POEDetailsResponse', 'type': 'object', 'properties': {'response': {'title': 'POEDetailsResponseResponse', 'type': 'object', 'properties': {'powerAllocated': {'type': 'string', 'description': 'Power Allocated'}, 'powerConsumed': {'type': 'string', 'description': 'Power Consumed'}, 'powerRemaining': {'type': 'string', 'description': 'Power Remaining'}}}, 'version': {'type': 'string', 'description': 'Version'}}}}], 'content_types': ['application/json'], 'response_type': {}, 'method': 'GET', 'path': '/dna/intent/api/v1/network-device/{deviceUuid}/poe', 'originalURL': '/dna/intent/api/v1/network-device/{deviceUuid}/poe', 'headers': {}, 'path_params': {'deviceUuid': {'type': 'string', 'description': 'deviceUuid path parameter. uuid of the device\n', 'required': True}}, 'params': {}, 'response_json_schema': {'title': 'POEDetailsResponse', 'type': 'object', 'properties': {'response': {'title': 'POEDetailsResponseResponse', 'type': 'object', 'properties': {'powerAllocated': {'type': 'string', 'description': 'Power Allocated'}, 'powerConsumed': {'type': 'string', 'description': 'Power Consumed'}, 'powerRemaining': {'type': 'string', 'description': 'Power Remaining'}}}, 'version': {'type': 'string', 'description': 'Version'}}, '$schema': 'http://json-schema.org/draft-04/schema#'}, 'response': {'response': {'powerAllocated': 'string', 'powerConsumed': 'string', 'powerRemaining': 'string'}, 'version': 'string'}, 'data': {}, 'id': 'f7a67aba-0b36-5a1e-9dae-62d148511a25', 'name': 'POEDetails', 'kwargs': ''}
         Documentation Link:
-        https://developer.cisco.com/docs/dna-center/#!p-o-e-details
+        https://developer.cisco.com/docs/dna-center/#!poe-details
         """
         return self.poe_details(device_uuid,
                                 headers=headers,
@@ -4054,9 +4004,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!p-o-e-details
+            https://developer.cisco.com/docs/dna-center/#!poe-details
         """
         check_type(headers, dict)
         check_type(device_uuid, basestring,
@@ -4113,7 +4062,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-supervisor-card-detail
         """
@@ -4172,7 +4120,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-by-id
         """
@@ -4232,7 +4179,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-device-by-id
         """
@@ -4293,7 +4239,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-summary
         """
@@ -4351,7 +4296,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-polling-interval-by-id
         """
@@ -4410,7 +4354,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-organization-list-for-meraki
         """
@@ -4471,9 +4414,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-interface-v-lans
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-vlans
         """
         check_type(headers, dict)
         check_type(interface_type, basestring)
@@ -4532,7 +4474,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-wireless-lan-controller-details-by-id
         """
@@ -4590,7 +4531,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-device-config-by-id
         """
@@ -4653,7 +4593,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-network-device-by-pagination-range
         """

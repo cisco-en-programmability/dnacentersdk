@@ -85,7 +85,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-all-discovery
         """
@@ -216,9 +215,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-an-existing-discovery-by-specified-id
+            https://developer.cisco.com/docs/dna-center/#!updates-discovery-by-id
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -421,7 +419,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!start-discovery
         """
@@ -540,7 +537,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-count-of-all-discovery-jobs
         """
@@ -601,7 +597,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-discovery-jobs-by-ip
         """
@@ -670,7 +665,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-id
         """
@@ -728,7 +722,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-discovery-by-id
         """
@@ -793,7 +786,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-list-of-discoveries-by-discovery-id
         """
@@ -863,7 +855,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-discovered-network-devices-by-discovery-id
         """
@@ -927,7 +918,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-devices-discovered-by-id
         """
@@ -996,7 +986,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-discovered-devices-by-range
         """
@@ -1045,7 +1034,7 @@ class Discovery(object):
 
     def get_network_devices_from_discovery(self,
                                            id,
-                                           cli_status=None,
+                                           clistatus=None,
                                            http_status=None,
                                            ip_address=None,
                                            netconf_status=None,
@@ -1067,7 +1056,7 @@ class Discovery(object):
             ip_address(basestring, list, set, tuple): ipAddress query parameter.
             ping_status(basestring, list, set, tuple): pingStatus query parameter.
             snmp_status(basestring, list, set, tuple): snmpStatus query parameter.
-            cli_status(basestring, list, set, tuple): cliStatus query parameter.
+            clistatus(basestring, list, set, tuple): cliStatus query parameter.
             netconf_status(basestring, list, set, tuple): netconfStatus query parameter.
             http_status(basestring, list, set, tuple): httpStatus query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1083,7 +1072,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-network-devices-from-discovery
         """
@@ -1094,7 +1082,7 @@ class Discovery(object):
         check_type(ip_address, (basestring, list, set, tuple))
         check_type(ping_status, (basestring, list, set, tuple))
         check_type(snmp_status, (basestring, list, set, tuple))
-        check_type(cli_status, (basestring, list, set, tuple))
+        check_type(clistatus, (basestring, list, set, tuple))
         check_type(netconf_status, (basestring, list, set, tuple))
         check_type(http_status, (basestring, list, set, tuple))
         check_type(id, basestring,
@@ -1118,7 +1106,7 @@ class Discovery(object):
             'snmpStatus':
                 snmp_status,
             'cliStatus':
-                cli_status,
+                clistatus,
             'netconfStatus':
                 netconf_status,
             'httpStatus':
@@ -1170,7 +1158,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-specified-range
         """
@@ -1234,7 +1221,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-discoveries-by-range
         """
@@ -1302,7 +1288,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-global-credentials
         """
@@ -1389,9 +1374,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-c-l-i-credentials
+            https://developer.cisco.com/docs/dna-center/#!update-cli-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1479,9 +1463,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-c-l-i-credentials
+            https://developer.cisco.com/docs/dna-center/#!create-cli-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1545,7 +1528,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-http-read-credentials
         """
@@ -1634,7 +1616,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-http-read-credential
         """
@@ -1743,7 +1724,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-http-write-credentials
         """
@@ -1835,7 +1815,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-http-write-credentials
         """
@@ -1915,7 +1894,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-netconf-credentials
         """
@@ -2001,7 +1979,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-netconf-credentials
         """
@@ -2078,9 +2055,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-read-community
+            https://developer.cisco.com/docs/dna-center/#!update-snmp-read-community
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2161,9 +2137,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-read-community
+            https://developer.cisco.com/docs/dna-center/#!create-snmp-read-community
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2228,9 +2203,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-write-community
+            https://developer.cisco.com/docs/dna-center/#!create-snmp-write-community
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2309,9 +2283,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-write-community
+            https://developer.cisco.com/docs/dna-center/#!update-snmp-write-community
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2414,9 +2387,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-pv3-credentials
+            https://developer.cisco.com/docs/dna-center/#!update-snmpv3-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2510,9 +2482,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-pv3-credentials
+            https://developer.cisco.com/docs/dna-center/#!create-snmpv3-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2572,7 +2543,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-global-credentials-by-id
         """
@@ -2639,7 +2609,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-global-credentials
         """
@@ -2710,7 +2679,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-credential-sub-type-by-credential-id
         """
@@ -2766,9 +2734,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-properties
+            https://developer.cisco.com/docs/dna-center/#!get-snmp-properties
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2825,9 +2792,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-update-s-n-m-p-properties
+            https://developer.cisco.com/docs/dna-center/#!create-update-snmp-properties
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2904,7 +2870,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!update-global-credentials-v2
         """
@@ -2998,7 +2963,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!create-global-credentials-v2
         """
@@ -3074,7 +3038,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!get-all-global-credentials-v2
         """
@@ -3129,7 +3092,6 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!delete-global-credential-v2
         """
