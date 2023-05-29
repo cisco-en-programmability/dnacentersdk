@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dnacentersdk"
-version = "2.6.4"
+version = "2.6.5"
 description = "Cisco DNA Center Platform SDK"
 authors = ["Jose Bogarin Solano <jbogarin@altus.cr>", "William Astorga <wastorga@altus.cr>", "Francisco Muñoz <fmunoz@altus.cr>", "Francisco Muñoz <fmunoz@altus.cr>", "Bryan Vargas <bvargas@altus.cr>"]
 license = "MIT"

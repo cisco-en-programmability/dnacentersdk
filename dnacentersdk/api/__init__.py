@@ -2012,7 +2012,7 @@ class DNACenterAPI(object):
                 Topology_v2_3_5_3(
                     self._session, object_factory, _validator
                 )
-            self.userand_roles = \
+            self.user_and_roles = \
                 UserandRoles_v2_3_5_3(
                     self._session, object_factory, _validator
                 )

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.5] - 2023-05-29
+### Changed
+- user_and_roles::Unable to use user and roles module. #112 
+
 ## [2.6.4] - 2023-05-25
 ### Changed
 - SDK implementation for API Add Edge Device to Sda fabric on DNAC Version 2.3.3.0 inconsistent with previous DNAC versions implementation #90
