@@ -12,7 +12,7 @@ future==0.18.2 ; python_version >= "3.6" and python_version < "4.0" \
 idna==3.4 ; python_version >= "3.6" and python_version < "4.0" \
     --hash=sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4 \
     --hash=sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2
-requests-toolbelt==0.10.1 ; python_version >= "3.6" and python_version < "4.0" \
+requests-toolbelt==1.0.0 ; python_version >= "3.6" and python_version < "4.0" \
     --hash=sha256:18565aa58116d9951ac39baa288d3adb5b3ff975c4f25eee78555d89e8f247f7 \
     --hash=sha256:62e09f7ff5ccbda92772a29f394a49c3ad6cb181d568b1337626b2abb628a63d
 requests==2.27.1 ; python_version >= "3.6" and python_version < "4.0" \

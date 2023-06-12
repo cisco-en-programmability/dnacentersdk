@@ -45,7 +45,7 @@ INSTALLATION_REQUIREMENTS = [
     'future',
     'requests>=2.4.2',
     'fastjsonschema>=2.12',
-    'requests-toolbelt>=0.9.1',
+    'requests-toolbelt>=1.0.0',
 ]
 
 
