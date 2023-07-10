@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.6] - 2023-07-10
+### Changed
+- Change requests-toolbelt minimum version #101
+
 ## [2.6.5] - 2023-05-29
 ### Changed
 - user_and_roles::Unable to use user and roles module. #112 
