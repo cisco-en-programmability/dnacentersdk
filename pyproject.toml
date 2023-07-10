@@ -16,7 +16,7 @@ python = "^3.6"
 requests = "^2.27.1"
 fastjsonschema = "^2.16.2"
 future = "^0.18.2"
-requests-toolbelt = "^0.10.1"
+requests-toolbelt = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 sphinx = "^5.0.0"
