@@ -42,9 +42,9 @@ PACKAGE_CLASSIFIERS = [
 ]
 
 INSTALLATION_REQUIREMENTS = [
-    'future',
-    'requests>=2.4.2',
-    'fastjsonschema>=2.12',
+    'future>=0.18.3',
+    'requests>=2.27.1,<=2.28',
+    'fastjsonschema>=2.16.2',
     'requests-toolbelt>=1.0.0',
 ]
 
