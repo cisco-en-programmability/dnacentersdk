@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.7] - 2023-08-25
+### Changed
+- Update readthedocs settings
+
 ## [2.6.6] - 2023-07-10
 ### Changed
 - Change requests-toolbelt minimum version #101
@@ -440,4 +444,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.0...v2.6.1
 [2.6.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.1...v2.6.2
 [2.6.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.2...v2.6.3
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.3...master
+[2.6.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.3...v2.6.4
+[2.6.5]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.4...v2.6.5
+[2.6.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.5...v2.6.6
+[2.6.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.6...v2.6.7
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.7...develop
