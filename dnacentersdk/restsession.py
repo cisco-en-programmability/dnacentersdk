@@ -47,6 +47,7 @@ from .config import (
     DEFAULT_SINGLE_REQUEST_TIMEOUT,
     DEFAULT_VERIFY,
     DEFAULT_WAIT_ON_RATE_LIMIT,
+    DEFAULT_MAX_RETRIES_ON_RATE_LIMIT,
 )
 from .exceptions import (
     ApiError,
@@ -140,6 +141,7 @@ class RestSession(object):
     def __init__(self, get_access_token, access_token, base_url,
                  single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
                  wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
+                 max_retries_on_rate_limit=DEFAULT_MAX_RETRIES_ON_RATE_LIMIT,
                  verify=DEFAULT_VERIFY,
                  version=None,
                  debug=False):
@@ -156,6 +158,8 @@ class RestSession(object):
                 HTTP REST API request.
             wait_on_rate_limit(bool): Enable or disable automatic rate-limit
                 handling.
+            max_retries_on_rate_limit(int): Maximum number of request retries
+                performed by automatic rate-limit handling
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
@@ -186,6 +190,7 @@ class RestSession(object):
         self._access_token = str(access_token)
         self._single_request_timeout = single_request_timeout
         self._wait_on_rate_limit = wait_on_rate_limit
+        self._max_retries_on_rate_limit = max_retries_on_rate_limit
         self._verify = verify
         self._version = version
         self._debug = debug
@@ -436,6 +441,7 @@ class RestSession(object):
             kwargs.pop('data', None)
 
         c = custom_refresh
+        rate_limit_retry = 0
         while True:
             c += 1
             # Make the HTTP request to the API endpoint
@@ -472,8 +478,9 @@ class RestSession(object):
             except RateLimitError as e:
                 # Catch rate-limit errors
                 # Wait and retry if automatic rate-limit handling is enabled
-                if self.wait_on_rate_limit:
-                    warnings.warn(RateLimitWarning(response))
+                if self.wait_on_rate_limit and rate_limit_retry <= self._max_retries_on_rate_limit:
+                    logger.warning(RateLimitWarning(response))
+                    rate_limit_retry += 1
                     time.sleep(e.retry_after)
                     continue
                 else:
