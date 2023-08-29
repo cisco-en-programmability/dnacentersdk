@@ -466,7 +466,7 @@ class RestSession(object):
             except RateLimitError as e:
                 # Catch rate-limit errors
                 # Wait and retry if automatic rate-limit handling is enabled
-                if self.wait_on_rate_limit and rate_limit_retry <= self._max_retries_on_rate_limit:
+                if self.wait_on_rate_limit and rate_limit_retry < self._max_retries_on_rate_limit:
                     logger.warning(RateLimitWarning(response))
                     rate_limit_retry += 1
                     time.sleep(e.retry_after)
