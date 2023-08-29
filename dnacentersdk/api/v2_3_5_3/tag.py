@@ -706,9 +706,9 @@ class Tag(object):
             id(basestring): id path parameter. Tag ID .
             member_type(basestring): memberType query parameter. Entity type of the member. Possible values can be
                 retrieved by using /tag/member/type API .
-            offset(basestring): offset query parameter. Used for pagination. It indicates the starting row number
+            offset(int, basestring): offset query parameter. Used for pagination. It indicates the starting row number
                 out of available member records .
-            limit(basestring): limit query parameter. Used to Number of maximum members to return in the result .
+            limit(int, basestring): limit query parameter. Used to Number of maximum members to return in the result .
             member_association_type(basestring): memberAssociationType query parameter. Indicates how the member is
                 associated with the tag. Possible values and description. 1) DYNAMIC : The member is
                 associated to the tag through rules. 2) STATIC – The member is associated to the tag
@@ -734,8 +734,8 @@ class Tag(object):
         check_type(headers, dict)
         check_type(member_type, basestring,
                    may_be_none=False)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (int,basestring))
+        check_type(limit, (int, basestring))
         check_type(member_association_type, basestring)
         check_type(level, basestring)
         check_type(id, basestring,

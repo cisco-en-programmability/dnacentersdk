@@ -185,8 +185,8 @@ class Task(object):
         check_type(is_error, basestring)
         check_type(failure_reason, basestring)
         check_type(parent_id, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(sort_by, basestring)
         check_type(order, basestring)
         if headers is not None:

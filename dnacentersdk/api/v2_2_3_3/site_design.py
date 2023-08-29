@@ -593,8 +593,8 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(name, basestring)
         check_type(id, basestring,
                    may_be_none=False)

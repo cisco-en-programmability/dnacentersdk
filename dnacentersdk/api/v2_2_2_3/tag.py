@@ -208,8 +208,8 @@ class Tag(object):
         check_type(additional_info_name_space, basestring)
         check_type(additional_info_attributes, basestring)
         check_type(level, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(size, basestring)
         check_type(field, basestring)
         check_type(sort_by, basestring)
@@ -716,8 +716,8 @@ class Tag(object):
         check_type(headers, dict)
         check_type(member_type, basestring,
                    may_be_none=False)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset,  (int,basestring))
+        check_type(limit,  (int,basestring))
         check_type(member_association_type, basestring)
         check_type(level, basestring)
         check_type(id, basestring,
