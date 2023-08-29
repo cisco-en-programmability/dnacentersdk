@@ -460,18 +460,6 @@ class RestSession(object):
                                                          **kwargs)
                 except Exception as e:
                     raise dnacentersdkException('Socket error {}'.format(e))
-            except IOError as e:
-                if e.errno == errno.EPIPE:
-                    # EPIPE error
-                    try:
-                        c += 1
-                        logger.debug('Attempt {}'.format(c))
-                        response = self._req_session.request(method, abs_url,
-                                                             **kwargs)
-                    except Exception as e:
-                        raise dnacentersdkException('PipeError {}'.format(e))
-                else:
-                    raise dnacentersdkException('IOError {}'.format(e))
             try:
                 # Check the response code for error conditions
                 check_response_code(response, erc)
