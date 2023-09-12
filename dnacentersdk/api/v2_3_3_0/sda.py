@@ -2375,6 +2375,8 @@ class Sda(object):
         return self._object_factory('bpm_cb1fe08692b85767a42b84340c4c7d53_v2_3_3_0', json_data)
 
     def add_vn(self,
+               siteNameHierarchy=None,
+               virtualNetworkName=None,
                headers=None,
                payload=None,
                active_validation=True,
@@ -2382,9 +2384,11 @@ class Sda(object):
         """Add virtual network (VN) in SDA Fabric   .
 
         Args:
+            siteNameHierarchy(string): SDA's Path of sda Fabric Site .
+            virtualNetworkName(string): SDA's Virtual Network Name, that is created at Global level .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(list): A JSON serializable Python object to send in the
+            payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
             active_validation(bool): Enable/Disable payload validation.
                 Defaults to True.
@@ -2399,9 +2403,11 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-vn
         """
         check_type(headers, dict)
-        check_type(payload, list)
+        check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2414,7 +2420,18 @@ class Sda(object):
 
         path_params = {
         }
-        _payload = payload or []
+        _payload = [
+            {
+                'virtualNetworkName':
+                    virtualNetworkName,
+                'siteNameHierarchy':
+                    siteNameHierarchy,
+            }
+        ]
+        
+        if payload is not None:
+            _payload.extend(payload)
+
         if active_validation:
             self._request_validator('jsd_e3a724a35854758d65a83823c88435_v2_3_3_0')\
                 .validate(_payload)
