@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.6.9] - 2023-09-20
+### Changed
+-  AP port assignment API not working with DNAC APIs of 2.3.3.0 #126, Documetion bug, extra-space in enum.
+
 ## [2.6.8] - 2023-09-12
+### Changed
 - 2_3_3_0 sda sevice `add_vn` method update.
 
 ## [2.6.7] - 2023-08-25
@@ -451,4 +457,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.6]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.5...v2.6.6
 [2.6.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.6...v2.6.7
 [2.6.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.7...v2.6.8
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...develop
+[2.6.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...develop

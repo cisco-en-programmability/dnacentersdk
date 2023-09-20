@@ -44,7 +44,7 @@ class JSONSchemaValidatorE4A09Bf566F35BabAd9E27F5Eb61A86D(object):
                 "enum": [
                 "No Authentication",
                 "Open Authentication",
-                "Closed Authentication ",
+                "Closed Authentication",
                 "Low Impact"
                 ],
                 "type": "string"
