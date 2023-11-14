@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.10] - 2023-11-10
+### Fixed
+- Fixed params in 2.3.5.3 claim_a_device_to_a_site from interfaceName to ipInterfaceName
+- Fixed params in 2.3.5.3 claim_a_device_to_a_site from vlanID to vlanId
+
 ## [2.6.9] - 2023-09-20
 ### Changed
 -  AP port assignment API not working with DNAC APIs of 2.3.3.0 #126, Documetion bug, extra-space in enum.
@@ -458,4 +463,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.7]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.6...v2.6.7
 [2.6.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.7...v2.6.8
 [2.6.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...develop
+[2.6.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...develop

@@ -515,7 +515,7 @@ def claim_a_device_to_a_site(api):
         deviceId='string',
         gateway='string',
         imageInfo={'imageId': 'string', 'skip': True},
-        interfaceName='string',
+        ipInterfaceName='string',
         payload=None,
         rfProfile='string',
         sensorProfile='string',
@@ -523,7 +523,7 @@ def claim_a_device_to_a_site(api):
         staticIP='string',
         subnetMask='string',
         type='string',
-        vlanID='string'
+        vlanId='string'
     )
     return endpoint_result
 

@@ -850,21 +850,21 @@ class DeviceOnboardingPnp(object):
                                  deviceId=None,
                                  gateway=None,
                                  imageInfo=None,
-                                 interfaceName=None,
+                                 ipInterfaceName=None,
                                  rfProfile=None,
                                  sensorProfile=None,
                                  siteId=None,
                                  staticIP=None,
                                  subnetMask=None,
                                  type=None,
-                                 vlanID=None,
+                                 vlanId=None,
                                  headers=None,
                                  payload=None,
                                  active_validation=True,
                                  **request_parameters):
         """Claim a device based on DNA-C Site-based design process. Some required parameters differ based on device
         platform: Default/StackSwitch: imageInfo, configInfo.   AccessPoints: rfProfile.   Sensors:
-        sensorProfile.   CatalystWLC/MobilityExpress/EWC: staticIP, subnetMask, gateway. vlanID and
+        sensorProfile.   CatalystWLC/MobilityExpress/EWC: staticIP, subnetMask, gateway. vlanId and
         ipInterfaceName are also allowed for Catalyst 9800 WLCs. .
 
         Args:
@@ -872,7 +872,7 @@ class DeviceOnboardingPnp(object):
             deviceId(string): Device Onboarding (PnP)'s Device Id.
             gateway(string): Device Onboarding (PnP)'s for CatalystWLC/MobilityExpress .
             imageInfo(object): Device Onboarding (PnP)'s imageInfo.
-            interfaceName(string): Device Onboarding (PnP)'s for Catalyst 9800 WLC .
+            ipInterfaceName(string): Device Onboarding (PnP)'s for Catalyst 9800 WLC .
             rfProfile(string): Device Onboarding (PnP)'s for Access Points .
             sensorProfile(string): Device Onboarding (PnP)'s for Sensors .
             siteId(string): Device Onboarding (PnP)'s Site Id.
@@ -880,7 +880,7 @@ class DeviceOnboardingPnp(object):
             subnetMask(string): Device Onboarding (PnP)'s for CatalystWLC/MobilityExpress .
             type(string): Device Onboarding (PnP)'s Type. Available values are 'Default', 'StackSwitch',
                 'AccessPoint', 'Sensor', 'CatalystWLC' and 'MobilityExpress'.
-            vlanID(string): Device Onboarding (PnP)'s for Catalyst 9800 WLC .
+            vlanId(string): Device Onboarding (PnP)'s for Catalyst 9800 WLC .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -937,10 +937,10 @@ class DeviceOnboardingPnp(object):
                 subnetMask,
             'gateway':
                 gateway,
-            'vlanID':
-                vlanID,
-            'interfaceName':
-                interfaceName,
+            'vlanId':
+                vlanId,
+            'ipInterfaceName':
+                ipInterfaceName,
             'sensorProfile':
                 sensorProfile,
         }

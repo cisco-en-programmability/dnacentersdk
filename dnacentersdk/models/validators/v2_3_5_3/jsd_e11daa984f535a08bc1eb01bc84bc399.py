@@ -82,7 +82,7 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 },
                 "type": "object"
                 },
-                "interfaceName": {
+                "ipInterfaceName": {
                 "type": "string"
                 },
                 "rfProfile": {
@@ -111,7 +111,7 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 ],
                 "type": "string"
                 },
-                "vlanID": {
+                "vlanId": {
                 "type": "string"
                 }
                 },
