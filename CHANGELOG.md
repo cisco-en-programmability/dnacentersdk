@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.0] - 2023-11-10
+### Added
+- Add support of DNA Center versions ('2.3.7.3')
+- Adds modules for v2_3_7_3
+
 ## [2.6.10] - 2023-11-10
 ### Fixed
 - Fixed params in 2.3.5.3 claim_a_device_to_a_site from interfaceName to ipInterfaceName
