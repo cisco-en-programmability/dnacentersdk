@@ -41,7 +41,6 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "configInfo": {
-                "items": {
                 "properties": {
                 "configId": {
                 "type": "string"
@@ -62,8 +61,6 @@ class JSONSchemaValidatorE11Daa984F535A08Bc1EB01Bc84Bc399(object):
                 }
                 },
                 "type": "object"
-                },
-                "type": "array"
                 },
                 "deviceId": {
                 "type": "string"
