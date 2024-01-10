@@ -549,7 +549,33 @@ class ConfigurationTemplates(object):
 
     def imports_the_templates_provided(self,
                                        project_name,
+                                       author=None,
+                                       composite=None,
+                                       containingTemplates=None,
+                                       createTime=None,
+                                       customParamsOrder=None,
+                                       description=None,
+                                       deviceTypes=None,
                                        do_version=None,
+                                       failurePolicy=None,
+                                       id=None,
+                                       language=None,
+                                       lastUpdateTime=None,
+                                       latestVersionTime=None,
+                                       name=None,
+                                       parentTemplateId=None,
+                                       projectId=None,
+                                       projectName=None,
+                                       rollbackTemplateContent=None,
+                                       rollbackTemplateParams=None,
+                                       softwareType=None,
+                                       softwareVariant=None,
+                                       softwareVersion=None,
+                                       tags=None,
+                                       templateContent=None,
+                                       templateParams=None,
+                                       validationErrors=None,
+                                       version=None,
                                        headers=None,
                                        payload=None,
                                        active_validation=True,
@@ -557,6 +583,34 @@ class ConfigurationTemplates(object):
         """Imports the templates provided in the DTO by project Name .
 
         Args:
+            author(string): Configuration Templates's Author of template .
+            composite(boolean): Configuration Templates's Is it composite template .
+            containingTemplates(list): Configuration Templates's containingTemplates (list of objects).
+            createTime(integer): Configuration Templates's Create time of template .
+            customParamsOrder(boolean): Configuration Templates's Custom Params Order .
+            description(string): Configuration Templates's Description of template .
+            deviceTypes(list): Configuration Templates's deviceTypes (list of objects).
+            failurePolicy(string): Configuration Templates's Define failure policy if template provisioning fails .
+                Available values are 'ABORT_ON_ERROR', 'CONTINUE_ON_ERROR', 'ROLLBACK_ON_ERROR',
+                'ROLLBACK_TARGET_ON_ERROR' and 'ABORT_TARGET_ON_ERROR'.
+            id(string): Configuration Templates's UUID of template .
+            language(string): Configuration Templates's Template language (JINJA or VELOCITY) .
+            lastUpdateTime(integer): Configuration Templates's Update time of template .
+            latestVersionTime(integer): Configuration Templates's Latest versioned template time .
+            name(string): Configuration Templates's Name of template .
+            parentTemplateId(string): Configuration Templates's Parent templateID .
+            projectId(string): Configuration Templates's Project UUID .
+            projectName(string): Configuration Templates's Project name .
+            rollbackTemplateContent(string): Configuration Templates's Rollback template content .
+            rollbackTemplateParams(list): Configuration Templates's rollbackTemplateParams (list of objects).
+            softwareType(string): Configuration Templates's Applicable device software type .
+            softwareVariant(string): Configuration Templates's Applicable device software variant .
+            softwareVersion(string): Configuration Templates's Applicable device software version .
+            tags(list): Configuration Templates's tags (list of objects).
+            templateContent(string): Configuration Templates's Template content .
+            templateParams(list): Configuration Templates's templateParams (list of objects).
+            validationErrors(object): Configuration Templates's validationErrors.
+            version(string): Configuration Templates's Current version of template .
             project_name(basestring): projectName path parameter. Project name to create template under the project
                 .
             do_version(bool): doVersion query parameter. If this flag is true then it creates a new version of the
@@ -565,7 +619,7 @@ class ConfigurationTemplates(object):
                 already exists' error .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
-            payload(list): A JSON serializable Python object to send in the
+            payload(dict): A JSON serializable Python object to send in the
                 body of the Request.
             active_validation(bool): Enable/Disable payload validation.
                 Defaults to True.
@@ -584,7 +638,7 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!imports-the-templates-provided
         """
         check_type(headers, dict)
-        check_type(payload, list)
+        check_type(payload, dict)
         check_type(do_version, bool)
         check_type(project_name, basestring,
                    may_be_none=False)
@@ -606,7 +660,62 @@ class ConfigurationTemplates(object):
         path_params = {
             'projectName': project_name,
         }
-        _payload = payload or []
+        _payload = {
+            'tags':
+                tags,
+            'author':
+                author,
+            'composite':
+                composite,
+            'containingTemplates':
+                containingTemplates,
+            'createTime':
+                createTime,
+            'customParamsOrder':
+                customParamsOrder,
+            'description':
+                description,
+            'deviceTypes':
+                deviceTypes,
+            'failurePolicy':
+                failurePolicy,
+            'id':
+                id,
+            'language':
+                language,
+            'lastUpdateTime':
+                lastUpdateTime,
+            'latestVersionTime':
+                latestVersionTime,
+            'name':
+                name,
+            'parentTemplateId':
+                parentTemplateId,
+            'projectId':
+                projectId,
+            'projectName':
+                projectName,
+            'rollbackTemplateContent':
+                rollbackTemplateContent,
+            'rollbackTemplateParams':
+                rollbackTemplateParams,
+            'softwareType':
+                softwareType,
+            'softwareVariant':
+                softwareVariant,
+            'softwareVersion':
+                softwareVersion,
+            'templateContent':
+                templateContent,
+            'templateParams':
+                templateParams,
+            'validationErrors':
+                validationErrors,
+            'version':
+                version,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
         if active_validation:
             self._request_validator('jsd_db7b6c4f0542aab9fe7cf5c995f83_v2_3_5_3')\
                 .validate(_payload)

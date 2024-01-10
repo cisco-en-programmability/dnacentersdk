@@ -15,7 +15,7 @@ idna==3.4 ; python_version >= "3.6" and python_version < "4.0" \
 requests-toolbelt==1.0.0 ; python_version >= "3.6" and python_version < "4.0" \
     --hash=sha256:7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6 \
     --hash=sha256:cccfdd665f0a24fcf4726e690f65639d272bb0637b9b92dfd91a5568ccf6bd06
-requests==2.27.1 ; python_version >= "3.6" and python_version < "4.0" \
+requests==2.31.0 ; python_version >= "3.6" and python_version < "4.0" \
     --hash=sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61 \
     --hash=sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d
 urllib3==1.26.16 ; python_version >= "3.6" and python_version < "4.0" \
