@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.11] - 2023-01-10
+### Fixed
+- Configuration template import template - check_type error #142 - Fixing required schema.
+- Updating request version. Issue #132
+
 ## [2.6.10] - 2023-11-10
 ### Fixed
 - Fixed params in 2.3.5.3 claim_a_device_to_a_site from interfaceName to ipInterfaceName
