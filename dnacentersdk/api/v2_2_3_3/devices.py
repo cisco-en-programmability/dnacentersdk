@@ -2106,8 +2106,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(category, basestring,
                    may_be_none=False)
         check_type(sort_by, basestring)
@@ -2187,8 +2187,8 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         check_type(sort_by, basestring)
         check_type(order, basestring)
         check_type(site_id, basestring,
@@ -2324,8 +2324,8 @@ class Devices(object):
         check_type(headers, dict)
         check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(name_list, (basestring, list, set, tuple))
         check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
         check_type(part_number_list, (basestring, list, set, tuple))

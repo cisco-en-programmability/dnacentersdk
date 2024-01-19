@@ -240,8 +240,8 @@ class PathTrace(object):
         check_type(status, basestring)
         check_type(task_id, basestring)
         check_type(last_update_time, basestring)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(order, basestring)
         check_type(sort_by, basestring)
         if headers is not None:

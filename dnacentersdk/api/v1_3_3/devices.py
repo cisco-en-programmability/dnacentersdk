@@ -2225,8 +2225,8 @@ class Devices(object):
         check_type(headers, dict)
         check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
+        check_type(limit, (basestring, int))
+        check_type(offset, (basestring, int))
         check_type(name_list, (basestring, list, set, tuple))
         check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
         check_type(part_number_list, (basestring, list, set, tuple))
@@ -2774,8 +2774,8 @@ class Devices(object):
         check_type(role, basestring)
         check_type(role_source, basestring)
         check_type(associated_wlc_ip, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(offset, (basestring, int))
+        check_type(limit, (basestring, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
