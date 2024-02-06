@@ -50,6 +50,9 @@ SINGLE_REQUEST_TIMEOUT_ENVIRONMENT_VARIABLE = \
 #: name of the environment wait_on_rate_limit variable
 WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_WAIT_ON_RATE_LIMIT'
 
+#: name of the environment max_retries_on_rate_limit variable
+MAX_RETRIES_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_MAX_RETRIES_ON_RATE_LIMIT'
+
 #: name of the environment verify variable
 VERIFY_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY'
 
@@ -118,6 +121,13 @@ def get_env_wait_on_rate_limit():
         WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
         bool, _is_bool)
     return DNA_CENTER_WAIT_ON_RATE_LIMIT
+
+
+def get_env_max_retries_on_rate_limit():
+    DNA_CENTER_MAX_RETRIES_ON_RATE_LIMIT = _get_env_value(
+        MAX_RETRIES_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE,
+        int, int)
+    return DNA_CENTER_MAX_RETRIES_ON_RATE_LIMIT
 
 
 def get_env_verify():

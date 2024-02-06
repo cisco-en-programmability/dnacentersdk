@@ -30,6 +30,7 @@ from dnacentersdk.config import (
     DEFAULT_BASE_URL,
     DEFAULT_SINGLE_REQUEST_TIMEOUT,
     DEFAULT_WAIT_ON_RATE_LIMIT,
+    DEFAULT_MAX_RETRIES_ON_RATE_LIMIT,
     DEFAULT_VERIFY,
 )
 import dnacentersdk.environment as dnacenter_environment
@@ -654,6 +655,7 @@ class DNACenterAPI(object):
                  base_url=None,
                  single_request_timeout=None,
                  wait_on_rate_limit=None,
+                 max_retries_on_rate_limit=None,
                  verify=None,
                  version=None,
                  debug=None,
@@ -700,6 +702,11 @@ class DNACenterAPI(object):
                 environment variable or
                 dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT
                 if the environment variable is not set.
+            max_retries_on_rate_limit(int): Maximum number of request retries
+                performed by automatic rate-limit handling Defaults to the
+                DNA_CENTER_MAX_RETRIES_ON_RATE_LIMIT environment variable or
+                dnacentersdk.config.DEFAULT_MAX_RETRIES_ON_RATE_LIMIT
+                if the environment variable is not set.
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY 
@@ -745,8 +752,12 @@ class DNACenterAPI(object):
         if wait_on_rate_limit is None:
             wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
 
+        if max_retries_on_rate_limit is None:
+            max_retries_on_rate_limit = dnacenter_environment.get_env_max_retries_on_rate_limit() \
+                if dnacenter_environment.get_env_max_retries_on_rate_limit() is not None else DEFAULT_MAX_RETRIES_ON_RATE_LIMIT
+
         if verify is None:
-            verify = dnacenter_environment.get_env_verify() if dnacenter_environment.get_env_verify() != None else DEFAULT_VERIFY
+            verify = dnacenter_environment.get_env_verify() if dnacenter_environment.get_env_verify() is not None else DEFAULT_VERIFY
 
         version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
 
@@ -813,6 +824,7 @@ class DNACenterAPI(object):
             base_url=base_url,
             single_request_timeout=single_request_timeout,
             wait_on_rate_limit=wait_on_rate_limit,
+            max_retries_on_rate_limit=max_retries_on_rate_limit,
             verify=verify,
             version=version,
             debug=debug,

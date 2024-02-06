@@ -40,6 +40,10 @@ DEFAULT_SINGLE_REQUEST_TIMEOUT = 60
 #: Enables or disables automatic rate-limit handling.
 DEFAULT_WAIT_ON_RATE_LIMIT = True
 
+#: **retries_on_rate_limit** default value.
+#: Maximum number of times automatic rate-limit handling retries requests.
+DEFAULT_MAX_RETRIES_ON_RATE_LIMIT = 5
+
 #: **verify** default value.
 #: Controls whether to verify the server's TLS certificate or not.
 DEFAULT_VERIFY = True
