@@ -79,7 +79,7 @@ class Authentication(object):
 
         """
         check_type(base_url, basestring, may_be_none=False)
-        check_type(single_request_timeout, int)
+        check_type(single_request_timeout, (int,float))
         check_type(verify, (bool, basestring), may_be_none=False)
 
         super(Authentication, self).__init__()
