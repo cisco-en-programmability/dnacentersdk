@@ -654,6 +654,7 @@ class DNACenterAPI(object):
                  base_url=None,
                  single_request_timeout=None,
                  wait_on_rate_limit=None,
+                 session=None,
                  verify=None,
                  version=None,
                  debug=None,
@@ -702,10 +703,12 @@ class DNACenterAPI(object):
                 if the environment variable is not set.
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
-                to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY 
+                to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY
                 environment variable or
                 dnacentersdk.config.DEFAULT_VERIFY if the environment
                 variables are not set.
+            session(requests.Session): Optionally inject a `requests.Session`
+                instance to use for HTTP operations.
             version(basestring): Controls which version of DNA_CENTER to use.
                 Defaults to the DNA_CENTER_VERSION environment variable or
                 dnacentersdk.config.DEFAULT_VERSION
@@ -813,6 +816,7 @@ class DNACenterAPI(object):
             base_url=base_url,
             single_request_timeout=single_request_timeout,
             wait_on_rate_limit=wait_on_rate_limit,
+            session=session,
             verify=verify,
             version=version,
             debug=debug,

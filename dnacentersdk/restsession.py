@@ -140,6 +140,7 @@ class RestSession(object):
     def __init__(self, get_access_token, access_token, base_url,
                  single_request_timeout=DEFAULT_SINGLE_REQUEST_TIMEOUT,
                  wait_on_rate_limit=DEFAULT_WAIT_ON_RATE_LIMIT,
+                 session=None,
                  verify=DEFAULT_VERIFY,
                  version=None,
                  debug=False):
@@ -156,6 +157,8 @@ class RestSession(object):
                 HTTP REST API request.
             wait_on_rate_limit(bool): Enable or disable automatic rate-limit
                 handling.
+            session(requests.Session): Optionally inject a `requests.Session`
+                object to be used for HTTP operations.
             verify(bool,basestring): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
@@ -199,8 +202,8 @@ class RestSession(object):
         if verify is False:
             requests.packages.urllib3.disable_warnings()
 
-        # Initialize a new `requests` session
-        self._req_session = requests.session()
+        # Use the injected `requests` session, build a new one if not provided
+        self._req_session = session or requests.session()
 
         # Update the headers of the `requests` session
         self.update_headers({'X-Auth-Token': access_token,
