@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add support of DNA Center versions ('2.3.7.3')
 - Adds modules for v2_3_7_3
+## [2.6.11] - 2023-01-10
+### Fixed
+- Configuration template import template - check_type error #142 - Fixing required schema.
+- Updating request version. Issue #132
 
 ## [2.6.10] - 2023-11-10
 ### Fixed
@@ -469,4 +473,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.8]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.7...v2.6.8
 [2.6.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9
 [2.6.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...develop
+[2.6.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...develop
