@@ -27,7 +27,7 @@ By default, dnacentersdk will look for the following environment variables to cr
 
     * ``DNA_CENTER_DEBUG`` - Tells the SDK whether to log request and response information. Useful for debugging and seeing what is going on under the hood. Defaults to False.
 
-    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '2.3.7.3'.
+    * ``DNA_CENTER_VERSION`` - DNA Center API version to use. Defaults to '2.3.7.5'.
 
     * ``DNA_CENTER_ENCODED_AUTH`` - It takes priority. It is the `username:password` encoded in base 64.
       For example 'ZGV2bmV0dXNlcjpDaXNjbzEyMyEK' which decoded is 'devnetuser:Cisco123!'
@@ -129,7 +129,7 @@ If you don't provide a known version and try to create a new :class:`DNACenterAP
       File "<stdin>", line 1, in <module>
       File "dnacentersdk/__init__.py", line 209, in __init__
         raise VersionError(error_message)
-    VersionError: Unknown API version, known versions are 2.1.1, 2.1.2, 2.2.1, 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3 and 2.3.7.3.
+    VersionError: Unknown API version, known versions are 2.1.1, 2.1.2, 2.2.1, 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and 2.3.7.5.
 
 
 Use the arguments to manually provide enough information for the HTTP Basic Auth process, 
@@ -138,15 +138,15 @@ when creating a new :class:`DNACenterAPI` connection object.
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 2.3.7.3
-    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac.cisco.com:443", version='2.3.7.3')
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center sandbox URL and encoded_auth, with DNA Center API version 2.3.7.5
+    >>> api = DNACenterAPI(encoded_auth='ZGV2bmV0dXNlcjpDaXNjbzEyMyEK', base_url="https://sandboxdnac.cisco.com:443", version='2.3.7.5')
 
 .. code-block:: python
 
     >>> from dnacentersdk import DNACenterAPI
-    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 2.3.7.3
+    >>> # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 2.3.7.5
     >>> # The base_url used by default is `from dnacentersdk.config import DEFAULT_BASE_URL`
-    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac.cisco.com:443", version='2.3.7.3')
+    >>> api = DNACenterAPI(username='devnetuser', password='Cisco123!', base_url="https://sandboxdnac.cisco.com:443", version='2.3.7.5')
 
 Note that this can be very useful if you are reading authentication credentials
 from a file or database and/or when you want to create more than one connection object.
@@ -156,8 +156,8 @@ from a file or database and/or when you want to create more than one connection 
     >>> from dnacentersdk import DNACenterAPI
     >>> kingston_auth = 'ZG5hY2VudGVydXNlcjpDaXNjbzEyMyEK'
     >>> london_auth = ('london', 'rcx0cf43!')
-    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac.cisco.com:443", version='2.3.7.3')
-    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='2.3.7.3')  # * Unpacks tuple
+    >>> kingston_api = DNACenterAPI(encoded_auth=kingston_auth, base_url="https://sandboxdnac.cisco.com:443", version='2.3.7.5')
+    >>> london_api = DNACenterAPI(*london_auth, base_url="https://128.107.71.199:443", version='2.3.7.5')  # * Unpacks tuple
 
 
 Certificates
@@ -173,7 +173,7 @@ To avoid getting errors like the following:
 
     >>> from dnacentersdk import DNACenterAPI
     >>> own_api = DNACenterAPI(encoded_auth='dXNlcm5hbWU6cGFzc3dvcmQK', 
-    ... base_url="https://128.107.71.199:443", version='2.3.7.3')
+    ... base_url="https://128.107.71.199:443", version='2.3.7.5')
     requests.exceptions.SLError: HTTPSConnectionPool(host='128.107.71.199', port=443):
     Max retries exceeded with url: /dna/system/api/v1/auth/token (Caused by
     SSLError (SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate
@@ -296,7 +296,7 @@ A summary of the structure is available for each version supported
 
 + :ref:`v2.3.7.3 <v2_3_7_3 summary>`
 
-
++ :ref:`v2.3.7.5 <v2_3_7_5 summary>`
 
 You can easily access and call any of these methods directly from your
 :class:`DNACenterAPI` connection object:
@@ -562,12 +562,12 @@ Custom caller functions help you:
     from dnacentersdk import api
 
     # Create a DNACenterAPI connection object;
-    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.3.7.3.,
+    # it uses DNA Center sandbox URL, username and password, with DNA Center API version 2.3.7.5.,
     # and requests to verify the server's TLS certificate with verify=True.
     api_ = api.DNACenterAPI(username="devnetuser",
                             password="Cisco123!",
                             base_url="https://sandboxdnac.cisco.com:443",
-                            version='2.3.7.3',
+                            version='2.3.7.5',
                             verify=True)
 
     # Add your custom API call to the connection object.

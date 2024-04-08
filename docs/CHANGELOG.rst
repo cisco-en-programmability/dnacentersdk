@@ -11,6 +11,18 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 `Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...develop>`__
 ---------------------------------------------------------------------------------------------------
 
+2024-11-10
+--------------------
+
+Added
+~~~~~
+
+-  Add support of DNA Center versions (‘2.3.7.5’)
+-  Adds modules for v2_3_7_5
+
+.. _section-1:
+
+-------------------------------------------------------------------------------------
 [2.7.0] - 2023-11-10
 --------------------
 
@@ -20,7 +32,7 @@ Added
 -  Add support of DNA Center versions (‘2.3.7.3’)
 -  Adds modules for v2_3_7_3
 
-.. _section-1:
+.. _section-2:
 
 `2.6.10 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10>`__ - 2023-11-10
 -----------------------------------------------------------------------------------------------------------
@@ -33,7 +45,7 @@ Fixed
 -  Fixed params in 2.3.5.3 claim_a_device_to_a_site from vlanID to
    vlanId
 
-.. _section-2:
+.. _section-3:
 
 `2.6.9 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9>`__ - 2023-09-20
 ---------------------------------------------------------------------------------------------------------
@@ -44,7 +56,7 @@ Changed
 -  AP port assignment API not working with DNAC APIs of 2.3.3.0 #126,
    Documetion bug, extra-space in enum.
 
-.. _section-3:
+.. _section-4:
 
 `2.6.8 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.7...v2.6.8>`__ - 2023-09-12
 ---------------------------------------------------------------------------------------------------------
@@ -56,7 +68,7 @@ Changed
 
 -  2_3_3_0 sda sevice ``add_vn`` method update.
 
-.. _section-4:
+.. _section-5:
 
 `2.6.7 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.6...v2.6.7>`__ - 2023-08-25
 ---------------------------------------------------------------------------------------------------------
@@ -68,7 +80,7 @@ Changed
 
 -  Update readthedocs settings
 
-.. _section-5:
+.. _section-6:
 
 `2.6.6 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.5...v2.6.6>`__ - 2023-07-10
 ---------------------------------------------------------------------------------------------------------
@@ -80,7 +92,7 @@ Changed
 
 -  Change requests-toolbelt minimum version #101
 
-.. _section-6:
+.. _section-7:
 
 `2.6.5 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.4...v2.6.5>`__ - 2023-05-29
 ---------------------------------------------------------------------------------------------------------
@@ -92,7 +104,7 @@ Changed
 
 -  user_and_roles::Unable to use user and roles module. #112
 
-.. _section-7:
+.. _section-8:
 
 `2.6.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.3...v2.6.4>`__ - 2023-05-25
 ---------------------------------------------------------------------------------------------------------
@@ -121,7 +133,7 @@ Changed
 -  Poor naming of function: v2_3_5_3/authentication_management.py :
    ``authentication_ap_i( #102``
 
-.. _section-8:
+.. _section-9:
 
 `2.6.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.2...v2.6.3>`__ - 2023-04-28
 ---------------------------------------------------------------------------------------------------------
