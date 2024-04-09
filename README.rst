@@ -161,6 +161,9 @@ The following table shows the supported versions.
      - 2.6.10
    * - 2.3.7.3
      - 2.7.0
+   * - 2.3.7.5
+     - 2.8.0
+
    
 
 If your SDK is older please consider updating it first.
