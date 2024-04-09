@@ -2947,7 +2947,6 @@ class EventManagement(object):
                                    trustCert=None,
                                    url=None,
                                    webhookId=None,
-                                   headers=None,
                                    payload=None,
                                    active_validation=True,
                                    **request_parameters):
@@ -3048,7 +3047,6 @@ class EventManagement(object):
                                    trustCert=None,
                                    url=None,
                                    webhookId=None,
-                                   headers=None,
                                    payload=None,
                                    active_validation=True,
                                    **request_parameters):

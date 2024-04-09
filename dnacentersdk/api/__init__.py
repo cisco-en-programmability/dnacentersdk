@@ -588,7 +588,7 @@ from .v2_3_7_5.devices import \
     Devices as Devices_v2_3_7_5
 from .v2_3_7_5.discovery import \
     Discovery as Discovery_v2_3_7_5
-from .v2_3_7_5.eo_x import \
+from .v2_3_7_5.eox import \
     EoX as EoX_v2_3_7_5
 from .v2_3_7_5.event_management import \
     EventManagement as EventManagement_v2_3_7_5
@@ -636,7 +636,7 @@ from .v2_3_7_5.task import \
     Task as Task_v2_3_7_5
 from .v2_3_7_5.topology import \
     Topology as Topology_v2_3_7_5
-from .v2_3_7_5.userand_roles import \
+from .v2_3_7_5.user_and_roles import \
     UserandRoles as UserandRoles_v2_3_7_5
 from .v2_3_7_5.users import \
     Users as Users_v2_3_7_5
@@ -776,8 +776,8 @@ class DNACenterAPI(object):
             raise VersionError(
                 'Unknown API version, '
                 + 'known versions are {}'.format(
-                    '2.1.1, 2.1.2, 2.2.1, 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and'
-                    + '2.3.7.5.'
+                    '2.1.1, 2.1.2, 2.2.1, 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and '
+                    + '2.3.7.5'
                 )
             )
 
@@ -1936,7 +1936,7 @@ class DNACenterAPI(object):
                 Discovery_v2_3_7_5(
                     self._session, object_factory, _validator
                 )
-            self.eo_x = \
+            self.eox = \
                 EoX_v2_3_7_5(
                     self._session, object_factory, _validator
                 )
@@ -2032,7 +2032,7 @@ class DNACenterAPI(object):
                 Topology_v2_3_7_5(
                     self._session, object_factory, _validator
                 )
-            self.userand_roles = \
+            self.user_and_roles = \
                 UserandRoles_v2_3_7_5(
                     self._session, object_factory, _validator
                 )
