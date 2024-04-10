@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -90,7 +90,7 @@ class File(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -123,7 +123,7 @@ class File(object):
         """Returns list of files under a specific namespace.
 
         Args:
-            name_space(basestring): nameSpace path parameter. A listing of fileId's.
+            name_space(str): nameSpace path parameter. A listing of fileId's.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -139,12 +139,12 @@ class File(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name_space, basestring,
+        check_type(name_space, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -181,12 +181,12 @@ class File(object):
         """Downloads a file specified by fileId.
 
         Args:
-            file_id(basestring): fileId path parameter. File Identification number.
-            dirpath(basestring): Directory absolute path. Defaults to
+            file_id(str): fileId path parameter. File Identification number.
+            dirpath(str): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
                 raw response.
-            filename(basestring): The filename used to save the download
+            filename(str): The filename used to save the download
                 file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -205,12 +205,12 @@ class File(object):
             response to a file.
         """
         check_type(headers, dict)
-        check_type(file_id, basestring,
+        check_type(file_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

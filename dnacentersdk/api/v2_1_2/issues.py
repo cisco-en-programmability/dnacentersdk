@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -84,14 +84,14 @@ class Issues(object):
         Args:
             start_time(int): Starting epoch time in milliseconds of query time window.
             end_time(int): Ending epoch time in milliseconds of query time window.
-            site_id(basestring): Assurance UUID value of the site in the issue content.
-            device_id(basestring): Assurance UUID value of the device in the issue content.
-            mac_address(basestring): Client's device MAC address of the issue (format xx:xx:xx:xx:xx:xx).
-            priority(basestring): The issue's priority value (One of P1, P2, P3, or P4)(Use only when macAddress and
+            site_id(str): Assurance UUID value of the site in the issue content.
+            device_id(str): Assurance UUID value of the device in the issue content.
+            mac_address(str): Client's device MAC address of the issue (format xx:xx:xx:xx:xx:xx).
+            priority(str): The issue's priority value (One of P1, P2, P3, or P4)(Use only when macAddress and
                 deviceId are not provided).
-            ai_driven(basestring): The issue's AI driven value (Yes or No)(Use only when macAddress and deviceId are
+            ai_driven(str): The issue's AI driven value (Yes or No)(Use only when macAddress and deviceId are
                 not provided).
-            issue_status(basestring): The issue's status value (One of ACTIVE, IGNORED, RESOLVED) (Use only when
+            issue_status(str): The issue's status value (One of ACTIVE, IGNORED, RESOLVED) (Use only when
                 macAddress and deviceId are not provided).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -110,16 +110,16 @@ class Issues(object):
         check_type(headers, dict)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(site_id, basestring)
-        check_type(device_id, basestring)
-        check_type(mac_address, basestring)
-        check_type(priority, basestring)
-        check_type(ai_driven, basestring)
-        check_type(issue_status, basestring)
+        check_type(site_id, str)
+        check_type(device_id, str)
+        check_type(mac_address, str)
+        check_type(priority, str)
+        check_type(ai_driven, str)
+        check_type(issue_status, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -187,13 +187,13 @@ class Issues(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

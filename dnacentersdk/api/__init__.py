@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from past.types import basestring
+from past.types import str
 
 from dnacentersdk.config import (
     DEFAULT_DEBUG,
@@ -690,14 +690,14 @@ class DNACenterAPI(object):
         When not given enough parameters an AccessTokenError is raised.
 
         Args:
-            base_url(basestring): The base URL to be prefixed to the
+            base_url(str): The base URL to be prefixed to the
                 individual API endpoint suffixes.
                 Defaults to the DNA_CENTER_BASE_URL environment variable or
                 dnacentersdk.config.DEFAULT_BASE_URL
                 if the environment variable is not set.
-            username(basestring): HTTP Basic Auth username.
-            password(basestring): HTTP Basic Auth password.
-            encoded_auth(basestring): HTTP Basic Auth base64 encoded string.
+            username(str): HTTP Basic Auth username.
+            password(str): HTTP Basic Auth password.
+            encoded_auth(str): HTTP Basic Auth base64 encoded string.
             single_request_timeout(int): Timeout (in seconds) for RESTful HTTP
                 requests. Defaults to the DNA_CENTER_SINGLE_REQUEST_TIMEOUT
                 environment variable or
@@ -708,17 +708,17 @@ class DNACenterAPI(object):
                 environment variable or
                 dnacentersdk.config.DEFAULT_WAIT_ON_RATE_LIMIT
                 if the environment variable is not set.
-            verify(bool,basestring): Controls whether we verify the server's
+            verify(bool,str): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use. Defaults to the DNA_CENTER_VERIFY
                 (or DNA_CENTER_VERIFY_STRING) environment variable or
                 dnacentersdk.config.DEFAULT_VERIFY if the environment
                 variables are not set.
-            version(basestring): Controls which version of DNA_CENTER to use.
+            version(str): Controls which version of DNA_CENTER to use.
                 Defaults to the DNA_CENTER_VERSION environment variable or
                 dnacentersdk.config.DEFAULT_VERSION
                 if the environment variable is not set.
-            debug(bool,basestring): Controls whether to log information about
+            debug(bool,str): Controls whether to log information about
                 DNA Center APIs' request and response process.
                 Defaults to the DNA_CENTER_DEBUG environment variable or False
                 if the environment variable is not set.
@@ -760,15 +760,15 @@ class DNACenterAPI(object):
         if debug is None:
             debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG
 
-        check_type(base_url, basestring)
+        check_type(base_url, str)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool)
-        check_type(debug, (bool, basestring), may_be_none=True)
-        check_type(username, basestring, may_be_none=True)
-        check_type(password, basestring, may_be_none=True)
-        check_type(encoded_auth, basestring, may_be_none=True)
-        check_type(verify, (bool, basestring), may_be_none=False)
-        check_type(version, basestring, may_be_none=False)
+        check_type(debug, (bool, str), may_be_none=True)
+        check_type(username, str, may_be_none=True)
+        check_type(password, str, may_be_none=True)
+        check_type(encoded_auth, str, may_be_none=True)
+        check_type(verify, (bool, str), may_be_none=False)
+        check_type(version, str, may_be_none=False)
 
         if version not in ['2.1.1', '2.1.2', '2.2.1', '2.2.2.3', '2.2.3.3',
                            '2.3.3.0', '2.3.5.3',

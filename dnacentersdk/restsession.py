@@ -39,7 +39,7 @@ import warnings
 from builtins import *
 
 import requests
-from past.builtins import basestring
+
 from requests.packages.urllib3.response import HTTPResponse
 from requests_toolbelt.multipart import encoder
 
@@ -90,9 +90,9 @@ class DownloadResponse(HTTPResponse):
         Args:
             response(requests.Response): The Response object, which contains a server's
                 response to an HTTP request.
-            path(basestring): The downloaded file path.
-            filename(basestring): The downloaded filename.
-            dirpath(basestring): The download directory path.
+            path(str): The downloaded file path.
+            filename(str): The downloaded filename.
+            dirpath(str): The download directory path.
             collected_data(bytes): HTTP response's data.
         """
         super(DownloadResponse, self).__init__(
@@ -148,20 +148,20 @@ class RestSession(object):
         Args:
             get_access_token(callable): The DNA Center method to get a new
                 access token.
-            access_token(basestring): The DNA Center access token to be used
+            access_token(str): The DNA Center access token to be used
                 for this session.
-            base_url(basestring): The base URL that will be suffixed onto API
+            base_url(str): The base URL that will be suffixed onto API
                 endpoint relative URLs to produce a callable absolute URL.
             single_request_timeout(int): The timeout (seconds) for a single
                 HTTP REST API request.
             wait_on_rate_limit(bool): Enable or disable automatic rate-limit
                 handling.
-            verify(bool,basestring): Controls whether we verify the server's
+            verify(bool,str): Controls whether we verify the server's
                 TLS certificate, or a string, in which case it must be a path
                 to a CA bundle to use.
-            version(basestring): Controls which version of DNA_CENTER to use.
+            version(str): Controls which version of DNA_CENTER to use.
                 Defaults to dnacentersdk.config.DNA_CENTER_VERSION
-            debug(bool,basestring): Controls whether to log information about
+            debug(bool,str): Controls whether to log information about
                 DNA Center APIs' request and response process.
                 Defaults to the DEBUG environment variable or False
                 if the environment variable is not set.
@@ -170,12 +170,12 @@ class RestSession(object):
             TypeError: If the parameter types are incorrect.
 
         """
-        check_type(access_token, basestring, may_be_none=False)
-        check_type(base_url, basestring, may_be_none=False)
+        check_type(access_token, str, may_be_none=False)
+        check_type(base_url, str, may_be_none=False)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool, may_be_none=False)
-        check_type(verify, (bool, basestring), may_be_none=False)
-        check_type(version, basestring, may_be_none=False)
+        check_type(verify, (bool, str), may_be_none=False)
+        check_type(version, str, may_be_none=False)
         check_type(debug, (bool), may_be_none=False)
 
         super(RestSession, self).__init__()
@@ -219,7 +219,7 @@ class RestSession(object):
     @verify.setter
     def verify(self, value):
         """The verify (TLS Certificate) for the API endpoints."""
-        check_type(value, (bool, basestring), may_be_none=False)
+        check_type(value, (bool, str), may_be_none=False)
         self._verify = value
 
     @property
@@ -230,7 +230,7 @@ class RestSession(object):
     @base_url.setter
     def base_url(self, value):
         """The base URL for the API endpoints."""
-        check_type(value, basestring, may_be_none=False)
+        check_type(value, str, may_be_none=False)
         self._base_url = str(validate_base_url(value))
 
     @property
@@ -304,7 +304,7 @@ class RestSession(object):
         """Given a relative or absolute URL; return an absolute URL.
 
         Args:
-            url(basestring): A relative or absolute URL.
+            url(str): A relative or absolute URL.
 
         Returns:
             str: An absolute URL.
@@ -322,7 +322,7 @@ class RestSession(object):
         """Get the filename from the Content-Disposition's header
 
         Args:
-            content(basestring): the Content-Disposition's header
+            content(str): the Content-Disposition's header
 
         Returns:
             str: the filename from the Content-Disposition's header
@@ -341,8 +341,8 @@ class RestSession(object):
         """It immediately downloads the response content.
 
         Args:
-            method(basestring): The request-method type ('GET', 'POST', etc.).
-            url(basestring): The URL of the API endpoint to be called.
+            method(str): The request-method type ('GET', 'POST', etc.).
+            url(str): The URL of the API endpoint to be called.
             erc(int): The expected response code that should be returned by the
                 DNA Center API endpoint to indicate success.
             **kwargs: Passed on to the requests package.
@@ -407,8 +407,8 @@ class RestSession(object):
                 and makes the request to the API endpoint again
 
         Args:
-            method(basestring): The request-method type ('GET', 'POST', etc.).
-            url(basestring): The URL of the API endpoint to be called.
+            method(str): The request-method type ('GET', 'POST', etc.).
+            url(str): The URL of the API endpoint to be called.
             erc(int): The expected response code that should be returned by the
                 DNA Center API endpoint to indicate success.
             **kwargs: Passed on to the requests package.
@@ -523,7 +523,7 @@ class RestSession(object):
         """Sends a GET request.
 
         Args:
-            url(basestring): The URL of the API endpoint.
+            url(str): The URL of the API endpoint.
             params(dict): The parameters for the HTTP GET request.
             **kwargs:
                 erc(int): The expected (success) response code for the request.
@@ -538,7 +538,7 @@ class RestSession(object):
                 returned by the DNA Center API endpoint.
 
         """
-        check_type(url, basestring, may_be_none=False)
+        check_type(url, str, may_be_none=False)
         check_type(params, dict)
 
         # Expected response code
@@ -554,7 +554,7 @@ class RestSession(object):
         """Sends a PATCH request.
 
         Args:
-            url(basestring): The URL of the API endpoint.
+            url(str): The URL of the API endpoint.
             json: Data to be sent in JSON format in tbe body of the request.
             data: Data to be sent in the body of the request.
             **kwargs:
@@ -570,7 +570,7 @@ class RestSession(object):
                 returned by the DNA Center API endpoint.
 
         """
-        check_type(url, basestring, may_be_none=False)
+        check_type(url, str, may_be_none=False)
         check_type(params, dict)
 
         # Expected response code
@@ -589,7 +589,7 @@ class RestSession(object):
         """Sends a POST request.
 
         Args:
-            url(basestring): The URL of the API endpoint.
+            url(str): The URL of the API endpoint.
             json: Data to be sent in JSON format in tbe body of the request.
             data: Data to be sent in the body of the request.
             **kwargs:
@@ -605,7 +605,7 @@ class RestSession(object):
                 returned by the DNA Center API endpoint.
 
         """
-        check_type(url, basestring, may_be_none=False)
+        check_type(url, str, may_be_none=False)
         check_type(params, dict)
 
         # Expected response code
@@ -624,7 +624,7 @@ class RestSession(object):
         """Sends a PUT request.
 
         Args:
-            url(basestring): The URL of the API endpoint.
+            url(str): The URL of the API endpoint.
             json: Data to be sent in JSON format in tbe body of the request.
             data: Data to be sent in the body of the request.
             **kwargs:
@@ -641,7 +641,7 @@ class RestSession(object):
                 returned by the DNA Center API endpoint.
 
         """
-        check_type(url, basestring, may_be_none=False)
+        check_type(url, str, may_be_none=False)
         check_type(params, dict)
 
         # Expected response code
@@ -660,7 +660,7 @@ class RestSession(object):
         """Sends a DELETE request.
 
         Args:
-            url(basestring): The URL of the API endpoint.
+            url(str): The URL of the API endpoint.
             **kwargs:
                 erc(int): The expected (success) response code for the request.
                 others: Passed on to the requests package.
@@ -670,7 +670,7 @@ class RestSession(object):
                 returned by the DNA Center API endpoint.
 
         """
-        check_type(url, basestring, may_be_none=False)
+        check_type(url, str, may_be_none=False)
         check_type(params, dict)
 
         # Expected response code

@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -74,8 +74,8 @@ class Sda(object):
         """Get default authentication profile from SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
-            authenticate_template_name(basestring): authenticateTemplateName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            authenticate_template_name(str): authenticateTemplateName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -91,13 +91,13 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
-        check_type(authenticate_template_name, basestring)
+        check_type(authenticate_template_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -158,7 +158,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -221,7 +221,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -260,7 +260,7 @@ class Sda(object):
         """Delete default authentication profile in SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -276,12 +276,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -340,7 +340,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -379,7 +379,7 @@ class Sda(object):
         """Get border device detail from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -395,12 +395,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -435,7 +435,7 @@ class Sda(object):
         """Delete border device from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -451,12 +451,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -491,7 +491,7 @@ class Sda(object):
         """Delete control plane device in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -507,12 +507,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -547,7 +547,7 @@ class Sda(object):
         """Get control plane device from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -563,12 +563,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -636,7 +636,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -684,7 +684,7 @@ class Sda(object):
         """Get device info from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -700,12 +700,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -740,7 +740,7 @@ class Sda(object):
         """Get device role in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter. Device Management
+            device_management_ip_address(str): deviceManagementIpAddress query parameter. Device Management
                 IP Address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -757,12 +757,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -827,7 +827,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -873,7 +873,7 @@ class Sda(object):
         """Delete edge device from SDA Fabric. .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -889,12 +889,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -929,7 +929,7 @@ class Sda(object):
         """Get edge device from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -945,12 +945,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -985,7 +985,7 @@ class Sda(object):
         """Get Site info from SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Hierarchy .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1001,12 +1001,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1041,7 +1041,7 @@ class Sda(object):
         """Delete Site from SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Hierarchy .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1057,12 +1057,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1131,7 +1131,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1217,7 +1217,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1273,8 +1273,8 @@ class Sda(object):
         """Delete Port assignment for access point in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1290,14 +1290,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1336,8 +1336,8 @@ class Sda(object):
         """Get Port assignment for access point in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1353,14 +1353,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1399,8 +1399,8 @@ class Sda(object):
         """Delete Port assignment for user device in SDA Fabric. .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1416,14 +1416,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1508,7 +1508,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1570,8 +1570,8 @@ class Sda(object):
         """Get Port assignment for user device in SDA Fabric. .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1587,14 +1587,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1665,7 +1665,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1715,7 +1715,7 @@ class Sda(object):
         """Get multicast details from SDA fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. fabric site name hierarchy .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. fabric site name hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1731,12 +1731,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1771,7 +1771,7 @@ class Sda(object):
         """Delete multicast from SDA fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1787,12 +1787,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1827,7 +1827,7 @@ class Sda(object):
         """Delete provisioned Wired Device .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter. Valid IP address of
+            device_management_ip_address(str): deviceManagementIpAddress query parameter. Valid IP address of
                 the device currently provisioned in a fabric site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1844,12 +1844,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1912,7 +1912,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1986,7 +1986,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2032,7 +2032,7 @@ class Sda(object):
         """Get Provisioned Wired Device .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2048,12 +2048,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -2088,7 +2088,7 @@ class Sda(object):
         """Delete Transit Peer Network from SD-Access .
 
         Args:
-            transit_peer_network_name(basestring): transitPeerNetworkName query parameter. Transit Peer Network Name
+            transit_peer_network_name(str): transitPeerNetworkName query parameter. Transit Peer Network Name
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2105,12 +2105,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(transit_peer_network_name, basestring,
+        check_type(transit_peer_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'transitPeerNetworkName':
@@ -2145,7 +2145,7 @@ class Sda(object):
         """Get Transit Peer Network Info from SD-Access .
 
         Args:
-            transit_peer_network_name(basestring): transitPeerNetworkName query parameter. Transit or Peer Network
+            transit_peer_network_name(str): transitPeerNetworkName query parameter. Transit or Peer Network
                 Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2162,12 +2162,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(transit_peer_network_name, basestring,
+        check_type(transit_peer_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'transitPeerNetworkName':
@@ -2235,7 +2235,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2286,8 +2286,8 @@ class Sda(object):
         """Delete virtual network (VN) from SDA Fabric   .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2303,14 +2303,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -2348,8 +2348,8 @@ class Sda(object):
         """Get virtual network (VN) from SDA Fabric .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2365,14 +2365,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -2437,7 +2437,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2483,7 +2483,7 @@ class Sda(object):
         """Get Virtual Network Summary .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Complete fabric siteNameHierarchy
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Complete fabric siteNameHierarchy
                 Path .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2500,12 +2500,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2542,9 +2542,9 @@ class Sda(object):
         """Get IP Pool from SDA Virtual Network .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            ip_pool_name(basestring): ipPoolName query parameter. ipPoolName. Note: Use vlanName as a value for this
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            ip_pool_name(str): ipPoolName query parameter. ipPoolName. Note: Use vlanName as a value for this
                 parameter if same ip pool is assigned to multiple virtual networks (e.g..
                 ipPoolName=vlan1021) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2562,16 +2562,16 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(ip_pool_name, basestring,
+        check_type(ip_pool_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2612,9 +2612,9 @@ class Sda(object):
         """Delete IP Pool from SDA Virtual Network .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            ip_pool_name(basestring): ipPoolName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            ip_pool_name(str): ipPoolName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2630,16 +2630,16 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(ip_pool_name, basestring,
+        check_type(ip_pool_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2743,7 +2743,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2841,10 +2841,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2907,7 +2907,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2953,13 +2953,13 @@ class Sda(object):
         """Returns a list of anycast gateways that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the anycast gateway to search for in the database. .
-            fabric_id(basestring): fabricId query parameter. Get anycast gateways within this fabric. .
-            virtual_network_name(basestring): virtualNetworkName query parameter. Get anycast gateways associated
+            id(str): id query parameter. ID of the anycast gateway to search for in the database. .
+            fabric_id(str): fabricId query parameter. Get anycast gateways within this fabric. .
+            virtual_network_name(str): virtualNetworkName query parameter. Get anycast gateways associated
                 with this virtual network. .
-            ip_pool_name(basestring): ipPoolName query parameter. Get anycast gateways associated with this IP pool.
+            ip_pool_name(str): ipPoolName query parameter. Get anycast gateways associated with this IP pool.
                 .
-            vlan_name(basestring): vlanName query parameter. Get anycast gateways associated with this VLAN name. .
+            vlan_name(str): vlanName query parameter. Get anycast gateways associated with this VLAN name. .
             vlan_id(int): vlanId query parameter. Get anycast gateways associated with this VLAN ID. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -2978,18 +2978,18 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(fabric_id, basestring)
-        check_type(virtual_network_name, basestring)
-        check_type(ip_pool_name, basestring)
-        check_type(vlan_name, basestring)
+        check_type(id, str)
+        check_type(fabric_id, str)
+        check_type(virtual_network_name, str)
+        check_type(ip_pool_name, str)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -3042,12 +3042,12 @@ class Sda(object):
         """Returns the count of anycast gateways that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. Only count anycast gateways within this fabric. .
-            virtual_network_name(basestring): virtualNetworkName query parameter. Only count anycast gateways
+            fabric_id(str): fabricId query parameter. Only count anycast gateways within this fabric. .
+            virtual_network_name(str): virtualNetworkName query parameter. Only count anycast gateways
                 associated with this virtual network. .
-            ip_pool_name(basestring): ipPoolName query parameter. Only count anycast gateways associated with this
+            ip_pool_name(str): ipPoolName query parameter. Only count anycast gateways associated with this
                 IP pool. .
-            vlan_name(basestring): vlanName query parameter. Only count anycast gateways associated with this VLAN
+            vlan_name(str): vlanName query parameter. Only count anycast gateways associated with this VLAN
                 name. .
             vlan_id(int): vlanId query parameter. Only count anycast gateways associated with this VLAN ID. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3065,15 +3065,15 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(virtual_network_name, basestring)
-        check_type(ip_pool_name, basestring)
-        check_type(vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(virtual_network_name, str)
+        check_type(ip_pool_name, str)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3116,7 +3116,7 @@ class Sda(object):
         """Deletes an anycast gateway based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the anycast gateway to be deleted. .
+            id(str): id path parameter. ID of the anycast gateway to be deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3132,12 +3132,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3172,9 +3172,9 @@ class Sda(object):
         """Returns a list of authentication profiles that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric whose authentication profiles are to
+            fabric_id(str): fabricId query parameter. ID of the fabric whose authentication profiles are to
                 be returned. .
-            authentication_profile_name(basestring): authenticationProfileName query parameter. Return only the
+            authentication_profile_name(str): authenticationProfileName query parameter. Return only the
                 authentication profiles with this specified name. Note that 'No Authentication' is not a
                 valid option for this parameter. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3192,12 +3192,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(authentication_profile_name, basestring)
+        check_type(fabric_id, str)
+        check_type(authentication_profile_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3258,7 +3258,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3321,10 +3321,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3387,7 +3387,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3428,7 +3428,7 @@ class Sda(object):
         """Returns a list of extranet policies that match the provided query parameters. .
 
         Args:
-            extranet_policy_name(basestring): extranetPolicyName query parameter. Name of the extranet policy. .
+            extranet_policy_name(str): extranetPolicyName query parameter. Name of the extranet policy. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3446,13 +3446,13 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(extranet_policy_name, basestring)
+        check_type(extranet_policy_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'extranetPolicyName':
@@ -3508,7 +3508,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3541,7 +3541,7 @@ class Sda(object):
         """Deletes an extranet policy based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the extranet policy. .
+            id(str): id path parameter. ID of the extranet policy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3557,12 +3557,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3600,10 +3600,10 @@ class Sda(object):
         """Returns a list of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. .
+            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3621,16 +3621,16 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
-        check_type(device_roles, basestring)
+        check_type(network_device_id, str)
+        check_type(device_roles, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3697,7 +3697,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3738,10 +3738,10 @@ class Sda(object):
         """Deletes fabric devices based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. .
+            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3757,14 +3757,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
-        check_type(device_roles, basestring)
+        check_type(network_device_id, str)
+        check_type(device_roles, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3827,7 +3827,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3868,10 +3868,10 @@ class Sda(object):
         """Returns the count of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. .
+            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3887,14 +3887,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
-        check_type(device_roles, basestring)
+        check_type(network_device_id, str)
+        check_type(device_roles, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3934,8 +3934,8 @@ class Sda(object):
         """Deletes layer 2 handoffs of a fabric device based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3952,14 +3952,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3999,8 +3999,8 @@ class Sda(object):
         """Returns a list of layer 2 handoffs of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4019,15 +4019,15 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4092,7 +4092,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4132,8 +4132,8 @@ class Sda(object):
         """Returns the count of layer 2 handoffs of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4150,13 +4150,13 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4194,7 +4194,7 @@ class Sda(object):
         """Deletes a layer 2 handoff of a fabric device based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the layer 2 handoff of a fabric device. .
+            id(str): id path parameter. ID of the layer 2 handoff of a fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4210,12 +4210,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4273,10 +4273,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4340,7 +4340,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4381,8 +4381,8 @@ class Sda(object):
         """Deletes layer 3 handoffs with ip transit of a fabric device based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4399,14 +4399,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4447,8 +4447,8 @@ class Sda(object):
         """Returns a list of layer 3 handoffs with ip transit of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4467,15 +4467,15 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4519,8 +4519,8 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4537,13 +4537,13 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4581,7 +4581,7 @@ class Sda(object):
         """Deletes a layer 3 handoff with ip transit of a fabric device by id. .
 
         Args:
-            id(basestring): id path parameter. ID of the layer 3 handoff with ip transit of a fabric device to be
+            id(str): id path parameter. ID of the layer 3 handoff with ip transit of a fabric device to be
                 deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4598,12 +4598,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4662,10 +4662,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4709,8 +4709,8 @@ class Sda(object):
         .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4729,15 +4729,15 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4780,8 +4780,8 @@ class Sda(object):
         """Deletes layer 3 handoffs with sda transit of a fabric device based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4798,14 +4798,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4867,7 +4867,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4909,8 +4909,8 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4927,13 +4927,13 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4971,7 +4971,7 @@ class Sda(object):
         """Deletes a fabric device based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the fabric device. .
+            id(str): id path parameter. ID of the fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4987,12 +4987,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5029,8 +5029,8 @@ class Sda(object):
         """Returns a list of fabric sites that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the fabric site to search for in the database. .
-            site_id(basestring): siteId query parameter. Get the fabric site associated with this network hierarchy.
+            id(str): id query parameter. ID of the fabric site to search for in the database. .
+            site_id(str): siteId query parameter. Get the fabric site associated with this network hierarchy.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -5049,14 +5049,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(site_id, basestring)
+        check_type(id, str)
+        check_type(site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -5121,7 +5121,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5184,7 +5184,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5240,7 +5240,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5273,7 +5273,7 @@ class Sda(object):
         """Deletes a fabric site based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the fabric site to be deleted. .
+            id(str): id path parameter. ID of the fabric site to be deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5289,12 +5289,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5331,8 +5331,8 @@ class Sda(object):
         """Returns a list of fabric zones that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the fabric zone to search for in the database. .
-            site_id(basestring): siteId query parameter. get the fabric zone associated with this network hierarchy.
+            id(str): id query parameter. ID of the fabric zone to search for in the database. .
+            site_id(str): siteId query parameter. get the fabric zone associated with this network hierarchy.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -5351,14 +5351,14 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(site_id, basestring)
+        check_type(id, str)
+        check_type(site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -5423,7 +5423,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5486,7 +5486,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5542,7 +5542,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5575,7 +5575,7 @@ class Sda(object):
         """Deletes a fabric zone based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the fabric zone to be deleted. .
+            id(str): id path parameter. ID of the fabric zone to be deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5591,12 +5591,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5654,10 +5654,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5702,12 +5702,12 @@ class Sda(object):
         """Returns a list of port assignments that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port assignment
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the port assignment
                 .
-            interface_name(basestring): interfaceName query parameter. Interface Name of the port assignment .
-            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment .
-            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment .
+            interface_name(str): interfaceName query parameter. Interface Name of the port assignment .
+            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
+            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
             offset(int): offset query parameter. Starting record for pagination .
             limit(int): limit query parameter. Maximum number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -5725,17 +5725,17 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(interface_name, basestring)
-        check_type(data_vlan_name, basestring)
-        check_type(voice_vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(network_device_id, str)
+        check_type(interface_name, str)
+        check_type(data_vlan_name, str)
+        check_type(voice_vlan_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5806,7 +5806,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5849,12 +5849,12 @@ class Sda(object):
         """Deletes port assignments based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port assignment
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the port assignment
                 .
-            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment .
-            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment .
-            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment .
+            interface_name(str): interfaceName query parameter. Interface name of the port assignment .
+            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
+            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5870,17 +5870,17 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
-        check_type(interface_name, basestring)
-        check_type(data_vlan_name, basestring)
-        check_type(voice_vlan_name, basestring)
+        check_type(interface_name, str)
+        check_type(data_vlan_name, str)
+        check_type(voice_vlan_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5927,12 +5927,12 @@ class Sda(object):
         """Returns the count of port assignments that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port assignment
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the port assignment
                 .
-            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment .
-            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment .
-            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment .
+            interface_name(str): interfaceName query parameter. Interface name of the port assignment .
+            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
+            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5948,15 +5948,15 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(interface_name, basestring)
-        check_type(data_vlan_name, basestring)
-        check_type(voice_vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(network_device_id, str)
+        check_type(interface_name, str)
+        check_type(data_vlan_name, str)
+        check_type(voice_vlan_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5999,7 +5999,7 @@ class Sda(object):
         """Deletes a port assignment based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the port assignment. .
+            id(str): id path parameter. ID of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6015,12 +6015,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6055,8 +6055,8 @@ class Sda(object):
         """Delete provisioned devices based on query parameters. .
 
         Args:
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            site_id(str): siteId query parameter. ID of the site hierarchy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6072,12 +6072,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring)
-        check_type(site_id, basestring)
+        check_type(network_device_id, str)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'networkDeviceId':
@@ -6138,7 +6138,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6181,9 +6181,9 @@ class Sda(object):
         """Returns the list of provisioned devices based on query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the provisioned device. .
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            id(str): id query parameter. ID of the provisioned device. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            site_id(str): siteId query parameter. ID of the site hierarchy. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of devices to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -6201,15 +6201,15 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(site_id, basestring)
+        check_type(id, str)
+        check_type(network_device_id, str)
+        check_type(site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -6276,7 +6276,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6315,7 +6315,7 @@ class Sda(object):
         """Returns the count of provisioned devices based on query parameters. .
 
         Args:
-            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            site_id(str): siteId query parameter. ID of the site hierarchy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6331,11 +6331,11 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -6370,7 +6370,7 @@ class Sda(object):
         """Deletes provisioned device based on Id. .
 
         Args:
-            id(basestring): id path parameter. ID of provisioned device. .
+            id(str): id path parameter. ID of provisioned device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6386,12 +6386,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6457,7 +6457,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6507,7 +6507,7 @@ class Sda(object):
         """Delete virtual network with scalable groups .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6523,12 +6523,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -6563,7 +6563,7 @@ class Sda(object):
         """Get virtual network with scalable groups .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6579,12 +6579,12 @@ class Sda(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -6653,7 +6653,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

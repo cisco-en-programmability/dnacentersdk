@@ -27,7 +27,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import logging
 from builtins import *
 
-from past.builtins import basestring
+
 from requests.exceptions import HTTPError
 
 from ..restsession import RestSession
@@ -92,8 +92,8 @@ class CustomCaller(object):
         """Handles the requests and response.
 
         Args:
-            method(basestring): type of request.
-            resource_path(basestring): URL in the request object.
+            method(str): type of request.
+            resource_path(str): URL in the request object.
             raise_exception(bool): If True, http exceptions will be raised.
             original_response(bool): If True, MyDict (JSON response) is
                 returned, else response object.
@@ -124,7 +124,7 @@ class CustomCaller(object):
                 verified. A CA_BUNDLE path can also be provided as a string.
             stream(optional): if False, the response content will be
                 immediately downloaded.
-            cert(basestring, tuple) (optional): if String, path to ssl client
+            cert(str, tuple) (optional): if String, path to ssl client
                 cert file (.pem). If Tuple, (‘cert’, ‘key’) pair
 
         Returns:

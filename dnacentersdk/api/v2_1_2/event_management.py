@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -73,7 +73,7 @@ class EventManagement(object):
         """Returns the Count of EventSubscriptions.
 
         Args:
-            event_ids(basestring): List of subscriptions related to the respective eventIds.
+            event_ids(str): List of subscriptions related to the respective eventIds.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -89,12 +89,12 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring,
+        check_type(event_ids, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -135,12 +135,12 @@ class EventManagement(object):
         tags as mandatory.
 
         Args:
-            event_id(basestring): The registered EventId should be provided.
-            tags(basestring): The registered Tags should be provided.
+            event_id(str): The registered EventId should be provided.
+            tags(str): The registered Tags should be provided.
             offset(int): The number of Registries to offset in the resultset whose default value 0.
             limit(int): The number of Registries to limit in the resultset whose default value 10.
-            sort_by(basestring): SortBy field name.
-            order(basestring): order query parameter.
+            sort_by(str): SortBy field name.
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -157,17 +157,17 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(event_id, basestring)
-        check_type(tags, basestring,
+        check_type(event_id, str)
+        check_type(tags, str,
                    may_be_none=False)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventId':
@@ -236,10 +236,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -303,10 +303,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -348,8 +348,8 @@ class EventManagement(object):
         tags as mandatory.
 
         Args:
-            event_id(basestring): The registered EventId should be provided.
-            tags(basestring): The registered Tags should be provided.
+            event_id(str): The registered EventId should be provided.
+            tags(str): The registered Tags should be provided.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -365,13 +365,13 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(event_id, basestring)
-        check_type(tags, basestring,
+        check_type(event_id, str)
+        check_type(tags, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventId':
@@ -416,15 +416,15 @@ class EventManagement(object):
         """Get the Count of Published Notifications.
 
         Args:
-            event_ids(basestring): The registered EventIds should be provided.
-            start_time(basestring): StartTime .
-            end_time(basestring): endTime .
-            category(basestring): category .
-            type(basestring): type .
-            severity(basestring): severity .
-            domain(basestring): domain .
-            sub_domain(basestring): subDomain .
-            source(basestring): source .
+            event_ids(str): The registered EventIds should be provided.
+            start_time(str): StartTime .
+            end_time(str): endTime .
+            category(str): category .
+            type(str): type .
+            severity(str): severity .
+            domain(str): domain .
+            sub_domain(str): subDomain .
+            source(str): source .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -440,19 +440,19 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
-        check_type(start_time, basestring)
-        check_type(end_time, basestring)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
+        check_type(event_ids, str)
+        check_type(start_time, str)
+        check_type(end_time, str)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -503,7 +503,7 @@ class EventManagement(object):
         """Delete EventSubscriptions.
 
         Args:
-            subscriptions(basestring): List of EventSubscriptionId's for removal.
+            subscriptions(str): List of EventSubscriptionId's for removal.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -519,15 +519,15 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(subscriptions, basestring,
+        check_type(subscriptions, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'subscriptions':
@@ -567,11 +567,11 @@ class EventManagement(object):
         limit.
 
         Args:
-            event_ids(basestring): List of subscriptions related to the respective eventIds.
+            event_ids(str): List of subscriptions related to the respective eventIds.
             offset(int): The number of Subscriptions's to offset in the resultset whose default value 0.
             limit(int): The number of Subscriptions's to limit in the resultset whose default value 10.
-            sort_by(basestring): SortBy field name.
-            order(basestring): order query parameter.
+            sort_by(str): SortBy field name.
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -588,15 +588,15 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -640,7 +640,7 @@ class EventManagement(object):
         mandatory path parameter.
 
         Args:
-            execution_id(basestring): Execution ID.
+            execution_id(str): Execution ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -656,12 +656,12 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(execution_id, basestring,
+        check_type(execution_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -707,19 +707,19 @@ class EventManagement(object):
         """Get the list of Published Notifications.
 
         Args:
-            event_ids(basestring): The registered EventIds should be provided.
-            start_time(basestring): StartTime .
-            end_time(basestring): endTime .
-            category(basestring): category .
-            type(basestring): type .
-            severity(basestring): severity .
-            domain(basestring): domain .
-            sub_domain(basestring): subDomain .
-            source(basestring): source .
+            event_ids(str): The registered EventIds should be provided.
+            start_time(str): StartTime .
+            end_time(str): endTime .
+            category(str): category .
+            type(str): type .
+            severity(str): severity .
+            domain(str): domain .
+            sub_domain(str): subDomain .
+            source(str): source .
             offset(int): Offset whose default value 0.
             limit(int): Limit whose default value 10.
-            sort_by(basestring): SortBy field name.
-            order(basestring): order query parameter.
+            sort_by(str): SortBy field name.
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -735,23 +735,23 @@ class EventManagement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
-        check_type(start_time, basestring)
-        check_type(end_time, basestring)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
+        check_type(event_ids, str)
+        check_type(start_time, str)
+        check_type(end_time, str)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':

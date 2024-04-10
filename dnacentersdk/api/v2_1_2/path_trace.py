@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -89,20 +89,20 @@ class PathTrace(object):
 
         Args:
             periodic_refresh(bool): Is analysis periodically refreshed?.
-            source_ip(basestring): Source IP address.
-            dest_ip(basestring): Destination IP adress.
-            source_port(basestring): Source port.
-            dest_port(basestring): Destination port.
-            gt_create_time(basestring): Analyses requested after this time.
-            lt_create_time(basestring): Analyses requested before this time.
-            protocol(basestring): protocol query parameter.
-            status(basestring): status query parameter.
-            task_id(basestring): Task ID.
-            last_update_time(basestring): Last update time.
-            limit(basestring): Number of resources returned.
-            offset(basestring): Start index of resources returned (1-based).
-            order(basestring): Order by this field.
-            sort_by(basestring): Sort by this field.
+            source_ip(str): Source IP address.
+            dest_ip(str): Destination IP adress.
+            source_port(str): Source port.
+            dest_port(str): Destination port.
+            gt_create_time(str): Analyses requested after this time.
+            lt_create_time(str): Analyses requested before this time.
+            protocol(str): protocol query parameter.
+            status(str): status query parameter.
+            task_id(str): Task ID.
+            last_update_time(str): Last update time.
+            limit(str): Number of resources returned.
+            offset(str): Start index of resources returned (1-based).
+            order(str): Order by this field.
+            sort_by(str): Sort by this field.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -119,24 +119,24 @@ class PathTrace(object):
         """
         check_type(headers, dict)
         check_type(periodic_refresh, bool)
-        check_type(source_ip, basestring)
-        check_type(dest_ip, basestring)
-        check_type(source_port, basestring)
-        check_type(dest_port, basestring)
-        check_type(gt_create_time, basestring)
-        check_type(lt_create_time, basestring)
-        check_type(protocol, basestring)
-        check_type(status, basestring)
-        check_type(task_id, basestring)
-        check_type(last_update_time, basestring)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
-        check_type(order, basestring)
-        check_type(sort_by, basestring)
+        check_type(source_ip, str)
+        check_type(dest_ip, str)
+        check_type(source_port, str)
+        check_type(dest_port, str)
+        check_type(gt_create_time, str)
+        check_type(lt_create_time, str)
+        check_type(protocol, str)
+        check_type(status, str)
+        check_type(task_id, str)
+        check_type(last_update_time, str)
+        check_type(limit, str)
+        check_type(offset, str)
+        check_type(order, str)
+        check_type(sort_by, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'periodicRefresh':
@@ -200,7 +200,7 @@ class PathTrace(object):
         Flow Analysis id.
 
         Args:
-            flow_analysis_id(basestring): Flow analysis request id.
+            flow_analysis_id(str): Flow analysis request id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -216,12 +216,12 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, basestring,
+        check_type(flow_analysis_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -255,7 +255,7 @@ class PathTrace(object):
         """Deletes a flow analysis request by its id.
 
         Args:
-            flow_analysis_id(basestring): Flow analysis request id.
+            flow_analysis_id(str): Flow analysis request id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -271,12 +271,12 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, basestring,
+        check_type(flow_analysis_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -352,10 +352,10 @@ class PathTrace(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

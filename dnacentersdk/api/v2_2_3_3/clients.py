@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -74,9 +74,9 @@ class Clients(object):
         """Returns detailed Client information retrieved by Mac Address for any given point of time.  .
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Client health
+            timestamp(str): timestamp query parameter. Epoch time(in milliseconds) when the Client health
                 data is required .
-            mac_address(basestring): macAddress query parameter. MAC Address of the client .
+            mac_address(str): macAddress query parameter. MAC Address of the client .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -92,13 +92,13 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, basestring)
-        check_type(mac_address, basestring,
+        check_type(timestamp, str)
+        check_type(mac_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -158,16 +158,16 @@ class Clients(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'issueCategory' in headers:
                 check_type(headers.get('issueCategory'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -200,7 +200,7 @@ class Clients(object):
         """Returns Overall Client Health information by Client type (Wired and Wireless) for any given point of time .
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Client health
+            timestamp(str): timestamp query parameter. Epoch time(in milliseconds) when the Client health
                 data is required .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -217,11 +217,11 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, basestring)
+        check_type(timestamp, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -264,7 +264,7 @@ class Clients(object):
         this API call: NETWORK-CLIENTS-3-506 Client Proximity Report. .
 
         Args:
-            username(basestring): username query parameter. Wireless client username for which proximity information
+            username(str): username query parameter. Wireless client username for which proximity information
                 is required .
             number_days(int): number_days query parameter. Number of days to track proximity until current date.
                 Defaults and maximum up to 14 days. .
@@ -285,14 +285,14 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(username, basestring,
+        check_type(username, str,
                    may_be_none=False)
         check_type(number_days, int)
         check_type(time_resolution, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'username':

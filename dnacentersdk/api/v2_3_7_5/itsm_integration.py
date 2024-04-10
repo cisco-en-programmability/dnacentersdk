@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -105,7 +105,7 @@ class ItsmIntegration(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -165,7 +165,7 @@ class ItsmIntegration(object):
             description(string): ITSM Integration's Description of the setting instance .
             dypName(string): ITSM Integration's It can be ServiceNowConnection .
             name(string): ITSM Integration's Name of the setting instance .
-            instance_id(basestring): instanceId path parameter. Instance Id of the Integration setting instance .
+            instance_id(str): instanceId path parameter. Instance Id of the Integration setting instance .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -186,12 +186,12 @@ class ItsmIntegration(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(instance_id, basestring,
+        check_type(instance_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -243,7 +243,7 @@ class ItsmIntegration(object):
         """Fetches ITSM Integration setting by ID .
 
         Args:
-            instance_id(basestring): instanceId path parameter. Instance Id of the Integration setting instance .
+            instance_id(str): instanceId path parameter. Instance Id of the Integration setting instance .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -259,12 +259,12 @@ class ItsmIntegration(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(instance_id, basestring,
+        check_type(instance_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -299,7 +299,7 @@ class ItsmIntegration(object):
         """Deletes the ITSM Integration setting .
 
         Args:
-            instance_id(basestring): instanceId path parameter. Instance Id of the Integration setting instance .
+            instance_id(str): instanceId path parameter. Instance Id of the Integration setting instance .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -315,12 +315,12 @@ class ItsmIntegration(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(instance_id, basestring,
+        check_type(instance_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -373,7 +373,7 @@ class ItsmIntegration(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -423,7 +423,7 @@ class ItsmIntegration(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

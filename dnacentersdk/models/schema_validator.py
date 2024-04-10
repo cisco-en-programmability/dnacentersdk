@@ -6584,7 +6584,7 @@ class SchemaValidator:
         """Factory function for creating JSONSchemaValidator objects.
 
         Args:
-            model(basestring).
+            model(str).
 
         Returns:
             JSONSchemaValidator: The created JSONSchemaValidator object.

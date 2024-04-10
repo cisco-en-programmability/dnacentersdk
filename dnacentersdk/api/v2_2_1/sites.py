@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -77,7 +77,7 @@ class Sites(object):
 
         Args:
             device(list): Sites's device (list of objects).
-            site_id(basestring): siteId path parameter. Site id to which site the device to assign.
+            site_id(str): siteId path parameter. Site id to which site the device to assign.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -98,7 +98,7 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if '__runsync' in headers:
@@ -112,7 +112,7 @@ class Sites(object):
                            int)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -157,7 +157,7 @@ class Sites(object):
         """Returns Overall Health information for all sites.
 
         Args:
-            timestamp(basestring): timestamp query parameter. Epoch time(in milliseconds) when the Site Hierarchy
+            timestamp(str): timestamp query parameter. Epoch time(in milliseconds) when the Site Hierarchy
                 data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -174,11 +174,11 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, basestring)
+        check_type(timestamp, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -220,11 +220,11 @@ class Sites(object):
         """Get site using siteNameHierarchy/siteId/type ,return all sites if these parameters are not given as input.
 
         Args:
-            name(basestring): name query parameter. siteNameHierarchy (ex: global/groupName).
-            site_id(basestring): siteId query parameter. Site id to which site details to retrieve.
-            type(basestring): type query parameter. type (ex: area, building, floor).
-            offset(basestring): offset query parameter. offset/starting row.
-            limit(basestring): limit query parameter. Number of sites to be retrieved.
+            name(str): name query parameter. siteNameHierarchy (ex: global/groupName).
+            site_id(str): siteId query parameter. Site id to which site details to retrieve.
+            type(str): type query parameter. type (ex: area, building, floor).
+            offset(str): offset query parameter. offset/starting row.
+            limit(str): limit query parameter. Number of sites to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -240,15 +240,15 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(site_id, basestring)
-        check_type(type, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(name, str)
+        check_type(site_id, str)
+        check_type(type, str)
+        check_type(offset, str)
+        check_type(limit, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -328,7 +328,7 @@ class Sites(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -374,7 +374,7 @@ class Sites(object):
         """API to get site count .
 
         Args:
-            site_id(basestring): siteId query parameter.  Site id to retrieve site count.
+            site_id(str): siteId query parameter.  Site id to retrieve site count.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -390,11 +390,11 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -435,7 +435,7 @@ class Sites(object):
         Args:
             site(object): Sites's site.
             type(string): Sites's type. Available values are 'area', 'building' and 'floor'.
-            site_id(basestring): siteId path parameter. Site id to which site details to be updated.
+            site_id(str): siteId path parameter. Site id to which site details to be updated.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -456,7 +456,7 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if '__runsync' in headers:
@@ -470,7 +470,7 @@ class Sites(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -517,7 +517,7 @@ class Sites(object):
         """Delete site with area/building/floor by siteId.
 
         Args:
-            site_id(basestring): siteId path parameter. Site id to which site details to be deleted.
+            site_id(str): siteId path parameter. Site id to which site details to be deleted.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -533,12 +533,12 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -576,11 +576,11 @@ class Sites(object):
         """Getting the site children details and device details.
 
         Args:
-            site_id(basestring): siteId path parameter. Site id to retrieve device associated with the site.
-            offset(basestring): offset query parameter. offset/starting row.
-            limit(basestring): limit query parameter. Number of sites to be retrieved.
-            device_family(basestring): deviceFamily query parameter. Device family name .
-            serial_number(basestring): serialNumber query parameter. Device serial number.
+            site_id(str): siteId path parameter. Site id to retrieve device associated with the site.
+            offset(str): offset query parameter. offset/starting row.
+            limit(str): limit query parameter. Number of sites to be retrieved.
+            device_family(str): deviceFamily query parameter. Device family name .
+            serial_number(str): serialNumber query parameter. Device serial number.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -596,16 +596,16 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
-        check_type(device_family, basestring)
-        check_type(serial_number, basestring)
-        check_type(site_id, basestring,
+        check_type(offset, str)
+        check_type(limit, str)
+        check_type(device_family, str)
+        check_type(serial_number, str)
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':

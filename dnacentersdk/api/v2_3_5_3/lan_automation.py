@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -99,10 +99,10 @@ class LanAutomation(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -176,7 +176,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -247,7 +247,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -300,7 +300,7 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session logs based on the given LAN Automation session id. .
 
         Args:
-            id(basestring): id path parameter. LAN Automation session identifier. .
+            id(str): id path parameter. LAN Automation session identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -318,12 +318,12 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-log-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -374,9 +374,9 @@ class LanAutomation(object):
         session id and device serial number.  .
 
         Args:
-            id(basestring): id path parameter. LAN Automation session identifier. .
-            serial_number(basestring): serialNumber path parameter. Device serial number. .
-            log_level(basestring): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE,
+            id(str): id path parameter. LAN Automation session identifier. .
+            serial_number(str): serialNumber path parameter. Device serial number. .
+            log_level(str): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE,
                 CONFIG and ALL. Specifying ALL will display device specific logs with the exception of
                 CONFIG logs. In order to view CONFIG logs along with the remaining logs, please leave
                 the query parameter blank. .
@@ -397,15 +397,15 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-logs-for-individual-devices
         """
         check_type(headers, dict)
-        check_type(log_level, basestring)
-        check_type(id, basestring,
+        check_type(log_level, str)
+        check_type(id, str,
                    may_be_none=False)
-        check_type(serial_number, basestring,
+        check_type(serial_number, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'logLevel':
@@ -462,7 +462,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -521,7 +521,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -574,7 +574,7 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session status based on the given Lan Automation session id. .
 
         Args:
-            id(basestring): id path parameter. LAN Automation session identifier. .
+            id(str): id path parameter. LAN Automation session identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -592,12 +592,12 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-status-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -645,7 +645,7 @@ class LanAutomation(object):
         """Invoke this API to stop LAN Automation for the given site.  .
 
         Args:
-            id(basestring): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
+            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
                 automation/status. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -664,12 +664,12 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-stop
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

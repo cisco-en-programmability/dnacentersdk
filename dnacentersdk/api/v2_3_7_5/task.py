@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -73,7 +73,7 @@ class Task(object):
         """Retrieves the execution details of a Business API .
 
         Args:
-            execution_id(basestring): executionId path parameter. Execution Id of API .
+            execution_id(str): executionId path parameter. Execution Id of API .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -89,12 +89,12 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(execution_id, basestring,
+        check_type(execution_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -142,24 +142,24 @@ class Task(object):
         """Returns task(s) based on filter criteria .
 
         Args:
-            start_time(basestring): startTime query parameter. This is the epoch start time from which tasks need to
+            start_time(str): startTime query parameter. This is the epoch start time from which tasks need to
                 be fetched .
-            end_time(basestring): endTime query parameter. This is the epoch end time upto which audit records need
+            end_time(str): endTime query parameter. This is the epoch end time upto which audit records need
                 to be fetched .
-            data(basestring): data query parameter. Fetch tasks that contains this data .
-            error_code(basestring): errorCode query parameter. Fetch tasks that have this error code .
-            service_type(basestring): serviceType query parameter. Fetch tasks with this service type .
-            username(basestring): username query parameter. Fetch tasks with this username .
-            progress(basestring): progress query parameter. Fetch tasks that contains this progress .
-            is_error(basestring): isError query parameter. Fetch tasks ended as success or failure. Valid values:
+            data(str): data query parameter. Fetch tasks that contains this data .
+            error_code(str): errorCode query parameter. Fetch tasks that have this error code .
+            service_type(str): serviceType query parameter. Fetch tasks with this service type .
+            username(str): username query parameter. Fetch tasks with this username .
+            progress(str): progress query parameter. Fetch tasks that contains this progress .
+            is_error(str): isError query parameter. Fetch tasks ended as success or failure. Valid values:
                 true, false .
-            failure_reason(basestring): failureReason query parameter. Fetch tasks that contains this failure reason
+            failure_reason(str): failureReason query parameter. Fetch tasks that contains this failure reason
                 .
-            parent_id(basestring): parentId query parameter. Fetch tasks that have this parent Id .
+            parent_id(str): parentId query parameter. Fetch tasks that have this parent Id .
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            sort_by(basestring): sortBy query parameter. Sort results by this field .
-            order(basestring): order query parameter. Sort order asc or dsc .
+            sort_by(str): sortBy query parameter. Sort results by this field .
+            order(str): order query parameter. Sort order asc or dsc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -175,24 +175,24 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(start_time, basestring)
-        check_type(end_time, basestring)
-        check_type(data, basestring)
-        check_type(error_code, basestring)
-        check_type(service_type, basestring)
-        check_type(username, basestring)
-        check_type(progress, basestring)
-        check_type(is_error, basestring)
-        check_type(failure_reason, basestring)
-        check_type(parent_id, basestring)
+        check_type(start_time, str)
+        check_type(end_time, str)
+        check_type(data, str)
+        check_type(error_code, str)
+        check_type(service_type, str)
+        check_type(username, str)
+        check_type(progress, str)
+        check_type(is_error, str)
+        check_type(failure_reason, str)
+        check_type(parent_id, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -262,20 +262,20 @@ class Task(object):
         """Returns Task count .
 
         Args:
-            start_time(basestring): startTime query parameter. This is the epoch start time from which tasks need to
+            start_time(str): startTime query parameter. This is the epoch start time from which tasks need to
                 be fetched .
-            end_time(basestring): endTime query parameter. This is the epoch end time upto which audit records need
+            end_time(str): endTime query parameter. This is the epoch end time upto which audit records need
                 to be fetched .
-            data(basestring): data query parameter. Fetch tasks that contains this data .
-            error_code(basestring): errorCode query parameter. Fetch tasks that have this error code .
-            service_type(basestring): serviceType query parameter. Fetch tasks with this service type .
-            username(basestring): username query parameter. Fetch tasks with this username .
-            progress(basestring): progress query parameter. Fetch tasks that contains this progress .
-            is_error(basestring): isError query parameter. Fetch tasks ended as success or failure. Valid values:
+            data(str): data query parameter. Fetch tasks that contains this data .
+            error_code(str): errorCode query parameter. Fetch tasks that have this error code .
+            service_type(str): serviceType query parameter. Fetch tasks with this service type .
+            username(str): username query parameter. Fetch tasks with this username .
+            progress(str): progress query parameter. Fetch tasks that contains this progress .
+            is_error(str): isError query parameter. Fetch tasks ended as success or failure. Valid values:
                 true, false .
-            failure_reason(basestring): failureReason query parameter. Fetch tasks that contains this failure reason
+            failure_reason(str): failureReason query parameter. Fetch tasks that contains this failure reason
                 .
-            parent_id(basestring): parentId query parameter. Fetch tasks that have this parent Id .
+            parent_id(str): parentId query parameter. Fetch tasks that have this parent Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -291,20 +291,20 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(start_time, basestring)
-        check_type(end_time, basestring)
-        check_type(data, basestring)
-        check_type(error_code, basestring)
-        check_type(service_type, basestring)
-        check_type(username, basestring)
-        check_type(progress, basestring)
-        check_type(is_error, basestring)
-        check_type(failure_reason, basestring)
-        check_type(parent_id, basestring)
+        check_type(start_time, str)
+        check_type(end_time, str)
+        check_type(data, str)
+        check_type(error_code, str)
+        check_type(service_type, str)
+        check_type(username, str)
+        check_type(progress, str)
+        check_type(is_error, str)
+        check_type(failure_reason, str)
+        check_type(parent_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -359,7 +359,7 @@ class Task(object):
         """Returns root tasks associated with an Operationid .
 
         Args:
-            operation_id(basestring): operationId path parameter.
+            operation_id(str): operationId path parameter.
             offset(int): offset path parameter. Index, minimum value is 0 .
             limit(int): limit path parameter. The maximum value of {limit} supported is 500.               Base 1
                 indexing for {limit}, minimum value is 1 .
@@ -378,7 +378,7 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(operation_id, basestring,
+        check_type(operation_id, str,
                    may_be_none=False)
         check_type(offset, int,
                    may_be_none=False)
@@ -387,7 +387,7 @@ class Task(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -424,7 +424,7 @@ class Task(object):
         """Returns a task by specified id .
 
         Args:
-            task_id(basestring): taskId path parameter. UUID of the Task .
+            task_id(str): taskId path parameter. UUID of the Task .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -440,12 +440,12 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring,
+        check_type(task_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -479,7 +479,7 @@ class Task(object):
         """Returns a task with its children tasks by based on their id .
 
         Args:
-            task_id(basestring): taskId path parameter. UUID of the Task .
+            task_id(str): taskId path parameter. UUID of the Task .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -495,12 +495,12 @@ class Task(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring,
+        check_type(task_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -76,9 +76,9 @@ class Compliance(object):
         """Return compliance status of device(s). .
 
         Args:
-            compliance_status(basestring): complianceStatus query parameter. Compliance status can be have value
+            compliance_status(str): complianceStatus query parameter. Compliance status can be have value
                 among 'COMPLIANT','NON_COMPLIANT','IN_PROGRESS', 'ERROR' .
-            device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids .
+            device_uuid(str): deviceUuid query parameter. Comma separated deviceUuids .
             offset(int): offset query parameter. offset/starting row .
             limit(int): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -112,9 +112,9 @@ class Compliance(object):
         """Return compliance status of device(s). .
 
         Args:
-            compliance_status(basestring): complianceStatus query parameter. Compliance status can be have value
+            compliance_status(str): complianceStatus query parameter. Compliance status can be have value
                 among 'COMPLIANT','NON_COMPLIANT','IN_PROGRESS', 'ERROR' .
-            device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids .
+            device_uuid(str): deviceUuid query parameter. Comma separated deviceUuids .
             offset(int): offset query parameter. offset/starting row .
             limit(int): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -132,14 +132,14 @@ class Compliance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(compliance_status, basestring)
-        check_type(device_uuid, basestring)
+        check_type(compliance_status, str)
+        check_type(device_uuid, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'complianceStatus':
@@ -210,10 +210,10 @@ class Compliance(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -261,7 +261,7 @@ class Compliance(object):
         """Return Compliance Status Count .
 
         Args:
-            compliance_status(basestring): complianceStatus query parameter. Compliance status can have value among
+            compliance_status(str): complianceStatus query parameter. Compliance status can have value among
                 'COMPLIANT', 'NON_COMPLIANT', 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -279,11 +279,11 @@ class Compliance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(compliance_status, basestring)
+        check_type(compliance_status, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'complianceStatus':
@@ -322,15 +322,15 @@ class Compliance(object):
         """Return Compliance Detail  .
 
         Args:
-            compliance_type(basestring): complianceType query parameter. complianceType can have any value among
+            compliance_type(str): complianceType query parameter. complianceType can have any value among
                 'NETWORK_PROFILE', 'IMAGE', 'APPLICATION_VISIBILITY', 'FABRIC', 'PSIRT',
                 'RUNNING_CONFIG', 'WORKFLOW' .
-            compliance_status(basestring): complianceStatus query parameter. Compliance status can have value among
+            compliance_status(str): complianceStatus query parameter. Compliance status can have value among
                 'COMPLIANT', 'NON_COMPLIANT', 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'
                 .
-            device_uuid(basestring): deviceUuid query parameter. Comma separated deviceUuids .
-            offset(basestring): offset query parameter. offset/starting row .
-            limit(basestring): limit query parameter. Number of records to be retrieved .
+            device_uuid(str): deviceUuid query parameter. Comma separated deviceUuids .
+            offset(str): offset query parameter. offset/starting row .
+            limit(str): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -346,15 +346,15 @@ class Compliance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(compliance_type, basestring)
-        check_type(compliance_status, basestring)
-        check_type(device_uuid, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(compliance_type, str)
+        check_type(compliance_status, str)
+        check_type(device_uuid, str)
+        check_type(offset, str)
+        check_type(limit, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'complianceType':
@@ -398,10 +398,10 @@ class Compliance(object):
         """Return  Compliance Count Detail .
 
         Args:
-            compliance_type(basestring): complianceType query parameter. complianceType can have any value among
+            compliance_type(str): complianceType query parameter. complianceType can have any value among
                 'NETWORK_PROFILE', 'IMAGE', 'APPLICATION_VISIBILITY', 'FABRIC', 'PSIRT',
                 'RUNNING_CONFIG', 'WORKFLOW'. .
-            compliance_status(basestring): complianceStatus query parameter. Compliance status can have value among
+            compliance_status(str): complianceStatus query parameter. Compliance status can have value among
                 'COMPLIANT', 'NON_COMPLIANT', 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -419,12 +419,12 @@ class Compliance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(compliance_type, basestring)
-        check_type(compliance_status, basestring)
+        check_type(compliance_type, str)
+        check_type(compliance_status, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'complianceType':
@@ -461,7 +461,7 @@ class Compliance(object):
         """Return compliance status of a device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter.
+            device_uuid(str): deviceUuid path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -477,12 +477,12 @@ class Compliance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_uuid, basestring,
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -521,14 +521,14 @@ class Compliance(object):
         """Return compliance detailed report for a device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter.
-            category(basestring): category query parameter. complianceCategory can have any value among 'INTENT',
+            device_uuid(str): deviceUuid path parameter.
+            category(str): category query parameter. complianceCategory can have any value among 'INTENT',
                 'RUNNING_CONFIG' .
-            compliance_type(basestring): complianceType query parameter. complianceType can have any value among
+            compliance_type(str): complianceType query parameter. complianceType can have any value among
                 'NETWORK_DESIGN', 'NETWORK_PROFILE', 'FABRIC', 'POLICY', 'RUNNING_CONFIG' .
             diff_list(bool): diffList query parameter. diff list [ pass true to fetch the diff list ] .
-            key(basestring): key query parameter. extended attribute key .
-            value(basestring): value query parameter. extended attribute value .
+            key(str): key query parameter. extended attribute key .
+            value(str): value query parameter. extended attribute value .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -544,17 +544,17 @@ class Compliance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(category, basestring)
-        check_type(compliance_type, basestring)
+        check_type(category, str)
+        check_type(compliance_type, str)
         check_type(diff_list, bool)
-        check_type(key, basestring)
-        check_type(value, basestring)
-        check_type(device_uuid, basestring,
+        check_type(key, str)
+        check_type(value, str)
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'category':

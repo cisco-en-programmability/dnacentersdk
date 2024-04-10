@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -74,7 +74,7 @@ class Itsm(object):
         create tickets in ITSM.
 
         Args:
-            instance_id(basestring): Instance Id of the failed event as in the Runtime Dashboard.
+            instance_id(str): Instance Id of the failed event as in the Runtime Dashboard.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -91,11 +91,11 @@ class Itsm(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(instance_id, basestring)
+        check_type(instance_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'instanceId':
@@ -159,7 +159,7 @@ class Itsm(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

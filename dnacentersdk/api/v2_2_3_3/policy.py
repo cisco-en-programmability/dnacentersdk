@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -133,10 +133,10 @@ class Policy(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -220,7 +220,7 @@ class Policy(object):
         /profiling-rules/count' API can be used to find out the total number of rules in the system. .
 
         Args:
-            rule_type(basestring): ruleType query parameter. Use comma-separated list of rule types to filter the
+            rule_type(str): ruleType query parameter. Use comma-separated list of rule types to filter the
                 data. Defaults to 'Custom Rule'. .
             include_deleted(bool): includeDeleted query parameter. Flag to indicate whether deleted rules should be
                 part of the records fetched. .
@@ -228,9 +228,9 @@ class Policy(object):
                 will be fetched by default. To fetch all the records in the system, provide a large
                 value for this parameter. .
             offset(int): offset query parameter. Record offset to start data fetch at. Offset starts at zero. .
-            sort_by(basestring): sortBy query parameter. Name of the column to sort the results on. Please note that
+            sort_by(str): sortBy query parameter. Name of the column to sort the results on. Please note that
                 fetch might take more time if sorting is requested. .
-            order(basestring): order query parameter. Order to be used for sorting. .
+            order(str): order query parameter. Order to be used for sorting. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -246,16 +246,16 @@ class Policy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(rule_type, basestring)
+        check_type(rule_type, str)
         check_type(include_deleted, bool)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'ruleType':
@@ -330,10 +330,10 @@ class Policy(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -381,7 +381,7 @@ class Policy(object):
         parameters. .
 
         Args:
-            rule_type(basestring): ruleType query parameter. Use comma-separated list of rule types to filter the
+            rule_type(str): ruleType query parameter. Use comma-separated list of rule types to filter the
                 data. Defaults to 'Custom Rule'. .
             include_deleted(bool): includeDeleted query parameter. Flag to indicate whether deleted rules should be
                 part of the records fetched. .
@@ -400,12 +400,12 @@ class Policy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(rule_type, basestring)
+        check_type(rule_type, str)
         check_type(include_deleted, bool)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'ruleType':
@@ -481,7 +481,7 @@ class Policy(object):
             sourcePriority(integer): Policy's Source priority for the rule. .
             usedAttributes(list): Policy's List of attributes used in the rule. Only applicable for 'Cisco Default'
                 rules.  (list of strings).
-            rule_id(basestring): ruleId path parameter. Unique rule identifier .
+            rule_id(str): ruleId path parameter. Unique rule identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -502,15 +502,15 @@ class Policy(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(rule_id, basestring,
+        check_type(rule_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -584,7 +584,7 @@ class Policy(object):
         """Fetches details of the profiling rule for the given 'ruleId'. .
 
         Args:
-            rule_id(basestring): ruleId path parameter. Unique rule identifier .
+            rule_id(str): ruleId path parameter. Unique rule identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -600,12 +600,12 @@ class Policy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(rule_id, basestring,
+        check_type(rule_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -640,7 +640,7 @@ class Policy(object):
         """Deletes the profiling rule for the given 'ruleId'. .
 
         Args:
-            rule_id(basestring): ruleId path parameter. Unique rule identifier .
+            rule_id(str): ruleId path parameter. Unique rule identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -656,12 +656,12 @@ class Policy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(rule_id, basestring,
+        check_type(rule_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

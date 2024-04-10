@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -76,10 +76,10 @@ class Wireless(object):
         """Intent API to get SENSOR test result summary .
 
         Args:
-            site_id(basestring): siteId query parameter. Assurance site UUID .
+            site_id(str): siteId query parameter. Assurance site UUID .
             start_time(int): startTime query parameter. The epoch time in milliseconds .
             end_time(int): endTime query parameter. The epoch time in milliseconds .
-            test_failure_by(basestring): testFailureBy query parameter. Obtain failure statistics group by "area",
+            test_failure_by(str): testFailureBy query parameter. Obtain failure statistics group by "area",
                 "building", or "floor" (case insensitive) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -96,14 +96,14 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(test_failure_by, basestring)
+        check_type(test_failure_by, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -180,10 +180,10 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -237,9 +237,9 @@ class Wireless(object):
         Center .
 
         Args:
-            ssid_name(basestring): ssidName path parameter. SSID Name. This parameter needs to be encoded as per
+            ssid_name(str): ssidName path parameter. SSID Name. This parameter needs to be encoded as per
                 UTF-8 encoding. .
-            managed_aplocations(basestring): managedAPLocations path parameter. List of managed AP locations (Site
+            managed_aplocations(str): managedAPLocations path parameter. List of managed AP locations (Site
                 Hierarchies). This parameter needs to be encoded as per UTF-8 encoding .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -256,17 +256,17 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring,
+        check_type(ssid_name, str,
                    may_be_none=False)
-        check_type(managed_aplocations, basestring,
+        check_type(managed_aplocations, str,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -328,10 +328,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -375,7 +375,7 @@ class Wireless(object):
         """Users can query the access point reboot status using this intent API .
 
         Args:
-            parent_task_id(basestring): parentTaskId query parameter. task id of ap reboot request .
+            parent_task_id(str): parentTaskId query parameter. task id of ap reboot request .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -392,11 +392,11 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(parent_task_id, basestring)
+        check_type(parent_task_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'parentTaskId':
@@ -431,7 +431,7 @@ class Wireless(object):
         """Gets either one or all the enterprise SSID .
 
         Args:
-            ssid_name(basestring): ssidName query parameter. Enter the enterprise SSID name that needs to be
+            ssid_name(str): ssidName query parameter. Enter the enterprise SSID name that needs to be
                 retrieved. If not entered, all the enterprise SSIDs will be retrieved. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -449,11 +449,11 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring)
+        check_type(ssid_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'ssidName':
@@ -591,7 +591,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -800,7 +800,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -906,7 +906,7 @@ class Wireless(object):
         """Deletes given enterprise SSID .
 
         Args:
-            ssid_name(basestring): ssidName path parameter. Enter the SSID name to be deleted .
+            ssid_name(str): ssidName path parameter. Enter the SSID name to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -922,12 +922,12 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring,
+        check_type(ssid_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -961,7 +961,7 @@ class Wireless(object):
         """Delete the Wireless Profile from Cisco DNA Center whose name is provided. .
 
         Args:
-            wireless_profile_name(basestring): wirelessProfileName path parameter. Wireless Profile Name .
+            wireless_profile_name(str): wirelessProfileName path parameter. Wireless Profile Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -977,12 +977,12 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(wireless_profile_name, basestring,
+        check_type(wireless_profile_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1103,10 +1103,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1192,7 +1192,7 @@ class Wireless(object):
         """Users can query the access point configuration result using this intent API .
 
         Args:
-            task_id(basestring): task_id path parameter. task id information of ap config .
+            task_id(str): task_id path parameter. task id information of ap config .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1209,12 +1209,12 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring,
+        check_type(task_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1249,7 +1249,7 @@ class Wireless(object):
         """Users can query the access point configuration information per device using the ethernet MAC address .
 
         Args:
-            key(basestring): key query parameter. The ethernet MAC address of Access point .
+            key(str): key query parameter. The ethernet MAC address of Access point .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1265,12 +1265,12 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(key, basestring,
+        check_type(key, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'key':
@@ -1330,10 +1330,10 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1372,7 +1372,7 @@ class Wireless(object):
         """Delete a dynamic interface .
 
         Args:
-            interface_name(basestring): interfaceName query parameter. valid interface-name to be deleted .
+            interface_name(str): interfaceName query parameter. valid interface-name to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1388,7 +1388,7 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if '__runsync' in headers:
@@ -1399,7 +1399,7 @@ class Wireless(object):
                            int)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interfaceName':
@@ -1462,7 +1462,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1508,7 +1508,7 @@ class Wireless(object):
         """Get one or all dynamic interface(s) .
 
         Args:
-            interface_name(basestring): interface-name query parameter. dynamic-interface name, if not specified all
+            interface_name(str): interface-name query parameter. dynamic-interface name, if not specified all
                 the existing dynamic interfaces will be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1526,11 +1526,11 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(interface_name, basestring)
+        check_type(interface_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interface-name':
@@ -1593,7 +1593,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1663,7 +1663,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1707,7 +1707,7 @@ class Wireless(object):
         """Gets either one or all the wireless network profiles if no name is provided for network-profile. .
 
         Args:
-            profile_name(basestring): profileName query parameter. Wireless Network Profile Name .
+            profile_name(str): profileName query parameter. Wireless Network Profile Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1724,11 +1724,11 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(profile_name, basestring)
+        check_type(profile_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'profileName':
@@ -1787,10 +1787,10 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1853,7 +1853,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1924,7 +1924,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1974,7 +1974,7 @@ class Wireless(object):
         """Retrieve all RF profiles .
 
         Args:
-            rf_profile_name(basestring): rf-profile-name query parameter. RF Profile Name .
+            rf_profile_name(str): rf-profile-name query parameter. RF Profile Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1990,11 +1990,11 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(rf_profile_name, basestring)
+        check_type(rf_profile_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'rf-profile-name':
@@ -2075,7 +2075,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2139,7 +2139,7 @@ class Wireless(object):
         """Delete RF profile(s) .
 
         Args:
-            rf_profile_name(basestring): rfProfileName path parameter. RF profile name to be deleted(required) *non-
+            rf_profile_name(str): rfProfileName path parameter. RF profile name to be deleted(required) *non-
                 custom RF profile cannot be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2156,12 +2156,12 @@ class Wireless(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(rf_profile_name, basestring,
+        check_type(rf_profile_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2298,10 +2298,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

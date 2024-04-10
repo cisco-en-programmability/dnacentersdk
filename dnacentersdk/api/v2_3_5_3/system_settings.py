@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -76,9 +76,9 @@ class SystemSettings(object):
 
         Args:
             is_ise_enabled(bool): isIseEnabled query parameter. Valid values are : true, false .
-            state(basestring): state query parameter. Valid values are: INPROGRESS, ACTIVE, DELETED, RBAC-FAILURE,
+            state(str): state query parameter. Valid values are: INPROGRESS, ACTIVE, DELETED, RBAC-FAILURE,
                 FAILED .
-            role(basestring): role query parameter. Authentication and Policy Server Role (Example: primary,
+            role(str): role query parameter. Authentication and Policy Server Role (Example: primary,
                 secondary) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -98,12 +98,12 @@ class SystemSettings(object):
         """
         check_type(headers, dict)
         check_type(is_ise_enabled, bool)
-        check_type(state, basestring)
-        check_type(role, basestring)
+        check_type(state, str)
+        check_type(role, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'isIseEnabled':
@@ -161,7 +161,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -225,7 +225,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -73,7 +73,7 @@ class ConfigurationTemplates(object):
         """Returns the projects in the system.
 
         Args:
-            name(basestring): name query parameter. Name of project to be searched.
+            name(str): name query parameter. Name of project to be searched.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -90,11 +90,11 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -167,10 +167,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -264,10 +264,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -329,12 +329,12 @@ class ConfigurationTemplates(object):
         """List the templates available.
 
         Args:
-            project_id(basestring): projectId query parameter.
-            software_type(basestring): softwareType query parameter.
-            software_version(basestring): softwareVersion query parameter.
-            product_family(basestring): productFamily query parameter.
-            product_series(basestring): productSeries query parameter.
-            product_type(basestring): productType query parameter.
+            project_id(str): projectId query parameter.
+            software_type(str): softwareType query parameter.
+            software_version(str): softwareVersion query parameter.
+            product_family(str): productFamily query parameter.
+            product_series(str): productSeries query parameter.
+            product_type(str): productType query parameter.
             filter_conflicting_templates(bool): filterConflictingTemplates query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -352,17 +352,17 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(project_id, basestring)
-        check_type(software_type, basestring)
-        check_type(software_version, basestring)
-        check_type(product_family, basestring)
-        check_type(product_series, basestring)
-        check_type(product_type, basestring)
+        check_type(project_id, str)
+        check_type(software_type, str)
+        check_type(software_version, str)
+        check_type(product_family, str)
+        check_type(product_series, str)
+        check_type(product_type, str)
         check_type(filter_conflicting_templates, bool)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'projectId':
@@ -479,10 +479,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -605,10 +605,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -690,10 +690,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -740,7 +740,7 @@ class ConfigurationTemplates(object):
         """Returns details of the specified template.
 
         Args:
-            template_id(basestring): templateId path parameter.
+            template_id(str): templateId path parameter.
             latest_version(bool): latestVersion query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -758,12 +758,12 @@ class ConfigurationTemplates(object):
         """
         check_type(headers, dict)
         check_type(latest_version, bool)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'latestVersion':
@@ -800,7 +800,7 @@ class ConfigurationTemplates(object):
         """Deletes an existing template.
 
         Args:
-            template_id(basestring): templateId path parameter.
+            template_id(str): templateId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -816,12 +816,12 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -856,7 +856,7 @@ class ConfigurationTemplates(object):
         """Returns the status of a deployed template.
 
         Args:
-            deployment_id(basestring): deploymentId path parameter.
+            deployment_id(str): deploymentId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -872,12 +872,12 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(deployment_id, basestring,
+        check_type(deployment_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -912,7 +912,7 @@ class ConfigurationTemplates(object):
         """Returns the versions of a specified template.
 
         Args:
-            template_id(basestring): templateId path parameter.
+            template_id(str): templateId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -929,12 +929,12 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -969,7 +969,7 @@ class ConfigurationTemplates(object):
         """Deletes an existing Project.
 
         Args:
-            project_id(basestring): projectId path parameter.
+            project_id(str): projectId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -985,12 +985,12 @@ class ConfigurationTemplates(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(project_id, basestring,
+        check_type(project_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1053,10 +1053,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1150,7 +1150,7 @@ class ConfigurationTemplates(object):
             templateContent(string): Configuration Templates's templateContent.
             templateParams(list): Configuration Templates's templateParams (list of objects).
             version(string): Configuration Templates's version.
-            project_id(basestring): projectId path parameter.
+            project_id(str): projectId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1171,15 +1171,15 @@ class ConfigurationTemplates(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(project_id, basestring,
+        check_type(project_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

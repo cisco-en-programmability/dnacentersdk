@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -85,24 +85,24 @@ class DeviceReplacement(object):
         Device Serial Number, Device Replacement status, Product Family. .
 
         Args:
-            faulty_device_name(basestring): faultyDeviceName query parameter. Faulty Device Name .
-            faulty_device_platform(basestring): faultyDevicePlatform query parameter. Faulty Device Platform .
-            replacement_device_platform(basestring): replacementDevicePlatform query parameter. Replacement Device
+            faulty_device_name(str): faultyDeviceName query parameter. Faulty Device Name .
+            faulty_device_platform(str): faultyDevicePlatform query parameter. Faulty Device Platform .
+            replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement Device
                 Platform .
-            faulty_device_serial_number(basestring): faultyDeviceSerialNumber query parameter. Faulty Device Serial
+            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty Device Serial
                 Number .
-            replacement_device_serial_number(basestring): replacementDeviceSerialNumber query parameter. Replacement
+            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement
                 Device Serial Number .
-            replacement_status(basestring, list, set, tuple): replacementStatus query parameter. Device Replacement
+            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
                 status [READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED,
                 ERROR, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED] .
-            family(basestring, list, set, tuple): family query parameter. List of families[Routers, Switches and
+            family(str, list, set, tuple): family query parameter. List of families[Routers, Switches and
                 Hubs, AP] .
-            sort_by(basestring): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
+            sort_by(str): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
                 .
-            sort_order(basestring): sortOrder query parameter. Order on displayName[ASC,DESC] .
-            offset(basestring, int): offset query parameter.
-            limit(basestring, int): limit query parameter.
+            sort_order(str): sortOrder query parameter. Order on displayName[ASC,DESC] .
+            offset(str, int): offset query parameter.
+            limit(str, int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -118,21 +118,21 @@ class DeviceReplacement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(faulty_device_name, basestring)
-        check_type(faulty_device_platform, basestring)
-        check_type(replacement_device_platform, basestring)
-        check_type(faulty_device_serial_number, basestring)
-        check_type(replacement_device_serial_number, basestring)
-        check_type(replacement_status, (basestring, list, set, tuple))
-        check_type(family, (basestring, list, set, tuple))
-        check_type(sort_by, basestring)
-        check_type(sort_order, basestring)
-        check_type(offset, (basestring, int))
-        check_type(limit, (basestring, int))
+        check_type(faulty_device_name, str)
+        check_type(faulty_device_platform, str)
+        check_type(replacement_device_platform, str)
+        check_type(faulty_device_serial_number, str)
+        check_type(replacement_device_serial_number, str)
+        check_type(replacement_status, (str, list, set, tuple))
+        check_type(family, (str, list, set, tuple))
+        check_type(sort_by, str)
+        check_type(sort_order, str)
+        check_type(offset, (str, int))
+        check_type(limit, (str, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'faultyDeviceName':
@@ -211,7 +211,7 @@ class DeviceReplacement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -274,7 +274,7 @@ class DeviceReplacement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -313,7 +313,7 @@ class DeviceReplacement(object):
         """Get replacement devices count .
 
         Args:
-            replacement_status(basestring, list, set, tuple): replacementStatus query parameter. Device Replacement
+            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
                 status list[READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED,
                 REPLACED, ERROR] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -331,11 +331,11 @@ class DeviceReplacement(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(replacement_status, (basestring, list, set, tuple))
+        check_type(replacement_status, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'replacementStatus':
@@ -399,10 +399,10 @@ class DeviceReplacement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

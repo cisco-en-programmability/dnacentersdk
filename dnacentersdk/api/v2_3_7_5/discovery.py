@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -90,7 +90,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -227,7 +227,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -429,7 +429,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -544,7 +544,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -582,8 +582,8 @@ class Discovery(object):
         Args:
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            ip_address(basestring): ipAddress query parameter.
-            name(basestring): name query parameter.
+            ip_address(str): ipAddress query parameter.
+            name(str): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -601,13 +601,13 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(ip_address, basestring,
+        check_type(ip_address, str,
                    may_be_none=False)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -649,7 +649,7 @@ class Discovery(object):
         Discoveries by range" API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
+            id(str): id path parameter. Discovery ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -665,12 +665,12 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -704,7 +704,7 @@ class Discovery(object):
         """Returns discovery by Discovery ID. Discovery ID can be obtained using the "Get Discoveries by range" API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
+            id(str): id path parameter. Discovery ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -720,12 +720,12 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -763,10 +763,10 @@ class Discovery(object):
         IP. Discovery ID can be obtained using the "Get Discoveries by range" API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
+            id(str): id path parameter. Discovery ID .
             offset(int): offset query parameter. Starting index for the records .
             limit(int): limit query parameter. Number of records to fetch from the starting index .
-            ip_address(basestring): ipAddress query parameter. Filter records based on IP address .
+            ip_address(str): ipAddress query parameter. Filter records based on IP address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -784,13 +784,13 @@ class Discovery(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(ip_address, basestring)
-        check_type(id, basestring,
+        check_type(ip_address, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -832,8 +832,8 @@ class Discovery(object):
         Discoveries by range" API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
-            task_id(basestring): taskId query parameter.
+            id(str): id path parameter. Discovery ID .
+            task_id(str): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -849,13 +849,13 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring)
-        check_type(id, basestring,
+        check_type(task_id, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'taskId':
@@ -893,8 +893,8 @@ class Discovery(object):
         "Get Discoveries by range" API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
-            task_id(basestring): taskId query parameter.
+            id(str): id path parameter. Discovery ID .
+            task_id(str): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -910,13 +910,13 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring)
-        check_type(id, basestring,
+        check_type(task_id, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'taskId':
@@ -957,11 +957,11 @@ class Discovery(object):
         API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
+            id(str): id path parameter. Discovery ID .
             start_index(int): startIndex path parameter. Starting index for the records .
             records_to_return(int): recordsToReturn path parameter. Number of records to fetch from the start index
                 .
-            task_id(basestring): taskId query parameter.
+            task_id(str): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -977,8 +977,8 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring)
-        check_type(id, basestring,
+        check_type(task_id, str)
+        check_type(id, str,
                    may_be_none=False)
         check_type(start_index, int,
                    may_be_none=False)
@@ -987,7 +987,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'taskId':
@@ -1036,23 +1036,23 @@ class Discovery(object):
         the "Get Discoveries by range" API. .
 
         Args:
-            id(basestring): id path parameter. Discovery ID .
-            task_id(basestring): taskId query parameter.
-            sort_by(basestring): sortBy query parameter. Sort by field. Available values are pingStatus,
+            id(str): id path parameter. Discovery ID .
+            task_id(str): taskId query parameter.
+            sort_by(str): sortBy query parameter. Sort by field. Available values are pingStatus,
                 cliStatus,snmpStatus, httpStatus and netconfStatus .
-            sort_order(basestring): sortOrder query parameter. Order of sorting based on sortBy. Available values
+            sort_order(str): sortOrder query parameter. Order of sorting based on sortBy. Available values
                 are 'asc' and 'des' .
-            ip_address(basestring, list, set, tuple): ipAddress query parameter. IP Address of the device .
-            ping_status(basestring, list, set, tuple): pingStatus query parameter. Ping status for the IP during the
+            ip_address(str, list, set, tuple): ipAddress query parameter. IP Address of the device .
+            ping_status(str, list, set, tuple): pingStatus query parameter. Ping status for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
-            snmp_status(basestring, list, set, tuple): snmpStatus query parameter. SNMP status for the IP during the
+            snmp_status(str, list, set, tuple): snmpStatus query parameter. SNMP status for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
-            cli_status(basestring, list, set, tuple): cliStatus query parameter. CLI status for the IP during the
+            cli_status(str, list, set, tuple): cliStatus query parameter. CLI status for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
-            netconf_status(basestring, list, set, tuple): netconfStatus query parameter. NETCONF status for the IP
+            netconf_status(str, list, set, tuple): netconfStatus query parameter. NETCONF status for the IP
                 during the job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-
                 VALIDATED' .
-            http_status(basestring, list, set, tuple): httpStatus query parameter. HTTP staus for the IP during the
+            http_status(str, list, set, tuple): httpStatus query parameter. HTTP staus for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1069,21 +1069,21 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(task_id, basestring)
-        check_type(sort_by, basestring)
-        check_type(sort_order, basestring)
-        check_type(ip_address, (basestring, list, set, tuple))
-        check_type(ping_status, (basestring, list, set, tuple))
-        check_type(snmp_status, (basestring, list, set, tuple))
-        check_type(cli_status, (basestring, list, set, tuple))
-        check_type(netconf_status, (basestring, list, set, tuple))
-        check_type(http_status, (basestring, list, set, tuple))
-        check_type(id, basestring,
+        check_type(task_id, str)
+        check_type(sort_by, str)
+        check_type(sort_order, str)
+        check_type(ip_address, (str, list, set, tuple))
+        check_type(ping_status, (str, list, set, tuple))
+        check_type(snmp_status, (str, list, set, tuple))
+        check_type(cli_status, (str, list, set, tuple))
+        check_type(netconf_status, (str, list, set, tuple))
+        check_type(http_status, (str, list, set, tuple))
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'taskId':
@@ -1161,7 +1161,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1223,7 +1223,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1261,12 +1261,12 @@ class Discovery(object):
         """Returns global credential for the given credential sub type .
 
         Args:
-            credential_sub_type(basestring): credentialSubType query parameter. Credential type as CLI /
+            credential_sub_type(str): credentialSubType query parameter. Credential type as CLI /
                 SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 / HTTP_WRITE / HTTP_READ /
                 NETCONF .
-            sort_by(basestring): sortBy query parameter. Field to sort the results by. Sorts by 'instanceId' if no
+            sort_by(str): sortBy query parameter. Field to sort the results by. Sorts by 'instanceId' if no
                 value is provided .
-            order(basestring): order query parameter. Order of sorting. 'asc' or 'des' .
+            order(str): order query parameter. Order of sorting. 'asc' or 'des' .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1282,14 +1282,14 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(credential_sub_type, basestring,
+        check_type(credential_sub_type, str,
                    may_be_none=False)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'credentialSubType':
@@ -1371,10 +1371,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1458,7 +1458,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1521,10 +1521,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1608,7 +1608,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1715,10 +1715,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1804,7 +1804,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1883,10 +1883,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1966,7 +1966,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2040,10 +2040,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2120,7 +2120,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2184,10 +2184,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2262,7 +2262,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2365,10 +2365,10 @@ class Discovery(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2458,7 +2458,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2497,7 +2497,7 @@ class Discovery(object):
         """Deletes global credential for the given ID .
 
         Args:
-            global_credential_id(basestring): globalCredentialId path parameter. ID of global-credential .
+            global_credential_id(str): globalCredentialId path parameter. ID of global-credential .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2513,12 +2513,12 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(global_credential_id, basestring,
+        check_type(global_credential_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2557,7 +2557,7 @@ class Discovery(object):
 
         Args:
             siteUuids(list): Discovery's List of siteUuids where credential is to be updated  (list of strings).
-            global_credential_id(basestring): globalCredentialId path parameter. Global credential Uuid .
+            global_credential_id(str): globalCredentialId path parameter. Global credential Uuid .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2578,12 +2578,12 @@ class Discovery(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(global_credential_id, basestring,
+        check_type(global_credential_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2629,7 +2629,7 @@ class Discovery(object):
         """Returns the credential sub type for the given Id .
 
         Args:
-            id(basestring): id path parameter. Global Credential ID .
+            id(str): id path parameter. Global Credential ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2645,12 +2645,12 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2701,7 +2701,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2758,7 +2758,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2834,7 +2834,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2925,7 +2925,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2997,7 +2997,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3030,7 +3030,7 @@ class Discovery(object):
         """Delete a global credential. Only 'id' of the credential has to be passed. .
 
         Args:
-            id(basestring): id path parameter. Global Credential id   .
+            id(str): id path parameter. Global Credential id   .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3046,12 +3046,12 @@ class Discovery(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

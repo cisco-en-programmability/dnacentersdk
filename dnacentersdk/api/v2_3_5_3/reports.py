@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -114,10 +114,10 @@ class Reports(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -174,8 +174,8 @@ class Reports(object):
         """Get list of scheduled report configurations. .
 
         Args:
-            view_group_id(basestring): viewGroupId query parameter. viewGroupId of viewgroup for report .
-            view_id(basestring): viewId query parameter. viewId of view for report .
+            view_group_id(str): viewGroupId query parameter. viewGroupId of viewgroup for report .
+            view_id(str): viewId query parameter. viewId of view for report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -194,12 +194,12 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!get-list-of-scheduled-reports
         """
         check_type(headers, dict)
-        check_type(view_group_id, basestring)
-        check_type(view_id, basestring)
+        check_type(view_group_id, str)
+        check_type(view_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'viewGroupId':
@@ -236,7 +236,7 @@ class Reports(object):
         """Get scheduled report configuration by reportId .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId of report .
+            report_id(str): reportId path parameter. reportId of report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -254,12 +254,12 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!get-a-scheduled-report
         """
         check_type(headers, dict)
-        check_type(report_id, basestring,
+        check_type(report_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -293,7 +293,7 @@ class Reports(object):
         """Delete a scheduled report configuration. Deletes the report executions also. .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId of report .
+            report_id(str): reportId path parameter. reportId of report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -311,12 +311,12 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!delete-a-scheduled-report
         """
         check_type(headers, dict)
-        check_type(report_id, basestring,
+        check_type(report_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -350,7 +350,7 @@ class Reports(object):
         """Get details of all executions for a given report .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId of report .
+            report_id(str): reportId path parameter. reportId of report .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -368,12 +368,12 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!get-all-execution-details-for-a-given-report
         """
         check_type(headers, dict)
-        check_type(report_id, basestring,
+        check_type(report_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -412,13 +412,13 @@ class Reports(object):
         file format available from content-disposition response header. .
 
         Args:
-            report_id(basestring): reportId path parameter. reportId of report .
-            execution_id(basestring): executionId path parameter. executionId of report execution .
-            dirpath(basestring): Directory absolute path. Defaults to
+            report_id(str): reportId path parameter. reportId of report .
+            execution_id(str): executionId path parameter. executionId of report execution .
+            dirpath(str): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
                 raw response.
-            filename(basestring): The filename used to save the download
+            filename(str): The filename used to save the download
                 file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -439,14 +439,14 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!download-report-content
         """
         check_type(headers, dict)
-        check_type(report_id, basestring,
+        check_type(report_id, str,
                    may_be_none=False)
-        check_type(execution_id, basestring,
+        check_type(execution_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -504,7 +504,7 @@ class Reports(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -538,7 +538,7 @@ class Reports(object):
         (required as a query param for this API) for available viewgroups. .
 
         Args:
-            view_group_id(basestring): viewGroupId path parameter. viewGroupId of viewgroup. .
+            view_group_id(str): viewGroupId path parameter. viewGroupId of viewgroup. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -556,12 +556,12 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!get-views-for-a-given-view-group
         """
         check_type(headers, dict)
-        check_type(view_group_id, basestring,
+        check_type(view_group_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -597,8 +597,8 @@ class Reports(object):
         group" API to get the viewIds  (required as a query param for this API) for available views. .
 
         Args:
-            view_group_id(basestring): viewGroupId path parameter. viewGroupId of viewgroup .
-            view_id(basestring): viewId path parameter. view id of view .
+            view_group_id(str): viewGroupId path parameter. viewGroupId of viewgroup .
+            view_id(str): viewId path parameter. view id of view .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -616,14 +616,14 @@ class Reports(object):
             https://developer.cisco.com/docs/dna-center/#!get-view-details-for-a-given-view-group-and-view
         """
         check_type(headers, dict)
-        check_type(view_group_id, basestring,
+        check_type(view_group_id, str,
                    may_be_none=False)
-        check_type(view_id, basestring,
+        check_type(view_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

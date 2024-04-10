@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -76,7 +76,7 @@ class Devices(object):
         """Provides a list of Planned Access Points for the Building it is requested for .
 
         Args:
-            building_id(basestring): buildingId path parameter. Building Id .
+            building_id(str): buildingId path parameter. Building Id .
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             radios(bool): radios query parameter. inlcude planned radio details .
@@ -100,12 +100,12 @@ class Devices(object):
         check_type(limit, int)
         check_type(offset, int)
         check_type(radios, bool)
-        check_type(building_id, basestring,
+        check_type(building_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -150,8 +150,8 @@ class Devices(object):
 
         Args:
             timestamp(int): timestamp query parameter. UTC timestamp of device data in milliseconds .
-            identifier(basestring): identifier query parameter. One of "nwDeviceName", "uuid", "macAddress" .
-            search_by(basestring): searchBy query parameter. The value of identifier .
+            identifier(str): identifier query parameter. One of "nwDeviceName", "uuid", "macAddress" .
+            search_by(str): searchBy query parameter. The value of identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -170,14 +170,14 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(timestamp, int)
-        check_type(identifier, basestring,
+        check_type(identifier, str,
                    may_be_none=False)
-        check_type(search_by, basestring,
+        check_type(search_by, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -240,13 +240,13 @@ class Devices(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -286,9 +286,9 @@ class Devices(object):
         additional value added services. .
 
         Args:
-            device_role(basestring): deviceRole query parameter. CORE, ACCESS, DISTRIBUTION, ROUTER, WLC, or AP .
-            site_id(basestring): siteId query parameter. DNAC site UUID .
-            health(basestring): health query parameter. DNAC health catagory (POOR, FAIR, or GOOD) .
+            device_role(str): deviceRole query parameter. CORE, ACCESS, DISTRIBUTION, ROUTER, WLC, or AP .
+            site_id(str): siteId query parameter. DNAC site UUID .
+            health(str): health query parameter. DNAC health catagory (POOR, FAIR, or GOOD) .
             start_time(int): startTime query parameter. UTC epoch time in milliseconds .
             end_time(int): endTime query parameter. UTC epoch time in milliseconds .
             limit(int): limit query parameter. Max number of device entries in the response (default to 50. Max at
@@ -311,9 +311,9 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!devices
         """
         check_type(headers, dict)
-        check_type(device_role, basestring)
-        check_type(site_id, basestring)
-        check_type(health, basestring)
+        check_type(device_role, str)
+        check_type(site_id, str)
+        check_type(health, str)
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(limit, int)
@@ -321,7 +321,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceRole':
@@ -385,7 +385,7 @@ class Devices(object):
             position(object): Devices's position.
             radioCount(integer): Devices's radioCount.
             radios(list): Devices's radios (list of objects).
-            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
+            floor_id(str): floorId path parameter. The instance UUID of the floor hierarchy element .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -408,15 +408,15 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(floor_id, basestring,
+        check_type(floor_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -489,7 +489,7 @@ class Devices(object):
             position(object): Devices's position.
             radioCount(integer): Devices's radioCount.
             radios(list): Devices's radios (list of objects).
-            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
+            floor_id(str): floorId path parameter. The instance UUID of the floor hierarchy element .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -512,12 +512,12 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(floor_id, basestring,
+        check_type(floor_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -576,7 +576,7 @@ class Devices(object):
         """Provides a list of Planned Access Points for the Floor it is requested for .
 
         Args:
-            floor_id(basestring): floorId path parameter. Floor Id .
+            floor_id(str): floorId path parameter. Floor Id .
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             radios(bool): radios query parameter. inlcude planned radio details .
@@ -600,12 +600,12 @@ class Devices(object):
         check_type(limit, int)
         check_type(offset, int)
         check_type(radios, bool)
-        check_type(floor_id, basestring,
+        check_type(floor_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -650,8 +650,8 @@ class Devices(object):
         this API to delete that specific instance. .
 
         Args:
-            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
-            planned_access_point_uuid(basestring): plannedAccessPointUuid path parameter. The instance UUID of the
+            floor_id(str): floorId path parameter. The instance UUID of the floor hierarchy element .
+            planned_access_point_uuid(str): plannedAccessPointUuid path parameter. The instance UUID of the
                 planned access point to delete .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -670,14 +670,14 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!delete-planned-access-point-for-floor
         """
         check_type(headers, dict)
-        check_type(floor_id, basestring,
+        check_type(floor_id, str,
                    may_be_none=False)
-        check_type(planned_access_point_uuid, basestring,
+        check_type(planned_access_point_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -718,8 +718,8 @@ class Devices(object):
         Args:
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            last_input_time(basestring): lastInputTime query parameter. Last Input Time .
-            last_output_time(basestring): lastOutputTime query parameter. Last Output Time .
+            last_input_time(str): lastInputTime query parameter. Last Input Time .
+            last_output_time(str): lastOutputTime query parameter. Last Output Time .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -739,12 +739,12 @@ class Devices(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(last_input_time, basestring)
-        check_type(last_output_time, basestring)
+        check_type(last_input_time, str)
+        check_type(last_output_time, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -804,7 +804,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -837,7 +837,7 @@ class Devices(object):
         """Returns list of interfaces for specified device management IP address .
 
         Args:
-            ip_address(basestring): ipAddress path parameter. IP address of the interface .
+            ip_address(str): ipAddress path parameter. IP address of the interface .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -855,12 +855,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-ip
         """
         check_type(headers, dict)
-        check_type(ip_address, basestring,
+        check_type(ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -913,7 +913,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -946,7 +946,7 @@ class Devices(object):
         """Returns list of interfaces by specified device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device ID .
+            device_id(str): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -964,12 +964,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-info-by-id
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1003,7 +1003,7 @@ class Devices(object):
         """Returns the interface count for the given device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device ID .
+            device_id(str): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1021,12 +1021,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-interface-count
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1062,8 +1062,8 @@ class Devices(object):
         """Returns interface by specified device Id and interface name .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device ID .
-            name(basestring): name query parameter. Interface name .
+            device_id(str): deviceId path parameter. Device ID .
+            name(str): name query parameter. Interface name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1081,14 +1081,14 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-details-by-device-id-and-interface-name
         """
         check_type(headers, dict)
-        check_type(name, basestring,
+        check_type(name, str,
                    may_be_none=False)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -1127,7 +1127,7 @@ class Devices(object):
         """Returns the list of interfaces for the device for the specified range .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device ID .
+            device_id(str): deviceId path parameter. Device ID .
             start_index(int): startIndex path parameter. Start index .
             records_to_return(int): recordsToReturn path parameter. Number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1147,7 +1147,7 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-interfaces-by-specified-range
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         check_type(start_index, int,
                    may_be_none=False)
@@ -1156,7 +1156,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1212,7 +1212,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1245,7 +1245,7 @@ class Devices(object):
         """Returns the interface for the given interface ID .
 
         Args:
-            id(basestring): id path parameter. Interface ID .
+            id(str): id path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1263,12 +1263,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1314,8 +1314,8 @@ class Devices(object):
             description(string): Devices's Description.
             vlanId(integer): Devices's Vlan Id.
             voiceVlanId(integer): Devices's Voice Vlan Id.
-            interface_uuid(basestring): interfaceUuid path parameter. Interface ID .
-            deployment_mode(basestring): deploymentMode query parameter. Preview/Deploy ['Preview' means the
+            interface_uuid(str): interfaceUuid path parameter. Interface ID .
+            deployment_mode(str): deploymentMode query parameter. Preview/Deploy ['Preview' means the
                 configuration is not pushed to the device. 'Deploy' makes the configuration pushed to
                 the device] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1340,16 +1340,16 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(deployment_mode, basestring)
-        check_type(interface_uuid, basestring,
+        check_type(deployment_mode, str)
+        check_type(interface_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deploymentMode':
@@ -1402,7 +1402,7 @@ class Devices(object):
         """Get list of all properties & operations valid for an interface. .
 
         Args:
-            interface_uuid(basestring): interfaceUuid path parameter. Interface ID .
+            interface_uuid(str): interfaceUuid path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1420,12 +1420,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!legit-operations-for-interface
         """
         check_type(headers, dict)
-        check_type(interface_uuid, basestring,
+        check_type(interface_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1467,8 +1467,8 @@ class Devices(object):
         Args:
             operation(string): Devices's Operation needs to be specified as 'ClearMacAddress'. .
             payload(object): Devices's Payload is not applicable .
-            interface_uuid(basestring): interfaceUuid path parameter. Interface Id .
-            deployment_mode(basestring): deploymentMode query parameter. Preview/Deploy ['Preview' means the
+            interface_uuid(str): interfaceUuid path parameter. Interface Id .
+            deployment_mode(str): deploymentMode query parameter. Preview/Deploy ['Preview' means the
                 configuration is not pushed to the device. 'Deploy' makes the configuration pushed to
                 the device] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1493,16 +1493,16 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(deployment_mode, basestring)
-        check_type(interface_uuid, basestring,
+        check_type(deployment_mode, str)
+        check_type(interface_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deploymentMode':
@@ -1589,40 +1589,40 @@ class Devices(object):
         ignores the other request parameters. You can also specify offset & limit to get the required list. .
 
         Args:
-            hostname(basestring, list, set, tuple): hostname query parameter.
-            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
-            mac_address(basestring, list, set, tuple): macAddress query parameter.
-            location_name(basestring, list, set, tuple): locationName query parameter.
-            serial_number(basestring, list, set, tuple): serialNumber query parameter.
-            location(basestring, list, set, tuple): location query parameter.
-            family(basestring, list, set, tuple): family query parameter.
-            type(basestring, list, set, tuple): type query parameter.
-            series(basestring, list, set, tuple): series query parameter.
-            collection_status(basestring, list, set, tuple): collectionStatus query parameter.
-            collection_interval(basestring, list, set, tuple): collectionInterval query parameter.
-            not_synced_for_minutes(basestring, list, set, tuple): notSyncedForMinutes query parameter.
-            error_code(basestring, list, set, tuple): errorCode query parameter.
-            error_description(basestring, list, set, tuple): errorDescription query parameter.
-            software_version(basestring, list, set, tuple): softwareVersion query parameter.
-            software_type(basestring, list, set, tuple): softwareType query parameter.
-            platform_id(basestring, list, set, tuple): platformId query parameter.
-            role(basestring, list, set, tuple): role query parameter.
-            reachability_status(basestring, list, set, tuple): reachabilityStatus query parameter.
-            up_time(basestring, list, set, tuple): upTime query parameter.
-            associated_wlc_ip(basestring, list, set, tuple): associatedWlcIp query parameter.
-            license_name(basestring, list, set, tuple): license.name query parameter.
-            license_type(basestring, list, set, tuple): license.type query parameter.
-            license_status(basestring, list, set, tuple): license.status query parameter.
-            module_name(basestring, list, set, tuple): module+name query parameter.
-            module_equpimenttype(basestring, list, set, tuple): module+equpimenttype query parameter.
-            module_servicestate(basestring, list, set, tuple): module+servicestate query parameter.
-            module_vendorequipmenttype(basestring, list, set, tuple): module+vendorequipmenttype query parameter.
-            module_partnumber(basestring, list, set, tuple): module+partnumber query parameter.
-            module_operationstatecode(basestring, list, set, tuple): module+operationstatecode query parameter.
-            id(basestring): id query parameter. Accepts comma separated ids and return list of network-devices for
+            hostname(str, list, set, tuple): hostname query parameter.
+            management_ip_address(str, list, set, tuple): managementIpAddress query parameter.
+            mac_address(str, list, set, tuple): macAddress query parameter.
+            location_name(str, list, set, tuple): locationName query parameter.
+            serial_number(str, list, set, tuple): serialNumber query parameter.
+            location(str, list, set, tuple): location query parameter.
+            family(str, list, set, tuple): family query parameter.
+            type(str, list, set, tuple): type query parameter.
+            series(str, list, set, tuple): series query parameter.
+            collection_status(str, list, set, tuple): collectionStatus query parameter.
+            collection_interval(str, list, set, tuple): collectionInterval query parameter.
+            not_synced_for_minutes(str, list, set, tuple): notSyncedForMinutes query parameter.
+            error_code(str, list, set, tuple): errorCode query parameter.
+            error_description(str, list, set, tuple): errorDescription query parameter.
+            software_version(str, list, set, tuple): softwareVersion query parameter.
+            software_type(str, list, set, tuple): softwareType query parameter.
+            platform_id(str, list, set, tuple): platformId query parameter.
+            role(str, list, set, tuple): role query parameter.
+            reachability_status(str, list, set, tuple): reachabilityStatus query parameter.
+            up_time(str, list, set, tuple): upTime query parameter.
+            associated_wlc_ip(str, list, set, tuple): associatedWlcIp query parameter.
+            license_name(str, list, set, tuple): license.name query parameter.
+            license_type(str, list, set, tuple): license.type query parameter.
+            license_status(str, list, set, tuple): license.status query parameter.
+            module_name(str, list, set, tuple): module+name query parameter.
+            module_equpimenttype(str, list, set, tuple): module+equpimenttype query parameter.
+            module_servicestate(str, list, set, tuple): module+servicestate query parameter.
+            module_vendorequipmenttype(str, list, set, tuple): module+vendorequipmenttype query parameter.
+            module_partnumber(str, list, set, tuple): module+partnumber query parameter.
+            module_operationstatecode(str, list, set, tuple): module+operationstatecode query parameter.
+            id(str): id query parameter. Accepts comma separated ids and return list of network-devices for
                 the given ids. If invalid or not-found ids are provided, null entry will be returned in
                 the list. .
-            device_support_level(basestring): deviceSupportLevel query parameter.
+            device_support_level(str): deviceSupportLevel query parameter.
             offset(int): offset query parameter. offset >= 1 [X gives results from Xth device onwards] .
             limit(int): limit query parameter. 1 <= limit <= 500 [max. no. of devices to be returned in the result]
                 .
@@ -1643,44 +1643,44 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-list
         """
         check_type(headers, dict)
-        check_type(hostname, (basestring, list, set, tuple))
-        check_type(management_ip_address, (basestring, list, set, tuple))
-        check_type(mac_address, (basestring, list, set, tuple))
-        check_type(location_name, (basestring, list, set, tuple))
-        check_type(serial_number, (basestring, list, set, tuple))
-        check_type(location, (basestring, list, set, tuple))
-        check_type(family, (basestring, list, set, tuple))
-        check_type(type, (basestring, list, set, tuple))
-        check_type(series, (basestring, list, set, tuple))
-        check_type(collection_status, (basestring, list, set, tuple))
-        check_type(collection_interval, (basestring, list, set, tuple))
-        check_type(not_synced_for_minutes, (basestring, list, set, tuple))
-        check_type(error_code, (basestring, list, set, tuple))
-        check_type(error_description, (basestring, list, set, tuple))
-        check_type(software_version, (basestring, list, set, tuple))
-        check_type(software_type, (basestring, list, set, tuple))
-        check_type(platform_id, (basestring, list, set, tuple))
-        check_type(role, (basestring, list, set, tuple))
-        check_type(reachability_status, (basestring, list, set, tuple))
-        check_type(up_time, (basestring, list, set, tuple))
-        check_type(associated_wlc_ip, (basestring, list, set, tuple))
-        check_type(license_name, (basestring, list, set, tuple))
-        check_type(license_type, (basestring, list, set, tuple))
-        check_type(license_status, (basestring, list, set, tuple))
-        check_type(module_name, (basestring, list, set, tuple))
-        check_type(module_equpimenttype, (basestring, list, set, tuple))
-        check_type(module_servicestate, (basestring, list, set, tuple))
-        check_type(module_vendorequipmenttype, (basestring, list, set, tuple))
-        check_type(module_partnumber, (basestring, list, set, tuple))
-        check_type(module_operationstatecode, (basestring, list, set, tuple))
-        check_type(id, basestring)
-        check_type(device_support_level, basestring)
+        check_type(hostname, (str, list, set, tuple))
+        check_type(management_ip_address, (str, list, set, tuple))
+        check_type(mac_address, (str, list, set, tuple))
+        check_type(location_name, (str, list, set, tuple))
+        check_type(serial_number, (str, list, set, tuple))
+        check_type(location, (str, list, set, tuple))
+        check_type(family, (str, list, set, tuple))
+        check_type(type, (str, list, set, tuple))
+        check_type(series, (str, list, set, tuple))
+        check_type(collection_status, (str, list, set, tuple))
+        check_type(collection_interval, (str, list, set, tuple))
+        check_type(not_synced_for_minutes, (str, list, set, tuple))
+        check_type(error_code, (str, list, set, tuple))
+        check_type(error_description, (str, list, set, tuple))
+        check_type(software_version, (str, list, set, tuple))
+        check_type(software_type, (str, list, set, tuple))
+        check_type(platform_id, (str, list, set, tuple))
+        check_type(role, (str, list, set, tuple))
+        check_type(reachability_status, (str, list, set, tuple))
+        check_type(up_time, (str, list, set, tuple))
+        check_type(associated_wlc_ip, (str, list, set, tuple))
+        check_type(license_name, (str, list, set, tuple))
+        check_type(license_type, (str, list, set, tuple))
+        check_type(license_status, (str, list, set, tuple))
+        check_type(module_name, (str, list, set, tuple))
+        check_type(module_equpimenttype, (str, list, set, tuple))
+        check_type(module_servicestate, (str, list, set, tuple))
+        check_type(module_vendorequipmenttype, (str, list, set, tuple))
+        check_type(module_partnumber, (str, list, set, tuple))
+        check_type(module_operationstatecode, (str, list, set, tuple))
+        check_type(id, str)
+        check_type(device_support_level, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'hostname':
@@ -1863,7 +1863,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2041,7 +2041,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2162,26 +2162,26 @@ class Devices(object):
         match fully or partially the provided attribute. {[10.10.1.1, 10.10.20.2, …]}. .
 
         Args:
-            vrf_name(basestring): vrfName query parameter.
-            management_ip_address(basestring): managementIpAddress query parameter.
-            hostname(basestring): hostname query parameter.
-            mac_address(basestring): macAddress query parameter.
-            family(basestring): family query parameter.
-            collection_status(basestring): collectionStatus query parameter.
-            collection_interval(basestring): collectionInterval query parameter.
-            software_version(basestring): softwareVersion query parameter.
-            software_type(basestring): softwareType query parameter.
-            reachability_status(basestring): reachabilityStatus query parameter.
-            reachability_failure_reason(basestring): reachabilityFailureReason query parameter.
-            error_code(basestring): errorCode query parameter.
-            platform_id(basestring): platformId query parameter.
-            series(basestring): series query parameter.
-            type(basestring): type query parameter.
-            serial_number(basestring): serialNumber query parameter.
-            up_time(basestring): upTime query parameter.
-            role(basestring): role query parameter.
-            role_source(basestring): roleSource query parameter.
-            associated_wlc_ip(basestring): associatedWlcIp query parameter.
+            vrf_name(str): vrfName query parameter.
+            management_ip_address(str): managementIpAddress query parameter.
+            hostname(str): hostname query parameter.
+            mac_address(str): macAddress query parameter.
+            family(str): family query parameter.
+            collection_status(str): collectionStatus query parameter.
+            collection_interval(str): collectionInterval query parameter.
+            software_version(str): softwareVersion query parameter.
+            software_type(str): softwareType query parameter.
+            reachability_status(str): reachabilityStatus query parameter.
+            reachability_failure_reason(str): reachabilityFailureReason query parameter.
+            error_code(str): errorCode query parameter.
+            platform_id(str): platformId query parameter.
+            series(str): series query parameter.
+            type(str): type query parameter.
+            serial_number(str): serialNumber query parameter.
+            up_time(str): upTime query parameter.
+            role(str): role query parameter.
+            role_source(str): roleSource query parameter.
+            associated_wlc_ip(str): associatedWlcIp query parameter.
             offset(int): offset query parameter.
             limit(int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2201,32 +2201,32 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-values-that-match-fully-or-partially-an-attribute
         """
         check_type(headers, dict)
-        check_type(vrf_name, basestring)
-        check_type(management_ip_address, basestring)
-        check_type(hostname, basestring)
-        check_type(mac_address, basestring)
-        check_type(family, basestring)
-        check_type(collection_status, basestring)
-        check_type(collection_interval, basestring)
-        check_type(software_version, basestring)
-        check_type(software_type, basestring)
-        check_type(reachability_status, basestring)
-        check_type(reachability_failure_reason, basestring)
-        check_type(error_code, basestring)
-        check_type(platform_id, basestring)
-        check_type(series, basestring)
-        check_type(type, basestring)
-        check_type(serial_number, basestring)
-        check_type(up_time, basestring)
-        check_type(role, basestring)
-        check_type(role_source, basestring)
-        check_type(associated_wlc_ip, basestring)
+        check_type(vrf_name, str)
+        check_type(management_ip_address, str)
+        check_type(hostname, str)
+        check_type(mac_address, str)
+        check_type(family, str)
+        check_type(collection_status, str)
+        check_type(collection_interval, str)
+        check_type(software_version, str)
+        check_type(software_type, str)
+        check_type(reachability_status, str)
+        check_type(reachability_failure_reason, str)
+        check_type(error_code, str)
+        check_type(platform_id, str)
+        check_type(series, str)
+        check_type(type, str)
+        check_type(serial_number, str)
+        check_type(up_time, str)
+        check_type(role, str)
+        check_type(role_source, str)
+        check_type(associated_wlc_ip, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'vrfName':
@@ -2335,10 +2335,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2405,7 +2405,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2458,7 +2458,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2510,7 +2510,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2547,10 +2547,10 @@ class Devices(object):
         hostname and location name .
 
         Args:
-            hostname(basestring, list, set, tuple): hostname query parameter.
-            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
-            mac_address(basestring, list, set, tuple): macAddress query parameter.
-            location_name(basestring, list, set, tuple): locationName query parameter.
+            hostname(str, list, set, tuple): hostname query parameter.
+            management_ip_address(str, list, set, tuple): managementIpAddress query parameter.
+            mac_address(str, list, set, tuple): macAddress query parameter.
+            location_name(str, list, set, tuple): locationName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2568,14 +2568,14 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-count
         """
         check_type(headers, dict)
-        check_type(hostname, (basestring, list, set, tuple))
-        check_type(management_ip_address, (basestring, list, set, tuple))
-        check_type(mac_address, (basestring, list, set, tuple))
-        check_type(location_name, (basestring, list, set, tuple))
+        check_type(hostname, (str, list, set, tuple))
+        check_type(management_ip_address, (str, list, set, tuple))
+        check_type(mac_address, (str, list, set, tuple))
+        check_type(location_name, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'hostname':
@@ -2652,10 +2652,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2706,10 +2706,10 @@ class Devices(object):
         """Returns the functional-capability for given devices .
 
         Args:
-            device_id(basestring): deviceId query parameter. Accepts comma separated deviceid's and return list of
+            device_id(str): deviceId query parameter. Accepts comma separated deviceid's and return list of
                 functional-capabilities for the given id's. If invalid or not-found id's are provided,
                 null entry will be returned in the list. .
-            function_name(basestring, list, set, tuple): functionName query parameter.
+            function_name(str, list, set, tuple): functionName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2727,13 +2727,13 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-functional-capability-for-devices
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
-        check_type(function_name, (basestring, list, set, tuple))
+        check_type(function_name, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -2770,7 +2770,7 @@ class Devices(object):
         """Returns functional capability with given Id .
 
         Args:
-            id(basestring): id path parameter. Functional Capability UUID .
+            id(str): id path parameter. Functional Capability UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2788,12 +2788,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-functional-capability-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2833,13 +2833,13 @@ class Devices(object):
         """Find all devices with link mismatch (speed /  vlan) .
 
         Args:
-            site_id(basestring): siteId path parameter.
+            site_id(str): siteId path parameter.
             offset(int): offset query parameter. Row Number.  Default value is 1 .
             limit(int): limit query parameter. Default value is 500 .
-            category(basestring): category query parameter. Links mismatch category.  Value can be speed-duplex or
+            category(str): category query parameter. Links mismatch category.  Value can be speed-duplex or
                 vlan. .
-            sort_by(basestring): sortBy query parameter. Sort By .
-            order(basestring): order query parameter. Order.  Value can be asc or desc.  Default value is asc .
+            sort_by(str): sortBy query parameter. Sort By .
+            order(str): order query parameter. Order.  Value can be asc or desc.  Default value is asc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2859,16 +2859,16 @@ class Devices(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(category, basestring,
+        check_type(category, str,
                    may_be_none=False)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(site_id, basestring,
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -2913,7 +2913,7 @@ class Devices(object):
         """Returns the network device by specified IP address .
 
         Args:
-            ip_address(basestring): ipAddress path parameter. Device IP address .
+            ip_address(str): ipAddress path parameter. Device IP address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2931,12 +2931,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-device-by-ip
         """
         check_type(headers, dict)
-        check_type(ip_address, basestring,
+        check_type(ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2976,13 +2976,13 @@ class Devices(object):
         """Returns modules by specified device id .
 
         Args:
-            device_id(basestring): deviceId query parameter.
+            device_id(str): deviceId query parameter.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
-            name_list(basestring, list, set, tuple): nameList query parameter.
-            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
-            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
-            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
+            name_list(str, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(str, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(str, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3000,18 +3000,18 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-modules
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(name_list, (basestring, list, set, tuple))
-        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
-        check_type(part_number_list, (basestring, list, set, tuple))
-        check_type(operational_state_code_list, (basestring, list, set, tuple))
+        check_type(name_list, (str, list, set, tuple))
+        check_type(vendor_equipment_type_list, (str, list, set, tuple))
+        check_type(part_number_list, (str, list, set, tuple))
+        check_type(operational_state_code_list, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -3062,11 +3062,11 @@ class Devices(object):
         """Returns Module Count .
 
         Args:
-            device_id(basestring): deviceId query parameter.
-            name_list(basestring, list, set, tuple): nameList query parameter.
-            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
-            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
-            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
+            device_id(str): deviceId query parameter.
+            name_list(str, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(str, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(str, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3084,16 +3084,16 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-module-count
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
-        check_type(name_list, (basestring, list, set, tuple))
-        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
-        check_type(part_number_list, (basestring, list, set, tuple))
-        check_type(operational_state_code_list, (basestring, list, set, tuple))
+        check_type(name_list, (str, list, set, tuple))
+        check_type(vendor_equipment_type_list, (str, list, set, tuple))
+        check_type(part_number_list, (str, list, set, tuple))
+        check_type(operational_state_code_list, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -3136,7 +3136,7 @@ class Devices(object):
         """Returns Module info by 'module id' .
 
         Args:
-            id(basestring): id path parameter. Module id .
+            id(str): id path parameter. Module id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3154,12 +3154,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-module-info-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3193,7 +3193,7 @@ class Devices(object):
         """Returns the network device with given serial number .
 
         Args:
-            serial_number(basestring): serialNumber path parameter. Device serial number .
+            serial_number(str): serialNumber path parameter. Device serial number .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3211,12 +3211,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-by-serial-number
         """
         check_type(headers, dict)
-        check_type(serial_number, basestring,
+        check_type(serial_number, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3282,10 +3282,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'forceSync':
@@ -3328,8 +3328,8 @@ class Devices(object):
         address are required to be provided as query parameters. .
 
         Args:
-            serial_number(basestring): serialNumber query parameter. Serial number of the device .
-            macaddress(basestring): macaddress query parameter. Mac addres of the device .
+            serial_number(str): serialNumber query parameter. Serial number of the device .
+            macaddress(str): macaddress query parameter. Mac addres of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3347,12 +3347,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-devices-registered-for-wsa-notification
         """
         check_type(headers, dict)
-        check_type(serial_number, basestring)
-        check_type(macaddress, basestring)
+        check_type(serial_number, str)
+        check_type(macaddress, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'serialNumber':
@@ -3391,8 +3391,8 @@ class Devices(object):
         supported by UDF Id(s) or UDF name(s) or both. .
 
         Args:
-            id(basestring): id query parameter. Comma-seperated id(s) used for search/filtering .
-            name(basestring): name query parameter. Comma-seperated name(s) used for search/filtering .
+            id(str): id query parameter. Comma-seperated id(s) used for search/filtering .
+            name(str): name query parameter. Comma-seperated name(s) used for search/filtering .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3410,12 +3410,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-all-user-defined-fields
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(name, basestring)
+        check_type(id, str)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -3482,7 +3482,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3534,7 +3534,7 @@ class Devices(object):
         Args:
             description(string): Devices's Description of UDF .
             name(string): Devices's Name of UDF .
-            id(basestring): id path parameter. UDF id .
+            id(str): id path parameter. UDF id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -3557,12 +3557,12 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3610,7 +3610,7 @@ class Devices(object):
         """Deletes an existing Global User-Defined-Field using it's id. .
 
         Args:
-            id(basestring): id path parameter. UDF id .
+            id(str): id path parameter. UDF id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3628,12 +3628,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!delete-user-defined-field
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3668,7 +3668,7 @@ class Devices(object):
         """Returns chassis details for given device ID .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device ID .
+            device_id(str): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3686,12 +3686,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-chassis-details-for-device
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3725,7 +3725,7 @@ class Devices(object):
         """Retrieves complete stack details for given device ID .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device ID .
+            device_id(str): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3743,12 +3743,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-stack-details-for-device
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3784,8 +3784,8 @@ class Devices(object):
         Global UDF will not be deleted by this operation. .
 
         Args:
-            device_id(basestring): deviceId path parameter. UUID of device from which UDF has to be removed .
-            name(basestring): name query parameter. Name of UDF to be removed .
+            device_id(str): deviceId path parameter. UUID of device from which UDF has to be removed .
+            name(str): name query parameter. Name of UDF to be removed .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3803,14 +3803,14 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!remove-user-defined-field-from-device
         """
         check_type(headers, dict)
-        check_type(name, basestring,
+        check_type(name, str,
                    may_be_none=False)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -3851,7 +3851,7 @@ class Devices(object):
         be an existing global UDF. Otherwise error shall be shown. .
 
         Args:
-            device_id(basestring): deviceId path parameter. UUID of device to which UDF has to be added .
+            device_id(str): deviceId path parameter. UUID of device to which UDF has to be added .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -3874,12 +3874,12 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3922,8 +3922,8 @@ class Devices(object):
         SFP for the Given device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter.
-            type(basestring): type query parameter. Type value can be PowerSupply, Fan, Chassis, Backplane, Module,
+            device_uuid(str): deviceUuid path parameter.
+            type(str): type query parameter. Type value can be PowerSupply, Fan, Chassis, Backplane, Module,
                 PROCESSOR, Other, SFP. If no type is mentioned, All equipments are fetched for the
                 device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3943,13 +3943,13 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-the-details-of-physical-components-of-the-given-device
         """
         check_type(headers, dict)
-        check_type(type, basestring)
-        check_type(device_uuid, basestring,
+        check_type(type, str)
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'type':
@@ -3988,8 +3988,8 @@ class Devices(object):
         operationalStatus) .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
-            interface_name_list(basestring): interfaceNameList query parameter. comma seperated interface names .
+            device_uuid(str): deviceUuid path parameter. uuid of the device .
+            interface_name_list(str): interfaceNameList query parameter. comma seperated interface names .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4007,13 +4007,13 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!returns-poe-interface-details-for-the-device
         """
         check_type(headers, dict)
-        check_type(interface_name_list, basestring)
-        check_type(device_uuid, basestring,
+        check_type(interface_name_list, str)
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interfaceNameList':
@@ -4051,8 +4051,8 @@ class Devices(object):
         """Get connected device detail for given deviceUuid and interfaceUuid .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. instanceuuid of Device .
-            interface_uuid(basestring): interfaceUuid path parameter. instanceuuid of interface .
+            device_uuid(str): deviceUuid path parameter. instanceuuid of Device .
+            interface_uuid(str): interfaceUuid path parameter. instanceuuid of interface .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4070,14 +4070,14 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-connected-device-detail
         """
         check_type(headers, dict)
-        check_type(device_uuid, basestring,
+        check_type(device_uuid, str,
                    may_be_none=False)
-        check_type(interface_uuid, basestring,
+        check_type(interface_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4113,7 +4113,7 @@ class Devices(object):
         """Get line card detail for a given deviceuuid.  Response will contain serial no, part no, switch no and slot no. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. instanceuuid of device .
+            device_uuid(str): deviceUuid path parameter. instanceuuid of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4131,12 +4131,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-linecard-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, basestring,
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4170,7 +4170,7 @@ class Devices(object):
         """Returns POE details for device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
+            device_uuid(str): deviceUuid path parameter. uuid of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4198,7 +4198,7 @@ class Devices(object):
         """Returns POE details for device. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
+            device_uuid(str): deviceUuid path parameter. uuid of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4216,12 +4216,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!poe-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, basestring,
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4256,7 +4256,7 @@ class Devices(object):
         no. .
 
         Args:
-            device_uuid(basestring): deviceUuid path parameter. instanceuuid of device .
+            device_uuid(str): deviceUuid path parameter. instanceuuid of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4274,12 +4274,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-supervisor-card-detail
         """
         check_type(headers, dict)
-        check_type(device_uuid, basestring,
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4318,7 +4318,7 @@ class Devices(object):
 
         Args:
             newIP(string): Devices's New IP Address.
-            deviceid(basestring): deviceid path parameter. The UUID of the device whose management IP address is to
+            deviceid(str): deviceid path parameter. The UUID of the device whose management IP address is to
                 be updated. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4342,12 +4342,12 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(deviceid, basestring,
+        check_type(deviceid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4393,7 +4393,7 @@ class Devices(object):
         """Returns the network device details for the given device ID .
 
         Args:
-            id(basestring): id path parameter. Device ID .
+            id(str): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4411,12 +4411,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4451,7 +4451,7 @@ class Devices(object):
         """Deletes the network device for the given Id .
 
         Args:
-            id(basestring): id path parameter. Device ID .
+            id(str): id path parameter. Device ID .
             clean_config(bool): cleanConfig query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4471,12 +4471,12 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(clean_config, bool)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'cleanConfig':
@@ -4512,7 +4512,7 @@ class Devices(object):
         """Returns brief summary of device info such as hostname, management IP address for the given device Id .
 
         Args:
-            id(basestring): id path parameter. Device ID .
+            id(str): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4530,12 +4530,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-summary
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4569,7 +4569,7 @@ class Devices(object):
         """Returns polling interval by device id .
 
         Args:
-            id(basestring): id path parameter. Device ID .
+            id(str): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4587,12 +4587,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-polling-interval-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4627,7 +4627,7 @@ class Devices(object):
         """Returns list of organizations for meraki dashboard .
 
         Args:
-            id(basestring): id path parameter. Device Id .
+            id(str): id path parameter. Device Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4645,12 +4645,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-organization-list-for-meraki
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4686,8 +4686,8 @@ class Devices(object):
         """Returns Device Interface VLANs. If parameter value is null or empty, it won't return any value in response. .
 
         Args:
-            id(basestring): id path parameter.
-            interface_type(basestring): interfaceType query parameter. Vlan associated with sub-interface. If no
+            id(str): id path parameter.
+            interface_type(str): interfaceType query parameter. Vlan associated with sub-interface. If no
                 interfaceType mentioned it will return all types of Vlan interfaces. If interfaceType is
                 selected but not specified then it will take default value. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -4707,13 +4707,13 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-interface-vlans
         """
         check_type(headers, dict)
-        check_type(interface_type, basestring)
-        check_type(id, basestring,
+        check_type(interface_type, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interfaceType':
@@ -4749,7 +4749,7 @@ class Devices(object):
         """Returns the wireless lan controller info with given device ID .
 
         Args:
-            id(basestring): id path parameter. Device ID .
+            id(str): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4767,12 +4767,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-wireless-lan-controller-details-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4806,7 +4806,7 @@ class Devices(object):
         """Returns the device config by specified device ID .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter.
+            network_device_id(str): networkDeviceId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4824,12 +4824,12 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-config-by-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4893,7 +4893,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4938,7 +4938,7 @@ class Devices(object):
             endTime(integer): Devices's UTC epoch timestamp in milliseconds .
             query(object): Devices's query.
             startTime(integer): Devices's UTC epoch timestamp in milliseconds .
-            device_id(basestring): deviceId path parameter. Network Device Id .
+            device_id(str): deviceId path parameter. Network Device Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -4961,15 +4961,15 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

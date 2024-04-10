@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -80,15 +80,15 @@ class Applications(object):
         """Intent API to get a list of applications for a specific site, a device, or a client device's MAC address.
 
         Args:
-            site_id(basestring): siteId query parameter. Assurance site UUID value (Cannot be submitted together
+            site_id(str): siteId query parameter. Assurance site UUID value (Cannot be submitted together
                 with deviceId and clientMac).
-            device_id(basestring): deviceId query parameter. Assurance device UUID value (Cannot be submitted
+            device_id(str): deviceId query parameter. Assurance device UUID value (Cannot be submitted
                 together with siteId and clientMac).
-            mac_address(basestring): macAddress query parameter. Client device's MAC address (Cannot be submitted
+            mac_address(str): macAddress query parameter. Client device's MAC address (Cannot be submitted
                 together with siteId and deviceId).
             start_time(int): startTime query parameter. Starting epoch time in milliseconds of time window.
             end_time(int): endTime query parameter. Ending epoch time in milliseconds of time window.
-            application_health(basestring): applicationHealth query parameter. Application health category (POOR,
+            application_health(str): applicationHealth query parameter. Application health category (POOR,
                 FAIR, or GOOD.  Optionally use with siteId only).
             offset(int): offset query parameter. The offset of the first application in the returned data
                 (optionally used with siteId only).
@@ -109,18 +109,18 @@ class Applications(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
-        check_type(device_id, basestring)
-        check_type(mac_address, basestring)
+        check_type(site_id, str)
+        check_type(device_id, str)
+        check_type(mac_address, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(application_health, basestring)
+        check_type(application_health, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':

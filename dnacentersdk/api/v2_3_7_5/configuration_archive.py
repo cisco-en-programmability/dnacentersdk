@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -105,10 +105,10 @@ class ConfigurationArchive(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -160,14 +160,14 @@ class ConfigurationArchive(object):
         applicable) by specified criteria .
 
         Args:
-            device_id(basestring): deviceId query parameter. comma separated device id for example
+            device_id(str): deviceId query parameter. comma separated device id for example
                 cf35b0a1-407f-412f-b2f4-f0c3156695f9,aaa38191-0c22-4158-befd-779a09d7cec1 . if device id
                 is not provided it will fetch for all devices .
-            file_type(basestring): fileType query parameter. Config File Type can be RUNNINGCONFIG or STARTUPCONFIG
+            file_type(str): fileType query parameter. Config File Type can be RUNNINGCONFIG or STARTUPCONFIG
                 .
-            created_time(basestring): createdTime query parameter. Supported with logical filters GT,GTE,LT,LTE & BT
+            created_time(str): createdTime query parameter. Supported with logical filters GT,GTE,LT,LTE & BT
                 : time in milliseconds (epoc format) .
-            created_by(basestring): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
+            created_by(str): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
                 CONFIG_CHANGE_EVENT, SCHEDULED_FIRST_TIME, DR_CALL_BACK, PRE_DEPLOY .
             offset(int): offset query parameter.
             limit(int): limit query parameter.
@@ -187,16 +187,16 @@ class ConfigurationArchive(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring)
-        check_type(file_type, basestring)
-        check_type(created_time, basestring)
-        check_type(created_by, basestring)
+        check_type(device_id, str)
+        check_type(file_type, str)
+        check_type(created_time, str)
+        check_type(created_by, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':

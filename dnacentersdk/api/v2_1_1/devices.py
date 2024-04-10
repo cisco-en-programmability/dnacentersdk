@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -73,7 +73,7 @@ class Devices(object):
         """Returns Module info by id.
 
         Args:
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -89,12 +89,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -172,37 +172,37 @@ class Devices(object):
         the other request parameters. .
 
         Args:
-            hostname(basestring, list, set, tuple): hostname query parameter.
-            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
-            mac_address(basestring, list, set, tuple): macAddress query parameter.
-            location_name(basestring, list, set, tuple): locationName query parameter.
-            serial_number(basestring, list, set, tuple): serialNumber query parameter.
-            location(basestring, list, set, tuple): location query parameter.
-            family(basestring, list, set, tuple): family query parameter.
-            type(basestring, list, set, tuple): type query parameter.
-            series(basestring, list, set, tuple): series query parameter.
-            collection_status(basestring, list, set, tuple): collectionStatus query parameter.
-            collection_interval(basestring, list, set, tuple): collectionInterval query parameter.
-            not_synced_for_minutes(basestring, list, set, tuple): notSyncedForMinutes query parameter.
-            error_code(basestring, list, set, tuple): errorCode query parameter.
-            error_description(basestring, list, set, tuple): errorDescription query parameter.
-            software_version(basestring, list, set, tuple): softwareVersion query parameter.
-            software_type(basestring, list, set, tuple): softwareType query parameter.
-            platform_id(basestring, list, set, tuple): platformId query parameter.
-            role(basestring, list, set, tuple): role query parameter.
-            reachability_status(basestring, list, set, tuple): reachabilityStatus query parameter.
-            up_time(basestring, list, set, tuple): upTime query parameter.
-            associated_wlc_ip(basestring, list, set, tuple): associatedWlcIp query parameter.
-            license_name(basestring, list, set, tuple): license.name query parameter.
-            license_type(basestring, list, set, tuple): license.type query parameter.
-            license_status(basestring, list, set, tuple): license.status query parameter.
-            module_name(basestring, list, set, tuple): module+name query parameter.
-            module_equpimenttype(basestring, list, set, tuple): module+equpimenttype query parameter.
-            module_servicestate(basestring, list, set, tuple): module+servicestate query parameter.
-            module_vendorequipmenttype(basestring, list, set, tuple): module+vendorequipmenttype query parameter.
-            module_partnumber(basestring, list, set, tuple): module+partnumber query parameter.
-            module_operationstatecode(basestring, list, set, tuple): module+operationstatecode query parameter.
-            id(basestring): Accepts comma separated id's and return list of network-devices for the given id's. If
+            hostname(str, list, set, tuple): hostname query parameter.
+            management_ip_address(str, list, set, tuple): managementIpAddress query parameter.
+            mac_address(str, list, set, tuple): macAddress query parameter.
+            location_name(str, list, set, tuple): locationName query parameter.
+            serial_number(str, list, set, tuple): serialNumber query parameter.
+            location(str, list, set, tuple): location query parameter.
+            family(str, list, set, tuple): family query parameter.
+            type(str, list, set, tuple): type query parameter.
+            series(str, list, set, tuple): series query parameter.
+            collection_status(str, list, set, tuple): collectionStatus query parameter.
+            collection_interval(str, list, set, tuple): collectionInterval query parameter.
+            not_synced_for_minutes(str, list, set, tuple): notSyncedForMinutes query parameter.
+            error_code(str, list, set, tuple): errorCode query parameter.
+            error_description(str, list, set, tuple): errorDescription query parameter.
+            software_version(str, list, set, tuple): softwareVersion query parameter.
+            software_type(str, list, set, tuple): softwareType query parameter.
+            platform_id(str, list, set, tuple): platformId query parameter.
+            role(str, list, set, tuple): role query parameter.
+            reachability_status(str, list, set, tuple): reachabilityStatus query parameter.
+            up_time(str, list, set, tuple): upTime query parameter.
+            associated_wlc_ip(str, list, set, tuple): associatedWlcIp query parameter.
+            license_name(str, list, set, tuple): license.name query parameter.
+            license_type(str, list, set, tuple): license.type query parameter.
+            license_status(str, list, set, tuple): license.status query parameter.
+            module_name(str, list, set, tuple): module+name query parameter.
+            module_equpimenttype(str, list, set, tuple): module+equpimenttype query parameter.
+            module_servicestate(str, list, set, tuple): module+servicestate query parameter.
+            module_vendorequipmenttype(str, list, set, tuple): module+vendorequipmenttype query parameter.
+            module_partnumber(str, list, set, tuple): module+partnumber query parameter.
+            module_operationstatecode(str, list, set, tuple): module+operationstatecode query parameter.
+            id(str): Accepts comma separated id's and return list of network-devices for the given id's. If
                 invalid or not-found id's are provided, null entry will be returned in the list.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -219,41 +219,41 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(hostname, (basestring, list, set, tuple))
-        check_type(management_ip_address, (basestring, list, set, tuple))
-        check_type(mac_address, (basestring, list, set, tuple))
-        check_type(location_name, (basestring, list, set, tuple))
-        check_type(serial_number, (basestring, list, set, tuple))
-        check_type(location, (basestring, list, set, tuple))
-        check_type(family, (basestring, list, set, tuple))
-        check_type(type, (basestring, list, set, tuple))
-        check_type(series, (basestring, list, set, tuple))
-        check_type(collection_status, (basestring, list, set, tuple))
-        check_type(collection_interval, (basestring, list, set, tuple))
-        check_type(not_synced_for_minutes, (basestring, list, set, tuple))
-        check_type(error_code, (basestring, list, set, tuple))
-        check_type(error_description, (basestring, list, set, tuple))
-        check_type(software_version, (basestring, list, set, tuple))
-        check_type(software_type, (basestring, list, set, tuple))
-        check_type(platform_id, (basestring, list, set, tuple))
-        check_type(role, (basestring, list, set, tuple))
-        check_type(reachability_status, (basestring, list, set, tuple))
-        check_type(up_time, (basestring, list, set, tuple))
-        check_type(associated_wlc_ip, (basestring, list, set, tuple))
-        check_type(license_name, (basestring, list, set, tuple))
-        check_type(license_type, (basestring, list, set, tuple))
-        check_type(license_status, (basestring, list, set, tuple))
-        check_type(module_name, (basestring, list, set, tuple))
-        check_type(module_equpimenttype, (basestring, list, set, tuple))
-        check_type(module_servicestate, (basestring, list, set, tuple))
-        check_type(module_vendorequipmenttype, (basestring, list, set, tuple))
-        check_type(module_partnumber, (basestring, list, set, tuple))
-        check_type(module_operationstatecode, (basestring, list, set, tuple))
-        check_type(id, basestring)
+        check_type(hostname, (str, list, set, tuple))
+        check_type(management_ip_address, (str, list, set, tuple))
+        check_type(mac_address, (str, list, set, tuple))
+        check_type(location_name, (str, list, set, tuple))
+        check_type(serial_number, (str, list, set, tuple))
+        check_type(location, (str, list, set, tuple))
+        check_type(family, (str, list, set, tuple))
+        check_type(type, (str, list, set, tuple))
+        check_type(series, (str, list, set, tuple))
+        check_type(collection_status, (str, list, set, tuple))
+        check_type(collection_interval, (str, list, set, tuple))
+        check_type(not_synced_for_minutes, (str, list, set, tuple))
+        check_type(error_code, (str, list, set, tuple))
+        check_type(error_description, (str, list, set, tuple))
+        check_type(software_version, (str, list, set, tuple))
+        check_type(software_type, (str, list, set, tuple))
+        check_type(platform_id, (str, list, set, tuple))
+        check_type(role, (str, list, set, tuple))
+        check_type(reachability_status, (str, list, set, tuple))
+        check_type(up_time, (str, list, set, tuple))
+        check_type(associated_wlc_ip, (str, list, set, tuple))
+        check_type(license_name, (str, list, set, tuple))
+        check_type(license_type, (str, list, set, tuple))
+        check_type(license_status, (str, list, set, tuple))
+        check_type(module_name, (str, list, set, tuple))
+        check_type(module_equpimenttype, (str, list, set, tuple))
+        check_type(module_servicestate, (str, list, set, tuple))
+        check_type(module_vendorequipmenttype, (str, list, set, tuple))
+        check_type(module_partnumber, (str, list, set, tuple))
+        check_type(module_operationstatecode, (str, list, set, tuple))
+        check_type(id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'hostname':
@@ -349,8 +349,8 @@ class Devices(object):
         """Returns Device Interface VLANs.
 
         Args:
-            id(basestring): id path parameter.
-            interface_type(basestring): Vlan assocaited with sub-interface.
+            id(str): id path parameter.
+            interface_type(str): Vlan assocaited with sub-interface.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -366,13 +366,13 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(interface_type, basestring)
-        check_type(id, basestring,
+        check_type(interface_type, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interfaceType':
@@ -409,7 +409,7 @@ class Devices(object):
         """Deletes the network device for the given Id.
 
         Args:
-            id(basestring): Device ID.
+            id(str): Device ID.
             is_force_delete(bool): isForceDelete query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -427,12 +427,12 @@ class Devices(object):
         """
         check_type(headers, dict)
         check_type(is_force_delete, bool)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'isForceDelete':
@@ -471,7 +471,7 @@ class Devices(object):
         range.
 
         Args:
-            device_id(basestring): Device ID.
+            device_id(str): Device ID.
             start_index(int): Start index.
             records_to_return(int): Number of records to return.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -489,7 +489,7 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         check_type(start_index, int,
                    may_be_none=False)
@@ -498,7 +498,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -552,7 +552,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -617,10 +617,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'forceSync':
@@ -679,7 +679,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -791,10 +791,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -892,8 +892,8 @@ class Devices(object):
         """Returns interface by specified device Id and interface name.
 
         Args:
-            device_id(basestring): Device ID.
-            name(basestring): Interface name.
+            device_id(str): Device ID.
+            name(str): Interface name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -909,14 +909,14 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring,
+        check_type(name, str,
                    may_be_none=False)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -970,7 +970,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1003,7 +1003,7 @@ class Devices(object):
         """Returns the interface count for the given device.
 
         Args:
-            device_id(basestring): Device ID.
+            device_id(str): Device ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1019,12 +1019,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1078,7 +1078,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1111,7 +1111,7 @@ class Devices(object):
         """Returns functional capability with given Id.
 
         Args:
-            id(basestring): Functional Capability UUID.
+            id(str): Functional Capability UUID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1127,12 +1127,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1167,7 +1167,7 @@ class Devices(object):
         """Returns the device config by specified device ID.
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter.
+            network_device_id(str): networkDeviceId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1183,12 +1183,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1223,7 +1223,7 @@ class Devices(object):
         """Returns polling interval by device id.
 
         Args:
-            id(basestring): Device ID.
+            id(str): Device ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1239,12 +1239,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1279,7 +1279,7 @@ class Devices(object):
         """Returns list of organizations for meraki dashboard.
 
         Args:
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1295,12 +1295,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1352,7 +1352,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1386,7 +1386,7 @@ class Devices(object):
         management IP address for the given device Id.
 
         Args:
-            id(basestring): Device ID.
+            id(str): Device ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1402,12 +1402,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1445,11 +1445,11 @@ class Devices(object):
         """Returns Module Count.
 
         Args:
-            device_id(basestring): deviceId query parameter.
-            name_list(basestring, list, set, tuple): nameList query parameter.
-            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
-            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
-            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
+            device_id(str): deviceId query parameter.
+            name_list(str, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(str, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(str, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1465,16 +1465,16 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
-        check_type(name_list, (basestring, list, set, tuple))
-        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
-        check_type(part_number_list, (basestring, list, set, tuple))
-        check_type(operational_state_code_list, (basestring, list, set, tuple))
+        check_type(name_list, (str, list, set, tuple))
+        check_type(vendor_equipment_type_list, (str, list, set, tuple))
+        check_type(part_number_list, (str, list, set, tuple))
+        check_type(operational_state_code_list, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -1534,7 +1534,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1567,7 +1567,7 @@ class Devices(object):
         """Returns the network device details for the given device ID.
 
         Args:
-            id(basestring): Device ID.
+            id(str): Device ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1583,12 +1583,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1701,10 +1701,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1818,7 +1818,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1851,7 +1851,7 @@ class Devices(object):
         """Returns the interface for the given interface ID.
 
         Args:
-            id(basestring): Interface ID.
+            id(str): Interface ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1867,12 +1867,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1937,10 +1937,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1990,10 +1990,10 @@ class Devices(object):
         """Returns the functional-capability for given devices.
 
         Args:
-            device_id(basestring): Accepts comma separated deviceid's and return list of functional-capabilities for
+            device_id(str): Accepts comma separated deviceid's and return list of functional-capabilities for
                 the given id's. If invalid or not-found id's are provided, null entry will be returned
                 in the list.
-            function_name(basestring, list, set, tuple): functionName query parameter.
+            function_name(str, list, set, tuple): functionName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2009,13 +2009,13 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
-        check_type(function_name, (basestring, list, set, tuple))
+        check_type(function_name, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -2052,7 +2052,7 @@ class Devices(object):
         """Returns list of interfaces by specified IP address.
 
         Args:
-            ip_address(basestring): IP address of the interface.
+            ip_address(str): IP address of the interface.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2068,12 +2068,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(ip_address, basestring,
+        check_type(ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2107,7 +2107,7 @@ class Devices(object):
         """Returns the network device by specified IP address.
 
         Args:
-            ip_address(basestring): Device IP address.
+            ip_address(str): Device IP address.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2123,12 +2123,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(ip_address, basestring,
+        check_type(ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2163,7 +2163,7 @@ class Devices(object):
         """Returns list of interfaces by specified device.
 
         Args:
-            device_id(basestring): Device ID.
+            device_id(str): Device ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2179,12 +2179,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2253,10 +2253,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2310,8 +2310,8 @@ class Devices(object):
         """Registers a device for WSA notification.
 
         Args:
-            serial_number(basestring): Serial number of the device.
-            macaddress(basestring): Mac addres of the device.
+            serial_number(str): Serial number of the device.
+            macaddress(str): Mac addres of the device.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2327,12 +2327,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(serial_number, basestring)
-        check_type(macaddress, basestring)
+        check_type(serial_number, str)
+        check_type(macaddress, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'serialNumber':
@@ -2369,7 +2369,7 @@ class Devices(object):
         """Returns the network device with given serial number.
 
         Args:
-            serial_number(basestring): Device serial number.
+            serial_number(str): Device serial number.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2385,12 +2385,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(serial_number, basestring,
+        check_type(serial_number, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2431,13 +2431,13 @@ class Devices(object):
         """Returns modules by specified device id.
 
         Args:
-            device_id(basestring): deviceId query parameter.
-            limit(basestring): limit query parameter.
-            offset(basestring): offset query parameter.
-            name_list(basestring, list, set, tuple): nameList query parameter.
-            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
-            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
-            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
+            device_id(str): deviceId query parameter.
+            limit(str): limit query parameter.
+            offset(str): offset query parameter.
+            name_list(str, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(str, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(str, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2453,18 +2453,18 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
-        check_type(name_list, (basestring, list, set, tuple))
-        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
-        check_type(part_number_list, (basestring, list, set, tuple))
-        check_type(operational_state_code_list, (basestring, list, set, tuple))
+        check_type(limit, str)
+        check_type(offset, str)
+        check_type(name_list, (str, list, set, tuple))
+        check_type(vendor_equipment_type_list, (str, list, set, tuple))
+        check_type(part_number_list, (str, list, set, tuple))
+        check_type(operational_state_code_list, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -2537,7 +2537,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2601,28 +2601,28 @@ class Devices(object):
         attributes.
 
         Args:
-            vrf_name(basestring): vrfName query parameter.
-            management_ip_address(basestring): managementIpAddress query parameter.
-            hostname(basestring): hostname query parameter.
-            mac_address(basestring): macAddress query parameter.
-            family(basestring): family query parameter.
-            collection_status(basestring): collectionStatus query parameter.
-            collection_interval(basestring): collectionInterval query parameter.
-            software_version(basestring): softwareVersion query parameter.
-            software_type(basestring): softwareType query parameter.
-            reachability_status(basestring): reachabilityStatus query parameter.
-            reachability_failure_reason(basestring): reachabilityFailureReason query parameter.
-            error_code(basestring): errorCode query parameter.
-            platform_id(basestring): platformId query parameter.
-            series(basestring): series query parameter.
-            type(basestring): type query parameter.
-            serial_number(basestring): serialNumber query parameter.
-            up_time(basestring): upTime query parameter.
-            role(basestring): role query parameter.
-            role_source(basestring): roleSource query parameter.
-            associated_wlc_ip(basestring): associatedWlcIp query parameter.
-            offset(basestring): offset query parameter.
-            limit(basestring): limit query parameter.
+            vrf_name(str): vrfName query parameter.
+            management_ip_address(str): managementIpAddress query parameter.
+            hostname(str): hostname query parameter.
+            mac_address(str): macAddress query parameter.
+            family(str): family query parameter.
+            collection_status(str): collectionStatus query parameter.
+            collection_interval(str): collectionInterval query parameter.
+            software_version(str): softwareVersion query parameter.
+            software_type(str): softwareType query parameter.
+            reachability_status(str): reachabilityStatus query parameter.
+            reachability_failure_reason(str): reachabilityFailureReason query parameter.
+            error_code(str): errorCode query parameter.
+            platform_id(str): platformId query parameter.
+            series(str): series query parameter.
+            type(str): type query parameter.
+            serial_number(str): serialNumber query parameter.
+            up_time(str): upTime query parameter.
+            role(str): role query parameter.
+            role_source(str): roleSource query parameter.
+            associated_wlc_ip(str): associatedWlcIp query parameter.
+            offset(str): offset query parameter.
+            limit(str): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2638,32 +2638,32 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(vrf_name, basestring)
-        check_type(management_ip_address, basestring)
-        check_type(hostname, basestring)
-        check_type(mac_address, basestring)
-        check_type(family, basestring)
-        check_type(collection_status, basestring)
-        check_type(collection_interval, basestring)
-        check_type(software_version, basestring)
-        check_type(software_type, basestring)
-        check_type(reachability_status, basestring)
-        check_type(reachability_failure_reason, basestring)
-        check_type(error_code, basestring)
-        check_type(platform_id, basestring)
-        check_type(series, basestring)
-        check_type(type, basestring)
-        check_type(serial_number, basestring)
-        check_type(up_time, basestring)
-        check_type(role, basestring)
-        check_type(role_source, basestring)
-        check_type(associated_wlc_ip, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(vrf_name, str)
+        check_type(management_ip_address, str)
+        check_type(hostname, str)
+        check_type(mac_address, str)
+        check_type(family, str)
+        check_type(collection_status, str)
+        check_type(collection_interval, str)
+        check_type(software_version, str)
+        check_type(software_type, str)
+        check_type(reachability_status, str)
+        check_type(reachability_failure_reason, str)
+        check_type(error_code, str)
+        check_type(platform_id, str)
+        check_type(series, str)
+        check_type(type, str)
+        check_type(serial_number, str)
+        check_type(up_time, str)
+        check_type(role, str)
+        check_type(role_source, str)
+        check_type(associated_wlc_ip, str)
+        check_type(offset, str)
+        check_type(limit, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'vrfName':
@@ -2740,7 +2740,7 @@ class Devices(object):
         """Returns the wireless lan controller info with given device ID.
 
         Args:
-            id(basestring): Device ID.
+            id(str): Device ID.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2756,12 +2756,12 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2819,7 +2819,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -2860,9 +2860,9 @@ class Devices(object):
         time. .
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds) when the device data is required.
-            search_by(basestring): MAC Address or Device Name value or UUID of the network device.
-            identifier(basestring): One of keywords : macAddress or uuid or nwDeviceName.
+            timestamp(str, int): Epoch time(in milliseconds) when the device data is required.
+            search_by(str): MAC Address or Device Name value or UUID of the network device.
+            identifier(str): One of keywords : macAddress or uuid or nwDeviceName.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2878,15 +2878,15 @@ class Devices(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (basestring, int))
-        check_type(search_by, basestring,
+        check_type(timestamp, (str, int))
+        check_type(search_by, str,
                    may_be_none=False)
-        check_type(identifier, basestring,
+        check_type(identifier, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -2949,13 +2949,13 @@ class Devices(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

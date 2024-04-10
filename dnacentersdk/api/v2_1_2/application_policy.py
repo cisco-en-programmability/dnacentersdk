@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -90,7 +90,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -147,7 +147,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -211,7 +211,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -255,7 +255,7 @@ class ApplicationPolicy(object):
         Args:
             offset(int): The offset of the first application to be returned.
             limit(int): The maximum number of applications to be returned.
-            name(basestring): Application's name.
+            name(str): Application's name.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -274,11 +274,11 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -317,7 +317,7 @@ class ApplicationPolicy(object):
         """Delete existing application-set by it's id.
 
         Args:
-            id(basestring): id query parameter.
+            id(str): id query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -333,12 +333,12 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -377,7 +377,7 @@ class ApplicationPolicy(object):
         Args:
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            name(basestring): name query parameter.
+            name(str): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -395,11 +395,11 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -462,7 +462,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -519,7 +519,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -553,7 +553,7 @@ class ApplicationPolicy(object):
         """Delete existing application by its id.
 
         Args:
-            id(basestring): Application's Id.
+            id(str): Application's Id.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -569,12 +569,12 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':

@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -74,7 +74,7 @@ class Clients(object):
         and Wireless) for any given point of time.
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds) when the Client health data is required.
+            timestamp(str, int): Epoch time(in milliseconds) when the Client health data is required.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -90,11 +90,11 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (basestring, int))
+        check_type(timestamp, (str, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -154,16 +154,16 @@ class Clients(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'issueCategory' in headers:
                 check_type(headers.get('issueCategory'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -198,8 +198,8 @@ class Clients(object):
         any given point of time. .
 
         Args:
-            timestamp(basestring, int): Epoch time(in milliseconds) when the Client health data is required.
-            mac_address(basestring): MAC Address of the client.
+            timestamp(str, int): Epoch time(in milliseconds) when the Client health data is required.
+            mac_address(str): MAC Address of the client.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -215,13 +215,13 @@ class Clients(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(timestamp, (basestring, int))
-        check_type(mac_address, basestring,
+        check_type(timestamp, (str, int))
+        check_type(mac_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':

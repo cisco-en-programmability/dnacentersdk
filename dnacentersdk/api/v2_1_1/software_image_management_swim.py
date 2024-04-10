@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -91,22 +91,22 @@ class SoftwareImageManagementSwim(object):
         example: "filterbyName = cat3k%".
 
         Args:
-            image_uuid(basestring): imageUuid query parameter.
-            name(basestring): name query parameter.
-            family(basestring): family query parameter.
-            application_type(basestring): applicationType query parameter.
-            image_integrity_status(basestring): imageIntegrityStatus FAILURE, UNKNOWN, VERIFIED.
-            version(basestring): software Image Version.
-            image_series(basestring): image Series.
-            image_name(basestring): image Name.
+            image_uuid(str): imageUuid query parameter.
+            name(str): name query parameter.
+            family(str): family query parameter.
+            application_type(str): applicationType query parameter.
+            image_integrity_status(str): imageIntegrityStatus FAILURE, UNKNOWN, VERIFIED.
+            version(str): software Image Version.
+            image_series(str): image Series.
+            image_name(str): image Name.
             is_tagged_golden(bool): is Tagged Golden.
             is_cco_recommended(bool): is recommended from cisco.com.
             is_cco_latest(bool): is latest from cisco.com.
             created_time(int): time in milliseconds (epoch format).
             image_size_greater_than(int): size in bytes.
             image_size_lesser_than(int): size in bytes.
-            sort_by(basestring): sort results by this field.
-            sort_order(basestring): sort order 'asc' or 'des'. Default is asc.
+            sort_by(str): sort results by this field.
+            sort_order(str): sort order 'asc' or 'des'. Default is asc.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -124,28 +124,28 @@ class SoftwareImageManagementSwim(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(image_uuid, basestring)
-        check_type(name, basestring)
-        check_type(family, basestring)
-        check_type(application_type, basestring)
-        check_type(image_integrity_status, basestring)
-        check_type(version, basestring)
-        check_type(image_series, basestring)
-        check_type(image_name, basestring)
+        check_type(image_uuid, str)
+        check_type(name, str)
+        check_type(family, str)
+        check_type(application_type, str)
+        check_type(image_integrity_status, str)
+        check_type(version, str)
+        check_type(image_series, str)
+        check_type(image_name, str)
         check_type(is_tagged_golden, bool)
         check_type(is_cco_recommended, bool)
         check_type(is_cco_latest, bool)
         check_type(created_time, int)
         check_type(image_size_greater_than, int)
         check_type(image_size_lesser_than, int)
-        check_type(sort_by, basestring)
-        check_type(sort_order, basestring)
+        check_type(sort_by, str)
+        check_type(sort_order, str)
         check_type(limit, int)
         check_type(offset, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'imageUuid':
@@ -250,9 +250,9 @@ class SoftwareImageManagementSwim(object):
 
         Args:
             is_third_party(bool): Third party Image check.
-            third_party_vendor(basestring): Third Party Vendor.
-            third_party_image_family(basestring): Third Party image family.
-            third_party_application_type(basestring): Third Party Application Type.
+            third_party_vendor(str): Third Party Vendor.
+            third_party_image_family(str): Third Party image family.
+            third_party_application_type(str): Third Party Application Type.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -273,16 +273,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
-        check_type(third_party_vendor, basestring)
-        check_type(third_party_image_family, basestring)
-        check_type(third_party_application_type, basestring)
+        check_type(third_party_vendor, str)
+        check_type(third_party_image_family, str)
+        check_type(third_party_application_type, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'isThirdParty':
@@ -356,10 +356,10 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -406,10 +406,10 @@ class SoftwareImageManagementSwim(object):
         ova, tar_gz and qcow2.
 
         Args:
-            schedule_at(basestring): Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the
+            schedule_at(str): Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the
                 distribution should be scheduled (Optional) .
-            schedule_desc(basestring): Custom Description (Optional).
-            schedule_origin(basestring): Originator of this call (Optional).
+            schedule_desc(str): Custom Description (Optional).
+            schedule_origin(str): Originator of this call (Optional).
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -430,16 +430,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(schedule_at, basestring)
-        check_type(schedule_desc, basestring)
-        check_type(schedule_origin, basestring)
+        check_type(schedule_at, str)
+        check_type(schedule_desc, str)
+        check_type(schedule_origin, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'scheduleAt':
@@ -513,16 +513,16 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Client-Type' in headers:
                 check_type(headers.get('Client-Type'),
-                           basestring)
+                           str)
             if 'Client-Url' in headers:
                 check_type(headers.get('Client-Url'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'scheduleValidate':

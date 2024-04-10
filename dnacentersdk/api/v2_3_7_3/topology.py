@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -96,7 +96,7 @@ class Topology(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -134,7 +134,7 @@ class Topology(object):
         """Returns Layer 2 network topology by specified VLAN ID .
 
         Args:
-            vlan_id(basestring): vlanID path parameter. Vlan Name for e.g Vlan1, Vlan23 etc .
+            vlan_id(str): vlanID path parameter. Vlan Name for e.g Vlan1, Vlan23 etc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -152,12 +152,12 @@ class Topology(object):
             https://developer.cisco.com/docs/dna-center/#!get-topology-details
         """
         check_type(headers, dict)
-        check_type(vlan_id, basestring,
+        check_type(vlan_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -191,7 +191,7 @@ class Topology(object):
         """Returns the Layer 3 network topology by routing protocol .
 
         Args:
-            topology_type(basestring): topologyType path parameter. Type of topology(OSPF,ISIS,etc) .
+            topology_type(str): topologyType path parameter. Type of topology(OSPF,ISIS,etc) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -209,12 +209,12 @@ class Topology(object):
             https://developer.cisco.com/docs/dna-center/#!get-l3-topology-details
         """
         check_type(headers, dict)
-        check_type(topology_type, basestring,
+        check_type(topology_type, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -248,7 +248,7 @@ class Topology(object):
         """Returns the raw physical topology by specified criteria of nodeType .
 
         Args:
-            node_type(basestring): nodeType query parameter.
+            node_type(str): nodeType query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -266,11 +266,11 @@ class Topology(object):
             https://developer.cisco.com/docs/dna-center/#!get-physical-topology
         """
         check_type(headers, dict)
-        check_type(node_type, basestring)
+        check_type(node_type, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'nodeType':
@@ -324,7 +324,7 @@ class Topology(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -376,7 +376,7 @@ class Topology(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

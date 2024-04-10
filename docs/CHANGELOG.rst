@@ -218,7 +218,7 @@ Added
 Fixed
 ~~~~~
 
--  Offset and limit now support basestring and int
+-  Offset and limit now support str and int
 
    -  dnacentersdk.api.v2_3_3_0.application_policy
    -  dnacentersdk.api.v2_3_3_0.applications

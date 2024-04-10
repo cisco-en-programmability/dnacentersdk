@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -76,10 +76,10 @@ class SiteDesign(object):
         """API to get NFV network profile.
 
         Args:
-            id(basestring): ID of network profile to retrieve.
-            offset(basestring): offset/starting row.
-            limit(basestring): Number of profile to be retrieved.
-            name(basestring): Name of network profile to be retrieved.
+            id(str): ID of network profile to retrieve.
+            offset(str): offset/starting row.
+            limit(str): Number of profile to be retrieved.
+            name(str): Name of network profile to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -95,15 +95,15 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
-        check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(offset, str)
+        check_type(limit, str)
+        check_type(name, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -148,8 +148,8 @@ class SiteDesign(object):
 
         Args:
             device(list): Device, property of the request body (list of objects).
-            id(basestring): Id of the NFV profile to be updated.
-            name(basestring): Name of the profile to be updated.
+            id(str): Id of the NFV profile to be updated.
+            name(str): Name of the profile to be updated.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -170,13 +170,13 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(name, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -252,7 +252,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -335,7 +335,7 @@ class SiteDesign(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -381,8 +381,8 @@ class SiteDesign(object):
         """API to delete nfv network profile.
 
         Args:
-            id(basestring): Id of nfv network profile to delete. .
-            name(basestring): Nameof nfv network profile to delete. .
+            id(str): Id of nfv network profile to delete. .
+            name(str): Nameof nfv network profile to delete. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -398,13 +398,13 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(name, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -478,7 +478,7 @@ class SiteDesign(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -526,7 +526,7 @@ class SiteDesign(object):
         address.
 
         Args:
-            device_ip(basestring): Device to which the provisioning detail has to be retrieved.
+            device_ip(str): Device to which the provisioning detail has to be retrieved.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -542,12 +542,12 @@ class SiteDesign(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(device_ip, basestring,
+        check_type(device_ip, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceIp':

@@ -92,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Compatibility matrix added in `readme.rst`
 
 ### Fixed
-- Offset and limit now support basestring and int
+- Offset and limit now support str and int
   + dnacentersdk.api.v2_3_3_0.application_policy
   + dnacentersdk.api.v2_3_3_0.applications
   + dnacentersdk.api.v2_3_3_0.compliance
