@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dnacentersdk"
-version = "2.8.0"
+version = "2.9.0"
 description = "Cisco DNA Center Platform SDK"
 authors = ["Jose Bogarin Solano <jbogarin@altus.cr>", "William Astorga <wastorga@altus.cr>", "Francisco Muñoz <fmunoz@altus.cr>", "Francisco Muñoz <fmunoz@altus.cr>", "Bryan Vargas <bvargas@altus.cr>"]
 license = "MIT"
@@ -12,10 +12,9 @@ classifiers = [
 readme = "README.rst"
 
 [tool.poetry.dependencies]
-python = "^3.6"
-requests = ">=2.27.1, <=2.40.0"
+python = "^3.7"
+requests = "^2.31.0"
 fastjsonschema = "^2.16.2"
-future = "^0.18.3"
 requests-toolbelt = "^1.0.0"
 
 [tool.poetry.dev-dependencies]

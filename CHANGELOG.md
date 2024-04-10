@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.0] - 2024-04-10
+### Changed
+- The future library was removed
+- The past library was removed
+- Changed basestring to str
+- Requirements updated
+
 
 ## [2.8.0] - 2024-04-09
 ### Added

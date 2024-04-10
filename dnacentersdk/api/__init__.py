@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from past.types import str
 
 from dnacentersdk.config import (
     DEFAULT_DEBUG,
