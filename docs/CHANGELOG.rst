@@ -11,7 +11,7 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 `Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...develop>`__
 ---------------------------------------------------------------------------------------------------
 
-[2.9.0] - 2024-04-10
+[2.9.0] - 2024-04-11
 --------------------
 
 Changed
