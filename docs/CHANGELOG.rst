@@ -41,8 +41,8 @@ Changed
 Added
 ~~~~~
 
--  Add support of DNA Center versions (‘2.3.7.5’)
--  Adds modules for v2_3_7_5
+-  Add support of DNA Center versions (‘2.3.7.6’)
+-  Adds modules for v2_3_7_6
 
 .. _section-3:
 

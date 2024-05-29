@@ -8,7 +8,7 @@ dnacentersdk
 
 -------------------------------------------------------------------------------
 
-Welcome to the docs!  dnacentersdk is a *community developed* Pythonic wrapping of the DNA Center APIs (for API versions: 2.1.1, 2.1.2, 2.2.1, 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and 2.3.7.5).
+Welcome to the docs!  dnacentersdk is a *community developed* Pythonic wrapping of the DNA Center APIs (for API versions:  2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and 2.3.7.6).
 The package represents all of the Cisco DNA Center API interactions via native Python tools.
 Making working with the Cisco DNA Center APIs in Python a *native* and *natural* experience.
 

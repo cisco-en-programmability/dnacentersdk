@@ -28,15 +28,12 @@ pytest_plugins = [
     'tests.test_importsdk',
     'tests.test_dnacentersdk',
     'tests.api',
-    'tests.api.v2_1_1',
-    'tests.api.v2_1_2',
-    'tests.api.v2_2_1',
     'tests.api.v2_2_2_3',
     'tests.api.v2_2_3_3',
     'tests.api.v2_3_3_0',
     'tests.api.v2_3_5_3',
     'tests.api.v2_3_7_3',
-    'tests.api.v2_3_7_5',
+    'tests.api.v2_3_7_6',
 ]
 
 
