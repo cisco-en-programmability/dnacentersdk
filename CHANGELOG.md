@@ -6,28 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.9.1] - 2024-05-07
-### Fixed
-- Fix headers in `create_webhook_destination` and `update_webhook_destination`
 
-
-## [2.9.0] - 2024-04-11
+## [2.7.0] - 2024-05-30
+### Added
+- Add support of DNA Center versions ('2.3.7.3')
+- Adds modules for v2_3_7_3
+### Added
+- Add support of DNA Center versions ('2.3.7.6')
+- Adds modules for v2_3_7_6
 ### Changed
 - The future library was removed
 - The past library was removed
 - Changed basestring to str
 - Requirements updated
+### Fixed
+- Fix headers in `create_webhook_destination` and `update_webhook_destination`
 
 
-## [2.8.0] - 2024-04-09
-### Added
-- Add support of DNA Center versions ('2.3.7.6')
-- Adds modules for v2_3_7_6
-
-## [2.7.0] - 2023-11-10
-### Added
-- Add support of DNA Center versions ('2.3.7.3')
-- Adds modules for v2_3_7_3
 ## [2.6.11] - 2023-01-10
 ### Fixed
 - Configuration template import template - check_type error #142 - Fixing required schema.

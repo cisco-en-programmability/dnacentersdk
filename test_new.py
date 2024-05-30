@@ -7,7 +7,7 @@ dnac = api.DNACenterAPI(username="devnetuser",
                         password="Cisco123!",
                         base_url="https://sandboxdnac.cisco.com:443",
                         version='2.3.7.6',
-                        verify=True)
+                        verify=False)
 
 # Find all devices that have 'Switches and Hubs' in their family
 devices = dnac.devices.get_device_list(family='Switches and Hubs')
