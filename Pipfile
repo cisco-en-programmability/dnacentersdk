@@ -4,9 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages] # Here goes your package requirements for running the application and its versions (which packages you will use when running the application).
-requests = ">=2.27.1, <=2.40.0"
+requests = ">=2.31.0, <=2.40.0"
 requests-toolbelt = ">=1.0.0"
-future = ">=0.18.3"
 fastjsonschema = ">=2.16.2"
 
 [dev-packages] # Here goes your package requirements for developing the application and its versions (which packaes you will use when developing the application)

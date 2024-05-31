@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -92,7 +90,7 @@ class SecurityAdvisories(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -144,7 +142,7 @@ class SecurityAdvisories(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -177,7 +175,7 @@ class SecurityAdvisories(object):
         """Retrieves list of devices for an advisory .
 
         Args:
-            advisory_id(basestring): advisoryId path parameter. Advisory ID .
+            advisory_id(str): advisoryId path parameter. Advisory ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -195,12 +193,12 @@ class SecurityAdvisories(object):
             https://developer.cisco.com/docs/dna-center/#!get-devices-per-advisory
         """
         check_type(headers, dict)
-        check_type(advisory_id, basestring,
+        check_type(advisory_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -235,7 +233,7 @@ class SecurityAdvisories(object):
         """Retrieves list of advisory IDs for a device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device instance UUID .
+            device_id(str): deviceId path parameter. Device instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -253,12 +251,12 @@ class SecurityAdvisories(object):
             https://developer.cisco.com/docs/dna-center/#!get-advisory-ids-per-device
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -292,7 +290,7 @@ class SecurityAdvisories(object):
         """Retrieves list of advisories for a device .
 
         Args:
-            device_id(basestring): deviceId path parameter. Device instance UUID .
+            device_id(str): deviceId path parameter. Device instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -310,12 +308,12 @@ class SecurityAdvisories(object):
             https://developer.cisco.com/docs/dna-center/#!get-advisories-per-device
         """
         check_type(headers, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

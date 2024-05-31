@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -92,7 +90,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -144,10 +142,10 @@ class UserandRoles(object):
         if headers is not None:
             if 'invokeSource' in headers:
                 check_type(headers.get('invokeSource'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -180,7 +178,7 @@ class UserandRoles(object):
         """Get all users for the Cisco DNA Center system .
 
         Args:
-            invoke_source(basestring): invokeSource query parameter. The source that invokes this API .
+            invoke_source(str): invokeSource query parameter. The source that invokes this API .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -198,12 +196,12 @@ class UserandRoles(object):
             https://developer.cisco.com/docs/dna-center/#!get-users-api
         """
         check_type(headers, dict)
-        check_type(invoke_source, basestring,
+        check_type(invoke_source, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'invokeSource':
@@ -276,7 +274,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -368,7 +366,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -422,7 +420,7 @@ class UserandRoles(object):
         """Get external users authentication servers .
 
         Args:
-            invoke_source(basestring): invokeSource query parameter. The source that invokes this API .
+            invoke_source(str): invokeSource query parameter. The source that invokes this API .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -440,12 +438,12 @@ class UserandRoles(object):
             https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-api
         """
         check_type(headers, dict)
-        check_type(invoke_source, basestring,
+        check_type(invoke_source, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'invokeSource':

@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -103,8 +101,8 @@ class AuthenticationManagement(object):
                 return callback
 
         Args:
-            pk_password(basestring): pkPassword query parameter. Private Key Passsword .
-            list_of_users(basestring, list, set, tuple): listOfUsers query parameter.
+            pk_password(str): pkPassword query parameter. Private Key Passsword .
+            list_of_users(str, list, set, tuple): listOfUsers query parameter.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -126,15 +124,15 @@ class AuthenticationManagement(object):
             https://developer.cisco.com/docs/dna-center/#!import-certificate
         """
         check_type(headers, dict)
-        check_type(pk_password, basestring)
-        check_type(list_of_users, (basestring, list, set, tuple))
+        check_type(pk_password, str)
+        check_type(list_of_users, (str, list, set, tuple))
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'pkPassword':
@@ -209,9 +207,9 @@ class AuthenticationManagement(object):
                 return callback
 
         Args:
-            p12_password(basestring): p12Password query parameter. P12 Passsword .
-            pk_password(basestring): pkPassword query parameter. Private Key Passsword .
-            list_of_users(basestring, list, set, tuple): listOfUsers query parameter.
+            p12_password(str): p12Password query parameter. P12 Passsword .
+            pk_password(str): pkPassword query parameter. Private Key Passsword .
+            list_of_users(str, list, set, tuple): listOfUsers query parameter.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -233,16 +231,16 @@ class AuthenticationManagement(object):
             https://developer.cisco.com/docs/dna-center/#!import-certificate-p12
         """
         check_type(headers, dict)
-        check_type(p12_password, basestring)
-        check_type(pk_password, basestring)
-        check_type(list_of_users, (basestring, list, set, tuple))
+        check_type(p12_password, str)
+        check_type(pk_password, str)
+        check_type(list_of_users, (str, list, set, tuple))
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'p12Password':
@@ -308,13 +306,13 @@ class AuthenticationManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Authorization' in headers:
                 check_type(headers.get('Authorization'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -93,27 +91,27 @@ class EventManagement(object):
         """Get Parent Audit Log Event instances from the Event-Hub  .
 
         Args:
-            instance_id(basestring): instanceId query parameter. InstanceID of the Audit Log. .
-            name(basestring): name query parameter. Audit Log notification event name. .
-            event_id(basestring): eventId query parameter. Audit Log notification's event ID.  .
-            category(basestring): category query parameter. Audit Log notification's event category. Supported
+            instance_id(str): instanceId query parameter. InstanceID of the Audit Log. .
+            name(str): name query parameter. Audit Log notification event name. .
+            event_id(str): eventId query parameter. Audit Log notification's event ID.  .
+            category(str): category query parameter. Audit Log notification's event category. Supported
                 values: INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND,
                 QUERY, CONVERSATION .
-            severity(basestring): severity query parameter. Audit Log notification's event severity. Supported
+            severity(str): severity query parameter. Audit Log notification's event severity. Supported
                 values: 1, 2, 3, 4, 5. .
-            domain(basestring): domain query parameter. Audit Log notification's event domain. .
-            sub_domain(basestring): subDomain query parameter. Audit Log notification's event sub-domain. .
-            source(basestring): source query parameter. Audit Log notification's event source. .
-            user_id(basestring): userId query parameter. Audit Log notification's event userId. .
-            context(basestring): context query parameter. Audit Log notification's event correlationId. .
-            event_hierarchy(basestring): eventHierarchy query parameter. Audit Log notification's event
+            domain(str): domain query parameter. Audit Log notification's event domain. .
+            sub_domain(str): subDomain query parameter. Audit Log notification's event sub-domain. .
+            source(str): source query parameter. Audit Log notification's event source. .
+            user_id(str): userId query parameter. Audit Log notification's event userId. .
+            context(str): context query parameter. Audit Log notification's event correlationId. .
+            event_hierarchy(str): eventHierarchy query parameter. Audit Log notification's event
                 eventHierarchy. Example: "US.CA.San Jose" OR "US.CA" OR "CA.San Jose" Delimiter for
                 hierarchy separation is ".". .
-            site_id(basestring): siteId query parameter. Audit Log notification's siteId. .
-            device_id(basestring): deviceId query parameter. Audit Log notification's deviceId. .
+            site_id(str): siteId query parameter. Audit Log notification's siteId. .
+            device_id(str): deviceId query parameter. Audit Log notification's deviceId. .
             is_system_events(bool): isSystemEvents query parameter. Parameter to filter system generated audit-logs.
                 .
-            description(basestring): description query parameter. String full/partial search (Provided input string
+            description(str): description query parameter. String full/partial search (Provided input string
                 is case insensitively matched for records). .
             offset(int): offset query parameter. Position of a particular Audit Log record in the data.  .
             limit(int): limit query parameter. Number of Audit Log records to be returned per page. .
@@ -121,9 +119,9 @@ class EventManagement(object):
                 (when provided endTime is mandatory) .
             end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
                 provided startTime is mandatory) .
-            sort_by(basestring): sortBy query parameter. Sort the Audit Logs by certain fields. Supported values are
+            sort_by(str): sortBy query parameter. Sort the Audit Logs by certain fields. Supported values are
                 event notification header attributes. .
-            order(basestring): order query parameter. Order of the sorted Audit Log records. Default value is desc
+            order(str): order query parameter. Order of the sorted Audit Log records. Default value is desc
                 by timestamp. Supported values: asc, desc. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -143,31 +141,31 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-auditlog-parent-records
         """
         check_type(headers, dict)
-        check_type(instance_id, basestring)
-        check_type(name, basestring)
-        check_type(event_id, basestring)
-        check_type(category, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
-        check_type(user_id, basestring)
-        check_type(context, basestring)
-        check_type(event_hierarchy, basestring)
-        check_type(site_id, basestring)
-        check_type(device_id, basestring)
+        check_type(instance_id, str)
+        check_type(name, str)
+        check_type(event_id, str)
+        check_type(category, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
+        check_type(user_id, str)
+        check_type(context, str)
+        check_type(event_hierarchy, str)
+        check_type(site_id, str)
+        check_type(device_id, str)
         check_type(is_system_events, bool)
-        check_type(description, basestring)
+        check_type(description, str)
         check_type(offset, int)
         check_type(limit, int)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'instanceId':
@@ -261,30 +259,30 @@ class EventManagement(object):
         """Get Audit Log Summary from the Event-Hub .
 
         Args:
-            parent_instance_id(basestring): parentInstanceId query parameter. Parent Audit Log record's instanceID.
+            parent_instance_id(str): parentInstanceId query parameter. Parent Audit Log record's instanceID.
                 .
             is_parent_only(bool): isParentOnly query parameter. Parameter to filter parent only audit-logs. .
-            instance_id(basestring): instanceId query parameter. InstanceID of the Audit Log. .
-            name(basestring): name query parameter. Audit Log notification event name. .
-            event_id(basestring): eventId query parameter. Audit Log notification's event ID.  .
-            category(basestring): category query parameter. Audit Log notification's event category. Supported
+            instance_id(str): instanceId query parameter. InstanceID of the Audit Log. .
+            name(str): name query parameter. Audit Log notification event name. .
+            event_id(str): eventId query parameter. Audit Log notification's event ID.  .
+            category(str): category query parameter. Audit Log notification's event category. Supported
                 values: INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND,
                 QUERY, CONVERSATION .
-            severity(basestring): severity query parameter. Audit Log notification's event severity. Supported
+            severity(str): severity query parameter. Audit Log notification's event severity. Supported
                 values: 1, 2, 3, 4, 5. .
-            domain(basestring): domain query parameter. Audit Log notification's event domain. .
-            sub_domain(basestring): subDomain query parameter. Audit Log notification's event sub-domain. .
-            source(basestring): source query parameter. Audit Log notification's event source. .
-            user_id(basestring): userId query parameter. Audit Log notification's event userId. .
-            context(basestring): context query parameter. Audit Log notification's event correlationId. .
-            event_hierarchy(basestring): eventHierarchy query parameter. Audit Log notification's event
+            domain(str): domain query parameter. Audit Log notification's event domain. .
+            sub_domain(str): subDomain query parameter. Audit Log notification's event sub-domain. .
+            source(str): source query parameter. Audit Log notification's event source. .
+            user_id(str): userId query parameter. Audit Log notification's event userId. .
+            context(str): context query parameter. Audit Log notification's event correlationId. .
+            event_hierarchy(str): eventHierarchy query parameter. Audit Log notification's event
                 eventHierarchy. Example: "US.CA.San Jose" OR "US.CA" OR "CA.San Jose" Delimiter for
                 hierarchy separation is ".". .
-            site_id(basestring): siteId query parameter. Audit Log notification's siteId. .
-            device_id(basestring): deviceId query parameter. Audit Log notification's deviceId. .
+            site_id(str): siteId query parameter. Audit Log notification's siteId. .
+            device_id(str): deviceId query parameter. Audit Log notification's deviceId. .
             is_system_events(bool): isSystemEvents query parameter. Parameter to filter system generated audit-logs.
                 .
-            description(basestring): description query parameter. String full/partial search (Provided input string
+            description(str): description query parameter. String full/partial search (Provided input string
                 is case insensitively matched for records). .
             start_time(int): startTime query parameter. Start Time in milliseconds since Epoch Eg. 1597950637211
                 (when provided endTime is mandatory) .
@@ -308,29 +306,29 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-auditlog-summary
         """
         check_type(headers, dict)
-        check_type(parent_instance_id, basestring)
+        check_type(parent_instance_id, str)
         check_type(is_parent_only, bool)
-        check_type(instance_id, basestring)
-        check_type(name, basestring)
-        check_type(event_id, basestring)
-        check_type(category, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
-        check_type(user_id, basestring)
-        check_type(context, basestring)
-        check_type(event_hierarchy, basestring)
-        check_type(site_id, basestring)
-        check_type(device_id, basestring)
+        check_type(instance_id, str)
+        check_type(name, str)
+        check_type(event_id, str)
+        check_type(category, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
+        check_type(user_id, str)
+        check_type(context, str)
+        check_type(event_hierarchy, str)
+        check_type(site_id, str)
+        check_type(device_id, str)
         check_type(is_system_events, bool)
-        check_type(description, basestring)
+        check_type(description, str)
         check_type(start_time, int)
         check_type(end_time, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'parentInstanceId':
@@ -422,29 +420,29 @@ class EventManagement(object):
         """Get Audit Log Event instances from the Event-Hub  .
 
         Args:
-            parent_instance_id(basestring): parentInstanceId query parameter. Parent Audit Log record's instanceID.
+            parent_instance_id(str): parentInstanceId query parameter. Parent Audit Log record's instanceID.
                 .
-            instance_id(basestring): instanceId query parameter. InstanceID of the Audit Log. .
-            name(basestring): name query parameter. Audit Log notification event name. .
-            event_id(basestring): eventId query parameter. Audit Log notification's event ID.  .
-            category(basestring): category query parameter. Audit Log notification's event category. Supported
+            instance_id(str): instanceId query parameter. InstanceID of the Audit Log. .
+            name(str): name query parameter. Audit Log notification event name. .
+            event_id(str): eventId query parameter. Audit Log notification's event ID.  .
+            category(str): category query parameter. Audit Log notification's event category. Supported
                 values: INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND,
                 QUERY, CONVERSATION .
-            severity(basestring): severity query parameter. Audit Log notification's event severity. Supported
+            severity(str): severity query parameter. Audit Log notification's event severity. Supported
                 values: 1, 2, 3, 4, 5. .
-            domain(basestring): domain query parameter. Audit Log notification's event domain. .
-            sub_domain(basestring): subDomain query parameter. Audit Log notification's event sub-domain. .
-            source(basestring): source query parameter. Audit Log notification's event source. .
-            user_id(basestring): userId query parameter. Audit Log notification's event userId. .
-            context(basestring): context query parameter. Audit Log notification's event correlationId. .
-            event_hierarchy(basestring): eventHierarchy query parameter. Audit Log notification's event
+            domain(str): domain query parameter. Audit Log notification's event domain. .
+            sub_domain(str): subDomain query parameter. Audit Log notification's event sub-domain. .
+            source(str): source query parameter. Audit Log notification's event source. .
+            user_id(str): userId query parameter. Audit Log notification's event userId. .
+            context(str): context query parameter. Audit Log notification's event correlationId. .
+            event_hierarchy(str): eventHierarchy query parameter. Audit Log notification's event
                 eventHierarchy. Example: "US.CA.San Jose" OR "US.CA" OR "CA.San Jose" Delimiter for
                 hierarchy separation is ".". .
-            site_id(basestring): siteId query parameter. Audit Log notification's siteId. .
-            device_id(basestring): deviceId query parameter. Audit Log notification's deviceId. .
+            site_id(str): siteId query parameter. Audit Log notification's siteId. .
+            device_id(str): deviceId query parameter. Audit Log notification's deviceId. .
             is_system_events(bool): isSystemEvents query parameter. Parameter to filter system generated audit-logs.
                 .
-            description(basestring): description query parameter. String full/partial search (Provided input string
+            description(str): description query parameter. String full/partial search (Provided input string
                 is case insensitively matched for records). .
             offset(int): offset query parameter. Position of a particular Audit Log record in the data.  .
             limit(int): limit query parameter. Number of Audit Log records to be returned per page. .
@@ -452,9 +450,9 @@ class EventManagement(object):
                 (when provided endTime is mandatory) .
             end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
                 provided startTime is mandatory) .
-            sort_by(basestring): sortBy query parameter. Sort the Audit Logs by certain fields. Supported values are
+            sort_by(str): sortBy query parameter. Sort the Audit Logs by certain fields. Supported values are
                 event notification header attributes. .
-            order(basestring): order query parameter. Order of the sorted Audit Log records. Default value is desc
+            order(str): order query parameter. Order of the sorted Audit Log records. Default value is desc
                 by timestamp. Supported values: asc, desc. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -474,32 +472,32 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-auditlog-records
         """
         check_type(headers, dict)
-        check_type(parent_instance_id, basestring)
-        check_type(instance_id, basestring)
-        check_type(name, basestring)
-        check_type(event_id, basestring)
-        check_type(category, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
-        check_type(user_id, basestring)
-        check_type(context, basestring)
-        check_type(event_hierarchy, basestring)
-        check_type(site_id, basestring)
-        check_type(device_id, basestring)
+        check_type(parent_instance_id, str)
+        check_type(instance_id, str)
+        check_type(name, str)
+        check_type(event_id, str)
+        check_type(category, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
+        check_type(user_id, str)
+        check_type(context, str)
+        check_type(event_hierarchy, str)
+        check_type(site_id, str)
+        check_type(device_id, str)
         check_type(is_system_events, bool)
-        check_type(description, basestring)
+        check_type(description, str)
         check_type(offset, int)
         check_type(limit, int)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'parentInstanceId':
@@ -576,7 +574,7 @@ class EventManagement(object):
         """Get the Status of events API calls with provided executionId as mandatory path parameter .
 
         Args:
-            execution_id(basestring): executionId path parameter. Execution ID .
+            execution_id(str): executionId path parameter. Execution ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -594,12 +592,12 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-status-api-for-events
         """
         check_type(headers, dict)
-        check_type(execution_id, basestring,
+        check_type(execution_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -671,10 +669,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -748,7 +746,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -819,7 +817,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -888,22 +886,22 @@ class EventManagement(object):
         """Get the list of Published Notifications .
 
         Args:
-            event_ids(basestring): eventIds query parameter. The registered EventId should be provided .
+            event_ids(str): eventIds query parameter. The registered EventId should be provided .
             start_time(int): startTime query parameter. Start Time in milliseconds .
             end_time(int): endTime query parameter. End Time in milliseconds .
-            category(basestring): category query parameter.
-            type(basestring): type query parameter.
-            severity(basestring): severity query parameter.
-            domain(basestring): domain query parameter.
-            sub_domain(basestring): subDomain query parameter. Sub Domain .
-            source(basestring): source query parameter.
+            category(str): category query parameter.
+            type(str): type query parameter.
+            severity(str): severity query parameter.
+            domain(str): domain query parameter.
+            sub_domain(str): subDomain query parameter. Sub Domain .
+            source(str): source query parameter.
             offset(int): offset query parameter. Start Offset .
             limit(int): limit query parameter. # of records .
-            sort_by(basestring): sortBy query parameter. Sort By column .
-            order(basestring): order query parameter. Ascending/Descending order [asc/desc] .
-            tags(basestring): tags query parameter.
-            namespace(basestring): namespace query parameter.
-            site_id(basestring): siteId query parameter. Site Id .
+            sort_by(str): sortBy query parameter. Sort By column .
+            order(str): order query parameter. Ascending/Descending order [asc/desc] .
+            tags(str): tags query parameter.
+            namespace(str): namespace query parameter.
+            site_id(str): siteId query parameter. Site Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -922,26 +920,26 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-notifications
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(tags, basestring)
-        check_type(namespace, basestring)
-        check_type(site_id, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(tags, str)
+        check_type(namespace, str)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -1014,15 +1012,15 @@ class EventManagement(object):
         """Get the Count of Published Notifications .
 
         Args:
-            event_ids(basestring): eventIds query parameter. The registered EventId should be provided .
+            event_ids(str): eventIds query parameter. The registered EventId should be provided .
             start_time(int): startTime query parameter. Start Time in milliseconds .
             end_time(int): endTime query parameter. End Time in milliseconds .
-            category(basestring): category query parameter.
-            type(basestring): type query parameter.
-            severity(basestring): severity query parameter.
-            domain(basestring): domain query parameter.
-            sub_domain(basestring): subDomain query parameter. Sub Domain .
-            source(basestring): source query parameter.
+            category(str): category query parameter.
+            type(str): type query parameter.
+            severity(str): severity query parameter.
+            domain(str): domain query parameter.
+            sub_domain(str): subDomain query parameter. Sub Domain .
+            source(str): source query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1040,19 +1038,19 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!count-of-notifications
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(severity, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(source, basestring)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(severity, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(source, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -1107,13 +1105,13 @@ class EventManagement(object):
         """Get SNMP Destination .
 
         Args:
-            config_id(basestring): configId query parameter. List of SNMP configurations .
+            config_id(str): configId query parameter. List of SNMP configurations .
             offset(int): offset query parameter. The number of SNMP configuration's to offset in the resultset whose
                 default value 0 .
             limit(int): limit query parameter. The number of SNMP configuration's to limit in the resultset whose
                 default value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1131,15 +1129,15 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-snmp-destination
         """
         check_type(headers, dict)
-        check_type(config_id, basestring)
+        check_type(config_id, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'configId':
@@ -1186,14 +1184,14 @@ class EventManagement(object):
         """Gets the list of Subscriptions's based on provided offset and limit (Deprecated) .
 
         Args:
-            event_ids(basestring): eventIds query parameter. List of subscriptions related to the respective
+            event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds .
             offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
             limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1212,15 +1210,15 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -1263,7 +1261,7 @@ class EventManagement(object):
         """Delete EventSubscriptions .
 
         Args:
-            subscriptions(basestring): subscriptions query parameter. List of EventSubscriptionId's for removal .
+            subscriptions(str): subscriptions query parameter. List of EventSubscriptionId's for removal .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1281,12 +1279,12 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!delete-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(subscriptions, basestring,
+        check_type(subscriptions, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'subscriptions':
@@ -1347,7 +1345,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1412,7 +1410,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1456,14 +1454,14 @@ class EventManagement(object):
         """Gets the list of subscription details for specified connectorType .
 
         Args:
-            name(basestring): name query parameter. Name of the specific configuration .
-            instance_id(basestring): instanceId query parameter. Instance Id of the specific configuration .
+            name(str): name query parameter. Name of the specific configuration .
+            instance_id(str): instanceId query parameter. Instance Id of the specific configuration .
             offset(int): offset query parameter. The number of Email Subscription detail's to offset in the
                 resultset whose default value 0 .
             limit(int): limit query parameter. The number of Email Subscription detail's to limit in the resultset
                 whose default value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1482,16 +1480,16 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-email-subscription-details
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(instance_id, basestring)
+        check_type(name, str)
+        check_type(instance_id, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -1541,14 +1539,14 @@ class EventManagement(object):
         """Gets the list of subscription details for specified connectorType .
 
         Args:
-            name(basestring): name query parameter. Name of the specific configuration .
-            instance_id(basestring): instanceId query parameter. Instance Id of the specific configuration .
+            name(str): name query parameter. Name of the specific configuration .
+            instance_id(str): instanceId query parameter. Instance Id of the specific configuration .
             offset(int): offset query parameter. The number of Rest/Webhook Subscription detail's to offset in the
                 resultset whose default value 0 .
             limit(int): limit query parameter. The number of Rest/Webhook Subscription detail's to limit in the
                 resultset whose default value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1567,16 +1565,16 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-subscription-details
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(instance_id, basestring)
+        check_type(name, str)
+        check_type(instance_id, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -1626,14 +1624,14 @@ class EventManagement(object):
         """Gets the list of subscription details for specified connectorType .
 
         Args:
-            name(basestring): name query parameter. Name of the specific configuration .
-            instance_id(basestring): instanceId query parameter. Instance Id of the specific configuration .
+            name(str): name query parameter. Name of the specific configuration .
+            instance_id(str): instanceId query parameter. Instance Id of the specific configuration .
             offset(int): offset query parameter. The number of Syslog Subscription detail's to offset in the
                 resultset whose default value 0 .
             limit(int): limit query parameter. The number of Syslog Subscription detail's to limit in the resultset
                 whose default value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1652,16 +1650,16 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-syslog-subscription-details
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(instance_id, basestring)
+        check_type(name, str)
+        check_type(instance_id, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -1706,7 +1704,7 @@ class EventManagement(object):
         """Returns the Count of EventSubscriptions .
 
         Args:
-            event_ids(basestring): eventIds query parameter. List of subscriptions related to the respective
+            event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1725,12 +1723,12 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!count-of-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring,
+        check_type(event_ids, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -1791,10 +1789,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1859,7 +1857,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1907,22 +1905,22 @@ class EventManagement(object):
         """Gets the list of email Subscriptions's based on provided query params .
 
         Args:
-            event_ids(basestring): eventIds query parameter. List of email subscriptions related to the respective
+            event_ids(str): eventIds query parameter. List of email subscriptions related to the respective
                 eventIds (Comma separated event ids) .
             offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
             limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
-            domain(basestring): domain query parameter. List of email subscriptions related to the respective domain
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
+            domain(str): domain query parameter. List of email subscriptions related to the respective domain
                 .
-            sub_domain(basestring): subDomain query parameter. List of email subscriptions related to the respective
+            sub_domain(str): subDomain query parameter. List of email subscriptions related to the respective
                 sub-domain .
-            category(basestring): category query parameter. List of email subscriptions related to the respective
+            category(str): category query parameter. List of email subscriptions related to the respective
                 category .
-            type(basestring): type query parameter. List of email subscriptions related to the respective type .
-            name(basestring): name query parameter. List of email subscriptions related to the respective name .
+            type(str): type query parameter. List of email subscriptions related to the respective type .
+            name(str): name query parameter. List of email subscriptions related to the respective name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1941,20 +1939,20 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-email-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(name, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -2033,10 +2031,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2084,21 +2082,21 @@ class EventManagement(object):
         """Gets the list of Rest/Webhook Subscriptions's based on provided query params .
 
         Args:
-            event_ids(basestring): eventIds query parameter. List of subscriptions related to the respective
+            event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds (Comma separated event ids) .
             offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
             limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
-            domain(basestring): domain query parameter. List of subscriptions related to the respective domain .
-            sub_domain(basestring): subDomain query parameter. List of subscriptions related to the respective sub-
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
+            domain(str): domain query parameter. List of subscriptions related to the respective domain .
+            sub_domain(str): subDomain query parameter. List of subscriptions related to the respective sub-
                 domain .
-            category(basestring): category query parameter. List of subscriptions related to the respective category
+            category(str): category query parameter. List of subscriptions related to the respective category
                 .
-            type(basestring): type query parameter. List of subscriptions related to the respective type .
-            name(basestring): name query parameter. List of subscriptions related to the respective name .
+            type(str): type query parameter. List of subscriptions related to the respective type .
+            name(str): name query parameter. List of subscriptions related to the respective name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2117,20 +2115,20 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(name, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -2209,7 +2207,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2274,10 +2272,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2342,7 +2340,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2390,21 +2388,21 @@ class EventManagement(object):
         """Gets the list of Syslog Subscriptions's based on provided offset and limit .
 
         Args:
-            event_ids(basestring): eventIds query parameter. List of subscriptions related to the respective
+            event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds (Comma separated event ids) .
             offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
             limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
-            domain(basestring): domain query parameter. List of subscriptions related to the respective domain .
-            sub_domain(basestring): subDomain query parameter. List of subscriptions related to the respective sub-
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
+            domain(str): domain query parameter. List of subscriptions related to the respective domain .
+            sub_domain(str): subDomain query parameter. List of subscriptions related to the respective sub-
                 domain .
-            category(basestring): category query parameter. List of subscriptions related to the respective category
+            category(str): category query parameter. List of subscriptions related to the respective category
                 .
-            type(basestring): type query parameter. List of subscriptions related to the respective type .
-            name(basestring): name query parameter. List of subscriptions related to the respective name .
+            type(str): type query parameter. List of subscriptions related to the respective type .
+            name(str): name query parameter. List of subscriptions related to the respective name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2423,20 +2421,20 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-syslog-event-subscriptions
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
+        check_type(event_ids, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(domain, basestring)
-        check_type(sub_domain, basestring)
-        check_type(category, basestring)
-        check_type(type, basestring)
-        check_type(name, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(domain, str)
+        check_type(sub_domain, str)
+        check_type(category, str)
+        check_type(type, str)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -2527,10 +2525,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2590,15 +2588,15 @@ class EventManagement(object):
         """Get Syslog Destination .
 
         Args:
-            config_id(basestring): configId query parameter. Config id of syslog server .
-            name(basestring): name query parameter. Name of syslog server .
-            protocol(basestring): protocol query parameter. Protocol of syslog server .
+            config_id(str): configId query parameter. Config id of syslog server .
+            name(str): name query parameter. Name of syslog server .
+            protocol(str): protocol query parameter. Protocol of syslog server .
             offset(int): offset query parameter. The number of syslog configuration's to offset in the resultset
                 whose default value 0 .
             limit(int): limit query parameter. The number of syslog configuration's to limit in the resultset whose
                 default value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2616,17 +2614,17 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-syslog-destination
         """
         check_type(headers, dict)
-        check_type(config_id, basestring)
-        check_type(name, basestring)
-        check_type(protocol, basestring)
+        check_type(config_id, str)
+        check_type(name, str)
+        check_type(protocol, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'configId':
@@ -2711,7 +2709,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2803,10 +2801,10 @@ class EventManagement(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2900,7 +2898,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2960,13 +2958,13 @@ class EventManagement(object):
         """Get Webhook Destination .
 
         Args:
-            webhook_ids(basestring): webhookIds query parameter. List of webhook configurations .
+            webhook_ids(str): webhookIds query parameter. List of webhook configurations .
             offset(int): offset query parameter. The number of webhook configuration's to offset in the resultset
                 whose default value 0 .
             limit(int): limit query parameter. The number of webhook configuration's to limit in the resultset whose
                 default value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2984,15 +2982,15 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-webhook-destination
         """
         check_type(headers, dict)
-        check_type(webhook_ids, basestring)
+        check_type(webhook_ids, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'webhookIds':
@@ -3040,14 +3038,14 @@ class EventManagement(object):
         """Gets the list of registered Events with provided eventIds or tags as mandatory .
 
         Args:
-            event_id(basestring): eventId query parameter. The registered EventId should be provided .
-            tags(basestring): tags query parameter. The registered Tags should be provided .
+            event_id(str): eventId query parameter. The registered EventId should be provided .
+            tags(str): tags query parameter. The registered Tags should be provided .
             offset(int): offset query parameter. The number of Registries to offset in the resultset whose default
                 value 0 .
             limit(int): limit query parameter. The number of Registries to limit in the resultset whose default
                 value 10 .
-            sort_by(basestring): sortBy query parameter. SortBy field name .
-            order(basestring): order query parameter.
+            sort_by(str): sortBy query parameter. SortBy field name .
+            order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3066,17 +3064,17 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-events
         """
         check_type(headers, dict)
-        check_type(event_id, basestring)
-        check_type(tags, basestring,
+        check_type(event_id, str)
+        check_type(tags, str,
                    may_be_none=False)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventId':
@@ -3122,8 +3120,8 @@ class EventManagement(object):
         """Get the count of registered events with provided eventIds or tags as mandatory .
 
         Args:
-            event_id(basestring): eventId query parameter. The registered EventId should be provided .
-            tags(basestring): tags query parameter. The registered Tags should be provided .
+            event_id(str): eventId query parameter. The registered EventId should be provided .
+            tags(str): tags query parameter. The registered Tags should be provided .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3141,13 +3139,13 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!count-of-events
         """
         check_type(headers, dict)
-        check_type(event_id, basestring)
-        check_type(tags, basestring,
+        check_type(event_id, str)
+        check_type(tags, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventId':
@@ -3190,13 +3188,13 @@ class EventManagement(object):
         """Gets the list of artifacts based on provided offset and limit .
 
         Args:
-            event_ids(basestring): eventIds query parameter. List of eventIds .
-            tags(basestring): tags query parameter. Tags defined .
+            event_ids(str): eventIds query parameter. List of eventIds .
+            tags(str): tags query parameter. Tags defined .
             offset(int): offset query parameter. Record start offset .
             limit(int): limit query parameter. # of records to return in result set .
-            sort_by(basestring): sortBy query parameter. Sort by field .
-            order(basestring): order query parameter. sorting order (asc/desc) .
-            search(basestring): search query parameter. findd matches in name, description, eventId, type, category
+            sort_by(str): sortBy query parameter. Sort by field .
+            order(str): order query parameter. sorting order (asc/desc) .
+            search(str): search query parameter. findd matches in name, description, eventId, type, category
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3216,17 +3214,17 @@ class EventManagement(object):
             https://developer.cisco.com/docs/dna-center/#!get-eventartifacts
         """
         check_type(headers, dict)
-        check_type(event_ids, basestring)
-        check_type(tags, basestring)
+        check_type(event_ids, str)
+        check_type(tags, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(search, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(search, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'eventIds':
@@ -3292,7 +3290,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3345,7 +3343,7 @@ class EventManagement(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

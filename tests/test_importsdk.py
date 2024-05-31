@@ -10,7 +10,7 @@ class TestImportSDK:
         self.base_url = base_url
         self.verify = False
         self.debug = True
-        self.version = "2.3.5.3"
+        self.version = "2.3.7.6"
 
 
 @pytest.fixture

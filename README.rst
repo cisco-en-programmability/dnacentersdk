@@ -18,7 +18,7 @@ dnacentersdk
     dnac = api.DNACenterAPI(username="devnetuser",
                             password="Cisco123!",
                             base_url="https://sandboxdnac.cisco.com:443",
-                            version='2.3.5.3',
+                            version='2.3.7.6',
                             verify=True)
 
     # Find all devices that have 'Switches and Hubs' in their family
@@ -149,8 +149,6 @@ The following table shows the supported versions.
 
    * - Cisco DNA Center version
      - Python "dnacentersdk" version
-   * - 2.1.1
-     - 2.2.5
    * - 2.2.2.3
      - 2.3.3
    * - 2.2.3.3
@@ -159,6 +157,9 @@ The following table shows the supported versions.
      - 2.5.6
    * - 2.3.5.3
      - 2.6.10
+   * - 2.3.7.6
+     - 2.7.0
+
    
 
 If your SDK is older please consider updating it first.

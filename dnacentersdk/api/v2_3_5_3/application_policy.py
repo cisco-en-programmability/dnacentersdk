@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -73,7 +71,7 @@ class ApplicationPolicy(object):
         """Get all existing application policies .
 
         Args:
-            policy_scope(basestring): policyScope query parameter. policy scope name .
+            policy_scope(str): policyScope query parameter. policy scope name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -91,11 +89,11 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-application-policy
         """
         check_type(headers, dict)
-        check_type(policy_scope, basestring)
+        check_type(policy_scope, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'policyScope':
@@ -149,7 +147,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -214,10 +212,10 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -265,7 +263,7 @@ class ApplicationPolicy(object):
         """Get all or by name, existing application policy queuing profiles .
 
         Args:
-            name(basestring): name query parameter. queuing profile name .
+            name(str): name query parameter. queuing profile name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -283,11 +281,11 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile
         """
         check_type(headers, dict)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -348,7 +346,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -413,7 +411,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -471,7 +469,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -504,7 +502,7 @@ class ApplicationPolicy(object):
         """Delete existing custom application policy queuing profile by id .
 
         Args:
-            id(basestring): id path parameter. Id of custom queuing profile to delete .
+            id(str): id path parameter. Id of custom queuing profile to delete .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -522,12 +520,12 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application-policy-queuing-profile
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -565,7 +563,7 @@ class ApplicationPolicy(object):
         Args:
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            name(basestring): name query parameter.
+            name(str): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -585,11 +583,11 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -628,7 +626,7 @@ class ApplicationPolicy(object):
         """Delete existing application-set by it's id .
 
         Args:
-            id(basestring): id query parameter.
+            id(str): id query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -646,12 +644,12 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application-set
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -712,7 +710,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -770,7 +768,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -830,7 +828,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -895,7 +893,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -934,7 +932,7 @@ class ApplicationPolicy(object):
         """Delete existing application by its id .
 
         Args:
-            id(basestring): id query parameter. Application's Id .
+            id(str): id query parameter. Application's Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -952,12 +950,12 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-application
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -996,7 +994,7 @@ class ApplicationPolicy(object):
         Args:
             offset(int): offset query parameter. The offset of the first application to be returned .
             limit(int): limit query parameter. The maximum number of applications to be returned .
-            name(basestring): name query parameter. Application's name .
+            name(str): name query parameter. Application's name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1016,11 +1014,11 @@ class ApplicationPolicy(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -1078,7 +1076,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1111,7 +1109,7 @@ class ApplicationPolicy(object):
         """Get all or by network device id, existing qos device interface infos .
 
         Args:
-            network_device_id(basestring): networkDeviceId query parameter. network device id .
+            network_device_id(str): networkDeviceId query parameter. network device id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1129,11 +1127,11 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'networkDeviceId':
@@ -1194,7 +1192,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1261,7 +1259,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1319,7 +1317,7 @@ class ApplicationPolicy(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1352,7 +1350,7 @@ class ApplicationPolicy(object):
         """Delete all qos device interface infos associate with network device id .
 
         Args:
-            id(basestring): id path parameter. Id of the qos device info, this object holds all qos device interface
+            id(str): id path parameter. Id of the qos device info, this object holds all qos device interface
                 infos associate with network device id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1371,12 +1369,12 @@ class ApplicationPolicy(object):
             https://developer.cisco.com/docs/dna-center/#!delete-qos-device-interface-info
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

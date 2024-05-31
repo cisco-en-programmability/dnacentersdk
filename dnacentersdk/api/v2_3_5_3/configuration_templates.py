@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -75,11 +73,11 @@ class ConfigurationTemplates(object):
         """API to clone template .
 
         Args:
-            name(basestring): name path parameter. Template name to clone template(Name should be different than
+            name(str): name path parameter. Template name to clone template(Name should be different than
                 existing template name within same project) .
-            template_id(basestring): templateId path parameter. UUID of the template to clone it .
-            project_id(basestring): projectId path parameter.
-            project_id(basestring): projectId query parameter. UUID of the project in which the template needs to be
+            template_id(str): templateId path parameter. UUID of the template to clone it .
+            project_id(str): projectId path parameter.
+            project_id(str): projectId query parameter. UUID of the project in which the template needs to be
                 created .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -98,20 +96,20 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!clone-given-template
         """
         check_type(headers, dict)
-        check_type(project_id, basestring)
-        check_type(name, basestring,
+        check_type(project_id, str)
+        check_type(name, str,
                    may_be_none=False)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
-        check_type(project_id, basestring,
+        check_type(project_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'projectId':
@@ -190,10 +188,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -289,7 +287,7 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -346,8 +344,8 @@ class ConfigurationTemplates(object):
         """List the projects .
 
         Args:
-            name(basestring): name query parameter. Name of project to be searched .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            name(str): name query parameter. Name of project to be searched .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -366,12 +364,12 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!get-projects
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(sort_order, basestring)
+        check_type(name, str)
+        check_type(sort_order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -440,10 +438,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'doVersion':
@@ -481,7 +479,6 @@ class ConfigurationTemplates(object):
     def export_projects(self,
                         headers=None,
                         payload=None,
-                        active_validation=True,
                         **request_parameters):
         """Exports the projects for given projectNames. .
 
@@ -511,10 +508,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -524,9 +521,6 @@ class ConfigurationTemplates(object):
         path_params = {
         }
         _payload = payload or []
-        if active_validation:
-            self._request_validator('jsd_e6ea8c5d425cf9ac77006f5593725f_v2_3_5_3')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}
@@ -611,7 +605,7 @@ class ConfigurationTemplates(object):
             templateParams(list): Configuration Templates's templateParams (list of objects).
             validationErrors(object): Configuration Templates's validationErrors.
             version(string): Configuration Templates's Current version of template .
-            project_name(basestring): projectName path parameter. Project name to create template under the project
+            project_name(str): projectName path parameter. Project name to create template under the project
                 .
             do_version(bool): doVersion query parameter. If this flag is true then it creates a new version of the
                 template with the imported contents in case if the templates already exists. " If this
@@ -640,15 +634,15 @@ class ConfigurationTemplates(object):
         check_type(headers, dict)
         check_type(payload, dict)
         check_type(do_version, bool)
-        check_type(project_name, basestring,
+        check_type(project_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'doVersion':
@@ -746,7 +740,7 @@ class ConfigurationTemplates(object):
         """Get the details of the given project by its id. .
 
         Args:
-            project_id(basestring): projectId path parameter. projectId(UUID) of project to get project details .
+            project_id(str): projectId path parameter. projectId(UUID) of project to get project details .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -764,12 +758,12 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!get-project-details
         """
         check_type(headers, dict)
-        check_type(project_id, basestring,
+        check_type(project_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -804,7 +798,7 @@ class ConfigurationTemplates(object):
         """Deletes the project by its id .
 
         Args:
-            project_id(basestring): projectId path parameter. projectId(UUID) of project to be deleted .
+            project_id(str): projectId path parameter. projectId(UUID) of project to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -822,12 +816,12 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-the-project
         """
         check_type(headers, dict)
-        check_type(project_id, basestring,
+        check_type(project_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -918,7 +912,7 @@ class ConfigurationTemplates(object):
             templateParams(list): Configuration Templates's templateParams (list of objects).
             validationErrors(object): Configuration Templates's validationErrors.
             version(string): Configuration Templates's Current version of template .
-            project_id(basestring): projectId path parameter. UUID of the project in which the template needs to be
+            project_id(str): projectId path parameter. UUID of the project in which the template needs to be
                 created .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -942,15 +936,15 @@ class ConfigurationTemplates(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(project_id, basestring,
+        check_type(project_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1056,20 +1050,20 @@ class ConfigurationTemplates(object):
         """List the templates available .
 
         Args:
-            project_id(basestring): projectId query parameter. Filter template(s) based on project UUID .
-            software_type(basestring): softwareType query parameter. Filter template(s) based software type .
-            software_version(basestring): softwareVersion query parameter. Filter template(s) based softwareVersion
+            project_id(str): projectId query parameter. Filter template(s) based on project UUID .
+            software_type(str): softwareType query parameter. Filter template(s) based software type .
+            software_version(str): softwareVersion query parameter. Filter template(s) based softwareVersion
                 .
-            product_family(basestring): productFamily query parameter. Filter template(s) based on device family .
-            product_series(basestring): productSeries query parameter. Filter template(s) based on device series .
-            product_type(basestring): productType query parameter. Filter template(s) based on device type .
+            product_family(str): productFamily query parameter. Filter template(s) based on device family .
+            product_series(str): productSeries query parameter. Filter template(s) based on device series .
+            product_type(str): productType query parameter. Filter template(s) based on device type .
             filter_conflicting_templates(bool): filterConflictingTemplates query parameter. Filter template(s) based
                 on confliting templates .
-            tags(basestring, list, set, tuple): tags query parameter. Filter template(s) based on tags .
-            project_names(basestring, list, set, tuple): projectNames query parameter. Filter template(s) based on
+            tags(str, list, set, tuple): tags query parameter. Filter template(s) based on tags .
+            project_names(str, list, set, tuple): projectNames query parameter. Filter template(s) based on
                 project names .
             un_committed(bool): unCommitted query parameter. Filter template(s) based on template commited or not .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1088,21 +1082,21 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!gets-the-templates-available
         """
         check_type(headers, dict)
-        check_type(project_id, basestring)
-        check_type(software_type, basestring)
-        check_type(software_version, basestring)
-        check_type(product_family, basestring)
-        check_type(product_series, basestring)
-        check_type(product_type, basestring)
+        check_type(project_id, str)
+        check_type(software_type, str)
+        check_type(software_version, str)
+        check_type(product_family, str)
+        check_type(product_series, str)
+        check_type(product_type, str)
         check_type(filter_conflicting_templates, bool)
-        check_type(tags, (basestring, list, set, tuple))
-        check_type(project_names, (basestring, list, set, tuple))
+        check_type(tags, (str, list, set, tuple))
+        check_type(project_names, (str, list, set, tuple))
         check_type(un_committed, bool)
-        check_type(sort_order, basestring)
+        check_type(sort_order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'projectId':
@@ -1237,7 +1231,7 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1369,10 +1363,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1426,7 +1420,7 @@ class ConfigurationTemplates(object):
         """API to retrieve the status of template deployment. .
 
         Args:
-            deployment_id(basestring): deploymentId path parameter. UUID of deployment to retrieve template
+            deployment_id(str): deploymentId path parameter. UUID of deployment to retrieve template
                 deployment status .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1445,12 +1439,12 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!get-template-deployment-status
         """
         check_type(headers, dict)
-        check_type(deployment_id, basestring,
+        check_type(deployment_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1511,10 +1505,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1588,10 +1582,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1671,10 +1665,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1720,7 +1714,7 @@ class ConfigurationTemplates(object):
         """Get all the versions of template by its id .
 
         Args:
-            template_id(basestring): templateId path parameter. templateId(UUID) to get list of versioned templates
+            template_id(str): templateId path parameter. templateId(UUID) to get list of versioned templates
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1740,12 +1734,12 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!get-template-versions
         """
         check_type(headers, dict)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1780,7 +1774,7 @@ class ConfigurationTemplates(object):
         """Deletes the template by its id .
 
         Args:
-            template_id(basestring): templateId path parameter. templateId(UUID) of template to be deleted .
+            template_id(str): templateId path parameter. templateId(UUID) of template to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1798,12 +1792,12 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-the-template
         """
         check_type(headers, dict)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1839,7 +1833,7 @@ class ConfigurationTemplates(object):
         """Details of the template by its id .
 
         Args:
-            template_id(basestring): templateId path parameter. TemplateId(UUID) to get details of the template .
+            template_id(str): templateId path parameter. TemplateId(UUID) to get details of the template .
             latest_version(bool): latestVersion query parameter. latestVersion flag to get the latest versioned
                 template .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1860,12 +1854,12 @@ class ConfigurationTemplates(object):
         """
         check_type(headers, dict)
         check_type(latest_version, bool)
-        check_type(template_id, basestring,
+        check_type(template_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'latestVersion':
@@ -1906,11 +1900,11 @@ class ConfigurationTemplates(object):
         """Get project(s) details .
 
         Args:
-            id(basestring): id query parameter. Id of project to be searched .
-            name(basestring): name query parameter. Name of project to be searched .
+            id(str): id query parameter. Id of project to be searched .
+            name(str): name query parameter. Name of project to be searched .
             offset(int): offset query parameter. Index of first result .
             limit(int): limit query parameter. Limits number of results .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1928,15 +1922,15 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!get-projects-details
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(name, basestring)
+        check_type(id, str)
+        check_type(name, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_order, basestring)
+        check_type(sort_order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -1995,21 +1989,21 @@ class ConfigurationTemplates(object):
         """Get template(s) details .
 
         Args:
-            id(basestring): id query parameter. Id of template to be searched .
-            name(basestring): name query parameter. Name of template to be searched .
-            project_id(basestring): projectId query parameter. Filter template(s) based on project id .
-            project_name(basestring): projectName query parameter. Filter template(s) based on project name .
-            software_type(basestring): softwareType query parameter. Filter template(s) based software type .
-            software_version(basestring): softwareVersion query parameter. Filter template(s) based softwareVersion
+            id(str): id query parameter. Id of template to be searched .
+            name(str): name query parameter. Name of template to be searched .
+            project_id(str): projectId query parameter. Filter template(s) based on project id .
+            project_name(str): projectName query parameter. Filter template(s) based on project name .
+            software_type(str): softwareType query parameter. Filter template(s) based software type .
+            software_version(str): softwareVersion query parameter. Filter template(s) based softwareVersion
                 .
-            product_family(basestring): productFamily query parameter. Filter template(s) based on device family .
-            product_series(basestring): productSeries query parameter. Filter template(s) based on device series .
-            product_type(basestring): productType query parameter. Filter template(s) based on device type .
+            product_family(str): productFamily query parameter. Filter template(s) based on device family .
+            product_series(str): productSeries query parameter. Filter template(s) based on device series .
+            product_type(str): productType query parameter. Filter template(s) based on device type .
             filter_conflicting_templates(bool): filterConflictingTemplates query parameter. Filter template(s) based
                 on confliting templates .
-            tags(basestring, list, set, tuple): tags query parameter. Filter template(s) based on tags .
+            tags(str, list, set, tuple): tags query parameter. Filter template(s) based on tags .
             un_committed(bool): unCommitted query parameter. Return uncommitted template .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
             all_template_attributes(bool): allTemplateAttributes query parameter. Return all template attributes .
             include_version_details(bool): includeVersionDetails query parameter. Include template version details .
             offset(int): offset query parameter. Index of first result .
@@ -2031,19 +2025,19 @@ class ConfigurationTemplates(object):
             https://developer.cisco.com/docs/dna-center/#!get-templates-details
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(name, basestring)
-        check_type(project_id, basestring)
-        check_type(project_name, basestring)
-        check_type(software_type, basestring)
-        check_type(software_version, basestring)
-        check_type(product_family, basestring)
-        check_type(product_series, basestring)
-        check_type(product_type, basestring)
+        check_type(id, str)
+        check_type(name, str)
+        check_type(project_id, str)
+        check_type(project_name, str)
+        check_type(software_type, str)
+        check_type(software_version, str)
+        check_type(product_family, str)
+        check_type(product_series, str)
+        check_type(product_type, str)
         check_type(filter_conflicting_templates, bool)
-        check_type(tags, (basestring, list, set, tuple))
+        check_type(tags, (str, list, set, tuple))
         check_type(un_committed, bool)
-        check_type(sort_order, basestring)
+        check_type(sort_order, str)
         check_type(all_template_attributes, bool)
         check_type(include_version_details, bool)
         check_type(offset, int)
@@ -2051,7 +2045,7 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -2156,10 +2150,10 @@ class ConfigurationTemplates(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

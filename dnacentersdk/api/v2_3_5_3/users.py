@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -94,13 +92,13 @@ class Users(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [2.7.0] - 2024-05-31
+### Added
+- Add support of DNA Center versions ('2.3.7.6')
+- Adds modules for v2_3_7_6
+### Changed
+- The future library was removed
+- The past library was removed
+- Changed basestring to str
+- Requirements updated
+### Fixed
+- Fix headers in `create_webhook_destination` and `update_webhook_destination`
+
+
 ## [2.6.11] - 2023-01-10
 ### Fixed
 - Configuration template import template - check_type error #142 - Fixing required schema.
@@ -82,7 +96,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Compatibility matrix added in `readme.rst`
 
 ### Fixed
-- Offset and limit now support basestring and int
+- Offset and limit now support str and int
   + dnacentersdk.api.v2_3_3_0.application_policy
   + dnacentersdk.api.v2_3_3_0.applications
   + dnacentersdk.api.v2_3_3_0.compliance
@@ -470,4 +484,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9
 [2.6.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10
 [2.6.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...develop
+[2.7.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...v2.7.0
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...develop
