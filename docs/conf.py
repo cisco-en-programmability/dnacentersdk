@@ -7,8 +7,8 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 
-from pkg_resources import get_distribution
-release = get_distribution('dnacentersdk').version
+from importlib.metadata import version
+release = version('dnacentersdk')
 version = '.'.join(release.split('.')[:2])
 
 project = u'dnacentersdk'
