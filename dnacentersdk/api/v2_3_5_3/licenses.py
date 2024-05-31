@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -292,7 +290,7 @@ class Licenses(object):
                                 virtual_account_name=virtual_account_name,
                                 headers=headers,
                                 **request_parameters)
-    
+
     def device_license_details2(self,
                                 device_uuid,
                                 headers=None,
@@ -354,7 +352,7 @@ class Licenses(object):
                                 device_uuid,
                                 headers=None,
                                 **request_parameters):
-        return self.device_license_details2(self,
+        return self.device_license_details2(
                                 device_uuid,
                                 headers=headers,
                                 **request_parameters)

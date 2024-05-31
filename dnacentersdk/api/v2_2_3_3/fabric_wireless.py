@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession

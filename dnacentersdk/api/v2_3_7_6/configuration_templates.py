@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -471,7 +469,6 @@ class ConfigurationTemplates(object):
     def export_projects(self,
                         headers=None,
                         payload=None,
-                        active_validation=True,
                         **request_parameters):
         """Exports the projects for given projectNames. .
 
@@ -512,9 +509,6 @@ class ConfigurationTemplates(object):
         path_params = {
         }
         _payload = payload or []
-        if active_validation:
-            self._request_validator('jsd_e6ea8c5d425cf9ac77006f5593725f_v2_3_7_6')\
-                .validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

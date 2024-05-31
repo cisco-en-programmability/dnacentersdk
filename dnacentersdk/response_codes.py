@@ -23,8 +23,6 @@ SOFTWARE.
 """
 
 
-
-
 RESPONSE_CODES = {
     200: "Successful request with body content.",
     201: "Fulfilled request, a new resource has been created.",

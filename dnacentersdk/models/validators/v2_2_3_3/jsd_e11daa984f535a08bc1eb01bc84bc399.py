@@ -23,7 +23,6 @@ SOFTWARE.
 """
 
 
-
 import fastjsonschema
 import json
 from dnacentersdk.exceptions import MalformedRequest

@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -67,6 +65,7 @@ class Reports(object):
         self._request_validator = request_validator
 
     def create_or_schedule_a_report(self,
+                                    dataCategory=None,
                                     deliveries=None,
                                     name=None,
                                     schedule=None,
@@ -82,6 +81,7 @@ class Reports(object):
         metadata required to configure a report. .
 
         Args:
+            dataCategory(string): Reports's category of viewgroup for the report.
             deliveries(list): Reports's Array of available delivery channels  (list of objects).
             name(string): Reports's report name .
             schedule(object): Reports's schedule.
@@ -139,6 +139,8 @@ class Reports(object):
                 viewGroupId,
             'viewGroupVersion':
                 viewGroupVersion,
+            'dataCategory':
+                dataCategory,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)

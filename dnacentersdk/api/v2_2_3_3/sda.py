@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -219,7 +217,7 @@ class Sda(object):
         Args:
             authenticateTemplateName(string): SDA's Authenticate Template Name. Allowed values are 'Open
                 Authentication', 'Closed Authentication', 'No Authentication', 'Low  Impact'. .
-            authenticationOrder(string): SDA's Authentication Order. Allowed values are 'dot1x ', 'mac'. .
+            authenticationOrder(string): SDA's Authentication Order. Allowed values are 'dot1x', 'mac'. .
             dot1xToMabFallbackTimeout(string): SDA's In a network that includes both devices that support and
                 devices that do not support IEEE 802.1X, MAB can be deployed as a fallback, or
                 complementary, mechanism to IEEE 802.1X. If the network does not have any IEEE

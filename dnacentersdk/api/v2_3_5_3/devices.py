@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -3975,7 +3973,6 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
-        //{'summary': 'POE details  - 8ba6-7932-4ed9-abae', 'operationId': 'POEDetails', 'tags': ['Devices'], 'description': 'Returns POE details for device.\n', 'parameters': [{'name': 'deviceUuid', 'in': 'path', 'description': 'uuid of the device\n', 'required': True, 'schema': {'type': 'string'}}], 'responses': [{'code': '200', 'content_type': 'application/json', 'schema': '#/components/schemas/POEDetailsResponse', 'data': {'title': 'POEDetailsResponse', 'type': 'object', 'properties': {'response': {'title': 'POEDetailsResponseResponse', 'type': 'object', 'properties': {'powerAllocated': {'type': 'string', 'description': 'Power Allocated'}, 'powerConsumed': {'type': 'string', 'description': 'Power Consumed'}, 'powerRemaining': {'type': 'string', 'description': 'Power Remaining'}}}, 'version': {'type': 'string', 'description': 'Version'}}}}], 'content_types': ['application/json'], 'response_type': {}, 'method': 'GET', 'path': '/dna/intent/api/v1/network-device/{deviceUuid}/poe', 'originalURL': '/dna/intent/api/v1/network-device/{deviceUuid}/poe', 'headers': {}, 'path_params': {'deviceUuid': {'type': 'string', 'description': 'deviceUuid path parameter. uuid of the device\n', 'required': True}}, 'params': {}, 'response_json_schema': {'title': 'POEDetailsResponse', 'type': 'object', 'properties': {'response': {'title': 'POEDetailsResponseResponse', 'type': 'object', 'properties': {'powerAllocated': {'type': 'string', 'description': 'Power Allocated'}, 'powerConsumed': {'type': 'string', 'description': 'Power Consumed'}, 'powerRemaining': {'type': 'string', 'description': 'Power Remaining'}}}, 'version': {'type': 'string', 'description': 'Version'}}, '$schema': 'http://json-schema.org/draft-04/schema#'}, 'response': {'response': {'powerAllocated': 'string', 'powerConsumed': 'string', 'powerRemaining': 'string'}, 'version': 'string'}, 'data': {}, 'id': 'f7a67aba-0b36-5a1e-9dae-62d148511a25', 'name': 'POEDetails', 'kwargs': ''}
         Documentation Link:
         https://developer.cisco.com/docs/dna-center/#!poe-details
         """

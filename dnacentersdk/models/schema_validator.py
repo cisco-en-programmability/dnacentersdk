@@ -29,7 +29,6 @@ SOFTWARE.
 """
 
 
-
 import json
 from builtins import *
 
@@ -2444,7 +2443,6 @@ class SchemaValidator:
         self.load_validators(version)
 
     def load_validators(self, version):
-        
         if version == '2.2.2.3':
             self.json_schema_validators['jsd_b2f15d0c54c2862a60a904289ddd_v2_2_2_3'] =\
                 JSONSchemaValidatorB2F15D0C54C2862A60A904289Ddd_v2_2_2_3()
@@ -3627,7 +3625,6 @@ class SchemaValidator:
                 JSONSchemaValidatorFd488Ff002115F3B8F0EE165E5347609_v2_3_5_3()
             self.json_schema_validators['jsd_fdbe4ec3e9f252a988404dc94250b80d_v2_3_5_3'] =\
                 JSONSchemaValidatorFdbe4Ec3E9F252A988404Dc94250B80D_v2_3_5_3()
-        
         if version == '2.3.7.6':
             self.json_schema_validators['jsd_b2f15d0c54c2862a60a904289ddd_v2_3_7_6'] =\
                 JSONSchemaValidatorB2F15D0C54C2862A60A904289Ddd_v2_3_7_6()

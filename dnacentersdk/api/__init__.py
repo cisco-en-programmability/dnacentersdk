@@ -592,8 +592,6 @@ class DNACenterAPI(object):
         _validator = validator(version).json_schema_validate
 
         # API wrappers
-        
-       
         if version == '2.2.2.3':
             self.application_policy = \
                 ApplicationPolicy_v2_2_2_3(
@@ -1182,7 +1180,7 @@ class DNACenterAPI(object):
                 Wireless_v2_3_5_3(
                     self._session, object_factory, _validator
                 )
-        
+
         if version == '2.3.7.6':
             self.application_policy = \
                 ApplicationPolicy_v2_3_7_6(
@@ -1335,7 +1333,7 @@ class DNACenterAPI(object):
             self.wireless = \
                 Wireless_v2_3_7_6(
                     self._session, object_factory, _validator
-                )   
+                )
         self.custom_caller = \
             CustomCaller(self._session, object_factory)
 

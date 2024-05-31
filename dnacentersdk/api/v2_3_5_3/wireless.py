@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -2062,8 +2060,7 @@ class Wireless(object):
         Args:
             rf_profile_name(str): rfProfileName path parameter. RF profile name to be deleted(required) *non-
                 custom RF profile cannot be deleted .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 

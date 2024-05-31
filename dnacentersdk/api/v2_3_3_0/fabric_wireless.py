@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -242,7 +240,7 @@ class FabricWireless(object):
                                         payload=None,
                                         active_validation=True,
                                         **request_parameters):
-        return self.update_ssid_to_ip_pool_mapping2(self,
+        return self.update_ssid_to_ip_pool_mapping2(
                                         scalableGroupName=scalableGroupName,
                                         siteNameHierarchy=siteNameHierarchy,
                                         ssidNames=ssidNames,
@@ -251,6 +249,7 @@ class FabricWireless(object):
                                         payload=payload,
                                         active_validation=active_validation,
                                         **request_parameters)
+
     def get_ssid_to_ip_pool_mapping(self,
                                     site_name_hierarchy,
                                     vlan_name,

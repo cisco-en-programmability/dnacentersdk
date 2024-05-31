@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -2428,7 +2426,7 @@ class Sda(object):
                     siteNameHierarchy,
             }
         ]
-        
+
         if payload is not None:
             _payload.extend(payload)
 

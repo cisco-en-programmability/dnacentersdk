@@ -14,7 +14,7 @@ version = '.'.join(release.split('.')[:2])
 project = u'dnacentersdk'
 copyright = u'Copyright (c) 2019-2021 Cisco Systems.'
 author = u''
-language = None
+language = 'en'
 
 
 extensions = [
@@ -179,7 +179,6 @@ html_static_path = ['_static']
 htmlhelp_basename = 'dnacentersdkdoc'
 
 
-
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
@@ -241,7 +240,6 @@ latex_documents = [
 # latex_domain_indices = True
 
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
@@ -254,7 +252,6 @@ man_pages = [
 # If true, show URL addresses after external links.
 #
 # man_show_urls = False
-
 
 
 # -- Options for Texinfo output -------------------------------------------

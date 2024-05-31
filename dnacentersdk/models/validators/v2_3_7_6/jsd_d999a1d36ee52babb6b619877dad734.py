@@ -23,7 +23,6 @@ SOFTWARE.
 """
 
 
-
 import json
 from builtins import *
 
@@ -51,8 +50,8 @@ class JSONSchemaValidatorD999A1D36Ee52BaBb6B619877Dad734(object):
                 },
                 "authenticationOrder": {
                 "enum": [
-                "dot1x ",
-                "mab"
+                "dot1x",
+                "mac"
                 ],
                 "type": "string"
                 },

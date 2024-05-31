@@ -1393,7 +1393,7 @@ topology
 userand_roles
 -------------
 
-.. autoclass:: dnacentersdk.api.v2_3_5_3.userand_roles.UserandRoles()
+.. autoclass:: dnacentersdk.api.v2_3_5_3.user_and_roles.UserandRoles()
 
 
 

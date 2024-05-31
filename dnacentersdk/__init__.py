@@ -23,7 +23,6 @@ SOFTWARE.
 """
 
 
-
 import logging
 
 from ._metadata import *

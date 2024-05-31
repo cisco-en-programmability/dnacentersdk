@@ -23,7 +23,6 @@ SOFTWARE.
 """
 
 
-
 import json
 from builtins import *
 
@@ -40,6 +39,9 @@ class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
+                "dataCategory": {
+                "type": "string"
+                },
                 "deliveries": {
                 "items": {
                 "type": "object"

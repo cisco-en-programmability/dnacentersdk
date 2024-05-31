@@ -35,7 +35,6 @@ from collections import OrderedDict, namedtuple
 from datetime import datetime, timedelta, tzinfo
 
 
-
 from .exceptions import ApiError, RateLimitError
 from .response_codes import RATE_LIMIT_RESPONSE_CODE
 

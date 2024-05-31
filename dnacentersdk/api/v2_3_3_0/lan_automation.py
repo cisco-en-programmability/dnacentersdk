@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -131,7 +129,6 @@ class LanAutomation(object):
                                            json=_payload)
 
         return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_3_0', json_data)
-
 
     def lan_automation_session_count(self,
                                      headers=None,
