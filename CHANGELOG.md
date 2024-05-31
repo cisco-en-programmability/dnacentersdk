@@ -489,4 +489,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10
 [2.6.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11
 [2.7.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...v2.7.0
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...develop
+[2.7.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...develop
