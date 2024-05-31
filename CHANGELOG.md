@@ -9,9 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.7.0] - 2024-05-30
 ### Added
-- Add support of DNA Center versions ('2.3.7.3')
-- Adds modules for v2_3_7_3
-### Added
 - Add support of DNA Center versions ('2.3.7.6')
 - Adds modules for v2_3_7_6
 ### Changed

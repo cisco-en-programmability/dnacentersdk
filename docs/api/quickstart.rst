@@ -129,7 +129,7 @@ If you don't provide a known version and try to create a new :class:`DNACenterAP
       File "<stdin>", line 1, in <module>
       File "dnacentersdk/__init__.py", line 209, in __init__
         raise VersionError(error_message)
-    VersionError: Unknown API version, known versions are  2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and 2.3.7.6.
+    VersionError: Unknown API version, known versions are  2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3 and 2.3.7.6.
 
 
 Use the arguments to manually provide enough information for the HTTP Basic Auth process, 
@@ -286,8 +286,6 @@ A summary of the structure is available for each version supported
 
 + :ref:`v2.3.5.3 <v2_3_5_3 summary>`
 
-
-+ :ref:`v2.3.7.3 <v2_3_7_3 summary>`
 
 + :ref:`v2.3.7.6 <v2_3_7_6 summary>`
 

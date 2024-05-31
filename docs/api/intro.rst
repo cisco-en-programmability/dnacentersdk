@@ -65,7 +65,7 @@ With dnacentersdk, the above Python code can be consolidated to the following:
 
 + Reads your DNA Center credentials from environment variables (DNA_CENTER_ENCODED_AUTH, DNA_CENTER_USERNAME, DNA_CENTER_PASSWORD)
 
-+ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION. Supported versions: 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.3 and 2.3.7.6. Now with version and base_url, you have more control.
++ Reads your DNA Center API version from environment variable DNA_CENTER_VERSION. Supported versions: 2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3 and 2.3.7.6. Now with version and base_url, you have more control.
 
 + Controls whether to verify the server's TLS certificate or not according to the verify parameter.
 

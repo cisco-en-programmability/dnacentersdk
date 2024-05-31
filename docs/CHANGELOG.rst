@@ -43,8 +43,6 @@ Added
 Added
 ~~~~~
 
--  Add support of DNA Center versions (‘2.3.7.3’)
--  Adds modules for v2_3_7_3 ##
    `2.6.11 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11>`__
    - 2023-01-10 ### Fixed
 -  Configuration template import template - check_type error #142 -

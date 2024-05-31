@@ -56,13 +56,6 @@ v2.3.5.3 summary
 .. include:: api_structure_table_v2_3_5_3.rst
 
 
-.. _v2_3_7_3 summary:
-
-v2.3.7.3 summary
-----------------
-
-.. include:: api_structure_table_v2_3_7_3.rst
-
 
 .. _v2_3_7_6 summary:
 
@@ -1423,372 +1416,12 @@ wireless
 
 
 
-DNACenterAPI v2.3.7.3
-=====================
-
-.. _application_policy_2_3_7_3:
-
-application_policy
-------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.application_policy.ApplicationPolicy()
-
-
-
-.. _applications_2_3_7_3:
-
-applications
-------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.applications.Applications()
-
-
-
-.. _authentication_management_2_3_7_3:
-
-authentication_management
--------------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.authentication_management.AuthenticationManagement()
-
-
-
-.. _cisco_dna_center_system_2_3_7_3:
-
-cisco_dna_center_system
------------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.cisco_dna_center_system.CiscoDnaCenterSystem()
-
-
-
-.. _clients_2_3_7_3:
-
-clients
--------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.clients.Clients()
-
-
-
-.. _command_runner_2_3_7_3:
-
-command_runner
---------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.command_runner.CommandRunner()
-
-
-
-.. _compliance_2_3_7_3:
-
-compliance
-----------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.compliance.Compliance()
-
-
-
-.. _configuration_archive_2_3_7_3:
-
-configuration_archive
----------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.configuration_archive.ConfigurationArchive()
-
-
-
-.. _configuration_templates_2_3_7_3:
-
-configuration_templates
------------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.configuration_templates.ConfigurationTemplates()
-
-
-
-.. _device_onboarding_pnp_2_3_7_3:
-
-device_onboarding_pnp
----------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.device_onboarding_pnp.DeviceOnboardingPnp()
-
-
-
-.. _device_replacement_2_3_7_3:
-
-device_replacement
-------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.device_replacement.DeviceReplacement()
-
-
-
-.. _devices_2_3_7_3:
-
-devices
--------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.devices.Devices()
-
-
-
-.. _discovery_2_3_7_3:
-
-discovery
----------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.discovery.Discovery()
-
-
-
-.. _eox_2_3_7_3:
-
-eox
----
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.eox.Eox()
-
-
-
-.. _event_management_2_3_7_3:
-
-event_management
-----------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.event_management.EventManagement()
-
-
-
-.. _fabric_wireless_2_3_7_3:
-
-fabric_wireless
----------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.fabric_wireless.FabricWireless()
-
-
-
-.. _file_2_3_7_3:
-
-file
-----
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.file.File()
-
-
-
-.. _health_and_performance_2_3_7_3:
-
-health_and_performance
-----------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.health_and_performance.HealthAndPerformance()
-
-
-
-.. _itsm_2_3_7_3:
-
-itsm
-----
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.itsm.Itsm()
-
-
-
-.. _itsm_integration_2_3_7_3:
-
-itsm_integration
-----------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.itsm_integration.ItsmIntegration()
-
-
-
-.. _issues_2_3_7_3:
-
-issues
-------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.issues.Issues()
-
-
-
-.. _lan_automation_2_3_7_3:
-
-lan_automation
---------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.lan_automation.LanAutomation()
-
-
-
-.. _licenses_2_3_7_3:
-
-licenses
---------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.licenses.Licenses()
-
-
-
-.. _network_settings_2_3_7_3:
-
-network_settings
-----------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.network_settings.NetworkSettings()
-
-
-
-.. _path_trace_2_3_7_3:
-
-path_trace
-----------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.path_trace.PathTrace()
-
-
-
-.. _platform_2_3_7_3:
-
-platform
---------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.platform.Platform()
-
-
-
-.. _reports_2_3_7_3:
-
-reports
--------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.reports.Reports()
-
-
-
-.. _sda_2_3_7_3:
-
-sda
----
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.sda.Sda()
-
-
-
-.. _security_advisories_2_3_7_3:
-
-security_advisories
--------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.security_advisories.SecurityAdvisories()
-
-
-
-.. _sensors_2_3_7_3:
-
-sensors
--------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.sensors.Sensors()
-
-
-
-.. _site_design_2_3_7_3:
-
-site_design
------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.site_design.SiteDesign()
-
-
-
-.. _sites_2_3_7_3:
-
-sites
------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.sites.Sites()
-
-
-
-.. _software_image_management_swim_2_3_7_3:
-
-software_image_management_swim
-------------------------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.software_image_management_swim.SoftwareImageManagementSwim()
-
-
-
-.. _system_settings_2_3_7_3:
-
-system_settings
----------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.system_settings.SystemSettings()
-
-
-
-.. _tag_2_3_7_3:
-
-tag
----
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.tag.Tag()
-
-
-
-.. _task_2_3_7_3:
-
-task
-----
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.task.Task()
-
-
-
-.. _topology_2_3_7_3:
-
-topology
---------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.topology.Topology()
-
-
-
-.. _userand_roles_2_3_7_3:
-
-userand_roles
--------------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.userand_roles.UserandRoles()
-
-
-
-.. _users_2_3_7_3:
-
-users
------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.users.Users()
-
-
-
-.. _wireless_2_3_7_3:
-
-wireless
---------
-
-.. autoclass:: dnacentersdk.api.v2_3_7_3.wireless.Wireless()
 
 
 DNACenterAPI v2.3.7.6
 =====================
 
-.. _application_policy_2_3_7_5:
+.. _application_policy_2_3_7_6:
 
 application_policy
 ------------------
@@ -1797,7 +1430,7 @@ application_policy
 
 
 
-.. _applications_2_3_7_5:
+.. _applications_2_3_7_6:
 
 applications
 ------------
@@ -1806,7 +1439,7 @@ applications
 
 
 
-.. _clients_2_3_7_5:
+.. _clients_2_3_7_6:
 
 clients
 -------
@@ -1815,7 +1448,7 @@ clients
 
 
 
-.. _command_runner_2_3_7_5:
+.. _command_runner_2_3_7_6:
 
 command_runner
 --------------
@@ -1824,7 +1457,7 @@ command_runner
 
 
 
-.. _compliance_2_3_7_5:
+.. _compliance_2_3_7_6:
 
 compliance
 ----------
@@ -1833,7 +1466,7 @@ compliance
 
 
 
-.. _configuration_archive_2_3_7_5:
+.. _configuration_archive_2_3_7_6:
 
 configuration_archive
 ---------------------
@@ -1842,7 +1475,7 @@ configuration_archive
 
 
 
-.. _configuration_templates_2_3_7_5:
+.. _configuration_templates_2_3_7_6:
 
 configuration_templates
 -----------------------
@@ -1851,7 +1484,7 @@ configuration_templates
 
 
 
-.. _device_onboarding_pnp_2_3_7_5:
+.. _device_onboarding_pnp_2_3_7_6:
 
 device_onboarding_pnp
 ---------------------
@@ -1860,7 +1493,7 @@ device_onboarding_pnp
 
 
 
-.. _device_replacement_2_3_7_5:
+.. _device_replacement_2_3_7_6:
 
 device_replacement
 ------------------
@@ -1869,7 +1502,7 @@ device_replacement
 
 
 
-.. _devices_2_3_7_5:
+.. _devices_2_3_7_6:
 
 devices
 -------
@@ -1878,7 +1511,7 @@ devices
 
 
 
-.. _discovery_2_3_7_5:
+.. _discovery_2_3_7_6:
 
 discovery
 ---------
@@ -1887,7 +1520,7 @@ discovery
 
 
 
-.. _eo_x_2_3_7_5:
+.. _eo_x_2_3_7_6:
 
 eo_x
 ----
@@ -1896,7 +1529,7 @@ eo_x
 
 
 
-.. _event_management_2_3_7_5:
+.. _event_management_2_3_7_6:
 
 event_management
 ----------------
@@ -1905,7 +1538,7 @@ event_management
 
 
 
-.. _fabric_wireless_2_3_7_5:
+.. _fabric_wireless_2_3_7_6:
 
 fabric_wireless
 ---------------
@@ -1914,7 +1547,7 @@ fabric_wireless
 
 
 
-.. _file_2_3_7_5:
+.. _file_2_3_7_6:
 
 file
 ----
@@ -1923,7 +1556,7 @@ file
 
 
 
-.. _health_and_performance_2_3_7_5:
+.. _health_and_performance_2_3_7_6:
 
 health_and_performance
 ----------------------
@@ -1932,7 +1565,7 @@ health_and_performance
 
 
 
-.. _itsm_2_3_7_5:
+.. _itsm_2_3_7_6:
 
 itsm
 ----
@@ -1941,7 +1574,7 @@ itsm
 
 
 
-.. _itsm_integration_2_3_7_5:
+.. _itsm_integration_2_3_7_6:
 
 itsm_integration
 ----------------
@@ -1950,7 +1583,7 @@ itsm_integration
 
 
 
-.. _issues_2_3_7_5:
+.. _issues_2_3_7_6:
 
 issues
 ------
@@ -1959,7 +1592,7 @@ issues
 
 
 
-.. _lan_automation_2_3_7_5:
+.. _lan_automation_2_3_7_6:
 
 lan_automation
 --------------
@@ -1968,7 +1601,7 @@ lan_automation
 
 
 
-.. _licenses_2_3_7_5:
+.. _licenses_2_3_7_6:
 
 licenses
 --------
@@ -1977,7 +1610,7 @@ licenses
 
 
 
-.. _network_settings_2_3_7_5:
+.. _network_settings_2_3_7_6:
 
 network_settings
 ----------------
@@ -1986,7 +1619,7 @@ network_settings
 
 
 
-.. _path_trace_2_3_7_5:
+.. _path_trace_2_3_7_6:
 
 path_trace
 ----------
@@ -1995,7 +1628,7 @@ path_trace
 
 
 
-.. _platform_2_3_7_5:
+.. _platform_2_3_7_6:
 
 platform
 --------
@@ -2004,7 +1637,7 @@ platform
 
 
 
-.. _reports_2_3_7_5:
+.. _reports_2_3_7_6:
 
 reports
 -------
@@ -2013,7 +1646,7 @@ reports
 
 
 
-.. _sda_2_3_7_5:
+.. _sda_2_3_7_6:
 
 sda
 ---
@@ -2022,7 +1655,7 @@ sda
 
 
 
-.. _security_advisories_2_3_7_5:
+.. _security_advisories_2_3_7_6:
 
 security_advisories
 -------------------
@@ -2031,7 +1664,7 @@ security_advisories
 
 
 
-.. _sensors_2_3_7_5:
+.. _sensors_2_3_7_6:
 
 sensors
 -------
@@ -2040,7 +1673,7 @@ sensors
 
 
 
-.. _site_design_2_3_7_5:
+.. _site_design_2_3_7_6:
 
 site_design
 -----------
@@ -2049,7 +1682,7 @@ site_design
 
 
 
-.. _sites_2_3_7_5:
+.. _sites_2_3_7_6:
 
 sites
 -----
@@ -2058,7 +1691,7 @@ sites
 
 
 
-.. _software_image_management_swim_2_3_7_5:
+.. _software_image_management_swim_2_3_7_6:
 
 software_image_management_swim
 ------------------------------
@@ -2067,7 +1700,7 @@ software_image_management_swim
 
 
 
-.. _system_settings_2_3_7_5:
+.. _system_settings_2_3_7_6:
 
 system_settings
 ---------------
@@ -2076,7 +1709,7 @@ system_settings
 
 
 
-.. _tag_2_3_7_5:
+.. _tag_2_3_7_6:
 
 tag
 ---
@@ -2085,7 +1718,7 @@ tag
 
 
 
-.. _task_2_3_7_5:
+.. _task_2_3_7_6:
 
 task
 ----
@@ -2094,7 +1727,7 @@ task
 
 
 
-.. _topology_2_3_7_5:
+.. _topology_2_3_7_6:
 
 topology
 --------
@@ -2103,7 +1736,7 @@ topology
 
 
 
-.. _userand_roles_2_3_7_5:
+.. _userand_roles_2_3_7_6:
 
 userand_roles
 -------------
@@ -2112,7 +1745,7 @@ userand_roles
 
 
 
-.. _users_2_3_7_5:
+.. _users_2_3_7_6:
 
 users
 -----
@@ -2121,7 +1754,7 @@ users
 
 
 
-.. _wireless_2_3_7_5:
+.. _wireless_2_3_7_6:
 
 wireless
 --------
