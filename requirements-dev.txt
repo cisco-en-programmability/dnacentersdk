@@ -258,9 +258,9 @@ pytest==8.2.2 ; python_version >= "3.8" and python_version < "4.0" \
 pytz==2024.1 ; python_version >= "3.8" and python_version < "3.9" \
     --hash=sha256:2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812 \
     --hash=sha256:328171f4e3623139da4983451950b28e95ac706e13f3f2630a879749e7a8b319
-readthedocs-sphinx-search==0.1.2 ; python_version >= "3.8" and python_version < "4.0" \
-    --hash=sha256:66d950fadcc044a082816763c766d3ebc7130cb84caeabbffa239368dc5124fe \
-    --hash=sha256:f3eacbebf766c0b12342462959913d4c5b2de1763f790a46563f719cd910f0f7
+readthedocs-sphinx-search==0.3.2 ; python_version >= "3.8" and python_version < "4.0" \
+    --hash=sha256:277773bfa28566a86694c08e568d5a648cd80f22826545555a764d6d20c365fb \
+    --hash=sha256:58716fd21f01581e6e67bf3bc02e79c77e10dc58b5f8e4c7cc1977e013eda173
 requests-toolbelt==1.0.0 ; python_version >= "3.8" and python_version < "4.0" \
     --hash=sha256:7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6 \
     --hash=sha256:cccfdd665f0a24fcf4726e690f65639d272bb0637b9b92dfd91a5568ccf6bd06

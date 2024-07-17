@@ -24,7 +24,7 @@ pytest = "*"
 pytest-rerunfailures = "^10.3"
 flake8 = "*"
 ipython = "*"
-readthedocs-sphinx-search = "^0.1.0"
+readthedocs-sphinx-search = "^0.3.2"
 setuptools_scm = "^6.0.0"
 
 [build-system]
