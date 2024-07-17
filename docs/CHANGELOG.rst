@@ -8,11 +8,17 @@ Changelog <https://keepachangelog.com/en/1.0.0/>`__, and this project
 adheres to `Semantic
 Versioning <https://semver.org/spec/v2.0.0.html>`__.
 
-`Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...develop>`__
+`Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...develop>`__
 --------------------------------------------------------------------------------------------------
 
-[2.7.1] - 2024-05-31
---------------------
+-  Update requirements:
+
+   -  python = “^3.8”
+   -  requests = “^2.32.0”
+   -  readthedocs-sphinx-search = “^0.3.2”
+
+`2.7.1 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1>`__ - 2024-05-31
+---------------------------------------------------------------------------------------------------------
 
 Fixed
 ~~~~~

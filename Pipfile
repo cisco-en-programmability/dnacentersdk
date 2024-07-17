@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages] # Here goes your package requirements for running the application and its versions (which packages you will use when running the application).
-requests = ">=2.31.0, <=2.40.0"
+requests = ">=2.32.0, <3.0.0"
 requests-toolbelt = ">=1.0.0"
 fastjsonschema = ">=2.16.2"
 
@@ -15,5 +15,5 @@ pytest = "*"
 pytest-rerunfailures = ">=10.3"
 flake8 = "*"
 ipython = "*"
-readthedocs-sphinx-search = ">=0.1.0"
+readthedocs-sphinx-search = ">=0.3.2"
 setuptools_scm = ">=6.0.0"
