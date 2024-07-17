@@ -681,13 +681,13 @@ files = [
 
 [[package]]
 name = "readthedocs-sphinx-search"
-version = "0.1.2"
+version = "0.3.2"
 description = "Sphinx extension to enable search as you type for docs hosted on Read the Docs."
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "readthedocs-sphinx-search-0.1.2.tar.gz", hash = "sha256:66d950fadcc044a082816763c766d3ebc7130cb84caeabbffa239368dc5124fe"},
-    {file = "readthedocs_sphinx_search-0.1.2-py3-none-any.whl", hash = "sha256:f3eacbebf766c0b12342462959913d4c5b2de1763f790a46563f719cd910f0f7"},
+    {file = "readthedocs-sphinx-search-0.3.2.tar.gz", hash = "sha256:277773bfa28566a86694c08e568d5a648cd80f22826545555a764d6d20c365fb"},
+    {file = "readthedocs_sphinx_search-0.3.2-py3-none-any.whl", hash = "sha256:58716fd21f01581e6e67bf3bc02e79c77e10dc58b5f8e4c7cc1977e013eda173"},
 ]
 
 [[package]]
@@ -1041,4 +1041,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "f14fc0a28b788116520f216489a49baba94a22b646675d201a6a4e1bc2c53ec1"
+content-hash = "469f9a0e5d3b20c4969470e913bb5ef734766bfa07448d0fdd1bb9eb642826b0"
