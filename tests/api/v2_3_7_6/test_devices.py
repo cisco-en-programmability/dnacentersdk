@@ -29,6 +29,1178 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
+def is_valid_gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(json_schema_validate, obj):
+    json_schema_validate('jsd_0928a421626459dcbe382c43ffcbddae_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api):
+    endpoint_result = api.devices.gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+        active_validation=True,
+        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'value': 'string'}],
+        page={'limit': 0, 'offset': 0, 'sortBy': [{'name': 'string', 'order': 'string'}]},
+        payload=None,
+        startTime=0,
+        views=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api, validator):
+    try:
+        assert is_valid_gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+            validator,
+            gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api):
+    endpoint_result = api.devices.gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        payload=None,
+        startTime=None,
+        views=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+            validator,
+            gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_query_assurance_events(json_schema_validate, obj):
+    json_schema_validate('jsd_99114bc891de5102872b3415d23b7a0b_v2_3_7_6').validate(obj)
+    return True
+
+
+def query_assurance_events(api):
+    endpoint_result = api.devices.query_assurance_events(
+        ap_mac='string',
+        attribute='string',
+        client_mac='string',
+        device_family='string',
+        end_time=0,
+        limit=0,
+        message_type='string',
+        network_device_id='string',
+        network_device_name='string',
+        offset=0,
+        order='string',
+        severity=0,
+        site_hierarchy_id='string',
+        site_id='string',
+        sort_by='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_query_assurance_events(api, validator):
+    try:
+        assert is_valid_query_assurance_events(
+            validator,
+            query_assurance_events(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def query_assurance_events_default_val(api):
+    endpoint_result = api.devices.query_assurance_events(
+        ap_mac=None,
+        attribute=None,
+        client_mac=None,
+        device_family=None,
+        end_time=None,
+        limit=None,
+        message_type=None,
+        network_device_id=None,
+        network_device_name=None,
+        offset=None,
+        order=None,
+        severity=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        sort_by=None,
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_query_assurance_events_default_val(api, validator):
+    try:
+        assert is_valid_query_assurance_events(
+            validator,
+            query_assurance_events_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_count_the_number_of_events(json_schema_validate, obj):
+    json_schema_validate('jsd_915abf597583520eb0a7a0b24e5c7f69_v2_3_7_6').validate(obj)
+    return True
+
+
+def count_the_number_of_events(api):
+    endpoint_result = api.devices.count_the_number_of_events(
+        ap_mac='string',
+        client_mac='string',
+        device_family='string',
+        end_time='string',
+        message_type='string',
+        network_device_id='string',
+        network_device_name='string',
+        severity='string',
+        site_hierarchy_id='string',
+        site_id='string',
+        start_time='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_count_the_number_of_events(api, validator):
+    try:
+        assert is_valid_count_the_number_of_events(
+            validator,
+            count_the_number_of_events(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def count_the_number_of_events_default_val(api):
+    endpoint_result = api.devices.count_the_number_of_events(
+        ap_mac=None,
+        client_mac=None,
+        device_family=None,
+        end_time=None,
+        message_type=None,
+        network_device_id=None,
+        network_device_name=None,
+        severity=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        start_time=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_count_the_number_of_events_default_val(api, validator):
+    try:
+        assert is_valid_count_the_number_of_events(
+            validator,
+            count_the_number_of_events_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_query_assurance_events_with_filters(json_schema_validate, obj):
+    json_schema_validate('jsd_ef94c2c20ba15fd38e129ac75067de1e_v2_3_7_6').validate(obj)
+    return True
+
+
+def query_assurance_events_with_filters(api):
+    endpoint_result = api.devices.query_assurance_events_with_filters(
+        active_validation=True,
+        attributes=['string'],
+        deviceFamily=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'value': 'string'}],
+        page={'offset': 0, 'limit': 0, 'sortBy': [{'name': 'string', 'order': 'string'}]},
+        payload=None,
+        startTime=0,
+        views=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_query_assurance_events_with_filters(api, validator):
+    try:
+        assert is_valid_query_assurance_events_with_filters(
+            validator,
+            query_assurance_events_with_filters(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def query_assurance_events_with_filters_default_val(api):
+    endpoint_result = api.devices.query_assurance_events_with_filters(
+        active_validation=True,
+        attributes=None,
+        deviceFamily=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        payload=None,
+        startTime=None,
+        views=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_query_assurance_events_with_filters_default_val(api, validator):
+    try:
+        assert is_valid_query_assurance_events_with_filters(
+            validator,
+            query_assurance_events_with_filters_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_count_the_number_of_events_with_filters(json_schema_validate, obj):
+    json_schema_validate('jsd_a91eed12dfc85dbdaacab22e6e9f04a5_v2_3_7_6').validate(obj)
+    return True
+
+
+def count_the_number_of_events_with_filters(api):
+    endpoint_result = api.devices.count_the_number_of_events_with_filters(
+        active_validation=True,
+        deviceFamily=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'value': 'string'}],
+        payload=None,
+        startTime=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_count_the_number_of_events_with_filters(api, validator):
+    try:
+        assert is_valid_count_the_number_of_events_with_filters(
+            validator,
+            count_the_number_of_events_with_filters(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def count_the_number_of_events_with_filters_default_val(api):
+    endpoint_result = api.devices.count_the_number_of_events_with_filters(
+        active_validation=True,
+        deviceFamily=None,
+        endTime=None,
+        filters=None,
+        payload=None,
+        startTime=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_count_the_number_of_events_with_filters_default_val(api, validator):
+    try:
+        assert is_valid_count_the_number_of_events_with_filters(
+            validator,
+            count_the_number_of_events_with_filters_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_details_of_a_single_assurance_event(json_schema_validate, obj):
+    json_schema_validate('jsd_031a36092e78528b9bd8730c93b5412d_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_details_of_a_single_assurance_event(api):
+    endpoint_result = api.devices.get_details_of_a_single_assurance_event(
+        attribute='string',
+        id='string',
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_details_of_a_single_assurance_event(api, validator):
+    try:
+        assert is_valid_get_details_of_a_single_assurance_event(
+            validator,
+            get_details_of_a_single_assurance_event(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_details_of_a_single_assurance_event_default_val(api):
+    endpoint_result = api.devices.get_details_of_a_single_assurance_event(
+        attribute=None,
+        id='string',
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_details_of_a_single_assurance_event_default_val(api, validator):
+    try:
+        assert is_valid_get_details_of_a_single_assurance_event(
+            validator,
+            get_details_of_a_single_assurance_event_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_list_of_child_events_for_the_given_wireless_client_event(json_schema_validate, obj):
+    json_schema_validate('jsd_d3cf1ace30895351b5b8c3f7919b972e_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_list_of_child_events_for_the_given_wireless_client_event(api):
+    endpoint_result = api.devices.get_list_of_child_events_for_the_given_wireless_client_event(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_list_of_child_events_for_the_given_wireless_client_event(api, validator):
+    try:
+        assert is_valid_get_list_of_child_events_for_the_given_wireless_client_event(
+            validator,
+            get_list_of_child_events_for_the_given_wireless_client_event(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_list_of_child_events_for_the_given_wireless_client_event_default_val(api):
+    endpoint_result = api.devices.get_list_of_child_events_for_the_given_wireless_client_event(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_list_of_child_events_for_the_given_wireless_client_event_default_val(api, validator):
+    try:
+        assert is_valid_get_list_of_child_events_for_the_given_wireless_client_event(
+            validator,
+            get_list_of_child_events_for_the_given_wireless_client_event_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_interfaces_along_with_statistics_data_from_all_network_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_1912fc7a61a854f2b2015d3f1c059ce9_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_interfaces_along_with_statistics_data_from_all_network_devices(api):
+    endpoint_result = api.devices.gets_interfaces_along_with_statistics_data_from_all_network_devices(
+        attribute='string',
+        end_time=0,
+        interface_id='string',
+        interface_name='string',
+        limit=0,
+        network_device_id='string',
+        network_device_ip_address='string',
+        network_device_mac_address='string',
+        offset=0,
+        order='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_id='string',
+        sort_by='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_interfaces_along_with_statistics_data_from_all_network_devices(api, validator):
+    try:
+        assert is_valid_gets_interfaces_along_with_statistics_data_from_all_network_devices(
+            validator,
+            gets_interfaces_along_with_statistics_data_from_all_network_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_interfaces_along_with_statistics_data_from_all_network_devices_default_val(api):
+    endpoint_result = api.devices.gets_interfaces_along_with_statistics_data_from_all_network_devices(
+        attribute=None,
+        end_time=None,
+        interface_id=None,
+        interface_name=None,
+        limit=None,
+        network_device_id=None,
+        network_device_ip_address=None,
+        network_device_mac_address=None,
+        offset=None,
+        order=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        sort_by=None,
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_interfaces_along_with_statistics_data_from_all_network_devices_default_val(api, validator):
+    try:
+        assert is_valid_gets_interfaces_along_with_statistics_data_from_all_network_devices(
+            validator,
+            gets_interfaces_along_with_statistics_data_from_all_network_devices_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(json_schema_validate, obj):
+    json_schema_validate('jsd_412775760f4b503bbce76ebb802f0ad7_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(api):
+    endpoint_result = api.devices.gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(
+        end_time=0,
+        interface_id='string',
+        interface_name='string',
+        network_device_id='string',
+        network_device_ip_address='string',
+        network_device_mac_address='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_id='string',
+        start_time=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(api, validator):
+    try:
+        assert is_valid_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(
+            validator,
+            gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_default_val(api):
+    endpoint_result = api.devices.gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(
+        end_time=None,
+        interface_id=None,
+        interface_name=None,
+        network_device_id=None,
+        network_device_ip_address=None,
+        network_device_mac_address=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        start_time=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(
+            validator,
+            gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(json_schema_validate, obj):
+    json_schema_validate('jsd_f667322836d5527482ad2100bec7feb4_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api):
+    endpoint_result = api.devices.gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+        active_validation=True,
+        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'logicalOperator': 'string', 'value': {}, 'filters': [{'key': 'string', 'operator': 'string', 'logicalOperator': 'string', 'value': {}, 'filters': ['string']}]}],
+        page={'limit': 0, 'offset': 0, 'sortBy': [{'name': 'string', 'order': 'string'}]},
+        payload=None,
+        startTime=0,
+        views=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api, validator):
+    try:
+        assert is_valid_gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+            validator,
+            gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api):
+    endpoint_result = api.devices.gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        payload=None,
+        startTime=None,
+        views=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+            validator,
+            gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_the_total_interfaces_count_across_the_network_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_b0b146a144a65aa296b8b939c2926158_v2_3_7_6').validate(obj)
+    return True
+
+
+def the_total_interfaces_count_across_the_network_devices(api):
+    endpoint_result = api.devices.the_total_interfaces_count_across_the_network_devices(
+        active_validation=True,
+        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'logicalOperator': 'string', 'value': {}, 'filters': ['string']}],
+        page={'limit': 0, 'offset': 0, 'sortBy': [{'name': 'string', 'order': 'string'}]},
+        payload=None,
+        startTime=0,
+        views=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_the_total_interfaces_count_across_the_network_devices(api, validator):
+    try:
+        assert is_valid_the_total_interfaces_count_across_the_network_devices(
+            validator,
+            the_total_interfaces_count_across_the_network_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def the_total_interfaces_count_across_the_network_devices_default_val(api):
+    endpoint_result = api.devices.the_total_interfaces_count_across_the_network_devices(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        payload=None,
+        startTime=None,
+        views=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_the_total_interfaces_count_across_the_network_devices_default_val(api, validator):
+    try:
+        assert is_valid_the_total_interfaces_count_across_the_network_devices(
+            validator,
+            the_total_interfaces_count_across_the_network_devices_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(json_schema_validate, obj):
+    json_schema_validate('jsd_56adcdf890505770af113b18b30c1b5f_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(api):
+    endpoint_result = api.devices.get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(
+        attribute='string',
+        end_time=0,
+        id='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(api, validator):
+    try:
+        assert is_valid_get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(
+            validator,
+            get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_default_val(api):
+    endpoint_result = api.devices.get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(
+        attribute=None,
+        end_time=None,
+        id='string',
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_default_val(api, validator):
+    try:
+        assert is_valid_get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(
+            validator,
+            get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_network_device_details_based_on_the_provided_query_parameters(json_schema_validate, obj):
+    json_schema_validate('jsd_71c7314fc7e15dab859eb66f45b1e95a_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_network_device_details_based_on_the_provided_query_parameters(api):
+    endpoint_result = api.devices.gets_the_network_device_details_based_on_the_provided_query_parameters(
+        attribute='string',
+        end_time=0,
+        family='string',
+        health_score='string',
+        id='string',
+        limit=0,
+        mac_address='string',
+        maintenance_mode=True,
+        management_ip_address='string',
+        offset=0,
+        order='string',
+        role='string',
+        serial_number='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_id='string',
+        software_version='string',
+        sort_by='string',
+        start_time=0,
+        type='string',
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_network_device_details_based_on_the_provided_query_parameters(api, validator):
+    try:
+        assert is_valid_gets_the_network_device_details_based_on_the_provided_query_parameters(
+            validator,
+            gets_the_network_device_details_based_on_the_provided_query_parameters(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_network_device_details_based_on_the_provided_query_parameters_default_val(api):
+    endpoint_result = api.devices.gets_the_network_device_details_based_on_the_provided_query_parameters(
+        attribute=None,
+        end_time=None,
+        family=None,
+        health_score=None,
+        id=None,
+        limit=None,
+        mac_address=None,
+        maintenance_mode=None,
+        management_ip_address=None,
+        offset=None,
+        order=None,
+        role=None,
+        serial_number=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        software_version=None,
+        sort_by=None,
+        start_time=None,
+        type=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_network_device_details_based_on_the_provided_query_parameters_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_network_device_details_based_on_the_provided_query_parameters(
+            validator,
+            gets_the_network_device_details_based_on_the_provided_query_parameters_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_total_network_device_counts_based_on_the_provided_query_parameters(json_schema_validate, obj):
+    json_schema_validate('jsd_3d8782f4d285506d9e1391f0190ff738_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_total_network_device_counts_based_on_the_provided_query_parameters(api):
+    endpoint_result = api.devices.gets_the_total_network_device_counts_based_on_the_provided_query_parameters(
+        attribute='string',
+        end_time=0,
+        family='string',
+        health_score='string',
+        id='string',
+        mac_address='string',
+        maintenance_mode=True,
+        management_ip_address='string',
+        role='string',
+        serial_number='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_id='string',
+        software_version='string',
+        start_time=0,
+        type='string',
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_total_network_device_counts_based_on_the_provided_query_parameters(api, validator):
+    try:
+        assert is_valid_gets_the_total_network_device_counts_based_on_the_provided_query_parameters(
+            validator,
+            gets_the_total_network_device_counts_based_on_the_provided_query_parameters(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_total_network_device_counts_based_on_the_provided_query_parameters_default_val(api):
+    endpoint_result = api.devices.gets_the_total_network_device_counts_based_on_the_provided_query_parameters(
+        attribute=None,
+        end_time=None,
+        family=None,
+        health_score=None,
+        id=None,
+        mac_address=None,
+        maintenance_mode=None,
+        management_ip_address=None,
+        role=None,
+        serial_number=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_id=None,
+        software_version=None,
+        start_time=None,
+        type=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_total_network_device_counts_based_on_the_provided_query_parameters_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_total_network_device_counts_based_on_the_provided_query_parameters(
+            validator,
+            gets_the_total_network_device_counts_based_on_the_provided_query_parameters_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(json_schema_validate, obj):
+    json_schema_validate('jsd_8bd1c59e9be75ac4a40decaa95ee9efd_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api):
+    endpoint_result = api.devices.gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+        active_validation=True,
+        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'value': 'string'}],
+        page={'limit': 0, 'offset': 0, 'count': 0, 'sortBy': 'string'},
+        payload=None,
+        startTime=0,
+        views=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api, validator):
+    try:
+        assert is_valid_gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+            validator,
+            gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api):
+    endpoint_result = api.devices.gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        page=None,
+        payload=None,
+        startTime=None,
+        views=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(
+            validator,
+            gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_summary_analytics_data_related_to_network_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_06bb7c52e5225e9398a006fecf4da06f_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_summary_analytics_data_related_to_network_devices(api):
+    endpoint_result = api.devices.gets_the_summary_analytics_data_related_to_network_devices(
+        active_validation=True,
+        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'value': 'string'}],
+        groupBy=['string'],
+        page={'limit': 0, 'offset': 0, 'sortBy': [{'name': 'string', 'order': 'string'}]},
+        payload=None,
+        startTime=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_summary_analytics_data_related_to_network_devices(api, validator):
+    try:
+        assert is_valid_gets_the_summary_analytics_data_related_to_network_devices(
+            validator,
+            gets_the_summary_analytics_data_related_to_network_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_summary_analytics_data_related_to_network_devices_default_val(api):
+    endpoint_result = api.devices.gets_the_summary_analytics_data_related_to_network_devices(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        payload=None,
+        startTime=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_summary_analytics_data_related_to_network_devices_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_summary_analytics_data_related_to_network_devices(
+            validator,
+            gets_the_summary_analytics_data_related_to_network_devices_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_gets_the_trend_analytics_data(json_schema_validate, obj):
+    json_schema_validate('jsd_ac7ce690e0f55a469b0a9bfa3d2c165e_v2_3_7_6').validate(obj)
+    return True
+
+
+def gets_the_trend_analytics_data(api):
+    endpoint_result = api.devices.gets_the_trend_analytics_data(
+        active_validation=True,
+        aggregateAttributes=[{}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'value': 'string'}],
+        groupBy=[{}],
+        page={'limit': 0, 'offset': 0, 'timestampOrder': 'string'},
+        payload=None,
+        startTime=0,
+        trendInterval='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_trend_analytics_data(api, validator):
+    try:
+        assert is_valid_gets_the_trend_analytics_data(
+            validator,
+            gets_the_trend_analytics_data(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def gets_the_trend_analytics_data_default_val(api):
+    endpoint_result = api.devices.gets_the_trend_analytics_data(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        page=None,
+        payload=None,
+        startTime=None,
+        trendInterval=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_gets_the_trend_analytics_data_default_val(api, validator):
+    try:
+        assert is_valid_gets_the_trend_analytics_data(
+            validator,
+            gets_the_trend_analytics_data_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_the_device_data_for_the_given_device_id_uuid(json_schema_validate, obj):
+    json_schema_validate('jsd_f89c7ee84a615469b754add8feeabb5a_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_the_device_data_for_the_given_device_id_uuid(api):
+    endpoint_result = api.devices.get_the_device_data_for_the_given_device_id_uuid(
+        attribute='string',
+        end_time=0,
+        id='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_the_device_data_for_the_given_device_id_uuid(api, validator):
+    try:
+        assert is_valid_get_the_device_data_for_the_given_device_id_uuid(
+            validator,
+            get_the_device_data_for_the_given_device_id_uuid(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_the_device_data_for_the_given_device_id_uuid_default_val(api):
+    endpoint_result = api.devices.get_the_device_data_for_the_given_device_id_uuid(
+        attribute=None,
+        end_time=None,
+        id='string',
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_the_device_data_for_the_given_device_id_uuid_default_val(api, validator):
+    try:
+        assert is_valid_get_the_device_data_for_the_given_device_id_uuid(
+            validator,
+            get_the_device_data_for_the_given_device_id_uuid_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(json_schema_validate, obj):
+    json_schema_validate('jsd_14ca2f659b595c0ba7c649fd8c8bdad6_v2_3_7_6').validate(obj)
+    return True
+
+
+def the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(api):
+    endpoint_result = api.devices.the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(
+        active_validation=True,
+        aggregateAttributes=[{'name': 'string', 'function': 'string'}],
+        attributes=['string'],
+        endTime=0,
+        filters=[{'key': 'string', 'operator': 'string', 'logicalOperator': 'string', 'value': {}, 'filters': ['string']}],
+        groupBy=['string'],
+        id='string',
+        page={'limit': 0, 'offset': 0, 'timestampOrder': 'string'},
+        payload=None,
+        startTime=0,
+        trendIntervalInMinutes=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(api, validator):
+    try:
+        assert is_valid_the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(
+            validator,
+            the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def the_trend_analytics_data_for_the_network_device_in_the_specified_time_range_default_val(api):
+    endpoint_result = api.devices.the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(
+        active_validation=True,
+        aggregateAttributes=None,
+        attributes=None,
+        endTime=None,
+        filters=None,
+        groupBy=None,
+        id='string',
+        page=None,
+        payload=None,
+        startTime=None,
+        trendIntervalInMinutes=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_the_trend_analytics_data_for_the_network_device_in_the_specified_time_range_default_val(api, validator):
+    try:
+        assert is_valid_the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(
+            validator,
+            the_trend_analytics_data_for_the_network_device_in_the_specified_time_range_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_get_planned_access_points_for_building(json_schema_validate, obj):
     json_schema_validate('jsd_30efc372d6eb577ca47e8c86f30c3d2f_v2_3_7_6').validate(obj)
     return True
@@ -235,14 +1407,14 @@ def is_valid_update_planned_access_point_for_floor(json_schema_validate, obj):
 def update_planned_access_point_for_floor(api):
     endpoint_result = api.devices.update_planned_access_point_for_floor(
         active_validation=True,
-        attributes={'createDate': 0, 'domain': 'string', 'heirarchyName': 'string', 'id': 0, 'instanceUuid': 'string', 'macaddress': 'string', 'name': 'string', 'source': 'string', 'typeString': 'string'},
+        attributes={'createDate': 0, 'domain': 'string', 'heirarchyName': 'string', 'id': 0, 'instanceUuid': 'string', 'macAddress': 'string', 'name': 'string', 'source': 'string', 'typeString': 'string'},
         floor_id='string',
         isSensor=True,
         location={'altitude': 0, 'lattitude': 0, 'longtitude': 0},
         payload=None,
         position={'x': 0, 'y': 0, 'z': 0},
         radioCount=0,
-        radios=[{'antenna': {'azimuthAngle': 0, 'elevationAngle': 0, 'gain': 0, 'mode': 'string', 'name': 'string', 'type': 'string'}, 'attributes': {'channel': 0, 'channelString': 'string', 'id': 0, 'ifMode': 'string', 'ifTypeString': 'string', 'ifTypeSubband': 'string', 'instanceUuid': 'string', 'slotId': 0}, 'isSensor': True}]
+        radios=[{'antenna': {'azimuthAngle': 0, 'elevationAngle': 0, 'gain': 0, 'mode': 'string', 'name': 'string', 'type': 'string'}, 'attributes': {'channel': 0, 'channelString': 'string', 'id': 0, 'ifMode': 'string', 'ifTypeString': 'string', 'ifTypeSubband': 'string', 'instanceUuid': 'string', 'slotId': 0, 'txPowerLevel': 0}, 'isSensor': True}]
     )
     return endpoint_result
 
@@ -295,14 +1467,14 @@ def is_valid_create_planned_access_point_for_floor(json_schema_validate, obj):
 def create_planned_access_point_for_floor(api):
     endpoint_result = api.devices.create_planned_access_point_for_floor(
         active_validation=True,
-        attributes={'createDate': 0, 'domain': 'string', 'heirarchyName': 'string', 'id': 0, 'instanceUuid': 'string', 'macaddress': 'string', 'name': 'string', 'source': 'string', 'typeString': 'string'},
+        attributes={'createDate': 0, 'domain': 'string', 'heirarchyName': 'string', 'id': 0, 'instanceUuid': 'string', 'macAddress': 'string', 'name': 'string', 'source': 'string', 'typeString': 'string'},
         floor_id='string',
         isSensor=True,
         location={'altitude': 0, 'lattitude': 0, 'longtitude': 0},
         payload=None,
         position={'x': 0, 'y': 0, 'z': 0},
         radioCount=0,
-        radios=[{'antenna': {'azimuthAngle': 0, 'elevationAngle': 0, 'gain': 0, 'mode': 'string', 'name': 'string', 'type': 'string'}, 'attributes': {'channel': 0, 'channelString': 'string', 'id': 0, 'ifMode': 'string', 'ifTypeString': 'string', 'ifTypeSubband': 'string', 'instanceUuid': 'string', 'slotId': 0}, 'isSensor': True}]
+        radios=[{'antenna': {'azimuthAngle': 0, 'elevationAngle': 0, 'gain': 0, 'mode': 'string', 'name': 'string', 'type': 'string'}, 'attributes': {'channel': 0, 'channelString': 'string', 'id': 0, 'ifMode': 'string', 'ifTypeString': 'string', 'ifTypeSubband': 'string', 'instanceUuid': 'string', 'slotId': 0, 'txPowerLevel': 0}, 'isSensor': True}]
     )
     return endpoint_result
 
@@ -437,6 +1609,204 @@ def test_delete_planned_access_point_for_floor_default_val(api, validator):
         assert is_valid_delete_planned_access_point_for_floor(
             validator,
             delete_planned_access_point_for_floor_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_all_health_score_definitions_for_given_filters(json_schema_validate, obj):
+    json_schema_validate('jsd_84dea15738b550f3b147965f64050c97_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_all_health_score_definitions_for_given_filters(api):
+    endpoint_result = api.devices.get_all_health_score_definitions_for_given_filters(
+        attribute='string',
+        device_type='string',
+        id='string',
+        include_for_overall_health=True,
+        limit=0,
+        offset=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_all_health_score_definitions_for_given_filters(api, validator):
+    try:
+        assert is_valid_get_all_health_score_definitions_for_given_filters(
+            validator,
+            get_all_health_score_definitions_for_given_filters(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_all_health_score_definitions_for_given_filters_default_val(api):
+    endpoint_result = api.devices.get_all_health_score_definitions_for_given_filters(
+        attribute=None,
+        device_type=None,
+        id=None,
+        include_for_overall_health=None,
+        limit=None,
+        offset=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_all_health_score_definitions_for_given_filters_default_val(api, validator):
+    try:
+        assert is_valid_get_all_health_score_definitions_for_given_filters(
+            validator,
+            get_all_health_score_definitions_for_given_filters_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_health_score_definitions(json_schema_validate, obj):
+    json_schema_validate('jsd_b08f499f995f5f46ba52e0385b54721a_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_health_score_definitions(api):
+    endpoint_result = api.devices.update_health_score_definitions(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_health_score_definitions(api, validator):
+    try:
+        assert is_valid_update_health_score_definitions(
+            validator,
+            update_health_score_definitions(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_health_score_definitions_default_val(api):
+    endpoint_result = api.devices.update_health_score_definitions(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_health_score_definitions_default_val(api, validator):
+    try:
+        assert is_valid_update_health_score_definitions(
+            validator,
+            update_health_score_definitions_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_health_score_definition_for_the_given_id(json_schema_validate, obj):
+    json_schema_validate('jsd_15d2a0bbce2c5b6ba0b4aee3248ace42_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_health_score_definition_for_the_given_id(api):
+    endpoint_result = api.devices.get_health_score_definition_for_the_given_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_health_score_definition_for_the_given_id(api, validator):
+    try:
+        assert is_valid_get_health_score_definition_for_the_given_id(
+            validator,
+            get_health_score_definition_for_the_given_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_health_score_definition_for_the_given_id_default_val(api):
+    endpoint_result = api.devices.get_health_score_definition_for_the_given_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_health_score_definition_for_the_given_id_default_val(api, validator):
+    try:
+        assert is_valid_get_health_score_definition_for_the_given_id(
+            validator,
+            get_health_score_definition_for_the_given_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_health_score_definition_for_the_given_id(json_schema_validate, obj):
+    json_schema_validate('jsd_b4f52e69ddca5b2583b28fb4c96447aa_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_health_score_definition_for_the_given_id(api):
+    endpoint_result = api.devices.update_health_score_definition_for_the_given_id(
+        active_validation=True,
+        id='string',
+        includeForOverallHealth=True,
+        payload=None,
+        synchronizeToIssueThreshold=True,
+        thresholdValue=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_health_score_definition_for_the_given_id(api, validator):
+    try:
+        assert is_valid_update_health_score_definition_for_the_given_id(
+            validator,
+            update_health_score_definition_for_the_given_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_health_score_definition_for_the_given_id_default_val(api):
+    endpoint_result = api.devices.update_health_score_definition_for_the_given_id(
+        active_validation=True,
+        id='string',
+        includeForOverallHealth=None,
+        payload=None,
+        synchronizeToIssueThreshold=None,
+        thresholdValue=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_health_score_definition_for_the_given_id_default_val(api, validator):
+    try:
+        assert is_valid_update_health_score_definition_for_the_given_id(
+            validator,
+            update_health_score_definition_for_the_given_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -3306,6 +4676,194 @@ def test_get_network_device_by_pagination_range_default_val(api, validator):
             raise original_e
 
 
+def is_valid_update_global_resync_interval(json_schema_validate, obj):
+    json_schema_validate('jsd_37537a64bd4956649de3a61e10f0637e_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_global_resync_interval(api):
+    endpoint_result = api.devices.update_global_resync_interval(
+        active_validation=True,
+        interval=0,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_global_resync_interval(api, validator):
+    try:
+        assert is_valid_update_global_resync_interval(
+            validator,
+            update_global_resync_interval(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_global_resync_interval_default_val(api):
+    endpoint_result = api.devices.update_global_resync_interval(
+        active_validation=True,
+        interval=None,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_global_resync_interval_default_val(api, validator):
+    try:
+        assert is_valid_update_global_resync_interval(
+            validator,
+            update_global_resync_interval_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_override_resync_interval(json_schema_validate, obj):
+    json_schema_validate('jsd_dc239a9ab9e5562b93a45ea0b9708b84_v2_3_7_6').validate(obj)
+    return True
+
+
+def override_resync_interval(api):
+    endpoint_result = api.devices.override_resync_interval(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_override_resync_interval(api, validator):
+    try:
+        assert is_valid_override_resync_interval(
+            validator,
+            override_resync_interval(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def override_resync_interval_default_val(api):
+    endpoint_result = api.devices.override_resync_interval(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_override_resync_interval_default_val(api, validator):
+    try:
+        assert is_valid_override_resync_interval(
+            validator,
+            override_resync_interval_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_resync_interval_for_the_network_device(json_schema_validate, obj):
+    json_schema_validate('jsd_fdfc828270d950ecb75480fe03f7d573_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_resync_interval_for_the_network_device(api):
+    endpoint_result = api.devices.update_resync_interval_for_the_network_device(
+        active_validation=True,
+        id='string',
+        interval=0,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_resync_interval_for_the_network_device(api, validator):
+    try:
+        assert is_valid_update_resync_interval_for_the_network_device(
+            validator,
+            update_resync_interval_for_the_network_device(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_resync_interval_for_the_network_device_default_val(api):
+    endpoint_result = api.devices.update_resync_interval_for_the_network_device(
+        active_validation=True,
+        id='string',
+        interval=None,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_update_resync_interval_for_the_network_device_default_val(api, validator):
+    try:
+        assert is_valid_update_resync_interval_for_the_network_device(
+            validator,
+            update_resync_interval_for_the_network_device_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_resync_interval_for_the_network_device(json_schema_validate, obj):
+    json_schema_validate('jsd_e56a4c0d91dd53ecb737da824115a050_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_resync_interval_for_the_network_device(api):
+    endpoint_result = api.devices.get_resync_interval_for_the_network_device(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_resync_interval_for_the_network_device(api, validator):
+    try:
+        assert is_valid_get_resync_interval_for_the_network_device(
+            validator,
+            get_resync_interval_for_the_network_device(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_resync_interval_for_the_network_device_default_val(api):
+    endpoint_result = api.devices.get_resync_interval_for_the_network_device(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_resync_interval_for_the_network_device_default_val(api, validator):
+    try:
+        assert is_valid_get_resync_interval_for_the_network_device(
+            validator,
+            get_resync_interval_for_the_network_device_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_get_device_interface_stats_info(json_schema_validate, obj):
     json_schema_validate('jsd_a9e0722d184658c592bd130ff03e1dde_v2_3_7_6').validate(obj)
     return True
@@ -3354,6 +4912,54 @@ def test_get_device_interface_stats_info_default_val(api, validator):
         assert is_valid_get_device_interface_stats_info(
             validator,
             get_device_interface_stats_info_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_the_count_of_health_score_definitions_based_on_provided_filters(json_schema_validate, obj):
+    json_schema_validate('jsd_6a51fd8467055ff1a69ade1ae8096993_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_the_count_of_health_score_definitions_based_on_provided_filters(api):
+    endpoint_result = api.devices.get_the_count_of_health_score_definitions_based_on_provided_filters(
+        device_type='string',
+        id='string',
+        include_for_overall_health=True
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_the_count_of_health_score_definitions_based_on_provided_filters(api, validator):
+    try:
+        assert is_valid_get_the_count_of_health_score_definitions_based_on_provided_filters(
+            validator,
+            get_the_count_of_health_score_definitions_based_on_provided_filters(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_the_count_of_health_score_definitions_based_on_provided_filters_default_val(api):
+    endpoint_result = api.devices.get_the_count_of_health_score_definitions_based_on_provided_filters(
+        device_type=None,
+        id=None,
+        include_for_overall_health=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.devices
+def test_get_the_count_of_health_score_definitions_based_on_provided_filters_default_val(api, validator):
+    try:
+        assert is_valid_get_the_count_of_health_score_definitions_based_on_provided_filters(
+            validator,
+            get_the_count_of_health_score_definitions_based_on_provided_filters_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

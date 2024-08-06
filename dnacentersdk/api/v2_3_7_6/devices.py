@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -64,20 +66,204 @@ class Devices(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_planned_access_points_for_building(self,
-                                               building_id,
-                                               limit=None,
-                                               offset=None,
-                                               radios=None,
-                                               headers=None,
-                                               **request_parameters):
-        """Provides a list of Planned Access Points for the Building it is requested for .
+    def gets_the_total_number_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(self,
+                                                                                                              aggregateAttributes=None,
+                                                                                                              attributes=None,
+                                                                                                              endTime=None,
+                                                                                                              filters=None,
+                                                                                                              page=None,
+                                                                                                              startTime=None,
+                                                                                                              views=None,
+                                                                                                              headers=None,
+                                                                                                              payload=None,
+                                                                                                              active_validation=True,
+                                                                                                              **request_parameters):
+        """Gets the total number Network Devices based on the provided complex filters and aggregation functions. For
+        detailed information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
 
         Args:
-            building_id(str): buildingId path parameter. Building Id .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
-            radios(bool): radios query parameter. inlcude planned radio details .
+            aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            views(list): Devices's Views (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-total-number-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'views':
+                views,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a421626459dcbe382c43ffcbddae_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/data/api/v1/networkDevices/query/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_a421626459dcbe382c43ffcbddae_v2_3_7_6', json_data)
+
+    def query_assurance_events(self,
+                               device_family,
+                               ap_mac=None,
+                               attribute=None,
+                               client_mac=None,
+                               end_time=None,
+                               limit=None,
+                               message_type=None,
+                               network_device_id=None,
+                               network_device_name=None,
+                               offset=None,
+                               order=None,
+                               severity=None,
+                               site_hierarchy_id=None,
+                               site_id=None,
+                               sort_by=None,
+                               start_time=None,
+                               view=None,
+                               headers=None,
+                               **request_parameters):
+        """Returns the list of events discovered by Catalyst Center, determined by the complex filters. Please refer to the
+        'API Support Documentation' section to understand which fields are supported. For detailed information
+        about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceEvents-1.0.0-resolved.yaml .
+
+        Args:
+            device_family(basestring): deviceFamily query parameter. Device family. Please note that multiple
+                families across network device type and client type is not allowed. For example,
+                choosing `Routers` along with `Wireless Client` or `Unified AP` is not supported.
+                Examples: `deviceFamily=Switches and Hubs` (single deviceFamily requested)
+                `deviceFamily=Switches and Hubs&deviceFamily=Routers` (multiple deviceFamily requested)
+                .
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time minus 24
+                hours. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. If
+                `endTime` is not provided, API will default to current time. .
+            message_type(basestring): messageType query parameter. Message type for the event. Examples:
+                `messageType=Syslog` (single messageType requested)
+                `messageType=Trap&messageType=Syslog` (multiple messageType requested) .
+            severity(int): severity query parameter. Severity of the event between 0 and 6. This is applicable only
+                for events related to network devices (other than AP) and `Wired Client` events. (Value:
+                Severity: 0: Emergency: 1: Alert: 2: Critical: 3: Error: 4: Warning: 5: Notice: 6:
+                Info),  Examples: `severity=0` (single severity requested) `severity=0&severity=1`
+                (multiple severity requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) Examples:
+                `?siteId=id1` (single siteId requested) `?siteId=id1&siteId=id2&siteId=id3` (multiple
+                siteId requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyId requested) .
+            network_device_name(basestring): networkDeviceName query parameter. Network device name. This parameter
+                is applicable for network device related families. This field supports wildcard (`*`)
+                character-based search. Ex: `*Branch*` or `Branch*` or `*Branch` Examples:
+                `networkDeviceName=Branch-3-Gateway` (single networkDeviceName requested)
+                `networkDeviceName=Branch-3-Gateway&networkDeviceName=Branch-3-Switch` (multiple
+                networkDeviceName requested) .
+            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
+                requested) `networkDeviceId=6bef213c-19ca-4170-8375-
+                b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
+                cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
+                networkDeviceId with & separator) .
+            ap_mac(basestring): apMac query parameter. MAC address of the access point. This parameter is applicable
+                for `Unified AP` and `Wireless Client` events. This field supports wildcard (`*`)
+                character-based search. Ex: `*50:0F*` or `50:0F*` or `*50:0F` Examples:
+                `apMac=50:0F:80:0F:F7:E0` (single apMac requested)
+                `apMac=50:0F:80:0F:F7:E0&apMac=18:80:90:AB:7E:A0` (multiple apMac requested) .
+            client_mac(basestring): clientMac query parameter. MAC address of the client. This parameter is
+                applicable for `Wired Client` and `Wireless Client` events. This field supports wildcard
+                (`*`) character-based search. Ex: `*66:2B*` or `66:2B*` or `*66:2B` Examples:
+                `clientMac=66:2B:B8:D2:01:56` (single clientMac requested)
+                `clientMac=66:2B:B8:D2:01:56&clientMac=DC:A6:32:F5:5A:89` (multiple clientMac requested)
+                .
+            attribute(basestring): attribute query parameter. The list of attributes that needs to be included in
+                the response. If this parameter is not provided, then basic attributes (`id`, `name`,
+                `timestamp`, `details`, `messageType`, `siteHierarchyId`, `siteHierarchy`,
+                `deviceFamily`, `networkDeviceId`, `networkDeviceName`, `managementIpAddress`) would be
+                part of the response.  Examples: `attribute=name` (single attribute requested)
+                `attribute=name&attribute=networkDeviceName` (multiple attribute requested) .
+            view(basestring): view query parameter. The list of events views. Please refer to `EventViews` for the
+                supported list  Examples: `view=network` (single view requested) `view=network&view=ap`
+                (multiple view requested) .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            limit(int): limit query parameter. Maximum number of records to return .
+            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
+            order(basestring): order query parameter. The sort order of the field ascending or descending. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -91,17 +277,2209 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!query-assurance-events
+        """
+        check_type(headers, dict)
+        check_type(device_family, basestring,
+                   may_be_none=False)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(message_type, basestring)
+        check_type(severity, int)
+        check_type(site_id, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(network_device_name, basestring)
+        check_type(network_device_id, basestring)
+        check_type(ap_mac, basestring)
+        check_type(client_mac, basestring)
+        check_type(attribute, basestring)
+        check_type(view, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'deviceFamily':
+                device_family,
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'messageType':
+                message_type,
+            'severity':
+                severity,
+            'siteId':
+                site_id,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'networkDeviceName':
+                network_device_name,
+            'networkDeviceId':
+                network_device_id,
+            'apMac':
+                ap_mac,
+            'clientMac':
+                client_mac,
+            'attribute':
+                attribute,
+            'view':
+                view,
+            'offset':
+                offset,
+            'limit':
+                limit,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/assuranceEvents')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_bc891de5102872b3415d23b7a0b_v2_3_7_6', json_data)
+
+    def count_the_number_of_events(self,
+                                   device_family,
+                                   ap_mac=None,
+                                   client_mac=None,
+                                   end_time=None,
+                                   message_type=None,
+                                   network_device_id=None,
+                                   network_device_name=None,
+                                   severity=None,
+                                   site_hierarchy_id=None,
+                                   site_id=None,
+                                   start_time=None,
+                                   headers=None,
+                                   **request_parameters):
+        """API to fetch the count of assurance events that match the filter criteria. Please refer to the 'API Support
+        Documentation' section to understand which fields are supported. For detailed information about the
+        usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        AssuranceEvents-1.0.0-resolved.yaml .
+
+        Args:
+            device_family(basestring): deviceFamily query parameter. Device family. Please note that multiple
+                families across network device type and client type is not allowed. For example,
+                choosing `Routers` along with `Wireless Client` or `Unified AP` is not supported.
+                Examples: `deviceFamily=Switches and Hubs` (single deviceFamily requested)
+                `deviceFamily=Switches and Hubs&deviceFamily=Routers` (multiple deviceFamily requested)
+                .
+            start_time(basestring): startTime query parameter. Start time from which API queries the data set
+                related to the resource. It must be specified in UNIX epochtime in milliseconds. Value
+                is inclusive. If `startTime` is not provided, API will default to current time minus 24
+                hours. .
+            end_time(basestring): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. If
+                `endTime` is not provided, API will default to current time. .
+            message_type(basestring): messageType query parameter. Message type for the event. Examples:
+                `messageType=Syslog` (single messageType requested)
+                `messageType=Trap&messageType=Syslog` (multiple messageType requested) .
+            severity(basestring): severity query parameter. Severity of the event between 0 and 6. This is
+                applicable only for events related to network devices (other than AP) and `Wired Client`
+                events. (Value: Severity: 0: Emergency: 1: Alert: 2: Critical: 3: Error: 4: Warning: 5:
+                Notice: 6: Info),  Examples: `severity=0` (single severity requested)
+                `severity=0&severity=1` (multiple severity requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) Examples:
+                `?siteId=id1` (single siteId requested) `?siteId=id1&siteId=id2&siteId=id3` (multiple
+                siteId requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyId requested) .
+            network_device_name(basestring): networkDeviceName query parameter. Network device name. This parameter
+                is applicable for network device related families. This field supports wildcard (`*`)
+                character-based search. Ex: `*Branch*` or `Branch*` or `*Branch` Examples:
+                `networkDeviceName=Branch-3-Gateway` (single networkDeviceName requested)
+                `networkDeviceName=Branch-3-Gateway&networkDeviceName=Branch-3-Switch` (multiple
+                networkDeviceName requested) .
+            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
+                requested) `networkDeviceId=6bef213c-19ca-4170-8375-
+                b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
+                cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
+                networkDeviceId requested) .
+            ap_mac(basestring): apMac query parameter. MAC address of the access point. This parameter is applicable
+                for `Unified AP` and `Wireless Client` events. This field supports wildcard (`*`)
+                character-based search. Ex: `*50:0F*` or `50:0F*` or `*50:0F` Examples:
+                `apMac=50:0F:80:0F:F7:E0` (single apMac requested)
+                `apMac=50:0F:80:0F:F7:E0&apMac=18:80:90:AB:7E:A0` (multiple apMac requested) .
+            client_mac(basestring): clientMac query parameter. MAC address of the client. This parameter is
+                applicable for `Wired Client` and `Wireless Client` events. This field supports wildcard
+                (`*`) character-based search. Ex: `*66:2B*` or `66:2B*` or `*66:2B` Examples:
+                `clientMac=66:2B:B8:D2:01:56` (single clientMac requested)
+                `clientMac=66:2B:B8:D2:01:56&clientMac=DC:A6:32:F5:5A:89` (multiple clientMac requested)
+                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-events
+        """
+        check_type(headers, dict)
+        check_type(device_family, basestring,
+                   may_be_none=False)
+        check_type(start_time, basestring)
+        check_type(end_time, basestring)
+        check_type(message_type, basestring)
+        check_type(severity, basestring)
+        check_type(site_id, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(network_device_name, basestring)
+        check_type(network_device_id, basestring)
+        check_type(ap_mac, basestring)
+        check_type(client_mac, basestring)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'deviceFamily':
+                device_family,
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'messageType':
+                message_type,
+            'severity':
+                severity,
+            'siteId':
+                site_id,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'networkDeviceName':
+                network_device_name,
+            'networkDeviceId':
+                network_device_id,
+            'apMac':
+                ap_mac,
+            'clientMac':
+                client_mac,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/assuranceEvents/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_abf597583520eb0a7a0b24e5c7f69_v2_3_7_6', json_data)
+
+    def query_assurance_events_with_filters(self,
+                                            attributes=None,
+                                            deviceFamily=None,
+                                            endTime=None,
+                                            filters=None,
+                                            page=None,
+                                            startTime=None,
+                                            views=None,
+                                            headers=None,
+                                            payload=None,
+                                            active_validation=True,
+                                            **request_parameters):
+        """Returns the list of events discovered by Catalyst Center, determined by the complex filters. Please refer to the
+        'API Support Documentation' section to understand which fields are supported. For detailed information
+        about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceEvents-1.0.0-resolved.yaml .
+
+        Args:
+            attributes(list): Devices's Attributes (list of strings).
+            deviceFamily(list): Devices's Device Family (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            views(list): Devices's Views (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!query-assurance-events-with-filters
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'deviceFamily':
+                deviceFamily,
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'attributes':
+                attributes,
+            'views':
+                views,
+            'filters':
+                filters,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ef94c2c20ba15fd38e129ac75067de1e_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/assuranceEvents/query')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ef94c2c20ba15fd38e129ac75067de1e_v2_3_7_6', json_data)
+
+    def count_the_number_of_events_with_filters(self,
+                                                deviceFamily=None,
+                                                endTime=None,
+                                                filters=None,
+                                                startTime=None,
+                                                headers=None,
+                                                payload=None,
+                                                active_validation=True,
+                                                **request_parameters):
+        """API to fetch the count of assurance events for the given complex query. Please refer to the 'API Support
+        Documentation' section to understand which fields are supported. For detailed information about the
+        usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        AssuranceEvents-1.0.0-resolved.yaml .
+
+        Args:
+            deviceFamily(list): Devices's Device Family (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            startTime(integer): Devices's Start Time.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-events-with-filters
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'deviceFamily':
+                deviceFamily,
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'filters':
+                filters,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a91eed12dfc85dbdaacab22e6e9f04a5_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/assuranceEvents/query/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_a91eed12dfc85dbdaacab22e6e9f04a5_v2_3_7_6', json_data)
+
+    def get_details_of_a_single_assurance_event(self,
+                                                id,
+                                                attribute=None,
+                                                view=None,
+                                                headers=None,
+                                                **request_parameters):
+        """API to fetch the details of an assurance event using event `id`. For detailed information about the usage of the
+        API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        AssuranceEvents-1.0.0-resolved.yaml .
+
+        Args:
+            id(basestring): id path parameter. Unique identifier for the event .
+            attribute(basestring): attribute query parameter. The list of attributes that needs to be included in
+                the response. If this parameter is not provided, then basic attributes (`id`, `name`,
+                `timestamp`, `details`, `messageType`, `siteHierarchyId`, `siteHierarchy`,
+                `deviceFamily`, `networkDeviceId`, `networkDeviceName`, `managementIpAddress`) would be
+                part of the response.  Examples: `attribute=name` (single attribute requested)
+                `attribute=name&attribute=networkDeviceName` (multiple attribute requested) .
+            view(basestring): view query parameter. The list of events views. Please refer to `EventViews` for the
+                supported list  Examples: `view=network` (single view requested) `view=network&view=ap`
+                (multiple view requested) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-assurance-event
+        """
+        check_type(headers, dict)
+        check_type(attribute, basestring)
+        check_type(view, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'attribute':
+                attribute,
+            'view':
+                view,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/assuranceEvents/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a36092e78528b9bd8730c93b5412d_v2_3_7_6', json_data)
+
+    def get_list_of_child_events_for_the_given_wireless_client_event(self,
+                                                                     id,
+                                                                     headers=None,
+                                                                     **request_parameters):
+        """Wireless client event could have child events and this API can be used to fetch the same using parent event `id`
+        as the input. For detailed information about the usage of the API, please refer to the Open API
+        specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceEvents-1.0.0-resolved.yaml .
+
+        Args:
+            id(basestring): id path parameter. Unique identifier for the event .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-child-events-for-the-given-wireless-client-event
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/assuranceEvents/{id}/childEvents')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_d3cf1ace30895351b5b8c3f7919b972e_v2_3_7_6', json_data)
+
+    def gets_interfaces_along_with_statistics_data_from_all_network_devices(self,
+                                                                            attribute=None,
+                                                                            end_time=None,
+                                                                            interface_id=None,
+                                                                            interface_name=None,
+                                                                            limit=None,
+                                                                            network_device_id=None,
+                                                                            network_device_ip_address=None,
+                                                                            network_device_mac_address=None,
+                                                                            offset=None,
+                                                                            order=None,
+                                                                            site_hierarchy=None,
+                                                                            site_hierarchy_id=None,
+                                                                            site_id=None,
+                                                                            sort_by=None,
+                                                                            start_time=None,
+                                                                            view=None,
+                                                                            headers=None,
+                                                                            **request_parameters):
+        """Retrieves the list of the interfaces from all network devices based on the provided query parameters. The latest
+        interfaces data in the specified start and end time range will be returned. When there is no start and
+        end time specified returns the latest available data. The elements are grouped and sorted by deviceUuid
+        first, and are then sorted by the given sort field, or by the default value: name.   The supported
+        sorting options are: name, adminStatus, description, duplexConfig,
+        duplexOper,interfaceIfIndex,interfaceType, macAddress,mediaType, operStatus,portChannelId, portMode,
+        portType,speed, vlanId. For detailed information about the usage of the API, please refer to the Open
+        API specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-interfaces-1.0.2-resolved.yaml .
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            limit(int): limit query parameter. Maximum number of records to return .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
+            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
+                supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
+                Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
+                requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
+                reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) Examples:
+                `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3` (multiple ids
+                requested) .
+            view(basestring): view query parameter. The specific summary view being requested. This is an optional
+                parameter which can be passed to get one or more of the specific view associated fields.
+                The default view is ``configuration``. ### Response data proviced by each view:   1.
+                **configuration** [id,adminStatus,description,duplexConfig,duplexOper,interfaceIfIndex,i
+                nterfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,name,o
+                perStatus, portChannelId,portMode, portType,speed,timestamp,vlanId,networkDeviceId,netwo
+                rkDeviceIpAddress,networkDeviceMacAddress,siteName,siteHierarchy,siteHierarchyId]   2.
+                **statistics** [id,name,rxDiscards,rxError,rxRate,rxUtilization,txDiscards,txError,txRat
+                e,txUtilization,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteName,
+                siteHierarchy,siteHierarchyId]   3. **stackPort** [id,name,peerStackMember,peerStackPort
+                ,stackPortType,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteName,s
+                iteHierarchy,siteHierarchyId]   The default view is configuration, If need to access an
+                additional view, simply include the view name in the query parameter. Examples:
+                view=configuration (single view requested) view=configuration&view=statistic&stackPort
+                (multiple views requested) .
+            attribute(basestring): attribute query parameter. The following list of attributes can be provided in
+                the attribute field [id,adminStatus, description,duplexConfig,duplexOper,interfaceIfInde
+                x,interfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,nam
+                e,operStatus,peerStackMember,peerStackPort, portChannelId,portMode, portType,rxDiscards,
+                rxError,rxRate,rxUtilization,speed,stackPortType,timestamp,txDiscards,txError,txRate,txU
+                tilization,vlanId,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteNam
+                e,siteHierarchy,siteHierarchyId] If length of attribute list is too long, please use
+                'views' param instead. Examples: attributes=name (single attribute requested)
+                attributes=name,description,duplexOper (multiple attributes with comma separator) .
+            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
+                requested) `networkDeviceId=6bef213c-19ca-4170-8375-
+                b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
+                cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
+                networkDeviceIds with & separator) .
+            network_device_ip_address(basestring): networkDeviceIpAddress query parameter. The list of Network
+                Device management IP Address. (Ex. `121.1.1.10`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*1.1*` or `1.1*` or `*1.1` Examples:
+                `networkDeviceIpAddress=121.1.1.10` `networkDeviceIpAddress=121.1.1.10&networkDeviceIpAd
+                dress=172.20.1.10&networkDeviceIpAddress=10.10.20.10` (multiple networkDevice IP Address
+                with & separator) .
+            network_device_mac_address(basestring): networkDeviceMacAddress query parameter. The list of Network
+                Device MAC Address. (Ex. `64:f6:9d:07:9a:00`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*` or `*AB:AB:AB` Examples:
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00`
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00&networkDeviceMacAddress=70:56:9d:07:ac:77`
+                (multiple networkDevice MAC addresses with & separator) .
+            interface_id(basestring): interfaceId query parameter. The list of Interface Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `interfaceId=6bef213c-19ca-4170-8375-b694e251101c` (single interface uuid ) `interfaceId
+                =6bef213c-19ca-4170-8375-b694e251101c&32219612-819e-4b5e-a96b-cf22aca13dd9&2541e9a7-
+                b80d-4955-8aa2-79b233318ba0` (multiple Interface uuid with & separator) .
+            interface_name(basestring): interfaceName query parameter. The list of Interface name (Ex.
+                `GigabitEthernet1/0/1`) This field supports wildcard (`*`) character-based search.  Ex:
+                `*1/0/1*` or `1/0/1*` or `*1/0/1` Examples: `interfaceNames=GigabitEthernet1/0/1`
+                (single interface name)
+                `interfaceNames=GigabitEthernet1/0/1&GigabitEthernet2/0/1&GigabitEthernet3/0/1`
+                (multiple interface names with & separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-interfaces-along-with-statistics-data-from-all-network-devices
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        check_type(site_hierarchy, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(site_id, basestring)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        check_type(network_device_id, basestring)
+        check_type(network_device_ip_address, basestring)
+        check_type(network_device_mac_address, basestring)
+        check_type(interface_id, basestring)
+        check_type(interface_name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'view':
+                view,
+            'attribute':
+                attribute,
+            'networkDeviceId':
+                network_device_id,
+            'networkDeviceIpAddress':
+                network_device_ip_address,
+            'networkDeviceMacAddress':
+                network_device_mac_address,
+            'interfaceId':
+                interface_id,
+            'interfaceName':
+                interface_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fc7a61a854f2b2015d3f1c059ce9_v2_3_7_6', json_data)
+
+    def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(self,
+                                                                                                                                                                           end_time=None,
+                                                                                                                                                                           interface_id=None,
+                                                                                                                                                                           interface_name=None,
+                                                                                                                                                                           network_device_id=None,
+                                                                                                                                                                           network_device_ip_address=None,
+                                                                                                                                                                           network_device_mac_address=None,
+                                                                                                                                                                           site_hierarchy=None,
+                                                                                                                                                                           site_hierarchy_id=None,
+                                                                                                                                                                           site_id=None,
+                                                                                                                                                                           start_time=None,
+                                                                                                                                                                           headers=None,
+                                                                                                                                                                           **request_parameters):
+        """Gets the total Network device interface counts. For detailed information about the usage of the API, please
+        refer to the Open API specification document https://github.com/cisco-en-programmability/catalyst-
+        center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-interfaces-1.0.2-resolved.yaml .
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
+                supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
+                Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
+                requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
+                reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) Examples:
+                `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3` (multiple ids
+                requested) .
+            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
+                requested) `networkDeviceId=6bef213c-19ca-4170-8375-
+                b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
+                cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
+                networkDeviceIds with & separator) .
+            network_device_ip_address(basestring): networkDeviceIpAddress query parameter. The list of Network
+                Device management IP Address. (Ex. `121.1.1.10`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*1.1*` or `1.1*` or `*1.1` Examples:
+                `networkDeviceIpAddress=121.1.1.10` `networkDeviceIpAddress=121.1.1.10&networkDeviceIpAd
+                dress=172.20.1.10&networkDeviceIpAddress=10.10.20.10` (multiple networkDevice IP Address
+                with & separator) .
+            network_device_mac_address(basestring): networkDeviceMacAddress query parameter. The list of Network
+                Device MAC Address. (Ex. `64:f6:9d:07:9a:00`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*` or `*AB:AB:AB` Examples:
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00`
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00&networkDeviceMacAddress=70:56:9d:07:ac:77`
+                (multiple networkDevice MAC addresses with & separator) .
+            interface_id(basestring): interfaceId query parameter. The list of Interface Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `interfaceId=6bef213c-19ca-4170-8375-b694e251101c` (single interface uuid ) `interfaceId
+                =6bef213c-19ca-4170-8375-b694e251101c&32219612-819e-4b5e-a96b-cf22aca13dd9&2541e9a7-
+                b80d-4955-8aa2-79b233318ba0` (multiple Interface uuid with & separator) .
+            interface_name(basestring): interfaceName query parameter. The list of Interface name (Ex.
+                `GigabitEthernet1/0/1`) This field supports wildcard (`*`) character-based search.  Ex:
+                `*1/0/1*` or `1/0/1*` or `*1/0/1` Examples: `interfaceNames=GigabitEthernet1/0/1`
+                (single interface name)
+                `interfaceNames=GigabitEthernet1/0/1&GigabitEthernet2/0/1&GigabitEthernet3/0/1`
+                (multiple interface names with & separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-total-network-device-interface-counts-in-the-specified-time-range-when-there-is-no-start-and-end-time-specified-returns-the-latest-interfaces-total-count
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(site_hierarchy, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(site_id, basestring)
+        check_type(network_device_id, basestring)
+        check_type(network_device_ip_address, basestring)
+        check_type(network_device_mac_address, basestring)
+        check_type(interface_id, basestring)
+        check_type(interface_name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'networkDeviceId':
+                network_device_id,
+            'networkDeviceIpAddress':
+                network_device_ip_address,
+            'networkDeviceMacAddress':
+                network_device_mac_address,
+            'interfaceId':
+                interface_id,
+            'interfaceName':
+                interface_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_0f4b503bbce76ebb802f0ad7_v2_3_7_6', json_data)
+
+    def gets_the_list_of_interfaces_across_the_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(self,
+                                                                                                                               aggregateAttributes=None,
+                                                                                                                               attributes=None,
+                                                                                                                               endTime=None,
+                                                                                                                               filters=None,
+                                                                                                                               page=None,
+                                                                                                                               startTime=None,
+                                                                                                                               views=None,
+                                                                                                                               headers=None,
+                                                                                                                               payload=None,
+                                                                                                                               active_validation=True,
+                                                                                                                               **request_parameters):
+        """Gets the list of interfaces across the Network Devices based on the provided complex filters and aggregation
+        functions The elements are grouped and sorted by deviceUuid first, and are then sorted by the given sort
+        field, or by the default value: name. The supported sorting options are: name, adminStatus, description,
+        duplexConfig, duplexOper, interfaceIfIndex,interfaceType, macAddress,mediaType, operStatus,
+        portChannelId, portMode, portType,speed, vlanId. For detailed information about the usage of the API,
+        please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        interfaces-1.0.2-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            views(list): Devices's Views (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-list-of-interfaces-across-the-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'views':
+                views,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f667322836d5527482ad2100bec7feb4_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces/query')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_f667322836d5527482ad2100bec7feb4_v2_3_7_6', json_data)
+
+    def the_total_interfaces_count_across_the_network_devices(self,
+                                                              aggregateAttributes=None,
+                                                              attributes=None,
+                                                              endTime=None,
+                                                              filters=None,
+                                                              page=None,
+                                                              startTime=None,
+                                                              views=None,
+                                                              headers=None,
+                                                              payload=None,
+                                                              active_validation=True,
+                                                              **request_parameters):
+        """Gets the total number of interfaces across the Network devices based on the provided complex filters and
+        aggregation functions. For detailed information about the usage of the API, please refer to the Open API
+        specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-interfaces-1.0.2-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            views(list): Devices's Views (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!the-total-interfaces-count-across-the-network-devices
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'views':
+                views,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_b0b146a144a65aa296b8b939c2926158_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces/query/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_b0b146a144a65aa296b8b939c2926158_v2_3_7_6', json_data)
+
+    def get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(self,
+                                                                                                      id,
+                                                                                                      attribute=None,
+                                                                                                      end_time=None,
+                                                                                                      start_time=None,
+                                                                                                      view=None,
+                                                                                                      headers=None,
+                                                                                                      **request_parameters):
+        """Returns the interface data for the given interface instance Uuid along with the statistics data. The latest
+        interface data in the specified start and end time range will be returned. When there is no start and
+        end time specified returns the latest available data for the given interface Id. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-interfaces-1.0.2-resolved.yaml .
+
+        Args:
+            id(basestring): id path parameter. The interface Uuid .
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            view(basestring): view query parameter. Interface data model views .
+            attribute(basestring): attribute query parameter. The following list of attributes can be provided in
+                the attribute field [id,adminStatus, description,duplexConfig,duplexOper,interfaceIfInde
+                x,interfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,nam
+                e,operStatus,peerStackMember,peerStackPort, portChannelId,portMode, portType,rxDiscards,
+                rxError,rxRate,rxUtilization,speed,stackPortType,timestamp,txDiscards,txError,txRate,txU
+                tilization,vlanId,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteNam
+                e,siteHierarchy,siteHierarchyId] If length of attribute list is too long, please use
+                'views' param instead. Examples: attributes=name (single attribute requested)
+                attributes=name,description,duplexOper (multiple attributes with comma separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-the-interface-data-for-the-given-interface-idinstance-uuid-along-with-the-statistics-data
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_adcdf890505770af113b18b30c1b5f_v2_3_7_6', json_data)
+
+    def gets_the_network_device_details_based_on_the_provided_query_parameters(self,
+                                                                               attribute=None,
+                                                                               end_time=None,
+                                                                               family=None,
+                                                                               health_score=None,
+                                                                               id=None,
+                                                                               limit=None,
+                                                                               mac_address=None,
+                                                                               maintenance_mode=None,
+                                                                               management_ip_address=None,
+                                                                               offset=None,
+                                                                               order=None,
+                                                                               role=None,
+                                                                               serial_number=None,
+                                                                               site_hierarchy=None,
+                                                                               site_hierarchy_id=None,
+                                                                               site_id=None,
+                                                                               software_version=None,
+                                                                               sort_by=None,
+                                                                               start_time=None,
+                                                                               type=None,
+                                                                               view=None,
+                                                                               headers=None,
+                                                                               **request_parameters):
+        """Gets the Network Device details based on the provided query parameters.  When there is no start and end time
+        specified returns the latest device details. For detailed information about the usage of the API, please
+        refer to the Open API specification document https://github.com/cisco-en-programmability/catalyst-
+        center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            limit(int): limit query parameter. Maximum number of records to return .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
+            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
+                supports wildcard asterisk (*) character search support. E.g. */San*, */San, /San*
+                Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
+                requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
+                reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (*) character search support. E.g. `*uuid*, *uuid, uuid* Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) This field supports
+                wildcard asterisk (*) character search support. E.g.*flooruuid*, *flooruuid, flooruuid*
+                Examples: `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3`
+                (multiple ids requested) .
+            id(basestring): id query parameter. The list of entity Uuids.
+                (Ex."6bef213c-19ca-4170-8375-b694e251101c") Examples:
+                id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid requested) id=6bef213c-19ca-
+                4170-8375-b694e251101c&id=32219612-819e-4b5e-a96b-cf22aca13dd9&id=2541e9a7-b80d-4955-
+                8aa2-79b233318ba0 (multiple entity uuid with '&' separator) .
+            management_ip_address(basestring): managementIpAddress query parameter. The list of entity management IP
+                Address. It can be either Ipv4 or Ipv6 address or combination of both(Ex. "121.1.1.10")
+                This field supports wildcard (`*`) character-based search.  Ex: `*1.1*` or `1.1*` or
+                `*1.1` Examples: managementIpAddresses=121.1.1.10 managementIpAddresses=121.1.1.10&manag
+                ementIpAddresses=172.20.1.10&managementIpAddresses=200:10&=managementIpAddresses172.20.3
+                .4 (multiple entity IP Address with & separator) .
+            mac_address(basestring): macAddress query parameter. The macAddress of the network device or client This
+                field supports wildcard (`*`) character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*`
+                or `*AB:AB:AB` Examples: `macAddress=AB:AB:AB:CD:CD:CD` (single macAddress requested)
+                `macAddress=AB:AB:AB:CD:CD:DC&macAddress=AB:AB:AB:CD:CD:FE` (multiple macAddress
+                requested) .
+            family(basestring): family query parameter. The list of network device family names
+                Examples:family=Switches and Hubs (single network device family name )family=Switches
+                and Hubs&family=Router&family=Wireless Controller (multiple Network device family names
+                with & separator). This field is not case sensitive. .
+            type(basestring): type query parameter. The list of network device type This field supports wildcard
+                (`*`) character-based search. Ex: `*9407R*` or `*9407R` or `9407R*` Examples:
+                type=SwitchesCisco Catalyst 9407R Switch (single network device types ) type=Cisco
+                Catalyst 38xx stack-able ethernet switch&type=Cisco 3945 Integrated Services Router G2
+                (multiple Network device types with & separator) .
+            role(basestring): role query parameter. The list of network device role. Examples:role=CORE,
+                role=CORE&role=ACCESS&role=ROUTER (multiple Network device roles with & separator). This
+                field is not case sensitive. .
+            serial_number(basestring): serialNumber query parameter. The list of network device serial numbers. This
+                field supports wildcard (`*`) character-based search.  Ex: `*MS1SV*` or `MS1SV*` or
+                `*MS1SV` Examples: serialNumber=9FUFMS1SVAX
+                serialNumber=9FUFMS1SVAX&FCW2333Q0BY&FJC240617JX(multiple Network device serial number
+                with & separator) .
+            maintenance_mode(bool): maintenanceMode query parameter. The device maintenanceMode status true or false
+                .
+            software_version(basestring): softwareVersion query parameter. The list of network device software
+                version This field supports wildcard (`*`) character-based search. Ex: `*17.8*` or
+                `*17.8` or `17.8*` Examples: softwareVersion=2.3.4.0 (single network device software
+                version ) softwareVersion=17.9.3.23&softwareVersion=17.7.1.2&softwareVersion=*.17.7
+                (multiple Network device software versions with & separator) .
+            health_score(basestring): healthScore query parameter. The list of entity health score categories
+                Examples: healthScore=good, healthScore=good&healthScore=fair (multiple entity
+                healthscore values with & separator). This field is not case sensitive. .
+            view(basestring): view query parameter. The List of Network Device model views. Please refer to
+                ```NetworkDeviceView``` for the supported list .
+            attribute(basestring): attribute query parameter. The List of Network Device model attributes. This is
+                helps to specify the interested fields in the request. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-network-device-details-based-on-the-provided-query-parameters
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        check_type(site_hierarchy, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(site_id, basestring)
+        check_type(id, basestring)
+        check_type(management_ip_address, basestring)
+        check_type(mac_address, basestring)
+        check_type(family, basestring)
+        check_type(type, basestring)
+        check_type(role, basestring)
+        check_type(serial_number, basestring)
+        check_type(maintenance_mode, bool)
+        check_type(software_version, basestring)
+        check_type(health_score, basestring)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'id':
+                id,
+            'managementIpAddress':
+                management_ip_address,
+            'macAddress':
+                mac_address,
+            'family':
+                family,
+            'type':
+                type,
+            'role':
+                role,
+            'serialNumber':
+                serial_number,
+            'maintenanceMode':
+                maintenance_mode,
+            'softwareVersion':
+                software_version,
+            'healthScore':
+                health_score,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c7314fc7e15dab859eb66f45b1e95a_v2_3_7_6', json_data)
+
+    def gets_the_total_network_device_counts_based_on_the_provided_query_parameters(self,
+                                                                                    attribute=None,
+                                                                                    end_time=None,
+                                                                                    family=None,
+                                                                                    health_score=None,
+                                                                                    id=None,
+                                                                                    mac_address=None,
+                                                                                    maintenance_mode=None,
+                                                                                    management_ip_address=None,
+                                                                                    role=None,
+                                                                                    serial_number=None,
+                                                                                    site_hierarchy=None,
+                                                                                    site_hierarchy_id=None,
+                                                                                    site_id=None,
+                                                                                    software_version=None,
+                                                                                    start_time=None,
+                                                                                    type=None,
+                                                                                    view=None,
+                                                                                    headers=None,
+                                                                                    **request_parameters):
+        """Gets the total Network device counts. When there is no start and end time specified returns the latest
+        interfaces total count. For detailed information about the usage of the API, please refer to the Open
+        API specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            id(basestring): id query parameter. The list of entity Uuids.
+                (Ex."6bef213c-19ca-4170-8375-b694e251101c") Examples:
+                id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid requested) id=6bef213c-19ca-
+                4170-8375-b694e251101c&id=32219612-819e-4b5e-a96b-cf22aca13dd9&id=2541e9a7-b80d-4955-
+                8aa2-79b233318ba0 (multiple entity uuid with '&' separator) .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
+                supports wildcard asterisk (*) character search support. E.g. */San*, */San, /San*
+                Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
+                requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
+                reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (*) character search support. E.g. `*uuid*, *uuid, uuid* Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) This field supports
+                wildcard asterisk (*) character search support. E.g.*flooruuid*, *flooruuid, flooruuid*
+                Examples: `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3`
+                (multiple ids requested) .
+            management_ip_address(basestring): managementIpAddress query parameter. The list of entity management IP
+                Address. It can be either Ipv4 or Ipv6 address or combination of both(Ex. "121.1.1.10")
+                This field supports wildcard (`*`) character-based search.  Ex: `*1.1*` or `1.1*` or
+                `*1.1` Examples: managementIpAddresses=121.1.1.10 managementIpAddresses=121.1.1.10&manag
+                ementIpAddresses=172.20.1.10&managementIpAddresses=200:10&=managementIpAddresses172.20.3
+                .4 (multiple entity IP Address with & separator) .
+            mac_address(basestring): macAddress query parameter. The macAddress of the network device or client This
+                field supports wildcard (`*`) character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*`
+                or `*AB:AB:AB` Examples: `macAddress=AB:AB:AB:CD:CD:CD` (single macAddress requested)
+                `macAddress=AB:AB:AB:CD:CD:DC&macAddress=AB:AB:AB:CD:CD:FE` (multiple macAddress
+                requested) .
+            family(basestring): family query parameter. The list of network device family names
+                Examples:family=Switches and Hubs (single network device family name )family=Switches
+                and Hubs&family=Router&family=Wireless Controller (multiple Network device family names
+                with & separator). This field is not case sensitive. .
+            type(basestring): type query parameter. The list of network device type This field supports wildcard
+                (`*`) character-based search. Ex: `*9407R*` or `*9407R` or
+                `9407R*`Examples:type=SwitchesCisco Catalyst 9407R Switch (single network device types
+                )type=Cisco Catalyst 38xx stack-able ethernet switch&type=Cisco 3945 Integrated Services
+                Router G2 (multiple Network device types with & separator) .
+            role(basestring): role query parameter. The list of network device role. Examples:role=CORE,
+                role=CORE&role=ACCESS&role=ROUTER (multiple Network device roles with & separator). This
+                field is not case sensitive. .
+            serial_number(basestring): serialNumber query parameter. The list of network device serial numbers. This
+                field supports wildcard (`*`) character-based search.  Ex: `*MS1SV*` or `MS1SV*` or
+                `*MS1SV` Examples: serialNumber=9FUFMS1SVAX
+                serialNumber=9FUFMS1SVAX&FCW2333Q0BY&FJC240617JX(multiple Network device serial number
+                with & separator) .
+            maintenance_mode(bool): maintenanceMode query parameter. The device maintenanceMode status true or false
+                .
+            software_version(basestring): softwareVersion query parameter. The list of network device software
+                version This field supports wildcard (`*`) character-based search. Ex: `*17.8*` or
+                `*17.8` or `17.8*` Examples: softwareVersion=2.3.4.0 (single network device software
+                version ) softwareVersion=17.9.3.23&softwareVersion=17.7.1.2&softwareVersion=*.17.7
+                (multiple Network device software versions with & separator) .
+            health_score(basestring): healthScore query parameter. The list of entity health score categories
+                Examples:healthScore=good,healthScore=good&healthScore=fair (multiple entity healthscore
+                values with & separator). This field is not case sensitive. .
+            view(basestring): view query parameter. The List of Network Device model views. Please refer to
+                ```NetworkDeviceView``` for the supported list .
+            attribute(basestring): attribute query parameter. The List of Network Device model attributes. This is
+                helps to specify the interested fields in the request. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-total-network-device-counts-based-on-the-provided-query-parameters
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(id, basestring)
+        check_type(site_hierarchy, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(site_id, basestring)
+        check_type(management_ip_address, basestring)
+        check_type(mac_address, basestring)
+        check_type(family, basestring)
+        check_type(type, basestring)
+        check_type(role, basestring)
+        check_type(serial_number, basestring)
+        check_type(maintenance_mode, bool)
+        check_type(software_version, basestring)
+        check_type(health_score, basestring)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'id':
+                id,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'managementIpAddress':
+                management_ip_address,
+            'macAddress':
+                mac_address,
+            'family':
+                family,
+            'type':
+                type,
+            'role':
+                role,
+            'serialNumber':
+                serial_number,
+            'maintenanceMode':
+                maintenance_mode,
+            'softwareVersion':
+                software_version,
+            'healthScore':
+                health_score,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_d8782f4d285506d9e1391f0190ff738_v2_3_7_6', json_data)
+
+    def gets_the_list_of_network_devices_based_on_the_provided_complex_filters_and_aggregation_functions(self,
+                                                                                                         aggregateAttributes=None,
+                                                                                                         attributes=None,
+                                                                                                         endTime=None,
+                                                                                                         filters=None,
+                                                                                                         page=None,
+                                                                                                         startTime=None,
+                                                                                                         views=None,
+                                                                                                         headers=None,
+                                                                                                         payload=None,
+                                                                                                         active_validation=True,
+                                                                                                         **request_parameters):
+        """Gets the list of Network Devices based on the provided complex filters and aggregation functions. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            views(list): Devices's Views (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-list-of-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'views':
+                views,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_bd1c59e9be75ac4a40decaa95ee9efd_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices/query')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_bd1c59e9be75ac4a40decaa95ee9efd_v2_3_7_6', json_data)
+
+    def gets_the_summary_analytics_data_related_to_network_devices(self,
+                                                                   aggregateAttributes=None,
+                                                                   attributes=None,
+                                                                   endTime=None,
+                                                                   filters=None,
+                                                                   groupBy=None,
+                                                                   page=None,
+                                                                   startTime=None,
+                                                                   headers=None,
+                                                                   payload=None,
+                                                                   active_validation=True,
+                                                                   **request_parameters):
+        """Gets the summary analytics data related to network devices based on the provided input data. This endpoint helps
+        to obtain the consolidated insights into the performance and status of the monitored network devices.
+        For detailed information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            groupBy(list): Devices's Group By (list of strings).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-summary-analytics-data-related-to-network-devices
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'groupBy':
+                groupBy,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_bb7c52e5225e9398a006fecf4da06f_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices/summaryAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_bb7c52e5225e9398a006fecf4da06f_v2_3_7_6', json_data)
+
+    def gets_the_trend_analytics_data(self,
+                                      aggregateAttributes=None,
+                                      attributes=None,
+                                      endTime=None,
+                                      filters=None,
+                                      groupBy=None,
+                                      page=None,
+                                      startTime=None,
+                                      trendInterval=None,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
+        """Gets the Trend analytics Network device data for the given time range. The data will be grouped based on the
+        given trend time Interval. The required property for this API is `trendInterval`. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Devices's Aggregate Attributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            groupBy(list): Devices's Group By (list of objects).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            trendInterval(string): Devices's Trend Interval.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-the-trend-analytics-data
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'trendInterval':
+                trendInterval,
+            'groupBy':
+                groupBy,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ac7ce690e0f55a469b0a9bfa3d2c165e_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices/trendAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ac7ce690e0f55a469b0a9bfa3d2c165e_v2_3_7_6', json_data)
+
+    def get_the_device_data_for_the_given_device_id_uuid(self,
+                                                         id,
+                                                         attribute=None,
+                                                         end_time=None,
+                                                         start_time=None,
+                                                         view=None,
+                                                         headers=None,
+                                                         **request_parameters):
+        """Returns the device data for the given device Uuid in the specified start and end time range. When there is no
+        start and end time specified returns the latest available data for the given Id. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            id(basestring): id path parameter. The device Uuid .
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            view(basestring): view query parameter. The List of Network Device model views. Please refer to
+                ```NetworkDeviceView``` for the supported list .
+            attribute(basestring): attribute query parameter. The List of Network Device model attributes. This is
+                helps to specify the interested fields in the request. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-the-device-data-for-the-given-device-id-uuid
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_f89c7ee84a615469b754add8feeabb5a_v2_3_7_6', json_data)
+
+    def the_trend_analytics_data_for_the_network_device_in_the_specified_time_range(self,
+                                                                                    id,
+                                                                                    aggregateAttributes=None,
+                                                                                    attributes=None,
+                                                                                    endTime=None,
+                                                                                    filters=None,
+                                                                                    groupBy=None,
+                                                                                    page=None,
+                                                                                    startTime=None,
+                                                                                    trendIntervalInMinutes=None,
+                                                                                    headers=None,
+                                                                                    payload=None,
+                                                                                    active_validation=True,
+                                                                                    **request_parameters):
+        """The Trend analytics data for the network Device in the specified time range. The data is grouped based on the
+        trend time Interval, other input parameters like attribute and aggregate attributes. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceNetworkDevices-1.0.2-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Devices's aggregateAttributes (list of objects).
+            attributes(list): Devices's Attributes (list of strings).
+            endTime(integer): Devices's End Time.
+            filters(list): Devices's filters (list of objects).
+            groupBy(list): Devices's Group By (list of strings).
+            page(object): Devices's page.
+            startTime(integer): Devices's Start Time.
+            trendIntervalInMinutes(integer): Devices's Trend Interval In Minutes.
+            id(basestring): id path parameter. The device Uuid .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-the-network-device-in-the-specified-time-range
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'trendIntervalInMinutes':
+                trendIntervalInMinutes,
+            'groupBy':
+                groupBy,
+            'filters':
+                filters,
+            'attributes':
+                attributes,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ca2f659b595c0ba7c649fd8c8bdad6_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/networkDevices/{id}/trendAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ca2f659b595c0ba7c649fd8c8bdad6_v2_3_7_6', json_data)
+
+    def get_planned_access_points_for_building(self,
+                                               building_id,
+                                               limit=None,
+                                               offset=None,
+                                               radios=None,
+                                               headers=None,
+                                               **request_parameters):
+        """Provides a list of Planned Access Points for the Building it is requested for .
+
+        Args:
+            building_id(basestring): buildingId path parameter. The instance UUID of the building hierarchy element
+                .
+            limit(int): limit query parameter. The page size limit for the response, e.g. limit=100 will return a
+                maximum of 100 records .
+            offset(int): offset query parameter. The page offset for the response. E.g. if limit=100, offset=0 will
+                return first 100 records, offset=1 will return next 100 records, etc. .
+            radios(bool): radios query parameter. Whether to include the planned radio details of the planned access
+                points .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-building
         """
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
         check_type(radios, bool)
-        check_type(building_id, str,
+        check_type(building_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'limit':
@@ -146,9 +2524,9 @@ class Devices(object):
 
         Args:
             timestamp(int): timestamp query parameter. UTC timestamp of device data in milliseconds .
-            identifier(str): identifier query parameter. One of "macAddress", "nwDeviceName", "uuid" (case
+            identifier(basestring): identifier query parameter. One of "macAddress", "nwDeviceName", "uuid" (case
                 insensitive) .
-            search_by(str): searchBy query parameter. MAC Address, device name, or UUID of the network device
+            search_by(basestring): searchBy query parameter. MAC Address, device name, or UUID of the network device
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -163,17 +2541,19 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-detail
         """
         check_type(headers, dict)
         check_type(timestamp, int)
-        check_type(identifier, str,
+        check_type(identifier, basestring,
                    may_be_none=False)
-        check_type(search_by, str,
+        check_type(search_by, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -229,18 +2609,23 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -280,10 +2665,10 @@ class Devices(object):
         additional value added services. .
 
         Args:
-            device_role(str): deviceRole query parameter. CORE, ACCESS, DISTRIBUTION, ROUTER, WLC, or AP
+            device_role(basestring): deviceRole query parameter. CORE, ACCESS, DISTRIBUTION, ROUTER, WLC, or AP
                 (case insensitive) .
-            site_id(str): siteId query parameter. DNAC site UUID .
-            health(str): health query parameter. DNAC health catagory: POOR, FAIR, or GOOD (case insensitive)
+            site_id(basestring): siteId query parameter. DNAC site UUID .
+            health(basestring): health query parameter. DNAC health catagory: POOR, FAIR, or GOOD (case insensitive)
                 .
             start_time(int): startTime query parameter. UTC epoch time in milliseconds .
             end_time(int): endTime query parameter. UTC epoch time in milliseconds .
@@ -304,11 +2689,13 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!devices
         """
         check_type(headers, dict)
-        check_type(device_role, str)
-        check_type(site_id, str)
-        check_type(health, str)
+        check_type(device_role, basestring)
+        check_type(site_id, basestring)
+        check_type(health, basestring)
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(limit, int)
@@ -316,7 +2703,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceRole':
@@ -375,12 +2762,12 @@ class Devices(object):
 
         Args:
             attributes(object): Devices's attributes.
-            isSensor(boolean): Devices's isSensor.
+            isSensor(boolean): Devices's Indicates that PAP is a sensor .
             location(object): Devices's location.
             position(object): Devices's position.
-            radioCount(integer): Devices's radioCount.
+            radioCount(integer): Devices's Number of radios of the planned access point .
             radios(list): Devices's radios (list of objects).
-            floor_id(str): floorId path parameter. The instance UUID of the floor hierarchy element .
+            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -398,18 +2785,20 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-planned-access-point-for-floor
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(floor_id, str,
+        check_type(floor_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -477,12 +2866,12 @@ class Devices(object):
 
         Args:
             attributes(object): Devices's attributes.
-            isSensor(boolean): Devices's isSensor.
+            isSensor(boolean): Devices's Indicates that PAP is a sensor .
             location(object): Devices's location.
             position(object): Devices's position.
-            radioCount(integer): Devices's radioCount.
+            radioCount(integer): Devices's Number of radios of the planned access point .
             radios(list): Devices's radios (list of objects).
-            floor_id(str): floorId path parameter. The instance UUID of the floor hierarchy element .
+            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -500,15 +2889,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-planned-access-point-for-floor
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(floor_id, str,
+        check_type(floor_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -567,10 +2958,13 @@ class Devices(object):
         """Provides a list of Planned Access Points for the Floor it is requested for .
 
         Args:
-            floor_id(str): floorId path parameter. Floor Id .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
-            radios(bool): radios query parameter. inlcude planned radio details .
+            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
+            limit(int): limit query parameter. The page size limit for the response, e.g. limit=100 will return a
+                maximum of 100 records .
+            offset(int): offset query parameter. The page offset for the response. E.g. if limit=100, offset=0 will
+                return first 100 records, offset=1 will return next 100 records, etc. .
+            radios(bool): radios query parameter. Whether to include the planned radio details of the planned access
+                points .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -584,17 +2978,19 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-floor
         """
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
         check_type(radios, bool)
-        check_type(floor_id, str,
+        check_type(floor_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'limit':
@@ -639,8 +3035,8 @@ class Devices(object):
         this API to delete that specific instance. .
 
         Args:
-            floor_id(str): floorId path parameter. The instance UUID of the floor hierarchy element .
-            planned_access_point_uuid(str): plannedAccessPointUuid path parameter. The instance UUID of the
+            floor_id(basestring): floorId path parameter. The instance UUID of the floor hierarchy element .
+            planned_access_point_uuid(basestring): plannedAccessPointUuid path parameter. The instance UUID of the
                 planned access point to delete .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -655,16 +3051,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-planned-access-point-for-floor
         """
         check_type(headers, dict)
-        check_type(floor_id, str,
+        check_type(floor_id, basestring,
                    may_be_none=False)
-        check_type(planned_access_point_uuid, str,
+        check_type(planned_access_point_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -693,20 +3091,38 @@ class Devices(object):
 
         return self._object_factory('bpm_cb644669ab8d5955826d23197015e208_v2_3_7_6', json_data)
 
-    def get_all_interfaces(self,
-                           last_input_time=None,
-                           last_output_time=None,
-                           limit=None,
-                           offset=None,
-                           headers=None,
-                           **request_parameters):
-        """Returns all available interfaces. This endpoint can return a maximum of 500 interfaces .
+    def get_all_health_score_definitions_for_given_filters(self,
+                                                           attribute=None,
+                                                           device_type=None,
+                                                           id=None,
+                                                           include_for_overall_health=None,
+                                                           limit=None,
+                                                           offset=None,
+                                                           headers=None,
+                                                           **request_parameters):
+        """Get all health score defintions. Supported filters are id, name and overall health include status. A health
+        score definition can be different across device type. So, deviceType in the query param is important and
+        default is all device types. By default all supported attributes are listed in response. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-issueAndHealthDefinitions-1.0.0-resolved.yaml .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
-            last_input_time(str): lastInputTime query parameter. Last Input Time .
-            last_output_time(str): lastOutputTime query parameter. Last Output Time .
+            device_type(basestring): deviceType query parameter. These are the device families supported for health
+                score definitions. If no input is made on device family, all device families are
+                considered. .
+            id(basestring): id query parameter. The definition identifier. Examples:
+                id=015d9cba-4f53-4087-8317-7e49e5ffef46 (single entity id request)
+                id=015d9cba-4f53-4087-8317-7e49e5ffef46&id=015d9cba-4f53-4087-8317-7e49e5ffef47
+                (multiple ids in the query param) .
+            include_for_overall_health(bool): includeForOverallHealth query parameter. The inclusion status of the
+                issue definition, either true or false. true indicates that particular health metric is
+                included in overall health computation, otherwise false. By default it's set to true.  .
+            attribute(basestring): attribute query parameter. These are the attributes supported in health score
+                definitions response. By default, all properties are sent in response. .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            limit(int): limit query parameter. Maximum number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -720,16 +3136,326 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-health-score-definitions-for-given-filters
+        """
+        check_type(headers, dict)
+        check_type(device_type, basestring)
+        check_type(id, basestring)
+        check_type(include_for_overall_health, bool)
+        check_type(attribute, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'deviceType':
+                device_type,
+            'id':
+                id,
+            'includeForOverallHealth':
+                include_for_overall_health,
+            'attribute':
+                attribute,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/healthScoreDefinitions')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_dea15738b550f3b147965f64050c97_v2_3_7_6', json_data)
+
+    def update_health_score_definitions(self,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
+        """Update health thresholds, include status of overall health status for each metric. And also to synchronize with
+        global profile issue thresholds of the definition for given metric. For detailed information about the
+        usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        issueAndHealthDefinitions-1.0.0-resolved.yaml .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-health-score-definitions
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_b08f499f995f5f46ba52e0385b54721a_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/healthScoreDefinitions/bulkUpdate')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_b08f499f995f5f46ba52e0385b54721a_v2_3_7_6', json_data)
+
+    def get_health_score_definition_for_the_given_id(self,
+                                                     id,
+                                                     headers=None,
+                                                     **request_parameters):
+        """Get health score defintion for the given id. Definition includes all properties from HealthScoreDefinition
+        schema by default. For detailed information about the usage of the API, please refer to the Open API
+        specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-issueAndHealthDefinitions-1.0.0-resolved.yaml .
+
+        Args:
+            id(basestring): id path parameter. Health score definition id. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-health-score-definition-for-the-given-id
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/healthScoreDefinitions/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_d2a0bbce2c5b6ba0b4aee3248ace42_v2_3_7_6', json_data)
+
+    def update_health_score_definition_for_the_given_id(self,
+                                                        id,
+                                                        includeForOverallHealth=None,
+                                                        synchronizeToIssueThreshold=None,
+                                                        thresholdValue=None,
+                                                        headers=None,
+                                                        payload=None,
+                                                        active_validation=True,
+                                                        **request_parameters):
+        """Update health threshold, include status of overall health status. And also to synchronize with global profile
+        issue thresholds of the definition for given id. For detailed information about the usage of the API,
+        please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        issueAndHealthDefinitions-1.0.0-resolved.yaml .
+
+        Args:
+            includeForOverallHealth(boolean): Devices's Include For Overall Health.
+            synchronizeToIssueThreshold(boolean): Devices's Synchronize To Issue Threshold.
+            thresholdValue(number): Devices's Thresehold Value.
+            id(basestring): id path parameter. Health score definition id. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-health-score-definition-for-the-given-id
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'includeForOverallHealth':
+                includeForOverallHealth,
+            'thresholdValue':
+                thresholdValue,
+            'synchronizeToIssueThreshold':
+                synchronizeToIssueThreshold,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_b4f52e69ddca5b2583b28fb4c96447aa_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/healthScoreDefinitions/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_b4f52e69ddca5b2583b28fb4c96447aa_v2_3_7_6', json_data)
+
+    def get_all_interfaces(self,
+                           last_input_time=None,
+                           last_output_time=None,
+                           limit=None,
+                           offset=None,
+                           headers=None,
+                           **request_parameters):
+        """Returns all available interfaces. This endpoint can return a maximum of 500 interfaces .
+
+        Args:
+            offset(int): offset query parameter.
+            limit(int): limit query parameter.
+            last_input_time(basestring): lastInputTime query parameter. Last Input Time .
+            last_output_time(basestring): lastOutputTime query parameter. Last Output Time .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-interfaces
         """
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(last_input_time, str)
-        check_type(last_output_time, str)
+        check_type(last_input_time, basestring)
+        check_type(last_output_time, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -782,12 +3508,14 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count-for-multiple-devices
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -820,7 +3548,7 @@ class Devices(object):
         """Returns list of interfaces for specified device management IP address .
 
         Args:
-            ip_address(str): ipAddress path parameter. IP address of the interface .
+            ip_address(basestring): ipAddress path parameter. IP address of the interface .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -834,14 +3562,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-interface-by-i-p
         """
         check_type(headers, dict)
-        check_type(ip_address, str,
+        check_type(ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -887,12 +3617,14 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-i-s-i-s-interfaces
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -925,7 +3657,7 @@ class Devices(object):
         """Returns list of interfaces by specified device .
 
         Args:
-            device_id(str): deviceId path parameter. Device ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -939,14 +3671,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-interface-info-by-id
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -980,7 +3714,7 @@ class Devices(object):
         """Returns the interface count for the given device .
 
         Args:
-            device_id(str): deviceId path parameter. Device ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -994,14 +3728,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1037,8 +3773,8 @@ class Devices(object):
         """Returns interface by specified device Id and interface name .
 
         Args:
-            device_id(str): deviceId path parameter. Device ID .
-            name(str): name query parameter. Interface name .
+            device_id(basestring): deviceId path parameter. Device ID .
+            name(basestring): name query parameter. Interface name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1052,16 +3788,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-interface-details-by-device-id-and-interface-name
         """
         check_type(headers, dict)
-        check_type(name, str,
+        check_type(name, basestring,
                    may_be_none=False)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'name':
@@ -1100,7 +3838,7 @@ class Devices(object):
         """Returns the list of interfaces for the device for the specified range .
 
         Args:
-            device_id(str): deviceId path parameter. Device ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             start_index(int): startIndex path parameter. Start index .
             records_to_return(int): recordsToReturn path parameter. Number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1116,9 +3854,11 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-interfaces-by-specified-range
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         check_type(start_index, int,
                    may_be_none=False)
@@ -1127,7 +3867,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1176,12 +3916,14 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-o-s-p-f-interfaces
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1214,7 +3956,7 @@ class Devices(object):
         """Returns the interface for the given interface ID .
 
         Args:
-            id(str): id path parameter. Interface ID .
+            id(basestring): id path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1228,14 +3970,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-interface-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1281,8 +4025,8 @@ class Devices(object):
             description(string): Devices's Description for the Interface .
             vlanId(integer): Devices's VLAN Id to be Updated .
             voiceVlanId(integer): Devices's Voice Vlan Id to be Updated .
-            interface_uuid(str): interfaceUuid path parameter. Interface ID .
-            deployment_mode(str): deploymentMode query parameter. Preview/Deploy ['Preview' means the
+            interface_uuid(basestring): interfaceUuid path parameter. Interface ID .
+            deployment_mode(basestring): deploymentMode query parameter. Preview/Deploy ['Preview' means the
                 configuration is not pushed to the device. 'Deploy' makes the configuration pushed to
                 the device] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1302,19 +4046,21 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-interface-details
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(deployment_mode, str)
-        check_type(interface_uuid, str,
+        check_type(deployment_mode, basestring)
+        check_type(interface_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deploymentMode':
@@ -1367,7 +4113,7 @@ class Devices(object):
         """Get list of all properties & operations valid for an interface. .
 
         Args:
-            interface_uuid(str): interfaceUuid path parameter. Interface ID .
+            interface_uuid(basestring): interfaceUuid path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1381,14 +4127,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!legit-operations-for-interface
         """
         check_type(headers, dict)
-        check_type(interface_uuid, str,
+        check_type(interface_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1422,6 +4170,7 @@ class Devices(object):
                                 operation=None,
                                 payload=None,
                                 headers=None,
+                                payload=None,
                                 active_validation=True,
                                 **request_parameters):
         """Clear mac-address on an individual port. In request body, operation needs to be specified as 'ClearMacAddress'.
@@ -1430,8 +4179,8 @@ class Devices(object):
         Args:
             operation(string): Devices's Operation needs to be specified as 'ClearMacAddress'. .
             payload(object): Devices's Payload is not applicable .
-            interface_uuid(str): interfaceUuid path parameter. Interface Id .
-            deployment_mode(str): deploymentMode query parameter. Preview/Deploy ['Preview' means the
+            interface_uuid(basestring): interfaceUuid path parameter. Interface Id .
+            deployment_mode(basestring): deploymentMode query parameter. Preview/Deploy ['Preview' means the
                 configuration is not pushed to the device. 'Deploy' makes the configuration pushed to
                 the device] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1451,19 +4200,21 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!clear-mac-address-table
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(deployment_mode, str)
-        check_type(interface_uuid, str,
+        check_type(deployment_mode, basestring)
+        check_type(interface_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str)
+                           basestring)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deploymentMode':
@@ -1550,40 +4301,40 @@ class Devices(object):
         ignores the other request parameters. You can also specify offset & limit to get the required list. .
 
         Args:
-            hostname(str, list, set, tuple): hostname query parameter.
-            management_ip_address(str, list, set, tuple): managementIpAddress query parameter.
-            mac_address(str, list, set, tuple): macAddress query parameter.
-            location_name(str, list, set, tuple): locationName query parameter.
-            serial_number(str, list, set, tuple): serialNumber query parameter.
-            location(str, list, set, tuple): location query parameter.
-            family(str, list, set, tuple): family query parameter.
-            type(str, list, set, tuple): type query parameter.
-            series(str, list, set, tuple): series query parameter.
-            collection_status(str, list, set, tuple): collectionStatus query parameter.
-            collection_interval(str, list, set, tuple): collectionInterval query parameter.
-            not_synced_for_minutes(str, list, set, tuple): notSyncedForMinutes query parameter.
-            error_code(str, list, set, tuple): errorCode query parameter.
-            error_description(str, list, set, tuple): errorDescription query parameter.
-            software_version(str, list, set, tuple): softwareVersion query parameter.
-            software_type(str, list, set, tuple): softwareType query parameter.
-            platform_id(str, list, set, tuple): platformId query parameter.
-            role(str, list, set, tuple): role query parameter.
-            reachability_status(str, list, set, tuple): reachabilityStatus query parameter.
-            up_time(str, list, set, tuple): upTime query parameter.
-            associated_wlc_ip(str, list, set, tuple): associatedWlcIp query parameter.
-            license_name(str, list, set, tuple): license.name query parameter.
-            license_type(str, list, set, tuple): license.type query parameter.
-            license_status(str, list, set, tuple): license.status query parameter.
-            module_name(str, list, set, tuple): module+name query parameter.
-            module_equpimenttype(str, list, set, tuple): module+equpimenttype query parameter.
-            module_servicestate(str, list, set, tuple): module+servicestate query parameter.
-            module_vendorequipmenttype(str, list, set, tuple): module+vendorequipmenttype query parameter.
-            module_partnumber(str, list, set, tuple): module+partnumber query parameter.
-            module_operationstatecode(str, list, set, tuple): module+operationstatecode query parameter.
-            id(str): id query parameter. Accepts comma separated ids and return list of network-devices for
+            hostname(basestring, list, set, tuple): hostname query parameter.
+            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
+            mac_address(basestring, list, set, tuple): macAddress query parameter.
+            location_name(basestring, list, set, tuple): locationName query parameter.
+            serial_number(basestring, list, set, tuple): serialNumber query parameter.
+            location(basestring, list, set, tuple): location query parameter.
+            family(basestring, list, set, tuple): family query parameter.
+            type(basestring, list, set, tuple): type query parameter.
+            series(basestring, list, set, tuple): series query parameter.
+            collection_status(basestring, list, set, tuple): collectionStatus query parameter.
+            collection_interval(basestring, list, set, tuple): collectionInterval query parameter.
+            not_synced_for_minutes(basestring, list, set, tuple): notSyncedForMinutes query parameter.
+            error_code(basestring, list, set, tuple): errorCode query parameter.
+            error_description(basestring, list, set, tuple): errorDescription query parameter.
+            software_version(basestring, list, set, tuple): softwareVersion query parameter.
+            software_type(basestring, list, set, tuple): softwareType query parameter.
+            platform_id(basestring, list, set, tuple): platformId query parameter.
+            role(basestring, list, set, tuple): role query parameter.
+            reachability_status(basestring, list, set, tuple): reachabilityStatus query parameter.
+            up_time(basestring, list, set, tuple): upTime query parameter.
+            associated_wlc_ip(basestring, list, set, tuple): associatedWlcIp query parameter.
+            license_name(basestring, list, set, tuple): license.name query parameter.
+            license_type(basestring, list, set, tuple): license.type query parameter.
+            license_status(basestring, list, set, tuple): license.status query parameter.
+            module_name(basestring, list, set, tuple): module+name query parameter.
+            module_equpimenttype(basestring, list, set, tuple): module+equpimenttype query parameter.
+            module_servicestate(basestring, list, set, tuple): module+servicestate query parameter.
+            module_vendorequipmenttype(basestring, list, set, tuple): module+vendorequipmenttype query parameter.
+            module_partnumber(basestring, list, set, tuple): module+partnumber query parameter.
+            module_operationstatecode(basestring, list, set, tuple): module+operationstatecode query parameter.
+            id(basestring): id query parameter. Accepts comma separated ids and return list of network-devices for
                 the given ids. If invalid or not-found ids are provided, null entry will be returned in
                 the list. .
-            device_support_level(str): deviceSupportLevel query parameter.
+            device_support_level(basestring): deviceSupportLevel query parameter.
             offset(int): offset query parameter. offset >= 1 [X gives results from Xth device onwards] .
             limit(int): limit query parameter. 1 <= limit <= 500 [max. no. of devices to be returned in the result]
                 .
@@ -1600,46 +4351,48 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-list
         """
         check_type(headers, dict)
-        check_type(hostname, (str, list, set, tuple))
-        check_type(management_ip_address, (str, list, set, tuple))
-        check_type(mac_address, (str, list, set, tuple))
-        check_type(location_name, (str, list, set, tuple))
-        check_type(serial_number, (str, list, set, tuple))
-        check_type(location, (str, list, set, tuple))
-        check_type(family, (str, list, set, tuple))
-        check_type(type, (str, list, set, tuple))
-        check_type(series, (str, list, set, tuple))
-        check_type(collection_status, (str, list, set, tuple))
-        check_type(collection_interval, (str, list, set, tuple))
-        check_type(not_synced_for_minutes, (str, list, set, tuple))
-        check_type(error_code, (str, list, set, tuple))
-        check_type(error_description, (str, list, set, tuple))
-        check_type(software_version, (str, list, set, tuple))
-        check_type(software_type, (str, list, set, tuple))
-        check_type(platform_id, (str, list, set, tuple))
-        check_type(role, (str, list, set, tuple))
-        check_type(reachability_status, (str, list, set, tuple))
-        check_type(up_time, (str, list, set, tuple))
-        check_type(associated_wlc_ip, (str, list, set, tuple))
-        check_type(license_name, (str, list, set, tuple))
-        check_type(license_type, (str, list, set, tuple))
-        check_type(license_status, (str, list, set, tuple))
-        check_type(module_name, (str, list, set, tuple))
-        check_type(module_equpimenttype, (str, list, set, tuple))
-        check_type(module_servicestate, (str, list, set, tuple))
-        check_type(module_vendorequipmenttype, (str, list, set, tuple))
-        check_type(module_partnumber, (str, list, set, tuple))
-        check_type(module_operationstatecode, (str, list, set, tuple))
-        check_type(id, str)
-        check_type(device_support_level, str)
+        check_type(hostname, (basestring, list, set, tuple))
+        check_type(management_ip_address, (basestring, list, set, tuple))
+        check_type(mac_address, (basestring, list, set, tuple))
+        check_type(location_name, (basestring, list, set, tuple))
+        check_type(serial_number, (basestring, list, set, tuple))
+        check_type(location, (basestring, list, set, tuple))
+        check_type(family, (basestring, list, set, tuple))
+        check_type(type, (basestring, list, set, tuple))
+        check_type(series, (basestring, list, set, tuple))
+        check_type(collection_status, (basestring, list, set, tuple))
+        check_type(collection_interval, (basestring, list, set, tuple))
+        check_type(not_synced_for_minutes, (basestring, list, set, tuple))
+        check_type(error_code, (basestring, list, set, tuple))
+        check_type(error_description, (basestring, list, set, tuple))
+        check_type(software_version, (basestring, list, set, tuple))
+        check_type(software_type, (basestring, list, set, tuple))
+        check_type(platform_id, (basestring, list, set, tuple))
+        check_type(role, (basestring, list, set, tuple))
+        check_type(reachability_status, (basestring, list, set, tuple))
+        check_type(up_time, (basestring, list, set, tuple))
+        check_type(associated_wlc_ip, (basestring, list, set, tuple))
+        check_type(license_name, (basestring, list, set, tuple))
+        check_type(license_type, (basestring, list, set, tuple))
+        check_type(license_status, (basestring, list, set, tuple))
+        check_type(module_name, (basestring, list, set, tuple))
+        check_type(module_equpimenttype, (basestring, list, set, tuple))
+        check_type(module_servicestate, (basestring, list, set, tuple))
+        check_type(module_vendorequipmenttype, (basestring, list, set, tuple))
+        check_type(module_partnumber, (basestring, list, set, tuple))
+        check_type(module_operationstatecode, (basestring, list, set, tuple))
+        check_type(id, basestring)
+        check_type(device_support_level, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'hostname':
@@ -1767,39 +4520,51 @@ class Devices(object):
         """Adds the device with given credential .
 
         Args:
-            cliTransport(string): Devices's CLI transport. Supported values: telnet, ssh2 .
-            computeDevice(boolean): Devices's Compute Device or not. Options are TRUE / FALSE .
-            enablePassword(string): Devices's CLI enable password of the device  .
+            cliTransport(string): Devices's CLI transport. Supported values: telnet, ssh. Required if type is
+                NETWORK_DEVICE. .
+            computeDevice(boolean): Devices's Compute Device or not. Options are true / false. .
+            enablePassword(string): Devices's CLI enable password of the device. Required if device is configured to
+                use enable password. .
             extendedDiscoveryInfo(string): Devices's This field holds that info as whether to add device with canned
-                data or not. Supported values: DISCOVER_WITH_CANNED_DATA .
-            httpPassword(string): Devices's HTTP password of the device .
-            httpPort(string): Devices's HTTP port of the device .
-            httpSecure(boolean): Devices's Flag to select HTTP / HTTPS protocol. Options are TRUE / FALSE. TRUE for
-                HTTPS and FALSE for HTTP .
-            httpUserName(string): Devices's HTTP Username of the device .
-            ipAddress(list): Devices's IP Address of the device  (list of strings).
-            merakiOrgId(list): Devices's Selected meraki organization for which the devices needs to be imported
-                (list of strings).
-            netconfPort(string): Devices's Netconf Port of the device .
-            password(string): Devices's CLI Password of the device .
-            serialNumber(string): Devices's Serial Number of the Device .
-            snmpAuthPassphrase(string): Devices's SNMPV3 auth passphrase of the device .
-            snmpAuthProtocol(string): Devices's SNMPV3 auth protocol. Supported values: sha, md5 .
-            snmpMode(string): Devices's SNMPV3 mode. Supported values: noAuthnoPriv, authNoPriv, authPriv .
-            snmpPrivPassphrase(string): Devices's SNMPV3 priv passphrase .
-            snmpPrivProtocol(string): Devices's SNMPV3 priv protocol. Supported values: AES128 .
-            snmpROCommunity(string): Devices's SNMP Read Community of the device .
-            snmpRWCommunity(string): Devices's SNMP Write Community of the device .
+                data or not. Supported values: DISCOVER_WITH_CANNED_DATA. .
+            httpPassword(string): Devices's HTTP password of the device / API key for Meraki Dashboard. Required if
+                type is MERAKI_DASHBOARD or COMPUTE_DEVICE. .
+            httpPort(string): Devices's HTTP port of the device. Required if type is COMPUTE_DEVICE. .
+            httpSecure(boolean): Devices's Flag to select HTTP / HTTPS protocol. Options are true / false. true for
+                HTTPS and false for HTTP. Default is true. .
+            httpUserName(string): Devices's HTTP Username of the device. Required if type is COMPUTE_DEVICE. .
+            ipAddress(list): Devices's IP Address of the device. Required if type is NETWORK_DEVICE, COMPUTE_DEVICE
+                or THIRD_PARTY_DEVICE.  (list of strings).
+            merakiOrgId(list): Devices's Selected Meraki organization for which the devices needs to be imported.
+                Required if type is MERAKI_DASHBOARD.  (list of strings).
+            netconfPort(string): Devices's Netconf Port of the device. cliTransport must be 'ssh' if netconf is
+                provided. .
+            password(string): Devices's CLI Password of the device. Required if type is NETWORK_DEVICE. .
+            serialNumber(string): Devices's Serial Number of the Device. Required if extendedDiscoveryInfo is
+                'DISCOVER_WITH_CANNED_DATA'. .
+            snmpAuthPassphrase(string): Devices's SNMPv3 auth passphrase of the device. Required if snmpMode is
+                authNoPriv or authPriv. .
+            snmpAuthProtocol(string): Devices's SNMPv3 auth protocol. Supported values: sha, md5. Required if
+                snmpMode is authNoPriv or authPriv. .
+            snmpMode(string): Devices's SNMPv3 mode. Supported values: noAuthnoPriv, authNoPriv, authPriv. Required
+                if snmpVersion is v3. .
+            snmpPrivPassphrase(string): Devices's SNMPv3 priv passphrase. Required if snmpMode is authPriv. .
+            snmpPrivProtocol(string): Devices's SNMPv3 priv protocol. Supported values: AES128. Required if snmpMode
+                is authPriv. .
+            snmpROCommunity(string): Devices's SNMP Read Community of the device. If snmpVersion is v2, at least one
+                of snmpROCommunity and snmpRWCommunity is required. .
+            snmpRWCommunity(string): Devices's SNMP Write Community of the device. If snmpVersion is v2, at least
+                one of snmpROCommunity and snmpRWCommunity is required. .
             snmpRetry(integer): Devices's SNMP retry count. Max value supported is 3. Default is Global SNMP retry
                 (if exists) or 3. .
             snmpTimeout(integer): Devices's SNMP timeout in seconds. Max value supported is 300. Default is Global
                 SNMP timeout (if exists) or 5. .
-            snmpUserName(string): Devices's SNMPV3 user name of the device .
-            snmpVersion(string): Devices's SNMP version. Values supported: v2, v3. Default is v2 .
-            type(string): Devices's Type of device being added. . Available values are 'COMPUTE_DEVICE',
-                'MERAKI_DASHBOARD', 'NETWORK_DEVICE', 'FIREPOWER MANAGEMENT CENTER', 'THIRD PARTY
-                DEVICE' and 'NODATACHANGE'.
-            userName(string): Devices's CLI user name of the device .
+            snmpUserName(string): Devices's SNMPV3 user name of the device. Required if snmpVersion is v3. .
+            snmpVersion(string): Devices's SNMP version. Values supported: v2, v3. Required if type is
+                NETWORK_DEVICE, COMPUTE_DEVICE or THIRD_PARTY_DEVICE. .
+            type(string): Devices's Type of device being added. Default is NETWORK_DEVICE. . Available values are
+                'COMPUTE_DEVICE', 'MERAKI_DASHBOARD', 'THIRD_PARTY_DEVICE' and 'NETWORK_DEVICE'.
+            userName(string): Devices's CLI user name of the device. Required if type is NETWORK_DEVICE. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1817,13 +4582,15 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-device2
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1946,39 +4713,61 @@ class Devices(object):
         trigger an inventory sync. .
 
         Args:
-            cliTransport(string): Devices's CLI transport. Supported values: telnet, ssh2 .
-            computeDevice(boolean): Devices's Compute Device or not. Options are TRUE / FALSE .
-            enablePassword(string): Devices's CLI enable password of the device .
+            cliTransport(string): Devices's CLI transport. Supported values: telnet, ssh. Use NO!$DATA!$ if no
+                change is required. Required if type is NETWORK_DEVICE. .
+            computeDevice(boolean): Devices's Compute Device or not. Options are true / false. .
+            enablePassword(string): Devices's CLI enable password of the device. Required if device is configured to
+                use enable password. Use NO!$DATA!$ if no change is required. .
             extendedDiscoveryInfo(string): Devices's This field holds that info as whether to add device with canned
-                data or not. Supported values: DISCOVER_WITH_CANNED_DATA .
-            httpPassword(string): Devices's HTTP password of the device .
-            httpPort(string): Devices's HTTP port of the device .
-            httpSecure(boolean): Devices's Flag to select HTTP / HTTPS protocol. Options are TRUE / FALSE. TRUE for
-                HTTPS and FALSE for HTTP .
-            httpUserName(string): Devices's HTTP Username of the device .
-            ipAddress(list): Devices's IP Address of the device  (list of strings).
-            merakiOrgId(list): Devices's Selected meraki organization for which the devices needs to be imported
-                (list of strings).
-            netconfPort(string): Devices's Netconf Port of the device .
-            password(string): Devices's CLI Password of the device .
-            serialNumber(string): Devices's Serial Number of the Device .
-            snmpAuthPassphrase(string): Devices's SNMPV3 auth passphrase of the device .
-            snmpAuthProtocol(string): Devices's SNMPV3 auth protocol. Supported values: sha, md5 .
-            snmpMode(string): Devices's SNMPV3 mode. Supported values: noAuthnoPriv, authNoPriv, authPriv .
-            snmpPrivPassphrase(string): Devices's SNMPV3 priv passphrase .
-            snmpPrivProtocol(string): Devices's SNMPV3 priv protocol. Supported values: AES128 .
-            snmpROCommunity(string): Devices's SNMP Read Community of the device .
-            snmpRWCommunity(string): Devices's SNMP Write Community of the device .
+                data or not. Supported values: DISCOVER_WITH_CANNED_DATA. .
+            httpPassword(string): Devices's HTTP password of the device / API key for Meraki Dashboard. Required if
+                type is MERAKI_DASHBOARD or COMPUTE_DEVICE. Use NO!$DATA!$ if no change is required. .
+            httpPort(string): Devices's HTTP port of the device. Required if type is COMPUTE_DEVICE. .
+            httpSecure(boolean): Devices's Flag to select HTTP / HTTPS protocol. Options are true / false. true for
+                HTTPS and false for HTTP. .
+            httpUserName(string): Devices's HTTP Username of the device. Required if type is COMPUTE_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            ipAddress(list): Devices's IP Address of the device. Required. Use 'api.meraki.com' for Meraki
+                Dashboard.  (list of strings).
+            merakiOrgId(list): Devices's Selected Meraki organization for which the devices needs to be imported.
+                Required if type is MERAKI_DASHBOARD.  (list of strings).
+            netconfPort(string): Devices's Netconf Port of the device. cliTransport must be 'ssh' if netconf is
+                provided. .
+            password(string): Devices's CLI Password of the device. Required if type is NETWORK_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            serialNumber(string): Devices's Serial Number of the Device. Required if extendedDiscoveryInfo is
+                'DISCOVER_WITH_CANNED_DATA'. .
+            snmpAuthPassphrase(string): Devices's SNMPv3 auth passphrase of the device. Required if snmpMode is
+                authNoPriv or authPriv. Use NO!$DATA!$ if no change is required. .
+            snmpAuthProtocol(string): Devices's SNMPv3 auth protocol. Supported values: sha, md5.  Required if
+                snmpMode is authNoPriv or authPriv. Use NODATACHANGE if no change is required. .
+            snmpMode(string): Devices's SNMPv3 mode. Supported values: noAuthnoPriv, authNoPriv, authPriv. Required
+                if snmpVersion is v3. Use NODATACHANGE if no change is required. .
+            snmpPrivPassphrase(string): Devices's SNMPv3 priv passphrase. Required if snmpMode is authPriv. Use
+                NO!$DATA!$ if no change is required. .
+            snmpPrivProtocol(string): Devices's SNMPv3 priv protocol. Supported values: AES128. Required if snmpMode
+                is authPriv. Use NODATACHANGE if no change is required. .
+            snmpROCommunity(string): Devices's SNMP Read Community of the device. If snmpVersion is v2, at least one
+                of snmpROCommunity and snmpRWCommunity is required. Use NO!$DATA!$ if no change is
+                required. .
+            snmpRWCommunity(string): Devices's SNMP Write Community of the device. If snmpVersion is v2, at least
+                one of snmpROCommunity and snmpRWCommunity is required. Use NO!$DATA!$ if no change is
+                required. .
             snmpRetry(integer): Devices's SNMP retry count. Max value supported is 3. Default is Global SNMP retry
                 (if exists) or 3. .
             snmpTimeout(integer): Devices's SNMP timeout in seconds. Max value supported is 300. Default is Global
                 SNMP timeout (if exists) or 5. .
-            snmpUserName(string): Devices's SNMPV3 user name of the device .
-            snmpVersion(string): Devices's SNMP version. Values supported: v2, v3. Default is v2 .
-            type(string): Devices's Type of device being added. . Available values are 'COMPUTE_DEVICE',
-                'MERAKI_DASHBOARD', 'NETWORK_DEVICE' and 'NODATACHANGE'.
+            snmpUserName(string): Devices's SNMPV3 user name of the device. Required if snmpVersion is v3. Use
+                NO!$DATA!$ if no change is required. .
+            snmpVersion(string): Devices's SNMP version. Values supported: v2, v3. Required if type is
+                NETWORK_DEVICE, COMPUTE_DEVICE or THIRD_PARTY_DEVICE. Use NODATACHANGE if no change is
+                required. .
+            type(string): Devices's Type of device being edited. Default is NETWORK_DEVICE. . Available values are
+                'COMPUTE_DEVICE', 'MERAKI_DASHBOARD', 'NETWORK_DEVICE', 'THIRD_PARTY_DEVICE' and
+                'NODATACHANGE'.
             updateMgmtIPaddressList(list): Devices's updateMgmtIPaddressList (list of objects).
-            userName(string): Devices's CLI user name of the device .
+            userName(string): Devices's CLI user name of the device. Required if type is NETWORK_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1996,13 +4785,15 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-details
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2123,26 +4914,26 @@ class Devices(object):
         match fully or partially the provided attribute. {[10.10.1.1, 10.10.20.2, …]}. .
 
         Args:
-            vrf_name(str): vrfName query parameter.
-            management_ip_address(str): managementIpAddress query parameter.
-            hostname(str): hostname query parameter.
-            mac_address(str): macAddress query parameter.
-            family(str): family query parameter.
-            collection_status(str): collectionStatus query parameter.
-            collection_interval(str): collectionInterval query parameter.
-            software_version(str): softwareVersion query parameter.
-            software_type(str): softwareType query parameter.
-            reachability_status(str): reachabilityStatus query parameter.
-            reachability_failure_reason(str): reachabilityFailureReason query parameter.
-            error_code(str): errorCode query parameter.
-            platform_id(str): platformId query parameter.
-            series(str): series query parameter.
-            type(str): type query parameter.
-            serial_number(str): serialNumber query parameter.
-            up_time(str): upTime query parameter.
-            role(str): role query parameter.
-            role_source(str): roleSource query parameter.
-            associated_wlc_ip(str): associatedWlcIp query parameter.
+            vrf_name(basestring): vrfName query parameter.
+            management_ip_address(basestring): managementIpAddress query parameter.
+            hostname(basestring): hostname query parameter.
+            mac_address(basestring): macAddress query parameter.
+            family(basestring): family query parameter.
+            collection_status(basestring): collectionStatus query parameter.
+            collection_interval(basestring): collectionInterval query parameter.
+            software_version(basestring): softwareVersion query parameter.
+            software_type(basestring): softwareType query parameter.
+            reachability_status(basestring): reachabilityStatus query parameter.
+            reachability_failure_reason(basestring): reachabilityFailureReason query parameter.
+            error_code(basestring): errorCode query parameter.
+            platform_id(basestring): platformId query parameter.
+            series(basestring): series query parameter.
+            type(basestring): type query parameter.
+            serial_number(basestring): serialNumber query parameter.
+            up_time(basestring): upTime query parameter.
+            role(basestring): role query parameter.
+            role_source(basestring): roleSource query parameter.
+            associated_wlc_ip(basestring): associatedWlcIp query parameter.
             offset(int): offset query parameter.
             limit(int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2158,34 +4949,36 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-values-that-match-fully-or-partially-an-attribute
         """
         check_type(headers, dict)
-        check_type(vrf_name, str)
-        check_type(management_ip_address, str)
-        check_type(hostname, str)
-        check_type(mac_address, str)
-        check_type(family, str)
-        check_type(collection_status, str)
-        check_type(collection_interval, str)
-        check_type(software_version, str)
-        check_type(software_type, str)
-        check_type(reachability_status, str)
-        check_type(reachability_failure_reason, str)
-        check_type(error_code, str)
-        check_type(platform_id, str)
-        check_type(series, str)
-        check_type(type, str)
-        check_type(serial_number, str)
-        check_type(up_time, str)
-        check_type(role, str)
-        check_type(role_source, str)
-        check_type(associated_wlc_ip, str)
+        check_type(vrf_name, basestring)
+        check_type(management_ip_address, basestring)
+        check_type(hostname, basestring)
+        check_type(mac_address, basestring)
+        check_type(family, basestring)
+        check_type(collection_status, basestring)
+        check_type(collection_interval, basestring)
+        check_type(software_version, basestring)
+        check_type(software_type, basestring)
+        check_type(reachability_status, basestring)
+        check_type(reachability_failure_reason, basestring)
+        check_type(error_code, basestring)
+        check_type(platform_id, basestring)
+        check_type(series, basestring)
+        check_type(type, basestring)
+        check_type(serial_number, basestring)
+        check_type(up_time, basestring)
+        check_type(role, basestring)
+        check_type(role_source, basestring)
+        check_type(associated_wlc_ip, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'vrfName':
@@ -2286,16 +5079,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-role
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2355,12 +5150,14 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-polling-interval-for-all-devices
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2407,12 +5204,14 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-config-for-all-devices
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2457,12 +5256,14 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-config-count
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2499,10 +5300,10 @@ class Devices(object):
         hostname and location name .
 
         Args:
-            hostname(str, list, set, tuple): hostname query parameter.
-            management_ip_address(str, list, set, tuple): managementIpAddress query parameter.
-            mac_address(str, list, set, tuple): macAddress query parameter.
-            location_name(str, list, set, tuple): locationName query parameter.
+            hostname(basestring, list, set, tuple): hostname query parameter.
+            management_ip_address(basestring, list, set, tuple): managementIpAddress query parameter.
+            mac_address(basestring, list, set, tuple): macAddress query parameter.
+            location_name(basestring, list, set, tuple): locationName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2516,16 +5317,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-count2
         """
         check_type(headers, dict)
-        check_type(hostname, (str, list, set, tuple))
-        check_type(management_ip_address, (str, list, set, tuple))
-        check_type(mac_address, (str, list, set, tuple))
-        check_type(location_name, (str, list, set, tuple))
+        check_type(hostname, (basestring, list, set, tuple))
+        check_type(management_ip_address, (basestring, list, set, tuple))
+        check_type(mac_address, (basestring, list, set, tuple))
+        check_type(location_name, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'hostname':
@@ -2594,16 +5397,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!export-device-list
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2654,10 +5459,10 @@ class Devices(object):
         """Returns the functional-capability for given devices .
 
         Args:
-            device_id(str): deviceId query parameter. Accepts comma separated deviceid's and return list of
+            device_id(basestring): deviceId query parameter. Accepts comma separated deviceid's and return list of
                 functional-capabilities for the given id's. If invalid or not-found id's are provided,
                 null entry will be returned in the list. .
-            function_name(str, list, set, tuple): functionName query parameter.
+            function_name(basestring, list, set, tuple): functionName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2671,15 +5476,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-functional-capability-for-devices
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(function_name, (str, list, set, tuple))
+        check_type(function_name, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -2716,7 +5523,7 @@ class Devices(object):
         """Returns functional capability with given Id .
 
         Args:
-            id(str): id path parameter. Functional Capability UUID .
+            id(basestring): id path parameter. Functional Capability UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2730,14 +5537,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-functional-capability-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2777,13 +5586,13 @@ class Devices(object):
         """Find all devices with link mismatch (speed /  vlan) .
 
         Args:
-            site_id(str): siteId path parameter.
+            site_id(basestring): siteId path parameter.
             offset(int): offset query parameter. Row Number.  Default value is 1 .
             limit(int): limit query parameter. Default value is 500 .
-            category(str): category query parameter. Links mismatch category.  Value can be speed-duplex or
+            category(basestring): category query parameter. Links mismatch category.  Value can be speed-duplex or
                 vlan. .
-            sort_by(str): sortBy query parameter. Sort By .
-            order(str): order query parameter. Order.  Value can be asc or desc.  Default value is asc .
+            sort_by(basestring): sortBy query parameter. Sort By .
+            order(basestring): order query parameter. Order.  Value can be asc or desc.  Default value is asc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2797,20 +5606,22 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!inventory-insight-device-link-mismatch-a-p-i
         """
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(category, str,
+        check_type(category, basestring,
                    may_be_none=False)
-        check_type(sort_by, str)
-        check_type(order, str)
-        check_type(site_id, str,
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -2855,7 +5666,7 @@ class Devices(object):
         """Returns the network device by specified IP address .
 
         Args:
-            ip_address(str): ipAddress path parameter. Device IP address .
+            ip_address(basestring): ipAddress path parameter. Device IP address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2869,14 +5680,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network-device-by-i-p
         """
         check_type(headers, dict)
-        check_type(ip_address, str,
+        check_type(ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2916,13 +5729,13 @@ class Devices(object):
         """Returns modules by specified device id .
 
         Args:
-            device_id(str): deviceId query parameter.
+            device_id(basestring): deviceId query parameter.
             limit(int): limit query parameter.
             offset(int): offset query parameter.
-            name_list(str, list, set, tuple): nameList query parameter.
-            vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
-            part_number_list(str, list, set, tuple): partNumberList query parameter.
-            operational_state_code_list(str, list, set, tuple): operationalStateCodeList query parameter.
+            name_list(basestring, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2936,20 +5749,22 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-modules
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(name_list, (str, list, set, tuple))
-        check_type(vendor_equipment_type_list, (str, list, set, tuple))
-        check_type(part_number_list, (str, list, set, tuple))
-        check_type(operational_state_code_list, (str, list, set, tuple))
+        check_type(name_list, (basestring, list, set, tuple))
+        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
+        check_type(part_number_list, (basestring, list, set, tuple))
+        check_type(operational_state_code_list, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -3000,11 +5815,11 @@ class Devices(object):
         """Returns Module Count .
 
         Args:
-            device_id(str): deviceId query parameter.
-            name_list(str, list, set, tuple): nameList query parameter.
-            vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
-            part_number_list(str, list, set, tuple): partNumberList query parameter.
-            operational_state_code_list(str, list, set, tuple): operationalStateCodeList query parameter.
+            device_id(basestring): deviceId query parameter.
+            name_list(basestring, list, set, tuple): nameList query parameter.
+            vendor_equipment_type_list(basestring, list, set, tuple): vendorEquipmentTypeList query parameter.
+            part_number_list(basestring, list, set, tuple): partNumberList query parameter.
+            operational_state_code_list(basestring, list, set, tuple): operationalStateCodeList query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3018,18 +5833,20 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-module-count
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
-        check_type(name_list, (str, list, set, tuple))
-        check_type(vendor_equipment_type_list, (str, list, set, tuple))
-        check_type(part_number_list, (str, list, set, tuple))
-        check_type(operational_state_code_list, (str, list, set, tuple))
+        check_type(name_list, (basestring, list, set, tuple))
+        check_type(vendor_equipment_type_list, (basestring, list, set, tuple))
+        check_type(part_number_list, (basestring, list, set, tuple))
+        check_type(operational_state_code_list, (basestring, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceId':
@@ -3072,7 +5889,7 @@ class Devices(object):
         """Returns Module info by 'module id' .
 
         Args:
-            id(str): id path parameter. Module id .
+            id(basestring): id path parameter. Module id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3086,14 +5903,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-module-info-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3127,7 +5946,7 @@ class Devices(object):
         """Returns the network device with given serial number .
 
         Args:
-            serial_number(str): serialNumber path parameter. Device serial number .
+            serial_number(basestring): serialNumber path parameter. Device serial number .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3141,14 +5960,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-by-serial-number
         """
         check_type(headers, dict)
-        check_type(serial_number, str,
+        check_type(serial_number, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3205,6 +6026,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!sync-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -3212,10 +6035,10 @@ class Devices(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'forceSync':
@@ -3258,8 +6081,8 @@ class Devices(object):
         address are required to be provided as query parameters. .
 
         Args:
-            serial_number(str): serialNumber query parameter. Serial number of the device .
-            macaddress(str): macaddress query parameter. Mac addres of the device .
+            serial_number(basestring): serialNumber query parameter. Serial number of the device .
+            macaddress(basestring): macaddress query parameter. Mac addres of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3273,14 +6096,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-devices-registered-for-w-s-a-notification
         """
         check_type(headers, dict)
-        check_type(serial_number, str)
-        check_type(macaddress, str)
+        check_type(serial_number, basestring)
+        check_type(macaddress, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'serialNumber':
@@ -3319,8 +6144,8 @@ class Devices(object):
         supported by UDF Id(s) or UDF name(s) or both. .
 
         Args:
-            id(str): id query parameter. Comma-seperated id(s) used for search/filtering .
-            name(str): name query parameter. Comma-seperated name(s) used for search/filtering .
+            id(basestring): id query parameter. Comma-seperated id(s) used for search/filtering .
+            name(basestring): name query parameter. Comma-seperated name(s) used for search/filtering .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3334,14 +6159,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-user-defined-fields
         """
         check_type(headers, dict)
-        check_type(id, str)
-        check_type(name, str)
+        check_type(id, basestring)
+        check_type(name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'id':
@@ -3400,13 +6227,15 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-user-defined-field
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3458,7 +6287,7 @@ class Devices(object):
         Args:
             description(string): Devices's Description of UDF .
             name(string): Devices's Name of UDF .
-            id(str): id path parameter. UDF id .
+            id(basestring): id path parameter. UDF id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -3476,15 +6305,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-user-defined-field
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3532,7 +6363,7 @@ class Devices(object):
         """Deletes an existing Global User-Defined-Field using it's id. .
 
         Args:
-            id(str): id path parameter. UDF id .
+            id(basestring): id path parameter. UDF id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3546,14 +6377,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-user-defined-field
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3588,7 +6421,7 @@ class Devices(object):
         """Returns chassis details for given device ID .
 
         Args:
-            device_id(str): deviceId path parameter. Device ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3602,14 +6435,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-chassis-details-for-device
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3643,7 +6478,7 @@ class Devices(object):
         """Retrieves complete stack details for given device ID .
 
         Args:
-            device_id(str): deviceId path parameter. Device ID .
+            device_id(basestring): deviceId path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3657,14 +6492,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-stack-details-for-device
         """
         check_type(headers, dict)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3700,8 +6537,8 @@ class Devices(object):
         Global UDF will not be deleted by this operation. .
 
         Args:
-            device_id(str): deviceId path parameter. UUID of device from which UDF has to be removed .
-            name(str): name query parameter. Name of UDF to be removed .
+            device_id(basestring): deviceId path parameter. UUID of device from which UDF has to be removed .
+            name(basestring): name query parameter. Name of UDF to be removed .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3715,16 +6552,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!remove-user-defined-field-from-device
         """
         check_type(headers, dict)
-        check_type(name, str,
+        check_type(name, basestring,
                    may_be_none=False)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'name':
@@ -3765,7 +6604,7 @@ class Devices(object):
         be an existing global UDF. Otherwise error shall be shown. .
 
         Args:
-            device_id(str): deviceId path parameter. UUID of device to which UDF has to be added .
+            device_id(basestring): deviceId path parameter. UUID of device to which UDF has to be added .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -3783,15 +6622,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-user-defined-field-to-device
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(device_id, str,
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3834,8 +6675,8 @@ class Devices(object):
         SFP for the Given device. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter.
-            type(str): type query parameter. Type value can be PowerSupply, Fan, Chassis, Backplane, Module,
+            device_uuid(basestring): deviceUuid path parameter.
+            type(basestring): type query parameter. Type value can be PowerSupply, Fan, Chassis, Backplane, Module,
                 PROCESSOR, Other, SFP. If no type is mentioned, All equipments are fetched for the
                 device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3851,15 +6692,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-physical-components-of-the-given-device
         """
         check_type(headers, dict)
-        check_type(type, str)
-        check_type(device_uuid, str,
+        check_type(type, basestring)
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'type':
@@ -3898,8 +6741,8 @@ class Devices(object):
         operationalStatus) .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. uuid of the device .
-            interface_name_list(str): interfaceNameList query parameter. comma seperated interface names .
+            device_uuid(basestring): deviceUuid path parameter. uuid of the device .
+            interface_name_list(basestring): interfaceNameList query parameter. comma seperated interface names .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3913,15 +6756,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!returns-p-o-e-interface-details-for-the-device
         """
         check_type(headers, dict)
-        check_type(interface_name_list, str)
-        check_type(device_uuid, str,
+        check_type(interface_name_list, basestring)
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'interfaceNameList':
@@ -3959,8 +6804,8 @@ class Devices(object):
         """Get connected device detail for given deviceUuid and interfaceUuid .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. instanceuuid of Device .
-            interface_uuid(str): interfaceUuid path parameter. instanceuuid of interface .
+            device_uuid(basestring): deviceUuid path parameter. instanceuuid of Device .
+            interface_uuid(basestring): interfaceUuid path parameter. instanceuuid of interface .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3974,16 +6819,18 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-connected-device-detail
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
+        check_type(device_uuid, basestring,
                    may_be_none=False)
-        check_type(interface_uuid, str,
+        check_type(interface_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4019,7 +6866,7 @@ class Devices(object):
         """Get line card detail for a given deviceuuid.  Response will contain serial no, part no, switch no and slot no. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. instanceuuid of device .
+            device_uuid(basestring): deviceUuid path parameter. instanceuuid of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4033,14 +6880,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-linecard-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4074,7 +6923,7 @@ class Devices(object):
         """Returns POE details for device. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. UUID of the device .
+            device_uuid(basestring): deviceUuid path parameter. UUID of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4088,6 +6937,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+        https://developer.cisco.com/docs/dna-center/#!p-o-e-details
         """
         return self.poe_details(device_uuid,
                                 headers=headers,
@@ -4100,7 +6951,7 @@ class Devices(object):
         """Returns POE details for device. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. UUID of the device .
+            device_uuid(basestring): deviceUuid path parameter. UUID of the device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4114,14 +6965,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!p-o-e-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4156,7 +7009,7 @@ class Devices(object):
         no. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. instanceuuid of device .
+            device_uuid(basestring): deviceUuid path parameter. instanceuuid of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4170,14 +7023,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-supervisor-card-detail
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4216,7 +7071,7 @@ class Devices(object):
 
         Args:
             newIP(string): Devices's New IP Address of the device to be Updated .
-            deviceid(str): deviceid path parameter. The UUID of the device whose management IP address is to
+            deviceid(basestring): deviceid path parameter. The UUID of the device whose management IP address is to
                 be updated. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4235,15 +7090,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-management-address
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(deviceid, str,
+        check_type(deviceid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4289,7 +7146,7 @@ class Devices(object):
         """Returns the network device details for the given device ID .
 
         Args:
-            id(str): id path parameter. Device ID .
+            id(basestring): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4303,14 +7160,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-by-i-d
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4342,11 +7201,17 @@ class Devices(object):
                             clean_config=None,
                             headers=None,
                             **request_parameters):
-        """Deletes the network device for the given Id .
+        """This API allows any network device that is not currently provisioned to be removed from the inventory.
+        Important: Devices currently provisioned cannot be deleted. To delete a provisioned device, the device
+        must be first deprovisioned. .
 
         Args:
-            id(str): id path parameter. Device ID .
-            clean_config(bool): cleanConfig query parameter.
+            id(basestring): id path parameter. Device ID .
+            clean_config(bool): cleanConfig query parameter. Selecting the clean up configuration option will
+                attempt to remove device settings that were configured during the addition of the device
+                to the inventory and site assignment. Please note that this operation is different from
+                deprovisioning. It does not remove configurations that were pushed during device
+                provisioning. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4360,15 +7225,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-device-by-id
         """
         check_type(headers, dict)
         check_type(clean_config, bool)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'cleanConfig':
@@ -4404,7 +7271,7 @@ class Devices(object):
         """Returns brief summary of device info such as hostname, management IP address for the given device Id .
 
         Args:
-            id(str): id path parameter. Device ID .
+            id(basestring): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4418,14 +7285,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-summary
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4459,7 +7328,7 @@ class Devices(object):
         """Returns polling interval by device id .
 
         Args:
-            id(str): id path parameter. Device ID .
+            id(basestring): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4473,14 +7342,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-polling-interval-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4515,7 +7386,7 @@ class Devices(object):
         """Returns list of organizations for meraki dashboard .
 
         Args:
-            id(str): id path parameter. Device Id .
+            id(basestring): id path parameter. Device Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4529,14 +7400,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-organization-list-for-meraki
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4572,8 +7445,8 @@ class Devices(object):
         """Returns Device Interface VLANs. If parameter value is null or empty, it won't return any value in response. .
 
         Args:
-            id(str): id path parameter.
-            interface_type(str): interfaceType query parameter. Vlan associated with sub-interface. If no
+            id(basestring): id path parameter.
+            interface_type(basestring): interfaceType query parameter. Vlan associated with sub-interface. If no
                 interfaceType mentioned it will return all types of Vlan interfaces. If interfaceType is
                 selected but not specified then it will take default value. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -4589,15 +7462,17 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-v-l-a-ns
         """
         check_type(headers, dict)
-        check_type(interface_type, str)
-        check_type(id, str,
+        check_type(interface_type, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'interfaceType':
@@ -4633,7 +7508,7 @@ class Devices(object):
         """Returns the wireless lan controller info with given device ID .
 
         Args:
-            id(str): id path parameter. Device ID .
+            id(basestring): id path parameter. Device ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4647,14 +7522,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-lan-controller-details-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4688,7 +7565,7 @@ class Devices(object):
         """Returns the device config by specified device ID .
 
         Args:
-            network_device_id(str): networkDeviceId path parameter.
+            network_device_id(basestring): networkDeviceId path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4702,14 +7579,16 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-config-by-id
         """
         check_type(headers, dict)
-        check_type(network_device_id, str,
+        check_type(network_device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4762,6 +7641,8 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network-device-by-pagination-range
         """
         check_type(headers, dict)
         check_type(start_index, int,
@@ -4771,7 +7652,7 @@ class Devices(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4800,23 +7681,18 @@ class Devices(object):
 
         return self._object_factory('bpm_d7b6ce5abd5dad837e22ace817a6f0_v2_3_7_6', json_data)
 
-    def get_device_interface_stats_info(self,
-                                        device_id,
-                                        endTime=None,
-                                        query=None,
-                                        startTime=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
-        """This API returns the Interface Stats for the given Device Id. Please refer to the Feature tab for the Request
-        Body usage and the API filtering support. .
+    def update_global_resync_interval(self,
+                                      interval=None,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
+        """Updates the resync interval (in minutes) globally for devices which do not have custom resync interval. To
+        override this setting for all network devices refer to [/networkDevices/resyncIntervalSettings/override]
+        .
 
         Args:
-            endTime(integer): Devices's UTC epoch timestamp in milliseconds .
-            query(object): Devices's query.
-            startTime(integer): Devices's UTC epoch timestamp in milliseconds .
-            device_id(str): deviceId path parameter. Network Device Id .
+            interval(integer): Devices's Resync Interval should be between 25 to 1440 minutes .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -4834,18 +7710,291 @@ class Devices(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-global-resync-interval
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(device_id, str,
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'interval':
+                interval,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a64bd4956649de3a61e10f0637e_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/networkDevices/resyncIntervalSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_a64bd4956649de3a61e10f0637e_v2_3_7_6', json_data)
+
+    def override_resync_interval(self,
+                                 headers=None,
+                                 **request_parameters):
+        """Overrides the global resync interval on all network devices. This essentially removes device specific intervals
+        if set. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!override-resync-interval
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/networkDevices/resyncIntervalSettings'
+                 + '/override')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_dc239a9ab9e5562b93a45ea0b9708b84_v2_3_7_6', json_data)
+
+    def update_resync_interval_for_the_network_device(self,
+                                                      id,
+                                                      interval=None,
+                                                      headers=None,
+                                                      payload=None,
+                                                      active_validation=True,
+                                                      **request_parameters):
+        """Update the resync interval (in minutes) for the given network device id. To disable periodic resync, set
+        interval as `0`. To use global settings, set interval as `null`. .
+
+        Args:
+            interval(integer): Devices's Resync interval in minutes. To disable periodic resync, set interval as
+                `0`. To use global settings, set interval as `null`. .
+            id(basestring): id path parameter. The id of the network device. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-resync-interval-for-the-network-device
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'interval':
+                interval,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_fdfc828270d950ecb75480fe03f7d573_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/networkDevices/{id}/resyncIntervalSet'
+                 + 'tings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_fdfc828270d950ecb75480fe03f7d573_v2_3_7_6', json_data)
+
+    def get_resync_interval_for_the_network_device(self,
+                                                   id,
+                                                   headers=None,
+                                                   **request_parameters):
+        """Fetch the reysnc interval for the given network device id. .
+
+        Args:
+            id(basestring): id path parameter. The id of the network device. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-resync-interval-for-the-network-device
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/networkDevices/{id}/resyncIntervalSet'
+                 + 'tings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_e56a4c0d91dd53ecb737da824115a050_v2_3_7_6', json_data)
+
+    def get_device_interface_stats_info(self,
+                                        device_id,
+                                        endTime=None,
+                                        query=None,
+                                        startTime=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
+        """This API returns the Interface Stats for the given Device Id. Please refer to the Feature tab for the Request
+        Body usage and the API filtering support. .
+
+        Args:
+            endTime(integer): Devices's UTC epoch timestamp in milliseconds .
+            query(object): Devices's query.
+            startTime(integer): Devices's UTC epoch timestamp in milliseconds .
+            device_id(basestring): deviceId path parameter. Network Device Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-stats-info
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4887,3 +8036,83 @@ class Devices(object):
                                            json=_payload)
 
         return self._object_factory('bpm_a9e0722d184658c592bd130ff03e1dde_v2_3_7_6', json_data)
+
+    def get_the_count_of_health_score_definitions_based_on_provided_filters(self,
+                                                                            device_type=None,
+                                                                            id=None,
+                                                                            include_for_overall_health=None,
+                                                                            headers=None,
+                                                                            **request_parameters):
+        """Get the count of health score definitions based on provided filters. Supported filters are id, name and overall
+        health include status. For detailed information about the usage of the API, please refer to the Open API
+        specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-issueAndHealthDefinitions-1.0.0-resolved.yaml .
+
+        Args:
+            device_type(basestring): deviceType query parameter. These are the device families supported for health
+                score definitions. If no input is made on device family, all device families are
+                considered. .
+            id(basestring): id query parameter. The definition identifier. Examples:
+                id=015d9cba-4f53-4087-8317-7e49e5ffef46 (single entity id request)
+                id=015d9cba-4f53-4087-8317-7e49e5ffef46&id=015d9cba-4f53-4087-8317-7e49e5ffef47
+                (multiple ids in the query param) .
+            include_for_overall_health(bool): includeForOverallHealth query parameter. The inclusion status of the
+                issue definition, either true or false. true indicates that particular health metric is
+                included in overall health computation, otherwise false. By default it's set to true. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-the-count-of-health-score-definitions-based-on-provided-filters
+        """
+        check_type(headers, dict)
+        check_type(device_type, basestring)
+        check_type(id, basestring)
+        check_type(include_for_overall_health, bool)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'deviceType':
+                device_type,
+            'id':
+                id,
+            'includeForOverallHealth':
+                include_for_overall_health,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/healthScoreDefinitions/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a51fd8467055ff1a69ade1ae8096993_v2_3_7_6', json_data)

@@ -85,7 +85,7 @@ def is_valid_add_device(json_schema_validate, obj):
 def add_device(api):
     endpoint_result = api.device_onboarding_pnp.add_device(
         active_validation=True,
-        deviceInfo={'serialNumber': 'string', 'stack': True, 'description': 'string', 'macAddress': 'string', 'pid': 'string', 'siteId': 'string', 'isSudiRequired': True, 'deviceSudiSerialNos': ['string'], 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'workflowId': 'string', 'workflowName': 'string', 'hostname': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}},
+        deviceInfo={'serialNumber': 'string', 'stack': True, 'description': 'string', 'macAddress': 'string', 'pid': 'string', 'siteId': 'string', 'sudiRequired': True, 'deviceSudiSerialNos': ['string'], 'userMicNumbers': ['string'], 'userSudiSerialNos': ['string'], 'workflowId': 'string', 'workflowName': 'string', 'hostname': 'string', 'stackInfo': {'supportsStackWorkflows': True, 'isFullRing': True, 'stackMemberList': [{'serialNumber': 'string', 'state': 'string', 'role': 'string', 'macAddress': 'string', 'pid': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'sudiSerialNumber': 'string', 'hardwareVersion': 'string', 'stackNumber': 0, 'softwareVersion': 'string', 'priority': 0}], 'stackRingProtocol': 'string', 'validLicenseLevels': ['string'], 'totalMemberCount': 0}},
         payload=None
     )
     return endpoint_result
@@ -211,6 +211,7 @@ def is_valid_claim_device(json_schema_validate, obj):
 def claim_device(api):
     endpoint_result = api.device_onboarding_pnp.claim_device(
         active_validation=True,
+        authorizationNeeded=True,
         configFileUrl='string',
         configId='string',
         deviceClaimList=[{'configList': [{'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]}], 'deviceId': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'topOfStackSerialNumber': 'string'}],
@@ -241,6 +242,7 @@ def test_claim_device(api, validator):
 def claim_device_default_val(api):
     endpoint_result = api.device_onboarding_pnp.claim_device(
         active_validation=True,
+        authorizationNeeded=None,
         configFileUrl=None,
         configId=None,
         deviceClaimList=None,
@@ -534,6 +536,7 @@ def claim_a_device_to_a_site(api):
         configInfo={'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]},
         deviceId='string',
         gateway='string',
+        hostname='string',
         imageInfo={'imageId': 'string', 'skip': True},
         ipInterfaceName='string',
         payload=None,
@@ -567,6 +570,7 @@ def claim_a_device_to_a_site_default_val(api):
         configInfo=None,
         deviceId=None,
         gateway=None,
+        hostname=None,
         imageInfo=None,
         ipInterfaceName=None,
         payload=None,
@@ -773,7 +777,7 @@ def is_valid_update_device(json_schema_validate, obj):
 def update_device(api):
     endpoint_result = api.device_onboarding_pnp.update_device(
         active_validation=True,
-        deviceInfo={'hostname': 'string', 'serialNumber': 'string', 'pid': 'string', 'sudiRequired': True, 'sudiSerialNos': [{}], 'stack': True},
+        deviceInfo={'hostname': 'string', 'serialNumber': 'string', 'pid': 'string', 'sudiRequired': True, 'userSudiSerialNos': ['string'], 'stack': True},
         id='string',
         payload=None
     )
@@ -1103,7 +1107,7 @@ def add_virtual_account(api):
         expiry=0,
         lastSync=0,
         payload=None,
-        profile={'addressFqdn': 'string', 'addressIpV4': 'string', 'cert': 'string', 'makeDefault': True, 'name': 'string', 'port': 0, 'profileId': 'string', 'proxy': True},
+        profile={'addressFqdn': 'string', 'addressIpV4': 'string', 'addressIpV6': 'string', 'cert': 'string', 'makeDefault': True, 'name': 'string', 'port': 0, 'profileId': 'string', 'proxy': True},
         smartAccountId='string',
         syncResult={'syncList': [{'deviceSnList': ['string'], 'syncType': 'string'}], 'syncMsg': 'string'},
         syncResultStr='string',
@@ -1172,7 +1176,7 @@ def update_pnp_server_profile(api):
         active_validation=True,
         ccoUser='string',
         payload=None,
-        profile={'proxy': True, 'makeDefault': True, 'port': 0, 'profileId': 'string', 'name': 'string', 'addressIpV4': 'string', 'cert': 'string', 'addressFqdn': 'string'},
+        profile={'proxy': True, 'makeDefault': True, 'port': 0, 'profileId': 'string', 'name': 'string', 'addressFqdn': 'string', 'addressIpV4': 'string', 'addressIpV6': 'string', 'cert': 'string'},
         smartAccountId='string',
         virtualAccountId='string'
     )

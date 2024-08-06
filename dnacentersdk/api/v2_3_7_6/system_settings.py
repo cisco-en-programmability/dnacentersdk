@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -140,13 +142,15 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -225,9 +229,9 @@ class SystemSettings(object):
 
         Args:
             is_ise_enabled(bool): isIseEnabled query parameter. Valid values are : true, false .
-            state(str): state query parameter. Valid values are: ACTIVE, INACTIVE, RBAC_SUCCESS,
+            state(basestring): state query parameter. Valid values are: ACTIVE, INACTIVE, RBAC_SUCCESS,
                 RBAC_FAILURE, DELETED, FAILED, INPROGRESS .
-            role(str): role query parameter. Authentication and Policy Server Role (Example: primary,
+            role(basestring): role query parameter. Authentication and Policy Server Role (Example: primary,
                 secondary) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -242,15 +246,17 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-authentication-and-policy-servers
         """
         check_type(headers, dict)
         check_type(is_ise_enabled, bool)
-        check_type(state, str)
-        check_type(role, str)
+        check_type(state, basestring)
+        check_type(role, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'isIseEnabled':
@@ -289,7 +295,7 @@ class SystemSettings(object):
         """API to delete AAA/ISE server access configuration. .
 
         Args:
-            id(str): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
+            id(basestring): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
                 and Policy Servers' intent API to find the identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -304,14 +310,16 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -394,7 +402,7 @@ class SystemSettings(object):
                 authentication and policy server. The range is from 2 to 20 .
             useDnacCertForPxgrid(boolean): System Settings's Value true to use DNAC certificate for Pxgrid. Default
                 value is false .
-            id(str): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
+            id(basestring): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
                 and Policy Servers' intent API to find the identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -413,15 +421,17 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!edit-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -505,7 +515,7 @@ class SystemSettings(object):
         Args:
             isCertAcceptedByUser(boolean): System Settings's Value true for accept, false for deny. Remove this
                 field and send empty request payload ( {} ) to retry the failed integration .
-            id(str): id path parameter. Cisco ISE Server Identifier. Use 'Get Authentication and Policy
+            id(basestring): id path parameter. Cisco ISE Server Identifier. Use 'Get Authentication and Policy
                 Servers' intent API to find the identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -524,15 +534,17 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!accept-cisco-i-s-e-server-certificate-for-cisco-i-s-e-server-integration
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -589,12 +601,14 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!cisco-i-s-e-server-integration-status
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -620,9 +634,9 @@ class SystemSettings(object):
 
         return self._object_factory('bpm_a1bc4f82533a5d909ed345b4703cff8a_v2_3_7_6', json_data)
 
-    def custom_prompt_support_get_api(self,
-                                      headers=None,
-                                      **request_parameters):
+    def custom_prompt_support_g_e_t_api(self,
+                                        headers=None,
+                                        **request_parameters):
         """Returns supported custom prompts by Catalyst Center .
 
         Args:
@@ -639,12 +653,14 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-support-g-e-t-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -670,13 +686,13 @@ class SystemSettings(object):
 
         return self._object_factory('bpm_ada20dc4915d5901b50634628392e79f_v2_3_7_6', json_data)
 
-    def custom_prompt_post_api(self,
-                               passwordPrompt=None,
-                               usernamePrompt=None,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def custom_prompt_p_o_s_t_api(self,
+                                  passwordPrompt=None,
+                                  usernamePrompt=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
         """Save custom prompt added by user in Catalyst Center. API will always override the existing prompts. User should
         provide all the custom prompt in case of any update .
 
@@ -700,13 +716,15 @@ class SystemSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-p-o-s-t-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -744,3 +762,438 @@ class SystemSettings(object):
                                            json=_payload)
 
         return self._object_factory('bpm_d2ea814bfae85da1b77872d095fc8221_v2_3_7_6', json_data)
+
+    def set_provisioning_settings(self,
+                                  requireItsmApproval=None,
+                                  requirePreview=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
+        """Sets provisioning settings .
+
+        Args:
+            requireItsmApproval(boolean): System Settings's If require ITSM approval is enabled, the planned
+                configurations must be submitted for ITSM approval. Also if enabled, requirePreview will
+                default to enabled. .
+            requirePreview(boolean): System Settings's If require preview is enabled, the device configurations must
+                be reviewed before deploying them .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-provisioning-settings
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'requireItsmApproval':
+                requireItsmApproval,
+            'requirePreview':
+                requirePreview,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_b3ab480a3f485ecc9fef1bd2f8c9d109_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/provisioningSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_b3ab480a3f485ecc9fef1bd2f8c9d109_v2_3_7_6', json_data)
+
+    def get_provisioning_settings(self,
+                                  headers=None,
+                                  **request_parameters):
+        """Returns provisioning settings .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-provisioning-settings
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/provisioningSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_b2e5d0e7f80b555f865bb1f72c4d7bdd_v2_3_7_6', json_data)
+
+    def creates_configuration_details_of_the_external_ip_a_m_server(self,
+                                                                    password=None,
+                                                                    provider=None,
+                                                                    serverName=None,
+                                                                    serverUrl=None,
+                                                                    syncView=None,
+                                                                    userName=None,
+                                                                    view=None,
+                                                                    headers=None,
+                                                                    payload=None,
+                                                                    active_validation=True,
+                                                                    **request_parameters):
+        """Creates configuration details of the external IPAM server. You should only create one external IPAM server;
+        delete any existing external server before creating a new one. .
+
+        Args:
+            password(string): System Settings's The password for the external IPAM server login username.
+            provider(string): System Settings's Type of external IPAM. Can be either INFOBLOX, BLUECAT or GENERIC.
+            serverName(string): System Settings's A descriptive name of this external server, used for
+                identification purposes.
+            serverUrl(string): System Settings's The URL of this external server.
+            syncView(boolean): System Settings's Synchronize the IP pools from the local IPAM to this external
+                server.
+            userName(string): System Settings's The external IPAM server login username.
+            view(string): System Settings's The view under which pools are created in the external IPAM server.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!creates-configuration-details-of-the-external-i-p-a-m-server
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'serverName':
+                serverName,
+            'serverUrl':
+                serverUrl,
+            'password':
+                password,
+            'userName':
+                userName,
+            'provider':
+                provider,
+            'view':
+                view,
+            'syncView':
+                syncView,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e2aafa194305e97961e8b01802493d1_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/ipam/serverSetting')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_e2aafa194305e97961e8b01802493d1_v2_3_7_6', json_data)
+
+    def retrieves_configuration_details_of_the_external_ip_a_m_server(self,
+                                                                      headers=None,
+                                                                      **request_parameters):
+        """Retrieves configuration details of the external IPAM server.  If an external IPAM server has not been created,
+        this resource will return a `404` response. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-configuration-details-of-the-external-i-p-a-m-server
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/ipam/serverSetting')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_aa2b05d9d5822a691fa25fef3d085_v2_3_7_6', json_data)
+
+    def deletes_configuration_details_of_the_external_ip_a_m_server(self,
+                                                                    headers=None,
+                                                                    **request_parameters):
+        """Deletes configuration details of the external IPAM server. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deletes-configuration-details-of-the-external-i-p-a-m-server
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/ipam/serverSetting')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_d629f44c6f7f529bbb5d11568f1b5c8c_v2_3_7_6', json_data)
+
+    def updates_configuration_details_of_the_external_ip_a_m_server(self,
+                                                                    password=None,
+                                                                    serverName=None,
+                                                                    serverUrl=None,
+                                                                    syncView=None,
+                                                                    userName=None,
+                                                                    view=None,
+                                                                    headers=None,
+                                                                    payload=None,
+                                                                    active_validation=True,
+                                                                    **request_parameters):
+        """Updates configuration details of the external IPAM server. .
+
+        Args:
+            password(string): System Settings's The password for the external IPAM server login username.
+            serverName(string): System Settings's A descriptive name of this external server, used for
+                identification purposes.
+            serverUrl(string): System Settings's The URL of this external server.
+            syncView(boolean): System Settings's Synchronize the IP pools from the local IPAM to this external
+                server.
+            userName(string): System Settings's The external IPAM server login username.
+            view(string): System Settings's The view under which pools are created in the external IPAM server.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!updates-configuration-details-of-the-external-i-p-a-m-server
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'serverName':
+                serverName,
+            'serverUrl':
+                serverUrl,
+            'password':
+                password,
+            'userName':
+                userName,
+            'view':
+                view,
+            'syncView':
+                syncView,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e62afae0b7685296a73eaee6bad1ca70_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/ipam/serverSetting')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_e62afae0b7685296a73eaee6bad1ca70_v2_3_7_6', json_data)

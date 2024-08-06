@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -43,9 +44,18 @@ class JSONSchemaValidatorE6713A34508993B3E9F6837Dd690(object):
                 "items": {
                 "properties": {
                 "authenticationOrder": {
+                "enum": [
+                "dot1x",
+                "mac"
+                ],
                 "type": "string"
                 },
                 "authenticationProfileName": {
+                "enum": [
+                "Closed Authentication",
+                "Low Impact",
+                "Open Authentication"
+                ],
                 "type": "string"
                 },
                 "dot1xToMabFallbackTimeout": {
@@ -57,7 +67,14 @@ class JSONSchemaValidatorE6713A34508993B3E9F6837Dd690(object):
                 "id": {
                 "type": "string"
                 },
+                "isBpduGuardEnabled": {
+                "type": "boolean"
+                },
                 "numberOfHosts": {
+                "enum": [
+                "Single",
+                "Unlimited"
+                ],
                 "type": "string"
                 },
                 "wakeOnLan": {

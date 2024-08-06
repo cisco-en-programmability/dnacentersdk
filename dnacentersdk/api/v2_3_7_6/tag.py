@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -101,16 +103,18 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -174,19 +178,19 @@ class Tag(object):
         """Returns the tags for given filter criteria .
 
         Args:
-            name(str): name query parameter. Tag name is mandatory when filter operation is used. .
-            additional_info_name_space(str): additionalInfo.nameSpace query parameter.
-            additional_info_attributes(str): additionalInfo.attributes query parameter.
-            level(str): level query parameter.
+            name(basestring): name query parameter. Tag name is mandatory when filter operation is used. .
+            additional_info_name_space(basestring): additionalInfo.nameSpace query parameter.
+            additional_info_attributes(basestring): additionalInfo.attributes query parameter.
+            level(basestring): level query parameter.
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            size(str): size query parameter. size in kilobytes(KB) .
-            field(str): field query parameter. Available field names are
+            size(basestring): size query parameter. size in kilobytes(KB) .
+            field(basestring): field query parameter. Available field names are
                 :'name,id,parentId,type,additionalInfo.nameSpace,additionalInfo.attributes' .
-            sort_by(str): sortBy query parameter. Only supported attribute is name. SortyBy is mandatory when
+            sort_by(basestring): sortBy query parameter. Only supported attribute is name. SortyBy is mandatory when
                 order is used. .
-            order(str): order query parameter. Available values are asc and des .
-            system_tag(str): systemTag query parameter.
+            order(basestring): order query parameter. Available values are asc and des .
+            system_tag(basestring): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -200,23 +204,25 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag
         """
         check_type(headers, dict)
-        check_type(name, str)
-        check_type(additional_info_name_space, str)
-        check_type(additional_info_attributes, str)
-        check_type(level, str)
+        check_type(name, basestring)
+        check_type(additional_info_name_space, basestring)
+        check_type(additional_info_attributes, basestring)
+        check_type(level, basestring)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(size, str)
-        check_type(field, str)
-        check_type(sort_by, str)
-        check_type(order, str)
-        check_type(system_tag, str)
+        check_type(size, basestring)
+        check_type(field, basestring)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        check_type(system_tag, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'name':
@@ -301,13 +307,15 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -365,11 +373,11 @@ class Tag(object):
         """Returns tag count .
 
         Args:
-            name(str): name query parameter.
-            name_space(str): nameSpace query parameter.
-            attribute_name(str): attributeName query parameter.
-            size(str): size query parameter. size in kilobytes(KB) .
-            system_tag(str): systemTag query parameter.
+            name(basestring): name query parameter.
+            name_space(basestring): nameSpace query parameter.
+            attribute_name(basestring): attributeName query parameter.
+            size(basestring): size query parameter. size in kilobytes(KB) .
+            system_tag(basestring): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -383,17 +391,19 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-count
         """
         check_type(headers, dict)
-        check_type(name, str)
-        check_type(name_space, str)
-        check_type(attribute_name, str)
-        check_type(size, str)
-        check_type(system_tag, str)
+        check_type(name, basestring)
+        check_type(name_space, basestring)
+        check_type(attribute_name, basestring)
+        check_type(size, basestring)
+        check_type(system_tag, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'name':
@@ -460,16 +470,18 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-tag-membership
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -527,12 +539,14 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-resource-types
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -565,7 +579,7 @@ class Tag(object):
         """Deletes a tag specified by id .
 
         Args:
-            id(str): id path parameter. Tag ID .
+            id(basestring): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -579,14 +593,16 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-tag
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -620,7 +636,7 @@ class Tag(object):
         """Returns tag specified by Id .
 
         Args:
-            id(str): id path parameter. Tag ID .
+            id(basestring): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -634,14 +650,16 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -680,18 +698,18 @@ class Tag(object):
         """Returns tag members specified by id .
 
         Args:
-            id(str): id path parameter. Tag ID .
-            member_type(str): memberType query parameter. Entity type of the member. Possible values can be
+            id(basestring): id path parameter. Tag ID .
+            member_type(basestring): memberType query parameter. Entity type of the member. Possible values can be
                 retrieved by using /tag/member/type API .
             offset(int): offset query parameter. Used for pagination. It indicates the starting row number out of
                 available member records .
             limit(int): limit query parameter. Used to Number of maximum members to return in the result .
-            member_association_type(str): memberAssociationType query parameter. Indicates how the member is
+            member_association_type(basestring): memberAssociationType query parameter. Indicates how the member is
                 associated with the tag. Possible values and description. 1) DYNAMIC : The member is
                 associated to the tag through rules. 2) STATIC – The member is associated to the tag
                 manually. 3) MIXED – The member is associated manually and also satisfies the rule
                 defined for the tag .
-            level(str): level query parameter.
+            level(basestring): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -705,20 +723,22 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-members-by-id
         """
         check_type(headers, dict)
-        check_type(member_type, str,
+        check_type(member_type, basestring,
                    may_be_none=False)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(member_association_type, str)
-        check_type(level, str)
-        check_type(id, str,
+        check_type(member_association_type, basestring)
+        check_type(level, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'memberType':
@@ -766,7 +786,7 @@ class Tag(object):
 
         Args:
             memberType(list): Tag's memberType (list of strings).
-            id(str): id path parameter. Tag ID .
+            id(basestring): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -784,15 +804,17 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-members-to-the-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -839,9 +861,9 @@ class Tag(object):
         """Returns the number of members in a given tag .
 
         Args:
-            id(str): id path parameter. Tag ID .
-            member_type(str): memberType query parameter.
-            member_association_type(str): memberAssociationType query parameter.
+            id(basestring): id path parameter. Tag ID .
+            member_type(basestring): memberType query parameter.
+            member_association_type(basestring): memberAssociationType query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -855,17 +877,19 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-tag-member-count
         """
         check_type(headers, dict)
-        check_type(member_type, str,
+        check_type(member_type, basestring,
                    may_be_none=False)
-        check_type(member_association_type, str)
-        check_type(id, str,
+        check_type(member_association_type, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'memberType':
@@ -904,8 +928,8 @@ class Tag(object):
         """Removes Tag member from the tag specified by id .
 
         Args:
-            id(str): id path parameter. Tag ID .
-            member_id(str): memberId path parameter. TagMember id to be removed from tag .
+            id(basestring): id path parameter. Tag ID .
+            member_id(basestring): memberId path parameter. TagMember id to be removed from tag .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -919,16 +943,18 @@ class Tag(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!remove-tag-member
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
-        check_type(member_id, str,
+        check_type(member_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -955,3 +981,402 @@ class Tag(object):
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_cc9883be5c1cad1959347babb342_v2_3_7_6', json_data)
+
+    def retrieve_tags_associated_with_the_interfaces(self,
+                                                     limit=None,
+                                                     offset=None,
+                                                     headers=None,
+                                                     **request_parameters):
+        """Fetches the tags associated with the interfaces. Interfaces that don't have any tags associated will not be
+        included in the response. A tag is a user-defined or system-defined construct to group resources. When
+        an interface is tagged, it is called a member of the tag. .
+
+        Args:
+            offset(int): offset query parameter. The first record to show for this page; the first record is
+                numbered 1. minimum: 1 .
+            limit(int): limit query parameter. The number of records to show for this page. minimum: 1, maximum: 500
+                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-tags-associated-with-the-interfaces
+        """
+        check_type(headers, dict)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/tags/interfaces/membersAssociations')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c1e915930a6dcd0f06fb9f378_v2_3_7_6', json_data)
+
+    def retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(self,
+                                                                                   headers=None,
+                                                                                   **request_parameters):
+        """Fetches the count of interfaces that are associated with at least one tag. A tag is a user-defined or system-
+        defined construct to group resources. When an interface is tagged, it is called a member of the tag. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-interfaces-that-are-associated-with-at-least-one-tag
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/tags/interfaces/membersAssociations/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_dfee1fb7f55294be3e2f1b5d9f3759_v2_3_7_6', json_data)
+
+    def query_the_tags_associated_with_interfaces(self,
+                                                  ids=None,
+                                                  headers=None,
+                                                  payload=None,
+                                                  active_validation=True,
+                                                  **request_parameters):
+        """Fetches the tags associated with the given interface `ids`. Interfaces that don't have any tags associated will
+        not be included in the response. A tag is a user-defined or system-defined construct to group resources.
+        When an interface is tagged, it is called a member of the tag. `ids` can be fetched via
+        `/dna/intent/api/v1/interface` API. .
+
+        Args:
+            ids(list): Tag's List of member ids (network device or interface), maximum 500 ids can be passed.  (list
+                of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!query-the-tags-associated-with-interfaces
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'ids':
+                ids,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_da4715087051f2a04498a3b707eff4_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/tags/interfaces/membersAssociations/query')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_da4715087051f2a04498a3b707eff4_v2_3_7_6', json_data)
+
+    def retrieve_tags_associated_with_network_devices(self,
+                                                      limit=None,
+                                                      offset=None,
+                                                      headers=None,
+                                                      **request_parameters):
+        """Fetches the tags associated with network devices. Devices that don't have any tags associated will not be
+        included in the response. A tag is a user-defined or system-defined construct to group resources. When a
+        device is tagged, it is called a member of the tag. .
+
+        Args:
+            offset(int): offset query parameter. The first record to show for this page; the first record is
+                numbered 1. minimum: 1 .
+            limit(int): limit query parameter. The number of records to show for this page. minimum: 1, maximum: 500
+                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-tags-associated-with-network-devices
+        """
+        check_type(headers, dict)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/tags/networkDevices/membersAssociations')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c635a46570cb757d56a1fd429d0_v2_3_7_6', json_data)
+
+    def retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(self,
+                                                                                        headers=None,
+                                                                                        **request_parameters):
+        """Fetches the count of network devices that are associated with at least one tag. A tag is a user-defined or
+        system-defined construct to group resources. When a device is tagged, it is called a member of the tag.
+        .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-network-devices-that-are-associated-with-at-least-one-tag
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/tags/networkDevices/membersAssociations/c'
+                 + 'ount')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ed33b615feea55b48c1d67d9071e726d_v2_3_7_6', json_data)
+
+    def query_the_tags_associated_with_network_devices(self,
+                                                       ids=None,
+                                                       headers=None,
+                                                       payload=None,
+                                                       active_validation=True,
+                                                       **request_parameters):
+        """Fetches the tags associated with the given network device `ids`. Devices that don't have any tags associated
+        will not be included in the response. A tag is a user-defined or system-defined construct to group
+        resources. When a device is tagged, it is called a member of the tag. `ids` can be fetched via
+        `/dna/intent/api/v1/network-device` API. .
+
+        Args:
+            ids(list): Tag's List of member ids (network device or interface), maximum 500 ids can be passed.  (list
+                of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!query-the-tags-associated-with-network-devices
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'ids':
+                ids,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_c5535cad45ca385a38b01d5865b5a_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/intent/api/v1/tags/networkDevices/membersAssociations/q'
+                 + 'uery')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_c5535cad45ca385a38b01d5865b5a_v2_3_7_6', json_data)

@@ -377,24 +377,24 @@ def test_cisco_ise_server_integration_status_default_val(api, validator):
             raise original_e
 
 
-def is_valid_custom_prompt_support_get_api(json_schema_validate, obj):
+def is_valid_custom_prompt_support_g_e_t_api(json_schema_validate, obj):
     json_schema_validate('jsd_ada20dc4915d5901b50634628392e79f_v2_3_7_6').validate(obj)
     return True
 
 
-def custom_prompt_support_get_api(api):
-    endpoint_result = api.system_settings.custom_prompt_support_get_api(
+def custom_prompt_support_g_e_t_api(api):
+    endpoint_result = api.system_settings.custom_prompt_support_g_e_t_api(
 
     )
     return endpoint_result
 
 
 @pytest.mark.system_settings
-def test_custom_prompt_support_get_api(api, validator):
+def test_custom_prompt_support_g_e_t_api(api, validator):
     try:
-        assert is_valid_custom_prompt_support_get_api(
+        assert is_valid_custom_prompt_support_g_e_t_api(
             validator,
-            custom_prompt_support_get_api(api)
+            custom_prompt_support_g_e_t_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -402,32 +402,32 @@ def test_custom_prompt_support_get_api(api, validator):
             raise original_e
 
 
-def custom_prompt_support_get_api_default_val(api):
-    endpoint_result = api.system_settings.custom_prompt_support_get_api(
+def custom_prompt_support_g_e_t_api_default_val(api):
+    endpoint_result = api.system_settings.custom_prompt_support_g_e_t_api(
 
     )
     return endpoint_result
 
 
 @pytest.mark.system_settings
-def test_custom_prompt_support_get_api_default_val(api, validator):
+def test_custom_prompt_support_g_e_t_api_default_val(api, validator):
     try:
-        assert is_valid_custom_prompt_support_get_api(
+        assert is_valid_custom_prompt_support_g_e_t_api(
             validator,
-            custom_prompt_support_get_api_default_val(api)
+            custom_prompt_support_g_e_t_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_custom_prompt_post_api(json_schema_validate, obj):
+def is_valid_custom_prompt_p_o_s_t_api(json_schema_validate, obj):
     json_schema_validate('jsd_d2ea814bfae85da1b77872d095fc8221_v2_3_7_6').validate(obj)
     return True
 
 
-def custom_prompt_post_api(api):
-    endpoint_result = api.system_settings.custom_prompt_post_api(
+def custom_prompt_p_o_s_t_api(api):
+    endpoint_result = api.system_settings.custom_prompt_p_o_s_t_api(
         active_validation=True,
         passwordPrompt='string',
         payload=None,
@@ -437,11 +437,11 @@ def custom_prompt_post_api(api):
 
 
 @pytest.mark.system_settings
-def test_custom_prompt_post_api(api, validator):
+def test_custom_prompt_p_o_s_t_api(api, validator):
     try:
-        assert is_valid_custom_prompt_post_api(
+        assert is_valid_custom_prompt_p_o_s_t_api(
             validator,
-            custom_prompt_post_api(api)
+            custom_prompt_p_o_s_t_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -449,8 +449,8 @@ def test_custom_prompt_post_api(api, validator):
             raise original_e
 
 
-def custom_prompt_post_api_default_val(api):
-    endpoint_result = api.system_settings.custom_prompt_post_api(
+def custom_prompt_p_o_s_t_api_default_val(api):
+    endpoint_result = api.system_settings.custom_prompt_p_o_s_t_api(
         active_validation=True,
         passwordPrompt=None,
         payload=None,
@@ -460,11 +460,311 @@ def custom_prompt_post_api_default_val(api):
 
 
 @pytest.mark.system_settings
-def test_custom_prompt_post_api_default_val(api, validator):
+def test_custom_prompt_p_o_s_t_api_default_val(api, validator):
     try:
-        assert is_valid_custom_prompt_post_api(
+        assert is_valid_custom_prompt_p_o_s_t_api(
             validator,
-            custom_prompt_post_api_default_val(api)
+            custom_prompt_p_o_s_t_api_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_set_provisioning_settings(json_schema_validate, obj):
+    json_schema_validate('jsd_b3ab480a3f485ecc9fef1bd2f8c9d109_v2_3_7_6').validate(obj)
+    return True
+
+
+def set_provisioning_settings(api):
+    endpoint_result = api.system_settings.set_provisioning_settings(
+        active_validation=True,
+        payload=None,
+        requireItsmApproval=True,
+        requirePreview=True
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_set_provisioning_settings(api, validator):
+    try:
+        assert is_valid_set_provisioning_settings(
+            validator,
+            set_provisioning_settings(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def set_provisioning_settings_default_val(api):
+    endpoint_result = api.system_settings.set_provisioning_settings(
+        active_validation=True,
+        payload=None,
+        requireItsmApproval=None,
+        requirePreview=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_set_provisioning_settings_default_val(api, validator):
+    try:
+        assert is_valid_set_provisioning_settings(
+            validator,
+            set_provisioning_settings_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_provisioning_settings(json_schema_validate, obj):
+    json_schema_validate('jsd_b2e5d0e7f80b555f865bb1f72c4d7bdd_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_provisioning_settings(api):
+    endpoint_result = api.system_settings.get_provisioning_settings(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_get_provisioning_settings(api, validator):
+    try:
+        assert is_valid_get_provisioning_settings(
+            validator,
+            get_provisioning_settings(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_provisioning_settings_default_val(api):
+    endpoint_result = api.system_settings.get_provisioning_settings(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_get_provisioning_settings_default_val(api, validator):
+    try:
+        assert is_valid_get_provisioning_settings(
+            validator,
+            get_provisioning_settings_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_creates_configuration_details_of_the_external_ip_a_m_server(json_schema_validate, obj):
+    json_schema_validate('jsd_7e2aafa194305e97961e8b01802493d1_v2_3_7_6').validate(obj)
+    return True
+
+
+def creates_configuration_details_of_the_external_ip_a_m_server(api):
+    endpoint_result = api.system_settings.creates_configuration_details_of_the_external_ip_a_m_server(
+        active_validation=True,
+        password='string',
+        payload=None,
+        provider='string',
+        serverName='string',
+        serverUrl='string',
+        syncView=True,
+        userName='string',
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_creates_configuration_details_of_the_external_ip_a_m_server(api, validator):
+    try:
+        assert is_valid_creates_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            creates_configuration_details_of_the_external_ip_a_m_server(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def creates_configuration_details_of_the_external_ip_a_m_server_default_val(api):
+    endpoint_result = api.system_settings.creates_configuration_details_of_the_external_ip_a_m_server(
+        active_validation=True,
+        password=None,
+        payload=None,
+        provider=None,
+        serverName=None,
+        serverUrl=None,
+        syncView=None,
+        userName=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_creates_configuration_details_of_the_external_ip_a_m_server_default_val(api, validator):
+    try:
+        assert is_valid_creates_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            creates_configuration_details_of_the_external_ip_a_m_server_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_retrieves_configuration_details_of_the_external_ip_a_m_server(json_schema_validate, obj):
+    json_schema_validate('jsd_194aa2b05d9d5822a691fa25fef3d085_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieves_configuration_details_of_the_external_ip_a_m_server(api):
+    endpoint_result = api.system_settings.retrieves_configuration_details_of_the_external_ip_a_m_server(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_retrieves_configuration_details_of_the_external_ip_a_m_server(api, validator):
+    try:
+        assert is_valid_retrieves_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            retrieves_configuration_details_of_the_external_ip_a_m_server(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieves_configuration_details_of_the_external_ip_a_m_server_default_val(api):
+    endpoint_result = api.system_settings.retrieves_configuration_details_of_the_external_ip_a_m_server(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_retrieves_configuration_details_of_the_external_ip_a_m_server_default_val(api, validator):
+    try:
+        assert is_valid_retrieves_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            retrieves_configuration_details_of_the_external_ip_a_m_server_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_deletes_configuration_details_of_the_external_ip_a_m_server(json_schema_validate, obj):
+    json_schema_validate('jsd_d629f44c6f7f529bbb5d11568f1b5c8c_v2_3_7_6').validate(obj)
+    return True
+
+
+def deletes_configuration_details_of_the_external_ip_a_m_server(api):
+    endpoint_result = api.system_settings.deletes_configuration_details_of_the_external_ip_a_m_server(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_deletes_configuration_details_of_the_external_ip_a_m_server(api, validator):
+    try:
+        assert is_valid_deletes_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            deletes_configuration_details_of_the_external_ip_a_m_server(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def deletes_configuration_details_of_the_external_ip_a_m_server_default_val(api):
+    endpoint_result = api.system_settings.deletes_configuration_details_of_the_external_ip_a_m_server(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_deletes_configuration_details_of_the_external_ip_a_m_server_default_val(api, validator):
+    try:
+        assert is_valid_deletes_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            deletes_configuration_details_of_the_external_ip_a_m_server_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_updates_configuration_details_of_the_external_ip_a_m_server(json_schema_validate, obj):
+    json_schema_validate('jsd_e62afae0b7685296a73eaee6bad1ca70_v2_3_7_6').validate(obj)
+    return True
+
+
+def updates_configuration_details_of_the_external_ip_a_m_server(api):
+    endpoint_result = api.system_settings.updates_configuration_details_of_the_external_ip_a_m_server(
+        active_validation=True,
+        password='string',
+        payload=None,
+        serverName='string',
+        serverUrl='string',
+        syncView=True,
+        userName='string',
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_updates_configuration_details_of_the_external_ip_a_m_server(api, validator):
+    try:
+        assert is_valid_updates_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            updates_configuration_details_of_the_external_ip_a_m_server(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def updates_configuration_details_of_the_external_ip_a_m_server_default_val(api):
+    endpoint_result = api.system_settings.updates_configuration_details_of_the_external_ip_a_m_server(
+        active_validation=True,
+        password=None,
+        payload=None,
+        serverName=None,
+        serverUrl=None,
+        syncView=None,
+        userName=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.system_settings
+def test_updates_configuration_details_of_the_external_ip_a_m_server_default_val(api, validator):
+    try:
+        assert is_valid_updates_configuration_details_of_the_external_ip_a_m_server(
+            validator,
+            updates_configuration_details_of_the_external_ip_a_m_server_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

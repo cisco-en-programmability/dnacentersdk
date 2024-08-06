@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -83,12 +85,14 @@ class CommandRunner(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-keywords-of-c-l-is-accepted-by-command-runner
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -150,16 +154,18 @@ class CommandRunner(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!run-read-only-commands-on-devices-to-get-their-real-time-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

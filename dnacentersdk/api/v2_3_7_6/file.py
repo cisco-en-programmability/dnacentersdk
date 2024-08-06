@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -83,12 +85,14 @@ class File(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-available-namespaces
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -121,7 +125,7 @@ class File(object):
         """Returns list of files under a specific namespace .
 
         Args:
-            name_space(str): nameSpace path parameter. A listing of fileId's .
+            name_space(basestring): nameSpace path parameter. A listing of fileId's .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -135,14 +139,16 @@ class File(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-files
         """
         check_type(headers, dict)
-        check_type(name_space, str,
+        check_type(name_space, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -179,12 +185,12 @@ class File(object):
         """Downloads a file specified by fileId .
 
         Args:
-            file_id(str): fileId path parameter. File Identification number .
-            dirpath(str): Directory absolute path. Defaults to
+            file_id(basestring): fileId path parameter. File Identification number .
+            dirpath(basestring): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
                 raw response.
-            filename(str): The filename used to save the download
+            filename(basestring): The filename used to save the download
                 file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -201,14 +207,16 @@ class File(object):
             ApiError: If the DNA Center cloud returns an error.
             DownloadFailure: If was not able to download the raw
             response to a file.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!download-a-file-by-file-id
         """
         check_type(headers, dict)
-        check_type(file_id, str,
+        check_type(file_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -273,7 +281,7 @@ class File(object):
                 return callback
 
         Args:
-            name_space(str): nameSpace path parameter.
+            name_space(basestring): nameSpace path parameter.
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
             multipart_monitor_callback(function): function used to monitor
@@ -291,14 +299,16 @@ class File(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!upload-file
         """
         check_type(headers, dict)
-        check_type(name_space, str,
+        check_type(name_space, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

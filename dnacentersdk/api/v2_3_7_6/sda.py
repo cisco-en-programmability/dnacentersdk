@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -72,8 +74,8 @@ class Sda(object):
         """Get default authentication profile from SDA Fabric .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
-            authenticate_template_name(str): authenticateTemplateName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            authenticate_template_name(basestring): authenticateTemplateName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -87,15 +89,17 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-default-authentication-profile-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
-        check_type(authenticate_template_name, str)
+        check_type(authenticate_template_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -150,13 +154,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-default-authentication-template-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -213,13 +219,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-default-authentication-profile-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -258,7 +266,7 @@ class Sda(object):
         """Delete default authentication profile in SDA Fabric .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -272,14 +280,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-default-authentication-profile-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -332,13 +342,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-border-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -377,7 +389,7 @@ class Sda(object):
         """Get border device detail from SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -391,14 +403,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-border-device-detail-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -433,7 +447,7 @@ class Sda(object):
         """Delete border device from SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -447,14 +461,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-border-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -489,7 +505,7 @@ class Sda(object):
         """Delete control plane device in SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -503,14 +519,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-control-plane-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -545,7 +563,7 @@ class Sda(object):
         """Get control plane device from SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -559,14 +577,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-control-plane-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -628,13 +648,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-control-plane-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -682,7 +704,7 @@ class Sda(object):
         """Get device info from SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -696,14 +718,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-info-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -738,7 +762,7 @@ class Sda(object):
         """Get device role in SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter. Device Management
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter. Device Management
                 IP Address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -753,14 +777,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-role-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -819,13 +845,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-edge-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -871,7 +899,7 @@ class Sda(object):
         """Delete edge device from SDA Fabric. .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -885,14 +913,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-edge-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -927,7 +957,7 @@ class Sda(object):
         """Get edge device from SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -941,14 +971,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-edge-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -983,7 +1015,7 @@ class Sda(object):
         """Get Site info from SDA Fabric .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Hierarchy .
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -997,14 +1029,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-site-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1039,7 +1073,7 @@ class Sda(object):
         """Delete Site from SDA Fabric .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Hierarchy .
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1053,14 +1087,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-site-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1123,13 +1159,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-site-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1209,13 +1247,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1271,8 +1311,8 @@ class Sda(object):
         """Delete Port assignment for access point in SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
-            interface_name(str): interfaceName query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1286,16 +1326,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
-        check_type(interface_name, str,
+        check_type(interface_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1334,8 +1376,8 @@ class Sda(object):
         """Get Port assignment for access point in SDA Fabric .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
-            interface_name(str): interfaceName query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1349,16 +1391,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
-        check_type(interface_name, str,
+        check_type(interface_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1397,8 +1441,8 @@ class Sda(object):
         """Delete Port assignment for user device in SDA Fabric. .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
-            interface_name(str): interfaceName query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1412,16 +1456,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
-        check_type(interface_name, str,
+        check_type(interface_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1500,13 +1546,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1568,8 +1616,8 @@ class Sda(object):
         """Get Port assignment for user device in SDA Fabric. .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
-            interface_name(str): interfaceName query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            interface_name(basestring): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1583,16 +1631,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
-        check_type(interface_name, str,
+        check_type(interface_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1657,13 +1707,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-multicast-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1713,7 +1765,7 @@ class Sda(object):
         """Get multicast details from SDA fabric .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter. fabric site name hierarchy .
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter. fabric site name hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1727,14 +1779,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-details-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1769,7 +1823,7 @@ class Sda(object):
         """Delete multicast from SDA fabric .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1783,14 +1837,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-multicast-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1825,7 +1881,7 @@ class Sda(object):
         """Delete provisioned Wired Device .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter. Valid IP address of
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter. Valid IP address of
                 the device currently provisioned in a fabric site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1840,14 +1896,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-wired-device
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1904,13 +1962,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!re-provision-wired-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1978,13 +2038,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!provision-wired-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2030,7 +2092,7 @@ class Sda(object):
         """Get Provisioned Wired Device .
 
         Args:
-            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2044,14 +2106,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-wired-device
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, str,
+        check_type(device_management_ip_address, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -2086,7 +2150,7 @@ class Sda(object):
         """Delete Transit Peer Network from SD-Access .
 
         Args:
-            transit_peer_network_name(str): transitPeerNetworkName query parameter. Transit Peer Network Name
+            transit_peer_network_name(basestring): transitPeerNetworkName query parameter. Transit Peer Network Name
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2101,14 +2165,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-transit-peer-network
         """
         check_type(headers, dict)
-        check_type(transit_peer_network_name, str,
+        check_type(transit_peer_network_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'transitPeerNetworkName':
@@ -2143,7 +2209,7 @@ class Sda(object):
         """Get Transit Peer Network Info from SD-Access .
 
         Args:
-            transit_peer_network_name(str): transitPeerNetworkName query parameter. Transit or Peer Network
+            transit_peer_network_name(basestring): transitPeerNetworkName query parameter. Transit or Peer Network
                 Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2158,14 +2224,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-transit-peer-network-info
         """
         check_type(headers, dict)
-        check_type(transit_peer_network_name, str,
+        check_type(transit_peer_network_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'transitPeerNetworkName':
@@ -2227,13 +2295,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-transit-peer-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2281,11 +2351,11 @@ class Sda(object):
                   virtual_network_name,
                   headers=None,
                   **request_parameters):
-        """Delete virtual network (VN) from SDA Fabric   .
+        """Delete virtual network (VN) from SDA Fabric      .
 
         Args:
-            virtual_network_name(str): virtualNetworkName query parameter.
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2299,16 +2369,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-v-n-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, str,
+        check_type(virtual_network_name, basestring,
                    may_be_none=False)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -2346,8 +2418,8 @@ class Sda(object):
         """Get virtual network (VN) from SDA Fabric .
 
         Args:
-            virtual_network_name(str): virtualNetworkName query parameter.
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2361,16 +2433,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-v-n-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, str,
+        check_type(virtual_network_name, basestring,
                    may_be_none=False)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -2429,13 +2503,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-v-n-in-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2481,7 +2557,7 @@ class Sda(object):
         """Get Virtual Network Summary .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter. Complete fabric siteNameHierarchy
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Complete fabric siteNameHierarchy
                 Path .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2496,14 +2572,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-summary
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2540,9 +2618,9 @@ class Sda(object):
         """Get IP Pool from SDA Virtual Network .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
-            virtual_network_name(str): virtualNetworkName query parameter.
-            ip_pool_name(str): ipPoolName query parameter. ipPoolName. Note: Use vlanName as a value for this
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
+            ip_pool_name(basestring): ipPoolName query parameter. ipPoolName. Note: Use vlanName as a value for this
                 parameter if same ip pool is assigned to multiple virtual networks (e.g..
                 ipPoolName=vlan1021) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2558,18 +2636,20 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-i-p-pool-from-s-d-a-virtual-network
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
-        check_type(virtual_network_name, str,
+        check_type(virtual_network_name, basestring,
                    may_be_none=False)
-        check_type(ip_pool_name, str,
+        check_type(ip_pool_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2610,9 +2690,9 @@ class Sda(object):
         """Delete IP Pool from SDA Virtual Network .
 
         Args:
-            site_name_hierarchy(str): siteNameHierarchy query parameter.
-            virtual_network_name(str): virtualNetworkName query parameter.
-            ip_pool_name(str): ipPoolName query parameter.
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
+            ip_pool_name(basestring): ipPoolName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2626,18 +2706,20 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-i-p-pool-from-s-d-a-virtual-network
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
-        check_type(virtual_network_name, str,
+        check_type(virtual_network_name, basestring,
                    may_be_none=False)
-        check_type(ip_pool_name, str,
+        check_type(ip_pool_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2735,13 +2817,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-i-p-pool-in-s-d-a-virtual-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2833,16 +2917,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-anycast-gateways
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2899,13 +2985,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-anycast-gateways
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2951,14 +3039,15 @@ class Sda(object):
         """Returns a list of anycast gateways that match the provided query parameters. .
 
         Args:
-            id(str): id query parameter. ID of the anycast gateway to search for in the database. .
-            fabric_id(str): fabricId query parameter. Get anycast gateways within this fabric. .
-            virtual_network_name(str): virtualNetworkName query parameter. Get anycast gateways associated
-                with this virtual network. .
-            ip_pool_name(str): ipPoolName query parameter. Get anycast gateways associated with this IP pool.
-                .
-            vlan_name(str): vlanName query parameter. Get anycast gateways associated with this VLAN name. .
-            vlan_id(int): vlanId query parameter. Get anycast gateways associated with this VLAN ID. .
+            id(basestring): id query parameter. ID of the anycast gateway. .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the anycast gateway is assigned to. .
+            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the virtual network
+                associated with the anycast gateways. .
+            ip_pool_name(basestring): ipPoolName query parameter. Name of the IP pool associated with the anycast
+                gateways. .
+            vlan_name(basestring): vlanName query parameter. VLAN name of the anycast gateways. .
+            vlan_id(int): vlanId query parameter. VLAN ID of the anycast gateways. The allowed range for vlanId is
+                [2-4093] except for reserved VLANs [1002-1005], 2046, and 4094. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2974,20 +3063,22 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-anycast-gateways
         """
         check_type(headers, dict)
-        check_type(id, str)
-        check_type(fabric_id, str)
-        check_type(virtual_network_name, str)
-        check_type(ip_pool_name, str)
-        check_type(vlan_name, str)
+        check_type(id, basestring)
+        check_type(fabric_id, basestring)
+        check_type(virtual_network_name, basestring)
+        check_type(ip_pool_name, basestring)
+        check_type(vlan_name, basestring)
         check_type(vlan_id, int)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'id':
@@ -3040,14 +3131,14 @@ class Sda(object):
         """Returns the count of anycast gateways that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. Only count anycast gateways within this fabric. .
-            virtual_network_name(str): virtualNetworkName query parameter. Only count anycast gateways
-                associated with this virtual network. .
-            ip_pool_name(str): ipPoolName query parameter. Only count anycast gateways associated with this
-                IP pool. .
-            vlan_name(str): vlanName query parameter. Only count anycast gateways associated with this VLAN
-                name. .
-            vlan_id(int): vlanId query parameter. Only count anycast gateways associated with this VLAN ID. .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the anycast gateway is assigned to. .
+            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the virtual network
+                associated with the anycast gateways. .
+            ip_pool_name(basestring): ipPoolName query parameter. Name of the IP pool associated with the anycast
+                gateways. .
+            vlan_name(basestring): vlanName query parameter. VLAN name of the anycast gateways. .
+            vlan_id(int): vlanId query parameter. VLAN ID of the anycast gateways. The allowed range for vlanId is
+                [2-4093] except for reserved VLANs [1002-1005], 2046, and 4094. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3061,17 +3152,19 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-anycast-gateway-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, str)
-        check_type(virtual_network_name, str)
-        check_type(ip_pool_name, str)
-        check_type(vlan_name, str)
+        check_type(fabric_id, basestring)
+        check_type(virtual_network_name, basestring)
+        check_type(ip_pool_name, basestring)
+        check_type(vlan_name, basestring)
         check_type(vlan_id, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3114,7 +3207,7 @@ class Sda(object):
         """Deletes an anycast gateway based on id. .
 
         Args:
-            id(str): id path parameter. ID of the anycast gateway to be deleted. .
+            id(basestring): id path parameter. ID of the anycast gateway. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3128,14 +3221,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-anycast-gateway-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3165,16 +3260,20 @@ class Sda(object):
     def get_authentication_profiles(self,
                                     authentication_profile_name=None,
                                     fabric_id=None,
+                                    limit=None,
+                                    offset=None,
                                     headers=None,
                                     **request_parameters):
         """Returns a list of authentication profiles that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric whose authentication profiles are to
-                be returned. .
-            authentication_profile_name(str): authenticationProfileName query parameter. Return only the
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the authentication profile is assigned
+                to. .
+            authentication_profile_name(basestring): authenticationProfileName query parameter. Return only the
                 authentication profiles with this specified name. Note that 'No Authentication' is not a
                 valid option for this parameter. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3188,20 +3287,28 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-authentication-profiles
         """
         check_type(headers, dict)
-        check_type(fabric_id, str)
-        check_type(authentication_profile_name, str)
+        check_type(fabric_id, basestring)
+        check_type(authentication_profile_name, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
                 fabric_id,
             'authenticationProfileName':
                 authentication_profile_name,
+            'offset':
+                offset,
+            'limit':
+                limit,
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
@@ -3250,13 +3357,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-authentication-profile
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3288,6 +3397,63 @@ class Sda(object):
 
         return self._object_factory('bpm_ea8d75a9d8d9e6882da4a4a91_v2_3_7_6', json_data)
 
+    def delete_extranet_policies(self,
+                                 extranet_policy_name=None,
+                                 headers=None,
+                                 **request_parameters):
+        """Deletes extranet policies based on user input. .
+
+        Args:
+            extranet_policy_name(basestring): extranetPolicyName query parameter. Name of the extranet policy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-extranet-policies
+        """
+        check_type(headers, dict)
+        check_type(extranet_policy_name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'extranetPolicyName':
+                extranet_policy_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/extranetPolicies')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_e5f7c332c255f34b7b6e2bd6ac13800_v2_3_7_6', json_data)
+
     def update_extranet_policy(self,
                                headers=None,
                                payload=None,
@@ -3313,16 +3479,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-extranet-policy
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
-            if 'Content-Type' in headers:
-                check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3379,13 +3544,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-extranet-policy
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3426,7 +3593,7 @@ class Sda(object):
         """Returns a list of extranet policies that match the provided query parameters. .
 
         Args:
-            extranet_policy_name(str): extranetPolicyName query parameter. Name of the extranet policy. .
+            extranet_policy_name(basestring): extranetPolicyName query parameter. Name of the extranet policy. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3442,15 +3609,17 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-extranet-policies
         """
         check_type(headers, dict)
-        check_type(extranet_policy_name, str)
+        check_type(extranet_policy_name, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'extranetPolicyName':
@@ -3501,12 +3670,14 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-extranet-policy-count
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3539,7 +3710,7 @@ class Sda(object):
         """Deletes an extranet policy based on id. .
 
         Args:
-            id(str): id path parameter. ID of the extranet policy. .
+            id(basestring): id path parameter. ID of the extranet policy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3553,14 +3724,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-extranet-policy-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3598,10 +3771,12 @@ class Sda(object):
         """Returns a list of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
+            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. Allowed values
+                are [CONTROL_PLANE_NODE, EDGE_NODE, BORDER_NODE, WIRELESS_CONTROLLER_NODE,
+                EXTENDED_NODE]. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3617,18 +3792,20 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
-        check_type(device_roles, str)
+        check_type(network_device_id, basestring)
+        check_type(device_roles, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3689,13 +3866,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3736,10 +3915,11 @@ class Sda(object):
         """Deletes fabric devices based on user input. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
+            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. Allowed values
+                are [CONTROL_PLANE_NODE, EDGE_NODE, BORDER_NODE, WIRELESS_CONTROLLER_NODE]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3753,16 +3933,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-devices
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
-        check_type(device_roles, str)
+        check_type(network_device_id, basestring)
+        check_type(device_roles, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3819,13 +4001,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3866,10 +4050,12 @@ class Sda(object):
         """Returns the count of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
+            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. Allowed values
+                are [CONTROL_PLANE_NODE, EDGE_NODE, BORDER_NODE, WIRELESS_CONTROLLER_NODE,
+                EXTENDED_NODE]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3883,16 +4069,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
-        check_type(device_roles, str)
+        check_type(network_device_id, basestring)
+        check_type(device_roles, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3932,8 +4120,8 @@ class Sda(object):
         """Deletes layer 2 handoffs of a fabric device based on user input. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3948,16 +4136,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoffs
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str,
+        check_type(network_device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3997,8 +4187,8 @@ class Sda(object):
         """Returns a list of layer 2 handoffs of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4015,17 +4205,19 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
+        check_type(network_device_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4084,13 +4276,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer2-handoffs
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4130,8 +4324,8 @@ class Sda(object):
         """Returns the count of layer 2 handoffs of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4146,15 +4340,17 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
+        check_type(network_device_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4192,7 +4388,7 @@ class Sda(object):
         """Deletes a layer 2 handoff of a fabric device based on id. .
 
         Args:
-            id(str): id path parameter. ID of the layer 2 handoff of a fabric device. .
+            id(basestring): id path parameter. ID of the layer 2 handoff of a fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4206,14 +4402,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoff-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4265,16 +4463,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4332,13 +4532,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4379,8 +4581,8 @@ class Sda(object):
         """Deletes layer 3 handoffs with ip transit of a fabric device based on user input. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4395,16 +4597,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str,
+        check_type(network_device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4445,8 +4649,8 @@ class Sda(object):
         """Returns a list of layer 3 handoffs with ip transit of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4463,17 +4667,19 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
+        check_type(network_device_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4517,8 +4723,8 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4533,15 +4739,17 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
+        check_type(network_device_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4579,8 +4787,7 @@ class Sda(object):
         """Deletes a layer 3 handoff with ip transit of a fabric device by id. .
 
         Args:
-            id(str): id path parameter. ID of the layer 3 handoff with ip transit of a fabric device to be
-                deleted. .
+            id(basestring): id path parameter. ID of the layer 3 handoff with ip transit of a fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4594,14 +4801,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoff-with-ip-transit-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4654,16 +4863,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4707,8 +4918,8 @@ class Sda(object):
         .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4725,17 +4936,19 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
+        check_type(network_device_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4778,8 +4991,8 @@ class Sda(object):
         """Deletes layer 3 handoffs with sda transit of a fabric device based on user input. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4794,16 +5007,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str,
+        check_type(network_device_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4859,13 +5074,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -4907,8 +5124,8 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4923,15 +5140,17 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str)
+        check_type(network_device_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4962,14 +5181,14 @@ class Sda(object):
 
         return self._object_factory('bpm_b183d0cc487506ab776e0d470b0db91_v2_3_7_6', json_data)
 
-    def delete_a_fabric_device_by_id(self,
-                                     id,
-                                     headers=None,
-                                     **request_parameters):
+    def delete_fabric_device_by_id(self,
+                                   id,
+                                   headers=None,
+                                   **request_parameters):
         """Deletes a fabric device based on id. .
 
         Args:
-            id(str): id path parameter. ID of the fabric device. .
+            id(basestring): id path parameter. ID of the fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4983,14 +5202,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5027,9 +5248,9 @@ class Sda(object):
         """Returns a list of fabric sites that match the provided query parameters. .
 
         Args:
-            id(str): id query parameter. ID of the fabric site to search for in the database. .
-            site_id(str): siteId query parameter. Get the fabric site associated with this network hierarchy.
-                .
+            id(basestring): id query parameter. ID of the fabric site. .
+            site_id(basestring): siteId query parameter. ID of the network hierarchy associated with the fabric
+                site. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -5045,16 +5266,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-sites
         """
         check_type(headers, dict)
-        check_type(id, str)
-        check_type(site_id, str)
+        check_type(id, basestring)
+        check_type(site_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'id':
@@ -5113,13 +5336,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-site
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5176,13 +5401,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-site
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5233,12 +5460,14 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-site-count
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5271,7 +5500,7 @@ class Sda(object):
         """Deletes a fabric site based on id. .
 
         Args:
-            id(str): id path parameter. ID of the fabric site to be deleted. .
+            id(basestring): id path parameter. ID of the fabric site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5285,14 +5514,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-site-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5329,9 +5560,9 @@ class Sda(object):
         """Returns a list of fabric zones that match the provided query parameters. .
 
         Args:
-            id(str): id query parameter. ID of the fabric zone to search for in the database. .
-            site_id(str): siteId query parameter. get the fabric zone associated with this network hierarchy.
-                .
+            id(basestring): id query parameter. ID of the fabric zone. .
+            site_id(basestring): siteId query parameter. ID of the network hierarchy associated with the fabric
+                zone. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -5347,16 +5578,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-zones
         """
         check_type(headers, dict)
-        check_type(id, str)
-        check_type(site_id, str)
+        check_type(id, basestring)
+        check_type(site_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'id':
@@ -5415,13 +5648,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-zone
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5478,13 +5713,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-zone
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5535,12 +5772,14 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-zone-count
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5573,7 +5812,7 @@ class Sda(object):
         """Deletes a fabric zone based on id. .
 
         Args:
-            id(str): id path parameter. ID of the fabric zone to be deleted. .
+            id(basestring): id path parameter. ID of the fabric zone. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5587,14 +5826,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-zone-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5621,6 +5862,1301 @@ class Sda(object):
 
         return self._object_factory('bpm_cdb33e11852af80e1ed8f26e4336d_v2_3_7_6', json_data)
 
+    def add_layer2_virtual_networks(self,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
+        """Adds layer 2 virtual networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-layer2-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_f09c94c65c858e4b7be0b7cb3d25b7a_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer2VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_f09c94c65c858e4b7be0b7cb3d25b7a_v2_3_7_6', json_data)
+
+    def delete_layer2_virtual_networks(self,
+                                       fabric_id,
+                                       associated_layer3_virtual_network_name=None,
+                                       traffic_type=None,
+                                       vlan_id=None,
+                                       vlan_name=None,
+                                       headers=None,
+                                       **request_parameters):
+        """Deletes layer 2 virtual networks based on user input. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 2 virtual network is
+                assigned to. .
+            vlan_name(basestring): vlanName query parameter. The vlan name of the layer 2 virtual network. .
+            vlan_id(int): vlanId query parameter. The vlan ID of the layer 2 virtual network. .
+            traffic_type(basestring): trafficType query parameter. The traffic type of the layer 2 virtual network.
+                .
+            associated_layer3_virtual_network_name(basestring): associatedLayer3VirtualNetworkName query parameter.
+                Name of the associated layer 3 virtual network. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring,
+                   may_be_none=False)
+        check_type(vlan_name, basestring)
+        check_type(vlan_id, int)
+        check_type(traffic_type, basestring)
+        check_type(associated_layer3_virtual_network_name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'vlanName':
+                vlan_name,
+            'vlanId':
+                vlan_id,
+            'trafficType':
+                traffic_type,
+            'associatedLayer3VirtualNetworkName':
+                associated_layer3_virtual_network_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer2VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fa8caf01309507e9be1544b9d1faa39_v2_3_7_6', json_data)
+
+    def get_layer2_virtual_networks(self,
+                                    associated_layer3_virtual_network_name=None,
+                                    fabric_id=None,
+                                    id=None,
+                                    limit=None,
+                                    offset=None,
+                                    traffic_type=None,
+                                    vlan_id=None,
+                                    vlan_name=None,
+                                    headers=None,
+                                    **request_parameters):
+        """Returns a list of layer 2 virtual networks that match the provided query parameters. .
+
+        Args:
+            id(basestring): id query parameter. ID of the layer 2 virtual network. .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 2 virtual network is
+                assigned to. .
+            vlan_name(basestring): vlanName query parameter. The vlan name of the layer 2 virtual network. .
+            vlan_id(int): vlanId query parameter. The vlan ID of the layer 2 virtual network. .
+            traffic_type(basestring): trafficType query parameter. The traffic type of the layer 2 virtual network.
+                .
+            associated_layer3_virtual_network_name(basestring): associatedLayer3VirtualNetworkName query parameter.
+                Name of the associated layer 3 virtual network. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(id, basestring)
+        check_type(fabric_id, basestring)
+        check_type(vlan_name, basestring)
+        check_type(vlan_id, int)
+        check_type(traffic_type, basestring)
+        check_type(associated_layer3_virtual_network_name, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'id':
+                id,
+            'fabricId':
+                fabric_id,
+            'vlanName':
+                vlan_name,
+            'vlanId':
+                vlan_id,
+            'trafficType':
+                traffic_type,
+            'associatedLayer3VirtualNetworkName':
+                associated_layer3_virtual_network_name,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer2VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c794771a235f0da82cf11d968c9ec3_v2_3_7_6', json_data)
+
+    def update_layer2_virtual_networks(self,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """Updates layer 2 virtual networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-layer2-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_bcb7a52e3c5763b246bcf438fe57c9_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer2VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_bcb7a52e3c5763b246bcf438fe57c9_v2_3_7_6', json_data)
+
+    def get_layer2_virtual_network_count(self,
+                                         associated_layer3_virtual_network_name=None,
+                                         fabric_id=None,
+                                         traffic_type=None,
+                                         vlan_id=None,
+                                         vlan_name=None,
+                                         headers=None,
+                                         **request_parameters):
+        """Returns the count of layer 2 virtual networks that match the provided query parameters. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 2 virtual network is
+                assigned to. .
+            vlan_name(basestring): vlanName query parameter. The vlan name of the layer 2 virtual network. .
+            vlan_id(int): vlanId query parameter. The vlan ID of the layer 2 virtual network. .
+            traffic_type(basestring): trafficType query parameter. The traffic type of the layer 2 virtual network.
+                .
+            associated_layer3_virtual_network_name(basestring): associatedLayer3VirtualNetworkName query parameter.
+                Name of the associated layer 3 virtual network. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-network-count
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring)
+        check_type(vlan_name, basestring)
+        check_type(vlan_id, int)
+        check_type(traffic_type, basestring)
+        check_type(associated_layer3_virtual_network_name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'vlanName':
+                vlan_name,
+            'vlanId':
+                vlan_id,
+            'trafficType':
+                traffic_type,
+            'associatedLayer3VirtualNetworkName':
+                associated_layer3_virtual_network_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer2VirtualNetworks/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a69aee0c555fb5baaa9db43327f955_v2_3_7_6', json_data)
+
+    def delete_layer2_virtual_network_by_id(self,
+                                            id,
+                                            headers=None,
+                                            **request_parameters):
+        """Deletes a layer 2 virtual network based on id. .
+
+        Args:
+            id(basestring): id path parameter. ID of the layer 2 virtual network. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-network-by-id
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer2VirtualNetworks/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_bfbdb9daba59fc9587824918c61cd6_v2_3_7_6', json_data)
+
+    def add_layer3_virtual_networks(self,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
+        """Adds layer 3 virtual networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-layer3-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_dabd13cd5e9c928daf80d6758d62_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer3VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_dabd13cd5e9c928daf80d6758d62_v2_3_7_6', json_data)
+
+    def get_layer3_virtual_networks(self,
+                                    anchored_site_id=None,
+                                    fabric_id=None,
+                                    limit=None,
+                                    offset=None,
+                                    virtual_network_name=None,
+                                    headers=None,
+                                    **request_parameters):
+        """Returns a list of layer 3 virtual networks that match the provided query parameters. .
+
+        Args:
+            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the layer 3 virtual
+                network. .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 3 virtual network is
+                assigned to. .
+            anchored_site_id(basestring): anchoredSiteId query parameter. Fabric ID of the fabric site the layer 3
+                virtual network is anchored at. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(virtual_network_name, basestring)
+        check_type(fabric_id, basestring)
+        check_type(anchored_site_id, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'virtualNetworkName':
+                virtual_network_name,
+            'fabricId':
+                fabric_id,
+            'anchoredSiteId':
+                anchored_site_id,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer3VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fa3e62148dd542a8452b68ea888833a_v2_3_7_6', json_data)
+
+    def delete_layer3_virtual_networks(self,
+                                       virtual_network_name=None,
+                                       headers=None,
+                                       **request_parameters):
+        """Deletes layer 3 virtual networks based on user input. .
+
+        Args:
+            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the layer 3 virtual
+                network. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(virtual_network_name, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'virtualNetworkName':
+                virtual_network_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer3VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_e14a6db07f5c41903df6039be72e9c_v2_3_7_6', json_data)
+
+    def update_layer3_virtual_networks(self,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """Updates layer 3 virtual networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-layer3-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_ed9125b257ea54b79ef2db2d8ebd9d00_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer3VirtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_ed9125b257ea54b79ef2db2d8ebd9d00_v2_3_7_6', json_data)
+
+    def get_layer3_virtual_networks_count(self,
+                                          anchored_site_id=None,
+                                          fabric_id=None,
+                                          headers=None,
+                                          **request_parameters):
+        """Returns the count of layer 3 virtual networks that match the provided query parameters. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 3 virtual network is
+                assigned to. .
+            anchored_site_id(basestring): anchoredSiteId query parameter. Fabric ID of the fabric site the layer 3
+                virtual network is anchored at. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks-count
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring)
+        check_type(anchored_site_id, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'anchoredSiteId':
+                anchored_site_id,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer3VirtualNetworks/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ced302dd267557c79c2f5aee72da9e4c_v2_3_7_6', json_data)
+
+    def delete_layer3_virtual_network_by_id(self,
+                                            id,
+                                            headers=None,
+                                            **request_parameters):
+        """Deletes a layer 3 virtual network based on id. .
+
+        Args:
+            id(basestring): id path parameter. ID of the layer 3 virtual network. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-network-by-id
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/layer3VirtualNetworks/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a4e95fb6765d48bac0c654a393a0a8_v2_3_7_6', json_data)
+
+    def update_multicast(self,
+                         headers=None,
+                         payload=None,
+                         active_validation=True,
+                         **request_parameters):
+        """Updates a multicast configuration at a fabric level based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-multicast
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_cfb964a2958909f7ca12d23ab2bdb_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_cfb964a2958909f7ca12d23ab2bdb_v2_3_7_6', json_data)
+
+    def get_multicast(self,
+                      fabric_id=None,
+                      limit=None,
+                      offset=None,
+                      headers=None,
+                      **request_parameters):
+        """Returns a list of multicast configurations at a fabric site level that match the provided query parameters. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric site where multicast is configured. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-multicast
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_eb648d275875745950bc33d3f12a28f_v2_3_7_6', json_data)
+
+    def add_multicast_virtual_networks(self,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """Adds multicast for virtual networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-multicast-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_cdc0bafd4257e78d211a1f4120bfa9_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast/virtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_cdc0bafd4257e78d211a1f4120bfa9_v2_3_7_6', json_data)
+
+    def get_multicast_virtual_networks(self,
+                                       fabric_id=None,
+                                       limit=None,
+                                       offset=None,
+                                       virtual_network_name=None,
+                                       headers=None,
+                                       **request_parameters):
+        """Returns a list of multicast configurations for virtual networks that match the provided query parameters. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric site where multicast is configured. .
+            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the virtual network
+                associated to the multicast configuration. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring)
+        check_type(virtual_network_name, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'virtualNetworkName':
+                virtual_network_name,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast/virtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_bc8fbaa14c0b5064ba44a9aaf997a593_v2_3_7_6', json_data)
+
+    def update_multicast_virtual_networks(self,
+                                          headers=None,
+                                          payload=None,
+                                          active_validation=True,
+                                          **request_parameters):
+        """Updates multicast configurations for virtual networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-multicast-virtual-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_bc3ed6556f9b9c959e53e271d70_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast/virtualNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_bc3ed6556f9b9c959e53e271d70_v2_3_7_6', json_data)
+
+    def get_multicast_virtual_network_count(self,
+                                            fabric_id=None,
+                                            headers=None,
+                                            **request_parameters):
+        """Returns the count of multicast configurations associated to virtual networks that match the provided query
+        parameters. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric site the multicast configuration is
+                associated with. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-network-count
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast/virtualNetworks/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ecb8526b5333b7d7223dc4a68794_v2_3_7_6', json_data)
+
+    def delete_multicast_virtual_network_by_id(self,
+                                               id,
+                                               headers=None,
+                                               **request_parameters):
+        """Deletes a multicast configuration for a virtual network based on id. .
+
+        Args:
+            id(basestring): id path parameter. ID of the multicast configuration. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-multicast-virtual-network-by-id
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/multicast/virtualNetworks/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_e1e7b254440156e0a9ed4e72c5a9685a_v2_3_7_6', json_data)
+
     def add_port_assignments(self,
                              headers=None,
                              payload=None,
@@ -5646,16 +7182,18 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignments
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5700,14 +7238,14 @@ class Sda(object):
         """Returns a list of port assignments that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the port assignment
-                .
-            interface_name(str): interfaceName query parameter. Interface Name of the port assignment .
-            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
-            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
-            offset(int): offset query parameter. Starting record for pagination .
-            limit(int): limit query parameter. Maximum number of records to return .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port
+                assignment. .
+            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment. .
+            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment. .
+            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5721,19 +7259,21 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignments
         """
         check_type(headers, dict)
-        check_type(fabric_id, str)
-        check_type(network_device_id, str)
-        check_type(interface_name, str)
-        check_type(data_vlan_name, str)
-        check_type(voice_vlan_name, str)
+        check_type(fabric_id, basestring)
+        check_type(network_device_id, basestring)
+        check_type(interface_name, basestring)
+        check_type(data_vlan_name, basestring)
+        check_type(voice_vlan_name, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5798,13 +7338,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-port-assignments
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -5847,12 +7389,12 @@ class Sda(object):
         """Deletes port assignments based on user input. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the port assignment
-                .
-            interface_name(str): interfaceName query parameter. Interface name of the port assignment .
-            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
-            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port
+                assignment. .
+            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment. .
+            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment. .
+            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5866,19 +7408,21 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignments
         """
         check_type(headers, dict)
-        check_type(fabric_id, str,
+        check_type(fabric_id, basestring,
                    may_be_none=False)
-        check_type(network_device_id, str,
+        check_type(network_device_id, basestring,
                    may_be_none=False)
-        check_type(interface_name, str)
-        check_type(data_vlan_name, str)
-        check_type(voice_vlan_name, str)
+        check_type(interface_name, basestring)
+        check_type(data_vlan_name, basestring)
+        check_type(voice_vlan_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5925,12 +7469,12 @@ class Sda(object):
         """Returns the count of port assignments that match the provided query parameters. .
 
         Args:
-            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to .
-            network_device_id(str): networkDeviceId query parameter. Network device ID of the port assignment
-                .
-            interface_name(str): interfaceName query parameter. Interface name of the port assignment .
-            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
-            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port
+                assignment. .
+            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment. .
+            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment. .
+            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5944,17 +7488,19 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, str)
-        check_type(network_device_id, str)
-        check_type(interface_name, str)
-        check_type(data_vlan_name, str)
-        check_type(voice_vlan_name, str)
+        check_type(fabric_id, basestring)
+        check_type(network_device_id, basestring)
+        check_type(interface_name, basestring)
+        check_type(data_vlan_name, basestring)
+        check_type(voice_vlan_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5997,7 +7543,7 @@ class Sda(object):
         """Deletes a port assignment based on id. .
 
         Args:
-            id(str): id path parameter. ID of the port assignment. .
+            id(basestring): id path parameter. ID of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6011,14 +7557,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -6045,16 +7593,25 @@ class Sda(object):
 
         return self._object_factory('bpm_aa18582de8753438e0908cf9d92c2de_v2_3_7_6', json_data)
 
-    def delete_provisioned_devices(self,
-                                   network_device_id=None,
-                                   site_id=None,
-                                   headers=None,
-                                   **request_parameters):
-        """Delete provisioned devices based on query parameters. .
+    def get_port_channels(self,
+                          connected_device_type=None,
+                          fabric_id=None,
+                          limit=None,
+                          network_device_id=None,
+                          offset=None,
+                          port_channel_name=None,
+                          headers=None,
+                          **request_parameters):
+        """Returns a list of port channels that match the provided query parameters. .
 
         Args:
-            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
-            site_id(str): siteId query parameter. ID of the site hierarchy. .
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
+            port_channel_name(basestring): portChannelName query parameter. Name of the port channel. .
+            connected_device_type(basestring): connectedDeviceType query parameter. Connected device type of the
+                port channel. The allowed values are [TRUNK, EXTENDED_NODE]. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6068,14 +7625,425 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-channels
         """
         check_type(headers, dict)
-        check_type(network_device_id, str)
-        check_type(site_id, str)
+        check_type(fabric_id, basestring)
+        check_type(network_device_id, basestring)
+        check_type(port_channel_name, basestring)
+        check_type(connected_device_type, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'networkDeviceId':
+                network_device_id,
+            'portChannelName':
+                port_channel_name,
+            'connectedDeviceType':
+                connected_device_type,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/portChannels')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c747d79eb18e52f5a161006aa28df129_v2_3_7_6', json_data)
+
+    def add_port_channels(self,
+                          headers=None,
+                          payload=None,
+                          active_validation=True,
+                          **request_parameters):
+        """Adds port channels based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-port-channels
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_f2b137487385de6925b7b6136d4b027_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/portChannels')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_f2b137487385de6925b7b6136d4b027_v2_3_7_6', json_data)
+
+    def update_port_channels(self,
+                             headers=None,
+                             payload=None,
+                             active_validation=True,
+                             **request_parameters):
+        """Updates port channels based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-port-channels
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_bd421c1db8c5deaa3301b8cc73dd541_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/portChannels')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_bd421c1db8c5deaa3301b8cc73dd541_v2_3_7_6', json_data)
+
+    def delete_port_channels(self,
+                             fabric_id,
+                             network_device_id,
+                             connected_device_type=None,
+                             port_channel_name=None,
+                             headers=None,
+                             **request_parameters):
+        """Deletes port channels based on user input. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
+            port_channel_name(basestring): portChannelName query parameter. Name of the port channel. .
+            connected_device_type(basestring): connectedDeviceType query parameter. Connected device type of the
+                port channel. The allowed values are [TRUNK, EXTENDED_NODE]. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-channels
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring,
+                   may_be_none=False)
+        check_type(network_device_id, basestring,
+                   may_be_none=False)
+        check_type(port_channel_name, basestring)
+        check_type(connected_device_type, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'networkDeviceId':
+                network_device_id,
+            'portChannelName':
+                port_channel_name,
+            'connectedDeviceType':
+                connected_device_type,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/portChannels')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fd48c49a3f65cecb1f84f10b69b04f5_v2_3_7_6', json_data)
+
+    def get_port_channel_count(self,
+                               connected_device_type=None,
+                               fabric_id=None,
+                               network_device_id=None,
+                               port_channel_name=None,
+                               headers=None,
+                               **request_parameters):
+        """Returns the count of port channels that match the provided query parameters. .
+
+        Args:
+            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
+            port_channel_name(basestring): portChannelName query parameter. Name of the port channel. .
+            connected_device_type(basestring): connectedDeviceType query parameter. Connected device type of the
+                port channel. The allowed values are [TRUNK, EXTENDED_NODE]. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-port-channel-count
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring)
+        check_type(network_device_id, basestring)
+        check_type(port_channel_name, basestring)
+        check_type(connected_device_type, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'fabricId':
+                fabric_id,
+            'networkDeviceId':
+                network_device_id,
+            'portChannelName':
+                port_channel_name,
+            'connectedDeviceType':
+                connected_device_type,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/portChannels/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_b6ba7d5504bb3493964063611a_v2_3_7_6', json_data)
+
+    def delete_port_channel_by_id(self,
+                                  id,
+                                  headers=None,
+                                  **request_parameters):
+        """Deletes a port channel based on id. .
+
+        Args:
+            id(basestring): id path parameter. ID of the port channel. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-port-channel-by-id
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/portChannels/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_bcad6a4ea0850bf9b099b938bc55932_v2_3_7_6', json_data)
+
+    def delete_provisioned_devices(self,
+                                   network_device_id=None,
+                                   site_id=None,
+                                   headers=None,
+                                   **request_parameters):
+        """Delete provisioned devices based on query parameters. .
+
+        Args:
+            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
+            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-devices
+        """
+        check_type(headers, dict)
+        check_type(network_device_id, basestring)
+        check_type(site_id, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
             'networkDeviceId':
@@ -6130,13 +8098,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!provision-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -6179,9 +8149,9 @@ class Sda(object):
         """Returns the list of provisioned devices based on query parameters. .
 
         Args:
-            id(str): id query parameter. ID of the provisioned device. .
-            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
-            site_id(str): siteId query parameter. ID of the site hierarchy. .
+            id(basestring): id query parameter. ID of the provisioned device. .
+            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
+            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of devices to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -6197,17 +8167,19 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices
         """
         check_type(headers, dict)
-        check_type(id, str)
-        check_type(network_device_id, str)
-        check_type(site_id, str)
+        check_type(id, basestring)
+        check_type(network_device_id, basestring)
+        check_type(site_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'id':
@@ -6268,13 +8240,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!re-provision-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -6313,7 +8287,7 @@ class Sda(object):
         """Returns the count of provisioned devices based on query parameters. .
 
         Args:
-            site_id(str): siteId query parameter. ID of the site hierarchy. .
+            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6327,13 +8301,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices-count
         """
         check_type(headers, dict)
-        check_type(site_id, str)
+        check_type(site_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteId':
@@ -6368,7 +8344,7 @@ class Sda(object):
         """Deletes provisioned device based on Id. .
 
         Args:
-            id(str): id path parameter. ID of provisioned device. .
+            id(basestring): id path parameter. ID of the provisioned device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6382,14 +8358,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-device-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -6415,6 +8393,332 @@ class Sda(object):
             json_data = self._session.delete(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_ab7cbac7eaa45f259c9035fb828f6c08_v2_3_7_6', json_data)
+
+    def update_transit_networks(self,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
+        """Updates transit networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-transit-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_cc1599012a5a59c8abdda5376b5cc583_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/transitNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_cc1599012a5a59c8abdda5376b5cc583_v2_3_7_6', json_data)
+
+    def get_transit_networks(self,
+                             id=None,
+                             limit=None,
+                             name=None,
+                             offset=None,
+                             type=None,
+                             headers=None,
+                             **request_parameters):
+        """Returns a list of transit networks that match the provided query parameters. .
+
+        Args:
+            id(basestring): id query parameter. ID of the transit network. .
+            name(basestring): name query parameter. Name of the transit network. .
+            type(basestring): type query parameter. Type of the transit network. Allowed values are
+                [IP_BASED_TRANSIT, SDA_LISP_PUB_SUB_TRANSIT, SDA_LISP_BGP_TRANSIT]. .
+            offset(int): offset query parameter. Starting record for pagination. .
+            limit(int): limit query parameter. Maximum number of records to return. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-transit-networks
+        """
+        check_type(headers, dict)
+        check_type(id, basestring)
+        check_type(name, basestring)
+        check_type(type, basestring)
+        check_type(offset, int)
+        check_type(limit, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'id':
+                id,
+            'name':
+                name,
+            'type':
+                type,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/transitNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_eb415f4615ac09e61c6582ecca2fa_v2_3_7_6', json_data)
+
+    def add_transit_networks(self,
+                             headers=None,
+                             payload=None,
+                             active_validation=True,
+                             **request_parameters):
+        """Adds transit networks based on user input. .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-transit-networks
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_ae57085565e551594fc05b4db6a64af_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/transitNetworks')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ae57085565e551594fc05b4db6a64af_v2_3_7_6', json_data)
+
+    def get_transit_networks_count(self,
+                                   type=None,
+                                   headers=None,
+                                   **request_parameters):
+        """Returns the count of transit networks that match the provided query parameters. .
+
+        Args:
+            type(basestring): type query parameter. Type of the transit network. Allowed values are
+                [IP_BASED_TRANSIT, SDA_LISP_PUB_SUB_TRANSIT, SDA_LISP_BGP_TRANSIT]. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-transit-networks-count
+        """
+        check_type(headers, dict)
+        check_type(type, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'type':
+                type,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/transitNetworks/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fe6a7f95437d57bd997d2c8f0482310d_v2_3_7_6', json_data)
+
+    def delete_transit_network_by_id(self,
+                                     id,
+                                     headers=None,
+                                     **request_parameters):
+        """Deletes a transit network based on id. .
+
+        Args:
+            id(basestring): id path parameter. ID of the transit network. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-transit-network-by-id
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/transitNetworks/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.delete(endpoint_full_url, params=_params,
+                                             headers=_headers)
+        else:
+            json_data = self._session.delete(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_bc1bbf0065150ebabbe5e5bee3d80d7_v2_3_7_6', json_data)
 
     def add_virtual_network_with_scalable_groups(self,
                                                  isGuestVirtualNetwork=None,
@@ -6449,13 +8753,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -6505,7 +8811,7 @@ class Sda(object):
         """Delete virtual network with scalable groups .
 
         Args:
-            virtual_network_name(str): virtualNetworkName query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6519,14 +8825,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, str,
+        check_type(virtual_network_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -6561,7 +8869,7 @@ class Sda(object):
         """Get virtual network with scalable groups .
 
         Args:
-            virtual_network_name(str): virtualNetworkName query parameter.
+            virtual_network_name(basestring): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6575,14 +8883,16 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, str,
+        check_type(virtual_network_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -6645,13 +8955,15 @@ class Sda(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

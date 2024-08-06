@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -46,16 +47,11 @@ class JSONSchemaValidatorC0E0D76B2561B8F2EFd0220F02267(object):
                 "ciscoDNAEventLink": {
                 "type": "string"
                 },
-                "configs": {
-                "properties": {
-                "isACKnowledgeable": {
+                "deprecated": {
                 "type": "boolean"
                 },
-                "isAlert": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
+                "deprecationMessage": {
+                "type": "string"
                 },
                 "description":
                  {

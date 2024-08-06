@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -85,18 +87,23 @@ class Users(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-user-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

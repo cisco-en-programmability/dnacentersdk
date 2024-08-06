@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -74,7 +75,7 @@ class JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5(object):
                 "networkDeviceId": {
                 "type": "string"
                 },
-                "scalableGroupName": {
+                "securityGroupName": {
                 "type": "string"
                 },
                 "voiceVlanName": {

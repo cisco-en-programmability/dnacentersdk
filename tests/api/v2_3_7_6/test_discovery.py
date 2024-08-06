@@ -674,7 +674,7 @@ def is_valid_get_network_devices_from_discovery(json_schema_validate, obj):
 
 def get_network_devices_from_discovery(api):
     endpoint_result = api.discovery.get_network_devices_from_discovery(
-        cli_status='value1,value2',
+        clistatus='value1,value2',
         http_status='value1,value2',
         id='string',
         ip_address='value1,value2',
@@ -703,7 +703,7 @@ def test_get_network_devices_from_discovery(api, validator):
 
 def get_network_devices_from_discovery_default_val(api):
     endpoint_result = api.discovery.get_network_devices_from_discovery(
-        cli_status=None,
+        clistatus=None,
         http_status=None,
         id='string',
         ip_address=None,

@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -64,23 +66,16 @@ class Licenses(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def device_count_details(self,
-                             device_type=None,
-                             dna_level=None,
-                             registration_status=None,
-                             smart_account_id=None,
-                             virtual_account_name=None,
-                             headers=None,
-                             **request_parameters):
-        """Get total number of managed device(s). .
+    def retrieve_license_setting(self,
+                                 headers=None,
+                                 **request_parameters):
+        """Retrieves license setting Default smart account id and virtual account id for auto registration of devices for
+        smart license flow. If default smart account is not configured, 'defaultSmartAccountId' is 'null'.
+        Similarly, if auto registration of devices for smart license flow is not enabled,
+        'autoRegistrationVirtualAccountId' is 'null'. For smart proxy connection mode,
+        'autoRegistrationVirtualAccountId' is always 'null'. .
 
         Args:
-            device_type(str): device_type query parameter. Type of device .
-            registration_status(str): registration_status query parameter. Smart license registration status
-                of device .
-            dna_level(str): dna_level query parameter. Device Cisco DNA License Level .
-            virtual_account_name(str): virtual_account_name query parameter. Virtual account name .
-            smart_account_id(str): smart_account_id query parameter. Smart account id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -94,17 +89,161 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-license-setting
         """
         check_type(headers, dict)
-        check_type(device_type, str)
-        check_type(registration_status, str)
-        check_type(dna_level, str)
-        check_type(virtual_account_name, str)
-        check_type(smart_account_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/licenseSetting')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_b5ef334945074a609698223cf05db_v2_3_7_6', json_data)
+
+    def update_license_setting(self,
+                               autoRegistrationVirtualAccountId=None,
+                               defaultSmartAccountId=None,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """Update license setting Configure default smart account id  and/or virtual account id for auto registration of
+        devices for smart license flow. Virtual account should be part of default smart account. Default smart
+        account id cannot be set to 'null'. Auto registration of devices for smart license flow is applicable
+        only for direct or on-prem SSM connection mode. .
+
+        Args:
+            autoRegistrationVirtualAccountId(string): Licenses's Virtual account id .
+            defaultSmartAccountId(string): Licenses's Default smart account id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-license-setting
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'defaultSmartAccountId':
+                defaultSmartAccountId,
+            'autoRegistrationVirtualAccountId':
+                autoRegistrationVirtualAccountId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d9bd7c527d254ecb63d2b709c428043_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/licenseSetting')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_d9bd7c527d254ecb63d2b709c428043_v2_3_7_6', json_data)
+
+    def device_count_details(self,
+                             device_type=None,
+                             dna_level=None,
+                             registration_status=None,
+                             smart_account_id=None,
+                             virtual_account_name=None,
+                             headers=None,
+                             **request_parameters):
+        """Get total number of managed device(s). .
+
+        Args:
+            device_type(basestring): device_type query parameter. Type of device .
+            registration_status(basestring): registration_status query parameter. Smart license registration status
+                of device .
+            dna_level(basestring): dna_level query parameter. Device Cisco DNA License Level .
+            virtual_account_name(basestring): virtual_account_name query parameter. Virtual account name .
+            smart_account_id(basestring): smart_account_id query parameter. Smart account id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-count-details
+        """
+        check_type(headers, dict)
+        check_type(device_type, basestring)
+        check_type(registration_status, basestring)
+        check_type(dna_level, basestring)
+        check_type(virtual_account_name, basestring)
+        check_type(smart_account_id, basestring)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
             'device_type':
@@ -157,20 +296,20 @@ class Licenses(object):
 
         Args:
             page_number(int): page_number query parameter. Page number of response .
-            order(str): order query parameter. Sorting order .
-            sort_by(str): sort_by query parameter. Sort result by field .
-            dna_level(str): dna_level query parameter. Device Cisco DNA license level. The valid values are
+            order(basestring): order query parameter. Sorting order .
+            sort_by(basestring): sort_by query parameter. Sort result by field .
+            dna_level(basestring): dna_level query parameter. Device Cisco DNA license level. The valid values are
                 Advantage, Essentials .
-            device_type(str): device_type query parameter. Type of device. The valid values are Routers,
+            device_type(basestring): device_type query parameter. Type of device. The valid values are Routers,
                 Switches and Hubs, Wireless Controller .
             limit(int): limit query parameter.
-            registration_status(str): registration_status query parameter. Smart license registration status
+            registration_status(basestring): registration_status query parameter. Smart license registration status
                 of device. The valid values are Unknown, NA, Unregistered, Registered,
                 Registration_expired, Reservation_in_progress, Registered_slr, Registered_plr,
                 Registered_satellite .
-            virtual_account_name(str): virtual_account_name query parameter. Name of virtual account .
-            smart_account_id(str): smart_account_id query parameter. Id of smart account .
-            device_uuid(str): device_uuid query parameter. Id of device .
+            virtual_account_name(basestring): virtual_account_name query parameter. Name of virtual account .
+            smart_account_id(basestring): smart_account_id query parameter. Id of smart account .
+            device_uuid(basestring): device_uuid query parameter. Id of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -184,25 +323,27 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-license-summary
         """
         check_type(headers, dict)
         check_type(page_number, int,
                    may_be_none=False)
-        check_type(order, str,
+        check_type(order, basestring,
                    may_be_none=False)
-        check_type(sort_by, str)
-        check_type(dna_level, str)
-        check_type(device_type, str)
+        check_type(sort_by, basestring)
+        check_type(dna_level, basestring)
+        check_type(device_type, basestring)
         check_type(limit, int,
                    may_be_none=False)
-        check_type(registration_status, str)
-        check_type(virtual_account_name, str)
-        check_type(smart_account_id, str)
-        check_type(device_uuid, str)
+        check_type(registration_status, basestring)
+        check_type(virtual_account_name, basestring)
+        check_type(smart_account_id, basestring)
+        check_type(device_uuid, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'page_number':
@@ -255,7 +396,7 @@ class Licenses(object):
         """Get detailed license information of a device. .
 
         Args:
-            device_uuid(str): device_uuid path parameter. Id of device .
+            device_uuid(basestring): device_uuid path parameter. Id of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -269,14 +410,16 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-license-details
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -330,16 +473,18 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-deregistration
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str)
+                           basestring)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -388,7 +533,7 @@ class Licenses(object):
 
         Args:
             device_uuids(list): Licenses's Comma separated device ids  (list of strings).
-            virtual_account_name(str): virtual_account_name path parameter. Name of virtual account .
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -406,15 +551,17 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-registration
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(virtual_account_name, str,
+        check_type(virtual_account_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -465,8 +612,8 @@ class Licenses(object):
 
         Args:
             device_uuids(list): Licenses's Comma separated device ids  (list of strings).
-            smart_account_id(str): smart_account_id path parameter. Id of smart account .
-            virtual_account_name(str): virtual_account_name path parameter. Name of target virtual account .
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of target virtual account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -484,17 +631,19 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!change-virtual-account
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(smart_account_id, str,
+        check_type(smart_account_id, basestring,
                    may_be_none=False)
-        check_type(virtual_account_name, str,
+        check_type(virtual_account_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -542,7 +691,7 @@ class Licenses(object):
         """Get virtual account details of a smart account. .
 
         Args:
-            smart_account_id(str): smart_account_id path parameter. Id of smart account .
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -556,14 +705,16 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!virtual-account-details
         """
         check_type(headers, dict)
-        check_type(smart_account_id, str,
+        check_type(smart_account_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -594,7 +745,7 @@ class Licenses(object):
     def smart_account_details(self,
                               headers=None,
                               **request_parameters):
-        """Get detail of all smart accounts. .
+        """Retrieve details of all smart accounts. .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -610,12 +761,14 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!smart-account-details
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -650,10 +803,10 @@ class Licenses(object):
         """Get license term details. .
 
         Args:
-            smart_account_id(str): smart_account_id path parameter. Id of smart account .
-            virtual_account_name(str): virtual_account_name path parameter. Name of virtual account. Putting
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
                 "All" will give license term detail for all virtual accounts. .
-            device_type(str): device_type query parameter. Type of device like router, switch, wireless or
+            device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
                 ise .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -668,18 +821,20 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!license-term-details
         """
         check_type(headers, dict)
-        check_type(device_type, str,
+        check_type(device_type, basestring,
                    may_be_none=False)
-        check_type(smart_account_id, str,
+        check_type(smart_account_id, basestring,
                    may_be_none=False)
-        check_type(virtual_account_name, str,
+        check_type(virtual_account_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'device_type':
@@ -719,10 +874,10 @@ class Licenses(object):
         """Get count of purchased and in use Cisco DNA and Network licenses. .
 
         Args:
-            smart_account_id(str): smart_account_id path parameter. Id of smart account .
-            virtual_account_name(str): virtual_account_name path parameter. Name of virtual account. Putting
+            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
                 "All" will give license term detail for all virtual accounts. .
-            device_type(str): device_type query parameter. Type of device like router, switch, wireless or
+            device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
                 ise .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -737,18 +892,20 @@ class Licenses(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!license-usage-details
         """
         check_type(headers, dict)
-        check_type(device_type, str,
+        check_type(device_type, basestring,
                    may_be_none=False)
-        check_type(smart_account_id, str,
+        check_type(smart_account_id, basestring,
                    may_be_none=False)
-        check_type(virtual_account_name, str,
+        check_type(virtual_account_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'device_type':

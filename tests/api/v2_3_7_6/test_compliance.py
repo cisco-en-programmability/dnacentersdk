@@ -269,6 +269,54 @@ def test_get_compliance_detail_count_default_val(api, validator):
             raise original_e
 
 
+def is_valid_compliance_remediation(json_schema_validate, obj):
+    json_schema_validate('jsd_a233477d86a459eab3c5e9352c1c9d3e_v2_3_7_6').validate(obj)
+    return True
+
+
+def compliance_remediation(api):
+    endpoint_result = api.compliance.compliance_remediation(
+        active_validation=True,
+        id='string',
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.compliance
+def test_compliance_remediation(api, validator):
+    try:
+        assert is_valid_compliance_remediation(
+            validator,
+            compliance_remediation(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def compliance_remediation_default_val(api):
+    endpoint_result = api.compliance.compliance_remediation(
+        active_validation=True,
+        id='string',
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.compliance
+def test_compliance_remediation_default_val(api, validator):
+    try:
+        assert is_valid_compliance_remediation(
+            validator,
+            compliance_remediation_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_device_compliance_status(json_schema_validate, obj):
     json_schema_validate('jsd_41da8e5cdd435db0b1da1684be8f15b8_v2_3_7_6').validate(obj)
     return True

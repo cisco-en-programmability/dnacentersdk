@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -38,6 +39,7 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "items": {
                 "properties": {
                 "passPhrase": {
                 "type": "string"
@@ -45,7 +47,7 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
                 "site": {
                 "type": "string"
                 },
-                "ssidName": {
+                "ssid": {
                 "type": "string"
                 },
                 "wlanProfileName": {
@@ -53,6 +55,8 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
                 }
                 },
                 "type": "object"
+                },
+                "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

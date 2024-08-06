@@ -755,7 +755,7 @@ def deploy_template(api):
         mainTemplateId='string',
         memberTemplateDeploymentInfo=[{}],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': ['string'], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result

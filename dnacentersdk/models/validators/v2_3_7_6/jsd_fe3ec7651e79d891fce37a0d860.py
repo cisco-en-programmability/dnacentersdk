@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -121,10 +122,8 @@ class JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860(object):
                 "enum": [
                 "COMPUTE_DEVICE",
                 "MERAKI_DASHBOARD",
-                "NETWORK_DEVICE",
-                "FIREPOWER MANAGEMENT CENTER",
-                "THIRD PARTY DEVICE",
-                "NODATACHANGE"
+                "THIRD_PARTY_DEVICE",
+                "NETWORK_DEVICE"
                 ],
                 "type": "string"
                 },

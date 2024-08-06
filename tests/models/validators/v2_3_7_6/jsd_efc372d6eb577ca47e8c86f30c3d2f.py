@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -45,7 +46,7 @@ class JSONSchemaValidatorEfc372D6Eb577CA47E8C86F30C3D2F(object):
                 "attributes": {
                 "properties": {
                 "createDate": {
-                "type": "integer"
+                "type": "number"
                 },
                 "domain": {
                 "type": "string"
@@ -54,18 +55,21 @@ class JSONSchemaValidatorEfc372D6Eb577CA47E8C86F30C3D2F(object):
                 "type": "string"
                 },
                 "id": {
-                "type": "integer"
+                "type": "number"
                 },
                 "instanceUuid": {
                 "type": "string"
                 },
-                "macaddress": {
-                "type": "object"
+                "macAddress": {
+                "type": "string"
                 },
                 "name": {
                 "type": "string"
                 },
                 "source": {
+                "enum": [
+                "EKAHAU,MANUAL,UNKNOWN"
+                ],
                 "type": "string"
                 },
                 "typeString": {
@@ -78,6 +82,17 @@ class JSONSchemaValidatorEfc372D6Eb577CA47E8C86F30C3D2F(object):
                 "type": "boolean"
                 },
                 "location": {
+                "properties": {
+                "altitude": {
+                "type": "number"
+                },
+                "lattitude": {
+                "type": "number"
+                },
+                "longtitude": {
+                "type": "number"
+                }
+                },
                 "type": "object"
                 },
                 "position": {
@@ -112,6 +127,9 @@ class JSONSchemaValidatorEfc372D6Eb577CA47E8C86F30C3D2F(object):
                 "type": "number"
                 },
                 "mode": {
+                "enum": [
+                "sector_a, sector_b, omni, unknown"
+                ],
                 "type": "string"
                 },
                 "name": {
@@ -126,28 +144,37 @@ class JSONSchemaValidatorEfc372D6Eb577CA47E8C86F30C3D2F(object):
                 "attributes": {
                 "properties": {
                 "channel": {
-                "type": "object"
+                "type": "number"
                 },
                 "channelString": {
-                "type": "object"
+                "type": "string"
                 },
                 "id": {
                 "type": "integer"
                 },
                 "ifMode": {
+                "enum": [
+                "A, B, ABGN, Monitor, Sniffer, XorMonitor, Xor24, Xor5, Xor6, XorUnknown, _6GHZ, XOR56GHZ, Unknown"
+                ],
                 "type": "string"
                 },
                 "ifTypeString": {
                 "type": "string"
                 },
                 "ifTypeSubband": {
+                "enum": [
+                "A, B, ABGN, _6GHZ, _XOR_5_6GHZ, Unknown"
+                ],
                 "type": "string"
                 },
                 "instanceUuid": {
                 "type": "string"
                 },
                 "slotId": {
-                "type": "integer"
+                "type": "number"
+                },
+                "txPowerLevel": {
+                "type": "number"
                 }
                 },
                 "type": "object"

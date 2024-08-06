@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -83,12 +85,14 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-all-discovery
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -163,9 +167,9 @@ class Discovery(object):
             deviceIds(string): Discovery's Ids of the devices discovered in a discovery .
             discoveryCondition(string): Discovery's To indicate the discovery status. Available options: Complete or
                 In Progress .
-            discoveryStatus(string): Discovery's Status of the discovery. Available options are: active, inactive,
-                edit .
-            discoveryType(string): Discovery's Type of the discovery. 'SINGLE', 'RANGE', 'MULTI RANGE', 'CDP',
+            discoveryStatus(string): Discovery's Status of the discovery. Available options are: Active, Inactive,
+                Edit .
+            discoveryType(string): Discovery's Type of the discovery. 'Single', 'Range', 'Multi Range', 'CDP',
                 'LLDP', 'CIDR' .
             enablePasswordList(string): Discovery's Enable Password of the devices to be discovered .
             globalCredentialIdList(list): Discovery's List of global credential ids to be used  (list of strings).
@@ -219,13 +223,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!updates-an-existing-discovery-by-specified-id
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -369,7 +375,7 @@ class Discovery(object):
 
         Args:
             cdpLevel(integer): Discovery's CDP level to which neighbor devices are to be discovered .
-            discoveryType(string): Discovery's Type of the discovery. 'SINGLE', 'RANGE', 'MULTI RANGE', 'CDP',
+            discoveryType(string): Discovery's Type of the discovery. 'Single', 'Range', 'Multi Range', 'CDP',
                 'LLDP', 'CIDR' .
             enablePasswordList(list): Discovery's Enable Password of the devices to be discovered  (list of
                 strings).
@@ -421,13 +427,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!start-discovery
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -537,12 +545,14 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-all-discovery-jobs
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -580,8 +590,8 @@ class Discovery(object):
         Args:
             offset(int): offset query parameter.
             limit(int): limit query parameter.
-            ip_address(str): ipAddress query parameter.
-            name(str): name query parameter.
+            ip_address(basestring): ipAddress query parameter.
+            name(basestring): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -595,17 +605,19 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-discovery-jobs-by-i-p
         """
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(ip_address, str,
+        check_type(ip_address, basestring,
                    may_be_none=False)
-        check_type(name, str)
+        check_type(name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -647,7 +659,7 @@ class Discovery(object):
         Discoveries by range" API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
+            id(basestring): id path parameter. Discovery ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -661,14 +673,16 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -702,7 +716,7 @@ class Discovery(object):
         """Returns discovery by Discovery ID. Discovery ID can be obtained using the "Get Discoveries by range" API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
+            id(basestring): id path parameter. Discovery ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -716,14 +730,16 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-discovery-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -761,10 +777,10 @@ class Discovery(object):
         IP. Discovery ID can be obtained using the "Get Discoveries by range" API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
+            id(basestring): id path parameter. Discovery ID .
             offset(int): offset query parameter. Starting index for the records .
             limit(int): limit query parameter. Number of records to fetch from the starting index .
-            ip_address(str): ipAddress query parameter. Filter records based on IP address .
+            ip_address(basestring): ipAddress query parameter. Filter records based on IP address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -778,17 +794,19 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-discoveries-by-discovery-id
         """
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(ip_address, str)
-        check_type(id, str,
+        check_type(ip_address, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -830,8 +848,8 @@ class Discovery(object):
         Discoveries by range" API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
-            task_id(str): taskId query parameter.
+            id(basestring): id path parameter. Discovery ID .
+            task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -845,15 +863,17 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-discovered-network-devices-by-discovery-id
         """
         check_type(headers, dict)
-        check_type(task_id, str)
-        check_type(id, str,
+        check_type(task_id, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'taskId':
@@ -891,8 +911,8 @@ class Discovery(object):
         "Get Discoveries by range" API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
-            task_id(str): taskId query parameter.
+            id(basestring): id path parameter. Discovery ID .
+            task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -906,15 +926,17 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-devices-discovered-by-id
         """
         check_type(headers, dict)
-        check_type(task_id, str)
-        check_type(id, str,
+        check_type(task_id, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'taskId':
@@ -955,11 +977,11 @@ class Discovery(object):
         API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
+            id(basestring): id path parameter. Discovery ID .
             start_index(int): startIndex path parameter. Starting index for the records .
             records_to_return(int): recordsToReturn path parameter. Number of records to fetch from the start index
                 .
-            task_id(str): taskId query parameter.
+            task_id(basestring): taskId query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -973,10 +995,12 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-discovered-devices-by-range
         """
         check_type(headers, dict)
-        check_type(task_id, str)
-        check_type(id, str,
+        check_type(task_id, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
         check_type(start_index, int,
                    may_be_none=False)
@@ -985,7 +1009,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'taskId':
@@ -1019,7 +1043,7 @@ class Discovery(object):
 
     def get_network_devices_from_discovery(self,
                                            id,
-                                           cli_status=None,
+                                           clistatus=None,
                                            http_status=None,
                                            ip_address=None,
                                            netconf_status=None,
@@ -1034,23 +1058,23 @@ class Discovery(object):
         the "Get Discoveries by range" API. .
 
         Args:
-            id(str): id path parameter. Discovery ID .
-            task_id(str): taskId query parameter.
-            sort_by(str): sortBy query parameter. Sort by field. Available values are pingStatus,
+            id(basestring): id path parameter. Discovery ID .
+            task_id(basestring): taskId query parameter.
+            sort_by(basestring): sortBy query parameter. Sort by field. Available values are pingStatus,
                 cliStatus,snmpStatus, httpStatus and netconfStatus .
-            sort_order(str): sortOrder query parameter. Order of sorting based on sortBy. Available values
+            sort_order(basestring): sortOrder query parameter. Order of sorting based on sortBy. Available values
                 are 'asc' and 'des' .
-            ip_address(str, list, set, tuple): ipAddress query parameter. IP Address of the device .
-            ping_status(str, list, set, tuple): pingStatus query parameter. Ping status for the IP during the
+            ip_address(basestring, list, set, tuple): ipAddress query parameter. IP Address of the device .
+            ping_status(basestring, list, set, tuple): pingStatus query parameter. Ping status for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
-            snmp_status(str, list, set, tuple): snmpStatus query parameter. SNMP status for the IP during the
+            snmp_status(basestring, list, set, tuple): snmpStatus query parameter. SNMP status for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
-            cli_status(str, list, set, tuple): cliStatus query parameter. CLI status for the IP during the
-                job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
-            netconf_status(str, list, set, tuple): netconfStatus query parameter. NETCONF status for the IP
+            clistatus(basestring, list, set, tuple): cliStatus query parameter. CLI status for the IP during the job
+                run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
+            netconf_status(basestring, list, set, tuple): netconfStatus query parameter. NETCONF status for the IP
                 during the job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-
                 VALIDATED' .
-            http_status(str, list, set, tuple): httpStatus query parameter. HTTP staus for the IP during the
+            http_status(basestring, list, set, tuple): httpStatus query parameter. HTTP staus for the IP during the
                 job run. Available values are 'SUCCESS', 'FAILURE', 'NOT-PROVIDED' and 'NOT-VALIDATED' .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1065,23 +1089,25 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network-devices-from-discovery
         """
         check_type(headers, dict)
-        check_type(task_id, str)
-        check_type(sort_by, str)
-        check_type(sort_order, str)
-        check_type(ip_address, (str, list, set, tuple))
-        check_type(ping_status, (str, list, set, tuple))
-        check_type(snmp_status, (str, list, set, tuple))
-        check_type(cli_status, (str, list, set, tuple))
-        check_type(netconf_status, (str, list, set, tuple))
-        check_type(http_status, (str, list, set, tuple))
-        check_type(id, str,
+        check_type(task_id, basestring)
+        check_type(sort_by, basestring)
+        check_type(sort_order, basestring)
+        check_type(ip_address, (basestring, list, set, tuple))
+        check_type(ping_status, (basestring, list, set, tuple))
+        check_type(snmp_status, (basestring, list, set, tuple))
+        check_type(clistatus, (basestring, list, set, tuple))
+        check_type(netconf_status, (basestring, list, set, tuple))
+        check_type(http_status, (basestring, list, set, tuple))
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'taskId':
@@ -1097,7 +1123,7 @@ class Discovery(object):
             'snmpStatus':
                 snmp_status,
             'cliStatus':
-                cli_status,
+                clistatus,
             'netconfStatus':
                 netconf_status,
             'httpStatus':
@@ -1150,6 +1176,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-specified-range
         """
         check_type(headers, dict)
         check_type(start_index, int,
@@ -1159,7 +1187,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1212,6 +1240,8 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-discoveries-by-range
         """
         check_type(headers, dict)
         check_type(start_index, int,
@@ -1221,7 +1251,7 @@ class Discovery(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1259,12 +1289,12 @@ class Discovery(object):
         """Returns global credential for the given credential sub type .
 
         Args:
-            credential_sub_type(str): credentialSubType query parameter. Credential type as CLI /
+            credential_sub_type(basestring): credentialSubType query parameter. Credential type as CLI /
                 SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 / HTTP_WRITE / HTTP_READ /
                 NETCONF .
-            sort_by(str): sortBy query parameter. Field to sort the results by. Sorts by 'instanceId' if no
+            sort_by(basestring): sortBy query parameter. Field to sort the results by. Sorts by 'instanceId' if no
                 value is provided .
-            order(str): order query parameter. Order of sorting. 'asc' or 'des' .
+            order(basestring): order query parameter. Order of sorting. 'asc' or 'des' .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1278,16 +1308,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-global-credentials
         """
         check_type(headers, dict)
-        check_type(credential_sub_type, str,
+        check_type(credential_sub_type, basestring,
                    may_be_none=False)
-        check_type(sort_by, str)
-        check_type(order, str)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'credentialSubType':
@@ -1363,16 +1395,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-c-l-i-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1450,13 +1484,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-c-l-i-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1513,16 +1549,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-h-t-t-p-read-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1600,13 +1638,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-h-t-t-p-read-credential
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1707,16 +1747,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-h-t-t-p-write-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1796,13 +1838,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-h-t-t-p-write-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1875,16 +1919,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-netconf-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1958,13 +2004,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-netconf-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2032,16 +2080,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-read-community
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2112,13 +2162,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-read-community
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2176,16 +2228,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-write-community
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2254,13 +2308,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-write-community
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2326,20 +2382,26 @@ class Discovery(object):
         """Updates global SNMPv3 credential .
 
         Args:
-            authPassword(string): Discovery's Auth Password for SNMP .
-            authType(string): Discovery's SNMP auth protocol. 'SHA' or 'MD5' . Available values are 'SHA' and 'MD5'.
+            authPassword(string): Discovery's Auth password for SNMPv3. Required if snmpMode is 'AUTHPRIV' or
+                'AUTHNOPRIV'. Use 'NO!$DATA!$' if no change required. .
+            authType(string): Discovery's SNMPv3 auth protocol. 'SHA' or 'MD5'. Required if snmpMode is 'AUTHPRIV'
+                or 'AUTHNOPRIV'. . Available values are 'SHA' and 'MD5'.
             comments(string): Discovery's Comments to identify the SNMPv3 credential .
             credentialType(string): Discovery's Credential type to identify the application that uses the SNMPv3
                 credential . Available values are 'GLOBAL' and 'APP'.
-            description(string): Discovery's Description for Snmp V3 Credential .
-            id(string): Discovery's Id of the SNMP V3 Credential in UUID format .
-            instanceTenantId(string): Discovery's Deprecated .
-            instanceUuid(string): Discovery's Deprecated .
-            privacyPassword(string): Discovery's Privacy Password for SNMP privacy .
-            privacyType(string): Discovery's SNMP privacy protocol . Available values are 'AES128'.
-            snmpMode(string): Discovery's Mode of SNMP. 'AUTHPRIV' or 'AUTHNOPRIV' or 'NOAUTHNOPRIV' . Available
+            description(string): Discovery's Description for SNMPv3 Credential .
+            id(string): Discovery's Id of the SNMPv3 Credential .
+            instanceTenantId(string): Discovery's Deprecated. This attribute will be removed in a future release,
+                should not be used, and any value supplied will be ignored. .
+            instanceUuid(string): Discovery's Deprecated. This attribute will be removed in a future release, should
+                not be used, and any value supplied will be ignored. .
+            privacyPassword(string): Discovery's Privacy password for SNMPv3 privacy. Required if snmpMode is
+                'AUTHPRIV'. Use 'NO!$DATA!$' if no change required. .
+            privacyType(string): Discovery's SNMPv3 privacy protocol. Required is snmpMode is 'AUTHPRIV'. .
+                Available values are 'AES128'.
+            snmpMode(string): Discovery's Mode of SNMPv3. 'AUTHPRIV' or 'AUTHNOPRIV' or 'NOAUTHNOPRIV' . Available
                 values are 'AUTHPRIV', 'AUTHNOPRIV' and 'NOAUTHNOPRIV'.
-            username(string): Discovery's SNMP V3 Username .
+            username(string): Discovery's SNMPv3 username .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2357,16 +2419,18 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-pv3-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2450,13 +2514,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-pv3-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2495,7 +2561,7 @@ class Discovery(object):
         """Deletes global credential for the given ID .
 
         Args:
-            global_credential_id(str): globalCredentialId path parameter. ID of global-credential .
+            global_credential_id(basestring): globalCredentialId path parameter. ID of global-credential .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2509,14 +2575,16 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-global-credentials-by-id
         """
         check_type(headers, dict)
-        check_type(global_credential_id, str,
+        check_type(global_credential_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2555,7 +2623,7 @@ class Discovery(object):
 
         Args:
             siteUuids(list): Discovery's List of siteUuids where credential is to be updated  (list of strings).
-            global_credential_id(str): globalCredentialId path parameter. Global credential Uuid .
+            global_credential_id(basestring): globalCredentialId path parameter. Global credential Uuid .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2573,15 +2641,17 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-global-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(global_credential_id, str,
+        check_type(global_credential_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2627,7 +2697,7 @@ class Discovery(object):
         """Returns the credential sub type for the given Id .
 
         Args:
-            id(str): id path parameter. Global Credential ID .
+            id(basestring): id path parameter. Global Credential ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2641,14 +2711,16 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-credential-sub-type-by-credential-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2694,12 +2766,14 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-properties
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2750,13 +2824,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-update-s-n-m-p-properties
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2826,13 +2902,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-global-credentials-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2917,13 +2995,15 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-global-credentials-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2990,12 +3070,14 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-global-credentials-v2
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -3028,7 +3110,7 @@ class Discovery(object):
         """Delete a global credential. Only 'id' of the credential has to be passed. .
 
         Args:
-            id(str): id path parameter. Global Credential id   .
+            id(basestring): id path parameter. Global Credential id  .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3042,14 +3124,16 @@ class Discovery(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-global-credential-v2
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

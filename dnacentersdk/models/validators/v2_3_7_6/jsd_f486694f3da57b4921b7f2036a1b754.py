@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -52,6 +53,9 @@ class JSONSchemaValidatorF486694F3Da57B4921B7F2036A1B754(object):
                 "isCriticalPool": {
                 "type": "boolean"
                 },
+                "isGroupBasedPolicyEnforcementEnabled": {
+                "type": "boolean"
+                },
                 "isIntraSubnetRoutingEnabled": {
                 "type": "boolean"
                 },
@@ -71,6 +75,10 @@ class JSONSchemaValidatorF486694F3Da57B4921B7F2036A1B754(object):
                 "type": "boolean"
                 },
                 "poolType": {
+                "enum": [
+                "EXTENDED_NODE",
+                "FABRIC_AP"
+                ],
                 "type": "string"
                 },
                 "securityGroupName": {

@@ -346,7 +346,7 @@ from dnacentersdk.api.v2_3_7_6.devices import \
 from dnacentersdk.api.v2_3_7_6.discovery import \
     Discovery as Discovery_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.eox import \
-    EoX as EoX_v2_3_7_6
+    Eox as Eox_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.event_management import \
     EventManagement as EventManagement_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.fabric_wireless import \
@@ -647,7 +647,7 @@ class TestDNACenterSDK:
             assert isinstance(api.device_replacement, DeviceReplacement_v2_3_7_6)
             assert isinstance(api.devices, Devices_v2_3_7_6)
             assert isinstance(api.discovery, Discovery_v2_3_7_6)
-            assert isinstance(api.eo_x, EoX_v2_3_7_6)
+            assert isinstance(api.eo_x, Eox_v2_3_7_6)
             assert isinstance(api.event_management, EventManagement_v2_3_7_6)
             assert isinstance(api.fabric_wireless, FabricWireless_v2_3_7_6)
             assert isinstance(api.file, File_v2_3_7_6)

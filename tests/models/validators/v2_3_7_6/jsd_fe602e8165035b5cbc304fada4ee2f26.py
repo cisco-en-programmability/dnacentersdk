@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -100,6 +101,9 @@ class JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26(object):
                 "lastDeviceResyncStartTime": {
                 "type": "string"
                 },
+                "lastManagedResyncReasons": {
+                "type": "string"
+                },
                 "lastUpdateTime": {
                 "type": "number"
                 },
@@ -173,6 +177,9 @@ class JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26(object):
                 "type": "string"
                 },
                 "softwareVersion": {
+                "type": "string"
+                },
+                "syncRequestedByApp": {
                 "type": "string"
                 },
                 "tagCount": {

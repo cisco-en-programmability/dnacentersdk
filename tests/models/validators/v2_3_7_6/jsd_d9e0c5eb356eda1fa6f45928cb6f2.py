@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeleteAFabricDeviceById data model.
+"""Cisco DNA Center DeleteFabricDeviceById data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD9E0C5Eb356EdA1Fa6F45928Cb6F2(object):
-    """DeleteAFabricDeviceById request schema definition."""
+    """DeleteFabricDeviceById request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9E0C5Eb356EdA1Fa6F45928Cb6F2, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

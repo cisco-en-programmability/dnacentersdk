@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -42,7 +43,7 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "attributes": {
                 "properties": {
                 "createDate": {
-                "type": "integer"
+                "type": "number"
                 },
                 "domain": {
                 "type": "string"
@@ -56,7 +57,7 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "instanceUuid": {
                 "type": "string"
                 },
-                "macaddress": {
+                "macAddress": {
                 "type": "string"
                 },
                 "name": {
@@ -64,9 +65,7 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 },
                 "source": {
                 "enum": [
-                "EKAHAU",
-                "MANUAL",
-                "UNKNOWN"
+                "EKAHAU,MANUAL,UNKNOWN"
                 ],
                 "type": "string"
                 },
@@ -126,10 +125,7 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 },
                 "mode": {
                 "enum": [
-                "sector_a",
-                "sector_b",
-                "omni",
-                "unknown"
+                "sector_a, sector_b, omni, unknown"
                 ],
                 "type": "string"
                 },
@@ -137,13 +133,6 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "string"
                 },
                 "type": {
-                "enum": [
-                "internal",
-                "external",
-                "circular",
-                "linear",
-                "unknown"
-                ],
                 "type": "string"
                 }
                 },
@@ -158,23 +147,11 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "string"
                 },
                 "id": {
-                "type": "number"
+                "type": "integer"
                 },
                 "ifMode": {
                 "enum": [
-                "A",
-                "B",
-                "ABGN",
-                "Monitor",
-                "Sniffer",
-                "XorMonitor",
-                "Xor24",
-                "Xor5",
-                "Xor6",
-                "XorUnknown",
-                "_6GHZ",
-                "XOR56GHZ",
-                "Unknown"
+                "A, B, ABGN, Monitor, Sniffer, XorMonitor, Xor24, Xor5, Xor6, XorUnknown, _6GHZ, XOR56GHZ, Unknown"
                 ],
                 "type": "string"
                 },
@@ -183,12 +160,7 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 },
                 "ifTypeSubband": {
                 "enum": [
-                "A",
-                "B",
-                "ABGN",
-                "_6GHZ",
-                "_XOR_5_6GHZ",
-                "Unknown"
+                "A, B, ABGN, _6GHZ, _XOR_5_6GHZ, Unknown"
                 ],
                 "type": "string"
                 },
@@ -196,6 +168,9 @@ class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
                 "type": "string"
                 },
                 "slotId": {
+                "type": "number"
+                },
+                "txPowerLevel": {
                 "type": "number"
                 }
                 },

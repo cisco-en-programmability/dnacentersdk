@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetTasks data model.
+"""Cisco DNA Center GetTasks2 data model.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFf485556F6504D8443789F42098Be7(object):
-    """GetTasks request schema definition."""
+    """GetTasks2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFf485556F6504D8443789F42098Be7, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -72,9 +73,7 @@ class JSONSchemaValidatorFf485556F6504D8443789F42098Be7(object):
                 "lastUpdate": {
                 "type": "integer"
                 },
-                "operationIdList": {
-                "type": "object"
-                },
+                "operationIdList": {},
                 "parentId": {
                 "type": "string"
                 },

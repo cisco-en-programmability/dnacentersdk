@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -75,7 +76,7 @@ class JSONSchemaValidatorC9Ee787Eb5A0391309F45Ddf392Ca(object):
                 "type": "integer"
                 },
                 "cpu": {
-                "type": "string"
+                "type": "number"
                 },
                 "cpuScore": {
                 "type": "integer"

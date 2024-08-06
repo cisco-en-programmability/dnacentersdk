@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -40,7 +41,7 @@ class JSONSchemaValidatorC37Ce8136584F9E2ED471Fc896Ef9(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "response": {
-                "type": "string"
+                "type": "number"
                 },
                 "version": {
                 "type": "string"

@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -64,6 +66,1157 @@ class Clients(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
+    def retrieves_the_list_of_clients_while_also_offering_basic_filtering_and_sorting_capabilities(self,
+                                                                                                   attribute=None,
+                                                                                                   band=None,
+                                                                                                   connected_network_device_name=None,
+                                                                                                   end_time=None,
+                                                                                                   ipv4_address=None,
+                                                                                                   ipv6_address=None,
+                                                                                                   limit=None,
+                                                                                                   mac_address=None,
+                                                                                                   offset=None,
+                                                                                                   order=None,
+                                                                                                   os_type=None,
+                                                                                                   os_version=None,
+                                                                                                   site_hierarchy=None,
+                                                                                                   site_hierarchy_id=None,
+                                                                                                   site_id=None,
+                                                                                                   sort_by=None,
+                                                                                                   ssid=None,
+                                                                                                   start_time=None,
+                                                                                                   type=None,
+                                                                                                   view=None,
+                                                                                                   wlc_name=None,
+                                                                                                   headers=None,
+                                                                                                   **request_parameters):
+        """Retrieves the list of clients, while also offering basic filtering and sorting capabilities. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-clients1-1.0.0-resolved.yaml .
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            limit(int): limit query parameter. Maximum number of records to return .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
+            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            type(basestring): type query parameter. The client device type whether client is connected to network
+                through Wired or Wireless medium. .
+            os_type(basestring): osType query parameter. Client device operating system type. This field supports
+                wildcard (`*`) character-based search. If the value contains the (`*`) character, please
+                use the /query API for regex search.  Ex: `*iOS*` or `iOS*` or `*iOS` Examples:
+                `osType=iOS` (single osType requested) `osType=iOS&osType=Android` (multiple osType
+                requested) .
+            os_version(basestring): osVersion query parameter. Client device operating system version This field
+                supports wildcard (`*`) character-based search. If the value contains the (`*`)
+                character, please use the /query API for regex search.  Ex: `*14.3*` or `14.3*` or
+                `*14.3` Examples: `osVersion=14.3` (single osVersion requested)
+                `osVersion=14.3&osVersion=10.1` (multiple osVersion requested) .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. "Global/AreaName/BuildingName/FloorName") This field
+                supports wildcard (`*`) character-based search. If the value contains the (`*`)
+                character, please use the /query API for regex search.  Ex: `*BuildingName*` or
+                `BuildingName*` or `*BuildingName` Examples:
+                `siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy requested) 
+                `siteHierarchy=Global/AreaName/BuildingName1/FloorName1&siteHierarchy=Global/AreaName/Bu
+                ildingName1/FloorName2` (multiple siteHierarchy requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. "globalUuid/areaUuid/buildingUuid/floorUuid") This field supports wildcard (`*`)
+                character-based search.  Ex: `*buildingUuid*` or `buildingUuid*` or `*buildingUuid`
+                Examples: `siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid` (single
+                siteHierarchyId requested) `siteHierarchyId=globalUuid/areaUuid/buildingUuid1/floorUuid1
+                &siteHierarchyId=globalUuid/areaUuid/buildingUuid1/floorUuid2` (multiple siteHierarchyId
+                requested) .
+            site_id(basestring): siteId query parameter. The site UUID without the top level hierarchy.
+                (Ex."floorUuid") Examples: `siteId=floorUuid` (single siteId requested)
+                `siteId=floorUuid1&siteId=floorUuid2` (multiple siteId requested) .
+            ipv4_address(basestring): ipv4Address query parameter. IPv4 Address of the network entity either network
+                device or client This field supports wildcard (`*`) character-based search.  Ex: `*1.1*`
+                or `1.1*` or `*1.1` Examples: `ipv4Address=1.1.1.1` (single ipv4Address requested)
+                `ipv4Address=1.1.1.1&ipv4Address=2.2.2.2` (multiple ipv4Address requested) .
+            ipv6_address(basestring): ipv6Address query parameter. IPv6 Address of the network entity either network
+                device or client This field supports wildcard (`*`) character-based search. Ex:
+                `*2001:db8*` or `2001:db8*` or `*2001:db8` Examples: `ipv6Address=2001:db8:0:0:0:0:2:1`
+                (single ipv6Address requested)
+                `ipv6Address=2001:db8:0:0:0:0:2:1&ipv6Address=2001:db8:85a3:8d3:1319:8a2e:370:7348`
+                (multiple ipv6Address requested) .
+            mac_address(basestring): macAddress query parameter. The macAddress of the network device or client This
+                field supports wildcard (`*`) character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*`
+                or `*AB:AB:AB` Examples: `macAddress=AB:AB:AB:CD:CD:CD` (single macAddress requested)
+                `macAddress=AB:AB:AB:CD:CD:DC&macAddress=AB:AB:AB:CD:CD:FE` (multiple macAddress
+                requested) .
+            wlc_name(basestring): wlcName query parameter. Wireless Controller name that reports the wireless
+                client. This field supports wildcard (`*`) character-based search. If the value contains
+                the (`*`) character, please use the /query API for regex search. Ex: `*wlc-25*` or
+                `wlc-25*` or `*wlc-25` Examples: `wlcName=wlc-25` (single wlcName requested)
+                `wlcName=wlc-25&wlc-34` (multiple wlcName requested) .
+            connected_network_device_name(basestring): connectedNetworkDeviceName query parameter. Name of the
+                neighbor network device that client is connected to. This field supports wildcard (`*`)
+                character-based search. If the value contains the (`*`) character, please use the /query
+                API for regex search. Ex: `*ap-25*` or `ap-25*` or `*ap-25` Examples:
+                `connectedNetworkDeviceName=ap-25` (single connectedNetworkDeviceName requested)
+                `connectedNetworkDeviceName=ap-25&ap-34` (multiple connectedNetworkDeviceName requested)
+                .
+            ssid(basestring): ssid query parameter. SSID is the name of wireless network to which client connects
+                to. It is also referred to as WLAN ID Wireless Local Area Network Identifier. This field
+                supports wildcard (`*`) character-based search. If the value contains the (`*`)
+                character, please use the /query API for regex search.  Ex: `*Alpha*` or `Alpha*` or
+                `*Alpha` Examples: `ssid=Alpha` (single ssid requested) `ssid=Alpha&ssid=Guest`
+                (multiple ssid requested) .
+            band(basestring): band query parameter. WiFi frequency band that client or Access Point operates. Band
+                value is represented in Giga Hertz GHz Examples: `band=5GHZ` (single band requested)
+                `band=2.4GHZ&band=6GHZ` (multiple band requested) .
+            view(basestring): view query parameter. Client related Views Refer to ClientView schema for list of
+                views supported Examples: `view=Wireless` (single view requested)
+                `view=WirelessHealth&view=WirelessTraffic` (multiple view requested) .
+            attribute(basestring): attribute query parameter. List of attributes related to resource that can be
+                requested to only be part of the response along with the required attributes. Refer to
+                ClientAttribute schema for list of attributes supported Examples: `attribute=band`
+                (single attribute requested) `attribute=band&attribute=ssid&attribute=overallScore`
+                (multiple attribute requested) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-clients-while-also-offering-basic-filtering-and-sorting-capabilities
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(sort_by, basestring)
+        check_type(order, basestring)
+        check_type(type, basestring)
+        check_type(os_type, basestring)
+        check_type(os_version, basestring)
+        check_type(site_hierarchy, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(site_id, basestring)
+        check_type(ipv4_address, basestring)
+        check_type(ipv6_address, basestring)
+        check_type(mac_address, basestring)
+        check_type(wlc_name, basestring)
+        check_type(connected_network_device_name, basestring)
+        check_type(ssid, basestring)
+        check_type(band, basestring)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+            'type':
+                type,
+            'osType':
+                os_type,
+            'osVersion':
+                os_version,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'ipv4Address':
+                ipv4_address,
+            'ipv6Address':
+                ipv6_address,
+            'macAddress':
+                mac_address,
+            'wlcName':
+                wlc_name,
+            'connectedNetworkDeviceName':
+                connected_network_device_name,
+            'ssid':
+                ssid,
+            'band':
+                band,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_dfcf64acc1815459acc146cd924e9877_v2_3_7_6', json_data)
+
+    def retrieves_the_total_count_of_clients_by_applying_basic_filtering(self,
+                                                                         band=None,
+                                                                         connected_network_device_name=None,
+                                                                         end_time=None,
+                                                                         ipv4_address=None,
+                                                                         ipv6_address=None,
+                                                                         mac_address=None,
+                                                                         os_type=None,
+                                                                         os_version=None,
+                                                                         site_hierarchy=None,
+                                                                         site_hierarchy_id=None,
+                                                                         site_id=None,
+                                                                         ssid=None,
+                                                                         start_time=None,
+                                                                         type=None,
+                                                                         wlc_name=None,
+                                                                         headers=None,
+                                                                         **request_parameters):
+        """Retrieves the number of clients by applying basic filtering. For detailed information about the usage of the
+        API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        clients1-1.0.0-resolved.yaml .
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            type(basestring): type query parameter. The client device type whether client is connected to network
+                through Wired or Wireless medium. .
+            os_type(basestring): osType query parameter. Client device operating system type. This field supports
+                wildcard (`*`) character-based search. If the value contains the (`*`) character, please
+                use the /query API for regex search.  Ex: `*iOS*` or `iOS*` or `*iOS` Examples:
+                `osType=iOS` (single osType requested) `osType=iOS&osType=Android` (multiple osType
+                requested) .
+            os_version(basestring): osVersion query parameter. Client device operating system version This field
+                supports wildcard (`*`) character-based search. If the value contains the (`*`)
+                character, please use the /query API for regex search.  Ex: `*14.3*` or `14.3*` or
+                `*14.3` Examples: `osVersion=14.3` (single osVersion requested)
+                `osVersion=14.3&osVersion=10.1` (multiple osVersion requested) .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. "Global/AreaName/BuildingName/FloorName") This field
+                supports wildcard (`*`) character-based search. If the value contains the (`*`)
+                character, please use the /query API for regex search.  Ex: `*BuildingName*` or
+                `BuildingName*` or `*BuildingName` Examples:
+                `siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy requested) 
+                `siteHierarchy=Global/AreaName/BuildingName1/FloorName1&siteHierarchy=Global/AreaName/Bu
+                ildingName1/FloorName2` (multiple siteHierarchy requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. "globalUuid/areaUuid/buildingUuid/floorUuid") This field supports wildcard (`*`)
+                character-based search.  Ex: `*buildingUuid*` or `buildingUuid*` or `*buildingUuid`
+                Examples: `siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid` (single
+                siteHierarchyId requested) `siteHierarchyId=globalUuid/areaUuid/buildingUuid1/floorUuid1
+                &siteHierarchyId=globalUuid/areaUuid/buildingUuid1/floorUuid2` (multiple siteHierarchyId
+                requested) .
+            site_id(basestring): siteId query parameter. The site UUID without the top level hierarchy.
+                (Ex."floorUuid") Examples: `siteId=floorUuid` (single siteId requested)
+                `siteId=floorUuid1&siteId=floorUuid2` (multiple siteId requested) .
+            ipv4_address(basestring): ipv4Address query parameter. IPv4 Address of the network entity either network
+                device or client This field supports wildcard (`*`) character-based search.  Ex: `*1.1*`
+                or `1.1*` or `*1.1` Examples: `ipv4Address=1.1.1.1` (single ipv4Address requested)
+                `ipv4Address=1.1.1.1&ipv4Address=2.2.2.2` (multiple ipv4Address requested) .
+            ipv6_address(basestring): ipv6Address query parameter. IPv6 Address of the network entity either network
+                device or client This field supports wildcard (`*`) character-based search. Ex:
+                `*2001:db8*` or `2001:db8*` or `*2001:db8` Examples: `ipv6Address=2001:db8:0:0:0:0:2:1`
+                (single ipv6Address requested)
+                `ipv6Address=2001:db8:0:0:0:0:2:1&ipv6Address=2001:db8:85a3:8d3:1319:8a2e:370:7348`
+                (multiple ipv6Address requested) .
+            mac_address(basestring): macAddress query parameter. The macAddress of the network device or client This
+                field supports wildcard (`*`) character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*`
+                or `*AB:AB:AB` Examples: `macAddress=AB:AB:AB:CD:CD:CD` (single macAddress requested)
+                `macAddress=AB:AB:AB:CD:CD:DC&macAddress=AB:AB:AB:CD:CD:FE` (multiple macAddress
+                requested) .
+            wlc_name(basestring): wlcName query parameter. Wireless Controller name that reports the wireless
+                client. This field supports wildcard (`*`) character-based search. If the value contains
+                the (`*`) character, please use the /query API for regex search. Ex: `*wlc-25*` or
+                `wlc-25*` or `*wlc-25` Examples: `wlcName=wlc-25` (single wlcName requested)
+                `wlcName=wlc-25&wlc-34` (multiple wlcName requested) .
+            connected_network_device_name(basestring): connectedNetworkDeviceName query parameter. Name of the
+                neighbor network device that client is connected to. This field supports wildcard (`*`)
+                character-based search. If the value contains the (`*`) character, please use the /query
+                API for regex search. Ex: `*ap-25*` or `ap-25*` or `*ap-25` Examples:
+                `connectedNetworkDeviceName=ap-25` (single connectedNetworkDeviceName requested)
+                `connectedNetworkDeviceName=ap-25&ap-34` (multiple connectedNetworkDeviceName requested)
+                .
+            ssid(basestring): ssid query parameter. SSID is the name of wireless network to which client connects
+                to. It is also referred to as WLAN ID Wireless Local Area Network Identifier. This field
+                supports wildcard (`*`) character-based search. If the value contains the (`*`)
+                character, please use the /query API for regex search.  Ex: `*Alpha*` or `Alpha*` or
+                `*Alpha` Examples: `ssid=Alpha` (single ssid requested) `ssid=Alpha&ssid=Guest`
+                (multiple ssid requested) .
+            band(basestring): band query parameter. WiFi frequency band that client or Access Point operates. Band
+                value is represented in Giga Hertz GHz Examples: `band=5GHZ` (single band requested)
+                `band=2.4GHZ&band=6GHZ` (multiple band requested) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-count-of-clients-by-applying-basic-filtering
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(type, basestring)
+        check_type(os_type, basestring)
+        check_type(os_version, basestring)
+        check_type(site_hierarchy, basestring)
+        check_type(site_hierarchy_id, basestring)
+        check_type(site_id, basestring)
+        check_type(ipv4_address, basestring)
+        check_type(ipv6_address, basestring)
+        check_type(mac_address, basestring)
+        check_type(wlc_name, basestring)
+        check_type(connected_network_device_name, basestring)
+        check_type(ssid, basestring)
+        check_type(band, basestring)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'type':
+                type,
+            'osType':
+                os_type,
+            'osVersion':
+                os_version,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'ipv4Address':
+                ipv4_address,
+            'ipv6Address':
+                ipv6_address,
+            'macAddress':
+                mac_address,
+            'wlcName':
+                wlc_name,
+            'connectedNetworkDeviceName':
+                connected_network_device_name,
+            'ssid':
+                ssid,
+            'band':
+                band,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ed18d78d455f9a51049a09ae12d48_v2_3_7_6', json_data)
+
+    def retrieves_the_list_of_clients_by_applying_complex_filters_while_also_supporting_aggregate_attributes(self,
+                                                                                                             aggregateAttributes=None,
+                                                                                                             attributes=None,
+                                                                                                             endTime=None,
+                                                                                                             filters=None,
+                                                                                                             page=None,
+                                                                                                             startTime=None,
+                                                                                                             views=None,
+                                                                                                             headers=None,
+                                                                                                             payload=None,
+                                                                                                             active_validation=True,
+                                                                                                             **request_parameters):
+        """Retrieves the list of clients by applying complex filters while also supporting aggregate attributes. For
+        detailed information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-clients1-1.0.0-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Clients's aggregateAttributes (list of objects).
+            attributes(list): Clients's Attributes (list of strings).
+            endTime(integer): Clients's End Time.
+            filters(list): Clients's filters (list of objects).
+            page(object): Clients's page.
+            startTime(integer): Clients's Start Time.
+            views(list): Clients's Views (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-clients-by-applying-complex-filters-while-also-supporting-aggregate-attributes
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'views':
+                views,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ea5f116c0cd152bbb4a92c043738ea57_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/query')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ea5f116c0cd152bbb4a92c043738ea57_v2_3_7_6', json_data)
+
+    def retrieves_the_number_of_clients_by_applying_complex_filters(self,
+                                                                    endTime=None,
+                                                                    filters=None,
+                                                                    startTime=None,
+                                                                    headers=None,
+                                                                    payload=None,
+                                                                    active_validation=True,
+                                                                    **request_parameters):
+        """Retrieves the number of clients by applying complex filters. For detailed information about the usage of the
+        API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        clients1-1.0.0-resolved.yaml .
+
+        Args:
+            endTime(integer): Clients's End Time.
+            filters(list): Clients's filters (list of objects).
+            startTime(integer): Clients's Start Time.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-number-of-clients-by-applying-complex-filters
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'filters':
+                filters,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a2131eae5c1d8e73cd55eebf6a83_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/query/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_a2131eae5c1d8e73cd55eebf6a83_v2_3_7_6', json_data)
+
+    def retrieves_summary_analytics_data_related_to_clients(self,
+                                                            aggregateAttributes=None,
+                                                            attributes=None,
+                                                            endTime=None,
+                                                            filters=None,
+                                                            groupBy=None,
+                                                            page=None,
+                                                            startTime=None,
+                                                            headers=None,
+                                                            payload=None,
+                                                            active_validation=True,
+                                                            **request_parameters):
+        """Retrieves summary analytics data related to clients while applying complex filtering, aggregate functions, and
+        grouping. This API facilitates obtaining consolidated insights into the performance and status of the
+        clients. For detailed information about the usage of the API, please refer to the Open API specification
+        document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-clients1-1.0.0-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Clients's aggregateAttributes (list of objects).
+            attributes(list): Clients's Attributes (list of strings).
+            endTime(integer): Clients's End Time.
+            filters(list): Clients's filters (list of objects).
+            groupBy(list): Clients's Group By (list of strings).
+            page(object): Clients's page.
+            startTime(integer): Clients's Start Time.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-summary-analytics-data-related-to-clients
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'groupBy':
+                groupBy,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f210ff2d89425b4790ce56f19da7be92_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/summaryAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_f210ff2d89425b4790ce56f19da7be92_v2_3_7_6', json_data)
+
+    def retrieves_the_top_n_analytics_data_related_to_clients(self,
+                                                              aggregateAttributes=None,
+                                                              attributes=None,
+                                                              endTime=None,
+                                                              filters=None,
+                                                              groupBy=None,
+                                                              page=None,
+                                                              startTime=None,
+                                                              topN=None,
+                                                              headers=None,
+                                                              payload=None,
+                                                              active_validation=True,
+                                                              **request_parameters):
+        """Retrieves the top N analytics data related to clients based on the provided input data. This API facilitates
+        obtaining insights into the top-performing or most impacted clients. For detailed information about the
+        usage of the API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        clients1-1.0.0-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Clients's aggregateAttributes (list of objects).
+            attributes(list): Clients's Attributes (list of strings).
+            endTime(integer): Clients's End Time.
+            filters(list): Clients's filters (list of objects).
+            groupBy(list): Clients's Group By (list of strings).
+            page(object): Clients's page.
+            startTime(integer): Clients's Start Time.
+            topN(integer): Clients's Top N.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-top-n-analytics-data-related-to-clients
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'topN':
+                topN,
+            'groupBy':
+                groupBy,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_f44ddd3c38c5a9484f5cb4e125447bc_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/topNAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_f44ddd3c38c5a9484f5cb4e125447bc_v2_3_7_6', json_data)
+
+    def retrieves_the_trend_analytics_data_related_to_clients(self,
+                                                              aggregateAttributes=None,
+                                                              attributes=None,
+                                                              endTime=None,
+                                                              filters=None,
+                                                              groupBy=None,
+                                                              page=None,
+                                                              startTime=None,
+                                                              trendInterval=None,
+                                                              headers=None,
+                                                              payload=None,
+                                                              active_validation=True,
+                                                              **request_parameters):
+        """Retrieves the trend analytics of client data for the specified time range. The data will be grouped based on the
+        given trend time interval. This API facilitates obtaining consolidated insights into the performance and
+        status of the clients over the specified start and end time. For detailed information about the usage of
+        the API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        clients1-1.0.0-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Clients's aggregateAttributes (list of objects).
+            attributes(list): Clients's Attributes (list of strings).
+            endTime(integer): Clients's End Time.
+            filters(list): Clients's filters (list of objects).
+            groupBy(list): Clients's Group By (list of strings).
+            page(object): Clients's page.
+            startTime(integer): Clients's Start Time.
+            trendInterval(string): Clients's Trend Interval.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-trend-analytics-data-related-to-clients
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'trendInterval':
+                trendInterval,
+            'groupBy':
+                groupBy,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_ffd2fefb57d5523c87a5d941eb93ddc3_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/trendAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_ffd2fefb57d5523c87a5d941eb93ddc3_v2_3_7_6', json_data)
+
+    def retrieves_specific_client_information_matching_the_macaddress(self,
+                                                                      id,
+                                                                      attribute=None,
+                                                                      end_time=None,
+                                                                      start_time=None,
+                                                                      view=None,
+                                                                      headers=None,
+                                                                      **request_parameters):
+        """Retrieves specific client information matching the MAC address. For detailed information about the usage of the
+        API, please refer to the Open API specification document https://github.com/cisco-en-
+        programmability/catalyst-center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-
+        clients1-1.0.0-resolved.yaml .
+
+        Args:
+            id(basestring): id path parameter. id is the client mac address. It can be specified is any notational
+                conventions  01:23:45:67:89:AB or 01-23-45-67-89-AB or 0123.4567.89AB and is case
+                insensitive .
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            view(basestring): view query parameter. Client related Views Refer to ClientView schema for list of
+                views supported Examples: `view=Wireless` (single view requested)
+                `view=WirelessHealth&view=WirelessTraffic` (multiple view requested) .
+            attribute(basestring): attribute query parameter. List of attributes related to resource that can be
+                requested to only be part of the response along with the required attributes. Refer to
+                ClientAttribute schema for list of attributes supported Examples: `attribute=band`
+                (single attribute requested) `attribute=band&attribute=ssid&attribute=overallScore`
+                (multiple attribute requested) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-information-matching-the-m-a-c-address
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(view, basestring)
+        check_type(attribute, basestring)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ee00176282fd54ef90fc96a2c23d50ec_v2_3_7_6', json_data)
+
+    def retrieves_specific_client_information_over_a_specified_period_of_time(self,
+                                                                              id,
+                                                                              aggregateAttributes=None,
+                                                                              attributes=None,
+                                                                              endTime=None,
+                                                                              filters=None,
+                                                                              groupBy=None,
+                                                                              page=None,
+                                                                              startTime=None,
+                                                                              trendInterval=None,
+                                                                              headers=None,
+                                                                              payload=None,
+                                                                              active_validation=True,
+                                                                              **request_parameters):
+        """Retrieves the time series information of a specific client by applying complex filters, aggregate functions, and
+        grouping. The data will be grouped based on the specified trend time interval. For detailed information
+        about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-clients1-1.0.0-resolved.yaml .
+
+        Args:
+            aggregateAttributes(list): Clients's aggregateAttributes (list of objects).
+            attributes(list): Clients's Attributes (list of strings).
+            endTime(integer): Clients's End Time.
+            filters(list): Clients's filters (list of objects).
+            groupBy(list): Clients's Group By (list of strings).
+            page(object): Clients's page.
+            startTime(integer): Clients's Start Time.
+            trendInterval(string): Clients's Trend Interval.
+            id(basestring): id path parameter. id is the client mac address. It can be specified in one of the
+                notational conventions  01:23:45:67:89:AB or 01-23-45-67-89-AB or 0123.4567.89AB and is
+                case insensitive .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-information-over-a-specified-period-of-time
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-CALLER-ID' in headers:
+                check_type(headers.get('X-CALLER-ID'),
+                           basestring)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'startTime':
+                startTime,
+            'endTime':
+                endTime,
+            'trendInterval':
+                trendInterval,
+            'groupBy':
+                groupBy,
+            'attributes':
+                attributes,
+            'filters':
+                filters,
+            'aggregateAttributes':
+                aggregateAttributes,
+            'page':
+                page,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d9a13d575abdc26d485af708e7_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/clients/{id}/trendAnalytics')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_d9a13d575abdc26d485af708e7_v2_3_7_6', json_data)
+
     def get_client_detail(self,
                           mac_address,
                           timestamp=None,
@@ -72,7 +1225,7 @@ class Clients(object):
         """Returns detailed Client information retrieved by Mac Address for any given point of time.  .
 
         Args:
-            mac_address(str): macAddress query parameter. MAC Address of the client .
+            mac_address(basestring): macAddress query parameter. MAC Address of the client .
             timestamp(int): timestamp query parameter. Epoch time(in milliseconds) when the Client health data is
                 required .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -88,15 +1241,17 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-client-detail
         """
         check_type(headers, dict)
-        check_type(mac_address, str,
+        check_type(mac_address, basestring,
                    may_be_none=False)
         check_type(timestamp, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'macAddress':
@@ -151,21 +1306,26 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-client-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'issueCategory' in headers:
                 check_type(headers.get('issueCategory'),
-                           str)
+                           basestring)
+            if '__persistbapioutput' in headers:
+                check_type(headers.get('__persistbapioutput'),
+                           bool)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -213,13 +1373,15 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-overall-client-health
         """
         check_type(headers, dict)
         check_type(timestamp, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'timestamp':
@@ -262,7 +1424,7 @@ class Clients(object):
         this API call: NETWORK-CLIENTS-3-506 Client Proximity Report. .
 
         Args:
-            username(str): username query parameter. Wireless client username for which proximity information
+            username(basestring): username query parameter. Wireless client username for which proximity information
                 is required .
             number_days(int): number_days query parameter. Number of days to track proximity until current date.
                 Defaults and maximum up to 14 days. .
@@ -281,16 +1443,18 @@ class Clients(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!client-proximity
         """
         check_type(headers, dict)
-        check_type(username, str,
+        check_type(username, basestring,
                    may_be_none=False)
         check_type(number_days, int)
         check_type(time_resolution, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'username':

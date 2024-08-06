@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -85,7 +87,7 @@ class NetworkSettings(object):
             snmpV2ReadId(string): Network Settings's Snmp V2 Read Id.
             snmpV2WriteId(string): Network Settings's Snmp V2 Write Id.
             snmpV3Id(string): Network Settings's Snmp V3 Id.
-            site_id(str): siteId path parameter. site id to assign credential. .
+            site_id(basestring): siteId path parameter. site id to assign credential. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -103,18 +105,20 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!assign-device-credential-to-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -190,13 +194,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-device-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -261,13 +267,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -313,7 +321,7 @@ class NetworkSettings(object):
         Credentials V2 .
 
         Args:
-            site_id(str): siteId query parameter. Site id to retrieve the credential details associated with
+            site_id(basestring): siteId query parameter. Site id to retrieve the credential details associated with
                 the site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -328,13 +336,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-credential-details
         """
         check_type(headers, dict)
-        check_type(site_id, str)
+        check_type(site_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteId':
@@ -370,7 +380,7 @@ class NetworkSettings(object):
         after August 1st 2024 23:59:59 GMT. Please refer new Intent API : Delete Global Credentials V2 .
 
         Args:
-            id(str): id path parameter. global credential id .
+            id(basestring): id path parameter. global credential id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -384,14 +394,16 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-device-credential
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -442,6 +454,8 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-global-pool
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -449,7 +463,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -506,13 +520,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-global-pool
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -576,13 +592,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-global-pool
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -626,7 +644,7 @@ class NetworkSettings(object):
         """API to delete global IP pool. .
 
         Args:
-            id(str): id path parameter. global pool id .
+            id(basestring): id path parameter. global pool id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -640,14 +658,16 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-global-i-p-pool
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -681,7 +701,7 @@ class NetworkSettings(object):
         """API to get  DHCP and DNS center server details. .
 
         Args:
-            site_id(str): siteId query parameter. Site id to get the network settings associated with the
+            site_id(basestring): siteId query parameter. Site id to get the network settings associated with the
                 site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -696,13 +716,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network
         """
         check_type(headers, dict)
-        check_type(site_id, str)
+        check_type(site_id, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteId':
@@ -742,7 +764,7 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(str): siteId path parameter. Site id to which site details to associate with the network
+            site_id(basestring): siteId path parameter. Site id to which site details to associate with the network
                 settings. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -761,10 +783,12 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
@@ -772,7 +796,7 @@ class NetworkSettings(object):
                            bool)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -822,7 +846,7 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(str): siteId path parameter. Site id to update the network settings which is associated
+            site_id(basestring): siteId path parameter. Site id to update the network settings which is associated
                 with the site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -841,15 +865,17 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -899,18 +925,18 @@ class NetworkSettings(object):
         """API to get the ip subpool info. .
 
         Args:
-            site_id(str): siteId query parameter. site id of site from which to retrieve associated reserve
+            site_id(basestring): siteId query parameter. site id of site from which to retrieve associated reserve
                 pools. Either siteId (per site queries) or ignoreInheritedGroups must be used. They can
                 also be used together.  .
             offset(int): offset query parameter. offset/starting row. Indexed from 1. .
             limit(int): limit query parameter. Number of reserve pools to be retrieved. Default is 25 if not
                 specified. Maximum allowed limit is 500. .
-            ignore_inherited_groups(str): ignoreInheritedGroups query parameter. Ignores pools inherited from
+            ignore_inherited_groups(basestring): ignoreInheritedGroups query parameter. Ignores pools inherited from
                 parent site. Either siteId or ignoreInheritedGroups must be passed. They can also be
                 used together. .
-            pool_usage(str): poolUsage query parameter. Can take values empty, partially-full or empty-
+            pool_usage(basestring): poolUsage query parameter. Can take values empty, partially-full or empty-
                 partially-full .
-            group_name(str): groupName query parameter. Name of the group .
+            group_name(basestring): groupName query parameter. Name of the group .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -924,18 +950,20 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-reserve-i-p-subpool
         """
         check_type(headers, dict)
-        check_type(site_id, str)
+        check_type(site_id, basestring)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(ignore_inherited_groups, str)
-        check_type(pool_usage, str)
-        check_type(group_name, str)
+        check_type(ignore_inherited_groups, basestring)
+        check_type(pool_usage, basestring)
+        check_type(group_name, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteId':
@@ -980,7 +1008,7 @@ class NetworkSettings(object):
         """API to delete the reserved ip subpool .
 
         Args:
-            id(str): id path parameter. Id of reserve ip subpool to be deleted. .
+            id(basestring): id path parameter. Id of reserve ip subpool to be deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -994,14 +1022,16 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!release-reserve-i-p-subpool
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1091,7 +1121,7 @@ class NetworkSettings(object):
             slaacSupport(boolean): Network Settings's Slaac Support.
             type(string): Network Settings's Type of the reserve ip sub pool . Available values are 'Generic',
                 'LAN', 'WAN', 'management' and 'service'.
-            site_id(str): siteId path parameter. Site id to reserve the ip sub pool. .
+            site_id(basestring): siteId path parameter. Site id to reserve the ip sub pool. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1109,15 +1139,17 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!reserve-i-p-subpool
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1240,8 +1272,8 @@ class NetworkSettings(object):
                 required when ipv6prefix value is false. .
             name(string): Network Settings's Name of the reserve ip sub pool .
             slaacSupport(boolean): Network Settings's Slaac Support.
-            site_id(str): siteId path parameter. Site id of site to update sub pool. .
-            id(str): id query parameter. Id of subpool group .
+            site_id(basestring): siteId path parameter. Site id of site to update sub pool. .
+            id(basestring): id query parameter. Id of subpool group .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1259,17 +1291,19 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-reserve-i-p-subpool
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'id':
@@ -1354,12 +1388,14 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-service-provider-details
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1412,13 +1448,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-p-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1482,13 +1520,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-p-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1525,14 +1565,188 @@ class NetworkSettings(object):
 
         return self._object_factory('bpm_e22c99a82f5764828810acb45e7a9e_v2_3_7_6', json_data)
 
-    def delete_sp_profile(self,
-                          sp_profile_name,
-                          headers=None,
-                          **request_parameters):
-        """API to delete Service Provider Profile (QoS). .
+    def sync_network_devices_credential(self,
+                                        deviceCredentialId=None,
+                                        siteId=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
+        """When sync is triggered at a site with the credential that are associated to the same site, network devices in
+        impacted sites (child sites which are inheriting the credential) get managed in inventory with the
+        associated site credential. Credential gets configured on network devices before these get managed in
+        inventory. Please make a note that cli credential wouldn't be configured on AAA authenticated devices
+        but they just get managed with the associated site cli credential. .
 
         Args:
-            sp_profile_name(str): spProfileName path parameter. sp profile name .
+            deviceCredentialId(string): Network Settings's It must be cli/snmpV2Read/snmpV2Write/snmpV3 Id. .
+            siteId(string): Network Settings's Site Id. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!sync-network-devices-credential
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'deviceCredentialId':
+                deviceCredentialId,
+            'siteId':
+                siteId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e73b352ff2573aab906c2ad75c5a71_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/deviceCredentials/apply')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_e73b352ff2573aab906c2ad75c5a71_v2_3_7_6', json_data)
+
+    def set_a_a_a_settings_for_a_site(self,
+                                      id,
+                                      aaaClient=None,
+                                      aaaNetwork=None,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
+        """Set AAA settings for a site; `null` values indicate that the settings will be inherited from the parent site;
+        empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            aaaClient(object): Network Settings's aaaClient.
+            aaaNetwork(object): Network Settings's aaaNetwork.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-a-a-a-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'aaaNetwork':
+                aaaNetwork,
+            'aaaClient':
+                aaaClient,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_cd2e825a78b6de087e991f6fe0_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/aaaSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_cd2e825a78b6de087e991f6fe0_v2_3_7_6', json_data)
+
+    def retrieve_a_a_a_settings_for_a_site(self,
+                                           id,
+                                           inherited=None,
+                                           headers=None,
+                                           **request_parameters):
+        """Retrieve AAA settings for a site; `null` values indicate that the setting will be inherited from the parent
+        site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1546,14 +1760,1339 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-a-a-a-settings-for-a-site
         """
         check_type(headers, dict)
-        check_type(sp_profile_name, str,
+        check_type(inherited, bool)
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/aaaSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c13899171d45b4f828423c6feaa1e46_v2_3_7_6', json_data)
+
+    def retrieve_banner_settings_for_a_site(self,
+                                            id,
+                                            inherited=None,
+                                            headers=None,
+                                            **request_parameters):
+        """Retrieve banner settings for a site; `null` values indicate that the setting will be inherited from the parent
+        site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-banner-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/bannerSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_b29d90ce0125ad898bc06bbceb07403_v2_3_7_6', json_data)
+
+    def set_banner_settings_for_a_site(self,
+                                       id,
+                                       banner=None,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """Set banner settings for a site; `null` values indicate that the setting will be inherited from the parent site;
+        empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            banner(object): Network Settings's banner.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-banner-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'banner':
+                banner,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_b3c4383ecc13514c85c6f3d8484f6d68_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/bannerSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_b3c4383ecc13514c85c6f3d8484f6d68_v2_3_7_6', json_data)
+
+    def get_device_credential_settings_for_a_site(self,
+                                                  id,
+                                                  inherited=None,
+                                                  headers=None,
+                                                  **request_parameters):
+        """Gets device credential settings for a site; `null` values indicate that the setting will be inherited from the
+        parent site; empty objects (`{}`) indicate that the credential is unset, and that no credential of that
+        type will be used for the site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id, retrievable from the `id` attribute in
+                `/dna/intent/api/v1/sites` .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-device-credential-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/deviceCredentials')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_e4e92f7adc845290b11168e59ab4c88b_v2_3_7_6', json_data)
+
+    def update_device_credential_settings_for_a_site(self,
+                                                     id,
+                                                     cliCredentialsId=None,
+                                                     httpReadCredentialsId=None,
+                                                     httpWriteCredentialsId=None,
+                                                     snmpv2cReadCredentialsId=None,
+                                                     snmpv2cWriteCredentialsId=None,
+                                                     snmpv3CredentialsId=None,
+                                                     headers=None,
+                                                     payload=None,
+                                                     active_validation=True,
+                                                     **request_parameters):
+        """Updates device credential settings for a site; `null` values indicate that the setting will be inherited from
+        the parent site; empty objects (`{}`) indicate that the credential is unset, and that no credential of
+        that type will be used for the site. .
+
+        Args:
+            cliCredentialsId(object): Network Settings's cliCredentialsId.
+            httpReadCredentialsId(object): Network Settings's httpReadCredentialsId.
+            httpWriteCredentialsId(object): Network Settings's httpWriteCredentialsId.
+            snmpv2cReadCredentialsId(object): Network Settings's snmpv2cReadCredentialsId.
+            snmpv2cWriteCredentialsId(object): Network Settings's snmpv2cWriteCredentialsId.
+            snmpv3CredentialsId(object): Network Settings's snmpv3CredentialsId.
+            id(basestring): id path parameter. Site Id, retrievable from the `id` attribute in
+                `/dna/intent/api/v1/sites` .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-credential-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'cliCredentialsId':
+                cliCredentialsId,
+            'snmpv2cReadCredentialsId':
+                snmpv2cReadCredentialsId,
+            'snmpv2cWriteCredentialsId':
+                snmpv2cWriteCredentialsId,
+            'snmpv3CredentialsId':
+                snmpv3CredentialsId,
+            'httpReadCredentialsId':
+                httpReadCredentialsId,
+            'httpWriteCredentialsId':
+                httpWriteCredentialsId,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_e481654675355408be8daff9a82f9a0_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/deviceCredentials')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_e481654675355408be8daff9a82f9a0_v2_3_7_6', json_data)
+
+    def get_network_devices_credentials_sync_status(self,
+                                                    id,
+                                                    headers=None,
+                                                    **request_parameters):
+        """Get network devices credentials sync status at a given site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network-devices-credentials-sync-status
+        """
+        check_type(headers, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/deviceCredentials/status')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_be59a332e9e45f6991e96111743fd775_v2_3_7_6', json_data)
+
+    def set_dhcp_settings_for_a_site(self,
+                                     id,
+                                     dhcp=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
+        """Set DHCP settings for a site; `null` values indicate that the setting will be inherited from the parent site;
+        empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            dhcp(object): Network Settings's dhcp.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-dhcp-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'dhcp':
+                dhcp,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_a15a2f83f975a6a9964e7da79a605de_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/dhcpSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_a15a2f83f975a6a9964e7da79a605de_v2_3_7_6', json_data)
+
+    def retrieve_d_h_c_p_settings_for_a_site(self,
+                                             id,
+                                             inherited=None,
+                                             headers=None,
+                                             **request_parameters):
+        """Retrieve DHCP settings for a site; `null` values indicate that the setting will be inherited from the parent
+        site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-d-h-c-p-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/dhcpSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fe723d00fce5700b8abe2a43b82f035_v2_3_7_6', json_data)
+
+    def retrieve_d_n_s_settings_for_a_site(self,
+                                           id,
+                                           inherited=None,
+                                           headers=None,
+                                           **request_parameters):
+        """Retrieve DNS settings for a site; `null` values indicate that the setting will be inherited from the parent
+        site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-d-n-s-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/dnsSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_f32e172f454564ba92d7a410c63c164_v2_3_7_6', json_data)
+
+    def set_d_n_s_settings_for_a_site(self,
+                                      id,
+                                      dns=None,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
+        """Set DNS settings for a site; `null` values indicate that the setting will be inherited from the parent site;
+        empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            dns(object): Network Settings's dns.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-d-n-s-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'dns':
+                dns,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_eb3b18894545315b25b94d0c0e2ec67_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/dnsSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_eb3b18894545315b25b94d0c0e2ec67_v2_3_7_6', json_data)
+
+    def set_image_distribution_settings_for_a_site(self,
+                                                   id,
+                                                   imageDistribution=None,
+                                                   headers=None,
+                                                   payload=None,
+                                                   active_validation=True,
+                                                   **request_parameters):
+        """Set image distribution settings for a site; `null` values indicate that the setting will be inherited from the
+        parent site; empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            imageDistribution(object): Network Settings's imageDistribution.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-image-distribution-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'imageDistribution':
+                imageDistribution,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_d02614492a2251c18de2e36c097e40ff_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/imageDistributionSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_d02614492a2251c18de2e36c097e40ff_v2_3_7_6', json_data)
+
+    def retrieve_image_distribution_settings_for_a_site(self,
+                                                        id,
+                                                        inherited=None,
+                                                        headers=None,
+                                                        **request_parameters):
+        """Retrieve image distribution settings for a site; `null` values indicate that the setting will be inherited from
+        the parent site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-image-distribution-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/imageDistributionSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_d0c5259b59bd5751994e2aa77a15f70e_v2_3_7_6', json_data)
+
+    def set_n_t_p_settings_for_a_site(self,
+                                      id,
+                                      ntp=None,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
+        """Set NTP settings for a site; `null` values indicate that the setting will be inherited from the parent site;
+        empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            ntp(object): Network Settings's ntp.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-n-t-p-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'ntp':
+                ntp,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_df9ec5aa58815a849b4853b223343e5e_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/ntpSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_df9ec5aa58815a849b4853b223343e5e_v2_3_7_6', json_data)
+
+    def retrieve_n_t_p_settings_for_a_site(self,
+                                           id,
+                                           inherited=None,
+                                           headers=None,
+                                           **request_parameters):
+        """Retrieve NTP settings for a site; `null` values indicate that the setting will be inherited from the parent
+        site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-n-t-p-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/ntpSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c49b666d3a305b509d0d3b356e912ab4_v2_3_7_6', json_data)
+
+    def retrieve_telemetry_settings_for_a_site(self,
+                                               id,
+                                               inherited=None,
+                                               headers=None,
+                                               **request_parameters):
+        """Retrieves telemetry settings for the given site. `null` values indicate that the setting will be inherited from
+        the parent site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id, retrievable from the `id` attribute in
+                `/dna/intent/api/v1/sites` .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-telemetry-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/telemetrySettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_af4b3c5d1dc6505cadd13bf41c894700_v2_3_7_6', json_data)
+
+    def set_telemetry_settings_for_a_site(self,
+                                          id,
+                                          applicationVisibility=None,
+                                          snmpTraps=None,
+                                          syslogs=None,
+                                          wiredDataCollection=None,
+                                          wirelessTelemetry=None,
+                                          headers=None,
+                                          payload=None,
+                                          active_validation=True,
+                                          **request_parameters):
+        """Sets telemetry settings for the given site; `null` values indicate that the setting will be inherited from the
+        parent site. .
+
+        Args:
+            applicationVisibility(object): Network Settings's applicationVisibility.
+            snmpTraps(object): Network Settings's snmpTraps.
+            syslogs(object): Network Settings's syslogs.
+            wiredDataCollection(object): Network Settings's wiredDataCollection.
+            wirelessTelemetry(object): Network Settings's wirelessTelemetry.
+            id(basestring): id path parameter. Site Id, retrievable from the `id` attribute in
+                `/dna/intent/api/v1/sites` .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-telemetry-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'wiredDataCollection':
+                wiredDataCollection,
+            'wirelessTelemetry':
+                wirelessTelemetry,
+            'snmpTraps':
+                snmpTraps,
+            'syslogs':
+                syslogs,
+            'applicationVisibility':
+                applicationVisibility,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_bac0c488707959c182dfef18681bceda_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/telemetrySettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_bac0c488707959c182dfef18681bceda_v2_3_7_6', json_data)
+
+    def set_time_zone_for_a_site(self,
+                                 id,
+                                 timeZone=None,
+                                 headers=None,
+                                 payload=None,
+                                 active_validation=True,
+                                 **request_parameters):
+        """Set time zone settings for a site; `null` values indicate that the setting will be inherited from the parent
+        site; empty objects (`{}`) indicate that the settings is unset. .
+
+        Args:
+            timeZone(object): Network Settings's timeZone.
+            id(basestring): id path parameter. Site Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!set-time-zone-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+        _payload = {
+            'timeZone':
+                timeZone,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_c17432d928f755f8bb9f4edb83089d3e_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/timeZoneSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_c17432d928f755f8bb9f4edb83089d3e_v2_3_7_6', json_data)
+
+    def retrieve_time_zone_settings_for_a_site(self,
+                                               id,
+                                               inherited=None,
+                                               headers=None,
+                                               **request_parameters):
+        """Retrieve time zone settings for a site; `null` values indicate that the setting will be inherited from the
+        parent site; empty objects (`{}`) indicate that the setting is unset at a site. .
+
+        Args:
+            id(basestring): id path parameter. Site Id .
+            inherited(bool): _inherited query parameter. Include settings explicitly set for this site and settings
+                inherited from sites higher in the site hierarchy; when `false`, `null` values indicate
+                that the site inherits that setting from the parent site or a site higher in the site
+                hierarchy. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-time-zone-settings-for-a-site
+        """
+        check_type(headers, dict)
+        check_type(inherited, bool)
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            '_inherited':
+                inherited,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sites/{id}/timeZoneSettings')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a03efc6bba51eeabcde938f0856074_v2_3_7_6', json_data)
+
+    def delete_sp_profile(self,
+                          sp_profile_name,
+                          headers=None,
+                          **request_parameters):
+        """API to delete Service Provider Profile (QoS). .
+
+        Args:
+            sp_profile_name(basestring): spProfileName path parameter. sp profile name .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-s-p-profile
+        """
+        check_type(headers, dict)
+        check_type(sp_profile_name, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1580,6 +3119,83 @@ class NetworkSettings(object):
 
         return self._object_factory('bpm_a1d68f15e02adc37239b3fcbbb6_v2_3_7_6', json_data)
 
+    def update_a_devices_telemetry_settings_to_conform_to_the_telemetry_settings_for_its_site(self,
+                                                                                              deviceIds=None,
+                                                                                              headers=None,
+                                                                                              payload=None,
+                                                                                              active_validation=True,
+                                                                                              **request_parameters):
+        """Update a device(s) telemetry settings to conform to the telemetry settings for its site.  One Task is created to
+        track the update, for more granular status tracking, split your devices into multiple requests. .
+
+        Args:
+            deviceIds(list): Network Settings's The list of device Ids to perform the provisioning against  (list of
+                strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-a-devices-telemetry-settings-to-conform-to-the-telemetry-settings-for-its-site
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'deviceIds':
+                deviceIds,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_de1b75d59b083df0ece12259ecd_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/telemetrySettings/apply')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_de1b75d59b083df0ece12259ecd_v2_3_7_6', json_data)
+
     def assign_device_credential_to_site_v2(self,
                                             site_id,
                                             cliId=None,
@@ -1601,7 +3217,7 @@ class NetworkSettings(object):
             snmpV2ReadId(string): Network Settings's SNMPv2c Read Credential Id .
             snmpV2WriteId(string): Network Settings's SNMPv2c Write Credential Id .
             snmpV3Id(string): Network Settings's SNMPv3 Credential Id .
-            site_id(str): siteId path parameter. Site Id to assign credential. .
+            site_id(basestring): siteId path parameter. Site Id to assign credential. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1619,15 +3235,17 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!assign-device-credential-to-site-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1682,7 +3300,7 @@ class NetworkSettings(object):
         """API to get SNMP, NTP, Network AAA, Client and Endpoint AAA, and/or DNS center server settings. .
 
         Args:
-            site_id(str): siteId query parameter. Site Id to get the network settings associated with the
+            site_id(basestring): siteId query parameter. Site Id to get the network settings associated with the
                 site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1697,14 +3315,16 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-network-v2
         """
         check_type(headers, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'siteId':
@@ -1744,7 +3364,7 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(str): siteId path parameter. Site Id to which site details to associate with the network
+            site_id(basestring): siteId path parameter. Site Id to which site details to associate with the network
                 settings. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1763,15 +3383,17 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-network-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1821,7 +3443,7 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(str): siteId path parameter. Site Id to update the network settings which is associated
+            site_id(basestring): siteId path parameter. Site Id to update the network settings which is associated
                 with the site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1840,15 +3462,17 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-network-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, str,
+        check_type(site_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1913,13 +3537,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-s-p-profile-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -1983,13 +3609,15 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-p-profile-v2
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2045,12 +3673,14 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-service-provider-details-v2
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -2083,7 +3713,7 @@ class NetworkSettings(object):
         """API to delete Service Provider Profile (QoS). .
 
         Args:
-            sp_profile_name(str): spProfileName path parameter. SP profile name .
+            sp_profile_name(basestring): spProfileName path parameter. SP profile name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2097,14 +3727,16 @@ class NetworkSettings(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-s-p-profile-v2
         """
         check_type(headers, dict)
-        check_type(sp_profile_name, str,
+        check_type(sp_profile_name, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

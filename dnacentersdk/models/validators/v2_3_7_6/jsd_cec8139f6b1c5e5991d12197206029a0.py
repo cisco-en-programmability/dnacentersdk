@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -56,9 +57,9 @@ class JSONSchemaValidatorCec8139F6B1C5E5991D12197206029A0(object):
                 "sudiRequired": {
                 "type": "boolean"
                 },
-                "sudiSerialNos": {
+                "userSudiSerialNos": {
                 "items": {
-                "type": "object"
+                "type": "string"
                 },
                 "type": "array"
                 }

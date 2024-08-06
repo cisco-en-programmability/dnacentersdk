@@ -1227,7 +1227,7 @@ class DNACenterAPI(object):
                     self._session, object_factory, _validator
                 )
             self.eox = \
-                EoX_v2_3_7_6(
+                Eox_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
             self.event_management = \
@@ -1322,7 +1322,7 @@ class DNACenterAPI(object):
                 Topology_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
-            self.user_and_roles = \
+            self.userand_roles = \
                 UserandRoles_v2_3_7_6(
                     self._session, object_factory, _validator
                 )

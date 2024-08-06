@@ -2243,7 +2243,9 @@ def is_valid_get_authentication_profiles(json_schema_validate, obj):
 def get_authentication_profiles(api):
     endpoint_result = api.sda.get_authentication_profiles(
         authentication_profile_name='string',
-        fabric_id='string'
+        fabric_id='string',
+        limit=0,
+        offset=0
     )
     return endpoint_result
 
@@ -2264,7 +2266,9 @@ def test_get_authentication_profiles(api, validator):
 def get_authentication_profiles_default_val(api):
     endpoint_result = api.sda.get_authentication_profiles(
         authentication_profile_name=None,
-        fabric_id=None
+        fabric_id=None,
+        limit=None,
+        offset=None
     )
     return endpoint_result
 
@@ -2321,6 +2325,50 @@ def test_update_authentication_profile_default_val(api, validator):
         assert is_valid_update_authentication_profile(
             validator,
             update_authentication_profile_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_extranet_policies(json_schema_validate, obj):
+    json_schema_validate('jsd_8e5f7c332c255f34b7b6e2bd6ac13800_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_extranet_policies(api):
+    endpoint_result = api.sda.delete_extranet_policies(
+        extranet_policy_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_extranet_policies(api, validator):
+    try:
+        assert is_valid_delete_extranet_policies(
+            validator,
+            delete_extranet_policies(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_extranet_policies_default_val(api):
+    endpoint_result = api.sda.delete_extranet_policies(
+        extranet_policy_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_extranet_policies_default_val(api, validator):
+    try:
+        assert is_valid_delete_extranet_policies(
+            validator,
+            delete_extranet_policies_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -3539,24 +3587,24 @@ def test_get_fabric_devices_layer3_handoffs_with_sda_transit_count_default_val(a
             raise original_e
 
 
-def is_valid_delete_a_fabric_device_by_id(json_schema_validate, obj):
+def is_valid_delete_fabric_device_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_497d9e0c5eb356eda1fa6f45928cb6f2_v2_3_7_6').validate(obj)
     return True
 
 
-def delete_a_fabric_device_by_id(api):
-    endpoint_result = api.sda.delete_a_fabric_device_by_id(
+def delete_fabric_device_by_id(api):
+    endpoint_result = api.sda.delete_fabric_device_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.sda
-def test_delete_a_fabric_device_by_id(api, validator):
+def test_delete_fabric_device_by_id(api, validator):
     try:
-        assert is_valid_delete_a_fabric_device_by_id(
+        assert is_valid_delete_fabric_device_by_id(
             validator,
-            delete_a_fabric_device_by_id(api)
+            delete_fabric_device_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -3564,19 +3612,19 @@ def test_delete_a_fabric_device_by_id(api, validator):
             raise original_e
 
 
-def delete_a_fabric_device_by_id_default_val(api):
-    endpoint_result = api.sda.delete_a_fabric_device_by_id(
+def delete_fabric_device_by_id_default_val(api):
+    endpoint_result = api.sda.delete_fabric_device_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.sda
-def test_delete_a_fabric_device_by_id_default_val(api, validator):
+def test_delete_fabric_device_by_id_default_val(api, validator):
     try:
-        assert is_valid_delete_a_fabric_device_by_id(
+        assert is_valid_delete_fabric_device_by_id(
             validator,
-            delete_a_fabric_device_by_id_default_val(api)
+            delete_fabric_device_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -4043,6 +4091,906 @@ def test_delete_fabric_zone_by_id_default_val(api, validator):
             raise original_e
 
 
+def is_valid_add_layer2_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_3f09c94c65c858e4b7be0b7cb3d25b7a_v2_3_7_6').validate(obj)
+    return True
+
+
+def add_layer2_virtual_networks(api):
+    endpoint_result = api.sda.add_layer2_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_layer2_virtual_networks(api, validator):
+    try:
+        assert is_valid_add_layer2_virtual_networks(
+            validator,
+            add_layer2_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_layer2_virtual_networks_default_val(api):
+    endpoint_result = api.sda.add_layer2_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_layer2_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_add_layer2_virtual_networks(
+            validator,
+            add_layer2_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_layer2_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_1fa8caf01309507e9be1544b9d1faa39_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_layer2_virtual_networks(api):
+    endpoint_result = api.sda.delete_layer2_virtual_networks(
+        associated_layer3_virtual_network_name='string',
+        fabric_id='string',
+        traffic_type='string',
+        vlan_id=0,
+        vlan_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer2_virtual_networks(api, validator):
+    try:
+        assert is_valid_delete_layer2_virtual_networks(
+            validator,
+            delete_layer2_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_layer2_virtual_networks_default_val(api):
+    endpoint_result = api.sda.delete_layer2_virtual_networks(
+        associated_layer3_virtual_network_name=None,
+        fabric_id=None,
+        traffic_type=None,
+        vlan_id=None,
+        vlan_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer2_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_delete_layer2_virtual_networks(
+            validator,
+            delete_layer2_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_layer2_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_87c794771a235f0da82cf11d968c9ec3_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_layer2_virtual_networks(api):
+    endpoint_result = api.sda.get_layer2_virtual_networks(
+        associated_layer3_virtual_network_name='string',
+        fabric_id='string',
+        id='string',
+        limit=0,
+        offset=0,
+        traffic_type='string',
+        vlan_id=0,
+        vlan_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer2_virtual_networks(api, validator):
+    try:
+        assert is_valid_get_layer2_virtual_networks(
+            validator,
+            get_layer2_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_layer2_virtual_networks_default_val(api):
+    endpoint_result = api.sda.get_layer2_virtual_networks(
+        associated_layer3_virtual_network_name=None,
+        fabric_id=None,
+        id=None,
+        limit=None,
+        offset=None,
+        traffic_type=None,
+        vlan_id=None,
+        vlan_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer2_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_get_layer2_virtual_networks(
+            validator,
+            get_layer2_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_layer2_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_93bcb7a52e3c5763b246bcf438fe57c9_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_layer2_virtual_networks(api):
+    endpoint_result = api.sda.update_layer2_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_layer2_virtual_networks(api, validator):
+    try:
+        assert is_valid_update_layer2_virtual_networks(
+            validator,
+            update_layer2_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_layer2_virtual_networks_default_val(api):
+    endpoint_result = api.sda.update_layer2_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_layer2_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_update_layer2_virtual_networks(
+            validator,
+            update_layer2_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_layer2_virtual_network_count(json_schema_validate, obj):
+    json_schema_validate('jsd_98a69aee0c555fb5baaa9db43327f955_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_layer2_virtual_network_count(api):
+    endpoint_result = api.sda.get_layer2_virtual_network_count(
+        associated_layer3_virtual_network_name='string',
+        fabric_id='string',
+        traffic_type='string',
+        vlan_id=0,
+        vlan_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer2_virtual_network_count(api, validator):
+    try:
+        assert is_valid_get_layer2_virtual_network_count(
+            validator,
+            get_layer2_virtual_network_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_layer2_virtual_network_count_default_val(api):
+    endpoint_result = api.sda.get_layer2_virtual_network_count(
+        associated_layer3_virtual_network_name=None,
+        fabric_id=None,
+        traffic_type=None,
+        vlan_id=None,
+        vlan_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer2_virtual_network_count_default_val(api, validator):
+    try:
+        assert is_valid_get_layer2_virtual_network_count(
+            validator,
+            get_layer2_virtual_network_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_layer2_virtual_network_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_50bfbdb9daba59fc9587824918c61cd6_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_layer2_virtual_network_by_id(api):
+    endpoint_result = api.sda.delete_layer2_virtual_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer2_virtual_network_by_id(api, validator):
+    try:
+        assert is_valid_delete_layer2_virtual_network_by_id(
+            validator,
+            delete_layer2_virtual_network_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_layer2_virtual_network_by_id_default_val(api):
+    endpoint_result = api.sda.delete_layer2_virtual_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer2_virtual_network_by_id_default_val(api, validator):
+    try:
+        assert is_valid_delete_layer2_virtual_network_by_id(
+            validator,
+            delete_layer2_virtual_network_by_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_add_layer3_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_3606dabd13cd5e9c928daf80d6758d62_v2_3_7_6').validate(obj)
+    return True
+
+
+def add_layer3_virtual_networks(api):
+    endpoint_result = api.sda.add_layer3_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_layer3_virtual_networks(api, validator):
+    try:
+        assert is_valid_add_layer3_virtual_networks(
+            validator,
+            add_layer3_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_layer3_virtual_networks_default_val(api):
+    endpoint_result = api.sda.add_layer3_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_layer3_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_add_layer3_virtual_networks(
+            validator,
+            add_layer3_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_layer3_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_2fa3e62148dd542a8452b68ea888833a_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_layer3_virtual_networks(api):
+    endpoint_result = api.sda.get_layer3_virtual_networks(
+        anchored_site_id='string',
+        fabric_id='string',
+        limit=0,
+        offset=0,
+        virtual_network_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer3_virtual_networks(api, validator):
+    try:
+        assert is_valid_get_layer3_virtual_networks(
+            validator,
+            get_layer3_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_layer3_virtual_networks_default_val(api):
+    endpoint_result = api.sda.get_layer3_virtual_networks(
+        anchored_site_id=None,
+        fabric_id=None,
+        limit=None,
+        offset=None,
+        virtual_network_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer3_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_get_layer3_virtual_networks(
+            validator,
+            get_layer3_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_layer3_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_86e14a6db07f5c41903df6039be72e9c_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_layer3_virtual_networks(api):
+    endpoint_result = api.sda.delete_layer3_virtual_networks(
+        virtual_network_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer3_virtual_networks(api, validator):
+    try:
+        assert is_valid_delete_layer3_virtual_networks(
+            validator,
+            delete_layer3_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_layer3_virtual_networks_default_val(api):
+    endpoint_result = api.sda.delete_layer3_virtual_networks(
+        virtual_network_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer3_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_delete_layer3_virtual_networks(
+            validator,
+            delete_layer3_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_layer3_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_ed9125b257ea54b79ef2db2d8ebd9d00_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_layer3_virtual_networks(api):
+    endpoint_result = api.sda.update_layer3_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_layer3_virtual_networks(api, validator):
+    try:
+        assert is_valid_update_layer3_virtual_networks(
+            validator,
+            update_layer3_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_layer3_virtual_networks_default_val(api):
+    endpoint_result = api.sda.update_layer3_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_layer3_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_update_layer3_virtual_networks(
+            validator,
+            update_layer3_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_layer3_virtual_networks_count(json_schema_validate, obj):
+    json_schema_validate('jsd_ced302dd267557c79c2f5aee72da9e4c_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_layer3_virtual_networks_count(api):
+    endpoint_result = api.sda.get_layer3_virtual_networks_count(
+        anchored_site_id='string',
+        fabric_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer3_virtual_networks_count(api, validator):
+    try:
+        assert is_valid_get_layer3_virtual_networks_count(
+            validator,
+            get_layer3_virtual_networks_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_layer3_virtual_networks_count_default_val(api):
+    endpoint_result = api.sda.get_layer3_virtual_networks_count(
+        anchored_site_id=None,
+        fabric_id=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_layer3_virtual_networks_count_default_val(api, validator):
+    try:
+        assert is_valid_get_layer3_virtual_networks_count(
+            validator,
+            get_layer3_virtual_networks_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_layer3_virtual_network_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_12a4e95fb6765d48bac0c654a393a0a8_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_layer3_virtual_network_by_id(api):
+    endpoint_result = api.sda.delete_layer3_virtual_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer3_virtual_network_by_id(api, validator):
+    try:
+        assert is_valid_delete_layer3_virtual_network_by_id(
+            validator,
+            delete_layer3_virtual_network_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_layer3_virtual_network_by_id_default_val(api):
+    endpoint_result = api.sda.delete_layer3_virtual_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_layer3_virtual_network_by_id_default_val(api, validator):
+    try:
+        assert is_valid_delete_layer3_virtual_network_by_id(
+            validator,
+            delete_layer3_virtual_network_by_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_multicast(json_schema_validate, obj):
+    json_schema_validate('jsd_049cfb964a2958909f7ca12d23ab2bdb_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_multicast(api):
+    endpoint_result = api.sda.update_multicast(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_multicast(api, validator):
+    try:
+        assert is_valid_update_multicast(
+            validator,
+            update_multicast(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_multicast_default_val(api):
+    endpoint_result = api.sda.update_multicast(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_multicast_default_val(api, validator):
+    try:
+        assert is_valid_update_multicast(
+            validator,
+            update_multicast_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_multicast(json_schema_validate, obj):
+    json_schema_validate('jsd_9eb648d275875745950bc33d3f12a28f_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_multicast(api):
+    endpoint_result = api.sda.get_multicast(
+        fabric_id='string',
+        limit=0,
+        offset=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_multicast(api, validator):
+    try:
+        assert is_valid_get_multicast(
+            validator,
+            get_multicast(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_multicast_default_val(api):
+    endpoint_result = api.sda.get_multicast(
+        fabric_id=None,
+        limit=None,
+        offset=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_multicast_default_val(api, validator):
+    try:
+        assert is_valid_get_multicast(
+            validator,
+            get_multicast_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_add_multicast_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_03cdc0bafd4257e78d211a1f4120bfa9_v2_3_7_6').validate(obj)
+    return True
+
+
+def add_multicast_virtual_networks(api):
+    endpoint_result = api.sda.add_multicast_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_multicast_virtual_networks(api, validator):
+    try:
+        assert is_valid_add_multicast_virtual_networks(
+            validator,
+            add_multicast_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_multicast_virtual_networks_default_val(api):
+    endpoint_result = api.sda.add_multicast_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_multicast_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_add_multicast_virtual_networks(
+            validator,
+            add_multicast_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_multicast_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_bc8fbaa14c0b5064ba44a9aaf997a593_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_multicast_virtual_networks(api):
+    endpoint_result = api.sda.get_multicast_virtual_networks(
+        fabric_id='string',
+        limit=0,
+        offset=0,
+        virtual_network_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_multicast_virtual_networks(api, validator):
+    try:
+        assert is_valid_get_multicast_virtual_networks(
+            validator,
+            get_multicast_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_multicast_virtual_networks_default_val(api):
+    endpoint_result = api.sda.get_multicast_virtual_networks(
+        fabric_id=None,
+        limit=None,
+        offset=None,
+        virtual_network_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_multicast_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_get_multicast_virtual_networks(
+            validator,
+            get_multicast_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_multicast_virtual_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_93144bc3ed6556f9b9c959e53e271d70_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_multicast_virtual_networks(api):
+    endpoint_result = api.sda.update_multicast_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_multicast_virtual_networks(api, validator):
+    try:
+        assert is_valid_update_multicast_virtual_networks(
+            validator,
+            update_multicast_virtual_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_multicast_virtual_networks_default_val(api):
+    endpoint_result = api.sda.update_multicast_virtual_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_multicast_virtual_networks_default_val(api, validator):
+    try:
+        assert is_valid_update_multicast_virtual_networks(
+            validator,
+            update_multicast_virtual_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_multicast_virtual_network_count(json_schema_validate, obj):
+    json_schema_validate('jsd_8948ecb8526b5333b7d7223dc4a68794_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_multicast_virtual_network_count(api):
+    endpoint_result = api.sda.get_multicast_virtual_network_count(
+        fabric_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_multicast_virtual_network_count(api, validator):
+    try:
+        assert is_valid_get_multicast_virtual_network_count(
+            validator,
+            get_multicast_virtual_network_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_multicast_virtual_network_count_default_val(api):
+    endpoint_result = api.sda.get_multicast_virtual_network_count(
+        fabric_id=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_multicast_virtual_network_count_default_val(api, validator):
+    try:
+        assert is_valid_get_multicast_virtual_network_count(
+            validator,
+            get_multicast_virtual_network_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_multicast_virtual_network_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_e1e7b254440156e0a9ed4e72c5a9685a_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_multicast_virtual_network_by_id(api):
+    endpoint_result = api.sda.delete_multicast_virtual_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_multicast_virtual_network_by_id(api, validator):
+    try:
+        assert is_valid_delete_multicast_virtual_network_by_id(
+            validator,
+            delete_multicast_virtual_network_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_multicast_virtual_network_by_id_default_val(api):
+    endpoint_result = api.sda.delete_multicast_virtual_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_multicast_virtual_network_by_id_default_val(api, validator):
+    try:
+        assert is_valid_delete_multicast_virtual_network_by_id(
+            validator,
+            delete_multicast_virtual_network_by_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_add_port_assignments(json_schema_validate, obj):
     json_schema_validate('jsd_8d6b58f378895114839682dceed1a9b5_v2_3_7_6').validate(obj)
     return True
@@ -4339,6 +5287,296 @@ def test_delete_port_assignment_by_id_default_val(api, validator):
             raise original_e
 
 
+def is_valid_get_port_channels(json_schema_validate, obj):
+    json_schema_validate('jsd_c747d79eb18e52f5a161006aa28df129_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_port_channels(api):
+    endpoint_result = api.sda.get_port_channels(
+        connected_device_type='string',
+        fabric_id='string',
+        limit=0,
+        network_device_id='string',
+        offset=0,
+        port_channel_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_port_channels(api, validator):
+    try:
+        assert is_valid_get_port_channels(
+            validator,
+            get_port_channels(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_port_channels_default_val(api):
+    endpoint_result = api.sda.get_port_channels(
+        connected_device_type=None,
+        fabric_id=None,
+        limit=None,
+        network_device_id=None,
+        offset=None,
+        port_channel_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_port_channels_default_val(api, validator):
+    try:
+        assert is_valid_get_port_channels(
+            validator,
+            get_port_channels_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_add_port_channels(json_schema_validate, obj):
+    json_schema_validate('jsd_7f2b137487385de6925b7b6136d4b027_v2_3_7_6').validate(obj)
+    return True
+
+
+def add_port_channels(api):
+    endpoint_result = api.sda.add_port_channels(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_port_channels(api, validator):
+    try:
+        assert is_valid_add_port_channels(
+            validator,
+            add_port_channels(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_port_channels_default_val(api):
+    endpoint_result = api.sda.add_port_channels(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_port_channels_default_val(api, validator):
+    try:
+        assert is_valid_add_port_channels(
+            validator,
+            add_port_channels_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_port_channels(json_schema_validate, obj):
+    json_schema_validate('jsd_7bd421c1db8c5deaa3301b8cc73dd541_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_port_channels(api):
+    endpoint_result = api.sda.update_port_channels(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_port_channels(api, validator):
+    try:
+        assert is_valid_update_port_channels(
+            validator,
+            update_port_channels(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_port_channels_default_val(api):
+    endpoint_result = api.sda.update_port_channels(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_port_channels_default_val(api, validator):
+    try:
+        assert is_valid_update_port_channels(
+            validator,
+            update_port_channels_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_port_channels(json_schema_validate, obj):
+    json_schema_validate('jsd_1fd48c49a3f65cecb1f84f10b69b04f5_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_port_channels(api):
+    endpoint_result = api.sda.delete_port_channels(
+        connected_device_type='string',
+        fabric_id='string',
+        network_device_id='string',
+        port_channel_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_port_channels(api, validator):
+    try:
+        assert is_valid_delete_port_channels(
+            validator,
+            delete_port_channels(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_port_channels_default_val(api):
+    endpoint_result = api.sda.delete_port_channels(
+        connected_device_type=None,
+        fabric_id=None,
+        network_device_id=None,
+        port_channel_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_port_channels_default_val(api, validator):
+    try:
+        assert is_valid_delete_port_channels(
+            validator,
+            delete_port_channels_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_port_channel_count(json_schema_validate, obj):
+    json_schema_validate('jsd_292767b6ba7d5504bb3493964063611a_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_port_channel_count(api):
+    endpoint_result = api.sda.get_port_channel_count(
+        connected_device_type='string',
+        fabric_id='string',
+        network_device_id='string',
+        port_channel_name='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_port_channel_count(api, validator):
+    try:
+        assert is_valid_get_port_channel_count(
+            validator,
+            get_port_channel_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_port_channel_count_default_val(api):
+    endpoint_result = api.sda.get_port_channel_count(
+        connected_device_type=None,
+        fabric_id=None,
+        network_device_id=None,
+        port_channel_name=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_port_channel_count_default_val(api, validator):
+    try:
+        assert is_valid_get_port_channel_count(
+            validator,
+            get_port_channel_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_port_channel_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_6bcad6a4ea0850bf9b099b938bc55932_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_port_channel_by_id(api):
+    endpoint_result = api.sda.delete_port_channel_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_port_channel_by_id(api, validator):
+    try:
+        assert is_valid_delete_port_channel_by_id(
+            validator,
+            delete_port_channel_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_port_channel_by_id_default_val(api):
+    endpoint_result = api.sda.delete_port_channel_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_port_channel_by_id_default_val(api, validator):
+    try:
+        assert is_valid_delete_port_channel_by_id(
+            validator,
+            delete_port_channel_by_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_delete_provisioned_devices(json_schema_validate, obj):
     json_schema_validate('jsd_b049914e384051afbf87971d3066152b_v2_3_7_6').validate(obj)
     return True
@@ -4611,6 +5849,238 @@ def test_delete_provisioned_device_by_id_default_val(api, validator):
         assert is_valid_delete_provisioned_device_by_id(
             validator,
             delete_provisioned_device_by_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_transit_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_cc1599012a5a59c8abdda5376b5cc583_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_transit_networks(api):
+    endpoint_result = api.sda.update_transit_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_transit_networks(api, validator):
+    try:
+        assert is_valid_update_transit_networks(
+            validator,
+            update_transit_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_transit_networks_default_val(api):
+    endpoint_result = api.sda.update_transit_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_update_transit_networks_default_val(api, validator):
+    try:
+        assert is_valid_update_transit_networks(
+            validator,
+            update_transit_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_transit_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_996eb415f4615ac09e61c6582ecca2fa_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_transit_networks(api):
+    endpoint_result = api.sda.get_transit_networks(
+        id='string',
+        limit=0,
+        name='string',
+        offset=0,
+        type='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_transit_networks(api, validator):
+    try:
+        assert is_valid_get_transit_networks(
+            validator,
+            get_transit_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_transit_networks_default_val(api):
+    endpoint_result = api.sda.get_transit_networks(
+        id=None,
+        limit=None,
+        name=None,
+        offset=None,
+        type=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_transit_networks_default_val(api, validator):
+    try:
+        assert is_valid_get_transit_networks(
+            validator,
+            get_transit_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_add_transit_networks(json_schema_validate, obj):
+    json_schema_validate('jsd_8ae57085565e551594fc05b4db6a64af_v2_3_7_6').validate(obj)
+    return True
+
+
+def add_transit_networks(api):
+    endpoint_result = api.sda.add_transit_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_transit_networks(api, validator):
+    try:
+        assert is_valid_add_transit_networks(
+            validator,
+            add_transit_networks(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_transit_networks_default_val(api):
+    endpoint_result = api.sda.add_transit_networks(
+        active_validation=True,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_add_transit_networks_default_val(api, validator):
+    try:
+        assert is_valid_add_transit_networks(
+            validator,
+            add_transit_networks_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_get_transit_networks_count(json_schema_validate, obj):
+    json_schema_validate('jsd_fe6a7f95437d57bd997d2c8f0482310d_v2_3_7_6').validate(obj)
+    return True
+
+
+def get_transit_networks_count(api):
+    endpoint_result = api.sda.get_transit_networks_count(
+        type='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_transit_networks_count(api, validator):
+    try:
+        assert is_valid_get_transit_networks_count(
+            validator,
+            get_transit_networks_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def get_transit_networks_count_default_val(api):
+    endpoint_result = api.sda.get_transit_networks_count(
+        type=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_get_transit_networks_count_default_val(api, validator):
+    try:
+        assert is_valid_get_transit_networks_count(
+            validator,
+            get_transit_networks_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_delete_transit_network_by_id(json_schema_validate, obj):
+    json_schema_validate('jsd_1bc1bbf0065150ebabbe5e5bee3d80d7_v2_3_7_6').validate(obj)
+    return True
+
+
+def delete_transit_network_by_id(api):
+    endpoint_result = api.sda.delete_transit_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_transit_network_by_id(api, validator):
+    try:
+        assert is_valid_delete_transit_network_by_id(
+            validator,
+            delete_transit_network_by_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def delete_transit_network_by_id_default_val(api):
+    endpoint_result = api.sda.delete_transit_network_by_id(
+        id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sda
+def test_delete_transit_network_by_id_default_val(api, validator):
+    try:
+        assert is_valid_delete_transit_network_by_id(
+            validator,
+            delete_transit_network_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

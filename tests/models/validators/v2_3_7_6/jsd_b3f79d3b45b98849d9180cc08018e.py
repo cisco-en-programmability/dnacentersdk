@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -112,6 +113,9 @@ class JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E(object):
                 "additionalInfo": {
                 "type": "object"
                 },
+                "connectedDeviceId": {
+                "type": "string"
+                },
                 "customParam": {
                 "properties": {
                 "id": {
@@ -133,6 +137,9 @@ class JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E(object):
                 "type": "object"
                 },
                 "dataPathId": {
+                "type": "string"
+                },
+                "deviceSeries": {
                 "type": "string"
                 },
                 "deviceType": {

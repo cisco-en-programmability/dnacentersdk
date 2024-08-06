@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -81,6 +82,9 @@ class JSONSchemaValidatorD39E10793A45D3DB229D6D3820C665A(object):
                 "success",
                 "failed"
                 ],
+                "type": "string"
+                },
+                "transitPeerNetworkId": {
                 "type": "string"
                 },
                 "transitPeerNetworkName": {

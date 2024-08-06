@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -83,34 +84,6 @@ class JSONSchemaValidatorC6774Ff9549A53D4B41FDd2D88F1D0F5(object):
                 "smartAccountId": {
                 "type": "string"
                 },
-                "syncResult": {
-                "properties": {
-                "syncList": {
-                "items": {
-                "properties": {
-                "deviceSnList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "syncType": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "syncMsg": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "syncResultStr": {
-                "type": "string"
-                },
                 "syncStartTime": {
                 "type": "number"
                 },
@@ -118,9 +91,6 @@ class JSONSchemaValidatorC6774Ff9549A53D4B41FDd2D88F1D0F5(object):
                 "type": "string"
                 },
                 "tenantId": {
-                "type": "string"
-                },
-                "token": {
                 "type": "string"
                 },
                 "virtualAccountId": {

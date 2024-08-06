@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -49,13 +50,13 @@ class JSONSchemaValidatorA1De7Ff46Fa5Da09C5051C06Ad07F2C(object):
                 "type": "string"
                 },
                 "lastUpdateTime": {
-                "type": "string"
+                "type": "number"
                 },
                 "message": {
                 "type": "string"
                 },
                 "scheduleTime": {
-                "type": "string"
+                "type": "number"
                 }
                 },
                 "type": "object"

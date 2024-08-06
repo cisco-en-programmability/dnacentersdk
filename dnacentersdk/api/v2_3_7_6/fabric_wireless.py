@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -73,8 +75,7 @@ class FabricWireless(object):
                                     payload=None,
                                     active_validation=True,
                                     **request_parameters):
-        """Update SSID mapping to a VLAN. The request does not need to include all the SSIDs currently mapped to a VLAN; it
-        can include only the SSIDs that require update. Note: ECA is not supported. .
+        """Add SSID to IP Pool Mapping .
 
         Args:
             scalableGroupName(string): Fabric Wireless's Scalable Group Name .
@@ -98,13 +99,15 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -157,8 +160,7 @@ class FabricWireless(object):
                                        payload=None,
                                        active_validation=True,
                                        **request_parameters):
-        """Update SSID mapping to a VLAN. The request does not need to include all the SSIDs currently mapped to a VLAN; it
-        can include only the SSIDs that require update. Note: ECA is not supported. .
+        """Update SSID to IP Pool Mapping .
 
         Args:
             scalableGroupName(string): Fabric Wireless's Scalable Group Name .
@@ -182,13 +184,15 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -240,8 +244,8 @@ class FabricWireless(object):
         """Get SSID to IP Pool Mapping .
 
         Args:
-            vlan_name(str): vlanName query parameter. VLAN Name .
-            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Heirarchy .
+            vlan_name(basestring): vlanName query parameter. VLAN Name .
+            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Heirarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -255,16 +259,18 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
-        check_type(vlan_name, str,
+        check_type(vlan_name, basestring,
                    may_be_none=False)
-        check_type(site_name_hierarchy, str,
+        check_type(site_name_hierarchy, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'vlanName':
@@ -302,7 +308,7 @@ class FabricWireless(object):
         """Remove WLC from Fabric Domain .
 
         Args:
-            device_ipaddress(str): deviceIPAddress query parameter. Device Management IP Address .
+            device_ipaddress(basestring): deviceIPAddress query parameter. Device Management IP Address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -316,17 +322,19 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!remove-w-l-c-from-fabric-domain
         """
         check_type(headers, dict)
-        check_type(device_ipaddress, str,
+        check_type(device_ipaddress, basestring,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           str)
+                           basestring)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'deviceIPAddress':
@@ -383,13 +391,15 @@ class FabricWireless(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-w-l-c-to-fabric-domain
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -427,3 +437,331 @@ class FabricWireless(object):
                                            json=_payload)
 
         return self._object_factory('bpm_c4befbd77a452a9b7873ffc360a1f20_v2_3_7_6', json_data)
+
+    def returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(self,
+                                                                    limit=None,
+                                                                    offset=None,
+                                                                    headers=None,
+                                                                    **request_parameters):
+        """It will return all vlan to SSID mapping across all the fabric site .
+
+        Args:
+            limit(int): limit query parameter. Return only this many IP Pool to SSID Mapping .
+            offset(int): offset query parameter. Number of records to skip for pagination .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!returns-all-the-fabric-sites-that-have-v-l-a-n-to-s-s-i-d-mapping
+        """
+        check_type(headers, dict)
+        check_type(limit, int)
+        check_type(offset, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'limit':
+                limit,
+            'offset':
+                offset,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/fabrics/vlanToSsids')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fea6e17769f5b3eb5ee1696254d2973_v2_3_7_6', json_data)
+
+    def return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(self,
+                                                                                  headers=None,
+                                                                                  **request_parameters):
+        """Return the count of all the fabric site which has SSID to IP Pool mapping  .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!return-the-count-of-all-the-fabric-site-which-has-s-s-i-d-to-i-p-pool-mapping
+        """
+        check_type(headers, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/fabrics/vlanToSsids/count')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_be3f285e21b59701a1af044b28_v2_3_7_6', json_data)
+
+    def add_update_or_remove_ssid_mapping_to_a_vlan(self,
+                                                    fabric_id,
+                                                    headers=None,
+                                                    payload=None,
+                                                    active_validation=True,
+                                                    **request_parameters):
+        """Add update, or remove SSID mappings to a VLAN. If the payload doesn't contain a 'vlanName' which has SSIDs
+        mapping done earlier then all the mapped SSIDs of the 'vlanName' is cleared. The request must include
+        all SSIDs currently mapped to a VLAN, as determined by the response from the GET operation for the same
+        fabricId used in the request. If an already-mapped SSID is not included in the payload, its mapping will
+        be removed by this API. Conversely, if a new SSID is provided, it will be added to the Mapping. Ensure
+        that any new SSID added is a Fabric SSID. This API can also be used to add a VLAN and associate the
+        relevant SSIDs with it. The 'vlanName' must be 'Fabric Wireless Enabled' and should be part of the
+        Fabric Site representing 'Fabric ID' specified in the API request. .
+
+        Args:
+            fabric_id(basestring): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
+                Fabric Site .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-update-or-remove-s-s-i-d-mapping-to-a-v-l-a-n
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        check_type(fabric_id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'fabricId': fabric_id,
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_a3d2432ae8c55fe793c5180d8d5fce25_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/fabrics/{fabricId}/vlanToSsids')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_a3d2432ae8c55fe793c5180d8d5fce25_v2_3_7_6', json_data)
+
+    def retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(self,
+                                                                             fabric_id,
+                                                                             limit=None,
+                                                                             offset=None,
+                                                                             headers=None,
+                                                                             **request_parameters):
+        """Retrieve the VLANs and SSIDs mapped to the VLAN, within a Fabric Site. The 'fabricId' represents the Fabric ID
+        of a particular Fabric Site. .
+
+        Args:
+            fabric_id(basestring): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
+                Fabric Site .
+            limit(int): limit query parameter. The number of records to show for this page. .
+            offset(int): offset query parameter. The first record to show for this page; the first record is
+                numbered 1. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-v-l-a-ns-and-s-s-i-ds-mapped-to-the-v-l-a-n-within-a-fabric-site
+        """
+        check_type(headers, dict)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(fabric_id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+            'limit':
+                limit,
+            'offset':
+                offset,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'fabricId': fabric_id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/fabrics/{fabricId}/vlanToSsids')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a18f012c54a5d34aef05d651f2dea18_v2_3_7_6', json_data)
+
+    def returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(self,
+                                                                    fabric_id,
+                                                                    headers=None,
+                                                                    **request_parameters):
+        """Returns the count of VLANs mapped to SSIDs in a Fabric Site. The 'fabricId' represents the Fabric ID of a
+        particular Fabric Site. .
+
+        Args:
+            fabric_id(basestring): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
+                Fabric Site .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-v-l-a-ns-mapped-to-s-s-i-ds-in-a-fabric-site
+        """
+        check_type(headers, dict)
+        check_type(fabric_id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'fabricId': fabric_id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/sda/fabrics/{fabricId}/vlanToSsids/co'
+                 + 'unt')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_ed14be6211da53ab832acf9b5aea599c_v2_3_7_6', json_data)

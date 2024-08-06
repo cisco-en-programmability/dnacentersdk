@@ -1417,6 +1417,44 @@ wireless
 
 
 
+DNACenterAPI summary structure
+==============================
+
+
+.. _v2_3_7_6 summary:
+
+v2.3.7.6 summary
+----------------
+
+.. include:: api_structure_table_v2_3_7_6.rst
+
+
+DNACenterAPI Class
+==================
+
+.. autoclass:: DNACenterAPI()
+    :members:
+
+    .. automethod:: DNACenterAPI.__init__
+
+
+
+.. _authentication:
+
+authentication
+--------------
+
+.. autoclass:: dnacentersdk.api.authentication.Authentication()
+
+
+
+.. _custom_caller:
+
+custom_caller
+-------------
+
+.. autoclass:: dnacentersdk.api.custom_caller.CustomCaller()
+
 
 DNACenterAPI v2.3.7.6
 =====================
@@ -1520,12 +1558,12 @@ discovery
 
 
 
-.. _eo_x_2_3_7_6:
+.. _eox_2_3_7_6:
 
-eo_x
-----
+eox
+---
 
-.. autoclass:: dnacentersdk.api.v2_3_7_6.eo_x.EoX()
+.. autoclass:: dnacentersdk.api.v2_3_7_6.eox.Eox()
 
 
 

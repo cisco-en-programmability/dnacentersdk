@@ -29,6 +29,100 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
+def is_valid_retrieve_license_setting(json_schema_validate, obj):
+    json_schema_validate('jsd_420b5ef334945074a609698223cf05db_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieve_license_setting(api):
+    endpoint_result = api.licenses.retrieve_license_setting(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.licenses
+def test_retrieve_license_setting(api, validator):
+    try:
+        assert is_valid_retrieve_license_setting(
+            validator,
+            retrieve_license_setting(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieve_license_setting_default_val(api):
+    endpoint_result = api.licenses.retrieve_license_setting(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.licenses
+def test_retrieve_license_setting_default_val(api, validator):
+    try:
+        assert is_valid_retrieve_license_setting(
+            validator,
+            retrieve_license_setting_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_update_license_setting(json_schema_validate, obj):
+    json_schema_validate('jsd_1d9bd7c527d254ecb63d2b709c428043_v2_3_7_6').validate(obj)
+    return True
+
+
+def update_license_setting(api):
+    endpoint_result = api.licenses.update_license_setting(
+        active_validation=True,
+        autoRegistrationVirtualAccountId='string',
+        defaultSmartAccountId='string',
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.licenses
+def test_update_license_setting(api, validator):
+    try:
+        assert is_valid_update_license_setting(
+            validator,
+            update_license_setting(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def update_license_setting_default_val(api):
+    endpoint_result = api.licenses.update_license_setting(
+        active_validation=True,
+        autoRegistrationVirtualAccountId=None,
+        defaultSmartAccountId=None,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.licenses
+def test_update_license_setting_default_val(api, validator):
+    try:
+        assert is_valid_update_license_setting(
+            validator,
+            update_license_setting_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_device_count_details(json_schema_validate, obj):
     json_schema_validate('jsd_87c0cf04bdc758b29bb11abbdacbd921_v2_3_7_6').validate(obj)
     return True

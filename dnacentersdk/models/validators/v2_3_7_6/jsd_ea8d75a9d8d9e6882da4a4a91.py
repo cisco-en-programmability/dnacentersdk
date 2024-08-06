@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -54,6 +55,9 @@ class JSONSchemaValidatorEA8D75A9D8D9E6882Da4A4A91(object):
                 },
                 "id": {
                 "type": "string"
+                },
+                "isBpduGuardEnabled": {
+                "type": "boolean"
                 },
                 "numberOfHosts": {
                 "type": "string"

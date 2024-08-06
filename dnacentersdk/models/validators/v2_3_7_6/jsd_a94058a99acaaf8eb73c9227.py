@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -186,7 +187,8 @@ class JSONSchemaValidatorA94058A99AcaAf8Eb73C9227(object):
                 "WPA3_ENTERPRISE",
                 "WPA3_PERSONAL",
                 "WPA2_WPA3_PERSONAL",
-                "WPA2_WPA3_ENTERPRISE"
+                "WPA2_WPA3_ENTERPRISE",
+                "OPEN_SECURED"
                 ],
                 "type": "string"
                 },

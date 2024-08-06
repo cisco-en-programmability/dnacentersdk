@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -72,10 +74,10 @@ class Compliance(object):
         """Return compliance status of device(s). .
 
         Args:
-            compliance_status(str): complianceStatus query parameter. Specify "Compliance status(es)"
+            compliance_status(basestring): complianceStatus query parameter. Specify "Compliance status(es)"
                 separated by commas. The Compliance status can be 'COMPLIANT', 'NON_COMPLIANT',
                 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'. .
-            device_uuid(str): deviceUuid query parameter. Comma separated 'Device Ids' .
+            device_uuid(basestring): deviceUuid query parameter. Comma separated 'Device Ids' .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -89,6 +91,8 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+        https://developer.cisco.com/docs/dna-center/#!get-compliance-status
         """
         return self.get_compliance_status(compliance_status=compliance_status,
                                           device_uuid=device_uuid,
@@ -103,10 +107,10 @@ class Compliance(object):
         """Return compliance status of device(s). .
 
         Args:
-            compliance_status(str): complianceStatus query parameter. Specify "Compliance status(es)"
+            compliance_status(basestring): complianceStatus query parameter. Specify "Compliance status(es)"
                 separated by commas. The Compliance status can be 'COMPLIANT', 'NON_COMPLIANT',
                 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'. .
-            device_uuid(str): deviceUuid query parameter. Comma separated 'Device Ids' .
+            device_uuid(basestring): deviceUuid query parameter. Comma separated 'Device Ids' .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -120,14 +124,16 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-status
         """
         check_type(headers, dict)
-        check_type(compliance_status, str)
-        check_type(device_uuid, str)
+        check_type(compliance_status, basestring)
+        check_type(device_uuid, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'complianceStatus':
@@ -169,7 +175,7 @@ class Compliance(object):
 
         Args:
             categories(list): Compliance's Category can have any value among 'INTENT'(mapped to compliance types:
-                NETWORK_SETTINGS,NETWORK_PROFILE,WORKFLOW,FABRIC,APPLICATION_VISIBILITY),
+                NETWORK_SETTINGS,NETWORK_PROFILEWORKFLOW,FABRIC,APPLICATION_VISIBILITY),
                 'RUNNING_CONFIG' , 'IMAGE' , 'PSIRT' , 'EOX' , 'NETWORK_SETTINGS'  (list of strings).
             deviceUuids(list): Compliance's UUID of the device.  (list of strings).
             triggerFull(boolean): Compliance's if it is true then compliance will be triggered for all categories.
@@ -192,16 +198,18 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!run-compliance
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -249,7 +257,7 @@ class Compliance(object):
         """Return Compliance Status Count .
 
         Args:
-            compliance_status(str): complianceStatus query parameter. Specify "Compliance status(es)"
+            compliance_status(basestring): complianceStatus query parameter. Specify "Compliance status(es)"
                 separated by commas. The Compliance status can be 'COMPLIANT', 'NON_COMPLIANT',
                 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -265,13 +273,15 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-status-count
         """
         check_type(headers, dict)
-        check_type(compliance_status, str)
+        check_type(compliance_status, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'complianceStatus':
@@ -310,13 +320,13 @@ class Compliance(object):
         """Return Compliance Detail  .
 
         Args:
-            compliance_type(str): complianceType query parameter. Specify "Compliance type(s)" in commas. The
+            compliance_type(basestring): complianceType query parameter. Specify "Compliance type(s)" in commas. The
                 Compliance type can be 'NETWORK_PROFILE', 'IMAGE', 'FABRIC', 'APPLICATION_VISIBILITY',
                 'FABRIC', RUNNING_CONFIG', 'NETWORK_SETTINGS', 'WORKFLOW' , 'EOX'. .
-            compliance_status(str): complianceStatus query parameter. Specify "Compliance status(es)" in
+            compliance_status(basestring): complianceStatus query parameter. Specify "Compliance status(es)" in
                 commas. The Compliance status can be 'COMPLIANT', 'NON_COMPLIANT', 'IN_PROGRESS',
                 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'. .
-            device_uuid(str): deviceUuid query parameter. Comma separated "Device Id(s)" .
+            device_uuid(basestring): deviceUuid query parameter. Comma separated "Device Id(s)" .
             offset(int): offset query parameter. offset/starting row .
             limit(int): limit query parameter. Number of records to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -332,17 +342,19 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail
         """
         check_type(headers, dict)
-        check_type(compliance_type, str)
-        check_type(compliance_status, str)
-        check_type(device_uuid, str)
+        check_type(compliance_type, basestring)
+        check_type(compliance_status, basestring)
+        check_type(device_uuid, basestring)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'complianceType':
@@ -386,10 +398,10 @@ class Compliance(object):
         """Return  Compliance Count Detail .
 
         Args:
-            compliance_type(str): complianceType query parameter. Specify "Compliance type(s)" separated by
+            compliance_type(basestring): complianceType query parameter. Specify "Compliance type(s)" separated by
                 commas. The Compliance type can be 'APPLICATION_VISIBILITY', 'EOX', 'FABRIC', 'IMAGE',
                 'NETWORK_PROFILE', 'NETWORK_SETTINGS', 'PSIRT', 'RUNNING_CONFIG', 'WORKFLOW'.  .
-            compliance_status(str): complianceStatus query parameter. Specify "Compliance status(es)"
+            compliance_status(basestring): complianceStatus query parameter. Specify "Compliance status(es)"
                 separated by commas. The Compliance status can be 'COMPLIANT', 'NON_COMPLIANT',
                 'IN_PROGRESS', 'NOT_AVAILABLE', 'NOT_APPLICABLE', 'ERROR'. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -405,14 +417,16 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail-count
         """
         check_type(headers, dict)
-        check_type(compliance_type, str)
-        check_type(compliance_status, str)
+        check_type(compliance_type, basestring)
+        check_type(compliance_status, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'complianceType':
@@ -442,14 +456,16 @@ class Compliance(object):
 
         return self._object_factory('bpm_d3d38fed534f5aeaa80f5a8c63694708_v2_3_7_6', json_data)
 
-    def device_compliance_status(self,
-                                 device_uuid,
-                                 headers=None,
-                                 **request_parameters):
-        """Return compliance status of a device. .
+    def compliance_remediation(self,
+                               id,
+                               headers=None,
+                               **request_parameters):
+        """Remediates configuration compliance issues. Compliance issues related to 'Routing', 'HA Remediation', 'Software
+        Image', 'Securities Advisories', 'SD-Access Unsupported Configuration', 'Workflow', etc. will not be
+        addressed by this API. Warning: Fixing compliance mismatches could result in a possible network flap. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. Device Id .
+            id(basestring): id path parameter. Network device identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -463,14 +479,77 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!compliance-remediation
         """
         check_type(headers, dict)
-        check_type(device_uuid, str,
+        check_type(id, basestring,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           basestring, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           basestring, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/compliance/networkDevices/{id}/issues'
+                 + '/remediation/provision')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_a233477d86a459eab3c5e9352c1c9d3e_v2_3_7_6', json_data)
+
+    def device_compliance_status(self,
+                                 device_uuid,
+                                 headers=None,
+                                 **request_parameters):
+        """Return compliance status of a device. .
+
+        Args:
+            device_uuid(basestring): deviceUuid path parameter. Device Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!device-compliance-status
+        """
+        check_type(headers, dict)
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -507,10 +586,10 @@ class Compliance(object):
         """Return compliance detailed report for a device. .
 
         Args:
-            device_uuid(str): deviceUuid path parameter. Device Id .
-            category(str): category query parameter. category can have any value among 'INTENT',
+            device_uuid(basestring): deviceUuid path parameter. Device Id .
+            category(basestring): category query parameter. category can have any value among 'INTENT',
                 'RUNNING_CONFIG' , 'IMAGE' , 'PSIRT' , 'DESIGN_OOD' , 'EOX' , 'NETWORK_SETTINGS' .
-            compliance_type(str): complianceType query parameter. Specify "Compliance type(s)" separated by
+            compliance_type(basestring): complianceType query parameter. Specify "Compliance type(s)" separated by
                 commas. The Compliance type can be 'APPLICATION_VISIBILITY', 'EOX', 'FABRIC', 'IMAGE',
                 'NETWORK_PROFILE', 'NETWORK_SETTINGS', 'PSIRT', 'RUNNING_CONFIG', 'WORKFLOW'.  .
             diff_list(bool): diffList query parameter. diff list [ pass true to fetch the diff list ] .
@@ -527,17 +606,19 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!compliance-details-of-device
         """
         check_type(headers, dict)
-        check_type(category, str)
-        check_type(compliance_type, str)
+        check_type(category, basestring)
+        check_type(compliance_type, basestring)
         check_type(diff_list, bool)
-        check_type(device_uuid, str,
+        check_type(device_uuid, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'category':
@@ -577,7 +658,7 @@ class Compliance(object):
         """Returns a config task result details by specified id .
 
         Args:
-            parent_task_id(str): parentTaskId query parameter. task Id .
+            parent_task_id(basestring): parentTaskId query parameter. task Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -591,14 +672,16 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-config-task-details
         """
         check_type(headers, dict)
-        check_type(parent_task_id, str,
+        check_type(parent_task_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'parentTaskId':
@@ -653,16 +736,18 @@ class Compliance(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!commit-device-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

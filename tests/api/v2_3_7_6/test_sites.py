@@ -29,6 +29,296 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
+def is_valid_read_list_of_site_health_summaries(json_schema_validate, obj):
+    json_schema_validate('jsd_870b40b4f6d558bfbebcf8fcbc4df56b_v2_3_7_6').validate(obj)
+    return True
+
+
+def read_list_of_site_health_summaries(api):
+    endpoint_result = api.sites.read_list_of_site_health_summaries(
+        attribute='string',
+        end_time=0,
+        id='string',
+        limit=0,
+        offset=0,
+        order='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_type='string',
+        sort_by='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_list_of_site_health_summaries(api, validator):
+    try:
+        assert is_valid_read_list_of_site_health_summaries(
+            validator,
+            read_list_of_site_health_summaries(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def read_list_of_site_health_summaries_default_val(api):
+    endpoint_result = api.sites.read_list_of_site_health_summaries(
+        attribute=None,
+        end_time=None,
+        id=None,
+        limit=None,
+        offset=None,
+        order=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        sort_by=None,
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_list_of_site_health_summaries_default_val(api, validator):
+    try:
+        assert is_valid_read_list_of_site_health_summaries(
+            validator,
+            read_list_of_site_health_summaries_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_read_site_count(json_schema_validate, obj):
+    json_schema_validate('jsd_e67558dd99925a0385f5f870bbb8f634_v2_3_7_6').validate(obj)
+    return True
+
+
+def read_site_count(api):
+    endpoint_result = api.sites.read_site_count(
+        end_time=0,
+        id='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_type='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_site_count(api, validator):
+    try:
+        assert is_valid_read_site_count(
+            validator,
+            read_site_count(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def read_site_count_default_val(api):
+    endpoint_result = api.sites.read_site_count(
+        end_time=None,
+        id=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_site_count_default_val(api, validator):
+    try:
+        assert is_valid_read_site_count(
+            validator,
+            read_site_count_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_read_an_aggregated_summary_of_site_health_data(json_schema_validate, obj):
+    json_schema_validate('jsd_fc80b3e12ee9577a8e7fa5d4cd84e8fc_v2_3_7_6').validate(obj)
+    return True
+
+
+def read_an_aggregated_summary_of_site_health_data(api):
+    endpoint_result = api.sites.read_an_aggregated_summary_of_site_health_data(
+        attribute='string',
+        end_time=0,
+        id='string',
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_type='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_an_aggregated_summary_of_site_health_data(api, validator):
+    try:
+        assert is_valid_read_an_aggregated_summary_of_site_health_data(
+            validator,
+            read_an_aggregated_summary_of_site_health_data(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def read_an_aggregated_summary_of_site_health_data_default_val(api):
+    endpoint_result = api.sites.read_an_aggregated_summary_of_site_health_data(
+        attribute=None,
+        end_time=None,
+        id=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_an_aggregated_summary_of_site_health_data_default_val(api, validator):
+    try:
+        assert is_valid_read_an_aggregated_summary_of_site_health_data(
+            validator,
+            read_an_aggregated_summary_of_site_health_data_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_query_an_aggregated_summary_of_site_health_data(json_schema_validate, obj):
+    json_schema_validate('jsd_8bec2dde673c5b2f940d0474fed32af6_v2_3_7_6').validate(obj)
+    return True
+
+
+def query_an_aggregated_summary_of_site_health_data(api):
+    endpoint_result = api.sites.query_an_aggregated_summary_of_site_health_data(
+        active_validation=True,
+        attributes=['string'],
+        endTime=0,
+        id='string',
+        payload=None,
+        site_hierarchy='string',
+        site_hierarchy_id='string',
+        site_type='string',
+        startTime=0,
+        views=['string']
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_query_an_aggregated_summary_of_site_health_data(api, validator):
+    try:
+        assert is_valid_query_an_aggregated_summary_of_site_health_data(
+            validator,
+            query_an_aggregated_summary_of_site_health_data(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def query_an_aggregated_summary_of_site_health_data_default_val(api):
+    endpoint_result = api.sites.query_an_aggregated_summary_of_site_health_data(
+        active_validation=True,
+        attributes=None,
+        endTime=None,
+        id=None,
+        payload=None,
+        site_hierarchy=None,
+        site_hierarchy_id=None,
+        site_type=None,
+        startTime=None,
+        views=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_query_an_aggregated_summary_of_site_health_data_default_val(api, validator):
+    try:
+        assert is_valid_query_an_aggregated_summary_of_site_health_data(
+            validator,
+            query_an_aggregated_summary_of_site_health_data_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_read_site_health_summary_data_by_site_id(json_schema_validate, obj):
+    json_schema_validate('jsd_062572f214555abaa6a30cdbcc32e713_v2_3_7_6').validate(obj)
+    return True
+
+
+def read_site_health_summary_data_by_site_id(api):
+    endpoint_result = api.sites.read_site_health_summary_data_by_site_id(
+        attribute='string',
+        end_time=0,
+        id='string',
+        start_time=0,
+        view='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_site_health_summary_data_by_site_id(api, validator):
+    try:
+        assert is_valid_read_site_health_summary_data_by_site_id(
+            validator,
+            read_site_health_summary_data_by_site_id(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def read_site_health_summary_data_by_site_id_default_val(api):
+    endpoint_result = api.sites.read_site_health_summary_data_by_site_id(
+        attribute=None,
+        end_time=None,
+        id='string',
+        start_time=None,
+        view=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.sites
+def test_read_site_health_summary_data_by_site_id_default_val(api, validator):
+    try:
+        assert is_valid_read_site_health_summary_data_by_site_id(
+            validator,
+            read_site_health_summary_data_by_site_id_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
 def is_valid_assign_devices_to_site(json_schema_validate, obj):
     json_schema_validate('jsd_0a544e27e18e5412af3b68d915c8ca50_v2_3_7_6').validate(obj)
     return True

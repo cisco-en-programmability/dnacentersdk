@@ -639,3 +639,279 @@ def test_remove_tag_member_default_val(api, validator):
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
+
+
+def is_valid_retrieve_tags_associated_with_the_interfaces(json_schema_validate, obj):
+    json_schema_validate('jsd_0273818c1e915930a6dcd0f06fb9f378_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieve_tags_associated_with_the_interfaces(api):
+    endpoint_result = api.tag.retrieve_tags_associated_with_the_interfaces(
+        limit=0,
+        offset=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_tags_associated_with_the_interfaces(api, validator):
+    try:
+        assert is_valid_retrieve_tags_associated_with_the_interfaces(
+            validator,
+            retrieve_tags_associated_with_the_interfaces(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieve_tags_associated_with_the_interfaces_default_val(api):
+    endpoint_result = api.tag.retrieve_tags_associated_with_the_interfaces(
+        limit=None,
+        offset=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_tags_associated_with_the_interfaces_default_val(api, validator):
+    try:
+        assert is_valid_retrieve_tags_associated_with_the_interfaces(
+            validator,
+            retrieve_tags_associated_with_the_interfaces_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(json_schema_validate, obj):
+    json_schema_validate('jsd_75dfee1fb7f55294be3e2f1b5d9f3759_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(api):
+    endpoint_result = api.tag.retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(api, validator):
+    try:
+        assert is_valid_retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(
+            validator,
+            retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag_default_val(api):
+    endpoint_result = api.tag.retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag_default_val(api, validator):
+    try:
+        assert is_valid_retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag(
+            validator,
+            retrieve_the_count_of_interfaces_that_are_associated_with_at_least_one_tag_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_query_the_tags_associated_with_interfaces(json_schema_validate, obj):
+    json_schema_validate('jsd_37da4715087051f2a04498a3b707eff4_v2_3_7_6').validate(obj)
+    return True
+
+
+def query_the_tags_associated_with_interfaces(api):
+    endpoint_result = api.tag.query_the_tags_associated_with_interfaces(
+        active_validation=True,
+        ids=['string'],
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_query_the_tags_associated_with_interfaces(api, validator):
+    try:
+        assert is_valid_query_the_tags_associated_with_interfaces(
+            validator,
+            query_the_tags_associated_with_interfaces(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def query_the_tags_associated_with_interfaces_default_val(api):
+    endpoint_result = api.tag.query_the_tags_associated_with_interfaces(
+        active_validation=True,
+        ids=None,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_query_the_tags_associated_with_interfaces_default_val(api, validator):
+    try:
+        assert is_valid_query_the_tags_associated_with_interfaces(
+            validator,
+            query_the_tags_associated_with_interfaces_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_retrieve_tags_associated_with_network_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_56893c635a46570cb757d56a1fd429d0_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieve_tags_associated_with_network_devices(api):
+    endpoint_result = api.tag.retrieve_tags_associated_with_network_devices(
+        limit=0,
+        offset=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_tags_associated_with_network_devices(api, validator):
+    try:
+        assert is_valid_retrieve_tags_associated_with_network_devices(
+            validator,
+            retrieve_tags_associated_with_network_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieve_tags_associated_with_network_devices_default_val(api):
+    endpoint_result = api.tag.retrieve_tags_associated_with_network_devices(
+        limit=None,
+        offset=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_tags_associated_with_network_devices_default_val(api, validator):
+    try:
+        assert is_valid_retrieve_tags_associated_with_network_devices(
+            validator,
+            retrieve_tags_associated_with_network_devices_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(json_schema_validate, obj):
+    json_schema_validate('jsd_ed33b615feea55b48c1d67d9071e726d_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(api):
+    endpoint_result = api.tag.retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(api, validator):
+    try:
+        assert is_valid_retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(
+            validator,
+            retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag_default_val(api):
+    endpoint_result = api.tag.retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag_default_val(api, validator):
+    try:
+        assert is_valid_retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag(
+            validator,
+            retrieve_the_count_of_network_devices_that_are_associated_with_at_least_one_tag_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_query_the_tags_associated_with_network_devices(json_schema_validate, obj):
+    json_schema_validate('jsd_733c5535cad45ca385a38b01d5865b5a_v2_3_7_6').validate(obj)
+    return True
+
+
+def query_the_tags_associated_with_network_devices(api):
+    endpoint_result = api.tag.query_the_tags_associated_with_network_devices(
+        active_validation=True,
+        ids=['string'],
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_query_the_tags_associated_with_network_devices(api, validator):
+    try:
+        assert is_valid_query_the_tags_associated_with_network_devices(
+            validator,
+            query_the_tags_associated_with_network_devices(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def query_the_tags_associated_with_network_devices_default_val(api):
+    endpoint_result = api.tag.query_the_tags_associated_with_network_devices(
+        active_validation=True,
+        ids=None,
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.tag
+def test_query_the_tags_associated_with_network_devices_default_val(api, validator):
+    try:
+        assert is_valid_query_the_tags_associated_with_network_devices(
+            validator,
+            query_the_tags_associated_with_network_devices_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e

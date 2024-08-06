@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -89,16 +91,18 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-start
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -130,6 +134,22 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_7_6', json_data)
 
+    def start(self,
+              headers=None,
+              payload=None,
+              active_validation=True,
+              **query_parameters):
+        """Alias for `lan_automation_start <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_start>`_
+        """
+        return self.lan_automation_start(
+            payload=payload,
+            active_validation=active_validation,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_session_count(self,
                                      headers=None,
                                      **request_parameters):
@@ -149,12 +169,14 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-session-count
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -180,6 +202,18 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_eea014edd5807925df3a414a92ed4_v2_3_7_6', json_data)
 
+    def session_count(self,
+                      headers=None,
+                      **query_parameters):
+        """Alias for `lan_automation_session_count <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_session_count>`_
+        """
+        return self.lan_automation_session_count(
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_log(self,
                            limit=None,
                            offset=None,
@@ -204,6 +238,8 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-log
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -211,7 +247,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -241,6 +277,22 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_e37f6c9650b68e0aaac866a162cf_v2_3_7_6', json_data)
 
+    def log(self,
+            limit=None,
+            offset=None,
+            headers=None,
+            **query_parameters):
+        """Alias for `lan_automation_log <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_log>`_
+        """
+        return self.lan_automation_log(
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_log_by_id(self,
                                  id,
                                  headers=None,
@@ -248,7 +300,7 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session logs based on the given LAN Automation session id. .
 
         Args:
-            id(str): id path parameter. LAN Automation session identifier. .
+            id(basestring): id path parameter. LAN Automation session identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -262,14 +314,16 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-log-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -296,6 +350,20 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_e98b744fde50a1b53761251c43bfb0_v2_3_7_6', json_data)
 
+    def log_by_id(self,
+                  id,
+                  headers=None,
+                  **query_parameters):
+        """Alias for `lan_automation_log_by_id <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_log_by_id>`_
+        """
+        return self.lan_automation_log_by_id(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_logs_for_individual_devices(self,
                                                    id,
                                                    serial_number,
@@ -306,9 +374,9 @@ class LanAutomation(object):
         session id and device serial number.  .
 
         Args:
-            id(str): id path parameter. LAN Automation session identifier. .
-            serial_number(str): serialNumber path parameter. Device serial number. .
-            log_level(str): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE,
+            id(basestring): id path parameter. LAN Automation session identifier. .
+            serial_number(basestring): serialNumber path parameter. Device serial number. .
+            log_level(basestring): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE,
                 CONFIG and ALL. Specifying ALL will display device specific logs with the exception of
                 CONFIG logs. In order to view CONFIG logs along with the remaining logs, please leave
                 the query parameter blank. .
@@ -325,17 +393,19 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-logs-for-individual-devices
         """
         check_type(headers, dict)
-        check_type(log_level, str)
-        check_type(id, str,
+        check_type(log_level, basestring)
+        check_type(id, basestring,
                    may_be_none=False)
-        check_type(serial_number, str,
+        check_type(serial_number, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'logLevel':
@@ -385,12 +455,14 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-active-sessions
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -440,6 +512,8 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-status
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -447,7 +521,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'offset':
@@ -477,6 +551,22 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_c56a6c58fd5b71b7949036855ee25b_v2_3_7_6', json_data)
 
+    def status(self,
+               limit=None,
+               offset=None,
+               headers=None,
+               **query_parameters):
+        """Alias for `lan_automation_status <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_status>`_
+        """
+        return self.lan_automation_status(
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_status_by_id(self,
                                     id,
                                     headers=None,
@@ -484,7 +574,7 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session status based on the given Lan Automation session id. .
 
         Args:
-            id(str): id path parameter. LAN Automation session identifier. .
+            id(basestring): id path parameter. LAN Automation session identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -498,14 +588,16 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-status-by-id
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -532,6 +624,20 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_d5727c4bdb1056308cd10e99dff2acb8_v2_3_7_6', json_data)
 
+    def status_by_id(self,
+                     id,
+                     headers=None,
+                     **query_parameters):
+        """Alias for `lan_automation_status_by_id <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_status_by_id>`_
+        """
+        return self.lan_automation_status_by_id(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_device_update(self,
                                      feature,
                                      hostnameUpdateDevices=None,
@@ -548,8 +654,8 @@ class LanAutomation(object):
             hostnameUpdateDevices(list): LAN Automation's hostnameUpdateDevices (list of objects).
             linkUpdate(object): LAN Automation's linkUpdate.
             loopbackUpdateDeviceList(list): LAN Automation's loopbackUpdateDeviceList (list of objects).
-            feature(str): feature query parameter. Feature ID for the update. Supported feature IDs include:
-                LOOPBACK0_IPADDRESS_UPDATE, HOSTNAME_UPDATE, LINK_ADD, and LINK_DELETE.  .
+            feature(basestring): feature query parameter. Feature ID for the update. Supported feature IDs include:
+                LOOPBACK0_IPADDRESS_UPDATE, HOSTNAME_UPDATE, LINK_Add and LINK_DELETE.  .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -567,18 +673,20 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-device-update
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(feature, str,
+        check_type(feature, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'feature':
@@ -628,7 +736,7 @@ class LanAutomation(object):
         """Invoke this API to stop LAN Automation for the given site.  .
 
         Args:
-            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
+            id(basestring): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
                 automation/status. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -643,14 +751,16 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop
         """
         check_type(headers, dict)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -677,6 +787,20 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_ed815ca3e5ab5ae48720795217ec776b_v2_3_7_6', json_data)
 
+    def stop(self,
+             id,
+             headers=None,
+             **query_parameters):
+        """Alias for `lan_automation_stop <#dnacentersdk.
+        api.v2_3_7_6.lan_automation.
+        LanAutomation.lan_automation_stop>`_
+        """
+        return self.lan_automation_stop(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
+
     def lan_automation_stop_and_update_devices(self,
                                                id,
                                                headers=None,
@@ -687,7 +811,7 @@ class LanAutomation(object):
         session .
 
         Args:
-            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
+            id(basestring): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
                 automation/status. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -706,15 +830,17 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-and-update-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -777,16 +903,18 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-start-v2
         """
         check_type(headers, dict)
         check_type(payload, list)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -828,7 +956,7 @@ class LanAutomation(object):
         discovered in the current session.  .
 
         Args:
-            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
+            id(basestring): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
                 automation/status. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -847,18 +975,20 @@ class LanAutomation(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-and-update-devices-v2
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(id, str,
+        check_type(id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

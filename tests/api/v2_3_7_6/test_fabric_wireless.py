@@ -275,3 +275,233 @@ def test_add_w_l_c_to_fabric_domain_default_val(api, validator):
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
+
+
+def is_valid_returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(json_schema_validate, obj):
+    json_schema_validate('jsd_0fea6e17769f5b3eb5ee1696254d2973_v2_3_7_6').validate(obj)
+    return True
+
+
+def returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(api):
+    endpoint_result = api.fabric_wireless.returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(
+        limit=0,
+        offset=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(api, validator):
+    try:
+        assert is_valid_returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(
+            validator,
+            returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_default_val(api):
+    endpoint_result = api.fabric_wireless.returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(
+        limit=None,
+        offset=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_default_val(api, validator):
+    try:
+        assert is_valid_returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(
+            validator,
+            returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(json_schema_validate, obj):
+    json_schema_validate('jsd_233017be3f285e21b59701a1af044b28_v2_3_7_6').validate(obj)
+    return True
+
+
+def return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(api):
+    endpoint_result = api.fabric_wireless.return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(api, validator):
+    try:
+        assert is_valid_return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(
+            validator,
+            return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_default_val(api):
+    endpoint_result = api.fabric_wireless.return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(
+
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_default_val(api, validator):
+    try:
+        assert is_valid_return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(
+            validator,
+            return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_add_update_or_remove_ssid_mapping_to_a_vlan(json_schema_validate, obj):
+    json_schema_validate('jsd_a3d2432ae8c55fe793c5180d8d5fce25_v2_3_7_6').validate(obj)
+    return True
+
+
+def add_update_or_remove_ssid_mapping_to_a_vlan(api):
+    endpoint_result = api.fabric_wireless.add_update_or_remove_ssid_mapping_to_a_vlan(
+        active_validation=True,
+        fabric_id='string',
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_add_update_or_remove_ssid_mapping_to_a_vlan(api, validator):
+    try:
+        assert is_valid_add_update_or_remove_ssid_mapping_to_a_vlan(
+            validator,
+            add_update_or_remove_ssid_mapping_to_a_vlan(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def add_update_or_remove_ssid_mapping_to_a_vlan_default_val(api):
+    endpoint_result = api.fabric_wireless.add_update_or_remove_ssid_mapping_to_a_vlan(
+        active_validation=True,
+        fabric_id='string',
+        payload=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_add_update_or_remove_ssid_mapping_to_a_vlan_default_val(api, validator):
+    try:
+        assert is_valid_add_update_or_remove_ssid_mapping_to_a_vlan(
+            validator,
+            add_update_or_remove_ssid_mapping_to_a_vlan_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(json_schema_validate, obj):
+    json_schema_validate('jsd_6a18f012c54a5d34aef05d651f2dea18_v2_3_7_6').validate(obj)
+    return True
+
+
+def retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(api):
+    endpoint_result = api.fabric_wireless.retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(
+        fabric_id='string',
+        limit=0,
+        offset=0
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(api, validator):
+    try:
+        assert is_valid_retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(
+            validator,
+            retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_default_val(api):
+    endpoint_result = api.fabric_wireless.retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(
+        fabric_id='string',
+        limit=None,
+        offset=None
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_default_val(api, validator):
+    try:
+        assert is_valid_retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(
+            validator,
+            retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e
+
+
+def is_valid_returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(json_schema_validate, obj):
+    json_schema_validate('jsd_ed14be6211da53ab832acf9b5aea599c_v2_3_7_6').validate(obj)
+    return True
+
+
+def returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(api):
+    endpoint_result = api.fabric_wireless.returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(
+        fabric_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(api, validator):
+    try:
+        assert is_valid_returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(
+            validator,
+            returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest)):
+            print(original_e)
+            raise original_e
+
+
+def returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_default_val(api):
+    endpoint_result = api.fabric_wireless.returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(
+        fabric_id='string'
+    )
+    return endpoint_result
+
+
+@pytest.mark.fabric_wireless
+def test_returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_default_val(api, validator):
+    try:
+        assert is_valid_returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(
+            validator,
+            returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_default_val(api)
+        )
+    except Exception as original_e:
+        with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
+            raise original_e

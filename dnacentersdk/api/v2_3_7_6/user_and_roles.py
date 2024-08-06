@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -64,14 +66,14 @@ class UserandRoles(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def add_role_ap_i(self,
-                      description=None,
-                      resourceTypes=None,
-                      role=None,
-                      headers=None,
-                      payload=None,
-                      active_validation=True,
-                      **request_parameters):
+    def add_role_api(self,
+                     description=None,
+                     resourceTypes=None,
+                     role=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
         """Add a new role in Cisco DNA Center System. .
 
         Args:
@@ -95,16 +97,18 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-role-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -145,14 +149,14 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_a88c7510a15578b8eb2df183a92d5d_v2_3_7_6', json_data)
 
-    def update_role_ap_i(self,
-                         description=None,
-                         resourceTypes=None,
-                         roleId=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def update_role_api(self,
+                        description=None,
+                        resourceTypes=None,
+                        roleId=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
         """Update a role in Cisco DNA Center System. .
 
         Args:
@@ -176,13 +180,15 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-role-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -223,9 +229,9 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_v2_3_7_6', json_data)
 
-    def get_permissions_ap_i(self,
-                             headers=None,
-                             **request_parameters):
+    def get_permissions_api(self,
+                            headers=None,
+                            **request_parameters):
         """Get permissions for a role from Cisco DNA Center System. .
 
         Args:
@@ -242,12 +248,14 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-permissions-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -273,14 +281,14 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ec0b30eca9d540a845848cffd7c602a_v2_3_7_6', json_data)
 
-    def delete_role_ap_i(self,
-                         role_id,
-                         headers=None,
-                         **request_parameters):
+    def delete_role_api(self,
+                        role_id,
+                        headers=None,
+                        **request_parameters):
         """Delete a role in Cisco DNA Center System .
 
         Args:
-            role_id(str): roleId path parameter. The Id of the role to be deleted .
+            role_id(basestring): roleId path parameter. The Id of the role to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -294,14 +302,16 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-role-a-p-i
         """
         check_type(headers, dict)
-        check_type(role_id, str,
+        check_type(role_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -328,9 +338,9 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_da9e850c44d353f78ab002a640e5604f_v2_3_7_6', json_data)
 
-    def get_roles_ap_i(self,
-                       headers=None,
-                       **request_parameters):
+    def get_roles_api(self,
+                      headers=None,
+                      **request_parameters):
         """Get all roles for the Cisco DNA Center System. .
 
         Args:
@@ -347,15 +357,17 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-roles-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
             if 'invokeSource' in headers:
                 check_type(headers.get('invokeSource'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -381,17 +393,17 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_bef02e8f6f8354dc99e375826a87c88c_v2_3_7_6', json_data)
 
-    def get_users_ap_i(self,
-                       invoke_source,
-                       auth_source=None,
-                       headers=None,
-                       **request_parameters):
+    def get_users_api(self,
+                      invoke_source,
+                      auth_source=None,
+                      headers=None,
+                      **request_parameters):
         """Get all users for the Cisco DNA Center System. .
 
         Args:
-            invoke_source(str): invokeSource query parameter. The source that invokes this API. The value of
+            invoke_source(basestring): invokeSource query parameter. The source that invokes this API. The value of
                 this query parameter must be set to "external". .
-            auth_source(str): authSource query parameter. The source that authenticates the user. The value
+            auth_source(basestring): authSource query parameter. The source that authenticates the user. The value
                 of this query parameter can be set to "internal" or "external". If not provided, then
                 all users will be returned in the response. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -407,15 +419,17 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-users-a-p-i
         """
         check_type(headers, dict)
-        check_type(invoke_source, str,
+        check_type(invoke_source, basestring,
                    may_be_none=False)
-        check_type(auth_source, str)
+        check_type(auth_source, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'invokeSource':
@@ -445,17 +459,17 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_fa405b6d1be56739f2dfeea63212015_v2_3_7_6', json_data)
 
-    def add_user_ap_i(self,
-                      email=None,
-                      firstName=None,
-                      lastName=None,
-                      password=None,
-                      roleList=None,
-                      username=None,
-                      headers=None,
-                      payload=None,
-                      active_validation=True,
-                      **request_parameters):
+    def add_user_api(self,
+                     email=None,
+                     firstName=None,
+                     lastName=None,
+                     password=None,
+                     roleList=None,
+                     username=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
         """Add a new user for Cisco DNA Center System. .
 
         Args:
@@ -482,13 +496,15 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-user-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -535,17 +551,17 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_d82755e5e03510daf0951c1f42c2702_v2_3_7_6', json_data)
 
-    def update_user_ap_i(self,
-                         email=None,
-                         firstName=None,
-                         lastName=None,
-                         roleList=None,
-                         userId=None,
-                         username=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def update_user_api(self,
+                        email=None,
+                        firstName=None,
+                        lastName=None,
+                        roleList=None,
+                        userId=None,
+                        username=None,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
         """Update a user for Cisco DNA Center System. .
 
         Args:
@@ -572,13 +588,15 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-user-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -625,14 +643,14 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_d2bd5f05bd535a89ebadb30e2ede9e_v2_3_7_6', json_data)
 
-    def delete_user_ap_i(self,
-                         user_id,
-                         headers=None,
-                         **request_parameters):
+    def delete_user_api(self,
+                        user_id,
+                        headers=None,
+                        **request_parameters):
         """Delete a user from Cisco DNA Center System. .
 
         Args:
-            user_id(str): userId path parameter. The id of the user to be deleted .
+            user_id(basestring): userId path parameter. The id of the user to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -646,14 +664,16 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-user-a-p-i
         """
         check_type(headers, dict)
-        check_type(user_id, str,
+        check_type(user_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -680,9 +700,9 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_c65c6cc65f068766cbb8a42ad387_v2_3_7_6', json_data)
 
-    def get_external_authentication_setting_ap_i(self,
-                                                 headers=None,
-                                                 **request_parameters):
+    def get_external_authentication_setting_api(self,
+                                                headers=None,
+                                                **request_parameters):
         """Get the External Authentication setting. .
 
         Args:
@@ -699,12 +719,14 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-setting-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -730,12 +752,12 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ac03ba045f60925fd7843bf9e279_v2_3_7_6', json_data)
 
-    def manage_external_authentication_setting_ap_i(self,
-                                                    enable=None,
-                                                    headers=None,
-                                                    payload=None,
-                                                    active_validation=True,
-                                                    **request_parameters):
+    def manage_external_authentication_setting_api(self,
+                                                   enable=None,
+                                                   headers=None,
+                                                   payload=None,
+                                                   active_validation=True,
+                                                   **request_parameters):
         """Enable or disable external authentication on Cisco DNA Center System. Please find the Administrator Guide for
         your particular release from the list linked below and follow the steps required to enable external
         authentication before trying to do so from this API. https://www.cisco.com/c/en/us/support/cloud-
@@ -760,13 +782,15 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!manage-external-authentication-setting-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -803,14 +827,14 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_e4f57e8f06856ee9a7e490d01f7f692_v2_3_7_6', json_data)
 
-    def get_external_authentication_servers_ap_i(self,
-                                                 invoke_source,
-                                                 headers=None,
-                                                 **request_parameters):
+    def get_external_authentication_servers_api(self,
+                                                invoke_source,
+                                                headers=None,
+                                                **request_parameters):
         """Get external users authentication servers. .
 
         Args:
-            invoke_source(str): invokeSource query parameter. The source that invokes this API. The value of
+            invoke_source(basestring): invokeSource query parameter. The source that invokes this API. The value of
                 this query parameter must be set to "external". .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -825,14 +849,16 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-a-p-i
         """
         check_type(headers, dict)
-        check_type(invoke_source, str,
+        check_type(invoke_source, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'invokeSource':
@@ -860,12 +886,12 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_def9045d4d9c96bcd42172a79c_v2_3_7_6', json_data)
 
-    def add_and_update_a_a_a_attribute_ap_i(self,
-                                            attributeName=None,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
+    def add_and_update_a_a_a_attribute_api(self,
+                                           attributeName=None,
+                                           headers=None,
+                                           payload=None,
+                                           active_validation=True,
+                                           **request_parameters):
         """Add or update the custom AAA attribute for external authentication. Note that if you decide not to set the
         custom AAA attribute, a default AAA attribute will be used for authentication based on the protocol
         supported by your server. For TACACS servers it will be "cisco-av-pair" and for RADIUS servers it will
@@ -890,16 +916,18 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!add-and-update-a-a-a-attribute-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -936,9 +964,9 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_f5bfccc7e30550baa7046f74daa1ef2_v2_3_7_6', json_data)
 
-    def delete_a_a_a_attribute_ap_i(self,
-                                    headers=None,
-                                    **request_parameters):
+    def delete_a_a_a_attribute_api(self,
+                                   headers=None,
+                                   **request_parameters):
         """Delete the custom AAA attribute that was added. Note that by deleting the AAA attribute, a default AAA attribute
         will be used for authentication based on the protocol supported by your server. For TACACS servers it
         will be "cisco-av-pair" and for RADIUS servers it will be "Cisco-AVPair". .
@@ -957,12 +985,14 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-a-a-a-attribute-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -988,9 +1018,9 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_f20c99b436bd5be8bdb9094db3a47f01_v2_3_7_6', json_data)
 
-    def get_a_a_a_attribute_ap_i(self,
-                                 headers=None,
-                                 **request_parameters):
+    def get_a_a_a_attribute_api(self,
+                                headers=None,
+                                **request_parameters):
         """Get the current value of the custom AAA attribute. .
 
         Args:
@@ -1007,12 +1037,14 @@ class UserandRoles(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-a-a-a-attribute-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }

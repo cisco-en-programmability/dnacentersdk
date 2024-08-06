@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
+from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -86,20 +88,20 @@ class PathTrace(object):
 
         Args:
             periodic_refresh(bool): periodicRefresh query parameter. Is analysis periodically refreshed? .
-            source_ip(str): sourceIP query parameter. Source IP address .
-            dest_ip(str): destIP query parameter. Destination IP address .
+            source_ip(basestring): sourceIP query parameter. Source IP address .
+            dest_ip(basestring): destIP query parameter. Destination IP address .
             source_port(int): sourcePort query parameter. Source port .
             dest_port(int): destPort query parameter. Destination port .
             gt_create_time(int): gtCreateTime query parameter. Analyses requested after this time .
             lt_create_time(int): ltCreateTime query parameter. Analyses requested before this time .
-            protocol(str): protocol query parameter.
-            status(str): status query parameter.
-            task_id(str): taskId query parameter. Task ID .
+            protocol(basestring): protocol query parameter.
+            status(basestring): status query parameter.
+            task_id(basestring): taskId query parameter. Task ID .
             last_update_time(int): lastUpdateTime query parameter. Last update time .
             limit(int): limit query parameter. Number of resources returned .
             offset(int): offset query parameter. Start index of resources returned (1-based) .
-            order(str): order query parameter. Order by this field .
-            sort_by(str): sortBy query parameter. Sort by this field .
+            order(basestring): order query parameter. Order by this field .
+            sort_by(basestring): sortBy query parameter. Sort by this field .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -113,27 +115,29 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-all-previous-pathtraces-summary
         """
         check_type(headers, dict)
         check_type(periodic_refresh, bool)
-        check_type(source_ip, str)
-        check_type(dest_ip, str)
+        check_type(source_ip, basestring)
+        check_type(dest_ip, basestring)
         check_type(source_port, int)
         check_type(dest_port, int)
         check_type(gt_create_time, int)
         check_type(lt_create_time, int)
-        check_type(protocol, str)
-        check_type(status, str)
-        check_type(task_id, str)
+        check_type(protocol, basestring)
+        check_type(status, basestring)
+        check_type(task_id, basestring)
         check_type(last_update_time, int)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(order, str)
-        check_type(sort_by, str)
+        check_type(order, basestring)
+        check_type(sort_by, basestring)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
             'periodicRefresh':
@@ -232,13 +236,15 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!initiate-a-new-pathtrace
         """
         check_type(headers, dict)
         check_type(payload, dict)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -296,7 +302,7 @@ class PathTrace(object):
         """Returns result of a previously requested flow analysis by its Flow Analysis id .
 
         Args:
-            flow_analysis_id(str): flowAnalysisId path parameter. Flow analysis request id .
+            flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -310,14 +316,16 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!retrieves-previous-pathtrace
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, str,
+        check_type(flow_analysis_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
@@ -351,7 +359,7 @@ class PathTrace(object):
         """Deletes a flow analysis request by its id .
 
         Args:
-            flow_analysis_id(str): flowAnalysisId path parameter. Flow analysis request id .
+            flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -365,14 +373,16 @@ class PathTrace(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deletes-pathtrace-by-id
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, str,
+        check_type(flow_analysis_id, basestring,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                           basestring, may_be_none=False)
 
         _params = {
         }
