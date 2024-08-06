@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -77,9 +77,9 @@ class Itsm(object):
         parameter filtered detail will be send as response. .
 
         Args:
-            status(basestring): status query parameter. Supported values are "Success","Failed" and "Unknown".
+            status(str): status query parameter. Supported values are "Success","Failed" and "Unknown".
                 Providing other values will result in all the available sync job status. .
-            date(basestring): date query parameter. Provide date in "YYYY-MM-DD" format .
+            date(str): date query parameter. Provide date in "YYYY-MM-DD" format .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -98,12 +98,12 @@ class Itsm(object):
             https://developer.cisco.com/docs/dna-center/#!get-c-m-d-b-sync-status
         """
         check_type(headers, dict)
-        check_type(status, basestring)
-        check_type(date, basestring)
+        check_type(status, str)
+        check_type(date, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'status':
@@ -140,7 +140,7 @@ class Itsm(object):
         """Used to retrieve the list of integration events that failed to create tickets in ITSM .
 
         Args:
-            instance_id(basestring): instanceId query parameter. Instance Id of the failed event as in the Runtime
+            instance_id(str): instanceId query parameter. Instance Id of the failed event as in the Runtime
                 Dashboard .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -160,11 +160,11 @@ class Itsm(object):
             https://developer.cisco.com/docs/dna-center/#!get-failed-i-t-s-m-events
         """
         check_type(headers, dict)
-        check_type(instance_id, basestring)
+        check_type(instance_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'instanceId':
@@ -228,7 +228,7 @@ class Itsm(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -38,7 +38,7 @@ Added
 -  Adds modules for v2_3_7_6 ### Changed
 -  The future library was removed
 -  The past library was removed
--  Changed basestring to str
+-  Changed str to str
 -  Requirements updated ### Fixed
 -  Fix headers in ``create_webhook_destination`` and
    ``update_webhook_destination``

@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -120,103 +120,103 @@ class Issues(object):
             limit(int): limit query parameter. Maximum number of issues to return .
             offset(int): offset query parameter. Specifies the starting point within all records returned by the
                 API. It's one based offset. The starting value is 1. .
-            sort_by(basestring): sortBy query parameter.
-            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            sort_by(str): sortBy query parameter.
+            order(str): order query parameter. The sort order of the field ascending or descending. .
             is_global(bool): isGlobal query parameter. Global issues are those issues which impacts across many
                 devices, sites. They are also displayed on Issue Dashboard in Catalyst Center UI. Non-
                 Global issues are displayed only on Client 360 or Device 360 pages. If this flag is
                 'true', only global issues are returned. If it if 'false', all issues are returned. .
-            priority(basestring): priority query parameter. Priority of the issue. Supports single priority and
+            priority(str): priority query parameter. Priority of the issue. Supports single priority and
                 multiple priorities Examples: priority=P1 (single priority requested)
                 priority=P1&priority=P2&priority=P3 (multiple priorities requested) .
-            severity(basestring): severity query parameter. Severity of the issue. Supports single severity and
+            severity(str): severity query parameter. Severity of the issue. Supports single severity and
                 multiple severities. Examples: severity=high (single severity requested)
                 severity=high&severity=medium (multiple severities requested) .
-            status(basestring): status query parameter. Status of the issue. Supports single status and multiple
+            status(str): status query parameter. Status of the issue. Supports single status and multiple
                 statuses. Examples: status=active (single status requested)
                 status=active&status=resolved (multiple statuses requested) .
-            entity_type(basestring): entityType query parameter. Entity type of the issue. Supports single entity
+            entity_type(str): entityType query parameter. Entity type of the issue. Supports single entity
                 type and multiple entity types. Examples: entityType=networkDevice (single entity type
                 requested) entityType=network device&entityType=client (multiple entity types requested)
                 .
-            category(basestring): category query parameter. Categories of the issue. Supports single category and
+            category(str): category query parameter. Categories of the issue. Supports single category and
                 multiple categories. Examples: category=availability (single status requested)
                 category=availability&category=onboarding (multiple categories requested) .
-            device_type(basestring): deviceType query parameter. Device Type of the device to which this issue
+            device_type(str): deviceType query parameter. Device Type of the device to which this issue
                 belongs to. Supports single device type and multiple device types. Examples:
                 deviceType=wireless controller (single device type requested) deviceType=wireless
                 controller&deviceType=core (multiple device types requested) .
-            name(basestring): name query parameter. The name of the issue Examples: name=ap_down (single issue name
+            name(str): name query parameter. The name of the issue Examples: name=ap_down (single issue name
                 requested) name=ap_down&name=wlc_monitor (multiple issue names requested) Issue names
                 can be retrieved using the API /data/api/v1/assuranceIssueConfigurations .
-            issue_id(basestring): issueId query parameter. UUID of the issue Examples:
+            issue_id(str): issueId query parameter. UUID of the issue Examples:
                 issueId=e52aecfe-b142-4287-a587-11a16ba6dd26 (single issue id requested) issueId=e52aecf
                 e-b142-4287-a587-11a16ba6dd26&issueId=864d0421-02c0-43a6-9c52-81cad45f66d8 (multiple
                 issue ids requested) .
-            entity_id(basestring): entityId query parameter. Id of the entity for which this issue belongs to. For
+            entity_id(str): entityId query parameter. Id of the entity for which this issue belongs to. For
                 example, it     could be mac address of AP or UUID of Sensor   example:
                 68:ca:e4:79:3f:20 4de02167-901b-43cf-8822-cffd3caa286f Examples:
                 entityId=68:ca:e4:79:3f:20 (single entity id requested)
                 entityId=68:ca:e4:79:3f:20&entityId=864d0421-02c0-43a6-9c52-81cad45f66d8 (multiple
                 entity ids requested) .
-            updated_by(basestring): updatedBy query parameter. The user who last updated this issue. Examples:
+            updated_by(str): updatedBy query parameter. The user who last updated this issue. Examples:
                 updatedBy=admin (single updatedBy requested) updatedBy=admin&updatedBy=john (multiple
                 updatedBy requested) .
-            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
                 tree starting from Global site name and ending with the specific site name. The Root
                 site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
                 supports wildcard asterisk (*) character search support. E.g. */San*, */San, /San*
                 Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
                 requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
                 reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
-            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
                 tree in id form starting from Global site UUID and ending with the specific site UUID.
                 (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
                 (*) character search support. E.g. `*uuid*, *uuid, uuid* Examples:
                 `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
                 requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
                 globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
-            site_name(basestring): siteName query parameter. The name of the site. (Ex. `FloorName`) This field
+            site_name(str): siteName query parameter. The name of the site. (Ex. `FloorName`) This field
                 supports wildcard asterisk (*) character search support. E.g. *San*, *San, San*
                 Examples: `?siteName=building1` (single siteName requested)
                 `?siteName=building1&siteName=building2&siteName=building3` (multiple siteNames
                 requested) .
-            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) This field supports
+            site_id(str): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) This field supports
                 wildcard asterisk (*) character search support. E.g.*flooruuid*, *flooruuid, flooruuid*
                 Examples: `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3`
                 (multiple ids requested) .
-            fabric_site_id(basestring): fabricSiteId query parameter. The UUID of the fabric site. (Ex. "flooruuid")
+            fabric_site_id(str): fabricSiteId query parameter. The UUID of the fabric site. (Ex. "flooruuid")
                 Examples: fabricSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26 (single id requested)
                 fabricSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26,864d0421-02c0-43a6-9c52-81cad45f66d8
                 (multiple ids requested) .
-            fabric_vn_name(basestring): fabricVnName query parameter. The name of the fabric virtual network
+            fabric_vn_name(str): fabricVnName query parameter. The name of the fabric virtual network
                 Examples: fabricVnName=name1 (single fabric virtual network name requested)
                 fabricVnName=name1&fabricVnName=name2&fabricVnName=name3 (multiple fabric virtual
                 network names requested) .
-            fabric_transit_site_id(basestring): fabricTransitSiteId query parameter. The UUID of the fabric transit
+            fabric_transit_site_id(str): fabricTransitSiteId query parameter. The UUID of the fabric transit
                 site. (Ex. "flooruuid") Examples:
                 fabricTransitSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26 (single id requested) fabricTra
                 nsitSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26&fabricTransitSiteId=864d0421-02c0-43a6-
                 9c52-81cad45f66d8 (multiple ids requested) .
-            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+            network_device_id(str): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
                 `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
                 `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
                 requested) `networkDeviceId=6bef213c-19ca-4170-8375-
                 b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
                 cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
                 networkDeviceIds with & separator) .
-            network_device_ip_address(basestring): networkDeviceIpAddress query parameter. The list of Network
+            network_device_ip_address(str): networkDeviceIpAddress query parameter. The list of Network
                 Device management IP Address. (Ex. `121.1.1.10`) This field supports wildcard (`*`)
                 character-based search.  Ex: `*1.1*` or `1.1*` or `*1.1` Examples:
                 `networkDeviceIpAddress=121.1.1.10` `networkDeviceIpAddress=121.1.1.10&networkDeviceIpAd
                 dress=172.20.1.10&networkDeviceIpAddress=10.10.20.10` (multiple networkDevice IP Address
                 with & separator) .
-            mac_address(basestring): macAddress query parameter. The macAddress of the network device or client This
+            mac_address(str): macAddress query parameter. The macAddress of the network device or client This
                 field supports wildcard (`*`) character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*`
                 or `*AB:AB:AB` Examples: `macAddress=AB:AB:AB:CD:CD:CD` (single macAddress requested)
                 `macAddress=AB:AB:AB:CD:CD:DC&macAddress=AB:AB:AB:CD:CD:FE` (multiple macAddress
                 requested) .
-            view(basestring): view query parameter. The name of the View. Each view represents a specific data set.
+            view(str): view query parameter. The name of the View. Each view represents a specific data set.
                 Please refer to the `IssuesView` Model for supported views. View is predefined set of
                 attributes supported by the API. Only the attributes related to the given view will be
                 part of the API response along with default attributes. If multiple views are provided,
@@ -225,7 +225,7 @@ class Issues(object):
                 updatedBy: `site`: siteName, siteHierarchy, siteId, siteHierarchyId: Examples:
                 `view=update` (single view requested) `view=update&view=site` (multiple views
                 requested)),  .
-            attribute(basestring): attribute query parameter. List of attributes related to the issue. If these are
+            attribute(str): attribute query parameter. List of attributes related to the issue. If these are
                 provided, then only those attributes will be part of response along with the default
                 attributes. Please refer to the `IssuesResponseAttribute` Model for supported
                 attributes. Examples: `attribute=deviceType` (single attribute requested)
@@ -260,31 +260,31 @@ class Issues(object):
         check_type(end_time, int)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         check_type(is_global, bool)
-        check_type(priority, basestring)
-        check_type(severity, basestring)
-        check_type(status, basestring)
-        check_type(entity_type, basestring)
-        check_type(category, basestring)
-        check_type(device_type, basestring)
-        check_type(name, basestring)
-        check_type(issue_id, basestring)
-        check_type(entity_id, basestring)
-        check_type(updated_by, basestring)
-        check_type(site_hierarchy, basestring)
-        check_type(site_hierarchy_id, basestring)
-        check_type(site_name, basestring)
-        check_type(site_id, basestring)
-        check_type(fabric_site_id, basestring)
-        check_type(fabric_vn_name, basestring)
-        check_type(fabric_transit_site_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(network_device_ip_address, basestring)
-        check_type(mac_address, basestring)
-        check_type(view, basestring)
-        check_type(attribute, basestring)
+        check_type(priority, str)
+        check_type(severity, str)
+        check_type(status, str)
+        check_type(entity_type, str)
+        check_type(category, str)
+        check_type(device_type, str)
+        check_type(name, str)
+        check_type(issue_id, str)
+        check_type(entity_id, str)
+        check_type(updated_by, str)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_name, str)
+        check_type(site_id, str)
+        check_type(fabric_site_id, str)
+        check_type(fabric_vn_name, str)
+        check_type(fabric_transit_site_id, str)
+        check_type(network_device_id, str)
+        check_type(network_device_ip_address, str)
+        check_type(mac_address, str)
+        check_type(view, str)
+        check_type(attribute, str)
         check_type(ai_driven, bool)
         check_type(fabric_driven, bool)
         check_type(fabric_site_driven, bool)
@@ -293,13 +293,13 @@ class Issues(object):
         if headers is not None:
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -439,92 +439,92 @@ class Issues(object):
                 devices, sites. They are also displayed on Issue Dashboard in Catalyst Center UI. Non-
                 Global issues are displayed only on Client 360 or Device 360 pages. If this flag is
                 'true', only global issues are returned. If it if 'false', all issues are returned. .
-            priority(basestring): priority query parameter. Priority of the issue. Supports single priority and
+            priority(str): priority query parameter. Priority of the issue. Supports single priority and
                 multiple priorities Examples: priority=P1 (single priority requested)
                 priority=P1&priority=P2&priority=P3 (multiple priorities requested) .
-            severity(basestring): severity query parameter. Severity of the issue. Supports single severity and
+            severity(str): severity query parameter. Severity of the issue. Supports single severity and
                 multiple severities. Examples: severity=high (single severity requested)
                 severity=high&severity=medium (multiple severities requested) .
-            status(basestring): status query parameter. Status of the issue. Supports single status and multiple
+            status(str): status query parameter. Status of the issue. Supports single status and multiple
                 statuses. Examples: status=active (single status requested)
                 status=active&status=resolved (multiple statuses requested) .
-            entity_type(basestring): entityType query parameter. Entity type of the issue. Supports single entity
+            entity_type(str): entityType query parameter. Entity type of the issue. Supports single entity
                 type and multiple entity types. Examples: entityType=networkDevice (single entity type
                 requested) entityType=network device&entityType=client (multiple entity types requested)
                 .
-            category(basestring): category query parameter. Categories of the issue. Supports single category and
+            category(str): category query parameter. Categories of the issue. Supports single category and
                 multiple categories. Examples: category=availability (single status requested)
                 category=availability&category=onboarding (multiple categories requested) .
-            device_type(basestring): deviceType query parameter. Device Type of the device to which this issue
+            device_type(str): deviceType query parameter. Device Type of the device to which this issue
                 belongs to. Supports single device type and multiple device types. Examples:
                 deviceType=wireless controller (single device type requested) deviceType=wireless
                 controller&deviceType=core (multiple device types requested) .
-            name(basestring): name query parameter. The name of the issue Examples: name=ap_down (single issue name
+            name(str): name query parameter. The name of the issue Examples: name=ap_down (single issue name
                 requested) name=ap_down&name=wlc_monitor (multiple issue names requested) Issue names
                 can be retrieved using the API /data/api/v1/assuranceIssueConfigurations .
-            issue_id(basestring): issueId query parameter. UUID of the issue Examples:
+            issue_id(str): issueId query parameter. UUID of the issue Examples:
                 issueId=e52aecfe-b142-4287-a587-11a16ba6dd26 (single issue id requested) issueId=e52aecf
                 e-b142-4287-a587-11a16ba6dd26&issueId=864d0421-02c0-43a6-9c52-81cad45f66d8 (multiple
                 issue ids requested) .
-            entity_id(basestring): entityId query parameter. Id of the entity for which this issue belongs to. For
+            entity_id(str): entityId query parameter. Id of the entity for which this issue belongs to. For
                 example, it     could be mac address of AP or UUID of Sensor   example:
                 68:ca:e4:79:3f:20 4de02167-901b-43cf-8822-cffd3caa286f Examples:
                 entityId=68:ca:e4:79:3f:20 (single entity id requested)
                 entityId=68:ca:e4:79:3f:20&entityId=864d0421-02c0-43a6-9c52-81cad45f66d8 (multiple
                 entity ids requested) .
-            updated_by(basestring): updatedBy query parameter. The user who last updated this issue. Examples:
+            updated_by(str): updatedBy query parameter. The user who last updated this issue. Examples:
                 updatedBy=admin (single updatedBy requested) updatedBy=admin&updatedBy=john (multiple
                 updatedBy requested) .
-            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
                 tree starting from Global site name and ending with the specific site name. The Root
                 site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
                 supports wildcard asterisk (*) character search support. E.g. */San*, */San, /San*
                 Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
                 requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
                 reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
-            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
                 tree in id form starting from Global site UUID and ending with the specific site UUID.
                 (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
                 (*) character search support. E.g. `*uuid*, *uuid, uuid* Examples:
                 `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
                 requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
                 globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
-            site_name(basestring): siteName query parameter. The name of the site. (Ex. `FloorName`) This field
+            site_name(str): siteName query parameter. The name of the site. (Ex. `FloorName`) This field
                 supports wildcard asterisk (*) character search support. E.g. *San*, *San, San*
                 Examples: `?siteName=building1` (single siteName requested)
                 `?siteName=building1&siteName=building2&siteName=building3` (multiple siteNames
                 requested) .
-            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) This field supports
+            site_id(str): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) This field supports
                 wildcard asterisk (*) character search support. E.g.*flooruuid*, *flooruuid, flooruuid*
                 Examples: `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3`
                 (multiple ids requested) .
-            fabric_site_id(basestring): fabricSiteId query parameter. The UUID of the fabric site. (Ex. "flooruuid")
+            fabric_site_id(str): fabricSiteId query parameter. The UUID of the fabric site. (Ex. "flooruuid")
                 Examples: fabricSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26 (single id requested)
                 fabricSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26,864d0421-02c0-43a6-9c52-81cad45f66d8
                 (multiple ids requested) .
-            fabric_vn_name(basestring): fabricVnName query parameter. The name of the fabric virtual network
+            fabric_vn_name(str): fabricVnName query parameter. The name of the fabric virtual network
                 Examples: fabricVnName=name1 (single fabric virtual network name requested)
                 fabricVnName=name1&fabricVnName=name2&fabricVnName=name3 (multiple fabric virtual
                 network names requested) .
-            fabric_transit_site_id(basestring): fabricTransitSiteId query parameter. The UUID of the fabric transit
+            fabric_transit_site_id(str): fabricTransitSiteId query parameter. The UUID of the fabric transit
                 site. (Ex. "flooruuid") Examples:
                 fabricTransitSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26 (single id requested) fabricTra
                 nsitSiteId=e52aecfe-b142-4287-a587-11a16ba6dd26&fabricTransitSiteId=864d0421-02c0-43a6-
                 9c52-81cad45f66d8 (multiple ids requested) .
-            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+            network_device_id(str): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
                 `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
                 `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
                 requested) `networkDeviceId=6bef213c-19ca-4170-8375-
                 b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
                 cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
                 networkDeviceIds with & separator) .
-            network_device_ip_address(basestring): networkDeviceIpAddress query parameter. The list of Network
+            network_device_ip_address(str): networkDeviceIpAddress query parameter. The list of Network
                 Device management IP Address. (Ex. `121.1.1.10`) This field supports wildcard (`*`)
                 character-based search.  Ex: `*1.1*` or `1.1*` or `*1.1` Examples:
                 `networkDeviceIpAddress=121.1.1.10` `networkDeviceIpAddress=121.1.1.10&networkDeviceIpAd
                 dress=172.20.1.10&networkDeviceIpAddress=10.10.20.10` (multiple networkDevice IP Address
                 with & separator) .
-            mac_address(basestring): macAddress query parameter. The macAddress of the network device or client This
+            mac_address(str): macAddress query parameter. The macAddress of the network device or client This
                 field supports wildcard (`*`) character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*`
                 or `*AB:AB:AB` Examples: `macAddress=AB:AB:AB:CD:CD:CD` (single macAddress requested)
                 `macAddress=AB:AB:AB:CD:CD:DC&macAddress=AB:AB:AB:CD:CD:FE` (multiple macAddress
@@ -558,26 +558,26 @@ class Issues(object):
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(is_global, bool)
-        check_type(priority, basestring)
-        check_type(severity, basestring)
-        check_type(status, basestring)
-        check_type(entity_type, basestring)
-        check_type(category, basestring)
-        check_type(device_type, basestring)
-        check_type(name, basestring)
-        check_type(issue_id, basestring)
-        check_type(entity_id, basestring)
-        check_type(updated_by, basestring)
-        check_type(site_hierarchy, basestring)
-        check_type(site_hierarchy_id, basestring)
-        check_type(site_name, basestring)
-        check_type(site_id, basestring)
-        check_type(fabric_site_id, basestring)
-        check_type(fabric_vn_name, basestring)
-        check_type(fabric_transit_site_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(network_device_ip_address, basestring)
-        check_type(mac_address, basestring)
+        check_type(priority, str)
+        check_type(severity, str)
+        check_type(status, str)
+        check_type(entity_type, str)
+        check_type(category, str)
+        check_type(device_type, str)
+        check_type(name, str)
+        check_type(issue_id, str)
+        check_type(entity_id, str)
+        check_type(updated_by, str)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_name, str)
+        check_type(site_id, str)
+        check_type(fabric_site_id, str)
+        check_type(fabric_vn_name, str)
+        check_type(fabric_transit_site_id, str)
+        check_type(network_device_id, str)
+        check_type(network_device_ip_address, str)
+        check_type(mac_address, str)
         check_type(ai_driven, bool)
         check_type(fabric_driven, bool)
         check_type(fabric_site_driven, bool)
@@ -586,10 +586,10 @@ class Issues(object):
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -714,16 +714,16 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -807,13 +807,13 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -904,16 +904,16 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1014,16 +1014,16 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1127,16 +1127,16 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1198,8 +1198,8 @@ class Issues(object):
         IssuesList-1.0.0-resolved.yaml .
 
         Args:
-            id(basestring): id path parameter. The issue Uuid .
-            view(basestring): view query parameter. The name of the View. Each view represents a specific data set.
+            id(str): id path parameter. The issue Uuid .
+            view(str): view query parameter. The name of the View. Each view represents a specific data set.
                 Please refer to the `IssuesView` Model for supported views. View is predefined set of
                 attributes supported by the API. Only the attributes related to the given view will be
                 part of the API response along with default attributes. If multiple views are provided,
@@ -1208,7 +1208,7 @@ class Issues(object):
                 updatedBy: `site`: siteName, siteHierarchy, siteId, siteHierarchyId: Examples:
                 `view=update` (single view requested) `view=update&view=site` (multiple views
                 requested)),  .
-            attribute(basestring): attribute query parameter. List of attributes related to the issue. If these are
+            attribute(str): attribute query parameter. List of attributes related to the issue. If these are
                 provided, then only those attributes will be part of response along with the default
                 attributes. Please refer to the `IssuesResponseAttribute` Model for supported
                 attributes. Examples: `attribute=deviceType` (single attribute requested)
@@ -1230,20 +1230,20 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-all-the-details-and-suggested-actions-of-an-issue-for-the-given-issue-id
         """
         check_type(headers, dict)
-        check_type(view, basestring)
-        check_type(attribute, basestring)
-        check_type(id, basestring,
+        check_type(view, str)
+        check_type(attribute, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'view':
@@ -1313,13 +1313,13 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1395,13 +1395,13 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1452,7 +1452,7 @@ class Issues(object):
 
         Args:
             notes(string): Issues's Notes.
-            id(basestring): id path parameter. The issue Uuid .
+            id(str): id path parameter. The issue Uuid .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1475,21 +1475,21 @@ class Issues(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Accept-Language' in headers:
                 check_type(headers.get('Accept-Language'),
-                           basestring)
+                           str)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1576,13 +1576,13 @@ class Issues(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1654,16 +1654,16 @@ class Issues(object):
         .
 
         Args:
-            id(basestring): id query parameter. The custom issue definition identifier and unique identifier across
+            id(str): id query parameter. The custom issue definition identifier and unique identifier across
                 the profile.Examples: id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid
                 requested)
                 id=6bef213c-19ca-4170-8375-b694e251101c&id=19ca-4170-8375-b694e251101c-6bef213c
                 (multiple Id request in the query param) .
-            profile_id(basestring): profileId query parameter. The profile identifier to fetch the profile
+            profile_id(str): profileId query parameter. The profile identifier to fetch the profile
                 associated custom issue definitions. The default is global. For the custom profile, it
                 is profile UUID. Example : 3fa85f64-5717-4562-b3fc-2c963f66afa6 .
-            name(basestring): name query parameter. The list of UDI issue names .
-            priority(basestring): priority query parameter. The Issue priority value, possible values are P1, P2,
+            name(str): name query parameter. The list of UDI issue names .
+            priority(str): priority query parameter. The Issue priority value, possible values are P1, P2,
                 P3, P4. P1: A critical issue that needs immediate attention and can have a wide impact
                 on network operations. P2: A major issue that can potentially impact multiple devices or
                 clients. P3: A minor issue that has a localized or minimal impact. P4: A warning issue
@@ -1674,13 +1674,13 @@ class Issues(object):
             severity(int): severity query parameter. The syslog severity level. 0: Emergency 1: Alert, 2: Critical.
                 3: Error, 4: Warning, 5: Notice, 6: Info. Examples:severity=1&severity=2 (multi value
                 support with & separator) .
-            facility(basestring): facility query parameter. The syslog facility name .
-            mnemonic(basestring): mnemonic query parameter. The syslog mnemonic name .
+            facility(str): facility query parameter. The syslog facility name .
+            mnemonic(str): mnemonic query parameter. The syslog mnemonic name .
             limit(int): limit query parameter. The maximum number of records to return .
             offset(int): offset query parameter. Specifies the starting point within all records returned by the
                 API. It's one based offset. The starting value is 1. .
-            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
-            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            sort_by(str): sortBy query parameter. A field within the response to sort by. .
+            order(str): order query parameter. The sort order of the field ascending or descending. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1698,22 +1698,22 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-all-the-custom-issue-definitions-based-on-the-given-filters
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(profile_id, basestring)
-        check_type(name, basestring)
-        check_type(priority, basestring)
+        check_type(id, str)
+        check_type(profile_id, str)
+        check_type(name, str)
+        check_type(priority, str)
         check_type(is_enabled, bool)
         check_type(severity, int)
-        check_type(facility, basestring)
-        check_type(mnemonic, basestring)
+        check_type(facility, str)
+        check_type(mnemonic, str)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -1781,16 +1781,16 @@ class Issues(object):
         specs/blob/main/Assurance/CE_Cat_Center_Org-AssuranceUserDefinedIssueAPIs-1.0.0-resolved.yaml .
 
         Args:
-            id(basestring): id query parameter. The custom issue definition identifier and unique identifier across
+            id(str): id query parameter. The custom issue definition identifier and unique identifier across
                 the profile. Examples: id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid
                 requested)
                 id=6bef213c-19ca-4170-8375-b694e251101c&id=19ca-4170-8375-b694e251101c-6bef213c
                 (multiple Id request in the query param) .
-            profile_id(basestring): profileId query parameter. The profile identifier to fetch the profile
+            profile_id(str): profileId query parameter. The profile identifier to fetch the profile
                 associated custom issue definitions. The default is global. For the custom profile, it
                 is profile UUID. Example : 3fa85f64-5717-4562-b3fc-2c963f66afa6 .
-            name(basestring): name query parameter. The list of UDI issue names. (Ex."TestUdiIssues") .
-            priority(basestring): priority query parameter. The Issue priority value, possible values are P1, P2,
+            name(str): name query parameter. The list of UDI issue names. (Ex."TestUdiIssues") .
+            priority(str): priority query parameter. The Issue priority value, possible values are P1, P2,
                 P3, P4. P1: A critical issue that needs immediate attention and can have a wide impact
                 on network operations. P2: A major issue that can potentially impact multiple devices or
                 clients. P3: A minor issue that has a localized or minimal impact. P4: A warning issue
@@ -1801,8 +1801,8 @@ class Issues(object):
             severity(int): severity query parameter. The syslog severity level. 0: Emergency 1: Alert, 2: Critical.
                 3: Error, 4: Warning, 5: Notice, 6: Info. Examples:severity=1&severity=2 (multi value
                 support with & separator) .
-            facility(basestring): facility query parameter. The syslog facility name .
-            mnemonic(basestring): mnemonic query parameter. The syslog mnemonic name .
+            facility(str): facility query parameter. The syslog facility name .
+            mnemonic(str): mnemonic query parameter. The syslog mnemonic name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1820,21 +1820,21 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-the-total-custom-issue-definitions-count-based-on-the-provided-filters
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(profile_id, basestring)
-        check_type(name, basestring)
-        check_type(priority, basestring)
+        check_type(id, str)
+        check_type(profile_id, str)
+        check_type(name, str)
+        check_type(priority, str)
         check_type(is_enabled, bool)
         check_type(severity, int)
-        check_type(facility, basestring)
-        check_type(mnemonic, basestring)
+        check_type(facility, str)
+        check_type(mnemonic, str)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -1900,7 +1900,7 @@ class Issues(object):
             name(string): Issues's Name.
             priority(string): Issues's Priority.
             rules(list): Issues's rules (list of objects).
-            id(basestring): id path parameter. The custom issue definition Identifier .
+            id(str): id path parameter. The custom issue definition Identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1923,18 +1923,18 @@ class Issues(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1993,7 +1993,7 @@ class Issues(object):
         AssuranceUserDefinedIssueAPIs-1.0.0-resolved.yaml .
 
         Args:
-            id(basestring): id path parameter. The custom issue definition unique identifier .
+            id(str): id path parameter. The custom issue definition unique identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2011,12 +2011,12 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-an-existing-custom-issue-definition
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2086,7 +2086,7 @@ class Issues(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2152,16 +2152,16 @@ class Issues(object):
         if headers is not None:
             if 'entity_type' in headers:
                 check_type(headers.get('entity_type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'entity_value' in headers:
                 check_type(headers.get('entity_value'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
                            bool)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2204,16 +2204,16 @@ class Issues(object):
         Args:
             start_time(int): startTime query parameter. Starting epoch time in milliseconds of query time window .
             end_time(int): endTime query parameter. Ending epoch time in milliseconds of query time window .
-            site_id(basestring): siteId query parameter. Assurance UUID value of the site in the issue content .
-            device_id(basestring): deviceId query parameter. Assurance UUID value of the device in the issue content
+            site_id(str): siteId query parameter. Assurance UUID value of the site in the issue content .
+            device_id(str): deviceId query parameter. Assurance UUID value of the device in the issue content
                 .
-            mac_address(basestring): macAddress query parameter. Client's device MAC address of the issue (format
+            mac_address(str): macAddress query parameter. Client's device MAC address of the issue (format
                 xx:xx:xx:xx:xx:xx) .
-            priority(basestring): priority query parameter. The issue's priority value: P1, P2, P3, or P4 (case
+            priority(str): priority query parameter. The issue's priority value: P1, P2, P3, or P4 (case
                 insensitive) (Use only when macAddress and deviceId are not provided) .
-            issue_status(basestring): issueStatus query parameter. The issue's status value: ACTIVE, IGNORED,
+            issue_status(str): issueStatus query parameter. The issue's status value: ACTIVE, IGNORED,
                 RESOLVED (case insensitive) .
-            ai_driven(basestring): aiDriven query parameter. The issue's AI driven value: YES or NO (case
+            ai_driven(str): aiDriven query parameter. The issue's AI driven value: YES or NO (case
                 insensitive) (Use only when macAddress and deviceId are not provided) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2234,16 +2234,16 @@ class Issues(object):
         check_type(headers, dict)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(site_id, basestring)
-        check_type(device_id, basestring)
-        check_type(mac_address, basestring)
-        check_type(priority, basestring)
-        check_type(issue_status, basestring)
-        check_type(ai_driven, basestring)
+        check_type(site_id, str)
+        check_type(device_id, str)
+        check_type(mac_address, str)
+        check_type(priority, str)
+        check_type(issue_status, str)
+        check_type(ai_driven, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -2307,20 +2307,20 @@ class Issues(object):
         specs/blob/main/Assurance/CE_Cat_Center_Org-issueAndHealthDefinitions-1.0.0-resolved.yaml .
 
         Args:
-            device_type(basestring): deviceType query parameter. These are the device families/types supported for
+            device_type(str): deviceType query parameter. These are the device families/types supported for
                 system issue definitions. If no input is made on device type, all device types are
                 considered. .
-            profile_id(basestring): profileId query parameter. The profile identier to fetch the profile associated
+            profile_id(str): profileId query parameter. The profile identier to fetch the profile associated
                 issue defintions. The default is `global`. Please refer Network design profiles
                 documentation for more details. .
-            id(basestring): id query parameter. The definition identifier. Examples:
+            id(str): id query parameter. The definition identifier. Examples:
                 id=015d9cba-4f53-4087-8317-7e49e5ffef46 (single entity id request)
                 id=015d9cba-4f53-4087-8317-7e49e5ffef46&id=015d9cba-4f53-4087-8317-7e49e5ffef47
                 (multiple ids in the query param) .
-            name(basestring): name query parameter. The list of system defined issue names. (Ex."BGP_Down")
+            name(str): name query parameter. The list of system defined issue names. (Ex."BGP_Down")
                 Examples: name=BGP_Down (single entity uuid requested) name=BGP_Down&name=BGP_Flap
                 (multiple issue names separated by & operator) .
-            priority(basestring): priority query parameter. Issue priority, possible values are P1, P2, P3, P4.
+            priority(str): priority query parameter. Issue priority, possible values are P1, P2, P3, P4.
                 `P1`: A critical issue that needs immediate attention and can have a wide impact on
                 network operations. `P2`: A major issue that can potentially impact multiple devices or
                 clients. `P3`: A minor issue that has a localized or minimal impact. `P4`: A warning
@@ -2328,13 +2328,13 @@ class Issues(object):
                 performance. .
             issue_enabled(bool): issueEnabled query parameter. The enablement status of the issue definition, either
                 true or false. .
-            attribute(basestring): attribute query parameter. These are the attributes supported in system issue
+            attribute(str): attribute query parameter. These are the attributes supported in system issue
                 definitions response. By default, all properties are sent in response. .
             offset(int): offset query parameter. Specifies the starting point within all records returned by the
                 API. It's one based offset. The starting value is 1. .
             limit(int): limit query parameter. Maximum number of records to return .
-            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
-            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            sort_by(str): sortBy query parameter. A field within the response to sort by. .
+            order(str): order query parameter. The sort order of the field ascending or descending. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2352,24 +2352,24 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!returns-all-issue-trigger-definitions-for-given-filters
         """
         check_type(headers, dict)
-        check_type(device_type, basestring)
-        check_type(profile_id, basestring)
-        check_type(id, basestring)
-        check_type(name, basestring)
-        check_type(priority, basestring)
+        check_type(device_type, str)
+        check_type(profile_id, str)
+        check_type(id, str)
+        check_type(name, str)
+        check_type(priority, str)
         check_type(issue_enabled, bool)
-        check_type(attribute, basestring)
+        check_type(attribute, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceType':
@@ -2432,20 +2432,20 @@ class Issues(object):
         center-api-specs/blob/main/Assurance/CE_Cat_Center_Org-issueAndHealthDefinitions-1.0.0-resolved.yaml .
 
         Args:
-            device_type(basestring): deviceType query parameter. These are the device families/types supported for
+            device_type(str): deviceType query parameter. These are the device families/types supported for
                 system issue definitions. If no input is made on device type, all device types are
                 considered. .
-            profile_id(basestring): profileId query parameter. The profile identier to fetch the profile associated
+            profile_id(str): profileId query parameter. The profile identier to fetch the profile associated
                 issue defintions. The default is `global`. Please refer Network design profiles
                 documentation for more details. .
-            id(basestring): id query parameter. The definition identifier. Examples:
+            id(str): id query parameter. The definition identifier. Examples:
                 id=015d9cba-4f53-4087-8317-7e49e5ffef46 (single entity id request)
                 id=015d9cba-4f53-4087-8317-7e49e5ffef46&id=015d9cba-4f53-4087-8317-7e49e5ffef47
                 (multiple ids in the query param) .
-            name(basestring): name query parameter. The list of system defined issue names. (Ex."BGP_Down")
+            name(str): name query parameter. The list of system defined issue names. (Ex."BGP_Down")
                 Examples: name=BGP_Down (single entity uuid requested) name=BGP_Down&name=BGP_Flap
                 (multiple issue names separated by & operator) .
-            priority(basestring): priority query parameter. Issue priority, possible values are P1, P2, P3, P4.
+            priority(str): priority query parameter. Issue priority, possible values are P1, P2, P3, P4.
                 `P1`: A critical issue that needs immediate attention and can have a wide impact on
                 network operations. `P2`: A major issue that can potentially impact multiple devices or
                 clients. `P3`: A minor issue that has a localized or minimal impact. `P4`: A warning
@@ -2470,19 +2470,19 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-the-count-of-system-defined-issue-definitions-based-on-provided-filters
         """
         check_type(headers, dict)
-        check_type(device_type, basestring)
-        check_type(profile_id, basestring)
-        check_type(id, basestring)
-        check_type(name, basestring)
-        check_type(priority, basestring)
+        check_type(device_type, str)
+        check_type(profile_id, str)
+        check_type(id, str)
+        check_type(name, str)
+        check_type(priority, str)
         check_type(issue_enabled, bool)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceType':
@@ -2530,7 +2530,7 @@ class Issues(object):
         specs/blob/main/Assurance/CE_Cat_Center_Org-issueAndHealthDefinitions-1.0.0-resolved.yaml .
 
         Args:
-            id(basestring): id path parameter. Issue trigger definition id. .
+            id(str): id path parameter. Issue trigger definition id. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2548,15 +2548,15 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-issue-trigger-definition-for-given-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2603,7 +2603,7 @@ class Issues(object):
             priority(string): Issues's Priority.
             synchronizeToHealthThreshold(boolean): Issues's Synchronize To Health Threshold.
             thresholdValue(number): Issues's Threshold Value.
-            id(basestring): id path parameter. Issue trigger definition id. .
+            id(str): id path parameter. Issue trigger definition id. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2626,12 +2626,12 @@ class Issues(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2685,7 +2685,7 @@ class Issues(object):
         AssuranceUserDefinedIssueAPIs-1.0.0-resolved.yaml .
 
         Args:
-            id(basestring): id path parameter. Get the custom issue definition for the given custom issue definition
+            id(str): id path parameter. Get the custom issue definition for the given custom issue definition
                 Id. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2704,15 +2704,15 @@ class Issues(object):
             https://developer.cisco.com/docs/dna-center/#!get-the-custom-issue-definition-for-the-given-custom-issue-definition-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

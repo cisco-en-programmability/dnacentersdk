@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -107,7 +107,7 @@ class FabricWireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -192,7 +192,7 @@ class FabricWireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -244,8 +244,8 @@ class FabricWireless(object):
         """Get SSID to IP Pool Mapping .
 
         Args:
-            vlan_name(basestring): vlanName query parameter. VLAN Name .
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Heirarchy .
+            vlan_name(str): vlanName query parameter. VLAN Name .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Heirarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -263,14 +263,14 @@ class FabricWireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
-        check_type(vlan_name, basestring,
+        check_type(vlan_name, str,
                    may_be_none=False)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'vlanName':
@@ -308,7 +308,7 @@ class FabricWireless(object):
         """Remove WLC from Fabric Domain .
 
         Args:
-            device_ipaddress(basestring): deviceIPAddress query parameter. Device Management IP Address .
+            device_ipaddress(str): deviceIPAddress query parameter. Device Management IP Address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -326,15 +326,15 @@ class FabricWireless(object):
             https://developer.cisco.com/docs/dna-center/#!remove-w-l-c-from-fabric-domain
         """
         check_type(headers, dict)
-        check_type(device_ipaddress, basestring,
+        check_type(device_ipaddress, str,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceIPAddress':
@@ -399,7 +399,7 @@ class FabricWireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -470,7 +470,7 @@ class FabricWireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -526,7 +526,7 @@ class FabricWireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -568,7 +568,7 @@ class FabricWireless(object):
         Fabric Site representing 'Fabric ID' specified in the API request. .
 
         Args:
-            fabric_id(basestring): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
                 Fabric Site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -592,15 +592,15 @@ class FabricWireless(object):
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -643,7 +643,7 @@ class FabricWireless(object):
         of a particular Fabric Site. .
 
         Args:
-            fabric_id(basestring): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
                 Fabric Site .
             limit(int): limit query parameter. The number of records to show for this page. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
@@ -667,12 +667,12 @@ class FabricWireless(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -711,7 +711,7 @@ class FabricWireless(object):
         particular Fabric Site. .
 
         Args:
-            fabric_id(basestring): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
                 Fabric Site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -730,15 +730,15 @@ class FabricWireless(object):
             https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-v-l-a-ns-mapped-to-s-s-i-ds-in-a-fabric-site
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -76,10 +76,10 @@ class Wireless(object):
         """Intent API to get SENSOR test result summary .
 
         Args:
-            site_id(basestring): siteId query parameter. Assurance site UUID .
+            site_id(str): siteId query parameter. Assurance site UUID .
             start_time(int): startTime query parameter. The epoch time in milliseconds .
             end_time(int): endTime query parameter. The epoch time in milliseconds .
-            test_failure_by(basestring): testFailureBy query parameter. Obtain failure statistics group by "area",
+            test_failure_by(str): testFailureBy query parameter. Obtain failure statistics group by "area",
                 "building", or "floor" (case insensitive) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -98,14 +98,14 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!sensor-test-results
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(test_failure_by, basestring)
+        check_type(test_failure_by, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -184,10 +184,10 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -241,9 +241,9 @@ class Wireless(object):
         Center    .
 
         Args:
-            ssid_name(basestring): ssidName path parameter. SSID Name. This parameter needs to be encoded as per
+            ssid_name(str): ssidName path parameter. SSID Name. This parameter needs to be encoded as per
                 UTF-8 encoding. .
-            managed_aplocations(basestring): managedAPLocations path parameter. List of managed AP locations (Site
+            managed_aplocations(str): managedAPLocations path parameter. List of managed AP locations (Site
                 Hierarchies). This parameter needs to be encoded as per UTF-8 encoding .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -262,17 +262,17 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-s-s-i-d-and-provision-it-to-devices
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring,
+        check_type(ssid_name, str,
                    may_be_none=False)
-        check_type(managed_aplocations, basestring,
+        check_type(managed_aplocations, str,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -336,10 +336,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -383,7 +383,7 @@ class Wireless(object):
         """Users can query the access point reboot status using this intent API .
 
         Args:
-            parent_task_id(basestring): parentTaskId query parameter. task id of ap reboot request .
+            parent_task_id(str): parentTaskId query parameter. task id of ap reboot request .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -402,11 +402,11 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-access-point-reboot-task-result
         """
         check_type(headers, dict)
-        check_type(parent_task_id, basestring)
+        check_type(parent_task_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'parentTaskId':
@@ -441,7 +441,7 @@ class Wireless(object):
         """Get Enterprise SSID .
 
         Args:
-            ssid_name(basestring): ssidName query parameter. Enter the enterprise SSID name that needs to be
+            ssid_name(str): ssidName query parameter. Enter the enterprise SSID name that needs to be
                 retrieved. If not entered, all the enterprise SSIDs will be retrieved. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -461,11 +461,11 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-enterprise-s-s-i-d
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring)
+        check_type(ssid_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'ssidName':
@@ -602,7 +602,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -810,7 +810,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -916,7 +916,7 @@ class Wireless(object):
         """Deletes given enterprise SSID    .
 
         Args:
-            ssid_name(basestring): ssidName path parameter. Enter the SSID name to be deleted .
+            ssid_name(str): ssidName path parameter. Enter the SSID name to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -934,12 +934,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-enterprise-s-s-i-d
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring,
+        check_type(ssid_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1172,7 +1172,7 @@ class Wireless(object):
             wlanBandSelectEnable(boolean): Wireless's Band select is allowed only when band options selected
                 contains at least 2.4 GHz and 5 GHz band .
             wlanType(string): Wireless's Wlan Type . Available values are 'Enterprise' and 'Guest'.
-            site_id(basestring): siteId path parameter. Site UUID of Global site .
+            site_id(str): siteId path parameter. Site UUID of Global site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1195,15 +1195,15 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1380,7 +1380,7 @@ class Wireless(object):
         """This API allows the user to get all SSIDs (Service Set Identifier) at the given site .
 
         Args:
-            site_id(basestring): siteId path parameter. Site UUID .
+            site_id(str): siteId path parameter. Site UUID .
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1402,12 +1402,12 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -1445,7 +1445,7 @@ class Wireless(object):
         """This API allows the user to get count of all SSIDs (Service Set Identifier) present at global site.  .
 
         Args:
-            site_id(basestring): siteId path parameter. Site UUID .
+            site_id(str): siteId path parameter. Site UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1463,12 +1463,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-count-by-site
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1504,8 +1504,8 @@ class Wireless(object):
         """This API allows the user to get an SSID (Service Set Identifier) by ID at the given site .
 
         Args:
-            site_id(basestring): siteId path parameter. Site UUID .
-            id(basestring): id path parameter. SSID ID. .
+            site_id(str): siteId path parameter. Site UUID .
+            id(str): id path parameter. SSID ID. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1523,14 +1523,14 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-by-i-d
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1766,8 +1766,8 @@ class Wireless(object):
             wlanBandSelectEnable(boolean): Wireless's Band select is allowed only when band options selected
                 contains at least 2.4 GHz and 5 GHz band .
             wlanType(string): Wireless's Wlan Type . Available values are 'Enterprise' and 'Guest'.
-            site_id(basestring): siteId path parameter. Site UUID .
-            id(basestring): id path parameter. SSID ID. Inputs containing special characters should be encoded .
+            site_id(str): siteId path parameter. Site UUID .
+            id(str): id path parameter. SSID ID. Inputs containing special characters should be encoded .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1790,14 +1790,14 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1976,8 +1976,8 @@ class Wireless(object):
         mapped to any Wireless Profile .
 
         Args:
-            site_id(basestring): siteId path parameter. Site UUID where SSID is to be deleted .
-            id(basestring): id path parameter. SSID ID .
+            site_id(str): siteId path parameter. Site UUID where SSID is to be deleted .
+            id(str): id path parameter. SSID ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1995,14 +1995,14 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-s-s-i-d
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2038,7 +2038,7 @@ class Wireless(object):
         """Delete the Wireless Profile whose name is provided. .
 
         Args:
-            wireless_profile_name(basestring): wirelessProfileName path parameter. Wireless Profile Name .
+            wireless_profile_name(str): wirelessProfileName path parameter. Wireless Profile Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2056,12 +2056,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile
         """
         check_type(headers, dict)
-        check_type(wireless_profile_name, basestring,
+        check_type(wireless_profile_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2184,10 +2184,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2273,7 +2273,7 @@ class Wireless(object):
         """Users can query the access point configuration result using this intent API .
 
         Args:
-            task_id(basestring): task_id path parameter. task id information of ap config .
+            task_id(str): task_id path parameter. task id information of ap config .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2292,12 +2292,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-task-result
         """
         check_type(headers, dict)
-        check_type(task_id, basestring,
+        check_type(task_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2332,7 +2332,7 @@ class Wireless(object):
         """Users can query the access point configuration information per device using the ethernet MAC address .
 
         Args:
-            key(basestring): key query parameter. The ethernet MAC address of Access point .
+            key(str): key query parameter. The ethernet MAC address of Access point .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2350,12 +2350,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration
         """
         check_type(headers, dict)
-        check_type(key, basestring,
+        check_type(key, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'key':
@@ -2417,10 +2417,10 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2459,7 +2459,7 @@ class Wireless(object):
         """Delete a dynamic interface       .
 
         Args:
-            interface_name(basestring): interfaceName query parameter. valid interface-name to be deleted .
+            interface_name(str): interfaceName query parameter. valid interface-name to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2477,7 +2477,7 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-dynamic-interface
         """
         check_type(headers, dict)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if '__runsync' in headers:
@@ -2488,7 +2488,7 @@ class Wireless(object):
                            int)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interfaceName':
@@ -2553,7 +2553,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2599,7 +2599,7 @@ class Wireless(object):
         """Get one or all dynamic interface(s) .
 
         Args:
-            interface_name(basestring): interface-name query parameter. dynamic-interface name, if not specified all
+            interface_name(str): interface-name query parameter. dynamic-interface name, if not specified all
                 the existing dynamic interfaces will be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2619,11 +2619,11 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-dynamic-interface
         """
         check_type(headers, dict)
-        check_type(interface_name, basestring)
+        check_type(interface_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'interface-name':
@@ -2687,7 +2687,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2759,7 +2759,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2803,7 +2803,7 @@ class Wireless(object):
         """Gets either one or all the wireless network profiles if no name is provided for network-profile.         .
 
         Args:
-            profile_name(basestring): profileName query parameter. Wireless Network Profile Name .
+            profile_name(str): profileName query parameter. Wireless Network Profile Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2822,11 +2822,11 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-wireless-profile
         """
         check_type(headers, dict)
-        check_type(profile_name, basestring)
+        check_type(profile_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'profileName':
@@ -2887,10 +2887,10 @@ class Wireless(object):
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2955,7 +2955,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3020,7 +3020,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3059,7 +3059,7 @@ class Wireless(object):
         """Retrieve all RF profiles .
 
         Args:
-            rf_profile_name(basestring): rf-profile-name query parameter. RF Profile Name .
+            rf_profile_name(str): rf-profile-name query parameter. RF Profile Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3077,11 +3077,11 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!retrieve-r-f-profiles
         """
         check_type(headers, dict)
-        check_type(rf_profile_name, basestring)
+        check_type(rf_profile_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'rf-profile-name':
@@ -3164,7 +3164,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3228,7 +3228,7 @@ class Wireless(object):
         """Delete RF profile .
 
         Args:
-            rf_profile_name(basestring): rfProfileName path parameter. RF profile name to be deleted(required) *non-
+            rf_profile_name(str): rfProfileName path parameter. RF profile name to be deleted(required) *non-
                 custom RF profile cannot be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3247,12 +3247,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-r-f-profiles
         """
         check_type(headers, dict)
-        check_type(rf_profile_name, basestring,
+        check_type(rf_profile_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3322,10 +3322,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3372,7 +3372,7 @@ class Wireless(object):
         """This API returns each AP Factory Reset initiation status. .
 
         Args:
-            task_id(basestring): taskId query parameter. provide the task id which is returned in the response of ap
+            task_id(str): taskId query parameter. provide the task id which is returned in the response of ap
                 factory reset post api .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3391,12 +3391,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-access-points-factory-reset-status
         """
         check_type(headers, dict)
-        check_type(task_id, basestring,
+        check_type(task_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'taskId':
@@ -3467,10 +3467,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3522,7 +3522,7 @@ class Wireless(object):
         return the default values from the device. .
 
         Args:
-            network_device_id(basestring): networkDeviceId query parameter. Employ this query parameter to obtain
+            network_device_id(str): networkDeviceId query parameter. Employ this query parameter to obtain
                 the details of the Mobility Group corresponding to the provided networkDeviceId. Obtain
                 the network device ID value by using the API GET call /dna/intent/api/v1/network-
                 device/ip-address/${ipAddress}. .
@@ -3543,11 +3543,11 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-all-mobility-groups
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'networkDeviceId':
@@ -3602,7 +3602,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3681,10 +3681,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3771,10 +3771,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3831,7 +3831,7 @@ class Wireless(object):
             secondaryManagedAPLocationsSiteIds(list): Wireless's Site IDs of Secondary Managed AP Locations. These
                 values can be obtained by using the API call GET: /dna/intent/api/v1/site  (list of
                 strings).
-            device_id(basestring): deviceId path parameter. Network Device ID. This value can be obtained by using
+            device_id(str): deviceId path parameter. Network Device ID. This value can be obtained by using
                 the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress} .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3855,15 +3855,15 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3919,7 +3919,7 @@ class Wireless(object):
             interfaces(list): Wireless's interfaces (list of objects).
             rollingApUpgrade(object): Wireless's rollingApUpgrade.
             skipApProvision(boolean): Wireless's True if Skip AP Provision is enabled, else False .
-            device_id(basestring): deviceId path parameter. Network Device ID. This value can be obtained by using
+            device_id(str): deviceId path parameter. Network Device ID. This value can be obtained by using
                 the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress} .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3943,15 +3943,15 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(device_id, basestring,
+        check_type(device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4003,7 +4003,7 @@ class Wireless(object):
         """Retrieves all the details of Anchor Managed AP locations associated with the specific Wireless Controller. .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter. Obtain the network device ID value by
+            network_device_id(str): networkDeviceId path parameter. Obtain the network device ID value by
                 using the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress}. .
             limit(int): limit query parameter. The number of records to show for this page. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
@@ -4027,12 +4027,12 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -4072,7 +4072,7 @@ class Wireless(object):
         Locations, and Anchor Managed AP Locations, associated with the specific Wireless Controller. .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter. Obtain the network device ID value by
+            network_device_id(str): networkDeviceId path parameter. Obtain the network device ID value by
                 using the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress}. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4091,12 +4091,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-managed-a-p-locations-count-for-specific-wireless-controller
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4133,7 +4133,7 @@ class Wireless(object):
         """Retrieves all the details of Primary Managed AP locations associated with the specific Wireless Controller. .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter. Obtain the network device ID value by
+            network_device_id(str): networkDeviceId path parameter. Obtain the network device ID value by
                 using the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress}. .
             limit(int): limit query parameter. The number of records to show for this page. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
@@ -4157,12 +4157,12 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -4203,7 +4203,7 @@ class Wireless(object):
         """Retrieves all the details of Secondary Managed AP locations associated with the specific Wireless Controller. .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter. Obtain the network device ID value by
+            network_device_id(str): networkDeviceId path parameter. Obtain the network device ID value by
                 using the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress}. .
             limit(int): limit query parameter. The number of records to show for this page. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
@@ -4227,12 +4227,12 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -4276,9 +4276,9 @@ class Wireless(object):
         """Retrieves all details of SSIDs associated with the specific Wireless Controller. .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter. Obtain the network device ID value by
+            network_device_id(str): networkDeviceId path parameter. Obtain the network device ID value by
                 using the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress}. .
-            ssid_name(basestring): ssidName query parameter. Employ this query parameter to obtain the details of
+            ssid_name(str): ssidName query parameter. Employ this query parameter to obtain the details of
                 the SSID corresponding to the provided SSID name. .
             admin_status(bool): adminStatus query parameter. Utilize this query parameter to obtain the
                 administrative status. A 'true' value signifies that the admin status of the SSID is
@@ -4306,17 +4306,17 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-details-for-specific-wireless-controller
         """
         check_type(headers, dict)
-        check_type(ssid_name, basestring)
+        check_type(ssid_name, str)
         check_type(admin_status, bool)
         check_type(managed, bool)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'ssidName':
@@ -4363,7 +4363,7 @@ class Wireless(object):
         """Retrieves the count of SSIDs associated with the specific Wireless Controller. .
 
         Args:
-            network_device_id(basestring): networkDeviceId path parameter. Obtain the network device ID value by
+            network_device_id(str): networkDeviceId path parameter. Obtain the network device ID value by
                 using the API call GET: /dna/intent/api/v1/network-device/ip-address/${ipAddress}. .
             admin_status(bool): adminStatus query parameter. Utilize this query parameter to obtain the number of
                 SSIDs according to their administrative status. A 'true' value signifies that the admin
@@ -4390,12 +4390,12 @@ class Wireless(object):
         check_type(headers, dict)
         check_type(admin_status, bool)
         check_type(managed, bool)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'adminStatus':
@@ -4459,7 +4459,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -4526,7 +4526,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4591,7 +4591,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4630,7 +4630,7 @@ class Wireless(object):
         Args:
             ssidDetails(list): Wireless's ssidDetails (list of objects).
             wirelessProfileName(string): Wireless's Wireless Network Profile Name .
-            id(basestring): id path parameter. Wireless Profile Id .
+            id(str): id path parameter. Wireless Profile Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -4653,15 +4653,15 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4708,7 +4708,7 @@ class Wireless(object):
         """This API allows the user to get a Wireless Network Profile by ID .
 
         Args:
-            id(basestring): id path parameter. Wireless Profile Id .
+            id(str): id path parameter. Wireless Profile Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4726,12 +4726,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-wireless-profile-by-i-d
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4765,7 +4765,7 @@ class Wireless(object):
         """This API allows the user to delete Wireless Network Profile by ID .
 
         Args:
-            id(basestring): id path parameter. Wireless Profile Id .
+            id(str): id path parameter. Wireless Profile Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4783,12 +4783,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile2
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4847,7 +4847,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -4924,7 +4924,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4997,7 +4997,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5032,7 +5032,7 @@ class Wireless(object):
         Network Profile .
 
         Args:
-            id(basestring): id path parameter. 802.11be Profile ID .
+            id(str): id path parameter. 802.11be Profile ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5050,12 +5050,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-a80211be-profile
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5103,7 +5103,7 @@ class Wireless(object):
             ofdmaMultiRu(boolean): Wireless's OFDMA Multi-RU (Default: false) .
             ofdmaUpLink(boolean): Wireless's OFDMA Uplink (Default: true) .
             profileName(string): Wireless's 802.11be Profile Name .
-            id(basestring): id path parameter. 802.11be Profile ID .
+            id(str): id path parameter. 802.11be Profile ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -5126,12 +5126,12 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5186,7 +5186,7 @@ class Wireless(object):
         """This API allows the user to get 802.11be Profile by ID .
 
         Args:
-            id(basestring): id path parameter. 802.11be Profile ID .
+            id(str): id path parameter. 802.11be Profile ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5204,12 +5204,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get80211be-profile-by-i-d
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5268,7 +5268,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -5335,7 +5335,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5400,7 +5400,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5433,7 +5433,7 @@ class Wireless(object):
         """This API allows the user to get an interface by ID .
 
         Args:
-            id(basestring): id path parameter. Interface ID .
+            id(str): id path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5451,12 +5451,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-interface-by-i-d
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5490,7 +5490,7 @@ class Wireless(object):
         """This API allows the user to delete an interface by ID .
 
         Args:
-            id(basestring): id path parameter. Interface ID .
+            id(str): id path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5508,12 +5508,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-interface
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5553,7 +5553,7 @@ class Wireless(object):
         Args:
             interfaceName(string): Wireless's Interface Name .
             vlanId(integer): Wireless's VLAN ID range is 1-4094 .
-            id(basestring): id path parameter. Interface ID .
+            id(str): id path parameter. Interface ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -5576,12 +5576,12 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5674,10 +5674,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5760,7 +5760,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -5816,7 +5816,7 @@ class Wireless(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5849,7 +5849,7 @@ class Wireless(object):
         """This API allows the user to delete a custom RF Profile .
 
         Args:
-            id(basestring): id path parameter. RF Profile ID .
+            id(str): id path parameter. RF Profile ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5867,12 +5867,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!delete-r-f-profile
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5906,7 +5906,7 @@ class Wireless(object):
         """This API allows the user to get a RF Profile by RF Profile ID .
 
         Args:
-            id(basestring): id path parameter. RF Profile ID .
+            id(str): id path parameter. RF Profile ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5924,12 +5924,12 @@ class Wireless(object):
             https://developer.cisco.com/docs/dna-center/#!get-r-f-profile-by-i-d
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5985,7 +5985,7 @@ class Wireless(object):
             radioTypeAProperties(object): Wireless's radioTypeAProperties.
             radioTypeBProperties(object): Wireless's radioTypeBProperties.
             rfProfileName(string): Wireless's RF Profile Name .
-            id(basestring): id path parameter. RF Profile ID .
+            id(str): id path parameter. RF Profile ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -6008,12 +6008,12 @@ class Wireless(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6177,10 +6177,10 @@ class Wireless(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

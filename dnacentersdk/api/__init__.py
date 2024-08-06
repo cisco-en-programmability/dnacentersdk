@@ -354,7 +354,7 @@ from .v2_3_7_6.devices import \
 from .v2_3_7_6.discovery import \
     Discovery as Discovery_v2_3_7_6
 from .v2_3_7_6.eox import \
-    EoX as EoX_v2_3_7_6
+    Eox as Eox_v2_3_7_6
 from .v2_3_7_6.event_management import \
     EventManagement as EventManagement_v2_3_7_6
 from .v2_3_7_6.fabric_wireless import \

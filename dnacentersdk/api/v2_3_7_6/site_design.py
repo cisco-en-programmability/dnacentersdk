@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -103,10 +103,10 @@ class SiteDesign(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -158,7 +158,7 @@ class SiteDesign(object):
         Args:
             name(string): Site Design's Area name .
             parentId(string): Site Design's Parent Id .
-            id(basestring): id path parameter. Area Id .
+            id(str): id path parameter. Area Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -181,15 +181,15 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -237,7 +237,7 @@ class SiteDesign(object):
         this area. .
 
         Args:
-            id(basestring): id path parameter. Area ID .
+            id(str): id path parameter. Area ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -255,12 +255,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-an-area
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -294,7 +294,7 @@ class SiteDesign(object):
         """Gets an area in the network hierarchy. .
 
         Args:
-            id(basestring): id path parameter. Area Id .
+            id(str): id path parameter. Area Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -312,12 +312,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!gets-an-area
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -386,10 +386,10 @@ class SiteDesign(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -438,7 +438,7 @@ class SiteDesign(object):
         their internal identifiers. .
 
         Args:
-            site_id(basestring): siteId query parameter. Site Id. It must be area Id or building Id or floor Id. .
+            site_id(str): siteId query parameter. Site Id. It must be area Id or building Id or floor Id. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. .
             limit(int): limit query parameter. The number of records to show for this page. .
@@ -459,14 +459,14 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-assigned-network-devices
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -505,7 +505,7 @@ class SiteDesign(object):
         """Get all network devices count under the given site in the network hierarchy. .
 
         Args:
-            site_id(basestring): siteId query parameter. Site Id. It must be area Id or building Id or floor Id. .
+            site_id(str): siteId query parameter. Site Id. It must be area Id or building Id or floor Id. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -523,12 +523,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-assigned-network-devices-count
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -601,7 +601,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -688,7 +688,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -761,7 +761,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -817,7 +817,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -881,10 +881,10 @@ class SiteDesign(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -929,7 +929,7 @@ class SiteDesign(object):
         internal identifiers. .
 
         Args:
-            id(basestring): id path parameter. Network Device Id. .
+            id(str): id path parameter. Network Device Id. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -947,12 +947,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-assigned-network-device
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -993,10 +993,10 @@ class SiteDesign(object):
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. .
             limit(int): limit query parameter. The number of records to show for this page. .
-            sort_by(basestring): sortBy query parameter. A property within the response to sort by. .
-            order(basestring): order query parameter. Whether ascending or descending order should be used to sort
+            sort_by(str): sortBy query parameter. A property within the response to sort by. .
+            order(str): order query parameter. Whether ascending or descending order should be used to sort
                 the response. .
-            type(basestring): type query parameter. Filter responses to only include profiles of a given type .
+            type(str): type query parameter. Filter responses to only include profiles of a given type .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1016,13 +1016,13 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(type, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(type, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -1065,7 +1065,7 @@ class SiteDesign(object):
         """Retrieves the count of network profiles for sites .
 
         Args:
-            type(basestring): type query parameter. Filter the response to only count profiles of a given type .
+            type(str): type query parameter. Filter the response to only count profiles of a given type .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1083,11 +1083,11 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-network-profiles-for-sites
         """
         check_type(headers, dict)
-        check_type(type, basestring)
+        check_type(type, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'type':
@@ -1122,7 +1122,7 @@ class SiteDesign(object):
         """Deletes a network profile for sites. .
 
         Args:
-            id(basestring): id path parameter. The `id` of the network profile, retrievable from `GET
+            id(str): id path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1141,12 +1141,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-a-network-profile-for-sites
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1180,7 +1180,7 @@ class SiteDesign(object):
         """Retrieves a network profile for sites by id. .
 
         Args:
-            id(basestring): id path parameter. The `id` of the network profile, retrievable from `GET
+            id(str): id path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1199,12 +1199,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!retrieve-a-network-profile-for-sites-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1242,7 +1242,7 @@ class SiteDesign(object):
 
         Args:
             id(string): Site Design's Id.
-            profile_id(basestring): profileId path parameter. The `id` of the network profile, retrievable from `GET
+            profile_id(str): profileId path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1266,15 +1266,15 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(profile_id, basestring,
+        check_type(profile_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1323,7 +1323,7 @@ class SiteDesign(object):
         the profile has been directly assigned to, as well as child sites that have inherited the profile. .
 
         Args:
-            profile_id(basestring): profileId path parameter. The `id` of the network profile, retrievable from `GET
+            profile_id(str): profileId path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. .
@@ -1347,12 +1347,12 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(profile_id, basestring,
+        check_type(profile_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -1395,7 +1395,7 @@ class SiteDesign(object):
 
         Args:
             items(list): Site Design's Items (list of arrays).
-            profile_id(basestring): profileId path parameter. The `id` of the network profile, retrievable from `GET
+            profile_id(str): profileId path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1419,15 +1419,15 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(profile_id, basestring,
+        check_type(profile_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1475,9 +1475,9 @@ class SiteDesign(object):
         building first if this site is a floor. .
 
         Args:
-            profile_id(basestring): profileId path parameter. The `id` of the network profile, retrievable from `GET
+            profile_id(str): profileId path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
-            site_id(basestring): siteId query parameter. The `id` of the site, retrievable from `GET
+            site_id(str): siteId query parameter. The `id` of the site, retrievable from `GET
                 /intent/api/v1/sites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1496,14 +1496,14 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!unassigns-a-network-profile-for-sites-from-multiple-sites
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
-        check_type(profile_id, basestring,
+        check_type(profile_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -1540,7 +1540,7 @@ class SiteDesign(object):
         """Retrieves the count of sites that the given network profile for sites is assigned to. .
 
         Args:
-            profile_id(basestring): profileId path parameter. The `id` of the network profile, retrievable from `GET
+            profile_id(str): profileId path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1559,12 +1559,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-sites-that-the-given-network-profile-for-sites-is-assigned-to
         """
         check_type(headers, dict)
-        check_type(profile_id, basestring,
+        check_type(profile_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1601,9 +1601,9 @@ class SiteDesign(object):
         otherwise this operation will not ulimately  unassign the profile. .
 
         Args:
-            profile_id(basestring): profileId path parameter. The `id` of the network profile, retrievable from `GET
+            profile_id(str): profileId path parameter. The `id` of the network profile, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites` .
-            id(basestring): id path parameter. The `id` of the site, retrievable from `GET
+            id(str): id path parameter. The `id` of the site, retrievable from `GET
                 /intent/api/v1/networkProfilesForSites/{id}/siteAssignments` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1622,14 +1622,14 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!unassigns-a-network-profile-for-sites-from-a-site
         """
         check_type(headers, dict)
-        check_type(profile_id, basestring,
+        check_type(profile_id, str,
                    may_be_none=False)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1666,8 +1666,8 @@ class SiteDesign(object):
         """Associate Site to a Network Profile .
 
         Args:
-            network_profile_id(basestring): networkProfileId path parameter. Network-Profile Id to be associated .
-            site_id(basestring): siteId path parameter. Site Id to be associated .
+            network_profile_id(str): networkProfileId path parameter. Network-Profile Id to be associated .
+            site_id(str): siteId path parameter. Site Id to be associated .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1685,17 +1685,17 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!associate
         """
         check_type(headers, dict)
-        check_type(network_profile_id, basestring,
+        check_type(network_profile_id, str,
                    may_be_none=False)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1732,8 +1732,8 @@ class SiteDesign(object):
         """Disassociate a Site from a Network Profile .
 
         Args:
-            network_profile_id(basestring): networkProfileId path parameter. Network-Profile Id to be associated .
-            site_id(basestring): siteId path parameter. Site Id to be associated .
+            network_profile_id(str): networkProfileId path parameter. Network-Profile Id to be associated .
+            site_id(str): siteId path parameter. Site Id to be associated .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1751,14 +1751,14 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!disassociate
         """
         check_type(headers, dict)
-        check_type(network_profile_id, basestring,
+        check_type(network_profile_id, str,
                    may_be_none=False)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1799,10 +1799,10 @@ class SiteDesign(object):
         """Get sites. .
 
         Args:
-            name(basestring): name query parameter. Site name. .
-            name_hierarchy(basestring): nameHierarchy query parameter. Site name hierarchy. .
-            type(basestring): type query parameter. Site type. .
-            units_of_measure(basestring): _unitsOfMeasure query parameter. Floor units of measure .
+            name(str): name query parameter. Site name. .
+            name_hierarchy(str): nameHierarchy query parameter. Site name hierarchy. .
+            type(str): type query parameter. Site type. .
+            units_of_measure(str): _unitsOfMeasure query parameter. Floor units of measure .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. .
             limit(int): limit query parameter. The number of records to show for this page. .
@@ -1823,16 +1823,16 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-sites
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(name_hierarchy, basestring)
-        check_type(type, basestring)
-        check_type(units_of_measure, basestring)
+        check_type(name, str)
+        check_type(name_hierarchy, str)
+        check_type(type, str)
+        check_type(units_of_measure, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -1904,10 +1904,10 @@ class SiteDesign(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1946,7 +1946,7 @@ class SiteDesign(object):
         """Get sites count. .
 
         Args:
-            name(basestring): name query parameter. Site name. .
+            name(str): name query parameter. Site name. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1965,11 +1965,11 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-sites-count
         """
         check_type(headers, dict)
-        check_type(name, basestring)
+        check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -2009,7 +2009,7 @@ class SiteDesign(object):
         .
 
         Args:
-            site_id(basestring): siteId path parameter. The `id` of the site, retrievable from
+            site_id(str): siteId path parameter. The `id` of the site, retrievable from
                 `/dna/intent/api/v1/sites` .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. .
@@ -2033,12 +2033,12 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -2077,7 +2077,7 @@ class SiteDesign(object):
         assigned to this site, or were assigned to a parent site and have been inherited. .
 
         Args:
-            site_id(basestring): siteId path parameter. The `id` of the site, retrievable from
+            site_id(str): siteId path parameter. The `id` of the site, retrievable from
                 `/dna/intent/api/v1/sites` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2096,12 +2096,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-profiles-that-the-given-site-has-been-assigned
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2175,10 +2175,10 @@ class SiteDesign(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2247,7 +2247,7 @@ class SiteDesign(object):
             longitude(number): Site Design's Building Longitude. Example: -121.971063 .
             name(string): Site Design's Building name .
             parentId(string): Site Design's Parent Id .
-            id(basestring): id path parameter. Building Id .
+            id(str): id path parameter. Building Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2270,15 +2270,15 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2334,7 +2334,7 @@ class SiteDesign(object):
         if there are any devices assigned to this building. .
 
         Args:
-            id(basestring): id path parameter. Building ID .
+            id(str): id path parameter. Building ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2352,12 +2352,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-a-building
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2391,7 +2391,7 @@ class SiteDesign(object):
         """Gets a building in the network hierarchy. .
 
         Args:
-            id(basestring): id path parameter. Building Id .
+            id(str): id path parameter. Building Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2409,12 +2409,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!gets-a-building
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2491,10 +2491,10 @@ class SiteDesign(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2581,7 +2581,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2644,7 +2644,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2696,7 +2696,7 @@ class SiteDesign(object):
                 'Cubes And Walled Offices', 'Indoor High Ceiling' and 'Drywall Office Only'.
             unitsOfMeasure(string): Site Design's Units Of Measure. Available values are 'feet' and 'meters'.
             width(number): Site Design's Floor width. Example : 100.5 .
-            id(basestring): id path parameter. Floor Id .
+            id(str): id path parameter. Floor Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2719,15 +2719,15 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2787,8 +2787,8 @@ class SiteDesign(object):
         """Gets a floor in the network hierarchy. .
 
         Args:
-            id(basestring): id path parameter. Floor Id .
-            units_of_measure(basestring): _unitsOfMeasure query parameter. Floor units of measure .
+            id(str): id path parameter. Floor Id .
+            units_of_measure(str): _unitsOfMeasure query parameter. Floor units of measure .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2806,13 +2806,13 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!gets-a-floor
         """
         check_type(headers, dict)
-        check_type(units_of_measure, basestring)
-        check_type(id, basestring,
+        check_type(units_of_measure, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             '_unitsOfMeasure':
@@ -2849,7 +2849,7 @@ class SiteDesign(object):
         floor. .
 
         Args:
-            id(basestring): id path parameter. Floor ID .
+            id(str): id path parameter. Floor ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2867,12 +2867,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!deletes-a-floor
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2906,7 +2906,7 @@ class SiteDesign(object):
         """Uploads floor image. .
 
         Args:
-            id(basestring): id path parameter. Floor Id .
+            id(str): id path parameter. Floor Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2924,15 +2924,15 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!uploads-floor-image
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

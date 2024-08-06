@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -74,8 +74,8 @@ class Sda(object):
         """Get default authentication profile from SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
-            authenticate_template_name(basestring): authenticateTemplateName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            authenticate_template_name(str): authenticateTemplateName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -93,13 +93,13 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-default-authentication-profile-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
-        check_type(authenticate_template_name, basestring)
+        check_type(authenticate_template_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -162,7 +162,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -227,7 +227,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -266,7 +266,7 @@ class Sda(object):
         """Delete default authentication profile in SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -284,12 +284,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-default-authentication-profile-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -350,7 +350,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -389,7 +389,7 @@ class Sda(object):
         """Get border device detail from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -407,12 +407,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-border-device-detail-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -447,7 +447,7 @@ class Sda(object):
         """Delete border device from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -465,12 +465,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-border-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -505,7 +505,7 @@ class Sda(object):
         """Delete control plane device in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -523,12 +523,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-control-plane-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -563,7 +563,7 @@ class Sda(object):
         """Get control plane device from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -581,12 +581,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-control-plane-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -656,7 +656,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -704,7 +704,7 @@ class Sda(object):
         """Get device info from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -722,12 +722,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-info-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -762,7 +762,7 @@ class Sda(object):
         """Get device role in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter. Device Management
+            device_management_ip_address(str): deviceManagementIpAddress query parameter. Device Management
                 IP Address .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -781,12 +781,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-role-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -853,7 +853,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -899,7 +899,7 @@ class Sda(object):
         """Delete edge device from SDA Fabric. .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -917,12 +917,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-edge-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -957,7 +957,7 @@ class Sda(object):
         """Get edge device from SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -975,12 +975,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-edge-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1015,7 +1015,7 @@ class Sda(object):
         """Get Site info from SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Hierarchy .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1033,12 +1033,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1073,7 +1073,7 @@ class Sda(object):
         """Delete Site from SDA Fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Site Name Hierarchy .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1091,12 +1091,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-site-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1167,7 +1167,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1255,7 +1255,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1311,8 +1311,8 @@ class Sda(object):
         """Delete Port assignment for access point in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1330,14 +1330,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1376,8 +1376,8 @@ class Sda(object):
         """Get Port assignment for access point in SDA Fabric .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1395,14 +1395,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1441,8 +1441,8 @@ class Sda(object):
         """Delete Port assignment for user device in SDA Fabric. .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1460,14 +1460,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1554,7 +1554,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1616,8 +1616,8 @@ class Sda(object):
         """Get Port assignment for user device in SDA Fabric. .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
-            interface_name(basestring): interfaceName query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
+            interface_name(str): interfaceName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1635,14 +1635,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
-        check_type(interface_name, basestring,
+        check_type(interface_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1715,7 +1715,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1765,7 +1765,7 @@ class Sda(object):
         """Get multicast details from SDA fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. fabric site name hierarchy .
+            site_name_hierarchy(str): siteNameHierarchy query parameter. fabric site name hierarchy .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1783,12 +1783,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-multicast-details-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1823,7 +1823,7 @@ class Sda(object):
         """Delete multicast from SDA fabric .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1841,12 +1841,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-multicast-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -1881,7 +1881,7 @@ class Sda(object):
         """Delete provisioned Wired Device .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter. Valid IP address of
+            device_management_ip_address(str): deviceManagementIpAddress query parameter. Valid IP address of
                 the device currently provisioned in a fabric site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1900,12 +1900,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-provisioned-wired-device
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -1970,7 +1970,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2046,7 +2046,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2092,7 +2092,7 @@ class Sda(object):
         """Get Provisioned Wired Device .
 
         Args:
-            device_management_ip_address(basestring): deviceManagementIpAddress query parameter.
+            device_management_ip_address(str): deviceManagementIpAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2110,12 +2110,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-provisioned-wired-device
         """
         check_type(headers, dict)
-        check_type(device_management_ip_address, basestring,
+        check_type(device_management_ip_address, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceManagementIpAddress':
@@ -2150,7 +2150,7 @@ class Sda(object):
         """Delete Transit Peer Network from SD-Access .
 
         Args:
-            transit_peer_network_name(basestring): transitPeerNetworkName query parameter. Transit Peer Network Name
+            transit_peer_network_name(str): transitPeerNetworkName query parameter. Transit Peer Network Name
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2169,12 +2169,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-transit-peer-network
         """
         check_type(headers, dict)
-        check_type(transit_peer_network_name, basestring,
+        check_type(transit_peer_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'transitPeerNetworkName':
@@ -2209,7 +2209,7 @@ class Sda(object):
         """Get Transit Peer Network Info from SD-Access .
 
         Args:
-            transit_peer_network_name(basestring): transitPeerNetworkName query parameter. Transit or Peer Network
+            transit_peer_network_name(str): transitPeerNetworkName query parameter. Transit or Peer Network
                 Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2228,12 +2228,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-transit-peer-network-info
         """
         check_type(headers, dict)
-        check_type(transit_peer_network_name, basestring,
+        check_type(transit_peer_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'transitPeerNetworkName':
@@ -2303,7 +2303,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2354,8 +2354,8 @@ class Sda(object):
         """Delete virtual network (VN) from SDA Fabric      .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2373,14 +2373,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-v-n-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -2418,8 +2418,8 @@ class Sda(object):
         """Get virtual network (VN) from SDA Fabric .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2437,14 +2437,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-v-n-from-s-d-a-fabric
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -2511,7 +2511,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2557,7 +2557,7 @@ class Sda(object):
         """Get Virtual Network Summary .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter. Complete fabric siteNameHierarchy
+            site_name_hierarchy(str): siteNameHierarchy query parameter. Complete fabric siteNameHierarchy
                 Path .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2576,12 +2576,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-virtual-network-summary
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2618,9 +2618,9 @@ class Sda(object):
         """Get IP Pool from SDA Virtual Network .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            ip_pool_name(basestring): ipPoolName query parameter. ipPoolName. Note: Use vlanName as a value for this
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            ip_pool_name(str): ipPoolName query parameter. ipPoolName. Note: Use vlanName as a value for this
                 parameter if same ip pool is assigned to multiple virtual networks (e.g..
                 ipPoolName=vlan1021) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2640,16 +2640,16 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-i-p-pool-from-s-d-a-virtual-network
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(ip_pool_name, basestring,
+        check_type(ip_pool_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2690,9 +2690,9 @@ class Sda(object):
         """Delete IP Pool from SDA Virtual Network .
 
         Args:
-            site_name_hierarchy(basestring): siteNameHierarchy query parameter.
-            virtual_network_name(basestring): virtualNetworkName query parameter.
-            ip_pool_name(basestring): ipPoolName query parameter.
+            site_name_hierarchy(str): siteNameHierarchy query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
+            ip_pool_name(str): ipPoolName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2710,16 +2710,16 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-i-p-pool-from-s-d-a-virtual-network
         """
         check_type(headers, dict)
-        check_type(site_name_hierarchy, basestring,
+        check_type(site_name_hierarchy, str,
                    may_be_none=False)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
-        check_type(ip_pool_name, basestring,
+        check_type(ip_pool_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteNameHierarchy':
@@ -2825,7 +2825,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2925,10 +2925,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2993,7 +2993,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3039,13 +3039,13 @@ class Sda(object):
         """Returns a list of anycast gateways that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the anycast gateway. .
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the anycast gateway is assigned to. .
-            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the virtual network
+            id(str): id query parameter. ID of the anycast gateway. .
+            fabric_id(str): fabricId query parameter. ID of the fabric the anycast gateway is assigned to. .
+            virtual_network_name(str): virtualNetworkName query parameter. Name of the virtual network
                 associated with the anycast gateways. .
-            ip_pool_name(basestring): ipPoolName query parameter. Name of the IP pool associated with the anycast
+            ip_pool_name(str): ipPoolName query parameter. Name of the IP pool associated with the anycast
                 gateways. .
-            vlan_name(basestring): vlanName query parameter. VLAN name of the anycast gateways. .
+            vlan_name(str): vlanName query parameter. VLAN name of the anycast gateways. .
             vlan_id(int): vlanId query parameter. VLAN ID of the anycast gateways. The allowed range for vlanId is
                 [2-4093] except for reserved VLANs [1002-1005], 2046, and 4094. .
             offset(int): offset query parameter. Starting record for pagination. .
@@ -3067,18 +3067,18 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-anycast-gateways
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(fabric_id, basestring)
-        check_type(virtual_network_name, basestring)
-        check_type(ip_pool_name, basestring)
-        check_type(vlan_name, basestring)
+        check_type(id, str)
+        check_type(fabric_id, str)
+        check_type(virtual_network_name, str)
+        check_type(ip_pool_name, str)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -3131,12 +3131,12 @@ class Sda(object):
         """Returns the count of anycast gateways that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the anycast gateway is assigned to. .
-            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the virtual network
+            fabric_id(str): fabricId query parameter. ID of the fabric the anycast gateway is assigned to. .
+            virtual_network_name(str): virtualNetworkName query parameter. Name of the virtual network
                 associated with the anycast gateways. .
-            ip_pool_name(basestring): ipPoolName query parameter. Name of the IP pool associated with the anycast
+            ip_pool_name(str): ipPoolName query parameter. Name of the IP pool associated with the anycast
                 gateways. .
-            vlan_name(basestring): vlanName query parameter. VLAN name of the anycast gateways. .
+            vlan_name(str): vlanName query parameter. VLAN name of the anycast gateways. .
             vlan_id(int): vlanId query parameter. VLAN ID of the anycast gateways. The allowed range for vlanId is
                 [2-4093] except for reserved VLANs [1002-1005], 2046, and 4094. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3156,15 +3156,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-anycast-gateway-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(virtual_network_name, basestring)
-        check_type(ip_pool_name, basestring)
-        check_type(vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(virtual_network_name, str)
+        check_type(ip_pool_name, str)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3207,7 +3207,7 @@ class Sda(object):
         """Deletes an anycast gateway based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the anycast gateway. .
+            id(str): id path parameter. ID of the anycast gateway. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3225,12 +3225,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-anycast-gateway-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3267,9 +3267,9 @@ class Sda(object):
         """Returns a list of authentication profiles that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the authentication profile is assigned
+            fabric_id(str): fabricId query parameter. ID of the fabric the authentication profile is assigned
                 to. .
-            authentication_profile_name(basestring): authenticationProfileName query parameter. Return only the
+            authentication_profile_name(str): authenticationProfileName query parameter. Return only the
                 authentication profiles with this specified name. Note that 'No Authentication' is not a
                 valid option for this parameter. .
             offset(int): offset query parameter. Starting record for pagination. .
@@ -3291,14 +3291,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-authentication-profiles
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(authentication_profile_name, basestring)
+        check_type(fabric_id, str)
+        check_type(authentication_profile_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3365,7 +3365,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3404,7 +3404,7 @@ class Sda(object):
         """Deletes extranet policies based on user input. .
 
         Args:
-            extranet_policy_name(basestring): extranetPolicyName query parameter. Name of the extranet policy. .
+            extranet_policy_name(str): extranetPolicyName query parameter. Name of the extranet policy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3422,11 +3422,11 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-extranet-policies
         """
         check_type(headers, dict)
-        check_type(extranet_policy_name, basestring)
+        check_type(extranet_policy_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'extranetPolicyName':
@@ -3487,7 +3487,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3552,7 +3552,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3593,7 +3593,7 @@ class Sda(object):
         """Returns a list of extranet policies that match the provided query parameters. .
 
         Args:
-            extranet_policy_name(basestring): extranetPolicyName query parameter. Name of the extranet policy. .
+            extranet_policy_name(str): extranetPolicyName query parameter. Name of the extranet policy. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -3613,13 +3613,13 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-extranet-policies
         """
         check_type(headers, dict)
-        check_type(extranet_policy_name, basestring)
+        check_type(extranet_policy_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'extranetPolicyName':
@@ -3677,7 +3677,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3710,7 +3710,7 @@ class Sda(object):
         """Deletes an extranet policy based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the extranet policy. .
+            id(str): id path parameter. ID of the extranet policy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3728,12 +3728,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-extranet-policy-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3771,10 +3771,10 @@ class Sda(object):
         """Returns a list of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. Allowed values
+            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. Allowed values
                 are [CONTROL_PLANE_NODE, EDGE_NODE, BORDER_NODE, WIRELESS_CONTROLLER_NODE,
                 EXTENDED_NODE]. .
             offset(int): offset query parameter. Starting record for pagination. .
@@ -3796,16 +3796,16 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
-        check_type(device_roles, basestring)
+        check_type(network_device_id, str)
+        check_type(device_roles, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -3874,7 +3874,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -3915,10 +3915,10 @@ class Sda(object):
         """Deletes fabric devices based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. Allowed values
+            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. Allowed values
                 are [CONTROL_PLANE_NODE, EDGE_NODE, BORDER_NODE, WIRELESS_CONTROLLER_NODE]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -3937,14 +3937,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-devices
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
-        check_type(device_roles, basestring)
+        check_type(network_device_id, str)
+        check_type(device_roles, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4009,7 +4009,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4050,10 +4050,10 @@ class Sda(object):
         """Returns the count of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            device_roles(basestring): deviceRoles query parameter. Device roles of the fabric device. Allowed values
+            device_roles(str): deviceRoles query parameter. Device roles of the fabric device. Allowed values
                 are [CONTROL_PLANE_NODE, EDGE_NODE, BORDER_NODE, WIRELESS_CONTROLLER_NODE,
                 EXTENDED_NODE]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -4073,14 +4073,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
-        check_type(device_roles, basestring)
+        check_type(network_device_id, str)
+        check_type(device_roles, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4120,8 +4120,8 @@ class Sda(object):
         """Deletes layer 2 handoffs of a fabric device based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4140,14 +4140,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoffs
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4187,8 +4187,8 @@ class Sda(object):
         """Returns a list of layer 2 handoffs of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4209,15 +4209,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4284,7 +4284,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4324,8 +4324,8 @@ class Sda(object):
         """Returns the count of layer 2 handoffs of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4344,13 +4344,13 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4388,7 +4388,7 @@ class Sda(object):
         """Deletes a layer 2 handoff of a fabric device based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the layer 2 handoff of a fabric device. .
+            id(str): id path parameter. ID of the layer 2 handoff of a fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4406,12 +4406,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoff-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4471,10 +4471,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4540,7 +4540,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4581,8 +4581,8 @@ class Sda(object):
         """Deletes layer 3 handoffs with ip transit of a fabric device based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4601,14 +4601,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4649,8 +4649,8 @@ class Sda(object):
         """Returns a list of layer 3 handoffs with ip transit of fabric devices that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4671,15 +4671,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4723,8 +4723,8 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -4743,13 +4743,13 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4787,7 +4787,7 @@ class Sda(object):
         """Deletes a layer 3 handoff with ip transit of a fabric device by id. .
 
         Args:
-            id(basestring): id path parameter. ID of the layer 3 handoff with ip transit of a fabric device. .
+            id(str): id path parameter. ID of the layer 3 handoff with ip transit of a fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4805,12 +4805,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoff-with-ip-transit-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4871,10 +4871,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -4918,8 +4918,8 @@ class Sda(object):
         .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -4940,15 +4940,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -4991,8 +4991,8 @@ class Sda(object):
         """Deletes layer 3 handoffs with sda transit of a fabric device based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -5011,14 +5011,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5082,7 +5082,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5124,8 +5124,8 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric this device belongs to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the fabric device.
+            fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -5144,13 +5144,13 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring)
+        check_type(network_device_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -5188,7 +5188,7 @@ class Sda(object):
         """Deletes a fabric device based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the fabric device. .
+            id(str): id path parameter. ID of the fabric device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5206,12 +5206,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5248,8 +5248,8 @@ class Sda(object):
         """Returns a list of fabric sites that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the fabric site. .
-            site_id(basestring): siteId query parameter. ID of the network hierarchy associated with the fabric
+            id(str): id query parameter. ID of the fabric site. .
+            site_id(str): siteId query parameter. ID of the network hierarchy associated with the fabric
                 site. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -5270,14 +5270,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-sites
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(site_id, basestring)
+        check_type(id, str)
+        check_type(site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -5344,7 +5344,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5409,7 +5409,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5467,7 +5467,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5500,7 +5500,7 @@ class Sda(object):
         """Deletes a fabric site based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the fabric site. .
+            id(str): id path parameter. ID of the fabric site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5518,12 +5518,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-site-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5560,8 +5560,8 @@ class Sda(object):
         """Returns a list of fabric zones that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the fabric zone. .
-            site_id(basestring): siteId query parameter. ID of the network hierarchy associated with the fabric
+            id(str): id query parameter. ID of the fabric zone. .
+            site_id(str): siteId query parameter. ID of the network hierarchy associated with the fabric
                 zone. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -5582,14 +5582,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-fabric-zones
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(site_id, basestring)
+        check_type(id, str)
+        check_type(site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -5656,7 +5656,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5721,7 +5721,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5779,7 +5779,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5812,7 +5812,7 @@ class Sda(object):
         """Deletes a fabric zone based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the fabric zone. .
+            id(str): id path parameter. ID of the fabric zone. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5830,12 +5830,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-fabric-zone-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5895,10 +5895,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -5941,13 +5941,13 @@ class Sda(object):
         """Deletes layer 2 virtual networks based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 2 virtual network is
+            fabric_id(str): fabricId query parameter. ID of the fabric the layer 2 virtual network is
                 assigned to. .
-            vlan_name(basestring): vlanName query parameter. The vlan name of the layer 2 virtual network. .
+            vlan_name(str): vlanName query parameter. The vlan name of the layer 2 virtual network. .
             vlan_id(int): vlanId query parameter. The vlan ID of the layer 2 virtual network. .
-            traffic_type(basestring): trafficType query parameter. The traffic type of the layer 2 virtual network.
+            traffic_type(str): trafficType query parameter. The traffic type of the layer 2 virtual network.
                 .
-            associated_layer3_virtual_network_name(basestring): associatedLayer3VirtualNetworkName query parameter.
+            associated_layer3_virtual_network_name(str): associatedLayer3VirtualNetworkName query parameter.
                 Name of the associated layer 3 virtual network. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -5966,16 +5966,16 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-networks
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(vlan_name, basestring)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
-        check_type(traffic_type, basestring)
-        check_type(associated_layer3_virtual_network_name, basestring)
+        check_type(traffic_type, str)
+        check_type(associated_layer3_virtual_network_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -6025,14 +6025,14 @@ class Sda(object):
         """Returns a list of layer 2 virtual networks that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the layer 2 virtual network. .
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 2 virtual network is
+            id(str): id query parameter. ID of the layer 2 virtual network. .
+            fabric_id(str): fabricId query parameter. ID of the fabric the layer 2 virtual network is
                 assigned to. .
-            vlan_name(basestring): vlanName query parameter. The vlan name of the layer 2 virtual network. .
+            vlan_name(str): vlanName query parameter. The vlan name of the layer 2 virtual network. .
             vlan_id(int): vlanId query parameter. The vlan ID of the layer 2 virtual network. .
-            traffic_type(basestring): trafficType query parameter. The traffic type of the layer 2 virtual network.
+            traffic_type(str): trafficType query parameter. The traffic type of the layer 2 virtual network.
                 .
-            associated_layer3_virtual_network_name(basestring): associatedLayer3VirtualNetworkName query parameter.
+            associated_layer3_virtual_network_name(str): associatedLayer3VirtualNetworkName query parameter.
                 Name of the associated layer 3 virtual network. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -6053,18 +6053,18 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-networks
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(fabric_id, basestring)
-        check_type(vlan_name, basestring)
+        check_type(id, str)
+        check_type(fabric_id, str)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
-        check_type(traffic_type, basestring)
-        check_type(associated_layer3_virtual_network_name, basestring)
+        check_type(traffic_type, str)
+        check_type(associated_layer3_virtual_network_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -6139,7 +6139,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6182,13 +6182,13 @@ class Sda(object):
         """Returns the count of layer 2 virtual networks that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 2 virtual network is
+            fabric_id(str): fabricId query parameter. ID of the fabric the layer 2 virtual network is
                 assigned to. .
-            vlan_name(basestring): vlanName query parameter. The vlan name of the layer 2 virtual network. .
+            vlan_name(str): vlanName query parameter. The vlan name of the layer 2 virtual network. .
             vlan_id(int): vlanId query parameter. The vlan ID of the layer 2 virtual network. .
-            traffic_type(basestring): trafficType query parameter. The traffic type of the layer 2 virtual network.
+            traffic_type(str): trafficType query parameter. The traffic type of the layer 2 virtual network.
                 .
-            associated_layer3_virtual_network_name(basestring): associatedLayer3VirtualNetworkName query parameter.
+            associated_layer3_virtual_network_name(str): associatedLayer3VirtualNetworkName query parameter.
                 Name of the associated layer 3 virtual network. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -6207,15 +6207,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-network-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(vlan_name, str)
         check_type(vlan_id, int)
-        check_type(traffic_type, basestring)
-        check_type(associated_layer3_virtual_network_name, basestring)
+        check_type(traffic_type, str)
+        check_type(associated_layer3_virtual_network_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -6258,7 +6258,7 @@ class Sda(object):
         """Deletes a layer 2 virtual network based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the layer 2 virtual network. .
+            id(str): id path parameter. ID of the layer 2 virtual network. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6276,12 +6276,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-network-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6341,10 +6341,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6387,11 +6387,11 @@ class Sda(object):
         """Returns a list of layer 3 virtual networks that match the provided query parameters. .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the layer 3 virtual
+            virtual_network_name(str): virtualNetworkName query parameter. Name of the layer 3 virtual
                 network. .
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 3 virtual network is
+            fabric_id(str): fabricId query parameter. ID of the fabric the layer 3 virtual network is
                 assigned to. .
-            anchored_site_id(basestring): anchoredSiteId query parameter. Fabric ID of the fabric site the layer 3
+            anchored_site_id(str): anchoredSiteId query parameter. Fabric ID of the fabric site the layer 3
                 virtual network is anchored at. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -6412,15 +6412,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring)
-        check_type(fabric_id, basestring)
-        check_type(anchored_site_id, basestring)
+        check_type(virtual_network_name, str)
+        check_type(fabric_id, str)
+        check_type(anchored_site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -6463,7 +6463,7 @@ class Sda(object):
         """Deletes layer 3 virtual networks based on user input. .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the layer 3 virtual
+            virtual_network_name(str): virtualNetworkName query parameter. Name of the layer 3 virtual
                 network. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -6482,11 +6482,11 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-networks
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring)
+        check_type(virtual_network_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -6547,7 +6547,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6587,9 +6587,9 @@ class Sda(object):
         """Returns the count of layer 3 virtual networks that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the layer 3 virtual network is
+            fabric_id(str): fabricId query parameter. ID of the fabric the layer 3 virtual network is
                 assigned to. .
-            anchored_site_id(basestring): anchoredSiteId query parameter. Fabric ID of the fabric site the layer 3
+            anchored_site_id(str): anchoredSiteId query parameter. Fabric ID of the fabric site the layer 3
                 virtual network is anchored at. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -6608,12 +6608,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(anchored_site_id, basestring)
+        check_type(fabric_id, str)
+        check_type(anchored_site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -6650,7 +6650,7 @@ class Sda(object):
         """Deletes a layer 3 virtual network based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the layer 3 virtual network. .
+            id(str): id path parameter. ID of the layer 3 virtual network. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6668,12 +6668,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-network-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6733,10 +6733,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6777,7 +6777,7 @@ class Sda(object):
         """Returns a list of multicast configurations at a fabric site level that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric site where multicast is configured. .
+            fabric_id(str): fabricId query parameter. ID of the fabric site where multicast is configured. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -6797,13 +6797,13 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-multicast
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
+        check_type(fabric_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -6868,10 +6868,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -6913,8 +6913,8 @@ class Sda(object):
         """Returns a list of multicast configurations for virtual networks that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric site where multicast is configured. .
-            virtual_network_name(basestring): virtualNetworkName query parameter. Name of the virtual network
+            fabric_id(str): fabricId query parameter. ID of the fabric site where multicast is configured. .
+            virtual_network_name(str): virtualNetworkName query parameter. Name of the virtual network
                 associated to the multicast configuration. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -6935,14 +6935,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-networks
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(virtual_network_name, basestring)
+        check_type(fabric_id, str)
+        check_type(virtual_network_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7009,7 +7009,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7049,7 +7049,7 @@ class Sda(object):
         parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric site the multicast configuration is
+            fabric_id(str): fabricId query parameter. ID of the fabric site the multicast configuration is
                 associated with. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -7068,11 +7068,11 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-network-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
+        check_type(fabric_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7107,7 +7107,7 @@ class Sda(object):
         """Deletes a multicast configuration for a virtual network based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the multicast configuration. .
+            id(str): id path parameter. ID of the multicast configuration. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -7125,12 +7125,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-multicast-virtual-network-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7190,10 +7190,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7238,12 +7238,12 @@ class Sda(object):
         """Returns a list of port assignments that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port
+            fabric_id(str): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the port
                 assignment. .
-            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment. .
-            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment. .
-            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
+            interface_name(str): interfaceName query parameter. Interface name of the port assignment. .
+            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment. .
+            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -7263,17 +7263,17 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-port-assignments
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(interface_name, basestring)
-        check_type(data_vlan_name, basestring)
-        check_type(voice_vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(network_device_id, str)
+        check_type(interface_name, str)
+        check_type(data_vlan_name, str)
+        check_type(voice_vlan_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7346,7 +7346,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7389,12 +7389,12 @@ class Sda(object):
         """Deletes port assignments based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port
+            fabric_id(str): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the port
                 assignment. .
-            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment. .
-            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment. .
-            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
+            interface_name(str): interfaceName query parameter. Interface name of the port assignment. .
+            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment. .
+            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -7412,17 +7412,17 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-port-assignments
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
-        check_type(interface_name, basestring)
-        check_type(data_vlan_name, basestring)
-        check_type(voice_vlan_name, basestring)
+        check_type(interface_name, str)
+        check_type(data_vlan_name, str)
+        check_type(voice_vlan_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7469,12 +7469,12 @@ class Sda(object):
         """Returns the count of port assignments that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
-            network_device_id(basestring): networkDeviceId query parameter. Network device ID of the port
+            fabric_id(str): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(str): networkDeviceId query parameter. Network device ID of the port
                 assignment. .
-            interface_name(basestring): interfaceName query parameter. Interface name of the port assignment. .
-            data_vlan_name(basestring): dataVlanName query parameter. Data VLAN name of the port assignment. .
-            voice_vlan_name(basestring): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
+            interface_name(str): interfaceName query parameter. Interface name of the port assignment. .
+            data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment. .
+            voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -7492,15 +7492,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-port-assignment-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(interface_name, basestring)
-        check_type(data_vlan_name, basestring)
-        check_type(voice_vlan_name, basestring)
+        check_type(fabric_id, str)
+        check_type(network_device_id, str)
+        check_type(interface_name, str)
+        check_type(data_vlan_name, str)
+        check_type(voice_vlan_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7543,7 +7543,7 @@ class Sda(object):
         """Deletes a port assignment based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the port assignment. .
+            id(str): id path parameter. ID of the port assignment. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -7561,12 +7561,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7605,10 +7605,10 @@ class Sda(object):
         """Returns a list of port channels that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            port_channel_name(basestring): portChannelName query parameter. Name of the port channel. .
-            connected_device_type(basestring): connectedDeviceType query parameter. Connected device type of the
+            fabric_id(str): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            port_channel_name(str): portChannelName query parameter. Name of the port channel. .
+            connected_device_type(str): connectedDeviceType query parameter. Connected device type of the
                 port channel. The allowed values are [TRUNK, EXTENDED_NODE]. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -7629,16 +7629,16 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-port-channels
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(port_channel_name, basestring)
-        check_type(connected_device_type, basestring)
+        check_type(fabric_id, str)
+        check_type(network_device_id, str)
+        check_type(port_channel_name, str)
+        check_type(connected_device_type, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7709,7 +7709,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7774,7 +7774,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -7816,10 +7816,10 @@ class Sda(object):
         """Deletes port channels based on user input. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            port_channel_name(basestring): portChannelName query parameter. Name of the port channel. .
-            connected_device_type(basestring): connectedDeviceType query parameter. Connected device type of the
+            fabric_id(str): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            port_channel_name(str): portChannelName query parameter. Name of the port channel. .
+            connected_device_type(str): connectedDeviceType query parameter. Connected device type of the
                 port channel. The allowed values are [TRUNK, EXTENDED_NODE]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -7838,16 +7838,16 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-port-channels
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring,
+        check_type(fabric_id, str,
                    may_be_none=False)
-        check_type(network_device_id, basestring,
+        check_type(network_device_id, str,
                    may_be_none=False)
-        check_type(port_channel_name, basestring)
-        check_type(connected_device_type, basestring)
+        check_type(port_channel_name, str)
+        check_type(connected_device_type, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7891,10 +7891,10 @@ class Sda(object):
         """Returns the count of port channels that match the provided query parameters. .
 
         Args:
-            fabric_id(basestring): fabricId query parameter. ID of the fabric the device is assigned to. .
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            port_channel_name(basestring): portChannelName query parameter. Name of the port channel. .
-            connected_device_type(basestring): connectedDeviceType query parameter. Connected device type of the
+            fabric_id(str): fabricId query parameter. ID of the fabric the device is assigned to. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            port_channel_name(str): portChannelName query parameter. Name of the port channel. .
+            connected_device_type(str): connectedDeviceType query parameter. Connected device type of the
                 port channel. The allowed values are [TRUNK, EXTENDED_NODE]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -7913,14 +7913,14 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-port-channel-count
         """
         check_type(headers, dict)
-        check_type(fabric_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(port_channel_name, basestring)
-        check_type(connected_device_type, basestring)
+        check_type(fabric_id, str)
+        check_type(network_device_id, str)
+        check_type(port_channel_name, str)
+        check_type(connected_device_type, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'fabricId':
@@ -7961,7 +7961,7 @@ class Sda(object):
         """Deletes a port channel based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the port channel. .
+            id(str): id path parameter. ID of the port channel. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -7979,12 +7979,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-port-channel-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8019,8 +8019,8 @@ class Sda(object):
         """Delete provisioned devices based on query parameters. .
 
         Args:
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            site_id(str): siteId query parameter. ID of the site hierarchy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -8038,12 +8038,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-provisioned-devices
         """
         check_type(headers, dict)
-        check_type(network_device_id, basestring)
-        check_type(site_id, basestring)
+        check_type(network_device_id, str)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'networkDeviceId':
@@ -8106,7 +8106,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8149,9 +8149,9 @@ class Sda(object):
         """Returns the list of provisioned devices based on query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the provisioned device. .
-            network_device_id(basestring): networkDeviceId query parameter. ID of the network device. .
-            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            id(str): id query parameter. ID of the provisioned device. .
+            network_device_id(str): networkDeviceId query parameter. ID of the network device. .
+            site_id(str): siteId query parameter. ID of the site hierarchy. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of devices to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -8171,15 +8171,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(site_id, basestring)
+        check_type(id, str)
+        check_type(network_device_id, str)
+        check_type(site_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -8248,7 +8248,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8287,7 +8287,7 @@ class Sda(object):
         """Returns the count of provisioned devices based on query parameters. .
 
         Args:
-            site_id(basestring): siteId query parameter. ID of the site hierarchy. .
+            site_id(str): siteId query parameter. ID of the site hierarchy. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -8305,11 +8305,11 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices-count
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -8344,7 +8344,7 @@ class Sda(object):
         """Deletes provisioned device based on Id. .
 
         Args:
-            id(basestring): id path parameter. ID of the provisioned device. .
+            id(str): id path parameter. ID of the provisioned device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -8362,12 +8362,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-provisioned-device-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8427,10 +8427,10 @@ class Sda(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8473,9 +8473,9 @@ class Sda(object):
         """Returns a list of transit networks that match the provided query parameters. .
 
         Args:
-            id(basestring): id query parameter. ID of the transit network. .
-            name(basestring): name query parameter. Name of the transit network. .
-            type(basestring): type query parameter. Type of the transit network. Allowed values are
+            id(str): id query parameter. ID of the transit network. .
+            name(str): name query parameter. Name of the transit network. .
+            type(str): type query parameter. Type of the transit network. Allowed values are
                 [IP_BASED_TRANSIT, SDA_LISP_PUB_SUB_TRANSIT, SDA_LISP_BGP_TRANSIT]. .
             offset(int): offset query parameter. Starting record for pagination. .
             limit(int): limit query parameter. Maximum number of records to return. .
@@ -8496,15 +8496,15 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-transit-networks
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(name, basestring)
-        check_type(type, basestring)
+        check_type(id, str)
+        check_type(name, str)
+        check_type(type, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -8573,7 +8573,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8612,7 +8612,7 @@ class Sda(object):
         """Returns the count of transit networks that match the provided query parameters. .
 
         Args:
-            type(basestring): type query parameter. Type of the transit network. Allowed values are
+            type(str): type query parameter. Type of the transit network. Allowed values are
                 [IP_BASED_TRANSIT, SDA_LISP_PUB_SUB_TRANSIT, SDA_LISP_BGP_TRANSIT]. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -8631,11 +8631,11 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-transit-networks-count
         """
         check_type(headers, dict)
-        check_type(type, basestring)
+        check_type(type, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'type':
@@ -8670,7 +8670,7 @@ class Sda(object):
         """Deletes a transit network based on id. .
 
         Args:
-            id(basestring): id path parameter. ID of the transit network. .
+            id(str): id path parameter. ID of the transit network. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -8688,12 +8688,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-transit-network-by-id
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8761,7 +8761,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -8811,7 +8811,7 @@ class Sda(object):
         """Delete virtual network with scalable groups .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -8829,12 +8829,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!delete-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -8869,7 +8869,7 @@ class Sda(object):
         """Get virtual network with scalable groups .
 
         Args:
-            virtual_network_name(basestring): virtualNetworkName query parameter.
+            virtual_network_name(str): virtualNetworkName query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -8887,12 +8887,12 @@ class Sda(object):
             https://developer.cisco.com/docs/dna-center/#!get-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
-        check_type(virtual_network_name, basestring,
+        check_type(virtual_network_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'virtualNetworkName':
@@ -8963,7 +8963,7 @@ class Sda(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

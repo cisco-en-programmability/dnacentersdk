@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -103,16 +103,16 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Client-Type' in headers:
                 check_type(headers.get('Client-Type'),
-                           basestring)
+                           str)
             if 'Client-Url' in headers:
                 check_type(headers.get('Client-Url'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'scheduleValidate':
@@ -180,10 +180,10 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -239,23 +239,23 @@ class SoftwareImageManagementSwim(object):
         """Returns software image list based on a filter criteria. For example: "filterbyName = cat3k%" .
 
         Args:
-            image_uuid(basestring): imageUuid query parameter.
-            name(basestring): name query parameter.
-            family(basestring): family query parameter.
-            application_type(basestring): applicationType query parameter.
-            image_integrity_status(basestring): imageIntegrityStatus query parameter. imageIntegrityStatus FAILURE,
+            image_uuid(str): imageUuid query parameter.
+            name(str): name query parameter.
+            family(str): family query parameter.
+            application_type(str): applicationType query parameter.
+            image_integrity_status(str): imageIntegrityStatus query parameter. imageIntegrityStatus FAILURE,
                 UNKNOWN, VERIFIED .
-            version(basestring): version query parameter. software Image Version .
-            image_series(basestring): imageSeries query parameter. image Series .
-            image_name(basestring): imageName query parameter. image Name .
+            version(str): version query parameter. software Image Version .
+            image_series(str): imageSeries query parameter. image Series .
+            image_name(str): imageName query parameter. image Name .
             is_tagged_golden(bool): isTaggedGolden query parameter. is Tagged Golden .
             is_cco_recommended(bool): isCCORecommended query parameter. is recommended from cisco.com .
             is_cco_latest(bool): isCCOLatest query parameter. is latest from cisco.com .
             created_time(int): createdTime query parameter. time in milliseconds (epoch format) .
             image_size_greater_than(int): imageSizeGreaterThan query parameter. size in bytes .
             image_size_lesser_than(int): imageSizeLesserThan query parameter. size in bytes .
-            sort_by(basestring): sortBy query parameter. sort results by this field .
-            sort_order(basestring): sortOrder query parameter. sort order 'asc' or 'des'. Default is asc .
+            sort_by(str): sortBy query parameter. sort results by this field .
+            sort_order(str): sortOrder query parameter. sort order 'asc' or 'des'. Default is asc .
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -275,28 +275,28 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!get-software-image-details
         """
         check_type(headers, dict)
-        check_type(image_uuid, basestring)
-        check_type(name, basestring)
-        check_type(family, basestring)
-        check_type(application_type, basestring)
-        check_type(image_integrity_status, basestring)
-        check_type(version, basestring)
-        check_type(image_series, basestring)
-        check_type(image_name, basestring)
+        check_type(image_uuid, str)
+        check_type(name, str)
+        check_type(family, str)
+        check_type(application_type, str)
+        check_type(image_integrity_status, str)
+        check_type(version, str)
+        check_type(image_series, str)
+        check_type(image_name, str)
         check_type(is_tagged_golden, bool)
         check_type(is_cco_recommended, bool)
         check_type(is_cco_latest, bool)
         check_type(created_time, int)
         check_type(image_size_greater_than, int)
         check_type(image_size_lesser_than, int)
-        check_type(sort_by, basestring)
-        check_type(sort_order, basestring)
+        check_type(sort_by, str)
+        check_type(sort_order, str)
         check_type(limit, int)
         check_type(offset, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'imageUuid':
@@ -384,10 +384,10 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Accept' in headers:
                 check_type(headers.get('Accept'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -458,13 +458,13 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Accept' in headers:
                 check_type(headers.get('Accept'),
-                           basestring)
+                           str)
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -517,12 +517,12 @@ class SoftwareImageManagementSwim(object):
         """Remove golden tag. Set siteId as -1 for Global site. .
 
         Args:
-            site_id(basestring): siteId path parameter. Site Id in uuid format. Set siteId as -1 for Global site. .
-            device_family_identifier(basestring): deviceFamilyIdentifier path parameter. Device family identifier
+            site_id(str): siteId path parameter. Site Id in uuid format. Set siteId as -1 for Global site. .
+            device_family_identifier(str): deviceFamilyIdentifier path parameter. Device family identifier
                 e.g. : 277696480-283933147, e.g. : 277696480 .
-            device_role(basestring): deviceRole path parameter. Device Role. Permissible Values : ALL, UNKNOWN,
+            device_role(str): deviceRole path parameter. Device Role. Permissible Values : ALL, UNKNOWN,
                 ACCESS, BORDER ROUTER, DISTRIBUTION and CORE. .
-            image_id(basestring): imageId path parameter. Image Id in uuid format. .
+            image_id(str): imageId path parameter. Image Id in uuid format. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -540,21 +540,21 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!remove-golden-tag-for-image
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
-        check_type(device_family_identifier, basestring,
+        check_type(device_family_identifier, str,
                    may_be_none=False)
-        check_type(device_role, basestring,
+        check_type(device_role, str,
                    may_be_none=False)
-        check_type(image_id, basestring,
+        check_type(image_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Accept' in headers:
                 check_type(headers.get('Accept'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -596,12 +596,12 @@ class SoftwareImageManagementSwim(object):
         """Get golden tag status of an image. Set siteId as -1 for Global site. .
 
         Args:
-            site_id(basestring): siteId path parameter. Site Id in uuid format. Set siteId as -1 for Global site. .
-            device_family_identifier(basestring): deviceFamilyIdentifier path parameter. Device family identifier
+            site_id(str): siteId path parameter. Site Id in uuid format. Set siteId as -1 for Global site. .
+            device_family_identifier(str): deviceFamilyIdentifier path parameter. Device family identifier
                 e.g. : 277696480-283933147, e.g. : 277696480 .
-            device_role(basestring): deviceRole path parameter. Device Role. Permissible Values : ALL, UNKNOWN,
+            device_role(str): deviceRole path parameter. Device Role. Permissible Values : ALL, UNKNOWN,
                 ACCESS, BORDER ROUTER, DISTRIBUTION and CORE. .
-            image_id(basestring): imageId path parameter. Image Id in uuid format. .
+            image_id(str): imageId path parameter. Image Id in uuid format. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -619,18 +619,18 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!get-golden-tag-status-of-an-image
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
-        check_type(device_family_identifier, basestring,
+        check_type(device_family_identifier, str,
                    may_be_none=False)
-        check_type(device_role, basestring,
+        check_type(device_role, str,
                    may_be_none=False)
-        check_type(image_id, basestring,
+        check_type(image_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -703,9 +703,9 @@ class SoftwareImageManagementSwim(object):
 
         Args:
             is_third_party(bool): isThirdParty query parameter. Third party Image check .
-            third_party_vendor(basestring): thirdPartyVendor query parameter. Third Party Vendor .
-            third_party_image_family(basestring): thirdPartyImageFamily query parameter. Third Party image family .
-            third_party_application_type(basestring): thirdPartyApplicationType query parameter. Third Party
+            third_party_vendor(str): thirdPartyVendor query parameter. Third Party Vendor .
+            third_party_image_family(str): thirdPartyImageFamily query parameter. Third Party image family .
+            third_party_application_type(str): thirdPartyApplicationType query parameter. Third Party
                 Application Type .
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
@@ -729,16 +729,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
-        check_type(third_party_vendor, basestring)
-        check_type(third_party_image_family, basestring)
-        check_type(third_party_application_type, basestring)
+        check_type(third_party_vendor, str)
+        check_type(third_party_image_family, str)
+        check_type(third_party_application_type, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'isThirdParty':
@@ -791,10 +791,10 @@ class SoftwareImageManagementSwim(object):
         image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
 
         Args:
-            schedule_at(basestring): scheduleAt query parameter. Epoch Time (The number of milli-seconds since
+            schedule_at(str): scheduleAt query parameter. Epoch Time (The number of milli-seconds since
                 January 1 1970 UTC) at which the distribution should be scheduled (Optional)  .
-            schedule_desc(basestring): scheduleDesc query parameter. Custom Description (Optional) .
-            schedule_origin(basestring): scheduleOrigin query parameter. Originator of this call (Optional) .
+            schedule_desc(str): scheduleDesc query parameter. Custom Description (Optional) .
+            schedule_origin(str): scheduleOrigin query parameter. Originator of this call (Optional) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -817,16 +817,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(schedule_at, basestring)
-        check_type(schedule_desc, basestring)
-        check_type(schedule_origin, basestring)
+        check_type(schedule_at, str)
+        check_type(schedule_desc, str)
+        check_type(schedule_origin, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'scheduleAt':
@@ -884,7 +884,7 @@ class SoftwareImageManagementSwim(object):
         images from Cisco.com.  .
 
         Args:
-            site_id(basestring): siteId query parameter. Site identifier to get the list of all available products
+            site_id(str): siteId query parameter. Site identifier to get the list of all available products
                 under the site. The default value is the global site.  See
                 https://developer.cisco.com/docs/dna-center/get-site for `siteId` .
             product_name_ordinal(int): productNameOrdinal query parameter. The product name ordinal is a unique
@@ -898,13 +898,13 @@ class SoftwareImageManagementSwim(object):
                 imported images. Conversely, when the value is set to `false`, it will include image
                 records from the cloud. The identifier for cloud images can be utilized to download
                 images from Cisco.com to the disk. .
-            name(basestring): name query parameter. Filter with software image or add-on name. Supports partial
+            name(str): name query parameter. Filter with software image or add-on name. Supports partial
                 case-insensitive search. A minimum of 3 characters is required for the search. .
-            version(basestring): version query parameter. Filter with image version. Supports partial case-
+            version(str): version query parameter. Filter with image version. Supports partial case-
                 insensitive search. A minimum of 3 characters is required for the search. .
             golden(bool): golden query parameter. When set to `true`, it will retrieve the images marked as tagged
                 golden. When set to `false`, it will retrieve the images marked as not tagged golden. .
-            integrity(basestring): integrity query parameter. Filter with verified images using Integrity
+            integrity(str): integrity query parameter. Filter with verified images using Integrity
                 Verification Available values: UNKNOWN, VERIFIED .
             has_addon_images(bool): hasAddonImages query parameter. When set to `true`, it will retrieve the images
                 which have add-on images. When set to `false`, it will retrieve the images which do not
@@ -933,14 +933,14 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!returns-list-of-software-images
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         check_type(product_name_ordinal, int)
         check_type(supervisor_product_name_ordinal, int)
         check_type(imported, bool)
-        check_type(name, basestring)
-        check_type(version, basestring)
+        check_type(name, str)
+        check_type(version, str)
         check_type(golden, bool)
-        check_type(integrity, basestring)
+        check_type(integrity, str)
         check_type(has_addon_images, bool)
         check_type(is_addon_images, bool)
         check_type(offset, int)
@@ -948,7 +948,7 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -1014,7 +1014,7 @@ class SoftwareImageManagementSwim(object):
         """Returns the count of software images for given `siteId`. The default value of siteId is global .
 
         Args:
-            site_id(basestring): siteId query parameter. Site identifier to get the list of all available products
+            site_id(str): siteId query parameter. Site identifier to get the list of all available products
                 under the site. The default value is the global site.  See
                 https://developer.cisco.com/docs/dna-center/get-site for siteId .
             product_name_ordinal(int): productNameOrdinal query parameter. The product name ordinal is a unique
@@ -1028,14 +1028,14 @@ class SoftwareImageManagementSwim(object):
                 imported images. Conversely, when the value is set to `false`, it will include image
                 records from the cloud. The identifier for cloud images can be utilised to download
                 images from Cisco.com to the disk. .
-            name(basestring): name query parameter. Filter with software image or add-on name. Supports partial
+            name(str): name query parameter. Filter with software image or add-on name. Supports partial
                 case-insensitive search. A minimum of 3 characters is required for the search .
-            version(basestring): version query parameter. Filter with image version. Supports partial case-
+            version(str): version query parameter. Filter with image version. Supports partial case-
                 insensitive search. A minimum of 3 characters is required for the search .
-            golden(basestring): golden query parameter. When set to `true`, it will retrieve the images marked
+            golden(str): golden query parameter. When set to `true`, it will retrieve the images marked
                 tagged golden. When set to `false`, it will retrieve the images marked not tagged
                 golden. .
-            integrity(basestring): integrity query parameter. Filter with verified images using Integrity
+            integrity(str): integrity query parameter. Filter with verified images using Integrity
                 Verification Available values: UNKNOWN, VERIFIED .
             has_addon_images(bool): hasAddonImages query parameter. When set to `true`, it will retrieve the images
                 which have add-on images. When set to `false`, it will retrieve the images which do not
@@ -1060,20 +1060,20 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!returns-count-of-software-images
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         check_type(product_name_ordinal, int)
         check_type(supervisor_product_name_ordinal, int)
         check_type(imported, bool)
-        check_type(name, basestring)
-        check_type(version, basestring)
-        check_type(golden, basestring)
-        check_type(integrity, basestring)
+        check_type(name, str)
+        check_type(version, str)
+        check_type(golden, str)
+        check_type(integrity, str)
         check_type(has_addon_images, bool)
         check_type(is_addon_images, bool)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -1162,10 +1162,10 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1237,7 +1237,7 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1278,7 +1278,7 @@ class SoftwareImageManagementSwim(object):
             password(string): Software Image Management (SWIM)'s Server password .
             portNumber(number): Software Image Management (SWIM)'s Port number .
             username(string): Software Image Management (SWIM)'s Server username .
-            id(basestring): id path parameter. Remote server identifier. .
+            id(str): id path parameter. Remote server identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1301,15 +1301,15 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1359,7 +1359,7 @@ class SoftwareImageManagementSwim(object):
         """Retrieve image distribution server for the given server identifier .
 
         Args:
-            id(basestring): id path parameter. Server identifier .
+            id(str): id path parameter. Server identifier .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1377,12 +1377,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!retrieve-specific-image-distribution-server
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1417,7 +1417,7 @@ class SoftwareImageManagementSwim(object):
         """Delete remote image distribution server. .
 
         Args:
-            id(basestring): id path parameter. Remote server identifier. .
+            id(str): id path parameter. Remote server identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1435,12 +1435,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!remove-image-distribution-server
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1476,7 +1476,7 @@ class SoftwareImageManagementSwim(object):
         from the response of API [ /dna/intent/api/v1/images?hasAddonImages=true ]. .
 
         Args:
-            id(basestring): id path parameter. Software image identifier. Check
+            id(str): id path parameter. Software image identifier. Check
                 `/dna/intent/api/v1/images?hasAddonImages=true` API to get the same. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1495,12 +1495,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!retrieve-applicable-add-on-images-for-the-given-software-image
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1535,7 +1535,7 @@ class SoftwareImageManagementSwim(object):
         of API [ /dna/intent/api/v1/images?hasAddonImages=true ]. .
 
         Args:
-            id(basestring): id path parameter. Software image identifier. Check API `/dna/intent/api/v1/images` for
+            id(str): id path parameter. Software image identifier. Check API `/dna/intent/api/v1/images` for
                 id from response. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1554,12 +1554,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!returns-count-of-add-on-images
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1594,7 +1594,7 @@ class SoftwareImageManagementSwim(object):
         `/dna/intent/api/v1/images` for obtaining `id`. .
 
         Args:
-            id(basestring): id path parameter. Software image identifier. Check API `/dna/intent/api/v1/images` for
+            id(str): id path parameter. Software image identifier. Check API `/dna/intent/api/v1/images` for
                 `id` from response. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1613,12 +1613,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!download-the-software-image
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1661,7 +1661,7 @@ class SoftwareImageManagementSwim(object):
                 each network device product .
             siteIds(list): Software Image Management (SWIM)'s Sites where this image needs to be assigned. Ref
                 https://developer.cisco.com/docs/dna-center/#!sites  (list of strings).
-            image_id(basestring): imageId path parameter. Software image identifier. Refer
+            image_id(str): imageId path parameter. Software image identifier. Refer
                 `/dna/intent/api/v1/images` API for obtaining `imageId` .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1685,15 +1685,15 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(image_id, basestring,
+        check_type(image_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1747,15 +1747,15 @@ class SoftwareImageManagementSwim(object):
         `/dna/intent/api/v1/images` API for obtaining `imageId`. .
 
         Args:
-            image_id(basestring): imageId path parameter. Software image identifier. Refer
+            image_id(str): imageId path parameter. Software image identifier. Refer
                 `/dna/intent/api/v1/images` API for obtaining `imageId` .
-            product_name(basestring): productName query parameter. Filter with network device product name. Supports
+            product_name(str): productName query parameter. Filter with network device product name. Supports
                 partial case-insensitive search. A minimum of 3 characters is required for the search. .
-            product_id(basestring): productId query parameter. Filter with product ID (PID) .
-            recommended(basestring): recommended query parameter. Filter with recommended source. If `CISCO` then
+            product_id(str): productId query parameter. Filter with product ID (PID) .
+            recommended(str): recommended query parameter. Filter with recommended source. If `CISCO` then
                 the network device product assigned was recommended by Cisco and `USER` then the user
                 has manually assigned. Available values: CISCO, USER .
-            assigned(basestring): assigned query parameter. Filter with the assigned/unassigned, `ASSIGNED` option
+            assigned(str): assigned query parameter. Filter with the assigned/unassigned, `ASSIGNED` option
                 will filter network device products that are associated with the given image. The
                 `NOT_ASSIGNED` option will filter network device products that have not yet been
                 associated with the given image but apply to it. Available values: ASSIGNED,
@@ -1781,18 +1781,18 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-network-device-product-names-assigned-to-a-software-image
         """
         check_type(headers, dict)
-        check_type(product_name, basestring)
-        check_type(product_id, basestring)
-        check_type(recommended, basestring)
-        check_type(assigned, basestring)
+        check_type(product_name, str)
+        check_type(product_id, str)
+        check_type(recommended, str)
+        check_type(assigned, str)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(image_id, basestring,
+        check_type(image_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'productName':
@@ -1843,15 +1843,15 @@ class SoftwareImageManagementSwim(object):
         API for obtaining `imageId` .
 
         Args:
-            image_id(basestring): imageId path parameter. Software image identifier. Refer
+            image_id(str): imageId path parameter. Software image identifier. Refer
                 `/dna/intent/api/v/images` API for obtaining `imageId` .
-            product_name(basestring): productName query parameter. Filter with network device product name. Supports
+            product_name(str): productName query parameter. Filter with network device product name. Supports
                 partial case-insensitive search. A minimum of 3 characters are required for search. .
-            product_id(basestring): productId query parameter. Filter with product ID (PID) .
-            recommended(basestring): recommended query parameter. Filter with recommended source. If `CISCO` then
+            product_id(str): productId query parameter. Filter with product ID (PID) .
+            recommended(str): recommended query parameter. Filter with recommended source. If `CISCO` then
                 the network device product assigned was recommended by Cisco and `USER` then the user
                 has manually assigned. Available values : CISCO, USER .
-            assigned(basestring): assigned query parameter. Filter with the assigned/unassigned, `ASSIGNED` option
+            assigned(str): assigned query parameter. Filter with the assigned/unassigned, `ASSIGNED` option
                 will filter network device products that are associated with the given image. The
                 `NOT_ASSIGNED` option will filter network device products that have not yet been
                 associated with the given image but apply to it. Available values: ASSIGNED,
@@ -1873,16 +1873,16 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-assigned-network-device-products
         """
         check_type(headers, dict)
-        check_type(product_name, basestring)
-        check_type(product_id, basestring)
-        check_type(recommended, basestring)
-        check_type(assigned, basestring)
-        check_type(image_id, basestring,
+        check_type(product_name, str)
+        check_type(product_id, str)
+        check_type(recommended, str)
+        check_type(assigned, str)
+        check_type(image_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'productName':
@@ -1928,7 +1928,7 @@ class SoftwareImageManagementSwim(object):
         APIs for obtaining  `imageId` and `productNameOrdinal` respectively. .
 
         Args:
-            image_id(basestring): imageId path parameter. Software image identifier. Refer
+            image_id(str): imageId path parameter. Software image identifier. Refer
                 `/dna/intent/api/v1/images` API for obtaining `imageId` .
             product_name_ordinal(int): productNameOrdinal path parameter. The product name ordinal is a unique value
                 for each network device product. Refer
@@ -1951,14 +1951,14 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!unassign-network-device-product-name-from-the-given-software-image
         """
         check_type(headers, dict)
-        check_type(image_id, basestring,
+        check_type(image_id, str,
                    may_be_none=False)
         check_type(product_name_ordinal, int,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2002,7 +2002,7 @@ class SoftwareImageManagementSwim(object):
         Args:
             siteIds(list): Software Image Management (SWIM)'s Sites where all this image need to be assigned  (list
                 of strings).
-            image_id(basestring): imageId path parameter. Software image identifier. Refer
+            image_id(str): imageId path parameter. Software image identifier. Refer
                 `/dna/intent/api/v1/images` API for obtaining `imageId` .
             product_name_ordinal(int): productNameOrdinal path parameter. Product name ordinal is unique value for
                 each network device product. Refer
@@ -2030,14 +2030,14 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(image_id, basestring,
+        check_type(image_id, str,
                    may_be_none=False)
         check_type(product_name_ordinal, int,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2096,23 +2096,23 @@ class SoftwareImageManagementSwim(object):
         """Returns the list of network device image updates based on the given filter criteria .
 
         Args:
-            id(basestring): id query parameter. Update id which is unique for each network device under the parentId
+            id(str): id query parameter. Update id which is unique for each network device under the parentId
                 .
-            parent_id(basestring): parentId query parameter. Updates that have this parent id .
-            network_device_id(basestring): networkDeviceId query parameter. Network device id .
-            status(basestring): status query parameter. Status of the image update. Available values : FAILURE,
+            parent_id(str): parentId query parameter. Updates that have this parent id .
+            network_device_id(str): networkDeviceId query parameter. Network device id .
+            status(str): status query parameter. Status of the image update. Available values : FAILURE,
                 SUCCESS, IN_PROGRESS, PENDING .
-            image_name(basestring): imageName query parameter. Software image name for the update .
-            host_name(basestring): hostName query parameter. Host name of the network device for the image update.
+            image_name(str): imageName query parameter. Software image name for the update .
+            host_name(str): hostName query parameter. Host name of the network device for the image update.
                 Supports case-insensitive partial search .
-            management_address(basestring): managementAddress query parameter. Management address of the network
+            management_address(str): managementAddress query parameter. Management address of the network
                 device .
             start_time(int): startTime query parameter. Image update started after the given time (as milliseconds
                 since UNIX epoch) .
             end_time(int): endTime query parameter. Image update started before the given time (as milliseconds
                 since UNIX epoch) .
-            sort_by(basestring): sortBy query parameter. A property within the response to sort by. .
-            order(basestring): order query parameter. Whether ascending or descending order should be used to sort
+            sort_by(str): sortBy query parameter. A property within the response to sort by. .
+            order(str): order query parameter. Whether ascending or descending order should be used to sort
                 the response. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. .
@@ -2134,23 +2134,23 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!get-network-device-image-updates
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(parent_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(status, basestring)
-        check_type(image_name, basestring)
-        check_type(host_name, basestring)
-        check_type(management_address, basestring)
+        check_type(id, str)
+        check_type(parent_id, str)
+        check_type(network_device_id, str)
+        check_type(status, str)
+        check_type(image_name, str)
+        check_type(host_name, str)
+        check_type(management_address, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -2217,16 +2217,16 @@ class SoftwareImageManagementSwim(object):
         """Returns the count of network device image updates based on the given filter criteria .
 
         Args:
-            id(basestring): id query parameter. Update id which is unique for each network device under the parentId
+            id(str): id query parameter. Update id which is unique for each network device under the parentId
                 .
-            parent_id(basestring): parentId query parameter. Updates that have this parent id .
-            network_device_id(basestring): networkDeviceId query parameter. Network device id .
-            status(basestring): status query parameter. Status of the image update. Available values: FAILURE,
+            parent_id(str): parentId query parameter. Updates that have this parent id .
+            network_device_id(str): networkDeviceId query parameter. Network device id .
+            status(str): status query parameter. Status of the image update. Available values: FAILURE,
                 SUCCESS, IN_PROGRESS, PENDING .
-            image_name(basestring): imageName query parameter. Software image name for the update .
-            host_name(basestring): hostName query parameter. Host name of the network device for the image update.
+            image_name(str): imageName query parameter. Software image name for the update .
+            host_name(str): hostName query parameter. Host name of the network device for the image update.
                 Supports case-insensitive partial search. .
-            management_address(basestring): managementAddress query parameter. Management address of the network
+            management_address(str): managementAddress query parameter. Management address of the network
                 device .
             start_time(int): startTime query parameter. Image update started after the given time (as milliseconds
                 since UNIX epoch). .
@@ -2249,19 +2249,19 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!count-of-network-device-image-updates
         """
         check_type(headers, dict)
-        check_type(id, basestring)
-        check_type(parent_id, basestring)
-        check_type(network_device_id, basestring)
-        check_type(status, basestring)
-        check_type(image_name, basestring)
-        check_type(host_name, basestring)
-        check_type(management_address, basestring)
+        check_type(id, str)
+        check_type(parent_id, str)
+        check_type(network_device_id, str)
+        check_type(status, str)
+        check_type(image_name, str)
+        check_type(host_name, str)
+        check_type(management_address, str)
         check_type(start_time, int)
         check_type(end_time, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -2315,9 +2315,9 @@ class SoftwareImageManagementSwim(object):
         """Get the list of network device product names, their ordinal, and the support PIDs based on filter criteria. .
 
         Args:
-            product_name(basestring): productName query parameter. Filter with network device product name. Supports
+            product_name(str): productName query parameter. Filter with network device product name. Supports
                 partial case-insensitive search. A minimum of 3 characters are required for search .
-            product_id(basestring): productId query parameter. Filter with product ID (PID) .
+            product_id(str): productId query parameter. Filter with product ID (PID) .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. The minimum value is 1. .
             limit(int): limit query parameter. The number of records to show for this page. The minimum and maximum
@@ -2339,14 +2339,14 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-network-device-product-names
         """
         check_type(headers, dict)
-        check_type(product_name, basestring)
-        check_type(product_id, basestring)
+        check_type(product_name, str)
+        check_type(product_id, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'productName':
@@ -2388,9 +2388,9 @@ class SoftwareImageManagementSwim(object):
         """Count of product names based on filter criteria .
 
         Args:
-            product_name(basestring): productName query parameter. Filter with network device product name. Supports
+            product_name(str): productName query parameter. Filter with network device product name. Supports
                 partial case-insensitive search. A minimum of 3 characters are required for search .
-            product_id(basestring): productId query parameter. Filter with product ID (PID) .
+            product_id(str): productId query parameter. Filter with product ID (PID) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2408,12 +2408,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!count-of-network-product-names
         """
         check_type(headers, dict)
-        check_type(product_name, basestring)
-        check_type(product_id, basestring)
+        check_type(product_name, str)
+        check_type(product_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'productName':
@@ -2474,7 +2474,7 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2512,10 +2512,10 @@ class SoftwareImageManagementSwim(object):
         include the network device count and image summary. .
 
         Args:
-            site_id(basestring): siteId query parameter. Site identifier to get the list of all available products
+            site_id(str): siteId query parameter. Site identifier to get the list of all available products
                 under the site. The default value is the global site.  See
                 https://developer.cisco.com/docs/dna-center/get-site for siteId .
-            product_name(basestring): productName query parameter. Filter with network device product name. Supports
+            product_name(str): productName query parameter. Filter with network device product name. Supports
                 partial case-insensitive search. A minimum of 3 characters are required for search .
             offset(int): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. The minimum value is 1 .
@@ -2538,14 +2538,14 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!returns-network-device-product-names-for-a-site
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
-        check_type(product_name, basestring)
+        check_type(site_id, str)
+        check_type(product_name, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -2587,10 +2587,10 @@ class SoftwareImageManagementSwim(object):
         """Returns the count of network device product names for given filters. The default value of `siteId` is global. .
 
         Args:
-            site_id(basestring): siteId query parameter. Site identifier to get the list of all available products
+            site_id(str): siteId query parameter. Site identifier to get the list of all available products
                 under the site. The default value is global site id. See
                 https://developer.cisco.com/docs/dna-center/get-site/ for siteId .
-            product_name(basestring): productName query parameter. Filter with network device product name. Supports
+            product_name(str): productName query parameter. Filter with network device product name. Supports
                 partial case-insensitive search. A minimum of 3 characters are required for search .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -2609,12 +2609,12 @@ class SoftwareImageManagementSwim(object):
             https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-network-device-product-names-for-a-site
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
-        check_type(product_name, basestring)
+        check_type(site_id, str)
+        check_type(product_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':

@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -150,7 +150,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -229,9 +229,9 @@ class SystemSettings(object):
 
         Args:
             is_ise_enabled(bool): isIseEnabled query parameter. Valid values are : true, false .
-            state(basestring): state query parameter. Valid values are: ACTIVE, INACTIVE, RBAC_SUCCESS,
+            state(str): state query parameter. Valid values are: ACTIVE, INACTIVE, RBAC_SUCCESS,
                 RBAC_FAILURE, DELETED, FAILED, INPROGRESS .
-            role(basestring): role query parameter. Authentication and Policy Server Role (Example: primary,
+            role(str): role query parameter. Authentication and Policy Server Role (Example: primary,
                 secondary) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -251,12 +251,12 @@ class SystemSettings(object):
         """
         check_type(headers, dict)
         check_type(is_ise_enabled, bool)
-        check_type(state, basestring)
-        check_type(role, basestring)
+        check_type(state, str)
+        check_type(role, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'isIseEnabled':
@@ -295,7 +295,7 @@ class SystemSettings(object):
         """API to delete AAA/ISE server access configuration. .
 
         Args:
-            id(basestring): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
+            id(str): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
                 and Policy Servers' intent API to find the identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -314,12 +314,12 @@ class SystemSettings(object):
             https://developer.cisco.com/docs/dna-center/#!delete-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -402,7 +402,7 @@ class SystemSettings(object):
                 authentication and policy server. The range is from 2 to 20 .
             useDnacCertForPxgrid(boolean): System Settings's Value true to use DNAC certificate for Pxgrid. Default
                 value is false .
-            id(basestring): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
+            id(str): id path parameter. Authentication and Policy Server Identifier. Use 'Get Authentication
                 and Policy Servers' intent API to find the identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -426,12 +426,12 @@ class SystemSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -515,7 +515,7 @@ class SystemSettings(object):
         Args:
             isCertAcceptedByUser(boolean): System Settings's Value true for accept, false for deny. Remove this
                 field and send empty request payload ( {} ) to retry the failed integration .
-            id(basestring): id path parameter. Cisco ISE Server Identifier. Use 'Get Authentication and Policy
+            id(str): id path parameter. Cisco ISE Server Identifier. Use 'Get Authentication and Policy
                 Servers' intent API to find the identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -539,12 +539,12 @@ class SystemSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -608,7 +608,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -660,7 +660,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -724,7 +724,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -803,10 +803,10 @@ class SystemSettings(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -871,7 +871,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -947,10 +947,10 @@ class SystemSettings(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1026,7 +1026,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1078,7 +1078,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1151,7 +1151,7 @@ class SystemSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

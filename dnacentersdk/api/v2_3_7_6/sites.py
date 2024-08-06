@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -103,32 +103,32 @@ class Sites(object):
             limit(int): limit query parameter. Maximum number of records to return .
             offset(int): offset query parameter. Specifies the starting point within all records returned by the
                 API. It's one based offset. The starting value is 1. .
-            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
-            order(basestring): order query parameter. The sort order of the field ascending or descending. .
-            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+            sort_by(str): sortBy query parameter. A field within the response to sort by. .
+            order(str): order query parameter. The sort order of the field ascending or descending. .
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
                 tree starting from Global site name and ending with the specific site name. The Root
                 site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
                 supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
                 Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
                 requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
                 reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
-            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
                 tree in id form starting from Global site UUID and ending with the specific site UUID.
                 (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
                 (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
                 `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
                 requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
                 globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
-            site_type(basestring): siteType query parameter. The type of the site. A site can be an area, building,
+            site_type(str): siteType query parameter. The type of the site. A site can be an area, building,
                 or floor. Default when not provided will be `[floor,building,area]` Examples:
                 `?siteType=area` (single siteType requested)
                 `?siteType=area&siteType=building&siteType=floor` (multiple siteTypes requested) .
-            id(basestring): id query parameter. The list of entity Uuids.
+            id(str): id query parameter. The list of entity Uuids.
                 (Ex."6bef213c-19ca-4170-8375-b694e251101c") Examples:
                 id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid requested) id=6bef213c-19ca-
                 4170-8375-b694e251101c&id=32219612-819e-4b5e-a96b-cf22aca13dd9&id=2541e9a7-b80d-4955-
                 8aa2-79b233318ba0 (multiple entity uuid with '&' separator) .
-            view(basestring): view query parameter. The specific summary view being requested. This is an optional
+            view(str): view query parameter. The specific summary view being requested. This is an optional
                 parameter which can be passed to get one or more of the specific health data summaries
                 associated with sites. ### Response data proviced by each view:   1. **site** [id,
                 siteHierarchy, siteHierarchyId, siteType, latitude, longitude]   2. **network** [id,
@@ -149,7 +149,7 @@ class Sites(object):
                 When this query parameter is not added the default summaries are:
                 **[site,client,network,issue]** Examples: view=client (single view requested)
                 view=client&view=network&view=issue (multiple views requested) .
-            attribute(basestring): attribute query parameter. Supported Attributes: [id, siteHierarchy,
+            attribute(str): attribute query parameter. Supported Attributes: [id, siteHierarchy,
                 siteHierarchyId, siteType, latitude, longitude, networkDeviceCount,
                 networkDeviceGoodHealthCount,wirelessDeviceCount, wirelessDeviceGoodHealthCount,
                 accessDeviceCount, accessDeviceGoodHealthCount, coreDeviceCount,
@@ -189,21 +189,21 @@ class Sites(object):
         check_type(end_time, int)
         check_type(limit, int)
         check_type(offset, int)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(site_hierarchy, basestring)
-        check_type(site_hierarchy_id, basestring)
-        check_type(site_type, basestring)
-        check_type(id, basestring)
-        check_type(view, basestring)
-        check_type(attribute, basestring)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_type, str)
+        check_type(id, str)
+        check_type(view, str)
+        check_type(attribute, str)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -273,25 +273,25 @@ class Sites(object):
         Args:
             end_time(int): endTime query parameter. End time to which API queries the data set related to the
                 resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
-            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
                 tree starting from Global site name and ending with the specific site name. The Root
                 site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
                 supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
                 Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
                 requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
                 reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
-            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
                 tree in id form starting from Global site UUID and ending with the specific site UUID.
                 (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
                 (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
                 `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
                 requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
                 globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
-            site_type(basestring): siteType query parameter. The type of the site. A site can be an area, building,
+            site_type(str): siteType query parameter. The type of the site. A site can be an area, building,
                 or floor. Default when not provided will be `[floor,building,area]` Examples:
                 `?siteType=area` (single siteType requested)
                 `?siteType=area&siteType=building&siteType=floor` (multiple siteTypes requested) .
-            id(basestring): id query parameter. The list of entity Uuids.
+            id(str): id query parameter. The list of entity Uuids.
                 (Ex."6bef213c-19ca-4170-8375-b694e251101c") Examples:
                 id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid requested) id=6bef213c-19ca-
                 4170-8375-b694e251101c&id=32219612-819e-4b5e-a96b-cf22aca13dd9&id=2541e9a7-b80d-4955-
@@ -314,17 +314,17 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(end_time, int)
-        check_type(site_hierarchy, basestring)
-        check_type(site_hierarchy_id, basestring)
-        check_type(site_type, basestring)
-        check_type(id, basestring)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_type, str)
+        check_type(id, str)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'endTime':
@@ -391,30 +391,30 @@ class Sites(object):
                 inclusive. If `startTime` is not provided, API will default to current time. .
             end_time(int): endTime query parameter. End time to which API queries the data set related to the
                 resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
-            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
                 tree starting from Global site name and ending with the specific site name. The Root
                 site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
                 supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
                 Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
                 requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
                 reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
-            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
                 tree in id form starting from Global site UUID and ending with the specific site UUID.
                 (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
                 (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
                 `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
                 requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
                 globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
-            site_type(basestring): siteType query parameter. The type of the site. A site can be an area, building,
+            site_type(str): siteType query parameter. The type of the site. A site can be an area, building,
                 or floor. Default when not provided will be `[floor,building,area]` Examples:
                 `?siteType=area` (single siteType requested)
                 `?siteType=area&siteType=building&siteType=floor` (multiple siteTypes requested) .
-            id(basestring): id query parameter. The list of entity Uuids.
+            id(str): id query parameter. The list of entity Uuids.
                 (Ex."6bef213c-19ca-4170-8375-b694e251101c") Examples:
                 id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid requested) id=6bef213c-19ca-
                 4170-8375-b694e251101c&id=32219612-819e-4b5e-a96b-cf22aca13dd9&id=2541e9a7-b80d-4955-
                 8aa2-79b233318ba0 (multiple entity uuid with '&' separator) .
-            view(basestring): view query parameter. The specific summary view being requested. This is an optional
+            view(str): view query parameter. The specific summary view being requested. This is an optional
                 parameter which can be passed to get one or more of the specific health data summaries
                 associated with sites. ### Response data proviced by each view:   1. **site** [id,
                 siteHierarchy, siteHierarchyId, siteType, latitude, longitude]   2. **network** [id,
@@ -435,7 +435,7 @@ class Sites(object):
                 When this query parameter is not added the default summaries are:
                 **[site,client,network,issue]** Examples: view=client (single view requested)
                 view=client&view=network&view=issue (multiple views requested) .
-            attribute(basestring): attribute query parameter. Supported Attributes: [id, siteHierarchy,
+            attribute(str): attribute query parameter. Supported Attributes: [id, siteHierarchy,
                 siteHierarchyId, siteType, latitude, longitude, networkDeviceCount,
                 networkDeviceGoodHealthCount,wirelessDeviceCount, wirelessDeviceGoodHealthCount,
                 accessDeviceCount, accessDeviceGoodHealthCount, coreDeviceCount,
@@ -473,19 +473,19 @@ class Sites(object):
         check_type(headers, dict)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(site_hierarchy, basestring)
-        check_type(site_hierarchy_id, basestring)
-        check_type(site_type, basestring)
-        check_type(id, basestring)
-        check_type(view, basestring)
-        check_type(attribute, basestring)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_type, str)
+        check_type(id, str)
+        check_type(view, str)
+        check_type(attribute, str)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -559,25 +559,25 @@ class Sites(object):
             endTime(integer): Sites's End Time.
             startTime(integer): Sites's Start Time.
             views(list): Sites's Views (list of strings).
-            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
                 tree starting from Global site name and ending with the specific site name. The Root
                 site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
                 supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
                 Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
                 requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
                 reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
-            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
                 tree in id form starting from Global site UUID and ending with the specific site UUID.
                 (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
                 (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
                 `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
                 requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
                 globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
-            site_type(basestring): siteType query parameter. The type of the site. A site can be an area, building,
+            site_type(str): siteType query parameter. The type of the site. A site can be an area, building,
                 or floor. Default when not provided will be `[floor,building,area]` Examples:
                 `?siteType=area` (single siteType requested)
                 `?siteType=area&siteType=building&siteType=floor` (multiple siteTypes requested) .
-            id(basestring): id query parameter. The list of entity Uuids.
+            id(str): id query parameter. The list of entity Uuids.
                 (Ex."6bef213c-19ca-4170-8375-b694e251101c") Examples:
                 id=6bef213c-19ca-4170-8375-b694e251101c (single entity uuid requested) id=6bef213c-19ca-
                 4170-8375-b694e251101c&id=32219612-819e-4b5e-a96b-cf22aca13dd9&id=2541e9a7-b80d-4955-
@@ -604,14 +604,14 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_hierarchy, basestring)
-        check_type(site_hierarchy_id, basestring)
-        check_type(site_type, basestring)
-        check_type(id, basestring)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_type, str)
+        check_type(id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteHierarchy':
@@ -682,13 +682,13 @@ class Sites(object):
         specs/blob/main/Assurance/CE_Cat_Center_Org-siteHealthSummaries-1.0.3-resolved.yaml .
 
         Args:
-            id(basestring): id path parameter. unique site uuid .
+            id(str): id path parameter. unique site uuid .
             start_time(int): startTime query parameter. Start time from which API queries the data set related to
                 the resource. It must be specified in UNIX epochtime in milliseconds. Value is
                 inclusive. If `startTime` is not provided, API will default to current time. .
             end_time(int): endTime query parameter. End time to which API queries the data set related to the
                 resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
-            view(basestring): view query parameter. The specific summary view being requested. This is an optional
+            view(str): view query parameter. The specific summary view being requested. This is an optional
                 parameter which can be passed to get one or more of the specific health data summaries
                 associated with sites. ### Response data proviced by each view:   1. **site** [id,
                 siteHierarchy, siteHierarchyId, siteType, latitude, longitude]   2. **network** [id,
@@ -709,7 +709,7 @@ class Sites(object):
                 When this query parameter is not added the default summaries are:
                 **[site,client,network,issue]** Examples: view=client (single view requested)
                 view=client&view=network&view=issue (multiple views requested) .
-            attribute(basestring): attribute query parameter. Supported Attributes: [id, siteHierarchy,
+            attribute(str): attribute query parameter. Supported Attributes: [id, siteHierarchy,
                 siteHierarchyId, siteType, latitude, longitude, networkDeviceCount,
                 networkDeviceGoodHealthCount,wirelessDeviceCount, wirelessDeviceGoodHealthCount,
                 accessDeviceCount, accessDeviceGoodHealthCount, coreDeviceCount,
@@ -747,17 +747,17 @@ class Sites(object):
         check_type(headers, dict)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(view, basestring)
-        check_type(attribute, basestring)
-        check_type(id, basestring,
+        check_type(view, str)
+        check_type(attribute, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-CALLER-ID' in headers:
                 check_type(headers.get('X-CALLER-ID'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'startTime':
@@ -803,7 +803,7 @@ class Sites(object):
 
         Args:
             device(list): Sites's device (list of objects).
-            site_id(basestring): siteId path parameter. Site Id where device(s) needs to be assigned .
+            site_id(str): siteId path parameter. Site Id where device(s) needs to be assigned .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -826,7 +826,7 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if '__runsync' in headers:
@@ -840,7 +840,7 @@ class Sites(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -887,7 +887,7 @@ class Sites(object):
         """Allows exporting a Map archive in an XML interchange format along with the associated images.  .
 
         Args:
-            site_hierarchy_uuid(basestring): siteHierarchyUuid path parameter. The site hierarchy element UUID to
+            site_hierarchy_uuid(str): siteHierarchyUuid path parameter. The site hierarchy element UUID to
                 export, all child elements starting at this hierarchy element will be included. Limited
                 to a hierarchy that contains 500 or fewer maps. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -912,15 +912,15 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, (list, dict))
-        check_type(site_hierarchy_uuid, basestring,
+        check_type(site_hierarchy_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -981,10 +981,10 @@ class Sites(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1018,7 +1018,7 @@ class Sites(object):
         and ensures the import cannot accidentally be performed / approved at a later time. .
 
         Args:
-            import_context_uuid(basestring): importContextUuid path parameter. The unique import context UUID given
+            import_context_uuid(str): importContextUuid path parameter. The unique import context UUID given
                 by a previous call to Start Import API .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1037,12 +1037,12 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!import-map-archive-cancel-an-import
         """
         check_type(headers, dict)
-        check_type(import_context_uuid, basestring,
+        check_type(import_context_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1079,7 +1079,7 @@ class Sites(object):
         validation output prior to performing the import. .
 
         Args:
-            import_context_uuid(basestring): importContextUuid path parameter. The unique import context UUID given
+            import_context_uuid(str): importContextUuid path parameter. The unique import context UUID given
                 by a previous call of Start Import API .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1098,15 +1098,15 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!import-map-archive-perform-import
         """
         check_type(headers, dict)
-        check_type(import_context_uuid, basestring,
+        check_type(import_context_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1144,7 +1144,7 @@ class Sites(object):
         the import and upon completion a post-import summary of what was performed by the operation. .
 
         Args:
-            import_context_uuid(basestring): importContextUuid path parameter. The unique import context UUID given
+            import_context_uuid(str): importContextUuid path parameter. The unique import context UUID given
                 by a previous and recent call to maps/import/start API .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1163,12 +1163,12 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!import-map-archive-import-status
         """
         check_type(headers, dict)
-        check_type(import_context_uuid, basestring,
+        check_type(import_context_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1224,7 +1224,7 @@ class Sites(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1261,11 +1261,11 @@ class Sites(object):
         """Getting the site children details and device details. .
 
         Args:
-            site_id(basestring): siteId path parameter. Site id to retrieve device associated with the site. .
+            site_id(str): siteId path parameter. Site id to retrieve device associated with the site. .
             offset(int): offset query parameter. offset/starting row .
             limit(int): limit query parameter. Number of sites to be retrieved .
-            device_family(basestring): deviceFamily query parameter. Device family name  .
-            serial_number(basestring): serialNumber query parameter. Device serial number .
+            device_family(str): deviceFamily query parameter. Device family name  .
+            serial_number(str): serialNumber query parameter. Device serial number .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1285,14 +1285,14 @@ class Sites(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(device_family, basestring)
-        check_type(serial_number, basestring)
-        check_type(site_id, basestring,
+        check_type(device_family, str)
+        check_type(serial_number, str)
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -1374,7 +1374,7 @@ class Sites(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1425,9 +1425,9 @@ class Sites(object):
         input. .
 
         Args:
-            name(basestring): name query parameter. Site name hierarchy (E.g Global/USA/CA) .
-            site_id(basestring): siteId query parameter. Site Id .
-            type(basestring): type query parameter. Site type (Ex: area, building, floor) .
+            name(str): name query parameter. Site name hierarchy (E.g Global/USA/CA) .
+            site_id(str): siteId query parameter. Site Id .
+            type(str): type query parameter. Site type (Ex: area, building, floor) .
             offset(int): offset query parameter. Offset/starting index for pagination. Indexed from 1. .
             limit(int): limit query parameter. Number of sites to be listed .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -1447,15 +1447,15 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(site_id, basestring)
-        check_type(type, basestring)
+        check_type(name, str)
+        check_type(site_id, str)
+        check_type(type, str)
         check_type(offset, int)
         check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -1501,7 +1501,7 @@ class Sites(object):
         """Returns Overall Health information for all sites .
 
         Args:
-            site_type(basestring): siteType query parameter. site type: AREA or BUILDING (case insensitive) .
+            site_type(str): siteType query parameter. site type: AREA or BUILDING (case insensitive) .
             offset(int): offset query parameter. Offset of the first returned data set entry (Multiple of 'limit' +
                 1) .
             limit(int): limit query parameter. Max number of data entries in the returned data set [1,50].  Default
@@ -1525,14 +1525,14 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-health
         """
         check_type(headers, dict)
-        check_type(site_type, basestring)
+        check_type(site_type, str)
         check_type(offset, int)
         check_type(limit, int)
         check_type(timestamp, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteType':
@@ -1580,13 +1580,13 @@ class Sites(object):
         """API to get devices that are assigned to a site. .
 
         Args:
-            id(basestring): id path parameter. Site Id .
-            offset(basestring): offset query parameter. Offset/starting index for pagination .
-            limit(basestring): limit query parameter. Number of devices to be listed. Default and max supported
+            id(str): id path parameter. Site Id .
+            offset(str): offset query parameter. Offset/starting index for pagination .
+            limit(str): limit query parameter. Number of devices to be listed. Default and max supported
                 value is 500 .
-            member_type(basestring): memberType query parameter. Member type (This API only supports the
+            member_type(str): memberType query parameter. Member type (This API only supports the
                 'networkdevice' type) .
-            level(basestring): level query parameter. Depth of site hierarchy to be considered to list the devices.
+            level(str): level query parameter. Depth of site hierarchy to be considered to list the devices.
                 If the provided value is -1, devices for all child sites will be listed. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1605,17 +1605,17 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-devices-that-are-assigned-to-a-site
         """
         check_type(headers, dict)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
-        check_type(member_type, basestring,
+        check_type(offset, str)
+        check_type(limit, str)
+        check_type(member_type, str,
                    may_be_none=False)
-        check_type(level, basestring)
-        check_type(id, basestring,
+        check_type(level, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -1657,7 +1657,7 @@ class Sites(object):
         """Get the site count of the specified site's sub-hierarchy (inclusive of the provided site) .
 
         Args:
-            site_id(basestring): siteId query parameter. Site instance UUID .
+            site_id(str): siteId query parameter. Site instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1675,11 +1675,11 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-count
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -1720,7 +1720,7 @@ class Sites(object):
         Args:
             site(object): Sites's site.
             type(string): Sites's Site type . Available values are 'area', 'building' and 'floor'.
-            site_id(basestring): siteId path parameter. Site id to which site details to be updated. .
+            site_id(str): siteId path parameter. Site id to which site details to be updated. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1743,7 +1743,7 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if '__runsync' in headers:
@@ -1757,7 +1757,7 @@ class Sites(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1804,7 +1804,7 @@ class Sites(object):
         """Delete site with area/building/floor by siteId. .
 
         Args:
-            site_id(basestring): siteId path parameter. Site id to which site details to be deleted. .
+            site_id(str): siteId path parameter. Site id to which site details to be deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1822,12 +1822,12 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!delete-site
         """
         check_type(headers, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1866,12 +1866,12 @@ class Sites(object):
         as an input. .
 
         Args:
-            group_name_hierarchy(basestring): groupNameHierarchy query parameter. Site name hierarchy (E.g.
+            group_name_hierarchy(str): groupNameHierarchy query parameter. Site name hierarchy (E.g.
                 Global/USA/CA) .
-            id(basestring): id query parameter. Site Id .
-            type(basestring): type query parameter. Site type (Acceptable values: area, building, floor) .
-            offset(basestring): offset query parameter. Offset/starting index for pagination .
-            limit(basestring): limit query parameter. Number of sites to be listed. Default and max supported value
+            id(str): id query parameter. Site Id .
+            type(str): type query parameter. Site type (Acceptable values: area, building, floor) .
+            offset(str): offset query parameter. Offset/starting index for pagination .
+            limit(str): limit query parameter. Number of sites to be listed. Default and max supported value
                 is 500 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1890,15 +1890,15 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-v2
         """
         check_type(headers, dict)
-        check_type(group_name_hierarchy, basestring)
-        check_type(id, basestring)
-        check_type(type, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
+        check_type(group_name_hierarchy, str)
+        check_type(id, str)
+        check_type(type, str)
+        check_type(offset, str)
+        check_type(limit, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'groupNameHierarchy':
@@ -1941,7 +1941,7 @@ class Sites(object):
         """Get the site count of the specified site's sub-hierarchy (inclusive of the provided site) .
 
         Args:
-            id(basestring): id query parameter. Site instance UUID .
+            id(str): id query parameter. Site instance UUID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1959,11 +1959,11 @@ class Sites(object):
             https://developer.cisco.com/docs/dna-center/#!get-site-count-v2
         """
         check_type(headers, dict)
-        check_type(id, basestring)
+        check_type(id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':

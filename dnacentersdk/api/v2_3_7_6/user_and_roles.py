@@ -22,11 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 from builtins import *
 
-from past.builtins import basestring
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -105,10 +105,10 @@ class UserandRoles(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -188,7 +188,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -255,7 +255,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -288,7 +288,7 @@ class UserandRoles(object):
         """Delete a role in Cisco DNA Center System .
 
         Args:
-            role_id(basestring): roleId path parameter. The Id of the role to be deleted .
+            role_id(str): roleId path parameter. The Id of the role to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -306,12 +306,12 @@ class UserandRoles(object):
             https://developer.cisco.com/docs/dna-center/#!delete-role-a-p-i
         """
         check_type(headers, dict)
-        check_type(role_id, basestring,
+        check_type(role_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -364,10 +364,10 @@ class UserandRoles(object):
         if headers is not None:
             if 'invokeSource' in headers:
                 check_type(headers.get('invokeSource'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -401,9 +401,9 @@ class UserandRoles(object):
         """Get all users for the Cisco DNA Center System. .
 
         Args:
-            invoke_source(basestring): invokeSource query parameter. The source that invokes this API. The value of
+            invoke_source(str): invokeSource query parameter. The source that invokes this API. The value of
                 this query parameter must be set to "external". .
-            auth_source(basestring): authSource query parameter. The source that authenticates the user. The value
+            auth_source(str): authSource query parameter. The source that authenticates the user. The value
                 of this query parameter can be set to "internal" or "external". If not provided, then
                 all users will be returned in the response. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -423,13 +423,13 @@ class UserandRoles(object):
             https://developer.cisco.com/docs/dna-center/#!get-users-a-p-i
         """
         check_type(headers, dict)
-        check_type(invoke_source, basestring,
+        check_type(invoke_source, str,
                    may_be_none=False)
-        check_type(auth_source, basestring)
+        check_type(auth_source, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'invokeSource':
@@ -504,7 +504,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -596,7 +596,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -650,7 +650,7 @@ class UserandRoles(object):
         """Delete a user from Cisco DNA Center System. .
 
         Args:
-            user_id(basestring): userId path parameter. The id of the user to be deleted .
+            user_id(str): userId path parameter. The id of the user to be deleted .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -668,12 +668,12 @@ class UserandRoles(object):
             https://developer.cisco.com/docs/dna-center/#!delete-user-a-p-i
         """
         check_type(headers, dict)
-        check_type(user_id, basestring,
+        check_type(user_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -726,7 +726,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -790,7 +790,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -834,7 +834,7 @@ class UserandRoles(object):
         """Get external users authentication servers. .
 
         Args:
-            invoke_source(basestring): invokeSource query parameter. The source that invokes this API. The value of
+            invoke_source(str): invokeSource query parameter. The source that invokes this API. The value of
                 this query parameter must be set to "external". .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -853,12 +853,12 @@ class UserandRoles(object):
             https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-a-p-i
         """
         check_type(headers, dict)
-        check_type(invoke_source, basestring,
+        check_type(invoke_source, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'invokeSource':
@@ -924,10 +924,10 @@ class UserandRoles(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -992,7 +992,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1044,7 +1044,7 @@ class UserandRoles(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
