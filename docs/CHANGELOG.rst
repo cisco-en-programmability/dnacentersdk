@@ -17,8 +17,8 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 Added
 ~~~~~
 
--  Add support of DNA Center versions (‘2.3.7.6’)
--  Adds modules for v2_3_7_6 ### Changed
+-  Add support of DNA Center versions (‘2.3.7.5’)
+-  Adds modules for v2_3_7_5 ### Changed
 -  The future library was removed
 -  The past library was removed
 -  Changed basestring to str
