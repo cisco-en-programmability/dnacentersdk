@@ -9488,7 +9488,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_add_role_ap_i_response(self):
+    def userand_roles_add_role_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9505,7 +9505,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_update_role_ap_i_response(self):
+    def userand_roles_update_role_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9522,7 +9522,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_get_permissions_ap_i_response(self):
+    def userand_roles_get_permissions_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9539,7 +9539,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_delete_role_ap_i_response(self):
+    def userand_roles_delete_role_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9556,7 +9556,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_get_roles_ap_i_response(self):
+    def userand_roles_get_roles_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9573,7 +9573,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_get_users_ap_i_response(self):
+    def userand_roles_get_users_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9590,7 +9590,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_add_user_ap_i_response(self):
+    def userand_roles_add_user_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9607,7 +9607,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_update_user_ap_i_response(self):
+    def userand_roles_update_user_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9624,7 +9624,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_delete_user_ap_i_response(self):
+    def userand_roles_delete_user_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9641,7 +9641,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_get_external_authentication_setting_ap_i_response(self):
+    def userand_roles_get_external_authentication_setting_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9658,7 +9658,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_manage_external_authentication_setting_ap_i_response(self):
+    def userand_roles_manage_external_authentication_setting_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9675,7 +9675,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_get_external_authentication_servers_ap_i_response(self):
+    def userand_roles_get_external_authentication_servers_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9692,7 +9692,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_add_and_update_a_a_a_attribute_ap_i_response(self):
+    def userand_roles_add_and_update_aaa_attribute_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9709,7 +9709,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_delete_a_a_a_attribute_ap_i_response(self):
+    def userand_roles_delete_aaa_attribute_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9726,7 +9726,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def userand_roles_get_a_a_a_attribute_ap_i_response(self):
+    def userand_roles_get_aaa_attribute_api_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -11272,27 +11272,27 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             return
 
         if self.matches_USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a():
-            self.userand_roles_get_permissions_ap_i_response()
+            self.userand_roles_get_permissions_api_response()
             return
 
         if self.matches_USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c():
-            self.userand_roles_get_roles_ap_i_response()
+            self.userand_roles_get_roles_api_response()
             return
 
         if self.matches_USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015():
-            self.userand_roles_get_users_ap_i_response()
+            self.userand_roles_get_users_api_response()
             return
 
         if self.matches_USERAND_ROLES_5490ac03ba045f60925fd7843bf9e279():
-            self.userand_roles_get_external_authentication_setting_ap_i_response()
+            self.userand_roles_get_external_authentication_setting_api_response()
             return
 
         if self.matches_USERAND_ROLES_452738def9045d4d9c96bcd42172a79c():
-            self.userand_roles_get_external_authentication_servers_ap_i_response()
+            self.userand_roles_get_external_authentication_servers_api_response()
             return
 
         if self.matches_USERAND_ROLES_4bedf83096a45ad1beaaa1fc6c192103():
-            self.userand_roles_get_a_a_a_attribute_ap_i_response()
+            self.userand_roles_get_aaa_attribute_api_response()
             return
 
         if self.matches_USERS_70f9c1d861a051b4a4928f2e6d84b2e3():
@@ -11813,19 +11813,19 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             return
 
         if self.matches_USERAND_ROLES_38a88c7510a15578b8eb2df183a92d5d():
-            self.userand_roles_add_role_ap_i_response()
+            self.userand_roles_add_role_api_response()
             return
 
         if self.matches_USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702():
-            self.userand_roles_add_user_ap_i_response()
+            self.userand_roles_add_user_api_response()
             return
 
         if self.matches_USERAND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692():
-            self.userand_roles_manage_external_authentication_setting_ap_i_response()
+            self.userand_roles_manage_external_authentication_setting_api_response()
             return
 
         if self.matches_USERAND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2():
-            self.userand_roles_add_and_update_a_a_a_attribute_ap_i_response()
+            self.userand_roles_add_and_update_aaa_attribute_api_response()
             return
 
         if self.matches_WIRELESS_d825ae9a117f5b6bb65b7d78fd42513c():
@@ -12171,11 +12171,11 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             return
 
         if self.matches_USERAND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6():
-            self.userand_roles_update_role_ap_i_response()
+            self.userand_roles_update_role_api_response()
             return
 
         if self.matches_USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e():
-            self.userand_roles_update_user_ap_i_response()
+            self.userand_roles_update_user_api_response()
             return
 
         if self.matches_WIRELESS_25479623a94058a99acaaf8eb73c9227():
@@ -12461,15 +12461,15 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             return
 
         if self.matches_USERAND_ROLES_da9e850c44d353f78ab002a640e5604f():
-            self.userand_roles_delete_role_ap_i_response()
+            self.userand_roles_delete_role_api_response()
             return
 
         if self.matches_USERAND_ROLES_3556c65c6cc65f068766cbb8a42ad387():
-            self.userand_roles_delete_user_ap_i_response()
+            self.userand_roles_delete_user_api_response()
             return
 
         if self.matches_USERAND_ROLES_f20c99b436bd5be8bdb9094db3a47f01():
-            self.userand_roles_delete_a_a_a_attribute_ap_i_response()
+            self.userand_roles_delete_aaa_attribute_api_response()
             return
 
         if self.matches_WIRELESS_8e56eb2c294159d891b7dbe493ddc434():
