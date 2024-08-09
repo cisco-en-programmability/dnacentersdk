@@ -199,7 +199,8 @@ class RestSession(object):
 
         # Update the headers of the `requests` session
         self.update_headers({'X-Auth-Token': access_token,
-                             'Content-type': 'application/json;charset=utf-8'})
+                             'Content-type': 'application/json;charset=utf-8',
+                             'User-Agent': f'python-cisco-dnacsdk/{version}'})
 
     @property
     def version(self):

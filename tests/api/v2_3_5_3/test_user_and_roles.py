@@ -29,24 +29,24 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.5.3', reason='version does not match')
 
 
-def is_valid_get_permissions_ap_i(json_schema_validate, obj):
+def is_valid_get_permissions_api(json_schema_validate, obj):
     json_schema_validate('jsd_9ec0b30eca9d540a845848cffd7c602a_v2_3_5_3').validate(obj)
     return True
 
 
-def get_permissions_ap_i(api):
-    endpoint_result = api.userand_roles.get_permissions_ap_i(
+def get_permissions_api(api):
+    endpoint_result = api.userand_roles.get_permissions_api(
 
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_permissions_ap_i(api, validator):
+def test_get_permissions_api(api, validator):
     try:
-        assert is_valid_get_permissions_ap_i(
+        assert is_valid_get_permissions_api(
             validator,
-            get_permissions_ap_i(api)
+            get_permissions_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -54,43 +54,43 @@ def test_get_permissions_ap_i(api, validator):
             raise original_e
 
 
-def get_permissions_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_permissions_ap_i(
+def get_permissions_api_default_val(api):
+    endpoint_result = api.userand_roles.get_permissions_api(
 
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_permissions_ap_i_default_val(api, validator):
+def test_get_permissions_api_default_val(api, validator):
     try:
-        assert is_valid_get_permissions_ap_i(
+        assert is_valid_get_permissions_api(
             validator,
-            get_permissions_ap_i_default_val(api)
+            get_permissions_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_roles_ap_i(json_schema_validate, obj):
+def is_valid_get_roles_api(json_schema_validate, obj):
     json_schema_validate('jsd_bef02e8f6f8354dc99e375826a87c88c_v2_3_5_3').validate(obj)
     return True
 
 
-def get_roles_ap_i(api):
-    endpoint_result = api.userand_roles.get_roles_ap_i(
+def get_roles_api(api):
+    endpoint_result = api.userand_roles.get_roles_api(
 
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_roles_ap_i(api, validator):
+def test_get_roles_api(api, validator):
     try:
-        assert is_valid_get_roles_ap_i(
+        assert is_valid_get_roles_api(
             validator,
-            get_roles_ap_i(api)
+            get_roles_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -98,43 +98,43 @@ def test_get_roles_ap_i(api, validator):
             raise original_e
 
 
-def get_roles_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_roles_ap_i(
+def get_roles_api_default_val(api):
+    endpoint_result = api.userand_roles.get_roles_api(
 
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_roles_ap_i_default_val(api, validator):
+def test_get_roles_api_default_val(api, validator):
     try:
-        assert is_valid_get_roles_ap_i(
+        assert is_valid_get_roles_api(
             validator,
-            get_roles_ap_i_default_val(api)
+            get_roles_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_users_ap_i(json_schema_validate, obj):
+def is_valid_get_users_api(json_schema_validate, obj):
     json_schema_validate('jsd_7fa405b6d1be56739f2dfeea63212015_v2_3_5_3').validate(obj)
     return True
 
 
-def get_users_ap_i(api):
-    endpoint_result = api.userand_roles.get_users_ap_i(
+def get_users_api(api):
+    endpoint_result = api.userand_roles.get_users_api(
         invoke_source='string'
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_users_ap_i(api, validator):
+def test_get_users_api(api, validator):
     try:
-        assert is_valid_get_users_ap_i(
+        assert is_valid_get_users_api(
             validator,
-            get_users_ap_i(api)
+            get_users_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -142,32 +142,32 @@ def test_get_users_ap_i(api, validator):
             raise original_e
 
 
-def get_users_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_users_ap_i(
+def get_users_api_default_val(api):
+    endpoint_result = api.userand_roles.get_users_api(
         invoke_source=None
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_users_ap_i_default_val(api, validator):
+def test_get_users_api_default_val(api, validator):
     try:
-        assert is_valid_get_users_ap_i(
+        assert is_valid_get_users_api(
             validator,
-            get_users_ap_i_default_val(api)
+            get_users_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_add_user_ap_i(json_schema_validate, obj):
+def is_valid_add_user_api(json_schema_validate, obj):
     json_schema_validate('jsd_6d82755e5e03510daf0951c1f42c2702_v2_3_5_3').validate(obj)
     return True
 
 
-def add_user_ap_i(api):
-    endpoint_result = api.userand_roles.add_user_ap_i(
+def add_user_api(api):
+    endpoint_result = api.userand_roles.add_user_api(
         active_validation=True,
         email='string',
         firstName='string',
@@ -181,11 +181,11 @@ def add_user_ap_i(api):
 
 
 @pytest.mark.userand_roles
-def test_add_user_ap_i(api, validator):
+def test_add_user_api(api, validator):
     try:
-        assert is_valid_add_user_ap_i(
+        assert is_valid_add_user_api(
             validator,
-            add_user_ap_i(api)
+            add_user_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -193,8 +193,8 @@ def test_add_user_ap_i(api, validator):
             raise original_e
 
 
-def add_user_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.add_user_ap_i(
+def add_user_api_default_val(api):
+    endpoint_result = api.userand_roles.add_user_api(
         active_validation=True,
         email=None,
         firstName=None,
@@ -208,24 +208,24 @@ def add_user_ap_i_default_val(api):
 
 
 @pytest.mark.userand_roles
-def test_add_user_ap_i_default_val(api, validator):
+def test_add_user_api_default_val(api, validator):
     try:
-        assert is_valid_add_user_ap_i(
+        assert is_valid_add_user_api(
             validator,
-            add_user_ap_i_default_val(api)
+            add_user_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_user_ap_i(json_schema_validate, obj):
+def is_valid_update_user_api(json_schema_validate, obj):
     json_schema_validate('jsd_34d2bd5f05bd535a89ebadb30e2ede9e_v2_3_5_3').validate(obj)
     return True
 
 
-def update_user_ap_i(api):
-    endpoint_result = api.userand_roles.update_user_ap_i(
+def update_user_api(api):
+    endpoint_result = api.userand_roles.update_user_api(
         active_validation=True,
         email='string',
         firstName='string',
@@ -239,11 +239,11 @@ def update_user_ap_i(api):
 
 
 @pytest.mark.userand_roles
-def test_update_user_ap_i(api, validator):
+def test_update_user_api(api, validator):
     try:
-        assert is_valid_update_user_ap_i(
+        assert is_valid_update_user_api(
             validator,
-            update_user_ap_i(api)
+            update_user_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -251,8 +251,8 @@ def test_update_user_ap_i(api, validator):
             raise original_e
 
 
-def update_user_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.update_user_ap_i(
+def update_user_api_default_val(api):
+    endpoint_result = api.userand_roles.update_user_api(
         active_validation=True,
         email=None,
         firstName=None,
@@ -266,35 +266,35 @@ def update_user_ap_i_default_val(api):
 
 
 @pytest.mark.userand_roles
-def test_update_user_ap_i_default_val(api, validator):
+def test_update_user_api_default_val(api, validator):
     try:
-        assert is_valid_update_user_ap_i(
+        assert is_valid_update_user_api(
             validator,
-            update_user_ap_i_default_val(api)
+            update_user_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_external_authentication_servers_ap_i(json_schema_validate, obj):
+def is_valid_get_external_authentication_servers_api(json_schema_validate, obj):
     json_schema_validate('jsd_452738def9045d4d9c96bcd42172a79c_v2_3_5_3').validate(obj)
     return True
 
 
-def get_external_authentication_servers_ap_i(api):
-    endpoint_result = api.userand_roles.get_external_authentication_servers_ap_i(
+def get_external_authentication_servers_api(api):
+    endpoint_result = api.userand_roles.get_external_authentication_servers_api(
         invoke_source='string'
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_external_authentication_servers_ap_i(api, validator):
+def test_get_external_authentication_servers_api(api, validator):
     try:
-        assert is_valid_get_external_authentication_servers_ap_i(
+        assert is_valid_get_external_authentication_servers_api(
             validator,
-            get_external_authentication_servers_ap_i(api)
+            get_external_authentication_servers_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -302,19 +302,19 @@ def test_get_external_authentication_servers_ap_i(api, validator):
             raise original_e
 
 
-def get_external_authentication_servers_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_external_authentication_servers_ap_i(
+def get_external_authentication_servers_api_default_val(api):
+    endpoint_result = api.userand_roles.get_external_authentication_servers_api(
         invoke_source=None
     )
     return endpoint_result
 
 
 @pytest.mark.userand_roles
-def test_get_external_authentication_servers_ap_i_default_val(api, validator):
+def test_get_external_authentication_servers_api_default_val(api, validator):
     try:
-        assert is_valid_get_external_authentication_servers_ap_i(
+        assert is_valid_get_external_authentication_servers_api(
             validator,
-            get_external_authentication_servers_ap_i_default_val(api)
+            get_external_authentication_servers_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -64,7 +64,7 @@ class UserandRoles(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def add_role_ap_i(self,
+    def add_role_api(self,
                       description=None,
                       resourceTypes=None,
                       role=None,
@@ -145,7 +145,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_a88c7510a15578b8eb2df183a92d5d_v2_3_7_6', json_data)
 
-    def update_role_ap_i(self,
+    def update_role_api(self,
                          description=None,
                          resourceTypes=None,
                          roleId=None,
@@ -223,7 +223,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_v2_3_7_6', json_data)
 
-    def get_permissions_ap_i(self,
+    def get_permissions_api(self,
                              headers=None,
                              **request_parameters):
         """Get permissions for a role from Cisco DNA Center System. .
@@ -273,7 +273,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ec0b30eca9d540a845848cffd7c602a_v2_3_7_6', json_data)
 
-    def delete_role_ap_i(self,
+    def delete_role_api(self,
                          role_id,
                          headers=None,
                          **request_parameters):
@@ -328,7 +328,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_da9e850c44d353f78ab002a640e5604f_v2_3_7_6', json_data)
 
-    def get_roles_ap_i(self,
+    def get_roles_api(self,
                        headers=None,
                        **request_parameters):
         """Get all roles for the Cisco DNA Center System. .
@@ -381,7 +381,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_bef02e8f6f8354dc99e375826a87c88c_v2_3_7_6', json_data)
 
-    def get_users_ap_i(self,
+    def get_users_api(self,
                        invoke_source,
                        auth_source=None,
                        headers=None,
@@ -445,7 +445,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_fa405b6d1be56739f2dfeea63212015_v2_3_7_6', json_data)
 
-    def add_user_ap_i(self,
+    def add_user_api(self,
                       email=None,
                       firstName=None,
                       lastName=None,
@@ -535,7 +535,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_d82755e5e03510daf0951c1f42c2702_v2_3_7_6', json_data)
 
-    def update_user_ap_i(self,
+    def update_user_api(self,
                          email=None,
                          firstName=None,
                          lastName=None,
@@ -625,7 +625,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_d2bd5f05bd535a89ebadb30e2ede9e_v2_3_7_6', json_data)
 
-    def delete_user_ap_i(self,
+    def delete_user_api(self,
                          user_id,
                          headers=None,
                          **request_parameters):
@@ -680,7 +680,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_c65c6cc65f068766cbb8a42ad387_v2_3_7_6', json_data)
 
-    def get_external_authentication_setting_ap_i(self,
+    def get_external_authentication_setting_api(self,
                                                  headers=None,
                                                  **request_parameters):
         """Get the External Authentication setting. .
@@ -730,7 +730,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_ac03ba045f60925fd7843bf9e279_v2_3_7_6', json_data)
 
-    def manage_external_authentication_setting_ap_i(self,
+    def manage_external_authentication_setting_api(self,
                                                     enable=None,
                                                     headers=None,
                                                     payload=None,
@@ -803,7 +803,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_e4f57e8f06856ee9a7e490d01f7f692_v2_3_7_6', json_data)
 
-    def get_external_authentication_servers_ap_i(self,
+    def get_external_authentication_servers_api(self,
                                                  invoke_source,
                                                  headers=None,
                                                  **request_parameters):
@@ -860,7 +860,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_def9045d4d9c96bcd42172a79c_v2_3_7_6', json_data)
 
-    def add_and_update_a_a_a_attribute_ap_i(self,
+    def add_and_update_aaa_attribute_api(self,
                                             attributeName=None,
                                             headers=None,
                                             payload=None,
@@ -936,7 +936,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_f5bfccc7e30550baa7046f74daa1ef2_v2_3_7_6', json_data)
 
-    def delete_a_a_a_attribute_ap_i(self,
+    def delete_aaa_attribute_api(self,
                                     headers=None,
                                     **request_parameters):
         """Delete the custom AAA attribute that was added. Note that by deleting the AAA attribute, a default AAA attribute
@@ -988,7 +988,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_f20c99b436bd5be8bdb9094db3a47f01_v2_3_7_6', json_data)
 
-    def get_a_a_a_attribute_ap_i(self,
+    def get_aaa_attribute_api(self,
                                  headers=None,
                                  **request_parameters):
         """Get the current value of the custom AAA attribute. .
