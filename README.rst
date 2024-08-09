@@ -158,7 +158,7 @@ The following table shows the supported versions.
    * - 2.3.5.3
      - 2.6.11
    * - 2.3.7.6
-     - 2.7.1
+     - 2.7.2
 
    
 
