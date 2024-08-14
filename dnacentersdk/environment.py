@@ -54,7 +54,6 @@ WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_WAIT_ON_RATE_LIMIT'
 VERIFY_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY'
 
 
-
 def _is_bool(value):
     if isinstance(value, str):
         return 'true' in value.lower()

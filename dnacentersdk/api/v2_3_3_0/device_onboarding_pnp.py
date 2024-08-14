@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -115,10 +113,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -199,28 +197,28 @@ class DeviceOnboardingPnp(object):
         devices. Pagination and sorting are also supported by this endpoint .
 
         Args:
-            limit(basestring, int): limit query parameter. Limits number of results .
-            offset(basestring, int): offset query parameter. Index of first result .
-            sort(basestring, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
-            serial_number(basestring, list, set, tuple): serialNumber query parameter. Device Serial Number .
-            state(basestring, list, set, tuple): state query parameter. Device State .
-            onb_state(basestring, list, set, tuple): onbState query parameter. Device Onboarding State .
-            cm_state(basestring, list, set, tuple): cmState query parameter. Device Connection Manager State .
-            name(basestring, list, set, tuple): name query parameter. Device Name .
-            pid(basestring, list, set, tuple): pid query parameter. Device ProductId .
-            source(basestring, list, set, tuple): source query parameter. Device Source .
-            project_id(basestring, list, set, tuple): projectId query parameter. Device Project Id .
-            workflow_id(basestring, list, set, tuple): workflowId query parameter. Device Workflow Id .
-            project_name(basestring, list, set, tuple): projectName query parameter. Device Project Name .
-            workflow_name(basestring, list, set, tuple): workflowName query parameter. Device Workflow Name .
-            smart_account_id(basestring, list, set, tuple): smartAccountId query parameter. Device Smart Account .
-            virtual_account_id(basestring, list, set, tuple): virtualAccountId query parameter. Device Virtual
+            limit(str, int): limit query parameter. Limits number of results .
+            offset(str, int): offset query parameter. Index of first result .
+            sort(str, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            serial_number(str, list, set, tuple): serialNumber query parameter. Device Serial Number .
+            state(str, list, set, tuple): state query parameter. Device State .
+            onb_state(str, list, set, tuple): onbState query parameter. Device Onboarding State .
+            cm_state(str, list, set, tuple): cmState query parameter. Device Connection Manager State .
+            name(str, list, set, tuple): name query parameter. Device Name .
+            pid(str, list, set, tuple): pid query parameter. Device ProductId .
+            source(str, list, set, tuple): source query parameter. Device Source .
+            project_id(str, list, set, tuple): projectId query parameter. Device Project Id .
+            workflow_id(str, list, set, tuple): workflowId query parameter. Device Workflow Id .
+            project_name(str, list, set, tuple): projectName query parameter. Device Project Name .
+            workflow_name(str, list, set, tuple): workflowName query parameter. Device Workflow Name .
+            smart_account_id(str, list, set, tuple): smartAccountId query parameter. Device Smart Account .
+            virtual_account_id(str, list, set, tuple): virtualAccountId query parameter. Device Virtual
                 Account .
             last_contact(bool): lastContact query parameter. Device Has Contacted lastContact > 0 .
-            mac_address(basestring): macAddress query parameter. Device Mac Address .
-            hostname(basestring): hostname query parameter. Device Hostname .
-            site_name(basestring): siteName query parameter. Device Site Name .
+            mac_address(str): macAddress query parameter. Device Mac Address .
+            hostname(str): hostname query parameter. Device Hostname .
+            site_name(str): siteName query parameter. Device Site Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -237,31 +235,31 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, (basestring, int))
-        check_type(offset, (basestring, int))
-        check_type(sort, (basestring, list, set, tuple))
-        check_type(sort_order, basestring)
-        check_type(serial_number, (basestring, list, set, tuple))
-        check_type(state, (basestring, list, set, tuple))
-        check_type(onb_state, (basestring, list, set, tuple))
-        check_type(cm_state, (basestring, list, set, tuple))
-        check_type(name, (basestring, list, set, tuple))
-        check_type(pid, (basestring, list, set, tuple))
-        check_type(source, (basestring, list, set, tuple))
-        check_type(project_id, (basestring, list, set, tuple))
-        check_type(workflow_id, (basestring, list, set, tuple))
-        check_type(project_name, (basestring, list, set, tuple))
-        check_type(workflow_name, (basestring, list, set, tuple))
-        check_type(smart_account_id, (basestring, list, set, tuple))
-        check_type(virtual_account_id, (basestring, list, set, tuple))
+        check_type(limit, (str, int))
+        check_type(offset, (str, int))
+        check_type(sort, (str, list, set, tuple))
+        check_type(sort_order, str)
+        check_type(serial_number, (str, list, set, tuple))
+        check_type(state, (str, list, set, tuple))
+        check_type(onb_state, (str, list, set, tuple))
+        check_type(cm_state, (str, list, set, tuple))
+        check_type(name, (str, list, set, tuple))
+        check_type(pid, (str, list, set, tuple))
+        check_type(source, (str, list, set, tuple))
+        check_type(project_id, (str, list, set, tuple))
+        check_type(workflow_id, (str, list, set, tuple))
+        check_type(project_name, (str, list, set, tuple))
+        check_type(workflow_name, (str, list, set, tuple))
+        check_type(smart_account_id, (str, list, set, tuple))
+        check_type(virtual_account_id, (str, list, set, tuple))
         check_type(last_contact, bool)
-        check_type(mac_address, basestring)
-        check_type(hostname, basestring)
-        check_type(site_name, basestring)
+        check_type(mac_address, str)
+        check_type(hostname, str)
+        check_type(site_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -378,10 +376,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -454,19 +452,19 @@ class DeviceOnboardingPnp(object):
         """Returns the device count based on filter criteria. This is useful for pagination .
 
         Args:
-            serial_number(basestring, list, set, tuple): serialNumber query parameter. Device Serial Number .
-            state(basestring, list, set, tuple): state query parameter. Device State .
-            onb_state(basestring, list, set, tuple): onbState query parameter. Device Onboarding State .
-            cm_state(basestring, list, set, tuple): cmState query parameter. Device Connection Manager State .
-            name(basestring, list, set, tuple): name query parameter. Device Name .
-            pid(basestring, list, set, tuple): pid query parameter. Device ProductId .
-            source(basestring, list, set, tuple): source query parameter. Device Source .
-            project_id(basestring, list, set, tuple): projectId query parameter. Device Project Id .
-            workflow_id(basestring, list, set, tuple): workflowId query parameter. Device Workflow Id .
-            project_name(basestring, list, set, tuple): projectName query parameter. Device Project Name .
-            workflow_name(basestring, list, set, tuple): workflowName query parameter. Device Workflow Name .
-            smart_account_id(basestring, list, set, tuple): smartAccountId query parameter. Device Smart Account .
-            virtual_account_id(basestring, list, set, tuple): virtualAccountId query parameter. Device Virtual
+            serial_number(str, list, set, tuple): serialNumber query parameter. Device Serial Number .
+            state(str, list, set, tuple): state query parameter. Device State .
+            onb_state(str, list, set, tuple): onbState query parameter. Device Onboarding State .
+            cm_state(str, list, set, tuple): cmState query parameter. Device Connection Manager State .
+            name(str, list, set, tuple): name query parameter. Device Name .
+            pid(str, list, set, tuple): pid query parameter. Device ProductId .
+            source(str, list, set, tuple): source query parameter. Device Source .
+            project_id(str, list, set, tuple): projectId query parameter. Device Project Id .
+            workflow_id(str, list, set, tuple): workflowId query parameter. Device Workflow Id .
+            project_name(str, list, set, tuple): projectName query parameter. Device Project Name .
+            workflow_name(str, list, set, tuple): workflowName query parameter. Device Workflow Name .
+            smart_account_id(str, list, set, tuple): smartAccountId query parameter. Device Smart Account .
+            virtual_account_id(str, list, set, tuple): virtualAccountId query parameter. Device Virtual
                 Account .
             last_contact(bool): lastContact query parameter. Device Has Contacted lastContact > 0 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -484,24 +482,24 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(serial_number, (basestring, list, set, tuple))
-        check_type(state, (basestring, list, set, tuple))
-        check_type(onb_state, (basestring, list, set, tuple))
-        check_type(cm_state, (basestring, list, set, tuple))
-        check_type(name, (basestring, list, set, tuple))
-        check_type(pid, (basestring, list, set, tuple))
-        check_type(source, (basestring, list, set, tuple))
-        check_type(project_id, (basestring, list, set, tuple))
-        check_type(workflow_id, (basestring, list, set, tuple))
-        check_type(project_name, (basestring, list, set, tuple))
-        check_type(workflow_name, (basestring, list, set, tuple))
-        check_type(smart_account_id, (basestring, list, set, tuple))
-        check_type(virtual_account_id, (basestring, list, set, tuple))
+        check_type(serial_number, (str, list, set, tuple))
+        check_type(state, (str, list, set, tuple))
+        check_type(onb_state, (str, list, set, tuple))
+        check_type(cm_state, (str, list, set, tuple))
+        check_type(name, (str, list, set, tuple))
+        check_type(pid, (str, list, set, tuple))
+        check_type(source, (str, list, set, tuple))
+        check_type(project_id, (str, list, set, tuple))
+        check_type(workflow_id, (str, list, set, tuple))
+        check_type(project_name, (str, list, set, tuple))
+        check_type(workflow_name, (str, list, set, tuple))
+        check_type(smart_account_id, (str, list, set, tuple))
+        check_type(virtual_account_id, (str, list, set, tuple))
         check_type(last_contact, bool)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'serialNumber':
@@ -564,9 +562,9 @@ class DeviceOnboardingPnp(object):
         """Returns history for a specific device. Serial number is a required parameter .
 
         Args:
-            serial_number(basestring): serialNumber query parameter. Device Serial Number .
-            sort(basestring, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            serial_number(str): serialNumber query parameter. Device Serial Number .
+            sort(str, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -582,14 +580,14 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(serial_number, basestring,
+        check_type(serial_number, str,
                    may_be_none=False)
-        check_type(sort, (basestring, list, set, tuple))
-        check_type(sort_order, basestring)
+        check_type(sort, (str, list, set, tuple))
+        check_type(sort_order, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'serialNumber':
@@ -652,10 +650,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -724,10 +722,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -776,8 +774,8 @@ class DeviceOnboardingPnp(object):
         """Returns the summary of devices synced from the given smart account & virtual account with PnP .
 
         Args:
-            domain(basestring): domain path parameter. Smart Account Domain .
-            name(basestring): name path parameter. Virtual Account Name .
+            domain(str): domain path parameter. Smart Account Domain .
+            name(str): name path parameter. Virtual Account Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -793,14 +791,14 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(domain, basestring,
+        check_type(domain, str,
                    may_be_none=False)
-        check_type(name, basestring,
+        check_type(name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -883,10 +881,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -981,10 +979,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1059,10 +1057,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1158,10 +1156,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1249,7 +1247,7 @@ class DeviceOnboardingPnp(object):
             version(integer): Device Onboarding (PnP)'s version.
             workflow(object): Device Onboarding (PnP)'s workflow.
             workflowParameters(object): Device Onboarding (PnP)'s workflowParameters.
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1270,15 +1268,15 @@ class DeviceOnboardingPnp(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1339,7 +1337,7 @@ class DeviceOnboardingPnp(object):
         """Deletes specified device from PnP database .
 
         Args:
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1355,12 +1353,12 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1394,7 +1392,7 @@ class DeviceOnboardingPnp(object):
         """Returns device details specified by device id .
 
         Args:
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1410,12 +1408,12 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1489,10 +1487,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1567,7 +1565,7 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1618,7 +1616,7 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1651,7 +1649,7 @@ class DeviceOnboardingPnp(object):
         """Returns list of virtual accounts associated with the specified smart account .
 
         Args:
-            domain(basestring): domain path parameter. Smart Account Domain .
+            domain(str): domain path parameter. Smart Account Domain .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1668,12 +1666,12 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(domain, basestring,
+        check_type(domain, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1761,10 +1759,10 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1884,7 +1882,7 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1956,8 +1954,8 @@ class DeviceOnboardingPnp(object):
         .
 
         Args:
-            domain(basestring): domain query parameter. Smart Account Domain .
-            name(basestring): name query parameter. Virtual Account Name .
+            domain(str): domain query parameter. Smart Account Domain .
+            name(str): name query parameter. Virtual Account Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1973,14 +1971,14 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(domain, basestring,
+        check_type(domain, str,
                    may_be_none=False)
-        check_type(name, basestring,
+        check_type(name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'domain':
@@ -2023,12 +2021,12 @@ class DeviceOnboardingPnp(object):
         50 workflows. Pagination and sorting are also supported by this endpoint .
 
         Args:
-            limit(basestring, int): limit query parameter. Limits number of results .
-            offset(basestring, int): offset query parameter. Index of first result .
-            sort(basestring, list, set, tuple): sort query parameter. Comma seperated lost of fields to sort on .
-            sort_order(basestring): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
-            type(basestring, list, set, tuple): type query parameter. Workflow Type .
-            name(basestring, list, set, tuple): name query parameter. Workflow Name .
+            limit(str, int): limit query parameter. Limits number of results .
+            offset(str, int): offset query parameter. Index of first result .
+            sort(str, list, set, tuple): sort query parameter. Comma seperated lost of fields to sort on .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            type(str, list, set, tuple): type query parameter. Workflow Type .
+            name(str, list, set, tuple): name query parameter. Workflow Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2045,16 +2043,16 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, (basestring, int))
-        check_type(offset, (basestring, int))
-        check_type(sort, (basestring, list, set, tuple))
-        check_type(sort_order, basestring)
-        check_type(type, (basestring, list, set, tuple))
-        check_type(name, (basestring, list, set, tuple))
+        check_type(limit, (str, int))
+        check_type(offset, (str, int))
+        check_type(sort, (str, list, set, tuple))
+        check_type(sort_order, str)
+        check_type(type, (str, list, set, tuple))
+        check_type(name, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'limit':
@@ -2162,7 +2160,7 @@ class DeviceOnboardingPnp(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2242,7 +2240,7 @@ class DeviceOnboardingPnp(object):
         """Returns the workflow count .
 
         Args:
-            name(basestring, list, set, tuple): name query parameter. Workflow Name .
+            name(str, list, set, tuple): name query parameter. Workflow Name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2258,11 +2256,11 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, (basestring, list, set, tuple))
+        check_type(name, (str, list, set, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -2297,7 +2295,7 @@ class DeviceOnboardingPnp(object):
         """Returns a workflow specified by id .
 
         Args:
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2313,12 +2311,12 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2352,7 +2350,7 @@ class DeviceOnboardingPnp(object):
         """Deletes a workflow specified by id .
 
         Args:
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2368,12 +2366,12 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -2448,7 +2446,7 @@ class DeviceOnboardingPnp(object):
             type(string): Device Onboarding (PnP)'s type.
             useState(string): Device Onboarding (PnP)'s useState.
             version(integer): Device Onboarding (PnP)'s version.
-            id(basestring): id path parameter.
+            id(str): id path parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -2469,12 +2467,12 @@ class DeviceOnboardingPnp(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -101,16 +99,16 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'Client-Type' in headers:
                 check_type(headers.get('Client-Type'),
-                           basestring)
+                           str)
             if 'Client-Url' in headers:
                 check_type(headers.get('Client-Url'),
-                           basestring)
+                           str)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'scheduleValidate':
@@ -176,10 +174,10 @@ class SoftwareImageManagementSwim(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -235,23 +233,23 @@ class SoftwareImageManagementSwim(object):
         """Returns software image list based on a filter criteria. For example: "filterbyName = cat3k%" .
 
         Args:
-            image_uuid(basestring): imageUuid query parameter.
-            name(basestring): name query parameter.
-            family(basestring): family query parameter.
-            application_type(basestring): applicationType query parameter.
-            image_integrity_status(basestring): imageIntegrityStatus query parameter. imageIntegrityStatus FAILURE,
+            image_uuid(str): imageUuid query parameter.
+            name(str): name query parameter.
+            family(str): family query parameter.
+            application_type(str): applicationType query parameter.
+            image_integrity_status(str): imageIntegrityStatus query parameter. imageIntegrityStatus FAILURE,
                 UNKNOWN, VERIFIED .
-            version(basestring): version query parameter. software Image Version .
-            image_series(basestring): imageSeries query parameter. image Series .
-            image_name(basestring): imageName query parameter. image Name .
+            version(str): version query parameter. software Image Version .
+            image_series(str): imageSeries query parameter. image Series .
+            image_name(str): imageName query parameter. image Name .
             is_tagged_golden(bool): isTaggedGolden query parameter. is Tagged Golden .
             is_cco_recommended(bool): isCCORecommended query parameter. is recommended from cisco.com .
             is_cco_latest(bool): isCCOLatest query parameter. is latest from cisco.com .
             created_time(int): createdTime query parameter. time in milliseconds (epoch format) .
             image_size_greater_than(int): imageSizeGreaterThan query parameter. size in bytes .
             image_size_lesser_than(int): imageSizeLesserThan query parameter. size in bytes .
-            sort_by(basestring): sortBy query parameter. sort results by this field .
-            sort_order(basestring): sortOrder query parameter. sort order 'asc' or 'des'. Default is asc .
+            sort_by(str): sortBy query parameter. sort results by this field .
+            sort_order(str): sortOrder query parameter. sort order 'asc' or 'des'. Default is asc .
             limit(int): limit query parameter.
             offset(int): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -269,28 +267,28 @@ class SoftwareImageManagementSwim(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(image_uuid, basestring)
-        check_type(name, basestring)
-        check_type(family, basestring)
-        check_type(application_type, basestring)
-        check_type(image_integrity_status, basestring)
-        check_type(version, basestring)
-        check_type(image_series, basestring)
-        check_type(image_name, basestring)
+        check_type(image_uuid, str)
+        check_type(name, str)
+        check_type(family, str)
+        check_type(application_type, str)
+        check_type(image_integrity_status, str)
+        check_type(version, str)
+        check_type(image_series, str)
+        check_type(image_name, str)
         check_type(is_tagged_golden, bool)
         check_type(is_cco_recommended, bool)
         check_type(is_cco_latest, bool)
         check_type(created_time, int)
         check_type(image_size_greater_than, int)
         check_type(image_size_lesser_than, int)
-        check_type(sort_by, basestring)
-        check_type(sort_order, basestring)
+        check_type(sort_by, str)
+        check_type(sort_order, str)
         check_type(limit, int)
         check_type(offset, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'imageUuid':
@@ -394,9 +392,9 @@ class SoftwareImageManagementSwim(object):
 
         Args:
             is_third_party(bool): isThirdParty query parameter. Third party Image check .
-            third_party_vendor(basestring): thirdPartyVendor query parameter. Third Party Vendor .
-            third_party_image_family(basestring): thirdPartyImageFamily query parameter. Third Party image family .
-            third_party_application_type(basestring): thirdPartyApplicationType query parameter. Third Party
+            third_party_vendor(str): thirdPartyVendor query parameter. Third Party Vendor .
+            third_party_image_family(str): thirdPartyImageFamily query parameter. Third Party image family .
+            third_party_application_type(str): thirdPartyApplicationType query parameter. Third Party
                 Application Type .
             multipart_fields(dict): Fields from which to create a
                 multipart/form-data body.
@@ -418,16 +416,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
-        check_type(third_party_vendor, basestring)
-        check_type(third_party_image_family, basestring)
-        check_type(third_party_application_type, basestring)
+        check_type(third_party_vendor, str)
+        check_type(third_party_image_family, str)
+        check_type(third_party_application_type, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'isThirdParty':
@@ -480,10 +478,10 @@ class SoftwareImageManagementSwim(object):
         image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
 
         Args:
-            schedule_at(basestring): scheduleAt query parameter. Epoch Time (The number of milli-seconds since
+            schedule_at(str): scheduleAt query parameter. Epoch Time (The number of milli-seconds since
                 January 1 1970 UTC) at which the distribution should be scheduled (Optional)  .
-            schedule_desc(basestring): scheduleDesc query parameter. Custom Description (Optional) .
-            schedule_origin(basestring): scheduleOrigin query parameter. Originator of this call (Optional) .
+            schedule_desc(str): scheduleDesc query parameter. Custom Description (Optional) .
+            schedule_origin(str): scheduleOrigin query parameter. Originator of this call (Optional) .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -504,16 +502,16 @@ class SoftwareImageManagementSwim(object):
         """
         check_type(headers, dict)
         check_type(payload, list)
-        check_type(schedule_at, basestring)
-        check_type(schedule_desc, basestring)
-        check_type(schedule_origin, basestring)
+        check_type(schedule_at, str)
+        check_type(schedule_desc, str)
+        check_type(schedule_origin, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'scheduleAt':

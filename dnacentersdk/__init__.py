@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
 
@@ -45,6 +44,6 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 logger = logging.getLogger(__name__)
 
 
-from pkg_resources import get_distribution
-release = get_distribution('dnacentersdk').version
+from importlib.metadata import version
+release = version('dnacentersdk')
 __version__ = '.'.join(release.split('.')[:3])

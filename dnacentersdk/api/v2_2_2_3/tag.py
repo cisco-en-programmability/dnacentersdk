@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -109,10 +107,10 @@ class Tag(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -176,19 +174,19 @@ class Tag(object):
         """Returns the tags for given filter criteria .
 
         Args:
-            name(basestring): name query parameter. Tag name is mandatory when filter operation is used. .
-            additional_info_name_space(basestring): additionalInfo.nameSpace query parameter.
-            additional_info_attributes(basestring): additionalInfo.attributes query parameter.
-            level(basestring): level query parameter.
-            offset(basestring): offset query parameter.
-            limit(basestring): limit query parameter.
-            size(basestring): size query parameter. size in kilobytes(KB) .
-            field(basestring): field query parameter. Available field names are
+            name(str): name query parameter. Tag name is mandatory when filter operation is used. .
+            additional_info_name_space(str): additionalInfo.nameSpace query parameter.
+            additional_info_attributes(str): additionalInfo.attributes query parameter.
+            level(str): level query parameter.
+            offset(str): offset query parameter.
+            limit(str): limit query parameter.
+            size(str): size query parameter. size in kilobytes(KB) .
+            field(str): field query parameter. Available field names are
                 :'name,id,parentId,type,additionalInfo.nameSpace,additionalInfo.attributes' .
-            sort_by(basestring): sortBy query parameter. Only supported attribute is name. SortyBy is mandatory when
+            sort_by(str): sortBy query parameter. Only supported attribute is name. SortyBy is mandatory when
                 order is used. .
-            order(basestring): order query parameter. Available values are asc and des .
-            system_tag(basestring): systemTag query parameter.
+            order(str): order query parameter. Available values are asc and des .
+            system_tag(str): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -204,21 +202,21 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(additional_info_name_space, basestring)
-        check_type(additional_info_attributes, basestring)
-        check_type(level, basestring)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
-        check_type(size, basestring)
-        check_type(field, basestring)
-        check_type(sort_by, basestring)
-        check_type(order, basestring)
-        check_type(system_tag, basestring)
+        check_type(name, str)
+        check_type(additional_info_name_space, str)
+        check_type(additional_info_attributes, str)
+        check_type(level, str)
+        check_type(offset, str)
+        check_type(limit, str)
+        check_type(size, str)
+        check_type(field, str)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(system_tag, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -309,7 +307,7 @@ class Tag(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -368,12 +366,12 @@ class Tag(object):
         """Returns tag count .
 
         Args:
-            name(basestring): name query parameter.
-            name_space(basestring): nameSpace query parameter.
-            attribute_name(basestring): attributeName query parameter.
-            level(basestring): level query parameter.
-            size(basestring): size query parameter. size in kilobytes(KB) .
-            system_tag(basestring): systemTag query parameter.
+            name(str): name query parameter.
+            name_space(str): nameSpace query parameter.
+            attribute_name(str): attributeName query parameter.
+            level(str): level query parameter.
+            size(str): size query parameter. size in kilobytes(KB) .
+            system_tag(str): systemTag query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -389,16 +387,16 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(name_space, basestring)
-        check_type(attribute_name, basestring)
-        check_type(level, basestring)
-        check_type(size, basestring)
-        check_type(system_tag, basestring)
+        check_type(name, str)
+        check_type(name_space, str)
+        check_type(attribute_name, str)
+        check_type(level, str)
+        check_type(size, str)
+        check_type(system_tag, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -473,10 +471,10 @@ class Tag(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -539,7 +537,7 @@ class Tag(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -572,7 +570,7 @@ class Tag(object):
         """Deletes a tag specified by id .
 
         Args:
-            id(basestring): id path parameter. Tag ID .
+            id(str): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -588,12 +586,12 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -627,7 +625,7 @@ class Tag(object):
         """Returns tag specified by Id .
 
         Args:
-            id(basestring): id path parameter. Tag ID .
+            id(str): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -643,12 +641,12 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -687,18 +685,18 @@ class Tag(object):
         """Returns tag members specified by id .
 
         Args:
-            id(basestring): id path parameter. Tag ID .
-            member_type(basestring): memberType query parameter. Entity type of the member. Possible values can be
+            id(str): id path parameter. Tag ID .
+            member_type(str): memberType query parameter. Entity type of the member. Possible values can be
                 retrieved by using /tag/member/type API .
-            offset(basestring): offset query parameter. Used for pagination. It indicates the starting row number
+            offset(str): offset query parameter. Used for pagination. It indicates the starting row number
                 out of available member records .
-            limit(basestring): limit query parameter. Used to Number of maximum members to return in the result .
-            member_association_type(basestring): memberAssociationType query parameter. Indicates how the member is
+            limit(str): limit query parameter. Used to Number of maximum members to return in the result .
+            member_association_type(str): memberAssociationType query parameter. Indicates how the member is
                 associated with the tag. Possible values and description. 1) DYNAMIC : The member is
                 associated to the tag through rules. 2) STATIC – The member is associated to the tag
                 manually. 3) MIXED – The member is associated manually and also satisfies the rule
                 defined for the tag .
-            level(basestring): level query parameter.
+            level(str): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -714,18 +712,18 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(member_type, basestring,
+        check_type(member_type, str,
                    may_be_none=False)
-        check_type(offset, basestring)
-        check_type(limit, basestring)
-        check_type(member_association_type, basestring)
-        check_type(level, basestring)
-        check_type(id, basestring,
+        check_type(offset, str)
+        check_type(limit, str)
+        check_type(member_association_type, str)
+        check_type(level, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'memberType':
@@ -771,7 +769,7 @@ class Tag(object):
         """Adds members to the tag specified by id .
 
         Args:
-            id(basestring): id path parameter. Tag ID .
+            id(str): id path parameter. Tag ID .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -792,12 +790,12 @@ class Tag(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -843,10 +841,10 @@ class Tag(object):
         """Returns the number of members in a given tag .
 
         Args:
-            id(basestring): id path parameter. Tag ID .
-            member_type(basestring): memberType query parameter.
-            member_association_type(basestring): memberAssociationType query parameter.
-            level(basestring): level query parameter.
+            id(str): id path parameter. Tag ID .
+            member_type(str): memberType query parameter.
+            member_association_type(str): memberAssociationType query parameter.
+            level(str): level query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -862,16 +860,16 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(member_type, basestring,
+        check_type(member_type, str,
                    may_be_none=False)
-        check_type(member_association_type, basestring)
-        check_type(level, basestring)
-        check_type(id, basestring,
+        check_type(member_association_type, str)
+        check_type(level, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'memberType':
@@ -912,8 +910,8 @@ class Tag(object):
         """Removes Tag member from the tag specified by id .
 
         Args:
-            id(basestring): id path parameter. Tag ID .
-            member_id(basestring): memberId path parameter. TagMember id to be removed from tag .
+            id(str): id path parameter. Tag ID .
+            member_id(str): memberId path parameter. TagMember id to be removed from tag .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -929,14 +927,14 @@ class Tag(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
-        check_type(member_id, basestring,
+        check_type(member_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

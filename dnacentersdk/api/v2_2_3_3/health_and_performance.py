@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -78,9 +76,9 @@ class HealthAndPerformance(object):
 
         Args:
             summary(bool): summary query parameter. Fetch the latest high severity event .
-            domain(basestring): domain query parameter. Fetch system events with this domain. Possible values of
+            domain(str): domain query parameter. Fetch system events with this domain. Possible values of
                 domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
-            subdomain(basestring): subdomain query parameter. Fetch system events with this subdomain. Possible
+            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible
                 values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
                 toolkit/events .
             limit(int): limit query parameter.
@@ -101,17 +99,17 @@ class HealthAndPerformance(object):
         """
         check_type(headers, dict)
         check_type(summary, bool)
-        check_type(domain, basestring)
-        check_type(subdomain, basestring)
+        check_type(domain, str)
+        check_type(subdomain, str)
         check_type(limit, int)
         check_type(offset, int)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'summary':
@@ -155,9 +153,9 @@ class HealthAndPerformance(object):
         """This API gives the count of the latest system events .
 
         Args:
-            domain(basestring): domain query parameter. Fetch system events with this domain. Possible values of
+            domain(str): domain query parameter. Fetch system events with this domain. Possible values of
                 domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
-            subdomain(basestring): subdomain query parameter. Fetch system events with this subdomain. Possible
+            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible
                 values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
                 toolkit/events .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -175,15 +173,15 @@ class HealthAndPerformance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(domain, basestring)
-        check_type(subdomain, basestring)
+        check_type(domain, str)
+        check_type(subdomain, str)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'domain':
@@ -223,8 +221,8 @@ class HealthAndPerformance(object):
         """This API gives the aggregated performance indicators. The data can be retrieved for the last 3 months. .
 
         Args:
-            kpi(basestring): kpi query parameter. Valid values: cpu,memory,network .
-            function(basestring): function query parameter. Valid values: sum,average,max .
+            kpi(str): kpi query parameter. Valid values: cpu,memory,network .
+            function(str): function query parameter. Valid values: sum,average,max .
             start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
                 performance indicator need to be fetched .
             end_time(int): endTime query parameter. This is the epoch end time in milliseconds upto which
@@ -244,17 +242,17 @@ class HealthAndPerformance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(kpi, basestring)
-        check_type(function, basestring)
+        check_type(kpi, str)
+        check_type(function, str)
         check_type(start_time, int)
         check_type(end_time, int)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'kpi':
@@ -297,7 +295,7 @@ class HealthAndPerformance(object):
         """This API retrieves the historical performance indicators . The data can be retrieved for the last 3 months. .
 
         Args:
-            kpi(basestring): kpi query parameter. Fetch historical data for this kpi. Valid values:
+            kpi(str): kpi query parameter. Fetch historical data for this kpi. Valid values:
                 cpu,memory,network .
             start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
                 performance indicator need to be fetched .
@@ -318,16 +316,16 @@ class HealthAndPerformance(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(kpi, basestring)
+        check_type(kpi, str)
         check_type(start_time, int)
         check_type(end_time, int)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'kpi':

@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -77,12 +75,12 @@ class Licenses(object):
         """Get total number of managed device(s). .
 
         Args:
-            device_type(basestring): device_type query parameter. Type of device .
-            registration_status(basestring): registration_status query parameter. Smart license registration status
+            device_type(str): device_type query parameter. Type of device .
+            registration_status(str): registration_status query parameter. Smart license registration status
                 of device .
-            dna_level(basestring): dna_level query parameter. Device Cisco DNA License Level .
-            virtual_account_name(basestring): virtual_account_name query parameter. Virtual account name .
-            smart_account_id(basestring): smart_account_id query parameter. Smart account id .
+            dna_level(str): dna_level query parameter. Device Cisco DNA License Level .
+            virtual_account_name(str): virtual_account_name query parameter. Virtual account name .
+            smart_account_id(str): smart_account_id query parameter. Smart account id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -100,15 +98,15 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!device-count-details
         """
         check_type(headers, dict)
-        check_type(device_type, basestring)
-        check_type(registration_status, basestring)
-        check_type(dna_level, basestring)
-        check_type(virtual_account_name, basestring)
-        check_type(smart_account_id, basestring)
+        check_type(device_type, str)
+        check_type(registration_status, str)
+        check_type(dna_level, str)
+        check_type(virtual_account_name, str)
+        check_type(smart_account_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'device_type':
@@ -178,16 +176,16 @@ class Licenses(object):
 
         Args:
             page_number(int): page_number query parameter. Page number of response .
-            order(basestring): order query parameter. Sorting order .
-            sort_by(basestring): sort_by query parameter. Sort result by field .
-            dna_level(basestring): dna_level query parameter. Device Cisco DNA license level .
-            device_type(basestring): device_type query parameter. Type of device .
+            order(str): order query parameter. Sorting order .
+            sort_by(str): sort_by query parameter. Sort result by field .
+            dna_level(str): dna_level query parameter. Device Cisco DNA license level .
+            device_type(str): device_type query parameter. Type of device .
             limit(int): limit query parameter.
-            registration_status(basestring): registration_status query parameter. Smart license registration status
+            registration_status(str): registration_status query parameter. Smart license registration status
                 of device .
-            virtual_account_name(basestring): virtual_account_name query parameter. Name of virtual account .
+            virtual_account_name(str): virtual_account_name query parameter. Name of virtual account .
             smart_account_id(int): smart_account_id query parameter. Id of smart account .
-            device_uuid(basestring): device_uuid query parameter. Id of device .
+            device_uuid(str): device_uuid query parameter. Id of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -207,21 +205,21 @@ class Licenses(object):
         check_type(headers, dict)
         check_type(page_number, int,
                    may_be_none=False)
-        check_type(order, basestring,
+        check_type(order, str,
                    may_be_none=False)
-        check_type(sort_by, basestring)
-        check_type(dna_level, basestring)
-        check_type(device_type, basestring)
+        check_type(sort_by, str)
+        check_type(dna_level, str)
+        check_type(device_type, str)
         check_type(limit, int,
                    may_be_none=False)
-        check_type(registration_status, basestring)
-        check_type(virtual_account_name, basestring)
+        check_type(registration_status, str)
+        check_type(virtual_account_name, str)
         check_type(smart_account_id, int)
-        check_type(device_uuid, basestring)
+        check_type(device_uuid, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'page_number':
@@ -292,7 +290,7 @@ class Licenses(object):
                                 virtual_account_name=virtual_account_name,
                                 headers=headers,
                                 **request_parameters)
-    
+
     def device_license_details2(self,
                                 device_uuid,
                                 headers=None,
@@ -300,7 +298,7 @@ class Licenses(object):
         """Get detailed license information of a device. .
 
         Args:
-            device_uuid(basestring): device_uuid path parameter. Id of device .
+            device_uuid(str): device_uuid path parameter. Id of device .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -318,12 +316,12 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!device-license-details2
         """
         check_type(headers, dict)
-        check_type(device_uuid, basestring,
+        check_type(device_uuid, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -354,7 +352,7 @@ class Licenses(object):
                                 device_uuid,
                                 headers=None,
                                 **request_parameters):
-        return self.device_license_details2(self,
+        return self.device_license_details2(
                                 device_uuid,
                                 headers=headers,
                                 **request_parameters)
@@ -394,7 +392,7 @@ class Licenses(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -443,7 +441,7 @@ class Licenses(object):
 
         Args:
             device_uuids(list): Licenses's Comma separated device ids  (list of strings).
-            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account .
+            virtual_account_name(str): virtual_account_name path parameter. Name of virtual account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -466,12 +464,12 @@ class Licenses(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(virtual_account_name, basestring,
+        check_type(virtual_account_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -522,8 +520,8 @@ class Licenses(object):
 
         Args:
             device_uuids(list): Licenses's Comma separated device ids  (list of strings).
-            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_account_name(basestring): virtual_account_name path parameter. Name of target virtual account .
+            smart_account_id(str): smart_account_id path parameter. Id of smart account .
+            virtual_account_name(str): virtual_account_name path parameter. Name of target virtual account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -546,14 +544,14 @@ class Licenses(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(smart_account_id, basestring,
+        check_type(smart_account_id, str,
                    may_be_none=False)
-        check_type(virtual_account_name, basestring,
+        check_type(virtual_account_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -601,7 +599,7 @@ class Licenses(object):
         """Get virtual account details of a smart account. .
 
         Args:
-            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
+            smart_account_id(str): smart_account_id path parameter. Id of smart account .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -619,12 +617,12 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!virtual-account-details2
         """
         check_type(headers, dict)
-        check_type(smart_account_id, basestring,
+        check_type(smart_account_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -678,7 +676,7 @@ class Licenses(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -713,10 +711,10 @@ class Licenses(object):
         """Get license term details. .
 
         Args:
-            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
+            smart_account_id(str): smart_account_id path parameter. Id of smart account .
+            virtual_account_name(str): virtual_account_name path parameter. Name of virtual account. Putting
                 "All" will give license term detail for all virtual accounts. .
-            device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
+            device_type(str): device_type query parameter. Type of device like router, switch, wireless or
                 ise .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -735,16 +733,16 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!license-term-details2
         """
         check_type(headers, dict)
-        check_type(device_type, basestring,
+        check_type(device_type, str,
                    may_be_none=False)
-        check_type(smart_account_id, basestring,
+        check_type(smart_account_id, str,
                    may_be_none=False)
-        check_type(virtual_account_name, basestring,
+        check_type(virtual_account_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'device_type':
@@ -784,10 +782,10 @@ class Licenses(object):
         """Get count of purchased and in use Cisco DNA and Network licenses. .
 
         Args:
-            smart_account_id(basestring): smart_account_id path parameter. Id of smart account .
-            virtual_account_name(basestring): virtual_account_name path parameter. Name of virtual account. Putting
+            smart_account_id(str): smart_account_id path parameter. Id of smart account .
+            virtual_account_name(str): virtual_account_name path parameter. Name of virtual account. Putting
                 "All" will give license term detail for all virtual accounts. .
-            device_type(basestring): device_type query parameter. Type of device like router, switch, wireless or
+            device_type(str): device_type query parameter. Type of device like router, switch, wireless or
                 ise .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -806,16 +804,16 @@ class Licenses(object):
             https://developer.cisco.com/docs/dna-center/#!license-usage-details2
         """
         check_type(headers, dict)
-        check_type(device_type, basestring,
+        check_type(device_type, str,
                    may_be_none=False)
-        check_type(smart_account_id, basestring,
+        check_type(smart_account_id, str,
                    may_be_none=False)
-        check_type(virtual_account_name, basestring,
+        check_type(virtual_account_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'device_type':

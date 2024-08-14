@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -51,7 +50,7 @@ class JSONSchemaValidatorD999A1D36Ee52BaBb6B619877Dad734(object):
                 },
                 "authenticationOrder": {
                 "enum": [
-                "dot1x ",
+                "dot1x",
                 "mac"
                 ],
                 "type": "string"

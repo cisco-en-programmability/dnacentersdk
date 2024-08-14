@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -88,20 +86,20 @@ class PathTrace(object):
 
         Args:
             periodic_refresh(bool): periodicRefresh query parameter. Is analysis periodically refreshed? .
-            source_ip(basestring): sourceIP query parameter. Source IP address .
-            dest_ip(basestring): destIP query parameter. Destination IP adress .
-            source_port(basestring): sourcePort query parameter. Source port .
-            dest_port(basestring): destPort query parameter. Destination port .
-            gt_create_time(basestring): gtCreateTime query parameter. Analyses requested after this time .
-            lt_create_time(basestring): ltCreateTime query parameter. Analyses requested before this time .
-            protocol(basestring): protocol query parameter.
-            status(basestring): status query parameter.
-            task_id(basestring): taskId query parameter. Task ID .
-            last_update_time(basestring): lastUpdateTime query parameter. Last update time .
-            limit(basestring): limit query parameter. Number of resources returned .
-            offset(basestring): offset query parameter. Start index of resources returned (1-based) .
-            order(basestring): order query parameter. Order by this field .
-            sort_by(basestring): sortBy query parameter. Sort by this field .
+            source_ip(str): sourceIP query parameter. Source IP address .
+            dest_ip(str): destIP query parameter. Destination IP adress .
+            source_port(str): sourcePort query parameter. Source port .
+            dest_port(str): destPort query parameter. Destination port .
+            gt_create_time(str): gtCreateTime query parameter. Analyses requested after this time .
+            lt_create_time(str): ltCreateTime query parameter. Analyses requested before this time .
+            protocol(str): protocol query parameter.
+            status(str): status query parameter.
+            task_id(str): taskId query parameter. Task ID .
+            last_update_time(str): lastUpdateTime query parameter. Last update time .
+            limit(str): limit query parameter. Number of resources returned .
+            offset(str): offset query parameter. Start index of resources returned (1-based) .
+            order(str): order query parameter. Order by this field .
+            sort_by(str): sortBy query parameter. Sort by this field .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -118,24 +116,24 @@ class PathTrace(object):
         """
         check_type(headers, dict)
         check_type(periodic_refresh, bool)
-        check_type(source_ip, basestring)
-        check_type(dest_ip, basestring)
-        check_type(source_port, basestring)
-        check_type(dest_port, basestring)
-        check_type(gt_create_time, basestring)
-        check_type(lt_create_time, basestring)
-        check_type(protocol, basestring)
-        check_type(status, basestring)
-        check_type(task_id, basestring)
-        check_type(last_update_time, basestring)
-        check_type(limit, basestring)
-        check_type(offset, basestring)
-        check_type(order, basestring)
-        check_type(sort_by, basestring)
+        check_type(source_ip, str)
+        check_type(dest_ip, str)
+        check_type(source_port, str)
+        check_type(dest_port, str)
+        check_type(gt_create_time, str)
+        check_type(lt_create_time, str)
+        check_type(protocol, str)
+        check_type(status, str)
+        check_type(task_id, str)
+        check_type(last_update_time, str)
+        check_type(limit, str)
+        check_type(offset, str)
+        check_type(order, str)
+        check_type(sort_by, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'periodicRefresh':
@@ -239,7 +237,7 @@ class PathTrace(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -297,7 +295,7 @@ class PathTrace(object):
         """Returns result of a previously requested flow analysis by its Flow Analysis id .
 
         Args:
-            flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
+            flow_analysis_id(str): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -313,12 +311,12 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, basestring,
+        check_type(flow_analysis_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -352,7 +350,7 @@ class PathTrace(object):
         """Deletes a flow analysis request by its id .
 
         Args:
-            flow_analysis_id(basestring): flowAnalysisId path parameter. Flow analysis request id .
+            flow_analysis_id(str): flowAnalysisId path parameter. Flow analysis request id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -368,12 +366,12 @@ class PathTrace(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(flow_analysis_id, basestring,
+        check_type(flow_analysis_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

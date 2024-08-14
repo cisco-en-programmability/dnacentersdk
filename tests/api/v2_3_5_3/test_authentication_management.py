@@ -139,13 +139,13 @@ def test_import_certificate_p12_default_val(api, validator):
             raise original_e
 
 
-def is_valid_authentication_ap_i(json_schema_validate, obj):
+def is_valid_authentication_api(json_schema_validate, obj):
     json_schema_validate('jsd_a6bfcd88e22c5c138657b340870b4ebb_v2_3_5_3').validate(obj)
     return True
 
 
-def authentication_ap_i(api):
-    endpoint_result = api.authentication_management.authentication_ap_i(
+def authentication_api(api):
+    endpoint_result = api.authentication_management.authentication_api(
         active_validation=True,
         payload=None
     )
@@ -153,11 +153,11 @@ def authentication_ap_i(api):
 
 
 @pytest.mark.authentication_management
-def test_authentication_ap_i(api, validator):
+def test_authentication_api(api, validator):
     try:
-        assert is_valid_authentication_ap_i(
+        assert is_valid_authentication_api(
             validator,
-            authentication_ap_i(api)
+            authentication_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -165,8 +165,8 @@ def test_authentication_ap_i(api, validator):
             raise original_e
 
 
-def authentication_ap_i_default_val(api):
-    endpoint_result = api.authentication_management.authentication_ap_i(
+def authentication_api_default_val(api):
+    endpoint_result = api.authentication_management.authentication_api(
         active_validation=True,
         payload=None
     )
@@ -174,11 +174,11 @@ def authentication_ap_i_default_val(api):
 
 
 @pytest.mark.authentication_management
-def test_authentication_ap_i_default_val(api, validator):
+def test_authentication_api_default_val(api, validator):
     try:
-        assert is_valid_authentication_ap_i(
+        assert is_valid_authentication_api(
             validator,
-            authentication_ap_i_default_val(api)
+            authentication_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

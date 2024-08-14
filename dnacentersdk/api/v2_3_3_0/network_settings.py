@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -87,7 +85,7 @@ class NetworkSettings(object):
             snmpV2ReadId(string): Network Settings's Snmp V2 Read Id.
             snmpV2WriteId(string): Network Settings's Snmp V2 Write Id.
             snmpV3Id(string): Network Settings's Snmp V3 Id.
-            site_id(basestring): siteId path parameter. site id to assign credential. .
+            site_id(str): siteId path parameter. site id to assign credential. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -108,15 +106,15 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
                 check_type(headers.get('__persistbapioutput'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -197,7 +195,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -267,7 +265,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -311,7 +309,7 @@ class NetworkSettings(object):
         """API to get device credential details. .
 
         Args:
-            site_id(basestring): siteId query parameter. Site id to retrieve the credential details associated with
+            site_id(str): siteId query parameter. Site id to retrieve the credential details associated with
                 the site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -328,11 +326,11 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -367,7 +365,7 @@ class NetworkSettings(object):
         """Delete device credential. .
 
         Args:
-            id(basestring): id path parameter. global credential id .
+            id(str): id path parameter. global credential id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -383,12 +381,12 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -423,8 +421,8 @@ class NetworkSettings(object):
         """API to get global pool. .
 
         Args:
-            offset(basestring, int): offset query parameter. offset/starting row .
-            limit(basestring, int): limit query parameter. No of Global Pools to be retrieved .
+            offset(str, int): offset query parameter. offset/starting row .
+            limit(str, int): limit query parameter. No of Global Pools to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -440,12 +438,12 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, (basestring, int))
-        check_type(limit, (basestring, int))
+        check_type(offset, (str, int))
+        check_type(limit, (str, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -508,7 +506,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -578,7 +576,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -622,7 +620,7 @@ class NetworkSettings(object):
         """API to delete global IP pool. .
 
         Args:
-            id(basestring): id path parameter. global pool id .
+            id(str): id path parameter. global pool id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -638,12 +636,12 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -677,7 +675,7 @@ class NetworkSettings(object):
         """API to get  DHCP and DNS center server details. .
 
         Args:
-            site_id(basestring): siteId query parameter. Site id to get the network settings associated with the
+            site_id(str): siteId query parameter. Site id to get the network settings associated with the
                 site. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -694,11 +692,11 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
+        check_type(site_id, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -738,7 +736,7 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(basestring): siteId path parameter. Site id to which site details to associate with the network
+            site_id(str): siteId path parameter. Site id to which site details to associate with the network
                 settings. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -760,7 +758,7 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if '__persistbapioutput' in headers:
@@ -768,7 +766,7 @@ class NetworkSettings(object):
                            bool)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -817,7 +815,7 @@ class NetworkSettings(object):
 
         Args:
             settings(object): Network Settings's settings.
-            site_id(basestring): siteId path parameter. Site id to update the network settings which is associated
+            site_id(str): siteId path parameter. Site id to update the network settings which is associated
                 with the site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -839,12 +837,12 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -891,9 +889,9 @@ class NetworkSettings(object):
         """API to get the ip subpool info. .
 
         Args:
-            site_id(basestring): siteId query parameter. site id to get the reserve ip associated with the site .
-            offset(basestring, int): offset query parameter. offset/starting row .
-            limit(basestring, int): limit query parameter. No of Global Pools to be retrieved .
+            site_id(str): siteId query parameter. site id to get the reserve ip associated with the site .
+            offset(str, int): offset query parameter. offset/starting row .
+            limit(str, int): limit query parameter. No of Global Pools to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -909,13 +907,13 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(site_id, basestring)
-        check_type(offset, (basestring, int))
-        check_type(limit, (basestring, int))
+        check_type(site_id, str)
+        check_type(offset, (str, int))
+        check_type(limit, (str, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'siteId':
@@ -954,7 +952,7 @@ class NetworkSettings(object):
         """API to delete the reserved ip subpool .
 
         Args:
-            id(basestring): id path parameter. Id of reserve ip subpool to be deleted. .
+            id(str): id path parameter. Id of reserve ip subpool to be deleted. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -970,12 +968,12 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1063,7 +1061,7 @@ class NetworkSettings(object):
             slaacSupport(boolean): Network Settings's Slaac Support.
             type(string): Network Settings's Type of the reserve ip sub pool . Available values are 'Generic',
                 'LAN', 'WAN', 'management' and 'service'.
-            site_id(basestring): siteId path parameter. Site id to reserve the ip sub pool. .
+            site_id(str): siteId path parameter. Site id to reserve the ip sub pool. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1084,12 +1082,12 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1211,8 +1209,8 @@ class NetworkSettings(object):
             ipv6TotalHost(integer): Network Settings's IPv6 total host is required when ipv6prefix value is false. .
             name(string): Network Settings's Name of the reserve ip sub pool .
             slaacSupport(boolean): Network Settings's Slaac Support.
-            site_id(basestring): siteId path parameter. Site id of site to update sub pool. .
-            id(basestring): id query parameter. Id of subpool to be associated with the site .
+            site_id(str): siteId path parameter. Site id of site to update sub pool. .
+            id(str): id query parameter. Id of subpool to be associated with the site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1233,14 +1231,14 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'id':
@@ -1330,7 +1328,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1389,7 +1387,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1459,7 +1457,7 @@ class NetworkSettings(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -1503,7 +1501,7 @@ class NetworkSettings(object):
         """API to delete Service Provider profile (QoS). .
 
         Args:
-            sp_profile_name(basestring): spProfileName path parameter. sp profile name .
+            sp_profile_name(str): spProfileName path parameter. sp profile name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1519,12 +1517,12 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(sp_profile_name, basestring,
+        check_type(sp_profile_name, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

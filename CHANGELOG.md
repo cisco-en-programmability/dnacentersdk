@@ -6,6 +6,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.2] - 2024-08-09
+- Update User-Agent header in RestSession
+- Update requirements:
+  + python = "^3.8"
+  + requests = "^2.32.0"
+  + readthedocs-sphinx-search = "^0.3.2"
+### Fixed
+- Fix function names in 2.3.7.6 `user_and_roles`
+  + From add_role_ap_i to add_role_api
+  + From get_a_a_a_attribute_ap_i to get_aaa_attribute_api
+  + From get_permissions_ap_i to get_permissions_api
+  + From delete_role_ap_i to delete_role_api
+  + From get_roles_ap_i to get_roles_api
+  + From get_users_ap_i to get_users_api
+  + From add_user_ap_i to add_user_api
+  + From update_user_ap_i to update_user_api
+  + From delete_user_ap_i to delete_user_api
+  + From get_external_authentication_setting_ap_i to get_external_authentication_setting_api
+  + From manage_external_authentication_setting_ap_i to manage_external_authentication_setting_api
+  + From get_external_authentication_servers_ap_i to get_external_authentication_servers_api
+  + From add_and_update_a_a_a_attribute_ap_i to add_and_update_aaa_attribute_api
+  + From delete_a_a_a_attribute_ap_i to delete_aaa_attribute_api
+  + From get_a_a_a_attribute_ap_i to get_aaa_attribute_api
+
+
+## [2.7.1] - 2024-05-31
+### Fixed
+- Updated package version retrieval method from pkg_resources to importlib.metadata.
+
+## [2.7.0] - 2024-05-31
+### Added
+- Add support of DNA Center versions ('2.3.7.6')
+- Adds modules for v2_3_7_6
+### Changed
+- The future library was removed
+- The past library was removed
+- Changed basestring to str
+- Requirements updated
+### Fixed
+- Fix headers in `create_webhook_destination` and `update_webhook_destination`
+
+
 ## [2.6.11] - 2023-01-10
 ### Fixed
 - Configuration template import template - check_type error #142 - Fixing required schema.
@@ -82,7 +124,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Compatibility matrix added in `readme.rst`
 
 ### Fixed
-- Offset and limit now support basestring and int
+- Offset and limit now support str and int
   + dnacentersdk.api.v2_3_3_0.application_policy
   + dnacentersdk.api.v2_3_3_0.applications
   + dnacentersdk.api.v2_3_3_0.compliance
@@ -470,4 +512,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.9]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.8...v2.6.9
 [2.6.10]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.9...v2.6.10
 [2.6.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...develop
+[2.7.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...v2.7.0
+[2.7.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1
+[2.7.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...v2.7.2
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...develop

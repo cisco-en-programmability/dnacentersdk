@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -112,7 +110,7 @@ class SiteDesign(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -158,7 +156,7 @@ class SiteDesign(object):
         """Returns provisioning device information for the specified IP address. .
 
         Args:
-            device_ip(basestring): deviceIp query parameter. Device to which the provisioning detail has to be
+            device_ip(str): deviceIp query parameter. Device to which the provisioning detail has to be
                 retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -177,12 +175,12 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-device-details-by-ip
         """
         check_type(headers, dict)
-        check_type(device_ip, basestring,
+        check_type(device_ip, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'deviceIp':
@@ -218,8 +216,8 @@ class SiteDesign(object):
         """Associate Site to a Network Profile .
 
         Args:
-            network_profile_id(basestring): networkProfileId path parameter. Network-Profile Id to be associated .
-            site_id(basestring): siteId path parameter. Site Id to be associated .
+            network_profile_id(str): networkProfileId path parameter. Network-Profile Id to be associated .
+            site_id(str): siteId path parameter. Site Id to be associated .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -237,17 +235,17 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!associate
         """
         check_type(headers, dict)
-        check_type(network_profile_id, basestring,
+        check_type(network_profile_id, str,
                    may_be_none=False)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -284,8 +282,8 @@ class SiteDesign(object):
         """Disassociate a Site from a Network Profile .
 
         Args:
-            network_profile_id(basestring): networkProfileId path parameter. Network-Profile Id to be associated .
-            site_id(basestring): siteId path parameter. Site Id to be associated .
+            network_profile_id(str): networkProfileId path parameter. Network-Profile Id to be associated .
+            site_id(str): siteId path parameter. Site Id to be associated .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -303,14 +301,14 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!disassociate
         """
         check_type(headers, dict)
-        check_type(network_profile_id, basestring,
+        check_type(network_profile_id, str,
                    may_be_none=False)
-        check_type(site_id, basestring,
+        check_type(site_id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -383,7 +381,7 @@ class SiteDesign(object):
                            bool, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -457,7 +455,7 @@ class SiteDesign(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -508,8 +506,8 @@ class SiteDesign(object):
 
         Args:
             device(list): Site Design's device (list of objects).
-            id(basestring): id path parameter. Id of the NFV profile to be updated .
-            name(basestring): name query parameter. Name of the profile to be updated .
+            id(str): id path parameter. Id of the NFV profile to be updated .
+            name(str): name query parameter. Name of the profile to be updated .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -532,13 +530,13 @@ class SiteDesign(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(name, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':
@@ -588,10 +586,10 @@ class SiteDesign(object):
         """API to get NFV network profile. .
 
         Args:
-            id(basestring): id path parameter. ID of network profile to retrieve. .
+            id(str): id path parameter. ID of network profile to retrieve. .
             offset(int): offset query parameter. offset/starting row .
             limit(int): limit query parameter. Number of profile to be retrieved .
-            name(basestring): name query parameter. Name of network profile to be retrieved .
+            name(str): name query parameter. Name of network profile to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -611,13 +609,13 @@ class SiteDesign(object):
         check_type(headers, dict)
         check_type(offset, int)
         check_type(limit, int)
-        check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(name, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -658,8 +656,8 @@ class SiteDesign(object):
         """API to delete nfv network profile. .
 
         Args:
-            id(basestring): id path parameter. Id of nfv network profile to delete.  .
-            name(basestring): name query parameter. Nameof nfv network profile to delete.  .
+            id(str): id path parameter. Id of nfv network profile to delete.  .
+            name(str): name query parameter. Nameof nfv network profile to delete.  .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -677,13 +675,13 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!delete-nfv-profile
         """
         check_type(headers, dict)
-        check_type(name, basestring)
-        check_type(id, basestring,
+        check_type(name, str)
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'name':

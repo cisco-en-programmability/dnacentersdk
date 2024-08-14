@@ -22,11 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
 
 from builtins import *
 
-from past.builtins import basestring
 
 from ...restsession import RestSession
 from ...utils import (
@@ -97,10 +95,10 @@ class LanAutomation(object):
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -132,7 +130,6 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_3_0', json_data)
 
-
     def lan_automation_session_count(self,
                                      headers=None,
                                      **request_parameters):
@@ -157,7 +154,7 @@ class LanAutomation(object):
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -191,9 +188,9 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session logs. .
 
         Args:
-            offset(basestring, int): offset query parameter. Starting index of the LAN Automation session. Minimum value
+            offset(str, int): offset query parameter. Starting index of the LAN Automation session. Minimum value
                 is 1. .
-            limit(basestring, int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value
+            limit(str, int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value
                 can range between 1 to 10. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -210,12 +207,12 @@ class LanAutomation(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, (basestring, int))
-        check_type(limit, (basestring, int))
+        check_type(offset, (str, int))
+        check_type(limit, (str, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -252,7 +249,7 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session logs based on the given LAN Automation session id. .
 
         Args:
-            id(basestring): id path parameter. LAN Automation session identifier. .
+            id(str): id path parameter. LAN Automation session identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -268,12 +265,12 @@ class LanAutomation(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -308,9 +305,9 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session status.  .
 
         Args:
-            offset(basestring, int): offset query parameter. Starting index of the LAN Automation session. Minimum value
+            offset(str, int): offset query parameter. Starting index of the LAN Automation session. Minimum value
                 is 1. .
-            limit(basestring, int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value
+            limit(str, int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value
                 can range between 1 to 10. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -327,12 +324,12 @@ class LanAutomation(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, (basestring, int))
-        check_type(limit, (basestring, int))
+        check_type(offset, (str, int))
+        check_type(limit, (str, int))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
             'offset':
@@ -369,7 +366,7 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session status based on the given Lan Automation session id. .
 
         Args:
-            id(basestring): id path parameter. LAN Automation session identifier. .
+            id(str): id path parameter. LAN Automation session identifier. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -385,12 +382,12 @@ class LanAutomation(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }
@@ -424,7 +421,7 @@ class LanAutomation(object):
         """Invoke this API to stop LAN Automation for the given site.  .
 
         Args:
-            id(basestring): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
+            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
                 automation/status. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -441,12 +438,12 @@ class LanAutomation(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(id, basestring,
+        check_type(id, str,
                    may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
-                           basestring, may_be_none=False)
+                           str, may_be_none=False)
 
         _params = {
         }

@@ -28,17 +28,11 @@ pytest_plugins = [
     'tests.test_importsdk',
     'tests.test_dnacentersdk',
     'tests.api',
-    'tests.api.v1_2_10',
-    'tests.api.v1_3_0',
-    'tests.api.v1_3_1',
-    'tests.api.v1_3_3',
-    'tests.api.v2_1_1',
-    'tests.api.v2_1_2',
-    'tests.api.v2_2_1',
     'tests.api.v2_2_2_3',
     'tests.api.v2_2_3_3',
     'tests.api.v2_3_3_0',
     'tests.api.v2_3_5_3',
+    'tests.api.v2_3_7_6',
 ]
 
 
@@ -67,7 +61,6 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "cisco_dna_center_system: cisco_dna_center_system wrapper test"
     )
-    
     config.addinivalue_line(
         "markers", "clients: clients wrapper test"
     )
@@ -102,13 +95,10 @@ def pytest_configure(config):
         "markers", "discovery: discovery wrapper test"
     )
     config.addinivalue_line(
-        "markers", "eo_x: eo_x wrapper test"
+        "markers", "eox: eox wrapper test"
     )
     config.addinivalue_line(
         "markers", "event_management: event_management wrapper test"
-    )
-    config.addinivalue_line(
-        "markers", "fabric_wired: fabric_wired wrapper test"
     )
     config.addinivalue_line(
         "markers", "fabric_wireless: fabric_wireless wrapper test"
@@ -135,16 +125,7 @@ def pytest_configure(config):
         "markers", "licenses: licenses wrapper test"
     )
     config.addinivalue_line(
-        "markers", "network_discovery: network_discovery wrapper test"
-    )
-    config.addinivalue_line(
         "markers", "network_settings: network_settings wrapper test"
-    )
-    config.addinivalue_line(
-        "markers", "networks: networks wrapper test"
-    )
-    config.addinivalue_line(
-        "markers", "non_fabric_wireless: non_fabric_wireless wrapper test"
     )
     config.addinivalue_line(
         "markers", "path_trace: path_trace wrapper test"
@@ -153,7 +134,7 @@ def pytest_configure(config):
         "markers", "platform: platform wrapper test"
     )
     config.addinivalue_line(
-        "markers", "pnp: pnp wrapper test"
+        "markers", "platform_configuration: platform_configuration wrapper test"
     )
     config.addinivalue_line(
         "markers", "policy: policy wrapper test"
@@ -165,9 +146,6 @@ def pytest_configure(config):
         "markers", "sda: sda wrapper test"
     )
     config.addinivalue_line(
-        "markers", "swim: swim wrapper test"
-    )
-    config.addinivalue_line(
         "markers", "security_advisories: security_advisories wrapper test"
     )
     config.addinivalue_line(
@@ -175,9 +153,6 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "site_design: site_design wrapper test"
-    )
-    config.addinivalue_line(
-        "markers", "site_profile: site_profile wrapper test"
     )
     config.addinivalue_line(
         "markers", "sites: sites wrapper test"
@@ -193,9 +168,6 @@ def pytest_configure(config):
     )
     config.addinivalue_line(
         "markers", "task: task wrapper test"
-    )
-    config.addinivalue_line(
-        "markers", "template_programmer: template_programmer wrapper test"
     )
     config.addinivalue_line(
         "markers", "topology: topology wrapper test"
