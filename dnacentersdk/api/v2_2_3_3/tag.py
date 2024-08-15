@@ -446,7 +446,7 @@ class Tag(object):
         queried by using the /tag/member/type API .
 
         Args:
-            memberToTags(list): Tag's memberToTags (list of objects).
+            memberToTags(object): Tag's memberToTags.
             memberType(string): Tag's memberType.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

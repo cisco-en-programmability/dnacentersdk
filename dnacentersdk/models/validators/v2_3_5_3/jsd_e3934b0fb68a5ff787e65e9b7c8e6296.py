@@ -40,7 +40,6 @@ class JSONSchemaValidatorE3934B0FB68A5Ff787E65E9B7C8E6296(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "memberToTags": {
-                "items": {
                 "properties": {
                 "key": {
                 "items": {
@@ -50,8 +49,6 @@ class JSONSchemaValidatorE3934B0FB68A5Ff787E65E9B7C8E6296(object):
                 }
                 },
                 "type": "object"
-                },
-                "type": "array"
                 },
                 "memberType": {
                 "type": "string"
