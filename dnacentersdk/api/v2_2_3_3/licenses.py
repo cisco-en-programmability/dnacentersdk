@@ -161,7 +161,7 @@ class Licenses(object):
             sort_by(str): sort_by query parameter. Sort result by field .
             dna_level(str): dna_level query parameter. Device Cisco DNA license level .
             device_type(str): device_type query parameter. Type of device .
-            limit(int): limit query parameter.
+            limit(int,str): limit query parameter.
             registration_status(str): registration_status query parameter. Smart license registration status
                 of device .
             virtual_account_name(str): virtual_account_name query parameter. Name of virtual account .

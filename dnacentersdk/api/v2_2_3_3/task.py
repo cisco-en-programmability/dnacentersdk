@@ -154,8 +154,8 @@ class Task(object):
             failure_reason(str): failureReason query parameter. Fetch tasks that contains this failure reason
                 .
             parent_id(str): parentId query parameter. Fetch tasks that have this parent Id .
-            offset(str): offset query parameter.
-            limit(str): limit query parameter.
+            offset(str,int): offset query parameter.
+            limit(str,int): limit query parameter.
             sort_by(str): sortBy query parameter. Sort results by this field .
             order(str): order query parameter. Sort order asc or dsc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -183,8 +183,8 @@ class Task(object):
         check_type(is_error, str)
         check_type(failure_reason, str)
         check_type(parent_id, str)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -358,8 +358,8 @@ class Task(object):
 
         Args:
             operation_id(str): operationId path parameter.
-            offset(int): offset path parameter. Index, minimum value is 0 .
-            limit(int): limit path parameter. The maximum value of {limit} supported is 500.               Base 1
+            offset(int,str): offset path parameter. Index, minimum value is 0 .
+            limit(int,str): limit path parameter. The maximum value of {limit} supported is 500.               Base 1
                 indexing for {limit}, minimum value is 1 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

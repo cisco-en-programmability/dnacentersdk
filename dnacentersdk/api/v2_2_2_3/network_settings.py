@@ -421,8 +421,8 @@ class NetworkSettings(object):
         """API to get global pool. .
 
         Args:
-            offset(str): offset query parameter. offset/starting row .
-            limit(str): limit query parameter. No of Global Pools to be retrieved .
+            offset(str,int): offset query parameter. offset/starting row .
+            limit(str,int): limit query parameter. No of Global Pools to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -438,8 +438,8 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -889,8 +889,8 @@ class NetworkSettings(object):
 
         Args:
             site_id(str): siteId query parameter. site id to get the reserve ip associated with the site .
-            offset(str): offset query parameter. offset/starting row .
-            limit(str): limit query parameter. No of Global Pools to be retrieved .
+            offset(str,int): offset query parameter. offset/starting row .
+            limit(str,int): limit query parameter. No of Global Pools to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -907,8 +907,8 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(site_id, str)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

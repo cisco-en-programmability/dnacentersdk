@@ -75,8 +75,8 @@ class Devices(object):
 
         Args:
             building_id(str): buildingId path parameter. Building Id .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(int,str): limit query parameter.
+            offset(int,str): offset query parameter.
             radios(bool): radios query parameter. inlcude planned radio details .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -95,8 +95,8 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-building
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         check_type(radios, bool)
         check_type(building_id, str,
                    may_be_none=False)
@@ -293,9 +293,9 @@ class Devices(object):
             health(str): health query parameter. The device overall health (One of POOR, FAIR, GOOD) .
             start_time(int): startTime query parameter. UTC epoch time in milliseconds .
             end_time(int): endTime query parameter. UTC epoch time in miliseconds .
-            limit(int): limit query parameter. Max number of device entries in the response (default to 50.  Max at
+            limit(int,str): limit query parameter. Max number of device entries in the response (default to 50.  Max at
                 1000) .
-            offset(int): offset query parameter. The offset of the first device in the returned data .
+            offset(int,str): offset query parameter. The offset of the first device in the returned data .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -318,8 +318,8 @@ class Devices(object):
         check_type(health, str)
         check_type(start_time, int)
         check_type(end_time, int)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -374,8 +374,8 @@ class Devices(object):
 
         Args:
             floor_id(str): floorId path parameter. Floor Id .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(int,str): limit query parameter.
+            offset(int,str): offset query parameter.
             radios(bool): radios query parameter. inlcude planned radio details .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -394,8 +394,8 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-floor
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         check_type(radios, bool)
         check_type(floor_id, str,
                    may_be_none=False)
@@ -446,8 +446,8 @@ class Devices(object):
         """Returns all available interfaces. This endpoint can return a maximum of 500 interfaces .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             last_input_time(str): lastInputTime query parameter. Last Input Time .
             last_output_time(str): lastOutputTime query parameter. Last Output Time .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -467,8 +467,8 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-all-interfaces
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(last_input_time, str)
         check_type(last_output_time, str)
         if headers is not None:
@@ -1353,8 +1353,8 @@ class Devices(object):
                 the given ids. If invalid or not-found ids are provided, null entry will be returned in
                 the list. .
             device_support_level(str): deviceSupportLevel query parameter.
-            offset(int): offset query parameter. offset >= 1 [X gives results from Xth device onwards] .
-            limit(int): limit query parameter. 1 <= limit <= 500 [max. no. of devices to be returned in the result]
+            offset(int,str): offset query parameter. offset >= 1 [X gives results from Xth device onwards] .
+            limit(int,str): limit query parameter. 1 <= limit <= 500 [max. no. of devices to be returned in the result]
                 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1405,8 +1405,8 @@ class Devices(object):
         check_type(module_operationstatecode, (str, list, set, tuple))
         check_type(id, str)
         check_type(device_support_level, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -1910,8 +1910,8 @@ class Devices(object):
             role(str): role query parameter.
             role_source(str): roleSource query parameter.
             associated_wlc_ip(str): associatedWlcIp query parameter.
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1949,8 +1949,8 @@ class Devices(object):
         check_type(role, str)
         check_type(role_source, str)
         check_type(associated_wlc_ip, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -2545,8 +2545,8 @@ class Devices(object):
 
         Args:
             site_id(str): siteId path parameter.
-            offset(int): offset query parameter. Row Number.  Default value is 1 .
-            limit(int): limit query parameter. Default value is 500 .
+            offset(int,str): offset query parameter. Row Number.  Default value is 1 .
+            limit(int,str): limit query parameter. Default value is 500 .
             category(str): category query parameter. Links mismatch category.  Value can be speed-duplex or
                 vlan. .
             sort_by(str): sortBy query parameter. Sort By .
@@ -2568,8 +2568,8 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!inventory-insight-device-link-mismatch
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(category, str,
                    may_be_none=False)
         check_type(sort_by, str)
@@ -2630,8 +2630,8 @@ class Devices(object):
 
         Args:
             site_id(str): siteId path parameter.
-            offset(int): offset query parameter. Row Number.  Default value is 1 .
-            limit(int): limit query parameter. Default value is 500 .
+            offset(int,str): offset query parameter. Row Number.  Default value is 1 .
+            limit(int,str): limit query parameter. Default value is 500 .
             sort_by(str): sortBy query parameter. Sort By .
             order(str): order query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -2651,8 +2651,8 @@ class Devices(object):
             https://developer.cisco.com/docs/dna-center/#!get-devices-with-snmpv3-des
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         check_type(site_id, str,
@@ -2767,8 +2767,8 @@ class Devices(object):
 
         Args:
             device_id(str): deviceId query parameter.
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(int,str): limit query parameter.
+            offset(int,str): offset query parameter.
             name_list(str, list, set, tuple): nameList query parameter.
             vendor_equipment_type_list(str, list, set, tuple): vendorEquipmentTypeList query parameter.
             part_number_list(str, list, set, tuple): partNumberList query parameter.
@@ -2792,8 +2792,8 @@ class Devices(object):
         check_type(headers, dict)
         check_type(device_id, str,
                    may_be_none=False)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         check_type(name_list, (str, list, set, tuple))
         check_type(vendor_equipment_type_list, (str, list, set, tuple))
         check_type(part_number_list, (str, list, set, tuple))

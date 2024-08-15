@@ -520,8 +520,8 @@ class Sites(object):
 
         Args:
             site_id(str): siteId path parameter. Site id to retrieve device associated with the site. .
-            offset(int): offset query parameter. offset/starting row .
-            limit(int): limit query parameter. Number of sites to be retrieved .
+            offset(int,str): offset query parameter. offset/starting row .
+            limit(int,str): limit query parameter. Number of sites to be retrieved .
             device_family(str): deviceFamily query parameter. Device family name  .
             serial_number(str): serialNumber query parameter. Device serial number .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -539,8 +539,8 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(device_family, str)
         check_type(serial_number, str)
         check_type(site_id, str,
@@ -682,8 +682,8 @@ class Sites(object):
             name(str): name query parameter. Site name hierarchy (E.g Global/USA/CA) .
             site_id(str): siteId query parameter. Site Id .
             type(str): type query parameter. Site type (Ex: area, building, floor) .
-            offset(int): offset query parameter. Offset/starting index for pagination. Indexed from 1. .
-            limit(int): limit query parameter. Number of sites to be listed .
+            offset(int,str): offset query parameter. Offset/starting index for pagination. Indexed from 1. .
+            limit(int,str): limit query parameter. Number of sites to be listed .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -702,8 +702,8 @@ class Sites(object):
         check_type(name, str)
         check_type(site_id, str)
         check_type(type, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -754,9 +754,9 @@ class Sites(object):
 
         Args:
             site_type(str): siteType query parameter. site type: AREA or BUILDING (case insensitive) .
-            offset(int): offset query parameter. Offset of the first returned data set entry (Multiple of 'limit' +
+            offset(int,str): offset query parameter. Offset of the first returned data set entry (Multiple of 'limit' +
                 1) .
-            limit(int): limit query parameter. Max number of data entries in the returned data set [1,50].  Default
+            limit(int,str): limit query parameter. Max number of data entries in the returned data set [1,50].  Default
                 is 25 .
             timestamp(int): timestamp query parameter. Epoch time(in milliseconds) when the Site Hierarchy data is
                 required .
@@ -776,8 +776,8 @@ class Sites(object):
         """
         check_type(headers, dict)
         check_type(site_type, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(timestamp, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -831,8 +831,8 @@ class Sites(object):
 
         Args:
             id(str): id path parameter. Site Id .
-            offset(str): offset query parameter. Offset/starting index for pagination .
-            limit(str): limit query parameter. Number of devices to be listed. Default and max supported
+            offset(str,int): offset query parameter. Offset/starting index for pagination .
+            limit(str,int): limit query parameter. Number of devices to be listed. Default and max supported
                 value is 500 .
             member_type(str): memberType query parameter. Member type (This API only supports the
                 'networkdevice' type) .
@@ -853,8 +853,8 @@ class Sites(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(member_type, str,
                    may_be_none=False)
         check_type(level, str)
@@ -1112,8 +1112,8 @@ class Sites(object):
                 Global/USA/CA) .
             id(str): id query parameter. Site Id .
             type(str): type query parameter. Site type (Acceptable values: area, building, floor) .
-            offset(str): offset query parameter. Offset/starting index for pagination .
-            limit(str): limit query parameter. Number of sites to be listed. Default and max supported value
+            offset(str,int): offset query parameter. Offset/starting index for pagination .
+            limit(str,int): limit query parameter. Number of sites to be listed. Default and max supported value
                 is 500 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1133,8 +1133,8 @@ class Sites(object):
         check_type(group_name_hierarchy, str)
         check_type(id, str)
         check_type(type, str)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

@@ -113,8 +113,8 @@ class EventManagement(object):
                 .
             description(str): description query parameter. String full/partial search (Provided input string
                 is case insensitively matched for records). .
-            offset(int): offset query parameter. Position of a particular Audit Log record in the data.  .
-            limit(int): limit query parameter. Number of Audit Log records to be returned per page. .
+            offset(int,str): offset query parameter. Position of a particular Audit Log record in the data.  .
+            limit(int,str): limit query parameter. Number of Audit Log records to be returned per page. .
             start_time(int): startTime query parameter. Start Time in milliseconds since Epoch Eg. 1597950637211
                 (when provided endTime is mandatory) .
             end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
@@ -154,8 +154,8 @@ class EventManagement(object):
         check_type(device_id, str)
         check_type(is_system_events, bool)
         check_type(description, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(sort_by, str)
@@ -440,8 +440,8 @@ class EventManagement(object):
                 .
             description(str): description query parameter. String full/partial search (Provided input string
                 is case insensitively matched for records). .
-            offset(int): offset query parameter. Position of a particular Audit Log record in the data.  .
-            limit(int): limit query parameter. Number of Audit Log records to be returned per page. .
+            offset(int,str): offset query parameter. Position of a particular Audit Log record in the data.  .
+            limit(int,str): limit query parameter. Number of Audit Log records to be returned per page. .
             start_time(int): startTime query parameter. Start Time in milliseconds since Epoch Eg. 1597950637211
                 (when provided endTime is mandatory) .
             end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
@@ -482,8 +482,8 @@ class EventManagement(object):
         check_type(device_id, str)
         check_type(is_system_events, bool)
         check_type(description, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(sort_by, str)
@@ -644,8 +644,8 @@ class EventManagement(object):
             domain(str): domain query parameter.
             sub_domain(str): subDomain query parameter. Sub Domain .
             source(str): source query parameter.
-            offset(int): offset query parameter. Start Offset .
-            limit(int): limit query parameter. # of records .
+            offset(int,str): offset query parameter. Start Offset .
+            limit(int,str): limit query parameter. # of records .
             sort_by(str): sortBy query parameter. Sort By column .
             order(str): order query parameter. Ascending/Descending order [asc/desc] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -673,8 +673,8 @@ class EventManagement(object):
         check_type(domain, str)
         check_type(sub_domain, str)
         check_type(source, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -840,9 +840,9 @@ class EventManagement(object):
         Args:
             event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds .
-            offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
+            offset(int,str): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
-            limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
+            limit(int,str): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
             sort_by(str): sortBy query parameter. SortBy field name .
             order(str): order query parameter.
@@ -863,8 +863,8 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         check_type(event_ids, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -1488,9 +1488,9 @@ class EventManagement(object):
         Args:
             event_ids(str): eventIds query parameter. List of email subscriptions related to the respective
                 eventIds (Comma separated event ids) .
-            offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
+            offset(int,str): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
-            limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
+            limit(int,str): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
             sort_by(str): sortBy query parameter. SortBy field name .
             order(str): order query parameter.
@@ -1511,8 +1511,8 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         check_type(event_ids, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -1633,9 +1633,9 @@ class EventManagement(object):
         Args:
             event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds (Comma separated event ids) .
-            offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
+            offset(int,str): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
-            limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
+            limit(int,str): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
             sort_by(str): sortBy query parameter. SortBy field name .
             order(str): order query parameter.
@@ -1656,8 +1656,8 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         check_type(event_ids, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -1904,9 +1904,9 @@ class EventManagement(object):
         Args:
             event_ids(str): eventIds query parameter. List of subscriptions related to the respective
                 eventIds (Comma separated event ids) .
-            offset(int): offset query parameter. The number of Subscriptions's to offset in the resultset whose
+            offset(int,str): offset query parameter. The number of Subscriptions's to offset in the resultset whose
                 default value 0 .
-            limit(int): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
+            limit(int,str): limit query parameter. The number of Subscriptions's to limit in the resultset whose default
                 value 10 .
             sort_by(str): sortBy query parameter. SortBy field name .
             order(str): order query parameter.
@@ -1927,8 +1927,8 @@ class EventManagement(object):
         """
         check_type(headers, dict)
         check_type(event_ids, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -1984,9 +1984,9 @@ class EventManagement(object):
         Args:
             event_id(str): eventId query parameter. The registered EventId should be provided .
             tags(str): tags query parameter. The registered Tags should be provided .
-            offset(int): offset query parameter. The number of Registries to offset in the resultset whose default
+            offset(int,str): offset query parameter. The number of Registries to offset in the resultset whose default
                 value 0 .
-            limit(int): limit query parameter. The number of Registries to limit in the resultset whose default
+            limit(int,str): limit query parameter. The number of Registries to limit in the resultset whose default
                 value 10 .
             sort_by(str): sortBy query parameter. SortBy field name .
             order(str): order query parameter.
@@ -2009,8 +2009,8 @@ class EventManagement(object):
         check_type(event_id, str)
         check_type(tags, str,
                    may_be_none=False)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
@@ -2130,8 +2130,8 @@ class EventManagement(object):
         Args:
             event_ids(str): eventIds query parameter. List of eventIds .
             tags(str): tags query parameter. Tags defined .
-            offset(int): offset query parameter. Record start offset .
-            limit(int): limit query parameter. # of records to return in result set .
+            offset(int,str): offset query parameter. Record start offset .
+            limit(int,str): limit query parameter. # of records to return in result set .
             sort_by(str): sortBy query parameter. Sort by field .
             order(str): order query parameter. sorting order (asc/desc) .
             search(str): search query parameter. findd matches in name, description, eventId, type, category
@@ -2154,8 +2154,8 @@ class EventManagement(object):
         check_type(headers, dict)
         check_type(event_ids, str)
         check_type(tags, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         check_type(search, str)

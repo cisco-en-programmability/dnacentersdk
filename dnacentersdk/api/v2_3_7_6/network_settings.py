@@ -426,8 +426,8 @@ class NetworkSettings(object):
         """API to get the global pool. .
 
         Args:
-            offset(int): offset query parameter. Offset/starting row. Indexed from 1. Default value of 1. .
-            limit(int): limit query parameter. Number of Global Pools to be retrieved. Default is 25 if not
+            offset(int,str): offset query parameter. Offset/starting row. Indexed from 1. Default value of 1. .
+            limit(int,str): limit query parameter. Number of Global Pools to be retrieved. Default is 25 if not
                 specified. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -444,8 +444,8 @@ class NetworkSettings(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -902,8 +902,8 @@ class NetworkSettings(object):
             site_id(str): siteId query parameter. site id of site from which to retrieve associated reserve
                 pools. Either siteId (per site queries) or ignoreInheritedGroups must be used. They can
                 also be used together.  .
-            offset(int): offset query parameter. offset/starting row. Indexed from 1. .
-            limit(int): limit query parameter. Number of reserve pools to be retrieved. Default is 25 if not
+            offset(int,str): offset query parameter. offset/starting row. Indexed from 1. .
+            limit(int,str): limit query parameter. Number of reserve pools to be retrieved. Default is 25 if not
                 specified. Maximum allowed limit is 500. .
             ignore_inherited_groups(str): ignoreInheritedGroups query parameter. Ignores pools inherited from
                 parent site. Either siteId or ignoreInheritedGroups must be passed. They can also be
@@ -927,8 +927,8 @@ class NetworkSettings(object):
         """
         check_type(headers, dict)
         check_type(site_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(ignore_inherited_groups, str)
         check_type(pool_usage, str)
         check_type(group_name, str)

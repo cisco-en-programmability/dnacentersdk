@@ -180,8 +180,8 @@ class Tag(object):
             additional_info_name_space(str): additionalInfo.nameSpace query parameter.
             additional_info_attributes(str): additionalInfo.attributes query parameter.
             level(str): level query parameter.
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             size(str): size query parameter. size in kilobytes(KB) .
             field(str): field query parameter. Available field names are
                 :'name,id,parentId,type,additionalInfo.nameSpace,additionalInfo.attributes' .
@@ -210,8 +210,8 @@ class Tag(object):
         check_type(additional_info_name_space, str)
         check_type(additional_info_attributes, str)
         check_type(level, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(size, str)
         check_type(field, str)
         check_type(sort_by, str)
@@ -704,9 +704,9 @@ class Tag(object):
             id(str): id path parameter. Tag ID .
             member_type(str): memberType query parameter. Entity type of the member. Possible values can be
                 retrieved by using /tag/member/type API .
-            offset(str): offset query parameter. Used for pagination. It indicates the starting row number
+            offset(str,int): offset query parameter. Used for pagination. It indicates the starting row number
                 out of available member records .
-            limit(str): limit query parameter. Used to Number of maximum members to return in the result .
+            limit(str,int): limit query parameter. Used to Number of maximum members to return in the result .
             member_association_type(str): memberAssociationType query parameter. Indicates how the member is
                 associated with the tag. Possible values and description. 1) DYNAMIC : The member is
                 associated to the tag through rules. 2) STATIC – The member is associated to the tag
@@ -732,8 +732,8 @@ class Tag(object):
         check_type(headers, dict)
         check_type(member_type, str,
                    may_be_none=False)
-        check_type(offset, str)
-        check_type(limit, str)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(member_association_type, str)
         check_type(level, str)
         check_type(id, str,

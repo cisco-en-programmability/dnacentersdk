@@ -254,8 +254,8 @@ class SoftwareImageManagementSwim(object):
             image_size_lesser_than(int): imageSizeLesserThan query parameter. size in bytes .
             sort_by(str): sortBy query parameter. sort results by this field .
             sort_order(str): sortOrder query parameter. sort order 'asc' or 'des'. Default is asc .
-            limit(int): limit query parameter.
-            offset(int): offset query parameter.
+            limit(int,str): limit query parameter.
+            offset(int,str): offset query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -289,8 +289,8 @@ class SoftwareImageManagementSwim(object):
         check_type(image_size_lesser_than, int)
         check_type(sort_by, str)
         check_type(sort_order, str)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

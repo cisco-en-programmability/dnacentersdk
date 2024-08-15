@@ -222,10 +222,10 @@ class Policy(object):
                 data. Defaults to 'Custom Rule'. .
             include_deleted(bool): includeDeleted query parameter. Flag to indicate whether deleted rules should be
                 part of the records fetched. .
-            limit(int): limit query parameter. Maximum number of records to be fetched. If not provided, 500 records
+            limit(int,str): limit query parameter. Maximum number of records to be fetched. If not provided, 500 records
                 will be fetched by default. To fetch all the records in the system, provide a large
                 value for this parameter. .
-            offset(int): offset query parameter. Record offset to start data fetch at. Offset starts at zero. .
+            offset(int,str): offset query parameter. Record offset to start data fetch at. Offset starts at zero. .
             sort_by(str): sortBy query parameter. Name of the column to sort the results on. Please note that
                 fetch might take more time if sorting is requested. .
             order(str): order query parameter. Order to be used for sorting. .
@@ -246,8 +246,8 @@ class Policy(object):
         check_type(headers, dict)
         check_type(rule_type, str)
         check_type(include_deleted, bool)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         check_type(sort_by, str)
         check_type(order, str)
         if headers is not None:
