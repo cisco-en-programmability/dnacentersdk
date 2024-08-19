@@ -587,8 +587,8 @@ class SiteDesign(object):
 
         Args:
             id(str): id path parameter. ID of network profile to retrieve. .
-            offset(int): offset query parameter. offset/starting row .
-            limit(int): limit query parameter. Number of profile to be retrieved .
+            offset(int,str): offset query parameter. offset/starting row .
+            limit(int,str): limit query parameter. Number of profile to be retrieved .
             name(str): name query parameter. Name of network profile to be retrieved .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -607,8 +607,8 @@ class SiteDesign(object):
             https://developer.cisco.com/docs/dna-center/#!get-nfv-profile
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(name, str)
         check_type(id, str,
                    may_be_none=False)

@@ -427,6 +427,7 @@ class DNACenterAPI(object):
                  base_url=None,
                  single_request_timeout=None,
                  wait_on_rate_limit=None,
+                 session=None,
                  verify=None,
                  version=None,
                  debug=None,
@@ -479,6 +480,8 @@ class DNACenterAPI(object):
                 (or DNA_CENTER_VERIFY_STRING) environment variable or
                 dnacentersdk.config.DEFAULT_VERIFY if the environment
                 variables are not set.
+            session(requests.Session): Optionally inject a `requests.Session`
+                instance to use for HTTP operations.
             version(str): Controls which version of DNA_CENTER to use.
                 Defaults to the DNA_CENTER_VERSION environment variable or
                 dnacentersdk.config.DEFAULT_VERSION
@@ -518,7 +521,9 @@ class DNACenterAPI(object):
             wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
 
         if verify is None:
-            verify = dnacenter_environment.get_env_verify() or DEFAULT_VERIFY
+            verify = dnacenter_environment.get_env_verify()
+            if verify is None:
+                verify = DEFAULT_VERIFY
 
         version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
 
@@ -584,6 +589,7 @@ class DNACenterAPI(object):
             base_url=base_url,
             single_request_timeout=single_request_timeout,
             wait_on_rate_limit=wait_on_rate_limit,
+            session=session,
             verify=verify,
             version=version,
             debug=debug,

@@ -197,8 +197,8 @@ class DeviceOnboardingPnp(object):
         devices. Pagination and sorting are also supported by this endpoint .
 
         Args:
-            limit(int): limit query parameter. Limits number of results .
-            offset(int): offset query parameter. Index of first result .
+            limit(int,str): limit query parameter. Limits number of results .
+            offset(int,str): offset query parameter. Index of first result .
             sort(str, list, set, tuple): sort query parameter. Comma seperated list of fields to sort on .
             sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             serial_number(str, list, set, tuple): serialNumber query parameter. Device Serial Number .
@@ -235,8 +235,8 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         check_type(sort, (str, list, set, tuple))
         check_type(sort_order, str)
         check_type(serial_number, (str, list, set, tuple))
@@ -2030,8 +2030,8 @@ class DeviceOnboardingPnp(object):
         50 workflows. Pagination and sorting are also supported by this endpoint .
 
         Args:
-            limit(int): limit query parameter. Limits number of results .
-            offset(int): offset query parameter. Index of first result .
+            limit(int,str): limit query parameter. Limits number of results .
+            offset(int,str): offset query parameter. Index of first result .
             sort(str, list, set, tuple): sort query parameter. Comma seperated lost of fields to sort on .
             sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
             type(str, list, set, tuple): type query parameter. Workflow Type .
@@ -2052,8 +2052,8 @@ class DeviceOnboardingPnp(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(limit, int)
-        check_type(offset, int)
+        check_type(limit, (int, str))
+        check_type(offset, (int, str))
         check_type(sort, (str, list, set, tuple))
         check_type(sort_order, str)
         check_type(type, (str, list, set, tuple))

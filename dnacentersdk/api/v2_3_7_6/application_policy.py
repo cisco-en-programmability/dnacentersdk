@@ -545,8 +545,8 @@ class ApplicationPolicy(object):
         """Get appllication-sets by offset/limit or by name .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             name(str): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -563,8 +563,8 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -962,8 +962,8 @@ class ApplicationPolicy(object):
         """Get applications by offset/limit or by name .
 
         Args:
-            offset(int): offset query parameter. The offset of the first application to be returned .
-            limit(int): limit query parameter. The maximum number of applications to be returned .
+            offset(int,str): offset query parameter. The offset of the first application to be returned .
+            limit(int,str): limit query parameter. The maximum number of applications to be returned .
             name(str): name query parameter. Application's name .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -981,8 +981,8 @@ class ApplicationPolicy(object):
             ApiError: If the DNA Center cloud returns an error.
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -1436,9 +1436,9 @@ class ApplicationPolicy(object):
         Args:
             attributes(str): attributes query parameter. Attributes to retrieve, valid value applicationSet .
             name(str): name query parameter. Application set name .
-            offset(int): offset query parameter. The starting point or index from where the paginated results should
+            offset(int,str): offset query parameter. The starting point or index from where the paginated results should
                 begin. .
-            limit(int): limit query parameter. The limit which is the maximum number of items to include in a single
+            limit(int,str): limit query parameter. The limit which is the maximum number of items to include in a single
                 page of results, max value 500 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -1754,9 +1754,9 @@ class ApplicationPolicy(object):
         Args:
             attributes(str): attributes query parameter. Attributes to retrieve, valid value application .
             name(str): name query parameter. The application name .
-            offset(int): offset query parameter. The starting point or index from where the paginated results should
+            offset(int,str): offset query parameter. The starting point or index from where the paginated results should
                 begin. .
-            limit(int): limit query parameter. The limit which is the maximum number of items to include in a single
+            limit(int,str): limit query parameter. The limit which is the maximum number of items to include in a single
                 page of results, max value 500 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .

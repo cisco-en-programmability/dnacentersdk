@@ -220,8 +220,8 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session logs. .
 
         Args:
-            offset(int): offset query parameter. Starting index of the LAN Automation session. Minimum value is 1. .
-            limit(int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value can
+            offset(int,str): offset query parameter. Starting index of the LAN Automation session. Minimum value is 1. .
+            limit(int,str): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value can
                 range between 1 to 10. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -240,8 +240,8 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-log
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -494,8 +494,8 @@ class LanAutomation(object):
         """Invoke this API to get the LAN Automation session status.  .
 
         Args:
-            offset(int): offset query parameter. Starting index of the LAN Automation session. Minimum value is 1. .
-            limit(int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value can
+            offset(int,str): offset query parameter. Starting index of the LAN Automation session. Minimum value is 1. .
+            limit(int,str): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value can
                 range between 1 to 10. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -514,8 +514,8 @@ class LanAutomation(object):
             https://developer.cisco.com/docs/dna-center/#!lan-automation-status
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

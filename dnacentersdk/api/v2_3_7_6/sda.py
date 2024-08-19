@@ -2959,8 +2959,8 @@ class Sda(object):
                 .
             vlan_name(str): vlanName query parameter. Get anycast gateways associated with this VLAN name. .
             vlan_id(int): vlanId query parameter. Get anycast gateways associated with this VLAN ID. .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2982,8 +2982,8 @@ class Sda(object):
         check_type(ip_pool_name, str)
         check_type(vlan_name, str)
         check_type(vlan_id, int)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -3427,8 +3427,8 @@ class Sda(object):
 
         Args:
             extranet_policy_name(str): extranetPolicyName query parameter. Name of the extranet policy. .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3445,8 +3445,8 @@ class Sda(object):
         """
         check_type(headers, dict)
         check_type(extranet_policy_name, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -3602,8 +3602,8 @@ class Sda(object):
             network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
             device_roles(str): deviceRoles query parameter. Device roles of the fabric device. .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3623,8 +3623,8 @@ class Sda(object):
                    may_be_none=False)
         check_type(network_device_id, str)
         check_type(device_roles, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -4000,8 +4000,8 @@ class Sda(object):
             fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
             network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4020,8 +4020,8 @@ class Sda(object):
         check_type(fabric_id, str,
                    may_be_none=False)
         check_type(network_device_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -4448,8 +4448,8 @@ class Sda(object):
             fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
             network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4468,8 +4468,8 @@ class Sda(object):
         check_type(fabric_id, str,
                    may_be_none=False)
         check_type(network_device_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -4710,8 +4710,8 @@ class Sda(object):
             fabric_id(str): fabricId query parameter. ID of the fabric this device belongs to. .
             network_device_id(str): networkDeviceId query parameter. Network device ID of the fabric device.
                 .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4730,8 +4730,8 @@ class Sda(object):
         check_type(fabric_id, str,
                    may_be_none=False)
         check_type(network_device_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -5030,8 +5030,8 @@ class Sda(object):
             id(str): id query parameter. ID of the fabric site to search for in the database. .
             site_id(str): siteId query parameter. Get the fabric site associated with this network hierarchy.
                 .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5049,8 +5049,8 @@ class Sda(object):
         check_type(headers, dict)
         check_type(id, str)
         check_type(site_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -5332,8 +5332,8 @@ class Sda(object):
             id(str): id query parameter. ID of the fabric zone to search for in the database. .
             site_id(str): siteId query parameter. get the fabric zone associated with this network hierarchy.
                 .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of records to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of records to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5351,8 +5351,8 @@ class Sda(object):
         check_type(headers, dict)
         check_type(id, str)
         check_type(site_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -5706,8 +5706,8 @@ class Sda(object):
             interface_name(str): interfaceName query parameter. Interface Name of the port assignment .
             data_vlan_name(str): dataVlanName query parameter. Data VLAN name of the port assignment .
             voice_vlan_name(str): voiceVlanName query parameter. Voice VLAN name of the port assignment .
-            offset(int): offset query parameter. Starting record for pagination .
-            limit(int): limit query parameter. Maximum number of records to return .
+            offset(int,str): offset query parameter. Starting record for pagination .
+            limit(int,str): limit query parameter. Maximum number of records to return .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -5728,8 +5728,8 @@ class Sda(object):
         check_type(interface_name, str)
         check_type(data_vlan_name, str)
         check_type(voice_vlan_name, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -6182,8 +6182,8 @@ class Sda(object):
             id(str): id query parameter. ID of the provisioned device. .
             network_device_id(str): networkDeviceId query parameter. ID of the network device. .
             site_id(str): siteId query parameter. ID of the site hierarchy. .
-            offset(int): offset query parameter. Starting record for pagination. .
-            limit(int): limit query parameter. Maximum number of devices to return. .
+            offset(int,str): offset query parameter. Starting record for pagination. .
+            limit(int,str): limit query parameter. Maximum number of devices to return. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -6202,8 +6202,8 @@ class Sda(object):
         check_type(id, str)
         check_type(network_device_id, str)
         check_type(site_id, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

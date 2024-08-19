@@ -527,30 +527,32 @@ class SystemSettings(object):
         """
         check_type(headers, dict)
         check_type(payload, dict)
-        check_type(id, str,
-                   may_be_none=False)
+        check_type(id, str, may_be_none=False)
         if headers is not None:
             if 'X-Auth-Token' in headers:
-                check_type(headers.get('X-Auth-Token'),
-                           str, may_be_none=False)
+                check_type(headers.get('X-Auth-Token'), str, may_be_none=False)
 
-        _params = {
-        }
+        _params = {}
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
 
         path_params = {
             'id': id,
         }
-        _payload = {
-            'isCertAcceptedByUser':
-                isCertAcceptedByUser,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
-        if active_validation:
-            self._request_validator('jsd_e0ed6b9a530ea05d77a199ded4e3_v2_3_7_6')\
-                .validate(_payload)
+
+        valide = False
+        if isCertAcceptedByUser is None and (payload is None or payload == {}):
+            _payload = {}
+        else:
+            _payload = {
+                'isCertAcceptedByUser': isCertAcceptedByUser,
+            }
+            _payload.update(payload or {})
+            _payload = dict_from_items_with_values(_payload)
+            valide = True
+
+        if active_validation and valide:
+            self._request_validator('jsd_e0ed6b9a530ea05d77a199ded4e3_v2_3_7_6').validate(_payload)
 
         with_custom_headers = False
         _headers = self._session.headers or {}

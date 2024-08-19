@@ -578,8 +578,8 @@ class Discovery(object):
         """Returns the list of discovery jobs for the given IP .
 
         Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             ip_address(str): ipAddress query parameter.
             name(str): name query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -599,8 +599,8 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!get-discovery-jobs-by-ip
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(ip_address, str,
                    may_be_none=False)
         check_type(name, str)
@@ -768,8 +768,8 @@ class Discovery(object):
 
         Args:
             id(str): id path parameter. Discovery ID .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             ip_address(str): ipAddress query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -788,8 +788,8 @@ class Discovery(object):
             https://developer.cisco.com/docs/dna-center/#!get-list-of-discoveries-by-discovery-id
         """
         check_type(headers, dict)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(ip_address, str)
         check_type(id, str,
                    may_be_none=False)

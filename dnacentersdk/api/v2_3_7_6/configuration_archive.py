@@ -167,8 +167,8 @@ class ConfigurationArchive(object):
                 : time in milliseconds (epoc format) .
             created_by(str): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
                 CONFIG_CHANGE_EVENT, SCHEDULED_FIRST_TIME, DR_CALL_BACK, PRE_DEPLOY .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int,str): offset query parameter.
+            limit(int,str): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -189,8 +189,8 @@ class ConfigurationArchive(object):
         check_type(file_type, str)
         check_type(created_time, str)
         check_type(created_by, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),

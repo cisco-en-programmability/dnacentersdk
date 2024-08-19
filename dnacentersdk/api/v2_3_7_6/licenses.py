@@ -163,7 +163,7 @@ class Licenses(object):
                 Advantage, Essentials .
             device_type(str): device_type query parameter. Type of device. The valid values are Routers,
                 Switches and Hubs, Wireless Controller .
-            limit(int): limit query parameter.
+            limit(int,str): limit query parameter.
             registration_status(str): registration_status query parameter. Smart license registration status
                 of device. The valid values are Unknown, NA, Unregistered, Registered,
                 Registration_expired, Reservation_in_progress, Registered_slr, Registered_plr,

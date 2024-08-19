@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.3] - 2024-08-19
+- Refactor error message construction in ApiError class
+- Injection for requests.Session
+### Fixed
+- Fixed a problem when exporting the environment variable verify
+- Update offset and limit parameter type to support int and str value
+- `accept_cisco_ise_server_certificate_for_cisco_ise_server_integration` accept empty payload {} to retry
+- Update memberToTags from list to object in `updates_tag_membership`
+- Update offset and limit parameter type to support int and str value
+
 ## [2.7.2] - 2024-08-09
 - Update User-Agent header in RestSession
 - Update requirements:
@@ -515,4 +525,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.7.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...v2.7.0
 [2.7.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1
 [2.7.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...v2.7.2
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...develop
+[2.7.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...v2.7.3
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.3...develop

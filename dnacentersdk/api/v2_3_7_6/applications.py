@@ -91,9 +91,9 @@ class Applications(object):
             end_time(int): endTime query parameter. Ending epoch time in milliseconds of time window .
             application_health(str): applicationHealth query parameter. Application health category (POOR,
                 FAIR, or GOOD.  Optionally use with siteId only) .
-            offset(int): offset query parameter. The offset of the first application in the returned data
+            offset(int,str): offset query parameter. The offset of the first application in the returned data
                 (optionally used with siteId only) .
-            limit(int): limit query parameter. The max number of application entries in returned data [1, 1000]
+            limit(int,str): limit query parameter. The max number of application entries in returned data [1, 1000]
                 (optionally used with siteId only) .
             application_name(str): applicationName query parameter. The name of the application to get
                 information on .
@@ -118,8 +118,8 @@ class Applications(object):
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(application_health, str)
-        check_type(offset, int)
-        check_type(limit, int)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
         check_type(application_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
