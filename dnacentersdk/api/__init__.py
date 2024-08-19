@@ -521,7 +521,9 @@ class DNACenterAPI(object):
             wait_on_rate_limit = dnacenter_environment.get_env_wait_on_rate_limit() or DEFAULT_WAIT_ON_RATE_LIMIT
 
         if verify is None:
-            verify = dnacenter_environment.get_env_verify() or DEFAULT_VERIFY
+            verify = dnacenter_environment.get_env_verify()
+            if verify is None:
+                verify = DEFAULT_VERIFY
 
         version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
 
