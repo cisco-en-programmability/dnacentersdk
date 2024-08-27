@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNACenterAPI userand_roles API fixtures and tests.
+"""DNACenterAPI user_and_roles API fixtures and tests.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -35,7 +35,7 @@ def is_valid_add_role_api(json_schema_validate, obj):
 
 
 def add_role_api(api):
-    endpoint_result = api.userand_roles.add_role_api(
+    endpoint_result = api.user_and_roles.add_role_api(
         active_validation=True,
         description='string',
         payload=None,
@@ -45,7 +45,7 @@ def add_role_api(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_add_role_api(api, validator):
     try:
         assert is_valid_add_role_api(
@@ -59,7 +59,7 @@ def test_add_role_api(api, validator):
 
 
 def add_role_api_default_val(api):
-    endpoint_result = api.userand_roles.add_role_api(
+    endpoint_result = api.user_and_roles.add_role_api(
         active_validation=True,
         description=None,
         payload=None,
@@ -69,7 +69,7 @@ def add_role_api_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_add_role_api_default_val(api, validator):
     try:
         assert is_valid_add_role_api(
@@ -87,7 +87,7 @@ def is_valid_update_role_api(json_schema_validate, obj):
 
 
 def update_role_api(api):
-    endpoint_result = api.userand_roles.update_role_api(
+    endpoint_result = api.user_and_roles.update_role_api(
         active_validation=True,
         description='string',
         payload=None,
@@ -97,7 +97,7 @@ def update_role_api(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_update_role_api(api, validator):
     try:
         assert is_valid_update_role_api(
@@ -111,7 +111,7 @@ def test_update_role_api(api, validator):
 
 
 def update_role_api_default_val(api):
-    endpoint_result = api.userand_roles.update_role_api(
+    endpoint_result = api.user_and_roles.update_role_api(
         active_validation=True,
         description=None,
         payload=None,
@@ -121,7 +121,7 @@ def update_role_api_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_update_role_api_default_val(api, validator):
     try:
         assert is_valid_update_role_api(
@@ -139,13 +139,13 @@ def is_valid_get_permissions_api(json_schema_validate, obj):
 
 
 def get_permissions_api(api):
-    endpoint_result = api.userand_roles.get_permissions_api(
+    endpoint_result = api.user_and_roles.get_permissions_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_permissions_api(api, validator):
     try:
         assert is_valid_get_permissions_api(
@@ -159,13 +159,13 @@ def test_get_permissions_api(api, validator):
 
 
 def get_permissions_api_default_val(api):
-    endpoint_result = api.userand_roles.get_permissions_api(
+    endpoint_result = api.user_and_roles.get_permissions_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_permissions_api_default_val(api, validator):
     try:
         assert is_valid_get_permissions_api(
@@ -183,13 +183,13 @@ def is_valid_delete_role_api(json_schema_validate, obj):
 
 
 def delete_role_api(api):
-    endpoint_result = api.userand_roles.delete_role_api(
+    endpoint_result = api.user_and_roles.delete_role_api(
         role_id='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_delete_role_api(api, validator):
     try:
         assert is_valid_delete_role_api(
@@ -203,13 +203,13 @@ def test_delete_role_api(api, validator):
 
 
 def delete_role_api_default_val(api):
-    endpoint_result = api.userand_roles.delete_role_api(
+    endpoint_result = api.user_and_roles.delete_role_api(
         role_id='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_delete_role_api_default_val(api, validator):
     try:
         assert is_valid_delete_role_api(
@@ -227,13 +227,13 @@ def is_valid_get_roles_api(json_schema_validate, obj):
 
 
 def get_roles_api(api):
-    endpoint_result = api.userand_roles.get_roles_api(
+    endpoint_result = api.user_and_roles.get_roles_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_roles_api(api, validator):
     try:
         assert is_valid_get_roles_api(
@@ -247,13 +247,13 @@ def test_get_roles_api(api, validator):
 
 
 def get_roles_api_default_val(api):
-    endpoint_result = api.userand_roles.get_roles_api(
+    endpoint_result = api.user_and_roles.get_roles_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_roles_api_default_val(api, validator):
     try:
         assert is_valid_get_roles_api(
@@ -271,14 +271,14 @@ def is_valid_get_users_api(json_schema_validate, obj):
 
 
 def get_users_api(api):
-    endpoint_result = api.userand_roles.get_users_api(
+    endpoint_result = api.user_and_roles.get_users_api(
         auth_source='string',
         invoke_source='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_users_api(api, validator):
     try:
         assert is_valid_get_users_api(
@@ -292,14 +292,14 @@ def test_get_users_api(api, validator):
 
 
 def get_users_api_default_val(api):
-    endpoint_result = api.userand_roles.get_users_api(
+    endpoint_result = api.user_and_roles.get_users_api(
         auth_source=None,
         invoke_source=None
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_users_api_default_val(api, validator):
     try:
         assert is_valid_get_users_api(
@@ -317,7 +317,7 @@ def is_valid_add_user_api(json_schema_validate, obj):
 
 
 def add_user_api(api):
-    endpoint_result = api.userand_roles.add_user_api(
+    endpoint_result = api.user_and_roles.add_user_api(
         active_validation=True,
         email='string',
         firstName='string',
@@ -330,7 +330,7 @@ def add_user_api(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_add_user_api(api, validator):
     try:
         assert is_valid_add_user_api(
@@ -344,7 +344,7 @@ def test_add_user_api(api, validator):
 
 
 def add_user_api_default_val(api):
-    endpoint_result = api.userand_roles.add_user_api(
+    endpoint_result = api.user_and_roles.add_user_api(
         active_validation=True,
         email=None,
         firstName=None,
@@ -357,7 +357,7 @@ def add_user_api_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_add_user_api_default_val(api, validator):
     try:
         assert is_valid_add_user_api(
@@ -375,7 +375,7 @@ def is_valid_update_user_api(json_schema_validate, obj):
 
 
 def update_user_api(api):
-    endpoint_result = api.userand_roles.update_user_api(
+    endpoint_result = api.user_and_roles.update_user_api(
         active_validation=True,
         email='string',
         firstName='string',
@@ -388,7 +388,7 @@ def update_user_api(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_update_user_api(api, validator):
     try:
         assert is_valid_update_user_api(
@@ -402,7 +402,7 @@ def test_update_user_api(api, validator):
 
 
 def update_user_api_default_val(api):
-    endpoint_result = api.userand_roles.update_user_api(
+    endpoint_result = api.user_and_roles.update_user_api(
         active_validation=True,
         email=None,
         firstName=None,
@@ -415,7 +415,7 @@ def update_user_api_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_update_user_api_default_val(api, validator):
     try:
         assert is_valid_update_user_api(
@@ -433,13 +433,13 @@ def is_valid_delete_user_api(json_schema_validate, obj):
 
 
 def delete_user_api(api):
-    endpoint_result = api.userand_roles.delete_user_api(
+    endpoint_result = api.user_and_roles.delete_user_api(
         user_id='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_delete_user_api(api, validator):
     try:
         assert is_valid_delete_user_api(
@@ -453,13 +453,13 @@ def test_delete_user_api(api, validator):
 
 
 def delete_user_api_default_val(api):
-    endpoint_result = api.userand_roles.delete_user_api(
+    endpoint_result = api.user_and_roles.delete_user_api(
         user_id='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_delete_user_api_default_val(api, validator):
     try:
         assert is_valid_delete_user_api(
@@ -477,13 +477,13 @@ def is_valid_get_external_authentication_setting_api(json_schema_validate, obj):
 
 
 def get_external_authentication_setting_api(api):
-    endpoint_result = api.userand_roles.get_external_authentication_setting_api(
+    endpoint_result = api.user_and_roles.get_external_authentication_setting_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_external_authentication_setting_api(api, validator):
     try:
         assert is_valid_get_external_authentication_setting_api(
@@ -497,13 +497,13 @@ def test_get_external_authentication_setting_api(api, validator):
 
 
 def get_external_authentication_setting_api_default_val(api):
-    endpoint_result = api.userand_roles.get_external_authentication_setting_api(
+    endpoint_result = api.user_and_roles.get_external_authentication_setting_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_external_authentication_setting_api_default_val(api, validator):
     try:
         assert is_valid_get_external_authentication_setting_api(
@@ -521,7 +521,7 @@ def is_valid_manage_external_authentication_setting_api(json_schema_validate, ob
 
 
 def manage_external_authentication_setting_api(api):
-    endpoint_result = api.userand_roles.manage_external_authentication_setting_api(
+    endpoint_result = api.user_and_roles.manage_external_authentication_setting_api(
         active_validation=True,
         enable=True,
         payload=None
@@ -529,7 +529,7 @@ def manage_external_authentication_setting_api(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_manage_external_authentication_setting_api(api, validator):
     try:
         assert is_valid_manage_external_authentication_setting_api(
@@ -543,7 +543,7 @@ def test_manage_external_authentication_setting_api(api, validator):
 
 
 def manage_external_authentication_setting_api_default_val(api):
-    endpoint_result = api.userand_roles.manage_external_authentication_setting_api(
+    endpoint_result = api.user_and_roles.manage_external_authentication_setting_api(
         active_validation=True,
         enable=None,
         payload=None
@@ -551,7 +551,7 @@ def manage_external_authentication_setting_api_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_manage_external_authentication_setting_api_default_val(api, validator):
     try:
         assert is_valid_manage_external_authentication_setting_api(
@@ -569,13 +569,13 @@ def is_valid_get_external_authentication_servers_api(json_schema_validate, obj):
 
 
 def get_external_authentication_servers_api(api):
-    endpoint_result = api.userand_roles.get_external_authentication_servers_api(
+    endpoint_result = api.user_and_roles.get_external_authentication_servers_api(
         invoke_source='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_external_authentication_servers_api(api, validator):
     try:
         assert is_valid_get_external_authentication_servers_api(
@@ -589,13 +589,13 @@ def test_get_external_authentication_servers_api(api, validator):
 
 
 def get_external_authentication_servers_api_default_val(api):
-    endpoint_result = api.userand_roles.get_external_authentication_servers_api(
+    endpoint_result = api.user_and_roles.get_external_authentication_servers_api(
         invoke_source=None
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_external_authentication_servers_api_default_val(api, validator):
     try:
         assert is_valid_get_external_authentication_servers_api(
@@ -607,13 +607,13 @@ def test_get_external_authentication_servers_api_default_val(api, validator):
             raise original_e
 
 
-def is_valid_add_and_update_a_a_a_attribute_api(json_schema_validate, obj):
+def is_valid_add_and_update_aaa_attribute_api(json_schema_validate, obj):
     json_schema_validate('jsd_9f5bfccc7e30550baa7046f74daa1ef2_v2_3_7_6').validate(obj)
     return True
 
 
-def add_and_update_a_a_a_attribute_api(api):
-    endpoint_result = api.userand_roles.add_and_update_a_a_a_attribute_api(
+def add_and_update_aaa_attribute_api(api):
+    endpoint_result = api.user_and_roles.add_and_update_aaa_attribute_api(
         active_validation=True,
         attributeName='string',
         payload=None
@@ -621,12 +621,12 @@ def add_and_update_a_a_a_attribute_api(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
-def test_add_and_update_a_a_a_attribute_api(api, validator):
+@pytest.mark.user_and_roles
+def test_add_and_update_aaa_attribute_api(api, validator):
     try:
-        assert is_valid_add_and_update_a_a_a_attribute_api(
+        assert is_valid_add_and_update_aaa_attribute_api(
             validator,
-            add_and_update_a_a_a_attribute_api(api)
+            add_and_update_aaa_attribute_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -634,8 +634,8 @@ def test_add_and_update_a_a_a_attribute_api(api, validator):
             raise original_e
 
 
-def add_and_update_a_a_a_attribute_api_default_val(api):
-    endpoint_result = api.userand_roles.add_and_update_a_a_a_attribute_api(
+def add_and_update_aaa_attribute_api_default_val(api):
+    endpoint_result = api.user_and_roles.add_and_update_aaa_attribute_api(
         active_validation=True,
         attributeName=None,
         payload=None
@@ -643,36 +643,36 @@ def add_and_update_a_a_a_attribute_api_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
-def test_add_and_update_a_a_a_attribute_api_default_val(api, validator):
+@pytest.mark.user_and_roles
+def test_add_and_update_aaa_attribute_api_default_val(api, validator):
     try:
-        assert is_valid_add_and_update_a_a_a_attribute_api(
+        assert is_valid_add_and_update_aaa_attribute_api(
             validator,
-            add_and_update_a_a_a_attribute_api_default_val(api)
+            add_and_update_aaa_attribute_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_a_a_a_attribute_api(json_schema_validate, obj):
+def is_valid_delete_aaa_attribute_api(json_schema_validate, obj):
     json_schema_validate('jsd_f20c99b436bd5be8bdb9094db3a47f01_v2_3_7_6').validate(obj)
     return True
 
 
-def delete_a_a_a_attribute_api(api):
-    endpoint_result = api.userand_roles.delete_a_a_a_attribute_api(
+def delete_aaa_attribute_api(api):
+    endpoint_result = api.user_and_roles.delete_aaa_attribute_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
-def test_delete_a_a_a_attribute_api(api, validator):
+@pytest.mark.user_and_roles
+def test_delete_aaa_attribute_api(api, validator):
     try:
-        assert is_valid_delete_a_a_a_attribute_api(
+        assert is_valid_delete_aaa_attribute_api(
             validator,
-            delete_a_a_a_attribute_api(api)
+            delete_aaa_attribute_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -680,43 +680,43 @@ def test_delete_a_a_a_attribute_api(api, validator):
             raise original_e
 
 
-def delete_a_a_a_attribute_api_default_val(api):
-    endpoint_result = api.userand_roles.delete_a_a_a_attribute_api(
+def delete_aaa_attribute_api_default_val(api):
+    endpoint_result = api.user_and_roles.delete_aaa_attribute_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
-def test_delete_a_a_a_attribute_api_default_val(api, validator):
+@pytest.mark.user_and_roles
+def test_delete_aaa_attribute_api_default_val(api, validator):
     try:
-        assert is_valid_delete_a_a_a_attribute_api(
+        assert is_valid_delete_aaa_attribute_api(
             validator,
-            delete_a_a_a_attribute_api_default_val(api)
+            delete_aaa_attribute_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_a_a_a_attribute_api(json_schema_validate, obj):
+def is_valid_get_aaa_attribute_api(json_schema_validate, obj):
     json_schema_validate('jsd_4bedf83096a45ad1beaaa1fc6c192103_v2_3_7_6').validate(obj)
     return True
 
 
-def get_a_a_a_attribute_api(api):
-    endpoint_result = api.userand_roles.get_a_a_a_attribute_api(
+def get_aaa_attribute_api(api):
+    endpoint_result = api.user_and_roles.get_aaa_attribute_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
-def test_get_a_a_a_attribute_api(api, validator):
+@pytest.mark.user_and_roles
+def test_get_aaa_attribute_api(api, validator):
     try:
-        assert is_valid_get_a_a_a_attribute_api(
+        assert is_valid_get_aaa_attribute_api(
             validator,
-            get_a_a_a_attribute_api(api)
+            get_aaa_attribute_api(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -724,19 +724,19 @@ def test_get_a_a_a_attribute_api(api, validator):
             raise original_e
 
 
-def get_a_a_a_attribute_api_default_val(api):
-    endpoint_result = api.userand_roles.get_a_a_a_attribute_api(
+def get_aaa_attribute_api_default_val(api):
+    endpoint_result = api.user_and_roles.get_aaa_attribute_api(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
-def test_get_a_a_a_attribute_api_default_val(api, validator):
+@pytest.mark.user_and_roles
+def test_get_aaa_attribute_api_default_val(api, validator):
     try:
-        assert is_valid_get_a_a_a_attribute_api(
+        assert is_valid_get_aaa_attribute_api(
             validator,
-            get_a_a_a_attribute_api_default_val(api)
+            get_aaa_attribute_api_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -441,12 +441,12 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
     TOPOLOGY_4199688eb4ab5a978fe8785516c8af42_PATTERN = re.compile(r"/dna/intent/api/v1/topology/physical-topology")
     TOPOLOGY_f7abdb7ab46a5918a74e839488ff6ae0_PATTERN = re.compile(r"/dna/intent/api/v1/topology/site-topology")
     TOPOLOGY_fb6000ce8d8854bc80be3803b8dee1b7_PATTERN = re.compile(r"/dna/intent/api/v1/topology/vlan/vlan-names")
-    USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a_PATTERN = re.compile(r"/dna/system/api/v1/role/permissions")
-    USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c_PATTERN = re.compile(r"/dna/system/api/v1/roles")
-    USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015_PATTERN = re.compile(r"/dna/system/api/v1/user")
-    USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702_PATTERN = re.compile(r"/dna/system/api/v1/user")
-    USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN = re.compile(r"/dna/system/api/v1/user")
-    USERAND_ROLES_452738def9045d4d9c96bcd42172a79c_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers")
+    user_and_roles_9ec0b30eca9d540a845848cffd7c602a_PATTERN = re.compile(r"/dna/system/api/v1/role/permissions")
+    user_and_roles_bef02e8f6f8354dc99e375826a87c88c_PATTERN = re.compile(r"/dna/system/api/v1/roles")
+    user_and_roles_7fa405b6d1be56739f2dfeea63212015_PATTERN = re.compile(r"/dna/system/api/v1/user")
+    user_and_roles_6d82755e5e03510daf0951c1f42c2702_PATTERN = re.compile(r"/dna/system/api/v1/user")
+    user_and_roles_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN = re.compile(r"/dna/system/api/v1/user")
+    user_and_roles_452738def9045d4d9c96bcd42172a79c_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers")
     USERS_70f9c1d861a051b4a4928f2e6d84b2e3_PATTERN = re.compile(r"/dna/intent/api/v1/user-enrichment-details")
     WIRELESS_dde2b077d6d052dcae5a76f4aac09c1d_PATTERN = re.compile(r"/dna/intent/api/v1/AssuranceGetSensorTestResults")
     WIRELESS_d825ae9a117f5b6bb65b7d78fd42513c_PATTERN = re.compile(r"/dna/intent/api/v1/business/ssid")
@@ -7870,13 +7870,13 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a(self):
+    def matches_user_and_roles_9ec0b30eca9d540a845848cffd7c602a(self):
         return re.search(
-            self.USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a_PATTERN,
+            self.user_and_roles_9ec0b30eca9d540a845848cffd7c602a_PATTERN,
             self.path
         )
 
-    def userand_roles_get_permissions_ap_i_response(self):
+    def user_and_roles_get_permissions_ap_i_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7887,13 +7887,13 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c(self):
+    def matches_user_and_roles_bef02e8f6f8354dc99e375826a87c88c(self):
         return re.search(
-            self.USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c_PATTERN,
+            self.user_and_roles_bef02e8f6f8354dc99e375826a87c88c_PATTERN,
             self.path
         )
 
-    def userand_roles_get_roles_ap_i_response(self):
+    def user_and_roles_get_roles_ap_i_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7904,13 +7904,13 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015(self):
+    def matches_user_and_roles_7fa405b6d1be56739f2dfeea63212015(self):
         return re.search(
-            self.USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015_PATTERN,
+            self.user_and_roles_7fa405b6d1be56739f2dfeea63212015_PATTERN,
             self.path
         )
 
-    def userand_roles_get_users_ap_i_response(self):
+    def user_and_roles_get_users_ap_i_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7921,13 +7921,13 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702(self):
+    def matches_user_and_roles_6d82755e5e03510daf0951c1f42c2702(self):
         return re.search(
-            self.USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702_PATTERN,
+            self.user_and_roles_6d82755e5e03510daf0951c1f42c2702_PATTERN,
             self.path
         )
 
-    def userand_roles_add_user_ap_i_response(self):
+    def user_and_roles_add_user_ap_i_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7938,13 +7938,13 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e(self):
+    def matches_user_and_roles_34d2bd5f05bd535a89ebadb30e2ede9e(self):
         return re.search(
-            self.USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN,
+            self.user_and_roles_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN,
             self.path
         )
 
-    def userand_roles_update_user_ap_i_response(self):
+    def user_and_roles_update_user_ap_i_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -7955,13 +7955,13 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_452738def9045d4d9c96bcd42172a79c(self):
+    def matches_user_and_roles_452738def9045d4d9c96bcd42172a79c(self):
         return re.search(
-            self.USERAND_ROLES_452738def9045d4d9c96bcd42172a79c_PATTERN,
+            self.user_and_roles_452738def9045d4d9c96bcd42172a79c_PATTERN,
             self.path
         )
 
-    def userand_roles_get_external_authentication_servers_ap_i_response(self):
+    def user_and_roles_get_external_authentication_servers_ap_i_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -9349,20 +9349,20 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
             self.topology_get_vlan_details_response()
             return
 
-        if self.matches_USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a():
-            self.userand_roles_get_permissions_ap_i_response()
+        if self.matches_user_and_roles_9ec0b30eca9d540a845848cffd7c602a():
+            self.user_and_roles_get_permissions_ap_i_response()
             return
 
-        if self.matches_USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c():
-            self.userand_roles_get_roles_ap_i_response()
+        if self.matches_user_and_roles_bef02e8f6f8354dc99e375826a87c88c():
+            self.user_and_roles_get_roles_ap_i_response()
             return
 
-        if self.matches_USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015():
-            self.userand_roles_get_users_ap_i_response()
+        if self.matches_user_and_roles_7fa405b6d1be56739f2dfeea63212015():
+            self.user_and_roles_get_users_ap_i_response()
             return
 
-        if self.matches_USERAND_ROLES_452738def9045d4d9c96bcd42172a79c():
-            self.userand_roles_get_external_authentication_servers_ap_i_response()
+        if self.matches_user_and_roles_452738def9045d4d9c96bcd42172a79c():
+            self.user_and_roles_get_external_authentication_servers_ap_i_response()
             return
 
         if self.matches_USERS_70f9c1d861a051b4a4928f2e6d84b2e3():
@@ -9818,8 +9818,8 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
             self.tag_add_members_to_the_tag_response()
             return
 
-        if self.matches_USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702():
-            self.userand_roles_add_user_ap_i_response()
+        if self.matches_user_and_roles_6d82755e5e03510daf0951c1f42c2702():
+            self.user_and_roles_add_user_ap_i_response()
             return
 
         if self.matches_WIRELESS_d825ae9a117f5b6bb65b7d78fd42513c():
@@ -10084,8 +10084,8 @@ class MockServerRequestHandler_v2_3_5_3(BaseHTTPRequestHandler):
             self.tag_updates_tag_membership_response()
             return
 
-        if self.matches_USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e():
-            self.userand_roles_update_user_ap_i_response()
+        if self.matches_user_and_roles_34d2bd5f05bd535a89ebadb30e2ede9e():
+            self.user_and_roles_update_user_ap_i_response()
             return
 
         if self.matches_WIRELESS_25479623a94058a99acaaf8eb73c9227():

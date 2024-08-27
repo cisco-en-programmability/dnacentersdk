@@ -886,7 +886,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_def9045d4d9c96bcd42172a79c_v2_3_7_6', json_data)
 
-    def add_and_update_a_a_a_attribute_api(self,
+    def add_and_update_aaa_attribute_api(self,
                                            attributeName=None,
                                            headers=None,
                                            payload=None,
@@ -964,7 +964,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_f5bfccc7e30550baa7046f74daa1ef2_v2_3_7_6', json_data)
 
-    def delete_a_a_a_attribute_api(self,
+    def delete_aaa_attribute_api(self,
                                    headers=None,
                                    **request_parameters):
         """Delete the custom AAA attribute that was added. Note that by deleting the AAA attribute, a default AAA attribute
@@ -1018,7 +1018,7 @@ class UserandRoles(object):
 
         return self._object_factory('bpm_f20c99b436bd5be8bdb9094db3a47f01_v2_3_7_6', json_data)
 
-    def get_a_a_a_attribute_api(self,
+    def get_aaa_attribute_api(self,
                                 headers=None,
                                 **request_parameters):
         """Get the current value of the custom AAA attribute. .

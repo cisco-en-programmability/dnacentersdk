@@ -632,7 +632,7 @@ class TestDNACenterSDK:
             assert isinstance(api.tag, Tag_v2_3_5_3)
             assert isinstance(api.task, Task_v2_3_5_3)
             assert isinstance(api.topology, Topology_v2_3_5_3)
-            assert isinstance(api.userand_roles, UserandRoles_v2_3_5_3)
+            assert isinstance(api.user_and_roles, UserandRoles_v2_3_5_3)
             assert isinstance(api.users, Users_v2_3_5_3)
             assert isinstance(api.wireless, Wireless_v2_3_5_3)
         if api.version == '2.3.7.6':
@@ -671,6 +671,6 @@ class TestDNACenterSDK:
             assert isinstance(api.tag, Tag_v2_3_7_6)
             assert isinstance(api.task, Task_v2_3_7_6)
             assert isinstance(api.topology, Topology_v2_3_7_6)
-            assert isinstance(api.userand_roles, UserandRoles_v2_3_7_6)
+            assert isinstance(api.user_and_roles, UserandRoles_v2_3_7_6)
             assert isinstance(api.users, Users_v2_3_7_6)
             assert isinstance(api.wireless, Wireless_v2_3_7_6)

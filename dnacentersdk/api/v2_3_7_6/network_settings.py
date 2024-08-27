@@ -1648,7 +1648,7 @@ class NetworkSettings(object):
 
         return self._object_factory('bpm_e73b352ff2573aab906c2ad75c5a71_v2_3_7_6', json_data)
 
-    def set_a_a_a_settings_for_a_site(self,
+    def set_aaa_settings_for_a_site(self,
                                       id,
                                       aaaClient=None,
                                       aaaNetwork=None,
@@ -1733,7 +1733,7 @@ class NetworkSettings(object):
 
         return self._object_factory('bpm_cd2e825a78b6de087e991f6fe0_v2_3_7_6', json_data)
 
-    def retrieve_a_a_a_settings_for_a_site(self,
+    def retrieve_aaa_settings_for_a_site(self,
                                            id,
                                            inherited=None,
                                            headers=None,

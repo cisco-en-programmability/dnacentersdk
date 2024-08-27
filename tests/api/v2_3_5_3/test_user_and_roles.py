@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DNACenterAPI userand_roles API fixtures and tests.
+"""DNACenterAPI user_and_roles API fixtures and tests.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -35,13 +35,13 @@ def is_valid_get_permissions_ap_i(json_schema_validate, obj):
 
 
 def get_permissions_ap_i(api):
-    endpoint_result = api.userand_roles.get_permissions_ap_i(
+    endpoint_result = api.user_and_roles.get_permissions_ap_i(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_permissions_ap_i(api, validator):
     try:
         assert is_valid_get_permissions_ap_i(
@@ -55,13 +55,13 @@ def test_get_permissions_ap_i(api, validator):
 
 
 def get_permissions_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_permissions_ap_i(
+    endpoint_result = api.user_and_roles.get_permissions_ap_i(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_permissions_ap_i_default_val(api, validator):
     try:
         assert is_valid_get_permissions_ap_i(
@@ -79,13 +79,13 @@ def is_valid_get_roles_ap_i(json_schema_validate, obj):
 
 
 def get_roles_ap_i(api):
-    endpoint_result = api.userand_roles.get_roles_ap_i(
+    endpoint_result = api.user_and_roles.get_roles_ap_i(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_roles_ap_i(api, validator):
     try:
         assert is_valid_get_roles_ap_i(
@@ -99,13 +99,13 @@ def test_get_roles_ap_i(api, validator):
 
 
 def get_roles_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_roles_ap_i(
+    endpoint_result = api.user_and_roles.get_roles_ap_i(
 
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_roles_ap_i_default_val(api, validator):
     try:
         assert is_valid_get_roles_ap_i(
@@ -123,13 +123,13 @@ def is_valid_get_users_ap_i(json_schema_validate, obj):
 
 
 def get_users_ap_i(api):
-    endpoint_result = api.userand_roles.get_users_ap_i(
+    endpoint_result = api.user_and_roles.get_users_ap_i(
         invoke_source='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_users_ap_i(api, validator):
     try:
         assert is_valid_get_users_ap_i(
@@ -143,13 +143,13 @@ def test_get_users_ap_i(api, validator):
 
 
 def get_users_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_users_ap_i(
+    endpoint_result = api.user_and_roles.get_users_ap_i(
         invoke_source=None
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_users_ap_i_default_val(api, validator):
     try:
         assert is_valid_get_users_ap_i(
@@ -167,7 +167,7 @@ def is_valid_add_user_ap_i(json_schema_validate, obj):
 
 
 def add_user_ap_i(api):
-    endpoint_result = api.userand_roles.add_user_ap_i(
+    endpoint_result = api.user_and_roles.add_user_ap_i(
         active_validation=True,
         email='string',
         firstName='string',
@@ -180,7 +180,7 @@ def add_user_ap_i(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_add_user_ap_i(api, validator):
     try:
         assert is_valid_add_user_ap_i(
@@ -194,7 +194,7 @@ def test_add_user_ap_i(api, validator):
 
 
 def add_user_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.add_user_ap_i(
+    endpoint_result = api.user_and_roles.add_user_ap_i(
         active_validation=True,
         email=None,
         firstName=None,
@@ -207,7 +207,7 @@ def add_user_ap_i_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_add_user_ap_i_default_val(api, validator):
     try:
         assert is_valid_add_user_ap_i(
@@ -225,7 +225,7 @@ def is_valid_update_user_ap_i(json_schema_validate, obj):
 
 
 def update_user_ap_i(api):
-    endpoint_result = api.userand_roles.update_user_ap_i(
+    endpoint_result = api.user_and_roles.update_user_ap_i(
         active_validation=True,
         email='string',
         firstName='string',
@@ -238,7 +238,7 @@ def update_user_ap_i(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_update_user_ap_i(api, validator):
     try:
         assert is_valid_update_user_ap_i(
@@ -252,7 +252,7 @@ def test_update_user_ap_i(api, validator):
 
 
 def update_user_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.update_user_ap_i(
+    endpoint_result = api.user_and_roles.update_user_ap_i(
         active_validation=True,
         email=None,
         firstName=None,
@@ -265,7 +265,7 @@ def update_user_ap_i_default_val(api):
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_update_user_ap_i_default_val(api, validator):
     try:
         assert is_valid_update_user_ap_i(
@@ -283,13 +283,13 @@ def is_valid_get_external_authentication_servers_ap_i(json_schema_validate, obj)
 
 
 def get_external_authentication_servers_ap_i(api):
-    endpoint_result = api.userand_roles.get_external_authentication_servers_ap_i(
+    endpoint_result = api.user_and_roles.get_external_authentication_servers_ap_i(
         invoke_source='string'
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_external_authentication_servers_ap_i(api, validator):
     try:
         assert is_valid_get_external_authentication_servers_ap_i(
@@ -303,13 +303,13 @@ def test_get_external_authentication_servers_ap_i(api, validator):
 
 
 def get_external_authentication_servers_ap_i_default_val(api):
-    endpoint_result = api.userand_roles.get_external_authentication_servers_ap_i(
+    endpoint_result = api.user_and_roles.get_external_authentication_servers_ap_i(
         invoke_source=None
     )
     return endpoint_result
 
 
-@pytest.mark.userand_roles
+@pytest.mark.user_and_roles
 def test_get_external_authentication_servers_ap_i_default_val(api, validator):
     try:
         assert is_valid_get_external_authentication_servers_ap_i(

@@ -1057,13 +1057,13 @@ def test_sync_network_devices_credential_default_val(api, validator):
             raise original_e
 
 
-def is_valid_set_a_a_a_settings_for_a_site(json_schema_validate, obj):
+def is_valid_set_aaa_settings_for_a_site(json_schema_validate, obj):
     json_schema_validate('jsd_953292cd2e825a78b6de087e991f6fe0_v2_3_7_6').validate(obj)
     return True
 
 
-def set_a_a_a_settings_for_a_site(api):
-    endpoint_result = api.network_settings.set_a_a_a_settings_for_a_site(
+def set_aaa_settings_for_a_site(api):
+    endpoint_result = api.network_settings.set_aaa_settings_for_a_site(
         aaaClient={'serverType': 'string', 'protocol': 'string', 'pan': 'string', 'primaryServerIp': 'string', 'secondaryServerIp': 'string', 'sharedSecret': 'string'},
         aaaNetwork={'serverType': 'string', 'protocol': 'string', 'pan': 'string', 'primaryServerIp': 'string', 'secondaryServerIp': 'string', 'sharedSecret': 'string'},
         active_validation=True,
@@ -1074,11 +1074,11 @@ def set_a_a_a_settings_for_a_site(api):
 
 
 @pytest.mark.network_settings
-def test_set_a_a_a_settings_for_a_site(api, validator):
+def test_set_aaa_settings_for_a_site(api, validator):
     try:
-        assert is_valid_set_a_a_a_settings_for_a_site(
+        assert is_valid_set_aaa_settings_for_a_site(
             validator,
-            set_a_a_a_settings_for_a_site(api)
+            set_aaa_settings_for_a_site(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1086,8 +1086,8 @@ def test_set_a_a_a_settings_for_a_site(api, validator):
             raise original_e
 
 
-def set_a_a_a_settings_for_a_site_default_val(api):
-    endpoint_result = api.network_settings.set_a_a_a_settings_for_a_site(
+def set_aaa_settings_for_a_site_default_val(api):
+    endpoint_result = api.network_settings.set_aaa_settings_for_a_site(
         aaaClient=None,
         aaaNetwork=None,
         active_validation=True,
@@ -1098,24 +1098,24 @@ def set_a_a_a_settings_for_a_site_default_val(api):
 
 
 @pytest.mark.network_settings
-def test_set_a_a_a_settings_for_a_site_default_val(api, validator):
+def test_set_aaa_settings_for_a_site_default_val(api, validator):
     try:
-        assert is_valid_set_a_a_a_settings_for_a_site(
+        assert is_valid_set_aaa_settings_for_a_site(
             validator,
-            set_a_a_a_settings_for_a_site_default_val(api)
+            set_aaa_settings_for_a_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieve_a_a_a_settings_for_a_site(json_schema_validate, obj):
+def is_valid_retrieve_aaa_settings_for_a_site(json_schema_validate, obj):
     json_schema_validate('jsd_4c13899171d45b4f828423c6feaa1e46_v2_3_7_6').validate(obj)
     return True
 
 
-def retrieve_a_a_a_settings_for_a_site(api):
-    endpoint_result = api.network_settings.retrieve_a_a_a_settings_for_a_site(
+def retrieve_aaa_settings_for_a_site(api):
+    endpoint_result = api.network_settings.retrieve_aaa_settings_for_a_site(
         id='string',
         inherited=True
     )
@@ -1123,11 +1123,11 @@ def retrieve_a_a_a_settings_for_a_site(api):
 
 
 @pytest.mark.network_settings
-def test_retrieve_a_a_a_settings_for_a_site(api, validator):
+def test_retrieve_aaa_settings_for_a_site(api, validator):
     try:
-        assert is_valid_retrieve_a_a_a_settings_for_a_site(
+        assert is_valid_retrieve_aaa_settings_for_a_site(
             validator,
-            retrieve_a_a_a_settings_for_a_site(api)
+            retrieve_aaa_settings_for_a_site(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1135,8 +1135,8 @@ def test_retrieve_a_a_a_settings_for_a_site(api, validator):
             raise original_e
 
 
-def retrieve_a_a_a_settings_for_a_site_default_val(api):
-    endpoint_result = api.network_settings.retrieve_a_a_a_settings_for_a_site(
+def retrieve_aaa_settings_for_a_site_default_val(api):
+    endpoint_result = api.network_settings.retrieve_aaa_settings_for_a_site(
         id='string',
         inherited=None
     )
@@ -1144,11 +1144,11 @@ def retrieve_a_a_a_settings_for_a_site_default_val(api):
 
 
 @pytest.mark.network_settings
-def test_retrieve_a_a_a_settings_for_a_site_default_val(api, validator):
+def test_retrieve_aaa_settings_for_a_site_default_val(api, validator):
     try:
-        assert is_valid_retrieve_a_a_a_settings_for_a_site(
+        assert is_valid_retrieve_aaa_settings_for_a_site(
             validator,
-            retrieve_a_a_a_settings_for_a_site_default_val(api)
+            retrieve_aaa_settings_for_a_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
