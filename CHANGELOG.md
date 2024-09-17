@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.4] - 2024-09-17
+- Add multipart parameter for file upload in site_design:uploads_floor_image.
+
 ## [2.7.3] - 2024-08-19
 - Refactor error message construction in ApiError class
 - Injection for requests.Session
@@ -526,4 +529,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.7.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1
 [2.7.2]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...v2.7.2
 [2.7.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...v2.7.3
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.3...develop
+[2.7.4]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.3...v2.7.4
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.4...develop
