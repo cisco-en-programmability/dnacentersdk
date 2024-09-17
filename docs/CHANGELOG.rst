@@ -11,7 +11,7 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 `Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.3...develop>`__
 --------------------------------------------------------------------------------------------------
 
-`2.7.3 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...v2.7.3>`__ - 2024-08-19
+`2.7.4 <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.2...v2.7.3>`__ - 2024-08-19
 ---------------------------------------------------------------------------------------------------------
 
 -  Refactor error message construction in ApiError class
