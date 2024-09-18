@@ -649,6 +649,7 @@ class RestSession(object):
         else:
             response = self.request('PUT', url, erc, 0, params=params,
                                     json=json, data=data, **kwargs)
+            is_empty= response.text == ""
             return extract_and_parse_json(response)
 
     def delete(self, url, params=None, **kwargs):

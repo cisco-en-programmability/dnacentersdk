@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   + requests = "^2.32.0"
   + readthedocs-sphinx-search = "^0.3.2"
 
+## [2.9.3] - 2024-09-18
+### Fixed
+- Validate if answer is empty, to avoid panic while doing json.loads.
+
 ## [2.8.0] - 2024-07-06
 ### Added
 - Add support of DNA Center versions ('2.3.7.6')
@@ -498,4 +502,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [2.6.11]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.10...v2.6.11
 [2.7.0]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.6.11...v2.7.0
 [2.7.1]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.0...v2.7.1
-[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.1...develop
+[2.9.3]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.8.0...v2.9.3
+[Unreleased]: https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.9.3...develop

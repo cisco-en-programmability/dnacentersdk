@@ -220,7 +220,10 @@ def extract_and_parse_json(response):
         TypeError: caused by json.loads
     """
     try:
-        return json.loads(response.text, object_hook=OrderedDict)
+        if response.text != "":
+            return json.loads(response.text, object_hook=OrderedDict)
+        else:
+            return response.text
     except Exception as e:
         raise e
 
