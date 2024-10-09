@@ -10,9 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   + requests = "^2.32.0"
   + readthedocs-sphinx-search = "^0.3.2"
 
+## [2.9.4] - 2024-10-09
+### Fixed
+- Fixing uploads_floor_image function.
+
 ## [2.9.3] - 2024-09-18
 ### Fixed
-- Validate if answer is empty, to avoid panic while doing json.loads.
+- Validate if answer is empty, to avoid panic while doing json.loads.<>
 
 ## [2.8.0] - 2024-07-06
 ### Added

@@ -2900,22 +2900,42 @@ class SiteDesign(object):
         return self._object_factory('bpm_ec0e563f25f44bbe568527ea87fd6_v2_3_7_6', json_data)
 
     def uploads_floor_image(self,
+                            multipart_fields,
+                            multipart_monitor_callback,
                             id,
                             headers=None,
                             **request_parameters):
         """Uploads floor image. .
-
+        The following code gives an example of the multipart_fields.
+        .. code-block:: python
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+        .. code-block:: python
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
         Args:
             id(str): id path parameter. Floor Id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
-
         Returns:
             MyDict: JSON response. Access the object's properties by using
             the dot notation or the bracket notation.
-
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
@@ -2933,28 +2953,30 @@ class SiteDesign(object):
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
                            str, may_be_none=False)
-
         _params = {
         }
         _params.update(request_parameters)
         _params = dict_from_items_with_values(_params)
-
         path_params = {
             'id': id,
         }
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
-
         e_url = ('/dna/intent/api/v2/floors/{id}/uploadImage')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
-
         return self._object_factory('bpm_df8448b465a0abdc9bb7ee17aac9f_v2_3_7_6', json_data)
