@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center UpdatePnPServerProfile data model.
+"""Cisco DNA Center UpdatePnPServerProfileV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068(object):
-    """UpdatePnPServerProfile request schema definition."""
+    """UpdatePnPServerProfileV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -48,6 +49,9 @@ class JSONSchemaValidatorBc3Cb471Beaf5BfeB47201993C023068(object):
                 "type": "string"
                 },
                 "addressIpV4": {
+                "type": "string"
+                },
+                "addressIpV6": {
                 "type": "string"
                 },
                 "cert": {

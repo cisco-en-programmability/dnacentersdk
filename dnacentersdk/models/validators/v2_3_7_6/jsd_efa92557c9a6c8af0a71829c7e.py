@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeployTemplate data model.
+"""Cisco DNA Center DeployTemplateV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
-    """DeployTemplate request schema definition."""
+    """DeployTemplateV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -50,7 +51,7 @@ class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
                 },
                 "memberTemplateDeploymentInfo": {
                 "items": {
-                "type": "object"
+                "type": "string"
                 },
                 "type": "array"
                 },
@@ -68,7 +69,7 @@ class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
                 },
                 "resourceParams": {
                 "items": {
-                "type": "object"
+                "type": "string"
                 },
                 "type": "array"
                 },

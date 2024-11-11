@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [2.7.5] - 2024-11-11
+### ADD
+- The use of alias in the functions was implemented
+- The User Agent parameter was added
+- New Modules Such As (ai_endpoint_analytics, cisco_trusted_certificates, disaster_revery) were Added
+
 ## [2.7.4] - 2024-09-17
 - Add multipart parameter for file upload in site_design:uploads_floor_image.
 

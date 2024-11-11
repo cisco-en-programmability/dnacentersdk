@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetAuthenticationProfiles data model.
+"""Cisco DNA Center GetAuthenticationProfilesV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE6713A34508993B3E9F6837Dd690(object):
-    """GetAuthenticationProfiles request schema definition."""
+    """GetAuthenticationProfilesV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE6713A34508993B3E9F6837Dd690, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -43,9 +44,18 @@ class JSONSchemaValidatorE6713A34508993B3E9F6837Dd690(object):
                 "items": {
                 "properties": {
                 "authenticationOrder": {
+                "enum": [
+                "dot1x",
+                "mac"
+                ],
                 "type": "string"
                 },
                 "authenticationProfileName": {
+                "enum": [
+                "Closed Authentication",
+                "Low Impact",
+                "Open Authentication"
+                ],
                 "type": "string"
                 },
                 "dot1xToMabFallbackTimeout": {
@@ -57,7 +67,14 @@ class JSONSchemaValidatorE6713A34508993B3E9F6837Dd690(object):
                 "id": {
                 "type": "string"
                 },
+                "isBpduGuardEnabled": {
+                "type": "boolean"
+                },
                 "numberOfHosts": {
+                "enum": [
+                "Single",
+                "Unlimited"
+                ],
                 "type": "string"
                 },
                 "wakeOnLan": {

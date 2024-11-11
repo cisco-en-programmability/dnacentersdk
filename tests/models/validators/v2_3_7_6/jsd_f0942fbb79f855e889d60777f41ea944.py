@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center UpdateFabricDevicesLayer3HandoffsWithIpTransit data model.
+"""Cisco DNA Center UpdateFabricDevicesLayer3HandoffsWithIpTransitV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF0942Fbb79F855E889D60777F41Ea944(object):
-    """UpdateFabricDevicesLayer3HandoffsWithIpTransit request schema
+    """UpdateFabricDevicesLayer3HandoffsWithIpTransitV1 request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorF0942Fbb79F855E889D60777F41Ea944, self).__init__()

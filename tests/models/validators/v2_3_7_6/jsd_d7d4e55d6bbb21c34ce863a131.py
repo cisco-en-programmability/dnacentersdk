@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetEventSubscriptions data model.
+"""Cisco DNA Center GetEventSubscriptionsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD7D4E55D6BBb21C34Ce863A131(object):
-    """GetEventSubscriptions request schema definition."""
+    """GetEventSubscriptionsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD7D4E55D6BBb21C34Ce863A131, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeregisterVirtualAccount data model.
+"""Cisco DNA Center DeregisterVirtualAccountV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A(object):
-    """DeregisterVirtualAccount request schema definition."""
+    """DeregisterVirtualAccountV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -40,7 +41,7 @@ class JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "autoSyncPeriod": {
-                "type": "number"
+                "type": "integer"
                 },
                 "ccoUser": {
                 "type": "string"
@@ -59,6 +60,9 @@ class JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A(object):
                 "addressIpV4": {
                 "type": "string"
                 },
+                "addressIpV6": {
+                "type": "string"
+                },
                 "cert": {
                 "type": "string"
                 },
@@ -69,7 +73,7 @@ class JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A(object):
                 "type": "string"
                 },
                 "port": {
-                "type": "number"
+                "type": "integer"
                 },
                 "profileId": {
                 "type": "string"
@@ -83,34 +87,6 @@ class JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A(object):
                 "smartAccountId": {
                 "type": "string"
                 },
-                "syncResult": {
-                "properties": {
-                "syncList": {
-                "items": {
-                "properties": {
-                "deviceSnList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "syncType": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "type": "array"
-                },
-                "syncMsg": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                },
-                "syncResultStr": {
-                "type": "string"
-                },
                 "syncStartTime": {
                 "type": "number"
                 },
@@ -118,9 +94,6 @@ class JSONSchemaValidatorF785E5C9B1C5690B29A65D96F6A601A(object):
                 "type": "string"
                 },
                 "tenantId": {
-                "type": "string"
-                },
-                "token": {
                 "type": "string"
                 },
                 "virtualAccountId": {

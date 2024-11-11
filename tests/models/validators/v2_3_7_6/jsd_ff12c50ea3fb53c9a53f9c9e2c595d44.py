@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetTagMembersById data model.
+"""Cisco DNA Center GetTagMembersByIdV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFf12C50EA3Fb53C9A53F9C9E2C595D44(object):
-    """GetTagMembersById request schema definition."""
+    """GetTagMembersByIdV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFf12C50EA3Fb53C9A53F9C9E2C595D44, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

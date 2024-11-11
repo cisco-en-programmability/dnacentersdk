@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeleteFabricDeviceLayer3HandoffsWithSdaTransit data model.
+"""Cisco DNA Center DeleteFabricDeviceLayer3HandoffsWithSdaTransitV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAae870923852F3Ac5904F65812C559(object):
-    """DeleteFabricDeviceLayer3HandoffsWithSdaTransit request schema
+    """DeleteFabricDeviceLayer3HandoffsWithSdaTransitV1 request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorAae870923852F3Ac5904F65812C559, self).__init__()

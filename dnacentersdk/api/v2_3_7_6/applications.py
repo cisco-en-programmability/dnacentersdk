@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center Applications API wrapper.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,9 @@ SOFTWARE.
 """
 
 
+
 from builtins import *
+
 
 
 from ...restsession import RestSession
@@ -64,18 +66,18 @@ class Applications(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def applications(self,
-                     application_health=None,
-                     application_name=None,
-                     device_id=None,
-                     end_time=None,
-                     limit=None,
-                     mac_address=None,
-                     offset=None,
-                     site_id=None,
-                     start_time=None,
-                     headers=None,
-                     **request_parameters):
+    def applications_v1(self,
+                        application_health=None,
+                        application_name=None,
+                        device_id=None,
+                        end_time=None,
+                        limit=None,
+                        mac_address=None,
+                        offset=None,
+                        site_id=None,
+                        start_time=None,
+                        headers=None,
+                        **request_parameters):
         """Intent API to get a list of applications for a specific site, a device, or a client device's MAC address. For a
         combination of a specific application with site and/or device the API gets list of
         issues/devices/endpoints. .
@@ -91,9 +93,9 @@ class Applications(object):
             end_time(int): endTime query parameter. Ending epoch time in milliseconds of time window .
             application_health(str): applicationHealth query parameter. Application health category (POOR,
                 FAIR, or GOOD.  Optionally use with siteId only) .
-            offset(int,str): offset query parameter. The offset of the first application in the returned data
+            offset(int): offset query parameter. The offset of the first application in the returned data
                 (optionally used with siteId only) .
-            limit(int,str): limit query parameter. The max number of application entries in returned data [1, 1000]
+            limit(int): limit query parameter. The max number of application entries in returned data [1, 1000]
                 (optionally used with siteId only) .
             application_name(str): applicationName query parameter. The name of the application to get
                 information on .
@@ -110,6 +112,8 @@ class Applications(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!applications
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -118,8 +122,8 @@ class Applications(object):
         check_type(start_time, int)
         check_type(end_time, int)
         check_type(application_health, str)
-        check_type(offset, (int, str))
-        check_type(limit, (int, str))
+        check_type(offset, int)
+        check_type(limit, int)
         check_type(application_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:
@@ -167,3 +171,61 @@ class Applications(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_b85e4ce533d5ff49ddd3b2f9657cfa5_v2_3_7_6', json_data)
+
+                
+    
+    # Alias Function
+    def applications(self,
+                        application_health=None,
+                        application_name=None,
+                        device_id=None,
+                        end_time=None,
+                        limit=None,
+                        mac_address=None,
+                        offset=None,
+                        site_id=None,
+                        start_time=None,
+                        headers=None,
+                        **request_parameters):
+        """This function is an alias of applications_v1. .
+
+        Args:
+            site_id(str): siteId query parameter. Assurance site UUID value (Cannot be submitted together
+                with deviceId and clientMac) .
+            device_id(str): deviceId query parameter. Assurance device UUID value (Cannot be submitted
+                together with siteId and clientMac) .
+            mac_address(str): macAddress query parameter. Client device's MAC address (Cannot be submitted
+                together with siteId and deviceId) .
+            start_time(int): startTime query parameter. Starting epoch time in milliseconds of time window .
+            end_time(int): endTime query parameter. Ending epoch time in milliseconds of time window .
+            application_health(str): applicationHealth query parameter. Application health category (POOR,
+                FAIR, or GOOD.  Optionally use with siteId only) .
+            offset(int): offset query parameter. The offset of the first application in the returned data
+                (optionally used with siteId only) .
+            limit(int): limit query parameter. The max number of application entries in returned data [1, 1000]
+                (optionally used with siteId only) .
+            application_name(str): applicationName query parameter. The name of the application to get
+                information on .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of applications_v1.
+        """  
+        return self.applications_v1(
+                    application_health=application_health,
+                    application_name=application_name,
+                    device_id=device_id,
+                    end_time=end_time,
+                    limit=limit,
+                    mac_address=mac_address,
+                    offset=offset,
+                    site_id=site_id,
+                    start_time=start_time,
+                    headers=headers,
+                    **request_parameters
+        )
+
+

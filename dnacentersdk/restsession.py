@@ -138,7 +138,8 @@ class RestSession(object):
                  session=None,
                  verify=DEFAULT_VERIFY,
                  version=None,
-                 debug=False):
+                 debug=False,
+                 user_agent = None):
         """Initialize a new RestSession object.
 
         Args:
@@ -175,6 +176,7 @@ class RestSession(object):
         check_type(verify, (bool, str), may_be_none=False)
         check_type(version, str, may_be_none=False)
         check_type(debug, (bool), may_be_none=False)
+        check_type(user_agent, str, may_be_none=False)
 
         super(RestSession, self).__init__()
 
@@ -187,6 +189,7 @@ class RestSession(object):
         self._verify = verify
         self._version = version
         self._debug = debug
+        self._user_agent = user_agent
 
         if debug:
             logger.setLevel(logging.DEBUG)
@@ -203,13 +206,18 @@ class RestSession(object):
         # Update the headers of the `requests` session
         self.update_headers({'X-Auth-Token': access_token,
                              'Content-type': 'application/json;charset=utf-8',
-                             'User-Agent': f'python-cisco-dnacsdk/{version}'})
+                             'User-Agent': f'python-cisco-dnacsdk/{version}-{user_agent}'})
 
     @property
     def version(self):
         """The API version of DNA Center."""
         return self._version
 
+    @property
+    def user_agent(self):
+        """The API user agent."""
+        return self._user_agent
+    
     @property
     def verify(self):
         """The verify (TLS Certificate) for the API endpoints."""

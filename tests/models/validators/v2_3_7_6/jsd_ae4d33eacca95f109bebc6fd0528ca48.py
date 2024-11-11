@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center AddFabricZone data model.
+"""Cisco DNA Center AddFabricZoneV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAe4D33EaCca95F109BebC6Fd0528Ca48(object):
-    """AddFabricZone request schema definition."""
+    """AddFabricZoneV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAe4D33EaCca95F109BebC6Fd0528Ca48, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

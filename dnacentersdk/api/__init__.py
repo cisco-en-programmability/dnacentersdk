@@ -30,6 +30,7 @@ from dnacentersdk.config import (
     DEFAULT_SINGLE_REQUEST_TIMEOUT,
     DEFAULT_WAIT_ON_RATE_LIMIT,
     DEFAULT_VERIFY,
+    DEFAULT_VERIFY_USER_AGENT,
 )
 import dnacentersdk.environment as dnacenter_environment
 from dnacentersdk.exceptions import AccessTokenError, VersionError
@@ -331,10 +332,14 @@ from .v2_3_5_3.users import \
 from .v2_3_5_3.wireless import \
     Wireless as Wireless_v2_3_5_3
 
+from .v2_3_7_6.ai_endpoint_analytics import \
+    AIEndpointAnalytics as AIEndpointAnalytics_v2_3_7_6
 from .v2_3_7_6.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_7_6
 from .v2_3_7_6.applications import \
     Applications as Applications_v2_3_7_6
+from .v2_3_7_6.cisco_trusted_certificates import \
+    CiscoTrustedCertificates as CiscoTrustedCertificates_v2_3_7_6
 from .v2_3_7_6.clients import \
     Clients as Clients_v2_3_7_6
 from .v2_3_7_6.command_runner import \
@@ -351,6 +356,8 @@ from .v2_3_7_6.device_replacement import \
     DeviceReplacement as DeviceReplacement_v2_3_7_6
 from .v2_3_7_6.devices import \
     Devices as Devices_v2_3_7_6
+from .v2_3_7_6.disaster_recovery import \
+    DisasterRecovery as DisasterRecovery_v2_3_7_6
 from .v2_3_7_6.discovery import \
     Discovery as Discovery_v2_3_7_6
 from .v2_3_7_6.eox import \
@@ -432,7 +439,8 @@ class DNACenterAPI(object):
                  version=None,
                  debug=None,
                  object_factory=mydict_data_factory,
-                 validator=SchemaValidator):
+                 validator=SchemaValidator,
+                 user_agent =None):
         """Create a new DNACenterAPI object.
         An access token is required to interact with the DNA Center APIs.
         This package supports two methods for you to generate the
@@ -513,6 +521,7 @@ class DNACenterAPI(object):
         password = password or dnacenter_environment.get_env_password()
         encoded_auth = encoded_auth or dnacenter_environment.get_env_encoded_auth()
         base_url = base_url or dnacenter_environment.get_env_base_url() or DEFAULT_BASE_URL
+        user_agent = user_agent or dnacenter_environment.get_env_user_agent()
 
         if single_request_timeout is None:
             single_request_timeout = dnacenter_environment.get_env_single_request_timeout() or DEFAULT_SINGLE_REQUEST_TIMEOUT
@@ -530,6 +539,9 @@ class DNACenterAPI(object):
         if debug is None:
             debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG
 
+        if user_agent is None:
+            user_agent = dnacenter_environment.get_env_user_agent() or DEFAULT_VERIFY_USER_AGENT
+
         check_type(base_url, str)
         check_type(single_request_timeout, int)
         check_type(wait_on_rate_limit, bool)
@@ -539,6 +551,7 @@ class DNACenterAPI(object):
         check_type(encoded_auth, str, may_be_none=True)
         check_type(verify, (bool, str), may_be_none=False)
         check_type(version, str, may_be_none=False)
+        check_type(user_agent, str, may_be_none=False)
 
         if version not in ['2.2.2.3', '2.2.3.3',
                            '2.3.3.0', '2.3.5.3',
@@ -593,6 +606,7 @@ class DNACenterAPI(object):
             verify=verify,
             version=version,
             debug=debug,
+            user_agent = user_agent,
         )
 
         _validator = validator(version).json_schema_validate
@@ -1188,12 +1202,21 @@ class DNACenterAPI(object):
                 )
 
         if version == '2.3.7.6':
+            
+            self.ai_endpoint_analytics = \
+                AIEndpointAnalytics_v2_3_7_6(
+                    self._session, object_factory, _validator
+                )
             self.application_policy = \
                 ApplicationPolicy_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
             self.applications = \
                 Applications_v2_3_7_6(
+                    self._session, object_factory, _validator
+                )
+            self.cisco_trusted_certificates = \
+                CiscoTrustedCertificates_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
             self.clients = \
@@ -1226,6 +1249,10 @@ class DNACenterAPI(object):
                 )
             self.devices = \
                 Devices_v2_3_7_6(
+                    self._session, object_factory, _validator
+                )
+            self.disaster_recovery = \
+                DisasterRecovery_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
             self.discovery = \

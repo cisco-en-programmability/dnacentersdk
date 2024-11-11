@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetDeviceValuesThatMatchFullyOrPartiallyAnAttribute data model.
+"""Cisco DNA Center GetDeviceValuesThatMatchFullyOrPartiallyAnAttributeV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB5A5C8Da4Aaa526DA6A06E97C80A38Be(object):
-    """GetDeviceValuesThatMatchFullyOrPartiallyAnAttribute request schema
-    definition."""
+    """GetDeviceValuesThatMatchFullyOrPartiallyAnAttributeV1 request
+    schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB5A5C8Da4Aaa526DA6A06E97C80A38Be, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

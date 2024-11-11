@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center ImportMapArchiveImportStatus data model.
+"""Cisco DNA Center ImportMapArchiveImportStatusV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC04C790688E4566C9F5EAa52B8Fe39C8(object):
-    """ImportMapArchiveImportStatus request schema definition."""
+    """ImportMapArchiveImportStatusV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC04C790688E4566C9F5EAa52B8Fe39C8, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -43,7 +44,7 @@ class JSONSchemaValidatorC04C790688E4566C9F5EAa52B8Fe39C8(object):
                 "properties": {
                 "children": {
                 "items": {
-                "type": "object"
+                "type": "string"
                 },
                 "type": "array"
                 },

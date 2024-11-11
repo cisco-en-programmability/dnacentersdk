@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center Configuration Archive API wrapper.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,9 @@ SOFTWARE.
 """
 
 
+
 from builtins import *
+
 
 
 from ...restsession import RestSession
@@ -64,13 +66,13 @@ class ConfigurationArchive(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def export_device_configurations(self,
-                                     deviceId=None,
-                                     password=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def export_device_configurations_v1(self,
+                                        deviceId=None,
+                                        password=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
         """Export Device configurations to an encrypted zip file .
 
         Args:
@@ -97,6 +99,8 @@ class ConfigurationArchive(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!export-device-configurations
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -145,15 +149,15 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_e85b40c5ca055f4c82281617a8f95644_v2_3_7_6', json_data)
 
-    def get_configuration_archive_details(self,
-                                          created_by=None,
-                                          created_time=None,
-                                          device_id=None,
-                                          file_type=None,
-                                          limit=None,
-                                          offset=None,
-                                          headers=None,
-                                          **request_parameters):
+    def get_configuration_archive_details_v1(self,
+                                             created_by=None,
+                                             created_time=None,
+                                             device_id=None,
+                                             file_type=None,
+                                             limit=None,
+                                             offset=None,
+                                             headers=None,
+                                             **request_parameters):
         """Returns the historical device configurations (running configuration , startup configuration , vlan if
         applicable) by specified criteria .
 
@@ -167,8 +171,8 @@ class ConfigurationArchive(object):
                 : time in milliseconds (epoc format) .
             created_by(str): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
                 CONFIG_CHANGE_EVENT, SCHEDULED_FIRST_TIME, DR_CALL_BACK, PRE_DEPLOY .
-            offset(int,str): offset query parameter.
-            limit(int,str): limit query parameter.
+            offset(int): offset query parameter.
+            limit(int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -183,14 +187,16 @@ class ConfigurationArchive(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-configuration-archive-details
         """
         check_type(headers, dict)
         check_type(device_id, str)
         check_type(file_type, str)
         check_type(created_time, str)
         check_type(created_by, str)
-        check_type(offset, (int, str))
-        check_type(limit, (int, str))
+        check_type(offset, int)
+        check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -231,3 +237,89 @@ class ConfigurationArchive(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_ff699112d3854d99557dc1f48987f09_v2_3_7_6', json_data)
+
+                
+    
+    # Alias Function
+    def export_device_configurations(self,
+                                        deviceId=None,
+                                        password=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
+        """This function is an alias of export_device_configurations_v1 .
+
+        Args:
+            deviceId(string): Configuration Archive's UUIDs of the devices for which configurations need to be
+                exported.  .
+            password(string): Configuration Archive's Password for the zip file to protect exported configurations.
+                Must contain, at minimum 8 characters, one lowercase letter, one uppercase letter, one
+                number, one special character(-=[];,./~!@#$%^&*()_+{}|:?). It may not contain white
+                space or the characters <>. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of export_device_configurations_v1.
+        """  
+        return self.export_device_configurations_v1(
+                    deviceId=deviceId,
+                    password=password,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def get_configuration_archive_details(self,
+                                             created_by=None,
+                                             created_time=None,
+                                             device_id=None,
+                                             file_type=None,
+                                             limit=None,
+                                             offset=None,
+                                             headers=None,
+                                             **request_parameters):
+        """This function is an alias of get_configuration_archive_details_v1.
+
+        Args:
+            device_id(str): deviceId query parameter. comma separated device id for example
+                cf35b0a1-407f-412f-b2f4-f0c3156695f9,aaa38191-0c22-4158-befd-779a09d7cec1 . if device id
+                is not provided it will fetch for all devices .
+            file_type(str): fileType query parameter. Config File Type can be RUNNINGCONFIG or STARTUPCONFIG
+                .
+            created_time(str): createdTime query parameter. Supported with logical filters GT,GTE,LT,LTE & BT
+                : time in milliseconds (epoc format) .
+            created_by(str): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
+                CONFIG_CHANGE_EVENT, SCHEDULED_FIRST_TIME, DR_CALL_BACK, PRE_DEPLOY .
+            offset(int): offset query parameter.
+            limit(int): limit query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_configuration_archive_details_v1.
+        """  
+        return self.get_configuration_archive_details_v1(
+                    created_by=created_by,
+                    created_time=created_time,
+                    device_id=device_id,
+                    file_type=file_type,
+                    limit=limit,
+                    offset=offset,
+                    headers=headers,
+                    **request_parameters
+        )
+
+

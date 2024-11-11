@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI platform API fixtures and tests.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,24 +29,24 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
-def is_valid_cisco_dna_center_packages_summary(json_schema_validate, obj):
+def is_valid_cisco_dna_center_packages_summary_v1(json_schema_validate, obj):
     json_schema_validate('jsd_0c3bdcd996dd5d988d0d77ce8f732014_v2_3_7_6').validate(obj)
     return True
 
 
-def cisco_dna_center_packages_summary(api):
-    endpoint_result = api.platform.cisco_dna_center_packages_summary(
+def cisco_dna_center_packages_summary_v1(api):
+    endpoint_result = api.platform.cisco_dna_center_packages_summary_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.platform
-def test_cisco_dna_center_packages_summary(api, validator):
+def test_cisco_dna_center_packages_summary_v1(api, validator):
     try:
-        assert is_valid_cisco_dna_center_packages_summary(
+        assert is_valid_cisco_dna_center_packages_summary_v1(
             validator,
-            cisco_dna_center_packages_summary(api)
+            cisco_dna_center_packages_summary_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -54,19 +54,19 @@ def test_cisco_dna_center_packages_summary(api, validator):
             raise original_e
 
 
-def cisco_dna_center_packages_summary_default_val(api):
-    endpoint_result = api.platform.cisco_dna_center_packages_summary(
+def cisco_dna_center_packages_summary_v1_default_val(api):
+    endpoint_result = api.platform.cisco_dna_center_packages_summary_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.platform
-def test_cisco_dna_center_packages_summary_default_val(api, validator):
+def test_cisco_dna_center_packages_summary_v1_default_val(api, validator):
     try:
-        assert is_valid_cisco_dna_center_packages_summary(
+        assert is_valid_cisco_dna_center_packages_summary_v1(
             validator,
-            cisco_dna_center_packages_summary_default_val(api)
+            cisco_dna_center_packages_summary_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

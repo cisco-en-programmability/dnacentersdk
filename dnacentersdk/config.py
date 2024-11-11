@@ -43,3 +43,7 @@ DEFAULT_WAIT_ON_RATE_LIMIT = True
 #: **verify** default value.
 #: Controls whether to verify the server's TLS certificate or not.
 DEFAULT_VERIFY = True
+
+#: **user_agent** default value.
+#: Identifies the client using the SDK, providing useful data such as the SDK version and operating system
+DEFAULT_VERIFY_USER_AGENT = ""

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center LicenseTermDetails data model.
+"""Cisco DNA Center LicenseTermDetailsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDf2D278E89B45C8EA0Ca0A945C001F08(object):
-    """LicenseTermDetails request schema definition."""
+    """LicenseTermDetailsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDf2D278E89B45C8EA0Ca0A945C001F08, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

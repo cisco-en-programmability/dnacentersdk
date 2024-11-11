@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetDeviceList data model.
+"""Cisco DNA Center GetDeviceListV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26(object):
-    """GetDeviceList request schema definition."""
+    """GetDeviceListV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -98,6 +99,9 @@ class JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26(object):
                 "type": "string"
                 },
                 "lastDeviceResyncStartTime": {
+                "type": "string"
+                },
+                "lastManagedResyncReasons": {
                 "type": "string"
                 },
                 "lastUpdateTime": {
@@ -173,6 +177,9 @@ class JSONSchemaValidatorFe602E8165035B5CBc304Fada4Ee2F26(object):
                 "type": "string"
                 },
                 "softwareVersion": {
+                "type": "string"
+                },
+                "syncRequestedByApp": {
                 "type": "string"
                 },
                 "tagCount": {

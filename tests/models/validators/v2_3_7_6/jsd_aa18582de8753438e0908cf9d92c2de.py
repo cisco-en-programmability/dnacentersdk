@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeletePortAssignmentById data model.
+"""Cisco DNA Center DeletePortAssignmentByIdV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAa18582De8753438E0908Cf9D92C2De(object):
-    """DeletePortAssignmentById request schema definition."""
+    """DeletePortAssignmentByIdV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAa18582De8753438E0908Cf9D92C2De, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

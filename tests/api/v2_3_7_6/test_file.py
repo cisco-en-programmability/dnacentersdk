@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI file API fixtures and tests.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,24 +29,24 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
-def is_valid_get_list_of_available_namespaces(json_schema_validate, obj):
+def is_valid_get_list_of_available_namespaces_v1(json_schema_validate, obj):
     json_schema_validate('jsd_b7fc125c901c5d4488b7a2b75fa292bc_v2_3_7_6').validate(obj)
     return True
 
 
-def get_list_of_available_namespaces(api):
-    endpoint_result = api.file.get_list_of_available_namespaces(
+def get_list_of_available_namespaces_v1(api):
+    endpoint_result = api.file.get_list_of_available_namespaces_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.file
-def test_get_list_of_available_namespaces(api, validator):
+def test_get_list_of_available_namespaces_v1(api, validator):
     try:
-        assert is_valid_get_list_of_available_namespaces(
+        assert is_valid_get_list_of_available_namespaces_v1(
             validator,
-            get_list_of_available_namespaces(api)
+            get_list_of_available_namespaces_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -54,43 +54,43 @@ def test_get_list_of_available_namespaces(api, validator):
             raise original_e
 
 
-def get_list_of_available_namespaces_default_val(api):
-    endpoint_result = api.file.get_list_of_available_namespaces(
+def get_list_of_available_namespaces_v1_default_val(api):
+    endpoint_result = api.file.get_list_of_available_namespaces_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.file
-def test_get_list_of_available_namespaces_default_val(api, validator):
+def test_get_list_of_available_namespaces_v1_default_val(api, validator):
     try:
-        assert is_valid_get_list_of_available_namespaces(
+        assert is_valid_get_list_of_available_namespaces_v1(
             validator,
-            get_list_of_available_namespaces_default_val(api)
+            get_list_of_available_namespaces_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_list_of_files(json_schema_validate, obj):
+def is_valid_get_list_of_files_v1(json_schema_validate, obj):
     json_schema_validate('jsd_b7d63a5ae65b59a5a35d43edc58b6db5_v2_3_7_6').validate(obj)
     return True
 
 
-def get_list_of_files(api):
-    endpoint_result = api.file.get_list_of_files(
+def get_list_of_files_v1(api):
+    endpoint_result = api.file.get_list_of_files_v1(
         name_space='string'
     )
     return endpoint_result
 
 
 @pytest.mark.file
-def test_get_list_of_files(api, validator):
+def test_get_list_of_files_v1(api, validator):
     try:
-        assert is_valid_get_list_of_files(
+        assert is_valid_get_list_of_files_v1(
             validator,
-            get_list_of_files(api)
+            get_list_of_files_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -98,19 +98,19 @@ def test_get_list_of_files(api, validator):
             raise original_e
 
 
-def get_list_of_files_default_val(api):
-    endpoint_result = api.file.get_list_of_files(
+def get_list_of_files_v1_default_val(api):
+    endpoint_result = api.file.get_list_of_files_v1(
         name_space='string'
     )
     return endpoint_result
 
 
 @pytest.mark.file
-def test_get_list_of_files_default_val(api, validator):
+def test_get_list_of_files_v1_default_val(api, validator):
     try:
-        assert is_valid_get_list_of_files(
+        assert is_valid_get_list_of_files_v1(
             validator,
-            get_list_of_files_default_val(api)
+            get_list_of_files_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -167,15 +167,13 @@ def test_download_a_file_by_fileid_default_val(api, validator):
             raise original_e
 
 
-def is_valid_upload_file(json_schema_validate, obj):
+def is_valid_upload_file_v1(json_schema_validate, obj):
     json_schema_validate('jsd_3113e7fb3df05906b8cd6077d4d9cc5c_v2_3_7_6').validate(obj)
     return True
 
 
-def upload_file(api):
-    endpoint_result = api.file.upload_file(
-        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
-        multipart_monitor_callback=None,
+def upload_file_v1(api):
+    endpoint_result = api.file.upload_file_v1(
         active_validation=True,
         name_space='string',
         payload=None
@@ -184,11 +182,11 @@ def upload_file(api):
 
 
 @pytest.mark.file
-def test_upload_file(api, validator):
+def test_upload_file_v1(api, validator):
     try:
-        assert is_valid_upload_file(
+        assert is_valid_upload_file_v1(
             validator,
-            upload_file(api)
+            upload_file_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -196,10 +194,8 @@ def test_upload_file(api, validator):
             raise original_e
 
 
-def upload_file_default_val(api):
-    endpoint_result = api.file.upload_file(
-        multipart_fields={'file': ('test-1592357065255.csv', open('./tests/test-1592357065255.csv', 'rb'))},
-        multipart_monitor_callback=None,
+def upload_file_v1_default_val(api):
+    endpoint_result = api.file.upload_file_v1(
         active_validation=True,
         name_space='string',
         payload=None
@@ -208,11 +204,11 @@ def upload_file_default_val(api):
 
 
 @pytest.mark.file
-def test_upload_file_default_val(api, validator):
+def test_upload_file_v1_default_val(api, validator):
     try:
-        assert is_valid_upload_file(
+        assert is_valid_upload_file_v1(
             validator,
-            upload_file_default_val(api)
+            upload_file_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

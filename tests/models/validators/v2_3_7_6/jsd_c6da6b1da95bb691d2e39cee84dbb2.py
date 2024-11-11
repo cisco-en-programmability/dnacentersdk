@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetFabricDevicesLayer2HandoffsCount data model.
+"""Cisco DNA Center GetFabricDevicesLayer2HandoffsCountV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC6Da6B1Da95Bb691D2E39Cee84Dbb2(object):
-    """GetFabricDevicesLayer2HandoffsCount request schema definition."""
+    """GetFabricDevicesLayer2HandoffsCountV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC6Da6B1Da95Bb691D2E39Cee84Dbb2, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetTransitPeerNetworkInfo data model.
+"""Cisco DNA Center GetTransitPeerNetworkInfoV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD39E10793A45D3DB229D6D3820C665A(object):
-    """GetTransitPeerNetworkInfo request schema definition."""
+    """GetTransitPeerNetworkInfoV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD39E10793A45D3DB229D6D3820C665A, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -81,6 +82,9 @@ class JSONSchemaValidatorD39E10793A45D3DB229D6D3820C665A(object):
                 "success",
                 "failed"
                 ],
+                "type": "string"
+                },
+                "transitPeerNetworkId": {
                 "type": "string"
                 },
                 "transitPeerNetworkName": {

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeleteMulticastFromSDAFabric data model.
+"""Cisco DNA Center DeleteMulticastFromSDAFabricV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE8E007D3E25F7FB83A6579016Aea72(object):
-    """DeleteMulticastFromSDAFabric request schema definition."""
+    """DeleteMulticastFromSDAFabricV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE8E007D3E25F7FB83A6579016Aea72, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

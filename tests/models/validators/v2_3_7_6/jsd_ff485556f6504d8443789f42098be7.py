@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetTasks data model.
+"""Cisco DNA Center GetTasksOperationalTasksV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFf485556F6504D8443789F42098Be7(object):
-    """GetTasks request schema definition."""
+    """GetTasksOperationalTasksV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFf485556F6504D8443789F42098Be7, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -73,7 +74,10 @@ class JSONSchemaValidatorFf485556F6504D8443789F42098Be7(object):
                 "type": "integer"
                 },
                 "operationIdList": {
-                "type": "object"
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
                 },
                 "parentId": {
                 "type": "string"

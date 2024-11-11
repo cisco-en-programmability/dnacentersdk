@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center PskOverride data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -38,6 +39,7 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "items": {
                 "properties": {
                 "passPhrase": {
                 "type": "string"
@@ -45,7 +47,7 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
                 "site": {
                 "type": "string"
                 },
-                "ssidName": {
+                "ssid": {
                 "type": "string"
                 },
                 "wlanProfileName": {
@@ -53,6 +55,8 @@ class JSONSchemaValidatorF99C96C3A9B45DdaAbc2C75Ff8Efa67F(object):
                 }
                 },
                 "type": "object"
+                },
+                "type": "array"
                 }'''.replace("\n" + ' ' * 16, '')
         ))
 

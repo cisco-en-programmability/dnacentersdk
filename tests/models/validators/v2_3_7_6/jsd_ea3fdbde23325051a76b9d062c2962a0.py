@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center SmartAccountDetails data model.
+"""Cisco DNA Center SmartAccountDetailsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEa3Fdbde23325051A76B9D062C2962A0(object):
-    """SmartAccountDetails request schema definition."""
+    """SmartAccountDetailsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEa3Fdbde23325051A76B9D062C2962A0, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

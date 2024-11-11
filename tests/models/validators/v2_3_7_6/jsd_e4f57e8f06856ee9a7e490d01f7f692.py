@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center ManageExternalAuthenticationSettingAPI data model.
+"""Cisco DNA Center ManageExternalAuthenticationSettingAPIV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE4F57E8F06856Ee9A7E490D01F7F692(object):
-    """ManageExternalAuthenticationSettingAPI request schema definition."""
+    """ManageExternalAuthenticationSettingAPIV1 request schema
+    definition."""
     def __init__(self):
         super(JSONSchemaValidatorE4F57E8F06856Ee9A7E490D01F7F692, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

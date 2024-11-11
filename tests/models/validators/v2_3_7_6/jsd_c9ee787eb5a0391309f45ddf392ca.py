@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetDeviceDetail data model.
+"""Cisco DNA Center GetDeviceDetailV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC9Ee787Eb5A0391309F45Ddf392Ca(object):
-    """GetDeviceDetail request schema definition."""
+    """GetDeviceDetailV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC9Ee787Eb5A0391309F45Ddf392Ca, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -75,7 +76,7 @@ class JSONSchemaValidatorC9Ee787Eb5A0391309F45Ddf392Ca(object):
                 "type": "integer"
                 },
                 "cpu": {
-                "type": "string"
+                "type": "number"
                 },
                 "cpuScore": {
                 "type": "integer"
