@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetSyslogEventSubscriptions data model.
+"""Cisco DNA Center GetSyslogEventSubscriptionsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC7Bed4B4148753E6Bc9912E3Be135217(object):
-    """GetSyslogEventSubscriptions request schema definition."""
+    """GetSyslogEventSubscriptionsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC7Bed4B4148753E6Bc9912E3Be135217, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

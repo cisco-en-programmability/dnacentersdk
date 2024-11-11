@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetTopologyDetails data model.
+"""Cisco DNA Center GetTopologyDetailsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E(object):
-    """GetTopologyDetails request schema definition."""
+    """GetTopologyDetailsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -112,6 +113,9 @@ class JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E(object):
                 "additionalInfo": {
                 "type": "object"
                 },
+                "connectedDeviceId": {
+                "type": "string"
+                },
                 "customParam": {
                 "properties": {
                 "id": {
@@ -133,6 +137,9 @@ class JSONSchemaValidatorB3F79D3B45B98849D9180Cc08018E(object):
                 "type": "object"
                 },
                 "dataPathId": {
+                "type": "string"
+                },
+                "deviceSeries": {
                 "type": "string"
                 },
                 "deviceType": {

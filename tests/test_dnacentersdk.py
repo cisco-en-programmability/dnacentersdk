@@ -323,10 +323,14 @@ from dnacentersdk.api.v2_3_5_3.users import \
     Users as Users_v2_3_5_3
 from dnacentersdk.api.v2_3_5_3.wireless import \
     Wireless as Wireless_v2_3_5_3
+from dnacentersdk.dnacentersdk.api.v2_3_7_6.ai_endpoint_analytics import \
+    AIEndpointAnalytics as AIEndpointAnalytics_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.applications import \
     Applications as Applications_v2_3_7_6
+from dnacentersdk.api.v2_3_7_6.cisco_trusted_certificates import \
+    CiscoTrustedCertificates as CiscoTrustedCertificates_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.clients import \
     Clients as Clients_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.command_runner import \
@@ -343,6 +347,8 @@ from dnacentersdk.api.v2_3_7_6.device_replacement import \
     DeviceReplacement as DeviceReplacement_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.devices import \
     Devices as Devices_v2_3_7_6
+from dnacentersdk.api.v2_3_7_6.disaster_recovery import \
+    DisasterRecovery as DisasterRecovery_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.discovery import \
     Discovery as Discovery_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.eox import \
@@ -399,6 +405,7 @@ from dnacentersdk.api.v2_3_7_6.users import \
     Users as Users_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.wireless import \
     Wireless as Wireless_v2_3_7_6
+from dnacentersdk.api.custom_caller import CustomCaller
 from dnacentersdk.api.custom_caller import CustomCaller
 
 from tests.config import (
@@ -636,8 +643,10 @@ class TestDNACenterSDK:
             assert isinstance(api.users, Users_v2_3_5_3)
             assert isinstance(api.wireless, Wireless_v2_3_5_3)
         if api.version == '2.3.7.6':
+            assert isinstance(api.ai_endpoint_analytics, AIEndpointAnalytics_v2_3_7_6)
             assert isinstance(api.application_policy, ApplicationPolicy_v2_3_7_6)
             assert isinstance(api.applications, Applications_v2_3_7_6)
+            assert isinstance(api.cisco_trusted_certificates, CiscoTrustedCertificates_v2_3_7_6)
             assert isinstance(api.clients, Clients_v2_3_7_6)
             assert isinstance(api.command_runner, CommandRunner_v2_3_7_6)
             assert isinstance(api.compliance, Compliance_v2_3_7_6)
@@ -646,8 +655,9 @@ class TestDNACenterSDK:
             assert isinstance(api.device_onboarding_pnp, DeviceOnboardingPnp_v2_3_7_6)
             assert isinstance(api.device_replacement, DeviceReplacement_v2_3_7_6)
             assert isinstance(api.devices, Devices_v2_3_7_6)
+            assert isinstance(api.disaster_recovery, DisasterRecovery_v2_3_7_6)
             assert isinstance(api.discovery, Discovery_v2_3_7_6)
-            assert isinstance(api.eo_x, EoX_v2_3_7_6)
+            assert isinstance(api.eox, EoX_v2_3_7_6)
             assert isinstance(api.event_management, EventManagement_v2_3_7_6)
             assert isinstance(api.fabric_wireless, FabricWireless_v2_3_7_6)
             assert isinstance(api.file, File_v2_3_7_6)
@@ -671,6 +681,6 @@ class TestDNACenterSDK:
             assert isinstance(api.tag, Tag_v2_3_7_6)
             assert isinstance(api.task, Task_v2_3_7_6)
             assert isinstance(api.topology, Topology_v2_3_7_6)
-            assert isinstance(api.userand_roles, UserandRoles_v2_3_7_6)
+            assert isinstance(api.user_and_roles, UserandRoles_v2_3_7_6)
             assert isinstance(api.users, Users_v2_3_7_6)
             assert isinstance(api.wireless, Wireless_v2_3_7_6)

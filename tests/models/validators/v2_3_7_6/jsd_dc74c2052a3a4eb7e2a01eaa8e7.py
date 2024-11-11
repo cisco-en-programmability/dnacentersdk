@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetNetworkDeviceByIP data model.
+"""Cisco DNA Center GetNetworkDeviceByIPV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDc74C2052A3A4Eb7E2A01Eaa8E7(object):
-    """GetNetworkDeviceByIP request schema definition."""
+    """GetNetworkDeviceByIPV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDc74C2052A3A4Eb7E2A01Eaa8E7, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

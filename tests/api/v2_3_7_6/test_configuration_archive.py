@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI configuration_archive API fixtures and tests.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
-def is_valid_export_device_configurations(json_schema_validate, obj):
+def is_valid_export_device_configurations_v1(json_schema_validate, obj):
     json_schema_validate('jsd_e85b40c5ca055f4c82281617a8f95644_v2_3_7_6').validate(obj)
     return True
 
 
-def export_device_configurations(api):
-    endpoint_result = api.configuration_archive.export_device_configurations(
+def export_device_configurations_v1(api):
+    endpoint_result = api.configuration_archive.export_device_configurations_v1(
         active_validation=True,
         deviceId='string',
         password='string',
@@ -45,11 +45,11 @@ def export_device_configurations(api):
 
 
 @pytest.mark.configuration_archive
-def test_export_device_configurations(api, validator):
+def test_export_device_configurations_v1(api, validator):
     try:
-        assert is_valid_export_device_configurations(
+        assert is_valid_export_device_configurations_v1(
             validator,
-            export_device_configurations(api)
+            export_device_configurations_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -57,8 +57,8 @@ def test_export_device_configurations(api, validator):
             raise original_e
 
 
-def export_device_configurations_default_val(api):
-    endpoint_result = api.configuration_archive.export_device_configurations(
+def export_device_configurations_v1_default_val(api):
+    endpoint_result = api.configuration_archive.export_device_configurations_v1(
         active_validation=True,
         deviceId=None,
         password=None,
@@ -68,24 +68,24 @@ def export_device_configurations_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_export_device_configurations_default_val(api, validator):
+def test_export_device_configurations_v1_default_val(api, validator):
     try:
-        assert is_valid_export_device_configurations(
+        assert is_valid_export_device_configurations_v1(
             validator,
-            export_device_configurations_default_val(api)
+            export_device_configurations_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_configuration_archive_details(json_schema_validate, obj):
+def is_valid_get_configuration_archive_details_v1(json_schema_validate, obj):
     json_schema_validate('jsd_4ff699112d3854d99557dc1f48987f09_v2_3_7_6').validate(obj)
     return True
 
 
-def get_configuration_archive_details(api):
-    endpoint_result = api.configuration_archive.get_configuration_archive_details(
+def get_configuration_archive_details_v1(api):
+    endpoint_result = api.configuration_archive.get_configuration_archive_details_v1(
         created_by='string',
         created_time='string',
         device_id='string',
@@ -97,11 +97,11 @@ def get_configuration_archive_details(api):
 
 
 @pytest.mark.configuration_archive
-def test_get_configuration_archive_details(api, validator):
+def test_get_configuration_archive_details_v1(api, validator):
     try:
-        assert is_valid_get_configuration_archive_details(
+        assert is_valid_get_configuration_archive_details_v1(
             validator,
-            get_configuration_archive_details(api)
+            get_configuration_archive_details_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -109,8 +109,8 @@ def test_get_configuration_archive_details(api, validator):
             raise original_e
 
 
-def get_configuration_archive_details_default_val(api):
-    endpoint_result = api.configuration_archive.get_configuration_archive_details(
+def get_configuration_archive_details_v1_default_val(api):
+    endpoint_result = api.configuration_archive.get_configuration_archive_details_v1(
         created_by=None,
         created_time=None,
         device_id=None,
@@ -122,11 +122,11 @@ def get_configuration_archive_details_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_get_configuration_archive_details_default_val(api, validator):
+def test_get_configuration_archive_details_v1_default_val(api, validator):
     try:
-        assert is_valid_get_configuration_archive_details(
+        assert is_valid_get_configuration_archive_details_v1(
             validator,
-            get_configuration_archive_details_default_val(api)
+            get_configuration_archive_details_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

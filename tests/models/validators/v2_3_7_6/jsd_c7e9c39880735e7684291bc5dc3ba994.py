@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetL3TopologyDetails data model.
+"""Cisco DNA Center GetL3TopologyDetailsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC7E9C39880735E7684291Bc5Dc3Ba994(object):
-    """GetL3TopologyDetails request schema definition."""
+    """GetL3TopologyDetailsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC7E9C39880735E7684291Bc5Dc3Ba994, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -112,6 +113,9 @@ class JSONSchemaValidatorC7E9C39880735E7684291Bc5Dc3Ba994(object):
                 "additionalInfo": {
                 "type": "object"
                 },
+                "connectedDeviceId": {
+                "type": "string"
+                },
                 "customParam": {
                 "properties": {
                 "id": {
@@ -133,6 +137,9 @@ class JSONSchemaValidatorC7E9C39880735E7684291Bc5Dc3Ba994(object):
                 "type": "object"
                 },
                 "dataPathId": {
+                "type": "string"
+                },
+                "deviceSeries": {
                 "type": "string"
                 },
                 "deviceType": {

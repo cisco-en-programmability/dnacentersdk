@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI lan_automation API fixtures and tests.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
-def is_valid_lan_automation_start(json_schema_validate, obj):
+def is_valid_lan_automation_start_v1(json_schema_validate, obj):
     json_schema_validate('jsd_b119a4d455e35cc3b2cc6695a045cbfa_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_start(api):
-    endpoint_result = api.lan_automation.lan_automation_start(
+def lan_automation_start_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_start_v1(
         active_validation=True,
         payload=None
     )
@@ -43,11 +43,11 @@ def lan_automation_start(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_start(api, validator):
+def test_lan_automation_start_v1(api, validator):
     try:
-        assert is_valid_lan_automation_start(
+        assert is_valid_lan_automation_start_v1(
             validator,
-            lan_automation_start(api)
+            lan_automation_start_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,8 +55,8 @@ def test_lan_automation_start(api, validator):
             raise original_e
 
 
-def lan_automation_start_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_start(
+def lan_automation_start_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_start_v1(
         active_validation=True,
         payload=None
     )
@@ -64,35 +64,35 @@ def lan_automation_start_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_start_default_val(api, validator):
+def test_lan_automation_start_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_start(
+        assert is_valid_lan_automation_start_v1(
             validator,
-            lan_automation_start_default_val(api)
+            lan_automation_start_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_session_count(json_schema_validate, obj):
+def is_valid_lan_automation_session_count_v1(json_schema_validate, obj):
     json_schema_validate('jsd_130eea014edd5807925df3a414a92ed4_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_session_count(api):
-    endpoint_result = api.lan_automation.lan_automation_session_count(
+def lan_automation_session_count_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_session_count_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_session_count(api, validator):
+def test_lan_automation_session_count_v1(api, validator):
     try:
-        assert is_valid_lan_automation_session_count(
+        assert is_valid_lan_automation_session_count_v1(
             validator,
-            lan_automation_session_count(api)
+            lan_automation_session_count_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -100,32 +100,32 @@ def test_lan_automation_session_count(api, validator):
             raise original_e
 
 
-def lan_automation_session_count_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_session_count(
+def lan_automation_session_count_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_session_count_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_session_count_default_val(api, validator):
+def test_lan_automation_session_count_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_session_count(
+        assert is_valid_lan_automation_session_count_v1(
             validator,
-            lan_automation_session_count_default_val(api)
+            lan_automation_session_count_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_log(json_schema_validate, obj):
+def is_valid_lan_automation_log_v1(json_schema_validate, obj):
     json_schema_validate('jsd_3173e37f6c9650b68e0aaac866a162cf_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_log(api):
-    endpoint_result = api.lan_automation.lan_automation_log(
+def lan_automation_log_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_log_v1(
         limit=0,
         offset=0
     )
@@ -133,11 +133,11 @@ def lan_automation_log(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_log(api, validator):
+def test_lan_automation_log_v1(api, validator):
     try:
-        assert is_valid_lan_automation_log(
+        assert is_valid_lan_automation_log_v1(
             validator,
-            lan_automation_log(api)
+            lan_automation_log_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -145,8 +145,8 @@ def test_lan_automation_log(api, validator):
             raise original_e
 
 
-def lan_automation_log_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_log(
+def lan_automation_log_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_log_v1(
         limit=None,
         offset=None
     )
@@ -154,35 +154,35 @@ def lan_automation_log_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_log_default_val(api, validator):
+def test_lan_automation_log_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_log(
+        assert is_valid_lan_automation_log_v1(
             validator,
-            lan_automation_log_default_val(api)
+            lan_automation_log_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_log_by_id(json_schema_validate, obj):
+def is_valid_lan_automation_log_by_id_v1(json_schema_validate, obj):
     json_schema_validate('jsd_60e98b744fde50a1b53761251c43bfb0_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_log_by_id(api):
-    endpoint_result = api.lan_automation.lan_automation_log_by_id(
+def lan_automation_log_by_id_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_log_by_id_v1(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_log_by_id(api, validator):
+def test_lan_automation_log_by_id_v1(api, validator):
     try:
-        assert is_valid_lan_automation_log_by_id(
+        assert is_valid_lan_automation_log_by_id_v1(
             validator,
-            lan_automation_log_by_id(api)
+            lan_automation_log_by_id_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -190,32 +190,32 @@ def test_lan_automation_log_by_id(api, validator):
             raise original_e
 
 
-def lan_automation_log_by_id_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_log_by_id(
+def lan_automation_log_by_id_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_log_by_id_v1(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_log_by_id_default_val(api, validator):
+def test_lan_automation_log_by_id_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_log_by_id(
+        assert is_valid_lan_automation_log_by_id_v1(
             validator,
-            lan_automation_log_by_id_default_val(api)
+            lan_automation_log_by_id_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_logs_for_individual_devices(json_schema_validate, obj):
+def is_valid_lan_automation_logs_for_individual_devices_v1(json_schema_validate, obj):
     json_schema_validate('jsd_26485c3441f7507a98d02579c25814f4_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_logs_for_individual_devices(api):
-    endpoint_result = api.lan_automation.lan_automation_logs_for_individual_devices(
+def lan_automation_logs_for_individual_devices_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_logs_for_individual_devices_v1(
         id='string',
         log_level='string',
         serial_number='string'
@@ -224,11 +224,11 @@ def lan_automation_logs_for_individual_devices(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_logs_for_individual_devices(api, validator):
+def test_lan_automation_logs_for_individual_devices_v1(api, validator):
     try:
-        assert is_valid_lan_automation_logs_for_individual_devices(
+        assert is_valid_lan_automation_logs_for_individual_devices_v1(
             validator,
-            lan_automation_logs_for_individual_devices(api)
+            lan_automation_logs_for_individual_devices_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -236,8 +236,8 @@ def test_lan_automation_logs_for_individual_devices(api, validator):
             raise original_e
 
 
-def lan_automation_logs_for_individual_devices_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_logs_for_individual_devices(
+def lan_automation_logs_for_individual_devices_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_logs_for_individual_devices_v1(
         id='string',
         log_level=None,
         serial_number='string'
@@ -246,35 +246,35 @@ def lan_automation_logs_for_individual_devices_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_logs_for_individual_devices_default_val(api, validator):
+def test_lan_automation_logs_for_individual_devices_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_logs_for_individual_devices(
+        assert is_valid_lan_automation_logs_for_individual_devices_v1(
             validator,
-            lan_automation_logs_for_individual_devices_default_val(api)
+            lan_automation_logs_for_individual_devices_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_active_sessions(json_schema_validate, obj):
+def is_valid_lan_automation_active_sessions_v1(json_schema_validate, obj):
     json_schema_validate('jsd_5a19cf2241e75c648220d7172e9e4013_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_active_sessions(api):
-    endpoint_result = api.lan_automation.lan_automation_active_sessions(
+def lan_automation_active_sessions_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_active_sessions_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_active_sessions(api, validator):
+def test_lan_automation_active_sessions_v1(api, validator):
     try:
-        assert is_valid_lan_automation_active_sessions(
+        assert is_valid_lan_automation_active_sessions_v1(
             validator,
-            lan_automation_active_sessions(api)
+            lan_automation_active_sessions_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -282,32 +282,32 @@ def test_lan_automation_active_sessions(api, validator):
             raise original_e
 
 
-def lan_automation_active_sessions_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_active_sessions(
+def lan_automation_active_sessions_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_active_sessions_v1(
 
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_active_sessions_default_val(api, validator):
+def test_lan_automation_active_sessions_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_active_sessions(
+        assert is_valid_lan_automation_active_sessions_v1(
             validator,
-            lan_automation_active_sessions_default_val(api)
+            lan_automation_active_sessions_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_status(json_schema_validate, obj):
+def is_valid_lan_automation_status_v1(json_schema_validate, obj):
     json_schema_validate('jsd_40c56a6c58fd5b71b7949036855ee25b_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_status(api):
-    endpoint_result = api.lan_automation.lan_automation_status(
+def lan_automation_status_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_status_v1(
         limit=0,
         offset=0
     )
@@ -315,11 +315,11 @@ def lan_automation_status(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_status(api, validator):
+def test_lan_automation_status_v1(api, validator):
     try:
-        assert is_valid_lan_automation_status(
+        assert is_valid_lan_automation_status_v1(
             validator,
-            lan_automation_status(api)
+            lan_automation_status_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -327,8 +327,8 @@ def test_lan_automation_status(api, validator):
             raise original_e
 
 
-def lan_automation_status_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_status(
+def lan_automation_status_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_status_v1(
         limit=None,
         offset=None
     )
@@ -336,35 +336,35 @@ def lan_automation_status_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_status_default_val(api, validator):
+def test_lan_automation_status_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_status(
+        assert is_valid_lan_automation_status_v1(
             validator,
-            lan_automation_status_default_val(api)
+            lan_automation_status_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_status_by_id(json_schema_validate, obj):
+def is_valid_lan_automation_status_by_id_v1(json_schema_validate, obj):
     json_schema_validate('jsd_d5727c4bdb1056308cd10e99dff2acb8_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_status_by_id(api):
-    endpoint_result = api.lan_automation.lan_automation_status_by_id(
+def lan_automation_status_by_id_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_status_by_id_v1(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_status_by_id(api, validator):
+def test_lan_automation_status_by_id_v1(api, validator):
     try:
-        assert is_valid_lan_automation_status_by_id(
+        assert is_valid_lan_automation_status_by_id_v1(
             validator,
-            lan_automation_status_by_id(api)
+            lan_automation_status_by_id_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -372,32 +372,32 @@ def test_lan_automation_status_by_id(api, validator):
             raise original_e
 
 
-def lan_automation_status_by_id_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_status_by_id(
+def lan_automation_status_by_id_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_status_by_id_v1(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_status_by_id_default_val(api, validator):
+def test_lan_automation_status_by_id_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_status_by_id(
+        assert is_valid_lan_automation_status_by_id_v1(
             validator,
-            lan_automation_status_by_id_default_val(api)
+            lan_automation_status_by_id_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_device_update(json_schema_validate, obj):
+def is_valid_lan_automation_device_update_v1(json_schema_validate, obj):
     json_schema_validate('jsd_932aac9ba55e5043b4d5e0995c566dce_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_device_update(api):
-    endpoint_result = api.lan_automation.lan_automation_device_update(
+def lan_automation_device_update_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_device_update_v1(
         active_validation=True,
         feature='string',
         hostnameUpdateDevices=[{'deviceManagementIPAddress': 'string', 'newHostName': 'string'}],
@@ -409,11 +409,11 @@ def lan_automation_device_update(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_device_update(api, validator):
+def test_lan_automation_device_update_v1(api, validator):
     try:
-        assert is_valid_lan_automation_device_update(
+        assert is_valid_lan_automation_device_update_v1(
             validator,
-            lan_automation_device_update(api)
+            lan_automation_device_update_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -421,8 +421,8 @@ def test_lan_automation_device_update(api, validator):
             raise original_e
 
 
-def lan_automation_device_update_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_device_update(
+def lan_automation_device_update_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_device_update_v1(
         active_validation=True,
         feature=None,
         hostnameUpdateDevices=None,
@@ -434,35 +434,35 @@ def lan_automation_device_update_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_device_update_default_val(api, validator):
+def test_lan_automation_device_update_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_device_update(
+        assert is_valid_lan_automation_device_update_v1(
             validator,
-            lan_automation_device_update_default_val(api)
+            lan_automation_device_update_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_stop(json_schema_validate, obj):
+def is_valid_lan_automation_stop_v1(json_schema_validate, obj):
     json_schema_validate('jsd_ed815ca3e5ab5ae48720795217ec776b_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_stop(api):
-    endpoint_result = api.lan_automation.lan_automation_stop(
+def lan_automation_stop_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_stop_v1(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_stop(api, validator):
+def test_lan_automation_stop_v1(api, validator):
     try:
-        assert is_valid_lan_automation_stop(
+        assert is_valid_lan_automation_stop_v1(
             validator,
-            lan_automation_stop(api)
+            lan_automation_stop_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -470,32 +470,32 @@ def test_lan_automation_stop(api, validator):
             raise original_e
 
 
-def lan_automation_stop_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_stop(
+def lan_automation_stop_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_stop_v1(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_stop_default_val(api, validator):
+def test_lan_automation_stop_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_stop(
+        assert is_valid_lan_automation_stop_v1(
             validator,
-            lan_automation_stop_default_val(api)
+            lan_automation_stop_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_lan_automation_stop_and_update_devices(json_schema_validate, obj):
+def is_valid_lan_automation_stop_and_update_devices_v1(json_schema_validate, obj):
     json_schema_validate('jsd_d413a3d054ac50fa921ca8cf7fdf5449_v2_3_7_6').validate(obj)
     return True
 
 
-def lan_automation_stop_and_update_devices(api):
-    endpoint_result = api.lan_automation.lan_automation_stop_and_update_devices(
+def lan_automation_stop_and_update_devices_v1(api):
+    endpoint_result = api.lan_automation.lan_automation_stop_and_update_devices_v1(
         active_validation=True,
         id='string',
         payload=None
@@ -504,11 +504,11 @@ def lan_automation_stop_and_update_devices(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_stop_and_update_devices(api, validator):
+def test_lan_automation_stop_and_update_devices_v1(api, validator):
     try:
-        assert is_valid_lan_automation_stop_and_update_devices(
+        assert is_valid_lan_automation_stop_and_update_devices_v1(
             validator,
-            lan_automation_stop_and_update_devices(api)
+            lan_automation_stop_and_update_devices_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -516,8 +516,8 @@ def test_lan_automation_stop_and_update_devices(api, validator):
             raise original_e
 
 
-def lan_automation_stop_and_update_devices_default_val(api):
-    endpoint_result = api.lan_automation.lan_automation_stop_and_update_devices(
+def lan_automation_stop_and_update_devices_v1_default_val(api):
+    endpoint_result = api.lan_automation.lan_automation_stop_and_update_devices_v1(
         active_validation=True,
         id='string',
         payload=None
@@ -526,11 +526,11 @@ def lan_automation_stop_and_update_devices_default_val(api):
 
 
 @pytest.mark.lan_automation
-def test_lan_automation_stop_and_update_devices_default_val(api, validator):
+def test_lan_automation_stop_and_update_devices_v1_default_val(api, validator):
     try:
-        assert is_valid_lan_automation_stop_and_update_devices(
+        assert is_valid_lan_automation_stop_and_update_devices_v1(
             validator,
-            lan_automation_stop_and_update_devices_default_val(api)
+            lan_automation_stop_and_update_devices_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

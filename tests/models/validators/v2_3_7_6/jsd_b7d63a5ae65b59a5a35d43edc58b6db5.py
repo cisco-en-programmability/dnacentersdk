@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetListOfFiles data model.
+"""Cisco DNA Center GetListOfFilesV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB7D63A5AE65B59A5A35D43Edc58B6Db5(object):
-    """GetListOfFiles request schema definition."""
+    """GetListOfFilesV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB7D63A5AE65B59A5A35D43Edc58B6Db5, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

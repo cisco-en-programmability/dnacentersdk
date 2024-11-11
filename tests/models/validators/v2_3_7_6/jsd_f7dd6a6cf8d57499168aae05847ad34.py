@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center CreateSensorTestTemplate data model.
+"""Cisco DNA Center CreateSensorTestTemplateV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34(object):
-    """CreateSensorTestTemplate request schema definition."""
+    """CreateSensorTestTemplateV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF7Dd6A6Cf8D57499168Aae05847Ad34, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

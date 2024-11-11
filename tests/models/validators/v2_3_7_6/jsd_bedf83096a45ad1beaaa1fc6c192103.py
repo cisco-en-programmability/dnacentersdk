@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetAAAAttributeAPI data model.
+"""Cisco DNA Center GetAAAAttributeAPIV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBedf83096A45Ad1BeaaA1Fc6C192103(object):
-    """GetAAAAttributeAPI request schema definition."""
+    """GetAAAAttributeAPIV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBedf83096A45Ad1BeaaA1Fc6C192103, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

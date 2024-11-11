@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeployDeviceReplacementWorkflow data model.
+"""Cisco DNA Center DeployDeviceReplacementWorkflowV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF256E33Af7501A8BdaE2742Ca9F6D6(object):
-    """DeployDeviceReplacementWorkflow request schema definition."""
+    """DeployDeviceReplacementWorkflowV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF256E33Af7501A8BdaE2742Ca9F6D6, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

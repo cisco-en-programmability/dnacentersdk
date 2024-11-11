@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center ProvisionDevices data model.
+"""Cisco DNA Center ProvisionDevicesV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBdcb514AE33B571795E4A42147D11F87(object):
-    """ProvisionDevices request schema definition."""
+    """ProvisionDevicesV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBdcb514AE33B571795E4A42147D11F87, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

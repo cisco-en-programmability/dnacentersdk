@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetFabricSiteCount data model.
+"""Cisco DNA Center GetFabricSiteCountV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB871B97883085717Bfbb14E860Ab6654(object):
-    """GetFabricSiteCount request schema definition."""
+    """GetFabricSiteCountV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB871B97883085717Bfbb14E860Ab6654, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

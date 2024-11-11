@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center EoX API wrapper.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,9 @@ SOFTWARE.
 """
 
 
+
 from builtins import *
+
 
 
 from ...restsession import RestSession
@@ -64,9 +66,9 @@ class EoX(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_eo_x_status_for_all_devices(self,
-                                        headers=None,
-                                        **request_parameters):
+    def get_eox_status_for_all_devices_v1(self,
+                                          headers=None,
+                                          **request_parameters):
         """Retrieves EoX status for all devices in the network .
 
         Args:
@@ -83,6 +85,8 @@ class EoX(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-eox-status-for-all-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -114,10 +118,10 @@ class EoX(object):
 
         return self._object_factory('bpm_d5d27a53ac53258fa2183b7e93a7d5_v2_3_7_6', json_data)
 
-    def get_eo_x_details_per_device(self,
-                                    device_id,
-                                    headers=None,
-                                    **request_parameters):
+    def get_eox_details_per_device_v1(self,
+                                      device_id,
+                                      headers=None,
+                                      **request_parameters):
         """Retrieves EoX details for a device  .
 
         Args:
@@ -135,6 +139,8 @@ class EoX(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-eox-details-per-device
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -169,9 +175,9 @@ class EoX(object):
 
         return self._object_factory('bpm_ec048832853f8a63f34415d0e6fce_v2_3_7_6', json_data)
 
-    def get_eo_x_summary(self,
-                         headers=None,
-                         **request_parameters):
+    def get_eox_summary_v1(self,
+                           headers=None,
+                           **request_parameters):
         """Retrieves EoX summary for all devices in the network .
 
         Args:
@@ -188,6 +194,8 @@ class EoX(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-eox-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -218,3 +226,69 @@ class EoX(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_f0a0dfdaca465bdc91fc290d87476b89_v2_3_7_6', json_data)
+
+                
+    
+    # Alias Function
+    def get_eox_details_per_device(self,
+                                      device_id,
+                                      headers=None,
+                                      **request_parameters):
+        """ This function is an alias of get_eox_details_per_device_v1 .
+        Args:
+            device_id(basestring): deviceId path parameter. Device instance UUID .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_eox_details_per_device_v1 .
+        """ 
+        return self.get_eox_details_per_device_v1(
+                    device_id=device_id,
+                    headers=headers,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def get_eox_status_for_all_devices(self,
+                                          headers=None,
+                                          **request_parameters):
+        """ This function is an alias of get_eox_status_for_all_devices_v1 .
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_eox_status_for_all_devices_v1 .
+        """
+        return self.get_eox_status_for_all_devices_v1(
+                    headers=headers,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def get_eox_summary(self,
+                           headers=None,
+                           **request_parameters):
+        """ This function is an alias of get_eox_summary_v1 .
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_eox_summary_v1 .
+        """
+        return self.get_eox_summary_v1(
+                    headers=headers,
+                    **request_parameters
+        )
+
+

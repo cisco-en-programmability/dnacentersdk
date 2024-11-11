@@ -53,6 +53,9 @@ WAIT_ON_RATE_LIMIT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_WAIT_ON_RATE_LIMIT'
 #: name of the environment verify variable
 VERIFY_ENVIRONMENT_VARIABLE = 'DNA_CENTER_VERIFY'
 
+#: name of the environment user agent variable
+USER_AGENT_ENVIRONMENT_VARIABLE = 'DNA_CENTER_USER_AGENT'
+
 
 def _is_bool(value):
     if isinstance(value, str):
@@ -74,6 +77,10 @@ def _get_env_value(env_var, env_type, cast_func):
 def get_env_username():
     DNA_CENTER_USERNAME = os.getenv(USERNAME_ENVIRONMENT_VARIABLE)
     return DNA_CENTER_USERNAME
+
+def get_env_user_agent():
+    DNA_CENTER_USER_AGENT = os.getenv(USER_AGENT_ENVIRONMENT_VARIABLE)
+    return DNA_CENTER_USER_AGENT
 
 
 def get_env_password():

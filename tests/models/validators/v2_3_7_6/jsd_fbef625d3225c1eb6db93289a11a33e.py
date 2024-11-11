@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center DeleteApplicationSet data model.
+"""Cisco DNA Center DeleteApplicationSetV2 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFbef625D3225C1EB6Db93289A11A33E(object):
-    """DeleteApplicationSet request schema definition."""
+    """DeleteApplicationSetV2 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFbef625D3225C1EB6Db93289A11A33E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

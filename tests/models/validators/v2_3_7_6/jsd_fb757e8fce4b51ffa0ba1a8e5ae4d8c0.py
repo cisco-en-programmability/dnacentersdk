@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetEnterpriseSSID data model.
+"""Cisco DNA Center GetEnterpriseSSIDV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFb757E8FCe4B51FfA0Ba1A8E5Ae4D8C0(object):
-    """GetEnterpriseSSID request schema definition."""
+    """GetEnterpriseSSIDV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFb757E8FCe4B51FfA0Ba1A8E5Ae4D8C0, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

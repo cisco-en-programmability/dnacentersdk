@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center AddAuthenticationAndPolicyServerAccessConfiguration data model.
+"""Cisco DNA Center AddAuthenticationAndPolicyServerAccessConfigurationV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFa3975Be5Af25501Abb40339D96917Eb(object):
-    """AddAuthenticationAndPolicyServerAccessConfiguration request schema
-    definition."""
+    """AddAuthenticationAndPolicyServerAccessConfigurationV1 request
+    schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFa3975Be5Af25501Abb40339D96917Eb, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

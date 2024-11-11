@@ -862,23 +862,23 @@ class DeviceOnboardingPnp(object):
                                  **request_parameters):
         """Claim a device based on DNA-C Site-based design process. Some required parameters differ based on device
         platform: Default/StackSwitch: imageInfo, configInfo.   AccessPoints: rfProfile.   Sensors:
-        sensorProfile.   CatalystWLC/MobilityExpress/EWC: staticIP, subnetMask, gateway. vlanId and
-        ipInterfaceName are also allowed for Catalyst 9800 WLCs. .
+        sensorProfile.   DNAWLC/MobilityExpress/EWC: staticIP, subnetMask, gateway. vlanId and
+        ipInterfaceName are also allowed for DNA 9800 WLCs. .
 
         Args:
             configInfo(list): Device Onboarding (PnP)'s configInfo (list of objects).
             deviceId(string): Device Onboarding (PnP)'s Device Id.
-            gateway(string): Device Onboarding (PnP)'s for CatalystWLC/MobilityExpress .
+            gateway(string): Device Onboarding (PnP)'s for DNAWLC/MobilityExpress .
             imageInfo(object): Device Onboarding (PnP)'s imageInfo.
-            ipInterfaceName(string): Device Onboarding (PnP)'s for Catalyst 9800 WLC .
+            ipInterfaceName(string): Device Onboarding (PnP)'s for DNA 9800 WLC .
             rfProfile(string): Device Onboarding (PnP)'s for Access Points .
             sensorProfile(string): Device Onboarding (PnP)'s for Sensors .
             siteId(string): Device Onboarding (PnP)'s Site Id.
-            staticIP(string): Device Onboarding (PnP)'s for CatalystWLC/MobilityExpress .
-            subnetMask(string): Device Onboarding (PnP)'s for CatalystWLC/MobilityExpress .
+            staticIP(string): Device Onboarding (PnP)'s for DNAWLC/MobilityExpress .
+            subnetMask(string): Device Onboarding (PnP)'s for DNAWLC/MobilityExpress .
             type(string): Device Onboarding (PnP)'s Type. Available values are 'Default', 'StackSwitch',
-                'AccessPoint', 'Sensor', 'CatalystWLC' and 'MobilityExpress'.
-            vlanId(string): Device Onboarding (PnP)'s for Catalyst 9800 WLC .
+                'AccessPoint', 'Sensor', 'DNAWLC' and 'MobilityExpress'.
+            vlanId(string): Device Onboarding (PnP)'s for DNA 9800 WLC .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the

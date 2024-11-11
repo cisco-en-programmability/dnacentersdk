@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center AddAnycastGateways data model.
+"""Cisco DNA Center AddAnycastGatewaysV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEe8590B6B45048B84E814161272Bee(object):
-    """AddAnycastGateways request schema definition."""
+    """AddAnycastGatewaysV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEe8590B6B45048B84E814161272Bee, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -50,6 +51,9 @@ class JSONSchemaValidatorEe8590B6B45048B84E814161272Bee(object):
                 "type": "string"
                 },
                 "isCriticalPool": {
+                "type": "boolean"
+                },
+                "isGroupBasedPolicyEnforcementEnabled": {
                 "type": "boolean"
                 },
                 "isIntraSubnetRoutingEnabled": {

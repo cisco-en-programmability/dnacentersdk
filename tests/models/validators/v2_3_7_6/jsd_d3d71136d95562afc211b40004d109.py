@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetAllInterfaces data model.
+"""Cisco DNA Center GetAllInterfacesV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD3D71136D95562Afc211B40004D109(object):
-    """GetAllInterfaces request schema definition."""
+    """GetAllInterfacesV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD3D71136D95562Afc211B40004D109, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

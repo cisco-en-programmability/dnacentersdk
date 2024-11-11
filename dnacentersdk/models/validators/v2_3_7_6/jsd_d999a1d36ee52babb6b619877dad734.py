@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center UpdateDefaultAuthenticationProfile data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+
 
 
 import json
@@ -50,8 +51,8 @@ class JSONSchemaValidatorD999A1D36Ee52BaBb6B619877Dad734(object):
                 },
                 "authenticationOrder": {
                 "enum": [
-                "dot1x",
-                "mac"
+                "dot1x ",
+                "mab"
                 ],
                 "type": "string"
                 },

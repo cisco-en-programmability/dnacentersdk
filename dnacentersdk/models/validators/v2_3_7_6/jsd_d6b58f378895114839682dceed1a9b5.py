@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center AddPortAssignments data model.
+"""Cisco DNA Center AddPortAssignmentsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5(object):
-    """AddPortAssignments request schema definition."""
+    """AddPortAssignmentsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -74,7 +75,7 @@ class JSONSchemaValidatorD6B58F378895114839682Dceed1A9B5(object):
                 "networkDeviceId": {
                 "type": "string"
                 },
-                "scalableGroupName": {
+                "securityGroupName": {
                 "type": "string"
                 },
                 "voiceVlanName": {

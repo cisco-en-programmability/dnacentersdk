@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center CreateSNMPv3Credentials data model.
+"""Cisco DNA Center CreateSNMPv3CredentialsV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEcdb2D14C29B5Bf3Ad79Ed2E3Cc70715(object):
-    """CreateSNMPv3Credentials request schema definition."""
+    """CreateSNMPv3CredentialsV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEcdb2D14C29B5Bf3Ad79Ed2E3Cc70715, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

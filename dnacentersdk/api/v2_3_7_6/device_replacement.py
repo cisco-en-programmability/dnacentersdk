@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center Device Replacement API wrapper.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,9 @@ SOFTWARE.
 """
 
 
+
 from builtins import *
+
 
 
 from ...restsession import RestSession
@@ -64,7 +66,7 @@ class DeviceReplacement(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def return_replacement_devices_with_details(self,
+    def return_replacement_devices_with_details_v1(self,
                                                 family=None,
                                                 faulty_device_name=None,
                                                 faulty_device_platform=None,
@@ -99,8 +101,8 @@ class DeviceReplacement(object):
             sort_by(str): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
                 .
             sort_order(str): sortOrder query parameter. Order on displayName[ASC,DESC] .
-            offset(int,str): offset query parameter.
-            limit(int,str): limit query parameter.
+            offset(int): offset query parameter.
+            limit(int): limit query parameter.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -114,6 +116,8 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!return-list-of-replacement-devices-with-replacement-details
         """
         check_type(headers, dict)
         check_type(faulty_device_name, str)
@@ -125,8 +129,8 @@ class DeviceReplacement(object):
         check_type(family, (str, list, set, tuple))
         check_type(sort_by, str)
         check_type(sort_order, str)
-        check_type(offset, (int, str))
-        check_type(limit, (int, str))
+        check_type(offset, int)
+        check_type(limit, int)
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -178,11 +182,11 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_e89f8ba4965853b3a075c7401c564477_v2_3_7_6', json_data)
 
-    def unmark_device_for_replacement(self,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def unmark_device_for_replacement_v1(self,
+                                         headers=None,
+                                         payload=None,
+                                         active_validation=True,
+                                         **request_parameters):
         """UnMarks device for replacement .
 
         Args:
@@ -203,6 +207,8 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!un-mark-device-for-replacement
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -241,11 +247,11 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_b60f9f312235959812d49dc4c469e83_v2_3_7_6', json_data)
 
-    def mark_device_for_replacement(self,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def mark_device_for_replacement_v1(self,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
         """Marks device for replacement .
 
         Args:
@@ -266,6 +272,8 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!mark-device-for-replacement
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -304,10 +312,10 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_ac6e63199fb05bcf89106a22502c2197_v2_3_7_6', json_data)
 
-    def return_replacement_devices_count(self,
-                                         replacement_status=None,
-                                         headers=None,
-                                         **request_parameters):
+    def return_replacement_devices_count_v1(self,
+                                            replacement_status=None,
+                                            headers=None,
+                                            **request_parameters):
         """Get replacement devices count .
 
         Args:
@@ -327,6 +335,8 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!return-replacement-devices-count
         """
         check_type(headers, dict)
         check_type(replacement_status, (str, list, set, tuple))
@@ -361,13 +371,13 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_c2b2882c8fb65284bfc9d781e9ddd07f_v2_3_7_6', json_data)
 
-    def deploy_device_replacement_workflow(self,
-                                           faultyDeviceSerialNumber=None,
-                                           replacementDeviceSerialNumber=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
+    def deploy_device_replacement_workflow_v1(self,
+                                              faultyDeviceSerialNumber=None,
+                                              replacementDeviceSerialNumber=None,
+                                              headers=None,
+                                              payload=None,
+                                              active_validation=True,
+                                              **request_parameters):
         """API to trigger RMA workflow that will replace faulty device with replacement device with same configuration and
         images .
 
@@ -391,6 +401,8 @@ class DeviceReplacement(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!deploy-device-replacement-workflow
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -438,3 +450,186 @@ class DeviceReplacement(object):
                                            json=_payload)
 
         return self._object_factory('bpm_f256e33af7501a8bdae2742ca9f6d6_v2_3_7_6', json_data)
+
+                
+    
+    # Alias Function
+    def return_replacement_devices_with_details(self,
+                                                family=None,
+                                                faulty_device_name=None,
+                                                faulty_device_platform=None,
+                                                faulty_device_serial_number=None,
+                                                limit=None,
+                                                offset=None,
+                                                replacement_device_platform=None,
+                                                replacement_device_serial_number=None,
+                                                replacement_status=None,
+                                                sort_by=None,
+                                                sort_order=None,
+                                                headers=None,
+                                                **request_parameters):
+        """This function is an alias of return_replacement_devices_with_details_v1. .
+
+        Args:
+            faulty_device_name(str): faultyDeviceName query parameter. Faulty Device Name .
+            faulty_device_platform(str): faultyDevicePlatform query parameter. Faulty Device Platform .
+            replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement Device
+                Platform .
+            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty Device Serial
+                Number .
+            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement
+                Device Serial Number .
+            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
+                status [READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED,
+                ERROR, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED] .
+            family(str, list, set, tuple): family query parameter. List of families[Routers, Switches and
+                Hubs, AP] .
+            sort_by(str): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
+                .
+            sort_order(str): sortOrder query parameter. Order on displayName[ASC,DESC] .
+            offset(int): offset query parameter.
+            limit(int): limit query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of return_replacement_devices_with_details_v1.
+        """  
+        return self.return_replacement_devices_with_details_v1(
+                    family=family,
+                    faulty_device_name=faulty_device_name,
+                    faulty_device_platform=faulty_device_platform,
+                    faulty_device_serial_number=faulty_device_serial_number,
+                    limit=limit,
+                    offset=offset,
+                    replacement_device_platform=replacement_device_platform,
+                    replacement_device_serial_number=replacement_device_serial_number,
+                    replacement_status=replacement_status,
+                    sort_by=sort_by,
+                    sort_order=sort_order,
+                    headers=headers,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def unmark_device_for_replacement(self,
+                                         headers=None,
+                                         payload=None,
+                                         active_validation=True,
+                                         **request_parameters):
+        """This function is an alias of unmark_device_for_replacement_v1 .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of unmark_device_for_replacement_v1.
+        """  
+        return self.unmark_device_for_replacement_v1(
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def return_replacement_devices_count(self,
+                                            replacement_status=None,
+                                            headers=None,
+                                            **request_parameters):
+        """This function is an alias of return_replacement_devices_count_v1 .
+
+        Args:
+            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
+                status list[READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED,
+                REPLACED, ERROR] .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of return_replacement_devices_count_v1.
+        """  
+        return self.return_replacement_devices_count_v1(
+                    replacement_status=replacement_status,
+                    headers=headers,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def mark_device_for_replacement(self,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """This function is an alias of mark_device_for_replacement_v1 .
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of mark_device_for_replacement_v1.
+        """  
+        return self.mark_device_for_replacement_v1(
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def deploy_device_replacement_workflow(self,
+                                              faultyDeviceSerialNumber=None,
+                                              replacementDeviceSerialNumber=None,
+                                              headers=None,
+                                              payload=None,
+                                              active_validation=True,
+                                              **request_parameters):
+        """This function is an alias of deploy_device_replacement_workflow_v1 .
+
+        Args:
+            faultyDeviceSerialNumber(string): Device Replacement's Faulty device serial number .
+            replacementDeviceSerialNumber(string): Device Replacement's Replacement device serial number .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of deploy_device_replacement_workflow_v1.
+        """  
+        return self.deploy_device_replacement_workflow_v1(
+                    faultyDeviceSerialNumber=faultyDeviceSerialNumber,
+                    replacementDeviceSerialNumber=replacementDeviceSerialNumber,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+
+

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI configuration_templates API fixtures and tests.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -82,13 +82,13 @@ def test_clone_given_template_default_val(api, validator):
             raise original_e
 
 
-def is_valid_create_project(json_schema_validate, obj):
+def is_valid_create_project_v1(json_schema_validate, obj):
     json_schema_validate('jsd_8548ecc3258a5c5b8f2267a512820a59_v2_3_7_6').validate(obj)
     return True
 
 
-def create_project(api):
-    endpoint_result = api.configuration_templates.create_project(
+def create_project_v1(api):
+    endpoint_result = api.configuration_templates.create_project_v1(
         active_validation=True,
         createTime=0,
         description='string',
@@ -103,11 +103,11 @@ def create_project(api):
 
 
 @pytest.mark.configuration_templates
-def test_create_project(api, validator):
+def test_create_project_v1(api, validator):
     try:
-        assert is_valid_create_project(
+        assert is_valid_create_project_v1(
             validator,
-            create_project(api)
+            create_project_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -115,8 +115,8 @@ def test_create_project(api, validator):
             raise original_e
 
 
-def create_project_default_val(api):
-    endpoint_result = api.configuration_templates.create_project(
+def create_project_v1_default_val(api):
+    endpoint_result = api.configuration_templates.create_project_v1(
         active_validation=True,
         createTime=None,
         description=None,
@@ -131,24 +131,24 @@ def create_project_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_create_project_default_val(api, validator):
+def test_create_project_v1_default_val(api, validator):
     try:
-        assert is_valid_create_project(
+        assert is_valid_create_project_v1(
             validator,
-            create_project_default_val(api)
+            create_project_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_project(json_schema_validate, obj):
+def is_valid_update_project_v1(json_schema_validate, obj):
     json_schema_validate('jsd_cc19241fd92f586c8986d4d5c99c3a88_v2_3_7_6').validate(obj)
     return True
 
 
-def update_project(api):
-    endpoint_result = api.configuration_templates.update_project(
+def update_project_v1(api):
+    endpoint_result = api.configuration_templates.update_project_v1(
         active_validation=True,
         createTime=0,
         description='string',
@@ -163,11 +163,11 @@ def update_project(api):
 
 
 @pytest.mark.configuration_templates
-def test_update_project(api, validator):
+def test_update_project_v1(api, validator):
     try:
-        assert is_valid_update_project(
+        assert is_valid_update_project_v1(
             validator,
-            update_project(api)
+            update_project_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -175,8 +175,8 @@ def test_update_project(api, validator):
             raise original_e
 
 
-def update_project_default_val(api):
-    endpoint_result = api.configuration_templates.update_project(
+def update_project_v1_default_val(api):
+    endpoint_result = api.configuration_templates.update_project_v1(
         active_validation=True,
         createTime=None,
         description=None,
@@ -191,11 +191,11 @@ def update_project_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_update_project_default_val(api, validator):
+def test_update_project_v1_default_val(api, validator):
     try:
-        assert is_valid_update_project(
+        assert is_valid_update_project_v1(
             validator,
-            update_project_default_val(api)
+            update_project_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -248,13 +248,13 @@ def test_get_projects_default_val(api, validator):
             raise original_e
 
 
-def is_valid_imports_the_projects_provided(json_schema_validate, obj):
+def is_valid_imports_the_projects_provided_v1(json_schema_validate, obj):
     json_schema_validate('jsd_dec1857f1585557eb39e12a9c93ef985_v2_3_7_6').validate(obj)
     return True
 
 
-def imports_the_projects_provided(api):
-    endpoint_result = api.configuration_templates.imports_the_projects_provided(
+def imports_the_projects_provided_v1(api):
+    endpoint_result = api.configuration_templates.imports_the_projects_provided_v1(
         active_validation=True,
         do_version=True,
         payload=None
@@ -263,11 +263,11 @@ def imports_the_projects_provided(api):
 
 
 @pytest.mark.configuration_templates
-def test_imports_the_projects_provided(api, validator):
+def test_imports_the_projects_provided_v1(api, validator):
     try:
-        assert is_valid_imports_the_projects_provided(
+        assert is_valid_imports_the_projects_provided_v1(
             validator,
-            imports_the_projects_provided(api)
+            imports_the_projects_provided_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -275,8 +275,8 @@ def test_imports_the_projects_provided(api, validator):
             raise original_e
 
 
-def imports_the_projects_provided_default_val(api):
-    endpoint_result = api.configuration_templates.imports_the_projects_provided(
+def imports_the_projects_provided_v1_default_val(api):
+    endpoint_result = api.configuration_templates.imports_the_projects_provided_v1(
         active_validation=True,
         do_version=None,
         payload=None
@@ -285,11 +285,11 @@ def imports_the_projects_provided_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_imports_the_projects_provided_default_val(api, validator):
+def test_imports_the_projects_provided_v1_default_val(api, validator):
     try:
-        assert is_valid_imports_the_projects_provided(
+        assert is_valid_imports_the_projects_provided_v1(
             validator,
-            imports_the_projects_provided_default_val(api)
+            imports_the_projects_provided_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -342,13 +342,13 @@ def test_export_projects_default_val(api, validator):
             raise original_e
 
 
-def is_valid_imports_the_templates_provided(json_schema_validate, obj):
+def is_valid_imports_the_templates_provided_v1(json_schema_validate, obj):
     json_schema_validate('jsd_706db7b6c4f0542aab9fe7cf5c995f83_v2_3_7_6').validate(obj)
     return True
 
 
-def imports_the_templates_provided(api):
-    endpoint_result = api.configuration_templates.imports_the_templates_provided(
+def imports_the_templates_provided_v1(api):
+    endpoint_result = api.configuration_templates.imports_the_templates_provided_v1(
         active_validation=True,
         do_version=True,
         payload=None,
@@ -358,11 +358,11 @@ def imports_the_templates_provided(api):
 
 
 @pytest.mark.configuration_templates
-def test_imports_the_templates_provided(api, validator):
+def test_imports_the_templates_provided_v1(api, validator):
     try:
-        assert is_valid_imports_the_templates_provided(
+        assert is_valid_imports_the_templates_provided_v1(
             validator,
-            imports_the_templates_provided(api)
+            imports_the_templates_provided_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -370,8 +370,8 @@ def test_imports_the_templates_provided(api, validator):
             raise original_e
 
 
-def imports_the_templates_provided_default_val(api):
-    endpoint_result = api.configuration_templates.imports_the_templates_provided(
+def imports_the_templates_provided_v1_default_val(api):
+    endpoint_result = api.configuration_templates.imports_the_templates_provided_v1(
         active_validation=True,
         do_version=None,
         payload=None,
@@ -381,11 +381,11 @@ def imports_the_templates_provided_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_imports_the_templates_provided_default_val(api, validator):
+def test_imports_the_templates_provided_v1_default_val(api, validator):
     try:
-        assert is_valid_imports_the_templates_provided(
+        assert is_valid_imports_the_templates_provided_v1(
             validator,
-            imports_the_templates_provided_default_val(api)
+            imports_the_templates_provided_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -436,24 +436,24 @@ def test_get_project_details_default_val(api, validator):
             raise original_e
 
 
-def is_valid_deletes_the_project(json_schema_validate, obj):
+def is_valid_deletes_the_project_v1(json_schema_validate, obj):
     json_schema_validate('jsd_a3e0588fa1ac56d4947ae5cfc2e16a8f_v2_3_7_6').validate(obj)
     return True
 
 
-def deletes_the_project(api):
-    endpoint_result = api.configuration_templates.deletes_the_project(
+def deletes_the_project_v1(api):
+    endpoint_result = api.configuration_templates.deletes_the_project_v1(
         project_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_deletes_the_project(api, validator):
+def test_deletes_the_project_v1(api, validator):
     try:
-        assert is_valid_deletes_the_project(
+        assert is_valid_deletes_the_project_v1(
             validator,
-            deletes_the_project(api)
+            deletes_the_project_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -461,32 +461,32 @@ def test_deletes_the_project(api, validator):
             raise original_e
 
 
-def deletes_the_project_default_val(api):
-    endpoint_result = api.configuration_templates.deletes_the_project(
+def deletes_the_project_v1_default_val(api):
+    endpoint_result = api.configuration_templates.deletes_the_project_v1(
         project_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_deletes_the_project_default_val(api, validator):
+def test_deletes_the_project_v1_default_val(api, validator):
     try:
-        assert is_valid_deletes_the_project(
+        assert is_valid_deletes_the_project_v1(
             validator,
-            deletes_the_project_default_val(api)
+            deletes_the_project_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_template(json_schema_validate, obj):
+def is_valid_create_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_e3e170003d865b9a8d76cbe1d2f268be_v2_3_7_6').validate(obj)
     return True
 
 
-def create_template(api):
-    endpoint_result = api.configuration_templates.create_template(
+def create_template_v1(api):
+    endpoint_result = api.configuration_templates.create_template_v1(
         active_validation=True,
         author='string',
         composite=True,
@@ -521,11 +521,11 @@ def create_template(api):
 
 
 @pytest.mark.configuration_templates
-def test_create_template(api, validator):
+def test_create_template_v1(api, validator):
     try:
-        assert is_valid_create_template(
+        assert is_valid_create_template_v1(
             validator,
-            create_template(api)
+            create_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -533,8 +533,8 @@ def test_create_template(api, validator):
             raise original_e
 
 
-def create_template_default_val(api):
-    endpoint_result = api.configuration_templates.create_template(
+def create_template_v1_default_val(api):
+    endpoint_result = api.configuration_templates.create_template_v1(
         active_validation=True,
         author=None,
         composite=None,
@@ -569,24 +569,24 @@ def create_template_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_create_template_default_val(api, validator):
+def test_create_template_v1_default_val(api, validator):
     try:
-        assert is_valid_create_template(
+        assert is_valid_create_template_v1(
             validator,
-            create_template_default_val(api)
+            create_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_gets_the_templates_available(json_schema_validate, obj):
+def is_valid_gets_the_templates_available_v1(json_schema_validate, obj):
     json_schema_validate('jsd_027bdc3bc8a35908aba5858e78805d22_v2_3_7_6').validate(obj)
     return True
 
 
-def gets_the_templates_available(api):
-    endpoint_result = api.configuration_templates.gets_the_templates_available(
+def gets_the_templates_available_v1(api):
+    endpoint_result = api.configuration_templates.gets_the_templates_available_v1(
         filter_conflicting_templates=True,
         product_family='string',
         product_series='string',
@@ -603,11 +603,11 @@ def gets_the_templates_available(api):
 
 
 @pytest.mark.configuration_templates
-def test_gets_the_templates_available(api, validator):
+def test_gets_the_templates_available_v1(api, validator):
     try:
-        assert is_valid_gets_the_templates_available(
+        assert is_valid_gets_the_templates_available_v1(
             validator,
-            gets_the_templates_available(api)
+            gets_the_templates_available_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -615,8 +615,8 @@ def test_gets_the_templates_available(api, validator):
             raise original_e
 
 
-def gets_the_templates_available_default_val(api):
-    endpoint_result = api.configuration_templates.gets_the_templates_available(
+def gets_the_templates_available_v1_default_val(api):
+    endpoint_result = api.configuration_templates.gets_the_templates_available_v1(
         filter_conflicting_templates=None,
         product_family=None,
         product_series=None,
@@ -633,24 +633,24 @@ def gets_the_templates_available_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_gets_the_templates_available_default_val(api, validator):
+def test_gets_the_templates_available_v1_default_val(api, validator):
     try:
-        assert is_valid_gets_the_templates_available(
+        assert is_valid_gets_the_templates_available_v1(
             validator,
-            gets_the_templates_available_default_val(api)
+            gets_the_templates_available_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_template(json_schema_validate, obj):
+def is_valid_update_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_7dbea7d7de125cf6b840d5032d3a5c59_v2_3_7_6').validate(obj)
     return True
 
 
-def update_template(api):
-    endpoint_result = api.configuration_templates.update_template(
+def update_template_v1(api):
+    endpoint_result = api.configuration_templates.update_template_v1(
         active_validation=True,
         author='string',
         composite=True,
@@ -684,11 +684,11 @@ def update_template(api):
 
 
 @pytest.mark.configuration_templates
-def test_update_template(api, validator):
+def test_update_template_v1(api, validator):
     try:
-        assert is_valid_update_template(
+        assert is_valid_update_template_v1(
             validator,
-            update_template(api)
+            update_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -696,8 +696,8 @@ def test_update_template(api, validator):
             raise original_e
 
 
-def update_template_default_val(api):
-    endpoint_result = api.configuration_templates.update_template(
+def update_template_v1_default_val(api):
+    endpoint_result = api.configuration_templates.update_template_v1(
         active_validation=True,
         author=None,
         composite=None,
@@ -731,42 +731,42 @@ def update_template_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_update_template_default_val(api, validator):
+def test_update_template_v1_default_val(api, validator):
     try:
-        assert is_valid_update_template(
+        assert is_valid_update_template_v1(
             validator,
-            update_template_default_val(api)
+            update_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_deploy_template(json_schema_validate, obj):
+def is_valid_deploy_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_847875efa92557c9a6c8af0a71829c7e_v2_3_7_6').validate(obj)
     return True
 
 
-def deploy_template(api):
-    endpoint_result = api.configuration_templates.deploy_template(
+def deploy_template_v1(api):
+    endpoint_result = api.configuration_templates.deploy_template_v1(
         active_validation=True,
         forcePushTemplate=True,
         isComposite=True,
         mainTemplateId='string',
-        memberTemplateDeploymentInfo=[{}],
+        memberTemplateDeploymentInfo=['string'],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': ['string'], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_deploy_template(api, validator):
+def test_deploy_template_v1(api, validator):
     try:
-        assert is_valid_deploy_template(
+        assert is_valid_deploy_template_v1(
             validator,
-            deploy_template(api)
+            deploy_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -774,8 +774,8 @@ def test_deploy_template(api, validator):
             raise original_e
 
 
-def deploy_template_default_val(api):
-    endpoint_result = api.configuration_templates.deploy_template(
+def deploy_template_v1_default_val(api):
+    endpoint_result = api.configuration_templates.deploy_template_v1(
         active_validation=True,
         forcePushTemplate=None,
         isComposite=None,
@@ -789,11 +789,11 @@ def deploy_template_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_deploy_template_default_val(api, validator):
+def test_deploy_template_v1_default_val(api, validator):
     try:
-        assert is_valid_deploy_template(
+        assert is_valid_deploy_template_v1(
             validator,
-            deploy_template_default_val(api)
+            deploy_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -890,13 +890,13 @@ def test_export_templates_default_val(api, validator):
             raise original_e
 
 
-def is_valid_preview_template(json_schema_validate, obj):
+def is_valid_preview_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_ccbf614b4b355cac929f12cc61272c1c_v2_3_7_6').validate(obj)
     return True
 
 
-def preview_template(api):
-    endpoint_result = api.configuration_templates.preview_template(
+def preview_template_v1(api):
+    endpoint_result = api.configuration_templates.preview_template_v1(
         active_validation=True,
         deviceId='string',
         params={},
@@ -908,11 +908,11 @@ def preview_template(api):
 
 
 @pytest.mark.configuration_templates
-def test_preview_template(api, validator):
+def test_preview_template_v1(api, validator):
     try:
-        assert is_valid_preview_template(
+        assert is_valid_preview_template_v1(
             validator,
-            preview_template(api)
+            preview_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -920,8 +920,8 @@ def test_preview_template(api, validator):
             raise original_e
 
 
-def preview_template_default_val(api):
-    endpoint_result = api.configuration_templates.preview_template(
+def preview_template_v1_default_val(api):
+    endpoint_result = api.configuration_templates.preview_template_v1(
         active_validation=True,
         deviceId=None,
         params=None,
@@ -933,24 +933,24 @@ def preview_template_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_preview_template_default_val(api, validator):
+def test_preview_template_v1_default_val(api, validator):
     try:
-        assert is_valid_preview_template(
+        assert is_valid_preview_template_v1(
             validator,
-            preview_template_default_val(api)
+            preview_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_version_template(json_schema_validate, obj):
+def is_valid_version_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_13e1a76c121857a085149e62e56caadd_v2_3_7_6').validate(obj)
     return True
 
 
-def version_template(api):
-    endpoint_result = api.configuration_templates.version_template(
+def version_template_v1(api):
+    endpoint_result = api.configuration_templates.version_template_v1(
         active_validation=True,
         comments='string',
         payload=None,
@@ -960,11 +960,11 @@ def version_template(api):
 
 
 @pytest.mark.configuration_templates
-def test_version_template(api, validator):
+def test_version_template_v1(api, validator):
     try:
-        assert is_valid_version_template(
+        assert is_valid_version_template_v1(
             validator,
-            version_template(api)
+            version_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -972,8 +972,8 @@ def test_version_template(api, validator):
             raise original_e
 
 
-def version_template_default_val(api):
-    endpoint_result = api.configuration_templates.version_template(
+def version_template_v1_default_val(api):
+    endpoint_result = api.configuration_templates.version_template_v1(
         active_validation=True,
         comments=None,
         payload=None,
@@ -983,11 +983,11 @@ def version_template_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_version_template_default_val(api, validator):
+def test_version_template_v1_default_val(api, validator):
     try:
-        assert is_valid_version_template(
+        assert is_valid_version_template_v1(
             validator,
-            version_template_default_val(api)
+            version_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1037,24 +1037,24 @@ def test_get_template_versions_default_val(api, validator):
             raise original_e
 
 
-def is_valid_deletes_the_template(json_schema_validate, obj):
+def is_valid_deletes_the_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_c311bd3d952757b2a7b98a5bc5aa6137_v2_3_7_6').validate(obj)
     return True
 
 
-def deletes_the_template(api):
-    endpoint_result = api.configuration_templates.deletes_the_template(
+def deletes_the_template_v1(api):
+    endpoint_result = api.configuration_templates.deletes_the_template_v1(
         template_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_deletes_the_template(api, validator):
+def test_deletes_the_template_v1(api, validator):
     try:
-        assert is_valid_deletes_the_template(
+        assert is_valid_deletes_the_template_v1(
             validator,
-            deletes_the_template(api)
+            deletes_the_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1062,19 +1062,19 @@ def test_deletes_the_template(api, validator):
             raise original_e
 
 
-def deletes_the_template_default_val(api):
-    endpoint_result = api.configuration_templates.deletes_the_template(
+def deletes_the_template_v1_default_val(api):
+    endpoint_result = api.configuration_templates.deletes_the_template_v1(
         template_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_templates
-def test_deletes_the_template_default_val(api, validator):
+def test_deletes_the_template_v1_default_val(api, validator):
     try:
-        assert is_valid_deletes_the_template(
+        assert is_valid_deletes_the_template_v1(
             validator,
-            deletes_the_template_default_val(api)
+            deletes_the_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1127,13 +1127,13 @@ def test_get_template_details_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_projects_details(json_schema_validate, obj):
+def is_valid_get_projects_details_v2(json_schema_validate, obj):
     json_schema_validate('jsd_2074b1fbcb8a5286936915883ec1a0cc_v2_3_7_6').validate(obj)
     return True
 
 
-def get_projects_details(api):
-    endpoint_result = api.configuration_templates.get_projects_details(
+def get_projects_details_v2(api):
+    endpoint_result = api.configuration_templates.get_projects_details_v2(
         id='string',
         limit=0,
         name='string',
@@ -1144,11 +1144,11 @@ def get_projects_details(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_projects_details(api, validator):
+def test_get_projects_details_v2(api, validator):
     try:
-        assert is_valid_get_projects_details(
+        assert is_valid_get_projects_details_v2(
             validator,
-            get_projects_details(api)
+            get_projects_details_v2(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1156,8 +1156,8 @@ def test_get_projects_details(api, validator):
             raise original_e
 
 
-def get_projects_details_default_val(api):
-    endpoint_result = api.configuration_templates.get_projects_details(
+def get_projects_details_v2_default_val(api):
+    endpoint_result = api.configuration_templates.get_projects_details_v2(
         id=None,
         limit=None,
         name=None,
@@ -1168,24 +1168,24 @@ def get_projects_details_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_projects_details_default_val(api, validator):
+def test_get_projects_details_v2_default_val(api, validator):
     try:
-        assert is_valid_get_projects_details(
+        assert is_valid_get_projects_details_v2(
             validator,
-            get_projects_details_default_val(api)
+            get_projects_details_v2_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_templates_details(json_schema_validate, obj):
+def is_valid_get_templates_details_v2(json_schema_validate, obj):
     json_schema_validate('jsd_8915c55b3c31568294840b4b6fd8bc0a_v2_3_7_6').validate(obj)
     return True
 
 
-def get_templates_details(api):
-    endpoint_result = api.configuration_templates.get_templates_details(
+def get_templates_details_v2(api):
+    endpoint_result = api.configuration_templates.get_templates_details_v2(
         all_template_attributes=True,
         filter_conflicting_templates=True,
         id='string',
@@ -1208,11 +1208,11 @@ def get_templates_details(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_templates_details(api, validator):
+def test_get_templates_details_v2(api, validator):
     try:
-        assert is_valid_get_templates_details(
+        assert is_valid_get_templates_details_v2(
             validator,
-            get_templates_details(api)
+            get_templates_details_v2(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1220,8 +1220,8 @@ def test_get_templates_details(api, validator):
             raise original_e
 
 
-def get_templates_details_default_val(api):
-    endpoint_result = api.configuration_templates.get_templates_details(
+def get_templates_details_v2_default_val(api):
+    endpoint_result = api.configuration_templates.get_templates_details_v2(
         all_template_attributes=None,
         filter_conflicting_templates=None,
         id=None,
@@ -1244,11 +1244,11 @@ def get_templates_details_default_val(api):
 
 
 @pytest.mark.configuration_templates
-def test_get_templates_details_default_val(api, validator):
+def test_get_templates_details_v2_default_val(api, validator):
     try:
-        assert is_valid_get_templates_details(
+        assert is_valid_get_templates_details_v2(
             validator,
-            get_templates_details_default_val(api)
+            get_templates_details_v2_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -1266,9 +1266,9 @@ def deploy_template_v2(api):
         forcePushTemplate=True,
         isComposite=True,
         mainTemplateId='string',
-        memberTemplateDeploymentInfo=[{}],
+        memberTemplateDeploymentInfo=['string'],
         payload=None,
-        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': [{}], 'type': 'string', 'versionedTemplateId': 'string'}],
+        targetInfo=[{'hostName': 'string', 'id': 'string', 'params': {}, 'resourceParams': ['string'], 'type': 'string', 'versionedTemplateId': 'string'}],
         templateId='string'
     )
     return endpoint_result

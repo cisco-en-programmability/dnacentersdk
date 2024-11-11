@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetConnectorTypes data model.
+"""Cisco DNA Center GetConnectorTypesV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB94Cfb5Af084C1A65D8E51Df71(object):
-    """GetConnectorTypes request schema definition."""
+    """GetConnectorTypesV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB94Cfb5Af084C1A65D8E51Df71, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

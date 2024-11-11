@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center UpdateSite data model.
+"""Cisco DNA Center UpdateSiteV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDf9908Ad265E83Ab77D73803925678(object):
-    """UpdateSite request schema definition."""
+    """UpdateSiteV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDf9908Ad265E83Ab77D73803925678, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

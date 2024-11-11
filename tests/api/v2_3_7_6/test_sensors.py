@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """DNACenterAPI sensors API fixtures and tests.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.6', reason='version does not match')
 
 
-def is_valid_edit_sensor_test_template(json_schema_validate, obj):
+def is_valid_edit_sensor_test_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_e2f9718de3d050819cdc6355a3a43200_v2_3_7_6').validate(obj)
     return True
 
 
-def edit_sensor_test_template(api):
-    endpoint_result = api.sensors.edit_sensor_test_template(
+def edit_sensor_test_template_v1(api):
+    endpoint_result = api.sensors.edit_sensor_test_template_v1(
         _id='string',
         actionInProgress='string',
         active_validation=True,
@@ -71,11 +71,11 @@ def edit_sensor_test_template(api):
 
 
 @pytest.mark.sensors
-def test_edit_sensor_test_template(api, validator):
+def test_edit_sensor_test_template_v1(api, validator):
     try:
-        assert is_valid_edit_sensor_test_template(
+        assert is_valid_edit_sensor_test_template_v1(
             validator,
-            edit_sensor_test_template(api)
+            edit_sensor_test_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -83,8 +83,8 @@ def test_edit_sensor_test_template(api, validator):
             raise original_e
 
 
-def edit_sensor_test_template_default_val(api):
-    endpoint_result = api.sensors.edit_sensor_test_template(
+def edit_sensor_test_template_v1_default_val(api):
+    endpoint_result = api.sensors.edit_sensor_test_template_v1(
         _id=None,
         actionInProgress=None,
         active_validation=True,
@@ -120,24 +120,24 @@ def edit_sensor_test_template_default_val(api):
 
 
 @pytest.mark.sensors
-def test_edit_sensor_test_template_default_val(api, validator):
+def test_edit_sensor_test_template_v1_default_val(api, validator):
     try:
-        assert is_valid_edit_sensor_test_template(
+        assert is_valid_edit_sensor_test_template_v1(
             validator,
-            edit_sensor_test_template_default_val(api)
+            edit_sensor_test_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_sensor_test_template(json_schema_validate, obj):
+def is_valid_create_sensor_test_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_6f7dd6a6cf8d57499168aae05847ad34_v2_3_7_6').validate(obj)
     return True
 
 
-def create_sensor_test_template(api):
-    endpoint_result = api.sensors.create_sensor_test_template(
+def create_sensor_test_template_v1(api):
+    endpoint_result = api.sensors.create_sensor_test_template_v1(
         active_validation=True,
         apCoverage=[{'bands': 'string', 'numberOfApsToTest': 0, 'rssiThreshold': 0}],
         connection='string',
@@ -156,11 +156,11 @@ def create_sensor_test_template(api):
 
 
 @pytest.mark.sensors
-def test_create_sensor_test_template(api, validator):
+def test_create_sensor_test_template_v1(api, validator):
     try:
-        assert is_valid_create_sensor_test_template(
+        assert is_valid_create_sensor_test_template_v1(
             validator,
-            create_sensor_test_template(api)
+            create_sensor_test_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -168,8 +168,8 @@ def test_create_sensor_test_template(api, validator):
             raise original_e
 
 
-def create_sensor_test_template_default_val(api):
-    endpoint_result = api.sensors.create_sensor_test_template(
+def create_sensor_test_template_v1_default_val(api):
+    endpoint_result = api.sensors.create_sensor_test_template_v1(
         active_validation=True,
         apCoverage=None,
         connection=None,
@@ -188,35 +188,35 @@ def create_sensor_test_template_default_val(api):
 
 
 @pytest.mark.sensors
-def test_create_sensor_test_template_default_val(api, validator):
+def test_create_sensor_test_template_v1_default_val(api, validator):
     try:
-        assert is_valid_create_sensor_test_template(
+        assert is_valid_create_sensor_test_template_v1(
             validator,
-            create_sensor_test_template_default_val(api)
+            create_sensor_test_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_sensor_test(json_schema_validate, obj):
+def is_valid_delete_sensor_test_v1(json_schema_validate, obj):
     json_schema_validate('jsd_a1c0ac4386555300b7f4a541d8dba625_v2_3_7_6').validate(obj)
     return True
 
 
-def delete_sensor_test(api):
-    endpoint_result = api.sensors.delete_sensor_test(
+def delete_sensor_test_v1(api):
+    endpoint_result = api.sensors.delete_sensor_test_v1(
         template_name='string'
     )
     return endpoint_result
 
 
 @pytest.mark.sensors
-def test_delete_sensor_test(api, validator):
+def test_delete_sensor_test_v1(api, validator):
     try:
-        assert is_valid_delete_sensor_test(
+        assert is_valid_delete_sensor_test_v1(
             validator,
-            delete_sensor_test(api)
+            delete_sensor_test_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -224,43 +224,43 @@ def test_delete_sensor_test(api, validator):
             raise original_e
 
 
-def delete_sensor_test_default_val(api):
-    endpoint_result = api.sensors.delete_sensor_test(
+def delete_sensor_test_v1_default_val(api):
+    endpoint_result = api.sensors.delete_sensor_test_v1(
         template_name=None
     )
     return endpoint_result
 
 
 @pytest.mark.sensors
-def test_delete_sensor_test_default_val(api, validator):
+def test_delete_sensor_test_v1_default_val(api, validator):
     try:
-        assert is_valid_delete_sensor_test(
+        assert is_valid_delete_sensor_test_v1(
             validator,
-            delete_sensor_test_default_val(api)
+            delete_sensor_test_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_sensors(json_schema_validate, obj):
+def is_valid_sensors_v1(json_schema_validate, obj):
     json_schema_validate('jsd_49925cda740c5bdc92fd150c334d0e4e_v2_3_7_6').validate(obj)
     return True
 
 
-def sensors(api):
-    endpoint_result = api.sensors.sensors(
+def sensors_v1(api):
+    endpoint_result = api.sensors.sensors_v1(
         site_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.sensors
-def test_sensors(api, validator):
+def test_sensors_v1(api, validator):
     try:
-        assert is_valid_sensors(
+        assert is_valid_sensors_v1(
             validator,
-            sensors(api)
+            sensors_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -268,32 +268,32 @@ def test_sensors(api, validator):
             raise original_e
 
 
-def sensors_default_val(api):
-    endpoint_result = api.sensors.sensors(
+def sensors_v1_default_val(api):
+    endpoint_result = api.sensors.sensors_v1(
         site_id=None
     )
     return endpoint_result
 
 
 @pytest.mark.sensors
-def test_sensors_default_val(api, validator):
+def test_sensors_v1_default_val(api, validator):
     try:
-        assert is_valid_sensors(
+        assert is_valid_sensors_v1(
             validator,
-            sensors_default_val(api)
+            sensors_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_run_now_sensor_test(json_schema_validate, obj):
+def is_valid_run_now_sensor_test_v1(json_schema_validate, obj):
     json_schema_validate('jsd_cfadc5e4c912588389f4f63d2fb6e4ed_v2_3_7_6').validate(obj)
     return True
 
 
-def run_now_sensor_test(api):
-    endpoint_result = api.sensors.run_now_sensor_test(
+def run_now_sensor_test_v1(api):
+    endpoint_result = api.sensors.run_now_sensor_test_v1(
         active_validation=True,
         payload=None,
         templateName='string'
@@ -302,11 +302,11 @@ def run_now_sensor_test(api):
 
 
 @pytest.mark.sensors
-def test_run_now_sensor_test(api, validator):
+def test_run_now_sensor_test_v1(api, validator):
     try:
-        assert is_valid_run_now_sensor_test(
+        assert is_valid_run_now_sensor_test_v1(
             validator,
-            run_now_sensor_test(api)
+            run_now_sensor_test_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -314,8 +314,8 @@ def test_run_now_sensor_test(api, validator):
             raise original_e
 
 
-def run_now_sensor_test_default_val(api):
-    endpoint_result = api.sensors.run_now_sensor_test(
+def run_now_sensor_test_v1_default_val(api):
+    endpoint_result = api.sensors.run_now_sensor_test_v1(
         active_validation=True,
         payload=None,
         templateName=None
@@ -324,24 +324,24 @@ def run_now_sensor_test_default_val(api):
 
 
 @pytest.mark.sensors
-def test_run_now_sensor_test_default_val(api, validator):
+def test_run_now_sensor_test_v1_default_val(api, validator):
     try:
-        assert is_valid_run_now_sensor_test(
+        assert is_valid_run_now_sensor_test_v1(
             validator,
-            run_now_sensor_test_default_val(api)
+            run_now_sensor_test_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_duplicate_sensor_test_template(json_schema_validate, obj):
+def is_valid_duplicate_sensor_test_template_v1(json_schema_validate, obj):
     json_schema_validate('jsd_a352f6280e445075b3ea7cbf868c2d94_v2_3_7_6').validate(obj)
     return True
 
 
-def duplicate_sensor_test_template(api):
-    endpoint_result = api.sensors.duplicate_sensor_test_template(
+def duplicate_sensor_test_template_v1(api):
+    endpoint_result = api.sensors.duplicate_sensor_test_template_v1(
         active_validation=True,
         newTemplateName='string',
         payload=None,
@@ -351,11 +351,11 @@ def duplicate_sensor_test_template(api):
 
 
 @pytest.mark.sensors
-def test_duplicate_sensor_test_template(api, validator):
+def test_duplicate_sensor_test_template_v1(api, validator):
     try:
-        assert is_valid_duplicate_sensor_test_template(
+        assert is_valid_duplicate_sensor_test_template_v1(
             validator,
-            duplicate_sensor_test_template(api)
+            duplicate_sensor_test_template_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -363,8 +363,8 @@ def test_duplicate_sensor_test_template(api, validator):
             raise original_e
 
 
-def duplicate_sensor_test_template_default_val(api):
-    endpoint_result = api.sensors.duplicate_sensor_test_template(
+def duplicate_sensor_test_template_v1_default_val(api):
+    endpoint_result = api.sensors.duplicate_sensor_test_template_v1(
         active_validation=True,
         newTemplateName=None,
         payload=None,
@@ -374,11 +374,11 @@ def duplicate_sensor_test_template_default_val(api):
 
 
 @pytest.mark.sensors
-def test_duplicate_sensor_test_template_default_val(api, validator):
+def test_duplicate_sensor_test_template_v1_default_val(api, validator):
     try:
-        assert is_valid_duplicate_sensor_test_template(
+        assert is_valid_duplicate_sensor_test_template_v1(
             validator,
-            duplicate_sensor_test_template_default_val(api)
+            duplicate_sensor_test_template_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center GetAllExecutionDetailsForAGivenReport data model.
+"""Cisco DNA Center GetAllExecutionDetailsForAGivenReportV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb(object):
-    """GetAllExecutionDetailsForAGivenReport request schema definition."""
+    """GetAllExecutionDetailsForAGivenReportV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA4B1Ca0320185570Bc12Da238F0E88Bb, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

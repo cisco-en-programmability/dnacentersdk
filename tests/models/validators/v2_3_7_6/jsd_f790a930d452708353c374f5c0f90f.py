@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center APProvision data model.
+"""Cisco DNA Center APProvisionConnectivityV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF790A930D452708353C374F5C0F90F(object):
-    """APProvision request schema definition."""
+    """APProvisionConnectivityV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF790A930D452708353C374F5C0F90F, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

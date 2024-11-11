@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center Sensors API wrapper.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,9 @@ SOFTWARE.
 """
 
 
+
 from builtins import *
+
 
 
 from ...restsession import RestSession
@@ -64,39 +66,39 @@ class Sensors(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def edit_sensor_test_template(self,
-                                  _id=None,
-                                  actionInProgress=None,
-                                  apCoverage=None,
-                                  connection=None,
-                                  encryptionMode=None,
-                                  frequency=None,
-                                  lastModifiedTime=None,
-                                  location=None,
-                                  locationInfoList=None,
-                                  modelVersion=None,
-                                  name=None,
-                                  numAssociatedSensor=None,
-                                  numNeighborAPThreshold=None,
-                                  profiles=None,
-                                  radioAsSensorRemoved=None,
-                                  rssiThreshold=None,
-                                  runNow=None,
-                                  scheduleInDays=None,
-                                  sensors=None,
-                                  showWlcUpgradeBanner=None,
-                                  siteHierarchy=None,
-                                  ssids=None,
-                                  startTime=None,
-                                  status=None,
-                                  templateName=None,
-                                  testScheduleMode=None,
-                                  version=None,
-                                  wlans=None,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def edit_sensor_test_template_v1(self,
+                                     _id=None,
+                                     actionInProgress=None,
+                                     apCoverage=None,
+                                     connection=None,
+                                     encryptionMode=None,
+                                     frequency=None,
+                                     lastModifiedTime=None,
+                                     location=None,
+                                     locationInfoList=None,
+                                     modelVersion=None,
+                                     name=None,
+                                     numAssociatedSensor=None,
+                                     numNeighborAPThreshold=None,
+                                     profiles=None,
+                                     radioAsSensorRemoved=None,
+                                     rssiThreshold=None,
+                                     runNow=None,
+                                     scheduleInDays=None,
+                                     sensors=None,
+                                     showWlcUpgradeBanner=None,
+                                     siteHierarchy=None,
+                                     ssids=None,
+                                     startTime=None,
+                                     status=None,
+                                     templateName=None,
+                                     testScheduleMode=None,
+                                     version=None,
+                                     wlans=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
         """Intent API to deploy, schedule, or edit and existing SENSOR test template .
 
         Args:
@@ -146,6 +148,8 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!edit-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -243,22 +247,22 @@ class Sensors(object):
 
         return self._object_factory('bpm_e2f9718de3d050819cdc6355a3a43200_v2_3_7_6', json_data)
 
-    def create_sensor_test_template(self,
-                                    apCoverage=None,
-                                    connection=None,
-                                    encryptionMode=None,
-                                    locationInfoList=None,
-                                    modelVersion=None,
-                                    name=None,
-                                    profiles=None,
-                                    runNow=None,
-                                    sensors=None,
-                                    ssids=None,
-                                    version=None,
-                                    headers=None,
-                                    payload=None,
-                                    active_validation=True,
-                                    **request_parameters):
+    def create_sensor_test_template_v1(self,
+                                       apCoverage=None,
+                                       connection=None,
+                                       encryptionMode=None,
+                                       locationInfoList=None,
+                                       modelVersion=None,
+                                       name=None,
+                                       profiles=None,
+                                       runNow=None,
+                                       sensors=None,
+                                       ssids=None,
+                                       version=None,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
         """Intent API to create a SENSOR test template with a new SSID, existing SSID, or both new and existing SSID .
 
         Args:
@@ -290,6 +294,8 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!create-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -353,10 +359,10 @@ class Sensors(object):
 
         return self._object_factory('bpm_f7dd6a6cf8d57499168aae05847ad34_v2_3_7_6', json_data)
 
-    def delete_sensor_test(self,
-                           template_name,
-                           headers=None,
-                           **request_parameters):
+    def delete_sensor_test_v1(self,
+                              template_name,
+                              headers=None,
+                              **request_parameters):
         """Intent API to delete an existing SENSOR test template .
 
         Args:
@@ -374,6 +380,8 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!delete-sensor-test
         """
         check_type(headers, dict)
         check_type(template_name, str,
@@ -409,10 +417,10 @@ class Sensors(object):
 
         return self._object_factory('bpm_a1c0ac4386555300b7f4a541d8dba625_v2_3_7_6', json_data)
 
-    def sensors(self,
-                site_id=None,
-                headers=None,
-                **request_parameters):
+    def sensors_v1(self,
+                   site_id=None,
+                   headers=None,
+                   **request_parameters):
         """Intent API to get a list of SENSOR devices .
 
         Args:
@@ -430,6 +438,8 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!sensors
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -464,12 +474,12 @@ class Sensors(object):
 
         return self._object_factory('bpm_cda740c5bdc92fd150c334d0e4e_v2_3_7_6', json_data)
 
-    def run_now_sensor_test(self,
-                            templateName=None,
-                            headers=None,
-                            payload=None,
-                            active_validation=True,
-                            **request_parameters):
+    def run_now_sensor_test_v1(self,
+                               templateName=None,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
         """Intent API to run a deployed SENSOR test .
 
         Args:
@@ -491,6 +501,8 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!run-now-sensor-test
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -534,13 +546,13 @@ class Sensors(object):
 
         return self._object_factory('bpm_cfadc5e4c912588389f4f63d2fb6e4ed_v2_3_7_6', json_data)
 
-    def duplicate_sensor_test_template(self,
-                                       newTemplateName=None,
-                                       templateName=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def duplicate_sensor_test_template_v1(self,
+                                          newTemplateName=None,
+                                          templateName=None,
+                                          headers=None,
+                                          payload=None,
+                                          active_validation=True,
+                                          **request_parameters):
         """Intent API to duplicate an existing SENSOR test template .
 
         Args:
@@ -563,6 +575,8 @@ class Sensors(object):
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
             ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!duplicate-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -607,3 +621,291 @@ class Sensors(object):
                                           json=_payload)
 
         return self._object_factory('bpm_a352f6280e445075b3ea7cbf868c2d94_v2_3_7_6', json_data)
+
+                
+    
+    # Alias Function
+    def create_sensor_test_template(self,
+                                       apCoverage=None,
+                                       connection=None,
+                                       encryptionMode=None,
+                                       locationInfoList=None,
+                                       modelVersion=None,
+                                       name=None,
+                                       profiles=None,
+                                       runNow=None,
+                                       sensors=None,
+                                       ssids=None,
+                                       version=None,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """ This function is an alias of create_sensor_test_template_v1 .
+        Args:
+            apCoverage(list): Sensors's apCoverage (list of objects).
+            connection(string): Sensors's connection type of test: WIRED, WIRELESS, BOTH .
+            encryptionMode(string): Sensors's Encryption mode .
+            locationInfoList(list): Sensors's locationInfoList (list of objects).
+            modelVersion(integer): Sensors's Test template object model version (must be 2) .
+            name(string): Sensors's The sensor test template name .
+            profiles(list): Sensors's profiles (list of objects).
+            runNow(string): Sensors's Run now (YES, NO) .
+            sensors(list): Sensors's sensors (list of objects).
+            ssids(list): Sensors's ssids (list of objects).
+            version(integer): Sensors's The sensor test template version (must be 2) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of create_sensor_test_template_v1 .
+        """ 
+        return self.create_sensor_test_template_v1(
+                    apCoverage=apCoverage,
+                    connection=connection,
+                    encryptionMode=encryptionMode,
+                    locationInfoList=locationInfoList,
+                    modelVersion=modelVersion,
+                    name=name,
+                    profiles=profiles,
+                    runNow=runNow,
+                    sensors=sensors,
+                    ssids=ssids,
+                    version=version,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def run_now_sensor_test(self,
+                               templateName=None,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
+        """ This function is an alias of run_now_sensor_test_v1 .
+        Args:
+            templateName(string): Sensors's Template Name.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of run_now_sensor_test_v1 .
+        """ 
+        return self.run_now_sensor_test_v1(
+                    templateName=templateName,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def delete_sensor_test(self,
+                              template_name,
+                              headers=None,
+                              **request_parameters):
+        """ This function is an alias of delete_sensor_test_v1 .
+        Args:
+            template_name(basestring): templateName query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of delete_sensor_test_v1 .
+        """ 
+        return self.delete_sensor_test_v1(
+                    template_name=template_name,
+                    headers=headers,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def duplicate_sensor_test_template(self,
+                                          newTemplateName=None,
+                                          templateName=None,
+                                          headers=None,
+                                          payload=None,
+                                          active_validation=True,
+                                          **request_parameters):
+        """ This function is an alias of duplicate_sensor_test_template_v1 .
+        Args:
+            newTemplateName(string): Sensors's Destination test template name .
+            templateName(string): Sensors's Source test template name .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of duplicate_sensor_test_template_v1 .
+        """ 
+        return self.duplicate_sensor_test_template_v1(
+                    newTemplateName=newTemplateName,
+                    templateName=templateName,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def sensors(self,
+                   site_id=None,
+                   headers=None,
+                   **request_parameters):
+        """ This function is an alias of sensors_v1 .
+        Args:
+            site_id(basestring): siteId query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of sensors_v1 .
+        """ 
+        return self.sensors_v1(
+                    site_id=site_id,
+                    headers=headers,
+                    **request_parameters
+        )
+                
+    
+    # Alias Function
+    def edit_sensor_test_template(self,
+                                     _id=None,
+                                     actionInProgress=None,
+                                     apCoverage=None,
+                                     connection=None,
+                                     encryptionMode=None,
+                                     frequency=None,
+                                     lastModifiedTime=None,
+                                     location=None,
+                                     locationInfoList=None,
+                                     modelVersion=None,
+                                     name=None,
+                                     numAssociatedSensor=None,
+                                     numNeighborAPThreshold=None,
+                                     profiles=None,
+                                     radioAsSensorRemoved=None,
+                                     rssiThreshold=None,
+                                     runNow=None,
+                                     scheduleInDays=None,
+                                     sensors=None,
+                                     showWlcUpgradeBanner=None,
+                                     siteHierarchy=None,
+                                     ssids=None,
+                                     startTime=None,
+                                     status=None,
+                                     templateName=None,
+                                     testScheduleMode=None,
+                                     version=None,
+                                     wlans=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
+        """ This function is an alias of edit_sensor_test_template_v1 .
+        Args:
+            _id(string): Sensors's The sensor test template unique identifier, generated at test creation time .
+            actionInProgress(string): Sensors's Indication of inprogress action .
+            apCoverage(list): Sensors's apCoverage (list of objects).
+            connection(string): Sensors's connection type of test: WIRED, WIRELESS, BOTH .
+            encryptionMode(string): Sensors's Encryption mode .
+            frequency(object): Sensors's frequency.
+            lastModifiedTime(integer): Sensors's Last modify time .
+            location(string): Sensors's Location string .
+            locationInfoList(list): Sensors's locationInfoList (list of objects).
+            modelVersion(integer): Sensors's Test template object model version (must be 2) .
+            name(string): Sensors's The sensor test template name, which is the same as in 'templateName' .
+            numAssociatedSensor(integer): Sensors's Number of associated sensor .
+            numNeighborAPThreshold(integer): Sensors's Number of neighboring AP threshold .
+            profiles(list): Sensors's profiles (list of objects).
+            radioAsSensorRemoved(boolean): Sensors's Radio as sensor removed .
+            rssiThreshold(integer): Sensors's RSSI threshold .
+            runNow(string): Sensors's Run now (YES, NO) .
+            scheduleInDays(integer): Sensors's Bit-wise value of scheduled test days .
+            sensors(list): Sensors's sensors (list of objects).
+            showWlcUpgradeBanner(boolean): Sensors's Show WLC upgrade banner .
+            siteHierarchy(string): Sensors's Site hierarchy .
+            ssids(list): Sensors's ssids (list of objects).
+            startTime(integer): Sensors's Start time .
+            status(string): Sensors's Status of the test (RUNNING, NOTRUNNING) .
+            templateName(string): Sensors's The test template name that is to be edited .
+            testScheduleMode(string): Sensors's Test schedule mode (ONDEMAND, DEDICATED, SCHEDULED, CONTINUOUS,
+                RUNNOW) .
+            version(integer): Sensors's The sensor test template version (must be 2) .
+            wlans(list): Sensors's WLANs list  (list of strings).
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of edit_sensor_test_template_v1 .
+        """ 
+        return self.edit_sensor_test_template_v1(
+                    _id=_id,
+                    actionInProgress=actionInProgress,
+                    apCoverage=apCoverage,
+                    connection=connection,
+                    encryptionMode=encryptionMode,
+                    frequency=frequency,
+                    lastModifiedTime=lastModifiedTime,
+                    location=location,
+                    locationInfoList=locationInfoList,
+                    modelVersion=modelVersion,
+                    name=name,
+                    numAssociatedSensor=numAssociatedSensor,
+                    numNeighborAPThreshold=numNeighborAPThreshold,
+                    profiles=profiles,
+                    radioAsSensorRemoved=radioAsSensorRemoved,
+                    rssiThreshold=rssiThreshold,
+                    runNow=runNow,
+                    scheduleInDays=scheduleInDays,
+                    sensors=sensors,
+                    showWlcUpgradeBanner=showWlcUpgradeBanner,
+                    siteHierarchy=siteHierarchy,
+                    ssids=ssids,
+                    startTime=startTime,
+                    status=status,
+                    templateName=templateName,
+                    testScheduleMode=testScheduleMode,
+                    version=version,
+                    wlans=wlans,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
+
+

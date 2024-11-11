@@ -61,13 +61,13 @@ What is DNA Center?
 
     "A better way to control your network. Cisco DNA Center is the network management and command center for Cisco DNA Center, your intent-based network for the enterprise."
 
-Visit the official `DNA Center`_ website for more information and to create a `free account`_!
+
 
 
 DNA Center for Developers
 -------------------------
 
-Leveraging the DNA Center APIs and developing on top of the DNA Center cloud is easy.  Signup for a `free account`_ and then head over to the `DNA Center for Developers`_ website to learn more.
+Leveraging the DNA Center APIs and developing on top of the DNA Center cloud is easy.
 
 
 *Copyright (c) 2019-2021 Cisco Systems.*

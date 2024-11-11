@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center ReserveIPSubpool data model.
+"""Cisco DNA Center ReserveIPSubpoolV1 data model.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2024 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@ SOFTWARE.
 """
 
 
+
 import json
 from builtins import *
 
@@ -32,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B(object):
-    """ReserveIPSubpool request schema definition."""
+    """ReserveIPSubpoolV1 request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCeC6C85D9BB4BcC8F61F31296B, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

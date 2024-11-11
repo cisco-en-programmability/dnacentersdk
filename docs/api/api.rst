@@ -1421,6 +1421,16 @@ wireless
 DNACenterAPI v2.3.7.6
 =====================
 
+
+.. _ai_endpoint_analytics_2_3_7_6:
+
+ai_endpoint_analytics
+----------------------
+
+.. autoclass:: dnacentersdk.api.v2_3_7_6.ai_endpoint_analytics.AIEndpointAnalytics()
+
+
+
 .. _application_policy_2_3_7_6:
 
 application_policy
@@ -1436,6 +1446,15 @@ applications
 ------------
 
 .. autoclass:: dnacentersdk.api.v2_3_7_6.applications.Applications()
+
+
+
+.. _cisco_trusted_certificates_2_3_7_6:
+
+cisco_trusted_certificates
+--------------------------
+
+.. autoclass:: dnacentersdk.api.v2_3_7_6.cisco_trusted_certificates.CiscoTrustedCertificates()
 
 
 
@@ -1511,6 +1530,15 @@ devices
 
 
 
+.. _disaster_recovery_2_3_7_6:
+
+disaster_recovery
+-----------------
+
+.. autoclass:: dnacentersdk.api.v2_3_7_6.disaster_recovery.DisasterRecovery()
+
+
+
 .. _discovery_2_3_7_6:
 
 discovery
@@ -1520,12 +1548,12 @@ discovery
 
 
 
-.. _eo_x_2_3_7_6:
+.. _eox_2_3_7_6:
 
-eo_x
-----
+eox
+---
 
-.. autoclass:: dnacentersdk.api.v2_3_7_6.eo_x.EoX()
+.. autoclass:: dnacentersdk.api.v2_3_7_6.eox.EoX()
 
 
 
@@ -1738,10 +1766,10 @@ topology
 
 .. _userand_roles_2_3_7_6:
 
-userand_roles
+user_and_roles
 -------------
 
-.. autoclass:: dnacentersdk.api.v2_3_7_6.userand_roles.UserandRoles()
+.. autoclass:: dnacentersdk.api.v2_3_7_6.user_and_roles.UserandRoles()
 
 
 
@@ -1760,6 +1788,7 @@ wireless
 --------
 
 .. autoclass:: dnacentersdk.api.v2_3_7_6.wireless.Wireless()
+
 
 
 .. _DNA Center Data Object:
