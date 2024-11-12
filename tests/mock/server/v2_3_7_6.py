@@ -7,25 +7,25 @@ import requests
 
 class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
     AUTHENTICATION_ac8ae94c4e69a09d_PATTERN = re.compile(r"/dna/system/api/v1/auth/token")
-    A_I_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/anc-policies")
-    A_I_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/cmdb/endpoints")
-    A_I_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/dictionaries")
-    A_I_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints")
-    A_I_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints")
-    A_I_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/count")
-    A_I_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string")
-    A_I_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string")
-    A_I_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string")
-    A_I_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string/anc-policy")
-    A_I_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string/anc-policy")
-    A_I_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules")
-    A_I_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules")
-    A_I_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/bulk")
-    A_I_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/count")
-    A_I_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/string")
-    A_I_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/string")
-    A_I_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/string")
-    A_I_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/tasks/string")
+    AI_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/anc-policies")
+    AI_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/cmdb/endpoints")
+    AI_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/dictionaries")
+    AI_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints")
+    AI_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints")
+    AI_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/count")
+    AI_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string")
+    AI_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string")
+    AI_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string")
+    AI_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string/anc-policy")
+    AI_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/endpoints/string/anc-policy")
+    AI_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules")
+    AI_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules")
+    AI_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/bulk")
+    AI_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/count")
+    AI_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/string")
+    AI_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/string")
+    AI_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/profiling-rules/string")
+    AI_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d_PATTERN = re.compile(r"/dna/intent/api/v1/endpoint-analytics/tasks/string")
     APPLICATION_POLICY_fae4378ef4e2503f9fef4f3a4ddd4de4_PATTERN = re.compile(r"/dna/intent/api/v1/app-policy")
     APPLICATION_POLICY_9d1b2e541bb85dea8192cd474be4e3ad_PATTERN = re.compile(r"/dna/intent/api/v1/app-policy-default")
     APPLICATION_POLICY_72fa27ccbaf55711849381a707e1edfa_PATTERN = re.compile(r"/dna/intent/api/v1/app-policy-intent")
@@ -58,9 +58,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
     APPLICATION_POLICY_d4d0a63b02ed518a95fe297b2a566f1d_PATTERN = re.compile(r"/dna/intent/api/v2/applications-count")
     APPLICATION_POLICY_ef849b2f5415501086635693a458e69b_PATTERN = re.compile(r"/dna/intent/api/v2/applications/string")
     APPLICATIONS_1b85e4ce533d5ff49ddd3b2f9657cfa5_PATTERN = re.compile(r"/dna/intent/api/v1/application-health")
-    AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
-    AUTHENTICATION_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
-    AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb_PATTERN = re.compile(r"/dna/system/api/v1/auth/token")
+    AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
+    AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
+    AUTHENTICATION_MANAGEMENT_a6bfcd88e22c5c138657b340870b4ebb_PATTERN = re.compile(r"/dna/system/api/v1/auth/token")
     CISCO_TRUSTED_CERTIFICATES_ebe0eab8e1785bec83a1e155112fb70e_PATTERN = re.compile(r"/dna/intent/api/v1/trustedCertificates/import")
     CLIENTS_dfcf64acc1815459acc146cd924e9877_PATTERN = re.compile(r"/dna/data/api/v1/clients")
     CLIENTS_110ed18d78d455f9a51049a09ae12d48_PATTERN = re.compile(r"/dna/data/api/v1/clients/count")
@@ -776,21 +776,21 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
     TOPOLOGY_4199688eb4ab5a978fe8785516c8af42_PATTERN = re.compile(r"/dna/intent/api/v1/topology/physical-topology")
     TOPOLOGY_f7abdb7ab46a5918a74e839488ff6ae0_PATTERN = re.compile(r"/dna/intent/api/v1/topology/site-topology")
     TOPOLOGY_fb6000ce8d8854bc80be3803b8dee1b7_PATTERN = re.compile(r"/dna/intent/api/v1/topology/vlan/vlan-names")
-    USERAND_ROLES_38a88c7510a15578b8eb2df183a92d5d_PATTERN = re.compile(r"/dna/system/api/v1/role")
-    USERAND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_PATTERN = re.compile(r"/dna/system/api/v1/role")
-    USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a_PATTERN = re.compile(r"/dna/system/api/v1/role/permissions")
-    USERAND_ROLES_da9e850c44d353f78ab002a640e5604f_PATTERN = re.compile(r"/dna/system/api/v1/role/string")
-    USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c_PATTERN = re.compile(r"/dna/system/api/v1/roles")
-    USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015_PATTERN = re.compile(r"/dna/system/api/v1/user")
-    USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702_PATTERN = re.compile(r"/dna/system/api/v1/user")
-    USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN = re.compile(r"/dna/system/api/v1/user")
-    USERAND_ROLES_3556c65c6cc65f068766cbb8a42ad387_PATTERN = re.compile(r"/dna/system/api/v1/user/string")
-    USERAND_ROLES_5490ac03ba045f60925fd7843bf9e279_PATTERN = re.compile(r"/dna/system/api/v1/users/external-authentication")
-    USERAND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692_PATTERN = re.compile(r"/dna/system/api/v1/users/external-authentication")
-    USERAND_ROLES_452738def9045d4d9c96bcd42172a79c_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers")
-    USERAND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers/aaa-attribute")
-    USERAND_ROLES_f20c99b436bd5be8bdb9094db3a47f01_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers/aaa-attribute")
-    USERAND_ROLES_4bedf83096a45ad1beaaa1fc6c192103_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers/aaa-attribute")
+    USER_AND_ROLES_38a88c7510a15578b8eb2df183a92d5d_PATTERN = re.compile(r"/dna/system/api/v1/role")
+    USER_AND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_PATTERN = re.compile(r"/dna/system/api/v1/role")
+    USER_AND_ROLES_9ec0b30eca9d540a845848cffd7c602a_PATTERN = re.compile(r"/dna/system/api/v1/role/permissions")
+    USER_AND_ROLES_da9e850c44d353f78ab002a640e5604f_PATTERN = re.compile(r"/dna/system/api/v1/role/string")
+    USER_AND_ROLES_bef02e8f6f8354dc99e375826a87c88c_PATTERN = re.compile(r"/dna/system/api/v1/roles")
+    USER_AND_ROLES_7fa405b6d1be56739f2dfeea63212015_PATTERN = re.compile(r"/dna/system/api/v1/user")
+    USER_AND_ROLES_6d82755e5e03510daf0951c1f42c2702_PATTERN = re.compile(r"/dna/system/api/v1/user")
+    USER_AND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN = re.compile(r"/dna/system/api/v1/user")
+    USER_AND_ROLES_3556c65c6cc65f068766cbb8a42ad387_PATTERN = re.compile(r"/dna/system/api/v1/user/string")
+    USER_AND_ROLES_5490ac03ba045f60925fd7843bf9e279_PATTERN = re.compile(r"/dna/system/api/v1/users/external-authentication")
+    USER_AND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692_PATTERN = re.compile(r"/dna/system/api/v1/users/external-authentication")
+    USER_AND_ROLES_452738def9045d4d9c96bcd42172a79c_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers")
+    USER_AND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers/aaa-attribute")
+    USER_AND_ROLES_f20c99b436bd5be8bdb9094db3a47f01_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers/aaa-attribute")
+    USER_AND_ROLES_4bedf83096a45ad1beaaa1fc6c192103_PATTERN = re.compile(r"/dna/system/api/v1/users/external-servers/aaa-attribute")
     USERS_70f9c1d861a051b4a4928f2e6d84b2e3_PATTERN = re.compile(r"/dna/intent/api/v1/user-enrichment-details")
     WIRELESS_dde2b077d6d052dcae5a76f4aac09c1d_PATTERN = re.compile(r"/dna/intent/api/v1/AssuranceGetSensorTestResults")
     WIRELESS_d825ae9a117f5b6bb65b7d78fd42513c_PATTERN = re.compile(r"/dna/intent/api/v1/business/ssid")
@@ -882,9 +882,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1(self):
+    def matches_AI_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1_PATTERN,
             self.path
         )
 
@@ -899,9 +899,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82(self):
+    def matches_AI_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82_PATTERN,
             self.path
         )
 
@@ -916,9 +916,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a(self):
+    def matches_AI_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a_PATTERN,
             self.path
         )
 
@@ -933,9 +933,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7(self):
+    def matches_AI_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7_PATTERN,
             self.path
         )
 
@@ -950,9 +950,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae(self):
+    def matches_AI_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae_PATTERN,
             self.path
         )
 
@@ -967,9 +967,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f(self):
+    def matches_AI_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f_PATTERN,
             self.path
         )
 
@@ -984,9 +984,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237(self):
+    def matches_AI_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237_PATTERN,
             self.path
         )
 
@@ -1001,9 +1001,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1(self):
+    def matches_AI_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1_PATTERN,
             self.path
         )
 
@@ -1018,9 +1018,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14(self):
+    def matches_AI_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14_PATTERN,
             self.path
         )
 
@@ -1035,9 +1035,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40(self):
+    def matches_AI_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40_PATTERN,
             self.path
         )
 
@@ -1052,9 +1052,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a(self):
+    def matches_AI_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a_PATTERN,
             self.path
         )
 
@@ -1069,9 +1069,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd(self):
+    def matches_AI_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd_PATTERN,
             self.path
         )
 
@@ -1086,9 +1086,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0(self):
+    def matches_AI_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0_PATTERN,
             self.path
         )
 
@@ -1103,9 +1103,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4(self):
+    def matches_AI_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4_PATTERN,
             self.path
         )
 
@@ -1120,9 +1120,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899(self):
+    def matches_AI_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899_PATTERN,
             self.path
         )
 
@@ -1137,9 +1137,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1(self):
+    def matches_AI_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1_PATTERN,
             self.path
         )
 
@@ -1154,9 +1154,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1(self):
+    def matches_AI_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1_PATTERN,
             self.path
         )
 
@@ -1171,9 +1171,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4(self):
+    def matches_AI_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4_PATTERN,
             self.path
         )
 
@@ -1188,9 +1188,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_A_I_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d(self):
+    def matches_AI_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d(self):
         return re.search(
-            self.A_I_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d_PATTERN,
+            self.AI_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d_PATTERN,
             self.path
         )
 
@@ -1749,13 +1749,13 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173(self):
+    def matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173(self):
         return re.search(
-            self.AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173_PATTERN,
+            self.AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN,
             self.path
         )
 
-    def authentication_import_certificate_v1_response(self):
+    def authentication_management_import_certificate_v1_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -1766,13 +1766,13 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_AUTHENTICATION_c80e660c2e36582f939a7403ef15de22(self):
+    def matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22(self):
         return re.search(
-            self.AUTHENTICATION_c80e660c2e36582f939a7403ef15de22_PATTERN,
+            self.AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN,
             self.path
         )
 
-    def authentication_import_certificate_p12_v1_response(self):
+    def authentication_management_import_certificate_p12_v1_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -1783,13 +1783,13 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb(self):
+    def matches_AUTHENTICATION_MANAGEMENT_a6bfcd88e22c5c138657b340870b4ebb(self):
         return re.search(
-            self.AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb_PATTERN,
+            self.AUTHENTICATION_MANAGEMENT_a6bfcd88e22c5c138657b340870b4ebb_PATTERN,
             self.path
         )
 
-    def authentication_authentication_api_v1_response(self):
+    def authentication_management_authentication_api_v1_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -13955,9 +13955,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_38a88c7510a15578b8eb2df183a92d5d(self):
+    def matches_USER_AND_ROLES_38a88c7510a15578b8eb2df183a92d5d(self):
         return re.search(
-            self.USERAND_ROLES_38a88c7510a15578b8eb2df183a92d5d_PATTERN,
+            self.USER_AND_ROLES_38a88c7510a15578b8eb2df183a92d5d_PATTERN,
             self.path
         )
 
@@ -13972,9 +13972,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6(self):
+    def matches_USER_AND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6(self):
         return re.search(
-            self.USERAND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_PATTERN,
+            self.USER_AND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6_PATTERN,
             self.path
         )
 
@@ -13989,9 +13989,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a(self):
+    def matches_USER_AND_ROLES_9ec0b30eca9d540a845848cffd7c602a(self):
         return re.search(
-            self.USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a_PATTERN,
+            self.USER_AND_ROLES_9ec0b30eca9d540a845848cffd7c602a_PATTERN,
             self.path
         )
 
@@ -14006,9 +14006,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_da9e850c44d353f78ab002a640e5604f(self):
+    def matches_USER_AND_ROLES_da9e850c44d353f78ab002a640e5604f(self):
         return re.search(
-            self.USERAND_ROLES_da9e850c44d353f78ab002a640e5604f_PATTERN,
+            self.USER_AND_ROLES_da9e850c44d353f78ab002a640e5604f_PATTERN,
             self.path
         )
 
@@ -14023,9 +14023,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c(self):
+    def matches_USER_AND_ROLES_bef02e8f6f8354dc99e375826a87c88c(self):
         return re.search(
-            self.USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c_PATTERN,
+            self.USER_AND_ROLES_bef02e8f6f8354dc99e375826a87c88c_PATTERN,
             self.path
         )
 
@@ -14040,9 +14040,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015(self):
+    def matches_USER_AND_ROLES_7fa405b6d1be56739f2dfeea63212015(self):
         return re.search(
-            self.USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015_PATTERN,
+            self.USER_AND_ROLES_7fa405b6d1be56739f2dfeea63212015_PATTERN,
             self.path
         )
 
@@ -14057,9 +14057,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702(self):
+    def matches_USER_AND_ROLES_6d82755e5e03510daf0951c1f42c2702(self):
         return re.search(
-            self.USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702_PATTERN,
+            self.USER_AND_ROLES_6d82755e5e03510daf0951c1f42c2702_PATTERN,
             self.path
         )
 
@@ -14074,9 +14074,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e(self):
+    def matches_USER_AND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e(self):
         return re.search(
-            self.USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN,
+            self.USER_AND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e_PATTERN,
             self.path
         )
 
@@ -14091,9 +14091,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_3556c65c6cc65f068766cbb8a42ad387(self):
+    def matches_USER_AND_ROLES_3556c65c6cc65f068766cbb8a42ad387(self):
         return re.search(
-            self.USERAND_ROLES_3556c65c6cc65f068766cbb8a42ad387_PATTERN,
+            self.USER_AND_ROLES_3556c65c6cc65f068766cbb8a42ad387_PATTERN,
             self.path
         )
 
@@ -14108,9 +14108,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_5490ac03ba045f60925fd7843bf9e279(self):
+    def matches_USER_AND_ROLES_5490ac03ba045f60925fd7843bf9e279(self):
         return re.search(
-            self.USERAND_ROLES_5490ac03ba045f60925fd7843bf9e279_PATTERN,
+            self.USER_AND_ROLES_5490ac03ba045f60925fd7843bf9e279_PATTERN,
             self.path
         )
 
@@ -14125,9 +14125,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692(self):
+    def matches_USER_AND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692(self):
         return re.search(
-            self.USERAND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692_PATTERN,
+            self.USER_AND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692_PATTERN,
             self.path
         )
 
@@ -14142,9 +14142,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_452738def9045d4d9c96bcd42172a79c(self):
+    def matches_USER_AND_ROLES_452738def9045d4d9c96bcd42172a79c(self):
         return re.search(
-            self.USERAND_ROLES_452738def9045d4d9c96bcd42172a79c_PATTERN,
+            self.USER_AND_ROLES_452738def9045d4d9c96bcd42172a79c_PATTERN,
             self.path
         )
 
@@ -14159,9 +14159,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2(self):
+    def matches_USER_AND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2(self):
         return re.search(
-            self.USERAND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2_PATTERN,
+            self.USER_AND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2_PATTERN,
             self.path
         )
 
@@ -14176,9 +14176,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_f20c99b436bd5be8bdb9094db3a47f01(self):
+    def matches_USER_AND_ROLES_f20c99b436bd5be8bdb9094db3a47f01(self):
         return re.search(
-            self.USERAND_ROLES_f20c99b436bd5be8bdb9094db3a47f01_PATTERN,
+            self.USER_AND_ROLES_f20c99b436bd5be8bdb9094db3a47f01_PATTERN,
             self.path
         )
 
@@ -14193,9 +14193,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.wfile.write(response_content.encode('utf-8'))
         return
 
-    def matches_USERAND_ROLES_4bedf83096a45ad1beaaa1fc6c192103(self):
+    def matches_USER_AND_ROLES_4bedf83096a45ad1beaaa1fc6c192103(self):
         return re.search(
-            self.USERAND_ROLES_4bedf83096a45ad1beaaa1fc6c192103_PATTERN,
+            self.USER_AND_ROLES_4bedf83096a45ad1beaaa1fc6c192103_PATTERN,
             self.path
         )
 
@@ -15453,39 +15453,39 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
 
     def do_GET(self):
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1():
+        if self.matches_AI_ENDPOINT_ANALYTICS_c888e4f05d80571483ebe5793f6c44c1():
             self.ai_endpoint_analytics_get_anc_policies_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a():
+        if self.matches_AI_ENDPOINT_ANALYTICS_b12a3ca89c475179b182da81bdb64a8a():
             self.ai_endpoint_analytics_get_ai_endpoint_analytics_attribute_dictionaries_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae():
+        if self.matches_AI_ENDPOINT_ANALYTICS_b4f18988d61253bd8565ce2a22a909ae():
             self.ai_endpoint_analytics_query_the_endpoints_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f():
+        if self.matches_AI_ENDPOINT_ANALYTICS_1fab7e4bf248589894a0ad79c4f0940f():
             self.ai_endpoint_analytics_fetch_the_count_of_endpoints_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1():
+        if self.matches_AI_ENDPOINT_ANALYTICS_cde73293a8235ed8ae4cfe5f6717bff1():
             self.ai_endpoint_analytics_get_endpoint_details_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0():
+        if self.matches_AI_ENDPOINT_ANALYTICS_a4571194a9e05664ad348f72d7651bb0():
             self.ai_endpoint_analytics_get_list_of_profiling_rules_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899():
+        if self.matches_AI_ENDPOINT_ANALYTICS_2ec43ed2e44c5f3ea7a904d39af66899():
             self.ai_endpoint_analytics_get_count_of_profiling_rules_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1():
+        if self.matches_AI_ENDPOINT_ANALYTICS_fbea90831e6e57e79062edab0c76f8a1():
             self.ai_endpoint_analytics_get_details_of_a_single_profiling_rule_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d():
+        if self.matches_AI_ENDPOINT_ANALYTICS_682a0d1d05fe582aa287acb470e3af1d():
             self.ai_endpoint_analytics_get_task_details_v1_response()
             return
 
@@ -16993,27 +16993,27 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.topology_get_vlan_details_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_9ec0b30eca9d540a845848cffd7c602a():
+        if self.matches_USER_AND_ROLES_9ec0b30eca9d540a845848cffd7c602a():
             self.userand_roles_get_permissions_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_bef02e8f6f8354dc99e375826a87c88c():
+        if self.matches_USER_AND_ROLES_bef02e8f6f8354dc99e375826a87c88c():
             self.userand_roles_get_roles_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_7fa405b6d1be56739f2dfeea63212015():
+        if self.matches_USER_AND_ROLES_7fa405b6d1be56739f2dfeea63212015():
             self.userand_roles_get_users_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_5490ac03ba045f60925fd7843bf9e279():
+        if self.matches_USER_AND_ROLES_5490ac03ba045f60925fd7843bf9e279():
             self.userand_roles_get_external_authentication_setting_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_452738def9045d4d9c96bcd42172a79c():
+        if self.matches_USER_AND_ROLES_452738def9045d4d9c96bcd42172a79c():
             self.userand_roles_get_external_authentication_servers_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_4bedf83096a45ad1beaaa1fc6c192103():
+        if self.matches_USER_AND_ROLES_4bedf83096a45ad1beaaa1fc6c192103():
             self.userand_roles_get_aaa_attribute_api_v1_response()
             return
 
@@ -17158,19 +17158,19 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.authentication_authentication_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82():
+        if self.matches_AI_ENDPOINT_ANALYTICS_72aba18f6e605ce28a112b34dcb4fe82():
             self.ai_endpoint_analytics_process_cmdb_endpoints_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7():
+        if self.matches_AI_ENDPOINT_ANALYTICS_73b7ae9494b05a57bf6393eaf308b1e7():
             self.ai_endpoint_analytics_register_an_endpoint_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd():
+        if self.matches_AI_ENDPOINT_ANALYTICS_2194bf80823752baba63a8849fd521cd():
             self.ai_endpoint_analytics_create_a_profiling_rule_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4():
+        if self.matches_AI_ENDPOINT_ANALYTICS_90347931b4155d6f885a53ad0e47b1a4():
             self.ai_endpoint_analytics_import_profiling_rules_in_bulk_v1_response()
             return
 
@@ -17202,16 +17202,16 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.application_policy_create_applications_v2_response()
             return
 
-        if self.matches_AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173():
-            self.authentication_import_certificate_v1_response()
+        if self.matches_AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173():
+            self.authentication_management_import_certificate_v1_response()
             return
 
-        if self.matches_AUTHENTICATION_c80e660c2e36582f939a7403ef15de22():
-            self.authentication_import_certificate_p12_v1_response()
+        if self.matches_AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22():
+            self.authentication_management_import_certificate_p12_v1_response()
             return
 
-        if self.matches_AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb():
-            self.authentication_authentication_api_v1_response()
+        if self.matches_AUTHENTICATION_MANAGEMENT_a6bfcd88e22c5c138657b340870b4ebb():
+            self.authentication_management_authentication_api_v1_response()
             return
 
         if self.matches_CISCO_TRUSTED_CERTIFICATES_ebe0eab8e1785bec83a1e155112fb70e():
@@ -17898,19 +17898,19 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.tag_query_the_tags_associated_with_network_devices_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_38a88c7510a15578b8eb2df183a92d5d():
+        if self.matches_USER_AND_ROLES_38a88c7510a15578b8eb2df183a92d5d():
             self.userand_roles_add_role_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_6d82755e5e03510daf0951c1f42c2702():
+        if self.matches_USER_AND_ROLES_6d82755e5e03510daf0951c1f42c2702():
             self.userand_roles_add_user_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692():
+        if self.matches_USER_AND_ROLES_6e4f57e8f06856ee9a7e490d01f7f692():
             self.userand_roles_manage_external_authentication_setting_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2():
+        if self.matches_USER_AND_ROLES_9f5bfccc7e30550baa7046f74daa1ef2():
             self.userand_roles_add_and_update_aaa_attribute_api_v1_response()
             return
 
@@ -18004,15 +18004,15 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
 
     def do_PUT(self):
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237():
+        if self.matches_AI_ENDPOINT_ANALYTICS_15645b107800544384c1ddad7b60c237():
             self.ai_endpoint_analytics_update_a_registered_endpoint_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40():
+        if self.matches_AI_ENDPOINT_ANALYTICS_3de92f8ae3c15ea0bad5562452eb5c40():
             self.ai_endpoint_analytics_apply_anc_policy_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1():
+        if self.matches_AI_ENDPOINT_ANALYTICS_1508a4dab79d54829548004029a91ba1():
             self.ai_endpoint_analytics_update_an_existing_profiling_rule_v1_response()
             return
 
@@ -18436,11 +18436,11 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.tag_update_tag_membership_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6():
+        if self.matches_USER_AND_ROLES_ff5bf5a67c6c5c0aa9e7ba84c088e1a6():
             self.userand_roles_update_role_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e():
+        if self.matches_USER_AND_ROLES_34d2bd5f05bd535a89ebadb30e2ede9e():
             self.userand_roles_update_user_api_v1_response()
             return
 
@@ -18478,15 +18478,15 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
 
     def do_DELETE(self):
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14():
+        if self.matches_AI_ENDPOINT_ANALYTICS_d82c78cf10395b2baba3b51fd8370a14():
             self.ai_endpoint_analytics_delete_an_endpoint_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a():
+        if self.matches_AI_ENDPOINT_ANALYTICS_f136ac6d3b145d35922c4ba15ccb941a():
             self.ai_endpoint_analytics_revoke_anc_policy_v1_response()
             return
 
-        if self.matches_A_I_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4():
+        if self.matches_AI_ENDPOINT_ANALYTICS_3a3f7b6780725e83beed53d6ce2256e4():
             self.ai_endpoint_analytics_delete_an_existing_profiling_rule_v1_response()
             return
 
@@ -18842,15 +18842,15 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.tag_remove_tag_member_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_da9e850c44d353f78ab002a640e5604f():
+        if self.matches_USER_AND_ROLES_da9e850c44d353f78ab002a640e5604f():
             self.userand_roles_delete_role_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_3556c65c6cc65f068766cbb8a42ad387():
+        if self.matches_USER_AND_ROLES_3556c65c6cc65f068766cbb8a42ad387():
             self.userand_roles_delete_user_api_v1_response()
             return
 
-        if self.matches_USERAND_ROLES_f20c99b436bd5be8bdb9094db3a47f01():
+        if self.matches_USER_AND_ROLES_f20c99b436bd5be8bdb9094db3a47f01():
             self.userand_roles_delete_aaa_attribute_api_v1_response()
             return
 

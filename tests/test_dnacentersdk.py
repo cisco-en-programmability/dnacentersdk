@@ -323,12 +323,14 @@ from dnacentersdk.api.v2_3_5_3.users import \
     Users as Users_v2_3_5_3
 from dnacentersdk.api.v2_3_5_3.wireless import \
     Wireless as Wireless_v2_3_5_3
-from dnacentersdk.dnacentersdk.api.v2_3_7_6.ai_endpoint_analytics import \
+from dnacentersdk.api.v2_3_7_6.ai_endpoint_analytics import \
     AIEndpointAnalytics as AIEndpointAnalytics_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.applications import \
     Applications as Applications_v2_3_7_6
+from dnacentersdk.api.v2_3_7_6.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.cisco_trusted_certificates import \
     CiscoTrustedCertificates as CiscoTrustedCertificates_v2_3_7_6
 from dnacentersdk.api.v2_3_7_6.clients import \
@@ -639,13 +641,14 @@ class TestDNACenterSDK:
             assert isinstance(api.tag, Tag_v2_3_5_3)
             assert isinstance(api.task, Task_v2_3_5_3)
             assert isinstance(api.topology, Topology_v2_3_5_3)
-            assert isinstance(api.userand_roles, UserandRoles_v2_3_5_3)
+            assert isinstance(api.user_and_roles, UserandRoles_v2_3_5_3)
             assert isinstance(api.users, Users_v2_3_5_3)
             assert isinstance(api.wireless, Wireless_v2_3_5_3)
         if api.version == '2.3.7.6':
             assert isinstance(api.ai_endpoint_analytics, AIEndpointAnalytics_v2_3_7_6)
             assert isinstance(api.application_policy, ApplicationPolicy_v2_3_7_6)
             assert isinstance(api.applications, Applications_v2_3_7_6)
+            assert isinstance(api.authentication_management, AuthenticationManagement_v2_3_7_6)
             assert isinstance(api.cisco_trusted_certificates, CiscoTrustedCertificates_v2_3_7_6)
             assert isinstance(api.clients, Clients_v2_3_7_6)
             assert isinstance(api.command_runner, CommandRunner_v2_3_7_6)

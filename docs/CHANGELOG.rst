@@ -17,7 +17,7 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 ADD
 ~~~
 
--  Authentication module added
+-  authentication_management module added
 
 .. _section-1:
 

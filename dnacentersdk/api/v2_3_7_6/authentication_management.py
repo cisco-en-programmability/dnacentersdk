@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Dna Center Authentication API wrapper.
+"""Cisco DNA Center Authentication Management API wrapper.
 
 Copyright (c) 2024 Cisco Systems.
 
@@ -23,7 +23,6 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
 
 from ...restsession import RestSession
@@ -35,22 +34,22 @@ from ...utils import (
 )
 
 
-class Authentication(object):
-    """Cisco Dna Center Authentication API (version: 2.3.7.6).
+class AuthenticationManagement(object):
+    """Cisco DNA Center Authentication Management API (version: 2.3.7.6).
 
-    Wraps the Dna Center Authentication
+    Wraps the DNA Center Authentication Management
     API and exposes the API as native Python
     methods that return native Python objects.
 
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new Authentication
+        """Initialize a new AuthenticationManagement
         object with the provided RestSession.
 
         Args:
             session(RestSession): The RESTful session object to be used for
-                API calls to the Dna Center service.
+                API calls to the DNA Center service.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -58,7 +57,7 @@ class Authentication(object):
         """
         check_type(session, RestSession)
 
-        super(Authentication, self).__init__()
+        super(AuthenticationManagement, self).__init__()
 
         self._session = session
         self._object_factory = object_factory
@@ -88,9 +87,9 @@ class Authentication(object):
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
-            ApiError: If the Dna Center cloud returns an error.
+            ApiError: If the DNA Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-certificate-v1
+            https://developer.cisco.com/docs/dna-center/#!importcertificate
         """
         check_type(headers, dict)
         check_type(pk_password, str)
@@ -157,9 +156,9 @@ class Authentication(object):
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
-            ApiError: If the Dna Center cloud returns an error.
+            ApiError: If the DNA Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-certificate-p12-v1
+            https://developer.cisco.com/docs/dna-center/#!importcertificatep12
         """
         check_type(headers, dict)
         check_type(p12_password, str,
@@ -223,9 +222,9 @@ class Authentication(object):
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
-            ApiError: If the Dna Center cloud returns an error.
+            ApiError: If the DNA Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!authentication-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!authentication-api
         """
         check_type(headers, dict)
         if headers is not None:
