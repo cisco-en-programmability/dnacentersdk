@@ -1168,7 +1168,7 @@ def test_get_application_set_count_v2_default_val(api, validator):
 
 
 def is_valid_delete_application_set_v2(json_schema_validate, obj):
-    json_schema_validate('jsdfbef625d3225c1eb6db93289a11a33e_v2_3_7_6').validate(obj)
+    json_schema_validate('jsd_1fbef625d3225c1eb6db93289a11a33e_v2_3_7_6').validate(obj)
     return True
 
 

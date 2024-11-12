@@ -1388,9 +1388,9 @@ topology
 
 
 
-.. _userand_roles_2_3_5_3:
+.. _user_and_roles_2_3_5_3:
 
-userand_roles
+user_and_roles
 -------------
 
 .. autoclass:: dnacentersdk.api.v2_3_5_3.user_and_roles.UserandRoles()
@@ -1446,6 +1446,15 @@ applications
 ------------
 
 .. autoclass:: dnacentersdk.api.v2_3_7_6.applications.Applications()
+
+
+
+.. _authentication_management_2_3_7_6:
+
+authentication_management
+-------------------------
+
+.. autoclass:: dnacentersdk.api.v2_3_7_6.authentication_management.AuthenticationManagement()
 
 
 
@@ -1764,7 +1773,7 @@ topology
 
 
 
-.. _userand_roles_2_3_7_6:
+.. _user_and_roles_2_3_7_6:
 
 user_and_roles
 -------------

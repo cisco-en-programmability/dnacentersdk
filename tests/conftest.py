@@ -173,7 +173,7 @@ def pytest_configure(config):
         "markers", "topology: topology wrapper test"
     )
     config.addinivalue_line(
-        "markers", "userand_roles: userand_roles wrapper test"
+        "markers", "user_and_roles: user_and_roles wrapper test"
     )
     config.addinivalue_line(
         "markers", "users: users wrapper test"

@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.6] - 2024-11-12
+### ADD
+- authentication_management module added
 
 ## [2.7.5] - 2024-11-11
 ### ADD

@@ -356,6 +356,8 @@ from .v2_3_7_6.device_replacement import \
     DeviceReplacement as DeviceReplacement_v2_3_7_6
 from .v2_3_7_6.devices import \
     Devices as Devices_v2_3_7_6
+from .v2_3_7_6.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v2_3_7_6
 from .v2_3_7_6.disaster_recovery import \
     DisasterRecovery as DisasterRecovery_v2_3_7_6
 from .v2_3_7_6.discovery import \
@@ -1213,6 +1215,10 @@ class DNACenterAPI(object):
                 )
             self.applications = \
                 Applications_v2_3_7_6(
+                    self._session, object_factory, _validator
+                )
+            self.authentication_management = \
+                AuthenticationManagement_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
             self.cisco_trusted_certificates = \
