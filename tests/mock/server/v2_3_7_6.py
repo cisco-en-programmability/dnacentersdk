@@ -58,6 +58,9 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
     APPLICATION_POLICY_d4d0a63b02ed518a95fe297b2a566f1d_PATTERN = re.compile(r"/dna/intent/api/v2/applications-count")
     APPLICATION_POLICY_ef849b2f5415501086635693a458e69b_PATTERN = re.compile(r"/dna/intent/api/v2/applications/string")
     APPLICATIONS_1b85e4ce533d5ff49ddd3b2f9657cfa5_PATTERN = re.compile(r"/dna/intent/api/v1/application-health")
+    AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
+    AUTHENTICATION_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
+    AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb_PATTERN = re.compile(r"/dna/system/api/v1/auth/token")
     CISCO_TRUSTED_CERTIFICATES_ebe0eab8e1785bec83a1e155112fb70e_PATTERN = re.compile(r"/dna/intent/api/v1/trustedCertificates/import")
     CLIENTS_dfcf64acc1815459acc146cd924e9877_PATTERN = re.compile(r"/dna/data/api/v1/clients")
     CLIENTS_110ed18d78d455f9a51049a09ae12d48_PATTERN = re.compile(r"/dna/data/api/v1/clients/count")
@@ -1743,6 +1746,57 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
         self.end_headers()
         # Add response content.
         response_content = json.dumps({'version': 'string', 'totalCount': 0, 'response': [{'name': 'string', 'health': 0, 'businessRelevance': 'string', 'trafficClass': 'string', 'usageBytes': 0, 'averageThroughput': 0, 'packetLossPercent': {}, 'networkLatency': {}, 'jitter': {}, 'applicationServerLatency': {}, 'clientNetworkLatency': {}, 'serverNetworkLatency': {}, 'exporterIpAddress': 'string', 'exporterName': 'string', 'exporterUUID': 'string', 'exporterFamily': 'string', 'clientName': 'string', 'clientIp': 'string', 'location': 'string', 'operatingSystem': 'string', 'deviceType': 'string', 'clientMacAddress': 'string', 'issueId': 'string', 'issueName': 'string', 'application': 'string', 'severity': 'string', 'summary': 'string', 'rootCause': 'string', 'timestamp': 0, 'occurrences': 0, 'priority': 'string'}]})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173(self):
+        return re.search(
+            self.AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173_PATTERN,
+            self.path
+        )
+
+    def authentication_import_certificate_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_c80e660c2e36582f939a7403ef15de22(self):
+        return re.search(
+            self.AUTHENTICATION_c80e660c2e36582f939a7403ef15de22_PATTERN,
+            self.path
+        )
+
+    def authentication_import_certificate_p12_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb(self):
+        return re.search(
+            self.AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb_PATTERN,
+            self.path
+        )
+
+    def authentication_authentication_api_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'Token': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -17146,6 +17200,18 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
 
         if self.matches_APPLICATION_POLICY_a14e71c1b98e51eea41255720025b519():
             self.application_policy_create_applications_v2_response()
+            return
+
+        if self.matches_AUTHENTICATION_b19d7e8de2ca5329930d06f041a4a173():
+            self.authentication_import_certificate_v1_response()
+            return
+
+        if self.matches_AUTHENTICATION_c80e660c2e36582f939a7403ef15de22():
+            self.authentication_import_certificate_p12_v1_response()
+            return
+
+        if self.matches_AUTHENTICATION_a6bfcd88e22c5c138657b340870b4ebb():
+            self.authentication_authentication_api_v1_response()
             return
 
         if self.matches_CISCO_TRUSTED_CERTIFICATES_ebe0eab8e1785bec83a1e155112fb70e():

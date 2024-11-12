@@ -61,6 +61,8 @@ from .v2_2_2_3.device_onboarding_pnp import \
     DeviceOnboardingPnp as DeviceOnboardingPnp_v2_2_2_3
 from .v2_2_2_3.device_replacement import \
     DeviceReplacement as DeviceReplacement_v2_2_2_3
+from .v2_3_7_6.authentication import \
+    Authentication as Authentication_v2_3_7_6
 from .v2_2_2_3.devices import \
     Devices as Devices_v2_2_2_3
 from .v2_2_2_3.discovery import \
@@ -1213,6 +1215,10 @@ class DNACenterAPI(object):
                 )
             self.applications = \
                 Applications_v2_3_7_6(
+                    self._session, object_factory, _validator
+                )
+            self.authentication = \
+                Authentication_v2_3_7_6(
                     self._session, object_factory, _validator
                 )
             self.cisco_trusted_certificates = \

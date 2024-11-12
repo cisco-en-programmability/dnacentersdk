@@ -44,7 +44,7 @@ By default, dnacentersdk will look for the following environment variables to cr
 
     * ``DNA_CENTER_VERIFY`` - Controls whether to verify the server's TLS certificate or not. Defaults to True.
 
-    * ``CATALYST_CENTER_USER_AGENT`` - The User-Agent identifies the client using the SDK, providing useful data such as the SDK version and operating system. This information helps with debugging and monitoring requests.
+    * ``DNA_CENTER_USER_AGENT`` - The User-Agent identifies the client using the SDK, providing useful data such as the SDK version and operating system. This information helps with debugging and monitoring requests.
 
 
 __ https://12factor.net/config
