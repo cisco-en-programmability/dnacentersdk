@@ -2945,4 +2945,141 @@ class ConfigurationTemplates(object):
                     **request_parameters
         )
 
+    def get_templates_details(self,
+                              all_template_attributes=None,
+                              filter_conflicting_templates=None,
+                              id=None,
+                              include_version_details=None,
+                              limit=None,
+                              name=None,
+                              offset=None,
+                              product_family=None,
+                              product_series=None,
+                              product_type=None,
+                              project_id=None,
+                              project_name=None,
+                              software_type=None,
+                              software_version=None,
+                              sort_order=None,
+                              tags=None,
+                              un_committed=None,
+                              headers=None,
+                              **request_parameters):
+        """Get template(s) details .
 
+        Args:
+            id(str): id query parameter. Id of template to be searched .
+            name(str): name query parameter. Name of template to be searched .
+            project_id(str): projectId query parameter. Filter template(s) based on project id .
+            project_name(str): projectName query parameter. Filter template(s) based on project name .
+            software_type(str): softwareType query parameter. Filter template(s) based software type .
+            software_version(str): softwareVersion query parameter. Filter template(s) based softwareVersion
+                .
+            product_family(str): productFamily query parameter. Filter template(s) based on device family .
+            product_series(str): productSeries query parameter. Filter template(s) based on device series .
+            product_type(str): productType query parameter. Filter template(s) based on device type .
+            filter_conflicting_templates(bool): filterConflictingTemplates query parameter. Filter template(s) based
+                on conflicting templates .
+            tags(str, list, set, tuple): tags query parameter. Filter template(s) based on tags .
+            un_committed(bool): unCommitted query parameter. Return uncommitted template .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
+            all_template_attributes(bool): allTemplateAttributes query parameter. Return all template attributes .
+            include_version_details(bool): includeVersionDetails query parameter. Include template version details .
+            offset(int,str): offset query parameter. Index of first result .
+            limit(int,str): limit query parameter. Limits number of results .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-templates-details
+        """
+        check_type(headers, dict)
+        check_type(id, str)
+        check_type(name, str)
+        check_type(project_id, str)
+        check_type(project_name, str)
+        check_type(software_type, str)
+        check_type(software_version, str)
+        check_type(product_family, str)
+        check_type(product_series, str)
+        check_type(product_type, str)
+        check_type(filter_conflicting_templates, bool)
+        check_type(tags, (str, list, set, tuple))
+        check_type(un_committed, bool)
+        check_type(sort_order, str)
+        check_type(all_template_attributes, bool)
+        check_type(include_version_details, bool)
+        check_type(offset, (int, str))
+        check_type(limit, (int, str))
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'id':
+                id,
+            'name':
+                name,
+            'projectId':
+                project_id,
+            'projectName':
+                project_name,
+            'softwareType':
+                software_type,
+            'softwareVersion':
+                software_version,
+            'productFamily':
+                product_family,
+            'productSeries':
+                product_series,
+            'productType':
+                product_type,
+            'filterConflictingTemplates':
+                filter_conflicting_templates,
+            'tags':
+                tags,
+            'unCommitted':
+                un_committed,
+            'sortOrder':
+                sort_order,
+            'allTemplateAttributes':
+                all_template_attributes,
+            'includeVersionDetails':
+                include_version_details,
+            'offset':
+                offset,
+            'limit':
+                limit,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v2/template-programmer/template')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_c55b3c31568294840b4b6fd8bc0a_v2_3_7_6', json_data)
