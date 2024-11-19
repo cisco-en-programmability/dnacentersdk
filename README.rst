@@ -35,7 +35,7 @@ dnacentersdk
     #  Delete all of the demo tags
     for tag in demo_tags:
         dnac.tag.delete_tag(tag.id)
-    
+
     # Create a new demo tag
     demo_tag = dnac.tag.create_tag(name='dna Demo')
     task_demo_tag = dnac.task.get_task_by_id(task_id=demo_tag.response.taskId)
@@ -45,17 +45,17 @@ dnacentersdk
         created_tag = dnac.tag.get_tag(name='dna Demo')
 
         # Update tag
-        update_tag = dnac.tag.update_tag(id=created_tag.response[0].id, 
+        update_tag = dnac.tag.update_tag(id=created_tag.response[0].id,
                                          name='Updated ' + created_tag.response[0].name,
                                          description='DNA demo tag')
-        
+
         print(dnac.task.get_task_by_id(task_id=update_tag.response.taskId).response.progress)
-        
+
         # Retrieved updated
         updated_tag = dnac.tag.get_tag(name='Updated dna Demo')
         print(updated_tag)
     else:
-        # Get task error details 
+        # Get task error details
         print('Unfortunately ', task_demo_tag.response.progress)
         print('Reason: ', task_demo_tag.response.failureReason)
 
@@ -158,9 +158,9 @@ The following table shows the supported versions.
    * - 2.3.5.3
      - 2.6.11
    * - 2.3.7.6
-     - 2.7.6
+     - 2.7.7
 
-   
+
 
 If your SDK is older please consider updating it first.
 

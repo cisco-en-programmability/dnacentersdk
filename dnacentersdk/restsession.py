@@ -203,10 +203,13 @@ class RestSession(object):
         # Use the injected `requests` session, build a new one if not provided
         self._req_session = session or requests.session()
 
+        if user_agent != "":
+            user_agent = "-"+ user_agent
+
         # Update the headers of the `requests` session
         self.update_headers({'X-Auth-Token': access_token,
                              'Content-type': 'application/json;charset=utf-8',
-                             'User-Agent': f'python-cisco-dnacsdk/{version}-{user_agent}'})
+                             'User-Agent': f'python-cisco-dnacsdk/{version}{user_agent}'})
 
     @property
     def version(self):
