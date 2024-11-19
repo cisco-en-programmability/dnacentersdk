@@ -1864,7 +1864,7 @@ class ConfigurationTemplates(object):
 
         return self._object_factory('bpm_b1fbcb8a5286936915883ec1a0cc_v2_3_7_6', json_data)
 
-    def get_template_details_v2(self,
+    def get_templates_details_v2(self,
                                  all_template_attributes=None,
                                  filter_conflicting_templates=None,
                                  id=None,
@@ -2099,8 +2099,8 @@ class ConfigurationTemplates(object):
 
         return self._object_factory('bpm_bf40cea4982c54278a52ac2e7b0c458a_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def imports_the_projects_provided(self,
                                          do_version=None,
@@ -2126,7 +2126,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of imports_the_projects_provided_v1.
-        """  
+        """
         return self.imports_the_projects_provided_v1(
                     do_version=do_version,
                     headers=headers,
@@ -2134,8 +2134,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_project(self,
                           createTime=None,
@@ -2170,7 +2170,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of create_project_v1.
-        """  
+        """
         return self.create_project_v1(
                     createTime=createTime,
                     description=description,
@@ -2184,8 +2184,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deploy_template(self,
                            forcePushTemplate=None,
@@ -2219,7 +2219,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of deploy_template_v1.
-        """  
+        """
         return self.deploy_template_v1(
                     forcePushTemplate=forcePushTemplate,
                     isComposite=isComposite,
@@ -2232,8 +2232,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_template(self,
                            project_id,
@@ -2311,7 +2311,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of create_template_v1.
-        """  
+        """
         return self.create_template_v1(
                     project_id=project_id,
                     author=author,
@@ -2345,8 +2345,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_project(self,
                           createTime=None,
@@ -2381,7 +2381,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of update_project_v1.
-        """  
+        """
         return self.update_project_v1(
                     createTime=createTime,
                     description=description,
@@ -2395,8 +2395,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_project_details(self,
                             project_id,
@@ -2413,14 +2413,14 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of get_project_details_v1.
-        """  
+        """
         return self.get_project_details_v1(
                     project_id=project_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_the_template(self,
                                 template_id,
@@ -2437,14 +2437,14 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of deletes_the_template_v1.
-        """  
+        """
         return self.deletes_the_template_v1(
                     template_id=template_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def gets_the_templates_available(self,
                                         filter_conflicting_templates=None,
@@ -2500,8 +2500,8 @@ class ConfigurationTemplates(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def export_projects(self,
                         headers=None,
@@ -2522,15 +2522,15 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of export_projects_v1.
-        """  
+        """
         return self.export_projects_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def clone_given_template(self,
                              name,
@@ -2554,7 +2554,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of clone_given_template_v1.
-        """  
+        """
         return self.clone_given_template_v1(
                     name=name,
                     project_id=project_id,
@@ -2562,8 +2562,8 @@ class ConfigurationTemplates(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def imports_the_templates_provided(self,
                                           project_name,
@@ -2592,7 +2592,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of imports_the_templates_provided_v1.
-        """  
+        """
         return self.imports_the_templates_provided_v1(
                     project_name=project_name,
                     do_version=do_version,
@@ -2601,8 +2601,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def preview_template(self,
                             deviceId=None,
@@ -2631,7 +2631,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of preview_template_v1.
-        """  
+        """
         return self.preview_template_v1(
                     deviceId=deviceId,
                     params=params,
@@ -2642,8 +2642,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_the_project(self,
                                project_id,
@@ -2666,8 +2666,8 @@ class ConfigurationTemplates(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def export_templates(self,
                          headers=None,
@@ -2688,15 +2688,15 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of export_templates_v1.
-        """  
+        """
         return self.export_templates_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_template_versions(self,
                               template_id,
@@ -2714,14 +2714,14 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of get_template_versions_v1.
-        """  
+        """
         return self.get_template_versions_v1(
                     template_id=template_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_template_deployment_status(self,
                                        deployment_id,
@@ -2739,14 +2739,14 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of get_template_deployment_status_v1.
-        """  
+        """
         return self.get_template_deployment_status_v1(
                     deployment_id=deployment_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_template(self,
                            author=None,
@@ -2821,7 +2821,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of update_template_v1.
-        """  
+        """
         return self.update_template_v1(
                     author=author,
                     composite=composite,
@@ -2854,8 +2854,8 @@ class ConfigurationTemplates(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_projects(self,
                      name=None,
@@ -2874,15 +2874,15 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of get_projects_v1.
-        """  
+        """
         return self.get_projects_v1(
                     name=name,
                     sort_order=sort_order,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_template_details(self,
                              template_id,
@@ -2902,15 +2902,84 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of get_template_details_v1.
-        """  
+        """
         return self.get_template_details_v1(
                     template_id=template_id,
                     latest_version=latest_version,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+    # Alias Function
+    def get_templates_details(self,
+                                 all_template_attributes=None,
+                                 filter_conflicting_templates=None,
+                                 id=None,
+                                 include_version_details=None,
+                                 limit=None,
+                                 name=None,
+                                 offset=None,
+                                 product_family=None,
+                                 product_series=None,
+                                 product_type=None,
+                                 project_id=None,
+                                 project_name=None,
+                                 software_type=None,
+                                 software_version=None,
+                                 sort_order=None,
+                                 tags=None,
+                                 un_committed=None,
+                                 headers=None,
+                                 **request_parameters):
+        """This function is an alias of get_templates_details_v2. .
+
+        Args:
+            id(str): id query parameter. Id of template to be searched .
+            name(str): name query parameter. Name of template to be searched .
+            project_id(str): projectId query parameter. Filter template(s) based on project id .
+            project_name(str): projectName query parameter. Filter template(s) based on project name .
+            software_type(str): softwareType query parameter. Filter template(s) based software type .
+            software_version(str): softwareVersion query parameter. Filter template(s) based softwareVersion
+                .
+            product_family(str): productFamily query parameter. Filter template(s) based on device family .
+            product_series(str): productSeries query parameter. Filter template(s) based on device series .
+            product_type(str): productType query parameter. Filter template(s) based on device type .
+            filter_conflicting_templates(bool): filterConflictingTemplates query parameter. Filter template(s) based
+                on confliting templates .
+            tags(str, list, set, tuple): tags query parameter. Filter template(s) based on tags .
+            un_committed(bool): unCommitted query parameter. Return uncommitted template .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (dsc) .
+            all_template_attributes(bool): allTemplateAttributes query parameter. Return all template attributes .
+            include_version_details(bool): includeVersionDetails query parameter. Include template version details .
+            offset(int): offset query parameter. Index of first result .
+            limit(int): limit query parameter. Limits number of results .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_templates_details_v2.
+        """
+        return self.get_templates_details_v2(
+                                 all_template_attributes,
+                                 filter_conflicting_templates,
+                                 id,
+                                 include_version_details,
+                                 limit,
+                                 name,
+                                 offset,
+                                 product_family,
+                                 product_series,
+                                 product_type,
+                                 project_id,
+                                 project_name,
+                                 software_type,
+                                 software_version,
+                                 sort_order,
+                                 tags,
+                                 un_committed,
+                                 headers,
+                                 **request_parameters)
     # Alias Function
     def version_template(self,
                             comments=None,
@@ -2935,7 +3004,7 @@ class ConfigurationTemplates(object):
 
         Returns:
             This function returns the output of version_template_v1.
-        """  
+        """
         return self.version_template_v1(
                     comments=comments,
                     templateId=templateId,
