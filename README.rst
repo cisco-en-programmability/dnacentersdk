@@ -218,4 +218,4 @@ The development team may make additional name changes as the library evolves wit
 .. _pull request: `pull requests`_
 .. _Contributing: https://github.com/cisco-en-programmability/dnacentersdk/blob/master/docs/contributing.rst
 .. _webexteamssdk: https://github.com/CiscoDevNet/webexteamssdk
-.. _CHANGELOG: https://github.com/cisco-en-programmability/dnacentersdk/blob/main/CHANGELOG.md
+.. _CHANGELOG: https://github.com/cisco-en-programmability/dnacentersdk/blob/master/CHANGELOG.md
