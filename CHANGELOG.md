@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.0] - 2024-12-11
+### Added
+- Add support of DNA Center versions ('2.3.7.9')
+- Adds modules for v2_3_7_9
+
 ## [2.7.7] - 2024-11-19
 ### Bug fix
 - The get_templates_details function was added because it was named incorrectly.There was an "s" missing from the word templates.
