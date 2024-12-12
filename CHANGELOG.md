@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.1] - 2024-12-12
+### Fix
+- changing the api version in the configuration files
+
 ## [2.8.0] - 2024-12-11
 ### Added
 - Add support of DNA Center versions ('2.3.7.9')
