@@ -65,6 +65,13 @@ v2.3.7.6 summary
 .. include:: api_structure_table_v2_3_7_6.rst
 
 
+.. _v2_3_7_9 summary:
+
+v2.3.7.9 summary
+----------------
+
+.. include:: api_structure_table_v2_3_7_9.rst
+
 DNACenterAPI Class
 ==================
 
