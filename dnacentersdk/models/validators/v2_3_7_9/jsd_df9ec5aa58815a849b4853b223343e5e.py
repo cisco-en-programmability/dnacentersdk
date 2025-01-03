@@ -40,20 +40,21 @@ class JSONSchemaValidatorDf9Ec5Aa58815A849B4853B223343E5E(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "ntp": {
-                "properties": {
-                "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "ntp": {
+                        "type": ["object", "null"],
+                        "properties": {
+                            "servers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
                 },
                 "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
+            }'''.replace("\n" + ' ' * 8, '')
         ))
 
     def validate(self, request):

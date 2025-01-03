@@ -97,7 +97,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-compliance-status-v1
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-status
         """
         check_type(headers, dict)
         check_type(compliance_status, str)
@@ -177,7 +177,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!run-compliance-v1
+            https://developer.cisco.com/docs/dna-center/#!run-compliance
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -252,7 +252,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-compliance-status-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-status-count
         """
         check_type(headers, dict)
         check_type(compliance_status, str)
@@ -322,7 +322,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail-v1
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail
         """
         check_type(headers, dict)
         check_type(compliance_type, str)
@@ -397,7 +397,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-compliance-detail-count
         """
         check_type(headers, dict)
         check_type(compliance_type, str)
@@ -459,7 +459,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!compliance-remediation-v1
+            https://developer.cisco.com/docs/dna-center/#!compliance-remediation
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -520,7 +520,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-compliance-status-v1
+            https://developer.cisco.com/docs/dna-center/#!device-compliance-status
         """
         check_type(headers, dict)
         check_type(device_uuid, str,
@@ -602,7 +602,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!compliance-details-of-device-v1
+            https://developer.cisco.com/docs/dna-center/#!compliance-details-of-device
         """
         check_type(headers, dict)
         check_type(category, str)
@@ -691,7 +691,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -772,7 +772,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notice-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notice-network-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -836,7 +836,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-device-by-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-device-by-device-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -910,7 +910,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notices-affecting-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notices-affecting-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -991,7 +991,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notices-affecting-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notices-affecting-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -1057,7 +1057,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notice-affecting-the-network-device-by-device-id-and-notice-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notice-affecting-the-network-device-by-device-id-and-notice-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -1135,7 +1135,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -1216,7 +1216,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -1279,7 +1279,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notice-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notice-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1352,7 +1352,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-devices-for-the-notice-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-devices-for-the-notice
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -1433,7 +1433,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notice-network-devices-for-the-notice-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notice-network-devices-for-the-notice
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -1499,7 +1499,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-device-for-the-notice-by-network-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notice-network-device-for-the-notice-by-network-device-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1567,7 +1567,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-field-notices-results-trend-over-time-v1
+            https://developer.cisco.com/docs/dna-center/#!get-field-notices-results-trend-over-time
         """
         check_type(headers, dict)
         check_type(scan_time, int)
@@ -1631,7 +1631,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notices-results-trend-over-time-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-field-notices-results-trend-over-time
         """
         check_type(headers, dict)
         check_type(scan_time, int)
@@ -1688,7 +1688,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-a-trial-for-field-notices-detection-on-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-a-trial-for-field-notices-detection-on-network-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1740,7 +1740,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trial-details-for-field-notices-detection-on-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trial-details-for-field-notices-detection-on-network-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1799,7 +1799,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!triggers-a-field-notices-scan-for-the-supported-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!triggers-a-field-notices-scan-for-the-supported-network-devices
         """
         check_type(headers, dict)
         check_type(failed_devices_only, bool)
@@ -1856,7 +1856,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-config-task-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-config-task-details
         """
         check_type(headers, dict)
         check_type(parent_task_id, str,
@@ -1920,7 +1920,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!commit-device-configuration-v1
+            https://developer.cisco.com/docs/dna-center/#!commit-device-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2006,7 +2006,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bugs-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bugs
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -2087,7 +2087,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bugs-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bugs
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -2150,7 +2150,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bug-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bug-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -2226,7 +2226,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bug-devices-for-the-bug-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bug-devices-for-the-bug
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -2313,7 +2313,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bug-devices-for-the-bug-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bug-devices-for-the-bug
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -2383,7 +2383,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bug-device-for-the-bug-by-network-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bug-device-for-the-bug-by-network-device-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -2464,7 +2464,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bug-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bug-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -2551,7 +2551,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bug-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bug-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -2619,7 +2619,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bug-device-by-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bug-device-by-device-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -2693,7 +2693,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-bugs-affecting-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-bugs-affecting-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -2774,7 +2774,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-bugs-affecting-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-bugs-affecting-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -2840,7 +2840,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-bug-affecting-the-network-device-by-device-id-and-bug-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-bug-affecting-the-network-device-by-device-id-and-bug-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -2907,7 +2907,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-bugs-results-trend-over-time-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-bugs-results-trend-over-time
         """
         check_type(headers, dict)
         check_type(scan_time, int)
@@ -2970,7 +2970,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bugs-results-trend-over-time-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-network-bugs-results-trend-over-time
         """
         check_type(headers, dict)
         check_type(scan_time, int)
@@ -3027,7 +3027,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-a-trial-for-bugs-detection-on-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-a-trial-for-bugs-detection-on-network-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -3079,7 +3079,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trial-details-for-bugs-detection-on-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trial-details-for-bugs-detection-on-network-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -3136,7 +3136,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!triggers-a-bugs-scan-for-the-supported-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!triggers-a-bugs-scan-for-the-supported-network-devices
         """
         check_type(headers, dict)
         check_type(failed_devices_only, bool)
@@ -3213,7 +3213,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisories-affecting-the-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisories-affecting-the-network-devices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -3300,7 +3300,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisories-affecting-the-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisories-affecting-the-network-devices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -3367,7 +3367,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-affecting-the-network-devices-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-affecting-the-network-devices-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -3444,7 +3444,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-devices-for-the-security-advisory-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-devices-for-the-security-advisory
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -3531,7 +3531,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisory-network-devices-for-the-security-advisory-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisory-network-devices-for-the-security-advisory
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -3600,7 +3600,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-device-for-the-security-advisory-by-network-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-device-for-the-security-advisory-by-network-device-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -3681,7 +3681,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -3769,7 +3769,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisory-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisory-network-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -3836,7 +3836,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-device-by-network-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-network-device-by-network-device-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -3913,7 +3913,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisories-affecting-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisories-affecting-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -4000,7 +4000,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisories-affecting-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisories-affecting-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -4069,7 +4069,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-affecting-the-network-device-by-device-id-and-advisory-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisory-affecting-the-network-device-by-device-id-and-advisory-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -4137,7 +4137,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-security-advisories-results-trend-over-time-v1
+            https://developer.cisco.com/docs/dna-center/#!get-security-advisories-results-trend-over-time
         """
         check_type(headers, dict)
         check_type(scan_time, int)
@@ -4201,7 +4201,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisories-results-trend-over-time-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-security-advisories-results-trend-over-time
         """
         check_type(headers, dict)
         check_type(scan_time, int)
@@ -4256,7 +4256,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trial-details-for-security-advisories-detection-on-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trial-details-for-security-advisories-detection-on-network-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -4310,7 +4310,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-a-trial-for-security-advisories-detection-on-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-a-trial-for-security-advisories-detection-on-network-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -4368,7 +4368,7 @@ class Compliance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!triggers-a-security-advisories-scan-for-the-supported-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!triggers-a-security-advisories-scan-for-the-supported-network-devices
         """
         check_type(headers, dict)
         check_type(failed_devices_only, bool)

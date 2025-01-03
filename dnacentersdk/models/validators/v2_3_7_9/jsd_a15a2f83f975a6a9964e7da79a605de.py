@@ -40,20 +40,21 @@ class JSONSchemaValidatorA15A2F83F975A6A9964E7Da79A605De(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "dhcp": {
-                "properties": {
-                "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                }
+                    "dhcp": {
+                        "type": ["object", "null"],
+                        "properties": {
+                            "servers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
                 },
                 "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
+            }'''.replace("\n" + ' ' * 8, '')
         ))
 
     def validate(self, request):

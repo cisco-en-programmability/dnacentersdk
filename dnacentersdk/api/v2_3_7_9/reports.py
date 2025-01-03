@@ -93,7 +93,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!download-flexible-report-v1
+            https://developer.cisco.com/docs/dna-center/#!download-flexible-report
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -157,7 +157,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!executing-the-flexible-report-v1
+            https://developer.cisco.com/docs/dna-center/#!executing-the-flexible-report
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -218,7 +218,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-execution-id-by-report-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-execution-id-by-report-id
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -287,7 +287,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-schedule-of-flexible-report-v1
+            https://developer.cisco.com/docs/dna-center/#!update-schedule-of-flexible-report
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -359,7 +359,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-flexible-report-schedule-by-report-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-flexible-report-schedule-by-report-id
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -415,7 +415,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-flexible-report-schedules-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-flexible-report-schedules
         """
         check_type(headers, dict)
         if headers is not None:
@@ -493,7 +493,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-or-schedule-a-report-v1
+            https://developer.cisco.com/docs/dna-center/#!create-or-schedule-a-report
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -579,7 +579,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-list-of-scheduled-reports-v1
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-scheduled-reports
         """
         check_type(headers, dict)
         check_type(view_group_id, str)
@@ -639,7 +639,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-scheduled-report-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-scheduled-report
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -696,7 +696,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-scheduled-report-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-scheduled-report
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -753,7 +753,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-execution-details-for-a-given-report-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-execution-details-for-a-given-report
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -814,7 +814,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!download-report-content-v1
+            https://developer.cisco.com/docs/dna-center/#!download-report-content
         """
         check_type(headers, dict)
         check_type(report_id, str,
@@ -874,7 +874,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-view-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-view-groups
         """
         check_type(headers, dict)
         if headers is not None:
@@ -929,7 +929,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-views-for-a-given-view-group-v1
+            https://developer.cisco.com/docs/dna-center/#!get-views-for-a-given-view-group
         """
         check_type(headers, dict)
         check_type(view_group_id, str,
@@ -989,7 +989,7 @@ class Reports(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-view-details-for-a-given-view-group_-view-v1
+            https://developer.cisco.com/docs/dna-center/#!get-view-details-for-a-given-view-group_-view
         """
         check_type(headers, dict)
         check_type(view_group_id, str,

@@ -182,7 +182,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-list-of-site-health-summaries-v1
+            https://developer.cisco.com/docs/dna-center/#!read-list-of-site-health-summaries
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -310,7 +310,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-site-count-v1
+            https://developer.cisco.com/docs/dna-center/#!read-site-count
         """
         check_type(headers, dict)
         check_type(end_time, int)
@@ -468,7 +468,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-an-aggregated-summary-of-site-health-data-v1
+            https://developer.cisco.com/docs/dna-center/#!read-an-aggregated-summary-of-site-health-data
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -600,7 +600,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-an-aggregated-summary-of-site-health-data-v1
+            https://developer.cisco.com/docs/dna-center/#!query-an-aggregated-summary-of-site-health-data
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -752,7 +752,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-trend-analytics-data-for-a-grouping-of-sites-in-your-network-v1
+            https://developer.cisco.com/docs/dna-center/#!read-trend-analytics-data-for-a-grouping-of-sites-in-your-network
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -903,7 +903,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-site-health-summary-data-by-site-id-v1
+            https://developer.cisco.com/docs/dna-center/#!read-site-health-summary-data-by-site-id
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1018,7 +1018,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-trend-analytics-data-for-a-specific-site-in-your-network-v1
+            https://developer.cisco.com/docs/dna-center/#!read-trend-analytics-data-for-a-specific-site-in-your-network
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1202,7 +1202,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-for-the-child-sites-of-given-parent-site-and-other-query-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-for-the-child-sites-of-given-parent-site-and-other-query-parameters
         """
         check_type(headers, dict)
         check_type(task_id, str)
@@ -1343,7 +1343,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-site-analytics-records-available-for-for-given-set-of-query-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-site-analytics-records-available-for-for-given-set-of-query-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1437,7 +1437,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-for-the-child-sites-of-given-parent-site-and-other-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-for-the-child-sites-of-given-parent-site-and-other-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1532,7 +1532,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-site-analytics-records-available-for-for-given-set-of-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-site-analytics-records-available-for-for-given-set-of-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1612,7 +1612,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-summary-data-for-the-given-task-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-summary-data-for-the-given-task-id
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -1688,7 +1688,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!submit-request-for-site-analytics-summary-data-v1
+            https://developer.cisco.com/docs/dna-center/#!submit-request-for-site-analytics-summary-data
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1763,7 +1763,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-top-n-entities-related-to-site-analytics-for-the-given-task-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-top-n-entities-related-to-site-analytics-for-the-given-task-id
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -1841,7 +1841,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!submit-request-for-top-n-entities-related-to-site-analytics-v1
+            https://developer.cisco.com/docs/dna-center/#!submit-request-for-top-n-entities-related-to-site-analytics
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1919,7 +1919,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-trend-data-for-the-given-task-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-trend-data-for-the-given-task-id
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -1999,7 +1999,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!submit-request-for-site-analytics-trend-data-v1
+            https://developer.cisco.com/docs/dna-center/#!submit-request-for-site-analytics-trend-data
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2142,7 +2142,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-for-one-site-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-analytics-for-one-site
         """
         check_type(headers, dict)
         check_type(task_id, str)
@@ -2237,7 +2237,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!assign-devices-to-site-v1
+            https://developer.cisco.com/docs/dna-center/#!assign-devices-to-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2323,7 +2323,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!export-map-archive-v1
+            https://developer.cisco.com/docs/dna-center/#!export-map-archive
         """
         check_type(headers, dict)
         check_type(payload, (list, dict))
@@ -2390,7 +2390,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-map-archive-start-import-v1
+            https://developer.cisco.com/docs/dna-center/#!import-map-archive-start-import
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2449,7 +2449,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-map-archive-cancel-an-import-v1
+            https://developer.cisco.com/docs/dna-center/#!import-map-archive-cancel-an-import
         """
         check_type(headers, dict)
         check_type(import_context_uuid, str,
@@ -2510,7 +2510,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-map-archive-perform-import-v1
+            https://developer.cisco.com/docs/dna-center/#!import-map-archive-perform-import
         """
         check_type(headers, dict)
         check_type(import_context_uuid, str,
@@ -2575,7 +2575,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-map-archive-import-status-v1
+            https://developer.cisco.com/docs/dna-center/#!import-map-archive-import-status
         """
         check_type(headers, dict)
         check_type(import_context_uuid, str,
@@ -2633,7 +2633,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!maps-supported-access-points-v1
+            https://developer.cisco.com/docs/dna-center/#!maps-supported-access-points
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2695,7 +2695,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-membership-v1
+            https://developer.cisco.com/docs/dna-center/#!get-membership
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -2773,7 +2773,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-site-v1
+            https://developer.cisco.com/docs/dna-center/#!create-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2859,7 +2859,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -2937,7 +2937,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-health-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-health
         """
         check_type(headers, dict)
         check_type(site_type, str)
@@ -3017,7 +3017,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-devices-that-are-assigned-to-a-site-v1
+            https://developer.cisco.com/docs/dna-center/#!get-devices-that-are-assigned-to-a-site
         """
         check_type(headers, dict)
         check_type(offset, str)
@@ -3087,7 +3087,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-count
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -3154,7 +3154,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-site-v1
+            https://developer.cisco.com/docs/dna-center/#!update-site
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3234,7 +3234,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-site-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-site
         """
         check_type(headers, dict)
         check_type(site_id, str,

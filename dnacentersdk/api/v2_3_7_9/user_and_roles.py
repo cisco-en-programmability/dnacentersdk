@@ -98,7 +98,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-role-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!add-role-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -181,7 +181,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-role-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!update-role-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -249,7 +249,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-permissions-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!get-permissions-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
@@ -303,7 +303,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-role-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-role-a-p-i
         """
         check_type(headers, dict)
         check_type(role_id, str,
@@ -358,7 +358,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-roles-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!get-roles-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
@@ -420,7 +420,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-users-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!get-users-a-p-i
         """
         check_type(headers, dict)
         check_type(invoke_source, str,
@@ -497,7 +497,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-user-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!add-user-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -589,7 +589,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-user-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!update-user-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -665,7 +665,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-user-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-user-a-p-i
         """
         check_type(headers, dict)
         check_type(user_id, str,
@@ -720,7 +720,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-setting-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-setting-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
@@ -783,7 +783,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!manage-external-authentication-setting-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!manage-external-authentication-setting-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -850,7 +850,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!get-external-authentication-servers-a-p-i
         """
         check_type(headers, dict)
         check_type(invoke_source, str,
@@ -917,7 +917,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-and-update-a-a-a-attribute-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!add-and-update-a-a-a-attribute-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -986,7 +986,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-a-a-attribute-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-a-a-attribute-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1038,7 +1038,7 @@ class UserandRoles(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-a-a-attribute-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-a-a-attribute-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:

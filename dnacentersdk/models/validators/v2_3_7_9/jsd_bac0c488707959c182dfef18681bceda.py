@@ -40,80 +40,122 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "applicationVisibility": {
-                "properties": {
-                "collector": {
-                "properties": {
-                "address": {
-                "type": "string"
-                },
-                "collectorType": {
-                "enum": [
-                "Builtin",
-                "TelemetryBrokerOrUDPDirector"
-                ],
-                "type": "string"
-                },
-                "port": {
-                "type": "integer"
-                }
+                    "applicationVisibility": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "collector": {
+                                        "type": "object",
+                                        "properties": {
+                                            "address": {
+                                                "type": "string"
+                                            },
+                                            "collectorType": {
+                                                "enum": [
+                                                    "Builtin",
+                                                    "TelemetryBrokerOrUDPDirector"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "port": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "required": ["address", "collectorType", "port"]
+                                    },
+                                    "enableOnWiredAccessDevices": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": ["collector", "enableOnWiredAccessDevices"]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "snmpTraps": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "externalTrapServers": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "useBuiltinTrapServer": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": ["externalTrapServers", "useBuiltinTrapServer"]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "syslogs": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "externalSyslogServers": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "useBuiltinSyslogServer": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": ["externalSyslogServers", "useBuiltinSyslogServer"]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "wiredDataCollection": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "enableWiredDataCollectio": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": ["enableWiredDataCollectio"]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "wirelessTelemetry": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "enableWirelessTelemetry": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": ["enableWirelessTelemetry"]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
                 },
                 "type": "object"
-                },
-                "enableOnWiredAccessDevices": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "snmpTraps": {
-                "properties": {
-                "externalTrapServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "useBuiltinTrapServer": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "syslogs": {
-                "properties": {
-                "externalSyslogServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "useBuiltinSyslogServer": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "wiredDataCollection": {
-                "properties": {
-                "enableWiredDataCollectio": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                },
-                "wirelessTelemetry": {
-                "properties": {
-                "enableWirelessTelemetry": {
-                "type": "boolean"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
+            }'''.replace("\n" + ' ' * 16, '')
         ))
+
 
     def validate(self, request):
         try:

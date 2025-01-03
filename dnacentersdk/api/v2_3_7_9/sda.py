@@ -123,7 +123,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-list-of-fabric-sites-with-their-health-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!read-list-of-fabric-sites-with-their-health-summary
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -225,7 +225,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-fabric-site-count-v1
+            https://developer.cisco.com/docs/dna-center/#!read-fabric-site-count
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -313,7 +313,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-fabric-sites-with-health-summary-from-id-v1
+            https://developer.cisco.com/docs/dna-center/#!read-fabric-sites-with-health-summary-from-id
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -415,7 +415,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-a-fabric-site-in-the-specified-time-range-v1
+            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-a-fabric-site-in-the-specified-time-range
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -511,7 +511,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-fabric-entity-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!read-fabric-entity-summary
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -608,7 +608,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-list-of-transit-networks-with-their-health-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!read-list-of-transit-networks-with-their-health-summary
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -710,7 +710,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-transit-networks-count-v1
+            https://developer.cisco.com/docs/dna-center/#!read-transit-networks-count
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -798,7 +798,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-transit-network-with-its-health-summary-from-id-v1
+            https://developer.cisco.com/docs/dna-center/#!read-transit-network-with-its-health-summary-from-id
         """
         check_type(headers, dict)
         check_type(end_time, int)
@@ -901,7 +901,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-a-transit-network-in-the-specified-time-range-v1
+            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-a-transit-network-in-the-specified-time-range
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1024,7 +1024,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-list-of-virtual-networks-with-their-health-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!read-list-of-virtual-networks-with-their-health-summary
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1133,7 +1133,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-virtual-networks-count-v1
+            https://developer.cisco.com/docs/dna-center/#!read-virtual-networks-count
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1228,7 +1228,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!read-virtual-network-with-its-health-summary-from-id-v1
+            https://developer.cisco.com/docs/dna-center/#!read-virtual-network-with-its-health-summary-from-id
         """
         check_type(headers, dict)
         check_type(end_time, int)
@@ -1333,7 +1333,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-a-virtual-network-in-the-specified-time-range-v1
+            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-a-virtual-network-in-the-specified-time-range
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1418,7 +1418,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-default-authentication-profile-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-default-authentication-profile-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -1483,7 +1483,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-default-authentication-template-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-default-authentication-template-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1548,7 +1548,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-default-authentication-profile-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!update-default-authentication-profile-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1609,7 +1609,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-default-authentication-profile-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-default-authentication-profile-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -1671,7 +1671,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-border-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-border-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1732,7 +1732,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-border-device-detail-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-border-device-detail-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -1790,7 +1790,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-border-device-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-border-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -1848,7 +1848,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-control-plane-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-control-plane-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -1906,7 +1906,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-control-plane-device-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-control-plane-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -1977,7 +1977,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-control-plane-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-control-plane-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2047,7 +2047,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-info-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-info-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2106,7 +2106,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-role-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-role-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2174,7 +2174,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-edge-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-edge-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2242,7 +2242,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-edge-device-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-edge-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2300,7 +2300,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-edge-device-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-edge-device-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2358,7 +2358,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -2416,7 +2416,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-site-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-site-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -2488,7 +2488,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-site-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-site-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2576,7 +2576,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-access-point-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2655,7 +2655,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-access-point-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2720,7 +2720,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-access-point-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-access-point-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2785,7 +2785,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-user-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -2875,7 +2875,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-user-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2960,7 +2960,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-user-device-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-for-user-device-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -3036,7 +3036,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-multicast-in-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-multicast-in-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3108,7 +3108,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-multicast-details-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-details-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -3166,7 +3166,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-multicast-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-multicast-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -3225,7 +3225,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-wired-device-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-wired-device
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -3291,7 +3291,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!re-provision-wired-device-v1
+            https://developer.cisco.com/docs/dna-center/#!re-provision-wired-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3367,7 +3367,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!provision-wired-device-v1
+            https://developer.cisco.com/docs/dna-center/#!provision-wired-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3435,7 +3435,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-provisioned-wired-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-wired-device
         """
         check_type(headers, dict)
         check_type(device_management_ip_address, str,
@@ -3494,7 +3494,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-transit-peer-network-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-transit-peer-network
         """
         check_type(headers, dict)
         check_type(transit_peer_network_name, str,
@@ -3553,7 +3553,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-transit-peer-network-info-v1
+            https://developer.cisco.com/docs/dna-center/#!get-transit-peer-network-info
         """
         check_type(headers, dict)
         check_type(transit_peer_network_name, str,
@@ -3624,7 +3624,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-transit-peer-network-v1
+            https://developer.cisco.com/docs/dna-center/#!add-transit-peer-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3698,7 +3698,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-v-n-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-v-n-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(virtual_network_name, str,
@@ -3762,7 +3762,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-v-n-from-s-d-a-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!get-v-n-from-s-d-a-fabric
         """
         check_type(headers, dict)
         check_type(virtual_network_name, str,
@@ -3832,7 +3832,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-v-n-in-fabric-v1
+            https://developer.cisco.com/docs/dna-center/#!add-v-n-in-fabric
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3901,7 +3901,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-summary
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -3965,7 +3965,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-i-p-pool-from-s-d-a-virtual-network-v1
+            https://developer.cisco.com/docs/dna-center/#!get-i-p-pool-from-s-d-a-virtual-network
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -4035,7 +4035,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-i-p-pool-from-s-d-a-virtual-network-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-i-p-pool-from-s-d-a-virtual-network
         """
         check_type(headers, dict)
         check_type(site_name_hierarchy, str,
@@ -4146,7 +4146,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-i-p-pool-in-s-d-a-virtual-network-v1
+            https://developer.cisco.com/docs/dna-center/#!add-i-p-pool-in-s-d-a-virtual-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4246,7 +4246,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-anycast-gateways-v1
+            https://developer.cisco.com/docs/dna-center/#!update-anycast-gateways
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -4314,7 +4314,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-anycast-gateways-v1
+            https://developer.cisco.com/docs/dna-center/#!add-anycast-gateways
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -4393,7 +4393,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-anycast-gateways-v1
+            https://developer.cisco.com/docs/dna-center/#!get-anycast-gateways
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -4482,7 +4482,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-anycast-gateway-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-anycast-gateway-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -4551,7 +4551,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-anycast-gateway-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-anycast-gateway-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -4622,7 +4622,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-authentication-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!get-authentication-profiles
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -4695,7 +4695,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-authentication-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update-authentication-profile
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -4756,7 +4756,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-extranet-policies-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-extranet-policies
         """
         check_type(headers, dict)
         check_type(extranet_policy_name, str)
@@ -4817,7 +4817,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-extranet-policy-v1
+            https://developer.cisco.com/docs/dna-center/#!update-extranet-policy
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -4882,7 +4882,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-extranet-policy-v1
+            https://developer.cisco.com/docs/dna-center/#!add-extranet-policy
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -4948,7 +4948,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-extranet-policies-v1
+            https://developer.cisco.com/docs/dna-center/#!get-extranet-policies
         """
         check_type(headers, dict)
         check_type(extranet_policy_name, str)
@@ -5009,7 +5009,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-extranet-policy-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-extranet-policy-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -5063,7 +5063,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-extranet-policy-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-extranet-policy-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -5132,7 +5132,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -5206,7 +5206,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -5273,7 +5273,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-devices
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -5341,7 +5341,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -5409,7 +5409,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -5476,7 +5476,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoffs-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoffs
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -5546,7 +5546,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -5617,7 +5617,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer2-handoffs-v1
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer2-handoffs
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -5681,7 +5681,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer2-handoffs-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -5743,7 +5743,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoff-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer2-handoff-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -5804,7 +5804,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer3-handoffs-with-ip-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -5873,7 +5873,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-layer3-handoffs-with-ip-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -5938,7 +5938,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-ip-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -6009,7 +6009,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -6081,7 +6081,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-ip-transit-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -6143,7 +6143,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoff-with-ip-transit-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoff-with-ip-transit-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6205,7 +6205,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-layer3-handoffs-with-sda-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -6279,7 +6279,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -6350,7 +6350,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-sda-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -6417,7 +6417,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer3-handoffs-with-sda-transit-v1
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-devices-layer3-handoffs-with-sda-transit
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -6483,7 +6483,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-devices-layer3-handoffs-with-sda-transit-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -6545,7 +6545,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-device-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6610,7 +6610,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-sites-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-sites
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -6680,7 +6680,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-fabric-site-v1
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-site
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -6745,7 +6745,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-fabric-site-v1
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-site
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -6804,7 +6804,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-site-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-site-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -6858,7 +6858,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-site-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-site-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6923,7 +6923,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-zones-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-zones
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -6993,7 +6993,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-fabric-zone-v1
+            https://developer.cisco.com/docs/dna-center/#!update-fabric-zone
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -7058,7 +7058,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-fabric-zone-v1
+            https://developer.cisco.com/docs/dna-center/#!add-fabric-zone
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -7117,7 +7117,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-fabric-zone-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-fabric-zone-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -7171,7 +7171,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-fabric-zone-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-fabric-zone-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7232,7 +7232,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-layer2-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!add-layer2-virtual-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -7307,7 +7307,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-networks
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -7395,7 +7395,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-networks
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -7477,7 +7477,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-layer2-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!update-layer2-virtual-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -7549,7 +7549,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-network-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-layer2-virtual-network-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -7618,7 +7618,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-network-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-layer2-virtual-network-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7679,7 +7679,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-layer3-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!add-layer3-virtual-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -7755,7 +7755,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks
         """
         check_type(headers, dict)
         check_type(virtual_network_name, str)
@@ -7825,7 +7825,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-networks
         """
         check_type(headers, dict)
         check_type(virtual_network_name, str)
@@ -7886,7 +7886,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-layer3-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!update-layer3-virtual-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -7951,7 +7951,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-layer3-virtual-networks-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -8011,7 +8011,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-network-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-layer3-virtual-network-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8072,7 +8072,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-multicast-v1
+            https://developer.cisco.com/docs/dna-center/#!update-multicast
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -8141,7 +8141,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-multicast-v1
+            https://developer.cisco.com/docs/dna-center/#!get-multicast
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -8208,7 +8208,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-multicast-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!add-multicast-virtual-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -8280,7 +8280,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-networks
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -8350,7 +8350,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-multicast-virtual-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!update-multicast-virtual-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -8413,7 +8413,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-network-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-multicast-virtual-network-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -8470,7 +8470,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-multicast-virtual-network-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-multicast-virtual-network-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8532,7 +8532,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-pending-fabric-events-v1
+            https://developer.cisco.com/docs/dna-center/#!get-pending-fabric-events
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -8599,7 +8599,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!apply-pending-fabric-events-v1
+            https://developer.cisco.com/docs/dna-center/#!apply-pending-fabric-events
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -8667,7 +8667,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-port-assignments-v1
+            https://developer.cisco.com/docs/dna-center/#!add-port-assignments
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -8745,7 +8745,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-port-assignments-v1
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignments
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -8824,7 +8824,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-port-assignments-v1
+            https://developer.cisco.com/docs/dna-center/#!update-port-assignments
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -8894,7 +8894,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-port-assignments-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignments
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -8974,7 +8974,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-port-assignment-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -9043,7 +9043,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-port-assignment-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9112,7 +9112,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-port-channels-v1
+            https://developer.cisco.com/docs/dna-center/#!get-port-channels
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -9188,7 +9188,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-port-channels-v1
+            https://developer.cisco.com/docs/dna-center/#!add-port-channels
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9253,7 +9253,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-port-channels-v1
+            https://developer.cisco.com/docs/dna-center/#!update-port-channels
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9324,7 +9324,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-port-channels-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-port-channels
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -9401,7 +9401,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-port-channel-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-port-channel-count
         """
         check_type(headers, dict)
         check_type(fabric_id, str)
@@ -9467,7 +9467,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-port-channel-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-port-channel-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9529,7 +9529,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-devices
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -9596,7 +9596,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!provision-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!provision-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9666,7 +9666,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -9739,7 +9739,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!re-provision-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!re-provision-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9800,7 +9800,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-provisioned-devices-count
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -9860,7 +9860,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-device-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-provisioned-device-by-id
         """
         check_type(headers, dict)
         check_type(clean_up_config, bool)
@@ -9924,7 +9924,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-transit-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!update-transit-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9998,7 +9998,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-transit-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!get-transit-networks
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -10071,7 +10071,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-transit-networks-v1
+            https://developer.cisco.com/docs/dna-center/#!add-transit-networks
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -10133,7 +10133,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-transit-networks-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-transit-networks-count
         """
         check_type(headers, dict)
         check_type(type, str)
@@ -10190,7 +10190,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-transit-network-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-transit-network-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -10259,7 +10259,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-virtual-network-with-scalable-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!add-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -10331,7 +10331,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-virtual-network-with-scalable-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(virtual_network_name, str,
@@ -10389,7 +10389,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-with-scalable-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!get-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(virtual_network_name, str,
@@ -10461,7 +10461,7 @@ class Sda(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-virtual-network-with-scalable-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!update-virtual-network-with-scalable-groups
         """
         check_type(headers, dict)
         check_type(payload, dict)

@@ -95,7 +95,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!trigger-software-image-activation-v1
+            https://developer.cisco.com/docs/dna-center/#!trigger-software-image-activation
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -173,7 +173,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!trigger-software-image-distribution-v1
+            https://developer.cisco.com/docs/dna-center/#!trigger-software-image-distribution
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -272,7 +272,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-software-image-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-software-image-details
         """
         check_type(headers, dict)
         check_type(image_uuid, str)
@@ -378,7 +378,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-family-identifiers-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-family-identifiers
         """
         check_type(headers, dict)
         if headers is not None:
@@ -451,7 +451,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!tag-as-golden-image-v1
+            https://developer.cisco.com/docs/dna-center/#!tag-as-golden-image
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -537,7 +537,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-golden-tag-for-image-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-golden-tag-for-image
         """
         check_type(headers, dict)
         check_type(site_id, str,
@@ -616,7 +616,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-golden-tag-status-of-an-image-v1
+            https://developer.cisco.com/docs/dna-center/#!get-golden-tag-status-of-an-image
         """
         check_type(headers, dict)
         check_type(site_id, str,
@@ -692,7 +692,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-local-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!import-local-software-image
         """
         check_type(headers, dict)
         check_type(is_third_party, bool)
@@ -773,7 +773,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-software-image-via-u-r-l-v1
+            https://developer.cisco.com/docs/dna-center/#!import-software-image-via-u-r-l
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -890,7 +890,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-list-of-software-images-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-list-of-software-images
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -981,7 +981,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!initiates-sync-of-software-images-from-cisco-com-v1
+            https://developer.cisco.com/docs/dna-center/#!initiates-sync-of-software-images-from-cisco-com
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1075,7 +1075,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-count-of-software-images-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-count-of-software-images
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -1173,7 +1173,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-image-distribution-server-v1
+            https://developer.cisco.com/docs/dna-center/#!add-image-distribution-server
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1249,7 +1249,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-image-distribution-servers-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-image-distribution-servers
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1315,7 +1315,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-remote-image-distribution-server-v1
+            https://developer.cisco.com/docs/dna-center/#!update-remote-image-distribution-server
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1392,7 +1392,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-specific-image-distribution-server-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-specific-image-distribution-server
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1450,7 +1450,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-image-distribution-server-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-image-distribution-server
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1510,7 +1510,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-image-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-image
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1569,7 +1569,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-applicable-add-on-images-for-the-given-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-applicable-add-on-images-for-the-given-software-image
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1628,7 +1628,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-count-of-add-on-images-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-count-of-add-on-images
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1687,7 +1687,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!download-the-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!download-the-software-image
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1780,7 +1780,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!tagging-golden-image-v1
+            https://developer.cisco.com/docs/dna-center/#!tagging-golden-image
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1894,7 +1894,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!untagging-golden-image-v1
+            https://developer.cisco.com/docs/dna-center/#!untagging-golden-image
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1990,7 +1990,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!assign-network-device-product-name-to-the-given-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!assign-network-device-product-name-to-the-given-software-image
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2087,7 +2087,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-network-device-product-names-assigned-to-a-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-network-device-product-names-assigned-to-a-software-image
         """
         check_type(headers, dict)
         check_type(product_name, str)
@@ -2179,7 +2179,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-assigned-network-device-products-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-assigned-network-device-products
         """
         check_type(headers, dict)
         check_type(product_name, str)
@@ -2257,7 +2257,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!unassign-network-device-product-name-from-the-given-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!unassign-network-device-product-name-from-the-given-software-image
         """
         check_type(headers, dict)
         check_type(image_id, str,
@@ -2335,7 +2335,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-the-list-of-sites-for-the-network-device-product-name-assigned-to-the-software-image-v1
+            https://developer.cisco.com/docs/dna-center/#!update-the-list-of-sites-for-the-network-device-product-name-assigned-to-the-software-image
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2441,7 +2441,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-device-image-updates-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-device-image-updates
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -2556,7 +2556,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-of-network-device-image-updates-v1
+            https://developer.cisco.com/docs/dna-center/#!count-of-network-device-image-updates
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -2646,7 +2646,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-network-device-product-names-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-network-device-product-names
         """
         check_type(headers, dict)
         check_type(product_name, str)
@@ -2715,7 +2715,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-of-network-product-names-v1
+            https://developer.cisco.com/docs/dna-center/#!count-of-network-product-names
         """
         check_type(headers, dict)
         check_type(product_name, str)
@@ -2776,7 +2776,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-network-device-product-name-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-network-device-product-name
         """
         check_type(headers, dict)
         check_type(product_name_ordinal, int,
@@ -2837,7 +2837,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-the-image-summary-for-the-given-site-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-the-image-summary-for-the-given-site
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -2906,7 +2906,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-network-device-product-names-for-a-site-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-network-device-product-names-for-a-site
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -2977,7 +2977,7 @@ class SoftwareImageManagementSwim(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-network-device-product-names-for-a-site-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-network-device-product-names-for-a-site
         """
         check_type(headers, dict)
         check_type(site_id, str)

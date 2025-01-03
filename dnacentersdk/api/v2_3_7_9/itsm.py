@@ -95,7 +95,7 @@ class Itsm(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-c-m-d-b-sync-status-v1
+            https://developer.cisco.com/docs/dna-center/#!get-c-m-d-b-sync-status
         """
         check_type(headers, dict)
         check_type(status, str)
@@ -157,7 +157,7 @@ class Itsm(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-failed-i-t-s-m-events-v1
+            https://developer.cisco.com/docs/dna-center/#!get-failed-i-t-s-m-events
         """
         check_type(headers, dict)
         check_type(instance_id, str)
@@ -221,7 +221,7 @@ class Itsm(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retry-integration-events-v1
+            https://developer.cisco.com/docs/dna-center/#!retry-integration-events
         """
         check_type(headers, dict)
         check_type(payload, list)

@@ -86,7 +86,7 @@ class CiscoTrustedCertificates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-trusted-certificate-v1
+            https://developer.cisco.com/docs/dna-center/#!import-trusted-certificate
         """
         check_type(headers, dict)
         if headers is not None:

@@ -18,6 +18,8 @@ Fix
 ~~~
 
 -  changing the api version in the configuration files
+-  Resolved issue #174
+-  removal of -v1 from reference urls in the documentation
 
 .. _section-1:
 

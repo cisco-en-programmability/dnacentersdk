@@ -143,7 +143,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-a-a-a-services-for-given-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-a-a-a-services-for-given-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -283,7 +283,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-a-a-a-services-for-given-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-a-a-a-services-for-given-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -379,7 +379,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-a-a-a-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-a-a-a-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -470,7 +470,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-a-a-a-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-a-a-a-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -567,7 +567,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-a-a-a-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-a-a-a-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -674,7 +674,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-a-a-a-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-a-a-a-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -783,7 +783,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-a-a-a-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-a-a-a-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -882,7 +882,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-details-of-a-specific-a-a-a-service-matching-the-id-of-the-service-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-details-of-a-specific-a-a-a-service-matching-the-id-of-the-service
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -976,7 +976,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-for-a-given-a-a-a-service-matching-the-id-of-the-service-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-for-a-given-a-a-a-service-matching-the-id-of-the-service
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1153,7 +1153,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-assurance-events-v1
+            https://developer.cisco.com/docs/dna-center/#!query-assurance-events
         """
         check_type(headers, dict)
         check_type(device_family, str,
@@ -1330,7 +1330,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-events-v1
+            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-events
         """
         check_type(headers, dict)
         check_type(device_family, str,
@@ -1443,7 +1443,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-assurance-events-with-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!query-assurance-events-with-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1543,7 +1543,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-events-with-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-events-with-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1635,7 +1635,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-assurance-event-v1
+            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-assurance-event
         """
         check_type(headers, dict)
         check_type(attribute, str)
@@ -1704,7 +1704,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-list-of-child-events-for-the-given-wireless-client-event-v1
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-child-events-for-the-given-wireless-client-event
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1820,7 +1820,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-h-c-p-services-for-given-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-h-c-p-services-for-given-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1960,7 +1960,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-h-c-p-services-for-given-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-h-c-p-services-for-given-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -2056,7 +2056,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-h-c-p-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-h-c-p-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2147,7 +2147,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-h-c-p-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-h-c-p-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2244,7 +2244,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-d-h-c-p-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-d-h-c-p-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2351,7 +2351,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-d-h-c-p-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-d-h-c-p-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2460,7 +2460,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-d-h-c-p-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-d-h-c-p-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2559,7 +2559,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-details-of-a-specific-d-h-c-p-service-matching-the-id-of-the-service-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-details-of-a-specific-d-h-c-p-service-matching-the-id-of-the-service
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -2653,7 +2653,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-for-a-given-d-h-c-p-service-matching-the-id-of-the-service-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-for-a-given-d-h-c-p-service-matching-the-id-of-the-service
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2790,7 +2790,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-n-s-services-for-given-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-n-s-services-for-given-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -2919,7 +2919,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-n-s-services-for-given-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-n-s-services-for-given-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -3012,7 +3012,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-n-s-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-d-n-s-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3103,7 +3103,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-n-s-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-d-n-s-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3200,7 +3200,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-d-n-s-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-d-n-s-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3307,7 +3307,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-d-n-s-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-d-n-s-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3416,7 +3416,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-d-n-s-services-for-given-set-of-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-d-n-s-services-for-given-set-of-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3515,7 +3515,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-details-of-a-specific-d-n-s-service-matching-the-id-of-the-service-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-details-of-a-specific-d-n-s-service-matching-the-id-of-the-service
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -3609,7 +3609,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-for-a-given-d-n-s-service-matching-the-id-of-the-service-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-for-a-given-d-n-s-service-matching-the-id-of-the-service
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3814,7 +3814,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-interfaces-along-with-statistics-and-poe-data-from-all-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-interfaces-along-with-statistics-and-poe-data-from-all-network-devices
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -3978,7 +3978,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-total-network-device-interface-counts-in-the-specified-time-range-when-there-is-no-start-and-end-time-specified-returns-the-latest-interfaces-total-count-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-total-network-device-interface-counts-in-the-specified-time-range-when-there-is-no-start-and-end-time-specified-returns-the-latest-interfaces-total-count
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -4088,7 +4088,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-list-of-interfaces-across-the-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-list-of-interfaces-across-the-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4190,7 +4190,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!the-total-interfaces-count-across-the-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!the-total-interfaces-count-across-the-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4301,7 +4301,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-interface-data-for-the-given-interface-idinstance-uuid-along-with-the-statistics-and-poe-data-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-interface-data-for-the-given-interface-idinstance-uuid-along-with-the-statistics-and-poe-data
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -4396,7 +4396,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!the-trend-analytcis-data-for-the-interfaces-in-the-specified-time-range-v1
+            https://developer.cisco.com/docs/dna-center/#!the-trend-analytcis-data-for-the-interfaces-in-the-specified-time-range
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4607,7 +4607,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-network-device-details-based-on-the-provided-query-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-network-device-details-based-on-the-provided-query-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -4849,7 +4849,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-total-network-device-counts-based-on-the-provided-query-parameters-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-total-network-device-counts-based-on-the-provided-query-parameters
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -4984,7 +4984,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-list-of-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-list-of-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5078,7 +5078,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-total-number-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-total-number-network-devices-based-on-the-provided-complex-filters-and-aggregation-functions
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5173,7 +5173,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-summary-analytics-data-related-to-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-summary-analytics-data-related-to-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5278,7 +5278,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-top-n-analytics-data-related-to-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-top-n-analytics-data-related-to-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5385,7 +5385,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-trend-analytics-data-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-trend-analytics-data
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5487,7 +5487,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-device-data-for-the-given-device-id-uuid-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-device-data-for-the-given-device-id-uuid
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -5582,7 +5582,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-the-network-device-in-the-specified-time-range-v1
+            https://developer.cisco.com/docs/dna-center/#!the-trend-analytics-data-for-the-network-device-in-the-specified-time-range
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5678,7 +5678,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-building-v1
+            https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-building
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -5752,7 +5752,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-detail-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-detail
         """
         check_type(headers, dict)
         check_type(timestamp, int)
@@ -5820,7 +5820,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-enrichment-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -5900,7 +5900,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!devices-v1
+            https://developer.cisco.com/docs/dna-center/#!devices
         """
         check_type(headers, dict)
         check_type(device_role, str)
@@ -5996,7 +5996,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-planned-access-point-for-floor-v1
+            https://developer.cisco.com/docs/dna-center/#!update-planned-access-point-for-floor
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6100,7 +6100,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-planned-access-point-for-floor-v1
+            https://developer.cisco.com/docs/dna-center/#!create-planned-access-point-for-floor
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6189,7 +6189,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-floor-v1
+            https://developer.cisco.com/docs/dna-center/#!get-planned-access-points-for-floor
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -6262,7 +6262,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-planned-access-point-for-floor-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-planned-access-point-for-floor
         """
         check_type(headers, dict)
         check_type(floor_id, str,
@@ -6347,7 +6347,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-health-score-definitions-for-given-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-health-score-definitions-for-given-filters
         """
         check_type(headers, dict)
         check_type(device_type, str)
@@ -6430,7 +6430,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-health-score-definitions-v1
+            https://developer.cisco.com/docs/dna-center/#!update-health-score-definitions
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -6511,7 +6511,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-count-of-health-score-definitions-based-on-provided-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-count-of-health-score-definitions-based-on-provided-filters
         """
         check_type(headers, dict)
         check_type(device_type, str)
@@ -6580,7 +6580,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-health-score-definition-for-the-given-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-health-score-definition-for-the-given-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6656,7 +6656,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-health-score-definition-for-the-given-id-v1
+            https://developer.cisco.com/docs/dna-center/#!update-health-score-definition-for-the-given-id
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6735,7 +6735,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-interfaces
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -6799,7 +6799,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count-for-multiple-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count-for-multiple-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -6853,7 +6853,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interface-by-i-p-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interface-by-i-p
         """
         check_type(headers, dict)
         check_type(ip_address, str,
@@ -6908,7 +6908,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-i-s-i-s-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!get-i-s-i-s-interfaces
         """
         check_type(headers, dict)
         if headers is not None:
@@ -6962,7 +6962,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interface-info-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interface-info-by-id
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -7019,7 +7019,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-count
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -7079,7 +7079,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interface-details-by-device-id-and-interface-name-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interface-details-by-device-id-and-interface-name
         """
         check_type(headers, dict)
         check_type(name, str,
@@ -7145,7 +7145,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-interfaces-by-specified-range-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-interfaces-by-specified-range
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -7207,7 +7207,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-o-s-p-f-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!get-o-s-p-f-interfaces
         """
         check_type(headers, dict)
         if headers is not None:
@@ -7261,7 +7261,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interface-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interface-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7337,7 +7337,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-interface-details-v1
+            https://developer.cisco.com/docs/dna-center/#!update-interface-details
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -7418,7 +7418,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!legit-operations-for-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!legit-operations-for-interface
         """
         check_type(headers, dict)
         check_type(interface_uuid, str,
@@ -7490,7 +7490,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!clear-mac-address-table-v1
+            https://developer.cisco.com/docs/dna-center/#!clear-mac-address-table
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -7640,7 +7640,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-list-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-list
         """
         check_type(headers, dict)
         check_type(hostname, (str, list, set, tuple))
@@ -7871,7 +7871,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-device-know-your-network-v1
+            https://developer.cisco.com/docs/dna-center/#!add-device-know-your-network
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8074,7 +8074,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-device-details-v1
+            https://developer.cisco.com/docs/dna-center/#!update-device-details
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8238,7 +8238,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-values-that-match-fully-or-partially-an-attribute-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-values-that-match-fully-or-partially-an-attribute
         """
         check_type(headers, dict)
         check_type(vrf_name, str)
@@ -8368,7 +8368,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-device-role-v1
+            https://developer.cisco.com/docs/dna-center/#!update-device-role
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8439,7 +8439,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-polling-interval-for-all-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-polling-interval-for-all-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -8493,7 +8493,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-config-for-all-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-config-for-all-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -8545,7 +8545,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-config-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-config-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -8606,7 +8606,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-count-know-your-network-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-count-know-your-network
         """
         check_type(headers, dict)
         check_type(hostname, (str, list, set, tuple))
@@ -8686,7 +8686,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!export-device-list-v1
+            https://developer.cisco.com/docs/dna-center/#!export-device-list
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8765,7 +8765,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-functional-capability-for-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-functional-capability-for-devices
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -8826,7 +8826,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-functional-capability-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-functional-capability-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8895,7 +8895,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!inventory-insight-device-link-mismatch-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!inventory-insight-device-link-mismatch-a-p-i
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -8969,7 +8969,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-device-by-i-p-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-device-by-i-p
         """
         check_type(headers, dict)
         check_type(ip_address, str,
@@ -9038,7 +9038,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-modules-v1
+            https://developer.cisco.com/docs/dna-center/#!get-modules
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -9122,7 +9122,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-module-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-module-count
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -9192,7 +9192,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-module-info-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-module-info-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9249,7 +9249,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-by-serial-number-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-by-serial-number
         """
         check_type(headers, dict)
         check_type(serial_number, str,
@@ -9315,7 +9315,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!sync-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!sync-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9385,7 +9385,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-devices-registered-for-w-s-a-notification-v1
+            https://developer.cisco.com/docs/dna-center/#!get-devices-registered-for-w-s-a-notification
         """
         check_type(headers, dict)
         check_type(serial_number, str)
@@ -9448,7 +9448,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-user-defined-fields-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-user-defined-fields
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -9516,7 +9516,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-user-defined-field-v1
+            https://developer.cisco.com/docs/dna-center/#!create-user-defined-field
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -9594,7 +9594,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-user-defined-field-v1
+            https://developer.cisco.com/docs/dna-center/#!update-user-defined-field
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -9666,7 +9666,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-user-defined-field-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-user-defined-field
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9724,7 +9724,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-chassis-details-for-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-chassis-details-for-device
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -9781,7 +9781,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-stack-details-for-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-stack-details-for-device
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -9841,7 +9841,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-user-defined-field-from-device-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-user-defined-field-from-device
         """
         check_type(headers, dict)
         check_type(name, str,
@@ -9911,7 +9911,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-user-defined-field-to-device-v1
+            https://developer.cisco.com/docs/dna-center/#!add-user-defined-field-to-device
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -9981,7 +9981,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-physical-components-of-the-given-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-physical-components-of-the-given-device
         """
         check_type(headers, dict)
         check_type(type, str)
@@ -10045,7 +10045,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-p-o-e-interface-details-for-the-device-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-p-o-e-interface-details-for-the-device
         """
         check_type(headers, dict)
         check_type(interface_name_list, str)
@@ -10108,7 +10108,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-connected-device-detail-v1
+            https://developer.cisco.com/docs/dna-center/#!get-connected-device-detail
         """
         check_type(headers, dict)
         check_type(device_uuid, str,
@@ -10169,7 +10169,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-linecard-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-linecard-details
         """
         check_type(headers, dict)
         check_type(device_uuid, str,
@@ -10226,7 +10226,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!p-o-e-details-v1
+            https://developer.cisco.com/docs/dna-center/#!p-o-e-details
         """
         check_type(headers, dict)
         check_type(device_uuid, str,
@@ -10284,7 +10284,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-supervisor-card-detail-v1
+            https://developer.cisco.com/docs/dna-center/#!get-supervisor-card-detail
         """
         check_type(headers, dict)
         check_type(device_uuid, str,
@@ -10351,7 +10351,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-device-management-address-v1
+            https://developer.cisco.com/docs/dna-center/#!update-device-management-address
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -10421,7 +10421,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -10486,7 +10486,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-device-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-device-by-id
         """
         check_type(headers, dict)
         check_type(clean_config, bool)
@@ -10546,7 +10546,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-summary
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -10603,7 +10603,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-polling-interval-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-polling-interval-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -10661,7 +10661,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-organization-list-for-meraki-v1
+            https://developer.cisco.com/docs/dna-center/#!get-organization-list-for-meraki
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -10723,7 +10723,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-interface-v-l-a-ns-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-interface-v-l-a-ns
         """
         check_type(headers, dict)
         check_type(interface_type, str)
@@ -10783,7 +10783,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-wireless-lan-controller-details-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-lan-controller-details-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -10840,7 +10840,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-config-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-config-by-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -10902,7 +10902,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-device-by-pagination-range-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-device-by-pagination-range
         """
         check_type(headers, dict)
         check_type(start_index, int,
@@ -10976,7 +10976,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-maintenance-schedule-for-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!create-maintenance-schedule-for-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -11064,7 +11064,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-scheduled-maintenance-windows-for-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-scheduled-maintenance-windows-for-network-devices
         """
         check_type(headers, dict)
         check_type(network_device_ids, str)
@@ -11139,7 +11139,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-total-number-of-scheduled-maintenance-windows-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-total-number-of-scheduled-maintenance-windows
         """
         check_type(headers, dict)
         check_type(network_device_ids, str)
@@ -11217,7 +11217,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-the-maintenance-schedule-information-v1
+            https://developer.cisco.com/docs/dna-center/#!updates-the-maintenance-schedule-information
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -11291,7 +11291,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-maintenance-schedule-information-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-maintenance-schedule-information
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -11354,7 +11354,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-maintenance-schedule-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-maintenance-schedule
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -11463,7 +11463,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-network-devices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -11587,7 +11587,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-network-devices
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -11675,7 +11675,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-network-device-with-configuration-cleanup-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-network-device-with-configuration-cleanup
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -11751,7 +11751,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-network-device-without-configuration-cleanup-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-network-device-without-configuration-cleanup
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -11834,7 +11834,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-network-devices-with-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!query-network-devices-with-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -11913,7 +11913,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-network-devices-with-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!count-the-number-of-network-devices-with-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -11990,7 +11990,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-global-resync-interval-v1
+            https://developer.cisco.com/docs/dna-center/#!update-global-resync-interval
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12055,7 +12055,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!override-resync-interval-v1
+            https://developer.cisco.com/docs/dna-center/#!override-resync-interval
         """
         check_type(headers, dict)
         if headers is not None:
@@ -12118,7 +12118,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-network-device
         """
         check_type(headers, dict)
         check_type(views, str)
@@ -12188,7 +12188,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-resync-interval-for-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!update-resync-interval-for-the-network-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12258,7 +12258,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-resync-interval-for-the-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-resync-interval-for-the-network-device
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -12341,7 +12341,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!rogue-additional-details-v1
+            https://developer.cisco.com/docs/dna-center/#!rogue-additional-details
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12438,7 +12438,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!rogue-additional-detail-count-v1
+            https://developer.cisco.com/docs/dna-center/#!rogue-additional-detail-count
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12524,7 +12524,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!start-wireless-rogue-a-p-containment-v1
+            https://developer.cisco.com/docs/dna-center/#!start-wireless-rogue-a-p-containment
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12598,7 +12598,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!wireless-rogue-a-p-containment-status-v1
+            https://developer.cisco.com/docs/dna-center/#!wireless-rogue-a-p-containment-status
         """
         check_type(headers, dict)
         check_type(mac_address, str,
@@ -12671,7 +12671,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!stop-wireless-rogue-a-p-containment-v1
+            https://developer.cisco.com/docs/dna-center/#!stop-wireless-rogue-a-p-containment
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12765,7 +12765,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!threat-details-v1
+            https://developer.cisco.com/docs/dna-center/#!threat-details
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12868,7 +12868,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!threat-detail-count-v1
+            https://developer.cisco.com/docs/dna-center/#!threat-detail-count
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -12949,7 +12949,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-threat-levels-v1
+            https://developer.cisco.com/docs/dna-center/#!get-threat-levels
         """
         check_type(headers, dict)
         if headers is not None:
@@ -13010,7 +13010,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-allowed-mac-address-v1
+            https://developer.cisco.com/docs/dna-center/#!add-allowed-mac-address
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -13078,7 +13078,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-allowed-mac-address-v1
+            https://developer.cisco.com/docs/dna-center/#!get-allowed-mac-address
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -13136,7 +13136,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-allowed-mac-address-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-allowed-mac-address-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -13197,7 +13197,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-allowed-mac-address-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-allowed-mac-address
         """
         check_type(headers, dict)
         check_type(mac_address, str,
@@ -13272,7 +13272,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!threat-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!threat-summary
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -13347,7 +13347,7 @@ class Devices(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-threat-types-v1
+            https://developer.cisco.com/docs/dna-center/#!get-threat-types
         """
         check_type(headers, dict)
         if headers is not None:

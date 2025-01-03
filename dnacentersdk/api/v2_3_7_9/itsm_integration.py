@@ -100,7 +100,7 @@ class ItsmIntegration(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-i-t-s-m-integration-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!create-i-t-s-m-integration-setting
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -186,7 +186,7 @@ class ItsmIntegration(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-i-t-s-m-integration-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!update-i-t-s-m-integration-setting
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -262,7 +262,7 @@ class ItsmIntegration(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-i-t-s-m-integration-setting-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-i-t-s-m-integration-setting-by-id
         """
         check_type(headers, dict)
         check_type(instance_id, str,
@@ -320,7 +320,7 @@ class ItsmIntegration(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-i-t-s-m-integration-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-i-t-s-m-integration-setting
         """
         check_type(headers, dict)
         check_type(instance_id, str,
@@ -385,7 +385,7 @@ class ItsmIntegration(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-i-t-s-m-integration-settings-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-i-t-s-m-integration-settings
         """
         check_type(headers, dict)
         check_type(page_size, int)
@@ -449,7 +449,7 @@ class ItsmIntegration(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-i-t-s-m-integration-status-v1
+            https://developer.cisco.com/docs/dna-center/#!get-i-t-s-m-integration-status
         """
         check_type(headers, dict)
         if headers is not None:

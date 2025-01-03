@@ -100,7 +100,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-s-s-i-d-to-i-p-pool-mapping-v1
+            https://developer.cisco.com/docs/dna-center/#!add-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -185,7 +185,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-s-i-d-to-i-p-pool-mapping-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -260,7 +260,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-to-i-p-pool-mapping-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
         check_type(vlan_name, str,
@@ -323,7 +323,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-w-l-c-from-fabric-domain-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-w-l-c-from-fabric-domain
         """
         check_type(headers, dict)
         check_type(device_ipaddress, str,
@@ -392,7 +392,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-w-l-c-to-fabric-domain-v1
+            https://developer.cisco.com/docs/dna-center/#!add-w-l-c-to-fabric-domain
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -463,7 +463,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-all-the-fabric-sites-that-have-v-l-a-n-to-s-s-i-d-mapping-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-all-the-fabric-sites-that-have-v-l-a-n-to-s-s-i-d-mapping
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -521,7 +521,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!return-the-count-of-all-the-fabric-site-which-has-s-s-i-d-to-i-p-pool-mapping-v1
+            https://developer.cisco.com/docs/dna-center/#!return-the-count-of-all-the-fabric-site-which-has-s-s-i-d-to-i-p-pool-mapping
         """
         check_type(headers, dict)
         if headers is not None:
@@ -590,7 +590,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!switch-wireless-setting-and-rolling-a-p-upgrade-management-v1
+            https://developer.cisco.com/docs/dna-center/#!switch-wireless-setting-and-rolling-a-p-upgrade-management
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -667,7 +667,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-d-a-wireless-details-from-switches-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-d-a-wireless-details-from-switches
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -741,7 +741,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!reload-switch-for-wireless-controller-cleanup-v1
+            https://developer.cisco.com/docs/dna-center/#!reload-switch-for-wireless-controller-cleanup
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -825,7 +825,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-update-or-remove-s-s-i-d-mapping-to-a-v-l-a-n-v1
+            https://developer.cisco.com/docs/dna-center/#!add-update-or-remove-s-s-i-d-mapping-to-a-v-l-a-n
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -900,7 +900,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-v-l-a-ns-and-s-s-i-ds-mapped-to-the-v-l-a-n-within-a-fabric-site-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-v-l-a-ns-and-s-s-i-ds-mapped-to-the-v-l-a-n-within-a-fabric-site
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -965,7 +965,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-v-l-a-ns-mapped-to-s-s-i-ds-in-a-fabric-site-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-the-count-of-v-l-a-ns-mapped-to-s-s-i-ds-in-a-fabric-site
         """
         check_type(headers, dict)
         check_type(fabric_id, str,
@@ -1038,7 +1038,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-d-a-wireless-multicast-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-d-a-wireless-multicast
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1112,7 +1112,7 @@ class FabricWireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-d-a-wireless-multicast-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-d-a-wireless-multicast
         """
         check_type(headers, dict)
         check_type(fabric_id, str,

@@ -87,7 +87,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-n-c-policies-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-n-c-policies
         """
         check_type(headers, dict)
         if headers is not None:
@@ -145,7 +145,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!process-c-m-d-b-endpoints-v1
+            https://developer.cisco.com/docs/dna-center/#!process-c-m-d-b-endpoints
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -211,7 +211,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-i-endpoint-analytics-attribute-dictionaries-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-i-endpoint-analytics-attribute-dictionaries
         """
         check_type(headers, dict)
         check_type(include_attributes, bool)
@@ -280,7 +280,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!register-an-endpoint-v1
+            https://developer.cisco.com/docs/dna-center/#!register-an-endpoint
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -434,7 +434,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-the-endpoints-v1
+            https://developer.cisco.com/docs/dna-center/#!query-the-endpoints
         """
         check_type(headers, dict)
         check_type(profiling_status, str)
@@ -623,7 +623,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!fetch-the-count-of-endpoints-v1
+            https://developer.cisco.com/docs/dna-center/#!fetch-the-count-of-endpoints
         """
         check_type(headers, dict)
         check_type(profiling_status, str)
@@ -752,7 +752,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-a-registered-endpoint-v1
+            https://developer.cisco.com/docs/dna-center/#!update-a-registered-endpoint
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -836,7 +836,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-endpoint-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-endpoint-details
         """
         check_type(headers, dict)
         check_type(include, str)
@@ -896,7 +896,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-an-endpoint-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-an-endpoint
         """
         check_type(headers, dict)
         check_type(ep_id, str,
@@ -963,7 +963,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!apply-a-n-c-policy-v1
+            https://developer.cisco.com/docs/dna-center/#!apply-a-n-c-policy
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1038,7 +1038,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!revoke-a-n-c-policy-v1
+            https://developer.cisco.com/docs/dna-center/#!revoke-a-n-c-policy
         """
         check_type(headers, dict)
         check_type(ep_id, str,
@@ -1139,7 +1139,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-a-profiling-rule-v1
+            https://developer.cisco.com/docs/dna-center/#!create-a-profiling-rule
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1258,7 +1258,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-list-of-profiling-rules-v1
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-profiling-rules
         """
         check_type(headers, dict)
         check_type(rule_type, str)
@@ -1340,7 +1340,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-profiling-rules-in-bulk-v1
+            https://developer.cisco.com/docs/dna-center/#!import-profiling-rules-in-bulk
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1416,7 +1416,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-profiling-rules-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-profiling-rules
         """
         check_type(headers, dict)
         check_type(rule_type, str)
@@ -1522,7 +1522,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-an-existing-profiling-rule-v1
+            https://developer.cisco.com/docs/dna-center/#!update-an-existing-profiling-rule
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1623,7 +1623,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-profiling-rule-v1
+            https://developer.cisco.com/docs/dna-center/#!get-details-of-a-single-profiling-rule
         """
         check_type(headers, dict)
         check_type(rule_id, str,
@@ -1681,7 +1681,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-an-existing-profiling-rule-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-an-existing-profiling-rule
         """
         check_type(headers, dict)
         check_type(rule_id, str,
@@ -1740,7 +1740,7 @@ class AIEndpointAnalytics(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-task-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-task-details
         """
         check_type(headers, dict)
         check_type(task_id, str,

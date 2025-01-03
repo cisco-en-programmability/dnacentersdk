@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.8.1] - 2024-12-12
 ### Fix
 - changing the api version in the configuration files
+- Resolved issue #174
+- removal of -v1 from reference urls in the documentation
 
 ## [2.8.0] - 2024-12-11
 ### Added

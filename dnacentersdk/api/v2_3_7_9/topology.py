@@ -89,7 +89,7 @@ class Topology(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-overall-network-health-v1
+            https://developer.cisco.com/docs/dna-center/#!get-overall-network-health
         """
         check_type(headers, dict)
         check_type(timestamp, int)
@@ -149,7 +149,7 @@ class Topology(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-topology-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-topology-details
         """
         check_type(headers, dict)
         check_type(vlan_id, str,
@@ -206,7 +206,7 @@ class Topology(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-l3-topology-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-l3-topology-details
         """
         check_type(headers, dict)
         check_type(topology_type, str,
@@ -263,7 +263,7 @@ class Topology(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-physical-topology-v1
+            https://developer.cisco.com/docs/dna-center/#!get-physical-topology
         """
         check_type(headers, dict)
         check_type(node_type, str)
@@ -318,7 +318,7 @@ class Topology(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-site-topology-v1
+            https://developer.cisco.com/docs/dna-center/#!get-site-topology
         """
         check_type(headers, dict)
         if headers is not None:
@@ -370,7 +370,7 @@ class Topology(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-v-l-a-n-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-v-l-a-n-details
         """
         check_type(headers, dict)
         if headers is not None:

@@ -92,7 +92,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-start-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-start
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -154,7 +154,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-session-count-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-session-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -211,7 +211,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-log-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-log
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -271,7 +271,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-log-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-log-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -336,7 +336,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-logs-for-individual-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-logs-for-individual-devices
         """
         check_type(headers, dict)
         check_type(log_level, str)
@@ -398,7 +398,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-active-sessions-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-active-sessions
         """
         check_type(headers, dict)
         if headers is not None:
@@ -455,7 +455,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-status-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-status
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -515,7 +515,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-status-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-status-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -586,7 +586,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-device-update-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-device-update
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -664,7 +664,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -729,7 +729,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-and-update-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-and-update-devices
         """
         check_type(headers, dict)
         check_type(payload, list)

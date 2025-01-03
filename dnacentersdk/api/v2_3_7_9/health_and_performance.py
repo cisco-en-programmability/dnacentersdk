@@ -88,7 +88,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-diagnostic-task-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-diagnostic-task-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -145,7 +145,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-diagnostic-task-details-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-diagnostic-task-details-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -204,7 +204,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-all-the-validation-sets-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-all-the-validation-sets
         """
         check_type(headers, dict)
         check_type(view, str)
@@ -261,7 +261,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-validation-details-for-a-validation-set-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-validation-details-for-a-validation-set
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -335,7 +335,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-validation-workflows-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-validation-workflows
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -414,7 +414,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!submits-the-workflow-for-executing-validations-v1
+            https://developer.cisco.com/docs/dna-center/#!submits-the-workflow-for-executing-validations
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -494,7 +494,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-validation-workflows-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-validation-workflows
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -557,7 +557,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deletes-a-validation-workflow-v1
+            https://developer.cisco.com/docs/dna-center/#!deletes-a-validation-workflow
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -614,7 +614,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-validation-workflow-details-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-validation-workflow-details
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -684,7 +684,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-health-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!system-health-a-p-i
         """
         check_type(headers, dict)
         check_type(summary, bool)
@@ -758,7 +758,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-health-count-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!system-health-count-a-p-i
         """
         check_type(headers, dict)
         check_type(domain, str)
@@ -828,7 +828,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-performance-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!system-performance-a-p-i
         """
         check_type(headers, dict)
         check_type(kpi, str)
@@ -903,7 +903,7 @@ class HealthAndPerformance(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-performance-historical-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!system-performance-historical-a-p-i
         """
         check_type(headers, dict)
         check_type(kpi, str)

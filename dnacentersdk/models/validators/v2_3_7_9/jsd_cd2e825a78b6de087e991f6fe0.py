@@ -40,72 +40,73 @@ class JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "aaaClient": {
-                "properties": {
-                "pan": {
-                "type": "string"
-                },
-                "primaryServerIp": {
-                "type": "string"
-                },
-                "protocol": {
-                "enum": [
-                "RADIUS",
-                "TACACS"
-                ],
-                "type": "string"
-                },
-                "secondaryServerIp": {
-                "type": "string"
-                },
-                "serverType": {
-                "enum": [
-                "ISE",
-                "AAA"
-                ],
-                "type": "string"
-                },
-                "sharedSecret": {
-                "type": "string"
-                }
+                    "aaaClient": {
+                        "properties": {
+                            "pan": {
+                                "type": "string"
+                            },
+                            "primaryServerIp": {
+                                "type": "string"
+                            },
+                            "protocol": {
+                                "enum": [
+                                    "RADIUS",
+                                    "TACACS"
+                                ],
+                                "type": "string"
+                            },
+                            "secondaryServerIp": {
+                                "type": "string"
+                            },
+                            "serverType": {
+                                "enum": [
+                                    "ISE",
+                                    "AAA"
+                                ],
+                                "type": "string"
+                            },
+                            "sharedSecret": {
+                                "type": "string"
+                            }
+                        },
+                        "type": ["object", "null"]
+                    },
+                    "aaaNetwork": {
+                        "properties": {
+                            "pan": {
+                                "type": "string"
+                            },
+                            "primaryServerIp": {
+                                "type": "string"
+                            },
+                            "protocol": {
+                                "enum": [
+                                    "RADIUS",
+                                    "TACACS"
+                                ],
+                                "type": "string"
+                            },
+                            "secondaryServerIp": {
+                                "type": "string"
+                            },
+                            "serverType": {
+                                "enum": [
+                                    "ISE",
+                                    "AAA"
+                                ],
+                                "type": "string"
+                            },
+                            "sharedSecret": {
+                                "type": "string"
+                            }
+                        },
+                        "type": ["object", "null"]
+                    }
                 },
                 "type": "object"
-                },
-                "aaaNetwork": {
-                "properties": {
-                "pan": {
-                "type": "string"
-                },
-                "primaryServerIp": {
-                "type": "string"
-                },
-                "protocol": {
-                "enum": [
-                "RADIUS",
-                "TACACS"
-                ],
-                "type": "string"
-                },
-                "secondaryServerIp": {
-                "type": "string"
-                },
-                "serverType": {
-                "enum": [
-                "ISE",
-                "AAA"
-                ],
-                "type": "string"
-                },
-                "sharedSecret": {
-                "type": "string"
-                }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
+            }'''.replace("\n" + ' ' * 16, '')
         ))
+
 
     def validate(self, request):
         try:

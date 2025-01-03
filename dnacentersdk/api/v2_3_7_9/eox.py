@@ -92,7 +92,7 @@ class EoX(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-eo-x-status-for-all-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-eo-x-status-for-all-devices
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -152,7 +152,7 @@ class EoX(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-eo-x-details-per-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-eo-x-details-per-device
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -207,7 +207,7 @@ class EoX(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-eo-x-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!get-eo-x-summary
         """
         check_type(headers, dict)
         if headers is not None:

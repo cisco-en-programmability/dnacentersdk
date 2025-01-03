@@ -95,7 +95,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!sensor-test-results-v1
+            https://developer.cisco.com/docs/dna-center/#!sensor-test-results
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -177,7 +177,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-and-provision-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!create-and-provision-s-s-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -259,7 +259,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-s-s-i-d-and-provision-it-to-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-s-s-i-d-and-provision-it-to-devices
         """
         check_type(headers, dict)
         check_type(ssid_name, str,
@@ -329,7 +329,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!reboot-access-points-v1
+            https://developer.cisco.com/docs/dna-center/#!reboot-access-points
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -399,7 +399,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-access-point-reboot-task-result-v1
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-reboot-task-result
         """
         check_type(headers, dict)
         check_type(parent_task_id, str)
@@ -458,7 +458,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-enterprise-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-enterprise-s-s-i-d
         """
         check_type(headers, dict)
         check_type(ssid_name, str)
@@ -595,7 +595,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-enterprise-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!create-enterprise-s-s-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -803,7 +803,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-enterprise-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!update-enterprise-s-s-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -931,7 +931,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-enterprise-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-enterprise-s-s-i-d
         """
         check_type(headers, dict)
         check_type(ssid_name, str,
@@ -1197,7 +1197,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!create-s-s-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1413,7 +1413,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-by-site-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-by-site
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -1492,7 +1492,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-count-by-site-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-count-by-site
         """
         check_type(headers, dict)
         check_type(inherited, bool)
@@ -1555,7 +1555,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-by-i-d
         """
         check_type(headers, dict)
         check_type(site_id, str,
@@ -1827,7 +1827,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-s-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2036,7 +2036,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-s-s-i-d
         """
         check_type(headers, dict)
         check_type(remove_override_in_hierarchy, bool)
@@ -2309,7 +2309,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-or-override-s-s-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!update-or-override-s-s-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2517,7 +2517,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile
         """
         check_type(headers, dict)
         check_type(wireless_profile_name, str,
@@ -2641,7 +2641,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!configure-access-points-v1
+            https://developer.cisco.com/docs/dna-center/#!configure-access-points
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2762,7 +2762,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-count
         """
         check_type(headers, dict)
         check_type(wlc_ip_address, str)
@@ -2833,7 +2833,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-task-result-v1
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-task-result
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -2909,7 +2909,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration-v1
+            https://developer.cisco.com/docs/dna-center/#!get-access-point-configuration
         """
         check_type(headers, dict)
         check_type(key, str)
@@ -2992,7 +2992,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!a-p-provision-connectivity-v1
+            https://developer.cisco.com/docs/dna-center/#!a-p-provision-connectivity
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -3056,7 +3056,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-dynamic-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-dynamic-interface
         """
         check_type(headers, dict)
         check_type(interface_name, str,
@@ -3128,7 +3128,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-update-dynamic-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!create-update-dynamic-interface
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3198,7 +3198,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-dynamic-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!get-dynamic-interface
         """
         check_type(headers, dict)
         check_type(interface_name, str)
@@ -3262,7 +3262,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3334,7 +3334,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3401,7 +3401,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-profile
         """
         check_type(headers, dict)
         check_type(profile_name, str)
@@ -3462,7 +3462,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!provision-update-v1
+            https://developer.cisco.com/docs/dna-center/#!provision-update
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -3530,7 +3530,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!provision-v1
+            https://developer.cisco.com/docs/dna-center/#!provision
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -3595,7 +3595,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!p-s-k-override-v1
+            https://developer.cisco.com/docs/dna-center/#!p-s-k-override
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -3656,7 +3656,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-r-f-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-r-f-profiles
         """
         check_type(headers, dict)
         check_type(rf_profile_name, str)
@@ -3739,7 +3739,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-or-update-r-f-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-or-update-r-f-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3826,7 +3826,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-r-f-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-r-f-profiles
         """
         check_type(headers, dict)
         check_type(rf_profile_name, str,
@@ -3897,7 +3897,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!factory-reset-access-points-v1
+            https://developer.cisco.com/docs/dna-center/#!factory-reset-access-points
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3970,7 +3970,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-access-points-factory-reset-status-v1
+            https://developer.cisco.com/docs/dna-center/#!get-access-points-factory-reset-status
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -4043,7 +4043,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!a-p-provision-v1
+            https://developer.cisco.com/docs/dna-center/#!a-p-provision
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4116,7 +4116,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-anchor-capable-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!get-anchor-capable-devices
         """
         check_type(headers, dict)
         if headers is not None:
@@ -4179,7 +4179,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-mesh-ap-neighbours-v1
+            https://developer.cisco.com/docs/dna-center/#!get-mesh-ap-neighbours
         """
         check_type(headers, dict)
         check_type(wlc_ip_address, str)
@@ -4240,7 +4240,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-mesh-ap-neighbours-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-mesh-ap-neighbours-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -4300,7 +4300,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-mobility-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!get-mobility-groups
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -4356,7 +4356,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-mobility-groups-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-mobility-groups-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -4434,7 +4434,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!mobility-provision-v1
+            https://developer.cisco.com/docs/dna-center/#!mobility-provision
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4524,7 +4524,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!mobility-reset-v1
+            https://developer.cisco.com/docs/dna-center/#!mobility-reset
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4611,7 +4611,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!assign-managed-a-p-locations-for-w-l-c-v1
+            https://developer.cisco.com/docs/dna-center/#!assign-managed-a-p-locations-for-w-l-c
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4709,7 +4709,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!wireless-controller-provision-v1
+            https://developer.cisco.com/docs/dna-center/#!wireless-controller-provision
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -4797,7 +4797,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-anchor-managed-a-p-locations-for-specific-wireless-controller-v1
+            https://developer.cisco.com/docs/dna-center/#!get-anchor-managed-a-p-locations-for-specific-wireless-controller
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -4863,7 +4863,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-list-by-network-device-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-list-by-network-device-id
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -4923,7 +4923,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-managed-a-p-locations-count-for-specific-wireless-controller-v1
+            https://developer.cisco.com/docs/dna-center/#!get-managed-a-p-locations-count-for-specific-wireless-controller
         """
         check_type(headers, dict)
         check_type(network_device_id, str,
@@ -4988,7 +4988,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-primary-managed-a-p-locations-for-specific-wireless-controller-v1
+            https://developer.cisco.com/docs/dna-center/#!get-primary-managed-a-p-locations-for-specific-wireless-controller
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -5059,7 +5059,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-secondary-managed-a-p-locations-for-specific-wireless-controller-v1
+            https://developer.cisco.com/docs/dna-center/#!get-secondary-managed-a-p-locations-for-specific-wireless-controller
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -5141,7 +5141,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-details-for-specific-wireless-controller-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-details-for-specific-wireless-controller
         """
         check_type(headers, dict)
         check_type(ssid_name, str)
@@ -5223,7 +5223,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-count-for-specific-wireless-controller-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-count-for-specific-wireless-controller
         """
         check_type(headers, dict)
         check_type(admin_status, bool)
@@ -5293,7 +5293,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-wireless-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-profiles
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -5370,7 +5370,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-wireless-profile-connectivity-v1
+            https://developer.cisco.com/docs/dna-center/#!create-wireless-profile-connectivity
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5440,7 +5440,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-wireless-profiles-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-profiles-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -5510,7 +5510,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile-connectivity-v1
+            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile-connectivity
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5588,7 +5588,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-wireless-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-wireless-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -5645,7 +5645,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile-connectivity-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-wireless-profile-connectivity
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -5710,7 +5710,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-all-policy-tags-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-all-policy-tags-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -5789,7 +5789,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-multiple-policy-tags-for-a-wireless-profile-in-bulk-v1
+            https://developer.cisco.com/docs/dna-center/#!create-multiple-policy-tags-for-a-wireless-profile-in-bulk
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -5859,7 +5859,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-policy-tags-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-policy-tags-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -5921,7 +5921,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-specific-policy-tag-from-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-specific-policy-tag-from-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6001,7 +6001,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-a-specific-policy-tag-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update-a-specific-policy-tag-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6081,7 +6081,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-a-specific-policy-tag-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-a-specific-policy-tag-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6150,7 +6150,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-all-site-tags-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-all-site-tags-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -6231,7 +6231,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-multiple-site-tags-for-a-wireless-profile-in-bulk-v1
+            https://developer.cisco.com/docs/dna-center/#!create-multiple-site-tags-for-a-wireless-profile-in-bulk
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6301,7 +6301,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-site-tags-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-site-tags-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6383,7 +6383,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-a-specific-site-tag-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update-a-specific-site-tag-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6465,7 +6465,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-a-specific-site-tag-for-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-a-specific-site-tag-for-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6530,7 +6530,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-specific-site-tag-from-a-wireless-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-specific-site-tag-from-a-wireless-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6599,7 +6599,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-anchor-group-v1
+            https://developer.cisco.com/docs/dna-center/#!create-anchor-group
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6668,7 +6668,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-anchor-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!get-anchor-groups
         """
         check_type(headers, dict)
         if headers is not None:
@@ -6720,7 +6720,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-anchor-groups-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-anchor-groups
         """
         check_type(headers, dict)
         if headers is not None:
@@ -6774,7 +6774,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-anchor-group-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-anchor-group-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6831,7 +6831,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-anchor-group-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-anchor-group-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -6898,7 +6898,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-anchor-group-v1
+            https://developer.cisco.com/docs/dna-center/#!update-anchor-group
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -6979,7 +6979,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-lists-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-lists
         """
         check_type(headers, dict)
         check_type(ap_authorization_list_name, str)
@@ -7054,7 +7054,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-a-p-authorization-list-v1
+            https://developer.cisco.com/docs/dna-center/#!create-a-p-authorization-list
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -7122,7 +7122,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-list-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-list-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -7177,7 +7177,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-p-authorization-list-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-p-authorization-list
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7249,7 +7249,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-a-p-authorization-list-v1
+            https://developer.cisco.com/docs/dna-center/#!update-a-p-authorization-list
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -7324,7 +7324,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-list-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-authorization-list-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7441,7 +7441,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-a-p-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-a-p-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -7549,7 +7549,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-profiles
         """
         check_type(headers, dict)
         check_type(limit, str)
@@ -7610,7 +7610,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-profiles-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-profiles-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -7664,7 +7664,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a-p-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a-p-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7782,7 +7782,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-a-p-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!update-a-p-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -7883,7 +7883,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-a-p-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -7956,7 +7956,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get80211be-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!get80211be-profiles
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -8052,7 +8052,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-a80211be-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-a80211be-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8126,7 +8126,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get80211be-profiles-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get80211be-profiles-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -8182,7 +8182,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-a80211be-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-a80211be-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8257,7 +8257,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update80211be-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update80211be-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8336,7 +8336,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get80211be-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get80211be-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8401,7 +8401,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interfaces
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -8475,7 +8475,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!create-interface
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8541,7 +8541,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interfaces-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interfaces-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -8595,7 +8595,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-interface-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-interface-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8652,7 +8652,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-interface
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -8719,7 +8719,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-interface-v1
+            https://developer.cisco.com/docs/dna-center/#!update-interface
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8800,7 +8800,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-power-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-power-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -8877,7 +8877,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-power-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!get-power-profiles
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -8938,7 +8938,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-power-profiles-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-power-profiles-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -8992,7 +8992,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-power-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-power-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9061,7 +9061,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-power-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!update-power-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -9134,7 +9134,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-power-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-power-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9215,7 +9215,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-r-f-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-r-f-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -9310,7 +9310,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-r-f-profiles-v1
+            https://developer.cisco.com/docs/dna-center/#!get-r-f-profiles
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -9380,7 +9380,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-r-f-profiles-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-r-f-profiles-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -9434,7 +9434,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-r-f-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-r-f-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9491,7 +9491,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-r-f-profile-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-r-f-profile-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -9574,7 +9574,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-r-f-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update-r-f-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -9663,7 +9663,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-sites-with-overridden-s-s-i-ds-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-sites-with-overridden-s-s-i-ds
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -9744,7 +9744,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!assign-anchor-managed-a-p-locations-for-w-l-c-v1
+            https://developer.cisco.com/docs/dna-center/#!assign-anchor-managed-a-p-locations-for-w-l-c
         """
         check_type(headers, dict)
         check_type(payload, dict)
