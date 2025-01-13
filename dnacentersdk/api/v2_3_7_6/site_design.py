@@ -2901,14 +2901,18 @@ class SiteDesign(object):
 
     def uploads_floor_image_v2(self,
                                id,
+                               multipart_fields,
                                headers=None,
+                               multipart_monitor_callback=None,
                                **request_parameters):
         """Uploads floor image. .
 
         Args:
             id(str): id path parameter. Floor Id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request.
+            multipart_fields(dict,list): form data values.
+            create_callback(function): function that creates a function that
+                monitors the progress of the upload.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -2942,25 +2946,30 @@ class SiteDesign(object):
         path_params = {
             'id': id,
         }
-
+        multipart_body = self._session.multipart_data(
+            fields=multipart_fields,
+            create_callback=multipart_monitor_callback
+        )
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
-
+        else:
+            _headers['Content-Type'] = multipart_body.content_type
+            with_custom_headers = True
         e_url = ('/dna/intent/api/v2/floors/{id}/uploadImage')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+                                           headers=_headers, data = multipart_body)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params)
+            json_data = self._session.post(endpoint_full_url, params=_params, data = multipart_body)
 
         return self._object_factory('bpm_df8448b465a0abdc9bb7ee17aac9f_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def updates_floor_settings(self,
                                   unitsOfMeasure=None,
@@ -2982,7 +2991,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of updates_floor_settings_v2 .
-        """ 
+        """
         return self.updates_floor_settings_v2(
                     unitsOfMeasure=unitsOfMeasure,
                     headers=headers,
@@ -2990,8 +2999,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_sites_count(self,
                            name=None,
@@ -3007,14 +3016,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of get_sites_count_v1 .
-        """ 
+        """
         return self.get_sites_count_v1(
                     name=name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_count_of_profiles_that_the_given_site_has_been_assigned(self,
                                                                                  site_id,
@@ -3031,14 +3040,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieves_the_count_of_profiles_that_the_given_site_has_been_assigned_v1 .
-        """ 
+        """
         return self.retrieves_the_count_of_profiles_that_the_given_site_has_been_assigned_v1(
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_list_of_network_profiles_for_sites(self,
                                                             limit=None,
@@ -3064,7 +3073,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieves_the_list_of_network_profiles_for_sites_v1 .
-        """ 
+        """
         return self.retrieves_the_list_of_network_profiles_for_sites_v1(
                     limit=limit,
                     offset=offset,
@@ -3074,8 +3083,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_site_not_assigned_network_devices(self,
                                                  limit=None,
@@ -3094,15 +3103,15 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of get_site_not_assigned_network_devices_v1 .
-        """ 
+        """
         return self.get_site_not_assigned_network_devices_v1(
                     limit=limit,
                     offset=offset,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_site_not_assigned_network_devices_count(self,
                                                        headers=None,
@@ -3121,8 +3130,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def creates_a_floor(self,
                            floorNumber=None,
@@ -3159,7 +3168,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of creates_a_floor_v2 .
-        """ 
+        """
         return self.creates_a_floor_v2(
                     floorNumber=floorNumber,
                     height=height,
@@ -3174,8 +3183,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def updates_an_area(self,
                            id,
@@ -3201,7 +3210,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of updates_an_area_v1 .
-        """ 
+        """
         return self.updates_an_area_v1(
                     id=id,
                     name=name,
@@ -3211,31 +3220,37 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def uploads_floor_image(self,
                                id,
+                               multipart_fields,
                                headers=None,
+                               multipart_monitor_callback=None,
                                **request_parameters):
         """ This function is an alias of uploads_floor_image_v2 .
         Args:
-            id(basestring): id path parameter. Floor Id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
+            id(str): id path parameter. Floor Id .
+            headers(dict): Dictionary of HTTP Headers to send with the Request.
+            multipart_fields(dict,list): form data values.
+            create_callback(function): function that creates a function that
+                monitors the progress of the upload.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
         Returns:
             This function returns the output of uploads_floor_image_v2 .
-        """ 
+        """
         return self.uploads_floor_image_v2(
                     id=id,
+                    multipart_fields = multipart_fields,
                     headers=headers,
+                    multipart_monitor_callback = multipart_monitor_callback,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def creates_an_area(self,
                            name=None,
@@ -3259,7 +3274,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of creates_an_area_v1 .
-        """ 
+        """
         return self.creates_an_area_v1(
                     name=name,
                     parentId=parentId,
@@ -3268,8 +3283,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_count_of_sites_that_the_given_network_profile_for_sites_is_assigned_to(self,
                                                                                                 profile_id,
@@ -3286,14 +3301,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieves_the_count_of_sites_that_the_given_network_profile_for_sites_is_assigned_to_v1 .
-        """ 
+        """
         return self.retrieves_the_count_of_sites_that_the_given_network_profile_for_sites_is_assigned_to_v1(
                     profile_id=profile_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def updates_a_floor(self,
                            id,
@@ -3332,7 +3347,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of updates_a_floor_v2 .
-        """ 
+        """
         return self.updates_a_floor_v2(
                     id=id,
                     floorNumber=floorNumber,
@@ -3348,8 +3363,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_a_network_profile_for_sites(self,
                                                id,
@@ -3366,14 +3381,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of deletes_a_network_profile_for_sites_v1 .
-        """ 
+        """
         return self.deletes_a_network_profile_for_sites_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_site_assigned_network_device(self,
                                             id,
@@ -3389,14 +3404,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of get_site_assigned_network_device_v1 .
-        """ 
+        """
         return self.get_site_assigned_network_device_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def assign_a_network_profile_for_sites_to_the_given_site(self,
                                                                 profile_id,
@@ -3421,7 +3436,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of assign_a_network_profile_for_sites_to_the_given_site_v1 .
-        """ 
+        """
         return self.assign_a_network_profile_for_sites_to_the_given_site_v1(
                     profile_id=profile_id,
                     id=id,
@@ -3430,8 +3445,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def creates_a_building(self,
                               address=None,
@@ -3464,7 +3479,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of creates_a_building_v2 .
-        """ 
+        """
         return self.creates_a_building_v2(
                     address=address,
                     country=country,
@@ -3477,8 +3492,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_an_area(self,
                            id,
@@ -3494,14 +3509,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of deletes_an_area_v1 .
-        """ 
+        """
         return self.deletes_an_area_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieve_a_network_profile_for_sites_by_id(self,
                                                       id,
@@ -3518,14 +3533,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieve_a_network_profile_for_sites_by_id_v1 .
-        """ 
+        """
         return self.retrieve_a_network_profile_for_sites_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def gets_a_floor(self,
                         id,
@@ -3543,15 +3558,15 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of gets_a_floor_v2 .
-        """ 
+        """
         return self.gets_a_floor_v2(
                     id=id,
                     units_of_measure=units_of_measure,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_list_of_sites_that_the_given_network_profile_for_sites_is_assigned_to(self,
                                                                                                profile_id,
@@ -3573,7 +3588,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieves_the_list_of_sites_that_the_given_network_profile_for_sites_is_assigned_to_v1 .
-        """ 
+        """
         return self.retrieves_the_list_of_sites_that_the_given_network_profile_for_sites_is_assigned_to_v1(
                     profile_id=profile_id,
                     limit=limit,
@@ -3581,8 +3596,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def assign_a_network_profile_for_sites_to_a_list_of_sites(self,
                                                                  profile_id,
@@ -3607,7 +3622,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of assign_a_network_profile_for_sites_to_a_list_of_sites_v1 .
-        """ 
+        """
         return self.assign_a_network_profile_for_sites_to_a_list_of_sites_v1(
                     profile_id=profile_id,
                     type=type,
@@ -3616,8 +3631,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def updates_a_building(self,
                               id,
@@ -3652,7 +3667,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of updates_a_building_v2 .
-        """ 
+        """
         return self.updates_a_building_v2(
                     id=id,
                     address=address,
@@ -3666,8 +3681,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_count_of_network_profiles_for_sites(self,
                                                              type=None,
@@ -3683,14 +3698,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieves_the_count_of_network_profiles_for_sites_v1 .
-        """ 
+        """
         return self.retrieves_the_count_of_network_profiles_for_sites_v1(
                     type=type,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def unassigns_a_network_profile_for_sites_from_multiple_sites(self,
                                                                      profile_id,
@@ -3710,15 +3725,15 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of unassigns_a_network_profile_for_sites_from_multiple_sites_v1 .
-        """ 
+        """
         return self.unassigns_a_network_profile_for_sites_from_multiple_sites_v1(
                     profile_id=profile_id,
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def unassign_network_devices_from_sites(self,
                                                deviceIds=None,
@@ -3740,7 +3755,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of unassign_network_devices_from_sites_v1 .
-        """ 
+        """
         return self.unassign_network_devices_from_sites_v1(
                     deviceIds=deviceIds,
                     headers=headers,
@@ -3748,8 +3763,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def unassigns_a_network_profile_for_sites_from_a_site(self,
                                                              id,
@@ -3769,15 +3784,15 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of unassigns_a_network_profile_for_sites_from_a_site_v1 .
-        """ 
+        """
         return self.unassigns_a_network_profile_for_sites_from_a_site_v1(
                     id=id,
                     profile_id=profile_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def gets_an_area(self,
                         id,
@@ -3793,14 +3808,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of gets_an_area_v1 .
-        """ 
+        """
         return self.gets_an_area_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_a_building(self,
                               id,
@@ -3816,14 +3831,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of deletes_a_building_v2 .
-        """ 
+        """
         return self.deletes_a_building_v2(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_device_controllability_settings(self,
                                                headers=None,
@@ -3842,8 +3857,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_site_assigned_network_devices_count(self,
                                                    site_id,
@@ -3859,14 +3874,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of get_site_assigned_network_devices_count_v1 .
-        """ 
+        """
         return self.get_site_assigned_network_devices_count_v1(
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def gets_a_building(self,
                            id,
@@ -3882,14 +3897,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of gets_a_building_v2 .
-        """ 
+        """
         return self.gets_a_building_v2(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def assign_network_devices_to_a_site(self,
                                             deviceIds=None,
@@ -3915,7 +3930,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of assign_network_devices_to_a_site_v1 .
-        """ 
+        """
         return self.assign_network_devices_to_a_site_v1(
                     deviceIds=deviceIds,
                     siteId=siteId,
@@ -3924,8 +3939,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_list_of_network_profiles_that_the_given_site_has_been_assigned(self,
                                                                                         site_id,
@@ -3947,7 +3962,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of retrieves_the_list_of_network_profiles_that_the_given_site_has_been_assigned_v1 .
-        """ 
+        """
         return self.retrieves_the_list_of_network_profiles_that_the_given_site_has_been_assigned_v1(
                     site_id=site_id,
                     limit=limit,
@@ -3955,8 +3970,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_sites(self,
                         headers=None,
@@ -3976,15 +3991,15 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of create_sites_v1 .
-        """ 
+        """
         return self.create_sites_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_a_floor(self,
                            id,
@@ -4000,14 +4015,14 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of deletes_a_floor_v2 .
-        """ 
+        """
         return self.deletes_a_floor_v2(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_device_controllability_settings(self,
                                                   autocorrectTelemetryConfig=None,
@@ -4034,7 +4049,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of update_device_controllability_settings_v1 .
-        """ 
+        """
         return self.update_device_controllability_settings_v1(
                     autocorrectTelemetryConfig=autocorrectTelemetryConfig,
                     deviceControllability=deviceControllability,
@@ -4043,8 +4058,8 @@ class SiteDesign(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_floor_settings(self,
                               headers=None,
@@ -4063,8 +4078,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_site_assigned_network_devices(self,
                                              site_id,
@@ -4085,7 +4100,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of get_site_assigned_network_devices_v1 .
-        """ 
+        """
         return self.get_site_assigned_network_devices_v1(
                     site_id=site_id,
                     limit=limit,
@@ -4093,8 +4108,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_sites(self,
                      limit=None,
@@ -4121,7 +4136,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of get_sites_v1 .
-        """ 
+        """
         return self.get_sites_v1(
                     limit=limit,
                     name=name,
@@ -4132,8 +4147,8 @@ class SiteDesign(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def associate(self,
                      network_profile_id,
@@ -4151,15 +4166,15 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of associate_v1 .
-        """ 
+        """
         return self.associate_v1(
                     network_profile_id=network_profile_id,
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def disassociate(self,
                         network_profile_id,
@@ -4177,7 +4192,7 @@ class SiteDesign(object):
 
         Returns:
             This function returns the output of disassociate_v1 .
-        """ 
+        """
         return self.disassociate_v1(
                     network_profile_id=network_profile_id,
                     site_id=site_id,

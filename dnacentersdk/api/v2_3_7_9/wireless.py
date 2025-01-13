@@ -1197,7 +1197,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-s-i-d
+            https://developer.cisco.com/docs/dna-center/#!create-ssid
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1555,7 +1555,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-s-i-d-by-i-d
+            https://developer.cisco.com/docs/dna-center/#!get-ssid-by-id
         """
         check_type(headers, dict)
         check_type(site_id, str,

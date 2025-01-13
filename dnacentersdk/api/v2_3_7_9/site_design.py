@@ -3607,14 +3607,18 @@ class SiteDesign(object):
 
     def uploads_floor_image_v2(self,
                                id,
+                               multipart_fields,
                                headers=None,
+                               multipart_monitor_callback=None,
                                **request_parameters):
         """Uploads floor image. .
 
         Args:
             id(str): id path parameter. Floor Id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request.
+            multipart_fields(dict,list): form data values.
+            create_callback(function): function that creates a function that
+                monitors the progress of the upload.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -3648,20 +3652,25 @@ class SiteDesign(object):
         path_params = {
             'id': id,
         }
-
+        multipart_body = self._session.multipart_data(
+            fields=multipart_fields,
+            create_callback=multipart_monitor_callback
+        )
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
             _headers.update(dict_of_str(headers))
             with_custom_headers = True
-
+        else:
+            _headers['Content-Type'] = multipart_body.content_type
+            with_custom_headers = True
         e_url = ('/dna/intent/api/v2/floors/{id}/uploadImage')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
-                                           headers=_headers)
+                                           headers=_headers, data = multipart_body)
         else:
-            json_data = self._session.post(endpoint_full_url, params=_params)
+            json_data = self._session.post(endpoint_full_url, params=_params, data = multipart_body)
 
         return self._object_factory('bpm_df8448b465a0abdc9bb7ee17aac9f_v2_3_7_9', json_data)
 
@@ -3998,13 +4007,17 @@ class SiteDesign(object):
     # Alias Function
     def uploads_floor_image(self,
                                id,
+                               multipart_fields,
                                headers=None,
+                               multipart_monitor_callback=None,
                                **request_parameters):
         """ This function is an alias of uploads_floor_image_v2 .
         Args:
             id(str): id path parameter. Floor Id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request.
+            multipart_fields(dict,list): form data values.
+            create_callback(function): function that creates a function that
+                monitors the progress of the upload.
             **request_parameters: Additional request parameters (provides
                 support for parameters that may be added in the future).
 
@@ -4013,7 +4026,9 @@ class SiteDesign(object):
         """
         return self.uploads_floor_image_v2(
                     id=id,
+                    multipart_fields = multipart_fields,
                     headers=headers,
+                    multipart_monitor_callback = multipart_monitor_callback,
                     **request_parameters
         )
 
