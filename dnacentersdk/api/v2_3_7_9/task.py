@@ -101,7 +101,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-a-list-of-assurance-tasks-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-a-list-of-assurance-tasks
         """
         check_type(headers, dict)
         check_type(limit, int)
@@ -176,7 +176,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-a-count-of-the-number-of-assurance-tasks-that-currently-exist-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-a-count-of-the-number-of-assurance-tasks-that-currently-exist
         """
         check_type(headers, dict)
         check_type(status, str)
@@ -238,7 +238,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-a-specific-assurance-task-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-a-specific-assurance-task-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -298,7 +298,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-business-a-p-i-execution-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-business-a-p-i-execution-details
         """
         check_type(headers, dict)
         check_type(execution_id, str,
@@ -388,7 +388,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tasks-operational-tasks-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tasks-operational-tasks
         """
         check_type(headers, dict)
         check_type(start_time, str)
@@ -506,7 +506,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-task-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-task-count
         """
         check_type(headers, dict)
         check_type(start_time, str)
@@ -595,7 +595,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-task-by-operation-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-task-by-operation-id
         """
         check_type(headers, dict)
         check_type(operation_id, str,
@@ -659,7 +659,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-task-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-task-by-id
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -716,7 +716,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-task-tree-v1
+            https://developer.cisco.com/docs/dna-center/#!get-task-tree
         """
         check_type(headers, dict)
         check_type(task_id, str,
@@ -795,7 +795,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tasks-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tasks
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -887,7 +887,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tasks-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tasks-count
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -956,7 +956,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tasks-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tasks-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1013,7 +1013,7 @@ class Task(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-task-details-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-task-details-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,

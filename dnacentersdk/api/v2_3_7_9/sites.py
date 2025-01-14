@@ -2390,7 +2390,7 @@ class Sites(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-map-archive-start-import-v1
+            https://developer.cisco.com/docs/dna-center/#!import-map-archive-start-import
         """
         check_type(headers, dict)
         if headers is not None:

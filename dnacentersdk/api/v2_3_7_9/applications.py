@@ -135,7 +135,7 @@ class Applications(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-network-applications-along-with-experience-and-health-metrics-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-network-applications-along-with-experience-and-health-metrics
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -256,7 +256,7 @@ class Applications(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-count-of-network-applications-by-applying-basic-filtering-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-count-of-network-applications-by-applying-basic-filtering
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -361,7 +361,7 @@ class Applications(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-trend-analytics-data-related-to-network-applications-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-trend-analytics-data-related-to-network-applications
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -474,7 +474,7 @@ class Applications(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!applications-v1
+            https://developer.cisco.com/docs/dna-center/#!applications
         """
         check_type(headers, dict)
         check_type(site_id, str)

@@ -96,7 +96,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-template-project-v1
+            https://developer.cisco.com/docs/dna-center/#!create-template-project
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -173,7 +173,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-projects-v1
+            https://developer.cisco.com/docs/dna-center/#!get-template-projects
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -236,7 +236,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-project-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-template-project-count
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -294,7 +294,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-project-v1
+            https://developer.cisco.com/docs/dna-center/#!get-template-project
         """
         check_type(headers, dict)
         check_type(project_id, str,
@@ -362,7 +362,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-template-project-v1
+            https://developer.cisco.com/docs/dna-center/#!update-template-project
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -434,7 +434,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-template-project-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-template-project
         """
         check_type(headers, dict)
         check_type(project_id, str,
@@ -498,7 +498,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-a-clone-of-the-given-template-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-a-clone-of-the-given-template
         """
         check_type(headers, dict)
         check_type(project_id, str)
@@ -586,7 +586,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-project-v1
+            https://developer.cisco.com/docs/dna-center/#!create-project
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -685,7 +685,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-project-v1
+            https://developer.cisco.com/docs/dna-center/#!update-project
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -766,7 +766,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-a-list-of-projects-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-a-list-of-projects
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -835,7 +835,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!imports-the-projects-provided-v1
+            https://developer.cisco.com/docs/dna-center/#!imports-the-projects-provided
         """
         check_type(headers, dict)
         check_type(payload, (list, dict))
@@ -984,7 +984,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!imports-the-templates-provided-v1
+            https://developer.cisco.com/docs/dna-center/#!imports-the-templates-provided
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1055,7 +1055,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-details-of-a-given-project-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-details-of-a-given-project
         """
         check_type(headers, dict)
         check_type(project_id, str,
@@ -1113,7 +1113,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deletes-the-project-v1
+            https://developer.cisco.com/docs/dna-center/#!deletes-the-project
         """
         check_type(headers, dict)
         check_type(project_id, str,
@@ -1232,7 +1232,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-template-v1
+            https://developer.cisco.com/docs/dna-center/#!create-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1379,7 +1379,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-the-templates-available-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-the-templates-available
         """
         check_type(headers, dict)
         check_type(project_id, str)
@@ -1524,7 +1524,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-template-v1
+            https://developer.cisco.com/docs/dna-center/#!update-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1657,7 +1657,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deploy-template-v1
+            https://developer.cisco.com/docs/dna-center/#!deploy-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1737,7 +1737,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!status-of-template-deployment-v1
+            https://developer.cisco.com/docs/dna-center/#!status-of-template-deployment
         """
         check_type(headers, dict)
         check_type(deployment_id, str,
@@ -1799,7 +1799,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!exports-the-templates-for-a-given-criteria-v1
+            https://developer.cisco.com/docs/dna-center/#!exports-the-templates-for-a-given-criteria
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1876,7 +1876,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!preview-template-v1
+            https://developer.cisco.com/docs/dna-center/#!preview-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1959,7 +1959,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!version-template-v1
+            https://developer.cisco.com/docs/dna-center/#!version-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2032,7 +2032,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-all-the-versions-of-a-given-template-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-all-the-versions-of-a-given-template
         """
         check_type(headers, dict)
         check_type(template_id, str,
@@ -2090,7 +2090,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deletes-the-template-v1
+            https://developer.cisco.com/docs/dna-center/#!deletes-the-template
         """
         check_type(headers, dict)
         check_type(template_id, str,
@@ -2151,7 +2151,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!gets-details-of-a-given-template-v1
+            https://developer.cisco.com/docs/dna-center/#!gets-details-of-a-given-template
         """
         check_type(headers, dict)
         check_type(latest_version, bool)
@@ -2213,7 +2213,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-network-profiles-attached-to-a-c-l-i-template-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-network-profiles-attached-to-a-c-l-i-template
         """
         check_type(headers, dict)
         check_type(template_id, str,
@@ -2281,7 +2281,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!attach-network-profile-to-a-day-n-c-l-i-template-v1
+            https://developer.cisco.com/docs/dna-center/#!attach-network-profile-to-a-day-n-c-l-i-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2361,7 +2361,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!detach-a-list-of-network-profiles-from-a-day-n-c-l-i-template-v1
+            https://developer.cisco.com/docs/dna-center/#!detach-a-list-of-network-profiles-from-a-day-n-c-l-i-template
         """
         check_type(headers, dict)
         check_type(profile_id, str,
@@ -2432,7 +2432,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!attach-a-list-of-network-profiles-to-a-day-n-c-l-i-template-v1
+            https://developer.cisco.com/docs/dna-center/#!attach-a-list-of-network-profiles-to-a-day-n-c-l-i-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2503,7 +2503,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-count-of-network-profiles-attached-to-a-c-l-i-template-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-count-of-network-profiles-attached-to-a-c-l-i-template
         """
         check_type(headers, dict)
         check_type(template_id, str,
@@ -2565,7 +2565,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!detach-a-network-profile-from-a-day-n-c-l-i-template-v1
+            https://developer.cisco.com/docs/dna-center/#!detach-a-network-profile-from-a-day-n-c-l-i-template
         """
         check_type(headers, dict)
         check_type(template_id, str,
@@ -2642,7 +2642,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-versions-v1
+            https://developer.cisco.com/docs/dna-center/#!get-template-versions
         """
         check_type(headers, dict)
         check_type(version_number, int)
@@ -2724,7 +2724,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!commit-template-for-a-new-version-v1
+            https://developer.cisco.com/docs/dna-center/#!commit-template-for-a-new-version
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2804,7 +2804,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-versions-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-template-versions-count
         """
         check_type(headers, dict)
         check_type(version_number, int)
@@ -2871,7 +2871,7 @@ class ConfigurationTemplates(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-template-version-v1
+            https://developer.cisco.com/docs/dna-center/#!get-template-version
         """
         check_type(headers, dict)
         check_type(template_id, str,

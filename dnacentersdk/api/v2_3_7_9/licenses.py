@@ -86,7 +86,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-c-s-s-m-connection-mode-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-c-s-s-m-connection-mode
         """
         check_type(headers, dict)
         if headers is not None:
@@ -149,7 +149,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-c-s-s-m-connection-mode-v1
+            https://developer.cisco.com/docs/dna-center/#!update-c-s-s-m-connection-mode
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -219,7 +219,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-license-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-license-setting
         """
         check_type(headers, dict)
         if headers is not None:
@@ -284,7 +284,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-license-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!update-license-setting
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -361,7 +361,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-count-details-v1
+            https://developer.cisco.com/docs/dna-center/#!device-count-details
         """
         check_type(headers, dict)
         check_type(device_type, str)
@@ -450,7 +450,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-license-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!device-license-summary
         """
         check_type(headers, dict)
         check_type(page_number, int,
@@ -537,7 +537,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-license-details-v1
+            https://developer.cisco.com/docs/dna-center/#!device-license-details
         """
         check_type(headers, dict)
         check_type(device_uuid, str,
@@ -600,7 +600,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-deregistration-v1
+            https://developer.cisco.com/docs/dna-center/#!device-deregistration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -678,7 +678,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!device-registration-v1
+            https://developer.cisco.com/docs/dna-center/#!device-registration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -758,7 +758,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!change-virtual-account-v1
+            https://developer.cisco.com/docs/dna-center/#!change-virtual-account
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -832,7 +832,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!virtual-account-details-v1
+            https://developer.cisco.com/docs/dna-center/#!virtual-account-details
         """
         check_type(headers, dict)
         check_type(smart_account_id, str,
@@ -888,7 +888,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!smart-account-details-v1
+            https://developer.cisco.com/docs/dna-center/#!smart-account-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -948,7 +948,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!license-term-details-v1
+            https://developer.cisco.com/docs/dna-center/#!license-term-details
         """
         check_type(headers, dict)
         check_type(device_type, str,
@@ -1019,7 +1019,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!license-usage-details-v1
+            https://developer.cisco.com/docs/dna-center/#!license-usage-details
         """
         check_type(headers, dict)
         check_type(device_type, str,
@@ -1082,7 +1082,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!smart-licensing-deregistration-v1
+            https://developer.cisco.com/docs/dna-center/#!smart-licensing-deregistration
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1137,7 +1137,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-licensing-last-operation-status-v1
+            https://developer.cisco.com/docs/dna-center/#!system-licensing-last-operation-status
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1199,7 +1199,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-licensing-registration-v1
+            https://developer.cisco.com/docs/dna-center/#!system-licensing-registration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1268,7 +1268,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!smart-licensing-renew-operation-v1
+            https://developer.cisco.com/docs/dna-center/#!smart-licensing-renew-operation
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1324,7 +1324,7 @@ class Licenses(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!system-licensing-status-v1
+            https://developer.cisco.com/docs/dna-center/#!system-licensing-status
         """
         check_type(headers, dict)
         if headers is not None:

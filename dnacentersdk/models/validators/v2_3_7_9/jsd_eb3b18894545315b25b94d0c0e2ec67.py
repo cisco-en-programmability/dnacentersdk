@@ -40,23 +40,31 @@ class JSONSchemaValidatorEb3B18894545315B25B94D0C0E2Ec67(object):
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                "dns": {
-                "properties": {
-                "dnsServers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "domainName": {
-                "type": "string"
-                }
+                    "dns": {
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "dnsServers": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "domainName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["dnsServers", "domainName"]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
                 },
                 "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
+            }'''.replace("\n" + ' ' * 16, '')
         ))
 
     def validate(self, request):

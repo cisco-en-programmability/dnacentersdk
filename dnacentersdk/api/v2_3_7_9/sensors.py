@@ -111,7 +111,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!lists-i-c-a-p-packet-capture-files-matching-specified-criteria-v1
+            https://developer.cisco.com/docs/dna-center/#!lists-i-c-a-p-packet-capture-files-matching-specified-criteria
         """
         check_type(headers, dict)
         check_type(type, str,
@@ -210,7 +210,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-packet-capture-files-matching-specified-criteria-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-number-of-packet-capture-files-matching-specified-criteria
         """
         check_type(headers, dict)
         check_type(type, str,
@@ -287,7 +287,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-details-of-a-specific-i-c-a-p-packet-capture-file-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-details-of-a-specific-i-c-a-p-packet-capture-file
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -350,7 +350,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!downloads-a-specific-i-c-a-p-packet-capture-file-v1
+            https://developer.cisco.com/docs/dna-center/#!downloads-a-specific-i-c-a-p-packet-capture-file
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -430,7 +430,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-statistics-over-specified-period-of-time-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-statistics-over-specified-period-of-time
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -530,7 +530,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-radio-statistics-over-specified-period-of-time-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-radio-statistics-over-specified-period-of-time
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -629,7 +629,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-spectrum-interference-devices-reports-sent-by-w-l-c-for-provided-a-p-mac-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-spectrum-interference-devices-reports-sent-by-w-l-c-for-provided-a-p-mac
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -727,7 +727,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-spectrum-sensor-reports-sent-by-w-l-c-for-provided-a-p-mac-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-spectrum-sensor-reports-sent-by-w-l-c-for-provided-a-p-mac
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -867,7 +867,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!edit-sensor-test-template-v1
+            https://developer.cisco.com/docs/dna-center/#!edit-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1003,7 +1003,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-deployed-i-c-a-p-configurations-while-supporting-basic-filtering-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-deployed-i-c-a-p-configurations-while-supporting-basic-filtering
         """
         check_type(headers, dict)
         check_type(capture_status, str,
@@ -1091,7 +1091,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-an-i-c-a-p-configuration-intent-for-preview-approve-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-an-i-c-a-p-configuration-intent-for-preview-approve
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1172,7 +1172,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-a-i-c-a-p-configuration-workflow-for-i-c-a-p-intent-to-remove-the-i-c-a-p-configuration-on-the-device-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-a-i-c-a-p-configuration-workflow-for-i-c-a-p-intent-to-remove-the-i-c-a-p-configuration-on-the-device
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1254,7 +1254,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!discards-the-i-c-a-p-configuration-intent-by-activity-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!discards-the-i-c-a-p-configuration-intent-by-activity-i-d
         """
         check_type(headers, dict)
         check_type(preview_activity_id, str,
@@ -1327,7 +1327,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deploys-the-i-c-a-p-configuration-intent-by-activity-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!deploys-the-i-c-a-p-configuration-intent-by-activity-i-d
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1404,7 +1404,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-i-c-a-p-configuration-status-per-network-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-i-c-a-p-configuration-status-per-network-device
         """
         check_type(headers, dict)
         check_type(preview_activity_id, str,
@@ -1468,7 +1468,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-device's-c-l-is-of-the-i-c-a-p-intent-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-device's-c-l-is-of-the-i-c-a-p-intent
         """
         check_type(headers, dict)
         check_type(preview_activity_id, str,
@@ -1543,7 +1543,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!generates-the-device's-c-l-is-of-the-i-c-a-p-configuration-intent-v1
+            https://developer.cisco.com/docs/dna-center/#!generates-the-device's-c-l-is-of-the-i-c-a-p-configuration-intent
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1627,7 +1627,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-deployed-i-c-a-p-configurations-while-supporting-basic-filtering-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-count-of-deployed-i-c-a-p-configurations-while-supporting-basic-filtering
         """
         check_type(headers, dict)
         check_type(capture_type, str)
@@ -1708,7 +1708,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deploys-the-given-i-c-a-p-configuration-intent-without-preview-and-approve-v1
+            https://developer.cisco.com/docs/dna-center/#!deploys-the-given-i-c-a-p-configuration-intent-without-preview-and-approve
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1791,7 +1791,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-the-i-c-a-p-configuration-on-the-device-without-preview-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-the-i-c-a-p-configuration-on-the-device-without-preview
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1880,7 +1880,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-deployment-status-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-deployment-status
         """
         check_type(headers, dict)
         check_type(deploy_activity_id, str)
@@ -1959,7 +1959,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-device-deployment-status-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-device-deployment-status-count
         """
         check_type(headers, dict)
         check_type(deploy_activity_id, str)
@@ -2045,7 +2045,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-sensor-test-template-v1
+            https://developer.cisco.com/docs/dna-center/#!create-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2131,7 +2131,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-sensor-test-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-sensor-test
         """
         check_type(headers, dict)
         check_type(template_name, str,
@@ -2189,7 +2189,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!sensors-v1
+            https://developer.cisco.com/docs/dna-center/#!sensors
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -2252,7 +2252,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!run-now-sensor-test-v1
+            https://developer.cisco.com/docs/dna-center/#!run-now-sensor-test
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2326,7 +2326,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!duplicate-sensor-test-template-v1
+            https://developer.cisco.com/docs/dna-center/#!duplicate-sensor-test-template
         """
         check_type(headers, dict)
         check_type(payload, dict)

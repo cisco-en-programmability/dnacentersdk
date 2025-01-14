@@ -92,7 +92,7 @@ class AuthenticationManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-certificate-v1
+            https://developer.cisco.com/docs/dna-center/#!import-certificate
         """
         check_type(headers, dict)
         check_type(pk_password, str)
@@ -161,7 +161,7 @@ class AuthenticationManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!import-certificate-p12-v1
+            https://developer.cisco.com/docs/dna-center/#!import-certificate-p12
         """
         check_type(headers, dict)
         check_type(p12_password, str,
@@ -227,7 +227,7 @@ class AuthenticationManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!authentication-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!authentication-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:

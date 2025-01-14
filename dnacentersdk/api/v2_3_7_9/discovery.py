@@ -86,7 +86,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-all-discovery-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-all-discovery
         """
         check_type(headers, dict)
         if headers is not None:
@@ -224,7 +224,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-an-existing-discovery-by-specified-id-v1
+            https://developer.cisco.com/docs/dna-center/#!updates-an-existing-discovery-by-specified-id
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -428,7 +428,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!start-discovery-v1
+            https://developer.cisco.com/docs/dna-center/#!start-discovery
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -546,7 +546,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-count-of-all-discovery-jobs-v1
+            https://developer.cisco.com/docs/dna-center/#!get-count-of-all-discovery-jobs
         """
         check_type(headers, dict)
         if headers is not None:
@@ -606,7 +606,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-discovery-jobs-by-i-p-v1
+            https://developer.cisco.com/docs/dna-center/#!get-discovery-jobs-by-i-p
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -674,7 +674,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -731,7 +731,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-discovery-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-discovery-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -796,7 +796,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-list-of-discoveries-by-discovery-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-list-of-discoveries-by-discovery-id
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -865,7 +865,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-discovered-network-devices-by-discovery-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-discovered-network-devices-by-discovery-id
         """
         check_type(headers, dict)
         check_type(task_id, str)
@@ -928,7 +928,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-devices-discovered-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-devices-discovered-by-id
         """
         check_type(headers, dict)
         check_type(task_id, str)
@@ -997,7 +997,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-discovered-devices-by-range-v1
+            https://developer.cisco.com/docs/dna-center/#!get-discovered-devices-by-range
         """
         check_type(headers, dict)
         check_type(task_id, str)
@@ -1091,7 +1091,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-devices-from-discovery-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-devices-from-discovery
         """
         check_type(headers, dict)
         check_type(task_id, str)
@@ -1178,7 +1178,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-specified-range-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-discovery-by-specified-range
         """
         check_type(headers, dict)
         check_type(start_index, int,
@@ -1242,7 +1242,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-discoveries-by-range-v1
+            https://developer.cisco.com/docs/dna-center/#!get-discoveries-by-range
         """
         check_type(headers, dict)
         check_type(start_index, int,
@@ -1310,7 +1310,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-global-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!get-global-credentials
         """
         check_type(headers, dict)
         check_type(credential_sub_type, str,
@@ -1397,7 +1397,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-c-l-i-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!update-c-l-i-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1486,7 +1486,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-c-l-i-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!create-c-l-i-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1551,7 +1551,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-h-t-t-p-read-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!create-h-t-t-p-read-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1640,7 +1640,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-h-t-t-p-read-credential-v1
+            https://developer.cisco.com/docs/dna-center/#!update-h-t-t-p-read-credential
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1749,7 +1749,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-h-t-t-p-write-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!update-h-t-t-p-write-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1840,7 +1840,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-h-t-t-p-write-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!create-h-t-t-p-write-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1921,7 +1921,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-netconf-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!update-netconf-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2006,7 +2006,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-netconf-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!create-netconf-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2082,7 +2082,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-read-community-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-read-community
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2164,7 +2164,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-read-community-v1
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-read-community
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2230,7 +2230,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-write-community-v1
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-write-community
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2310,7 +2310,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-write-community-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-write-community
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2421,7 +2421,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-pv3-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-pv3-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2516,7 +2516,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-pv3-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-pv3-credentials
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2577,7 +2577,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-global-credentials-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-global-credentials-by-id
         """
         check_type(headers, dict)
         check_type(global_credential_id, str,
@@ -2643,7 +2643,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-global-credentials-v1
+            https://developer.cisco.com/docs/dna-center/#!update-global-credentials
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2713,7 +2713,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-credential-sub-type-by-credential-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-credential-sub-type-by-credential-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -2768,7 +2768,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-properties-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-properties
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2826,7 +2826,7 @@ class Discovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-update-s-n-m-p-properties-v1
+            https://developer.cisco.com/docs/dna-center/#!create-update-s-n-m-p-properties
         """
         check_type(headers, dict)
         check_type(payload, list)

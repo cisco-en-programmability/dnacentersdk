@@ -88,7 +88,7 @@ class Users(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-user-enrichment-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-user-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:

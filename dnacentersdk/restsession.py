@@ -220,7 +220,7 @@ class RestSession(object):
     def user_agent(self):
         """The API user agent."""
         return self._user_agent
-    
+
     @property
     def verify(self):
         """The verify (TLS Certificate) for the API endpoints."""

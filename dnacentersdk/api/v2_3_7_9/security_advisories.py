@@ -86,7 +86,7 @@ class SecurityAdvisories(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-advisories-list-v1
+            https://developer.cisco.com/docs/dna-center/#!get-advisories-list
         """
         check_type(headers, dict)
         if headers is not None:
@@ -138,7 +138,7 @@ class SecurityAdvisories(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-advisories-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!get-advisories-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -192,7 +192,7 @@ class SecurityAdvisories(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-devices-per-advisory-v1
+            https://developer.cisco.com/docs/dna-center/#!get-devices-per-advisory
         """
         check_type(headers, dict)
         check_type(advisory_id, str,
@@ -250,7 +250,7 @@ class SecurityAdvisories(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-advisory-device-detail-v1
+            https://developer.cisco.com/docs/dna-center/#!get-advisory-device-detail
         """
         check_type(headers, dict)
         check_type(device_id, str,
@@ -307,7 +307,7 @@ class SecurityAdvisories(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-advisories-per-device-v1
+            https://developer.cisco.com/docs/dna-center/#!get-advisories-per-device
         """
         check_type(headers, dict)
         check_type(device_id, str,

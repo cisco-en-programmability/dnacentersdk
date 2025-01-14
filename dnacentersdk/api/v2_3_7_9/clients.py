@@ -196,7 +196,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-clients-while-also-offering-basic-filtering-and-sorting-capabilities-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-clients-while-also-offering-basic-filtering-and-sorting-capabilities
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -405,7 +405,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-count-of-clients-by-applying-basic-filtering-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-total-count-of-clients-by-applying-basic-filtering
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -528,7 +528,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-clients-by-applying-complex-filters-while-also-supporting-aggregate-attributes-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-list-of-clients-by-applying-complex-filters-while-also-supporting-aggregate-attributes
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -625,7 +625,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-number-of-clients-by-applying-complex-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-number-of-clients-by-applying-complex-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -723,7 +723,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-summary-analytics-data-related-to-clients-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-summary-analytics-data-related-to-clients
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -831,7 +831,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-top-n-analytics-data-related-to-clients-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-top-n-analytics-data-related-to-clients
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -942,7 +942,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-trend-analytics-data-related-to-clients-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-trend-analytics-data-related-to-clients
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1050,7 +1050,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-information-matching-the-m-a-c-address-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-information-matching-the-m-a-c-address
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -1150,7 +1150,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-information-over-a-specified-period-of-time-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-specific-client-information-over-a-specified-period-of-time
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1242,7 +1242,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-client-detail-v1
+            https://developer.cisco.com/docs/dna-center/#!get-client-detail
         """
         check_type(headers, dict)
         check_type(mac_address, str,
@@ -1307,7 +1307,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-client-enrichment-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-client-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1374,7 +1374,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-overall-client-health-v1
+            https://developer.cisco.com/docs/dna-center/#!get-overall-client-health
         """
         check_type(headers, dict)
         check_type(timestamp, int)
@@ -1444,7 +1444,7 @@ class Clients(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!client-proximity-v1
+            https://developer.cisco.com/docs/dna-center/#!client-proximity
         """
         check_type(headers, dict)
         check_type(username, str,

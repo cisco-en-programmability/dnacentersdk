@@ -253,7 +253,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-issues-for-given-set-of-filters-know-your-network-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-issues-for-given-set-of-filters-know-your-network
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -552,7 +552,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-issues-for-given-set-of-filters-know-your-network-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-issues-for-given-set-of-filters-know-your-network
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -707,7 +707,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-issues-for-given-set-of-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-details-of-issues-for-given-set-of-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -800,7 +800,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-issues-for-given-set-of-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-total-number-of-issues-for-given-set-of-filters
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -898,7 +898,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-issues-v1
+            https://developer.cisco.com/docs/dna-center/#!get-summary-analytics-data-of-issues
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1009,7 +1009,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-issues-v1
+            https://developer.cisco.com/docs/dna-center/#!get-top-n-analytics-data-of-issues
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1122,7 +1122,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-issues-v1
+            https://developer.cisco.com/docs/dna-center/#!get-trend-analytics-data-of-issues
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1229,7 +1229,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-the-details-and-suggested-actions-of-an-issue-for-the-given-issue-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-the-details-and-suggested-actions-of-an-issue-for-the-given-issue-id
         """
         check_type(headers, dict)
         check_type(view, str)
@@ -1310,7 +1310,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!ignore-the-given-list-of-issues-v1
+            https://developer.cisco.com/docs/dna-center/#!ignore-the-given-list-of-issues
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1394,7 +1394,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!resolve-the-given-lists-of-issues-v1
+            https://developer.cisco.com/docs/dna-center/#!resolve-the-given-lists-of-issues
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1480,7 +1480,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-the-given-issue-by-updating-selected-fields-v1
+            https://developer.cisco.com/docs/dna-center/#!update-the-given-issue-by-updating-selected-fields
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1578,7 +1578,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-a-new-user-defined-issue-definitions-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-a-new-user-defined-issue-definitions
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1704,7 +1704,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-all-the-custom-issue-definitions-based-on-the-given-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-all-the-custom-issue-definitions-based-on-the-given-filters
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -1826,7 +1826,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-total-custom-issue-definitions-count-based-on-the-provided-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-total-custom-issue-definitions-count-based-on-the-provided-filters
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -1911,7 +1911,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-custom-issue-definition-for-the-given-custom-issue-definition-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-custom-issue-definition-for-the-given-custom-issue-definition-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1992,7 +1992,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-an-existing-custom-issue-definition-based-on-the-provided-id-v1
+            https://developer.cisco.com/docs/dna-center/#!updates-an-existing-custom-issue-definition-based-on-the-provided-id
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2075,7 +2075,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deletes-an-existing-custom-issue-definition-v1
+            https://developer.cisco.com/docs/dna-center/#!deletes-an-existing-custom-issue-definition
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -2142,7 +2142,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!execute-suggested-actions-commands-v1
+            https://developer.cisco.com/docs/dna-center/#!execute-suggested-actions-commands
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2209,7 +2209,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-issue-enrichment-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-issue-enrichment-details
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2292,7 +2292,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!issues-v1
+            https://developer.cisco.com/docs/dna-center/#!issues
         """
         check_type(headers, dict)
         check_type(start_time, int)
@@ -2412,7 +2412,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!returns-all-issue-trigger-definitions-for-given-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!returns-all-issue-trigger-definitions-for-given-filters
         """
         check_type(headers, dict)
         check_type(device_type, str)
@@ -2530,7 +2530,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-the-count-of-system-defined-issue-definitions-based-on-provided-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!get-the-count-of-system-defined-issue-definitions-based-on-provided-filters
         """
         check_type(headers, dict)
         check_type(device_type, str)
@@ -2608,7 +2608,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-issue-trigger-definition-for-given-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-issue-trigger-definition-for-given-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -2685,7 +2685,7 @@ class Issues(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!issue-trigger-definition-update-v1
+            https://developer.cisco.com/docs/dna-center/#!issue-trigger-definition-update
         """
         check_type(headers, dict)
         check_type(payload, dict)

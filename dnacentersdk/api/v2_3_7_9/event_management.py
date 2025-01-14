@@ -140,7 +140,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-audit-log-parent-records-v1
+            https://developer.cisco.com/docs/dna-center/#!get-audit-log-parent-records
         """
         check_type(headers, dict)
         check_type(instance_id, str)
@@ -305,7 +305,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-audit-log-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!get-audit-log-summary
         """
         check_type(headers, dict)
         check_type(parent_instance_id, str)
@@ -471,7 +471,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-audit-log-records-v1
+            https://developer.cisco.com/docs/dna-center/#!get-audit-log-records
         """
         check_type(headers, dict)
         check_type(parent_instance_id, str)
@@ -602,7 +602,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!get-s-n-m-p-destination
         """
         check_type(headers, dict)
         check_type(config_id, str)
@@ -671,7 +671,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-status-a-p-i-for-events-v1
+            https://developer.cisco.com/docs/dna-center/#!get-status-a-p-i-for-events
         """
         check_type(headers, dict)
         check_type(execution_id, str,
@@ -744,7 +744,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-email-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!update-email-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -822,7 +822,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-email-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!get-email-destination
         """
         check_type(headers, dict)
         if headers is not None:
@@ -892,7 +892,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-email-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!create-email-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -999,7 +999,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-notifications-v1
+            https://developer.cisco.com/docs/dna-center/#!get-notifications
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -1117,7 +1117,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-of-notifications-v1
+            https://developer.cisco.com/docs/dna-center/#!count-of-notifications
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -1228,7 +1228,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!create-s-n-m-p-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1351,7 +1351,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!update-s-n-m-p-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1454,7 +1454,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!get-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -1523,7 +1523,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-event-subscriptions
         """
         check_type(headers, dict)
         check_type(subscriptions, str,
@@ -1586,7 +1586,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!update-event-subscriptions
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1652,7 +1652,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!create-event-subscriptions
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1726,7 +1726,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-email-subscription-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-email-subscription-details
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -1811,7 +1811,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-subscription-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-subscription-details
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -1896,7 +1896,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-syslog-subscription-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-syslog-subscription-details
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -1969,7 +1969,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-of-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!count-of-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, str,
@@ -2031,7 +2031,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-email-event-subscription-v1
+            https://developer.cisco.com/docs/dna-center/#!create-email-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2099,7 +2099,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-email-event-subscription-v1
+            https://developer.cisco.com/docs/dna-center/#!update-email-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2185,7 +2185,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-email-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!get-email-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -2273,7 +2273,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-rest-webhook-event-subscription-v1
+            https://developer.cisco.com/docs/dna-center/#!create-rest-webhook-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2361,7 +2361,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!get-rest-webhook-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -2449,7 +2449,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-rest-webhook-event-subscription-v1
+            https://developer.cisco.com/docs/dna-center/#!update-rest-webhook-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2514,7 +2514,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-syslog-event-subscription-v1
+            https://developer.cisco.com/docs/dna-center/#!update-syslog-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2582,7 +2582,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-syslog-event-subscription-v1
+            https://developer.cisco.com/docs/dna-center/#!create-syslog-event-subscription
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2667,7 +2667,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-syslog-event-subscriptions-v1
+            https://developer.cisco.com/docs/dna-center/#!get-syslog-event-subscriptions
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -2767,7 +2767,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-syslog-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!update-syslog-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -2860,7 +2860,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-syslog-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!get-syslog-destination
         """
         check_type(headers, dict)
         check_type(config_id, str)
@@ -2951,7 +2951,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-syslog-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!create-syslog-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3046,7 +3046,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-webhook-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!create-webhook-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3148,7 +3148,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-webhook-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!update-webhook-destination
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -3238,7 +3238,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-webhook-destination-v1
+            https://developer.cisco.com/docs/dna-center/#!get-webhook-destination
         """
         check_type(headers, dict)
         check_type(webhook_ids, str)
@@ -3320,7 +3320,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-events-v1
+            https://developer.cisco.com/docs/dna-center/#!get-events
         """
         check_type(headers, dict)
         check_type(event_id, str)
@@ -3395,7 +3395,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-of-events-v1
+            https://developer.cisco.com/docs/dna-center/#!count-of-events
         """
         check_type(headers, dict)
         check_type(event_id, str)
@@ -3470,7 +3470,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-event-artifacts-v1
+            https://developer.cisco.com/docs/dna-center/#!get-event-artifacts
         """
         check_type(headers, dict)
         check_type(event_ids, str)
@@ -3543,7 +3543,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!event-artifact-count-v1
+            https://developer.cisco.com/docs/dna-center/#!event-artifact-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -3596,7 +3596,7 @@ class EventManagement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-connector-types-v1
+            https://developer.cisco.com/docs/dna-center/#!get-connector-types
         """
         check_type(headers, dict)
         if headers is not None:

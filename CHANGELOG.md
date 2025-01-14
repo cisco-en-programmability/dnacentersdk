@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.1] - 2025-01-13
+### Fix
+- changing the api version in the configuration files
+- Resolved issue #174
+- removal of -v1 from reference urls in the documentation
+- Fixed a bug in site_design in the uploads_floor_image function in versions 2.3.7.6 and 2.3.7.9.
+
 ## [2.8.0] - 2024-12-11
 ### Added
 - Add support of DNA Center versions ('2.3.7.9')

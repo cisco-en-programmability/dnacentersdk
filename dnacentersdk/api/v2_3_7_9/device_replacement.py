@@ -117,7 +117,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!return-list-of-replacement-devices-with-replacement-details-v1
+            https://developer.cisco.com/docs/dna-center/#!return-list-of-replacement-devices-with-replacement-details
         """
         check_type(headers, dict)
         check_type(faulty_device_name, str)
@@ -208,7 +208,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!un-mark-device-for-replacement-v1
+            https://developer.cisco.com/docs/dna-center/#!un-mark-device-for-replacement
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -273,7 +273,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!mark-device-for-replacement-v1
+            https://developer.cisco.com/docs/dna-center/#!mark-device-for-replacement
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -336,7 +336,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!return-replacement-devices-count-v1
+            https://developer.cisco.com/docs/dna-center/#!return-replacement-devices-count
         """
         check_type(headers, dict)
         check_type(replacement_status, (str, list, set, tuple))
@@ -402,7 +402,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deploy-device-replacement-workflow-v1
+            https://developer.cisco.com/docs/dna-center/#!deploy-device-replacement-workflow
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -516,7 +516,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-status-of-all-the-device-replacement-workflows-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-status-of-all-the-device-replacement-workflows
         """
         check_type(headers, dict)
         check_type(family, str)
@@ -605,7 +605,7 @@ class DeviceReplacement(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-status-of-device-replacement-workflow-that-replaces-a-faulty-device-with-a-replacement-device-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-status-of-device-replacement-workflow-that-replaces-a-faulty-device-with-a-replacement-device
         """
         check_type(headers, dict)
         check_type(id, str,

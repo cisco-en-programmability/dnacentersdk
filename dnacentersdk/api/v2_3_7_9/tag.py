@@ -104,7 +104,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!update-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -206,7 +206,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tag
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -309,7 +309,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!create-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -393,7 +393,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tag-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tag-count
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -472,7 +472,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-tag-membership-v1
+            https://developer.cisco.com/docs/dna-center/#!update-tag-membership
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -541,7 +541,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tag-resource-types-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tag-resource-types
         """
         check_type(headers, dict)
         if headers is not None:
@@ -595,7 +595,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-tag
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -652,7 +652,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tag-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tag-by-id
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -726,7 +726,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tag-members-by-id-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tag-members-by-id
         """
         check_type(headers, dict)
         check_type(member_type, str,
@@ -807,7 +807,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-members-to-the-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!add-members-to-the-tag
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -880,7 +880,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-tag-member-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-tag-member-count
         """
         check_type(headers, dict)
         check_type(member_type, str,
@@ -946,7 +946,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!remove-tag-member-v1
+            https://developer.cisco.com/docs/dna-center/#!remove-tag-member
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1012,7 +1012,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-tags-associated-with-the-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-tags-associated-with-the-interfaces
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -1078,7 +1078,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-tags-associated-with-the-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!update-tags-associated-with-the-interfaces
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1142,7 +1142,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-interfaces-that-are-associated-with-at-least-one-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-interfaces-that-are-associated-with-at-least-one-tag
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1207,7 +1207,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-the-tags-associated-with-interfaces-v1
+            https://developer.cisco.com/docs/dna-center/#!query-the-tags-associated-with-interfaces
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1283,7 +1283,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-tags-associated-with-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-tags-associated-with-network-devices
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -1350,7 +1350,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-tags-associated-with-the-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!update-tags-associated-with-the-network-devices
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1415,7 +1415,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-network-devices-that-are-associated-with-at-least-one-tag-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-network-devices-that-are-associated-with-at-least-one-tag
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1480,7 +1480,7 @@ class Tag(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!query-the-tags-associated-with-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!query-the-tags-associated-with-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)

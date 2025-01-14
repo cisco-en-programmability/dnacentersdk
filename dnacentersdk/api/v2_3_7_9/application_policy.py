@@ -88,7 +88,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-policy-v1
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy
         """
         check_type(headers, dict)
         check_type(policy_scope, str)
@@ -143,7 +143,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-policy-default-v1
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy-default
         """
         check_type(headers, dict)
         if headers is not None:
@@ -207,7 +207,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!application-policy-intent-v1
+            https://developer.cisco.com/docs/dna-center/#!application-policy-intent
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -280,7 +280,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(name, str)
@@ -341,7 +341,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-application-policy-queuing-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!update-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -406,7 +406,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-application-policy-queuing-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!create-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -465,7 +465,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-application-policy-queuing-profile-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -519,7 +519,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-application-policy-queuing-profile-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-application-policy-queuing-profile
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -580,7 +580,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-sets-v1
+            https://developer.cisco.com/docs/dna-center/#!get-application-sets
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -643,7 +643,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-application-set-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-application-set
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -705,7 +705,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-application-set-v1
+            https://developer.cisco.com/docs/dna-center/#!create-application-set
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -764,7 +764,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-sets-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-application-sets-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -872,7 +872,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-list-of-network-devices-with-their-application-visibility-status-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-list-of-network-devices-with-their-application-visibility-status
         """
         check_type(headers, dict)
         check_type(ids, str)
@@ -1012,7 +1012,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-network-devices-for-the-given-application-visibility-status-filters-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieve-the-count-of-network-devices-for-the-given-application-visibility-status-filters
         """
         check_type(headers, dict)
         check_type(ids, str)
@@ -1111,7 +1111,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!disable-application-telemetry-feature-on-multiple-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!disable-application-telemetry-feature-on-multiple-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1192,7 +1192,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!disable-c-b-a-r-feature-on-multiple-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!disable-c-b-a-r-feature-on-multiple-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1275,7 +1275,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!enable-application-telemetry-feature-on-multiple-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!enable-application-telemetry-feature-on-multiple-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1357,7 +1357,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!enable-c-b-a-r-feature-on-multiple-network-devices-v1
+            https://developer.cisco.com/docs/dna-center/#!enable-c-b-a-r-feature-on-multiple-network-devices
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1431,7 +1431,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-application-v1
+            https://developer.cisco.com/docs/dna-center/#!create-application
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1496,7 +1496,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!edit-application-v1
+            https://developer.cisco.com/docs/dna-center/#!edit-application
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1557,7 +1557,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-application-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-application
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -1620,7 +1620,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-applications-v1
+            https://developer.cisco.com/docs/dna-center/#!get-applications
         """
         check_type(headers, dict)
         check_type(offset, int)
@@ -1681,7 +1681,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-applications-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-applications-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1735,7 +1735,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info-v1
+            https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(network_device_id, str)
@@ -1796,7 +1796,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-qos-device-interface-info-v1
+            https://developer.cisco.com/docs/dna-center/#!update-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1863,7 +1863,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-qos-device-interface-info-v1
+            https://developer.cisco.com/docs/dna-center/#!create-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1922,7 +1922,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info-count-v1
+            https://developer.cisco.com/docs/dna-center/#!get-qos-device-interface-info-count
         """
         check_type(headers, dict)
         if headers is not None:
@@ -1977,7 +1977,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-qos-device-interface-info-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-qos-device-interface-info
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -2032,7 +2032,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-application-qo-s-policy-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-application-qo-s-policy-setting
         """
         check_type(headers, dict)
         if headers is not None:
@@ -2095,7 +2095,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-the-application-qo-s-policy-setting-v1
+            https://developer.cisco.com/docs/dna-center/#!updates-the-application-qo-s-policy-setting
         """
         check_type(headers, dict)
         check_type(payload, dict)

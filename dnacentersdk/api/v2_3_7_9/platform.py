@@ -86,7 +86,7 @@ class Platform(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!cisco-catalyst-center-packages-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!cisco-catalyst-center-packages-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -139,7 +139,7 @@ class Platform(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!cisco-catalyst-center-release-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!cisco-catalyst-center-release-summary
         """
         check_type(headers, dict)
         if headers is not None:
@@ -193,7 +193,7 @@ class Platform(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!cisco-catalyst-center-nodes-configuration-summary-v1
+            https://developer.cisco.com/docs/dna-center/#!cisco-catalyst-center-nodes-configuration-summary
         """
         check_type(headers, dict)
         if headers is not None:

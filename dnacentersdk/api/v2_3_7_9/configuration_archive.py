@@ -100,7 +100,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!export-device-configurations-v1
+            https://developer.cisco.com/docs/dna-center/#!export-device-configurations
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -189,7 +189,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-configuration-archive-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-configuration-archive-details
         """
         check_type(headers, dict)
         check_type(device_id, str)
@@ -275,7 +275,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-network-device-configuration-file-details-v1
+            https://developer.cisco.com/docs/dna-center/#!get-network-device-configuration-file-details
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -350,7 +350,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!count-of-network-device-configuration-files-v1
+            https://developer.cisco.com/docs/dna-center/#!count-of-network-device-configuration-files
         """
         check_type(headers, dict)
         check_type(id, str)
@@ -414,7 +414,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-configuration-file-details-by-i-d-v1
+            https://developer.cisco.com/docs/dna-center/#!get-configuration-file-details-by-i-d
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -472,7 +472,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!download-masked-device-configuration-v1
+            https://developer.cisco.com/docs/dna-center/#!download-masked-device-configuration
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -548,7 +548,7 @@ class ConfigurationArchive(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!download-unmaskedraw-device-configuration-as-z-i-p-v1
+            https://developer.cisco.com/docs/dna-center/#!download-unmaskedraw-device-configuration-as-z-i-p
         """
         check_type(headers, dict)
         check_type(payload, dict)

@@ -142,7 +142,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!add-authentication-and-policy-server-access-configuration-v1
+            https://developer.cisco.com/docs/dna-center/#!add-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -246,7 +246,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-authentication-and-policy-servers-v1
+            https://developer.cisco.com/docs/dna-center/#!get-authentication-and-policy-servers
         """
         check_type(headers, dict)
         check_type(is_ise_enabled, bool)
@@ -310,7 +310,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!delete-authentication-and-policy-server-access-configuration-v1
+            https://developer.cisco.com/docs/dna-center/#!delete-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -404,7 +404,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!edit-authentication-and-policy-server-access-configuration-v1
+            https://developer.cisco.com/docs/dna-center/#!edit-authentication-and-policy-server-access-configuration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -503,7 +503,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!accept-cisco-i-s-e-server-certificate-for-cisco-i-s-e-server-integration-v1
+            https://developer.cisco.com/docs/dna-center/#!accept-cisco-i-s-e-server-certificate-for-cisco-i-s-e-server-integration
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -593,7 +593,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!creates-configuration-details-of-the-external-i-p-a-m-server-v1
+            https://developer.cisco.com/docs/dna-center/#!creates-configuration-details-of-the-external-i-p-a-m-server
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -673,7 +673,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-configuration-details-of-the-external-i-p-a-m-server-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-configuration-details-of-the-external-i-p-a-m-server
         """
         check_type(headers, dict)
         if headers is not None:
@@ -725,7 +725,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deletes-configuration-details-of-the-external-i-p-a-m-server-v1
+            https://developer.cisco.com/docs/dna-center/#!deletes-configuration-details-of-the-external-i-p-a-m-server
         """
         check_type(headers, dict)
         if headers is not None:
@@ -797,7 +797,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-configuration-details-of-the-external-i-p-a-m-server-v1
+            https://developer.cisco.com/docs/dna-center/#!updates-configuration-details-of-the-external-i-p-a-m-server
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -871,7 +871,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!cisco-i-s-e-server-integration-status-v1
+            https://developer.cisco.com/docs/dna-center/#!cisco-i-s-e-server-integration-status
         """
         check_type(headers, dict)
         if headers is not None:
@@ -923,7 +923,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!custom-prompt-support-g-e-t-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-support-g-e-t-a-p-i
         """
         check_type(headers, dict)
         if headers is not None:
@@ -986,7 +986,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!custom-prompt-p-o-s-t-a-p-i-v1
+            https://developer.cisco.com/docs/dna-center/#!custom-prompt-p-o-s-t-a-p-i
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1065,7 +1065,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!set-provisioning-settings-v1
+            https://developer.cisco.com/docs/dna-center/#!set-provisioning-settings
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -1134,7 +1134,7 @@ class SystemSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-provisioning-settings-v1
+            https://developer.cisco.com/docs/dna-center/#!get-provisioning-settings
         """
         check_type(headers, dict)
         if headers is not None:

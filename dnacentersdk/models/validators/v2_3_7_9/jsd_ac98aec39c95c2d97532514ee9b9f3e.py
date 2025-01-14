@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GeneratesTheDevice'sCLIsOfTheICAPConfigurationIntentV1 data model.
+"""Cisco Catalyst Center GeneratesTheDevicesCLIsOfTheICAPConfigurationIntentV1 data model.
 
 Copyright (c) 2024 Cisco Systems.
 
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAc98Aec39C95C2D97532514Ee9B9F3E(object):
-    """GeneratesTheDevice'sCLIsOfTheICAPConfigurationIntentV1 request
+    """GeneratesTheDevicesCLIsOfTheICAPConfigurationIntentV1 request
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAc98Aec39C95C2D97532514Ee9B9F3E, self).__init__()

@@ -86,7 +86,7 @@ class DisasterRecovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!disaster-recovery-operational-status-v1
+            https://developer.cisco.com/docs/dna-center/#!disaster-recovery-operational-status
         """
         check_type(headers, dict)
         if headers is not None:
@@ -139,7 +139,7 @@ class DisasterRecovery(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!disaster-recovery-status-v1
+            https://developer.cisco.com/docs/dna-center/#!disaster-recovery-status
         """
         check_type(headers, dict)
         if headers is not None:
