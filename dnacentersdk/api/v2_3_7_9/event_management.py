@@ -5188,6 +5188,46 @@ class EventManagement(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_eventartifacts(self,
+                           event_ids=None,
+                           limit=None,
+                           offset=None,
+                           order=None,
+                           search=None,
+                           sort_by=None,
+                           tags=None,
+                           headers=None,
+                           **request_parameters):
+        """ This function is an alias of get_event_artifacts_v1 .
+        Args:
+            event_ids(str): eventIds query parameter. List of eventIds .
+            tags(str): tags query parameter. Tags defined .
+            offset(int): offset query parameter. Record start offset .
+            limit(int): limit query parameter. # of records to return in result set .
+            sort_by(str): sortBy query parameter. Sort by field .
+            order(str): order query parameter. sorting order (asc/desc) .
+            search(str): search query parameter. findd matches in name, description, eventId, type, category
+                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_event_artifacts_v1 .
+        """
+        return self.get_event_artifacts_v1(
+                    event_ids=event_ids,
+                    limit=limit,
+                    offset=offset,
+                    order=order,
+                    search=search,
+                    sort_by=sort_by,
+                    tags=tags,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def get_audit_log_parent_records(self,

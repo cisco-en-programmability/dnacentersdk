@@ -160,7 +160,7 @@ The following table shows the supported versions.
    * - 2.3.7.6
      - 2.7.7
    * - 2.3.7.9
-     - 2.8.1
+     - 2.8.2
 
 
 
