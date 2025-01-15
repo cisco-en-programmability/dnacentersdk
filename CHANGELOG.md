@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.2] - 2025-01-15
+### Fix
+- A new alias function has been added to maintain compatibility with event_management in versions 2.3.7.6 and 2.3.7.9.
+- The new function is get_eventartifacts which was already present in previous versions but was changed to get_event_artifacts in 2.3.7.6 and 2.3.7.9.
+- issues #186
+
 ## [2.8.1] - 2025-01-13
 ### Fix
 - changing the api version in the configuration files

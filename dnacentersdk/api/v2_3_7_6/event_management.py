@@ -3625,8 +3625,8 @@ class EventManagement(object):
 
         return self._object_factory('bpm_b94cfb5af084c1a65d8e51df71_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def get_event_subscriptions(self,
                                    event_ids=None,
@@ -3653,7 +3653,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_event_subscriptions_v1 .
-        """ 
+        """
         return self.get_event_subscriptions_v1(
                     event_ids=event_ids,
                     limit=limit,
@@ -3663,8 +3663,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_syslog_destination(self,
                                      configId=None,
@@ -3696,7 +3696,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_syslog_destination_v1 .
-        """ 
+        """
         return self.update_syslog_destination_v1(
                     configId=configId,
                     description=description,
@@ -3709,8 +3709,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_rest_webhook_event_subscription(self,
                                                   headers=None,
@@ -3730,15 +3730,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_rest_webhook_event_subscription_v1 .
-        """ 
+        """
         return self.create_rest_webhook_event_subscription_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_email_destination(self,
                                     emailConfigId=None,
@@ -3770,7 +3770,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_email_destination_v1 .
-        """ 
+        """
         return self.update_email_destination_v1(
                     emailConfigId=emailConfigId,
                     fromEmail=fromEmail,
@@ -3783,8 +3783,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_rest_webhook_subscription_details(self,
                                                  instance_id=None,
@@ -3812,7 +3812,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_rest_webhook_subscription_details_v1 .
-        """ 
+        """
         return self.get_rest_webhook_subscription_details_v1(
                     instance_id=instance_id,
                     limit=limit,
@@ -3823,8 +3823,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_rest_webhook_event_subscriptions(self,
                                                 category=None,
@@ -3863,7 +3863,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_rest_webhook_event_subscriptions_v1 .
-        """ 
+        """
         return self.get_rest_webhook_event_subscriptions_v1(
                     category=category,
                     domain=domain,
@@ -3878,8 +3878,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_event_subscriptions(self,
                                       subscriptions,
@@ -3895,14 +3895,14 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of delete_event_subscriptions_v1 .
-        """ 
+        """
         return self.delete_event_subscriptions_v1(
                     subscriptions=subscriptions,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_email_destination(self,
                                  headers=None,
@@ -3921,8 +3921,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_snmp_destination(self,
                                    authPassword=None,
@@ -3968,7 +3968,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_snmp_destination_v1 .
-        """ 
+        """
         return self.create_snmp_destination_v1(
                     authPassword=authPassword,
                     community=community,
@@ -3987,8 +3987,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_event_subscriptions(self,
                                       headers=None,
@@ -4008,15 +4008,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_event_subscriptions_v1 .
-        """ 
+        """
         return self.update_event_subscriptions_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def event_artifact_count(self,
                             headers=None,
@@ -4035,8 +4035,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_snmp_destination(self,
                                 config_id=None,
@@ -4062,7 +4062,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_snmp_destination_v1 .
-        """ 
+        """
         return self.get_snmp_destination_v1(
                     config_id=config_id,
                     limit=limit,
@@ -4072,8 +4072,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_email_event_subscription(self,
                                            headers=None,
@@ -4093,15 +4093,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_email_event_subscription_v1 .
-        """ 
+        """
         return self.create_email_event_subscription_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def count_of_event_subscriptions(self,
                                         event_ids,
@@ -4118,14 +4118,14 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of count_of_event_subscriptions_v1 .
-        """ 
+        """
         return self.count_of_event_subscriptions_v1(
                     event_ids=event_ids,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_webhook_destination(self,
                                       description=None,
@@ -4160,7 +4160,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_webhook_destination_v1 .
-        """ 
+        """
         return self.create_webhook_destination_v1(
                     description=description,
                     headers=headers,
@@ -4174,8 +4174,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_email_subscription_details(self,
                                           instance_id=None,
@@ -4203,7 +4203,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_email_subscription_details_v1 .
-        """ 
+        """
         return self.get_email_subscription_details_v1(
                     instance_id=instance_id,
                     limit=limit,
@@ -4214,8 +4214,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_status_api_for_events(self,
                                      execution_id,
@@ -4231,14 +4231,14 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_status_api_for_events_v1 .
-        """ 
+        """
         return self.get_status_api_for_events_v1(
                     execution_id=execution_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_events(self,
                       tags,
@@ -4266,7 +4266,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_events_v1 .
-        """ 
+        """
         return self.get_events_v1(
                     tags=tags,
                     event_id=event_id,
@@ -4277,8 +4277,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_snmp_destination(self,
                                    authPassword=None,
@@ -4326,7 +4326,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_snmp_destination_v1 .
-        """ 
+        """
         return self.update_snmp_destination_v1(
                     authPassword=authPassword,
                     community=community,
@@ -4346,8 +4346,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_syslog_event_subscription(self,
                                             headers=None,
@@ -4367,15 +4367,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_syslog_event_subscription_v1 .
-        """ 
+        """
         return self.update_syslog_event_subscription_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_email_destination(self,
                                     emailConfigId=None,
@@ -4407,7 +4407,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_email_destination_v1 .
-        """ 
+        """
         return self.create_email_destination_v1(
                     emailConfigId=emailConfigId,
                     fromEmail=fromEmail,
@@ -4420,8 +4420,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_syslog_event_subscription(self,
                                             headers=None,
@@ -4441,15 +4441,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_syslog_event_subscription_v1 .
-        """ 
+        """
         return self.create_syslog_event_subscription_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_email_event_subscription(self,
                                            headers=None,
@@ -4469,15 +4469,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_email_event_subscription_v1 .
-        """ 
+        """
         return self.update_email_event_subscription_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_webhook_destination(self,
                                       description=None,
@@ -4512,7 +4512,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_webhook_destination_v1 .
-        """ 
+        """
         return self.update_webhook_destination_v1(
                     description=description,
                     headers=headers,
@@ -4526,8 +4526,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_syslog_destination(self,
                                   config_id=None,
@@ -4557,7 +4557,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_syslog_destination_v1 .
-        """ 
+        """
         return self.get_syslog_destination_v1(
                     config_id=config_id,
                     limit=limit,
@@ -4569,8 +4569,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_event_subscriptions(self,
                                       headers=None,
@@ -4590,15 +4590,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_event_subscriptions_v1 .
-        """ 
+        """
         return self.create_event_subscriptions_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_notifications(self,
                              category=None,
@@ -4644,7 +4644,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_notifications_v1 .
-        """ 
+        """
         return self.get_notifications_v1(
                     category=category,
                     domain=domain,
@@ -4665,8 +4665,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_syslog_subscription_details(self,
                                            instance_id=None,
@@ -4694,7 +4694,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_syslog_subscription_details_v1 .
-        """ 
+        """
         return self.get_syslog_subscription_details_v1(
                     instance_id=instance_id,
                     limit=limit,
@@ -4705,8 +4705,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_connector_types(self,
                                headers=None,
@@ -4725,8 +4725,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_email_event_subscriptions(self,
                                          category=None,
@@ -4766,7 +4766,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_email_event_subscriptions_v1 .
-        """ 
+        """
         return self.get_email_event_subscriptions_v1(
                     category=category,
                     domain=domain,
@@ -4781,8 +4781,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_audit_log_records(self,
                              category=None,
@@ -4852,7 +4852,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_audit_log_records_v1 .
-        """ 
+        """
         return self.get_audit_log_records_v1(
                     category=category,
                     context=context,
@@ -4879,8 +4879,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_rest_webhook_event_subscription(self,
                                                   headers=None,
@@ -4900,15 +4900,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of update_rest_webhook_event_subscription_v1 .
-        """ 
+        """
         return self.update_rest_webhook_event_subscription_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def count_of_notifications(self,
                                   category=None,
@@ -4940,7 +4940,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of count_of_notifications_v1 .
-        """ 
+        """
         return self.count_of_notifications_v1(
                     category=category,
                     domain=domain,
@@ -4954,8 +4954,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_syslog_destination(self,
                                      configId=None,
@@ -4987,7 +4987,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of create_syslog_destination_v1 .
-        """ 
+        """
         return self.create_syslog_destination_v1(
                     configId=configId,
                     description=description,
@@ -5000,8 +5000,8 @@ class EventManagement(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_syslog_event_subscriptions(self,
                                           category=None,
@@ -5040,7 +5040,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_syslog_event_subscriptions_v1 .
-        """ 
+        """
         return self.get_syslog_event_subscriptions_v1(
                     category=category,
                     domain=domain,
@@ -5055,8 +5055,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_audit_log_summary(self,
                              category=None,
@@ -5118,7 +5118,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_audit_log_summary_v1 .
-        """ 
+        """
         return self.get_audit_log_summary_v1(
                     category=category,
                     context=context,
@@ -5142,8 +5142,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_event_artifacts(self,
                            event_ids=None,
@@ -5172,7 +5172,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_event_artifacts_v1 .
-        """ 
+        """
         return self.get_event_artifacts_v1(
                     event_ids=event_ids,
                     limit=limit,
@@ -5184,8 +5184,47 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+    # Alias Function
+    def get_eventartifacts(self,
+                           event_ids=None,
+                           limit=None,
+                           offset=None,
+                           order=None,
+                           search=None,
+                           sort_by=None,
+                           tags=None,
+                           headers=None,
+                           **request_parameters):
+        """ This function is an alias of get_event_artifacts_v1 .
+        Args:
+            event_ids(basestring): eventIds query parameter. List of eventIds .
+            tags(basestring): tags query parameter. Tags defined .
+            offset(int): offset query parameter. Record start offset .
+            limit(int): limit query parameter. # of records to return in result set .
+            sort_by(basestring): sortBy query parameter. Sort by field .
+            order(basestring): order query parameter. sorting order (asc/desc) .
+            search(basestring): search query parameter. findd matches in name, description, eventId, type, category
+                .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_event_artifacts_v1 .
+        """
+        return self.get_event_artifacts_v1(
+                    event_ids=event_ids,
+                    limit=limit,
+                    offset=offset,
+                    order=order,
+                    search=search,
+                    sort_by=sort_by,
+                    tags=tags,
+                    headers=headers,
+                    **request_parameters
+        )
     # Alias Function
     def get_audit_log_parent_records(self,
                                     category=None,
@@ -5252,7 +5291,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_audit_log_parent_records_v1 .
-        """ 
+        """
         return self.get_audit_log_parent_records_v1(
                     category=category,
                     context=context,
@@ -5278,8 +5317,8 @@ class EventManagement(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def count_of_events(self,
                            tags,
@@ -5297,15 +5336,15 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of count_of_events_v1 .
-        """ 
+        """
         return self.count_of_events_v1(
                     tags=tags,
                     event_id=event_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_webhook_destination(self,
                                    limit=None,
@@ -5331,7 +5370,7 @@ class EventManagement(object):
 
         Returns:
             This function returns the output of get_webhook_destination_v1 .
-        """ 
+        """
         return self.get_webhook_destination_v1(
                     limit=limit,
                     offset=offset,
