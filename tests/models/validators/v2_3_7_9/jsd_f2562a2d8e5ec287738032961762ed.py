@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetTaskByOperationid data model.
+"""Cisco Catalyst Center UpdatesTheCiscoIMCConfigurationForACatalystCenterNodeV1 data model.
 
 Copyright (c) 2024 Cisco Systems.
 
@@ -32,78 +32,25 @@ import fastjsonschema
 from dnacentersdk.exceptions import MalformedRequest
 
 
-class JSONSchemaValidatorD95C21E41Dce5A9DBee07D33Eefef2B2(object):
-    """GetTaskByOperationid request schema definition."""
+class JSONSchemaValidatorF2562A2D8E5Ec287738032961762Ed(object):
+    """UpdatesTheCiscoIMCConfigurationForACatalystCenterNodeV1 request
+    schema definition."""
     def __init__(self):
-        super(JSONSchemaValidatorD95C21E41Dce5A9DBee07D33Eefef2B2, self).__init__()
+        super(JSONSchemaValidatorF2562A2D8E5Ec287738032961762Ed, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
                 "response": {
-                "items": {
                 "properties": {
-                "additionalStatusURL": {
+                "taskId": {
                 "type": "string"
                 },
-                "data": {
+                "url": {
                 "type": "string"
-                },
-                "endTime": {
-                "type": "integer"
-                },
-                "errorCode": {
-                "type": "string"
-                },
-                "errorKey": {
-                "type": "string"
-                },
-                "failureReason": {
-                "type": "string"
-                },
-                "id": {
-                "type": "string"
-                },
-                "instanceTenantId": {
-                "type": "string"
-                },
-                "isError": {
-                "type": "boolean"
-                },
-                "lastUpdate": {
-                "type": "integer"
-                },
-                "operationIdList": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "parentId": {
-                "type": "string"
-                },
-                "progress": {
-                "type": "string"
-                },
-                "rootId": {
-                "type": "string"
-                },
-                "serviceType": {
-                "type": "string"
-                },
-                "startTime": {
-                "type": "integer"
-                },
-                "username": {
-                "type": "string"
-                },
-                "version": {
-                "type": "integer"
                 }
                 },
                 "type": "object"
-                },
-                "type": "array"
                 },
                 "version": {
                 "type": "string"

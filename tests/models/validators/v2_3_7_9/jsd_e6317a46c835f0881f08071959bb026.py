@@ -66,11 +66,8 @@ class JSONSchemaValidatorE6317A46C835F0881F08071959Bb026(object):
                 },
                 "fixedVersions": {
                 "properties": {
-                "15.2(7)E1a": {
-                "items": {
+                "version": {
                 "type": "string"
-                },
-                "type": "array"
                 }
                 },
                 "type": "object"

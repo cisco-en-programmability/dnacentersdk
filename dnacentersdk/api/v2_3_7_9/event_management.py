@@ -4041,6 +4041,26 @@ class EventManagement(object):
 
 
     # Alias Function
+    def eventartifact_count(self,
+                            headers=None,
+                            **request_parameters):
+        """ This function is an alias of event_artifact_count_v1 .
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of event_artifact_count_v1 .
+        """
+        return self.event_artifact_count_v1(
+                    headers=headers,
+                    **request_parameters
+        )
+
+
+    # Alias Function
     def get_snmp_destination(self,
                                 config_id=None,
                                 limit=None,
@@ -4883,6 +4903,102 @@ class EventManagement(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_auditlog_records(self,
+                             category=None,
+                             context=None,
+                             description=None,
+                             device_id=None,
+                             domain=None,
+                             end_time=None,
+                             event_hierarchy=None,
+                             event_id=None,
+                             instance_id=None,
+                             is_system_events=None,
+                             limit=None,
+                             name=None,
+                             offset=None,
+                             order=None,
+                             parent_instance_id=None,
+                             severity=None,
+                             site_id=None,
+                             sort_by=None,
+                             source=None,
+                             start_time=None,
+                             sub_domain=None,
+                             user_id=None,
+                             headers=None,
+                             **request_parameters):
+        """ This function is an alias of get_audit_log_records_v1 .
+        Args:
+            parent_instance_id(str): parentInstanceId query parameter. Parent Audit Log record's instanceID.
+                .
+            instance_id(str): instanceId query parameter. InstanceID of the Audit Log. .
+            name(str): name query parameter. Audit Log notification event name. .
+            event_id(str): eventId query parameter. Audit Log notification's event ID. .
+            category(str): category query parameter. Audit Log notification's event category. Supported
+                values: INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND,
+                QUERY, CONVERSATION .
+            severity(str): severity query parameter. Audit Log notification's event severity. Supported
+                values: 1, 2, 3, 4, 5. .
+            domain(str): domain query parameter. Audit Log notification's event domain. .
+            sub_domain(str): subDomain query parameter. Audit Log notification's event sub-domain. .
+            source(str): source query parameter. Audit Log notification's event source. .
+            user_id(str): userId query parameter. Audit Log notification's event userId. .
+            context(str): context query parameter. Audit Log notification's event correlationId. .
+            event_hierarchy(str): eventHierarchy query parameter. Audit Log notification's event
+                eventHierarchy. Example: "US.CA.San Jose" OR "US.CA" OR "CA.San Jose" Delimiter for
+                hierarchy separation is ".". .
+            site_id(str): siteId query parameter. Audit Log notification's siteId. .
+            device_id(str): deviceId query parameter. Audit Log notification's deviceId. .
+            is_system_events(bool): isSystemEvents query parameter. Parameter to filter system generated audit-logs.
+                .
+            description(str): description query parameter. String full/partial search (Provided input string
+                is case insensitively matched for records). .
+            offset(int): offset query parameter. Position of a particular Audit Log record in the data. .
+            limit(int): limit query parameter. Number of Audit Log records to be returned per page. .
+            start_time(int): startTime query parameter. Start Time in milliseconds since Epoch Eg. 1597950637211
+                (when provided endTime is mandatory) .
+            end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
+                provided startTime is mandatory) .
+            sort_by(str): sortBy query parameter. Sort the Audit Logs by certain fields. Supported values are
+                event notification header attributes. .
+            order(str): order query parameter. Order of the sorted Audit Log records. Default value is desc
+                by timestamp. Supported values: asc, desc. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_audit_log_records_v1 .
+        """
+        return self.get_audit_log_records_v1(
+                    category=category,
+                    context=context,
+                    description=description,
+                    device_id=device_id,
+                    domain=domain,
+                    end_time=end_time,
+                    event_hierarchy=event_hierarchy,
+                    event_id=event_id,
+                    instance_id=instance_id,
+                    is_system_events=is_system_events,
+                    limit=limit,
+                    name=name,
+                    offset=offset,
+                    order=order,
+                    parent_instance_id=parent_instance_id,
+                    severity=severity,
+                    site_id=site_id,
+                    sort_by=sort_by,
+                    source=source,
+                    start_time=start_time,
+                    sub_domain=sub_domain,
+                    user_id=user_id,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def update_rest_webhook_event_subscription(self,
@@ -5059,6 +5175,91 @@ class EventManagement(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_auditlog_summary(self,
+                             category=None,
+                             context=None,
+                             description=None,
+                             device_id=None,
+                             domain=None,
+                             end_time=None,
+                             event_hierarchy=None,
+                             event_id=None,
+                             instance_id=None,
+                             is_parent_only=None,
+                             is_system_events=None,
+                             name=None,
+                             parent_instance_id=None,
+                             severity=None,
+                             site_id=None,
+                             source=None,
+                             start_time=None,
+                             sub_domain=None,
+                             user_id=None,
+                             headers=None,
+                             **request_parameters):
+        """ This function is an alias of get_audit_log_summary_v1 .
+        Args:
+            parent_instance_id(str): parentInstanceId query parameter. Parent Audit Log record's instanceID.
+                .
+            is_parent_only(bool): isParentOnly query parameter. Parameter to filter parent only audit-logs. .
+            instance_id(str): instanceId query parameter. InstanceID of the Audit Log. .
+            name(str): name query parameter. Audit Log notification event name. .
+            event_id(str): eventId query parameter. Audit Log notification's event ID. .
+            category(str): category query parameter. Audit Log notification's event category. Supported
+                values: INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND,
+                QUERY, CONVERSATION .
+            severity(str): severity query parameter. Audit Log notification's event severity. Supported
+                values: 1, 2, 3, 4, 5. .
+            domain(str): domain query parameter. Audit Log notification's event domain. .
+            sub_domain(str): subDomain query parameter. Audit Log notification's event sub-domain. .
+            source(str): source query parameter. Audit Log notification's event source. .
+            user_id(str): userId query parameter. Audit Log notification's event userId. .
+            context(str): context query parameter. Audit Log notification's event correlationId. .
+            event_hierarchy(str): eventHierarchy query parameter. Audit Log notification's event
+                eventHierarchy. Example: "US.CA.San Jose" OR "US.CA" OR "CA.San Jose" Delimiter for
+                hierarchy separation is ".". .
+            site_id(str): siteId query parameter. Audit Log notification's siteId. .
+            device_id(str): deviceId query parameter. Audit Log notification's deviceId. .
+            is_system_events(bool): isSystemEvents query parameter. Parameter to filter system generated audit-logs.
+                .
+            description(str): description query parameter. String full/partial search (Provided input string
+                is case insensitively matched for records). .
+            start_time(int): startTime query parameter. Start Time in milliseconds since Epoch Eg. 1597950637211
+                (when provided endTime is mandatory) .
+            end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
+                provided startTime is mandatory) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_audit_log_summary_v1 .
+        """
+        return self.get_audit_log_summary_v1(
+                    category=category,
+                    context=context,
+                    description=description,
+                    device_id=device_id,
+                    domain=domain,
+                    end_time=end_time,
+                    event_hierarchy=event_hierarchy,
+                    event_id=event_id,
+                    instance_id=instance_id,
+                    is_parent_only=is_parent_only,
+                    is_system_events=is_system_events,
+                    name=name,
+                    parent_instance_id=parent_instance_id,
+                    severity=severity,
+                    site_id=site_id,
+                    source=source,
+                    start_time=start_time,
+                    sub_domain=sub_domain,
+                    user_id=user_id,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def get_audit_log_summary(self,
@@ -5322,6 +5523,98 @@ class EventManagement(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_auditlog_parent_records(self,
+                                    category=None,
+                                    context=None,
+                                    description=None,
+                                    device_id=None,
+                                    domain=None,
+                                    end_time=None,
+                                    event_hierarchy=None,
+                                    event_id=None,
+                                    instance_id=None,
+                                    is_system_events=None,
+                                    limit=None,
+                                    name=None,
+                                    offset=None,
+                                    order=None,
+                                    severity=None,
+                                    site_id=None,
+                                    sort_by=None,
+                                    source=None,
+                                    start_time=None,
+                                    sub_domain=None,
+                                    user_id=None,
+                                    headers=None,
+                                    **request_parameters):
+        """ This function is an alias of get_audit_log_parent_records_v1 .
+        Args:
+            instance_id(str): instanceId query parameter. InstanceID of the Audit Log. .
+            name(str): name query parameter. Audit Log notification event name. .
+            event_id(str): eventId query parameter. Audit Log notification's event ID. .
+            category(str): category query parameter. Audit Log notification's event category. Supported
+                values: INFO, WARN, ERROR, ALERT, TASK_PROGRESS, TASK_FAILURE, TASK_COMPLETE, COMMAND,
+                QUERY, CONVERSATION .
+            severity(str): severity query parameter. Audit Log notification's event severity. Supported
+                values: 1, 2, 3, 4, 5. .
+            domain(str): domain query parameter. Audit Log notification's event domain. .
+            sub_domain(str): subDomain query parameter. Audit Log notification's event sub-domain. .
+            source(str): source query parameter. Audit Log notification's event source. .
+            user_id(str): userId query parameter. Audit Log notification's event userId. .
+            context(str): context query parameter. Audit Log notification's event correlationId. .
+            event_hierarchy(str): eventHierarchy query parameter. Audit Log notification's event
+                eventHierarchy. Example: "US.CA.San Jose" OR "US.CA" OR "CA.San Jose" Delimiter for
+                hierarchy separation is ".". .
+            site_id(str): siteId query parameter. Audit Log notification's siteId. .
+            device_id(str): deviceId query parameter. Audit Log notification's deviceId. .
+            is_system_events(bool): isSystemEvents query parameter. Parameter to filter system generated audit-logs.
+                .
+            description(str): description query parameter. String full/partial search (Provided input string
+                is case insensitively matched for records). .
+            offset(int): offset query parameter. Position of a particular Audit Log record in the data. .
+            limit(int): limit query parameter. Number of Audit Log records to be returned per page. .
+            start_time(int): startTime query parameter. Start Time in milliseconds since Epoch Eg. 1597950637211
+                (when provided endTime is mandatory) .
+            end_time(int): endTime query parameter. End Time in milliseconds since Epoch Eg. 1597961437211 (when
+                provided startTime is mandatory) .
+            sort_by(str): sortBy query parameter. Sort the Audit Logs by certain fields. Supported values are
+                event notification header attributes. .
+            order(str): order query parameter. Order of the sorted Audit Log records. Default value is desc
+                by timestamp. Supported values: asc, desc. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_audit_log_parent_records_v1 .
+        """
+        return self.get_audit_log_parent_records_v1(
+                    category=category,
+                    context=context,
+                    description=description,
+                    device_id=device_id,
+                    domain=domain,
+                    end_time=end_time,
+                    event_hierarchy=event_hierarchy,
+                    event_id=event_id,
+                    instance_id=instance_id,
+                    is_system_events=is_system_events,
+                    limit=limit,
+                    name=name,
+                    offset=offset,
+                    order=order,
+                    severity=severity,
+                    site_id=site_id,
+                    sort_by=sort_by,
+                    source=source,
+                    start_time=start_time,
+                    sub_domain=sub_domain,
+                    user_id=user_id,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def count_of_events(self,

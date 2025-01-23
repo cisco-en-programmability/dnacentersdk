@@ -663,14 +663,43 @@ class SoftwareImageManagementSwim(object):
         return self._object_factory('bpm_ab6266cac654d394cf943a161fcc7b_v2_3_7_9', json_data)
 
     def import_local_software_image_v1(self,
-                                       is_third_party=None,
-                                       third_party_application_type=None,
-                                       third_party_image_family=None,
-                                       third_party_vendor=None,
-                                       headers=None,
-                                       **request_parameters):
+                                    multipart_fields,
+                                    multipart_monitor_callback,
+                                    is_third_party=None,
+                                    third_party_application_type=None,
+                                    third_party_image_family=None,
+                                    third_party_vendor=None,
+                                    headers=None,
+                                    **request_parameters):
         """Fetches a software image from local file system and uploads to DNA Center. Supported software image files
         extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
+
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
 
         Args:
             is_third_party(bool): isThirdParty query parameter. Third party Image check .
@@ -678,6 +707,10 @@ class SoftwareImageManagementSwim(object):
             third_party_image_family(str): thirdPartyImageFamily query parameter. Third Party image family .
             third_party_application_type(str): thirdPartyApplicationType query parameter. Third Party
                 Application Type .
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -690,7 +723,7 @@ class SoftwareImageManagementSwim(object):
         Raises:
             TypeError: If the parameter types are incorrect.
             MalformedRequest: If the request body created is invalid.
-            ApiError: If the Catalyst Center cloud returns an error.
+            ApiError: If the DNA Center cloud returns an error.
         Documentation Link:
             https://developer.cisco.com/docs/dna-center/#!import-local-software-image
         """
@@ -731,8 +764,15 @@ class SoftwareImageManagementSwim(object):
 
         e_url = ('/dna/intent/api/v1/image/importation/source/file')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
@@ -4242,6 +4282,8 @@ class SoftwareImageManagementSwim(object):
 
     # Alias Function
     def import_local_software_image(self,
+                                       multipart_fields,
+                                       multipart_monitor_callback,
                                        is_third_party=None,
                                        third_party_application_type=None,
                                        third_party_image_family=None,
@@ -4255,6 +4297,10 @@ class SoftwareImageManagementSwim(object):
             third_party_image_family(str): thirdPartyImageFamily query parameter. Third Party image family .
             third_party_application_type(str): thirdPartyApplicationType query parameter. Third Party
                 Application Type .
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -4264,6 +4310,8 @@ class SoftwareImageManagementSwim(object):
             This function returns the output of import_local_software_image_v1 .
         """
         return self.import_local_software_image_v1(
+                    multipart_fields = multipart_fields,
+                    multipart_monitor_callback = multipart_monitor_callback,
                     is_third_party=is_third_party,
                     third_party_application_type=third_party_application_type,
                     third_party_image_family=third_party_image_family,

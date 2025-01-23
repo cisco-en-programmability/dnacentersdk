@@ -72,6 +72,11 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
     AUTHENTICATION_MANAGEMENT_b19d7e8de2ca5329930d06f041a4a173_PATTERN = re.compile(r"/dna/intent/api/v1/certificate")
     AUTHENTICATION_MANAGEMENT_c80e660c2e36582f939a7403ef15de22_PATTERN = re.compile(r"/dna/intent/api/v1/certificate-p12")
     AUTHENTICATION_MANAGEMENT_a6bfcd88e22c5c138657b340870b4ebb_PATTERN = re.compile(r"/dna/system/api/v1/auth/token")
+    CISCO_I_M_C_00d5f8cf25475dc5be53f35357aca5a4_PATTERN = re.compile(r"/dna/system/api/v1/ciscoImcs")
+    CISCO_I_M_C_80b7ed1910345a8b9b9ad88aeee4f109_PATTERN = re.compile(r"/dna/system/api/v1/ciscoImcs")
+    CISCO_I_M_C_6baa237a3253535e875c62928443888b_PATTERN = re.compile(r"/dna/system/api/v1/ciscoImcs/string")
+    CISCO_I_M_C_19f2562a2d8e5ec287738032961762ed_PATTERN = re.compile(r"/dna/system/api/v1/ciscoImcs/string")
+    CISCO_I_M_C_3820afae98de597f918fe9d08045026c_PATTERN = re.compile(r"/dna/system/api/v1/ciscoImcs/string")
     CISCO_TRUSTED_CERTIFICATES_ebe0eab8e1785bec83a1e155112fb70e_PATTERN = re.compile(r"/dna/intent/api/v1/trustedCertificates/import")
     CLIENTS_dfcf64acc1815459acc146cd924e9877_PATTERN = re.compile(r"/dna/data/api/v1/clients")
     CLIENTS_110ed18d78d455f9a51049a09ae12d48_PATTERN = re.compile(r"/dna/data/api/v1/clients/count")
@@ -2253,6 +2258,91 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
         self.end_headers()
         # Add response content.
         response_content = json.dumps({'Token': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_CISCO_I_M_C_00d5f8cf25475dc5be53f35357aca5a4(self):
+        return re.search(
+            self.CISCO_I_M_C_00d5f8cf25475dc5be53f35357aca5a4_PATTERN,
+            self.path
+        )
+
+    def cisco_i_m_c_adds_cisco_i_m_c_configuration_to_a_catalyst_center_node_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_CISCO_I_M_C_80b7ed1910345a8b9b9ad88aeee4f109(self):
+        return re.search(
+            self.CISCO_I_M_C_80b7ed1910345a8b9b9ad88aeee4f109_PATTERN,
+            self.path
+        )
+
+    def cisco_i_m_c_retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': [{'id': 'string', 'nodeId': 'string', 'ipAddress': 'string', 'username': 'string'}], 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_CISCO_I_M_C_6baa237a3253535e875c62928443888b(self):
+        return re.search(
+            self.CISCO_I_M_C_6baa237a3253535e875c62928443888b_PATTERN,
+            self.path
+        )
+
+    def cisco_i_m_c_deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_CISCO_I_M_C_19f2562a2d8e5ec287738032961762ed(self):
+        return re.search(
+            self.CISCO_I_M_C_19f2562a2d8e5ec287738032961762ed_PATTERN,
+            self.path
+        )
+
+    def cisco_i_m_c_updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'taskId': 'string', 'url': 'string'}, 'version': 'string'})
+        self.wfile.write(response_content.encode('utf-8'))
+        return
+
+    def matches_CISCO_I_M_C_3820afae98de597f918fe9d08045026c(self):
+        return re.search(
+            self.CISCO_I_M_C_3820afae98de597f918fe9d08045026c_PATTERN,
+            self.path
+        )
+
+    def cisco_i_m_c_retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1_response(self):
+        # Add response status code.
+        self.send_response(requests.codes.ok)
+        # Add response headers.
+        self.send_header('Content-Type', 'application/json; charset=utf-8')
+        self.end_headers()
+        # Add response content.
+        response_content = json.dumps({'response': {'id': 'string', 'nodeId': 'string', 'ipAddress': 'string', 'username': 'string'}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -14560,7 +14650,7 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'advisoryId': 'string', 'deviceCount': 0, 'hiddenDeviceCount': 0, 'cves': ['string'], 'publicationUrl': 'string', 'sir': 'string', 'detectionType': 'string', 'defaultDetectionType': 'string', 'defaultConfigMatchPattern': 'string', 'fixedVersions': {'15.2(7)E1a': ['string']}}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'advisoryId': 'string', 'deviceCount': 0, 'hiddenDeviceCount': 0, 'cves': ['string'], 'publicationUrl': 'string', 'sir': 'string', 'detectionType': 'string', 'defaultDetectionType': 'string', 'defaultConfigMatchPattern': 'string', 'fixedVersions': {'version': 'string'}}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -17807,7 +17897,7 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': ['string'], 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -17841,7 +17931,7 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': ['string'], 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -17858,7 +17948,7 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': {'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}, 'version': 'string'})
+        response_content = json.dumps({'response': {'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': ['string'], 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}, 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -17875,7 +17965,7 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         # Add response content.
-        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': {}, 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
+        response_content = json.dumps({'response': [{'additionalStatusURL': 'string', 'data': 'string', 'endTime': 0, 'errorCode': 'string', 'errorKey': 'string', 'failureReason': 'string', 'id': 'string', 'instanceTenantId': 'string', 'isError': True, 'lastUpdate': 0, 'operationIdList': ['string'], 'parentId': 'string', 'progress': 'string', 'rootId': 'string', 'serviceType': 'string', 'startTime': 0, 'username': 'string', 'version': 0}], 'version': 'string'})
         self.wfile.write(response_content.encode('utf-8'))
         return
 
@@ -20411,6 +20501,14 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
             self.applications_applications_v1_response()
             return
 
+        if self.matches_CISCO_I_M_C_80b7ed1910345a8b9b9ad88aeee4f109():
+            self.cisco_i_m_c_retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes_v1_response()
+            return
+
+        if self.matches_CISCO_I_M_C_3820afae98de597f918fe9d08045026c():
+            self.cisco_i_m_c_retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1_response()
+            return
+
         if self.matches_CLIENTS_dfcf64acc1815459acc146cd924e9877():
             self.clients_retrieves_the_list_of_clients_while_also_offering_basic_filtering_and_sorting_capabilities_v1_response()
             return
@@ -22720,6 +22818,10 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
             self.authentication_management_authentication_api_v1_response()
             return
 
+        if self.matches_CISCO_I_M_C_00d5f8cf25475dc5be53f35357aca5a4():
+            self.cisco_i_m_c_adds_cisco_i_m_c_configuration_to_a_catalyst_center_node_v1_response()
+            return
+
         if self.matches_CISCO_TRUSTED_CERTIFICATES_ebe0eab8e1785bec83a1e155112fb70e():
             self.cisco_trusted_certificates_import_trusted_certificate_v1_response()
             return
@@ -23830,6 +23932,10 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
             self.application_policy_edit_applications_v2_response()
             return
 
+        if self.matches_CISCO_I_M_C_19f2562a2d8e5ec287738032961762ed():
+            self.cisco_i_m_c_updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1_response()
+            return
+
         if self.matches_CONFIGURATION_TEMPLATES_975150fb8fee52fcb7577206a3fcac8c():
             self.configuration_templates_update_template_project_v1_response()
             return
@@ -24370,6 +24476,10 @@ class MockServerRequestHandler_v2_3_7_9(BaseHTTPRequestHandler):
 
         if self.matches_APPLICATION_POLICY_ef849b2f5415501086635693a458e69b():
             self.application_policy_delete_application_v2_response()
+            return
+
+        if self.matches_CISCO_I_M_C_6baa237a3253535e875c62928443888b():
+            self.cisco_i_m_c_deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1_response()
             return
 
         if self.matches_CONFIGURATION_TEMPLATES_464579f3a0f150bc9cb9759496f6029c():

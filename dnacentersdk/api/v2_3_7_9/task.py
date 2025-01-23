@@ -1466,6 +1466,35 @@ class Task(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_task_by_operationid(self,
+                                limit,
+                                offset,
+                                operation_id,
+                                headers=None,
+                                **request_parameters):
+        """ This function is an alias of get_task_by_operation_id_v1 .
+        Args:
+            operation_id(str): operationId path parameter.
+            offset(int): offset path parameter. Index, minimum value is 0 .
+            limit(int): limit path parameter. The maximum value of {limit} supported is 500.               Base 1
+                indexing for {limit}, minimum value is 1 .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_task_by_operation_id_v1 .
+        """
+        return self.get_task_by_operation_id_v1(
+                    limit=limit,
+                    offset=offset,
+                    operation_id=operation_id,
+                    headers=headers,
+                    **request_parameters
+        )
+
 
     # Alias Function
     def get_tasks_by_id(self,
