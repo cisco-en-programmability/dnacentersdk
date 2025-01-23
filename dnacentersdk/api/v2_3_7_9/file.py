@@ -455,6 +455,9 @@ class File(object):
     # Alias Function
     def download_a_file_by_fileid(self,
                                   file_id,
+                                  dirpath=None,
+                                  save_file=None,
+                                  filename=None,
                                   headers=None,
                                   **request_parameters):
         """ This function is an alias of download_a_file_by_file_id_v1 .
@@ -476,6 +479,9 @@ class File(object):
         """
         return self.download_a_file_by_file_id_v1(
                     file_id=file_id,
+                    dirpath = dirpath,
+                    save_file = save_file,
+                    filename = filename,
                     headers=headers,
                     **request_parameters
         )

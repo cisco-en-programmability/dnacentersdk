@@ -455,16 +455,19 @@ class File(object):
     # Alias Function
     def download_a_file_by_fileid(self,
                                   file_id,
+                                  dirpath=None,
+                                  save_file=None,
+                                  filename=None,
                                   headers=None,
                                   **request_parameters):
         """ This function is an alias of download_a_file_by_file_id_v1 .
         Args:
-            file_id(basestring): fileId path parameter. File Identification number .
-            dirpath(basestring): Directory absolute path. Defaults to
+            file_id(str): fileId path parameter. File Identification number .
+            dirpath(str): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
                 raw response.
-            filename(basestring): The filename used to save the download
+            filename(str): The filename used to save the download
                 file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -476,6 +479,9 @@ class File(object):
         """
         return self.download_a_file_by_file_id_v1(
                     file_id=file_id,
+                    dirpath = dirpath,
+                    save_file = save_file,
+                    filename = filename,
                     headers=headers,
                     **request_parameters
         )
