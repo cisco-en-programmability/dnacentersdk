@@ -416,6 +416,8 @@ from dnacentersdk.api.v2_3_7_9.applications import \
     Applications as Applications_v2_3_7_9
 from dnacentersdk.api.v2_3_7_9.authentication_management import \
     AuthenticationManagement as AuthenticationManagement_v2_3_7_9
+from dnacentersdk.api.v2_3_7_9.cisco_i_m_c import \
+    CiscoIMC as CiscoIMC_v2_3_7_9
 from dnacentersdk.api.v2_3_7_9.cisco_trusted_certificates import \
     CiscoTrustedCertificates as CiscoTrustedCertificates_v2_3_7_9
 from dnacentersdk.api.v2_3_7_9.clients import \
@@ -778,6 +780,7 @@ class TestDNACenterSDK:
             assert isinstance(api.application_policy, ApplicationPolicy_v2_3_7_9)
             assert isinstance(api.applications, Applications_v2_3_7_9)
             assert isinstance(api.authentication_management, AuthenticationManagement_v2_3_7_9)
+            assert isinstance(api.cisco_i_m_c, CiscoIMC_v2_3_7_9)
             assert isinstance(api.cisco_trusted_certificates, CiscoTrustedCertificates_v2_3_7_9)
             assert isinstance(api.clients, Clients_v2_3_7_9)
             assert isinstance(api.command_runner, CommandRunner_v2_3_7_9)

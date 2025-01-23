@@ -663,14 +663,43 @@ class SoftwareImageManagementSwim(object):
         return self._object_factory('bpm_ab6266cac654d394cf943a161fcc7b_v2_3_7_6', json_data)
 
     def import_local_software_image_v1(self,
-                                       is_third_party=None,
-                                       third_party_application_type=None,
-                                       third_party_image_family=None,
-                                       third_party_vendor=None,
-                                       headers=None,
-                                       **request_parameters):
-        """Fetches a software image from local file system and uploads to DNACenter. Supported software image files
+                                    multipart_fields,
+                                    multipart_monitor_callback,
+                                    is_third_party=None,
+                                    third_party_application_type=None,
+                                    third_party_image_family=None,
+                                    third_party_vendor=None,
+                                    headers=None,
+                                    **request_parameters):
+        """Fetches a software image from local file system and uploads to DNA Center. Supported software image files
         extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2 .
+
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
 
         Args:
             is_third_party(bool): isThirdParty query parameter. Third party Image check .
@@ -678,6 +707,10 @@ class SoftwareImageManagementSwim(object):
             third_party_image_family(str): thirdPartyImageFamily query parameter. Third Party image family .
             third_party_application_type(str): thirdPartyApplicationType query parameter. Third Party
                 Application Type .
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -731,8 +764,15 @@ class SoftwareImageManagementSwim(object):
 
         e_url = ('/dna/intent/api/v1/image/importation/source/file')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
@@ -2604,8 +2644,8 @@ class SoftwareImageManagementSwim(object):
 
         return self._object_factory('bpm_ade3fee0a5a8eb0a7ced03126d560_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def get_device_family_identifiers(self,
                                          headers=None,
@@ -2624,8 +2664,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def trigger_software_image_distribution(self,
                                                headers=None,
@@ -2645,15 +2685,15 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of trigger_software_image_distribution_v1 .
-        """ 
+        """
         return self.trigger_software_image_distribution_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_network_device_image_updates(self,
                                             end_time=None,
@@ -2701,7 +2741,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of get_network_device_image_updates_v1 .
-        """ 
+        """
         return self.get_network_device_image_updates_v1(
                     end_time=end_time,
                     host_name=host_name,
@@ -2719,8 +2759,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_remote_image_distribution_server(self,
                                                    id,
@@ -2748,7 +2788,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of update_remote_image_distribution_server_v1 .
-        """ 
+        """
         return self.update_remote_image_distribution_server_v1(
                     id=id,
                     password=password,
@@ -2759,8 +2799,8 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_list_of_network_device_product_names(self,
                                                               limit=None,
@@ -2785,7 +2825,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of retrieves_the_list_of_network_device_product_names_v1 .
-        """ 
+        """
         return self.retrieves_the_list_of_network_device_product_names_v1(
                     limit=limit,
                     offset=offset,
@@ -2794,8 +2834,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def download_the_software_image(self,
                                        id,
@@ -2812,14 +2852,14 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of download_the_software_image_v1 .
-        """ 
+        """
         return self.download_the_software_image_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def trigger_software_image_activation(self,
                                              schedule_validate=None,
@@ -2842,7 +2882,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of trigger_software_image_activation_v1 .
-        """ 
+        """
         return self.trigger_software_image_activation_v1(
                     schedule_validate=schedule_validate,
                     headers=headers,
@@ -2850,8 +2890,8 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def assign_network_device_product_name_to_the_given_software_image(self,
                                                                           image_id,
@@ -2880,7 +2920,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of assign_network_device_product_name_to_the_given_software_image_v1 .
-        """ 
+        """
         return self.assign_network_device_product_name_to_the_given_software_image_v1(
                     image_id=image_id,
                     productNameOrdinal=productNameOrdinal,
@@ -2890,8 +2930,8 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieve_network_device_product_name(self,
                                                 product_name_ordinal,
@@ -2908,14 +2948,14 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of retrieve_network_device_product_name_v1 .
-        """ 
+        """
         return self.retrieve_network_device_product_name_v1(
                     product_name_ordinal=product_name_ordinal,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_software_image_details(self,
                                       application_type=None,
@@ -2966,7 +3006,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of get_software_image_details_v1 .
-        """ 
+        """
         return self.get_software_image_details_v1(
                     application_type=application_type,
                     created_time=created_time,
@@ -2989,8 +3029,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def returns_list_of_software_images(self,
                                            golden=None,
@@ -3048,7 +3088,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of returns_list_of_software_images_v1 .
-        """ 
+        """
         return self.returns_list_of_software_images_v1(
                     golden=golden,
                     has_addon_images=has_addon_images,
@@ -3065,8 +3105,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def returns_count_of_add_on_images(self,
                                           id,
@@ -3083,14 +3123,14 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of returns_count_of_add_on_images_v1 .
-        """ 
+        """
         return self.returns_count_of_add_on_images_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def count_of_network_product_names(self,
                                           product_id=None,
@@ -3109,15 +3149,15 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of count_of_network_product_names_v1 .
-        """ 
+        """
         return self.count_of_network_product_names_v1(
                     product_id=product_id,
                     product_name=product_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieve_specific_image_distribution_server(self,
                                                        id,
@@ -3133,14 +3173,14 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of retrieve_specific_image_distribution_server_v1 .
-        """ 
+        """
         return self.retrieve_specific_image_distribution_server_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def import_software_image_via_url(self,
                                          schedule_at=None,
@@ -3167,7 +3207,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of import_software_image_via_url_v1 .
-        """ 
+        """
         return self.import_software_image_via_url_v1(
                     schedule_at=schedule_at,
                     schedule_desc=schedule_desc,
@@ -3177,8 +3217,8 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def returns_network_device_product_names_for_a_site(self,
                                                            limit=None,
@@ -3205,7 +3245,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of returns_network_device_product_names_for_a_site_v1 .
-        """ 
+        """
         return self.returns_network_device_product_names_for_a_site_v1(
                     limit=limit,
                     offset=offset,
@@ -3214,8 +3254,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def returns_count_of_software_images(self,
                                             golden=None,
@@ -3268,7 +3308,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of returns_count_of_software_images_v1 .
-        """ 
+        """
         return self.returns_count_of_software_images_v1(
                     golden=golden,
                     has_addon_images=has_addon_images,
@@ -3283,8 +3323,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def count_of_network_device_image_updates(self,
                                                  end_time=None,
@@ -3322,7 +3362,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of count_of_network_device_image_updates_v1 .
-        """ 
+        """
         return self.count_of_network_device_image_updates_v1(
                     end_time=end_time,
                     host_name=host_name,
@@ -3336,8 +3376,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def unassign_network_device_product_name_from_the_given_software_image(self,
                                                                               image_id,
@@ -3359,15 +3399,15 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of unassign_network_device_product_name_from_the_given_software_image_v1 .
-        """ 
+        """
         return self.unassign_network_device_product_name_from_the_given_software_image_v1(
                     image_id=image_id,
                     product_name_ordinal=product_name_ordinal,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def remove_image_distribution_server(self,
                                             id,
@@ -3383,14 +3423,14 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of remove_image_distribution_server_v1 .
-        """ 
+        """
         return self.remove_image_distribution_server_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieve_applicable_add_on_images_for_the_given_software_image(self,
                                                                           id,
@@ -3407,14 +3447,14 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of retrieve_applicable_add_on_images_for_the_given_software_image_v1 .
-        """ 
+        """
         return self.retrieve_applicable_add_on_images_for_the_given_software_image_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def remove_golden_tag_for_image(self,
                                        device_family_identifier,
@@ -3438,7 +3478,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of remove_golden_tag_for_image_v1 .
-        """ 
+        """
         return self.remove_golden_tag_for_image_v1(
                     device_family_identifier=device_family_identifier,
                     device_role=device_role,
@@ -3447,8 +3487,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def returns_the_count_of_network_device_product_names_for_a_site(self,
                                                                         product_name=None,
@@ -3469,15 +3509,15 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of returns_the_count_of_network_device_product_names_for_a_site_v1 .
-        """ 
+        """
         return self.returns_the_count_of_network_device_product_names_for_a_site_v1(
                     product_name=product_name,
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_the_count_of_assigned_network_device_products(self,
                                                                    image_id,
@@ -3509,7 +3549,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of retrieves_the_count_of_assigned_network_device_products_v1 .
-        """ 
+        """
         return self.retrieves_the_count_of_assigned_network_device_products_v1(
                     image_id=image_id,
                     assigned=assigned,
@@ -3519,8 +3559,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_golden_tag_status_of_an_image(self,
                                              device_family_identifier,
@@ -3544,7 +3584,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of get_golden_tag_status_of_an_image_v1 .
-        """ 
+        """
         return self.get_golden_tag_status_of_an_image_v1(
                     device_family_identifier=device_family_identifier,
                     device_role=device_role,
@@ -3553,8 +3593,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_image_distribution_server(self,
                                          password=None,
@@ -3584,7 +3624,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of add_image_distribution_server_v1 .
-        """ 
+        """
         return self.add_image_distribution_server_v1(
                     password=password,
                     portNumber=portNumber,
@@ -3596,8 +3636,8 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_the_list_of_sites_for_the_network_device_product_name_assigned_to_the_software_image(self,
                                                                                                        image_id,
@@ -3628,7 +3668,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of update_the_list_of_sites_for_the_network_device_product_name_assigned_to_the_software_image_v1 .
-        """ 
+        """
         return self.update_the_list_of_sites_for_the_network_device_product_name_assigned_to_the_software_image_v1(
                     image_id=image_id,
                     product_name_ordinal=product_name_ordinal,
@@ -3638,10 +3678,12 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def import_local_software_image(self,
+                                       multipart_fields,
+                                       multipart_monitor_callback,
                                        is_third_party=None,
                                        third_party_application_type=None,
                                        third_party_image_family=None,
@@ -3655,6 +3697,10 @@ class SoftwareImageManagementSwim(object):
             third_party_image_family(basestring): thirdPartyImageFamily query parameter. Third Party image family .
             third_party_application_type(basestring): thirdPartyApplicationType query parameter. Third Party
                 Application Type .
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -3662,8 +3708,10 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of import_local_software_image_v1 .
-        """ 
+        """
         return self.import_local_software_image_v1(
+                    multipart_fields = multipart_fields,
+                    multipart_monitor_callback = multipart_monitor_callback,
                     is_third_party=is_third_party,
                     third_party_application_type=third_party_application_type,
                     third_party_image_family=third_party_image_family,
@@ -3671,8 +3719,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def tag_as_golden_image(self,
                                deviceFamilyIdentifier=None,
@@ -3703,7 +3751,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of tag_as_golden_image_v1 .
-        """ 
+        """
         return self.tag_as_golden_image_v1(
                     deviceFamilyIdentifier=deviceFamilyIdentifier,
                     deviceRole=deviceRole,
@@ -3714,8 +3762,8 @@ class SoftwareImageManagementSwim(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieve_image_distribution_servers(self,
                                                headers=None,
@@ -3734,8 +3782,8 @@ class SoftwareImageManagementSwim(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieves_network_device_product_names_assigned_to_a_software_image(self,
                                                                                image_id,
@@ -3773,7 +3821,7 @@ class SoftwareImageManagementSwim(object):
 
         Returns:
             This function returns the output of retrieves_network_device_product_names_assigned_to_a_software_image_v1 .
-        """ 
+        """
         return self.retrieves_network_device_product_names_assigned_to_a_software_image_v1(
                     image_id=image_id,
                     assigned=assigned,

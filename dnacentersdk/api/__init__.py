@@ -424,6 +424,8 @@ from .v2_3_7_9.applications import \
     Applications as Applications_v2_3_7_9
 from .v2_3_7_9.authentication_management import \
     AuthenticationManagement as AuthenticationManagement_v2_3_7_9
+from .v2_3_7_9.cisco_i_m_c import \
+    CiscoIMC as CiscoIMC_v2_3_7_9
 from .v2_3_7_9.cisco_trusted_certificates import \
     CiscoTrustedCertificates as CiscoTrustedCertificates_v2_3_7_9
 from .v2_3_7_9.clients import \
@@ -1473,6 +1475,10 @@ class DNACenterAPI(object):
                 )
             self.authentication_management = \
                 AuthenticationManagement_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
+            self.cisco_i_m_c = \
+                CiscoIMC_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
             self.cisco_trusted_certificates = \

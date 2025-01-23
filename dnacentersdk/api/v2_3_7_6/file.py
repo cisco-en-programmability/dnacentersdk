@@ -246,13 +246,46 @@ class File(object):
         return self._object_factory('bpm_fa4ab7605a75aafa6c7da6ac3f13_v2_3_7_6', json_data)
 
     def upload_file_v1(self,
-                       name_space,
-                       headers=None,
-                       **request_parameters):
+                    multipart_fields,
+                    multipart_monitor_callback,
+                    name_space,
+                    headers=None,
+                    **request_parameters):
         """Uploads a new file within a specific nameSpace .
+
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
 
         Args:
             name_space(str): nameSpace path parameter.
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -294,24 +327,37 @@ class File(object):
 
         e_url = ('/dna/intent/api/v1/file/{nameSpace}')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_e7fb3df05906b8cd6077d4d9cc5c_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def upload_file(self,
+                       multipart_fields,
+                       multipart_monitor_callback,
                        name_space,
                        headers=None,
                        **request_parameters):
         """ This function is an alias of upload_file_v1 .
         Args:
-            name_space(basestring): nameSpace path parameter.
+            name_space(str): nameSpace path parameter.
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -319,14 +365,16 @@ class File(object):
 
         Returns:
             This function returns the output of upload_file_v1 .
-        """ 
+        """
         return self.upload_file_v1(
+                    multipart_fields = multipart_fields,
+                    multipart_monitor_callback = multipart_monitor_callback,
                     name_space=name_space,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_list_of_files(self,
                              name_space,
@@ -342,14 +390,14 @@ class File(object):
 
         Returns:
             This function returns the output of get_list_of_files_v1 .
-        """ 
+        """
         return self.get_list_of_files_v1(
                     name_space=name_space,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_list_of_available_namespaces(self,
                                             headers=None,
@@ -368,21 +416,24 @@ class File(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def download_a_file_by_file_id(self,
                                   file_id,
+                                  dirpath=None,
+                                  save_file=None,
+                                  filename=None,
                                   headers=None,
                                   **request_parameters):
         """ This function is an alias of download_a_file_by_file_id_v1 .
         Args:
-            file_id(basestring): fileId path parameter. File Identification number .
-            dirpath(basestring): Directory absolute path. Defaults to
+            file_id(str): fileId path parameter. File Identification number .
+            dirpath(str): Directory absolute path. Defaults to
                 os.getcwd().
             save_file(bool): Enable or disable automatic file creation of
                 raw response.
-            filename(basestring): The filename used to save the download
+            filename(str): The filename used to save the download
                 file.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
@@ -391,9 +442,46 @@ class File(object):
 
         Returns:
             This function returns the output of download_a_file_by_file_id_v1 .
-        """ 
+        """
         return self.download_a_file_by_file_id_v1(
                     file_id=file_id,
+                    dirpath = dirpath,
+                    save_file = save_file,
+                    filename = filename,
+                    headers=headers,
+                    **request_parameters
+        )
+
+    # Alias Function
+    def download_a_file_by_fileid(self,
+                                  file_id,
+                                  dirpath=None,
+                                  save_file=None,
+                                  filename=None,
+                                  headers=None,
+                                  **request_parameters):
+        """ This function is an alias of download_a_file_by_file_id_v1 .
+        Args:
+            file_id(str): fileId path parameter. File Identification number .
+            dirpath(str): Directory absolute path. Defaults to
+                os.getcwd().
+            save_file(bool): Enable or disable automatic file creation of
+                raw response.
+            filename(str): The filename used to save the download
+                file.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of download_a_file_by_file_id_v1 .
+        """
+        return self.download_a_file_by_file_id_v1(
+                    file_id=file_id,
+                    dirpath = dirpath,
+                    save_file = save_file,
+                    filename = filename,
                     headers=headers,
                     **request_parameters
         )

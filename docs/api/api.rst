@@ -1839,7 +1839,12 @@ authentication_management
 
 .. autoclass:: dnacentersdk.api.v2_3_7_9.authentication_management.AuthenticationManagement()
 
+.. _cisco_i_m_c_2_3_7_9:
 
+cisco_i_m_c
+-----------
+
+.. autoclass:: dnacentersdk.api.v2_3_7_9.cisco_i_m_c.CiscoIMC()
 
 .. _cisco_trusted_certificates_2_3_7_9:
 

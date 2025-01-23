@@ -6271,8 +6271,8 @@ class Wireless(object):
 
         return self._object_factory('bpm_deb34387d0235811a90985711be9fe2e_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def assign_managed_ap_locations_for_w_l_c(self,
                                                  device_id,
@@ -6303,7 +6303,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of assign_managed_ap_locations_for_w_l_c_v1 .
-        """ 
+        """
         return self.assign_managed_ap_locations_for_w_l_c_v1(
                     device_id=device_id,
                     primaryManagedAPLocationsSiteIds=primaryManagedAPLocationsSiteIds,
@@ -6313,8 +6313,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_rf_profile(self,
                              defaultRfProfile=None,
@@ -6354,7 +6354,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_rf_profile_v1 .
-        """ 
+        """
         return self.create_rf_profile_v1(
                     defaultRfProfile=defaultRfProfile,
                     enableRadioType6GHz=enableRadioType6GHz,
@@ -6369,8 +6369,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_interfaces_count(self,
                                 headers=None,
@@ -6389,8 +6389,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_dynamic_interface(self,
                                     interface_name,
@@ -6406,14 +6406,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_dynamic_interface_v1 .
-        """ 
+        """
         return self.delete_dynamic_interface_v1(
                     interface_name=interface_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_rf_profile(self,
                              id,
@@ -6429,14 +6429,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_rf_profile_v1 .
-        """ 
+        """
         return self.delete_rf_profile_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_wireless_profile(self,
                                    profileDetails=None,
@@ -6458,7 +6458,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update_wireless_profile_v1 .
-        """ 
+        """
         return self.update_wireless_profile_v1(
                     profileDetails=profileDetails,
                     headers=headers,
@@ -6466,8 +6466,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_wireless_profile_connectivity(self,
                                                 id,
@@ -6493,7 +6493,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update_wireless_profile_connectivity_v1 .
-        """ 
+        """
         return self.update_wireless_profile_connectivity_v1(
                     id=id,
                     ssidDetails=ssidDetails,
@@ -6503,8 +6503,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_anchor_managed_ap_locations_for_specific_wireless_controller(self,
                                                                             network_device_id,
@@ -6526,7 +6526,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_anchor_managed_ap_locations_for_specific_wireless_controller_v1 .
-        """ 
+        """
         return self.get_anchor_managed_ap_locations_for_specific_wireless_controller_v1(
                     network_device_id=network_device_id,
                     limit=limit,
@@ -6534,8 +6534,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_update_dynamic_interface(self,
                                            interfaceName=None,
@@ -6559,7 +6559,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_update_dynamic_interface_v1 .
-        """ 
+        """
         return self.create_update_dynamic_interface_v1(
                     interfaceName=interfaceName,
                     vlanId=vlanId,
@@ -6568,8 +6568,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_interfaces(self,
                           limit=None,
@@ -6587,15 +6587,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_interfaces_v1 .
-        """ 
+        """
         return self.get_interfaces_v1(
                     limit=limit,
                     offset=offset,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_enterprise_ssid(self,
                                ssid_name=None,
@@ -6612,14 +6612,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_enterprise_ssid_v1 .
-        """ 
+        """
         return self.get_enterprise_ssid_v1(
                     ssid_name=ssid_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_ssid_by_id(self,
                           id,
@@ -6637,15 +6637,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_ssid_by_id_v1 .
-        """ 
+        """
         return self.get_ssid_by_id_v1(
                     id=id,
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def retrieve_rf_profiles(self,
                                 rf_profile_name=None,
@@ -6661,14 +6661,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of retrieve_rf_profiles_v1 .
-        """ 
+        """
         return self.retrieve_rf_profiles_v1(
                     rf_profile_name=rf_profile_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def configure_access_points(self,
                                    adminStatus=None,
@@ -6749,7 +6749,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of configure_access_points_v1 .
-        """ 
+        """
         return self.configure_access_points_v1(
                     adminStatus=adminStatus,
                     apList=apList,
@@ -6778,8 +6778,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_rf_profile_by_id(self,
                                 id,
@@ -6795,14 +6795,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_rf_profile_by_id_v1 .
-        """ 
+        """
         return self.get_rf_profile_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_wireless_profile(self,
                                    profileDetails=None,
@@ -6824,7 +6824,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_wireless_profile_v1 .
-        """ 
+        """
         return self.create_wireless_profile_v1(
                     profileDetails=profileDetails,
                     headers=headers,
@@ -6832,8 +6832,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def mobility_provision(self,
                               dataLinkEncryption=None,
@@ -6872,7 +6872,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of mobility_provision_v1 .
-        """ 
+        """
         return self.mobility_provision_v1(
                     dataLinkEncryption=dataLinkEncryption,
                     dtlsHighCipher=dtlsHighCipher,
@@ -6886,8 +6886,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_a80211be_profile(self,
                                    id,
@@ -6903,14 +6903,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_a80211be_profile_v1 .
-        """ 
+        """
         return self.delete_a80211be_profile_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_mobility_groups_count(self,
                                      headers=None,
@@ -6929,8 +6929,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_rf_profiles(self,
                            limit=None,
@@ -6948,15 +6948,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_rf_profiles_v1 .
-        """ 
+        """
         return self.get_rf_profiles_v1(
                     limit=limit,
                     offset=offset,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_all_mobility_groups(self,
                                    network_device_id=None,
@@ -6975,14 +6975,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_all_mobility_groups_v1 .
-        """ 
+        """
         return self.get_all_mobility_groups_v1(
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_wireless_profile(self,
                                    wireless_profile_name,
@@ -6998,14 +6998,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_wireless_profile_v1 .
-        """ 
+        """
         return self.delete_wireless_profile_v1(
                     wireless_profile_name=wireless_profile_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_rf_profiles_count(self,
                                  headers=None,
@@ -7024,8 +7024,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def mobility_reset(self,
                           networkDeviceId=None,
@@ -7049,7 +7049,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of mobility_reset_v1 .
-        """ 
+        """
         return self.mobility_reset_v1(
                     networkDeviceId=networkDeviceId,
                     headers=headers,
@@ -7057,8 +7057,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update80211be_profile(self,
                                  id,
@@ -7092,7 +7092,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update80211be_profile_v1 .
-        """ 
+        """
         return self.update80211be_profile_v1(
                     id=id,
                     muMimoDownLink=muMimoDownLink,
@@ -7106,8 +7106,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_dynamic_interface(self,
                                  interface_name=None,
@@ -7124,14 +7124,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_dynamic_interface_v1 .
-        """ 
+        """
         return self.get_dynamic_interface_v1(
                     interface_name=interface_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_interface_by_id(self,
                                id,
@@ -7147,14 +7147,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_interface_by_id_v1 .
-        """ 
+        """
         return self.get_interface_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_wireless_profile(self,
                                 profile_name=None,
@@ -7170,14 +7170,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_wireless_profile_v1 .
-        """ 
+        """
         return self.get_wireless_profile_v1(
                     profile_name=profile_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_ssid(self,
                        site_id,
@@ -7396,7 +7396,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_ssid_v1 .
-        """ 
+        """
         return self.create_ssid_v1(
                     site_id=site_id,
                     aaaOverride=aaaOverride,
@@ -7470,8 +7470,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_enterprise_ssid(self,
                                   aaaOverride=None,
@@ -7567,7 +7567,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_enterprise_ssid_v1 .
-        """ 
+        """
         return self.create_enterprise_ssid_v1(
                     aaaOverride=aaaOverride,
                     authKeyMgmt=authKeyMgmt,
@@ -7606,8 +7606,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_rf_profile(self,
                              id,
@@ -7649,7 +7649,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update_rf_profile_v1 .
-        """ 
+        """
         return self.update_rf_profile_v1(
                     id=id,
                     defaultRfProfile=defaultRfProfile,
@@ -7665,8 +7665,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_access_point_configuration_task_result(self,
                                                       task_id,
@@ -7682,14 +7682,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_access_point_configuration_task_result_v1 .
-        """ 
+        """
         return self.get_access_point_configuration_task_result_v1(
                     task_id=task_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_wireless_profile_by_id(self,
                                       id,
@@ -7705,14 +7705,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_wireless_profile_by_id_v1 .
-        """ 
+        """
         return self.get_wireless_profile_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get80211be_profile_by_id(self,
                                     id,
@@ -7728,14 +7728,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get80211be_profile_by_id_v1 .
-        """ 
+        """
         return self.get80211be_profile_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_managed_ap_locations_count_for_specific_wireless_controller(self,
                                                                            network_device_id,
@@ -7752,14 +7752,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_managed_ap_locations_count_for_specific_wireless_controller_v1 .
-        """ 
+        """
         return self.get_managed_ap_locations_count_for_specific_wireless_controller_v1(
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_enterprise_ssid(self,
                                   aaaOverride=None,
@@ -7855,7 +7855,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update_enterprise_ssid_v1 .
-        """ 
+        """
         return self.update_enterprise_ssid_v1(
                     aaaOverride=aaaOverride,
                     authKeyMgmt=authKeyMgmt,
@@ -7894,8 +7894,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def ap_provision(self,
                         apZoneName=None,
@@ -7924,7 +7924,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of ap_provision_v1 .
-        """ 
+        """
         return self.ap_provision_v1(
                     apZoneName=apZoneName,
                     networkDevices=networkDevices,
@@ -7935,8 +7935,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def psk_override(self,
                      headers=None,
@@ -7956,15 +7956,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of psk_override_v1 .
-        """ 
+        """
         return self.psk_override_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def provision_update(self,
                          headers=None,
@@ -7984,15 +7984,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of provision_update_v1 .
-        """ 
+        """
         return self.provision_update_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_ssid_by_site(self,
                             site_id,
@@ -8012,7 +8012,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_ssid_by_site_v1 .
-        """ 
+        """
         return self.get_ssid_by_site_v1(
                     site_id=site_id,
                     limit=limit,
@@ -8020,8 +8020,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def sensor_test_results(self,
                                end_time=None,
@@ -8044,7 +8044,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of sensor_test_results_v1 .
-        """ 
+        """
         return self.sensor_test_results_v1(
                     end_time=end_time,
                     site_id=site_id,
@@ -8053,8 +8053,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_all80211be_profiles(self,
                                    limit=None,
@@ -8072,15 +8072,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_all80211be_profiles_v1 .
-        """ 
+        """
         return self.get_all80211be_profiles_v1(
                     limit=limit,
                     offset=offset,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_interface(self,
                             id,
@@ -8096,14 +8096,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_interface_v1 .
-        """ 
+        """
         return self.delete_interface_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_ssid_count_for_specific_wireless_controller(self,
                                                            network_device_id,
@@ -8128,7 +8128,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_ssid_count_for_specific_wireless_controller_v1 .
-        """ 
+        """
         return self.get_ssid_count_for_specific_wireless_controller_v1(
                     network_device_id=network_device_id,
                     admin_status=admin_status,
@@ -8136,8 +8136,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def provision(self,
                      headers=None,
@@ -8157,15 +8157,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of provision_v1 .
-        """ 
+        """
         return self.provision_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def reboot_access_points(self,
                                 apMacAddresses=None,
@@ -8187,7 +8187,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of reboot_access_points_v1 .
-        """ 
+        """
         return self.reboot_access_points_v1(
                     apMacAddresses=apMacAddresses,
                     headers=headers,
@@ -8195,8 +8195,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def ap_provision_connectivity(self,
                                      headers=None,
@@ -8216,15 +8216,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of ap_provision_connectivity_v1 .
-        """ 
+        """
         return self.ap_provision_connectivity_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_and_provision_ssid(self,
                                      enableFabric=None,
@@ -8255,7 +8255,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_and_provision_ssid_v1 .
-        """ 
+        """
         return self.create_and_provision_ssid_v1(
                     enableFabric=enableFabric,
                     flexConnect=flexConnect,
@@ -8267,8 +8267,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_or_update_rf_profile(self,
                                        channelWidth=None,
@@ -8310,7 +8310,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_or_update_rf_profile_v1 .
-        """ 
+        """
         return self.create_or_update_rf_profile_v1(
                     channelWidth=channelWidth,
                     defaultRfProfile=defaultRfProfile,
@@ -8328,8 +8328,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_interface(self,
                             interfaceName=None,
@@ -8353,7 +8353,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_interface_v1 .
-        """ 
+        """
         return self.create_interface_v1(
                     interfaceName=interfaceName,
                     vlanId=vlanId,
@@ -8362,8 +8362,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_ssid_details_for_specific_wireless_controller(self,
                                                              network_device_id,
@@ -8396,7 +8396,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_ssid_details_for_specific_wireless_controller_v1 .
-        """ 
+        """
         return self.get_ssid_details_for_specific_wireless_controller_v1(
                     network_device_id=network_device_id,
                     admin_status=admin_status,
@@ -8407,8 +8407,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_ssid_and_provision_it_to_devices(self,
                                                    managed_aplocations,
@@ -8428,15 +8428,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_ssid_and_provision_it_to_devices_v1 .
-        """ 
+        """
         return self.delete_ssid_and_provision_it_to_devices_v1(
                     managed_aplocations=managed_aplocations,
                     ssid_name=ssid_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_interface(self,
                             id,
@@ -8462,7 +8462,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update_interface_v1 .
-        """ 
+        """
         return self.update_interface_v1(
                     id=id,
                     interfaceName=interfaceName,
@@ -8472,8 +8472,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_wireless_profiles(self,
                                  limit=None,
@@ -8491,15 +8491,15 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_wireless_profiles_v1 .
-        """ 
+        """
         return self.get_wireless_profiles_v1(
                     limit=limit,
                     offset=offset,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_ssid(self,
                        id,
@@ -8720,7 +8720,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of update_ssid_v1 .
-        """ 
+        """
         return self.update_ssid_v1(
                     id=id,
                     site_id=site_id,
@@ -8795,8 +8795,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_a80211be_profile(self,
                                    muMimoDownLink=None,
@@ -8828,7 +8828,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_a80211be_profile_v1 .
-        """ 
+        """
         return self.create_a80211be_profile_v1(
                     muMimoDownLink=muMimoDownLink,
                     muMimoUpLink=muMimoUpLink,
@@ -8841,8 +8841,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_wireless_profiles_count(self,
                                        headers=None,
@@ -8861,8 +8861,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_access_point_configuration(self,
                                           key,
@@ -8878,14 +8878,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_access_point_configuration_v1 .
-        """ 
+        """
         return self.get_access_point_configuration_v1(
                     key=key,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_rf_profiles(self,
                               rf_profile_name,
@@ -8902,14 +8902,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_rf_profiles_v1 .
-        """ 
+        """
         return self.delete_rf_profiles_v1(
                     rf_profile_name=rf_profile_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_ssid(self,
                        id,
@@ -8927,15 +8927,48 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_ssid_v1 .
-        """ 
+        """
         return self.delete_ssid_v1(
                     id=id,
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+    # Alias Function
+    def factory_reset_access_points(self,
+                                       apMacAddresses=None,
+                                       keepStaticIPConfig=None,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
+        """ This function is an alias of factory_reset_access_points_v1 .
+        Args:
+            apMacAddresses(list): Wireless's List of Access Point's Ethernet MAC addresses, set maximum 100 ethernet
+                MAC addresses per request.  (list of strings).
+            keepStaticIPConfig(boolean): Wireless's Set the value of keepStaticIPConfig to false, to clear all
+                configurations from Access Points and set the value of keepStaticIPConfig to true, to
+                clear all configurations from Access Points without clearing static IP configuration. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of factory_reset_access_points_v1 .
+        """
+        return self.factory_reset_access_points_v1(
+                                       apMacAddresses,
+                                       keepStaticIPConfig,
+                                       headers,
+                                       payload,
+                                       active_validation,
+                                       **request_parameters)
     # Alias Function
     def delete_enterprise_ssid(self,
                                   ssid_name,
@@ -8951,14 +8984,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_enterprise_ssid_v1 .
-        """ 
+        """
         return self.delete_enterprise_ssid_v1(
                     ssid_name=ssid_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_wireless_profile_connectivity(self,
                                                 id,
@@ -8974,14 +9007,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of delete_wireless_profile_connectivity_v1 .
-        """ 
+        """
         return self.delete_wireless_profile_connectivity_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get80211be_profiles_count(self,
                                      headers=None,
@@ -9000,8 +9033,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_ssid_count_by_site(self,
                                   site_id,
@@ -9017,14 +9050,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_ssid_count_by_site_v1 .
-        """ 
+        """
         return self.get_ssid_count_by_site_v1(
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_primary_managed_ap_locations_for_specific_wireless_controller(self,
                                                                              network_device_id,
@@ -9046,7 +9079,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_primary_managed_ap_locations_for_specific_wireless_controller_v1 .
-        """ 
+        """
         return self.get_primary_managed_ap_locations_for_specific_wireless_controller_v1(
                     network_device_id=network_device_id,
                     limit=limit,
@@ -9054,8 +9087,8 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def create_wireless_profile_connectivity(self,
                                                 ssidDetails=None,
@@ -9079,7 +9112,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of create_wireless_profile_connectivity_v1 .
-        """ 
+        """
         return self.create_wireless_profile_connectivity_v1(
                     ssidDetails=ssidDetails,
                     wirelessProfileName=wirelessProfileName,
@@ -9088,8 +9121,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def wireless_controller_provision(self,
                                          device_id,
@@ -9118,7 +9151,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of wireless_controller_provision_v1 .
-        """ 
+        """
         return self.wireless_controller_provision_v1(
                     device_id=device_id,
                     interfaces=interfaces,
@@ -9129,8 +9162,8 @@ class Wireless(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_access_point_reboot_task_result(self,
                                                parent_task_id=None,
@@ -9146,14 +9179,14 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_access_point_reboot_task_result_v1 .
-        """ 
+        """
         return self.get_access_point_reboot_task_result_v1(
                     parent_task_id=parent_task_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_secondary_managed_ap_locations_for_specific_wireless_controller(self,
                                                                                network_device_id,
@@ -9175,7 +9208,7 @@ class Wireless(object):
 
         Returns:
             This function returns the output of get_secondary_managed_ap_locations_for_specific_wireless_controller_v1 .
-        """ 
+        """
         return self.get_secondary_managed_ap_locations_for_specific_wireless_controller_v1(
                     network_device_id=network_device_id,
                     limit=limit,
@@ -9183,5 +9216,26 @@ class Wireless(object):
                     headers=headers,
                     **request_parameters
         )
+    #Alias Function
+    def get_access_points_factory_reset_status(self,
+                                                  task_id,
+                                                  headers=None,
+                                                  **request_parameters):
+        """ This function is an alias of get_access_points_factory_reset_status_v1 .
+        Args:
+            task_id(str): taskId query parameter. provide the task id which is returned in the response of ap
+                factory reset post api .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_access_points_factory_reset_status_v1 .
+        """
+        return self.get_access_points_factory_reset_status_v1(
+                                                  task_id,
+                                                  headers,
+                                                  **request_parameters)
 
 

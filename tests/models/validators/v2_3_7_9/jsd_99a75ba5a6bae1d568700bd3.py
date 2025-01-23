@@ -72,7 +72,12 @@ class JSONSchemaValidator99A75Ba5A6BaE1D568700Bd3(object):
                 "lastUpdate": {
                 "type": "integer"
                 },
-                "operationIdList": {},
+                "operationIdList": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
                 "parentId": {
                 "type": "string"
                 },
