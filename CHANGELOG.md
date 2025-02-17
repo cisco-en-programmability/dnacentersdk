@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.4] - 2025-02-17
+
+### Fix
+- fix in create_webhook_destination, update_webhook_destination, get_webhook_destination functions. In versions 2.3.7.6 and 2.3.7.9.
+
+
 ## [2.8.3] - 2025-01-23
 
 ### Fix
