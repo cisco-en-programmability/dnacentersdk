@@ -42,6 +42,9 @@ class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
                 "forcePushTemplate": {
                 "type": "boolean"
                 },
+                "copyingConfig": {
+                "type": "boolean"
+                },
                 "isComposite": {
                 "type": "boolean"
                 },
@@ -49,7 +52,10 @@ class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
                 "type": "string"
                 },
                 "memberTemplateDeploymentInfo": {
-                "type": "string"
+                "items": {
+                "type": "object"
+                },
+                "type": "array"
                 },
                 "targetInfo": {
                 "items": {
@@ -64,7 +70,10 @@ class JSONSchemaValidatorEfA92557C9A6C8Af0A71829C7E(object):
                 "type": "object"
                 },
                 "resourceParams": {
+                "items": {
                 "type": "object"
+                },
+                "type": "array"
                 },
                 "type": {
                 "enum": [

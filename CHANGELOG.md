@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.5] - 2025-02-21
+
+### Fix
+- correction in the request validation structures. In the deploy_template functions in version 1 and 2. In 2.3.5.3, 2.3.7.6 and 2.3.7.9.
+
 ## [2.8.4] - 2025-02-17
 
 ### Fix

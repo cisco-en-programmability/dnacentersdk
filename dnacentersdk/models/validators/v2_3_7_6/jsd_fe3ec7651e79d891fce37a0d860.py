@@ -39,101 +39,117 @@ class JSONSchemaValidatorFe3Ec7651E79D891Fce37A0D860(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "properties": {
-                "cliTransport": {
-                "type": "string"
-                },
-                "computeDevice": {
-                "type": "boolean"
-                },
-                "enablePassword": {
-                "type": "string"
-                },
-                "extendedDiscoveryInfo": {
-                "type": "string"
-                },
-                "httpPassword": {
-                "type": "string"
-                },
-                "httpPort": {
-                "type": "string"
-                },
-                "httpSecure": {
-                "type": "boolean"
-                },
-                "httpUserName": {
-                "type": "string"
-                },
-                "ipAddress": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "merakiOrgId": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
-                },
-                "netconfPort": {
-                "type": "string"
-                },
-                "password": {
-                "type": "string"
-                },
-                "serialNumber": {
-                "type": "string"
-                },
-                "snmpAuthPassphrase": {
-                "type": "string"
-                },
-                "snmpAuthProtocol": {
-                "type": "string"
-                },
-                "snmpMode": {
-                "type": "string"
-                },
-                "snmpPrivPassphrase": {
-                "type": "string"
-                },
-                "snmpPrivProtocol": {
-                "type": "string"
-                },
-                "snmpROCommunity": {
-                "type": "string"
-                },
-                "snmpRWCommunity": {
-                "type": "string"
-                },
-                "snmpRetry": {
-                "type": "integer"
-                },
-                "snmpTimeout": {
-                "type": "integer"
-                },
-                "snmpUserName": {
-                "type": "string"
-                },
-                "snmpVersion": {
-                "type": "string"
-                },
-                "type": {
-                "enum": [
-                "COMPUTE_DEVICE",
-                "MERAKI_DASHBOARD",
-                "THIRD_PARTY_DEVICE",
-                "NETWORK_DEVICE"
-                ],
-                "type": "string"
-                },
-                "userName": {
-                "type": "string"
+                    "cliTransport": {
+                        "type": "string"
+                    },
+                    "computeDevice": {
+                        "type": "boolean"
+                    },
+                    "enablePassword": {
+                        "type": "string"
+                    },
+                    "extendedDiscoveryInfo": {
+                        "type": "string"
+                    },
+                    "httpPassword": {
+                        "type": "string"
+                    },
+                    "httpPort": {
+                        "type": "string"
+                    },
+                    "httpSecure": {
+                        "type": "boolean"
+                    },
+                    "httpUserName": {
+                        "type": "string"
+                    },
+                    "ipAddress": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "merakiOrgId": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "netconfPort": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "serialNumber": {
+                        "type": "string"
+                    },
+                    "snmpAuthPassphrase": {
+                        "type": "string"
+                    },
+                    "snmpAuthProtocol": {
+                        "type": "string"
+                    },
+                    "snmpMode": {
+                        "type": "string"
+                    },
+                    "snmpPrivPassphrase": {
+                        "type": "string"
+                    },
+                    "snmpPrivProtocol": {
+                        "type": "string"
+                    },
+                    "snmpROCommunity": {
+                        "type": "string"
+                    },
+                    "snmpRWCommunity": {
+                        "type": "string"
+                    },
+                    "snmpRetry": {
+                        "type": "integer"
+                    },
+                    "snmpTimeout": {
+                        "type": "integer"
+                    },
+                    "snmpUserName": {
+                        "type": "string"
+                    },
+                    "snmpVersion": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "COMPUTE_DEVICE",
+                            "MERAKI_DASHBOARD",
+                            "THIRD_PARTY_DEVICE",
+                            "NETWORK_DEVICE"
+                        ]
+                    },
+                    "userName": {
+                        "type": "string"
+                    },
+                    "updateMgmtIPaddressList": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "existMgmtIpAddress": {
+                                    "type": "string"
+                                },
+                                "newMgmtIpAddress": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["existMgmtIpAddress", "newMgmtIpAddress"]
+                        }
+                    }
                 }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
+            }'''.replace("\n" + ' ' * 8, '')
         ))
+
 
     def validate(self, request):
         try:
