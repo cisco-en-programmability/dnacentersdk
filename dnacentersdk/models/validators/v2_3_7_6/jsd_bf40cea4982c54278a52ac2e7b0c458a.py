@@ -51,7 +51,7 @@ class JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A(object):
                 },
                 "memberTemplateDeploymentInfo": {
                 "items": {
-                "type": "string"
+                "type": "object"
                 },
                 "type": "array"
                 },
@@ -69,7 +69,7 @@ class JSONSchemaValidatorBf40Cea4982C54278A52Ac2E7B0C458A(object):
                 },
                 "resourceParams": {
                 "items": {
-                "type": "string"
+                "type": "object"
                 },
                 "type": "array"
                 },
