@@ -602,7 +602,7 @@ class DNACenterAPI(object):
                 argument or an environment variable, or it is not a
                 DNA Center API supported version
                 [  '2.2.2.3', '2.2.3.3',
-                '2.3.3.0', '2.3.5.3', '2.3.7.6'].
+                '2.3.3.0', '2.3.5.3', '2.3.7.6', '2.3.7.9'].
 
         """
         username = username or dnacenter_environment.get_env_username()
@@ -623,6 +623,8 @@ class DNACenterAPI(object):
                 verify = DEFAULT_VERIFY
 
         version = version or dnacenter_environment.get_env_version() or DEFAULT_VERSION
+        if version == "2.3.7.7":
+            version = "2.3.7.6"
 
         if debug is None:
             debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG

@@ -159,8 +159,10 @@ The following table shows the supported versions.
      - 2.6.11
    * - 2.3.7.6
      - 2.7.7
+   * - 2.3.7.7
+     - 2.8.6
    * - 2.3.7.9
-     - 2.8.5
+     - 2.8.6
 
 
 
