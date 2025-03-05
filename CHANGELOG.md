@@ -6,12 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.7] - 2025-03-05
+### Fix
+- Error correction in the user_and_roles module
+
 ## [2.8.6] - 2025-02-27
 ### Added
 - Add support of DNA Center versions ('2.3.7.7')
 
 ## [2.8.5] - 2025-02-21
-
 ### Fix
 - correction in the request validation structures. In the deploy_template functions in version 1 and 2. In 2.3.5.3, 2.3.7.6 and 2.3.7.9.
 
