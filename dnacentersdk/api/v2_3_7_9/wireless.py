@@ -7549,11 +7549,11 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-a-p-profiles
+            https://developer.cisco.com/docs/dna-center/#!get-ap-profiles
         """
         check_type(headers, dict)
-        check_type(limit, str)
-        check_type(offset, str)
+        check_type(limit, int)
+        check_type(offset, int)
         check_type(ap_profile_name, str)
         if headers is not None:
             if 'X-Auth-Token' in headers:

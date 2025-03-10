@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.8] - 2025-03-10
+### Fix
+- Modification of the data type in offset and limit. In the get_ap_profiles function of the wireless family.
+
 ## [2.8.7] - 2025-03-05
 ### Fix
 - Error correction in the user_and_roles module
