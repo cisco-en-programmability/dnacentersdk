@@ -39,22 +39,30 @@ class JSONSchemaValidatorA15A2F83F975A6A9964E7Da79A605De(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "properties": {
-                "dhcp": {
-                "properties": {
-                "servers": {
-                "items": {
-                "type": "string"
-                },
-                "type": "array"
+                    "dhcp": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "servers": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+            '''.replace("\n" + ' ' * 16, '')
+                    ))
 
     def validate(self, request):
         try:

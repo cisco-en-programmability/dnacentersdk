@@ -39,19 +39,27 @@ class JSONSchemaValidatorC17432D928F755F8Bb9F4Edb83089D3E(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "properties": {
-                "timeZone": {
-                "properties": {
-                "identifier": {
-                "type": "string"
+                    "timeZone": {
+                        "oneOf": [
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "identifier": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+            }
+            '''.replace("\n" + ' ' * 16, '')
+                    ))
 
     def validate(self, request):
         try:

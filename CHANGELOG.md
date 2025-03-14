@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.9] - 2025-03-13
+### Fix
+- Correction in the functions set_banner_settings_for_a_site, set_dhcp_settings_for_a_site, set_n_t_p_settings_for_a_site, set_time_zone_for_a_site, set_d_n_s_settings_for_a_site, set_telemetry_settings_for_a_site, set_aaa_settings_for_a_site. #174
+
 ## [2.8.8] - 2025-03-10
 ### Fix
 - Modification of the data type in offset and limit. In the get_ap_profiles function of the wireless family.

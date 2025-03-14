@@ -2835,25 +2835,17 @@ class NetworkSettings(object):
         path_params = {
             'id': id,
         }
+        json_null = True
         _payload = {
             'aaaNetwork':
                 aaaNetwork,
             'aaaClient':
                 aaaClient,
-        }
-        if aaaNetwork == None and aaaClient == None and payload == None:
-            _payload = {
-            'aaaNetwork':
-                None,
-            'aaaClient':
-                None,
-        }
-        elif aaaNetwork == None and aaaClient == None and payload == {}:
-            _payload = {
-            'payload':
-                payload,
             }
-        else:
+        if payload == {}:
+            _payload = payload
+            json_null = False
+        if payload != None:
             _payload.update(payload or {})
             _payload = dict_from_items_with_values(_payload)
         if active_validation:
@@ -2869,11 +2861,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/aaaSettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_cd2e825a78b6de087e991f6fe0_v2_3_7_9', json_data)
@@ -3060,27 +3052,21 @@ class NetworkSettings(object):
         path_params = {
             'id': id,
         }
-        _payload = {
-            'banner':
-                banner,
-        }
-        if banner == None and payload == None:
-            _payload = {
-            'banner':
-                None,
-            }
-        elif banner == None and payload == {}:
-            _payload = {
-            'payload':
-                payload,
-            }
+        json_null = True
+        if banner == {}:
+            _payload = banner
+            json_null = False
         else:
+            _payload = {
+                'banner':
+                    banner,
+            }
+        if banner == None and payload != None:
             _payload.update(payload or {})
             _payload = dict_from_items_with_values(_payload)
         if active_validation:
             self._request_validator('jsd_b3c4383ecc13514c85c6f3d8484f6d68_v2_3_7_9')\
                 .validate(_payload)
-
         with_custom_headers = False
         _headers = self._session.headers or {}
         if headers:
@@ -3089,11 +3075,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/bannerSettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_b3c4383ecc13514c85c6f3d8484f6d68_v2_3_7_9', json_data)
@@ -3380,17 +3366,16 @@ class NetworkSettings(object):
             'dhcp':
                 dhcp,
         }
-        if dhcp == None and payload == None:
-            _payload = {
-            'dhcp':
-                None,
-            }
-        elif dhcp == {}:
-            _payload = {
-            'dhcp':
-                {},
-            }
+        json_null = True
+        if dhcp == {}:
+            _payload = dhcp
+            json_null = False
         else:
+            _payload = {
+                'dhcp':
+                    dhcp,
+            }
+        if dhcp == None and payload != None:
             _payload.update(payload or {})
             _payload = dict_from_items_with_values(_payload)
         if active_validation:
@@ -3406,11 +3391,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/dhcpSettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_a15a2f83f975a6a9964e7da79a605de_v2_3_7_9', json_data)
@@ -3597,21 +3582,16 @@ class NetworkSettings(object):
         path_params = {
             'id': id,
         }
-        _payload = {
-            'dns':
-                dns,
-        }
-        if dns == None and payload == None:
-            _payload = {
-            'dns':
-                None,
-            }
-        elif dns == {}:
-            _payload = {
-            'dns':
-                {},
-            }
+        json_null = True
+        if dns == {}:
+            _payload = dns
+            json_null = False
         else:
+            _payload = {
+                'dns':
+                    dns,
+            }
+        if payload != None:
             _payload.update(payload or {})
             _payload = dict_from_items_with_values(_payload)
         if active_validation:
@@ -3627,11 +3607,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/dnsSettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_eb3b18894545315b25b94d0c0e2ec67_v2_3_7_9', json_data)
@@ -3836,21 +3816,16 @@ class NetworkSettings(object):
         path_params = {
             'id': id,
         }
-        _payload = {
-            'ntp':
-                ntp,
-        }
-        if ntp == None and payload == None:
-            _payload = {
-            'ntp':
-                None,
-            }
-        elif ntp == {}:
-            _payload = {
-            'ntp':
-                {},
-            }
+        json_null = True
+        if ntp == {}:
+            _payload = ntp
+            json_null = False
         else:
+            _payload = {
+                'ntp':
+                    ntp,
+            }
+        if payload != None:
             _payload.update(payload or {})
             _payload = dict_from_items_with_values(_payload)
         if active_validation:
@@ -3866,11 +3841,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/ntpSettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_df9ec5aa58815a849b4853b223343e5e_v2_3_7_9', json_data)
@@ -4067,6 +4042,7 @@ class NetworkSettings(object):
         path_params = {
             'id': id,
         }
+        json_null = True
         _payload = {
             'wiredDataCollection':
                 wiredDataCollection,
@@ -4092,6 +4068,7 @@ class NetworkSettings(object):
             'applicationVisibility':
                 None,
             }
+            json_null = False
         else:
             _payload.update(payload or {})
             _payload = dict_from_items_with_values(_payload)
@@ -4108,11 +4085,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/telemetrySettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_bac0c488707959c182dfef18681bceda_v2_3_7_9', json_data)
@@ -4170,12 +4147,18 @@ class NetworkSettings(object):
         path_params = {
             'id': id,
         }
-        _payload = {
-            'timeZone':
-                timeZone,
-        }
-        _payload.update(payload or {})
-        _payload = dict_from_items_with_values(_payload)
+        json_null = True
+        if timeZone == {}:
+            _payload = timeZone
+            json_null = False
+        else:
+            _payload = {
+                'timeZone':
+                    timeZone,
+            }
+        if payload != None:
+            _payload.update(payload or {})
+            _payload = dict_from_items_with_values(_payload)
         if active_validation:
             self._request_validator('jsd_c17432d928f755f8bb9f4edb83089d3e_v2_3_7_9')\
                 .validate(_payload)
@@ -4189,11 +4172,11 @@ class NetworkSettings(object):
         e_url = ('/dna/intent/api/v1/sites/{id}/timeZoneSettings')
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload,
                                           headers=_headers)
         else:
-            json_data = self._session.put(endpoint_full_url, params=_params,
+            json_data = self._session.put(endpoint_full_url, params=_params,json_null=json_null,
                                           json=_payload)
 
         return self._object_factory('bpm_c17432d928f755f8bb9f4edb83089d3e_v2_3_7_9', json_data)

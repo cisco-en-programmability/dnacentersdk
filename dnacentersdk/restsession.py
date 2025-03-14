@@ -405,7 +405,7 @@ class RestSession(object):
             final_response = DownloadResponse(resp, filepath, filename, dirpath, collected_data)
             return final_response
 
-    def request(self, method, url, erc, custom_refresh, **kwargs):
+    def request(self, method, url, erc, custom_refresh,json_null=True, **kwargs):
         """Abstract base method for making requests to the DNA Center APIs.
 
         This base method:
@@ -421,6 +421,7 @@ class RestSession(object):
             url(str): The URL of the API endpoint to be called.
             erc(int): The expected response code that should be returned by the
                 DNA Center API endpoint to indicate success.
+            json_null(bool): Validate if the json should be blank.
             **kwargs: Passed on to the requests package.
 
         Returns:
@@ -439,8 +440,9 @@ class RestSession(object):
         kwargs.setdefault('verify', self.verify)
 
         # Fixes requests inconsistent behavior with additional parameters
-        if not kwargs.get('json'):
-            kwargs.pop('json', None)
+        if json_null:
+            if not kwargs.get('json'):
+                kwargs.pop('json', None)
 
         if not kwargs.get('data'):
             kwargs.pop('data', None)
