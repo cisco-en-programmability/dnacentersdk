@@ -39,26 +39,33 @@ class JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "properties": {
-                "banner": {
-                "properties": {
-                "message": {
-                "type": "string"
+                    "banner": {
+                    "oneOf": [
+                        {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                            "type": "string"
+                            },
+                            "type": {
+                            "type": "string",
+                            "enum": ["Builtin", "Custom"]
+                            }
+                        },
+                        "additionalProperties": false
+                        },
+                        {
+                        "type": "null"
+                        }
+                    ]
+                    }
                 },
-                "type": {
-                "enum": [
-                "Builtin",
-                "Custom"
-                ],
-                "type": "string"
+                "additionalProperties": false
                 }
-                },
-                "type": "object"
-                }
-                },
-                "type": "object"
-                }'''.replace("\n" + ' ' * 16, '')
-        ))
+                '''.replace("\n" + ' ' * 16, '')
+                        ))
 
     def validate(self, request):
         try:

@@ -39,9 +39,10 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
                 "properties": {
                     "applicationVisibility": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "type": "object",
                                 "properties": {
@@ -52,23 +53,18 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                                                 "type": "string"
                                             },
                                             "collectorType": {
-                                                "enum": [
-                                                    "Builtin",
-                                                    "TelemetryBrokerOrUDPDirector"
-                                                ],
-                                                "type": "string"
+                                                "type": "string",
+                                                "enum": ["Builtin", "TelemetryBrokerOrUDPDirector"]
                                             },
                                             "port": {
                                                 "type": "integer"
                                             }
-                                        },
-                                        "required": ["address", "collectorType", "port"]
+                                        }
                                     },
                                     "enableOnWiredAccessDevices": {
                                         "type": "boolean"
                                     }
-                                },
-                                "required": ["collector", "enableOnWiredAccessDevices"]
+                                }
                             },
                             {
                                 "type": "null"
@@ -76,7 +72,7 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                         ]
                     },
                     "snmpTraps": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "type": "object",
                                 "properties": {
@@ -89,8 +85,7 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                                     "useBuiltinTrapServer": {
                                         "type": "boolean"
                                     }
-                                },
-                                "required": ["externalTrapServers", "useBuiltinTrapServer"]
+                                }
                             },
                             {
                                 "type": "null"
@@ -98,7 +93,7 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                         ]
                     },
                     "syslogs": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "type": "object",
                                 "properties": {
@@ -111,8 +106,7 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                                     "useBuiltinSyslogServer": {
                                         "type": "boolean"
                                     }
-                                },
-                                "required": ["externalSyslogServers", "useBuiltinSyslogServer"]
+                                }
                             },
                             {
                                 "type": "null"
@@ -120,15 +114,14 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                         ]
                     },
                     "wiredDataCollection": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "type": "object",
                                 "properties": {
                                     "enableWiredDataCollectio": {
                                         "type": "boolean"
                                     }
-                                },
-                                "required": ["enableWiredDataCollectio"]
+                                }
                             },
                             {
                                 "type": "null"
@@ -136,24 +129,23 @@ class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
                         ]
                     },
                     "wirelessTelemetry": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "type": "object",
                                 "properties": {
                                     "enableWirelessTelemetry": {
                                         "type": "boolean"
                                     }
-                                },
-                                "required": ["enableWirelessTelemetry"]
+                                }
                             },
                             {
                                 "type": "null"
                             }
                         ]
                     }
-                },
-                "type": "object"
-            }'''.replace("\n" + ' ' * 16, '')
+                }
+            }
+            '''.replace("\n" + ' ' * 16, '')
         ))
 
 

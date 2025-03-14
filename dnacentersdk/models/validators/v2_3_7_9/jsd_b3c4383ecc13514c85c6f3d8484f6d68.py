@@ -38,33 +38,33 @@ class JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68(object):
         super(JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
         '''{
-            "$schema": "http://json-schema.org/draft-04/schema#",
-            "properties": {
-                "banner": {
-                    "anyOf": [
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties": {
+                    "banner": {
+                    "oneOf": [
                         {
-                            "type": "object",
-                            "properties": {
-                                "message": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "enum": [
-                                        "Builtin",
-                                        "Custom"
-                                    ],
-                                    "type": "string"
-                                }
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                            "type": "string"
+                            },
+                            "type": {
+                            "type": "string",
+                            "enum": ["Builtin", "Custom"]
                             }
                         },
+                        "additionalProperties": false
+                        },
                         {
-                            "type": "null"
+                        "type": "null"
                         }
                     ]
+                    }
+                },
+                "additionalProperties": false
                 }
-            },
-            "type": "object"
-        }'''.replace("\n" + ' ' * 16, '')
+                '''.replace("\n" + ' ' * 16, '')
     ))
 
 
