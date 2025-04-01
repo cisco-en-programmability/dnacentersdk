@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.10] - 2025-04-01
+### Fix
+- This release allows the downloads_a_specific_i_cap_packet_capture_file_v1 function to correctly
+respond with a binary.
+
 ## [2.8.9] - 2025-03-13
 ### Fix
 - Correction in the functions set_banner_settings_for_a_site, set_dhcp_settings_for_a_site, set_n_t_p_settings_for_a_site, set_time_zone_for_a_site, set_d_n_s_settings_for_a_site, set_telemetry_settings_for_a_site, set_aaa_settings_for_a_site. #174
