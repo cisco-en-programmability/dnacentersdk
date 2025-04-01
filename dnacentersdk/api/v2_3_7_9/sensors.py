@@ -350,7 +350,7 @@ class Sensors(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!downloads-a-specific-i-c-a-p-packet-capture-file
+            https://developer.cisco.com/docs/dna-center/#!downloads-a-specific-icap-packet-capture-file
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -382,9 +382,9 @@ class Sensors(object):
         endpoint_full_url = apply_path_params(e_url, path_params)
         if with_custom_headers:
             json_data = self._session.get(endpoint_full_url, params=_params,
-                                          headers=_headers)
+                                          headers=_headers, stream=True)
         else:
-            json_data = self._session.get(endpoint_full_url, params=_params)
+            json_data = self._session.get(endpoint_full_url, params=_params, stream=True)
 
         return self._object_factory('bpm_aeb8cee149c55a4a49506e07b6c4385_v2_3_7_9', json_data)
 
