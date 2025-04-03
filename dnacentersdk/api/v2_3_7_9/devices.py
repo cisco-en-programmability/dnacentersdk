@@ -9285,6 +9285,211 @@ class Devices(object):
 
         return self._object_factory('bpm_c53d56c282e5f108c659009d21f9d26_v2_3_7_9', json_data)
 
+    def sync_devices_v1(self,
+                     cliTransport=None,
+                     computeDevice=None,
+                     enablePassword=None,
+                     extendedDiscoveryInfo=None,
+                     httpPassword=None,
+                     httpPort=None,
+                     httpSecure=None,
+                     httpUserName=None,
+                     ipAddress=None,
+                     merakiOrgId=None,
+                     netconfPort=None,
+                     password=None,
+                     serialNumber=None,
+                     snmpAuthPassphrase=None,
+                     snmpAuthProtocol=None,
+                     snmpMode=None,
+                     snmpPrivPassphrase=None,
+                     snmpPrivProtocol=None,
+                     snmpROCommunity=None,
+                     snmpRWCommunity=None,
+                     snmpRetry=None,
+                     snmpTimeout=None,
+                     snmpUserName=None,
+                     snmpVersion=None,
+                     type=None,
+                     updateMgmtIPaddressList=None,
+                     userName=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
+        """Update the credentials, management IP address of a given device (or a set of devices) in DNA Center and
+        trigger an inventory sync. .
+
+        Args:
+            cliTransport(string): Devices's CLI transport. Supported values: telnet, ssh. Use NO!$DATA!$ if no
+                change is required. Required if type is NETWORK_DEVICE. .
+            computeDevice(boolean): Devices's Compute Device or not. Options are true / false. .
+            enablePassword(string): Devices's CLI enable password of the device. Required if device is configured to
+                use enable password. Use NO!$DATA!$ if no change is required. .
+            extendedDiscoveryInfo(string): Devices's This field holds that info as whether to add device with canned
+                data or not. Supported values: DISCOVER_WITH_CANNED_DATA. .
+            httpPassword(string): Devices's HTTP password of the device / API key for Meraki Dashboard. Required if
+                type is MERAKI_DASHBOARD or COMPUTE_DEVICE. Use NO!$DATA!$ if no change is required. .
+            httpPort(string): Devices's HTTP port of the device. Required if type is COMPUTE_DEVICE. .
+            httpSecure(boolean): Devices's Flag to select HTTP / HTTPS protocol. Options are true / false. true for
+                HTTPS and false for HTTP. .
+            httpUserName(string): Devices's HTTP Username of the device. Required if type is COMPUTE_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            ipAddress(list): Devices's IP Address of the device. Required. Use 'api.meraki.com' for Meraki
+                Dashboard.  (list of strings).
+            merakiOrgId(list): Devices's Selected Meraki organization for which the devices needs to be imported.
+                Required if type is MERAKI_DASHBOARD.  (list of strings).
+            netconfPort(string): Devices's Netconf Port of the device. cliTransport must be 'ssh' if netconf is
+                provided. .
+            password(string): Devices's CLI Password of the device. Required if type is NETWORK_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            serialNumber(string): Devices's Serial Number of the Device. Required if extendedDiscoveryInfo is
+                'DISCOVER_WITH_CANNED_DATA'. .
+            snmpAuthPassphrase(string): Devices's SNMPv3 auth passphrase of the device. Required if snmpMode is
+                authNoPriv or authPriv. Use NO!$DATA!$ if no change is required. .
+            snmpAuthProtocol(string): Devices's SNMPv3 auth protocol. Supported values: sha, md5.  Required if
+                snmpMode is authNoPriv or authPriv. Use NODATACHANGE if no change is required. .
+            snmpMode(string): Devices's SNMPv3 mode. Supported values: noAuthnoPriv, authNoPriv, authPriv. Required
+                if snmpVersion is v3. Use NODATACHANGE if no change is required. .
+            snmpPrivPassphrase(string): Devices's SNMPv3 priv passphrase. Required if snmpMode is authPriv. Use
+                NO!$DATA!$ if no change is required. .
+            snmpPrivProtocol(string): Devices's SNMPv3 priv protocol. Supported values: AES128. Required if snmpMode
+                is authPriv. Use NODATACHANGE if no change is required. .
+            snmpROCommunity(string): Devices's SNMP Read Community of the device. If snmpVersion is v2, at least one
+                of snmpROCommunity and snmpRWCommunity is required. Use NO!$DATA!$ if no change is
+                required. .
+            snmpRWCommunity(string): Devices's SNMP Write Community of the device. If snmpVersion is v2, at least
+                one of snmpROCommunity and snmpRWCommunity is required. Use NO!$DATA!$ if no change is
+                required. .
+            snmpRetry(integer): Devices's SNMP retry count. Max value supported is 3. Default is Global SNMP retry
+                (if exists) or 3. .
+            snmpTimeout(integer): Devices's SNMP timeout in seconds. Max value supported is 300. Default is Global
+                SNMP timeout (if exists) or 5. .
+            snmpUserName(string): Devices's SNMPV3 user name of the device. Required if snmpVersion is v3. Use
+                NO!$DATA!$ if no change is required. .
+            snmpVersion(string): Devices's SNMP version. Values supported: v2, v3. Required if type is
+                NETWORK_DEVICE, COMPUTE_DEVICE or THIRD_PARTY_DEVICE. Use NODATACHANGE if no change is
+                required. .
+            type(string): Devices's Type of device being edited. Default is NETWORK_DEVICE. . Available values are
+                'COMPUTE_DEVICE', 'MERAKI_DASHBOARD', 'NETWORK_DEVICE', 'THIRD_PARTY_DEVICE' and
+                'NODATACHANGE'.
+            updateMgmtIPaddressList(list): Devices's updateMgmtIPaddressList (list of objects).
+            userName(string): Devices's CLI user name of the device. Required if type is NETWORK_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(dict): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!update-device-details
+        """
+        check_type(headers, dict)
+        check_type(payload, dict)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = {
+            'cliTransport':
+                cliTransport,
+            'computeDevice':
+                computeDevice,
+            'enablePassword':
+                enablePassword,
+            'extendedDiscoveryInfo':
+                extendedDiscoveryInfo,
+            'httpPassword':
+                httpPassword,
+            'httpPort':
+                httpPort,
+            'httpSecure':
+                httpSecure,
+            'httpUserName':
+                httpUserName,
+            'ipAddress':
+                ipAddress,
+            'merakiOrgId':
+                merakiOrgId,
+            'netconfPort':
+                netconfPort,
+            'password':
+                password,
+            'serialNumber':
+                serialNumber,
+            'snmpAuthPassphrase':
+                snmpAuthPassphrase,
+            'snmpAuthProtocol':
+                snmpAuthProtocol,
+            'snmpMode':
+                snmpMode,
+            'snmpPrivPassphrase':
+                snmpPrivPassphrase,
+            'snmpPrivProtocol':
+                snmpPrivProtocol,
+            'snmpROCommunity':
+                snmpROCommunity,
+            'snmpRWCommunity':
+                snmpRWCommunity,
+            'snmpRetry':
+                snmpRetry,
+            'snmpTimeout':
+                snmpTimeout,
+            'snmpUserName':
+                snmpUserName,
+            'snmpVersion':
+                snmpVersion,
+            'type':
+                type,
+            'updateMgmtIPaddressList':
+                updateMgmtIPaddressList,
+            'userName':
+                userName,
+        }
+        _payload.update(payload or {})
+        _payload = dict_from_items_with_values(_payload)
+        if active_validation:
+            self._request_validator('jsd_fe06867e548bba1919024b40d992_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/network-device')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload,
+                                          headers=_headers)
+        else:
+            json_data = self._session.put(endpoint_full_url, params=_params,
+                                          json=_payload)
+
+        return self._object_factory('bpm_fe06867e548bba1919024b40d992_v2_3_7_6', json_data)
+
     def sync_devices_using_forcesync_v1(self,
                                      force_sync=None,
                                      headers=None,
@@ -14998,6 +15203,142 @@ class Devices(object):
         """
         return self.get_threat_types_v1(
                     headers=headers,
+                    **request_parameters
+        )
+
+    # Alias Function
+    def sync_devices(self,
+                     cliTransport=None,
+                     computeDevice=None,
+                     enablePassword=None,
+                     extendedDiscoveryInfo=None,
+                     httpPassword=None,
+                     httpPort=None,
+                     httpSecure=None,
+                     httpUserName=None,
+                     ipAddress=None,
+                     merakiOrgId=None,
+                     netconfPort=None,
+                     password=None,
+                     serialNumber=None,
+                     snmpAuthPassphrase=None,
+                     snmpAuthProtocol=None,
+                     snmpMode=None,
+                     snmpPrivPassphrase=None,
+                     snmpPrivProtocol=None,
+                     snmpROCommunity=None,
+                     snmpRWCommunity=None,
+                     snmpRetry=None,
+                     snmpTimeout=None,
+                     snmpUserName=None,
+                     snmpVersion=None,
+                     type=None,
+                     updateMgmtIPaddressList=None,
+                     userName=None,
+                     headers=None,
+                     payload=None,
+                     active_validation=True,
+                     **request_parameters):
+        """ This function is an alias of sync_devices_v1 .
+        Args:
+            cliTransport(string): Devices's CLI transport. Supported values: telnet, ssh. Use NO!$DATA!$ if no
+                change is required. Required if type is NETWORK_DEVICE. .
+            computeDevice(boolean): Devices's Compute Device or not. Options are true / false. .
+            enablePassword(string): Devices's CLI enable password of the device. Required if device is configured to
+                use enable password. Use NO!$DATA!$ if no change is required. .
+            extendedDiscoveryInfo(string): Devices's This field holds that info as whether to add device with canned
+                data or not. Supported values: DISCOVER_WITH_CANNED_DATA. .
+            httpPassword(string): Devices's HTTP password of the device / API key for Meraki Dashboard. Required if
+                type is MERAKI_DASHBOARD or COMPUTE_DEVICE. Use NO!$DATA!$ if no change is required. .
+            httpPort(string): Devices's HTTP port of the device. Required if type is COMPUTE_DEVICE. .
+            httpSecure(boolean): Devices's Flag to select HTTP / HTTPS protocol. Options are true / false. true for
+                HTTPS and false for HTTP. .
+            httpUserName(string): Devices's HTTP Username of the device. Required if type is COMPUTE_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            ipAddress(list): Devices's IP Address of the device. Required. Use 'api.meraki.com' for Meraki
+                Dashboard.  (list of strings).
+            merakiOrgId(list): Devices's Selected Meraki organization for which the devices needs to be imported.
+                Required if type is MERAKI_DASHBOARD.  (list of strings).
+            netconfPort(string): Devices's Netconf Port of the device. cliTransport must be 'ssh' if netconf is
+                provided. .
+            password(string): Devices's CLI Password of the device. Required if type is NETWORK_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            serialNumber(string): Devices's Serial Number of the Device. Required if extendedDiscoveryInfo is
+                'DISCOVER_WITH_CANNED_DATA'. .
+            snmpAuthPassphrase(string): Devices's SNMPv3 auth passphrase of the device. Required if snmpMode is
+                authNoPriv or authPriv. Use NO!$DATA!$ if no change is required. .
+            snmpAuthProtocol(string): Devices's SNMPv3 auth protocol. Supported values: sha, md5.  Required if
+                snmpMode is authNoPriv or authPriv. Use NODATACHANGE if no change is required. .
+            snmpMode(string): Devices's SNMPv3 mode. Supported values: noAuthnoPriv, authNoPriv, authPriv. Required
+                if snmpVersion is v3. Use NODATACHANGE if no change is required. .
+            snmpPrivPassphrase(string): Devices's SNMPv3 priv passphrase. Required if snmpMode is authPriv. Use
+                NO!$DATA!$ if no change is required. .
+            snmpPrivProtocol(string): Devices's SNMPv3 priv protocol. Supported values: AES128. Required if snmpMode
+                is authPriv. Use NODATACHANGE if no change is required. .
+            snmpROCommunity(string): Devices's SNMP Read Community of the device. If snmpVersion is v2, at least one
+                of snmpROCommunity and snmpRWCommunity is required. Use NO!$DATA!$ if no change is
+                required. .
+            snmpRWCommunity(string): Devices's SNMP Write Community of the device. If snmpVersion is v2, at least
+                one of snmpROCommunity and snmpRWCommunity is required. Use NO!$DATA!$ if no change is
+                required. .
+            snmpRetry(integer): Devices's SNMP retry count. Max value supported is 3. Default is Global SNMP retry
+                (if exists) or 3. .
+            snmpTimeout(integer): Devices's SNMP timeout in seconds. Max value supported is 300. Default is Global
+                SNMP timeout (if exists) or 5. .
+            snmpUserName(string): Devices's SNMPV3 user name of the device. Required if snmpVersion is v3. Use
+                NO!$DATA!$ if no change is required. .
+            snmpVersion(string): Devices's SNMP version. Values supported: v2, v3. Required if type is
+                NETWORK_DEVICE, COMPUTE_DEVICE or THIRD_PARTY_DEVICE. Use NODATACHANGE if no change is
+                required. .
+            type(string): Devices's Type of device being edited. Default is NETWORK_DEVICE. . Available values are
+                'COMPUTE_DEVICE', 'MERAKI_DASHBOARD', 'NETWORK_DEVICE', 'THIRD_PARTY_DEVICE' and
+                'NODATACHANGE'.
+            updateMgmtIPaddressList(list): Devices's updateMgmtIPaddressList (list of objects).
+            userName(string): Devices's CLI user name of the device. Required if type is NETWORK_DEVICE. Use
+                NO!$DATA!$ if no change is required. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of sync_devices_v1 .
+        """
+        return self.sync_devices_v1(
+                    cliTransport=cliTransport,
+                    computeDevice=computeDevice,
+                    enablePassword=enablePassword,
+                    extendedDiscoveryInfo=extendedDiscoveryInfo,
+                    httpPassword=httpPassword,
+                    httpPort=httpPort,
+                    httpSecure=httpSecure,
+                    httpUserName=httpUserName,
+                    ipAddress=ipAddress,
+                    merakiOrgId=merakiOrgId,
+                    netconfPort=netconfPort,
+                    password=password,
+                    serialNumber=serialNumber,
+                    snmpAuthPassphrase=snmpAuthPassphrase,
+                    snmpAuthProtocol=snmpAuthProtocol,
+                    snmpMode=snmpMode,
+                    snmpPrivPassphrase=snmpPrivPassphrase,
+                    snmpPrivProtocol=snmpPrivProtocol,
+                    snmpROCommunity=snmpROCommunity,
+                    snmpRWCommunity=snmpRWCommunity,
+                    snmpRetry=snmpRetry,
+                    snmpTimeout=snmpTimeout,
+                    snmpUserName=snmpUserName,
+                    snmpVersion=snmpVersion,
+                    type=type,
+                    updateMgmtIPaddressList=updateMgmtIPaddressList,
+                    userName=userName,
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
                     **request_parameters
         )
 

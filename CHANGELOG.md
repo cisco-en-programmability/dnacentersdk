@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.11] - 2025-04-03
+### Fix
+- Resolution of issues #206 and #205.
+- sync_devices functionality has been added to devices.
+- Adjusted function names to avoid looping.
+
 ## [2.8.10] - 2025-04-01
 ### Fix
 - This release allows the downloads_a_specific_i_cap_packet_capture_file_v1 function to correctly

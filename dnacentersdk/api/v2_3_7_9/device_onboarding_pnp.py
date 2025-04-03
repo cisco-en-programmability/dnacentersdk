@@ -475,7 +475,7 @@ class DeviceOnboardingPnp(object):
 
         return self._object_factory('bpm_e722e05046d5262b55c125237e9b67d_v2_3_7_9', json_data)
 
-    def get_device_count(self,
+    def get_device_count_v1(self,
                          last_contact=None,
                          name=None,
                          onb_state=None,
@@ -3172,7 +3172,7 @@ class DeviceOnboardingPnp(object):
                          workflow_name=None,
                          headers=None,
                          **request_parameters):
-        """ This function is an alias of get_device_count .
+        """ This function is an alias of get_device_count_v1 .
         Args:
             serial_number(str, list, set, tuple): serialNumber query parameter. Device Serial Number .
             state(str, list, set, tuple): state query parameter. Device State .
@@ -3192,9 +3192,9 @@ class DeviceOnboardingPnp(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            This function returns the output of get_device_count .
+            This function returns the output of get_device_count_v1 .
         """
-        return self.get_device_count(
+        return self.get_device_count_v1(
                     last_contact=last_contact,
                     name=name,
                     onb_state=onb_state,
