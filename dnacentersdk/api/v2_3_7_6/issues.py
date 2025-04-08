@@ -1276,6 +1276,7 @@ class Issues(object):
 
     def ignore_the_given_list_of_issues_v1(self,
                                            issueIds=None,
+                                           ignoreHours=24,
                                            headers=None,
                                            payload=None,
                                            active_validation=True,
@@ -1288,6 +1289,8 @@ class Issues(object):
 
         Args:
             issueIds(list): Issues's Issue Ids (list of strings).
+            ignoreHours (int, optional): Number of hours during which issues will be ignored.
+                Must be in the range 1 to 720. Default value = 24.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1331,6 +1334,7 @@ class Issues(object):
         _payload = {
             'issueIds':
                 issueIds,
+            'ignoreHours': ignoreHours,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
@@ -2739,8 +2743,8 @@ class Issues(object):
 
         return self._object_factory('bpm_a2d089359a5a9899444a01a727453a_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def get_issue_enrichment_details(self,
                                         headers=None,
@@ -2759,8 +2763,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_custom_issue_definition_for_the_given_custom_issue_definition_id(self,
                                                                                     id,
@@ -2777,14 +2781,14 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_custom_issue_definition_for_the_given_custom_issue_definition_id_v1 .
-        """ 
+        """
         return self.get_the_custom_issue_definition_for_the_given_custom_issue_definition_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_summary_analytics_data_of_issues(self,
                                                 aggregateAttributes=None,
@@ -2818,7 +2822,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_summary_analytics_data_of_issues_v1 .
-        """ 
+        """
         return self.get_summary_analytics_data_of_issues_v1(
                     aggregateAttributes=aggregateAttributes,
                     attributes=attributes,
@@ -2832,8 +2836,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def execute_suggested_actions_commands(self,
                                               entity_type=None,
@@ -2858,7 +2862,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of execute_suggested_actions_commands_v1 .
-        """ 
+        """
         return self.execute_suggested_actions_commands_v1(
                     entity_type=entity_type,
                     entity_value=entity_value,
@@ -2867,8 +2871,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_total_custom_issue_definitions_count_based_on_the_provided_filters(self,
                                                                                       facility=None,
@@ -2912,7 +2916,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_total_custom_issue_definitions_count_based_on_the_provided_filters_v1 .
-        """ 
+        """
         return self.get_the_total_custom_issue_definitions_count_based_on_the_provided_filters_v1(
                     facility=facility,
                     id=id,
@@ -2925,8 +2929,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_total_number_of_issues_for_given_set_of_filters(self,
                                                                    endTime=None,
@@ -2952,7 +2956,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_total_number_of_issues_for_given_set_of_filters_v1 .
-        """ 
+        """
         return self.get_the_total_number_of_issues_for_given_set_of_filters_v1(
                     endTime=endTime,
                     filters=filters,
@@ -2962,8 +2966,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_top_n_analytics_data_of_issues(self,
                                               aggregateAttributes=None,
@@ -2999,7 +3003,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_top_n_analytics_data_of_issues_v1 .
-        """ 
+        """
         return self.get_top_n_analytics_data_of_issues_v1(
                     aggregateAttributes=aggregateAttributes,
                     attributes=attributes,
@@ -3014,8 +3018,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_trend_analytics_data_of_issues(self,
                                               aggregateAttributes=None,
@@ -3051,7 +3055,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_trend_analytics_data_of_issues_v1 .
-        """ 
+        """
         return self.get_trend_analytics_data_of_issues_v1(
                     aggregateAttributes=aggregateAttributes,
                     attributes=attributes,
@@ -3066,8 +3070,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_issue_trigger_definition_for_given_id(self,
                                                      id,
@@ -3083,14 +3087,14 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_issue_trigger_definition_for_given_id_v1 .
-        """ 
+        """
         return self.get_issue_trigger_definition_for_given_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def creates_a_new_user_defined_issue_definitions(self,
                                                         description=None,
@@ -3122,7 +3126,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of creates_a_new_user_defined_issue_definitions_v1 .
-        """ 
+        """
         return self.creates_a_new_user_defined_issue_definitions_v1(
                     description=description,
                     isEnabled=isEnabled,
@@ -3135,8 +3139,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_details_of_issues_for_given_set_of_filters(self,
                                                               endTime=None,
@@ -3162,7 +3166,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_details_of_issues_for_given_set_of_filters_v1 .
-        """ 
+        """
         return self.get_the_details_of_issues_for_given_set_of_filters_v1(
                     endTime=endTime,
                     filters=filters,
@@ -3172,8 +3176,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def updates_an_existing_custom_issue_definition_based_on_the_provided_id(self,
                                                                                 id,
@@ -3207,7 +3211,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of updates_an_existing_custom_issue_definition_based_on_the_provided_id_v1 .
-        """ 
+        """
         return self.updates_an_existing_custom_issue_definition_based_on_the_provided_id_v1(
                     id=id,
                     description=description,
@@ -3221,8 +3225,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def issues(self,
                   ai_driven=None,
@@ -3257,7 +3261,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of issues_v1 .
-        """ 
+        """
         return self.issues_v1(
                     ai_driven=ai_driven,
                     device_id=device_id,
@@ -3270,8 +3274,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_count_of_system_defined_issue_definitions_based_on_provided_filters(self,
                                                                                        device_type=None,
@@ -3312,7 +3316,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_count_of_system_defined_issue_definitions_based_on_provided_filters_v1 .
-        """ 
+        """
         return self.get_the_count_of_system_defined_issue_definitions_based_on_provided_filters_v1(
                     device_type=device_type,
                     id=id,
@@ -3323,8 +3327,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def resolve_the_given_lists_of_issues(self,
                                              issueIds=None,
@@ -3346,7 +3350,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of resolve_the_given_lists_of_issues_v1 .
-        """ 
+        """
         return self.resolve_the_given_lists_of_issues_v1(
                     issueIds=issueIds,
                     headers=headers,
@@ -3354,8 +3358,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def issue_trigger_definition_update(self,
                                            id,
@@ -3385,7 +3389,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of issue_trigger_definition_update_v1 .
-        """ 
+        """
         return self.issue_trigger_definition_update_v1(
                     id=id,
                     issueEnabled=issueEnabled,
@@ -3397,8 +3401,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_details_of_issues_for_given_set_of_filters_know_your_network(self,
                                                                                 ai_driven=None,
@@ -3573,7 +3577,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_details_of_issues_for_given_set_of_filters_know_your_network_v1 .
-        """ 
+        """
         return self.get_the_details_of_issues_for_given_set_of_filters_know_your_network_v1(
                     ai_driven=ai_driven,
                     attribute=attribute,
@@ -3612,8 +3616,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_all_the_details_and_suggested_actions_of_an_issue_for_the_given_issue_id(self,
                                                                                         id,
@@ -3645,7 +3649,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_all_the_details_and_suggested_actions_of_an_issue_for_the_given_issue_id_v1 .
-        """ 
+        """
         return self.get_all_the_details_and_suggested_actions_of_an_issue_for_the_given_issue_id_v1(
                     id=id,
                     attribute=attribute,
@@ -3653,8 +3657,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_all_the_custom_issue_definitions_based_on_the_given_filters(self,
                                                                            facility=None,
@@ -3707,7 +3711,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_all_the_custom_issue_definitions_based_on_the_given_filters_v1 .
-        """ 
+        """
         return self.get_all_the_custom_issue_definitions_based_on_the_given_filters_v1(
                     facility=facility,
                     id=id,
@@ -3724,8 +3728,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_an_existing_custom_issue_definition(self,
                                                        id,
@@ -3741,14 +3745,14 @@ class Issues(object):
 
         Returns:
             This function returns the output of deletes_an_existing_custom_issue_definition_v1 .
-        """ 
+        """
         return self.deletes_an_existing_custom_issue_definition_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def ignore_the_given_list_of_issues(self,
                                            issueIds=None,
@@ -3770,7 +3774,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of ignore_the_given_list_of_issues_v1 .
-        """ 
+        """
         return self.ignore_the_given_list_of_issues_v1(
                     issueIds=issueIds,
                     headers=headers,
@@ -3778,8 +3782,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_the_total_number_of_issues_for_given_set_of_filters_know_your_network(self,
                                                                                      ai_driven=None,
@@ -3929,7 +3933,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of get_the_total_number_of_issues_for_given_set_of_filters_know_your_network_v1 .
-        """ 
+        """
         return self.get_the_total_number_of_issues_for_given_set_of_filters_know_your_network_v1(
                     ai_driven=ai_driven,
                     category=category,
@@ -3962,8 +3966,8 @@ class Issues(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_the_given_issue_by_updating_selected_fields(self,
                                                               id,
@@ -3987,7 +3991,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of update_the_given_issue_by_updating_selected_fields_v1 .
-        """ 
+        """
         return self.update_the_given_issue_by_updating_selected_fields_v1(
                     id=id,
                     notes=notes,
@@ -3996,8 +4000,8 @@ class Issues(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def returns_all_issue_trigger_definitions_for_given_filters(self,
                                                                    attribute=None,
@@ -4050,7 +4054,7 @@ class Issues(object):
 
         Returns:
             This function returns the output of returns_all_issue_trigger_definitions_for_given_filters_v1 .
-        """ 
+        """
         return self.returns_all_issue_trigger_definitions_for_given_filters_v1(
                     attribute=attribute,
                     device_type=device_type,
