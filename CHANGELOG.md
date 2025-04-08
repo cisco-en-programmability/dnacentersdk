@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.12] - 2025-04-08
+### Fix
+- Fix in ignore_the_given_list_of_issues_v1 function in versions 2.3.7.6 and 2.3.7.9.
+
 ## [2.8.11] - 2025-04-03
 ### Fix
 - Resolution of issues #206 and #205.

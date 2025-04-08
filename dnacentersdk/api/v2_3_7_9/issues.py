@@ -1278,6 +1278,7 @@ class Issues(object):
 
     def ignore_the_given_list_of_issues_v1(self,
                                            issueIds=None,
+                                           ignoreHours=24,
                                            headers=None,
                                            payload=None,
                                            active_validation=True,
@@ -1292,6 +1293,8 @@ class Issues(object):
 
         Args:
             issueIds(list): Issues's Issue Ids (list of strings).
+            ignoreHours (int, optional): Number of hours during which issues will be ignored.
+                Must be in the range 1 to 720. Default value = 24.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -1335,6 +1338,7 @@ class Issues(object):
         _payload = {
             'issueIds':
                 issueIds,
+            'ignoreHours': ignoreHours,
         }
         _payload.update(payload or {})
         _payload = dict_from_items_with_values(_payload)
