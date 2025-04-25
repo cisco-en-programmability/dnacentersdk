@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.13] - 2025-04-25
+### Fix
+- Correction in error handling.
+- Added function aliases that have been renamed due to fixes.
+- Deprecated functions were established that would disappear in the future.
+- Deprecated functions (export_projects_v1, clone_given_template
+  get_projects_v1, export_projects, clone_given_template_v1, get_projects,
+  get_all_keywords_of_clis_accepted, get_all_keywords_of_clis_accepted_v1,
+  run_read_only_commands_on_devices_v1, run_read_only_commands_on_devices,
+  cisco_dna_center_packages_summary_v1, release_summary_v1, cisco_dna_center_packages_summary,
+  nodes_configuration_summary_v1, release_summary , nodes_configuration_summary,
+  get_all_mobility_groups, get_all80211be_profiles_v1, get_all80211be_profiles,
+  get_all_mobility_groups_v1,  gets_interfaces_along_with_statistics_data_from_all_network_devices_v1,
+  gets_interfaces_along_with_statistics_data_from_all_network_devices,
+  get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_v1
+  )
+
 ## [2.8.12] - 2025-04-08
 ### Fix
 - Fix in ignore_the_given_list_of_issues_v1 function in versions 2.3.7.6 and 2.3.7.9.

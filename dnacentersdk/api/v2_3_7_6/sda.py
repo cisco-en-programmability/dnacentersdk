@@ -9006,8 +9006,8 @@ class Sda(object):
 
         return self._object_factory('bpm_f9492367570c5f009cf8b5955790e87c_v2_3_7_6', json_data)
 
-                
-    
+
+
     # Alias Function
     def get_default_authentication_profile(self,
                                            site_name_hierarchy,
@@ -9025,15 +9025,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_default_authentication_profile_v1 .
-        """ 
+        """
         return self.get_default_authentication_profile_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     authenticate_template_name=authenticate_template_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_device_info(self,
                         device_management_ip_address,
@@ -9049,16 +9049,16 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_device_info_v1 .
-        """ 
+        """
         return self.get_device_info_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
-    def add_border_device(self,
+    def adds_border_device(self,
                            headers=None,
                            payload=None,
                            active_validation=True,
@@ -9076,15 +9076,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of adds_border_device_v1 .
-        """ 
+        """
         return self.adds_border_device_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_site(self,
                  site_name_hierarchy,
@@ -9100,14 +9100,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_site_v1 .
-        """ 
+        """
         return self.get_site_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_port_assignment_for_access_point(self,
                                              authenticateTemplateName=None,
@@ -9141,7 +9141,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_port_assignment_for_access_point_v1 .
-        """ 
+        """
         return self.add_port_assignment_for_access_point_v1(
                     authenticateTemplateName=authenticateTemplateName,
                     dataIpAddressPoolName=dataIpAddressPoolName,
@@ -9154,8 +9154,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_anycast_gateways(self,
                                    headers=None,
@@ -9175,15 +9175,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_anycast_gateways_v1 .
-        """ 
+        """
         return self.update_anycast_gateways_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_ip_pool_from_sda_virtual_network(self,
                                                 ip_pool_name,
@@ -9205,7 +9205,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_ip_pool_from_sda_virtual_network_v1 .
-        """ 
+        """
         return self.get_ip_pool_from_sda_virtual_network_v1(
                     ip_pool_name=ip_pool_name,
                     site_name_hierarchy=site_name_hierarchy,
@@ -9213,8 +9213,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_anycast_gateways(self,
                                 headers=None,
@@ -9234,15 +9234,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_anycast_gateways_v1 .
-        """ 
+        """
         return self.add_anycast_gateways_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_default_authentication_profile(self,
                                            headers=None,
@@ -9262,15 +9262,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_default_authentication_profile_v1 .
-        """ 
+        """
         return self.add_default_authentication_profile_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_ip_pool_from_sda_virtual_network(self,
                                                    ip_pool_name,
@@ -9290,7 +9290,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_ip_pool_from_sda_virtual_network_v1 .
-        """ 
+        """
         return self.delete_ip_pool_from_sda_virtual_network_v1(
                     ip_pool_name=ip_pool_name,
                     site_name_hierarchy=site_name_hierarchy,
@@ -9298,8 +9298,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_ip_pool_in_sda_virtual_network(self,
                                               autoGenerateVlanName=None,
@@ -9360,7 +9360,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_ip_pool_in_sda_virtual_network_v1 .
-        """ 
+        """
         return self.add_ip_pool_in_sda_virtual_network_v1(
                     autoGenerateVlanName=autoGenerateVlanName,
                     ipPoolName=ipPoolName,
@@ -9383,8 +9383,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_device_layer2_handoffs(self,
                                                 fabric_id,
@@ -9403,15 +9403,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_device_layer2_handoffs_v1 .
-        """ 
+        """
         return self.delete_fabric_device_layer2_handoffs_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_authentication_profiles(self,
                                        authentication_profile_name=None,
@@ -9436,7 +9436,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_authentication_profiles_v1 .
-        """ 
+        """
         return self.get_authentication_profiles_v1(
                     authentication_profile_name=authentication_profile_name,
                     fabric_id=fabric_id,
@@ -9445,8 +9445,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_layer3_handoffs_with_ip_transit_count(self,
                                                                     fabric_id,
@@ -9465,15 +9465,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_layer3_handoffs_with_ip_transit_count_v1 .
-        """ 
+        """
         return self.get_fabric_devices_layer3_handoffs_with_ip_transit_count_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_fabric_devices_layer3_handoffs_with_ip_transit(self,
                                                               headers=None,
@@ -9493,15 +9493,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_fabric_devices_layer3_handoffs_with_ip_transit_v1 .
-        """ 
+        """
         return self.add_fabric_devices_layer3_handoffs_with_ip_transit_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_layer3_virtual_networks_count(self,
                                              anchored_site_id=None,
@@ -9521,15 +9521,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_layer3_virtual_networks_count_v1 .
-        """ 
+        """
         return self.get_layer3_virtual_networks_count_v1(
                     anchored_site_id=anchored_site_id,
                     fabric_id=fabric_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_port_assignments(self,
                                 headers=None,
@@ -9549,15 +9549,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_port_assignments_v1 .
-        """ 
+        """
         return self.add_port_assignments_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_layer2_virtual_network_by_id(self,
                                                id,
@@ -9573,14 +9573,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_layer2_virtual_network_by_id_v1 .
-        """ 
+        """
         return self.delete_layer2_virtual_network_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_extranet_policies(self,
                                     extranet_policy_name=None,
@@ -9596,14 +9596,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_extranet_policies_v1 .
-        """ 
+        """
         return self.delete_extranet_policies_v1(
                     extranet_policy_name=extranet_policy_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_sites(self,
                             id=None,
@@ -9626,7 +9626,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_sites_v1 .
-        """ 
+        """
         return self.get_fabric_sites_v1(
                     id=id,
                     limit=limit,
@@ -9635,8 +9635,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_virtual_network_with_scalable_groups(self,
                                                     isGuestVirtualNetwork=None,
@@ -9664,7 +9664,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_virtual_network_with_scalable_groups_v1 .
-        """ 
+        """
         return self.add_virtual_network_with_scalable_groups_v1(
                     isGuestVirtualNetwork=isGuestVirtualNetwork,
                     scalableGroupNames=scalableGroupNames,
@@ -9675,8 +9675,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_port_assignment_for_access_point(self,
                                                 device_management_ip_address,
@@ -9694,15 +9694,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_port_assignment_for_access_point_v1 .
-        """ 
+        """
         return self.delete_port_assignment_for_access_point_v1(
                     device_management_ip_address=device_management_ip_address,
                     interface_name=interface_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_multicast_in_sda_fabric(self,
                                        multicastMethod=None,
@@ -9731,7 +9731,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_multicast_in_sda_fabric_v1 .
-        """ 
+        """
         return self.add_multicast_in_sda_fabric_v1(
                     multicastMethod=multicastMethod,
                     multicastType=multicastType,
@@ -9742,8 +9742,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_transit_networks(self,
                                    headers=None,
@@ -9763,15 +9763,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_transit_networks_v1 .
-        """ 
+        """
         return self.update_transit_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_device_layer3_handoff_with_ip_transit_by_id(self,
                                                                      id,
@@ -9787,14 +9787,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_device_layer3_handoff_with_ip_transit_by_id_v1 .
-        """ 
+        """
         return self.delete_fabric_device_layer3_handoff_with_ip_transit_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_extranet_policy(self,
                                   headers=None,
@@ -9814,15 +9814,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_extranet_policy_v1 .
-        """ 
+        """
         return self.update_extranet_policy_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_site_by_id(self,
                                     id,
@@ -9838,14 +9838,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_site_by_id_v1 .
-        """ 
+        """
         return self.delete_fabric_site_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_layer2_handoffs(self,
                                               fabric_id,
@@ -9868,7 +9868,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_layer2_handoffs_v1 .
-        """ 
+        """
         return self.get_fabric_devices_layer2_handoffs_v1(
                     fabric_id=fabric_id,
                     limit=limit,
@@ -9877,8 +9877,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_count(self,
                                     fabric_id,
@@ -9901,7 +9901,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_count_v1 .
-        """ 
+        """
         return self.get_fabric_devices_count_v1(
                     fabric_id=fabric_id,
                     device_roles=device_roles,
@@ -9909,8 +9909,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_device_layer2_handoff_by_id(self,
                                                      id,
@@ -9926,14 +9926,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_device_layer2_handoff_by_id_v1 .
-        """ 
+        """
         return self.delete_fabric_device_layer2_handoff_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_port_channels(self,
                              connected_device_type=None,
@@ -9960,7 +9960,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_port_channels_v1 .
-        """ 
+        """
         return self.get_port_channels_v1(
                     connected_device_type=connected_device_type,
                     fabric_id=fabric_id,
@@ -9971,8 +9971,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_edge_device(self,
                         deviceManagementIpAddress=None,
@@ -9998,7 +9998,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_edge_device_v1 .
-        """ 
+        """
         return self.add_edge_device_v1(
                     deviceManagementIpAddress=deviceManagementIpAddress,
                     siteNameHierarchy=siteNameHierarchy,
@@ -10007,8 +10007,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_device_role_in_sda_fabric(self,
                                          device_management_ip_address,
@@ -10025,14 +10025,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_device_role_in_sda_fabric_v1 .
-        """ 
+        """
         return self.get_device_role_in_sda_fabric_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_port_channel_by_id(self,
                                      id,
@@ -10048,14 +10048,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_port_channel_by_id_v1 .
-        """ 
+        """
         return self.delete_port_channel_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_fabric_devices_layer3_handoffs_with_ip_transit(self,
                                                                  headers=None,
@@ -10075,15 +10075,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_fabric_devices_layer3_handoffs_with_ip_transit_v1 .
-        """ 
+        """
         return self.update_fabric_devices_layer3_handoffs_with_ip_transit_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_multicast(self,
                             headers=None,
@@ -10103,15 +10103,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_multicast_v1 .
-        """ 
+        """
         return self.update_multicast_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_transit_networks_count(self,
                                       type=None,
@@ -10128,14 +10128,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_transit_networks_count_v1 .
-        """ 
+        """
         return self.get_transit_networks_count_v1(
                     type=type,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_layer3_virtual_networks(self,
                                        headers=None,
@@ -10155,15 +10155,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_layer3_virtual_networks_v1 .
-        """ 
+        """
         return self.add_layer3_virtual_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_layer3_virtual_networks(self,
                                        anchored_site_id=None,
@@ -10190,7 +10190,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_layer3_virtual_networks_v1 .
-        """ 
+        """
         return self.get_layer3_virtual_networks_v1(
                     anchored_site_id=anchored_site_id,
                     fabric_id=fabric_id,
@@ -10200,8 +10200,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_port_assignment_count(self,
                                      data_vlan_name=None,
@@ -10226,7 +10226,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_port_assignment_count_v1 .
-        """ 
+        """
         return self.get_port_assignment_count_v1(
                     data_vlan_name=data_vlan_name,
                     fabric_id=fabric_id,
@@ -10236,8 +10236,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_extranet_policy_by_id(self,
                                         id,
@@ -10253,14 +10253,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_extranet_policy_by_id_v1 .
-        """ 
+        """
         return self.delete_extranet_policy_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_multicast_virtual_network_by_id(self,
                                                   id,
@@ -10276,14 +10276,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_multicast_virtual_network_by_id_v1 .
-        """ 
+        """
         return self.delete_multicast_virtual_network_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_virtual_network_with_scalable_groups(self,
                                                        virtual_network_name,
@@ -10299,14 +10299,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_virtual_network_with_scalable_groups_v1 .
-        """ 
+        """
         return self.delete_virtual_network_with_scalable_groups_v1(
                     virtual_network_name=virtual_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_provisioned_devices(self,
                                       network_device_id=None,
@@ -10324,15 +10324,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_provisioned_devices_v1 .
-        """ 
+        """
         return self.delete_provisioned_devices_v1(
                     network_device_id=network_device_id,
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_layer3_virtual_network_by_id(self,
                                                id,
@@ -10348,14 +10348,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_layer3_virtual_network_by_id_v1 .
-        """ 
+        """
         return self.delete_layer3_virtual_network_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_transit_peer_network(self,
                                        transit_peer_network_name,
@@ -10372,14 +10372,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_transit_peer_network_v1 .
-        """ 
+        """
         return self.delete_transit_peer_network_v1(
                     transit_peer_network_name=transit_peer_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_provisioned_device_by_id(self,
                                            id,
@@ -10395,14 +10395,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_provisioned_device_by_id_v1 .
-        """ 
+        """
         return self.delete_provisioned_device_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices(self,
                               fabric_id,
@@ -10429,7 +10429,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_v1 .
-        """ 
+        """
         return self.get_fabric_devices_v1(
                     fabric_id=fabric_id,
                     device_roles=device_roles,
@@ -10439,8 +10439,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_multicast_virtual_networks(self,
                                           headers=None,
@@ -10460,15 +10460,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_multicast_virtual_networks_v1 .
-        """ 
+        """
         return self.add_multicast_virtual_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_transit_networks(self,
                                 id=None,
@@ -10493,7 +10493,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_transit_networks_v1 .
-        """ 
+        """
         return self.get_transit_networks_v1(
                     id=id,
                     limit=limit,
@@ -10503,8 +10503,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_vn(self,
                   site_name_hierarchy,
@@ -10522,15 +10522,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_vn_v1 .
-        """ 
+        """
         return self.delete_vn_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     virtual_network_name=virtual_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_fabric_devices_layer2_handoffs(self,
                                               headers=None,
@@ -10550,15 +10550,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_fabric_devices_layer2_handoffs_v1 .
-        """ 
+        """
         return self.add_fabric_devices_layer2_handoffs_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_fabric_devices(self,
                                  headers=None,
@@ -10578,15 +10578,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_fabric_devices_v1 .
-        """ 
+        """
         return self.update_fabric_devices_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def gets_border_device_detail(self,
                                   device_management_ip_address,
@@ -10602,14 +10602,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of gets_border_device_detail_v1 .
-        """ 
+        """
         return self.gets_border_device_detail_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_extranet_policy_count(self,
                                      headers=None,
@@ -10628,8 +10628,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_transit_peer_network_info(self,
                                          transit_peer_network_name,
@@ -10646,14 +10646,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_transit_peer_network_info_v1 .
-        """ 
+        """
         return self.get_transit_peer_network_info_v1(
                     transit_peer_network_name=transit_peer_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_device_by_id(self,
                                       id,
@@ -10669,14 +10669,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_device_by_id_v1 .
-        """ 
+        """
         return self.delete_fabric_device_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_port_assignments(self,
                                 data_vlan_name=None,
@@ -10705,7 +10705,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_port_assignments_v1 .
-        """ 
+        """
         return self.get_port_assignments_v1(
                     data_vlan_name=data_vlan_name,
                     fabric_id=fabric_id,
@@ -10717,8 +10717,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_virtual_network_with_scalable_groups(self,
                                                     virtual_network_name,
@@ -10734,14 +10734,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_virtual_network_with_scalable_groups_v1 .
-        """ 
+        """
         return self.get_virtual_network_with_scalable_groups_v1(
                     virtual_network_name=virtual_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_multicast_details_from_sda_fabric(self,
                                                  site_name_hierarchy,
@@ -10757,14 +10757,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_multicast_details_from_sda_fabric_v1 .
-        """ 
+        """
         return self.get_multicast_details_from_sda_fabric_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_provisioned_wired_device(self,
                                            device_management_ip_address,
@@ -10781,14 +10781,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_provisioned_wired_device_v1 .
-        """ 
+        """
         return self.delete_provisioned_wired_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_anycast_gateway_by_id(self,
                                         id,
@@ -10804,14 +10804,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_anycast_gateway_by_id_v1 .
-        """ 
+        """
         return self.delete_anycast_gateway_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_virtual_network_summary(self,
                                        site_name_hierarchy,
@@ -10828,14 +10828,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_virtual_network_summary_v1 .
-        """ 
+        """
         return self.get_virtual_network_summary_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_port_channels(self,
                              headers=None,
@@ -10855,15 +10855,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_port_channels_v1 .
-        """ 
+        """
         return self.add_port_channels_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_edge_device(self,
                            device_management_ip_address,
@@ -10879,14 +10879,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_edge_device_v1 .
-        """ 
+        """
         return self.delete_edge_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_devices(self,
                                  fabric_id,
@@ -10908,7 +10908,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_devices_v1 .
-        """ 
+        """
         return self.delete_fabric_devices_v1(
                     fabric_id=fabric_id,
                     device_roles=device_roles,
@@ -10916,8 +10916,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_zones(self,
                             id=None,
@@ -10940,7 +10940,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_zones_v1 .
-        """ 
+        """
         return self.get_fabric_zones_v1(
                     id=id,
                     limit=limit,
@@ -10949,8 +10949,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_fabric_devices_layer3_handoffs_with_sda_transit(self,
                                                                   headers=None,
@@ -10970,15 +10970,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_fabric_devices_layer3_handoffs_with_sda_transit_v1 .
-        """ 
+        """
         return self.update_fabric_devices_layer3_handoffs_with_sda_transit_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_authentication_profile(self,
                                          headers=None,
@@ -10998,15 +10998,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_authentication_profile_v1 .
-        """ 
+        """
         return self.update_authentication_profile_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_control_plane_device(self,
                                     device_management_ip_address,
@@ -11022,14 +11022,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_control_plane_device_v1 .
-        """ 
+        """
         return self.delete_control_plane_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_multicast_virtual_networks(self,
                                           fabric_id=None,
@@ -11052,7 +11052,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_multicast_virtual_networks_v1 .
-        """ 
+        """
         return self.get_multicast_virtual_networks_v1(
                     fabric_id=fabric_id,
                     limit=limit,
@@ -11061,8 +11061,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_port_assignments(self,
                                    headers=None,
@@ -11082,15 +11082,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_port_assignments_v1 .
-        """ 
+        """
         return self.update_port_assignments_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_layer3_handoffs_with_sda_transit(self,
                                                                fabric_id,
@@ -11113,7 +11113,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_layer3_handoffs_with_sda_transit_v1 .
-        """ 
+        """
         return self.get_fabric_devices_layer3_handoffs_with_sda_transit_v1(
                     fabric_id=fabric_id,
                     limit=limit,
@@ -11122,8 +11122,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_device_layer3_handoffs_with_sda_transit(self,
                                                                  fabric_id,
@@ -11142,15 +11142,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_device_layer3_handoffs_with_sda_transit_v1 .
-        """ 
+        """
         return self.delete_fabric_device_layer3_handoffs_with_sda_transit_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_layer2_virtual_networks(self,
                                        headers=None,
@@ -11170,15 +11170,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_layer2_virtual_networks_v1 .
-        """ 
+        """
         return self.add_layer2_virtual_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_fabric_devices_layer3_handoffs_with_sda_transit(self,
                                                                headers=None,
@@ -11198,15 +11198,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_fabric_devices_layer3_handoffs_with_sda_transit_v1 .
-        """ 
+        """
         return self.add_fabric_devices_layer3_handoffs_with_sda_transit_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_port_assignment_for_user_device(self,
                                                device_management_ip_address,
@@ -11224,15 +11224,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_port_assignment_for_user_device_v1 .
-        """ 
+        """
         return self.delete_port_assignment_for_user_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     interface_name=interface_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_layer2_handoffs_count(self,
                                                     fabric_id,
@@ -11251,15 +11251,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_layer2_handoffs_count_v1 .
-        """ 
+        """
         return self.get_fabric_devices_layer2_handoffs_count_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_transit_networks(self,
                                 headers=None,
@@ -11279,15 +11279,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_transit_networks_v1 .
-        """ 
+        """
         return self.add_transit_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_multicast_virtual_networks(self,
                                              headers=None,
@@ -11307,15 +11307,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_multicast_virtual_networks_v1 .
-        """ 
+        """
         return self.update_multicast_virtual_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_transit_network_by_id(self,
                                         id,
@@ -11331,14 +11331,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_transit_network_by_id_v1 .
-        """ 
+        """
         return self.delete_transit_network_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_zone_by_id(self,
                                     id,
@@ -11354,14 +11354,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_zone_by_id_v1 .
-        """ 
+        """
         return self.delete_fabric_zone_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_provisioned_devices_count(self,
                                          site_id=None,
@@ -11377,14 +11377,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_provisioned_devices_count_v1 .
-        """ 
+        """
         return self.get_provisioned_devices_count_v1(
                     site_id=site_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_site(self,
                     site_name_hierarchy,
@@ -11400,14 +11400,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_site_v1 .
-        """ 
+        """
         return self.delete_site_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_extranet_policy(self,
                                headers=None,
@@ -11427,15 +11427,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_extranet_policy_v1 .
-        """ 
+        """
         return self.add_extranet_policy_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_layer3_virtual_networks(self,
                                           virtual_network_name=None,
@@ -11452,14 +11452,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_layer3_virtual_networks_v1 .
-        """ 
+        """
         return self.delete_layer3_virtual_networks_v1(
                     virtual_network_name=virtual_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_fabric_zone(self,
                               headers=None,
@@ -11479,15 +11479,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_fabric_zone_v1 .
-        """ 
+        """
         return self.update_fabric_zone_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_multicast(self,
                          fabric_id=None,
@@ -11507,7 +11507,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_multicast_v1 .
-        """ 
+        """
         return self.get_multicast_v1(
                     fabric_id=fabric_id,
                     limit=limit,
@@ -11515,8 +11515,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_fabric_zone(self,
                            headers=None,
@@ -11536,15 +11536,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_fabric_zone_v1 .
-        """ 
+        """
         return self.add_fabric_zone_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def re_provision_wired_device(self,
                                      deviceManagementIpAddress=None,
@@ -11568,7 +11568,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of re_provision_wired_device_v1 .
-        """ 
+        """
         return self.re_provision_wired_device_v1(
                     deviceManagementIpAddress=deviceManagementIpAddress,
                     siteNameHierarchy=siteNameHierarchy,
@@ -11577,8 +11577,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_port_assignment_by_id(self,
                                         id,
@@ -11594,14 +11594,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_port_assignment_by_id_v1 .
-        """ 
+        """
         return self.delete_port_assignment_by_id_v1(
                     id=id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_fabric_device_layer3_handoffs_with_ip_transit(self,
                                                                 fabric_id,
@@ -11620,15 +11620,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_fabric_device_layer3_handoffs_with_ip_transit_v1 .
-        """ 
+        """
         return self.delete_fabric_device_layer3_handoffs_with_ip_transit_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_transit_peer_network(self,
                                     ipTransitSettings=None,
@@ -11657,7 +11657,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_transit_peer_network_v1 .
-        """ 
+        """
         return self.add_transit_peer_network_v1(
                     ipTransitSettings=ipTransitSettings,
                     sdaTransitSettings=sdaTransitSettings,
@@ -11668,8 +11668,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_control_plane_device(self,
                                  device_management_ip_address,
@@ -11685,14 +11685,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_control_plane_device_v1 .
-        """ 
+        """
         return self.get_control_plane_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_layer2_virtual_networks(self,
                                           fabric_id,
@@ -11719,7 +11719,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_layer2_virtual_networks_v1 .
-        """ 
+        """
         return self.delete_layer2_virtual_networks_v1(
                     fabric_id=fabric_id,
                     associated_layer3_virtual_network_name=associated_layer3_virtual_network_name,
@@ -11729,8 +11729,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_zone_count(self,
                                  headers=None,
@@ -11749,8 +11749,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_port_assignment_for_user_device(self,
                                             authenticateTemplateName=None,
@@ -11793,7 +11793,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_port_assignment_for_user_device_v1 .
-        """ 
+        """
         return self.add_port_assignment_for_user_device_v1(
                     authenticateTemplateName=authenticateTemplateName,
                     dataIpAddressPoolName=dataIpAddressPoolName,
@@ -11809,8 +11809,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_port_channels(self,
                                 headers=None,
@@ -11830,15 +11830,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_port_channels_v1 .
-        """ 
+        """
         return self.update_port_channels_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_vn(self,
                site_name_hierarchy,
@@ -11856,15 +11856,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_vn_v1 .
-        """ 
+        """
         return self.get_vn_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     virtual_network_name=virtual_network_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_layer3_handoffs_with_ip_transit(self,
                                                               fabric_id,
@@ -11887,7 +11887,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_layer3_handoffs_with_ip_transit_v1 .
-        """ 
+        """
         return self.get_fabric_devices_layer3_handoffs_with_ip_transit_v1(
                     fabric_id=fabric_id,
                     limit=limit,
@@ -11896,8 +11896,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_fabric_site(self,
                            headers=None,
@@ -11917,15 +11917,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_fabric_site_v1 .
-        """ 
+        """
         return self.add_fabric_site_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_virtual_network_with_scalable_groups(self,
                                                        isGuestVirtualNetwork=None,
@@ -11955,7 +11955,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_virtual_network_with_scalable_groups_v1 .
-        """ 
+        """
         return self.update_virtual_network_with_scalable_groups_v1(
                     isGuestVirtualNetwork=isGuestVirtualNetwork,
                     scalableGroupNames=scalableGroupNames,
@@ -11966,8 +11966,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_anycast_gateways(self,
                                 fabric_id=None,
@@ -12000,7 +12000,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_anycast_gateways_v1 .
-        """ 
+        """
         return self.get_anycast_gateways_v1(
                     fabric_id=fabric_id,
                     id=id,
@@ -12013,8 +12013,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def provision_devices(self,
                              headers=None,
@@ -12034,15 +12034,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of provision_devices_v1 .
-        """ 
+        """
         return self.provision_devices_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_layer3_virtual_networks(self,
                                           headers=None,
@@ -12062,15 +12062,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_layer3_virtual_networks_v1 .
-        """ 
+        """
         return self.update_layer3_virtual_networks_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_multicast_from_sda_fabric(self,
                                             site_name_hierarchy,
@@ -12086,14 +12086,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_multicast_from_sda_fabric_v1 .
-        """ 
+        """
         return self.delete_multicast_from_sda_fabric_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_control_plane_device(self,
                                  deviceManagementIpAddress=None,
@@ -12122,7 +12122,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_control_plane_device_v1 .
-        """ 
+        """
         return self.add_control_plane_device_v1(
                     deviceManagementIpAddress=deviceManagementIpAddress,
                     routeDistributionProtocol=routeDistributionProtocol,
@@ -12132,8 +12132,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_port_assignments(self,
                                    fabric_id,
@@ -12158,7 +12158,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_port_assignments_v1 .
-        """ 
+        """
         return self.delete_port_assignments_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
@@ -12168,8 +12168,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_multicast_virtual_network_count(self,
                                                fabric_id=None,
@@ -12186,14 +12186,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_multicast_virtual_network_count_v1 .
-        """ 
+        """
         return self.get_multicast_virtual_network_count_v1(
                     fabric_id=fabric_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_default_authentication_profile(self,
                                               headers=None,
@@ -12213,15 +12213,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_default_authentication_profile_v1 .
-        """ 
+        """
         return self.update_default_authentication_profile_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_devices_layer3_handoffs_with_sda_transit_count(self,
                                                                      fabric_id,
@@ -12240,15 +12240,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_fabric_devices_layer3_handoffs_with_sda_transit_count_v1 .
-        """ 
+        """
         return self.get_fabric_devices_layer3_handoffs_with_sda_transit_count_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_fabric_devices(self,
                               headers=None,
@@ -12268,15 +12268,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_fabric_devices_v1 .
-        """ 
+        """
         return self.add_fabric_devices_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_provisioned_devices(self,
                                    id=None,
@@ -12300,7 +12300,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_provisioned_devices_v1 .
-        """ 
+        """
         return self.get_provisioned_devices_v1(
                     id=id,
                     limit=limit,
@@ -12310,8 +12310,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_layer2_virtual_network_count(self,
                                             associated_layer3_virtual_network_name=None,
@@ -12338,7 +12338,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_layer2_virtual_network_count_v1 .
-        """ 
+        """
         return self.get_layer2_virtual_network_count_v1(
                     associated_layer3_virtual_network_name=associated_layer3_virtual_network_name,
                     fabric_id=fabric_id,
@@ -12348,8 +12348,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_anycast_gateway_count(self,
                                      fabric_id=None,
@@ -12376,7 +12376,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_anycast_gateway_count_v1 .
-        """ 
+        """
         return self.get_anycast_gateway_count_v1(
                     fabric_id=fabric_id,
                     ip_pool_name=ip_pool_name,
@@ -12386,8 +12386,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_port_channel_count(self,
                                   connected_device_type=None,
@@ -12410,7 +12410,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_port_channel_count_v1 .
-        """ 
+        """
         return self.get_port_channel_count_v1(
                     connected_device_type=connected_device_type,
                     fabric_id=fabric_id,
@@ -12419,8 +12419,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_edge_device(self,
                         device_management_ip_address,
@@ -12436,14 +12436,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_edge_device_v1 .
-        """ 
+        """
         return self.get_edge_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_fabric_site_count(self,
                                  headers=None,
@@ -12462,8 +12462,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def re_provision_devices(self,
                                 headers=None,
@@ -12483,15 +12483,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of re_provision_devices_v1 .
-        """ 
+        """
         return self.re_provision_devices_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def provision_wired_device(self,
                                   deviceManagementIpAddress=None,
@@ -12515,7 +12515,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of provision_wired_device_v1 .
-        """ 
+        """
         return self.provision_wired_device_v1(
                     deviceManagementIpAddress=deviceManagementIpAddress,
                     siteNameHierarchy=siteNameHierarchy,
@@ -12524,8 +12524,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_provisioned_wired_device(self,
                                         device_management_ip_address,
@@ -12541,14 +12541,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_provisioned_wired_device_v1 .
-        """ 
+        """
         return self.get_provisioned_wired_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_port_assignment_for_user_device(self,
                                             device_management_ip_address,
@@ -12566,15 +12566,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_port_assignment_for_user_device_v1 .
-        """ 
+        """
         return self.get_port_assignment_for_user_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     interface_name=interface_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_default_authentication_profile(self,
                                               site_name_hierarchy,
@@ -12590,14 +12590,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_default_authentication_profile_v1 .
-        """ 
+        """
         return self.delete_default_authentication_profile_v1(
                     site_name_hierarchy=site_name_hierarchy,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_fabric_site(self,
                               headers=None,
@@ -12617,15 +12617,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_fabric_site_v1 .
-        """ 
+        """
         return self.update_fabric_site_v1(
                     headers=headers,
                     payload=payload,
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_site(self,
                  fabricName=None,
@@ -12655,7 +12655,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_site_v1 .
-        """ 
+        """
         return self.add_site_v1(
                     fabricName=fabricName,
                     fabricType=fabricType,
@@ -12665,8 +12665,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def deletes_border_device(self,
                               device_management_ip_address,
@@ -12682,14 +12682,14 @@ class Sda(object):
 
         Returns:
             This function returns the output of deletes_border_device_v1 .
-        """ 
+        """
         return self.deletes_border_device_v1(
                     device_management_ip_address=device_management_ip_address,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_layer2_virtual_networks(self,
                                        associated_layer3_virtual_network_name=None,
@@ -12722,7 +12722,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_layer2_virtual_networks_v1 .
-        """ 
+        """
         return self.get_layer2_virtual_networks_v1(
                     associated_layer3_virtual_network_name=associated_layer3_virtual_network_name,
                     fabric_id=fabric_id,
@@ -12735,8 +12735,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_extranet_policies(self,
                                  extranet_policy_name=None,
@@ -12756,7 +12756,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_extranet_policies_v1 .
-        """ 
+        """
         return self.get_extranet_policies_v1(
                     extranet_policy_name=extranet_policy_name,
                     limit=limit,
@@ -12764,8 +12764,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def get_port_assignment_for_access_point(self,
                                              device_management_ip_address,
@@ -12783,15 +12783,15 @@ class Sda(object):
 
         Returns:
             This function returns the output of get_port_assignment_for_access_point_v1 .
-        """ 
+        """
         return self.get_port_assignment_for_access_point_v1(
                     device_management_ip_address=device_management_ip_address,
                     interface_name=interface_name,
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def delete_port_channels(self,
                                 fabric_id,
@@ -12814,7 +12814,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of delete_port_channels_v1 .
-        """ 
+        """
         return self.delete_port_channels_v1(
                     fabric_id=fabric_id,
                     network_device_id=network_device_id,
@@ -12823,8 +12823,8 @@ class Sda(object):
                     headers=headers,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def add_vn(self,
                siteNameHierarchy=None,
@@ -12848,7 +12848,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of add_vn .
-        """ 
+        """
         return self.add_vn_v1(
                     siteNameHierarchy=siteNameHierarchy,
                     virtualNetworkName=virtualNetworkName,
@@ -12857,8 +12857,8 @@ class Sda(object):
                     active_validation=active_validation,
                     **request_parameters
         )
-                
-    
+
+
     # Alias Function
     def update_layer2_virtual_networks(self,
                                           headers=None,
@@ -12878,7 +12878,7 @@ class Sda(object):
 
         Returns:
             This function returns the output of update_layer2_virtual_networks_v1 .
-        """ 
+        """
         return self.update_layer2_virtual_networks_v1(
                     headers=headers,
                     payload=payload,
