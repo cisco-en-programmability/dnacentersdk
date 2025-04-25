@@ -127,10 +127,16 @@ class ApiError(dnacentersdkException):
                 logger.warning("Error parsing JSON response body")
 
         # Extract detailed error information
-        error_code = self.details.get("response", {}).get("errorCode") if self.details else None
-        message = self.details.get("response", {}).get("message") if self.details else None
-        detail = self.details.get("response", {}).get("detail") if self.details else None
-
+        if isinstance(self.details, dict):
+            error_code = self.details.get("response", {}).get("errorCode") if self.details else None
+            message = self.details.get("response", {}).get("message") if self.details else None
+            detail = self.details.get("response", {}).get("detail") if self.details else None
+        elif isinstance(self.details, list) and len(self.details) > 0 and isinstance(self.details[0], dict):
+            error_code = self.details[0].get("errorCode") if self.details else None
+            message = self.details[0].get("message") if self.details else None
+            detail = self.details[0].get("detail") if self.details else None
+        else:
+            error_code = None
         # Construct the error message
         self.message = f"{error_code} - {message}: {detail}" if error_code and message and detail else \
             message or self.details.get("description") if self.details and isinstance(self.details, dict) else None

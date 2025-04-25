@@ -982,7 +982,7 @@ class HealthAndPerformance(object):
 
 
     # Alias Function
-    def system_performance_historical_v1(self,
+    def system_performance_historical(self,
                                       end_time=None,
                                       kpi=None,
                                       start_time=None,

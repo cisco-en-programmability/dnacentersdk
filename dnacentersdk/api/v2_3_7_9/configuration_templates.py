@@ -469,6 +469,77 @@ class ConfigurationTemplates(object):
 
         return self._object_factory('bpm_f3a0f150bc9cb9759496f6029c_v2_3_7_9', json_data)
 
+    def export_projects_v1(self,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
+        """Exports the projects for given projectNames. .This API has been deprecated and will not
+            be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+            This function will be replaced by the function exports_the_projects_for_a_given_criteria_v1.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!exports-the-projects-for-a-given-criteria
+        """
+        check_type(headers, dict)
+        check_type(payload, list)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           str, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+        _payload = payload or []
+        if active_validation:
+            self._request_validator('jsd_e6ea8c5d425cf9ac77006f5593725f_v2_3_7_6')\
+                .validate(_payload)
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-'
+                 + 'programmer/project/name/exportprojects')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           json=_payload)
+
+        return self._object_factory('bpm_e6ea8c5d425cf9ac77006f5593725f_v2_3_7_6', json_data)
+
     def creates_a_clone_of_the_given_template_v1(self,
                              name,
                              project_id,
@@ -545,6 +616,85 @@ class ConfigurationTemplates(object):
             json_data = self._session.post(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_feb800c6888f5b13972467f0e3416ec2_v2_3_7_9', json_data)
+
+    def clone_given_template_v1(self,
+                             name,
+                             project_id,
+                             template_id,
+                             headers=None,
+                             **request_parameters):
+        """API to clone template. This API has been deprecated and will not be available in a Cisco DNA
+            Center release after April 1st 2026 23:59:59 GMT. This function will be replaced by the function
+            creates_a_clone_of_the_given_template_v1.
+
+        Args:
+            name(str): name path parameter. Template name to clone template(Name should be different than
+                existing template name within same project) .
+            template_id(str): templateId path parameter. UUID of the template to clone it .
+            project_id(str): projectId path parameter.
+            project_id(str): projectId query parameter. UUID of the project in which the template needs to be
+                created .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!creates-a-clone-of-the-given-template
+        """
+        check_type(headers, dict)
+        check_type(project_id, str)
+        check_type(name, str,
+                   may_be_none=False)
+        check_type(template_id, str,
+                   may_be_none=False)
+        check_type(project_id, str,
+                   may_be_none=False)
+        if headers is not None:
+            if 'Content-Type' in headers:
+                check_type(headers.get('Content-Type'),
+                           str, may_be_none=False)
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'projectId':
+                project_id,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'name': name,
+            'templateId': template_id,
+            'projectId': project_id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-programmer/clone/name/{name}'
+                 + '/project/{projectId}/template/{templateId}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.post(endpoint_full_url, params=_params,
+                                           headers=_headers)
+        else:
+            json_data = self._session.post(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_feb800c6888f5b13972467f0e3416ec2_v2_3_7_6', json_data)
 
     def create_project_v1(self,
                           createTime=None,
@@ -644,6 +794,71 @@ class ConfigurationTemplates(object):
                                            json=_payload)
 
         return self._object_factory('bpm_ecc3258a5c5b8f2267a512820a59_v2_3_7_9', json_data)
+
+    def get_projects_v1(self,
+                     name=None,
+                     sort_order=None,
+                     headers=None,
+                     **request_parameters):
+        """List the projects. This API has been deprecated and will not be available in a Cisco DNA Center
+            release after April 1st 2026 23:59:59 GMT. This function will be replaced by the function
+            gets_a_list_of_projects_v1.
+
+        Args:
+            name(str): name query parameter. Name of project to be searched .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            list: JSON response. A list of MyDict objects.
+            Access the object's properties by using the dot notation
+            or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-a-list-of-projects
+        """
+        check_type(headers, dict)
+        check_type(name, str)
+        check_type(sort_order, str)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'name':
+                name,
+            'sortOrder':
+                sort_order,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/template-programmer/project')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_b942797fc158e3a0fbb5ffb1347962_v2_3_7_6', json_data)
 
     def update_project_v1(self,
                           createTime=None,
@@ -3292,6 +3507,35 @@ class ConfigurationTemplates(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def export_projects(self,
+                        headers=None,
+                        payload=None,
+                        active_validation=True,
+                        **request_parameters):
+        """This function is an alias of export_projects_v1.This API has been deprecated
+            and will not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+            This function will be replaced by the function exports_the_projects_for_a_given_criteria.
+
+        Args:
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            payload(list): A JSON serializable Python object to send in the
+                body of the Request.
+            active_validation(bool): Enable/Disable payload validation.
+                Defaults to True.
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of export_projects_v1.
+        """
+        return self.export_projects_v1(
+                    headers=headers,
+                    payload=payload,
+                    active_validation=active_validation,
+                    **request_parameters
+        )
 
     # Alias Function
     def create_project(self,
@@ -3582,6 +3826,33 @@ class ConfigurationTemplates(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_projects(self,
+                     name=None,
+                     sort_order=None,
+                     headers=None,
+                     **request_parameters):
+        """This function is an alias of  get_projects_v1. This API has been deprecated and
+            will not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+            This function will be replaced by the function gets_a_list_of_projects.
+
+        Args:
+            name(str): name query parameter. Name of project to be searched .
+            sort_order(str): sortOrder query parameter. Sort Order Ascending (asc) or Descending (des) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_projects_v1.
+        """
+        return self.get_projects_v1(
+                    name=name,
+                    sort_order=sort_order,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def retrieve_count_of_network_profiles_attached_to_acl_i_template(self,
@@ -3701,6 +3972,39 @@ class ConfigurationTemplates(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def clone_given_template(self,
+                             name,
+                             project_id,
+                             template_id,
+                             headers=None,
+                             **request_parameters):
+        """This function is an alias of clone_given_template_v1 . This API has been deprecated and will
+            not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+            This function will be replaced by the function creates_a_clone_of_the_given_template.
+
+        Args:
+            name(str): name path parameter. Template name to clone template(Name should be different than
+                existing template name within same project) .
+            template_id(str): templateId path parameter. UUID of the template to clone it .
+            project_id(str): projectId path parameter.
+            project_id(str): projectId query parameter. UUID of the project in which the template needs to be
+                created .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of clone_given_template_v1.
+        """
+        return self.clone_given_template_v1(
+                    name=name,
+                    project_id=project_id,
+                    template_id=template_id,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def gets_the_templates_available(self,

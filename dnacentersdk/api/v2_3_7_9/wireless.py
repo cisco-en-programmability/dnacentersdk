@@ -8012,6 +8012,70 @@ class Wireless(object):
 
         return self._object_factory('bpm_f2b94a700f80548694685475590d5e0b_v2_3_7_9', json_data)
 
+    def get_all80211be_profiles_v1(self,
+                                   limit=None,
+                                   offset=None,
+                                   headers=None,
+                                   **request_parameters):
+        """This API allows the user to get all 802.11be Profile(s) configured under Wireless Settings.
+            This API has been deprecated and will not be available in a Cisco DNA Center release after
+            April 1st 2026 23:59:59 GMT. This function will be replaced by the function get80211be_profiles_v1.
+
+        Args:
+            limit(int): limit query parameter.
+            offset(int): offset query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all80211be-profiles
+        """
+        check_type(headers, dict)
+        check_type(limit, int)
+        check_type(offset, int)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'limit':
+                limit,
+            'offset':
+                offset,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/wirelessSettings/dot11beProfiles')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_f2b94a700f80548694685475590d5e0b_v2_3_7_6', json_data)
+
     def create_a80211be_profile_v1(self,
                                    muMimoDownLink=None,
                                    muMimoUpLink=None,
@@ -9795,6 +9859,71 @@ class Wireless(object):
 
         return self._object_factory('bpm_af893464e53d2abc8922f4f3310ea_v2_3_7_9', json_data)
 
+    def get_all_mobility_groups_v1(self,
+                                   network_device_id=None,
+                                   headers=None,
+                                   **request_parameters):
+        """Retrieve all configured mobility groups if no Network Device Id is provided as a query parameter. If a Network
+        Device Id is given and a mobility group is configured for it, return the configured details; otherwise,
+        return the default values from the device. This API has been deprecated and will not be available in a Cisco DNA Center release
+        after April 1st 2026 23:59:59 GMT. This function will be replaced by the function get_mobility_groups_v1 .
+
+        Args:
+            network_device_id(str): networkDeviceId query parameter. Employ this query parameter to obtain
+                the details of the Mobility Group corresponding to the provided networkDeviceId. Obtain
+                the network device ID value by using the API GET call /dna/intent/api/v1/network-
+                device/ip-address/${ipAddress}. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-all-mobility-groups
+        """
+        check_type(headers, dict)
+        check_type(network_device_id, str)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'networkDeviceId':
+                network_device_id,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/intent/api/v1/wirelessControllers/wirelessMobilityG'
+                 + 'roups')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_cb3e813f46055a3d945b3f77c58f913d_v2_3_7_6', json_data)
+
+
     def configure_access_points_v2(self,
                                    adminStatus=None,
                                    apList=None,
@@ -10897,6 +11026,32 @@ class Wireless(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_all80211be_profiles(self,
+                                   limit=None,
+                                   offset=None,
+                                   headers=None,
+                                   **request_parameters):
+        """ This function is an alias of get_all80211be_profiles_v1.
+            This API has been deprecated and will not be available in a Cisco DNA Center release
+            after April 1st 2026 23:59:59 GMT.This function will be replaced by the function get80211be_profiles .
+        Args:
+            limit(int): limit query parameter.
+            offset(int): offset query parameter.
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_all80211be_profiles_v1 .
+        """
+        return self.get_all80211be_profiles_v1(
+                    limit=limit,
+                    offset=offset,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def delete_ap_authorization_list(self,
@@ -11479,6 +11634,32 @@ class Wireless(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def get_all_mobility_groups(self,
+                                   network_device_id=None,
+                                   headers=None,
+                                   **request_parameters):
+        """ This function is an alias of get_all_mobility_groups_v1. This API has been deprecated and will not
+            be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT. This function will be replaced by the function
+             get_mobility_groups.
+        Args:
+            network_device_id(basestring): networkDeviceId query parameter. Employ this query parameter to obtain
+                the details of the Mobility Group corresponding to the provided networkDeviceId. Obtain
+                the network device ID value by using the API GET call /dna/intent/api/v1/network-
+                device/ip-address/${ipAddress}. .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_all_mobility_groups_v1 .
+        """
+        return self.get_all_mobility_groups_v1(
+                    network_device_id=network_device_id,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def get_power_profiles_count(self,

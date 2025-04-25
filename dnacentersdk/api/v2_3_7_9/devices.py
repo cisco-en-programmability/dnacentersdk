@@ -3894,6 +3894,214 @@ class Devices(object):
 
         return self._object_factory('bpm_fc7a61a854f2b2015d3f1c059ce9_v2_3_7_9', json_data)
 
+    def gets_interfaces_along_with_statistics_data_from_all_network_devices_v1(self,
+                                                                               attribute=None,
+                                                                               end_time=None,
+                                                                               interface_id=None,
+                                                                               interface_name=None,
+                                                                               limit=None,
+                                                                               network_device_id=None,
+                                                                               network_device_ip_address=None,
+                                                                               network_device_mac_address=None,
+                                                                               offset=None,
+                                                                               order=None,
+                                                                               site_hierarchy=None,
+                                                                               site_hierarchy_id=None,
+                                                                               site_id=None,
+                                                                               sort_by=None,
+                                                                               start_time=None,
+                                                                               view=None,
+                                                                               headers=None,
+                                                                               **request_parameters):
+        """Retrieves the list of the interfaces from all network devices based on the provided query parameters. The latest
+        interfaces data in the specified start and end time range will be returned. When there is no start and
+        end time specified returns the latest available data. The elements are grouped and sorted by deviceUuid
+        first, and are then sorted by the given sort field, or by the default value: name.   The supported
+        sorting options are: name, adminStatus, description, duplexConfig,
+        duplexOper,interfaceIfIndex,interfaceType, macAddress,mediaType, operStatus,portChannelId, portMode,
+        portType,speed, vlanId. For detailed information about the usage of the API, please refer to the Open
+        API specification document https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-interfaces-1.0.2-resolved.yaml .
+        This API has been deprecated and will not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+        This function will be replaced by the function gets_interfaces_along_with_statistics_and_poe_data_from_all_network_devices_v1.
+
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            limit(int): limit query parameter. Maximum number of records to return .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            sort_by(str): sortBy query parameter. A field within the response to sort by. .
+            order(str): order query parameter. The sort order of the field ascending or descending. .
+            site_hierarchy(str): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
+                supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
+                Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
+                requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
+                reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
+            site_hierarchy_id(str): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
+            site_id(str): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) Examples:
+                `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3` (multiple ids
+                requested) .
+            view(str): view query parameter. The specific summary view being requested. This is an optional
+                parameter which can be passed to get one or more of the specific view associated fields.
+                The default view is ``configuration``. ### Response data proviced by each view:   1.
+                **configuration** [id,adminStatus,description,duplexConfig,duplexOper,interfaceIfIndex,i
+                nterfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,name,o
+                perStatus, portChannelId,portMode, portType,speed,timestamp,vlanId,networkDeviceId,netwo
+                rkDeviceIpAddress,networkDeviceMacAddress,siteName,siteHierarchy,siteHierarchyId]   2.
+                **statistics** [id,name,rxDiscards,rxError,rxRate,rxUtilization,txDiscards,txError,txRat
+                e,txUtilization,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteName,
+                siteHierarchy,siteHierarchyId]   3. **stackPort** [id,name,peerStackMember,peerStackPort
+                ,stackPortType,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteName,s
+                iteHierarchy,siteHierarchyId]   The default view is configuration, If need to access an
+                additional view, simply include the view name in the query parameter. Examples:
+                view=configuration (single view requested) view=configuration&view=statistic&stackPort
+                (multiple views requested) .
+            attribute(str): attribute query parameter. The following list of attributes can be provided in
+                the attribute field [id,adminStatus, description,duplexConfig,duplexOper,interfaceIfInde
+                x,interfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,nam
+                e,operStatus,peerStackMember,peerStackPort, portChannelId,portMode, portType,rxDiscards,
+                rxError,rxRate,rxUtilization,speed,stackPortType,timestamp,txDiscards,txError,txRate,txU
+                tilization,vlanId,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteNam
+                e,siteHierarchy,siteHierarchyId] If length of attribute list is too long, please use
+                'views' param instead. Examples: attributes=name (single attribute requested)
+                attributes=name,description,duplexOper (multiple attributes with comma separator) .
+            network_device_id(str): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
+                requested) `networkDeviceId=6bef213c-19ca-4170-8375-
+                b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
+                cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
+                networkDeviceIds with & separator) .
+            network_device_ip_address(str): networkDeviceIpAddress query parameter. The list of Network
+                Device management IP Address. (Ex. `121.1.1.10`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*1.1*` or `1.1*` or `*1.1` Examples:
+                `networkDeviceIpAddress=121.1.1.10` `networkDeviceIpAddress=121.1.1.10&networkDeviceIpAd
+                dress=172.20.1.10&networkDeviceIpAddress=10.10.20.10` (multiple networkDevice IP Address
+                with & separator) .
+            network_device_mac_address(str): networkDeviceMacAddress query parameter. The list of Network
+                Device MAC Address. (Ex. `64:f6:9d:07:9a:00`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*` or `*AB:AB:AB` Examples:
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00`
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00&networkDeviceMacAddress=70:56:9d:07:ac:77`
+                (multiple networkDevice MAC addresses with & separator) .
+            interface_id(str): interfaceId query parameter. The list of Interface Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `interfaceId=6bef213c-19ca-4170-8375-b694e251101c` (single interface uuid ) `interfaceId
+                =6bef213c-19ca-4170-8375-b694e251101c&32219612-819e-4b5e-a96b-cf22aca13dd9&2541e9a7-
+                b80d-4955-8aa2-79b233318ba0` (multiple Interface uuid with & separator) .
+            interface_name(str): interfaceName query parameter. The list of Interface name (Ex.
+                `GigabitEthernet1/0/1`) This field supports wildcard (`*`) character-based search.  Ex:
+                `*1/0/1*` or `1/0/1*` or `*1/0/1` Examples: `interfaceNames=GigabitEthernet1/0/1`
+                (single interface name)
+                `interfaceNames=GigabitEthernet1/0/1&GigabitEthernet2/0/1&GigabitEthernet3/0/1`
+                (multiple interface names with & separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!gets-interfaces-along-with-statistics-data-from-all-network-devices
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(limit, int)
+        check_type(offset, int)
+        check_type(sort_by, str)
+        check_type(order, str)
+        check_type(site_hierarchy, str)
+        check_type(site_hierarchy_id, str)
+        check_type(site_id, str)
+        check_type(view, str)
+        check_type(attribute, str)
+        check_type(network_device_id, str)
+        check_type(network_device_ip_address, str)
+        check_type(network_device_mac_address, str)
+        check_type(interface_id, str)
+        check_type(interface_name, str)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'limit':
+                limit,
+            'offset':
+                offset,
+            'sortBy':
+                sort_by,
+            'order':
+                order,
+            'siteHierarchy':
+                site_hierarchy,
+            'siteHierarchyId':
+                site_hierarchy_id,
+            'siteId':
+                site_id,
+            'view':
+                view,
+            'attribute':
+                attribute,
+            'networkDeviceId':
+                network_device_id,
+            'networkDeviceIpAddress':
+                network_device_ip_address,
+            'networkDeviceMacAddress':
+                network_device_mac_address,
+            'interfaceId':
+                interface_id,
+            'interfaceName':
+                interface_name,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_fc7a61a854f2b2015d3f1c059ce9_v2_3_7_6', json_data)
+
+
     def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(self,
                                                                                                                                                                               end_time=None,
                                                                                                                                                                               interface_id=None,
@@ -4347,6 +4555,102 @@ class Devices(object):
             json_data = self._session.get(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_adcdf890505770af113b18b30c1b5f_v2_3_7_9', json_data)
+
+    def get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_v1(self,
+                                                                                                         id,
+                                                                                                         attribute=None,
+                                                                                                         end_time=None,
+                                                                                                         start_time=None,
+                                                                                                         view=None,
+                                                                                                         headers=None,
+                                                                                                         **request_parameters):
+        """Returns the interface data for the given interface instance Uuid along with the statistics data. The latest
+        interface data in the specified start and end time range will be returned. When there is no start and
+        end time specified returns the latest available data for the given interface Id. For detailed
+        information about the usage of the API, please refer to the Open API specification document
+        https://github.com/cisco-en-programmability/catalyst-center-api-
+        specs/blob/main/Assurance/CE_Cat_Center_Org-interfaces-1.0.2-resolved.yaml .
+        This API has been deprecated and will not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+        This function will be replaced by the function get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_and_poe_data_v1.
+
+        Args:
+            id(str): id path parameter. The interface Uuid .
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            view(str): view query parameter. Interface data model views .
+            attribute(str): attribute query parameter. The following list of attributes can be provided in
+                the attribute field [id,adminStatus, description,duplexConfig,duplexOper,interfaceIfInde
+                x,interfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,nam
+                e,operStatus,peerStackMember,peerStackPort, portChannelId,portMode, portType,rxDiscards,
+                rxError,rxRate,rxUtilization,speed,stackPortType,timestamp,txDiscards,txError,txRate,txU
+                tilization,vlanId,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteNam
+                e,siteHierarchy,siteHierarchyId] If length of attribute list is too long, please use
+                'views' param instead. Examples: attributes=name (single attribute requested)
+                attributes=name,description,duplexOper (multiple attributes with comma separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            MyDict: JSON response. Access the object's properties by using
+            the dot notation or the bracket notation.
+
+        Raises:
+            TypeError: If the parameter types are incorrect.
+            MalformedRequest: If the request body created is invalid.
+            ApiError: If the DNA Center cloud returns an error.
+        Documentation Link:
+            https://developer.cisco.com/docs/dna-center/#!get-the-interface-data-for-the-given-interface-idinstance-uuid-along-with-the-statistics-data
+        """
+        check_type(headers, dict)
+        check_type(start_time, int)
+        check_type(end_time, int)
+        check_type(view, str)
+        check_type(attribute, str)
+        check_type(id, str,
+                   may_be_none=False)
+        if headers is not None:
+            if 'X-Auth-Token' in headers:
+                check_type(headers.get('X-Auth-Token'),
+                           str, may_be_none=False)
+
+        _params = {
+            'startTime':
+                start_time,
+            'endTime':
+                end_time,
+            'view':
+                view,
+            'attribute':
+                attribute,
+        }
+        _params.update(request_parameters)
+        _params = dict_from_items_with_values(_params)
+
+        path_params = {
+            'id': id,
+        }
+
+        with_custom_headers = False
+        _headers = self._session.headers or {}
+        if headers:
+            _headers.update(dict_of_str(headers))
+            with_custom_headers = True
+
+        e_url = ('/dna/data/api/v1/interfaces/{id}')
+        endpoint_full_url = apply_path_params(e_url, path_params)
+        if with_custom_headers:
+            json_data = self._session.get(endpoint_full_url, params=_params,
+                                          headers=_headers)
+        else:
+            json_data = self._session.get(endpoint_full_url, params=_params)
+
+        return self._object_factory('bpm_adcdf890505770af113b18b30c1b5f_v2_3_7_6', json_data)
+
 
     def the_trend_analytcis_data_for_the_interfaces_in_the_specified_time_range_v1(self,
                                                                                    id,
@@ -14788,6 +15092,139 @@ class Devices(object):
                     **request_parameters
         )
 
+    # Alias Function
+    def gets_interfaces_along_with_statistics_data_from_all_network_devices(self,
+                                                                               attribute=None,
+                                                                               end_time=None,
+                                                                               interface_id=None,
+                                                                               interface_name=None,
+                                                                               limit=None,
+                                                                               network_device_id=None,
+                                                                               network_device_ip_address=None,
+                                                                               network_device_mac_address=None,
+                                                                               offset=None,
+                                                                               order=None,
+                                                                               site_hierarchy=None,
+                                                                               site_hierarchy_id=None,
+                                                                               site_id=None,
+                                                                               sort_by=None,
+                                                                               start_time=None,
+                                                                               view=None,
+                                                                               headers=None,
+                                                                               **request_parameters):
+        """ This function is an alias of gets_interfaces_along_with_statistics_data_from_all_network_devices_v1 .
+            This API has been deprecated and will not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+            This function will be replaced by the function gets_interfaces_along_with_statistics_and_poe_data_from_all_network_devices_v1.
+        Args:
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            limit(int): limit query parameter. Maximum number of records to return .
+            offset(int): offset query parameter. Specifies the starting point within all records returned by the
+                API. It's one based offset. The starting value is 1. .
+            sort_by(basestring): sortBy query parameter. A field within the response to sort by. .
+            order(basestring): order query parameter. The sort order of the field ascending or descending. .
+            site_hierarchy(basestring): siteHierarchy query parameter. The full hierarchical breakdown of the site
+                tree starting from Global site name and ending with the specific site name. The Root
+                site is named "Global" (Ex. `Global/AreaName/BuildingName/FloorName`) This field
+                supports wildcard asterisk (`*`) character search support. E.g. `*/San*, */San, /San*`
+                Examples: `?siteHierarchy=Global/AreaName/BuildingName/FloorName` (single siteHierarchy
+                requested) `?siteHierarchy=Global/AreaName/BuildingName/FloorName&siteHierarchy=Global/A
+                reaName2/BuildingName2/FloorName2` (multiple siteHierarchies requested) .
+            site_hierarchy_id(basestring): siteHierarchyId query parameter. The full hierarchy breakdown of the site
+                tree in id form starting from Global site UUID and ending with the specific site UUID.
+                (Ex. `globalUuid/areaUuid/buildingUuid/floorUuid`) This field supports wildcard asterisk
+                (`*`) character search support. E.g. `*uuid*, *uuid, uuid*` Examples:
+                `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid `(single siteHierarchyId
+                requested) `?siteHierarchyId=globalUuid/areaUuid/buildingUuid/floorUuid&siteHierarchyId=
+                globalUuid/areaUuid2/buildingUuid2/floorUuid2` (multiple siteHierarchyIds requested) .
+            site_id(basestring): siteId query parameter. The UUID of the site. (Ex. `flooruuid`) Examples:
+                `?siteId=id1` (single id requested) `?siteId=id1&siteId=id2&siteId=id3` (multiple ids
+                requested) .
+            view(basestring): view query parameter. The specific summary view being requested. This is an optional
+                parameter which can be passed to get one or more of the specific view associated fields.
+                The default view is ``configuration``. ### Response data proviced by each view:   1.
+                **configuration** [id,adminStatus,description,duplexConfig,duplexOper,interfaceIfIndex,i
+                nterfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,name,o
+                perStatus, portChannelId,portMode, portType,speed,timestamp,vlanId,networkDeviceId,netwo
+                rkDeviceIpAddress,networkDeviceMacAddress,siteName,siteHierarchy,siteHierarchyId]   2.
+                **statistics** [id,name,rxDiscards,rxError,rxRate,rxUtilization,txDiscards,txError,txRat
+                e,txUtilization,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteName,
+                siteHierarchy,siteHierarchyId]   3. **stackPort** [id,name,peerStackMember,peerStackPort
+                ,stackPortType,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteName,s
+                iteHierarchy,siteHierarchyId]   The default view is configuration, If need to access an
+                additional view, simply include the view name in the query parameter. Examples:
+                view=configuration (single view requested) view=configuration&view=statistic&stackPort
+                (multiple views requested) .
+            attribute(basestring): attribute query parameter. The following list of attributes can be provided in
+                the attribute field [id,adminStatus, description,duplexConfig,duplexOper,interfaceIfInde
+                x,interfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,nam
+                e,operStatus,peerStackMember,peerStackPort, portChannelId,portMode, portType,rxDiscards,
+                rxError,rxRate,rxUtilization,speed,stackPortType,timestamp,txDiscards,txError,txRate,txU
+                tilization,vlanId,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteNam
+                e,siteHierarchy,siteHierarchyId] If length of attribute list is too long, please use
+                'views' param instead. Examples: attributes=name (single attribute requested)
+                attributes=name,description,duplexOper (multiple attributes with comma separator) .
+            network_device_id(basestring): networkDeviceId query parameter. The list of Network Device Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `networkDeviceId=6bef213c-19ca-4170-8375-b694e251101c` (single networkDeviceId
+                requested) `networkDeviceId=6bef213c-19ca-4170-8375-
+                b694e251101c&networkDeviceId=32219612-819e-4b5e-a96b-
+                cf22aca13dd9&networkDeviceId=2541e9a7-b80d-4955-8aa2-79b233318ba0` (multiple
+                networkDeviceIds with & separator) .
+            network_device_ip_address(basestring): networkDeviceIpAddress query parameter. The list of Network
+                Device management IP Address. (Ex. `121.1.1.10`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*1.1*` or `1.1*` or `*1.1` Examples:
+                `networkDeviceIpAddress=121.1.1.10` `networkDeviceIpAddress=121.1.1.10&networkDeviceIpAd
+                dress=172.20.1.10&networkDeviceIpAddress=10.10.20.10` (multiple networkDevice IP Address
+                with & separator) .
+            network_device_mac_address(basestring): networkDeviceMacAddress query parameter. The list of Network
+                Device MAC Address. (Ex. `64:f6:9d:07:9a:00`) This field supports wildcard (`*`)
+                character-based search.  Ex: `*AB:AB:AB*` or `AB:AB:AB*` or `*AB:AB:AB` Examples:
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00`
+                `networkDeviceMacAddress=64:f6:9d:07:9a:00&networkDeviceMacAddress=70:56:9d:07:ac:77`
+                (multiple networkDevice MAC addresses with & separator) .
+            interface_id(basestring): interfaceId query parameter. The list of Interface Uuids. (Ex.
+                `6bef213c-19ca-4170-8375-b694e251101c`) Examples:
+                `interfaceId=6bef213c-19ca-4170-8375-b694e251101c` (single interface uuid ) `interfaceId
+                =6bef213c-19ca-4170-8375-b694e251101c&32219612-819e-4b5e-a96b-cf22aca13dd9&2541e9a7-
+                b80d-4955-8aa2-79b233318ba0` (multiple Interface uuid with & separator) .
+            interface_name(basestring): interfaceName query parameter. The list of Interface name (Ex.
+                `GigabitEthernet1/0/1`) This field supports wildcard (`*`) character-based search.  Ex:
+                `*1/0/1*` or `1/0/1*` or `*1/0/1` Examples: `interfaceNames=GigabitEthernet1/0/1`
+                (single interface name)
+                `interfaceNames=GigabitEthernet1/0/1&GigabitEthernet2/0/1&GigabitEthernet3/0/1`
+                (multiple interface names with & separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of gets_interfaces_along_with_statistics_data_from_all_network_devices_v1 .
+        """
+        return self.gets_interfaces_along_with_statistics_data_from_all_network_devices_v1(
+                    attribute=attribute,
+                    end_time=end_time,
+                    interface_id=interface_id,
+                    interface_name=interface_name,
+                    limit=limit,
+                    network_device_id=network_device_id,
+                    network_device_ip_address=network_device_ip_address,
+                    network_device_mac_address=network_device_mac_address,
+                    offset=offset,
+                    order=order,
+                    site_hierarchy=site_hierarchy,
+                    site_hierarchy_id=site_hierarchy_id,
+                    site_id=site_id,
+                    sort_by=sort_by,
+                    start_time=start_time,
+                    view=view,
+                    headers=headers,
+                    **request_parameters
+        )
 
     # Alias Function
     def threat_detail_count(self,
@@ -20169,6 +20606,52 @@ class Devices(object):
             This function returns the output of get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_and_poe_data_v1 .
         """
         return self.get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_and_poe_data_v1(
+                                                                                                                 id,
+                                                                                                                 attribute,
+                                                                                                                 end_time,
+                                                                                                                 start_time,
+                                                                                                                 view,
+                                                                                                                 headers,
+                                                                                                                 **request_parameters)
+
+    def get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data(self,
+                                                                                                         id,
+                                                                                                         attribute=None,
+                                                                                                         end_time=None,
+                                                                                                         start_time=None,
+                                                                                                         view=None,
+                                                                                                         headers=None,
+                                                                                                         **request_parameters):
+        """This function is an alias of get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_v1
+           This API has been deprecated and will not be available in a Cisco DNA Center release after April 1st 2026 23:59:59 GMT.
+           This function will be replaced by the function get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_and_poe_data_v1.
+
+        Args:
+            id(str): id path parameter. The interface Uuid .
+            start_time(int): startTime query parameter. Start time from which API queries the data set related to
+                the resource. It must be specified in UNIX epochtime in milliseconds. Value is
+                inclusive. If `startTime` is not provided, API will default to current time. .
+            end_time(int): endTime query parameter. End time to which API queries the data set related to the
+                resource. It must be specified in UNIX epochtime in milliseconds. Value is inclusive. .
+            view(str): view query parameter. Interface data model views .
+            attribute(str): attribute query parameter. The following list of attributes can be provided in
+                the attribute field [id,adminStatus, description,duplexConfig,duplexOper,interfaceIfInde
+                x,interfaceType,ipv4Address,ipv6AddressList,isL3Interface,isWan,macAddress,mediaType,nam
+                e,operStatus,peerStackMember,peerStackPort, portChannelId,portMode, portType,rxDiscards,
+                rxError,rxRate,rxUtilization,speed,stackPortType,timestamp,txDiscards,txError,txRate,txU
+                tilization,vlanId,networkDeviceId,networkDeviceIpAddress,networkDeviceMacAddress,siteNam
+                e,siteHierarchy,siteHierarchyId] If length of attribute list is too long, please use
+                'views' param instead. Examples: attributes=name (single attribute requested)
+                attributes=name,description,duplexOper (multiple attributes with comma separator) .
+            headers(dict): Dictionary of HTTP Headers to send with the Request
+                .
+            **request_parameters: Additional request parameters (provides
+                support for parameters that may be added in the future).
+
+        Returns:
+            This function returns the output of get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_v1.
+        """
+        return self.get_the_interface_data_for_the_given_interface_idinstance_uuid_along_with_the_statistics_data_v1(
                                                                                                                  id,
                                                                                                                  attribute,
                                                                                                                  end_time,
