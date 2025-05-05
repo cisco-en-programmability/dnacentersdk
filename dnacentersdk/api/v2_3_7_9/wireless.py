@@ -5510,7 +5510,7 @@ class Wireless(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile-connectivity
+            https://developer.cisco.com/docs/dna-center/#!update-wireless-profile
         """
         check_type(headers, dict)
         check_type(payload, dict)

@@ -592,10 +592,11 @@ class ConfigurationArchive(object):
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
-                                           headers=_headers)
+                                           headers=_headers,
+                                           stream=True)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload)
+                                           json=_payload, stream=True)
 
         return self._object_factory('bpm_d8fcd6dbb7ff53b58f7398c49b27ded2_v2_3_7_9', json_data)
 

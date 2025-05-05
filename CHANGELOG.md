@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.14] - 2025-05-05
+### Fix
+- This release allows the download_unmaskedraw_device_configuration_as_z_ip_v1 function to correctly
+respond with a binary.
+
 ## [2.8.13] - 2025-04-25
 ### Fix
 - Correction in error handling.
