@@ -41,216 +41,6 @@ from dnacentersdk.utils import check_type
 
 from .authentication import Authentication
 
-from .v2_2_2_3.application_policy import \
-    ApplicationPolicy as ApplicationPolicy_v2_2_2_3
-from .v2_2_2_3.applications import \
-    Applications as Applications_v2_2_2_3
-from .v2_2_2_3.authentication_management import \
-    AuthenticationManagement as AuthenticationManagement_v2_2_2_3
-from .v2_2_2_3.clients import \
-    Clients as Clients_v2_2_2_3
-from .v2_2_2_3.command_runner import \
-    CommandRunner as CommandRunner_v2_2_2_3
-from .v2_2_2_3.compliance import \
-    Compliance as Compliance_v2_2_2_3
-from .v2_2_2_3.configuration_archive import \
-    ConfigurationArchive as ConfigurationArchive_v2_2_2_3
-from .v2_2_2_3.configuration_templates import \
-    ConfigurationTemplates as ConfigurationTemplates_v2_2_2_3
-from .v2_2_2_3.device_onboarding_pnp import \
-    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_2_2_3
-from .v2_2_2_3.device_replacement import \
-    DeviceReplacement as DeviceReplacement_v2_2_2_3
-from .v2_2_2_3.devices import \
-    Devices as Devices_v2_2_2_3
-from .v2_2_2_3.discovery import \
-    Discovery as Discovery_v2_2_2_3
-from .v2_2_2_3.event_management import \
-    EventManagement as EventManagement_v2_2_2_3
-from .v2_2_2_3.file import \
-    File as File_v2_2_2_3
-from .v2_2_2_3.health_and_performance import \
-    HealthAndPerformance as HealthAndPerformance_v2_2_2_3
-from .v2_2_2_3.itsm import \
-    Itsm as Itsm_v2_2_2_3
-from .v2_2_2_3.issues import \
-    Issues as Issues_v2_2_2_3
-from .v2_2_2_3.licenses import \
-    Licenses as Licenses_v2_2_2_3
-from .v2_2_2_3.network_settings import \
-    NetworkSettings as NetworkSettings_v2_2_2_3
-from .v2_2_2_3.path_trace import \
-    PathTrace as PathTrace_v2_2_2_3
-from .v2_2_2_3.reports import \
-    Reports as Reports_v2_2_2_3
-from .v2_2_2_3.sda import \
-    Sda as Sda_v2_2_2_3
-from .v2_2_2_3.security_advisories import \
-    SecurityAdvisories as SecurityAdvisories_v2_2_2_3
-from .v2_2_2_3.platform_configuration import \
-    PlatformConfiguration as PlatformConfiguration_v2_2_2_3
-from .v2_2_2_3.sensors import \
-    Sensors as Sensors_v2_2_2_3
-from .v2_2_2_3.site_design import \
-    SiteDesign as SiteDesign_v2_2_2_3
-from .v2_2_2_3.sites import \
-    Sites as Sites_v2_2_2_3
-from .v2_2_2_3.software_image_management_swim import \
-    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_2_2_3
-from .v2_2_2_3.tag import \
-    Tag as Tag_v2_2_2_3
-from .v2_2_2_3.task import \
-    Task as Task_v2_2_2_3
-from .v2_2_2_3.topology import \
-    Topology as Topology_v2_2_2_3
-from .v2_2_2_3.users import \
-    Users as Users_v2_2_2_3
-from .v2_2_2_3.wireless import \
-    Wireless as Wireless_v2_2_2_3
-from .v2_2_3_3.application_policy import \
-    ApplicationPolicy as ApplicationPolicy_v2_2_3_3
-from .v2_2_3_3.applications import \
-    Applications as Applications_v2_2_3_3
-from .v2_2_3_3.platform_configuration import \
-    PlatformConfiguration as PlatformConfiguration_v2_2_3_3
-from .v2_2_3_3.authentication_management import \
-    AuthenticationManagement as AuthenticationManagement_v2_2_3_3
-from .v2_2_3_3.clients import \
-    Clients as Clients_v2_2_3_3
-from .v2_2_3_3.command_runner import \
-    CommandRunner as CommandRunner_v2_2_3_3
-from .v2_2_3_3.compliance import \
-    Compliance as Compliance_v2_2_3_3
-from .v2_2_3_3.configuration_archive import \
-    ConfigurationArchive as ConfigurationArchive_v2_2_3_3
-from .v2_2_3_3.configuration_templates import \
-    ConfigurationTemplates as ConfigurationTemplates_v2_2_3_3
-from .v2_2_3_3.device_onboarding_pnp import \
-    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_2_3_3
-from .v2_2_3_3.device_replacement import \
-    DeviceReplacement as DeviceReplacement_v2_2_3_3
-from .v2_2_3_3.devices import \
-    Devices as Devices_v2_2_3_3
-from .v2_2_3_3.disaster_recovery import \
-    DisasterRecovery as DisasterRecovery_v2_2_3_3
-from .v2_2_3_3.discovery import \
-    Discovery as Discovery_v2_2_3_3
-from .v2_2_3_3.event_management import \
-    EventManagement as EventManagement_v2_2_3_3
-from .v2_2_3_3.fabric_wireless import \
-    FabricWireless as FabricWireless_v2_2_3_3
-from .v2_2_3_3.file import \
-    File as File_v2_2_3_3
-from .v2_2_3_3.health_and_performance import \
-    HealthAndPerformance as HealthAndPerformance_v2_2_3_3
-from .v2_2_3_3.itsm import \
-    Itsm as Itsm_v2_2_3_3
-from .v2_2_3_3.issues import \
-    Issues as Issues_v2_2_3_3
-from .v2_2_3_3.licenses import \
-    Licenses as Licenses_v2_2_3_3
-from .v2_2_3_3.network_settings import \
-    NetworkSettings as NetworkSettings_v2_2_3_3
-from .v2_2_3_3.path_trace import \
-    PathTrace as PathTrace_v2_2_3_3
-from .v2_2_3_3.policy import \
-    Policy as Policy_v2_2_3_3
-from .v2_2_3_3.reports import \
-    Reports as Reports_v2_2_3_3
-from .v2_2_3_3.sda import \
-    Sda as Sda_v2_2_3_3
-from .v2_2_3_3.security_advisories import \
-    SecurityAdvisories as SecurityAdvisories_v2_2_3_3
-from .v2_2_3_3.sensors import \
-    Sensors as Sensors_v2_2_3_3
-from .v2_2_3_3.site_design import \
-    SiteDesign as SiteDesign_v2_2_3_3
-from .v2_2_3_3.sites import \
-    Sites as Sites_v2_2_3_3
-from .v2_2_3_3.software_image_management_swim import \
-    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_2_3_3
-from .v2_2_3_3.tag import \
-    Tag as Tag_v2_2_3_3
-from .v2_2_3_3.task import \
-    Task as Task_v2_2_3_3
-from .v2_2_3_3.topology import \
-    Topology as Topology_v2_2_3_3
-from .v2_2_3_3.users import \
-    Users as Users_v2_2_3_3
-from .v2_2_3_3.wireless import \
-    Wireless as Wireless_v2_2_3_3
-from .v2_3_3_0.application_policy import \
-    ApplicationPolicy as ApplicationPolicy_v2_3_3_0
-from .v2_3_3_0.applications import \
-    Applications as Applications_v2_3_3_0
-from .v2_3_3_0.cisco_dna_center_system import \
-    CiscoDnaCenterSystem as CiscoDnaCenterSystem_v2_3_3_0
-from .v2_3_3_0.clients import \
-    Clients as Clients_v2_3_3_0
-from .v2_3_3_0.command_runner import \
-    CommandRunner as CommandRunner_v2_3_3_0
-from .v2_3_3_0.compliance import \
-    Compliance as Compliance_v2_3_3_0
-from .v2_3_3_0.configuration_archive import \
-    ConfigurationArchive as ConfigurationArchive_v2_3_3_0
-from .v2_3_3_0.configuration_templates import \
-    ConfigurationTemplates as ConfigurationTemplates_v2_3_3_0
-from .v2_3_3_0.device_onboarding_pnp import \
-    DeviceOnboardingPnp as DeviceOnboardingPnp_v2_3_3_0
-from .v2_3_3_0.device_replacement import \
-    DeviceReplacement as DeviceReplacement_v2_3_3_0
-from .v2_3_3_0.devices import \
-    Devices as Devices_v2_3_3_0
-from .v2_3_3_0.platform_configuration import \
-    PlatformConfiguration as PlatformConfiguration_v2_3_3_0
-from .v2_3_3_0.discovery import \
-    Discovery as Discovery_v2_3_3_0
-from .v2_3_3_0.event_management import \
-    EventManagement as EventManagement_v2_3_3_0
-from .v2_3_3_0.fabric_wireless import \
-    FabricWireless as FabricWireless_v2_3_3_0
-from .v2_3_3_0.file import \
-    File as File_v2_3_3_0
-from .v2_3_3_0.health_and_performance import \
-    HealthAndPerformance as HealthAndPerformance_v2_3_3_0
-from .v2_3_3_0.itsm import \
-    Itsm as Itsm_v2_3_3_0
-from .v2_3_3_0.issues import \
-    Issues as Issues_v2_3_3_0
-from .v2_3_3_0.lan_automation import \
-    LanAutomation as LanAutomation_v2_3_3_0
-from .v2_3_3_0.licenses import \
-    Licenses as Licenses_v2_3_3_0
-from .v2_3_3_0.network_settings import \
-    NetworkSettings as NetworkSettings_v2_3_3_0
-from .v2_3_3_0.path_trace import \
-    PathTrace as PathTrace_v2_3_3_0
-from .v2_3_3_0.reports import \
-    Reports as Reports_v2_3_3_0
-from .v2_3_3_0.sda import \
-    Sda as Sda_v2_3_3_0
-from .v2_3_3_0.security_advisories import \
-    SecurityAdvisories as SecurityAdvisories_v2_3_3_0
-from .v2_3_3_0.sensors import \
-    Sensors as Sensors_v2_3_3_0
-from .v2_3_3_0.site_design import \
-    SiteDesign as SiteDesign_v2_3_3_0
-from .v2_3_3_0.sites import \
-    Sites as Sites_v2_3_3_0
-from .v2_3_3_0.software_image_management_swim import \
-    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v2_3_3_0
-from .v2_3_3_0.system_settings import \
-    SystemSettings as SystemSettings_v2_3_3_0
-from .v2_3_3_0.tag import \
-    Tag as Tag_v2_3_3_0
-from .v2_3_3_0.task import \
-    Task as Task_v2_3_3_0
-from .v2_3_3_0.topology import \
-    Topology as Topology_v2_3_3_0
-from .v2_3_3_0.users import \
-    Users as Users_v2_3_3_0
-from .v2_3_3_0.wireless import \
-    Wireless as Wireless_v2_3_3_0
 from .v2_3_5_3.application_policy import \
     ApplicationPolicy as ApplicationPolicy_v2_3_5_3
 from .v2_3_5_3.applications import \
@@ -502,6 +292,103 @@ from .v2_3_7_9.users import \
     Users as Users_v2_3_7_9
 from .v2_3_7_9.wireless import \
     Wireless as Wireless_v2_3_7_9
+
+from .v3_1_3_0.ai_endpoint_analytics import \
+    AIEndpointAnalytics as AIEndpointAnalytics_v3_1_3_0
+from .v3_1_3_0.application_policy import \
+    ApplicationPolicy as ApplicationPolicy_v3_1_3_0
+from .v3_1_3_0.applications import \
+    Applications as Applications_v3_1_3_0
+from .v3_1_3_0.authentication_management import \
+    AuthenticationManagement as AuthenticationManagement_v3_1_3_0
+from .v3_1_3_0.backup import \
+    Backup as Backup_v3_1_3_0
+from .v3_1_3_0.cisco_i_m_c import \
+    CiscoIMC as CiscoIMC_v3_1_3_0
+from .v3_1_3_0.cisco_trusted_certificates import \
+    CiscoTrustedCertificates as CiscoTrustedCertificates_v3_1_3_0
+from .v3_1_3_0.clients import \
+    Clients as Clients_v3_1_3_0
+from .v3_1_3_0.command_runner import \
+    CommandRunner as CommandRunner_v3_1_3_0
+from .v3_1_3_0.compliance import \
+    Compliance as Compliance_v3_1_3_0
+from .v3_1_3_0.configuration_archive import \
+    ConfigurationArchive as ConfigurationArchive_v3_1_3_0
+from .v3_1_3_0.configuration_templates import \
+    ConfigurationTemplates as ConfigurationTemplates_v3_1_3_0
+from .v3_1_3_0.device_onboarding_pnp import \
+    DeviceOnboardingPnp as DeviceOnboardingPnp_v3_1_3_0
+from .v3_1_3_0.device_replacement import \
+    DeviceReplacement as DeviceReplacement_v3_1_3_0
+from .v3_1_3_0.devices import \
+    Devices as Devices_v3_1_3_0
+from .v3_1_3_0.disaster_recovery import \
+    DisasterRecovery as DisasterRecovery_v3_1_3_0
+from .v3_1_3_0.discovery import \
+    Discovery as Discovery_v3_1_3_0
+from .v3_1_3_0.eox import \
+    EoX as EoX_v3_1_3_0
+from .v3_1_3_0.event_management import \
+    EventManagement as EventManagement_v3_1_3_0
+from .v3_1_3_0.fabric_wireless import \
+    FabricWireless as FabricWireless_v3_1_3_0
+from .v3_1_3_0.file import \
+    File as File_v3_1_3_0
+from .v3_1_3_0.health_and_performance import \
+    HealthAndPerformance as HealthAndPerformance_v3_1_3_0
+from .v3_1_3_0.itsm import \
+    Itsm as Itsm_v3_1_3_0
+from .v3_1_3_0.itsm_integration import \
+    ItsmIntegration as ItsmIntegration_v3_1_3_0
+from .v3_1_3_0.industrial_configuration import \
+    IndustrialConfiguration as IndustrialConfiguration_v3_1_3_0
+from .v3_1_3_0.issues import \
+    Issues as Issues_v3_1_3_0
+from .v3_1_3_0.know_your_network import \
+    KnowYourNetwork as KnowYourNetwork_v3_1_3_0
+from .v3_1_3_0.lan_automation import \
+    LanAutomation as LanAutomation_v3_1_3_0
+from .v3_1_3_0.licenses import \
+    Licenses as Licenses_v3_1_3_0
+from .v3_1_3_0.network_settings import \
+    NetworkSettings as NetworkSettings_v3_1_3_0
+from .v3_1_3_0.path_trace import \
+    PathTrace as PathTrace_v3_1_3_0
+from .v3_1_3_0.platform import \
+    Platform as Platform_v3_1_3_0
+from .v3_1_3_0.reports import \
+    Reports as Reports_v3_1_3_0
+from .v3_1_3_0.restore import \
+    Restore as Restore_v3_1_3_0
+from .v3_1_3_0.sda import \
+    Sda as Sda_v3_1_3_0
+from .v3_1_3_0.security_advisories import \
+    SecurityAdvisories as SecurityAdvisories_v3_1_3_0
+from .v3_1_3_0.sensors import \
+    Sensors as Sensors_v3_1_3_0
+from .v3_1_3_0.site_design import \
+    SiteDesign as SiteDesign_v3_1_3_0
+from .v3_1_3_0.sites import \
+    Sites as Sites_v3_1_3_0
+from .v3_1_3_0.software_image_management_swim import \
+    SoftwareImageManagementSwim as SoftwareImageManagementSwim_v3_1_3_0
+from .v3_1_3_0.system_settings import \
+    SystemSettings as SystemSettings_v3_1_3_0
+from .v3_1_3_0.tag import \
+    Tag as Tag_v3_1_3_0
+from .v3_1_3_0.task import \
+    Task as Task_v3_1_3_0
+from .v3_1_3_0.topology import \
+    Topology as Topology_v3_1_3_0
+from .v3_1_3_0.user_and_roles import \
+    UserandRoles as UserandRoles_v3_1_3_0
+from .v3_1_3_0.users import \
+    Users as Users_v3_1_3_0
+from .v3_1_3_0.wired import \
+    Wired as Wired_v3_1_3_0
+from .v3_1_3_0.wireless import \
+    Wireless as Wireless_v3_1_3_0
 from .custom_caller import CustomCaller
 
 
@@ -602,7 +489,7 @@ class DNACenterAPI(object):
                 argument or an environment variable, or it is not a
                 DNA Center API supported version
                 [  '2.2.2.3', '2.2.3.3',
-                '2.3.3.0', '2.3.5.3', '2.3.7.6', '2.3.7.9'].
+                '2.3.3.0', '2.3.5.3', '2.3.7.6', '2.3.7.9', '3.1.3.0'].
 
         """
         username = username or dnacenter_environment.get_env_username()
@@ -643,14 +530,13 @@ class DNACenterAPI(object):
         check_type(version, str, may_be_none=False)
         check_type(user_agent, str, may_be_none=False)
 
-        if version not in ['2.2.2.3', '2.2.3.3',
-                           '2.3.3.0', '2.3.5.3',
-                           '2.3.7.6','2.3.7.9']:
+        if version not in ['2.3.5.3','2.3.7.6',
+                           '2.3.7.9','3.1.3.0']:
             raise VersionError(
                 'Unknown API version, '
                 + 'known versions are {}'.format(
-                    '  2.2.2.3, 2.2.3.3, 2.3.3.0, 2.3.5.3, 2.3.7.6 and '
-                    + '2.3.7.9'
+                    '  2.3.5.3, 2.3.7.6, 2.3.7.9 and '
+                    + '3.1.3.0'
                 )
             )
 
@@ -702,429 +588,6 @@ class DNACenterAPI(object):
         _validator = validator(version).json_schema_validate
 
         # API wrappers
-        if version == '2.2.2.3':
-            self.application_policy = \
-                ApplicationPolicy_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.applications = \
-                Applications_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.authentication_management = \
-                AuthenticationManagement_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.clients = \
-                Clients_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.command_runner = \
-                CommandRunner_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.compliance = \
-                Compliance_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.configuration_archive = \
-                ConfigurationArchive_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.configuration_templates = \
-                ConfigurationTemplates_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.device_onboarding_pnp = \
-                DeviceOnboardingPnp_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.device_replacement = \
-                DeviceReplacement_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.devices = \
-                Devices_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.discovery = \
-                Discovery_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.event_management = \
-                EventManagement_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.file = \
-                File_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.health_and_performance = \
-                HealthAndPerformance_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.itsm = \
-                Itsm_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.issues = \
-                Issues_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.licenses = \
-                Licenses_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.network_settings = \
-                NetworkSettings_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.path_trace = \
-                PathTrace_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.platform_configuration = \
-                PlatformConfiguration_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.reports = \
-                Reports_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.sda = \
-                Sda_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.security_advisories = \
-                SecurityAdvisories_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.sensors = \
-                Sensors_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.site_design = \
-                SiteDesign_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.sites = \
-                Sites_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.software_image_management_swim = \
-                SoftwareImageManagementSwim_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.tag = \
-                Tag_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.task = \
-                Task_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.topology = \
-                Topology_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.users = \
-                Users_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-            self.wireless = \
-                Wireless_v2_2_2_3(
-                    self._session, object_factory, _validator
-                )
-        if version == '2.2.3.3':
-            self.application_policy = \
-                ApplicationPolicy_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.applications = \
-                Applications_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.authentication_management = \
-                AuthenticationManagement_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.clients = \
-                Clients_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.command_runner = \
-                CommandRunner_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.compliance = \
-                Compliance_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.configuration_archive = \
-                ConfigurationArchive_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.configuration_templates = \
-                ConfigurationTemplates_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.device_onboarding_pnp = \
-                DeviceOnboardingPnp_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.device_replacement = \
-                DeviceReplacement_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.devices = \
-                Devices_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.disaster_recovery = \
-                DisasterRecovery_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.discovery = \
-                Discovery_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.event_management = \
-                EventManagement_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.fabric_wireless = \
-                FabricWireless_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.file = \
-                File_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.health_and_performance = \
-                HealthAndPerformance_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.itsm = \
-                Itsm_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.issues = \
-                Issues_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.licenses = \
-                Licenses_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.network_settings = \
-                NetworkSettings_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.path_trace = \
-                PathTrace_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.platform_configuration = \
-                PlatformConfiguration_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.policy = \
-                Policy_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.reports = \
-                Reports_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.sda = \
-                Sda_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.security_advisories = \
-                SecurityAdvisories_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.sensors = \
-                Sensors_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.site_design = \
-                SiteDesign_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.sites = \
-                Sites_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.software_image_management_swim = \
-                SoftwareImageManagementSwim_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.tag = \
-                Tag_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.task = \
-                Task_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.topology = \
-                Topology_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.users = \
-                Users_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-            self.wireless = \
-                Wireless_v2_2_3_3(
-                    self._session, object_factory, _validator
-                )
-        if version == '2.3.3.0':
-            self.application_policy = \
-                ApplicationPolicy_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.applications = \
-                Applications_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.cisco_dna_center_system = \
-                CiscoDnaCenterSystem_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.clients = \
-                Clients_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.command_runner = \
-                CommandRunner_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.compliance = \
-                Compliance_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.configuration_archive = \
-                ConfigurationArchive_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.configuration_templates = \
-                ConfigurationTemplates_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.device_onboarding_pnp = \
-                DeviceOnboardingPnp_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.device_replacement = \
-                DeviceReplacement_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.devices = \
-                Devices_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.discovery = \
-                Discovery_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.event_management = \
-                EventManagement_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.fabric_wireless = \
-                FabricWireless_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.file = \
-                File_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.health_and_performance = \
-                HealthAndPerformance_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.itsm = \
-                Itsm_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.issues = \
-                Issues_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.lan_automation = \
-                LanAutomation_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.licenses = \
-                Licenses_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.network_settings = \
-                NetworkSettings_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.path_trace = \
-                PathTrace_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.platform_configuration = \
-                PlatformConfiguration_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.reports = \
-                Reports_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.sda = \
-                Sda_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.security_advisories = \
-                SecurityAdvisories_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.sensors = \
-                Sensors_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.site_design = \
-                SiteDesign_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.sites = \
-                Sites_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.software_image_management_swim = \
-                SoftwareImageManagementSwim_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.system_settings = \
-                SystemSettings_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.tag = \
-                Tag_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.task = \
-                Task_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.topology = \
-                Topology_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.users = \
-                Users_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
-            self.wireless = \
-                Wireless_v2_3_3_0(
-                    self._session, object_factory, _validator
-                )
         if version == '2.3.5.3':
             self.application_policy = \
                 ApplicationPolicy_v2_3_5_3(
@@ -1633,6 +1096,199 @@ class DNACenterAPI(object):
                 )
             self.wireless = \
                 Wireless_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
+        if version == '3.1.3.0':
+            self.a_i_endpoint_analytics = \
+                AIEndpointAnalytics_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.application_policy = \
+                ApplicationPolicy_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.applications = \
+                Applications_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.authentication_management = \
+                AuthenticationManagement_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.backup = \
+                Backup_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.cisco_i_m_c = \
+                CiscoIMC_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.cisco_trusted_certificates = \
+                CiscoTrustedCertificates_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.clients = \
+                Clients_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.command_runner = \
+                CommandRunner_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.compliance = \
+                Compliance_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.configuration_archive = \
+                ConfigurationArchive_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.configuration_templates = \
+                ConfigurationTemplates_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.device_onboarding_pnp = \
+                DeviceOnboardingPnp_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.device_replacement = \
+                DeviceReplacement_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.devices = \
+                Devices_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.disaster_recovery = \
+                DisasterRecovery_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.discovery = \
+                Discovery_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.eox = \
+                EoX_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.event_management = \
+                EventManagement_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.fabric_wireless = \
+                FabricWireless_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.file = \
+                File_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.health_and_performance = \
+                HealthAndPerformance_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.itsm = \
+                Itsm_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.itsm_integration = \
+                ItsmIntegration_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.industrial_configuration = \
+                IndustrialConfiguration_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.issues = \
+                Issues_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.know_your_network = \
+                KnowYourNetwork_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.lan_automation = \
+                LanAutomation_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.licenses = \
+                Licenses_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.network_settings = \
+                NetworkSettings_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.path_trace = \
+                PathTrace_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.platform = \
+                Platform_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.reports = \
+                Reports_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.restore = \
+                Restore_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.sda = \
+                Sda_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.security_advisories = \
+                SecurityAdvisories_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.sensors = \
+                Sensors_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.site_design = \
+                SiteDesign_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.sites = \
+                Sites_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.software_image_management_swim = \
+                SoftwareImageManagementSwim_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.system_settings = \
+                SystemSettings_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.tag = \
+                Tag_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.task = \
+                Task_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.topology = \
+                Topology_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.user_and_roles = \
+                UserandRoles_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.users = \
+                Users_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.wired = \
+                Wired_v3_1_3_0(
+                    self._session, object_factory, _validator
+                )
+            self.wireless = \
+                Wireless_v3_1_3_0(
                     self._session, object_factory, _validator
                 )
         self.custom_caller = \

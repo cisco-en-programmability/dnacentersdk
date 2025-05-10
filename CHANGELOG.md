@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.0] - 2025-05-09
+### Added
+- Add support of DNA Center versions ('3.1.3.0')
+- Adds modules for v3_1_3_0
+- Modules 2_2_2_3, 2_2_3_3, 2_3_3_0 were removed
+
 ## [2.8.14] - 2025-05-05
 ### Fix
 - This release allows the download_unmaskedraw_device_configuration_as_z_ip_v1 function to correctly

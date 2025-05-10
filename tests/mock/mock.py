@@ -3,12 +3,10 @@ from http.server import HTTPServer
 from threading import Thread
 
 
-from tests.mock.server.v2_2_2_3 import MockServerRequestHandler_v2_2_2_3
-from tests.mock.server.v2_2_3_3 import MockServerRequestHandler_v2_2_3_3
-from tests.mock.server.v2_3_3_0 import MockServerRequestHandler_v2_3_3_0
 from tests.mock.server.v2_3_5_3 import MockServerRequestHandler_v2_3_5_3
 from tests.mock.server.v2_3_7_6 import MockServerRequestHandler_v2_3_7_6
 from tests.mock.server.v2_3_7_9 import MockServerRequestHandler_v2_3_7_9
+from tests.mock.server.v3_1_3_0 import MockServerRequestHandler_v3_1_3_0
 
 HOST = 'localhost'
 
@@ -29,18 +27,14 @@ def get_mock_url(free_port):
 def start_mock_server(port, version):
     mockServerHandler = None
 
-    if version == '2.2.2.3':
-        mockServerHandler = MockServerRequestHandler_v2_2_2_3
-    if version == '2.2.3.3':
-        mockServerHandler = MockServerRequestHandler_v2_2_3_3
-    if version == '2.3.3.0':
-        mockServerHandler = MockServerRequestHandler_v2_3_3_0
     if version == '2.3.5.3':
         mockServerHandler = MockServerRequestHandler_v2_3_5_3
     if version == '2.3.7.6':
         mockServerHandler = MockServerRequestHandler_v2_3_7_6
     if version == '2.3.7.9':
         mockServerHandler = MockServerRequestHandler_v2_3_7_9
+    if version == '3.1.3.0':
+        mockServerHandler = MockServerRequestHandler_v3_1_3_0
 
     if mockServerHandler is None:
         raise Exception('Could not create MockServer for version {}'.format(version))

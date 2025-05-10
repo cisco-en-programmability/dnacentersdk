@@ -27,7 +27,7 @@
 DEFAULT_DEBUG = 'False'
 
 #: **version** default value.
-DEFAULT_VERSION = '2.3.7.9'
+DEFAULT_VERSION = '3.1.3.0'
 
 #: **base_url** default value.
 DEFAULT_BASE_URL = 'https://sandboxdnac.cisco.com:443'
