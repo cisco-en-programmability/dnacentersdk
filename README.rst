@@ -149,12 +149,6 @@ The following table shows the supported versions.
 
    * - Cisco DNA Center version
      - Python "dnacentersdk" version
-   * - 2.2.2.3
-     - 2.3.3
-   * - 2.2.3.3
-     - 2.4.11
-   * - 2.3.3.0
-     - 2.5.6
    * - 2.3.5.3
      - 2.6.11
    * - 2.3.7.6
