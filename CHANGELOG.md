@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.1] - 2025-05-09
+### Fix
+- Modification of the get_reserve_ip_subpool_v1 function.
+
 ## [2.9.0] - 2025-05-09
 ### Added
 - Add support of DNA Center versions ('3.1.3.0')

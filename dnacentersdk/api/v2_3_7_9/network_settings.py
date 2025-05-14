@@ -2083,7 +2083,7 @@ class NetworkSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-reserve-i-p-subpool
+            https://developer.cisco.com/docs/dna-center/#!get-reserve-ip-subpool
         """
         check_type(headers, dict)
         check_type(site_id, str)
@@ -2096,6 +2096,9 @@ class NetworkSettings(object):
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
                            str, may_be_none=False)
+
+        if ignore_inherited_groups != None:
+            ignore_inherited_groups =  str(ignore_inherited_groups).lower()
 
         _params = {
             'siteId':
@@ -2424,7 +2427,7 @@ class NetworkSettings(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!update-reserve-i-p-subpool
+            https://developer.cisco.com/docs/dna-center/#!update-reserve-ip-subpool
         """
         check_type(headers, dict)
         check_type(payload, dict)
