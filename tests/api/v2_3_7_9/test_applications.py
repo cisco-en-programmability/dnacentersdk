@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
 
 
-def is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(json_schema_validate, obj):
+def is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(json_schema_validate, obj):
     json_schema_validate('jsd_fb02436a6c935d5d8a536b86de8b2846_v2_3_7_9').validate(obj)
     return True
 
 
-def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(api):
-    endpoint_result = api.applications.retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(
+def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(api):
+    endpoint_result = api.applications.retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
         application_name='string',
         attribute='string',
         business_relevance='string',
@@ -52,11 +52,11 @@ def retrieves_the_list_of_network_applications_along_with_experience_and_health_
 
 
 @pytest.mark.applications
-def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(api, validator):
+def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(api, validator):
     try:
-        assert is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(
+        assert is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
             validator,
-            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(api)
+            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -64,8 +64,8 @@ def test_retrieves_the_list_of_network_applications_along_with_experience_and_he
             raise original_e
 
 
-def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1_default_val(api):
-    endpoint_result = api.applications.retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(
+def retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(api):
+    endpoint_result = api.applications.retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
         application_name=None,
         attribute=None,
         business_relevance=None,
@@ -82,24 +82,24 @@ def retrieves_the_list_of_network_applications_along_with_experience_and_health_
 
 
 @pytest.mark.applications
-def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1_default_val(api, validator):
+def test_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(api, validator):
     try:
-        assert is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1(
+        assert is_valid_retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics(
             validator,
-            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_v1_default_val(api)
+            retrieves_the_list_of_network_applications_along_with_experience_and_health_metrics_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(json_schema_validate, obj):
+def is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(json_schema_validate, obj):
     json_schema_validate('jsd_43c50def6b3a58e5acab3ae592a57da8_v2_3_7_9').validate(obj)
     return True
 
 
-def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(api):
-    endpoint_result = api.applications.retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(
+def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(api):
+    endpoint_result = api.applications.retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
         application_name='string',
         business_relevance='string',
         end_time=0,
@@ -111,11 +111,11 @@ def retrieves_the_total_count_of_network_applications_by_applying_basic_filterin
 
 
 @pytest.mark.applications
-def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(api, validator):
+def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(api, validator):
     try:
-        assert is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(
+        assert is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
             validator,
-            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(api)
+            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -123,8 +123,8 @@ def test_retrieves_the_total_count_of_network_applications_by_applying_basic_fil
             raise original_e
 
 
-def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1_default_val(api):
-    endpoint_result = api.applications.retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(
+def retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(api):
+    endpoint_result = api.applications.retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
         application_name=None,
         business_relevance=None,
         end_time=None,
@@ -136,24 +136,24 @@ def retrieves_the_total_count_of_network_applications_by_applying_basic_filterin
 
 
 @pytest.mark.applications
-def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1_default_val(api, validator):
+def test_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(api, validator):
     try:
-        assert is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1(
+        assert is_valid_retrieves_the_total_count_of_network_applications_by_applying_basic_filtering(
             validator,
-            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_v1_default_val(api)
+            retrieves_the_total_count_of_network_applications_by_applying_basic_filtering_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_the_trend_analytics_data_related_to_network_applications_v1(json_schema_validate, obj):
+def is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(json_schema_validate, obj):
     json_schema_validate('jsd_154870476ce35f19bc4c1d058aa01536_v2_3_7_9').validate(obj)
     return True
 
 
-def retrieves_the_trend_analytics_data_related_to_network_applications_v1(api):
-    endpoint_result = api.applications.retrieves_the_trend_analytics_data_related_to_network_applications_v1(
+def retrieves_the_trend_analytics_data_related_to_network_applications(api):
+    endpoint_result = api.applications.retrieves_the_trend_analytics_data_related_to_network_applications(
         active_validation=True,
         aggregateAttributes=[{'name': 'string', 'function': 'string'}],
         attributes=['string'],
@@ -170,11 +170,11 @@ def retrieves_the_trend_analytics_data_related_to_network_applications_v1(api):
 
 
 @pytest.mark.applications
-def test_retrieves_the_trend_analytics_data_related_to_network_applications_v1(api, validator):
+def test_retrieves_the_trend_analytics_data_related_to_network_applications(api, validator):
     try:
-        assert is_valid_retrieves_the_trend_analytics_data_related_to_network_applications_v1(
+        assert is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(
             validator,
-            retrieves_the_trend_analytics_data_related_to_network_applications_v1(api)
+            retrieves_the_trend_analytics_data_related_to_network_applications(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -182,8 +182,8 @@ def test_retrieves_the_trend_analytics_data_related_to_network_applications_v1(a
             raise original_e
 
 
-def retrieves_the_trend_analytics_data_related_to_network_applications_v1_default_val(api):
-    endpoint_result = api.applications.retrieves_the_trend_analytics_data_related_to_network_applications_v1(
+def retrieves_the_trend_analytics_data_related_to_network_applications_default_val(api):
+    endpoint_result = api.applications.retrieves_the_trend_analytics_data_related_to_network_applications(
         active_validation=True,
         aggregateAttributes=None,
         attributes=None,
@@ -200,24 +200,24 @@ def retrieves_the_trend_analytics_data_related_to_network_applications_v1_defaul
 
 
 @pytest.mark.applications
-def test_retrieves_the_trend_analytics_data_related_to_network_applications_v1_default_val(api, validator):
+def test_retrieves_the_trend_analytics_data_related_to_network_applications_default_val(api, validator):
     try:
-        assert is_valid_retrieves_the_trend_analytics_data_related_to_network_applications_v1(
+        assert is_valid_retrieves_the_trend_analytics_data_related_to_network_applications(
             validator,
-            retrieves_the_trend_analytics_data_related_to_network_applications_v1_default_val(api)
+            retrieves_the_trend_analytics_data_related_to_network_applications_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_applications_v1(json_schema_validate, obj):
+def is_valid_applications(json_schema_validate, obj):
     json_schema_validate('jsd_1b85e4ce533d5ff49ddd3b2f9657cfa5_v2_3_7_9').validate(obj)
     return True
 
 
-def applications_v1(api):
-    endpoint_result = api.applications.applications_v1(
+def applications(api):
+    endpoint_result = api.applications.applications(
         application_health='string',
         application_name='string',
         device_id='string',
@@ -232,11 +232,11 @@ def applications_v1(api):
 
 
 @pytest.mark.applications
-def test_applications_v1(api, validator):
+def test_applications(api, validator):
     try:
-        assert is_valid_applications_v1(
+        assert is_valid_applications(
             validator,
-            applications_v1(api)
+            applications(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -244,8 +244,8 @@ def test_applications_v1(api, validator):
             raise original_e
 
 
-def applications_v1_default_val(api):
-    endpoint_result = api.applications.applications_v1(
+def applications_default_val(api):
+    endpoint_result = api.applications.applications(
         application_health=None,
         application_name=None,
         device_id=None,
@@ -260,11 +260,11 @@ def applications_v1_default_val(api):
 
 
 @pytest.mark.applications
-def test_applications_v1_default_val(api, validator):
+def test_applications_default_val(api, validator):
     try:
-        assert is_valid_applications_v1(
+        assert is_valid_applications(
             validator,
-            applications_v1_default_val(api)
+            applications_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

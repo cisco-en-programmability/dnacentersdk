@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddFabricDevicesLayer2HandoffsV1 data model.
+"""Cisco DNA Center AddFabricDevicesLayer2Handoffs data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE86B65311B05D29Ba5EEa0D5F1Fd88F(object):
-    """AddFabricDevicesLayer2HandoffsV1 request schema definition."""
+    """AddFabricDevicesLayer2Handoffs request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE86B65311B05D29Ba5EEa0D5F1Fd88F, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco DNA Center API wrappers.
 
-Copyright (c) 2019-2021 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -214,6 +214,8 @@ from .v2_3_7_9.applications import \
     Applications as Applications_v2_3_7_9
 from .v2_3_7_9.authentication_management import \
     AuthenticationManagement as AuthenticationManagement_v2_3_7_9
+from .v2_3_7_9.backup import \
+    Backup as Backup_v2_3_7_9
 from .v2_3_7_9.cisco_i_m_c import \
     CiscoIMC as CiscoIMC_v2_3_7_9
 from .v2_3_7_9.cisco_trusted_certificates import \
@@ -239,7 +241,7 @@ from .v2_3_7_9.disaster_recovery import \
 from .v2_3_7_9.discovery import \
     Discovery as Discovery_v2_3_7_9
 from .v2_3_7_9.eox import \
-    EoX as EoX_v2_3_7_9
+    Eox as Eox_v2_3_7_9
 from .v2_3_7_9.event_management import \
     EventManagement as EventManagement_v2_3_7_9
 from .v2_3_7_9.fabric_wireless import \
@@ -252,8 +254,12 @@ from .v2_3_7_9.itsm import \
     Itsm as Itsm_v2_3_7_9
 from .v2_3_7_9.itsm_integration import \
     ItsmIntegration as ItsmIntegration_v2_3_7_9
+from .v2_3_7_9.industrial_configuration import \
+    IndustrialConfiguration as IndustrialConfiguration_v2_3_7_9
 from .v2_3_7_9.issues import \
     Issues as Issues_v2_3_7_9
+from .v2_3_7_9.know_your_network import \
+    KnowYourNetwork as KnowYourNetwork_v2_3_7_9
 from .v2_3_7_9.lan_automation import \
     LanAutomation as LanAutomation_v2_3_7_9
 from .v2_3_7_9.licenses import \
@@ -266,6 +272,8 @@ from .v2_3_7_9.platform import \
     Platform as Platform_v2_3_7_9
 from .v2_3_7_9.reports import \
     Reports as Reports_v2_3_7_9
+from .v2_3_7_9.restore import \
+    Restore as Restore_v2_3_7_9
 from .v2_3_7_9.sda import \
     Sda as Sda_v2_3_7_9
 from .v2_3_7_9.security_advisories import \
@@ -290,9 +298,10 @@ from .v2_3_7_9.user_and_roles import \
     UserandRoles as UserandRoles_v2_3_7_9
 from .v2_3_7_9.users import \
     Users as Users_v2_3_7_9
+from .v2_3_7_9.wired import \
+    Wired as Wired_v2_3_7_9
 from .v2_3_7_9.wireless import \
     Wireless as Wireless_v2_3_7_9
-
 from .v3_1_3_0.ai_endpoint_analytics import \
     AIEndpointAnalytics as AIEndpointAnalytics_v3_1_3_0
 from .v3_1_3_0.application_policy import \
@@ -328,7 +337,7 @@ from .v3_1_3_0.disaster_recovery import \
 from .v3_1_3_0.discovery import \
     Discovery as Discovery_v3_1_3_0
 from .v3_1_3_0.eox import \
-    EoX as EoX_v3_1_3_0
+    Eox as Eox_v3_1_3_0
 from .v3_1_3_0.event_management import \
     EventManagement as EventManagement_v3_1_3_0
 from .v3_1_3_0.fabric_wireless import \
@@ -515,7 +524,7 @@ class DNACenterAPI(object):
 
         if debug is None:
             debug = dnacenter_environment.get_env_debug() or DEFAULT_DEBUG
-
+        
         if user_agent is None:
             user_agent = dnacenter_environment.get_env_user_agent() or DEFAULT_VERIFY_USER_AGENT
 
@@ -926,7 +935,7 @@ class DNACenterAPI(object):
                 )
 
         if version == '2.3.7.9':
-            self.a_i_endpoint_analytics = \
+            self.ai_endpoint_analytics = \
                 AIEndpointAnalytics_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
@@ -940,6 +949,10 @@ class DNACenterAPI(object):
                 )
             self.authentication_management = \
                 AuthenticationManagement_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
+            self.backup = \
+                Backup_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
             self.cisco_i_m_c = \
@@ -991,7 +1004,7 @@ class DNACenterAPI(object):
                     self._session, object_factory, _validator
                 )
             self.eox = \
-                EoX_v2_3_7_9(
+                Eox_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
             self.event_management = \
@@ -1018,8 +1031,16 @@ class DNACenterAPI(object):
                 ItsmIntegration_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
+            self.industrial_configuration = \
+                IndustrialConfiguration_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
             self.issues = \
                 Issues_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
+            self.know_your_network = \
+                KnowYourNetwork_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
             self.lan_automation = \
@@ -1044,6 +1065,10 @@ class DNACenterAPI(object):
                 )
             self.reports = \
                 Reports_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
+            self.restore = \
+                Restore_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
             self.sda = \
@@ -1094,12 +1119,16 @@ class DNACenterAPI(object):
                 Users_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
+            self.wired = \
+                Wired_v2_3_7_9(
+                    self._session, object_factory, _validator
+                )
             self.wireless = \
                 Wireless_v2_3_7_9(
                     self._session, object_factory, _validator
                 )
         if version == '3.1.3.0':
-            self.a_i_endpoint_analytics = \
+            self.ai_endpoint_analytics = \
                 AIEndpointAnalytics_v3_1_3_0(
                     self._session, object_factory, _validator
                 )
@@ -1168,7 +1197,7 @@ class DNACenterAPI(object):
                     self._session, object_factory, _validator
                 )
             self.eox = \
-                EoX_v3_1_3_0(
+                Eox_v3_1_3_0(
                     self._session, object_factory, _validator
                 )
             self.event_management = \

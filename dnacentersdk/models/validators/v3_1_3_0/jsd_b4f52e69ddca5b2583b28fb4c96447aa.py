@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateHealthScoreDefinitionForTheGivenIdV1 data model.
+"""Cisco DNA Center UpdateHealthScoreDefinitionForTheGivenId data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB4F52E69Ddca5B2583B28Fb4C96447Aa(object):
-    """UpdateHealthScoreDefinitionForTheGivenIdV1 request schema
+    """UpdateHealthScoreDefinitionForTheGivenId request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorB4F52E69Ddca5B2583B28Fb4C96447Aa, self).__init__()

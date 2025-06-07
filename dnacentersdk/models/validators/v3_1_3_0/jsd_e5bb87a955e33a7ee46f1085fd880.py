@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatesTheMaintenanceScheduleInformationV1 data model.
+"""Cisco DNA Center UpdatesTheMaintenanceScheduleInformation data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE5Bb87A955E33A7Ee46F1085Fd880(object):
-    """UpdatesTheMaintenanceScheduleInformationV1 request schema
+    """UpdatesTheMaintenanceScheduleInformation request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorE5Bb87A955E33A7Ee46F1085Fd880, self).__init__()

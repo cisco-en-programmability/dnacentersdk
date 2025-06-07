@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatePowerProfileByIDV1 data model.
+"""Cisco DNA Center UpdatePowerProfileByID data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc(object):
-    """UpdatePowerProfileByIDV1 request schema definition."""
+    """UpdatePowerProfileByID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -52,47 +52,47 @@ class JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc(object):
                 "properties": {
                 "interfaceID": {
                 "enum": [
-                "GigabitEthernet0",
-                "GigabitEthernet1",
-                "LAN 1",
-                "LAN 2",
-                "LAN 3",
-                "6 GHz",
-                "5 GHz",
-                "Secondary 5 GHz",
-                "2.4 GHz",
-                "USB 0"
+                "GIGABITETHERNET0",
+                "GIGABITETHERNET1",
+                "LAN1",
+                "LAN2",
+                "LAN3",
+                "6GHZ",
+                "5GHZ",
+                "SECONDARY_5GHZ",
+                "2_4GHZ",
+                "USB0"
                 ],
                 "type": "string"
                 },
                 "interfaceType": {
                 "enum": [
-                "Ethernet",
-                "Radio",
+                "ETHERNET",
+                "RADIO",
                 "USB"
                 ],
                 "type": "string"
                 },
                 "parameterType": {
                 "enum": [
-                "Speed",
-                "Spatial Stream",
-                "State"
+                "SPEED",
+                "SPATIALSTREAM",
+                "STATE"
                 ],
                 "type": "string"
                 },
                 "parameterValue": {
                 "enum": [
-                "5000 MBPS",
-                "2500 MBPS",
-                "1000 MBPS",
-                "100 MBPS",
-                "8\u00d78",
-                "4\u00d74",
-                "3\u00d73",
-                "2\u00d72",
-                "1\u00d71",
-                "Disable"
+                "5000MBPS",
+                "2500MBPS",
+                "1000MBPS",
+                "100MBPS",
+                "EIGHT_BY_EIGHT",
+                "FOUR_BY_FOUR",
+                "THREE_BY_THREE",
+                "TWO_BY_TWO",
+                "ONE_BY_ONE",
+                "DISABLE"
                 ],
                 "type": "string"
                 }

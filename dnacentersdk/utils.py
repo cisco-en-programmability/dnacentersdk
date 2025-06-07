@@ -33,11 +33,14 @@ import urllib.parse
 from builtins import *
 from collections import OrderedDict, namedtuple
 from datetime import datetime, timedelta, tzinfo
-
+import warnings
+import functools
 
 from .exceptions import ApiError, RateLimitError
 from .response_codes import RATE_LIMIT_RESPONSE_CODE
 
+
+warnings.simplefilter('default')
 
 EncodableFile = namedtuple('EncodableFile',
                            ['file_name', 'file_object', 'content_type'])
@@ -351,3 +354,27 @@ def dict_of_str(json_dict):
     for key, value in json_dict.items():
         result[key] = '{}'.format(value)
     return result
+
+
+def deprecated(func):
+    """Decorator to mark functions as deprecated.
+
+    This decorator will emit a warning when the decorated function is called,
+    indicating that the function is deprecated and should not be used.
+
+    Args:
+        func: The function to be marked as deprecated.
+
+    Returns:
+        wrapper: A wrapped function that emits a deprecation warning before
+                calling the original function.
+    """
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        warnings.warn(
+            f"The function '{func.__name__}' is deprecated.",
+            DeprecationWarning,
+            stacklevel=2
+        )
+        return func(*args, **kwargs)
+    return wrapper

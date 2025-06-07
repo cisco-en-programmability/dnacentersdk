@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco Catalyst Center Application Policy API wrapper.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,10 +65,10 @@ class ApplicationPolicy(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_application_policy_v1(self,
-                                  policy_scope=None,
-                                  headers=None,
-                                  **request_parameters):
+    def get_application_policy(self,
+                               policy_scope=None,
+                               headers=None,
+                               **request_parameters):
         """Get all existing application policies .
 
         Args:
@@ -123,9 +122,9 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_fae4378ef4e2503f9fef4f3a4ddd4de4_v2_3_7_9', json_data)
 
-    def get_application_policy_default_v1(self,
-                                          headers=None,
-                                          **request_parameters):
+    def get_application_policy_default(self,
+                                       headers=None,
+                                       **request_parameters):
         """Get default application policy .
 
         Args:
@@ -175,14 +174,14 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_d1b2e541bb85dea8192cd474be4e3ad_v2_3_7_9', json_data)
 
-    def application_policy_intent_v1(self,
-                                     createList=None,
-                                     deleteList=None,
-                                     updateList=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
+    def application_policy_intent(self,
+                                  createList=None,
+                                  deleteList=None,
+                                  updateList=None,
+                                  headers=None,
+                                  payload=None,
+                                  active_validation=True,
+                                  **request_parameters):
         """Create/Update/Delete application policy .
 
         Args:
@@ -258,10 +257,10 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_fa27ccbaf55711849381a707e1edfa_v2_3_7_9', json_data)
 
-    def get_application_policy_queuing_profile_v1(self,
-                                                  name=None,
-                                                  headers=None,
-                                                  **request_parameters):
+    def get_application_policy_queuing_profile(self,
+                                               name=None,
+                                               headers=None,
+                                               **request_parameters):
         """Get all or by name, existing application policy queuing profiles .
 
         Args:
@@ -315,11 +314,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_d47102747c9e50ed9e365b1297e4188d_v2_3_7_9', json_data)
 
-    def update_application_policy_queuing_profile_v1(self,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
+    def update_application_policy_queuing_profile(self,
+                                                  headers=None,
+                                                  payload=None,
+                                                  active_validation=True,
+                                                  **request_parameters):
         """Update existing custom application queuing profile .
 
         Args:
@@ -380,11 +379,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b11aa4de387251c794665e030fa815da_v2_3_7_9', json_data)
 
-    def create_application_policy_queuing_profile_v1(self,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
+    def create_application_policy_queuing_profile(self,
+                                                  headers=None,
+                                                  payload=None,
+                                                  active_validation=True,
+                                                  **request_parameters):
         """Create new custom application queuing profile .
 
         Args:
@@ -445,9 +444,9 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_bd31fcbd1ecd5a2c8b812088b27bfcea_v2_3_7_9', json_data)
 
-    def get_application_policy_queuing_profile_count_v1(self,
-                                                        headers=None,
-                                                        **request_parameters):
+    def get_application_policy_queuing_profile_count(self,
+                                                     headers=None,
+                                                     **request_parameters):
         """Get the number of all existing  application policy queuing profile .
 
         Args:
@@ -497,10 +496,10 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_a22faef865d55fe48dd2467bee214518_v2_3_7_9', json_data)
 
-    def delete_application_policy_queuing_profile_v1(self,
-                                                     id,
-                                                     headers=None,
-                                                     **request_parameters):
+    def delete_application_policy_queuing_profile(self,
+                                                  id,
+                                                  headers=None,
+                                                  **request_parameters):
         """Delete existing custom application policy queuing profile by id .
 
         Args:
@@ -554,12 +553,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_ac547ee07c2c5aff983d90cf4306619d_v2_3_7_9', json_data)
 
-    def get_application_sets_v1(self,
-                                limit=None,
-                                name=None,
-                                offset=None,
-                                headers=None,
-                                **request_parameters):
+    def get_application_sets(self,
+                             limit=None,
+                             name=None,
+                             offset=None,
+                             headers=None,
+                             **request_parameters):
         """Get appllication-sets by offset/limit or by name .
 
         Args:
@@ -621,10 +620,10 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b60dbd805b95030bc2caf345a44b504_v2_3_7_9', json_data)
 
-    def delete_application_set_v1(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
+    def delete_application_set(self,
+                               id,
+                               headers=None,
+                               **request_parameters):
         """Delete existing application-set by it's id .
 
         Args:
@@ -679,11 +678,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_a59a448c5c25f1e8246d6827e6e3215_v2_3_7_9', json_data)
 
-    def create_application_set_v1(self,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
+    def create_application_set(self,
+                               headers=None,
+                               payload=None,
+                               active_validation=True,
+                               **request_parameters):
         """Create new custom application-set/s .
 
         Args:
@@ -744,9 +743,9 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_cb7563a5058c4801eb842a74ff61c_v2_3_7_9', json_data)
 
-    def get_application_sets_count_v1(self,
-                                      headers=None,
-                                      **request_parameters):
+    def get_application_sets_count(self,
+                                   headers=None,
+                                   **request_parameters):
         """Get the number of existing application-sets .
 
         Args:
@@ -797,35 +796,35 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_ebc5880945305adb41253c6e4ffec_v2_3_7_9', json_data)
 
-    def retrieve_the_list_of_network_devices_with_their_application_visibility_status_v1(self,
-                                                                                         app_telemetry_deployment_status=None,
-                                                                                         app_telemetry_readiness_status=None,
-                                                                                         application_registry_sync_status=None,
-                                                                                         cbar_deployment_status=None,
-                                                                                         cbar_readiness_status=None,
-                                                                                         hostname=None,
-                                                                                         ids=None,
-                                                                                         limit=None,
-                                                                                         management_address=None,
-                                                                                         offset=None,
-                                                                                         order=None,
-                                                                                         protocol_pack_status=None,
-                                                                                         protocol_pack_update_status=None,
-                                                                                         site_id=None,
-                                                                                         sort_by=None,
-                                                                                         headers=None,
-                                                                                         **request_parameters):
+    def retrieve_the_list_of_network_devices_with_their_application_visibility_status(self,
+                                                                                      app_telemetry_deployment_status=None,
+                                                                                      app_telemetry_readiness_status=None,
+                                                                                      application_registry_sync_status=None,
+                                                                                      cbar_deployment_status=None,
+                                                                                      cbar_readiness_status=None,
+                                                                                      hostname=None,
+                                                                                      ids=None,
+                                                                                      limit=None,
+                                                                                      management_address=None,
+                                                                                      offset=None,
+                                                                                      order=None,
+                                                                                      protocol_pack_status=None,
+                                                                                      protocol_pack_update_status=None,
+                                                                                      site_id=None,
+                                                                                      sort_by=None,
+                                                                                      headers=None,
+                                                                                      **request_parameters):
         """This API retrieves the list of network devices with their application visibility status. The list can be
         filtered using the query parameters. Multiple filters can be applied. .
 
         Args:
-            ids(str): ids query parameter. List of network devices ids. If this parameter is not provided,
-                all network devices will be included in the response. Multiple network device IDs can be
+            ids(str): ids query parameter. List of network devices ids. If this parameter is not provided, all
+                network devices will be included in the response. Multiple network device IDs can be
                 provided. .
-            management_address(str): managementAddress query parameter. The management address for the
-                network device. This is normally IP address of the device. But it could be hostname in
-                some cases like Meraki devices. Partial search is supported. For example, searching for
-                `25.` would include `10.25.1.1`, `25.5.10.1`, `225.225.1.0`, `10.10.10.125`, etc. .
+            management_address(str): managementAddress query parameter. The management address for the network
+                device. This is normally IP address of the device. But it could be hostname in some
+                cases like Meraki devices. Partial search is supported. For example, searching for `25.`
+                would include `10.25.1.1`, `25.5.10.1`, `225.225.1.0`, `10.10.10.125`, etc. .
             hostname(str): hostname query parameter. The host name of the network device. Partial search is
                 supported. For example, searching for `switch` will include `edge-switch1.domain.com`,
                 `switch25`, etc. .
@@ -833,31 +832,31 @@ class ApplicationPolicy(object):
             app_telemetry_deployment_status(str): appTelemetryDeploymentStatus query parameter. Status of the
                 application telemetry deployment on the network device. Available values: SCHEDULED,
                 IN_PROGRESS, COMPLETED, FAILED, NOT_DEPLOYED. .
-            app_telemetry_readiness_status(str): appTelemetryReadinessStatus query parameter. Indicates
-                whether the network device is ready for application telemetry enablement or not.
-                Available values: ENABLED, READY, NOT_READY, NOT_SUPPORTED .
-            cbar_deployment_status(str): cbarDeploymentStatus query parameter. Status of the CBAR deployment
-                on the network device. Available values: SCHEDULED, IN_PROGRESS, COMPLETED, FAILED,
+            app_telemetry_readiness_status(str): appTelemetryReadinessStatus query parameter. Indicates whether the
+                network device is ready for application telemetry enablement or not. Available values:
+                ENABLED, READY, NOT_READY, NOT_SUPPORTED .
+            cbar_deployment_status(str): cbarDeploymentStatus query parameter. Status of the CBAR deployment on the
+                network device. Available values: SCHEDULED, IN_PROGRESS, COMPLETED, FAILED,
                 NOT_DEPLOYED .
-            cbar_readiness_status(str): cbarReadinessStatus query parameter. Indicates whether the network
-                device is ready for CBAR enablement or not. Available values: ENABLED, READY, NOT_READY,
+            cbar_readiness_status(str): cbarReadinessStatus query parameter. Indicates whether the network device is
+                ready for CBAR enablement or not. Available values: ENABLED, READY, NOT_READY,
                 NOT_SUPPORTED .
-            protocol_pack_status(str): protocolPackStatus query parameter. Indicates whether the NBAR
-                protocol pack is up-to-date or not on the network device. Available values: LATEST,
-                OUTDATED, UNKNOWN .
-            protocol_pack_update_status(str): protocolPackUpdateStatus query parameter. Status of the NBAR
-                protocol pack update on the network device. Available values: SCHEDULED, IN_PROGRESS,
-                SUCCESS, FAILED, NONE .
-            application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates
-                whether the latest definitions from application registry have been synchronized with the
-                network device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
+            protocol_pack_status(str): protocolPackStatus query parameter. Indicates whether the NBAR protocol pack
+                is up-to-date or not on the network device. Available values: LATEST, OUTDATED, UNKNOWN
+                .
+            protocol_pack_update_status(str): protocolPackUpdateStatus query parameter. Status of the NBAR protocol
+                pack update on the network device. Available values: SCHEDULED, IN_PROGRESS, SUCCESS,
+                FAILED, NONE .
+            application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates whether
+                the latest definitions from application registry have been synchronized with the network
+                device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
             offset(str): offset query parameter. The first record to show for this page; the first record is
                 numbered 1. Default value is: 1. .
-            limit(str): limit query parameter. The number of records to show for this page. Minimum value is:
-                1, Maximum value is: 500 .
+            limit(str): limit query parameter. The number of records to show for this page. Minimum value is: 1,
+                Maximum value is: 500 .
             sort_by(str): sortBy query parameter. A property within the response to sort by. .
-            order(str): order query parameter. Whether ascending or descending order should be used to sort
-                the response. Available values are: asc, desc. Default value is: asc .
+            order(str): order query parameter. Whether ascending or descending order should be used to sort the
+                response. Available values are: asc, desc. Default value is: asc .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -949,30 +948,30 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_a5b7b549ba686b2c5c1091157_v2_3_7_9', json_data)
 
-    def retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters_v1(self,
-                                                                                                     app_telemetry_deployment_status=None,
-                                                                                                     app_telemetry_readiness_status=None,
-                                                                                                     application_registry_sync_status=None,
-                                                                                                     cbar_deployment_status=None,
-                                                                                                     cbar_readiness_status=None,
-                                                                                                     hostname=None,
-                                                                                                     ids=None,
-                                                                                                     management_address=None,
-                                                                                                     protocol_pack_status=None,
-                                                                                                     protocol_pack_update_status=None,
-                                                                                                     site_id=None,
-                                                                                                     headers=None,
-                                                                                                     **request_parameters):
+    def retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters(self,
+                                                                                                  app_telemetry_deployment_status=None,
+                                                                                                  app_telemetry_readiness_status=None,
+                                                                                                  application_registry_sync_status=None,
+                                                                                                  cbar_deployment_status=None,
+                                                                                                  cbar_readiness_status=None,
+                                                                                                  hostname=None,
+                                                                                                  ids=None,
+                                                                                                  management_address=None,
+                                                                                                  protocol_pack_status=None,
+                                                                                                  protocol_pack_update_status=None,
+                                                                                                  site_id=None,
+                                                                                                  headers=None,
+                                                                                                  **request_parameters):
         """This API retrieves the count of network devices for the given application visibility status filters. .
 
         Args:
-            ids(str): ids query parameter. List of network devices ids. If this parameter is not provided,
-                all network devices will be included in the response. Multiple network device IDs can be
+            ids(str): ids query parameter. List of network devices ids. If this parameter is not provided, all
+                network devices will be included in the response. Multiple network device IDs can be
                 provided. .
-            management_address(str): managementAddress query parameter. The management address for the
-                network device. This is normally IP address of the device. But it could be hostname in
-                some cases like Meraki devices. Partial search is supported. For example, searching for
-                `25.` would include `10.25.1.1`, `25.5.10.1`, `225.225.1.0`, `10.10.10.125`, etc. .
+            management_address(str): managementAddress query parameter. The management address for the network
+                device. This is normally IP address of the device. But it could be hostname in some
+                cases like Meraki devices. Partial search is supported. For example, searching for `25.`
+                would include `10.25.1.1`, `25.5.10.1`, `225.225.1.0`, `10.10.10.125`, etc. .
             hostname(str): hostname query parameter. The host name of the network device. Partial search is
                 supported. For example, searching for `switch` will include `edge-switch1.domain.com`,
                 `switch25`, etc. .
@@ -980,24 +979,24 @@ class ApplicationPolicy(object):
             app_telemetry_deployment_status(str): appTelemetryDeploymentStatus query parameter. Status of the
                 application telemetry deployment on the network device. Available values: SCHEDULED,
                 IN_PROGRESS, COMPLETED, FAILED, NOT_DEPLOYED .
-            app_telemetry_readiness_status(str): appTelemetryReadinessStatus query parameter. Indicates
-                whether the network device is ready for application telemetry enablement or not.
-                Available values: ENABLED, READY, NOT_READY, NOT_SUPPORTED .
-            cbar_deployment_status(str): cbarDeploymentStatus query parameter. Status of the CBAR deployment
-                on the network device. Available values: SCHEDULED, IN_PROGRESS, COMPLETED, FAILED,
+            app_telemetry_readiness_status(str): appTelemetryReadinessStatus query parameter. Indicates whether the
+                network device is ready for application telemetry enablement or not. Available values:
+                ENABLED, READY, NOT_READY, NOT_SUPPORTED .
+            cbar_deployment_status(str): cbarDeploymentStatus query parameter. Status of the CBAR deployment on the
+                network device. Available values: SCHEDULED, IN_PROGRESS, COMPLETED, FAILED,
                 NOT_DEPLOYED .
-            cbar_readiness_status(str): cbarReadinessStatus query parameter. Indicates whether the network
-                device is ready for CBAR enablement or not. Available values: ENABLED, READY, NOT_READY,
+            cbar_readiness_status(str): cbarReadinessStatus query parameter. Indicates whether the network device is
+                ready for CBAR enablement or not. Available values: ENABLED, READY, NOT_READY,
                 NOT_SUPPORTED .
-            protocol_pack_status(str): protocolPackStatus query parameter. Indicates whether the NBAR
-                protocol pack is up-to-date or not on the network device. Available values: LATEST,
-                OUTDATED, UNKNOWN .
-            protocol_pack_update_status(str): protocolPackUpdateStatus query parameter. Status of the NBAR
-                protocol pack update on the network device. Available values: SCHEDULED, IN_PROGRESS,
-                SUCCESS, FAILED, NONE .
-            application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates
-                whether the latest definitions from application registry have been synchronized with the
-                network device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
+            protocol_pack_status(str): protocolPackStatus query parameter. Indicates whether the NBAR protocol pack
+                is up-to-date or not on the network device. Available values: LATEST, OUTDATED, UNKNOWN
+                .
+            protocol_pack_update_status(str): protocolPackUpdateStatus query parameter. Status of the NBAR protocol
+                pack update on the network device. Available values: SCHEDULED, IN_PROGRESS, SUCCESS,
+                FAILED, NONE .
+            application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates whether
+                the latest definitions from application registry have been synchronized with the network
+                device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1078,12 +1077,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_c378266e951b51b6b15818086b9ea97a_v2_3_7_9', json_data)
 
-    def disable_application_telemetry_feature_on_multiple_network_devices_v1(self,
-                                                                             networkDeviceIds=None,
-                                                                             headers=None,
-                                                                             payload=None,
-                                                                             active_validation=True,
-                                                                             **request_parameters):
+    def disable_application_telemetry_feature_on_multiple_network_devices(self,
+                                                                          networkDeviceIds=None,
+                                                                          headers=None,
+                                                                          payload=None,
+                                                                          active_validation=True,
+                                                                          **request_parameters):
         """This API can be used to disable application telemetry feature on multiple network devices. Request payload
         should include the list of network devices where it has to be disabled. This operation pushes
         configuration to the network devices, and is only permitted if the provisioning settings do not mandate
@@ -1159,12 +1158,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_dda852745acd5ce5a97b0cfdf0de2fd2_v2_3_7_9', json_data)
 
-    def disable_c_b_a_r_feature_on_multiple_network_devices_v1(self,
-                                                               networkDeviceIds=None,
-                                                               headers=None,
-                                                               payload=None,
-                                                               active_validation=True,
-                                                               **request_parameters):
+    def disable_c_b_a_r_feature_on_multiple_network_devices(self,
+                                                            networkDeviceIds=None,
+                                                            headers=None,
+                                                            payload=None,
+                                                            active_validation=True,
+                                                            **request_parameters):
         """This API can be used to disable CBAR feature on multiple network devices. Request payload should include the
         list of network devices where it has to be disabled. This operation pushes configuration to the network
         devices, and is only permitted if the provisioning settings do not mandate a config preview for CBAR
@@ -1240,12 +1239,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b4635c45c3b5e44a30d84daa1d5fb69_v2_3_7_9', json_data)
 
-    def enable_application_telemetry_feature_on_multiple_network_devices_v1(self,
-                                                                            networkDevices=None,
-                                                                            headers=None,
-                                                                            payload=None,
-                                                                            active_validation=True,
-                                                                            **request_parameters):
+    def enable_application_telemetry_feature_on_multiple_network_devices(self,
+                                                                         networkDevices=None,
+                                                                         headers=None,
+                                                                         payload=None,
+                                                                         active_validation=True,
+                                                                         **request_parameters):
         """This API can be used to enable application telemetry feature on multiple network devices. Request payload should
         include the list of network devices where application telemetry has to be enabled. For wireless
         controllers, it also needs the WLAN modes / SSID details to be included for enablement. Please note that
@@ -1323,12 +1322,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_d73cd5be487a36d0a01d6cdc3_v2_3_7_9', json_data)
 
-    def enable_c_b_a_r_feature_on_multiple_network_devices_v1(self,
-                                                              networkDevices=None,
-                                                              headers=None,
-                                                              payload=None,
-                                                              active_validation=True,
-                                                              **request_parameters):
+    def enable_c_b_a_r_feature_on_multiple_network_devices(self,
+                                                           networkDevices=None,
+                                                           headers=None,
+                                                           payload=None,
+                                                           active_validation=True,
+                                                           **request_parameters):
         """This API can be used to enable CBAR feature on multiple network devices. Request payload should include the list
         of network devices where CBAR has to be enabled. It can optionally include list of interfaces (wired) or
         WLAN modes (wireless) to be excluded from CBAR enablement. Please note that this operation can be
@@ -1405,11 +1404,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_e62749061c5aae8ecd1ccc2d315153_v2_3_7_9', json_data)
 
-    def create_application_v1(self,
-                              headers=None,
-                              payload=None,
-                              active_validation=True,
-                              **request_parameters):
+    def create_application(self,
+                           headers=None,
+                           payload=None,
+                           active_validation=True,
+                           **request_parameters):
         """Create new Custom application .
 
         Args:
@@ -1470,11 +1469,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_e1781a990c6b5a4b895d56bcfda2b7cb_v2_3_7_9', json_data)
 
-    def edit_application_v1(self,
-                            headers=None,
-                            payload=None,
-                            active_validation=True,
-                            **request_parameters):
+    def edit_application(self,
+                         headers=None,
+                         payload=None,
+                         active_validation=True,
+                         **request_parameters):
         """Edit the attributes of an existing application .
 
         Args:
@@ -1535,10 +1534,10 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_a3b37dcbe2a150bea06d9dcde1837281_v2_3_7_9', json_data)
 
-    def delete_application_v1(self,
-                              id,
-                              headers=None,
-                              **request_parameters):
+    def delete_application(self,
+                           id,
+                           headers=None,
+                           **request_parameters):
         """Delete existing application by its id .
 
         Args:
@@ -1593,12 +1592,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_d11d35f3505652b68905ddf1ee2f7e66_v2_3_7_9', json_data)
 
-    def get_applications_v1(self,
-                            limit=None,
-                            name=None,
-                            offset=None,
-                            headers=None,
-                            **request_parameters):
+    def get_applications(self,
+                         limit=None,
+                         name=None,
+                         offset=None,
+                         headers=None,
+                         **request_parameters):
         """Get applications by offset/limit or by name .
 
         Args:
@@ -1661,9 +1660,9 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b12cdd3a75c51258c9e051e84189f92_v2_3_7_9', json_data)
 
-    def get_applications_count_v1(self,
-                                  headers=None,
-                                  **request_parameters):
+    def get_applications_count(self,
+                               headers=None,
+                               **request_parameters):
         """Get the number of all existing applications .
 
         Args:
@@ -1713,10 +1712,10 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_af5f0aa1ed56ab9b98eb602dbd8366_v2_3_7_9', json_data)
 
-    def get_qos_device_interface_info_v1(self,
-                                         network_device_id=None,
-                                         headers=None,
-                                         **request_parameters):
+    def get_qos_device_interface_info(self,
+                                      network_device_id=None,
+                                      headers=None,
+                                      **request_parameters):
         """Get all or by network device id, existing qos device interface infos .
 
         Args:
@@ -1770,11 +1769,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_c37a46857f0bee5eba0a514091c_v2_3_7_9', json_data)
 
-    def update_qos_device_interface_info_v1(self,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
+    def update_qos_device_interface_info(self,
+                                         headers=None,
+                                         payload=None,
+                                         active_validation=True,
+                                         **request_parameters):
         """Update existing qos device interface infos associate with network device id .
 
         Args:
@@ -1835,11 +1834,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_ea59df3daf2a57a0b48044cc49c8a1ca_v2_3_7_9', json_data)
 
-    def create_qos_device_interface_info_v1(self,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
+    def create_qos_device_interface_info(self,
+                                         headers=None,
+                                         payload=None,
+                                         active_validation=True,
+                                         **request_parameters):
         """Create qos device interface infos associate with network device id to allow the user to mark specific interfaces
         as WAN, to associate WAN interfaces with specific SP Profile and to be able to define a shaper on WAN
         interfaces .
@@ -1902,9 +1901,9 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_d045d18062ad5ae59c6f446beb17d675_v2_3_7_9', json_data)
 
-    def get_qos_device_interface_info_count_v1(self,
-                                               headers=None,
-                                               **request_parameters):
+    def get_qos_device_interface_info_count(self,
+                                            headers=None,
+                                            **request_parameters):
         """Get the number of all existing qos device interface infos group by network device id .
 
         Args:
@@ -1954,15 +1953,15 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b98fe15b531dbb7e20c0f5fa61ab_v2_3_7_9', json_data)
 
-    def delete_qos_device_interface_info_v1(self,
-                                            id,
-                                            headers=None,
-                                            **request_parameters):
+    def delete_qos_device_interface_info(self,
+                                         id,
+                                         headers=None,
+                                         **request_parameters):
         """Delete all qos device interface infos associate with network device id .
 
         Args:
-            id(str): id path parameter. Id of the qos device info, this object holds all qos device interface
-                infos associate with network device id .
+            id(str): id path parameter. Id of the qos device info, this object holds all qos device interface infos
+                associate with network device id .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2012,9 +2011,9 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_a6a5bb5935709b03d0fc37a1d47d4_v2_3_7_9', json_data)
 
-    def retrieves_the_application_qo_s_policy_setting_v1(self,
-                                                         headers=None,
-                                                         **request_parameters):
+    def retrieves_the_application_qo_s_policy_setting(self,
+                                                      headers=None,
+                                                      **request_parameters):
         """API to retrieve the application QoS policy setting. .
 
         Args:
@@ -2064,12 +2063,12 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_d3c8a459b787b55338701d8b33_v2_3_7_9', json_data)
 
-    def updates_the_application_qo_s_policy_setting_v1(self,
-                                                       deployByDefaultOnWiredDevices=None,
-                                                       headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
-                                                       **request_parameters):
+    def updates_the_application_qo_s_policy_setting(self,
+                                                    deployByDefaultOnWiredDevices=None,
+                                                    headers=None,
+                                                    payload=None,
+                                                    active_validation=True,
+                                                    **request_parameters):
         """API to update the application QoS policy setting. .
 
         Args:
@@ -2139,11 +2138,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_bc9716ed6eb5c6e9ecb0380501d6138_v2_3_7_9', json_data)
 
-    def create_application_sets_v2(self,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
+    def create_application_sets(self,
+                                headers=None,
+                                payload=None,
+                                active_validation=True,
+                                **request_parameters):
         """Create new custom application set/s .
 
         Args:
@@ -2165,7 +2164,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-application-sets-v2
+            https://developer.cisco.com/docs/dna-center/#!create-application-sets
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2284,15 +2283,15 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b399a8f895b65f3d91926da8508a9295_v2_3_7_9', json_data)
 
-    def get_application_set_count_v2(self,
-                                     scalable_group_type,
-                                     headers=None,
-                                     **request_parameters):
+    def get_application_set_count(self,
+                                  scalable_group_type,
+                                  headers=None,
+                                  **request_parameters):
         """Get the number of all existing application sets .
 
         Args:
-            scalable_group_type(str): scalableGroupType query parameter. Scalable group type to retrieve,
-                valid value APPLICATION_GROUP .
+            scalable_group_type(str): scalableGroupType query parameter. Scalable group type to retrieve, valid
+                value APPLICATION_GROUP .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2307,7 +2306,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-set-count-v2
+            https://developer.cisco.com/docs/dna-center/#!get-application-set-count
         """
         check_type(headers, dict)
         check_type(scalable_group_type, str,
@@ -2402,11 +2401,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_fbef625d3225c1eb6db93289a11a33e_v2_3_7_9', json_data)
 
-    def edit_applications_v2(self,
-                             headers=None,
-                             payload=None,
-                             active_validation=True,
-                             **request_parameters):
+    def edit_applications(self,
+                          headers=None,
+                          payload=None,
+                          active_validation=True,
+                          **request_parameters):
         """Edit the attributes of an existing application .
 
         Args:
@@ -2428,7 +2427,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!edit-applications-v2
+            https://developer.cisco.com/docs/dna-center/#!edit-applications
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2470,11 +2469,11 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_b46a141650debf5946262e8a0961_v2_3_7_9', json_data)
 
-    def create_applications_v2(self,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
+    def create_applications(self,
+                            headers=None,
+                            payload=None,
+                            active_validation=True,
+                            **request_parameters):
         """Create new custom application/s .
 
         Args:
@@ -2496,7 +2495,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!create-applications-v2
+            https://developer.cisco.com/docs/dna-center/#!create-applications
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -2612,15 +2611,15 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_f8a81055328e2c77f0dcb60a68_v2_3_7_9', json_data)
 
-    def get_application_count_v2(self,
-                                 scalable_group_type,
-                                 headers=None,
-                                 **request_parameters):
+    def get_application_count(self,
+                              scalable_group_type,
+                              headers=None,
+                              **request_parameters):
         """Get the number of all existing applications .
 
         Args:
-            scalable_group_type(str): scalableGroupType query parameter. scalable group type to retrieve,
-                valid value APPLICATION .
+            scalable_group_type(str): scalableGroupType query parameter. scalable group type to retrieve, valid
+                value APPLICATION .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -2635,7 +2634,7 @@ class ApplicationPolicy(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!get-application-count-v2
+            https://developer.cisco.com/docs/dna-center/#!get-application-count
         """
         check_type(headers, dict)
         check_type(scalable_group_type, str,
@@ -2728,1033 +2727,5 @@ class ApplicationPolicy(object):
 
         return self._object_factory('bpm_ef849b2f5415501086635693a458e69b_v2_3_7_9', json_data)
 
-
-
-    # Alias Function
-    def retrieve_the_list_of_network_devices_with_their_application_visibility_status(self,
-                                                                                         app_telemetry_deployment_status=None,
-                                                                                         app_telemetry_readiness_status=None,
-                                                                                         application_registry_sync_status=None,
-                                                                                         cbar_deployment_status=None,
-                                                                                         cbar_readiness_status=None,
-                                                                                         hostname=None,
-                                                                                         ids=None,
-                                                                                         limit=None,
-                                                                                         management_address=None,
-                                                                                         offset=None,
-                                                                                         order=None,
-                                                                                         protocol_pack_status=None,
-                                                                                         protocol_pack_update_status=None,
-                                                                                         site_id=None,
-                                                                                         sort_by=None,
-                                                                                         headers=None,
-                                                                                         **request_parameters):
-        """ This function is an alias of retrieve_the_list_of_network_devices_with_their_application_visibility_status_v1 .
-        Args:
-            ids(str): ids query parameter. List of network devices ids. If this parameter is not provided,
-                all network devices will be included in the response. Multiple network device IDs can be
-                provided. .
-            management_address(str): managementAddress query parameter. The management address for the
-                network device. This is normally IP address of the device. But it could be hostname in
-                some cases like Meraki devices. Partial search is supported. For example, searching for
-                `25.` would include `10.25.1.1`, `25.5.10.1`, `225.225.1.0`, `10.10.10.125`, etc. .
-            hostname(str): hostname query parameter. The host name of the network device. Partial search is
-                supported. For example, searching for `switch` will include `edge-switch1.domain.com`,
-                `switch25`, etc. .
-            site_id(str): siteId query parameter. The site ID where the network device is assigned. .
-            app_telemetry_deployment_status(str): appTelemetryDeploymentStatus query parameter. Status of the
-                application telemetry deployment on the network device. Available values: SCHEDULED,
-                IN_PROGRESS, COMPLETED, FAILED, NOT_DEPLOYED. .
-            app_telemetry_readiness_status(str): appTelemetryReadinessStatus query parameter. Indicates
-                whether the network device is ready for application telemetry enablement or not.
-                Available values: ENABLED, READY, NOT_READY, NOT_SUPPORTED .
-            cbar_deployment_status(str): cbarDeploymentStatus query parameter. Status of the CBAR deployment
-                on the network device. Available values: SCHEDULED, IN_PROGRESS, COMPLETED, FAILED,
-                NOT_DEPLOYED .
-            cbar_readiness_status(str): cbarReadinessStatus query parameter. Indicates whether the network
-                device is ready for CBAR enablement or not. Available values: ENABLED, READY, NOT_READY,
-                NOT_SUPPORTED .
-            protocol_pack_status(str): protocolPackStatus query parameter. Indicates whether the NBAR
-                protocol pack is up-to-date or not on the network device. Available values: LATEST,
-                OUTDATED, UNKNOWN .
-            protocol_pack_update_status(str): protocolPackUpdateStatus query parameter. Status of the NBAR
-                protocol pack update on the network device. Available values: SCHEDULED, IN_PROGRESS,
-                SUCCESS, FAILED, NONE .
-            application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates
-                whether the latest definitions from application registry have been synchronized with the
-                network device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
-            offset(str): offset query parameter. The first record to show for this page; the first record is
-                numbered 1. Default value is: 1. .
-            limit(str): limit query parameter. The number of records to show for this page. Minimum value is:
-                1, Maximum value is: 500 .
-            sort_by(str): sortBy query parameter. A property within the response to sort by. .
-            order(str): order query parameter. Whether ascending or descending order should be used to sort
-                the response. Available values are: asc, desc. Default value is: asc .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieve_the_list_of_network_devices_with_their_application_visibility_status_v1 .
-        """
-        return self.retrieve_the_list_of_network_devices_with_their_application_visibility_status_v1(
-                    app_telemetry_deployment_status=app_telemetry_deployment_status,
-                    app_telemetry_readiness_status=app_telemetry_readiness_status,
-                    application_registry_sync_status=application_registry_sync_status,
-                    cbar_deployment_status=cbar_deployment_status,
-                    cbar_readiness_status=cbar_readiness_status,
-                    hostname=hostname,
-                    ids=ids,
-                    limit=limit,
-                    management_address=management_address,
-                    offset=offset,
-                    order=order,
-                    protocol_pack_status=protocol_pack_status,
-                    protocol_pack_update_status=protocol_pack_update_status,
-                    site_id=site_id,
-                    sort_by=sort_by,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_policy_default(self,
-                                          headers=None,
-                                          **request_parameters):
-        """ This function is an alias of get_application_policy_default_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_policy_default_v1 .
-        """
-        return self.get_application_policy_default_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_qos_device_interface_info(self,
-                                         network_device_id=None,
-                                         headers=None,
-                                         **request_parameters):
-        """ This function is an alias of get_qos_device_interface_info_v1 .
-        Args:
-            network_device_id(str): networkDeviceId query parameter. network device id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_qos_device_interface_info_v1 .
-        """
-        return self.get_qos_device_interface_info_v1(
-                    network_device_id=network_device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_application(self,
-                              headers=None,
-                              payload=None,
-                              active_validation=True,
-                              **request_parameters):
-        """ This function is an alias of create_application_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_application_v1 .
-        """
-        return self.create_application_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_application(self,
-                              id,
-                              headers=None,
-                              **request_parameters):
-        """ This function is an alias of delete_application_v1 .
-        Args:
-            id(str): id query parameter. Application's Id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_application_v1 .
-        """
-        return self.delete_application_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_policy(self,
-                                  policy_scope=None,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of get_application_policy_v1 .
-        Args:
-            policy_scope(str): policyScope query parameter. policy scope name .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_policy_v1 .
-        """
-        return self.get_application_policy_v1(
-                    policy_scope=policy_scope,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_count(self,
-                                 scalable_group_type,
-                                 headers=None,
-                                 **request_parameters):
-        """ This function is an alias of get_application_count_v2 .
-        Args:
-            scalable_group_type(str): scalableGroupType query parameter. scalable group type to retrieve,
-                valid value APPLICATION .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_count_v2 .
-        """
-        return self.get_application_count_v2(
-                    scalable_group_type=scalable_group_type,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_sets_count(self,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_application_sets_count_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_sets_count_v1 .
-        """
-        return self.get_application_sets_count_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def edit_application(self,
-                            headers=None,
-                            payload=None,
-                            active_validation=True,
-                            **request_parameters):
-        """ This function is an alias of edit_application_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of edit_application_v1 .
-        """
-        return self.edit_application_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_policy_queuing_profile_count(self,
-                                                        headers=None,
-                                                        **request_parameters):
-        """ This function is an alias of get_application_policy_queuing_profile_count_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_policy_queuing_profile_count_v1 .
-        """
-        return self.get_application_policy_queuing_profile_count_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_application_sets(self,
-                                   headers=None,
-                                   payload=None,
-                                   active_validation=True,
-                                   **request_parameters):
-        """ This function is an alias of create_application_sets_v2 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_application_sets_v2 .
-        """
-        return self.create_application_sets_v2(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def edit_applications(self,
-                             headers=None,
-                             payload=None,
-                             active_validation=True,
-                             **request_parameters):
-        """ This function is an alias of edit_applications_v2 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of edit_applications_v2 .
-        """
-        return self.edit_applications_v2(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_set_count(self,
-                                     scalable_group_type,
-                                     headers=None,
-                                     **request_parameters):
-        """ This function is an alias of get_application_set_count_v2 .
-        Args:
-            scalable_group_type(str): scalableGroupType query parameter. Scalable group type to retrieve,
-                valid value APPLICATION_GROUP .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_set_count_v2 .
-        """
-        return self.get_application_set_count_v2(
-                    scalable_group_type=scalable_group_type,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_applications(self,
-                               headers=None,
-                               payload=None,
-                               active_validation=True,
-                               **request_parameters):
-        """ This function is an alias of create_applications_v2 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_applications_v2 .
-        """
-        return self.create_applications_v2(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_applications(self,
-                            limit=None,
-                            name=None,
-                            offset=None,
-                            headers=None,
-                            **request_parameters):
-        """ This function is an alias of get_applications_v1 .
-        Args:
-            offset(int): offset query parameter. The offset of the first application to be returned .
-            limit(int): limit query parameter. The maximum number of applications to be returned .
-            name(str): name query parameter. Application's name .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_applications_v1 .
-        """
-        return self.get_applications_v1(
-                    limit=limit,
-                    name=name,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_qos_device_interface_info(self,
-                                            id,
-                                            headers=None,
-                                            **request_parameters):
-        """ This function is an alias of delete_qos_device_interface_info_v1 .
-        Args:
-            id(str): id path parameter. Id of the qos device info, this object holds all qos device interface
-                infos associate with network device id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_qos_device_interface_info_v1 .
-        """
-        return self.delete_qos_device_interface_info_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_qos_device_interface_info_count(self,
-                                               headers=None,
-                                               **request_parameters):
-        """ This function is an alias of get_qos_device_interface_info_count_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_qos_device_interface_info_count_v1 .
-        """
-        return self.get_qos_device_interface_info_count_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def application_policy_intent(self,
-                                     createList=None,
-                                     deleteList=None,
-                                     updateList=None,
-                                     headers=None,
-                                     payload=None,
-                                     active_validation=True,
-                                     **request_parameters):
-        """ This function is an alias of application_policy_intent_v1 .
-        Args:
-            createList(list): Application Policy's createList (list of objects).
-            deleteList(list): Application Policy's Delete list of Group Based Policy ids  (list of strings).
-            updateList(list): Application Policy's updateList (list of objects).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of application_policy_intent_v1 .
-        """
-        return self.application_policy_intent_v1(
-                    createList=createList,
-                    deleteList=deleteList,
-                    updateList=updateList,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_policy_queuing_profile(self,
-                                                  name=None,
-                                                  headers=None,
-                                                  **request_parameters):
-        """ This function is an alias of get_application_policy_queuing_profile_v1 .
-        Args:
-            name(str): name query parameter. queuing profile name .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_policy_queuing_profile_v1 .
-        """
-        return self.get_application_policy_queuing_profile_v1(
-                    name=name,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def update_application_policy_queuing_profile(self,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
-        """ This function is an alias of update_application_policy_queuing_profile_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of update_application_policy_queuing_profile_v1 .
-        """
-        return self.update_application_policy_queuing_profile_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_the_application_qo_s_policy_setting(self,
-                                                         headers=None,
-                                                         **request_parameters):
-        """ This function is an alias of retrieves_the_application_qo_s_policy_setting_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_the_application_qo_s_policy_setting_v1 .
-        """
-        return self.retrieves_the_application_qo_s_policy_setting_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_application_set(self,
-                                  id,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of delete_application_set_v1 .
-        Args:
-            id(str): id query parameter.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_application_set_v1 .
-        """
-        return self.delete_application_set_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def enable_c_b_a_r_feature_on_multiple_network_devices(self,
-                                                              networkDevices=None,
-                                                              headers=None,
-                                                              payload=None,
-                                                              active_validation=True,
-                                                              **request_parameters):
-        """ This function is an alias of enable_c_b_a_r_feature_on_multiple_network_devices_v1 .
-        Args:
-            networkDevices(list): Application Policy's networkDevices (list of objects).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of enable_c_b_a_r_feature_on_multiple_network_devices_v1 .
-        """
-        return self.enable_c_b_a_r_feature_on_multiple_network_devices_v1(
-                    networkDevices=networkDevices,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def updates_the_application_qo_s_policy_setting(self,
-                                                       deployByDefaultOnWiredDevices=None,
-                                                       headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
-                                                       **request_parameters):
-        """ This function is an alias of updates_the_application_qo_s_policy_setting_v1 .
-        Args:
-            deployByDefaultOnWiredDevices(boolean): Application Policy's Flag to indicate whether QoS policy should
-                be deployed automatically on wired network device when it is provisioned. This would be
-                only applicable for cases where the network device is assigned to a site where a QoS
-                policy has been configured. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of updates_the_application_qo_s_policy_setting_v1 .
-        """
-        return self.updates_the_application_qo_s_policy_setting_v1(
-                    deployByDefaultOnWiredDevices=deployByDefaultOnWiredDevices,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_application_sets(self,
-                                limit=None,
-                                name=None,
-                                offset=None,
-                                headers=None,
-                                **request_parameters):
-        """ This function is an alias of get_application_sets_v1 .
-        Args:
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
-            name(str): name query parameter.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_application_sets_v1 .
-        """
-        return self.get_application_sets_v1(
-                    limit=limit,
-                    name=name,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def update_qos_device_interface_info(self,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
-        """ This function is an alias of update_qos_device_interface_info_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of update_qos_device_interface_info_v1 .
-        """
-        return self.update_qos_device_interface_info_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_applications_count(self,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of get_applications_count_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_applications_count_v1 .
-        """
-        return self.get_applications_count_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def disable_application_telemetry_feature_on_multiple_network_devices(self,
-                                                                             networkDeviceIds=None,
-                                                                             headers=None,
-                                                                             payload=None,
-                                                                             active_validation=True,
-                                                                             **request_parameters):
-        """ This function is an alias of disable_application_telemetry_feature_on_multiple_network_devices_v1 .
-        Args:
-            networkDeviceIds(list): Application Policy's List of network device ids where Application Telemetry has
-                to be disabled  (list of strings).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of disable_application_telemetry_feature_on_multiple_network_devices_v1 .
-        """
-        return self.disable_application_telemetry_feature_on_multiple_network_devices_v1(
-                    networkDeviceIds=networkDeviceIds,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def disable_c_b_a_r_feature_on_multiple_network_devices(self,
-                                                               networkDeviceIds=None,
-                                                               headers=None,
-                                                               payload=None,
-                                                               active_validation=True,
-                                                               **request_parameters):
-        """ This function is an alias of disable_c_b_a_r_feature_on_multiple_network_devices_v1 .
-        Args:
-            networkDeviceIds(list): Application Policy's List of network device ids where CBAR has to be disabled
-                (list of strings).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of disable_c_b_a_r_feature_on_multiple_network_devices_v1 .
-        """
-        return self.disable_c_b_a_r_feature_on_multiple_network_devices_v1(
-                    networkDeviceIds=networkDeviceIds,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_qos_device_interface_info(self,
-                                            headers=None,
-                                            payload=None,
-                                            active_validation=True,
-                                            **request_parameters):
-        """ This function is an alias of create_qos_device_interface_info_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_qos_device_interface_info_v1 .
-        """
-        return self.create_qos_device_interface_info_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def enable_application_telemetry_feature_on_multiple_network_devices(self,
-                                                                            networkDevices=None,
-                                                                            headers=None,
-                                                                            payload=None,
-                                                                            active_validation=True,
-                                                                            **request_parameters):
-        """ This function is an alias of enable_application_telemetry_feature_on_multiple_network_devices_v1 .
-        Args:
-            networkDevices(list): Application Policy's networkDevices (list of objects).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of enable_application_telemetry_feature_on_multiple_network_devices_v1 .
-        """
-        return self.enable_application_telemetry_feature_on_multiple_network_devices_v1(
-                    networkDevices=networkDevices,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_application_policy_queuing_profile(self,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
-        """ This function is an alias of create_application_policy_queuing_profile_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_application_policy_queuing_profile_v1 .
-        """
-        return self.create_application_policy_queuing_profile_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_application_policy_queuing_profile(self,
-                                                     id,
-                                                     headers=None,
-                                                     **request_parameters):
-        """ This function is an alias of delete_application_policy_queuing_profile_v1 .
-        Args:
-            id(str): id path parameter. Id of custom queuing profile to delete .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_application_policy_queuing_profile_v1 .
-        """
-        return self.delete_application_policy_queuing_profile_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters(self,
-                                                                                                     app_telemetry_deployment_status=None,
-                                                                                                     app_telemetry_readiness_status=None,
-                                                                                                     application_registry_sync_status=None,
-                                                                                                     cbar_deployment_status=None,
-                                                                                                     cbar_readiness_status=None,
-                                                                                                     hostname=None,
-                                                                                                     ids=None,
-                                                                                                     management_address=None,
-                                                                                                     protocol_pack_status=None,
-                                                                                                     protocol_pack_update_status=None,
-                                                                                                     site_id=None,
-                                                                                                     headers=None,
-                                                                                                     **request_parameters):
-        """ This function is an alias of retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters_v1 .
-        Args:
-            ids(str): ids query parameter. List of network devices ids. If this parameter is not provided,
-                all network devices will be included in the response. Multiple network device IDs can be
-                provided. .
-            management_address(str): managementAddress query parameter. The management address for the
-                network device. This is normally IP address of the device. But it could be hostname in
-                some cases like Meraki devices. Partial search is supported. For example, searching for
-                `25.` would include `10.25.1.1`, `25.5.10.1`, `225.225.1.0`, `10.10.10.125`, etc. .
-            hostname(str): hostname query parameter. The host name of the network device. Partial search is
-                supported. For example, searching for `switch` will include `edge-switch1.domain.com`,
-                `switch25`, etc. .
-            site_id(str): siteId query parameter. The site ID where the network device is assigned. .
-            app_telemetry_deployment_status(str): appTelemetryDeploymentStatus query parameter. Status of the
-                application telemetry deployment on the network device. Available values: SCHEDULED,
-                IN_PROGRESS, COMPLETED, FAILED, NOT_DEPLOYED .
-            app_telemetry_readiness_status(str): appTelemetryReadinessStatus query parameter. Indicates
-                whether the network device is ready for application telemetry enablement or not.
-                Available values: ENABLED, READY, NOT_READY, NOT_SUPPORTED .
-            cbar_deployment_status(str): cbarDeploymentStatus query parameter. Status of the CBAR deployment
-                on the network device. Available values: SCHEDULED, IN_PROGRESS, COMPLETED, FAILED,
-                NOT_DEPLOYED .
-            cbar_readiness_status(str): cbarReadinessStatus query parameter. Indicates whether the network
-                device is ready for CBAR enablement or not. Available values: ENABLED, READY, NOT_READY,
-                NOT_SUPPORTED .
-            protocol_pack_status(str): protocolPackStatus query parameter. Indicates whether the NBAR
-                protocol pack is up-to-date or not on the network device. Available values: LATEST,
-                OUTDATED, UNKNOWN .
-            protocol_pack_update_status(str): protocolPackUpdateStatus query parameter. Status of the NBAR
-                protocol pack update on the network device. Available values: SCHEDULED, IN_PROGRESS,
-                SUCCESS, FAILED, NONE .
-            application_registry_sync_status(str): applicationRegistrySyncStatus query parameter. Indicates
-                whether the latest definitions from application registry have been synchronized with the
-                network device or not. Available values: SYNCING, IN_SYNC, OUT_OF_SYNC, NOT_APPLICABLE .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters_v1 .
-        """
-        return self.retrieve_the_count_of_network_devices_for_the_given_application_visibility_status_filters_v1(
-                    app_telemetry_deployment_status=app_telemetry_deployment_status,
-                    app_telemetry_readiness_status=app_telemetry_readiness_status,
-                    application_registry_sync_status=application_registry_sync_status,
-                    cbar_deployment_status=cbar_deployment_status,
-                    cbar_readiness_status=cbar_readiness_status,
-                    hostname=hostname,
-                    ids=ids,
-                    management_address=management_address,
-                    protocol_pack_status=protocol_pack_status,
-                    protocol_pack_update_status=protocol_pack_update_status,
-                    site_id=site_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_application_set(self,
-                                  headers=None,
-                                  payload=None,
-                                  active_validation=True,
-                                  **request_parameters):
-        """ This function is an alias of create_application_set_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_application_set_v1 .
-        """
-        return self.create_application_set_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
+# Alias Functions
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center DisableCBARFeatureOnMultipleNetworkDevicesV1 data model.
+"""Cisco DNA Center DisableCBARFeatureOnMultipleNetworkDevices data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB4635C45C3B5E44A30D84Daa1D5Fb69(object):
-    """DisableCBARFeatureOnMultipleNetworkDevicesV1 request schema
+    """DisableCBARFeatureOnMultipleNetworkDevices request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorB4635C45C3B5E44A30D84Daa1D5Fb69, self).__init__()

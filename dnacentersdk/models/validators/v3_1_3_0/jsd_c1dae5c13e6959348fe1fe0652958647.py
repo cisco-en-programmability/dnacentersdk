@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateMaintenanceScheduleForNetworkDevicesV1 data model.
+"""Cisco DNA Center CreateMaintenanceScheduleForNetworkDevices data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC1Dae5C13E6959348Fe1Fe0652958647(object):
-    """CreateMaintenanceScheduleForNetworkDevicesV1 request schema
+    """CreateMaintenanceScheduleForNetworkDevices request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorC1Dae5C13E6959348Fe1Fe0652958647, self).__init__()

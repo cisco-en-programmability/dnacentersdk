@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center ChangeVirtualAccountV1 data model.
+"""Cisco DNA Center ChangeVirtualAccount data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBd5B507F58A50AaB614E3D7409Eec4C(object):
-    """ChangeVirtualAccountV1 request schema definition."""
+    """ChangeVirtualAccount request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBd5B507F58A50AaB614E3D7409Eec4C, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

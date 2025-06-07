@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SetAAASettingsForASiteV1 data model.
+"""Cisco DNA Center SetAAASettingsForASite data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,80 +33,79 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0(object):
-    """SetAAASettingsForASiteV1 request schema definition."""
+    """SetAAASettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCd2E825A78B6De087E991F6Fe0, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                    "aaaClient": {
-                        "properties": {
-                            "pan": {
-                                "type": "string"
-                            },
-                            "primaryServerIp": {
-                                "type": "string"
-                            },
-                            "protocol": {
-                                "enum": [
-                                    "RADIUS",
-                                    "TACACS"
-                                ],
-                                "type": "string"
-                            },
-                            "secondaryServerIp": {
-                                "type": "string"
-                            },
-                            "serverType": {
-                                "enum": [
-                                    "ISE",
-                                    "AAA"
-                                ],
-                                "type": "string"
-                            },
-                            "sharedSecret": {
-                                "type": "string"
-                            }
-                        },
-                        "type": ["object", "null"]
-                    },
-                    "aaaNetwork": {
-                        "properties": {
-                            "pan": {
-                                "type": "string"
-                            },
-                            "primaryServerIp": {
-                                "type": "string"
-                            },
-                            "protocol": {
-                                "enum": [
-                                    "RADIUS",
-                                    "TACACS"
-                                ],
-                                "type": "string"
-                            },
-                            "secondaryServerIp": {
-                                "type": "string"
-                            },
-                            "serverType": {
-                                "enum": [
-                                    "ISE",
-                                    "AAA"
-                                ],
-                                "type": "string"
-                            },
-                            "sharedSecret": {
-                                "type": "string"
-                            }
-                        },
-                        "type": ["object", "null"]
-                    }
+                "aaaClient": {
+                "properties": {
+                "pan": {
+                "type": "string"
+                },
+                "primaryServerIp": {
+                "type": "string"
+                },
+                "protocol": {
+                "enum": [
+                "RADIUS",
+                "TACACS"
+                ],
+                "type": "string"
+                },
+                "secondaryServerIp": {
+                "type": "string"
+                },
+                "serverType": {
+                "enum": [
+                "ISE",
+                "AAA"
+                ],
+                "type": "string"
+                },
+                "sharedSecret": {
+                "type": "string"
+                }
                 },
                 "type": "object"
-            }'''.replace("\n" + ' ' * 16, '')
+                },
+                "aaaNetwork": {
+                "properties": {
+                "pan": {
+                "type": "string"
+                },
+                "primaryServerIp": {
+                "type": "string"
+                },
+                "protocol": {
+                "enum": [
+                "RADIUS",
+                "TACACS"
+                ],
+                "type": "string"
+                },
+                "secondaryServerIp": {
+                "type": "string"
+                },
+                "serverType": {
+                "enum": [
+                "ISE",
+                "AAA"
+                ],
+                "type": "string"
+                },
+                "sharedSecret": {
+                "type": "string"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
         ))
-
 
     def validate(self, request):
         try:

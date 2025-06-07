@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateDeviceRoleV1 data model.
+"""Cisco DNA Center UpdateDeviceRole data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAa11F09D28165F4EA6C81B8642E59Cc4(object):
-    """UpdateDeviceRoleV1 request schema definition."""
+    """UpdateDeviceRole request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAa11F09D28165F4EA6C81B8642E59Cc4, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center RetrievesTheNumberOfClientsByApplyingComplexFiltersV1 data model.
+"""Cisco DNA Center RetrievesTheNumberOfClientsByApplyingComplexFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA2131Eae5C1D8E73Cd55Eebf6A83(object):
-    """RetrievesTheNumberOfClientsByApplyingComplexFiltersV1 request
-    schema definition."""
+    """RetrievesTheNumberOfClientsByApplyingComplexFilters request schema
+    definition."""
     def __init__(self):
         super(JSONSchemaValidatorA2131Eae5C1D8E73Cd55Eebf6A83, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

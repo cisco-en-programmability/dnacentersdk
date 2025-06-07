@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SetNTPSettingsForASiteV1 data model.
+"""Cisco DNA Center SetNTPSettingsForASite data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,34 +33,27 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDf9Ec5Aa58815A849B4853B223343E5E(object):
-    """SetNTPSettingsForASiteV1 request schema definition."""
+    """SetNTPSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDf9Ec5Aa58815A849B4853B223343E5E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "object",
                 "properties": {
-                    "ntp": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "servers": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    }
+                "ntp": {
+                "properties": {
+                "servers": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
                 }
-            }'''.replace("\n" + ' ' * 8, '')
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
         ))
 
     def validate(self, request):

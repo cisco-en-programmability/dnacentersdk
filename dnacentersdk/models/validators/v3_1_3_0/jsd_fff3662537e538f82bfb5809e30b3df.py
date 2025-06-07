@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center QueryNetworkDevicesWithFiltersV1 data model.
+"""Cisco DNA Center QueryNetworkDevicesWithFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFff3662537E538F82BfB5809E30B3Df(object):
-    """QueryNetworkDevicesWithFiltersV1 request schema definition."""
+    """QueryNetworkDevicesWithFilters request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFff3662537E538F82BfB5809E30B3Df, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

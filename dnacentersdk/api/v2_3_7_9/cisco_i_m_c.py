@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco Catalyst Center Cisco IMC API wrapper.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
 from builtins import *
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -30,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -62,15 +65,15 @@ class CiscoIMC(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def adds_cisco_i_m_c_configuration_to_a_catalyst_center_node_v1(self,
-                                                                    ipAddress=None,
-                                                                    nodeId=None,
-                                                                    password=None,
-                                                                    username=None,
-                                                                    headers=None,
-                                                                    payload=None,
-                                                                    active_validation=True,
-                                                                    **request_parameters):
+    def adds_cisco_i_m_c_configuration_to_a_catalyst_center_node(self,
+                                                                 ipAddress=None,
+                                                                 nodeId=None,
+                                                                 password=None,
+                                                                 username=None,
+                                                                 headers=None,
+                                                                 payload=None,
+                                                                 active_validation=True,
+                                                                 **request_parameters):
         """This API adds a Cisco Integrated Management Controller (IMC) configuration to a Cisco Catalyst Center node,
         identified by its `nodeId`. Obtain the `nodeId` from the `id` attribute in the response of the
         `/dna/intent/api/v1/nodes-config` API. The Cisco IMC configuration APIs enable the management of
@@ -108,7 +111,7 @@ class CiscoIMC(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!adds-cisco-i-m-c-configuration-to-a-catalyst-center-node-v1
+            https://developer.cisco.com/docs/dna-center/#!adds-cisco-imc-configuration-to-a-catalyst-center-node
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -161,9 +164,9 @@ class CiscoIMC(object):
 
         return self._object_factory('bpm_d5f8cf25475dc5be53f35357aca5a4_v2_3_7_9', json_data)
 
-    def retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes_v1(self,
-                                                                          headers=None,
-                                                                          **request_parameters):
+    def retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes(self,
+                                                                       headers=None,
+                                                                       **request_parameters):
         """This API retrieves the configurations of the Cisco Integrated Management Controller (IMC) that have been added
         to the Catalyst Center nodes. The Cisco IMC configuration APIs enable the management of connections
         between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and credentials to
@@ -190,7 +193,7 @@ class CiscoIMC(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-cisco-i-m-c-configurations-for-catalyst-center-nodes-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-cisco-i-m-c-configurations-for-catalyst-center-nodes
         """
         check_type(headers, dict)
         if headers is not None:
@@ -222,10 +225,10 @@ class CiscoIMC(object):
 
         return self._object_factory('bpm_b7ed1910345a8b9b9ad88aeee4f109_v2_3_7_9', json_data)
 
-    def deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1(self,
-                                                                            id,
-                                                                            headers=None,
-                                                                            **request_parameters):
+    def deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
+                                                                         id,
+                                                                         headers=None,
+                                                                         **request_parameters):
         """This API removes a specific Cisco Integrated Management Controller (IMC) configuration from a Catalyst Center
         node using the provided identifier. The Cisco IMC configuration APIs enable the management of
         connections between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and
@@ -253,7 +256,7 @@ class CiscoIMC(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!deletes-the-cisco-i-m-c-configuration-for-a-catalyst-center-node-v1
+            https://developer.cisco.com/docs/dna-center/#!deletes-the-cisco-i-m-c-configuration-for-a-catalyst-center-node
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -288,15 +291,15 @@ class CiscoIMC(object):
 
         return self._object_factory('bpm_baa237a3253535e875c62928443888b_v2_3_7_9', json_data)
 
-    def updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1(self,
-                                                                            id,
-                                                                            ipAddress=None,
-                                                                            password=None,
-                                                                            username=None,
-                                                                            headers=None,
-                                                                            payload=None,
-                                                                            active_validation=True,
-                                                                            **request_parameters):
+    def updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
+                                                                         id,
+                                                                         ipAddress=None,
+                                                                         password=None,
+                                                                         username=None,
+                                                                         headers=None,
+                                                                         payload=None,
+                                                                         active_validation=True,
+                                                                         **request_parameters):
         """This API updates the Cisco Integrated Management Controller (IMC) configuration for a Catalyst Center node,
         identified by the specified ID. The Cisco IMC configuration APIs enable the management of connections
         between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and credentials to
@@ -332,7 +335,7 @@ class CiscoIMC(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!updates-the-cisco-i-m-c-configuration-for-a-catalyst-center-node-v1
+            https://developer.cisco.com/docs/dna-center/#!updates-the-cisco-i-m-c-configuration-for-a-catalyst-center-node
         """
         check_type(headers, dict)
         check_type(payload, dict)
@@ -383,10 +386,10 @@ class CiscoIMC(object):
 
         return self._object_factory('bpm_f2562a2d8e5ec287738032961762ed_v2_3_7_9', json_data)
 
-    def retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1(self,
-                                                                              id,
-                                                                              headers=None,
-                                                                              **request_parameters):
+    def retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
+                                                                           id,
+                                                                           headers=None,
+                                                                           **request_parameters):
         """This API retrieves the Cisco Integrated Management Controller (IMC) configuration for a Catalyst Center node,
         identified by the specified ID. The Cisco IMC configuration APIs enable the management of connections
         between Cisco IMC and Cisco Catalyst Center. By providing the Cisco IMC IP address and credentials to
@@ -414,7 +417,7 @@ class CiscoIMC(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!retrieves-the-cisco-i-m-c-configuration-for-a-catalyst-center-node-v1
+            https://developer.cisco.com/docs/dna-center/#!retrieves-the-cisco-i-m-c-configuration-for-a-catalyst-center-node
         """
         check_type(headers, dict)
         check_type(id, str,
@@ -449,152 +452,5 @@ class CiscoIMC(object):
 
         return self._object_factory('bpm_afae98de597f918fe9d08045026c_v2_3_7_9', json_data)
 
-
-
-    # Alias Function
-    def adds_cisco_i_m_c_configuration_to_a_catalyst_center_node(self,
-                                                                    ipAddress=None,
-                                                                    nodeId=None,
-                                                                    password=None,
-                                                                    username=None,
-                                                                    headers=None,
-                                                                    payload=None,
-                                                                    active_validation=True,
-                                                                    **request_parameters):
-        """ This function is an alias of adds_cisco_i_m_c_configuration_to_a_catalyst_center_node_v1 .
-        Args:
-            ipAddress(string): Cisco IMC's IP address of the Cisco IMC .
-            nodeId(string): Cisco IMC's The UUID that represents the Catalyst Center node. Its value can be obtained
-                from the `id` attribute of the response of the `/dna/intent/api/v1/nodes-config` API. .
-            password(string): Cisco IMC's Password of the Cisco IMC .
-            username(string): Cisco IMC's Username of the Cisco IMC .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of adds_cisco_i_m_c_configuration_to_a_catalyst_center_node_v1 .
-        """
-        return self.adds_cisco_i_m_c_configuration_to_a_catalyst_center_node_v1(
-                    ipAddress=ipAddress,
-                    nodeId=nodeId,
-                    password=password,
-                    username=username,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
-                                                                            id,
-                                                                            headers=None,
-                                                                            **request_parameters):
-        """ This function is an alias of deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1 .
-        Args:
-            id(str): id path parameter. The unique identifier for this Cisco IMC configuration .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1 .
-        """
-        return self.deletes_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
-                                                                            id,
-                                                                            ipAddress=None,
-                                                                            password=None,
-                                                                            username=None,
-                                                                            headers=None,
-                                                                            payload=None,
-                                                                            active_validation=True,
-                                                                            **request_parameters):
-        """ This function is an alias of updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1 .
-        Args:
-            ipAddress(string): Cisco IMC's IP address of the Cisco IMC .
-            password(string): Cisco IMC's Password of the Cisco IMC .
-            username(string): Cisco IMC's Username of the Cisco IMC .
-            id(str): id path parameter. The unique identifier for this Cisco IMC configuration .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1 .
-        """
-        return self.updates_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1(
-                    id=id,
-                    ipAddress=ipAddress,
-                    password=password,
-                    username=username,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node(self,
-                                                                              id,
-                                                                              headers=None,
-                                                                              **request_parameters):
-        """ This function is an alias of retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1 .
-        Args:
-            id(str): id path parameter. The unique identifier for this Cisco IMC configuration .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1 .
-        """
-        return self.retrieves_the_cisco_i_m_c_configuration_for_a_catalyst_center_node_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes(self,
-                                                                          headers=None,
-                                                                          **request_parameters):
-        """ This function is an alias of retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes_v1 .
-        """
-        return self.retrieves_cisco_i_m_c_configurations_for_catalyst_center_nodes_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

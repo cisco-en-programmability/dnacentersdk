@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center PreviewConfigV1 data model.
+"""Cisco DNA Center PreviewConfig data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFc416739F3C655Ed911884Aec0130E83(object):
-    """PreviewConfigV1 request schema definition."""
+    """PreviewConfig request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFc416739F3C655Ed911884Aec0130E83, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

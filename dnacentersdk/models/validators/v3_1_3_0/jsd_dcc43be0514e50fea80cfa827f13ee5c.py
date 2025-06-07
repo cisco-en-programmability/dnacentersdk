@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddMembersToTheTagV1 data model.
+"""Cisco DNA Center AddMembersToTheTag data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDcc43Be0514E50FeA80CFa827F13Ee5C(object):
-    """AddMembersToTheTagV1 request schema definition."""
+    """AddMembersToTheTag request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDcc43Be0514E50FeA80CFa827F13Ee5C, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

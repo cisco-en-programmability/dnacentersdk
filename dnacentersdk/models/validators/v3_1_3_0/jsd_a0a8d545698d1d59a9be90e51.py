@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center RunComplianceV1 data model.
+"""Cisco DNA Center RunCompliance data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA0A8D545698D1D59A9Be90E51(object):
-    """RunComplianceV1 request schema definition."""
+    """RunCompliance request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA0A8D545698D1D59A9Be90E51, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

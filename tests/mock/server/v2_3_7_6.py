@@ -3387,7 +3387,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             self.path
         )
 
-    def devices_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1_response(self):
+    def devices_gets_the_total_network_device_interface_counts_v1_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -15718,7 +15718,7 @@ class MockServerRequestHandler_v2_3_7_6(BaseHTTPRequestHandler):
             return
 
         if self.matches_DEVICES_412775760f4b503bbce76ebb802f0ad7():
-            self.devices_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1_response()
+            self.devices_gets_the_total_network_device_interface_counts_v1_response()
             return
 
         if self.matches_DEVICES_56adcdf890505770af113b18b30c1b5f():

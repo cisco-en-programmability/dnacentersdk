@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateOrUpdateRFProfileV1 data model.
+"""Cisco DNA Center CreateOrUpdateRFProfile data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF24F6C07641580BA6Ed710E92C2Da16(object):
-    """CreateOrUpdateRFProfileV1 request schema definition."""
+    """CreateOrUpdateRFProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF24F6C07641580BA6Ed710E92C2Da16, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

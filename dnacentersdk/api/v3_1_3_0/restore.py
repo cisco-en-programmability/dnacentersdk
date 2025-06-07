@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,13 +65,13 @@ class Restore(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def restore_backup_v1(self,
-                          id,
-                          encryptionPassphrase=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
+    def restore_backup(self,
+                       id,
+                       encryptionPassphrase=None,
+                       headers=None,
+                       payload=None,
+                       active_validation=True,
+                       **request_parameters):
         """This api is used to trigger restore workflow of a specific backup. Obtain the `id` from the id attribute in the
         response of the `/dna/system/api/v1/backups` API. To monitor the progress and completion of the backup
         deletion , please call `/dna/system/api/v1/backupRestoreExecutions/{id}` api , where id is the taskId
@@ -80,8 +79,8 @@ class Restore(object):
 
         Args:
             encryptionPassphrase(string): Restore's Passphrase to restore backup .
-            id(str): id path parameter. The `id` of the backup to be restored.Obtain the `id` from the id
-                attribute in the response of the `/dna/system/api/v1/backups` API. .
+            id(str): id path parameter. The `id` of the backup to be restored.Obtain the `id` from the id attribute
+                in the response of the `/dna/system/api/v1/backups` API. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -150,40 +149,5 @@ class Restore(object):
 
         return self._object_factory('bpm_b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def restore_backup(self,
-                          id,
-                          encryptionPassphrase=None,
-                          headers=None,
-                          payload=None,
-                          active_validation=True,
-                          **request_parameters):
-        """ This function is an alias of restore_backup_v1 .
-        Args:
-            encryptionPassphrase(string): Restore's Passphrase to restore backup .
-            id(str): id path parameter. The `id` of the backup to be restored.Obtain the `id` from the id
-                attribute in the response of the `/dna/system/api/v1/backups` API. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of restore_backup_v1 .
-        """
-        return self.restore_backup_v1(
-                    id=id,
-                    encryptionPassphrase=encryptionPassphrase,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
+# Alias Functions
 

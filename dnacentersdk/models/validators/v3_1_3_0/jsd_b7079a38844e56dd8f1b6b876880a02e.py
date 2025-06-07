@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddMulticastInSDAFabricV1 data model.
+"""Cisco DNA Center AddMulticastInSDAFabric data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E(object):
-    """AddMulticastInSDAFabricV1 request schema definition."""
+    """AddMulticastInSDAFabric request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB7079A38844E56Dd8F1B6B876880A02E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

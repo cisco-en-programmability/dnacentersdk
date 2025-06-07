@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center PreviewTemplateV1 data model.
+"""Cisco DNA Center PreviewTemplate data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C(object):
-    """PreviewTemplateV1 request schema definition."""
+    """PreviewTemplate request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCcbf614B4B355Cac929F12Cc61272C1C, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
 
 
-def is_valid_authorize_device_v1(json_schema_validate, obj):
+def is_valid_authorize_device(json_schema_validate, obj):
     json_schema_validate('jsd_5627d9227adc5f02b7cd264af7255d19_v2_3_7_9').validate(obj)
     return True
 
 
-def authorize_device_v1(api):
-    endpoint_result = api.device_onboarding_pnp.authorize_device_v1(
+def authorize_device(api):
+    endpoint_result = api.device_onboarding_pnp.authorize_device(
         active_validation=True,
         deviceIdList=['string'],
         payload=None
@@ -44,11 +44,11 @@ def authorize_device_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_authorize_device_v1(api, validator):
+def test_authorize_device(api, validator):
     try:
-        assert is_valid_authorize_device_v1(
+        assert is_valid_authorize_device(
             validator,
-            authorize_device_v1(api)
+            authorize_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -56,8 +56,8 @@ def test_authorize_device_v1(api, validator):
             raise original_e
 
 
-def authorize_device_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.authorize_device_v1(
+def authorize_device_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.authorize_device(
         active_validation=True,
         deviceIdList=None,
         payload=None
@@ -66,11 +66,11 @@ def authorize_device_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_authorize_device_v1_default_val(api, validator):
+def test_authorize_device_default_val(api, validator):
     try:
-        assert is_valid_authorize_device_v1(
+        assert is_valid_authorize_device(
             validator,
-            authorize_device_v1_default_val(api)
+            authorize_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -203,13 +203,13 @@ def test_get_device_list_default_val(api, validator):
             raise original_e
 
 
-def is_valid_claim_device_v1(json_schema_validate, obj):
+def is_valid_claim_device(json_schema_validate, obj):
     json_schema_validate('jsd_2e722e05046d5262b55c125237e9b67d_v2_3_7_9').validate(obj)
     return True
 
 
-def claim_device_v1(api):
-    endpoint_result = api.device_onboarding_pnp.claim_device_v1(
+def claim_device(api):
+    endpoint_result = api.device_onboarding_pnp.claim_device(
         active_validation=True,
         authorizationNeeded=True,
         configFileUrl='string',
@@ -227,11 +227,11 @@ def claim_device_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_device_v1(api, validator):
+def test_claim_device(api, validator):
     try:
-        assert is_valid_claim_device_v1(
+        assert is_valid_claim_device(
             validator,
-            claim_device_v1(api)
+            claim_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -239,8 +239,8 @@ def test_claim_device_v1(api, validator):
             raise original_e
 
 
-def claim_device_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.claim_device_v1(
+def claim_device_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.claim_device(
         active_validation=True,
         authorizationNeeded=None,
         configFileUrl=None,
@@ -258,11 +258,11 @@ def claim_device_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_device_v1_default_val(api, validator):
+def test_claim_device_default_val(api, validator):
     try:
-        assert is_valid_claim_device_v1(
+        assert is_valid_claim_device(
             validator,
-            claim_device_v1_default_val(api)
+            claim_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -333,13 +333,13 @@ def test_get_device_count_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_device_history_v1(json_schema_validate, obj):
+def is_valid_get_device_history(json_schema_validate, obj):
     json_schema_validate('jsd_f03966978a7f5cd4b3228dcae71373fe_v2_3_7_9').validate(obj)
     return True
 
 
-def get_device_history_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_device_history_v1(
+def get_device_history(api):
+    endpoint_result = api.device_onboarding_pnp.get_device_history(
         serial_number='string',
         sort='value1,value2',
         sort_order='string'
@@ -348,11 +348,11 @@ def get_device_history_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_history_v1(api, validator):
+def test_get_device_history(api, validator):
     try:
-        assert is_valid_get_device_history_v1(
+        assert is_valid_get_device_history(
             validator,
-            get_device_history_v1(api)
+            get_device_history(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -360,8 +360,8 @@ def test_get_device_history_v1(api, validator):
             raise original_e
 
 
-def get_device_history_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_device_history_v1(
+def get_device_history_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_device_history(
         serial_number=None,
         sort=None,
         sort_order=None
@@ -370,24 +370,24 @@ def get_device_history_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_history_v1_default_val(api, validator):
+def test_get_device_history_default_val(api, validator):
     try:
-        assert is_valid_get_device_history_v1(
+        assert is_valid_get_device_history(
             validator,
-            get_device_history_v1_default_val(api)
+            get_device_history_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_import_devices_in_bulk_v1(json_schema_validate, obj):
+def is_valid_import_devices_in_bulk(json_schema_validate, obj):
     json_schema_validate('jsd_a7d6d604f38f5f849af79d8768bddfc1_v2_3_7_9').validate(obj)
     return True
 
 
-def import_devices_in_bulk_v1(api):
-    endpoint_result = api.device_onboarding_pnp.import_devices_in_bulk_v1(
+def import_devices_in_bulk(api):
+    endpoint_result = api.device_onboarding_pnp.import_devices_in_bulk(
         active_validation=True,
         payload=None
     )
@@ -395,11 +395,11 @@ def import_devices_in_bulk_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_import_devices_in_bulk_v1(api, validator):
+def test_import_devices_in_bulk(api, validator):
     try:
-        assert is_valid_import_devices_in_bulk_v1(
+        assert is_valid_import_devices_in_bulk(
             validator,
-            import_devices_in_bulk_v1(api)
+            import_devices_in_bulk(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -407,8 +407,8 @@ def test_import_devices_in_bulk_v1(api, validator):
             raise original_e
 
 
-def import_devices_in_bulk_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.import_devices_in_bulk_v1(
+def import_devices_in_bulk_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.import_devices_in_bulk(
         active_validation=True,
         payload=None
     )
@@ -416,24 +416,24 @@ def import_devices_in_bulk_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_import_devices_in_bulk_v1_default_val(api, validator):
+def test_import_devices_in_bulk_default_val(api, validator):
     try:
-        assert is_valid_import_devices_in_bulk_v1(
+        assert is_valid_import_devices_in_bulk(
             validator,
-            import_devices_in_bulk_v1_default_val(api)
+            import_devices_in_bulk_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_reset_device_v1(json_schema_validate, obj):
+def is_valid_reset_device(json_schema_validate, obj):
     json_schema_validate('jsd_15226f5a13405ba69f3957b98db8663a_v2_3_7_9').validate(obj)
     return True
 
 
-def reset_device_v1(api):
-    endpoint_result = api.device_onboarding_pnp.reset_device_v1(
+def reset_device(api):
+    endpoint_result = api.device_onboarding_pnp.reset_device(
         active_validation=True,
         deviceResetList=[{'configList': [{'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]}], 'deviceId': 'string', 'licenseLevel': 'string', 'licenseType': 'string', 'topOfStackSerialNumber': 'string'}],
         payload=None,
@@ -444,11 +444,11 @@ def reset_device_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_reset_device_v1(api, validator):
+def test_reset_device(api, validator):
     try:
-        assert is_valid_reset_device_v1(
+        assert is_valid_reset_device(
             validator,
-            reset_device_v1(api)
+            reset_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -456,8 +456,8 @@ def test_reset_device_v1(api, validator):
             raise original_e
 
 
-def reset_device_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.reset_device_v1(
+def reset_device_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.reset_device(
         active_validation=True,
         deviceResetList=None,
         payload=None,
@@ -468,24 +468,24 @@ def reset_device_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_reset_device_v1_default_val(api, validator):
+def test_reset_device_default_val(api, validator):
     try:
-        assert is_valid_reset_device_v1(
+        assert is_valid_reset_device(
             validator,
-            reset_device_v1_default_val(api)
+            reset_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_sync_result_for_virtual_account_v1(json_schema_validate, obj):
+def is_valid_get_sync_result_for_virtual_account(json_schema_validate, obj):
     json_schema_validate('jsd_b34f9daa98735533a61287ce30d216b6_v2_3_7_9').validate(obj)
     return True
 
 
-def get_sync_result_for_virtual_account_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_sync_result_for_virtual_account_v1(
+def get_sync_result_for_virtual_account(api):
+    endpoint_result = api.device_onboarding_pnp.get_sync_result_for_virtual_account(
         domain='string',
         name='string'
     )
@@ -493,11 +493,11 @@ def get_sync_result_for_virtual_account_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_sync_result_for_virtual_account_v1(api, validator):
+def test_get_sync_result_for_virtual_account(api, validator):
     try:
-        assert is_valid_get_sync_result_for_virtual_account_v1(
+        assert is_valid_get_sync_result_for_virtual_account(
             validator,
-            get_sync_result_for_virtual_account_v1(api)
+            get_sync_result_for_virtual_account(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -505,8 +505,8 @@ def test_get_sync_result_for_virtual_account_v1(api, validator):
             raise original_e
 
 
-def get_sync_result_for_virtual_account_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_sync_result_for_virtual_account_v1(
+def get_sync_result_for_virtual_account_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_sync_result_for_virtual_account(
         domain='string',
         name='string'
     )
@@ -514,24 +514,24 @@ def get_sync_result_for_virtual_account_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_sync_result_for_virtual_account_v1_default_val(api, validator):
+def test_get_sync_result_for_virtual_account_default_val(api, validator):
     try:
-        assert is_valid_get_sync_result_for_virtual_account_v1(
+        assert is_valid_get_sync_result_for_virtual_account(
             validator,
-            get_sync_result_for_virtual_account_v1_default_val(api)
+            get_sync_result_for_virtual_account_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_claim_a_device_to_a_site_v1(json_schema_validate, obj):
+def is_valid_claim_a_device_to_a_site(json_schema_validate, obj):
     json_schema_validate('jsd_e11daa984f535a08bc1eb01bc84bc399_v2_3_7_9').validate(obj)
     return True
 
 
-def claim_a_device_to_a_site_v1(api):
-    endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site_v1(
+def claim_a_device_to_a_site(api):
+    endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site(
         active_validation=True,
         configInfo={'configId': 'string', 'configParameters': [{'key': 'string', 'value': 'string'}]},
         deviceId='string',
@@ -552,11 +552,11 @@ def claim_a_device_to_a_site_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_a_device_to_a_site_v1(api, validator):
+def test_claim_a_device_to_a_site(api, validator):
     try:
-        assert is_valid_claim_a_device_to_a_site_v1(
+        assert is_valid_claim_a_device_to_a_site(
             validator,
-            claim_a_device_to_a_site_v1(api)
+            claim_a_device_to_a_site(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -564,8 +564,8 @@ def test_claim_a_device_to_a_site_v1(api, validator):
             raise original_e
 
 
-def claim_a_device_to_a_site_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site_v1(
+def claim_a_device_to_a_site_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.claim_a_device_to_a_site(
         active_validation=True,
         configInfo=None,
         deviceId=None,
@@ -586,24 +586,24 @@ def claim_a_device_to_a_site_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_claim_a_device_to_a_site_v1_default_val(api, validator):
+def test_claim_a_device_to_a_site_default_val(api, validator):
     try:
-        assert is_valid_claim_a_device_to_a_site_v1(
+        assert is_valid_claim_a_device_to_a_site(
             validator,
-            claim_a_device_to_a_site_v1_default_val(api)
+            claim_a_device_to_a_site_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_preview_config_v1(json_schema_validate, obj):
+def is_valid_preview_config(json_schema_validate, obj):
     json_schema_validate('jsd_fc416739f3c655ed911884aec0130e83_v2_3_7_9').validate(obj)
     return True
 
 
-def preview_config_v1(api):
-    endpoint_result = api.device_onboarding_pnp.preview_config_v1(
+def preview_config(api):
+    endpoint_result = api.device_onboarding_pnp.preview_config(
         active_validation=True,
         deviceId='string',
         payload=None,
@@ -614,11 +614,11 @@ def preview_config_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_preview_config_v1(api, validator):
+def test_preview_config(api, validator):
     try:
-        assert is_valid_preview_config_v1(
+        assert is_valid_preview_config(
             validator,
-            preview_config_v1(api)
+            preview_config(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -626,8 +626,8 @@ def test_preview_config_v1(api, validator):
             raise original_e
 
 
-def preview_config_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.preview_config_v1(
+def preview_config_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.preview_config(
         active_validation=True,
         deviceId=None,
         payload=None,
@@ -638,24 +638,24 @@ def preview_config_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_preview_config_v1_default_val(api, validator):
+def test_preview_config_default_val(api, validator):
     try:
-        assert is_valid_preview_config_v1(
+        assert is_valid_preview_config(
             validator,
-            preview_config_v1_default_val(api)
+            preview_config_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_un_claim_device_v1(json_schema_validate, obj):
+def is_valid_un_claim_device(json_schema_validate, obj):
     json_schema_validate('jsd_0768898397e350a7a690cdfeffa5eaca_v2_3_7_9').validate(obj)
     return True
 
 
-def un_claim_device_v1(api):
-    endpoint_result = api.device_onboarding_pnp.un_claim_device_v1(
+def un_claim_device(api):
+    endpoint_result = api.device_onboarding_pnp.un_claim_device(
         active_validation=True,
         deviceIdList=['string'],
         payload=None
@@ -664,11 +664,11 @@ def un_claim_device_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_un_claim_device_v1(api, validator):
+def test_un_claim_device(api, validator):
     try:
-        assert is_valid_un_claim_device_v1(
+        assert is_valid_un_claim_device(
             validator,
-            un_claim_device_v1(api)
+            un_claim_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -676,8 +676,8 @@ def test_un_claim_device_v1(api, validator):
             raise original_e
 
 
-def un_claim_device_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.un_claim_device_v1(
+def un_claim_device_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.un_claim_device(
         active_validation=True,
         deviceIdList=None,
         payload=None
@@ -686,24 +686,24 @@ def un_claim_device_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_un_claim_device_v1_default_val(api, validator):
+def test_un_claim_device_default_val(api, validator):
     try:
-        assert is_valid_un_claim_device_v1(
+        assert is_valid_un_claim_device(
             validator,
-            un_claim_device_v1_default_val(api)
+            un_claim_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_sync_virtual_account_devices_v1(json_schema_validate, obj):
+def is_valid_sync_virtual_account_devices(json_schema_validate, obj):
     json_schema_validate('jsd_97591ad0cce45817862bebfc839bf5ae_v2_3_7_9').validate(obj)
     return True
 
 
-def sync_virtual_account_devices_v1(api):
-    endpoint_result = api.device_onboarding_pnp.sync_virtual_account_devices_v1(
+def sync_virtual_account_devices(api):
+    endpoint_result = api.device_onboarding_pnp.sync_virtual_account_devices(
         active_validation=True,
         autoSyncPeriod=0,
         ccoUser='string',
@@ -724,11 +724,11 @@ def sync_virtual_account_devices_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_sync_virtual_account_devices_v1(api, validator):
+def test_sync_virtual_account_devices(api, validator):
     try:
-        assert is_valid_sync_virtual_account_devices_v1(
+        assert is_valid_sync_virtual_account_devices(
             validator,
-            sync_virtual_account_devices_v1(api)
+            sync_virtual_account_devices(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -736,8 +736,8 @@ def test_sync_virtual_account_devices_v1(api, validator):
             raise original_e
 
 
-def sync_virtual_account_devices_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.sync_virtual_account_devices_v1(
+def sync_virtual_account_devices_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.sync_virtual_account_devices(
         active_validation=True,
         autoSyncPeriod=None,
         ccoUser=None,
@@ -758,24 +758,24 @@ def sync_virtual_account_devices_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_sync_virtual_account_devices_v1_default_val(api, validator):
+def test_sync_virtual_account_devices_default_val(api, validator):
     try:
-        assert is_valid_sync_virtual_account_devices_v1(
+        assert is_valid_sync_virtual_account_devices(
             validator,
-            sync_virtual_account_devices_v1_default_val(api)
+            sync_virtual_account_devices_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_device_v1(json_schema_validate, obj):
+def is_valid_update_device(json_schema_validate, obj):
     json_schema_validate('jsd_cec8139f6b1c5e5991d12197206029a0_v2_3_7_9').validate(obj)
     return True
 
 
-def update_device_v1(api):
-    endpoint_result = api.device_onboarding_pnp.update_device_v1(
+def update_device(api):
+    endpoint_result = api.device_onboarding_pnp.update_device(
         active_validation=True,
         deviceInfo={'hostname': 'string', 'serialNumber': 'string', 'pid': 'string', 'sudiRequired': True, 'userSudiSerialNos': ['string'], 'stack': True},
         id='string',
@@ -785,11 +785,11 @@ def update_device_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_device_v1(api, validator):
+def test_update_device(api, validator):
     try:
-        assert is_valid_update_device_v1(
+        assert is_valid_update_device(
             validator,
-            update_device_v1(api)
+            update_device(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -797,8 +797,8 @@ def test_update_device_v1(api, validator):
             raise original_e
 
 
-def update_device_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.update_device_v1(
+def update_device_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.update_device(
         active_validation=True,
         deviceInfo=None,
         id='string',
@@ -809,35 +809,35 @@ def update_device_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_device_v1_default_val(api, validator):
+def test_update_device_default_val(api, validator):
     try:
-        assert is_valid_update_device_v1(
+        assert is_valid_update_device(
             validator,
-            update_device_v1_default_val(api)
+            update_device_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_device_by_id_from_pnp_v1(json_schema_validate, obj):
+def is_valid_delete_device_by_id_from_pnp(json_schema_validate, obj):
     json_schema_validate('jsd_5cfec9657be95cac9679e5a808e95124_v2_3_7_9').validate(obj)
     return True
 
 
-def delete_device_by_id_from_pnp_v1(api):
-    endpoint_result = api.device_onboarding_pnp.delete_device_by_id_from_pnp_v1(
+def delete_device_by_id_from_pnp(api):
+    endpoint_result = api.device_onboarding_pnp.delete_device_by_id_from_pnp(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_device_by_id_from_pnp_v1(api, validator):
+def test_delete_device_by_id_from_pnp(api, validator):
     try:
-        assert is_valid_delete_device_by_id_from_pnp_v1(
+        assert is_valid_delete_device_by_id_from_pnp(
             validator,
-            delete_device_by_id_from_pnp_v1(api)
+            delete_device_by_id_from_pnp(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -845,43 +845,43 @@ def test_delete_device_by_id_from_pnp_v1(api, validator):
             raise original_e
 
 
-def delete_device_by_id_from_pnp_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.delete_device_by_id_from_pnp_v1(
+def delete_device_by_id_from_pnp_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.delete_device_by_id_from_pnp(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_device_by_id_from_pnp_v1_default_val(api, validator):
+def test_delete_device_by_id_from_pnp_default_val(api, validator):
     try:
-        assert is_valid_delete_device_by_id_from_pnp_v1(
+        assert is_valid_delete_device_by_id_from_pnp(
             validator,
-            delete_device_by_id_from_pnp_v1_default_val(api)
+            delete_device_by_id_from_pnp_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_device_by_id_v1(json_schema_validate, obj):
+def is_valid_get_device_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_6d2ead8063ab552ea4abcb3e947a092a_v2_3_7_9').validate(obj)
     return True
 
 
-def get_device_by_id_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_device_by_id_v1(
+def get_device_by_id(api):
+    endpoint_result = api.device_onboarding_pnp.get_device_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_by_id_v1(api, validator):
+def test_get_device_by_id(api, validator):
     try:
-        assert is_valid_get_device_by_id_v1(
+        assert is_valid_get_device_by_id(
             validator,
-            get_device_by_id_v1(api)
+            get_device_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -889,32 +889,32 @@ def test_get_device_by_id_v1(api, validator):
             raise original_e
 
 
-def get_device_by_id_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_device_by_id_v1(
+def get_device_by_id_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_device_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_device_by_id_v1_default_val(api, validator):
+def test_get_device_by_id_default_val(api, validator):
     try:
-        assert is_valid_get_device_by_id_v1(
+        assert is_valid_get_device_by_id(
             validator,
-            get_device_by_id_v1_default_val(api)
+            get_device_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_pnp_global_settings_v1(json_schema_validate, obj):
+def is_valid_update_pnp_global_settings(json_schema_validate, obj):
     json_schema_validate('jsd_fc8410781af357b6be17a2104ce5efb1_v2_3_7_9').validate(obj)
     return True
 
 
-def update_pnp_global_settings_v1(api):
-    endpoint_result = api.device_onboarding_pnp.update_pnp_global_settings_v1(
+def update_pnp_global_settings(api):
+    endpoint_result = api.device_onboarding_pnp.update_pnp_global_settings(
         acceptEula='string',
         active_validation=True,
         defaultProfile={'cert': 'string', 'fqdnAddresses': ['string'], 'ipAddresses': ['string'], 'port': 'string', 'proxy': 'string'},
@@ -926,11 +926,11 @@ def update_pnp_global_settings_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_global_settings_v1(api, validator):
+def test_update_pnp_global_settings(api, validator):
     try:
-        assert is_valid_update_pnp_global_settings_v1(
+        assert is_valid_update_pnp_global_settings(
             validator,
-            update_pnp_global_settings_v1(api)
+            update_pnp_global_settings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -938,8 +938,8 @@ def test_update_pnp_global_settings_v1(api, validator):
             raise original_e
 
 
-def update_pnp_global_settings_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.update_pnp_global_settings_v1(
+def update_pnp_global_settings_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.update_pnp_global_settings(
         acceptEula=None,
         active_validation=True,
         defaultProfile=None,
@@ -951,35 +951,35 @@ def update_pnp_global_settings_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_global_settings_v1_default_val(api, validator):
+def test_update_pnp_global_settings_default_val(api, validator):
     try:
-        assert is_valid_update_pnp_global_settings_v1(
+        assert is_valid_update_pnp_global_settings(
             validator,
-            update_pnp_global_settings_v1_default_val(api)
+            update_pnp_global_settings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_pnp_global_settings_v1(json_schema_validate, obj):
+def is_valid_get_pnp_global_settings(json_schema_validate, obj):
     json_schema_validate('jsd_b37eb826a4ad5283ae85dc4628045b40_v2_3_7_9').validate(obj)
     return True
 
 
-def get_pnp_global_settings_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_pnp_global_settings_v1(
+def get_pnp_global_settings(api):
+    endpoint_result = api.device_onboarding_pnp.get_pnp_global_settings(
 
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_pnp_global_settings_v1(api, validator):
+def test_get_pnp_global_settings(api, validator):
     try:
-        assert is_valid_get_pnp_global_settings_v1(
+        assert is_valid_get_pnp_global_settings(
             validator,
-            get_pnp_global_settings_v1(api)
+            get_pnp_global_settings(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -987,43 +987,43 @@ def test_get_pnp_global_settings_v1(api, validator):
             raise original_e
 
 
-def get_pnp_global_settings_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_pnp_global_settings_v1(
+def get_pnp_global_settings_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_pnp_global_settings(
 
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_pnp_global_settings_v1_default_val(api, validator):
+def test_get_pnp_global_settings_default_val(api, validator):
     try:
-        assert is_valid_get_pnp_global_settings_v1(
+        assert is_valid_get_pnp_global_settings(
             validator,
-            get_pnp_global_settings_v1_default_val(api)
+            get_pnp_global_settings_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_smart_account_list_v1(json_schema_validate, obj):
+def is_valid_get_smart_account_list(json_schema_validate, obj):
     json_schema_validate('jsd_6e433c01ec815f18af40dcf05481ef52_v2_3_7_9').validate(obj)
     return True
 
 
-def get_smart_account_list_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_smart_account_list_v1(
+def get_smart_account_list(api):
+    endpoint_result = api.device_onboarding_pnp.get_smart_account_list(
 
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_smart_account_list_v1(api, validator):
+def test_get_smart_account_list(api, validator):
     try:
-        assert is_valid_get_smart_account_list_v1(
+        assert is_valid_get_smart_account_list(
             validator,
-            get_smart_account_list_v1(api)
+            get_smart_account_list(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1031,43 +1031,43 @@ def test_get_smart_account_list_v1(api, validator):
             raise original_e
 
 
-def get_smart_account_list_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_smart_account_list_v1(
+def get_smart_account_list_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_smart_account_list(
 
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_smart_account_list_v1_default_val(api, validator):
+def test_get_smart_account_list_default_val(api, validator):
     try:
-        assert is_valid_get_smart_account_list_v1(
+        assert is_valid_get_smart_account_list(
             validator,
-            get_smart_account_list_v1_default_val(api)
+            get_smart_account_list_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_virtual_account_list_v1(json_schema_validate, obj):
+def is_valid_get_virtual_account_list(json_schema_validate, obj):
     json_schema_validate('jsd_c1a9d2c14ac255fd812d6e7aa20a57cc_v2_3_7_9').validate(obj)
     return True
 
 
-def get_virtual_account_list_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_virtual_account_list_v1(
+def get_virtual_account_list(api):
+    endpoint_result = api.device_onboarding_pnp.get_virtual_account_list(
         domain='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_virtual_account_list_v1(api, validator):
+def test_get_virtual_account_list(api, validator):
     try:
-        assert is_valid_get_virtual_account_list_v1(
+        assert is_valid_get_virtual_account_list(
             validator,
-            get_virtual_account_list_v1(api)
+            get_virtual_account_list(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1075,32 +1075,32 @@ def test_get_virtual_account_list_v1(api, validator):
             raise original_e
 
 
-def get_virtual_account_list_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_virtual_account_list_v1(
+def get_virtual_account_list_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_virtual_account_list(
         domain='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_virtual_account_list_v1_default_val(api, validator):
+def test_get_virtual_account_list_default_val(api, validator):
     try:
-        assert is_valid_get_virtual_account_list_v1(
+        assert is_valid_get_virtual_account_list(
             validator,
-            get_virtual_account_list_v1_default_val(api)
+            get_virtual_account_list_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_add_virtual_account_v1(json_schema_validate, obj):
+def is_valid_add_virtual_account(json_schema_validate, obj):
     json_schema_validate('jsd_c6774ff9549a53d4b41fdd2d88f1d0f5_v2_3_7_9').validate(obj)
     return True
 
 
-def add_virtual_account_v1(api):
-    endpoint_result = api.device_onboarding_pnp.add_virtual_account_v1(
+def add_virtual_account(api):
+    endpoint_result = api.device_onboarding_pnp.add_virtual_account(
         active_validation=True,
         autoSyncPeriod=0,
         ccoUser='string',
@@ -1121,11 +1121,11 @@ def add_virtual_account_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_virtual_account_v1(api, validator):
+def test_add_virtual_account(api, validator):
     try:
-        assert is_valid_add_virtual_account_v1(
+        assert is_valid_add_virtual_account(
             validator,
-            add_virtual_account_v1(api)
+            add_virtual_account(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1133,8 +1133,8 @@ def test_add_virtual_account_v1(api, validator):
             raise original_e
 
 
-def add_virtual_account_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.add_virtual_account_v1(
+def add_virtual_account_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.add_virtual_account(
         active_validation=True,
         autoSyncPeriod=None,
         ccoUser=None,
@@ -1155,24 +1155,24 @@ def add_virtual_account_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_virtual_account_v1_default_val(api, validator):
+def test_add_virtual_account_default_val(api, validator):
     try:
-        assert is_valid_add_virtual_account_v1(
+        assert is_valid_add_virtual_account(
             validator,
-            add_virtual_account_v1_default_val(api)
+            add_virtual_account_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_pnp_server_profile_v1(json_schema_validate, obj):
+def is_valid_update_pnp_server_profile(json_schema_validate, obj):
     json_schema_validate('jsd_bc3cb471beaf5bfeb47201993c023068_v2_3_7_9').validate(obj)
     return True
 
 
-def update_pnp_server_profile_v1(api):
-    endpoint_result = api.device_onboarding_pnp.update_pnp_server_profile_v1(
+def update_pnp_server_profile(api):
+    endpoint_result = api.device_onboarding_pnp.update_pnp_server_profile(
         active_validation=True,
         ccoUser='string',
         payload=None,
@@ -1184,11 +1184,11 @@ def update_pnp_server_profile_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_server_profile_v1(api, validator):
+def test_update_pnp_server_profile(api, validator):
     try:
-        assert is_valid_update_pnp_server_profile_v1(
+        assert is_valid_update_pnp_server_profile(
             validator,
-            update_pnp_server_profile_v1(api)
+            update_pnp_server_profile(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1196,8 +1196,8 @@ def test_update_pnp_server_profile_v1(api, validator):
             raise original_e
 
 
-def update_pnp_server_profile_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.update_pnp_server_profile_v1(
+def update_pnp_server_profile_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.update_pnp_server_profile(
         active_validation=True,
         ccoUser=None,
         payload=None,
@@ -1209,24 +1209,24 @@ def update_pnp_server_profile_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_pnp_server_profile_v1_default_val(api, validator):
+def test_update_pnp_server_profile_default_val(api, validator):
     try:
-        assert is_valid_update_pnp_server_profile_v1(
+        assert is_valid_update_pnp_server_profile(
             validator,
-            update_pnp_server_profile_v1_default_val(api)
+            update_pnp_server_profile_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_deregister_virtual_account_v1(json_schema_validate, obj):
+def is_valid_deregister_virtual_account(json_schema_validate, obj):
     json_schema_validate('jsd_8f785e5c9b1c5690b29a65d96f6a601a_v2_3_7_9').validate(obj)
     return True
 
 
-def deregister_virtual_account_v1(api):
-    endpoint_result = api.device_onboarding_pnp.deregister_virtual_account_v1(
+def deregister_virtual_account(api):
+    endpoint_result = api.device_onboarding_pnp.deregister_virtual_account(
         domain='string',
         name='string'
     )
@@ -1234,11 +1234,11 @@ def deregister_virtual_account_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_deregister_virtual_account_v1(api, validator):
+def test_deregister_virtual_account(api, validator):
     try:
-        assert is_valid_deregister_virtual_account_v1(
+        assert is_valid_deregister_virtual_account(
             validator,
-            deregister_virtual_account_v1(api)
+            deregister_virtual_account(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1246,8 +1246,8 @@ def test_deregister_virtual_account_v1(api, validator):
             raise original_e
 
 
-def deregister_virtual_account_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.deregister_virtual_account_v1(
+def deregister_virtual_account_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.deregister_virtual_account(
         domain=None,
         name=None
     )
@@ -1255,24 +1255,24 @@ def deregister_virtual_account_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_deregister_virtual_account_v1_default_val(api, validator):
+def test_deregister_virtual_account_default_val(api, validator):
     try:
-        assert is_valid_deregister_virtual_account_v1(
+        assert is_valid_deregister_virtual_account(
             validator,
-            deregister_virtual_account_v1_default_val(api)
+            deregister_virtual_account_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_workflows_v1(json_schema_validate, obj):
+def is_valid_get_workflows(json_schema_validate, obj):
     json_schema_validate('jsd_1df400c60659589599f2a0e3e1171985_v2_3_7_9').validate(obj)
     return True
 
 
-def get_workflows_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_workflows_v1(
+def get_workflows(api):
+    endpoint_result = api.device_onboarding_pnp.get_workflows(
         limit=0,
         name='value1,value2',
         offset=0,
@@ -1284,11 +1284,11 @@ def get_workflows_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflows_v1(api, validator):
+def test_get_workflows(api, validator):
     try:
-        assert is_valid_get_workflows_v1(
+        assert is_valid_get_workflows(
             validator,
-            get_workflows_v1(api)
+            get_workflows(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1296,8 +1296,8 @@ def test_get_workflows_v1(api, validator):
             raise original_e
 
 
-def get_workflows_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_workflows_v1(
+def get_workflows_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_workflows(
         limit=None,
         name=None,
         offset=None,
@@ -1309,24 +1309,24 @@ def get_workflows_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflows_v1_default_val(api, validator):
+def test_get_workflows_default_val(api, validator):
     try:
-        assert is_valid_get_workflows_v1(
+        assert is_valid_get_workflows(
             validator,
-            get_workflows_v1_default_val(api)
+            get_workflows_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_add_a_workflow_v1(json_schema_validate, obj):
+def is_valid_add_a_workflow(json_schema_validate, obj):
     json_schema_validate('jsd_d967a378b43457ad8c6a6de7bc1845d1_v2_3_7_9').validate(obj)
     return True
 
 
-def add_a_workflow_v1(api):
-    endpoint_result = api.device_onboarding_pnp.add_a_workflow_v1(
+def add_a_workflow(api):
+    endpoint_result = api.device_onboarding_pnp.add_a_workflow(
         _id='string',
         active_validation=True,
         addToInventory=True,
@@ -1353,11 +1353,11 @@ def add_a_workflow_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_a_workflow_v1(api, validator):
+def test_add_a_workflow(api, validator):
     try:
-        assert is_valid_add_a_workflow_v1(
+        assert is_valid_add_a_workflow(
             validator,
-            add_a_workflow_v1(api)
+            add_a_workflow(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1365,8 +1365,8 @@ def test_add_a_workflow_v1(api, validator):
             raise original_e
 
 
-def add_a_workflow_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.add_a_workflow_v1(
+def add_a_workflow_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.add_a_workflow(
         _id=None,
         active_validation=True,
         addToInventory=None,
@@ -1393,35 +1393,35 @@ def add_a_workflow_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_add_a_workflow_v1_default_val(api, validator):
+def test_add_a_workflow_default_val(api, validator):
     try:
-        assert is_valid_add_a_workflow_v1(
+        assert is_valid_add_a_workflow(
             validator,
-            add_a_workflow_v1_default_val(api)
+            add_a_workflow_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_workflow_count_v1(json_schema_validate, obj):
+def is_valid_get_workflow_count(json_schema_validate, obj):
     json_schema_validate('jsd_da8a788940fe59519facc6327e988922_v2_3_7_9').validate(obj)
     return True
 
 
-def get_workflow_count_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_workflow_count_v1(
+def get_workflow_count(api):
+    endpoint_result = api.device_onboarding_pnp.get_workflow_count(
         name='value1,value2'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_count_v1(api, validator):
+def test_get_workflow_count(api, validator):
     try:
-        assert is_valid_get_workflow_count_v1(
+        assert is_valid_get_workflow_count(
             validator,
-            get_workflow_count_v1(api)
+            get_workflow_count(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1429,43 +1429,43 @@ def test_get_workflow_count_v1(api, validator):
             raise original_e
 
 
-def get_workflow_count_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_workflow_count_v1(
+def get_workflow_count_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_workflow_count(
         name=None
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_count_v1_default_val(api, validator):
+def test_get_workflow_count_default_val(api, validator):
     try:
-        assert is_valid_get_workflow_count_v1(
+        assert is_valid_get_workflow_count(
             validator,
-            get_workflow_count_v1_default_val(api)
+            get_workflow_count_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_workflow_by_id_v1(json_schema_validate, obj):
+def is_valid_get_workflow_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_56a2b8f2239f5ef5b2e749f1b85d6508_v2_3_7_9').validate(obj)
     return True
 
 
-def get_workflow_by_id_v1(api):
-    endpoint_result = api.device_onboarding_pnp.get_workflow_by_id_v1(
+def get_workflow_by_id(api):
+    endpoint_result = api.device_onboarding_pnp.get_workflow_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_by_id_v1(api, validator):
+def test_get_workflow_by_id(api, validator):
     try:
-        assert is_valid_get_workflow_by_id_v1(
+        assert is_valid_get_workflow_by_id(
             validator,
-            get_workflow_by_id_v1(api)
+            get_workflow_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1473,43 +1473,43 @@ def test_get_workflow_by_id_v1(api, validator):
             raise original_e
 
 
-def get_workflow_by_id_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.get_workflow_by_id_v1(
+def get_workflow_by_id_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.get_workflow_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_get_workflow_by_id_v1_default_val(api, validator):
+def test_get_workflow_by_id_default_val(api, validator):
     try:
-        assert is_valid_get_workflow_by_id_v1(
+        assert is_valid_get_workflow_by_id(
             validator,
-            get_workflow_by_id_v1_default_val(api)
+            get_workflow_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_workflow_by_id_v1(json_schema_validate, obj):
+def is_valid_delete_workflow_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_820ccaae97d6564e9a29fa5170ccd2a3_v2_3_7_9').validate(obj)
     return True
 
 
-def delete_workflow_by_id_v1(api):
-    endpoint_result = api.device_onboarding_pnp.delete_workflow_by_id_v1(
+def delete_workflow_by_id(api):
+    endpoint_result = api.device_onboarding_pnp.delete_workflow_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_workflow_by_id_v1(api, validator):
+def test_delete_workflow_by_id(api, validator):
     try:
-        assert is_valid_delete_workflow_by_id_v1(
+        assert is_valid_delete_workflow_by_id(
             validator,
-            delete_workflow_by_id_v1(api)
+            delete_workflow_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1517,32 +1517,32 @@ def test_delete_workflow_by_id_v1(api, validator):
             raise original_e
 
 
-def delete_workflow_by_id_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.delete_workflow_by_id_v1(
+def delete_workflow_by_id_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.delete_workflow_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.device_onboarding_pnp
-def test_delete_workflow_by_id_v1_default_val(api, validator):
+def test_delete_workflow_by_id_default_val(api, validator):
     try:
-        assert is_valid_delete_workflow_by_id_v1(
+        assert is_valid_delete_workflow_by_id(
             validator,
-            delete_workflow_by_id_v1_default_val(api)
+            delete_workflow_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_workflow_v1(json_schema_validate, obj):
+def is_valid_update_workflow(json_schema_validate, obj):
     json_schema_validate('jsd_4550fdd2af215b9b8327a3e24a3dea89_v2_3_7_9').validate(obj)
     return True
 
 
-def update_workflow_v1(api):
-    endpoint_result = api.device_onboarding_pnp.update_workflow_v1(
+def update_workflow(api):
+    endpoint_result = api.device_onboarding_pnp.update_workflow(
         _id='string',
         active_validation=True,
         addToInventory=True,
@@ -1570,11 +1570,11 @@ def update_workflow_v1(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_workflow_v1(api, validator):
+def test_update_workflow(api, validator):
     try:
-        assert is_valid_update_workflow_v1(
+        assert is_valid_update_workflow(
             validator,
-            update_workflow_v1(api)
+            update_workflow(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1582,8 +1582,8 @@ def test_update_workflow_v1(api, validator):
             raise original_e
 
 
-def update_workflow_v1_default_val(api):
-    endpoint_result = api.device_onboarding_pnp.update_workflow_v1(
+def update_workflow_default_val(api):
+    endpoint_result = api.device_onboarding_pnp.update_workflow(
         _id=None,
         active_validation=True,
         addToInventory=None,
@@ -1611,11 +1611,11 @@ def update_workflow_v1_default_val(api):
 
 
 @pytest.mark.device_onboarding_pnp
-def test_update_workflow_v1_default_val(api, validator):
+def test_update_workflow_default_val(api, validator):
     try:
-        assert is_valid_update_workflow_v1(
+        assert is_valid_update_workflow(
             validator,
-            update_workflow_v1_default_val(api)
+            update_workflow_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

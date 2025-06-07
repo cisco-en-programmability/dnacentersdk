@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateUserDefinedFieldV1 data model.
+"""Cisco DNA Center UpdateUserDefinedField data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD76A951F85A7A927AFc2F1Ea935C8(object):
-    """UpdateUserDefinedFieldV1 request schema definition."""
+    """UpdateUserDefinedField request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD76A951F85A7A927AFc2F1Ea935C8, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

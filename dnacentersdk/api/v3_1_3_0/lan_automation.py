@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,11 +65,11 @@ class LanAutomation(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def lan_automation_start_v1(self,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
+    def lan_automation_start(self,
+                             headers=None,
+                             payload=None,
+                             active_validation=True,
+                             **request_parameters):
         """Invoke this API to start LAN Automation for the given site. .
 
         Args:
@@ -134,9 +133,25 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_b119a4d455e35cc3b2cc6695a045cbfa_v3_1_3_0', json_data)
 
-    def lan_automation_session_count_v1(self,
-                                        headers=None,
-                                        **request_parameters):
+    def start(self,
+              headers=None,
+              payload=None,
+              active_validation=True,
+              **query_parameters):
+        """Alias for `lan_automation_start <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_start>`_
+        """
+        return self.lan_automation_start(
+            payload=payload,
+            active_validation=active_validation,
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_session_count(self,
+                                     headers=None,
+                                     **request_parameters):
         """Invoke this API to get the total count of LAN Automation sessions. .
 
         Args:
@@ -186,11 +201,23 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_eea014edd5807925df3a414a92ed4_v3_1_3_0', json_data)
 
-    def lan_automation_log_v1(self,
-                              limit=None,
-                              offset=None,
-                              headers=None,
-                              **request_parameters):
+    def session_count(self,
+                      headers=None,
+                      **query_parameters):
+        """Alias for `lan_automation_session_count <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_session_count>`_
+        """
+        return self.lan_automation_session_count(
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_log(self,
+                           limit=None,
+                           offset=None,
+                           headers=None,
+                           **request_parameters):
         """Invoke this API to get the LAN Automation session logs. .
 
         Args:
@@ -249,10 +276,26 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_e37f6c9650b68e0aaac866a162cf_v3_1_3_0', json_data)
 
-    def lan_automation_log_by_id_v1(self,
-                                    id,
-                                    headers=None,
-                                    **request_parameters):
+    def log(self,
+            limit=None,
+            offset=None,
+            headers=None,
+            **query_parameters):
+        """Alias for `lan_automation_log <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_log>`_
+        """
+        return self.lan_automation_log(
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_log_by_id(self,
+                                 id,
+                                 headers=None,
+                                 **request_parameters):
         """Invoke this API to get the LAN Automation session logs based on the given LAN Automation session id. .
 
         Args:
@@ -306,22 +349,36 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_e98b744fde50a1b53761251c43bfb0_v3_1_3_0', json_data)
 
-    def lan_automation_logs_for_individual_devices_v1(self,
-                                                      id,
-                                                      serial_number,
-                                                      log_level=None,
-                                                      headers=None,
-                                                      **request_parameters):
+    def log_by_id(self,
+                  id,
+                  headers=None,
+                  **query_parameters):
+        """Alias for `lan_automation_log_by_id <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_log_by_id>`_
+        """
+        return self.lan_automation_log_by_id(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_logs_for_individual_devices(self,
+                                                   id,
+                                                   serial_number,
+                                                   log_level=None,
+                                                   headers=None,
+                                                   **request_parameters):
         """Invoke this API to get the LAN Automation session logs for individual devices based on the given LAN Automation
         session id and device serial number. .
 
         Args:
             id(str): id path parameter. LAN Automation session identifier. .
             serial_number(str): serialNumber path parameter. Device serial number. .
-            log_level(str): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE,
-                CONFIG and ALL. Specifying ALL will display device specific logs with the exception of
-                CONFIG logs. In order to view CONFIG logs along with the remaining logs, please leave
-                the query parameter blank. .
+            log_level(str): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE, CONFIG and
+                ALL. Specifying ALL will display device specific logs with the exception of CONFIG logs.
+                In order to view CONFIG logs along with the remaining logs, please leave the query
+                parameter blank. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -378,9 +435,9 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_c3441f7507a98d02579c25814f4_v3_1_3_0', json_data)
 
-    def lan_automation_active_sessions_v1(self,
-                                          headers=None,
-                                          **request_parameters):
+    def lan_automation_active_sessions(self,
+                                       headers=None,
+                                       **request_parameters):
         """Invoke this API to get the LAN Automation active session information .
 
         Args:
@@ -430,11 +487,11 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_a19cf2241e75c648220d7172e9e4013_v3_1_3_0', json_data)
 
-    def lan_automation_status_v1(self,
-                                 limit=None,
-                                 offset=None,
-                                 headers=None,
-                                 **request_parameters):
+    def lan_automation_status(self,
+                              limit=None,
+                              offset=None,
+                              headers=None,
+                              **request_parameters):
         """Invoke this API to get the LAN Automation session status. .
 
         Args:
@@ -493,10 +550,26 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_c56a6c58fd5b71b7949036855ee25b_v3_1_3_0', json_data)
 
-    def lan_automation_status_by_id_v1(self,
-                                       id,
-                                       headers=None,
-                                       **request_parameters):
+    def status(self,
+               limit=None,
+               offset=None,
+               headers=None,
+               **query_parameters):
+        """Alias for `lan_automation_status <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_status>`_
+        """
+        return self.lan_automation_status(
+            limit=limit,
+            offset=offset,
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_status_by_id(self,
+                                    id,
+                                    headers=None,
+                                    **request_parameters):
         """Invoke this API to get the LAN Automation session status based on the given Lan Automation session id. .
 
         Args:
@@ -550,15 +623,29 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_d5727c4bdb1056308cd10e99dff2acb8_v3_1_3_0', json_data)
 
-    def lan_automation_device_update_v1(self,
-                                        feature,
-                                        hostnameUpdateDevices=None,
-                                        linkUpdate=None,
-                                        loopbackUpdateDeviceList=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def status_by_id(self,
+                     id,
+                     headers=None,
+                     **query_parameters):
+        """Alias for `lan_automation_status_by_id <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_status_by_id>`_
+        """
+        return self.lan_automation_status_by_id(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_device_update(self,
+                                     feature,
+                                     hostnameUpdateDevices=None,
+                                     linkUpdate=None,
+                                     loopbackUpdateDeviceList=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
         """Invoke this API to perform a DAY-N update on LAN Automation-related devices. Supported features include
         Loopback0 IP update, hostname update, link addition, and link deletion. .
 
@@ -641,10 +728,10 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_aac9ba55e5043b4d5e0995c566dce_v3_1_3_0', json_data)
 
-    def lan_automation_stop_v1(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
+    def lan_automation_stop(self,
+                            id,
+                            headers=None,
+                            **request_parameters):
         """Invoke this API to stop LAN Automation for the given site. .
 
         Args:
@@ -699,12 +786,26 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_ed815ca3e5ab5ae48720795217ec776b_v3_1_3_0', json_data)
 
-    def lan_automation_stop_and_update_devices_v1(self,
-                                                  id,
-                                                  headers=None,
-                                                  payload=None,
-                                                  active_validation=True,
-                                                  **request_parameters):
+    def stop(self,
+             id,
+             headers=None,
+             **query_parameters):
+        """Alias for `lan_automation_stop <#dnacentersdk.
+        api.v3_1_3_0.lan_automation.
+        LanAutomation.lan_automation_stop>`_
+        """
+        return self.lan_automation_stop(
+            id=id,
+            headers=headers,
+            **query_parameters
+        )
+
+    def lan_automation_stop_and_update_devices(self,
+                                               id,
+                                               headers=None,
+                                               payload=None,
+                                               active_validation=True,
+                                               **request_parameters):
         """Invoke this API to stop LAN Automation and Update Loopback0 IP Address of Devices, discovered in the current
         session .
 
@@ -771,23 +872,23 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_d413a3d054ac50fa921ca8cf7fdf5449_v3_1_3_0', json_data)
 
-    def get_port_channels_v1(self,
-                             device1_management_ipaddress=None,
-                             device1_uuid=None,
-                             device2_management_ipaddress=None,
-                             device2_uuid=None,
-                             limit=None,
-                             offset=None,
-                             headers=None,
-                             **request_parameters):
+    def get_port_channels(self,
+                          device1_management_ipaddress=None,
+                          device1_uuid=None,
+                          device2_management_ipaddress=None,
+                          device2_uuid=None,
+                          limit=None,
+                          offset=None,
+                          headers=None,
+                          **request_parameters):
         """Returns a list of Port Channel between the LAN Automation associated devices. .
 
         Args:
-            device1_management_ipaddress(str): device1ManagementIPAddress query parameter. The management IP
-                address of the device1. .
+            device1_management_ipaddress(str): device1ManagementIPAddress query parameter. The management IP address
+                of the device1. .
             device1_uuid(str): device1Uuid query parameter. Unique identifier for the network device1 .
-            device2_management_ipaddress(str): device2ManagementIPAddress query parameter. The management IP
-                address of the device2. .
+            device2_management_ipaddress(str): device2ManagementIPAddress query parameter. The management IP address
+                of the device2. .
             device2_uuid(str): device2Uuid query parameter. Unique identifier for the network device2 .
             offset(str): offset query parameter. Starting record for pagination. .
             limit(str): limit query parameter. Maximum number of Port Channel to return. .
@@ -855,16 +956,16 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_ee969674421c512494b828e1115d899f_v3_1_3_0', json_data)
 
-    def create_a_new_port_channel_between_devices_v1(self,
-                                                     device1ManagementIPAddress=None,
-                                                     device1Uuid=None,
-                                                     device2ManagementIPAddress=None,
-                                                     device2Uuid=None,
-                                                     portChannelMembers=None,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
+    def create_a_new_port_channel_between_devices(self,
+                                                  device1ManagementIPAddress=None,
+                                                  device1Uuid=None,
+                                                  device2ManagementIPAddress=None,
+                                                  device2Uuid=None,
+                                                  portChannelMembers=None,
+                                                  headers=None,
+                                                  payload=None,
+                                                  active_validation=True,
+                                                  **request_parameters):
         """This API creates a Port Channel between two LAN Automation associated devices using the PAgP protocol, with a
         minimum of 2 and a maximum of 8 LAN Automated interfaces in UP status. .
 
@@ -946,10 +1047,10 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_cf0138550909ea413dab063868c_v3_1_3_0', json_data)
 
-    def get_port_channel_information_by_id_v1(self,
-                                              id,
-                                              headers=None,
-                                              **request_parameters):
+    def get_port_channel_information_by_id(self,
+                                           id,
+                                           headers=None,
+                                           **request_parameters):
         """This API retrieves Port Channel information using its ID. .
 
         Args:
@@ -1003,10 +1104,10 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_e149c0cd53b8b8998d82fd3dc1d1_v3_1_3_0', json_data)
 
-    def delete_port_channel_v1(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
+    def delete_port_channel(self,
+                            id,
+                            headers=None,
+                            **request_parameters):
         """This API deletes a Port Channel between LAN Automation associated devices using a valid Port Channel ID. .
 
         Args:
@@ -1060,13 +1161,13 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_bec4a00bb2bf5a63a75f745862904e4d_v3_1_3_0', json_data)
 
-    def add_a_lan_automated_link_to_a_port_channel_v1(self,
-                                                      id,
-                                                      portChannelMembers=None,
-                                                      headers=None,
-                                                      payload=None,
-                                                      active_validation=True,
-                                                      **request_parameters):
+    def add_a_lan_automated_link_to_a_port_channel(self,
+                                                   id,
+                                                   portChannelMembers=None,
+                                                   headers=None,
+                                                   payload=None,
+                                                   active_validation=True,
+                                                   **request_parameters):
         """This API adds a new LAN Automated link as a member to an existing Port Channel, provided the interface is in UP
         state and already LAN Automated. .
 
@@ -1142,13 +1243,13 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_fa8fb3bdbffe5958858f20447dcb3ca5_v3_1_3_0', json_data)
 
-    def remove_a_link_from_port_channel_v1(self,
-                                           id,
-                                           portChannelMembers=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
+    def remove_a_link_from_port_channel(self,
+                                        id,
+                                        portChannelMembers=None,
+                                        headers=None,
+                                        payload=None,
+                                        active_validation=True,
+                                        **request_parameters):
         """This API removes a member link from an existing Port Channel, reverting the link to a P2P L3 interface. .
 
         Args:
@@ -1254,7 +1355,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-start
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-start-v2
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1326,7 +1427,7 @@ class LanAutomation(object):
             MalformedRequest: If the request body created is invalid.
             ApiError: If the Catalyst Center cloud returns an error.
         Documentation Link:
-            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-and-update-devices
+            https://developer.cisco.com/docs/dna-center/#!l-a-n-automation-stop-and-update-devices-v2
         """
         check_type(headers, dict)
         check_type(payload, list)
@@ -1371,499 +1472,5 @@ class LanAutomation(object):
 
         return self._object_factory('bpm_ad0cb5a12a76384ba4644e55e_v3_1_3_0', json_data)
 
+# Alias Functions
 
-
-    # Alias Function
-    def get_port_channels(self,
-                             device1_management_ipaddress=None,
-                             device1_uuid=None,
-                             device2_management_ipaddress=None,
-                             device2_uuid=None,
-                             limit=None,
-                             offset=None,
-                             headers=None,
-                             **request_parameters):
-        """ This function is an alias of get_port_channels_v1 .
-        Args:
-            device1_management_ipaddress(str): device1ManagementIPAddress query parameter. The management IP
-                address of the device1. .
-            device1_uuid(str): device1Uuid query parameter. Unique identifier for the network device1 .
-            device2_management_ipaddress(str): device2ManagementIPAddress query parameter. The management IP
-                address of the device2. .
-            device2_uuid(str): device2Uuid query parameter. Unique identifier for the network device2 .
-            offset(str): offset query parameter. Starting record for pagination. .
-            limit(str): limit query parameter. Maximum number of Port Channel to return. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_port_channels_v1 .
-        """
-        return self.get_port_channels_v1(
-                    device1_management_ipaddress=device1_management_ipaddress,
-                    device1_uuid=device1_uuid,
-                    device2_management_ipaddress=device2_management_ipaddress,
-                    device2_uuid=device2_uuid,
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_port_channel_information_by_id(self,
-                                              id,
-                                              headers=None,
-                                              **request_parameters):
-        """ This function is an alias of get_port_channel_information_by_id_v1 .
-        Args:
-            id(str): id path parameter. ID of the port channel. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_port_channel_information_by_id_v1 .
-        """
-        return self.get_port_channel_information_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def add_a_lan_automated_link_to_a_port_channel(self,
-                                                      id,
-                                                      portChannelMembers=None,
-                                                      headers=None,
-                                                      payload=None,
-                                                      active_validation=True,
-                                                      **request_parameters):
-        """ This function is an alias of add_a_lan_automated_link_to_a_port_channel_v1 .
-        Args:
-            portChannelMembers(list): LAN Automation's portChannelMembers (list of objects).
-            id(str): id path parameter. ID of the port channel. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of add_a_lan_automated_link_to_a_port_channel_v1 .
-        """
-        return self.add_a_lan_automated_link_to_a_port_channel_v1(
-                    id=id,
-                    portChannelMembers=portChannelMembers,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_status_by_id(self,
-                                       id,
-                                       headers=None,
-                                       **request_parameters):
-        """ This function is an alias of lan_automation_status_by_id_v1 .
-        Args:
-            id(str): id path parameter. LAN Automation session identifier. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_status_by_id_v1 .
-        """
-        return self.lan_automation_status_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_stop(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
-        """ This function is an alias of lan_automation_stop_v1 .
-        Args:
-            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
-                automation/status. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_stop_v1 .
-        """
-        return self.lan_automation_stop_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_log(self,
-                              limit=None,
-                              offset=None,
-                              headers=None,
-                              **request_parameters):
-        """ This function is an alias of lan_automation_log_v1 .
-        Args:
-            offset(int): offset query parameter. Starting index of the LAN Automation session. Minimum value is 1. .
-            limit(int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value can
-                range between 1 to 10. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_log_v1 .
-        """
-        return self.lan_automation_log_v1(
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_log_by_id(self,
-                                    id,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of lan_automation_log_by_id_v1 .
-        Args:
-            id(str): id path parameter. LAN Automation session identifier. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_log_by_id_v1 .
-        """
-        return self.lan_automation_log_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_logs_for_individual_devices(self,
-                                                      id,
-                                                      serial_number,
-                                                      log_level=None,
-                                                      headers=None,
-                                                      **request_parameters):
-        """ This function is an alias of lan_automation_logs_for_individual_devices_v1 .
-        Args:
-            id(str): id path parameter. LAN Automation session identifier. .
-            serial_number(str): serialNumber path parameter. Device serial number. .
-            log_level(str): logLevel query parameter. Supported levels are ERROR, INFO, WARNING, TRACE,
-                CONFIG and ALL. Specifying ALL will display device specific logs with the exception of
-                CONFIG logs. In order to view CONFIG logs along with the remaining logs, please leave
-                the query parameter blank. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_logs_for_individual_devices_v1 .
-        """
-        return self.lan_automation_logs_for_individual_devices_v1(
-                    id=id,
-                    serial_number=serial_number,
-                    log_level=log_level,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_stop_and_update_devices(self,
-                                                  id,
-                                                  headers=None,
-                                                  payload=None,
-                                                  active_validation=True,
-                                                  **request_parameters):
-        """ This function is an alias of lan_automation_stop_and_update_devices_v1 .
-        Args:
-            id(str): id path parameter. LAN Automation id can be obtained from /dna/intent/api/v1/lan-
-                automation/status. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_stop_and_update_devices_v1 .
-        """
-        return self.lan_automation_stop_and_update_devices_v1(
-                    id=id,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_start(self,
-                                headers=None,
-                                payload=None,
-                                active_validation=True,
-                                **request_parameters):
-        """ This function is an alias of lan_automation_start_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_start_v1 .
-        """
-        return self.lan_automation_start_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_status(self,
-                                 limit=None,
-                                 offset=None,
-                                 headers=None,
-                                 **request_parameters):
-        """ This function is an alias of lan_automation_status_v1 .
-        Args:
-            offset(int): offset query parameter. Starting index of the LAN Automation session. Minimum value is 1. .
-            limit(int): limit query parameter. Number of LAN Automation sessions to be retrieved. Limit value can
-                range between 1 to 10. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_status_v1 .
-        """
-        return self.lan_automation_status_v1(
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def remove_a_link_from_port_channel(self,
-                                           id,
-                                           portChannelMembers=None,
-                                           headers=None,
-                                           payload=None,
-                                           active_validation=True,
-                                           **request_parameters):
-        """ This function is an alias of remove_a_link_from_port_channel_v1 .
-        Args:
-            portChannelMembers(list): LAN Automation's portChannelMembers (list of objects).
-            id(str): id path parameter. ID of the port channel. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of remove_a_link_from_port_channel_v1 .
-        """
-        return self.remove_a_link_from_port_channel_v1(
-                    id=id,
-                    portChannelMembers=portChannelMembers,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_device_update(self,
-                                        feature,
-                                        hostnameUpdateDevices=None,
-                                        linkUpdate=None,
-                                        loopbackUpdateDeviceList=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
-        """ This function is an alias of lan_automation_device_update_v1 .
-        Args:
-            hostnameUpdateDevices(list): LAN Automation's hostnameUpdateDevices (list of objects).
-            linkUpdate(object): LAN Automation's linkUpdate.
-            loopbackUpdateDeviceList(list): LAN Automation's loopbackUpdateDeviceList (list of objects).
-            feature(str): feature query parameter. Feature ID for the update. Supported feature IDs include:
-                LOOPBACK0_IPADDRESS_UPDATE, HOSTNAME_UPDATE, LINK_ADD, and LINK_DELETE. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_device_update_v1 .
-        """
-        return self.lan_automation_device_update_v1(
-                    feature=feature,
-                    hostnameUpdateDevices=hostnameUpdateDevices,
-                    linkUpdate=linkUpdate,
-                    loopbackUpdateDeviceList=loopbackUpdateDeviceList,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_a_new_port_channel_between_devices(self,
-                                                     device1ManagementIPAddress=None,
-                                                     device1Uuid=None,
-                                                     device2ManagementIPAddress=None,
-                                                     device2Uuid=None,
-                                                     portChannelMembers=None,
-                                                     headers=None,
-                                                     payload=None,
-                                                     active_validation=True,
-                                                     **request_parameters):
-        """ This function is an alias of create_a_new_port_channel_between_devices_v1 .
-        Args:
-            device1ManagementIPAddress(string): LAN Automation's Either device1ManagementIPAddress or device1Uuid is
-                required. .
-            device1Uuid(string): LAN Automation's Either device1ManagementIPAddress or device1Uuid is required. .
-            device2ManagementIPAddress(string): LAN Automation's Either device2ManagementIPAddress or device2Uuid is
-                required. .
-            device2Uuid(string): LAN Automation's Either device2ManagementIPAddress or device2Uuid is required. .
-            portChannelMembers(list): LAN Automation's portChannelMembers (list of objects).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_a_new_port_channel_between_devices_v1 .
-        """
-        return self.create_a_new_port_channel_between_devices_v1(
-                    device1ManagementIPAddress=device1ManagementIPAddress,
-                    device1Uuid=device1Uuid,
-                    device2ManagementIPAddress=device2ManagementIPAddress,
-                    device2Uuid=device2Uuid,
-                    portChannelMembers=portChannelMembers,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_session_count(self,
-                                        headers=None,
-                                        **request_parameters):
-        """ This function is an alias of lan_automation_session_count_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_session_count_v1 .
-        """
-        return self.lan_automation_session_count_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_port_channel(self,
-                               id,
-                               headers=None,
-                               **request_parameters):
-        """ This function is an alias of delete_port_channel_v1 .
-        Args:
-            id(str): id path parameter. ID of the port channel. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_port_channel_v1 .
-        """
-        return self.delete_port_channel_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def lan_automation_active_sessions(self,
-                                          headers=None,
-                                          **request_parameters):
-        """ This function is an alias of lan_automation_active_sessions_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of lan_automation_active_sessions_v1 .
-        """
-        return self.lan_automation_active_sessions_v1(
-                    headers=headers,
-                    **request_parameters
-        )

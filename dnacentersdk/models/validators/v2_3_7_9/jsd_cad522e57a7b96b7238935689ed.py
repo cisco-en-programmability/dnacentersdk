@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatePortAssignmentsV1 data model.
+"""Cisco DNA Center UpdatePortAssignments data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCad522E57A7B96B7238935689Ed(object):
-    """UpdatePortAssignmentsV1 request schema definition."""
+    """UpdatePortAssignments request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCad522E57A7B96B7238935689Ed, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -41,6 +41,9 @@ class JSONSchemaValidatorCad522E57A7B96B7238935689Ed(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "items": {
                 "properties": {
+                "allowedVlanRanges": {
+                "type": "string"
+                },
                 "authenticateTemplateName": {
                 "enum": [
                 "No Authentication",
@@ -74,6 +77,9 @@ class JSONSchemaValidatorCad522E57A7B96B7238935689Ed(object):
                 },
                 "interfaceName": {
                 "type": "string"
+                },
+                "nativeVlanId": {
+                "type": "integer"
                 },
                 "networkDeviceId": {
                 "type": "string"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateRFProfileV1 data model.
+"""Cisco DNA Center UpdateRFProfile data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db(object):
-    """UpdateRFProfileV1 request schema definition."""
+    """UpdateRFProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -91,7 +91,7 @@ class JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db(object):
                 "enableStandardPowerService": {
                 "type": "boolean"
                 },
-                "fraProperties": {
+                "fraPropertiesC": {
                 "properties": {
                 "clientResetCount": {
                 "type": "integer"
@@ -254,7 +254,7 @@ class JSONSchemaValidatorDa455F4BE5B75126Ba9970C7Cc54C7Db(object):
                 "dataRates": {
                 "type": "string"
                 },
-                "fraProperties": {
+                "fraPropertiesA": {
                 "properties": {
                 "clientAware": {
                 "type": "boolean"

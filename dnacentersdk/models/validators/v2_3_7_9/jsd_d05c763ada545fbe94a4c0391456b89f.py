@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetsTheTotalNumberNetworkDevicesBasedOnTheProvidedComplexFiltersAndAggregati
-onFunctionsV1 data model.
+"""Cisco DNA Center GetsTheTotalNumberNetworkDevicesBasedOnTheProvidedComplexFiltersAndAggregati
+onFunctions data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -35,7 +35,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 class JSONSchemaValidatorD05C763ADa545Fbe94A4C0391456B89F(object):
     """GetsTheTotalNumberNetworkDevicesBasedOnTheProvidedComplexFiltersAn
-    dAggregationFunctionsV1 request schema definition."""
+    dAggregationFunctions request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD05C763ADa545Fbe94A4C0391456B89F, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -32,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -64,18 +65,51 @@ class AuthenticationManagement(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def import_certificate_v1(self,
-                              list_of_users=None,
-                              pk_password=None,
-                              headers=None,
-                              **request_parameters):
+    def import_certificate(self,
+                           multipart_fields,
+                           multipart_monitor_callback,
+                           list_of_users=None,
+                           pk_password=None,
+                           headers=None,
+                           **request_parameters):
         """This API enables a user to import a PEM certificate and its key for the controller and/or disaster recovery. .
+
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
 
         Args:
             pk_password(str): pkPassword query parameter. Password for encrypted private key .
-            list_of_users(str, list, set, tuple): listOfUsers query parameter. Specify whether the
-                certificate will be used for controller ("server"), disaster recovery ("ipsec") or both
-                ("server, ipsec"). If no value is provided, the default value taken will be "server" .
+            list_of_users(list, set, str, tuple): listOfUsers query parameter. Specify whether the certificate will
+                be used for controller ("server"), disaster recovery ("ipsec") or both ("server,
+                ipsec"). If no value is provided, the default value taken will be "server" .
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -94,7 +128,7 @@ class AuthenticationManagement(object):
         """
         check_type(headers, dict)
         check_type(pk_password, str)
-        check_type(list_of_users, (str, list, set, tuple))
+        check_type(list_of_users, (list, set, str, tuple))
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
@@ -123,28 +157,68 @@ class AuthenticationManagement(object):
 
         e_url = ('/dna/intent/api/v1/certificate')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_b19d7e8de2ca5329930d06f041a4a173_v3_1_3_0', json_data)
 
-    def import_certificate_p12_v1(self,
-                                  p12_password,
-                                  list_of_users=None,
-                                  pk_password=None,
-                                  headers=None,
-                                  **request_parameters):
+    def import_certificate_p12(self,
+                               multipart_fields,
+                               multipart_monitor_callback,
+                               p12_password,
+                               list_of_users=None,
+                               pk_password=None,
+                               headers=None,
+                               **request_parameters):
         """This API enables a user to import a PKCS12 certificate bundle for the controller and/or disaster recovery. .
+
+        The following code gives an example of the multipart_fields.
+
+        .. code-block:: python
+
+            multipart_fields={'file': ('file.zip', open('file.zip', 'rb')}
+            multipart_fields={'file': ('file.txt', open('file.txt', 'rb'),
+                'text/plain',
+                {'X-My-Header': 'my-value'})}
+            multipart_fields=[('images', ('foo.png', open('foo.png', 'rb'),
+                'image/png')),
+                ('images', ('bar.png', open('bar.png', 'rb'), 'image/png'))]
+
+        The following example demonstrates how to use
+        `multipart_monitor_callback=create_callback` to create a progress bar
+        using clint.
+
+        .. code-block:: python
+
+            from clint.textui.progress import Bar
+            def create_callback(encoder):
+                encoder_len = encoder.len
+                bar = Bar(expected_size=encoder_len,
+                          filled_char="=")
+                def callback(monitor):
+                    bar.show(monitor.bytes_read)
+                return callback
 
         Args:
             p12_password(str): p12Password query parameter. The password for PKCS12 certificate bundle .
             pk_password(str): pkPassword query parameter. Password for encrypted private key .
-            list_of_users(str, list, set, tuple): listOfUsers query parameter. Specify whether the
-                certificate will be used for controller ("server"), disaster recovery ("ipsec") or both
-                ("server, ipsec"). If no value is provided, the default value taken will be "server" .
+            list_of_users(list, set, str, tuple): listOfUsers query parameter. Specify whether the certificate will
+                be used for controller ("server"), disaster recovery ("ipsec") or both ("server,
+                ipsec"). If no value is provided, the default value taken will be "server" .
+            multipart_fields(dict): Fields from which to create a
+                multipart/form-data body.
+            multipart_monitor_callback(function): function used to monitor
+                the progress of the upload.
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -165,7 +239,7 @@ class AuthenticationManagement(object):
         check_type(p12_password, str,
                    may_be_none=False)
         check_type(pk_password, str)
-        check_type(list_of_users, (str, list, set, tuple))
+        check_type(list_of_users, (list, set, str, tuple))
         if headers is not None:
             if 'Content-Type' in headers:
                 check_type(headers.get('Content-Type'),
@@ -196,19 +270,26 @@ class AuthenticationManagement(object):
 
         e_url = ('/dna/intent/api/v1/certificate-p12')
         endpoint_full_url = apply_path_params(e_url, path_params)
+        m_data = self._session.multipart_data(multipart_fields,
+                                              multipart_monitor_callback)
+        _headers.update({'Content-Type': m_data.content_type,
+                         'Content-Length': str(m_data.len),
+                         'Connection': 'keep-alive'})
+        with_custom_headers = True
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
+                                           data=m_data,
                                            headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params)
 
         return self._object_factory('bpm_c80e660c2e36582f939a7403ef15de22_v3_1_3_0', json_data)
 
-    def authentication_api_v1(self,
-                              headers=None,
-                              **request_parameters):
+    def authentication_api(self,
+                           headers=None,
+                           **request_parameters):
         """API to obtain an access token, which remains valid for 1 hour. The token obtained using this API is required to
-        be set as value to the X-Auth-Token HTTP Header for all API calls to Cisco DNA Center. .
+        be set as value to the X-Auth-Token HTTP Header for all API calls to Cisco Catalyst Center. .
 
         Args:
             headers(dict): Dictionary of HTTP Headers to send with the Request
@@ -263,84 +344,5 @@ class AuthenticationManagement(object):
 
         return self._object_factory('bpm_a6bfcd88e22c5c138657b340870b4ebb_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def authentication_api(self,
-                              headers=None,
-                              **request_parameters):
-        """ This function is an alias of authentication_api_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of authentication_api_v1 .
-        """
-        return self.authentication_api_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def import_certificate_p12(self,
-                                  p12_password,
-                                  list_of_users=None,
-                                  pk_password=None,
-                                  headers=None,
-                                  **request_parameters):
-        """ This function is an alias of import_certificate_p12_v1 .
-        Args:
-            p12_password(str): p12Password query parameter. The password for PKCS12 certificate bundle .
-            pk_password(str): pkPassword query parameter. Password for encrypted private key .
-            list_of_users(str, list, set, tuple): listOfUsers query parameter. Specify whether the
-                certificate will be used for controller ("server"), disaster recovery ("ipsec") or both
-                ("server, ipsec"). If no value is provided, the default value taken will be "server" .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of import_certificate_p12_v1 .
-        """
-        return self.import_certificate_p12_v1(
-                    p12_password=p12_password,
-                    list_of_users=list_of_users,
-                    pk_password=pk_password,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def import_certificate(self,
-                              list_of_users=None,
-                              pk_password=None,
-                              headers=None,
-                              **request_parameters):
-        """ This function is an alias of import_certificate_v1 .
-        Args:
-            pk_password(str): pkPassword query parameter. Password for encrypted private key .
-            list_of_users(str, list, set, tuple): listOfUsers query parameter. Specify whether the
-                certificate will be used for controller ("server"), disaster recovery ("ipsec") or both
-                ("server, ipsec"). If no value is provided, the default value taken will be "server" .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of import_certificate_v1 .
-        """
-        return self.import_certificate_v1(
-                    list_of_users=list_of_users,
-                    pk_password=pk_password,
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

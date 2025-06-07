@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddExtranetPolicyV1 data model.
+"""Cisco DNA Center AddExtranetPolicy data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA0C237C8Fc115B6F98B87Cc7A1360Dd0(object):
-    """AddExtranetPolicyV1 request schema definition."""
+    """AddExtranetPolicy request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA0C237C8Fc115B6F98B87Cc7A1360Dd0, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

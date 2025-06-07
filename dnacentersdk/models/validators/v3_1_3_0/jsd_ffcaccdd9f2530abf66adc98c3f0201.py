@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateHTTPReadCredentialsV1 data model.
+"""Cisco DNA Center CreateHTTPReadCredentials data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFfcaccdD9F2530ABf66Adc98C3F0201(object):
-    """CreateHTTPReadCredentialsV1 request schema definition."""
+    """CreateHTTPReadCredentials request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFfcaccdD9F2530ABf66Adc98C3F0201, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

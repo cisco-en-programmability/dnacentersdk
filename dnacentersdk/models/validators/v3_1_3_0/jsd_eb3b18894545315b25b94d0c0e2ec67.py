@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SetDNSSettingsForASiteV1 data model.
+"""Cisco DNA Center SetDNSSettingsForASite data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,38 +33,30 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEb3B18894545315B25B94D0C0E2Ec67(object):
-    """SetDNSSettingsForASiteV1 request schema definition."""
+    """SetDNSSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEb3B18894545315B25B94D0C0E2Ec67, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "properties": {
-                    "dns": {
-                        "anyOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "dnsServers": {
-                                        "items": {
-                                            "type": "string"
-                                        },
-                                        "type": "array"
-                                    },
-                                    "domainName": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": ["dnsServers", "domainName"]
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    }
+                "dns": {
+                "properties": {
+                "dnsServers": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "domainName": {
+                "type": "string"
+                }
                 },
                 "type": "object"
-            }'''.replace("\n" + ' ' * 16, '')
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
         ))
 
     def validate(self, request):

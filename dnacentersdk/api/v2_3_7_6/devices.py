@@ -1072,7 +1072,7 @@ class Devices(object):
 
         return self._object_factory('bpm_fc7a61a854f2b2015d3f1c059ce9_v2_3_7_6', json_data)
 
-    def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(self,
+    def gets_the_total_network_device_interface_counts_v1(self,
                                                                                                                                                                               end_time=None,
                                                                                                                                                                               interface_id=None,
                                                                                                                                                                               interface_name=None,
@@ -10843,7 +10843,7 @@ class Devices(object):
                 
     
     # Alias Function
-    def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count(self,
+    def gets_the_total_network_device_interface_counts(self,
                                                                                                                                                                               end_time=None,
                                                                                                                                                                               interface_id=None,
                                                                                                                                                                               interface_name=None,
@@ -10856,7 +10856,7 @@ class Devices(object):
                                                                                                                                                                               start_time=None,
                                                                                                                                                                               headers=None,
                                                                                                                                                                               **request_parameters):
-        """ This function is an alias of gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1 .
+        """ This function is an alias of gets_the_total_network_device_interface_counts_v1 .
         Args:
             start_time(int): startTime query parameter. Start time from which API queries the data set related to
                 the resource. It must be specified in UNIX epochtime in milliseconds. Value is
@@ -10916,9 +10916,9 @@ class Devices(object):
                 support for parameters that may be added in the future).
 
         Returns:
-            This function returns the output of gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1 .
+            This function returns the output of gets_the_total_network_device_interface_counts_v1 .
         """ 
-        return self.gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(
+        return self.gets_the_total_network_device_interface_counts_v1(
                     end_time=end_time,
                     interface_id=interface_id,
                     interface_name=interface_name,

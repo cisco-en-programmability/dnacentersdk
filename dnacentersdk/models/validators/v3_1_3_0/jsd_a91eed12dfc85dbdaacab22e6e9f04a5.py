@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CountTheNumberOfEventsWithFiltersV1 data model.
+"""Cisco DNA Center CountTheNumberOfEventsWithFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA91Eed12Dfc85DbdAacaB22E6E9F04A5(object):
-    """CountTheNumberOfEventsWithFiltersV1 request schema definition."""
+    """CountTheNumberOfEventsWithFilters request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA91Eed12Dfc85DbdAacaB22E6E9F04A5, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

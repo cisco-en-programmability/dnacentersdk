@@ -11,6 +11,24 @@ Versioning <https://semver.org/spec/v2.0.0.html>`__.
 `Unreleased <https://github.com/cisco-en-programmability/dnacentersdk/compare/v2.7.4...develop>`__
 --------------------------------------------------------------------------------------------------
 
+[2.10.0] - 2025-06-07
+---------------------
+
+Removed
+~~~~~~~
+
+-  The v1 alias functions were all removed. Example... if your using "application_v1" you must be able to change it
+   to "application".
+
+Changed
+~~~~~~~
+
+- Renamed `get_auditlog_summary` to `get_audit_log_summary`
+- Renamed `get_auditlog_parent_records` to `get_audit_log_parent_records`
+- Renamed `get_eventartifacts` to `get_event_artifacts`
+- Renamed `get_auditlog_records` to `get_audit_log_records`
+- Moved `get_port_channels` to LAN Automation service
+
 [2.9.1] - 2025-05-09
 --------------------
 
@@ -380,7 +398,7 @@ Added
 -  Adds modules for v2_3_7_6 ### Changed
 -  The future library was removed
 -  The past library was removed
--  Changed basestring to str
+-  Changed str to str
 -  Requirements updated ### Fixed
 -  Fix headers in ``create_webhook_destination`` and
    ``update_webhook_destination``

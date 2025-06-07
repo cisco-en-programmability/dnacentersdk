@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
 from builtins import *
 
 
@@ -31,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -63,13 +65,13 @@ class ConfigurationArchive(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def export_device_configurations_v1(self,
-                                        deviceId=None,
-                                        password=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def export_device_configurations(self,
+                                     deviceId=None,
+                                     password=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
         """Export Device configuration for every device that is provided will be included in an encrypted zip file. .
 
         Args:
@@ -146,15 +148,15 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_e85b40c5ca055f4c82281617a8f95644_v3_1_3_0', json_data)
 
-    def get_configuration_archive_details_v1(self,
-                                             created_by=None,
-                                             created_time=None,
-                                             device_id=None,
-                                             file_type=None,
-                                             limit=None,
-                                             offset=None,
-                                             headers=None,
-                                             **request_parameters):
+    def get_configuration_archive_details(self,
+                                          created_by=None,
+                                          created_time=None,
+                                          device_id=None,
+                                          file_type=None,
+                                          limit=None,
+                                          offset=None,
+                                          headers=None,
+                                          **request_parameters):
         """Returns the historical device configurations (running configuration , startup configuration , vlan if
         applicable) by specified criteria .
 
@@ -162,10 +164,9 @@ class ConfigurationArchive(object):
             device_id(str): deviceId query parameter. comma separated device id for example
                 cf35b0a1-407f-412f-b2f4-f0c3156695f9,aaa38191-0c22-4158-befd-779a09d7cec1 . if device id
                 is not provided it will fetch for all devices .
-            file_type(str): fileType query parameter. Config File Type can be RUNNINGCONFIG or STARTUPCONFIG
-                .
-            created_time(str): createdTime query parameter. Supported with logical filters GT,GTE,LT,LTE & BT
-                : time in milliseconds (epoc format) .
+            file_type(str): fileType query parameter. Config File Type can be RUNNINGCONFIG or STARTUPCONFIG .
+            created_time(str): createdTime query parameter. Supported with logical filters GT,GTE,LT,LTE & BT : time
+                in milliseconds (epoc format) .
             created_by(str): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
                 CONFIG_CHANGE_EVENT, SCHEDULED_FIRST_TIME, DR_CALL_BACK, PRE_DEPLOY .
             offset(int): offset query parameter.
@@ -236,14 +237,14 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_ff699112d3854d99557dc1f48987f09_v3_1_3_0', json_data)
 
-    def get_network_device_configuration_file_details_v1(self,
-                                                         file_type=None,
-                                                         id=None,
-                                                         limit=None,
-                                                         network_device_id=None,
-                                                         offset=None,
-                                                         headers=None,
-                                                         **request_parameters):
+    def get_network_device_configuration_file_details(self,
+                                                      file_type=None,
+                                                      id=None,
+                                                      limit=None,
+                                                      network_device_id=None,
+                                                      offset=None,
+                                                      headers=None,
+                                                      **request_parameters):
         """Retrieves the list of network device configuration file details, sorted by createdTime in descending order. Use
         /intent/api/v1/networkDeviceConfigFiles/{id}/downloadMasked to download masked configurations, or
         /intent/api/v1/networkDeviceConfigFiles/{id}/downloadUnmasked for unmasked configurations. .
@@ -319,12 +320,12 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_c07ca5c25f5084ae4148ce8b1ce940_v3_1_3_0', json_data)
 
-    def count_of_network_device_configuration_files_v1(self,
-                                                       file_type=None,
-                                                       id=None,
-                                                       network_device_id=None,
-                                                       headers=None,
-                                                       **request_parameters):
+    def count_of_network_device_configuration_files(self,
+                                                    file_type=None,
+                                                    id=None,
+                                                    network_device_id=None,
+                                                    headers=None,
+                                                    **request_parameters):
         """Retrieves count the details of the network device configuration files. .
 
         Args:
@@ -388,10 +389,10 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_af5e273c15f6abc150e9328e4d070_v3_1_3_0', json_data)
 
-    def get_configuration_file_details_by_id_v1(self,
-                                                id,
-                                                headers=None,
-                                                **request_parameters):
+    def get_configuration_file_details_by_id(self,
+                                             id,
+                                             headers=None,
+                                             **request_parameters):
         """Retrieves the details of a specific network device configuration file using the `id`. .
 
         Args:
@@ -446,10 +447,10 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_e8878000b5e5810be1b2630e70a5118_v3_1_3_0', json_data)
 
-    def download_masked_device_configuration_v1(self,
-                                                id,
-                                                headers=None,
-                                                **request_parameters):
+    def download_masked_device_configuration(self,
+                                             id,
+                                             headers=None,
+                                             **request_parameters):
         """Download the masked (sanitized) device configuration by providing the file `id`. .
 
         Args:
@@ -508,13 +509,13 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_fe0e28b3465084b5ee60a43602be1c_v3_1_3_0', json_data)
 
-    def download_unmaskedraw_device_configuration_as_z_ip_v1(self,
-                                                             id,
-                                                             password=None,
-                                                             headers=None,
-                                                             payload=None,
-                                                             active_validation=True,
-                                                             **request_parameters):
+    def download_unmaskedraw_device_configuration_as_z_ip(self,
+                                                          id,
+                                                          password=None,
+                                                          headers=None,
+                                                          payload=None,
+                                                          active_validation=True,
+                                                          **request_parameters):
         """Download the unmasked (raw) device configuration by providing the file `id` and a `password`. The response will
         be a password-protected zip file containing the unmasked configuration. Password must contain a minimum
         of 8 characters, one lowercase letter, one uppercase letter, one number, one special character
@@ -589,248 +590,12 @@ class ConfigurationArchive(object):
         if with_custom_headers:
             json_data = self._session.post(endpoint_full_url, params=_params,
                                            json=_payload,
-                                           headers=_headers,
-                                           stream=True)
+                                           headers=_headers)
         else:
             json_data = self._session.post(endpoint_full_url, params=_params,
-                                           json=_payload, stream=True)
+                                           json=_payload)
 
         return self._object_factory('bpm_d8fcd6dbb7ff53b58f7398c49b27ded2_v3_1_3_0', json_data)
 
-
-    # Alias Function
-
-    def download_unmaskedraw_device_configuration_as_z_ip(self,
-                                                             id,
-                                                             password=None,
-                                                             headers=None,
-                                                             payload=None,
-                                                             active_validation=True,
-                                                             **request_parameters):
-        """ This function is an alias of download_unmaskedraw_device_configuration_as_z_ip_v1 .
-        Args:
-            password(string): Configuration Archive's Password for the zip file to protect exported configurations.
-                Must contain, at minimum 8 characters, one lowercase letter, one uppercase letter, one
-                number, one special character(-=[];,./~!@#$%^&*()_+{}|:?). It may not contain white
-                space or the characters <>. .
-            id(str): id path parameter. The value of `id` can be obtained from the response of API
-                `/dna/intent/api/v1/networkDeviceConfigFiles` .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(dict): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of download_unmaskedraw_device_configuration_as_z_ip_v1 .
-        """
-        return self.download_unmaskedraw_device_configuration_as_z_ip_v1(
-                                                             id,
-                                                             password,
-                                                             headers,
-                                                             payload,
-                                                             active_validation,
-                                                             **request_parameters)
-
-    # Alias Function
-    def export_device_configurations(self,
-                                        deviceId=None,
-                                        password=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
-        """ This function is an alias of export_device_configurations_v1 .
-        Args:
-            deviceId(list): Configuration Archive's UUIDs of the devices for which configurations need to be
-                exported.  (list of strings).
-            password(string): Configuration Archive's Password for the zip file to protect exported configurations.
-                Must contain, at minimum 8 characters, one lowercase letter, one uppercase letter, one
-                number, one special character(-=[];,./~!@#$%^&*()_+{}|:?). It may not contain white
-                space or the characters <>. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of export_device_configurations_v1 .
-        """
-        return self.export_device_configurations_v1(
-                    deviceId=deviceId,
-                    password=password,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_network_device_configuration_file_details(self,
-                                                         file_type=None,
-                                                         id=None,
-                                                         limit=None,
-                                                         network_device_id=None,
-                                                         offset=None,
-                                                         headers=None,
-                                                         **request_parameters):
-        """ This function is an alias of get_network_device_configuration_file_details_v1 .
-        Args:
-            id(str): id query parameter. Unique identifier (UUID) of the configuration file. .
-            network_device_id(str): networkDeviceId query parameter. Unique identifier (UUID) of the network
-                devices. The number of networkDeviceId(s) must not exceed 5. .
-            file_type(str): fileType query parameter. Type of device configuration file.Available values :
-                'RUNNINGCONFIG', 'STARTUPCONFIG', 'VLAN' .
-            offset(int): offset query parameter. The first record to show for this page; the first record is
-                numbered 1. .
-            limit(int): limit query parameter. The number of records to be retrieved defaults to 500 if not
-                specified, with a maximum allowed limit of 500. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_network_device_configuration_file_details_v1 .
-        """
-        return self.get_network_device_configuration_file_details_v1(
-                    file_type=file_type,
-                    id=id,
-                    limit=limit,
-                    network_device_id=network_device_id,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def count_of_network_device_configuration_files(self,
-                                                       file_type=None,
-                                                       id=None,
-                                                       network_device_id=None,
-                                                       headers=None,
-                                                       **request_parameters):
-        """ This function is an alias of count_of_network_device_configuration_files_v1 .
-        Args:
-            id(str): id query parameter. Unique identifier (UUID) of the configuration file. .
-            network_device_id(str): networkDeviceId query parameter. Unique identifier (UUID) of the network
-                devices. The number of networkDeviceId(s) must not exceed 5. .
-            file_type(str): fileType query parameter. Type of device configuration file. Available values :
-                'RUNNINGCONFIG', 'STARTUPCONFIG', 'VLAN' .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of count_of_network_device_configuration_files_v1 .
-        """
-        return self.count_of_network_device_configuration_files_v1(
-                    file_type=file_type,
-                    id=id,
-                    network_device_id=network_device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_configuration_archive_details(self,
-                                             created_by=None,
-                                             created_time=None,
-                                             device_id=None,
-                                             file_type=None,
-                                             limit=None,
-                                             offset=None,
-                                             headers=None,
-                                             **request_parameters):
-        """ This function is an alias of get_configuration_archive_details_v1 .
-        Args:
-            device_id(str): deviceId query parameter. comma separated device id for example
-                cf35b0a1-407f-412f-b2f4-f0c3156695f9,aaa38191-0c22-4158-befd-779a09d7cec1 . if device id
-                is not provided it will fetch for all devices .
-            file_type(str): fileType query parameter. Config File Type can be RUNNINGCONFIG or STARTUPCONFIG
-                .
-            created_time(str): createdTime query parameter. Supported with logical filters GT,GTE,LT,LTE & BT
-                : time in milliseconds (epoc format) .
-            created_by(str): createdBy query parameter. Comma separated values for createdBy SCHEDULED, USER,
-                CONFIG_CHANGE_EVENT, SCHEDULED_FIRST_TIME, DR_CALL_BACK, PRE_DEPLOY .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter. The number of records to be retrieved defaults to 500 if not
-                specified, with a maximum allowed limit of 500. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_configuration_archive_details_v1 .
-        """
-        return self.get_configuration_archive_details_v1(
-                    created_by=created_by,
-                    created_time=created_time,
-                    device_id=device_id,
-                    file_type=file_type,
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_configuration_file_details_by_id(self,
-                                                id,
-                                                headers=None,
-                                                **request_parameters):
-        """ This function is an alias of get_configuration_file_details_by_id_v1 .
-        Args:
-            id(str): id path parameter. The value of `id` can be obtained from the response of API
-                `/dna/intent/api/v1/networkDeviceConfigFiles` .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_configuration_file_details_by_id_v1 .
-        """
-        return self.get_configuration_file_details_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def download_masked_device_configuration(self,
-                                                id,
-                                                headers=None,
-                                                **request_parameters):
-        """ This function is an alias of download_masked_device_configuration_v1 .
-        Args:
-            id(str): id path parameter. The value of `id` can be obtained from the response of API
-                `/dna/intent/api/v1/networkDeviceConfigFiles` .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of download_masked_device_configuration_v1 .
-        """
-        return self.download_masked_device_configuration_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
+# Alias Functions
 

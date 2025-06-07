@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center Authentication API wrapper.
+"""Cisco Catalyst Center Authentication API wrapper.
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -46,9 +46,9 @@ __license__ = "MIT"
 
 
 class Authentication(object):
-    """Cisco DNA Center Authentication API.
+    """Cisco Catalyst Center Authentication API.
 
-    Wraps the DNA Center Authentication API and exposes the API as native
+    Wraps the Catalyst Center Authentication API and exposes the API as native
     Python methods that return native Python objects.
 
     """
@@ -62,7 +62,7 @@ class Authentication(object):
             base_url(str): The base URL to be prefixed to the
                 individual API endpoint suffixes.
             object_factory(callable): The factory function to use to create
-                Python objects from the returned DNA Center JSON data objects.
+                Python objects from the returned Catalyst Center JSON data objects.
             single_request_timeout(int): Timeout in seconds for the API
                 requests.
             verify(bool,str): Controls whether we verify the server's
@@ -138,11 +138,11 @@ class Authentication(object):
 
         Returns:
             AccessToken: An AccessToken object with the access token provided
-            by the DNA Center cloud.
+            by the Catalyst Center cloud.
 
         Raises:
             TypeError: If the parameter types are incorrect.
-            ApiError: If the DNA Center cloud returns an error.
+            ApiError: If the Catalyst Center cloud returns an error.
 
         """
         temp_url = '/dna/system/api/v1/auth/token'

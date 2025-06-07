@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
 from builtins import *
+
 
 from ...restsession import RestSession
 from ...utils import (
@@ -30,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -62,9 +65,9 @@ class DisasterRecovery(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def disaster_recovery_operational_status_v1(self,
-                                                headers=None,
-                                                **request_parameters):
+    def disaster_recovery_operational_status(self,
+                                             headers=None,
+                                             **request_parameters):
         """Returns the status of Disaster Recovery operation performed on the system. .
 
         Args:
@@ -115,9 +118,9 @@ class DisasterRecovery(object):
 
         return self._object_factory('bpm_b20622545922503da0c01b57c144f75b_v3_1_3_0', json_data)
 
-    def disaster_recovery_status_v1(self,
-                                    headers=None,
-                                    **request_parameters):
+    def disaster_recovery_status(self,
+                                 headers=None,
+                                 **request_parameters):
         """Detailed and Summarized status of DR components (Active, Standby and Witness system's health). .
 
         Args:
@@ -167,45 +170,5 @@ class DisasterRecovery(object):
 
         return self._object_factory('bpm_b27ccd369519d8820de238483b865_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def disaster_recovery_operational_status(self,
-                                                headers=None,
-                                                **request_parameters):
-        """ This function is an alias of disaster_recovery_operational_status_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of disaster_recovery_operational_status_v1 .
-        """
-        return self.disaster_recovery_operational_status_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def disaster_recovery_status(self,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of disaster_recovery_status_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of disaster_recovery_status_v1 .
-        """
-        return self.disaster_recovery_status_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateSSIDV1 data model.
+"""Cisco DNA Center CreateSSID data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAa663Ca2Bd1F5A3DB67C405987495112(object):
-    """CreateSSIDV1 request schema definition."""
+    """CreateSSID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAa663Ca2Bd1F5A3DB67C405987495112, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

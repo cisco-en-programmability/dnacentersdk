@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SubmitRequestForTopNEntitiesRelatedToSiteAnalyticsV1 data model.
+"""Cisco DNA Center SubmitRequestForTopNEntitiesRelatedToSiteAnalytics data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD9E3276D1Ed3511B80B22Ea8388959C8(object):
-    """SubmitRequestForTopNEntitiesRelatedToSiteAnalyticsV1 request
-    schema definition."""
+    """SubmitRequestForTopNEntitiesRelatedToSiteAnalytics request schema
+    definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9E3276D1Ed3511B80B22Ea8388959C8, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

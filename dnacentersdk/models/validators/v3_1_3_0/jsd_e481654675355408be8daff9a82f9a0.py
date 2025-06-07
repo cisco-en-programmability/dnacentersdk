@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateDeviceCredentialSettingsForASiteV1 data model.
+"""Cisco DNA Center UpdateDeviceCredentialSettingsForASite data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0(object):
-    """UpdateDeviceCredentialSettingsForASiteV1 request schema
-    definition."""
+    """UpdateDeviceCredentialSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE481654675355408Be8Daff9A82F9A0, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

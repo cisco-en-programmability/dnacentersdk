@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateGlobalPoolV1 data model.
+"""Cisco DNA Center UpdateGlobalPool data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC380301E3E05423Bdc1857Ff00Ae77A(object):
-    """UpdateGlobalPoolV1 request schema definition."""
+    """UpdateGlobalPool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC380301E3E05423Bdc1857Ff00Ae77A, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

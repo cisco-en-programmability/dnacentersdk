@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center RogueAdditionalDetailsV1 data model.
+"""Cisco DNA Center RogueAdditionalDetails data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC8354B61A36524CBb2E1037Bd814807(object):
-    """RogueAdditionalDetailsV1 request schema definition."""
+    """RogueAdditionalDetails request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC8354B61A36524CBb2E1037Bd814807, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

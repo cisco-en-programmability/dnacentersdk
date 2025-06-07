@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center RetrievesTheTopNAnalyticsDataRelatedToClientsV1 data model.
+"""Cisco DNA Center RetrievesTheTopNAnalyticsDataRelatedToClients data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF44Ddd3C38C5A9484F5Cb4E125447Bc(object):
-    """RetrievesTheTopNAnalyticsDataRelatedToClientsV1 request schema
+    """RetrievesTheTopNAnalyticsDataRelatedToClients request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorF44Ddd3C38C5A9484F5Cb4E125447Bc, self).__init__()

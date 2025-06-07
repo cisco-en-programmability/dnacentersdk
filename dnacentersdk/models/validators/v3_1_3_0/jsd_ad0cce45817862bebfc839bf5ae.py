@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SyncVirtualAccountDevicesV1 data model.
+"""Cisco DNA Center SyncVirtualAccountDevices data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorAd0Cce45817862BEbfc839Bf5Ae(object):
-    """SyncVirtualAccountDevicesV1 request schema definition."""
+    """SyncVirtualAccountDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorAd0Cce45817862BEbfc839Bf5Ae, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

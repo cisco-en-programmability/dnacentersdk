@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetsTheSummaryAnalyticsDataRelatedToNetworkDevicesV1 data model.
+"""Cisco DNA Center GetsTheSummaryAnalyticsDataRelatedToNetworkDevices data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBb7C52E5225E9398A006Fecf4Da06F(object):
-    """GetsTheSummaryAnalyticsDataRelatedToNetworkDevicesV1 request
-    schema definition."""
+    """GetsTheSummaryAnalyticsDataRelatedToNetworkDevices request schema
+    definition."""
     def __init__(self):
         super(JSONSchemaValidatorBb7C52E5225E9398A006Fecf4Da06F, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco Catalyst Center Cisco Trusted Certificates API wrapper.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,9 +65,9 @@ class CiscoTrustedCertificates(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def import_trusted_certificate_v1(self,
-                                      headers=None,
-                                      **request_parameters):
+    def import_trusted_certificate(self,
+                                   headers=None,
+                                   **request_parameters):
         """Imports trusted certificate into a truststore. Accepts .pem or .der file as input. .
 
         Args:
@@ -121,25 +120,5 @@ class CiscoTrustedCertificates(object):
 
         return self._object_factory('bpm_ebe0eab8e1785bec83a1e155112fb70e_v2_3_7_9', json_data)
 
-
-
-    # Alias Function
-    def import_trusted_certificate(self,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of import_trusted_certificate_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of import_trusted_certificate_v1 .
-        """
-        return self.import_trusted_certificate_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

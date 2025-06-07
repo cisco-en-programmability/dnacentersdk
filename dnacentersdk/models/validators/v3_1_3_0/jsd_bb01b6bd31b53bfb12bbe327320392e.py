@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateITSMIntegrationSettingV1 data model.
+"""Cisco DNA Center CreateITSMIntegrationSetting data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBb01B6BD31B53BfB12BBe327320392E(object):
-    """CreateITSMIntegrationSettingV1 request schema definition."""
+    """CreateITSMIntegrationSetting request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBb01B6BD31B53BfB12BBe327320392E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

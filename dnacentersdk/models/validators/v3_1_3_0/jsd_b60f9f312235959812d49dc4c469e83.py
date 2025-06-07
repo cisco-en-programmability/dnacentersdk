@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UnMarkDeviceForReplacementV1 data model.
+"""Cisco DNA Center UnMarkDeviceForReplacement data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB60F9F312235959812D49Dc4C469E83(object):
-    """UnMarkDeviceForReplacementV1 request schema definition."""
+    """UnMarkDeviceForReplacement request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB60F9F312235959812D49Dc4C469E83, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

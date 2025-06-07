@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetSiteAnalyticsForTheChildSitesOfGivenParentSiteAndOtherFiltersV1 data
-model.
+"""Cisco DNA Center GetSiteAnalyticsForTheChildSitesOfGivenParentSiteAndOtherFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -23,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -34,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA4829A44597BBf9813664Eb75De0(object):
-    """GetSiteAnalyticsForTheChildSitesOfGivenParentSiteAndOtherFiltersV1
+    """GetSiteAnalyticsForTheChildSitesOfGivenParentSiteAndOtherFilters
     request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA4829A44597BBf9813664Eb75De0, self).__init__()

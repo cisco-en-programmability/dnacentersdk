@@ -279,13 +279,13 @@ def test_get_auditlog_records_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_snmp_destination_v1(json_schema_validate, obj):
+def is_valid_get_snmp_destination(json_schema_validate, obj):
     json_schema_validate('jsd_e6effbb4a8555f669395009245149ba7_v2_3_7_9').validate(obj)
     return True
 
 
-def get_snmp_destination_v1(api):
-    endpoint_result = api.event_management.get_snmp_destination_v1(
+def get_snmp_destination(api):
+    endpoint_result = api.event_management.get_snmp_destination(
         config_id='string',
         limit=0,
         offset=0,
@@ -296,11 +296,11 @@ def get_snmp_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_snmp_destination_v1(api, validator):
+def test_get_snmp_destination(api, validator):
     try:
-        assert is_valid_get_snmp_destination_v1(
+        assert is_valid_get_snmp_destination(
             validator,
-            get_snmp_destination_v1(api)
+            get_snmp_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -308,8 +308,8 @@ def test_get_snmp_destination_v1(api, validator):
             raise original_e
 
 
-def get_snmp_destination_v1_default_val(api):
-    endpoint_result = api.event_management.get_snmp_destination_v1(
+def get_snmp_destination_default_val(api):
+    endpoint_result = api.event_management.get_snmp_destination(
         config_id=None,
         limit=None,
         offset=None,
@@ -320,35 +320,35 @@ def get_snmp_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_snmp_destination_v1_default_val(api, validator):
+def test_get_snmp_destination_default_val(api, validator):
     try:
-        assert is_valid_get_snmp_destination_v1(
+        assert is_valid_get_snmp_destination(
             validator,
-            get_snmp_destination_v1_default_val(api)
+            get_snmp_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_status_api_for_events_v1(json_schema_validate, obj):
+def is_valid_get_status_api_for_events(json_schema_validate, obj):
     json_schema_validate('jsd_e1bd67a1a0225713ab23f0d0d3ceb4f6_v2_3_7_9').validate(obj)
     return True
 
 
-def get_status_api_for_events_v1(api):
-    endpoint_result = api.event_management.get_status_api_for_events_v1(
+def get_status_api_for_events(api):
+    endpoint_result = api.event_management.get_status_api_for_events(
         execution_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_get_status_api_for_events_v1(api, validator):
+def test_get_status_api_for_events(api, validator):
     try:
-        assert is_valid_get_status_api_for_events_v1(
+        assert is_valid_get_status_api_for_events(
             validator,
-            get_status_api_for_events_v1(api)
+            get_status_api_for_events(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -356,32 +356,32 @@ def test_get_status_api_for_events_v1(api, validator):
             raise original_e
 
 
-def get_status_api_for_events_v1_default_val(api):
-    endpoint_result = api.event_management.get_status_api_for_events_v1(
+def get_status_api_for_events_default_val(api):
+    endpoint_result = api.event_management.get_status_api_for_events(
         execution_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_get_status_api_for_events_v1_default_val(api, validator):
+def test_get_status_api_for_events_default_val(api, validator):
     try:
-        assert is_valid_get_status_api_for_events_v1(
+        assert is_valid_get_status_api_for_events(
             validator,
-            get_status_api_for_events_v1_default_val(api)
+            get_status_api_for_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_email_destination_v1(json_schema_validate, obj):
+def is_valid_update_email_destination(json_schema_validate, obj):
     json_schema_validate('jsd_96aaebb912125213b350d7423b4f01a4_v2_3_7_9').validate(obj)
     return True
 
 
-def update_email_destination_v1(api):
-    endpoint_result = api.event_management.update_email_destination_v1(
+def update_email_destination(api):
+    endpoint_result = api.event_management.update_email_destination(
         active_validation=True,
         emailConfigId='string',
         fromEmail='string',
@@ -395,11 +395,11 @@ def update_email_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_email_destination_v1(api, validator):
+def test_update_email_destination(api, validator):
     try:
-        assert is_valid_update_email_destination_v1(
+        assert is_valid_update_email_destination(
             validator,
-            update_email_destination_v1(api)
+            update_email_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -407,8 +407,8 @@ def test_update_email_destination_v1(api, validator):
             raise original_e
 
 
-def update_email_destination_v1_default_val(api):
-    endpoint_result = api.event_management.update_email_destination_v1(
+def update_email_destination_default_val(api):
+    endpoint_result = api.event_management.update_email_destination(
         active_validation=True,
         emailConfigId=None,
         fromEmail=None,
@@ -422,35 +422,35 @@ def update_email_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_email_destination_v1_default_val(api, validator):
+def test_update_email_destination_default_val(api, validator):
     try:
-        assert is_valid_update_email_destination_v1(
+        assert is_valid_update_email_destination(
             validator,
-            update_email_destination_v1_default_val(api)
+            update_email_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_email_destination_v1(json_schema_validate, obj):
+def is_valid_get_email_destination(json_schema_validate, obj):
     json_schema_validate('jsd_d5f08e8ff59e51d1a9ae56c3e20eae3c_v2_3_7_9').validate(obj)
     return True
 
 
-def get_email_destination_v1(api):
-    endpoint_result = api.event_management.get_email_destination_v1(
+def get_email_destination(api):
+    endpoint_result = api.event_management.get_email_destination(
 
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_get_email_destination_v1(api, validator):
+def test_get_email_destination(api, validator):
     try:
-        assert is_valid_get_email_destination_v1(
+        assert is_valid_get_email_destination(
             validator,
-            get_email_destination_v1(api)
+            get_email_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -458,32 +458,32 @@ def test_get_email_destination_v1(api, validator):
             raise original_e
 
 
-def get_email_destination_v1_default_val(api):
-    endpoint_result = api.event_management.get_email_destination_v1(
+def get_email_destination_default_val(api):
+    endpoint_result = api.event_management.get_email_destination(
 
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_get_email_destination_v1_default_val(api, validator):
+def test_get_email_destination_default_val(api, validator):
     try:
-        assert is_valid_get_email_destination_v1(
+        assert is_valid_get_email_destination(
             validator,
-            get_email_destination_v1_default_val(api)
+            get_email_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_email_destination_v1(json_schema_validate, obj):
+def is_valid_create_email_destination(json_schema_validate, obj):
     json_schema_validate('jsd_9c991ce0b0f058a08c863a4abdfc70a6_v2_3_7_9').validate(obj)
     return True
 
 
-def create_email_destination_v1(api):
-    endpoint_result = api.event_management.create_email_destination_v1(
+def create_email_destination(api):
+    endpoint_result = api.event_management.create_email_destination(
         active_validation=True,
         emailConfigId='string',
         fromEmail='string',
@@ -497,11 +497,11 @@ def create_email_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_email_destination_v1(api, validator):
+def test_create_email_destination(api, validator):
     try:
-        assert is_valid_create_email_destination_v1(
+        assert is_valid_create_email_destination(
             validator,
-            create_email_destination_v1(api)
+            create_email_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -509,8 +509,8 @@ def test_create_email_destination_v1(api, validator):
             raise original_e
 
 
-def create_email_destination_v1_default_val(api):
-    endpoint_result = api.event_management.create_email_destination_v1(
+def create_email_destination_default_val(api):
+    endpoint_result = api.event_management.create_email_destination(
         active_validation=True,
         emailConfigId=None,
         fromEmail=None,
@@ -524,24 +524,24 @@ def create_email_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_email_destination_v1_default_val(api, validator):
+def test_create_email_destination_default_val(api, validator):
     try:
-        assert is_valid_create_email_destination_v1(
+        assert is_valid_create_email_destination(
             validator,
-            create_email_destination_v1_default_val(api)
+            create_email_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_notifications_v1(json_schema_validate, obj):
+def is_valid_get_notifications(json_schema_validate, obj):
     json_schema_validate('jsd_c641f481dd285301861010da8d6fbf9f_v2_3_7_9').validate(obj)
     return True
 
 
-def get_notifications_v1(api):
-    endpoint_result = api.event_management.get_notifications_v1(
+def get_notifications(api):
+    endpoint_result = api.event_management.get_notifications(
         category='string',
         domain='string',
         end_time=0,
@@ -563,11 +563,11 @@ def get_notifications_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_notifications_v1(api, validator):
+def test_get_notifications(api, validator):
     try:
-        assert is_valid_get_notifications_v1(
+        assert is_valid_get_notifications(
             validator,
-            get_notifications_v1(api)
+            get_notifications(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -575,8 +575,8 @@ def test_get_notifications_v1(api, validator):
             raise original_e
 
 
-def get_notifications_v1_default_val(api):
-    endpoint_result = api.event_management.get_notifications_v1(
+def get_notifications_default_val(api):
+    endpoint_result = api.event_management.get_notifications(
         category=None,
         domain=None,
         end_time=None,
@@ -598,24 +598,24 @@ def get_notifications_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_notifications_v1_default_val(api, validator):
+def test_get_notifications_default_val(api, validator):
     try:
-        assert is_valid_get_notifications_v1(
+        assert is_valid_get_notifications(
             validator,
-            get_notifications_v1_default_val(api)
+            get_notifications_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_count_of_notifications_v1(json_schema_validate, obj):
+def is_valid_count_of_notifications(json_schema_validate, obj):
     json_schema_validate('jsd_4431fd269fe156e4b5ad3f4210b7b168_v2_3_7_9').validate(obj)
     return True
 
 
-def count_of_notifications_v1(api):
-    endpoint_result = api.event_management.count_of_notifications_v1(
+def count_of_notifications(api):
+    endpoint_result = api.event_management.count_of_notifications(
         category='string',
         domain='string',
         end_time=0,
@@ -630,11 +630,11 @@ def count_of_notifications_v1(api):
 
 
 @pytest.mark.event_management
-def test_count_of_notifications_v1(api, validator):
+def test_count_of_notifications(api, validator):
     try:
-        assert is_valid_count_of_notifications_v1(
+        assert is_valid_count_of_notifications(
             validator,
-            count_of_notifications_v1(api)
+            count_of_notifications(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -642,8 +642,8 @@ def test_count_of_notifications_v1(api, validator):
             raise original_e
 
 
-def count_of_notifications_v1_default_val(api):
-    endpoint_result = api.event_management.count_of_notifications_v1(
+def count_of_notifications_default_val(api):
+    endpoint_result = api.event_management.count_of_notifications(
         category=None,
         domain=None,
         end_time=None,
@@ -658,24 +658,24 @@ def count_of_notifications_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_count_of_notifications_v1_default_val(api, validator):
+def test_count_of_notifications_default_val(api, validator):
     try:
-        assert is_valid_count_of_notifications_v1(
+        assert is_valid_count_of_notifications(
             validator,
-            count_of_notifications_v1_default_val(api)
+            count_of_notifications_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_snmp_destination_v1(json_schema_validate, obj):
+def is_valid_create_snmp_destination(json_schema_validate, obj):
     json_schema_validate('jsd_d69b1cfffdda5bd1828a5a89a262cbdd_v2_3_7_9').validate(obj)
     return True
 
 
-def create_snmp_destination_v1(api):
-    endpoint_result = api.event_management.create_snmp_destination_v1(
+def create_snmp_destination(api):
+    endpoint_result = api.event_management.create_snmp_destination(
         active_validation=True,
         authPassword='string',
         community='string',
@@ -695,11 +695,11 @@ def create_snmp_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_snmp_destination_v1(api, validator):
+def test_create_snmp_destination(api, validator):
     try:
-        assert is_valid_create_snmp_destination_v1(
+        assert is_valid_create_snmp_destination(
             validator,
-            create_snmp_destination_v1(api)
+            create_snmp_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -707,8 +707,8 @@ def test_create_snmp_destination_v1(api, validator):
             raise original_e
 
 
-def create_snmp_destination_v1_default_val(api):
-    endpoint_result = api.event_management.create_snmp_destination_v1(
+def create_snmp_destination_default_val(api):
+    endpoint_result = api.event_management.create_snmp_destination(
         active_validation=True,
         authPassword=None,
         community=None,
@@ -728,24 +728,24 @@ def create_snmp_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_snmp_destination_v1_default_val(api, validator):
+def test_create_snmp_destination_default_val(api, validator):
     try:
-        assert is_valid_create_snmp_destination_v1(
+        assert is_valid_create_snmp_destination(
             validator,
-            create_snmp_destination_v1_default_val(api)
+            create_snmp_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_snmp_destination_v1(json_schema_validate, obj):
+def is_valid_update_snmp_destination(json_schema_validate, obj):
     json_schema_validate('jsd_1ccbaf226c685cacac29eb345955f3ad_v2_3_7_9').validate(obj)
     return True
 
 
-def update_snmp_destination_v1(api):
-    endpoint_result = api.event_management.update_snmp_destination_v1(
+def update_snmp_destination(api):
+    endpoint_result = api.event_management.update_snmp_destination(
         active_validation=True,
         authPassword='string',
         community='string',
@@ -766,11 +766,11 @@ def update_snmp_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_snmp_destination_v1(api, validator):
+def test_update_snmp_destination(api, validator):
     try:
-        assert is_valid_update_snmp_destination_v1(
+        assert is_valid_update_snmp_destination(
             validator,
-            update_snmp_destination_v1(api)
+            update_snmp_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -778,8 +778,8 @@ def test_update_snmp_destination_v1(api, validator):
             raise original_e
 
 
-def update_snmp_destination_v1_default_val(api):
-    endpoint_result = api.event_management.update_snmp_destination_v1(
+def update_snmp_destination_default_val(api):
+    endpoint_result = api.event_management.update_snmp_destination(
         active_validation=True,
         authPassword=None,
         community=None,
@@ -800,24 +800,24 @@ def update_snmp_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_snmp_destination_v1_default_val(api, validator):
+def test_update_snmp_destination_default_val(api, validator):
     try:
-        assert is_valid_update_snmp_destination_v1(
+        assert is_valid_update_snmp_destination(
             validator,
-            update_snmp_destination_v1_default_val(api)
+            update_snmp_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_get_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_343538d7d4e55d6bbb21c34ce863a131_v2_3_7_9').validate(obj)
     return True
 
 
-def get_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.get_event_subscriptions_v1(
+def get_event_subscriptions(api):
+    endpoint_result = api.event_management.get_event_subscriptions(
         event_ids='string',
         limit=0,
         offset=0,
@@ -828,11 +828,11 @@ def get_event_subscriptions_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_event_subscriptions_v1(api, validator):
+def test_get_event_subscriptions(api, validator):
     try:
-        assert is_valid_get_event_subscriptions_v1(
+        assert is_valid_get_event_subscriptions(
             validator,
-            get_event_subscriptions_v1(api)
+            get_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -840,8 +840,8 @@ def test_get_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def get_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.get_event_subscriptions_v1(
+def get_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.get_event_subscriptions(
         event_ids=None,
         limit=None,
         offset=None,
@@ -852,35 +852,35 @@ def get_event_subscriptions_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_event_subscriptions_v1_default_val(api, validator):
+def test_get_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_get_event_subscriptions_v1(
+        assert is_valid_get_event_subscriptions(
             validator,
-            get_event_subscriptions_v1_default_val(api)
+            get_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_delete_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_a0e0b1772dfc5a02a96a9f6ee6e2579b_v2_3_7_9').validate(obj)
     return True
 
 
-def delete_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.delete_event_subscriptions_v1(
+def delete_event_subscriptions(api):
+    endpoint_result = api.event_management.delete_event_subscriptions(
         subscriptions='string'
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_delete_event_subscriptions_v1(api, validator):
+def test_delete_event_subscriptions(api, validator):
     try:
-        assert is_valid_delete_event_subscriptions_v1(
+        assert is_valid_delete_event_subscriptions(
             validator,
-            delete_event_subscriptions_v1(api)
+            delete_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -888,32 +888,32 @@ def test_delete_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def delete_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.delete_event_subscriptions_v1(
+def delete_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.delete_event_subscriptions(
         subscriptions=None
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_delete_event_subscriptions_v1_default_val(api, validator):
+def test_delete_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_delete_event_subscriptions_v1(
+        assert is_valid_delete_event_subscriptions(
             validator,
-            delete_event_subscriptions_v1_default_val(api)
+            delete_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_update_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_dfda5beca4cc5437876bff366493ebf0_v2_3_7_9').validate(obj)
     return True
 
 
-def update_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.update_event_subscriptions_v1(
+def update_event_subscriptions(api):
+    endpoint_result = api.event_management.update_event_subscriptions(
         active_validation=True,
         payload=None
     )
@@ -921,11 +921,11 @@ def update_event_subscriptions_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_event_subscriptions_v1(api, validator):
+def test_update_event_subscriptions(api, validator):
     try:
-        assert is_valid_update_event_subscriptions_v1(
+        assert is_valid_update_event_subscriptions(
             validator,
-            update_event_subscriptions_v1(api)
+            update_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -933,8 +933,8 @@ def test_update_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def update_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.update_event_subscriptions_v1(
+def update_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.update_event_subscriptions(
         active_validation=True,
         payload=None
     )
@@ -942,24 +942,24 @@ def update_event_subscriptions_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_event_subscriptions_v1_default_val(api, validator):
+def test_update_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_update_event_subscriptions_v1(
+        assert is_valid_update_event_subscriptions(
             validator,
-            update_event_subscriptions_v1_default_val(api)
+            update_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_create_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_5fcc151af7615a84adf48b714d146192_v2_3_7_9').validate(obj)
     return True
 
 
-def create_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.create_event_subscriptions_v1(
+def create_event_subscriptions(api):
+    endpoint_result = api.event_management.create_event_subscriptions(
         active_validation=True,
         payload=None
     )
@@ -967,11 +967,11 @@ def create_event_subscriptions_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_event_subscriptions_v1(api, validator):
+def test_create_event_subscriptions(api, validator):
     try:
-        assert is_valid_create_event_subscriptions_v1(
+        assert is_valid_create_event_subscriptions(
             validator,
-            create_event_subscriptions_v1(api)
+            create_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -979,8 +979,8 @@ def test_create_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def create_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.create_event_subscriptions_v1(
+def create_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.create_event_subscriptions(
         active_validation=True,
         payload=None
     )
@@ -988,24 +988,24 @@ def create_event_subscriptions_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_event_subscriptions_v1_default_val(api, validator):
+def test_create_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_create_event_subscriptions_v1(
+        assert is_valid_create_event_subscriptions(
             validator,
-            create_event_subscriptions_v1_default_val(api)
+            create_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_email_subscription_details_v1(json_schema_validate, obj):
+def is_valid_get_email_subscription_details(json_schema_validate, obj):
     json_schema_validate('jsd_403889d420225889bb16f99ec7ba099a_v2_3_7_9').validate(obj)
     return True
 
 
-def get_email_subscription_details_v1(api):
-    endpoint_result = api.event_management.get_email_subscription_details_v1(
+def get_email_subscription_details(api):
+    endpoint_result = api.event_management.get_email_subscription_details(
         instance_id='string',
         limit=0,
         name='string',
@@ -1017,11 +1017,11 @@ def get_email_subscription_details_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_email_subscription_details_v1(api, validator):
+def test_get_email_subscription_details(api, validator):
     try:
-        assert is_valid_get_email_subscription_details_v1(
+        assert is_valid_get_email_subscription_details(
             validator,
-            get_email_subscription_details_v1(api)
+            get_email_subscription_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1029,8 +1029,8 @@ def test_get_email_subscription_details_v1(api, validator):
             raise original_e
 
 
-def get_email_subscription_details_v1_default_val(api):
-    endpoint_result = api.event_management.get_email_subscription_details_v1(
+def get_email_subscription_details_default_val(api):
+    endpoint_result = api.event_management.get_email_subscription_details(
         instance_id=None,
         limit=None,
         name=None,
@@ -1042,24 +1042,24 @@ def get_email_subscription_details_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_email_subscription_details_v1_default_val(api, validator):
+def test_get_email_subscription_details_default_val(api, validator):
     try:
-        assert is_valid_get_email_subscription_details_v1(
+        assert is_valid_get_email_subscription_details(
             validator,
-            get_email_subscription_details_v1_default_val(api)
+            get_email_subscription_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_rest_webhook_subscription_details_v1(json_schema_validate, obj):
+def is_valid_get_rest_webhook_subscription_details(json_schema_validate, obj):
     json_schema_validate('jsd_86272f278c72555e9a56f554b2a21c85_v2_3_7_9').validate(obj)
     return True
 
 
-def get_rest_webhook_subscription_details_v1(api):
-    endpoint_result = api.event_management.get_rest_webhook_subscription_details_v1(
+def get_rest_webhook_subscription_details(api):
+    endpoint_result = api.event_management.get_rest_webhook_subscription_details(
         instance_id='string',
         limit=0,
         name='string',
@@ -1071,11 +1071,11 @@ def get_rest_webhook_subscription_details_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_rest_webhook_subscription_details_v1(api, validator):
+def test_get_rest_webhook_subscription_details(api, validator):
     try:
-        assert is_valid_get_rest_webhook_subscription_details_v1(
+        assert is_valid_get_rest_webhook_subscription_details(
             validator,
-            get_rest_webhook_subscription_details_v1(api)
+            get_rest_webhook_subscription_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1083,8 +1083,8 @@ def test_get_rest_webhook_subscription_details_v1(api, validator):
             raise original_e
 
 
-def get_rest_webhook_subscription_details_v1_default_val(api):
-    endpoint_result = api.event_management.get_rest_webhook_subscription_details_v1(
+def get_rest_webhook_subscription_details_default_val(api):
+    endpoint_result = api.event_management.get_rest_webhook_subscription_details(
         instance_id=None,
         limit=None,
         name=None,
@@ -1096,24 +1096,24 @@ def get_rest_webhook_subscription_details_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_rest_webhook_subscription_details_v1_default_val(api, validator):
+def test_get_rest_webhook_subscription_details_default_val(api, validator):
     try:
-        assert is_valid_get_rest_webhook_subscription_details_v1(
+        assert is_valid_get_rest_webhook_subscription_details(
             validator,
-            get_rest_webhook_subscription_details_v1_default_val(api)
+            get_rest_webhook_subscription_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_syslog_subscription_details_v1(json_schema_validate, obj):
+def is_valid_get_syslog_subscription_details(json_schema_validate, obj):
     json_schema_validate('jsd_c0dcb335458a58fa8bc5a485b174427d_v2_3_7_9').validate(obj)
     return True
 
 
-def get_syslog_subscription_details_v1(api):
-    endpoint_result = api.event_management.get_syslog_subscription_details_v1(
+def get_syslog_subscription_details(api):
+    endpoint_result = api.event_management.get_syslog_subscription_details(
         instance_id='string',
         limit=0,
         name='string',
@@ -1125,11 +1125,11 @@ def get_syslog_subscription_details_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_syslog_subscription_details_v1(api, validator):
+def test_get_syslog_subscription_details(api, validator):
     try:
-        assert is_valid_get_syslog_subscription_details_v1(
+        assert is_valid_get_syslog_subscription_details(
             validator,
-            get_syslog_subscription_details_v1(api)
+            get_syslog_subscription_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1137,8 +1137,8 @@ def test_get_syslog_subscription_details_v1(api, validator):
             raise original_e
 
 
-def get_syslog_subscription_details_v1_default_val(api):
-    endpoint_result = api.event_management.get_syslog_subscription_details_v1(
+def get_syslog_subscription_details_default_val(api):
+    endpoint_result = api.event_management.get_syslog_subscription_details(
         instance_id=None,
         limit=None,
         name=None,
@@ -1150,35 +1150,35 @@ def get_syslog_subscription_details_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_syslog_subscription_details_v1_default_val(api, validator):
+def test_get_syslog_subscription_details_default_val(api, validator):
     try:
-        assert is_valid_get_syslog_subscription_details_v1(
+        assert is_valid_get_syslog_subscription_details(
             validator,
-            get_syslog_subscription_details_v1_default_val(api)
+            get_syslog_subscription_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_count_of_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_count_of_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_c538dc50a4555b5fba17b672a89ee1b8_v2_3_7_9').validate(obj)
     return True
 
 
-def count_of_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.count_of_event_subscriptions_v1(
+def count_of_event_subscriptions(api):
+    endpoint_result = api.event_management.count_of_event_subscriptions(
         event_ids='string'
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_count_of_event_subscriptions_v1(api, validator):
+def test_count_of_event_subscriptions(api, validator):
     try:
-        assert is_valid_count_of_event_subscriptions_v1(
+        assert is_valid_count_of_event_subscriptions(
             validator,
-            count_of_event_subscriptions_v1(api)
+            count_of_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1186,32 +1186,32 @@ def test_count_of_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def count_of_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.count_of_event_subscriptions_v1(
+def count_of_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.count_of_event_subscriptions(
         event_ids=None
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_count_of_event_subscriptions_v1_default_val(api, validator):
+def test_count_of_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_count_of_event_subscriptions_v1(
+        assert is_valid_count_of_event_subscriptions(
             validator,
-            count_of_event_subscriptions_v1_default_val(api)
+            count_of_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_email_event_subscription_v1(json_schema_validate, obj):
+def is_valid_create_email_event_subscription(json_schema_validate, obj):
     json_schema_validate('jsd_2e69d02d71905aecbd10b782469efbda_v2_3_7_9').validate(obj)
     return True
 
 
-def create_email_event_subscription_v1(api):
-    endpoint_result = api.event_management.create_email_event_subscription_v1(
+def create_email_event_subscription(api):
+    endpoint_result = api.event_management.create_email_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1219,11 +1219,11 @@ def create_email_event_subscription_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_email_event_subscription_v1(api, validator):
+def test_create_email_event_subscription(api, validator):
     try:
-        assert is_valid_create_email_event_subscription_v1(
+        assert is_valid_create_email_event_subscription(
             validator,
-            create_email_event_subscription_v1(api)
+            create_email_event_subscription(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1231,8 +1231,8 @@ def test_create_email_event_subscription_v1(api, validator):
             raise original_e
 
 
-def create_email_event_subscription_v1_default_val(api):
-    endpoint_result = api.event_management.create_email_event_subscription_v1(
+def create_email_event_subscription_default_val(api):
+    endpoint_result = api.event_management.create_email_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1240,24 +1240,24 @@ def create_email_event_subscription_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_email_event_subscription_v1_default_val(api, validator):
+def test_create_email_event_subscription_default_val(api, validator):
     try:
-        assert is_valid_create_email_event_subscription_v1(
+        assert is_valid_create_email_event_subscription(
             validator,
-            create_email_event_subscription_v1_default_val(api)
+            create_email_event_subscription_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_email_event_subscription_v1(json_schema_validate, obj):
+def is_valid_update_email_event_subscription(json_schema_validate, obj):
     json_schema_validate('jsd_f8b4842604b65658afb34b4f124db469_v2_3_7_9').validate(obj)
     return True
 
 
-def update_email_event_subscription_v1(api):
-    endpoint_result = api.event_management.update_email_event_subscription_v1(
+def update_email_event_subscription(api):
+    endpoint_result = api.event_management.update_email_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1265,11 +1265,11 @@ def update_email_event_subscription_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_email_event_subscription_v1(api, validator):
+def test_update_email_event_subscription(api, validator):
     try:
-        assert is_valid_update_email_event_subscription_v1(
+        assert is_valid_update_email_event_subscription(
             validator,
-            update_email_event_subscription_v1(api)
+            update_email_event_subscription(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1277,8 +1277,8 @@ def test_update_email_event_subscription_v1(api, validator):
             raise original_e
 
 
-def update_email_event_subscription_v1_default_val(api):
-    endpoint_result = api.event_management.update_email_event_subscription_v1(
+def update_email_event_subscription_default_val(api):
+    endpoint_result = api.event_management.update_email_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1286,24 +1286,24 @@ def update_email_event_subscription_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_email_event_subscription_v1_default_val(api, validator):
+def test_update_email_event_subscription_default_val(api, validator):
     try:
-        assert is_valid_update_email_event_subscription_v1(
+        assert is_valid_update_email_event_subscription(
             validator,
-            update_email_event_subscription_v1_default_val(api)
+            update_email_event_subscription_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_email_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_get_email_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_bc212b5ee1f252479f35e8dd58319f17_v2_3_7_9').validate(obj)
     return True
 
 
-def get_email_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.get_email_event_subscriptions_v1(
+def get_email_event_subscriptions(api):
+    endpoint_result = api.event_management.get_email_event_subscriptions(
         category='string',
         domain='string',
         event_ids='string',
@@ -1319,11 +1319,11 @@ def get_email_event_subscriptions_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_email_event_subscriptions_v1(api, validator):
+def test_get_email_event_subscriptions(api, validator):
     try:
-        assert is_valid_get_email_event_subscriptions_v1(
+        assert is_valid_get_email_event_subscriptions(
             validator,
-            get_email_event_subscriptions_v1(api)
+            get_email_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1331,8 +1331,8 @@ def test_get_email_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def get_email_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.get_email_event_subscriptions_v1(
+def get_email_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.get_email_event_subscriptions(
         category=None,
         domain=None,
         event_ids=None,
@@ -1348,24 +1348,24 @@ def get_email_event_subscriptions_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_email_event_subscriptions_v1_default_val(api, validator):
+def test_get_email_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_get_email_event_subscriptions_v1(
+        assert is_valid_get_email_event_subscriptions(
             validator,
-            get_email_event_subscriptions_v1_default_val(api)
+            get_email_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_rest_webhook_event_subscription_v1(json_schema_validate, obj):
+def is_valid_create_rest_webhook_event_subscription(json_schema_validate, obj):
     json_schema_validate('jsd_9f41eb48a0da56949cfaddeecb51ab66_v2_3_7_9').validate(obj)
     return True
 
 
-def create_rest_webhook_event_subscription_v1(api):
-    endpoint_result = api.event_management.create_rest_webhook_event_subscription_v1(
+def create_rest_webhook_event_subscription(api):
+    endpoint_result = api.event_management.create_rest_webhook_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1373,11 +1373,11 @@ def create_rest_webhook_event_subscription_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_rest_webhook_event_subscription_v1(api, validator):
+def test_create_rest_webhook_event_subscription(api, validator):
     try:
-        assert is_valid_create_rest_webhook_event_subscription_v1(
+        assert is_valid_create_rest_webhook_event_subscription(
             validator,
-            create_rest_webhook_event_subscription_v1(api)
+            create_rest_webhook_event_subscription(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1385,8 +1385,8 @@ def test_create_rest_webhook_event_subscription_v1(api, validator):
             raise original_e
 
 
-def create_rest_webhook_event_subscription_v1_default_val(api):
-    endpoint_result = api.event_management.create_rest_webhook_event_subscription_v1(
+def create_rest_webhook_event_subscription_default_val(api):
+    endpoint_result = api.event_management.create_rest_webhook_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1394,24 +1394,24 @@ def create_rest_webhook_event_subscription_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_rest_webhook_event_subscription_v1_default_val(api, validator):
+def test_create_rest_webhook_event_subscription_default_val(api, validator):
     try:
-        assert is_valid_create_rest_webhook_event_subscription_v1(
+        assert is_valid_create_rest_webhook_event_subscription(
             validator,
-            create_rest_webhook_event_subscription_v1_default_val(api)
+            create_rest_webhook_event_subscription_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_rest_webhook_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_get_rest_webhook_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_1ee2008494d158e7bff7f106519a64c5_v2_3_7_9').validate(obj)
     return True
 
 
-def get_rest_webhook_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.get_rest_webhook_event_subscriptions_v1(
+def get_rest_webhook_event_subscriptions(api):
+    endpoint_result = api.event_management.get_rest_webhook_event_subscriptions(
         category='string',
         domain='string',
         event_ids='string',
@@ -1427,11 +1427,11 @@ def get_rest_webhook_event_subscriptions_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_rest_webhook_event_subscriptions_v1(api, validator):
+def test_get_rest_webhook_event_subscriptions(api, validator):
     try:
-        assert is_valid_get_rest_webhook_event_subscriptions_v1(
+        assert is_valid_get_rest_webhook_event_subscriptions(
             validator,
-            get_rest_webhook_event_subscriptions_v1(api)
+            get_rest_webhook_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1439,8 +1439,8 @@ def test_get_rest_webhook_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def get_rest_webhook_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.get_rest_webhook_event_subscriptions_v1(
+def get_rest_webhook_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.get_rest_webhook_event_subscriptions(
         category=None,
         domain=None,
         event_ids=None,
@@ -1456,24 +1456,24 @@ def get_rest_webhook_event_subscriptions_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_rest_webhook_event_subscriptions_v1_default_val(api, validator):
+def test_get_rest_webhook_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_get_rest_webhook_event_subscriptions_v1(
+        assert is_valid_get_rest_webhook_event_subscriptions(
             validator,
-            get_rest_webhook_event_subscriptions_v1_default_val(api)
+            get_rest_webhook_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_rest_webhook_event_subscription_v1(json_schema_validate, obj):
+def is_valid_update_rest_webhook_event_subscription(json_schema_validate, obj):
     json_schema_validate('jsd_7474456b6581534bb321eaea272365b7_v2_3_7_9').validate(obj)
     return True
 
 
-def update_rest_webhook_event_subscription_v1(api):
-    endpoint_result = api.event_management.update_rest_webhook_event_subscription_v1(
+def update_rest_webhook_event_subscription(api):
+    endpoint_result = api.event_management.update_rest_webhook_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1481,11 +1481,11 @@ def update_rest_webhook_event_subscription_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_rest_webhook_event_subscription_v1(api, validator):
+def test_update_rest_webhook_event_subscription(api, validator):
     try:
-        assert is_valid_update_rest_webhook_event_subscription_v1(
+        assert is_valid_update_rest_webhook_event_subscription(
             validator,
-            update_rest_webhook_event_subscription_v1(api)
+            update_rest_webhook_event_subscription(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1493,8 +1493,8 @@ def test_update_rest_webhook_event_subscription_v1(api, validator):
             raise original_e
 
 
-def update_rest_webhook_event_subscription_v1_default_val(api):
-    endpoint_result = api.event_management.update_rest_webhook_event_subscription_v1(
+def update_rest_webhook_event_subscription_default_val(api):
+    endpoint_result = api.event_management.update_rest_webhook_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1502,24 +1502,24 @@ def update_rest_webhook_event_subscription_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_rest_webhook_event_subscription_v1_default_val(api, validator):
+def test_update_rest_webhook_event_subscription_default_val(api, validator):
     try:
-        assert is_valid_update_rest_webhook_event_subscription_v1(
+        assert is_valid_update_rest_webhook_event_subscription(
             validator,
-            update_rest_webhook_event_subscription_v1_default_val(api)
+            update_rest_webhook_event_subscription_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_syslog_event_subscription_v1(json_schema_validate, obj):
+def is_valid_update_syslog_event_subscription(json_schema_validate, obj):
     json_schema_validate('jsd_8d8fc92ddeab597ebb50ea003a6d46bd_v2_3_7_9').validate(obj)
     return True
 
 
-def update_syslog_event_subscription_v1(api):
-    endpoint_result = api.event_management.update_syslog_event_subscription_v1(
+def update_syslog_event_subscription(api):
+    endpoint_result = api.event_management.update_syslog_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1527,11 +1527,11 @@ def update_syslog_event_subscription_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_syslog_event_subscription_v1(api, validator):
+def test_update_syslog_event_subscription(api, validator):
     try:
-        assert is_valid_update_syslog_event_subscription_v1(
+        assert is_valid_update_syslog_event_subscription(
             validator,
-            update_syslog_event_subscription_v1(api)
+            update_syslog_event_subscription(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1539,8 +1539,8 @@ def test_update_syslog_event_subscription_v1(api, validator):
             raise original_e
 
 
-def update_syslog_event_subscription_v1_default_val(api):
-    endpoint_result = api.event_management.update_syslog_event_subscription_v1(
+def update_syslog_event_subscription_default_val(api):
+    endpoint_result = api.event_management.update_syslog_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1548,24 +1548,24 @@ def update_syslog_event_subscription_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_syslog_event_subscription_v1_default_val(api, validator):
+def test_update_syslog_event_subscription_default_val(api, validator):
     try:
-        assert is_valid_update_syslog_event_subscription_v1(
+        assert is_valid_update_syslog_event_subscription(
             validator,
-            update_syslog_event_subscription_v1_default_val(api)
+            update_syslog_event_subscription_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_syslog_event_subscription_v1(json_schema_validate, obj):
+def is_valid_create_syslog_event_subscription(json_schema_validate, obj):
     json_schema_validate('jsd_99fb5a8c0075563491622171958074bf_v2_3_7_9').validate(obj)
     return True
 
 
-def create_syslog_event_subscription_v1(api):
-    endpoint_result = api.event_management.create_syslog_event_subscription_v1(
+def create_syslog_event_subscription(api):
+    endpoint_result = api.event_management.create_syslog_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1573,11 +1573,11 @@ def create_syslog_event_subscription_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_syslog_event_subscription_v1(api, validator):
+def test_create_syslog_event_subscription(api, validator):
     try:
-        assert is_valid_create_syslog_event_subscription_v1(
+        assert is_valid_create_syslog_event_subscription(
             validator,
-            create_syslog_event_subscription_v1(api)
+            create_syslog_event_subscription(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1585,8 +1585,8 @@ def test_create_syslog_event_subscription_v1(api, validator):
             raise original_e
 
 
-def create_syslog_event_subscription_v1_default_val(api):
-    endpoint_result = api.event_management.create_syslog_event_subscription_v1(
+def create_syslog_event_subscription_default_val(api):
+    endpoint_result = api.event_management.create_syslog_event_subscription(
         active_validation=True,
         payload=None
     )
@@ -1594,24 +1594,24 @@ def create_syslog_event_subscription_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_syslog_event_subscription_v1_default_val(api, validator):
+def test_create_syslog_event_subscription_default_val(api, validator):
     try:
-        assert is_valid_create_syslog_event_subscription_v1(
+        assert is_valid_create_syslog_event_subscription(
             validator,
-            create_syslog_event_subscription_v1_default_val(api)
+            create_syslog_event_subscription_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_syslog_event_subscriptions_v1(json_schema_validate, obj):
+def is_valid_get_syslog_event_subscriptions(json_schema_validate, obj):
     json_schema_validate('jsd_c7bed4b4148753e6bc9912e3be135217_v2_3_7_9').validate(obj)
     return True
 
 
-def get_syslog_event_subscriptions_v1(api):
-    endpoint_result = api.event_management.get_syslog_event_subscriptions_v1(
+def get_syslog_event_subscriptions(api):
+    endpoint_result = api.event_management.get_syslog_event_subscriptions(
         category='string',
         domain='string',
         event_ids='string',
@@ -1627,11 +1627,11 @@ def get_syslog_event_subscriptions_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_syslog_event_subscriptions_v1(api, validator):
+def test_get_syslog_event_subscriptions(api, validator):
     try:
-        assert is_valid_get_syslog_event_subscriptions_v1(
+        assert is_valid_get_syslog_event_subscriptions(
             validator,
-            get_syslog_event_subscriptions_v1(api)
+            get_syslog_event_subscriptions(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1639,8 +1639,8 @@ def test_get_syslog_event_subscriptions_v1(api, validator):
             raise original_e
 
 
-def get_syslog_event_subscriptions_v1_default_val(api):
-    endpoint_result = api.event_management.get_syslog_event_subscriptions_v1(
+def get_syslog_event_subscriptions_default_val(api):
+    endpoint_result = api.event_management.get_syslog_event_subscriptions(
         category=None,
         domain=None,
         event_ids=None,
@@ -1656,24 +1656,24 @@ def get_syslog_event_subscriptions_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_syslog_event_subscriptions_v1_default_val(api, validator):
+def test_get_syslog_event_subscriptions_default_val(api, validator):
     try:
-        assert is_valid_get_syslog_event_subscriptions_v1(
+        assert is_valid_get_syslog_event_subscriptions(
             validator,
-            get_syslog_event_subscriptions_v1_default_val(api)
+            get_syslog_event_subscriptions_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_syslog_destination_v1(json_schema_validate, obj):
+def is_valid_update_syslog_destination(json_schema_validate, obj):
     json_schema_validate('jsd_6a9f5796226051218eac559ab5211384_v2_3_7_9').validate(obj)
     return True
 
 
-def update_syslog_destination_v1(api):
-    endpoint_result = api.event_management.update_syslog_destination_v1(
+def update_syslog_destination(api):
+    endpoint_result = api.event_management.update_syslog_destination(
         active_validation=True,
         configId='string',
         description='string',
@@ -1687,11 +1687,11 @@ def update_syslog_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_syslog_destination_v1(api, validator):
+def test_update_syslog_destination(api, validator):
     try:
-        assert is_valid_update_syslog_destination_v1(
+        assert is_valid_update_syslog_destination(
             validator,
-            update_syslog_destination_v1(api)
+            update_syslog_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1699,8 +1699,8 @@ def test_update_syslog_destination_v1(api, validator):
             raise original_e
 
 
-def update_syslog_destination_v1_default_val(api):
-    endpoint_result = api.event_management.update_syslog_destination_v1(
+def update_syslog_destination_default_val(api):
+    endpoint_result = api.event_management.update_syslog_destination(
         active_validation=True,
         configId=None,
         description=None,
@@ -1714,24 +1714,24 @@ def update_syslog_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_syslog_destination_v1_default_val(api, validator):
+def test_update_syslog_destination_default_val(api, validator):
     try:
-        assert is_valid_update_syslog_destination_v1(
+        assert is_valid_update_syslog_destination(
             validator,
-            update_syslog_destination_v1_default_val(api)
+            update_syslog_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_syslog_destination_v1(json_schema_validate, obj):
+def is_valid_get_syslog_destination(json_schema_validate, obj):
     json_schema_validate('jsd_a170168de2ac55cc93571af1fbc02894_v2_3_7_9').validate(obj)
     return True
 
 
-def get_syslog_destination_v1(api):
-    endpoint_result = api.event_management.get_syslog_destination_v1(
+def get_syslog_destination(api):
+    endpoint_result = api.event_management.get_syslog_destination(
         config_id='string',
         limit=0,
         name='string',
@@ -1744,11 +1744,11 @@ def get_syslog_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_syslog_destination_v1(api, validator):
+def test_get_syslog_destination(api, validator):
     try:
-        assert is_valid_get_syslog_destination_v1(
+        assert is_valid_get_syslog_destination(
             validator,
-            get_syslog_destination_v1(api)
+            get_syslog_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1756,8 +1756,8 @@ def test_get_syslog_destination_v1(api, validator):
             raise original_e
 
 
-def get_syslog_destination_v1_default_val(api):
-    endpoint_result = api.event_management.get_syslog_destination_v1(
+def get_syslog_destination_default_val(api):
+    endpoint_result = api.event_management.get_syslog_destination(
         config_id=None,
         limit=None,
         name=None,
@@ -1770,24 +1770,24 @@ def get_syslog_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_syslog_destination_v1_default_val(api, validator):
+def test_get_syslog_destination_default_val(api, validator):
     try:
-        assert is_valid_get_syslog_destination_v1(
+        assert is_valid_get_syslog_destination(
             validator,
-            get_syslog_destination_v1_default_val(api)
+            get_syslog_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_syslog_destination_v1(json_schema_validate, obj):
+def is_valid_create_syslog_destination(json_schema_validate, obj):
     json_schema_validate('jsd_919dece7a9b353b49084a8ffa4f18c91_v2_3_7_9').validate(obj)
     return True
 
 
-def create_syslog_destination_v1(api):
-    endpoint_result = api.event_management.create_syslog_destination_v1(
+def create_syslog_destination(api):
+    endpoint_result = api.event_management.create_syslog_destination(
         active_validation=True,
         configId='string',
         description='string',
@@ -1801,11 +1801,11 @@ def create_syslog_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_syslog_destination_v1(api, validator):
+def test_create_syslog_destination(api, validator):
     try:
-        assert is_valid_create_syslog_destination_v1(
+        assert is_valid_create_syslog_destination(
             validator,
-            create_syslog_destination_v1(api)
+            create_syslog_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1813,8 +1813,8 @@ def test_create_syslog_destination_v1(api, validator):
             raise original_e
 
 
-def create_syslog_destination_v1_default_val(api):
-    endpoint_result = api.event_management.create_syslog_destination_v1(
+def create_syslog_destination_default_val(api):
+    endpoint_result = api.event_management.create_syslog_destination(
         active_validation=True,
         configId=None,
         description=None,
@@ -1828,24 +1828,24 @@ def create_syslog_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_syslog_destination_v1_default_val(api, validator):
+def test_create_syslog_destination_default_val(api, validator):
     try:
-        assert is_valid_create_syslog_destination_v1(
+        assert is_valid_create_syslog_destination(
             validator,
-            create_syslog_destination_v1_default_val(api)
+            create_syslog_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_webhook_destination_v1(json_schema_validate, obj):
+def is_valid_create_webhook_destination(json_schema_validate, obj):
     json_schema_validate('jsd_36b8699619f95a24bd2d81f12f048235_v2_3_7_9').validate(obj)
     return True
 
 
-def create_webhook_destination_v1(api):
-    endpoint_result = api.event_management.create_webhook_destination_v1(
+def create_webhook_destination(api):
+    endpoint_result = api.event_management.create_webhook_destination(
         active_validation=True,
         description='string',
         headers=[{'name': 'string', 'value': 'string', 'defaultValue': 'string', 'encrypt': True}],
@@ -1861,11 +1861,11 @@ def create_webhook_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_create_webhook_destination_v1(api, validator):
+def test_create_webhook_destination(api, validator):
     try:
-        assert is_valid_create_webhook_destination_v1(
+        assert is_valid_create_webhook_destination(
             validator,
-            create_webhook_destination_v1(api)
+            create_webhook_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1873,8 +1873,8 @@ def test_create_webhook_destination_v1(api, validator):
             raise original_e
 
 
-def create_webhook_destination_v1_default_val(api):
-    endpoint_result = api.event_management.create_webhook_destination_v1(
+def create_webhook_destination_default_val(api):
+    endpoint_result = api.event_management.create_webhook_destination(
         active_validation=True,
         description=None,
         headers=None,
@@ -1890,24 +1890,24 @@ def create_webhook_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_create_webhook_destination_v1_default_val(api, validator):
+def test_create_webhook_destination_default_val(api, validator):
     try:
-        assert is_valid_create_webhook_destination_v1(
+        assert is_valid_create_webhook_destination(
             validator,
-            create_webhook_destination_v1_default_val(api)
+            create_webhook_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_webhook_destination_v1(json_schema_validate, obj):
+def is_valid_update_webhook_destination(json_schema_validate, obj):
     json_schema_validate('jsd_d5c229546dc755f796dfcf34f1c2e290_v2_3_7_9').validate(obj)
     return True
 
 
-def update_webhook_destination_v1(api):
-    endpoint_result = api.event_management.update_webhook_destination_v1(
+def update_webhook_destination(api):
+    endpoint_result = api.event_management.update_webhook_destination(
         active_validation=True,
         description='string',
         headers=[{'name': 'string', 'value': 'string', 'defaultValue': 'string', 'encrypt': True}],
@@ -1923,11 +1923,11 @@ def update_webhook_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_update_webhook_destination_v1(api, validator):
+def test_update_webhook_destination(api, validator):
     try:
-        assert is_valid_update_webhook_destination_v1(
+        assert is_valid_update_webhook_destination(
             validator,
-            update_webhook_destination_v1(api)
+            update_webhook_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1935,8 +1935,8 @@ def test_update_webhook_destination_v1(api, validator):
             raise original_e
 
 
-def update_webhook_destination_v1_default_val(api):
-    endpoint_result = api.event_management.update_webhook_destination_v1(
+def update_webhook_destination_default_val(api):
+    endpoint_result = api.event_management.update_webhook_destination(
         active_validation=True,
         description=None,
         headers=None,
@@ -1952,24 +1952,24 @@ def update_webhook_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_update_webhook_destination_v1_default_val(api, validator):
+def test_update_webhook_destination_default_val(api, validator):
     try:
-        assert is_valid_update_webhook_destination_v1(
+        assert is_valid_update_webhook_destination(
             validator,
-            update_webhook_destination_v1_default_val(api)
+            update_webhook_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_webhook_destination_v1(json_schema_validate, obj):
+def is_valid_get_webhook_destination(json_schema_validate, obj):
     json_schema_validate('jsd_ddecdd64b34c5fdc910296fce09b2828_v2_3_7_9').validate(obj)
     return True
 
 
-def get_webhook_destination_v1(api):
-    endpoint_result = api.event_management.get_webhook_destination_v1(
+def get_webhook_destination(api):
+    endpoint_result = api.event_management.get_webhook_destination(
         limit=0,
         offset=0,
         order='string',
@@ -1980,11 +1980,11 @@ def get_webhook_destination_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_webhook_destination_v1(api, validator):
+def test_get_webhook_destination(api, validator):
     try:
-        assert is_valid_get_webhook_destination_v1(
+        assert is_valid_get_webhook_destination(
             validator,
-            get_webhook_destination_v1(api)
+            get_webhook_destination(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1992,8 +1992,8 @@ def test_get_webhook_destination_v1(api, validator):
             raise original_e
 
 
-def get_webhook_destination_v1_default_val(api):
-    endpoint_result = api.event_management.get_webhook_destination_v1(
+def get_webhook_destination_default_val(api):
+    endpoint_result = api.event_management.get_webhook_destination(
         limit=None,
         offset=None,
         order=None,
@@ -2004,24 +2004,24 @@ def get_webhook_destination_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_webhook_destination_v1_default_val(api, validator):
+def test_get_webhook_destination_default_val(api, validator):
     try:
-        assert is_valid_get_webhook_destination_v1(
+        assert is_valid_get_webhook_destination(
             validator,
-            get_webhook_destination_v1_default_val(api)
+            get_webhook_destination_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_events_v1(json_schema_validate, obj):
+def is_valid_get_events(json_schema_validate, obj):
     json_schema_validate('jsd_bf36f1819e61575189c0709efab6e48a_v2_3_7_9').validate(obj)
     return True
 
 
-def get_events_v1(api):
-    endpoint_result = api.event_management.get_events_v1(
+def get_events(api):
+    endpoint_result = api.event_management.get_events(
         event_id='string',
         limit=0,
         offset=0,
@@ -2033,11 +2033,11 @@ def get_events_v1(api):
 
 
 @pytest.mark.event_management
-def test_get_events_v1(api, validator):
+def test_get_events(api, validator):
     try:
-        assert is_valid_get_events_v1(
+        assert is_valid_get_events(
             validator,
-            get_events_v1(api)
+            get_events(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -2045,8 +2045,8 @@ def test_get_events_v1(api, validator):
             raise original_e
 
 
-def get_events_v1_default_val(api):
-    endpoint_result = api.event_management.get_events_v1(
+def get_events_default_val(api):
+    endpoint_result = api.event_management.get_events(
         event_id=None,
         limit=None,
         offset=None,
@@ -2058,24 +2058,24 @@ def get_events_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_get_events_v1_default_val(api, validator):
+def test_get_events_default_val(api, validator):
     try:
-        assert is_valid_get_events_v1(
+        assert is_valid_get_events(
             validator,
-            get_events_v1_default_val(api)
+            get_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_count_of_events_v1(json_schema_validate, obj):
+def is_valid_count_of_events(json_schema_validate, obj):
     json_schema_validate('jsd_3b21d2947d715c198f5e62ba3149839a_v2_3_7_9').validate(obj)
     return True
 
 
-def count_of_events_v1(api):
-    endpoint_result = api.event_management.count_of_events_v1(
+def count_of_events(api):
+    endpoint_result = api.event_management.count_of_events(
         event_id='string',
         tags='string'
     )
@@ -2083,11 +2083,11 @@ def count_of_events_v1(api):
 
 
 @pytest.mark.event_management
-def test_count_of_events_v1(api, validator):
+def test_count_of_events(api, validator):
     try:
-        assert is_valid_count_of_events_v1(
+        assert is_valid_count_of_events(
             validator,
-            count_of_events_v1(api)
+            count_of_events(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -2095,8 +2095,8 @@ def test_count_of_events_v1(api, validator):
             raise original_e
 
 
-def count_of_events_v1_default_val(api):
-    endpoint_result = api.event_management.count_of_events_v1(
+def count_of_events_default_val(api):
+    endpoint_result = api.event_management.count_of_events(
         event_id=None,
         tags=None
     )
@@ -2104,11 +2104,11 @@ def count_of_events_v1_default_val(api):
 
 
 @pytest.mark.event_management
-def test_count_of_events_v1_default_val(api, validator):
+def test_count_of_events_default_val(api, validator):
     try:
-        assert is_valid_count_of_events_v1(
+        assert is_valid_count_of_events(
             validator,
-            count_of_events_v1_default_val(api)
+            count_of_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
@@ -2215,24 +2215,24 @@ def test_eventartifact_count_default_val(api, validator):
             raise original_e
 
 
-def is_valid_get_connector_types_v1(json_schema_validate, obj):
+def is_valid_get_connector_types(json_schema_validate, obj):
     json_schema_validate('jsd_632352b94cfb5af084c1a65d8e51df71_v2_3_7_9').validate(obj)
     return True
 
 
-def get_connector_types_v1(api):
-    endpoint_result = api.event_management.get_connector_types_v1(
+def get_connector_types(api):
+    endpoint_result = api.event_management.get_connector_types(
 
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_get_connector_types_v1(api, validator):
+def test_get_connector_types(api, validator):
     try:
-        assert is_valid_get_connector_types_v1(
+        assert is_valid_get_connector_types(
             validator,
-            get_connector_types_v1(api)
+            get_connector_types(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -2240,19 +2240,19 @@ def test_get_connector_types_v1(api, validator):
             raise original_e
 
 
-def get_connector_types_v1_default_val(api):
-    endpoint_result = api.event_management.get_connector_types_v1(
+def get_connector_types_default_val(api):
+    endpoint_result = api.event_management.get_connector_types(
 
     )
     return endpoint_result
 
 
 @pytest.mark.event_management
-def test_get_connector_types_v1_default_val(api, validator):
+def test_get_connector_types_default_val(api, validator):
     try:
-        assert is_valid_get_connector_types_v1(
+        assert is_valid_get_connector_types(
             validator,
-            get_connector_types_v1_default_val(api)
+            get_connector_types_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

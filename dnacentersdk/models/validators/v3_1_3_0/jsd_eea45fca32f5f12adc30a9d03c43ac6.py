@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center DeploysTheGivenICAPConfigurationIntentWithoutPreviewAndApproveV1 data model.
+"""Cisco DNA Center DeploysTheGivenICAPConfigurationIntentWithoutPreviewAndApprove data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEea45FcA32F5F12Adc30A9D03C43Ac6(object):
-    """DeploysTheGivenICAPConfigurationIntentWithoutPreviewAndApproveV1
+    """DeploysTheGivenICAPConfigurationIntentWithoutPreviewAndApprove
     request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEea45FcA32F5F12Adc30A9D03C43Ac6, self).__init__()

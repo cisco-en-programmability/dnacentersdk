@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateFabricDevicesLayer3HandoffsWithSdaTransitV1 data model.
+"""Cisco DNA Center UpdateFabricDevicesLayer3HandoffsWithSdaTransit data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC90C04B8356Cf9974957E0F9516D0(object):
-    """UpdateFabricDevicesLayer3HandoffsWithSdaTransitV1 request schema
+    """UpdateFabricDevicesLayer3HandoffsWithSdaTransit request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorC90C04B8356Cf9974957E0F9516D0, self).__init__()

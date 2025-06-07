@@ -29,24 +29,24 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
 
 
-def is_valid_get_anc_policies_v1(json_schema_validate, obj):
+def is_valid_get_anc_policies(json_schema_validate, obj):
     json_schema_validate('jsd_c888e4f05d80571483ebe5793f6c44c1_v2_3_7_9').validate(obj)
     return True
 
 
-def get_anc_policies_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_anc_policies_v1(
+def get_anc_policies(api):
+    endpoint_result = api.ai_endpoint_analytics.get_anc_policies(
 
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_anc_policies_v1(api, validator):
+def test_get_anc_policies(api, validator):
     try:
-        assert is_valid_get_anc_policies_v1(
+        assert is_valid_get_anc_policies(
             validator,
-            get_anc_policies_v1(api)
+            get_anc_policies(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -54,32 +54,32 @@ def test_get_anc_policies_v1(api, validator):
             raise original_e
 
 
-def get_anc_policies_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_anc_policies_v1(
+def get_anc_policies_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_anc_policies(
 
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_anc_policies_v1_default_val(api, validator):
+def test_get_anc_policies_default_val(api, validator):
     try:
-        assert is_valid_get_anc_policies_v1(
+        assert is_valid_get_anc_policies(
             validator,
-            get_anc_policies_v1_default_val(api)
+            get_anc_policies_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_process_cmdb_endpoints_v1(json_schema_validate, obj):
+def is_valid_process_cmdb_endpoints(json_schema_validate, obj):
     json_schema_validate('jsd_72aba18f6e605ce28a112b34dcb4fe82_v2_3_7_9').validate(obj)
     return True
 
 
-def process_cmdb_endpoints_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.process_cmdb_endpoints_v1(
+def process_cmdb_endpoints(api):
+    endpoint_result = api.ai_endpoint_analytics.process_cmdb_endpoints(
         active_validation=True,
         payload=None
     )
@@ -87,11 +87,11 @@ def process_cmdb_endpoints_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_process_cmdb_endpoints_v1(api, validator):
+def test_process_cmdb_endpoints(api, validator):
     try:
-        assert is_valid_process_cmdb_endpoints_v1(
+        assert is_valid_process_cmdb_endpoints(
             validator,
-            process_cmdb_endpoints_v1(api)
+            process_cmdb_endpoints(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -99,8 +99,8 @@ def test_process_cmdb_endpoints_v1(api, validator):
             raise original_e
 
 
-def process_cmdb_endpoints_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.process_cmdb_endpoints_v1(
+def process_cmdb_endpoints_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.process_cmdb_endpoints(
         active_validation=True,
         payload=None
     )
@@ -108,35 +108,35 @@ def process_cmdb_endpoints_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_process_cmdb_endpoints_v1_default_val(api, validator):
+def test_process_cmdb_endpoints_default_val(api, validator):
     try:
-        assert is_valid_process_cmdb_endpoints_v1(
+        assert is_valid_process_cmdb_endpoints(
             validator,
-            process_cmdb_endpoints_v1_default_val(api)
+            process_cmdb_endpoints_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_ai_endpoint_analytics_attribute_dictionaries_v1(json_schema_validate, obj):
+def is_valid_get_ai_endpoint_analytics_attribute_dictionaries(json_schema_validate, obj):
     json_schema_validate('jsd_b12a3ca89c475179b182da81bdb64a8a_v2_3_7_9').validate(obj)
     return True
 
 
-def get_ai_endpoint_analytics_attribute_dictionaries_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_ai_endpoint_analytics_attribute_dictionaries_v1(
+def get_ai_endpoint_analytics_attribute_dictionaries(api):
+    endpoint_result = api.ai_endpoint_analytics.get_ai_endpoint_analytics_attribute_dictionaries(
         include_attributes=True
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_ai_endpoint_analytics_attribute_dictionaries_v1(api, validator):
+def test_get_ai_endpoint_analytics_attribute_dictionaries(api, validator):
     try:
-        assert is_valid_get_ai_endpoint_analytics_attribute_dictionaries_v1(
+        assert is_valid_get_ai_endpoint_analytics_attribute_dictionaries(
             validator,
-            get_ai_endpoint_analytics_attribute_dictionaries_v1(api)
+            get_ai_endpoint_analytics_attribute_dictionaries(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -144,32 +144,32 @@ def test_get_ai_endpoint_analytics_attribute_dictionaries_v1(api, validator):
             raise original_e
 
 
-def get_ai_endpoint_analytics_attribute_dictionaries_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_ai_endpoint_analytics_attribute_dictionaries_v1(
+def get_ai_endpoint_analytics_attribute_dictionaries_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_ai_endpoint_analytics_attribute_dictionaries(
         include_attributes=None
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_ai_endpoint_analytics_attribute_dictionaries_v1_default_val(api, validator):
+def test_get_ai_endpoint_analytics_attribute_dictionaries_default_val(api, validator):
     try:
-        assert is_valid_get_ai_endpoint_analytics_attribute_dictionaries_v1(
+        assert is_valid_get_ai_endpoint_analytics_attribute_dictionaries(
             validator,
-            get_ai_endpoint_analytics_attribute_dictionaries_v1_default_val(api)
+            get_ai_endpoint_analytics_attribute_dictionaries_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_register_an_endpoint_v1(json_schema_validate, obj):
+def is_valid_register_an_endpoint(json_schema_validate, obj):
     json_schema_validate('jsd_73b7ae9494b05a57bf6393eaf308b1e7_v2_3_7_9').validate(obj)
     return True
 
 
-def register_an_endpoint_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.register_an_endpoint_v1(
+def register_an_endpoint(api):
+    endpoint_result = api.ai_endpoint_analytics.register_an_endpoint(
         active_validation=True,
         deviceType='string',
         hardwareManufacturer='string',
@@ -181,11 +181,11 @@ def register_an_endpoint_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_register_an_endpoint_v1(api, validator):
+def test_register_an_endpoint(api, validator):
     try:
-        assert is_valid_register_an_endpoint_v1(
+        assert is_valid_register_an_endpoint(
             validator,
-            register_an_endpoint_v1(api)
+            register_an_endpoint(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -193,8 +193,8 @@ def test_register_an_endpoint_v1(api, validator):
             raise original_e
 
 
-def register_an_endpoint_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.register_an_endpoint_v1(
+def register_an_endpoint_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.register_an_endpoint(
         active_validation=True,
         deviceType=None,
         hardwareManufacturer=None,
@@ -206,24 +206,24 @@ def register_an_endpoint_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_register_an_endpoint_v1_default_val(api, validator):
+def test_register_an_endpoint_default_val(api, validator):
     try:
-        assert is_valid_register_an_endpoint_v1(
+        assert is_valid_register_an_endpoint(
             validator,
-            register_an_endpoint_v1_default_val(api)
+            register_an_endpoint_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_query_the_endpoints_v1(json_schema_validate, obj):
+def is_valid_query_the_endpoints(json_schema_validate, obj):
     json_schema_validate('jsd_b4f18988d61253bd8565ce2a22a909ae_v2_3_7_9').validate(obj)
     return True
 
 
-def query_the_endpoints_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.query_the_endpoints_v1(
+def query_the_endpoints(api):
+    endpoint_result = api.ai_endpoint_analytics.query_the_endpoints(
         ai_spoofing_trust_level='string',
         anc_policy='string',
         auth_method='string',
@@ -255,11 +255,11 @@ def query_the_endpoints_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_query_the_endpoints_v1(api, validator):
+def test_query_the_endpoints(api, validator):
     try:
-        assert is_valid_query_the_endpoints_v1(
+        assert is_valid_query_the_endpoints(
             validator,
-            query_the_endpoints_v1(api)
+            query_the_endpoints(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -267,8 +267,8 @@ def test_query_the_endpoints_v1(api, validator):
             raise original_e
 
 
-def query_the_endpoints_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.query_the_endpoints_v1(
+def query_the_endpoints_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.query_the_endpoints(
         ai_spoofing_trust_level=None,
         anc_policy=None,
         auth_method=None,
@@ -300,24 +300,24 @@ def query_the_endpoints_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_query_the_endpoints_v1_default_val(api, validator):
+def test_query_the_endpoints_default_val(api, validator):
     try:
-        assert is_valid_query_the_endpoints_v1(
+        assert is_valid_query_the_endpoints(
             validator,
-            query_the_endpoints_v1_default_val(api)
+            query_the_endpoints_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_fetch_the_count_of_endpoints_v1(json_schema_validate, obj):
+def is_valid_fetch_the_count_of_endpoints(json_schema_validate, obj):
     json_schema_validate('jsd_1fab7e4bf248589894a0ad79c4f0940f_v2_3_7_9').validate(obj)
     return True
 
 
-def fetch_the_count_of_endpoints_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.fetch_the_count_of_endpoints_v1(
+def fetch_the_count_of_endpoints(api):
+    endpoint_result = api.ai_endpoint_analytics.fetch_the_count_of_endpoints(
         ai_spoofing_trust_level='string',
         anc_policy='string',
         auth_method='string',
@@ -344,11 +344,11 @@ def fetch_the_count_of_endpoints_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_fetch_the_count_of_endpoints_v1(api, validator):
+def test_fetch_the_count_of_endpoints(api, validator):
     try:
-        assert is_valid_fetch_the_count_of_endpoints_v1(
+        assert is_valid_fetch_the_count_of_endpoints(
             validator,
-            fetch_the_count_of_endpoints_v1(api)
+            fetch_the_count_of_endpoints(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -356,8 +356,8 @@ def test_fetch_the_count_of_endpoints_v1(api, validator):
             raise original_e
 
 
-def fetch_the_count_of_endpoints_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.fetch_the_count_of_endpoints_v1(
+def fetch_the_count_of_endpoints_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.fetch_the_count_of_endpoints(
         ai_spoofing_trust_level=None,
         anc_policy=None,
         auth_method=None,
@@ -384,24 +384,24 @@ def fetch_the_count_of_endpoints_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_fetch_the_count_of_endpoints_v1_default_val(api, validator):
+def test_fetch_the_count_of_endpoints_default_val(api, validator):
     try:
-        assert is_valid_fetch_the_count_of_endpoints_v1(
+        assert is_valid_fetch_the_count_of_endpoints(
             validator,
-            fetch_the_count_of_endpoints_v1_default_val(api)
+            fetch_the_count_of_endpoints_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_a_registered_endpoint_v1(json_schema_validate, obj):
+def is_valid_update_a_registered_endpoint(json_schema_validate, obj):
     json_schema_validate('jsd_15645b107800544384c1ddad7b60c237_v2_3_7_9').validate(obj)
     return True
 
 
-def update_a_registered_endpoint_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.update_a_registered_endpoint_v1(
+def update_a_registered_endpoint(api):
+    endpoint_result = api.ai_endpoint_analytics.update_a_registered_endpoint(
         active_validation=True,
         deviceType='string',
         ep_id='string',
@@ -413,11 +413,11 @@ def update_a_registered_endpoint_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_update_a_registered_endpoint_v1(api, validator):
+def test_update_a_registered_endpoint(api, validator):
     try:
-        assert is_valid_update_a_registered_endpoint_v1(
+        assert is_valid_update_a_registered_endpoint(
             validator,
-            update_a_registered_endpoint_v1(api)
+            update_a_registered_endpoint(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -425,8 +425,8 @@ def test_update_a_registered_endpoint_v1(api, validator):
             raise original_e
 
 
-def update_a_registered_endpoint_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.update_a_registered_endpoint_v1(
+def update_a_registered_endpoint_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.update_a_registered_endpoint(
         active_validation=True,
         deviceType=None,
         ep_id='string',
@@ -438,24 +438,24 @@ def update_a_registered_endpoint_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_update_a_registered_endpoint_v1_default_val(api, validator):
+def test_update_a_registered_endpoint_default_val(api, validator):
     try:
-        assert is_valid_update_a_registered_endpoint_v1(
+        assert is_valid_update_a_registered_endpoint(
             validator,
-            update_a_registered_endpoint_v1_default_val(api)
+            update_a_registered_endpoint_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_endpoint_details_v1(json_schema_validate, obj):
+def is_valid_get_endpoint_details(json_schema_validate, obj):
     json_schema_validate('jsd_cde73293a8235ed8ae4cfe5f6717bff1_v2_3_7_9').validate(obj)
     return True
 
 
-def get_endpoint_details_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_endpoint_details_v1(
+def get_endpoint_details(api):
+    endpoint_result = api.ai_endpoint_analytics.get_endpoint_details(
         ep_id='string',
         include='string'
     )
@@ -463,11 +463,11 @@ def get_endpoint_details_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_endpoint_details_v1(api, validator):
+def test_get_endpoint_details(api, validator):
     try:
-        assert is_valid_get_endpoint_details_v1(
+        assert is_valid_get_endpoint_details(
             validator,
-            get_endpoint_details_v1(api)
+            get_endpoint_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -475,8 +475,8 @@ def test_get_endpoint_details_v1(api, validator):
             raise original_e
 
 
-def get_endpoint_details_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_endpoint_details_v1(
+def get_endpoint_details_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_endpoint_details(
         ep_id='string',
         include=None
     )
@@ -484,35 +484,35 @@ def get_endpoint_details_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_endpoint_details_v1_default_val(api, validator):
+def test_get_endpoint_details_default_val(api, validator):
     try:
-        assert is_valid_get_endpoint_details_v1(
+        assert is_valid_get_endpoint_details(
             validator,
-            get_endpoint_details_v1_default_val(api)
+            get_endpoint_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_an_endpoint_v1(json_schema_validate, obj):
+def is_valid_delete_an_endpoint(json_schema_validate, obj):
     json_schema_validate('jsd_d82c78cf10395b2baba3b51fd8370a14_v2_3_7_9').validate(obj)
     return True
 
 
-def delete_an_endpoint_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.delete_an_endpoint_v1(
+def delete_an_endpoint(api):
+    endpoint_result = api.ai_endpoint_analytics.delete_an_endpoint(
         ep_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_delete_an_endpoint_v1(api, validator):
+def test_delete_an_endpoint(api, validator):
     try:
-        assert is_valid_delete_an_endpoint_v1(
+        assert is_valid_delete_an_endpoint(
             validator,
-            delete_an_endpoint_v1(api)
+            delete_an_endpoint(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -520,32 +520,32 @@ def test_delete_an_endpoint_v1(api, validator):
             raise original_e
 
 
-def delete_an_endpoint_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.delete_an_endpoint_v1(
+def delete_an_endpoint_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.delete_an_endpoint(
         ep_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_delete_an_endpoint_v1_default_val(api, validator):
+def test_delete_an_endpoint_default_val(api, validator):
     try:
-        assert is_valid_delete_an_endpoint_v1(
+        assert is_valid_delete_an_endpoint(
             validator,
-            delete_an_endpoint_v1_default_val(api)
+            delete_an_endpoint_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_apply_anc_policy_v1(json_schema_validate, obj):
+def is_valid_apply_anc_policy(json_schema_validate, obj):
     json_schema_validate('jsd_3de92f8ae3c15ea0bad5562452eb5c40_v2_3_7_9').validate(obj)
     return True
 
 
-def apply_anc_policy_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.apply_anc_policy_v1(
+def apply_anc_policy(api):
+    endpoint_result = api.ai_endpoint_analytics.apply_anc_policy(
         active_validation=True,
         ancPolicy='string',
         ep_id='string',
@@ -556,11 +556,11 @@ def apply_anc_policy_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_apply_anc_policy_v1(api, validator):
+def test_apply_anc_policy(api, validator):
     try:
-        assert is_valid_apply_anc_policy_v1(
+        assert is_valid_apply_anc_policy(
             validator,
-            apply_anc_policy_v1(api)
+            apply_anc_policy(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -568,8 +568,8 @@ def test_apply_anc_policy_v1(api, validator):
             raise original_e
 
 
-def apply_anc_policy_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.apply_anc_policy_v1(
+def apply_anc_policy_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.apply_anc_policy(
         active_validation=True,
         ancPolicy=None,
         ep_id='string',
@@ -580,35 +580,35 @@ def apply_anc_policy_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_apply_anc_policy_v1_default_val(api, validator):
+def test_apply_anc_policy_default_val(api, validator):
     try:
-        assert is_valid_apply_anc_policy_v1(
+        assert is_valid_apply_anc_policy(
             validator,
-            apply_anc_policy_v1_default_val(api)
+            apply_anc_policy_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_revoke_anc_policy_v1(json_schema_validate, obj):
+def is_valid_revoke_anc_policy(json_schema_validate, obj):
     json_schema_validate('jsd_f136ac6d3b145d35922c4ba15ccb941a_v2_3_7_9').validate(obj)
     return True
 
 
-def revoke_anc_policy_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.revoke_anc_policy_v1(
+def revoke_anc_policy(api):
+    endpoint_result = api.ai_endpoint_analytics.revoke_anc_policy(
         ep_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_revoke_anc_policy_v1(api, validator):
+def test_revoke_anc_policy(api, validator):
     try:
-        assert is_valid_revoke_anc_policy_v1(
+        assert is_valid_revoke_anc_policy(
             validator,
-            revoke_anc_policy_v1(api)
+            revoke_anc_policy(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -616,32 +616,32 @@ def test_revoke_anc_policy_v1(api, validator):
             raise original_e
 
 
-def revoke_anc_policy_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.revoke_anc_policy_v1(
+def revoke_anc_policy_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.revoke_anc_policy(
         ep_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_revoke_anc_policy_v1_default_val(api, validator):
+def test_revoke_anc_policy_default_val(api, validator):
     try:
-        assert is_valid_revoke_anc_policy_v1(
+        assert is_valid_revoke_anc_policy(
             validator,
-            revoke_anc_policy_v1_default_val(api)
+            revoke_anc_policy_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_create_a_profiling_rule_v1(json_schema_validate, obj):
+def is_valid_create_a_profiling_rule(json_schema_validate, obj):
     json_schema_validate('jsd_2194bf80823752baba63a8849fd521cd_v2_3_7_9').validate(obj)
     return True
 
 
-def create_a_profiling_rule_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.create_a_profiling_rule_v1(
+def create_a_profiling_rule(api):
+    endpoint_result = api.ai_endpoint_analytics.create_a_profiling_rule(
         active_validation=True,
         clusterId='string',
         conditionGroups={'type': 'string', 'condition': {'attribute': 'string', 'operator': 'string', 'value': 'string', 'attributeDictionary': 'string'}, 'operator': 'string', 'conditionGroup': [{}]},
@@ -664,11 +664,11 @@ def create_a_profiling_rule_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_create_a_profiling_rule_v1(api, validator):
+def test_create_a_profiling_rule(api, validator):
     try:
-        assert is_valid_create_a_profiling_rule_v1(
+        assert is_valid_create_a_profiling_rule(
             validator,
-            create_a_profiling_rule_v1(api)
+            create_a_profiling_rule(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -676,8 +676,8 @@ def test_create_a_profiling_rule_v1(api, validator):
             raise original_e
 
 
-def create_a_profiling_rule_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.create_a_profiling_rule_v1(
+def create_a_profiling_rule_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.create_a_profiling_rule(
         active_validation=True,
         clusterId=None,
         conditionGroups=None,
@@ -700,24 +700,24 @@ def create_a_profiling_rule_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_create_a_profiling_rule_v1_default_val(api, validator):
+def test_create_a_profiling_rule_default_val(api, validator):
     try:
-        assert is_valid_create_a_profiling_rule_v1(
+        assert is_valid_create_a_profiling_rule(
             validator,
-            create_a_profiling_rule_v1_default_val(api)
+            create_a_profiling_rule_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_list_of_profiling_rules_v1(json_schema_validate, obj):
+def is_valid_get_list_of_profiling_rules(json_schema_validate, obj):
     json_schema_validate('jsd_a4571194a9e05664ad348f72d7651bb0_v2_3_7_9').validate(obj)
     return True
 
 
-def get_list_of_profiling_rules_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_list_of_profiling_rules_v1(
+def get_list_of_profiling_rules(api):
+    endpoint_result = api.ai_endpoint_analytics.get_list_of_profiling_rules(
         include_deleted=True,
         limit=0,
         offset=0,
@@ -729,11 +729,11 @@ def get_list_of_profiling_rules_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_list_of_profiling_rules_v1(api, validator):
+def test_get_list_of_profiling_rules(api, validator):
     try:
-        assert is_valid_get_list_of_profiling_rules_v1(
+        assert is_valid_get_list_of_profiling_rules(
             validator,
-            get_list_of_profiling_rules_v1(api)
+            get_list_of_profiling_rules(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -741,8 +741,8 @@ def test_get_list_of_profiling_rules_v1(api, validator):
             raise original_e
 
 
-def get_list_of_profiling_rules_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_list_of_profiling_rules_v1(
+def get_list_of_profiling_rules_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_list_of_profiling_rules(
         include_deleted=None,
         limit=None,
         offset=None,
@@ -754,24 +754,24 @@ def get_list_of_profiling_rules_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_list_of_profiling_rules_v1_default_val(api, validator):
+def test_get_list_of_profiling_rules_default_val(api, validator):
     try:
-        assert is_valid_get_list_of_profiling_rules_v1(
+        assert is_valid_get_list_of_profiling_rules(
             validator,
-            get_list_of_profiling_rules_v1_default_val(api)
+            get_list_of_profiling_rules_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_import_profiling_rules_in_bulk_v1(json_schema_validate, obj):
+def is_valid_import_profiling_rules_in_bulk(json_schema_validate, obj):
     json_schema_validate('jsd_90347931b4155d6f885a53ad0e47b1a4_v2_3_7_9').validate(obj)
     return True
 
 
-def import_profiling_rules_in_bulk_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.import_profiling_rules_in_bulk_v1(
+def import_profiling_rules_in_bulk(api):
+    endpoint_result = api.ai_endpoint_analytics.import_profiling_rules_in_bulk(
         active_validation=True,
         payload=None,
         profilingRules=[{'ruleId': 'string', 'ruleName': 'string', 'ruleType': 'string', 'ruleVersion': 0, 'rulePriority': 0, 'sourcePriority': 0, 'isDeleted': True, 'lastModifiedBy': 'string', 'lastModifiedOn': 0, 'pluginId': 'string', 'clusterId': 'string', 'rejected': True, 'result': {'deviceType': ['string'], 'hardwareManufacturer': ['string'], 'hardwareModel': ['string'], 'operatingSystem': ['string']}, 'conditionGroups': {'type': 'string', 'condition': {'attribute': 'string', 'operator': 'string', 'value': 'string', 'attributeDictionary': 'string'}, 'operator': 'string', 'conditionGroup': [{}]}, 'usedAttributes': ['string']}]
@@ -780,11 +780,11 @@ def import_profiling_rules_in_bulk_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_import_profiling_rules_in_bulk_v1(api, validator):
+def test_import_profiling_rules_in_bulk(api, validator):
     try:
-        assert is_valid_import_profiling_rules_in_bulk_v1(
+        assert is_valid_import_profiling_rules_in_bulk(
             validator,
-            import_profiling_rules_in_bulk_v1(api)
+            import_profiling_rules_in_bulk(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -792,8 +792,8 @@ def test_import_profiling_rules_in_bulk_v1(api, validator):
             raise original_e
 
 
-def import_profiling_rules_in_bulk_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.import_profiling_rules_in_bulk_v1(
+def import_profiling_rules_in_bulk_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.import_profiling_rules_in_bulk(
         active_validation=True,
         payload=None,
         profilingRules=None
@@ -802,24 +802,24 @@ def import_profiling_rules_in_bulk_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_import_profiling_rules_in_bulk_v1_default_val(api, validator):
+def test_import_profiling_rules_in_bulk_default_val(api, validator):
     try:
-        assert is_valid_import_profiling_rules_in_bulk_v1(
+        assert is_valid_import_profiling_rules_in_bulk(
             validator,
-            import_profiling_rules_in_bulk_v1_default_val(api)
+            import_profiling_rules_in_bulk_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_count_of_profiling_rules_v1(json_schema_validate, obj):
+def is_valid_get_count_of_profiling_rules(json_schema_validate, obj):
     json_schema_validate('jsd_2ec43ed2e44c5f3ea7a904d39af66899_v2_3_7_9').validate(obj)
     return True
 
 
-def get_count_of_profiling_rules_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_count_of_profiling_rules_v1(
+def get_count_of_profiling_rules(api):
+    endpoint_result = api.ai_endpoint_analytics.get_count_of_profiling_rules(
         include_deleted=True,
         rule_type='string'
     )
@@ -827,11 +827,11 @@ def get_count_of_profiling_rules_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_count_of_profiling_rules_v1(api, validator):
+def test_get_count_of_profiling_rules(api, validator):
     try:
-        assert is_valid_get_count_of_profiling_rules_v1(
+        assert is_valid_get_count_of_profiling_rules(
             validator,
-            get_count_of_profiling_rules_v1(api)
+            get_count_of_profiling_rules(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -839,8 +839,8 @@ def test_get_count_of_profiling_rules_v1(api, validator):
             raise original_e
 
 
-def get_count_of_profiling_rules_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_count_of_profiling_rules_v1(
+def get_count_of_profiling_rules_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_count_of_profiling_rules(
         include_deleted=None,
         rule_type=None
     )
@@ -848,24 +848,24 @@ def get_count_of_profiling_rules_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_count_of_profiling_rules_v1_default_val(api, validator):
+def test_get_count_of_profiling_rules_default_val(api, validator):
     try:
-        assert is_valid_get_count_of_profiling_rules_v1(
+        assert is_valid_get_count_of_profiling_rules(
             validator,
-            get_count_of_profiling_rules_v1_default_val(api)
+            get_count_of_profiling_rules_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_update_an_existing_profiling_rule_v1(json_schema_validate, obj):
+def is_valid_update_an_existing_profiling_rule(json_schema_validate, obj):
     json_schema_validate('jsd_1508a4dab79d54829548004029a91ba1_v2_3_7_9').validate(obj)
     return True
 
 
-def update_an_existing_profiling_rule_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.update_an_existing_profiling_rule_v1(
+def update_an_existing_profiling_rule(api):
+    endpoint_result = api.ai_endpoint_analytics.update_an_existing_profiling_rule(
         active_validation=True,
         clusterId='string',
         conditionGroups={'type': 'string', 'condition': {'attribute': 'string', 'operator': 'string', 'value': 'string', 'attributeDictionary': 'string'}, 'operator': 'string', 'conditionGroup': [{}]},
@@ -889,11 +889,11 @@ def update_an_existing_profiling_rule_v1(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_update_an_existing_profiling_rule_v1(api, validator):
+def test_update_an_existing_profiling_rule(api, validator):
     try:
-        assert is_valid_update_an_existing_profiling_rule_v1(
+        assert is_valid_update_an_existing_profiling_rule(
             validator,
-            update_an_existing_profiling_rule_v1(api)
+            update_an_existing_profiling_rule(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -901,8 +901,8 @@ def test_update_an_existing_profiling_rule_v1(api, validator):
             raise original_e
 
 
-def update_an_existing_profiling_rule_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.update_an_existing_profiling_rule_v1(
+def update_an_existing_profiling_rule_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.update_an_existing_profiling_rule(
         active_validation=True,
         clusterId=None,
         conditionGroups=None,
@@ -926,35 +926,35 @@ def update_an_existing_profiling_rule_v1_default_val(api):
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_update_an_existing_profiling_rule_v1_default_val(api, validator):
+def test_update_an_existing_profiling_rule_default_val(api, validator):
     try:
-        assert is_valid_update_an_existing_profiling_rule_v1(
+        assert is_valid_update_an_existing_profiling_rule(
             validator,
-            update_an_existing_profiling_rule_v1_default_val(api)
+            update_an_existing_profiling_rule_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_details_of_a_single_profiling_rule_v1(json_schema_validate, obj):
+def is_valid_get_details_of_a_single_profiling_rule(json_schema_validate, obj):
     json_schema_validate('jsd_fbea90831e6e57e79062edab0c76f8a1_v2_3_7_9').validate(obj)
     return True
 
 
-def get_details_of_a_single_profiling_rule_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_details_of_a_single_profiling_rule_v1(
+def get_details_of_a_single_profiling_rule(api):
+    endpoint_result = api.ai_endpoint_analytics.get_details_of_a_single_profiling_rule(
         rule_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_details_of_a_single_profiling_rule_v1(api, validator):
+def test_get_details_of_a_single_profiling_rule(api, validator):
     try:
-        assert is_valid_get_details_of_a_single_profiling_rule_v1(
+        assert is_valid_get_details_of_a_single_profiling_rule(
             validator,
-            get_details_of_a_single_profiling_rule_v1(api)
+            get_details_of_a_single_profiling_rule(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -962,43 +962,43 @@ def test_get_details_of_a_single_profiling_rule_v1(api, validator):
             raise original_e
 
 
-def get_details_of_a_single_profiling_rule_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_details_of_a_single_profiling_rule_v1(
+def get_details_of_a_single_profiling_rule_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_details_of_a_single_profiling_rule(
         rule_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_details_of_a_single_profiling_rule_v1_default_val(api, validator):
+def test_get_details_of_a_single_profiling_rule_default_val(api, validator):
     try:
-        assert is_valid_get_details_of_a_single_profiling_rule_v1(
+        assert is_valid_get_details_of_a_single_profiling_rule(
             validator,
-            get_details_of_a_single_profiling_rule_v1_default_val(api)
+            get_details_of_a_single_profiling_rule_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_delete_an_existing_profiling_rule_v1(json_schema_validate, obj):
+def is_valid_delete_an_existing_profiling_rule(json_schema_validate, obj):
     json_schema_validate('jsd_3a3f7b6780725e83beed53d6ce2256e4_v2_3_7_9').validate(obj)
     return True
 
 
-def delete_an_existing_profiling_rule_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.delete_an_existing_profiling_rule_v1(
+def delete_an_existing_profiling_rule(api):
+    endpoint_result = api.ai_endpoint_analytics.delete_an_existing_profiling_rule(
         rule_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_delete_an_existing_profiling_rule_v1(api, validator):
+def test_delete_an_existing_profiling_rule(api, validator):
     try:
-        assert is_valid_delete_an_existing_profiling_rule_v1(
+        assert is_valid_delete_an_existing_profiling_rule(
             validator,
-            delete_an_existing_profiling_rule_v1(api)
+            delete_an_existing_profiling_rule(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1006,43 +1006,43 @@ def test_delete_an_existing_profiling_rule_v1(api, validator):
             raise original_e
 
 
-def delete_an_existing_profiling_rule_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.delete_an_existing_profiling_rule_v1(
+def delete_an_existing_profiling_rule_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.delete_an_existing_profiling_rule(
         rule_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_delete_an_existing_profiling_rule_v1_default_val(api, validator):
+def test_delete_an_existing_profiling_rule_default_val(api, validator):
     try:
-        assert is_valid_delete_an_existing_profiling_rule_v1(
+        assert is_valid_delete_an_existing_profiling_rule(
             validator,
-            delete_an_existing_profiling_rule_v1_default_val(api)
+            delete_an_existing_profiling_rule_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_task_details_v1(json_schema_validate, obj):
+def is_valid_get_task_details(json_schema_validate, obj):
     json_schema_validate('jsd_682a0d1d05fe582aa287acb470e3af1d_v2_3_7_9').validate(obj)
     return True
 
 
-def get_task_details_v1(api):
-    endpoint_result = api.ai_endpoint_analytics.get_task_details_v1(
+def get_task_details(api):
+    endpoint_result = api.ai_endpoint_analytics.get_task_details(
         task_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_task_details_v1(api, validator):
+def test_get_task_details(api, validator):
     try:
-        assert is_valid_get_task_details_v1(
+        assert is_valid_get_task_details(
             validator,
-            get_task_details_v1(api)
+            get_task_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -1050,19 +1050,19 @@ def test_get_task_details_v1(api, validator):
             raise original_e
 
 
-def get_task_details_v1_default_val(api):
-    endpoint_result = api.ai_endpoint_analytics.get_task_details_v1(
+def get_task_details_default_val(api):
+    endpoint_result = api.ai_endpoint_analytics.get_task_details(
         task_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.ai_endpoint_analytics
-def test_get_task_details_v1_default_val(api, validator):
+def test_get_task_details_default_val(api, validator):
     try:
-        assert is_valid_get_task_details_v1(
+        assert is_valid_get_task_details(
             validator,
-            get_task_details_v1_default_val(api)
+            get_task_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

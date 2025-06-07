@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateFabricDevicesV1 data model.
+"""Cisco DNA Center UpdateFabricDevices data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA924F763A15125A8D5Beaa6Dd6Fa2C(object):
-    """UpdateFabricDevicesV1 request schema definition."""
+    """UpdateFabricDevices request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA924F763A15125A8D5Beaa6Dd6Fa2C, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

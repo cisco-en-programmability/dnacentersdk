@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateAPProfileV1 data model.
+"""Cisco DNA Center CreateAPProfile data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA0F799D5Ec6954D1Bd7A25853080A9F1(object):
-    """CreateAPProfileV1 request schema definition."""
+    """CreateAPProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA0F799D5Ec6954D1Bd7A25853080A9F1, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

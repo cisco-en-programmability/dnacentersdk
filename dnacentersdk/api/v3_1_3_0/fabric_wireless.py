@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,15 +65,15 @@ class FabricWireless(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def add_ssid_to_ip_pool_mapping_v1(self,
-                                       scalableGroupName=None,
-                                       siteNameHierarchy=None,
-                                       ssidNames=None,
-                                       vlanName=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def add_ssid_to_ip_pool_mapping(self,
+                                    scalableGroupName=None,
+                                    siteNameHierarchy=None,
+                                    ssidNames=None,
+                                    vlanName=None,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
         """Add SSID to IP Pool Mapping .
 
         Args:
@@ -151,15 +150,15 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_ad96e712f4525a128368b1bfe3afc21c_v3_1_3_0', json_data)
 
-    def update_ssid_to_ip_pool_mapping_v1(self,
-                                          scalableGroupName=None,
-                                          siteNameHierarchy=None,
-                                          ssidNames=None,
-                                          vlanName=None,
-                                          headers=None,
-                                          payload=None,
-                                          active_validation=True,
-                                          **request_parameters):
+    def update_ssid_to_ip_pool_mapping(self,
+                                       scalableGroupName=None,
+                                       siteNameHierarchy=None,
+                                       ssidNames=None,
+                                       vlanName=None,
+                                       headers=None,
+                                       payload=None,
+                                       active_validation=True,
+                                       **request_parameters):
         """Update SSID to IP Pool Mapping .
 
         Args:
@@ -236,11 +235,11 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_f90ae8599c8a21c98b7a1ca804_v3_1_3_0', json_data)
 
-    def get_ssid_to_ip_pool_mapping_v1(self,
-                                       site_name_hierarchy,
-                                       vlan_name,
-                                       headers=None,
-                                       **request_parameters):
+    def get_ssid_to_ip_pool_mapping(self,
+                                    site_name_hierarchy,
+                                    vlan_name,
+                                    headers=None,
+                                    **request_parameters):
         """Get SSID to IP Pool Mapping .
 
         Args:
@@ -301,10 +300,10 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_b0f6a0410705c75a61cdc51cc96c53f_v3_1_3_0', json_data)
 
-    def remove_w_l_c_from_fabric_domain_v1(self,
-                                           device_ipaddress,
-                                           headers=None,
-                                           **request_parameters):
+    def remove_w_l_c_from_fabric_domain(self,
+                                        device_ipaddress,
+                                        headers=None,
+                                        **request_parameters):
         """Remove WLC from Fabric Domain .
 
         Args:
@@ -362,13 +361,13 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_bb706025a9cb183ce7a60e0b5df_v3_1_3_0', json_data)
 
-    def add_w_l_c_to_fabric_domain_v1(self,
-                                      deviceName=None,
-                                      siteNameHierarchy=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def add_w_l_c_to_fabric_domain(self,
+                                   deviceName=None,
+                                   siteNameHierarchy=None,
+                                   headers=None,
+                                   payload=None,
+                                   active_validation=True,
+                                   **request_parameters):
         """Add WLC to Fabric Domain .
 
         Args:
@@ -438,11 +437,11 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_c4befbd77a452a9b7873ffc360a1f20_v3_1_3_0', json_data)
 
-    def returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_v1(self,
-                                                                       limit=None,
-                                                                       offset=None,
-                                                                       headers=None,
-                                                                       **request_parameters):
+    def returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(self,
+                                                                    limit=None,
+                                                                    offset=None,
+                                                                    headers=None,
+                                                                    **request_parameters):
         """It will return all vlan to SSID mapping across all the fabric site .
 
         Args:
@@ -501,9 +500,9 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_fea6e17769f5b3eb5ee1696254d2973_v3_1_3_0', json_data)
 
-    def return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_v1(self,
-                                                                                     headers=None,
-                                                                                     **request_parameters):
+    def return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(self,
+                                                                                  headers=None,
+                                                                                  **request_parameters):
         """Return the count of all the fabric site which has SSID to IP Pool mapping .
 
         Args:
@@ -553,15 +552,15 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_be3f285e21b59701a1af044b28_v3_1_3_0', json_data)
 
-    def switch_wireless_setting_and_rolling_ap_upgrade_management_v1(self,
-                                                                     fabric_id,
-                                                                     enableWireless=None,
-                                                                     id=None,
-                                                                     rollingApUpgrade=None,
-                                                                     headers=None,
-                                                                     payload=None,
-                                                                     active_validation=True,
-                                                                     **request_parameters):
+    def switch_wireless_setting_and_rolling_ap_upgrade_management(self,
+                                                                  fabric_id,
+                                                                  enableWireless=None,
+                                                                  id=None,
+                                                                  rollingApUpgrade=None,
+                                                                  headers=None,
+                                                                  payload=None,
+                                                                  active_validation=True,
+                                                                  **request_parameters):
         """This API is used to enable or disable wireless capabilities on switch devices, along with configuring rolling AP
         upgrades on the fabric site. Reboot action is required to remove wireless configurations. .
 
@@ -569,9 +568,9 @@ class FabricWireless(object):
             enableWireless(boolean): Fabric Wireless's Enable Wireless.
             id(string): Fabric Wireless's Network Device ID of the wireless capable switch .
             rollingApUpgrade(object): Fabric Wireless's rollingApUpgrade.
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site. The 'fabricId' can be obtained using the api
-                /dna/intent/api/v1/sda/fabricSites.  Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular Fabric
+                Site. The 'fabricId' can be obtained using the api /dna/intent/api/v1/sda/fabricSites.
+                Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -642,17 +641,17 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_e5e51bcda0b5fec984ba8120f743fe2_v3_1_3_0', json_data)
 
-    def get_sda_wireless_details_from_switches_v1(self,
-                                                  fabric_id,
-                                                  headers=None,
-                                                  **request_parameters):
+    def get_sda_wireless_details_from_switches(self,
+                                               fabric_id,
+                                               headers=None,
+                                               **request_parameters):
         """Get the SDA Wireless details from the switches on the fabric site that have wireless capability enabled. A
         maximum of two switches can have a wireless role in a fabric site. .
 
         Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site. The 'fabricId' can be obtained using the api
-                /dna/intent/api/v1/sda/fabricSites.  Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular Fabric
+                Site. The 'fabricId' can be obtained using the api /dna/intent/api/v1/sda/fabricSites.
+                Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -703,13 +702,13 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_e33e204167d5408a6785177727f40c9_v3_1_3_0', json_data)
 
-    def reload_switch_for_wireless_controller_cleanup_v1(self,
-                                                         fabric_id,
-                                                         deviceId=None,
-                                                         headers=None,
-                                                         payload=None,
-                                                         active_validation=True,
-                                                         **request_parameters):
+    def reload_switch_for_wireless_controller_cleanup(self,
+                                                      fabric_id,
+                                                      deviceId=None,
+                                                      headers=None,
+                                                      payload=None,
+                                                      active_validation=True,
+                                                      **request_parameters):
         """This API is used to reload switches after disabling wireless to remove the wireless-controller configuration on
         the device. When wireless is disabled on a switch, all wireless configurations are removed except for
         the wireless-controller configuration. To completely remove the wireless-controller configuration, you
@@ -720,9 +719,9 @@ class FabricWireless(object):
 
         Args:
             deviceId(string): Fabric Wireless's Network Device ID .
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site. The 'fabricId' can be obtained using the api
-                /dna/intent/api/v1/sda/fabricSites.  Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular Fabric
+                Site. The 'fabricId' can be obtained using the api /dna/intent/api/v1/sda/fabricSites.
+                Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -789,12 +788,12 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_cdf8c0d3866d5147901c0cf4821a84a7_v3_1_3_0', json_data)
 
-    def add_update_or_remove_ssid_mapping_to_a_vlan_v1(self,
-                                                       fabric_id,
-                                                       headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
-                                                       **request_parameters):
+    def add_update_or_remove_ssid_mapping_to_a_vlan(self,
+                                                    fabric_id,
+                                                    headers=None,
+                                                    payload=None,
+                                                    active_validation=True,
+                                                    **request_parameters):
         """Add, update, or remove SSID mappings to a VLAN. If the payload doesn't contain a 'vlanName' which has SSIDs
         mapping done earlier then all the mapped SSIDs of the 'vlanName' is cleared. The request must include
         all SSIDs currently mapped to a VLAN, as determined by the response from the GET operation for the same
@@ -805,8 +804,8 @@ class FabricWireless(object):
         Fabric Site representing 'Fabric ID' specified in the API request. .
 
         Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site .
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular Fabric
+                Site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(list): A JSON serializable Python object to send in the
@@ -870,18 +869,18 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_a3d2432ae8c55fe793c5180d8d5fce25_v3_1_3_0', json_data)
 
-    def retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_v1(self,
-                                                                                fabric_id,
-                                                                                limit=None,
-                                                                                offset=None,
-                                                                                headers=None,
-                                                                                **request_parameters):
+    def retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(self,
+                                                                             fabric_id,
+                                                                             limit=None,
+                                                                             offset=None,
+                                                                             headers=None,
+                                                                             **request_parameters):
         """Retrieve the VLANs and SSIDs mapped to the VLAN, within a Fabric Site. The 'fabricId' represents the Fabric ID
         of a particular Fabric Site. .
 
         Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site .
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular Fabric
+                Site .
             limit(int): limit query parameter. The number of records to show for this page. Default is 500 if not
                 specified. Maximum allowed limit is 500. .
             offset(int): offset query parameter. The first record to show for this page; the first record is
@@ -941,16 +940,16 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_a18f012c54a5d34aef05d651f2dea18_v3_1_3_0', json_data)
 
-    def returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_v1(self,
-                                                                       fabric_id,
-                                                                       headers=None,
-                                                                       **request_parameters):
+    def returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(self,
+                                                                    fabric_id,
+                                                                    headers=None,
+                                                                    **request_parameters):
         """Returns the count of VLANs mapped to SSIDs in a Fabric Site. The 'fabricId' represents the Fabric ID of a
         particular Fabric Site. .
 
         Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site .
+            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular Fabric
+                Site .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1004,13 +1003,13 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_ed14be6211da53ab832acf9b5aea599c_v3_1_3_0', json_data)
 
-    def update_sda_wireless_multicast_v1(self,
-                                         fabric_id,
-                                         multicastEnabled=None,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def update_sda_wireless_multicast(self,
+                                      fabric_id,
+                                      multicastEnabled=None,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
         """Updates the Software-Defined Access (SDA) Wireless Multicast setting for a specified fabric site. This API
         allows you to enable or disable the multicast feature. For optimal performance, ensure wired multicast
         is also enabled. .
@@ -1086,10 +1085,10 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_a2be6dde4c587389e79d6cb84e54a6_v3_1_3_0', json_data)
 
-    def get_sda_wireless_multicast_v1(self,
-                                      fabric_id,
-                                      headers=None,
-                                      **request_parameters):
+    def get_sda_wireless_multicast(self,
+                                   fabric_id,
+                                   headers=None,
+                                   **request_parameters):
         """Retrieves the current Software-Defined Access (SDA) Wireless Multicast setting for a specified fabric site. The
         setting indicates whether multicast is enabled (true) or disabled (false). For optimal performance,
         ensure wired multicast is also enabled. .
@@ -1148,466 +1147,5 @@ class FabricWireless(object):
 
         return self._object_factory('bpm_fa08fad71522eb877d2356b584f7d_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def remove_w_l_c_from_fabric_domain(self,
-                                           device_ipaddress,
-                                           headers=None,
-                                           **request_parameters):
-        """ This function is an alias of remove_w_l_c_from_fabric_domain_v1 .
-        Args:
-            device_ipaddress(str): deviceIPAddress query parameter. Device Management IP Address .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of remove_w_l_c_from_fabric_domain_v1 .
-        """
-        return self.remove_w_l_c_from_fabric_domain_v1(
-                    device_ipaddress=device_ipaddress,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping(self,
-                                                                       limit=None,
-                                                                       offset=None,
-                                                                       headers=None,
-                                                                       **request_parameters):
-        """ This function is an alias of returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_v1 .
-        Args:
-            limit(int): limit query parameter. Return only this many IP Pool to SSID Mapping. Default is 500 if not
-                specified. Maximum allowed limit is 500. .
-            offset(int): offset query parameter. Number of records to skip for pagination .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_v1 .
-        """
-        return self.returns_all_the_fabric_sites_that_have_vlan_to_ssid_mapping_v1(
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def update_sda_wireless_multicast(self,
-                                         fabric_id,
-                                         multicastEnabled=None,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
-        """ This function is an alias of update_sda_wireless_multicast_v1 .
-        Args:
-            multicastEnabled(boolean): Fabric Wireless's Multicast Enabled.
-            fabric_id(str): fabricId path parameter. The unique identifier of the fabric site for which the
-                multicast setting is being requested. The identifier should be in the format of a UUID.
-                The 'fabricId' can be obtained using the api /dna/intent/api/v1/sda/fabricSites. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of update_sda_wireless_multicast_v1 .
-        """
-        return self.update_sda_wireless_multicast_v1(
-                    fabric_id=fabric_id,
-                    multicastEnabled=multicastEnabled,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def switch_wireless_setting_and_rolling_ap_upgrade_management(self,
-                                                                     fabric_id,
-                                                                     enableWireless=None,
-                                                                     id=None,
-                                                                     rollingApUpgrade=None,
-                                                                     headers=None,
-                                                                     payload=None,
-                                                                     active_validation=True,
-                                                                     **request_parameters):
-        """ This function is an alias of switch_wireless_setting_and_rolling_ap_upgrade_management_v1 .
-        Args:
-            enableWireless(boolean): Fabric Wireless's Enable Wireless.
-            id(string): Fabric Wireless's Network Device ID of the wireless capable switch .
-            rollingApUpgrade(object): Fabric Wireless's rollingApUpgrade.
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site. The 'fabricId' can be obtained using the api
-                /dna/intent/api/v1/sda/fabricSites.  Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of switch_wireless_setting_and_rolling_ap_upgrade_management_v1 .
-        """
-        return self.switch_wireless_setting_and_rolling_ap_upgrade_management_v1(
-                    fabric_id=fabric_id,
-                    enableWireless=enableWireless,
-                    id=id,
-                    rollingApUpgrade=rollingApUpgrade,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def add_w_l_c_to_fabric_domain(self,
-                                      deviceName=None,
-                                      siteNameHierarchy=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of add_w_l_c_to_fabric_domain_v1 .
-        Args:
-            deviceName(string): Fabric Wireless's WLC Device Name .
-            siteNameHierarchy(string): Fabric Wireless's Fabric Site Name Hierarchy .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of add_w_l_c_to_fabric_domain_v1 .
-        """
-        return self.add_w_l_c_to_fabric_domain_v1(
-                    deviceName=deviceName,
-                    siteNameHierarchy=siteNameHierarchy,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def add_ssid_to_ip_pool_mapping(self,
-                                       scalableGroupName=None,
-                                       siteNameHierarchy=None,
-                                       ssidNames=None,
-                                       vlanName=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
-        """ This function is an alias of add_ssid_to_ip_pool_mapping_v1 .
-        Args:
-            scalableGroupName(string): Fabric Wireless's Scalable Group Name .
-            siteNameHierarchy(string): Fabric Wireless's Site Name Hierarchy .
-            ssidNames(list): Fabric Wireless's List of SSIDs  (list of strings).
-            vlanName(string): Fabric Wireless's VLAN Name .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of add_ssid_to_ip_pool_mapping_v1 .
-        """
-        return self.add_ssid_to_ip_pool_mapping_v1(
-                    scalableGroupName=scalableGroupName,
-                    siteNameHierarchy=siteNameHierarchy,
-                    ssidNames=ssidNames,
-                    vlanName=vlanName,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def update_ssid_to_ip_pool_mapping(self,
-                                          scalableGroupName=None,
-                                          siteNameHierarchy=None,
-                                          ssidNames=None,
-                                          vlanName=None,
-                                          headers=None,
-                                          payload=None,
-                                          active_validation=True,
-                                          **request_parameters):
-        """ This function is an alias of update_ssid_to_ip_pool_mapping_v1 .
-        Args:
-            scalableGroupName(string): Fabric Wireless's Scalable Group Name .
-            siteNameHierarchy(string): Fabric Wireless's Site Name Hierarchy .
-            ssidNames(list): Fabric Wireless's List of SSIDs  (list of strings).
-            vlanName(string): Fabric Wireless's VLAN Name .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of update_ssid_to_ip_pool_mapping_v1 .
-        """
-        return self.update_ssid_to_ip_pool_mapping_v1(
-                    scalableGroupName=scalableGroupName,
-                    siteNameHierarchy=siteNameHierarchy,
-                    ssidNames=ssidNames,
-                    vlanName=vlanName,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def add_update_or_remove_ssid_mapping_to_a_vlan(self,
-                                                       fabric_id,
-                                                       headers=None,
-                                                       payload=None,
-                                                       active_validation=True,
-                                                       **request_parameters):
-        """ This function is an alias of add_update_or_remove_ssid_mapping_to_a_vlan_v1 .
-        Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of add_update_or_remove_ssid_mapping_to_a_vlan_v1 .
-        """
-        return self.add_update_or_remove_ssid_mapping_to_a_vlan_v1(
-                    fabric_id=fabric_id,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site(self,
-                                                                       fabric_id,
-                                                                       headers=None,
-                                                                       **request_parameters):
-        """ This function is an alias of returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_v1 .
-        Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_v1 .
-        """
-        return self.returns_the_count_of_vlans_mapped_to_ssids_in_a_fabric_site_v1(
-                    fabric_id=fabric_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_sda_wireless_multicast(self,
-                                      fabric_id,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_sda_wireless_multicast_v1 .
-        Args:
-            fabric_id(str): fabricId path parameter. The unique identifier of the fabric site for which the
-                multicast setting is being requested. The identifier should be in the format of a UUID.
-                The 'fabricId' can be obtained using the api /dna/intent/api/v1/sda/fabricSites. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_sda_wireless_multicast_v1 .
-        """
-        return self.get_sda_wireless_multicast_v1(
-                    fabric_id=fabric_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping(self,
-                                                                                     headers=None,
-                                                                                     **request_parameters):
-        """ This function is an alias of return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_v1 .
-        """
-        return self.return_the_count_of_all_the_fabric_site_which_has_ssid_to_ip_pool_mapping_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def reload_switch_for_wireless_controller_cleanup(self,
-                                                         fabric_id,
-                                                         deviceId=None,
-                                                         headers=None,
-                                                         payload=None,
-                                                         active_validation=True,
-                                                         **request_parameters):
-        """ This function is an alias of reload_switch_for_wireless_controller_cleanup_v1 .
-        Args:
-            deviceId(string): Fabric Wireless's Network Device ID .
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site. The 'fabricId' can be obtained using the api
-                /dna/intent/api/v1/sda/fabricSites.  Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of reload_switch_for_wireless_controller_cleanup_v1 .
-        """
-        return self.reload_switch_for_wireless_controller_cleanup_v1(
-                    fabric_id=fabric_id,
-                    deviceId=deviceId,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_ssid_to_ip_pool_mapping(self,
-                                       site_name_hierarchy,
-                                       vlan_name,
-                                       headers=None,
-                                       **request_parameters):
-        """ This function is an alias of get_ssid_to_ip_pool_mapping_v1 .
-        Args:
-            vlan_name(str): vlanName query parameter. VLAN Name .
-            site_name_hierarchy(str): siteNameHierarchy query parameter. Site Name Heirarchy .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_ssid_to_ip_pool_mapping_v1 .
-        """
-        return self.get_ssid_to_ip_pool_mapping_v1(
-                    site_name_hierarchy=site_name_hierarchy,
-                    vlan_name=vlan_name,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_sda_wireless_details_from_switches(self,
-                                                  fabric_id,
-                                                  headers=None,
-                                                  **request_parameters):
-        """ This function is an alias of get_sda_wireless_details_from_switches_v1 .
-        Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site. The 'fabricId' can be obtained using the api
-                /dna/intent/api/v1/sda/fabricSites.  Example : e290f1ee-6c54-4b01-90e6-d701748f0851 .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_sda_wireless_details_from_switches_v1 .
-        """
-        return self.get_sda_wireless_details_from_switches_v1(
-                    fabric_id=fabric_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site(self,
-                                                                                fabric_id,
-                                                                                limit=None,
-                                                                                offset=None,
-                                                                                headers=None,
-                                                                                **request_parameters):
-        """ This function is an alias of retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_v1 .
-        Args:
-            fabric_id(str): fabricId path parameter. The 'fabricId' represents the Fabric ID of a particular
-                Fabric Site .
-            limit(int): limit query parameter. The number of records to show for this page. Default is 500 if not
-                specified. Maximum allowed limit is 500. .
-            offset(int): offset query parameter. The first record to show for this page; the first record is
-                numbered 1. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_v1 .
-        """
-        return self.retrieve_the_vlans_and_ssids_mapped_to_the_vlan_within_a_fabric_site_v1(
-                    fabric_id=fabric_id,
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
+# Alias Functions
 

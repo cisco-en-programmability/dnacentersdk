@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SetBannerSettingsForASiteV1 data model.
+"""Cisco DNA Center SetBannerSettingsForASite data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,40 +33,32 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68(object):
-    """SetBannerSettingsForASiteV1 request schema definition."""
+    """SetBannerSettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB3C4383ECc13514C85C6F3D8484F6D68, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
-        '''{
+            '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "object",
                 "properties": {
-                    "banner": {
-                    "oneOf": [
-                        {
-                        "type": "object",
-                        "properties": {
-                            "message": {
-                            "type": "string"
-                            },
-                            "type": {
-                            "type": "string",
-                            "enum": ["Builtin", "Custom"]
-                            }
-                        },
-                        "additionalProperties": false
-                        },
-                        {
-                        "type": "null"
-                        }
-                    ]
-                    }
+                "banner": {
+                "properties": {
+                "message": {
+                "type": "string"
                 },
-                "additionalProperties": false
+                "type": {
+                "enum": [
+                "Builtin",
+                "Custom"
+                ],
+                "type": "string"
                 }
-                '''.replace("\n" + ' ' * 16, '')
-    ))
-
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
+        ))
 
     def validate(self, request):
         try:

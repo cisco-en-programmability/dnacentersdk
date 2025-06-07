@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateQosDeviceInterfaceInfoV1 data model.
+"""Cisco DNA Center CreateQosDeviceInterfaceInfo data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD045D18062Ad5Ae59C6F446Beb17D675(object):
-    """CreateQosDeviceInterfaceInfoV1 request schema definition."""
+    """CreateQosDeviceInterfaceInfo request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD045D18062Ad5Ae59C6F446Beb17D675, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

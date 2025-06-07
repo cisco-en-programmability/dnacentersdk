@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateSNMPDestinationV1 data model.
+"""Cisco DNA Center UpdateSNMPDestination data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCcbaf226C685CacAc29Eb345955F3Ad(object):
-    """UpdateSNMPDestinationV1 request schema definition."""
+    """UpdateSNMPDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCcbaf226C685CacAc29Eb345955F3Ad, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

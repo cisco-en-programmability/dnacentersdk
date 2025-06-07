@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreatesAnICAPConfigurationIntentForPreviewApproveV1 data model.
+"""Cisco DNA Center CreatesAnICAPConfigurationIntentForPreviewApprove data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCb38886D0236502783D431455E3Fb880(object):
-    """CreatesAnICAPConfigurationIntentForPreviewApproveV1 request schema
+    """CreatesAnICAPConfigurationIntentForPreviewApprove request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorCb38886D0236502783D431455E3Fb880, self).__init__()

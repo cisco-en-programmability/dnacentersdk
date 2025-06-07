@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetTheDetailsOfIssuesForGivenSetOfFiltersV1 data model.
+"""Cisco DNA Center GetTheDetailsOfIssuesForGivenSetOfFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB818044610579A9B74Ec582E7739Ab(object):
-    """GetTheDetailsOfIssuesForGivenSetOfFiltersV1 request schema
+    """GetTheDetailsOfIssuesForGivenSetOfFilters request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorB818044610579A9B74Ec582E7739Ab, self).__init__()

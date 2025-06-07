@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center DeleteNetworkDeviceWithConfigurationCleanupV1 data model.
+"""Cisco DNA Center DeleteNetworkDeviceWithConfigurationCleanup data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA18E761Ac8592E9A5C4E0Bb2308Cf0(object):
-    """DeleteNetworkDeviceWithConfigurationCleanupV1 request schema
+    """DeleteNetworkDeviceWithConfigurationCleanup request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorA18E761Ac8592E9A5C4E0Bb2308Cf0, self).__init__()
