@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [2.10.0]
+### Added
+- Backup service.
+- Industrial configuratiom service.
+- Know your network service.
+- Restore service.
+- Wired service.
 ### Changed
 - Renamed `get_auditlog_summary` to `get_audit_log_summary`
 - Renamed `get_auditlog_parent_records` to `get_audit_log_parent_records`
 - Renamed `get_eventartifacts` to `get_event_artifacts`
 - Renamed `get_auditlog_records` to `get_audit_log_records`
+- Renamed `gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count`to `gets_the_total_network_device_interface_counts`.
 - Moved `get_port_channels` to LAN Automation service
 ### Removed
 - The v1 alias functions were all removed. Example... if your using "application_v1" you must be able to change it
