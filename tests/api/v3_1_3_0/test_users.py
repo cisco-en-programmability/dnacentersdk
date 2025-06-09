@@ -29,24 +29,24 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
 
 
-def is_valid_get_user_enrichment_details_v1(json_schema_validate, obj):
+def is_valid_get_user_enrichment_details(json_schema_validate, obj):
     json_schema_validate('jsd_70f9c1d861a051b4a4928f2e6d84b2e3_v3_1_3_0').validate(obj)
     return True
 
 
-def get_user_enrichment_details_v1(api):
-    endpoint_result = api.users.get_user_enrichment_details_v1(
+def get_user_enrichment_details(api):
+    endpoint_result = api.users.get_user_enrichment_details(
 
     )
     return endpoint_result
 
 
 @pytest.mark.users
-def test_get_user_enrichment_details_v1(api, validator):
+def test_get_user_enrichment_details(api, validator):
     try:
-        assert is_valid_get_user_enrichment_details_v1(
+        assert is_valid_get_user_enrichment_details(
             validator,
-            get_user_enrichment_details_v1(api)
+            get_user_enrichment_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -54,19 +54,19 @@ def test_get_user_enrichment_details_v1(api, validator):
             raise original_e
 
 
-def get_user_enrichment_details_v1_default_val(api):
-    endpoint_result = api.users.get_user_enrichment_details_v1(
+def get_user_enrichment_details_default_val(api):
+    endpoint_result = api.users.get_user_enrichment_details(
 
     )
     return endpoint_result
 
 
 @pytest.mark.users
-def test_get_user_enrichment_details_v1_default_val(api, validator):
+def test_get_user_enrichment_details_default_val(api, validator):
     try:
-        assert is_valid_get_user_enrichment_details_v1(
+        assert is_valid_get_user_enrichment_details(
             validator,
-            get_user_enrichment_details_v1_default_val(api)
+            get_user_enrichment_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

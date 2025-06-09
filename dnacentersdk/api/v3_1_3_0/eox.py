@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,10 +32,11 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
-class EoX(object):
+class Eox(object):
     """Cisco Catalyst Center EoX API (version: 3.1.3.0).
 
     Wraps the Catalyst Center EoX
@@ -47,7 +46,7 @@ class EoX(object):
     """
 
     def __init__(self, session, object_factory, request_validator):
-        """Initialize a new EoX
+        """Initialize a new Eox
         object with the provided RestSession.
 
         Args:
@@ -60,17 +59,17 @@ class EoX(object):
         """
         check_type(session, RestSession)
 
-        super(EoX, self).__init__()
+        super(Eox, self).__init__()
 
         self._session = session
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_eox_status_for_all_devices_v1(self,
-                                          limit=None,
-                                          offset=None,
-                                          headers=None,
-                                          **request_parameters):
+    def get_eox_status_for_all_devices(self,
+                                       limit=None,
+                                       offset=None,
+                                       headers=None,
+                                       **request_parameters):
         """Retrieves EoX status for all devices in the network .
 
         Args:
@@ -130,10 +129,10 @@ class EoX(object):
 
         return self._object_factory('bpm_d5d27a53ac53258fa2183b7e93a7d5_v3_1_3_0', json_data)
 
-    def get_eox_details_per_device_v1(self,
-                                      device_id,
-                                      headers=None,
-                                      **request_parameters):
+    def get_eox_details_per_device(self,
+                                   device_id,
+                                   headers=None,
+                                   **request_parameters):
         """Retrieves EoX details for a device .
 
         Args:
@@ -187,9 +186,9 @@ class EoX(object):
 
         return self._object_factory('bpm_ec048832853f8a63f34415d0e6fce_v3_1_3_0', json_data)
 
-    def get_eox_summary_v1(self,
-                           headers=None,
-                           **request_parameters):
+    def get_eox_summary(self,
+                        headers=None,
+                        **request_parameters):
         """Retrieves EoX summary for all devices in the network .
 
         Args:
@@ -239,75 +238,5 @@ class EoX(object):
 
         return self._object_factory('bpm_f0a0dfdaca465bdc91fc290d87476b89_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def get_eox_details_per_device(self,
-                                      device_id,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_eox_details_per_device_v1 .
-        Args:
-            device_id(str): deviceId path parameter. Device instance UUID .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_eox_details_per_device_v1 .
-        """
-        return self.get_eox_details_per_device_v1(
-                    device_id=device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_eox_status_for_all_devices(self,
-                                          limit=None,
-                                          offset=None,
-                                          headers=None,
-                                          **request_parameters):
-        """ This function is an alias of get_eox_status_for_all_devices_v1 .
-        Args:
-            limit(int): limit query parameter. The number of records to show for this page. Default is 500 if not
-                specified. Maximum allowed limit is 500. .
-            offset(int): offset query parameter. The first record to show for this page, the first record is
-                numbered 1 .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_eox_status_for_all_devices_v1 .
-        """
-        return self.get_eox_status_for_all_devices_v1(
-                    limit=limit,
-                    offset=offset,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_eox_summary(self,
-                           headers=None,
-                           **request_parameters):
-        """ This function is an alias of get_eox_summary_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_eox_summary_v1 .
-        """
-        return self.get_eox_summary_v1(
-                    headers=headers,
-                    **request_parameters
-        )
+# Alias Functions
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AssignNetworkDeviceProductNameToTheGivenSoftwareImageV1 data model.
+"""Cisco DNA Center AssignNetworkDeviceProductNameToTheGivenSoftwareImage data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEb4A05F61E475Ad0B9E74F963F27Ea1D(object):
-    """AssignNetworkDeviceProductNameToTheGivenSoftwareImageV1 request
+    """AssignNetworkDeviceProductNameToTheGivenSoftwareImage request
     schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEb4A05F61E475Ad0B9E74F963F27Ea1D, self).__init__()

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AttachAListOfNetworkProfilesToADayNCLITemplateV1 data model.
+"""Cisco DNA Center AttachAListOfNetworkProfilesToADayNCLITemplate data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD0F4D6B5909B5EcaA29E854E919B4221(object):
-    """AttachAListOfNetworkProfilesToADayNCLITemplateV1 request schema
+    """AttachAListOfNetworkProfilesToADayNCLITemplate request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorD0F4D6B5909B5EcaA29E854E919B4221, self).__init__()

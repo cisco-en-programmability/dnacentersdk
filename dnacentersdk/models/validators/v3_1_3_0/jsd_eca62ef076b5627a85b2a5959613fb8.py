@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateNetworkV1 data model.
+"""Cisco DNA Center CreateNetwork data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEca62Ef076B5627A85B2A5959613Fb8(object):
-    """CreateNetworkV1 request schema definition."""
+    """CreateNetwork request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEca62Ef076B5627A85B2A5959613Fb8, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

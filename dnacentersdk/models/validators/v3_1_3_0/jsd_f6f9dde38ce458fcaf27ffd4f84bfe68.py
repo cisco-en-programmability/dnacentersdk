@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatePlannedAccessPointForFloorV1 data model.
+"""Cisco DNA Center UpdatePlannedAccessPointForFloor data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68(object):
-    """UpdatePlannedAccessPointForFloorV1 request schema definition."""
+    """UpdatePlannedAccessPointForFloor request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF6F9Dde38Ce458FcAf27Ffd4F84Bfe68, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

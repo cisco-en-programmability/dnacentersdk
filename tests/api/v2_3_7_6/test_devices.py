@@ -509,13 +509,13 @@ def test_gets_interfaces_along_with_statistics_data_from_all_network_devices_v1_
             raise original_e
 
 
-def is_valid_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(json_schema_validate, obj):
+def is_valid_gets_the_total_network_device_interface_counts_v1(json_schema_validate, obj):
     json_schema_validate('jsd_412775760f4b503bbce76ebb802f0ad7_v2_3_7_6').validate(obj)
     return True
 
 
-def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(api):
-    endpoint_result = api.devices.gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(
+def gets_the_total_network_device_interface_counts_v1(api):
+    endpoint_result = api.devices.gets_the_total_network_device_interface_counts_v1(
         end_time=0,
         interface_id='string',
         interface_name='string',
@@ -531,11 +531,11 @@ def gets_the_total_network_device_interface_counts_in_the_specified_time_range_w
 
 
 @pytest.mark.devices
-def test_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(api, validator):
+def test_gets_the_total_network_device_interface_counts_v1(api, validator):
     try:
-        assert is_valid_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(
+        assert is_valid_gets_the_total_network_device_interface_counts_v1(
             validator,
-            gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(api)
+            gets_the_total_network_device_interface_counts_v1(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -543,8 +543,8 @@ def test_gets_the_total_network_device_interface_counts_in_the_specified_time_ra
             raise original_e
 
 
-def gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1_default_val(api):
-    endpoint_result = api.devices.gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(
+def gets_the_total_network_device_interface_counts_v1_default_val(api):
+    endpoint_result = api.devices.gets_the_total_network_device_interface_counts_v1(
         end_time=None,
         interface_id=None,
         interface_name=None,
@@ -560,11 +560,11 @@ def gets_the_total_network_device_interface_counts_in_the_specified_time_range_w
 
 
 @pytest.mark.devices
-def test_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1_default_val(api, validator):
+def test_gets_the_total_network_device_interface_counts_v1_default_val(api, validator):
     try:
-        assert is_valid_gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1(
+        assert is_valid_gets_the_total_network_device_interface_counts_v1(
             validator,
-            gets_the_total_network_device_interface_counts_in_the_specified_time_range_when_there_is_no_start_and_end_time_specified_returns_the_latest_interfaces_total_count_v1_default_val(api)
+            gets_the_total_network_device_interface_counts_v1_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

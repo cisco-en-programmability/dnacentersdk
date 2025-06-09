@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetTrendAnalyticsDataForAGivenDNSServiceMatchingTheIdOfTheServiceV1 data
+"""Cisco DNA Center GetTrendAnalyticsDataForAGivenDNSServiceMatchingTheIdOfTheService data
 model.
 
 Copyright (c) 2025 Cisco Systems.
@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -34,8 +34,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF1DebbfD4775FabA3779C513181Dfbf(object):
-    """GetTrendAnalyticsDataForAGivenDNSServiceMatchingTheIdOfTheServiceV
-    1 request schema definition."""
+    """GetTrendAnalyticsDataForAGivenDNSServiceMatchingTheIdOfTheService
+    request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF1DebbfD4775FabA3779C513181Dfbf, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AssignNetworkDevicesToASiteV1 data model.
+"""Cisco DNA Center AssignNetworkDevicesToASite data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC279Ba052250D883Ef87775A415089(object):
-    """AssignNetworkDevicesToASiteV1 request schema definition."""
+    """AssignNetworkDevicesToASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC279Ba052250D883Ef87775A415089, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

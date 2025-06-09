@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateRFProfileV1 data model.
+"""Cisco DNA Center CreateRFProfile data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBcb1D489D735258975828F845Df1769(object):
-    """CreateRFProfileV1 request schema definition."""
+    """CreateRFProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBcb1D489D735258975828F845Df1769, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -91,7 +91,7 @@ class JSONSchemaValidatorBcb1D489D735258975828F845Df1769(object):
                 "enableStandardPowerService": {
                 "type": "boolean"
                 },
-                "fraProperties": {
+                "fraPropertiesC": {
                 "properties": {
                 "clientResetCount": {
                 "type": "integer"
@@ -254,7 +254,7 @@ class JSONSchemaValidatorBcb1D489D735258975828F845Df1769(object):
                 "dataRates": {
                 "type": "string"
                 },
-                "fraProperties": {
+                "fraPropertiesA": {
                 "properties": {
                 "clientAware": {
                 "type": "boolean"

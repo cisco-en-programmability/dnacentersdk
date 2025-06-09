@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,10 +65,10 @@ class Topology(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_overall_network_health_v1(self,
-                                      timestamp=None,
-                                      headers=None,
-                                      **request_parameters):
+    def get_overall_network_health(self,
+                                   timestamp=None,
+                                   headers=None,
+                                   **request_parameters):
         """Returns Overall Network Health information by Device category (Access, Distribution, Core, Router, Wireless) for
         any given point of time .
 
@@ -127,10 +126,10 @@ class Topology(object):
 
         return self._object_factory('bpm_b0753b63045528194f2f5bbf8ae432d_v3_1_3_0', json_data)
 
-    def get_topology_details_v1(self,
-                                vlan_id,
-                                headers=None,
-                                **request_parameters):
+    def get_topology_details(self,
+                             vlan_id,
+                             headers=None,
+                             **request_parameters):
         """Returns Layer 2 network topology by specified VLAN ID .
 
         Args:
@@ -184,10 +183,10 @@ class Topology(object):
 
         return self._object_factory('bpm_b3f79d3b45b98849d9180cc08018e_v3_1_3_0', json_data)
 
-    def get_l3_topology_details_v1(self,
-                                   topology_type,
-                                   headers=None,
-                                   **request_parameters):
+    def get_l3_topology_details(self,
+                                topology_type,
+                                headers=None,
+                                **request_parameters):
         """Returns the Layer 3 network topology by routing protocol .
 
         Args:
@@ -241,10 +240,10 @@ class Topology(object):
 
         return self._object_factory('bpm_c7e9c39880735e7684291bc5dc3ba994_v3_1_3_0', json_data)
 
-    def get_physical_topology_v1(self,
-                                 node_type=None,
-                                 headers=None,
-                                 **request_parameters):
+    def get_physical_topology(self,
+                              node_type=None,
+                              headers=None,
+                              **request_parameters):
         """Returns the raw physical topology by specified criteria of nodeType .
 
         Args:
@@ -298,9 +297,9 @@ class Topology(object):
 
         return self._object_factory('bpm_eb4ab5a978fe8785516c8af42_v3_1_3_0', json_data)
 
-    def get_site_topology_v1(self,
-                             headers=None,
-                             **request_parameters):
+    def get_site_topology(self,
+                          headers=None,
+                          **request_parameters):
         """Returns site topology .
 
         Args:
@@ -350,9 +349,9 @@ class Topology(object):
 
         return self._object_factory('bpm_f7abdb7ab46a5918a74e839488ff6ae0_v3_1_3_0', json_data)
 
-    def get_vlan_details_v1(self,
-                            headers=None,
-                            **request_parameters):
+    def get_vlan_details(self,
+                         headers=None,
+                         **request_parameters):
         """Returns the list of VLAN names that are involved in a loop as identified by the Spanning Tree Protocol .
 
         Args:
@@ -402,137 +401,5 @@ class Topology(object):
 
         return self._object_factory('bpm_fb6000ce8d8854bc80be3803b8dee1b7_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def get_site_topology(self,
-                             headers=None,
-                             **request_parameters):
-        """ This function is an alias of get_site_topology_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_site_topology_v1 .
-        """
-        return self.get_site_topology_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_physical_topology(self,
-                                 node_type=None,
-                                 headers=None,
-                                 **request_parameters):
-        """ This function is an alias of get_physical_topology_v1 .
-        Args:
-            node_type(str): nodeType query parameter.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_physical_topology_v1 .
-        """
-        return self.get_physical_topology_v1(
-                    node_type=node_type,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_topology_details(self,
-                                vlan_id,
-                                headers=None,
-                                **request_parameters):
-        """ This function is an alias of get_topology_details_v1 .
-        Args:
-            vlan_id(str): vlanID path parameter. Vlan Name for e.g Vlan1, Vlan23 etc .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_topology_details_v1 .
-        """
-        return self.get_topology_details_v1(
-                    vlan_id=vlan_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_l3_topology_details(self,
-                                   topology_type,
-                                   headers=None,
-                                   **request_parameters):
-        """ This function is an alias of get_l3_topology_details_v1 .
-        Args:
-            topology_type(str): topologyType path parameter. Type of topology(OSPF,ISIS,etc) .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_l3_topology_details_v1 .
-        """
-        return self.get_l3_topology_details_v1(
-                    topology_type=topology_type,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_vlan_details(self,
-                            headers=None,
-                            **request_parameters):
-        """ This function is an alias of get_vlan_details_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_vlan_details_v1 .
-        """
-        return self.get_vlan_details_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_overall_network_health(self,
-                                      timestamp=None,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of get_overall_network_health_v1 .
-        Args:
-            timestamp(int): timestamp query parameter. UTC timestamp of network health data in milliseconds .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_overall_network_health_v1 .
-        """
-        return self.get_overall_network_health_v1(
-                    timestamp=timestamp,
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

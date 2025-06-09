@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
 
 
-def is_valid_retrieves_all_previous_pathtraces_summary_v1(json_schema_validate, obj):
+def is_valid_retrieves_all_previous_pathtraces_summary(json_schema_validate, obj):
     json_schema_validate('jsd_a75e4b27171c5c6782e84f902da9e5be_v2_3_7_9').validate(obj)
     return True
 
 
-def retrieves_all_previous_pathtraces_summary_v1(api):
-    endpoint_result = api.path_trace.retrieves_all_previous_pathtraces_summary_v1(
+def retrieves_all_previous_pathtraces_summary(api):
+    endpoint_result = api.path_trace.retrieves_all_previous_pathtraces_summary(
         dest_ip='string',
         dest_port=0,
         gt_create_time=0,
@@ -56,11 +56,11 @@ def retrieves_all_previous_pathtraces_summary_v1(api):
 
 
 @pytest.mark.path_trace
-def test_retrieves_all_previous_pathtraces_summary_v1(api, validator):
+def test_retrieves_all_previous_pathtraces_summary(api, validator):
     try:
-        assert is_valid_retrieves_all_previous_pathtraces_summary_v1(
+        assert is_valid_retrieves_all_previous_pathtraces_summary(
             validator,
-            retrieves_all_previous_pathtraces_summary_v1(api)
+            retrieves_all_previous_pathtraces_summary(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -68,8 +68,8 @@ def test_retrieves_all_previous_pathtraces_summary_v1(api, validator):
             raise original_e
 
 
-def retrieves_all_previous_pathtraces_summary_v1_default_val(api):
-    endpoint_result = api.path_trace.retrieves_all_previous_pathtraces_summary_v1(
+def retrieves_all_previous_pathtraces_summary_default_val(api):
+    endpoint_result = api.path_trace.retrieves_all_previous_pathtraces_summary(
         dest_ip=None,
         dest_port=None,
         gt_create_time=None,
@@ -90,24 +90,24 @@ def retrieves_all_previous_pathtraces_summary_v1_default_val(api):
 
 
 @pytest.mark.path_trace
-def test_retrieves_all_previous_pathtraces_summary_v1_default_val(api, validator):
+def test_retrieves_all_previous_pathtraces_summary_default_val(api, validator):
     try:
-        assert is_valid_retrieves_all_previous_pathtraces_summary_v1(
+        assert is_valid_retrieves_all_previous_pathtraces_summary(
             validator,
-            retrieves_all_previous_pathtraces_summary_v1_default_val(api)
+            retrieves_all_previous_pathtraces_summary_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_initiate_a_new_pathtrace_v1(json_schema_validate, obj):
+def is_valid_initiate_a_new_pathtrace(json_schema_validate, obj):
     json_schema_validate('jsd_a54fce1a0c305bdabfe91a8a6161e539_v2_3_7_9').validate(obj)
     return True
 
 
-def initiate_a_new_pathtrace_v1(api):
-    endpoint_result = api.path_trace.initiate_a_new_pathtrace_v1(
+def initiate_a_new_pathtrace(api):
+    endpoint_result = api.path_trace.initiate_a_new_pathtrace(
         active_validation=True,
         controlPath=True,
         destIP='string',
@@ -123,11 +123,11 @@ def initiate_a_new_pathtrace_v1(api):
 
 
 @pytest.mark.path_trace
-def test_initiate_a_new_pathtrace_v1(api, validator):
+def test_initiate_a_new_pathtrace(api, validator):
     try:
-        assert is_valid_initiate_a_new_pathtrace_v1(
+        assert is_valid_initiate_a_new_pathtrace(
             validator,
-            initiate_a_new_pathtrace_v1(api)
+            initiate_a_new_pathtrace(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -135,8 +135,8 @@ def test_initiate_a_new_pathtrace_v1(api, validator):
             raise original_e
 
 
-def initiate_a_new_pathtrace_v1_default_val(api):
-    endpoint_result = api.path_trace.initiate_a_new_pathtrace_v1(
+def initiate_a_new_pathtrace_default_val(api):
+    endpoint_result = api.path_trace.initiate_a_new_pathtrace(
         active_validation=True,
         controlPath=None,
         destIP=None,
@@ -152,35 +152,35 @@ def initiate_a_new_pathtrace_v1_default_val(api):
 
 
 @pytest.mark.path_trace
-def test_initiate_a_new_pathtrace_v1_default_val(api, validator):
+def test_initiate_a_new_pathtrace_default_val(api, validator):
     try:
-        assert is_valid_initiate_a_new_pathtrace_v1(
+        assert is_valid_initiate_a_new_pathtrace(
             validator,
-            initiate_a_new_pathtrace_v1_default_val(api)
+            initiate_a_new_pathtrace_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retrieves_previous_pathtrace_v1(json_schema_validate, obj):
+def is_valid_retrieves_previous_pathtrace(json_schema_validate, obj):
     json_schema_validate('jsd_ed5cbafc332a5efa97547736ba8b6044_v2_3_7_9').validate(obj)
     return True
 
 
-def retrieves_previous_pathtrace_v1(api):
-    endpoint_result = api.path_trace.retrieves_previous_pathtrace_v1(
+def retrieves_previous_pathtrace(api):
+    endpoint_result = api.path_trace.retrieves_previous_pathtrace(
         flow_analysis_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.path_trace
-def test_retrieves_previous_pathtrace_v1(api, validator):
+def test_retrieves_previous_pathtrace(api, validator):
     try:
-        assert is_valid_retrieves_previous_pathtrace_v1(
+        assert is_valid_retrieves_previous_pathtrace(
             validator,
-            retrieves_previous_pathtrace_v1(api)
+            retrieves_previous_pathtrace(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -188,43 +188,43 @@ def test_retrieves_previous_pathtrace_v1(api, validator):
             raise original_e
 
 
-def retrieves_previous_pathtrace_v1_default_val(api):
-    endpoint_result = api.path_trace.retrieves_previous_pathtrace_v1(
+def retrieves_previous_pathtrace_default_val(api):
+    endpoint_result = api.path_trace.retrieves_previous_pathtrace(
         flow_analysis_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.path_trace
-def test_retrieves_previous_pathtrace_v1_default_val(api, validator):
+def test_retrieves_previous_pathtrace_default_val(api, validator):
     try:
-        assert is_valid_retrieves_previous_pathtrace_v1(
+        assert is_valid_retrieves_previous_pathtrace(
             validator,
-            retrieves_previous_pathtrace_v1_default_val(api)
+            retrieves_previous_pathtrace_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_deletes_pathtrace_by_id_v1(json_schema_validate, obj):
+def is_valid_deletes_pathtrace_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_8a7ae984f943507ba621abe155e6e744_v2_3_7_9').validate(obj)
     return True
 
 
-def deletes_pathtrace_by_id_v1(api):
-    endpoint_result = api.path_trace.deletes_pathtrace_by_id_v1(
+def deletes_pathtrace_by_id(api):
+    endpoint_result = api.path_trace.deletes_pathtrace_by_id(
         flow_analysis_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.path_trace
-def test_deletes_pathtrace_by_id_v1(api, validator):
+def test_deletes_pathtrace_by_id(api, validator):
     try:
-        assert is_valid_deletes_pathtrace_by_id_v1(
+        assert is_valid_deletes_pathtrace_by_id(
             validator,
-            deletes_pathtrace_by_id_v1(api)
+            deletes_pathtrace_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -232,19 +232,19 @@ def test_deletes_pathtrace_by_id_v1(api, validator):
             raise original_e
 
 
-def deletes_pathtrace_by_id_v1_default_val(api):
-    endpoint_result = api.path_trace.deletes_pathtrace_by_id_v1(
+def deletes_pathtrace_by_id_default_val(api):
+    endpoint_result = api.path_trace.deletes_pathtrace_by_id(
         flow_analysis_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.path_trace
-def test_deletes_pathtrace_by_id_v1_default_val(api, validator):
+def test_deletes_pathtrace_by_id_default_val(api, validator):
     try:
-        assert is_valid_deletes_pathtrace_by_id_v1(
+        assert is_valid_deletes_pathtrace_by_id(
             validator,
-            deletes_pathtrace_by_id_v1_default_val(api)
+            deletes_pathtrace_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

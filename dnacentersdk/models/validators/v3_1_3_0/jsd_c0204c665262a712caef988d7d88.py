@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatesAnExistingCustomIssueDefinitionBasedOnTheProvidedIdV1 data model.
+"""Cisco DNA Center UpdatesAnExistingCustomIssueDefinitionBasedOnTheProvidedId data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC0204C665262A712Caef988D7D88(object):
-    """UpdatesAnExistingCustomIssueDefinitionBasedOnTheProvidedIdV1
-    request schema definition."""
+    """UpdatesAnExistingCustomIssueDefinitionBasedOnTheProvidedId request
+    schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC0204C665262A712Caef988D7D88, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

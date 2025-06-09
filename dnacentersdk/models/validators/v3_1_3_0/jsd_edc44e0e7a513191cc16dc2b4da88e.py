@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SubmitRequestForSiteAnalyticsTrendDataV1 data model.
+"""Cisco DNA Center SubmitRequestForSiteAnalyticsTrendData data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEdc44E0E7A513191Cc16Dc2B4Da88E(object):
-    """SubmitRequestForSiteAnalyticsTrendDataV1 request schema
-    definition."""
+    """SubmitRequestForSiteAnalyticsTrendData request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEdc44E0E7A513191Cc16Dc2B4Da88E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

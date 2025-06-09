@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateLayer2VirtualNetworksV1 data model.
+"""Cisco DNA Center UpdateLayer2VirtualNetworks data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBcb7A52E3C5763B246Bcf438Fe57C9(object):
-    """UpdateLayer2VirtualNetworksV1 request schema definition."""
+    """UpdateLayer2VirtualNetworks request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBcb7A52E3C5763B246Bcf438Fe57C9, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

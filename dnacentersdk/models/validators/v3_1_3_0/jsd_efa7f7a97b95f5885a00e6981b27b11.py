@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center FactoryResetAccessPointsV1 data model.
+"""Cisco DNA Center FactoryResetAccessPoints data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEfa7F7A97B95F5885A00E6981B27B11(object):
-    """FactoryResetAccessPointsV1 request schema definition."""
+    """FactoryResetAccessPoints request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEfa7F7A97B95F5885A00E6981B27B11, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

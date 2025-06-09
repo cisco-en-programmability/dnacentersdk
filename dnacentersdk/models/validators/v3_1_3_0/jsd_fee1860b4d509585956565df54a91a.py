@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetTrendAnalyticsDataOfIssuesV1 data model.
+"""Cisco DNA Center GetTrendAnalyticsDataOfIssues data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFee1860B4D509585956565Df54A91A(object):
-    """GetTrendAnalyticsDataOfIssuesV1 request schema definition."""
+    """GetTrendAnalyticsDataOfIssues request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFee1860B4D509585956565Df54A91A, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

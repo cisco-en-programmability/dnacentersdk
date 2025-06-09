@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateTheListOfSitesForTheNetworkDeviceProductNameAssignedToTheSoftwareImage
-V1 data model.
+"""Cisco DNA Center UpdateTheListOfSitesForTheNetworkDeviceProductNameAssignedToTheSoftwareImage
+data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -35,7 +35,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 class JSONSchemaValidatorC224Ae3007D5486Bbc5Abb1F88E95E6(object):
     """UpdateTheListOfSitesForTheNetworkDeviceProductNameAssignedToTheSof
-    twareImageV1 request schema definition."""
+    twareImage request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC224Ae3007D5486Bbc5Abb1F88E95E6, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

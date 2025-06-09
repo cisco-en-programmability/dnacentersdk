@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco Catalyst Center Device Replacement API wrapper.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,7 +65,7 @@ class DeviceReplacement(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def return_replacement_devices_with_details_v1(self,
+    def return_replacement_devices_with_details(self,
                                                 family=None,
                                                 faulty_device_name=None,
                                                 faulty_device_platform=None,
@@ -87,22 +86,22 @@ class DeviceReplacement(object):
         Args:
             faulty_device_name(str): faultyDeviceName query parameter. Faulty Device Name .
             faulty_device_platform(str): faultyDevicePlatform query parameter. Faulty Device Platform .
-            replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement Device
-                Platform .
-            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty Device Serial
-                Number .
-            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement
-                Device Serial Number .
-            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
-                status [READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED,
-                ERROR, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED] .
-            family(str, list, set, tuple): family query parameter. List of families[Routers, Switches and
-                Hubs, AP] .
-            sort_by(str): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
+            replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement Device Platform
                 .
+            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty Device Serial Number
+                .
+            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement Device
+                Serial Number .
+            replacement_status(list, set, str, tuple): replacementStatus query parameter. Device Replacement status
+                [READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED, ERROR,
+                NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED] .
+            family(list, set, str, tuple): family query parameter. List of families[Routers, Switches and Hubs, AP]
+                .
+            sort_by(str): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used. .
             sort_order(str): sortOrder query parameter. Order on displayName[ASC,DESC] .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
+            offset(int): offset query parameter. The first record to show for this page; the first record is
+                numbered 1. .
+            limit(int): limit query parameter. The number of records to show for this page. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -125,8 +124,8 @@ class DeviceReplacement(object):
         check_type(replacement_device_platform, str)
         check_type(faulty_device_serial_number, str)
         check_type(replacement_device_serial_number, str)
-        check_type(replacement_status, (str, list, set, tuple))
-        check_type(family, (str, list, set, tuple))
+        check_type(replacement_status, (list, set, str, tuple))
+        check_type(family, (list, set, str, tuple))
         check_type(sort_by, str)
         check_type(sort_order, str)
         check_type(offset, int)
@@ -182,11 +181,11 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_e89f8ba4965853b3a075c7401c564477_v2_3_7_9', json_data)
 
-    def unmark_device_for_replacement_v1(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
+    def unmark_device_for_replacement(self,
+                                      headers=None,
+                                      payload=None,
+                                      active_validation=True,
+                                      **request_parameters):
         """UnMarks device for replacement .
 
         Args:
@@ -247,11 +246,11 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_b60f9f312235959812d49dc4c469e83_v2_3_7_9', json_data)
 
-    def mark_device_for_replacement_v1(self,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def mark_device_for_replacement(self,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
         """Marks device for replacement .
 
         Args:
@@ -312,16 +311,16 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_ac6e63199fb05bcf89106a22502c2197_v2_3_7_9', json_data)
 
-    def return_replacement_devices_count_v1(self,
-                                            replacement_status=None,
-                                            headers=None,
-                                            **request_parameters):
+    def return_replacement_devices_count(self,
+                                         replacement_status=None,
+                                         headers=None,
+                                         **request_parameters):
         """Get replacement devices count .
 
         Args:
-            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
-                status list[READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED,
-                REPLACED, ERROR] .
+            replacement_status(list, set, str, tuple): replacementStatus query parameter. Device Replacement status
+                list[READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED,
+                ERROR] .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -339,7 +338,7 @@ class DeviceReplacement(object):
             https://developer.cisco.com/docs/dna-center/#!return-replacement-devices-count
         """
         check_type(headers, dict)
-        check_type(replacement_status, (str, list, set, tuple))
+        check_type(replacement_status, (list, set, str, tuple))
         if headers is not None:
             if 'X-Auth-Token' in headers:
                 check_type(headers.get('X-Auth-Token'),
@@ -371,13 +370,13 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_c2b2882c8fb65284bfc9d781e9ddd07f_v2_3_7_9', json_data)
 
-    def deploy_device_replacement_workflow_v1(self,
-                                              faultyDeviceSerialNumber=None,
-                                              replacementDeviceSerialNumber=None,
-                                              headers=None,
-                                              payload=None,
-                                              active_validation=True,
-                                              **request_parameters):
+    def deploy_device_replacement_workflow(self,
+                                           faultyDeviceSerialNumber=None,
+                                           replacementDeviceSerialNumber=None,
+                                           headers=None,
+                                           payload=None,
+                                           active_validation=True,
+                                           **request_parameters):
         """API to trigger RMA workflow that will replace faulty device with replacement device with same configuration and
         images .
 
@@ -451,20 +450,20 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_f256e33af7501a8bdae2742ca9f6d6_v2_3_7_9', json_data)
 
-    def retrieve_the_status_of_all_the_device_replacement_workflows_v1(self,
-                                                                       family=None,
-                                                                       faulty_device_name=None,
-                                                                       faulty_device_platform=None,
-                                                                       faulty_device_serial_number=None,
-                                                                       limit=None,
-                                                                       offset=None,
-                                                                       replacement_device_platform=None,
-                                                                       replacement_device_serial_number=None,
-                                                                       replacement_status=None,
-                                                                       sort_by=None,
-                                                                       sort_order=None,
-                                                                       headers=None,
-                                                                       **request_parameters):
+    def retrieve_the_status_of_all_the_device_replacement_workflows(self,
+                                                                    family=None,
+                                                                    faulty_device_name=None,
+                                                                    faulty_device_platform=None,
+                                                                    faulty_device_serial_number=None,
+                                                                    limit=None,
+                                                                    offset=None,
+                                                                    replacement_device_platform=None,
+                                                                    replacement_device_serial_number=None,
+                                                                    replacement_status=None,
+                                                                    sort_by=None,
+                                                                    sort_order=None,
+                                                                    headers=None,
+                                                                    **request_parameters):
         """Retrieve the list of device replacements with replacement details. Filters can be applied based on faulty device
         name, faulty device platform, faulty device serial number, replacement device platform, replacement
         device serial number, device replacement status, device family. .
@@ -473,14 +472,14 @@ class DeviceReplacement(object):
             family(str): family query parameter. Faulty device family. .
             faulty_device_name(str): faultyDeviceName query parameter. Faulty device name. .
             faulty_device_platform(str): faultyDevicePlatform query parameter. Faulty device platform. .
-            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty device serial
-                number. .
+            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty device serial number.
+                .
             replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement device
                 platform. .
-            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement
-                device serial number. .
-            replacement_status(str): replacementStatus query parameter. Device replacement status. Available
-                values : MARKED_FOR_REPLACEMENT, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED,
+            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement device
+                serial number. .
+            replacement_status(str): replacementStatus query parameter. Device replacement status. Available values
+                : MARKED_FOR_REPLACEMENT, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED,
                 READY_FOR_REPLACEMENT, REPLACEMENT_SCHEDULED, REPLACEMENT_IN_PROGRESS, REPLACED, ERROR.
                 Replacement status: 'MARKED_FOR_REPLACEMENT' The faulty device has been marked for
                 replacement. 'NETWORK_READINESS_REQUESTED' Initiated steps to shut down neighboring
@@ -496,12 +495,12 @@ class DeviceReplacement(object):
                 numbered 1. .
             limit(int): limit query parameter. The number of records to show for this page. Maximum value can be
                 500. .
-            sort_by(str): sortBy query parameter. A property within the response to sort by. Available values
-                : id, creationTime, family, faultyDeviceId, fautyDeviceName, faultyDevicePlatform,
+            sort_by(str): sortBy query parameter. A property within the response to sort by. Available values : id,
+                creationTime, family, faultyDeviceId, fautyDeviceName, faultyDevicePlatform,
                 faultyDeviceSerialNumber, replacementDevicePlatform, replacementDeviceSerialNumber,
                 replacementTime. .
-            sort_order(str): sortOrder query parameter. Whether ascending or descending order should be used
-                to sort the response. Available values : ASC, DESC .
+            sort_order(str): sortOrder query parameter. Whether ascending or descending order should be used to sort
+                the response. Available values : ASC, DESC .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -581,10 +580,10 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_baf2f1fbbb9456c79497cb324764a3d0_v2_3_7_9', json_data)
 
-    def retrieve_the_status_of_device_replacement_workflow_that_replaces_a_faulty_device_with_a_replacement_device_v1(self,
-                                                                                                                      id,
-                                                                                                                      headers=None,
-                                                                                                                      **request_parameters):
+    def retrieve_the_status_of_device_replacement_workflow_that_replaces_a_faulty_device_with_a_replacement_device(self,
+                                                                                                                   id,
+                                                                                                                   headers=None,
+                                                                                                                   **request_parameters):
         """Fetches the status of the device replacement workflow for a given device replacement `id`. Invoke the API
         `/dna/intent/api/v1/networkDeviceReplacements` to `GET` the list of all device replacements and use the
         `id` field data as input to this API. .
@@ -640,277 +639,5 @@ class DeviceReplacement(object):
 
         return self._object_factory('bpm_babae5a4f2275df0aa468da4a268375e_v2_3_7_9', json_data)
 
-
-
-    # Alias Function
-    def return_replacement_devices_with_details(self,
-                                                family=None,
-                                                faulty_device_name=None,
-                                                faulty_device_platform=None,
-                                                faulty_device_serial_number=None,
-                                                limit=None,
-                                                offset=None,
-                                                replacement_device_platform=None,
-                                                replacement_device_serial_number=None,
-                                                replacement_status=None,
-                                                sort_by=None,
-                                                sort_order=None,
-                                                headers=None,
-                                                **request_parameters):
-        """ This function is an alias of return_replacement_devices_with_details_v1 .
-        Args:
-            faulty_device_name(str): faultyDeviceName query parameter. Faulty Device Name .
-            faulty_device_platform(str): faultyDevicePlatform query parameter. Faulty Device Platform .
-            replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement Device
-                Platform .
-            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty Device Serial
-                Number .
-            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement
-                Device Serial Number .
-            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
-                status [READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED, REPLACED,
-                ERROR, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED] .
-            family(str, list, set, tuple): family query parameter. List of families[Routers, Switches and
-                Hubs, AP] .
-            sort_by(str): sortBy query parameter. SortBy this field. SortBy is mandatory when order is used.
-                .
-            sort_order(str): sortOrder query parameter. Order on displayName[ASC,DESC] .
-            offset(int): offset query parameter.
-            limit(int): limit query parameter.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of return_replacement_devices_with_details_v1 .
-        """
-        return self.return_replacement_devices_with_details_v1(
-                    family=family,
-                    faulty_device_name=faulty_device_name,
-                    faulty_device_platform=faulty_device_platform,
-                    faulty_device_serial_number=faulty_device_serial_number,
-                    limit=limit,
-                    offset=offset,
-                    replacement_device_platform=replacement_device_platform,
-                    replacement_device_serial_number=replacement_device_serial_number,
-                    replacement_status=replacement_status,
-                    sort_by=sort_by,
-                    sort_order=sort_order,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def unmark_device_for_replacement(self,
-                                         headers=None,
-                                         payload=None,
-                                         active_validation=True,
-                                         **request_parameters):
-        """ This function is an alias of unmark_device_for_replacement_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of unmark_device_for_replacement_v1 .
-        """
-        return self.unmark_device_for_replacement_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def return_replacement_devices_count(self,
-                                            replacement_status=None,
-                                            headers=None,
-                                            **request_parameters):
-        """ This function is an alias of return_replacement_devices_count_v1 .
-        Args:
-            replacement_status(str, list, set, tuple): replacementStatus query parameter. Device Replacement
-                status list[READY-FOR-REPLACEMENT, REPLACEMENT-IN-PROGRESS, REPLACEMENT-SCHEDULED,
-                REPLACED, ERROR] .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of return_replacement_devices_count_v1 .
-        """
-        return self.return_replacement_devices_count_v1(
-                    replacement_status=replacement_status,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieve_the_status_of_all_the_device_replacement_workflows(self,
-                                                                       family=None,
-                                                                       faulty_device_name=None,
-                                                                       faulty_device_platform=None,
-                                                                       faulty_device_serial_number=None,
-                                                                       limit=None,
-                                                                       offset=None,
-                                                                       replacement_device_platform=None,
-                                                                       replacement_device_serial_number=None,
-                                                                       replacement_status=None,
-                                                                       sort_by=None,
-                                                                       sort_order=None,
-                                                                       headers=None,
-                                                                       **request_parameters):
-        """ This function is an alias of retrieve_the_status_of_all_the_device_replacement_workflows_v1 .
-        Args:
-            family(str): family query parameter. Faulty device family. .
-            faulty_device_name(str): faultyDeviceName query parameter. Faulty device name. .
-            faulty_device_platform(str): faultyDevicePlatform query parameter. Faulty device platform. .
-            faulty_device_serial_number(str): faultyDeviceSerialNumber query parameter. Faulty device serial
-                number. .
-            replacement_device_platform(str): replacementDevicePlatform query parameter. Replacement device
-                platform. .
-            replacement_device_serial_number(str): replacementDeviceSerialNumber query parameter. Replacement
-                device serial number. .
-            replacement_status(str): replacementStatus query parameter. Device replacement status. Available
-                values : MARKED_FOR_REPLACEMENT, NETWORK_READINESS_REQUESTED, NETWORK_READINESS_FAILED,
-                READY_FOR_REPLACEMENT, REPLACEMENT_SCHEDULED, REPLACEMENT_IN_PROGRESS, REPLACED, ERROR.
-                Replacement status: 'MARKED_FOR_REPLACEMENT' The faulty device has been marked for
-                replacement. 'NETWORK_READINESS_REQUESTED' Initiated steps to shut down neighboring
-                device interfaces and create a DHCP server on the uplink neighbor if the faulty device
-                is part of a fabric setup. 'NETWORK_READINESS_FAILED' Preparation of the network failed.
-                Neighboring device interfaces were not shut down, and the DHCP server on the uplink
-                neighbor was not created. 'READY_FOR_REPLACEMENT' The network is prepared for the faulty
-                device replacement. Neighboring device interfaces are shut down, and the DHCP server on
-                the uplink neighbor is set up. 'REPLACEMENT_SCHEDULED' Device replacement has been
-                scheduled. 'REPLACEMENT_IN_PROGRESS' Device replacement is currently in progress.
-                'REPLACED' Device replacement was successful. 'ERROR' Device replacement has failed. .
-            offset(int): offset query parameter. The first record to show for this page; the first record is
-                numbered 1. .
-            limit(int): limit query parameter. The number of records to show for this page. Maximum value can be
-                500. .
-            sort_by(str): sortBy query parameter. A property within the response to sort by. Available values
-                : id, creationTime, family, faultyDeviceId, fautyDeviceName, faultyDevicePlatform,
-                faultyDeviceSerialNumber, replacementDevicePlatform, replacementDeviceSerialNumber,
-                replacementTime. .
-            sort_order(str): sortOrder query parameter. Whether ascending or descending order should be used
-                to sort the response. Available values : ASC, DESC .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieve_the_status_of_all_the_device_replacement_workflows_v1 .
-        """
-        return self.retrieve_the_status_of_all_the_device_replacement_workflows_v1(
-                    family=family,
-                    faulty_device_name=faulty_device_name,
-                    faulty_device_platform=faulty_device_platform,
-                    faulty_device_serial_number=faulty_device_serial_number,
-                    limit=limit,
-                    offset=offset,
-                    replacement_device_platform=replacement_device_platform,
-                    replacement_device_serial_number=replacement_device_serial_number,
-                    replacement_status=replacement_status,
-                    sort_by=sort_by,
-                    sort_order=sort_order,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieve_the_status_of_device_replacement_workflow_that_replaces_a_faulty_device_with_a_replacement_device(self,
-                                                                                                                      id,
-                                                                                                                      headers=None,
-                                                                                                                      **request_parameters):
-        """ This function is an alias of retrieve_the_status_of_device_replacement_workflow_that_replaces_a_faulty_device_with_a_replacement_device_v1 .
-        Args:
-            id(str): id path parameter. Instance UUID of the device replacement .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieve_the_status_of_device_replacement_workflow_that_replaces_a_faulty_device_with_a_replacement_device_v1 .
-        """
-        return self.retrieve_the_status_of_device_replacement_workflow_that_replaces_a_faulty_device_with_a_replacement_device_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def mark_device_for_replacement(self,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
-        """ This function is an alias of mark_device_for_replacement_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of mark_device_for_replacement_v1 .
-        """
-        return self.mark_device_for_replacement_v1(
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def deploy_device_replacement_workflow(self,
-                                              faultyDeviceSerialNumber=None,
-                                              replacementDeviceSerialNumber=None,
-                                              headers=None,
-                                              payload=None,
-                                              active_validation=True,
-                                              **request_parameters):
-        """ This function is an alias of deploy_device_replacement_workflow_v1 .
-        Args:
-            faultyDeviceSerialNumber(string): Device Replacement's Faulty device serial number .
-            replacementDeviceSerialNumber(string): Device Replacement's Replacement device serial number .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of deploy_device_replacement_workflow_v1 .
-        """
-        return self.deploy_device_replacement_workflow_v1(
-                    faultyDeviceSerialNumber=faultyDeviceSerialNumber,
-                    replacementDeviceSerialNumber=replacementDeviceSerialNumber,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
+# Alias Functions
 

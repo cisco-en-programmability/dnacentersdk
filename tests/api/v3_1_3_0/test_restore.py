@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
 
 
-def is_valid_restore_backup_v1(json_schema_validate, obj):
+def is_valid_restore_backup(json_schema_validate, obj):
     json_schema_validate('jsd_9b5a94fd2d97514b8a9cf73df4e154b8_v3_1_3_0').validate(obj)
     return True
 
 
-def restore_backup_v1(api):
-    endpoint_result = api.restore.restore_backup_v1(
+def restore_backup(api):
+    endpoint_result = api.restore.restore_backup(
         active_validation=True,
         encryptionPassphrase='string',
         id='string',
@@ -45,11 +45,11 @@ def restore_backup_v1(api):
 
 
 @pytest.mark.restore
-def test_restore_backup_v1(api, validator):
+def test_restore_backup(api, validator):
     try:
-        assert is_valid_restore_backup_v1(
+        assert is_valid_restore_backup(
             validator,
-            restore_backup_v1(api)
+            restore_backup(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -57,8 +57,8 @@ def test_restore_backup_v1(api, validator):
             raise original_e
 
 
-def restore_backup_v1_default_val(api):
-    endpoint_result = api.restore.restore_backup_v1(
+def restore_backup_default_val(api):
+    endpoint_result = api.restore.restore_backup(
         active_validation=True,
         encryptionPassphrase=None,
         id='string',
@@ -68,11 +68,11 @@ def restore_backup_v1_default_val(api):
 
 
 @pytest.mark.restore
-def test_restore_backup_v1_default_val(api, validator):
+def test_restore_backup_default_val(api, validator):
     try:
-        assert is_valid_restore_backup_v1(
+        assert is_valid_restore_backup(
             validator,
-            restore_backup_v1_default_val(api)
+            restore_backup_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

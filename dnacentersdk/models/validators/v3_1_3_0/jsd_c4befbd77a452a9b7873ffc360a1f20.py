@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddWLCToFabricDomainV1 data model.
+"""Cisco DNA Center AddWLCToFabricDomain data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC4Befbd77A452A9B7873Ffc360A1F20(object):
-    """AddWLCToFabricDomainV1 request schema definition."""
+    """AddWLCToFabricDomain request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC4Befbd77A452A9B7873Ffc360A1F20, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

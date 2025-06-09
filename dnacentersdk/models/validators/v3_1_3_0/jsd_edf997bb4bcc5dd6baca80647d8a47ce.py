@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center GetTopNAnalyticsDataOfDHCPServicesForGivenSetOfComplexFiltersV1 data model.
+"""Cisco DNA Center GetTopNAnalyticsDataOfDHCPServicesForGivenSetOfComplexFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEdf997Bb4Bcc5Dd6Baca80647D8A47Ce(object):
-    """GetTopNAnalyticsDataOfDHCPServicesForGivenSetOfComplexFiltersV1
+    """GetTopNAnalyticsDataOfDHCPServicesForGivenSetOfComplexFilters
     request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEdf997Bb4Bcc5Dd6Baca80647D8A47Ce, self).__init__()

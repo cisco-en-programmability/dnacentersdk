@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco Catalyst Center Users API wrapper.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,9 +65,9 @@ class Users(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_user_enrichment_details_v1(self,
-                                       headers=None,
-                                       **request_parameters):
+    def get_user_enrichment_details(self,
+                                    headers=None,
+                                    **request_parameters):
         """Enriches a given network End User context (a network user-id or end user’s device Mac Address) with details
         about the user and devices that the user is connected to .
 
@@ -129,25 +128,5 @@ class Users(object):
 
         return self._object_factory('bpm_f9c1d861a051b4a4928f2e6d84b2e3_v2_3_7_9', json_data)
 
-
-
-    # Alias Function
-    def get_user_enrichment_details(self,
-                                       headers=None,
-                                       **request_parameters):
-        """ This function is an alias of get_user_enrichment_details_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_user_enrichment_details_v1 .
-        """
-        return self.get_user_enrichment_details_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

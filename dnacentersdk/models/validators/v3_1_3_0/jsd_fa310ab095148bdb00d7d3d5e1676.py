@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateOrScheduleAReportV1 data model.
+"""Cisco DNA Center CreateOrScheduleAReport data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676(object):
-    """CreateOrScheduleAReportV1 request schema definition."""
+    """CreateOrScheduleAReport request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorFa310Ab095148Bdb00D7D3D5E1676, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

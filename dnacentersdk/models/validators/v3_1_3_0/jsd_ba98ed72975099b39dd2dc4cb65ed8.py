@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatesConfigurationDetailsOfTheExternalIPAMServerV1 data model.
+"""Cisco DNA Center UpdatesConfigurationDetailsOfTheExternalIPAMServer data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBa98Ed72975099B39DD2Dc4Cb65Ed8(object):
-    """UpdatesConfigurationDetailsOfTheExternalIPAMServerV1 request
-    schema definition."""
+    """UpdatesConfigurationDetailsOfTheExternalIPAMServer request schema
+    definition."""
     def __init__(self):
         super(JSONSchemaValidatorBa98Ed72975099B39DD2Dc4Cb65Ed8, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

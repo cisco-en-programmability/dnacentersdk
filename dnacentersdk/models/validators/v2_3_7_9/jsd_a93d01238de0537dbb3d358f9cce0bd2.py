@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateScheduleOfFlexibleReportV1 data model.
+"""Cisco DNA Center UpdateScheduleOfFlexibleReport data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorA93D01238De0537DBb3D358F9Cce0Bd2(object):
-    """UpdateScheduleOfFlexibleReportV1 request schema definition."""
+    """UpdateScheduleOfFlexibleReport request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorA93D01238De0537DBb3D358F9Cce0Bd2, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

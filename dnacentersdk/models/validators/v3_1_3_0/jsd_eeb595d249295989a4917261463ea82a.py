@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateMultiplePolicyTagsForAWirelessProfileInBulkV1 data model.
+"""Cisco DNA Center CreateMultiplePolicyTagsForAWirelessProfileInBulk data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEeb595D249295989A4917261463Ea82A(object):
-    """CreateMultiplePolicyTagsForAWirelessProfileInBulkV1 request schema
+    """CreateMultiplePolicyTagsForAWirelessProfileInBulk request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorEeb595D249295989A4917261463Ea82A, self).__init__()

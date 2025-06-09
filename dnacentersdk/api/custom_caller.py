@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center CustomCaller
+"""Cisco Catalyst Center CustomCaller
 
 Copyright (c) 2019-2021 Cisco Systems.
 
@@ -42,9 +42,9 @@ logger = logging.getLogger(__name__)
 
 
 class CustomCaller(object):
-    """Cisco DNA Center CustomCaller.
+    """Cisco Catalyst Center CustomCaller.
 
-    DNA Center CustomCaller allows API creation.
+    Catalyst Center CustomCaller allows API creation.
 
     """
 
@@ -53,7 +53,7 @@ class CustomCaller(object):
 
         Args:
             session(RestSession): The RESTful session object to be used for
-                API calls to the DNA Center service.
+                API calls to the Catalyst Center service.
 
         Raises:
             TypeError: If the parameter types are incorrect.
@@ -134,7 +134,7 @@ class CustomCaller(object):
 
         Raises:
             TypeError: If the parameter types are incorrect.
-            HTTPError: If the DNA Center cloud returns an error.
+            HTTPError: If the Catalyst Center cloud returns an error.
         """
 
         path_params = kwargs.pop('path_params', {})

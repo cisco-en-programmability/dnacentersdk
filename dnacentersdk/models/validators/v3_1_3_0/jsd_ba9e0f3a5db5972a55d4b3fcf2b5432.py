@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateASpecificSiteTagForAWirelessProfileV1 data model.
+"""Cisco DNA Center UpdateASpecificSiteTagForAWirelessProfile data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBa9E0F3A5Db5972A55D4B3Fcf2B5432(object):
-    """UpdateASpecificSiteTagForAWirelessProfileV1 request schema
+    """UpdateASpecificSiteTagForAWirelessProfile request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorBa9E0F3A5Db5972A55D4B3Fcf2B5432, self).__init__()

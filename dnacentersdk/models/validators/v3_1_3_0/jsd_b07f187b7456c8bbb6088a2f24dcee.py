@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddIPPoolInSDAVirtualNetworkV1 data model.
+"""Cisco DNA Center AddIPPoolInSDAVirtualNetwork data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorB07F187B7456C8Bbb6088A2F24Dcee(object):
-    """AddIPPoolInSDAVirtualNetworkV1 request schema definition."""
+    """AddIPPoolInSDAVirtualNetwork request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorB07F187B7456C8Bbb6088A2F24Dcee, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
 
 
-def is_valid_get_cmdb_sync_status_v1(json_schema_validate, obj):
+def is_valid_get_cmdb_sync_status(json_schema_validate, obj):
     json_schema_validate('jsd_46eb1bf346225a4ba24f18408ffca7c9_v3_1_3_0').validate(obj)
     return True
 
 
-def get_cmdb_sync_status_v1(api):
-    endpoint_result = api.itsm.get_cmdb_sync_status_v1(
+def get_cmdb_sync_status(api):
+    endpoint_result = api.itsm.get_cmdb_sync_status(
         date='string',
         status='string'
     )
@@ -43,11 +43,11 @@ def get_cmdb_sync_status_v1(api):
 
 
 @pytest.mark.itsm
-def test_get_cmdb_sync_status_v1(api, validator):
+def test_get_cmdb_sync_status(api, validator):
     try:
-        assert is_valid_get_cmdb_sync_status_v1(
+        assert is_valid_get_cmdb_sync_status(
             validator,
-            get_cmdb_sync_status_v1(api)
+            get_cmdb_sync_status(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,8 +55,8 @@ def test_get_cmdb_sync_status_v1(api, validator):
             raise original_e
 
 
-def get_cmdb_sync_status_v1_default_val(api):
-    endpoint_result = api.itsm.get_cmdb_sync_status_v1(
+def get_cmdb_sync_status_default_val(api):
+    endpoint_result = api.itsm.get_cmdb_sync_status(
         date=None,
         status=None
     )
@@ -64,35 +64,35 @@ def get_cmdb_sync_status_v1_default_val(api):
 
 
 @pytest.mark.itsm
-def test_get_cmdb_sync_status_v1_default_val(api, validator):
+def test_get_cmdb_sync_status_default_val(api, validator):
     try:
-        assert is_valid_get_cmdb_sync_status_v1(
+        assert is_valid_get_cmdb_sync_status(
             validator,
-            get_cmdb_sync_status_v1_default_val(api)
+            get_cmdb_sync_status_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_failed_itsm_events_v1(json_schema_validate, obj):
+def is_valid_get_failed_itsm_events(json_schema_validate, obj):
     json_schema_validate('jsd_da70082b298a5a908edb780a61bd4ca6_v3_1_3_0').validate(obj)
     return True
 
 
-def get_failed_itsm_events_v1(api):
-    endpoint_result = api.itsm.get_failed_itsm_events_v1(
+def get_failed_itsm_events(api):
+    endpoint_result = api.itsm.get_failed_itsm_events(
         instance_id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.itsm
-def test_get_failed_itsm_events_v1(api, validator):
+def test_get_failed_itsm_events(api, validator):
     try:
-        assert is_valid_get_failed_itsm_events_v1(
+        assert is_valid_get_failed_itsm_events(
             validator,
-            get_failed_itsm_events_v1(api)
+            get_failed_itsm_events(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -100,32 +100,32 @@ def test_get_failed_itsm_events_v1(api, validator):
             raise original_e
 
 
-def get_failed_itsm_events_v1_default_val(api):
-    endpoint_result = api.itsm.get_failed_itsm_events_v1(
+def get_failed_itsm_events_default_val(api):
+    endpoint_result = api.itsm.get_failed_itsm_events(
         instance_id=None
     )
     return endpoint_result
 
 
 @pytest.mark.itsm
-def test_get_failed_itsm_events_v1_default_val(api, validator):
+def test_get_failed_itsm_events_default_val(api, validator):
     try:
-        assert is_valid_get_failed_itsm_events_v1(
+        assert is_valid_get_failed_itsm_events(
             validator,
-            get_failed_itsm_events_v1_default_val(api)
+            get_failed_itsm_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_retry_integration_events_v1(json_schema_validate, obj):
+def is_valid_retry_integration_events(json_schema_validate, obj):
     json_schema_validate('jsd_25624cfb1d6e52878d057740de275896_v3_1_3_0').validate(obj)
     return True
 
 
-def retry_integration_events_v1(api):
-    endpoint_result = api.itsm.retry_integration_events_v1(
+def retry_integration_events(api):
+    endpoint_result = api.itsm.retry_integration_events(
         active_validation=True,
         payload=None
     )
@@ -133,11 +133,11 @@ def retry_integration_events_v1(api):
 
 
 @pytest.mark.itsm
-def test_retry_integration_events_v1(api, validator):
+def test_retry_integration_events(api, validator):
     try:
-        assert is_valid_retry_integration_events_v1(
+        assert is_valid_retry_integration_events(
             validator,
-            retry_integration_events_v1(api)
+            retry_integration_events(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -145,8 +145,8 @@ def test_retry_integration_events_v1(api, validator):
             raise original_e
 
 
-def retry_integration_events_v1_default_val(api):
-    endpoint_result = api.itsm.retry_integration_events_v1(
+def retry_integration_events_default_val(api):
+    endpoint_result = api.itsm.retry_integration_events(
         active_validation=True,
         payload=None
     )
@@ -154,11 +154,11 @@ def retry_integration_events_v1_default_val(api):
 
 
 @pytest.mark.itsm
-def test_retry_integration_events_v1_default_val(api, validator):
+def test_retry_integration_events_default_val(api, validator):
     try:
-        assert is_valid_retry_integration_events_v1(
+        assert is_valid_retry_integration_events(
             validator,
-            retry_integration_events_v1_default_val(api)
+            retry_integration_events_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

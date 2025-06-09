@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center ReloadSwitchForWirelessControllerCleanupV1 data model.
+"""Cisco DNA Center ReloadSwitchForWirelessControllerCleanup data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCdf8C0D3866D5147901C0Cf4821A84A7(object):
-    """ReloadSwitchForWirelessControllerCleanupV1 request schema
+    """ReloadSwitchForWirelessControllerCleanup request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorCdf8C0D3866D5147901C0Cf4821A84A7, self).__init__()

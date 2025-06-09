@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center TheTrendAnalyticsDataForTheNetworkDeviceInTheSpecifiedTimeRangeV1 data
-model.
+"""Cisco DNA Center TheTrendAnalyticsDataForTheNetworkDeviceInTheSpecifiedTimeRange data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -23,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -34,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCa2F659B595C0BA7C649Fd8C8Bdad6(object):
-    """TheTrendAnalyticsDataForTheNetworkDeviceInTheSpecifiedTimeRangeV1
+    """TheTrendAnalyticsDataForTheNetworkDeviceInTheSpecifiedTimeRange
     request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCa2F659B595C0BA7C649Fd8C8Bdad6, self).__init__()

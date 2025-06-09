@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center MobilityProvisionV1 data model.
+"""Cisco DNA Center MobilityProvision data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBfd1Cc1403C951A99C0FCafd59Eaabf3(object):
-    """MobilityProvisionV1 request schema definition."""
+    """MobilityProvision request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBfd1Cc1403C951A99C0FCafd59Eaabf3, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

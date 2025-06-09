@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,11 +65,11 @@ class Wired(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_configurations_for_intended_layer2_features_on_a_wired_device_v1(self,
-                                                                             feature,
-                                                                             id,
-                                                                             headers=None,
-                                                                             **request_parameters):
+    def get_configurations_for_intended_layer2_features_on_a_wired_device(self,
+                                                                          feature,
+                                                                          id,
+                                                                          headers=None,
+                                                                          **request_parameters):
         """This API returns the configurations for the intended layer 2 features on a wired device. Even after the intended
         configurations are deployed using the API
         /intent/api/v1/networkDevices/{id}/configFeatures/intended/deploy, they continue to be a part of the
@@ -135,11 +134,11 @@ class Wired(object):
 
         return self._object_factory('bpm_d96b49e8c1a0594cb4e1946731f06411_v3_1_3_0', json_data)
 
-    def deploy_the_configuration_model_on_the_network_device_v1(self,
-                                                                network_device_id,
-                                                                preview_activity_id,
-                                                                headers=None,
-                                                                **request_parameters):
+    def deploy_the_configuration_model_on_the_network_device(self,
+                                                             network_device_id,
+                                                             preview_activity_id,
+                                                             headers=None,
+                                                             **request_parameters):
         """This API deploys the configuration model on the network device. This is the final step 'Step 4' of the following
         workflow. Step 1Use 'POST
         /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/configurationModels' to
@@ -163,8 +162,7 @@ class Wired(object):
             network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
                 provision. The API /intent/api/v1/network-device can be used to get the network device
                 ID. .
-            preview_activity_id(str): previewActivityId path parameter. Activity id from
-                intent/api/v1/activity. .
+            preview_activity_id(str): previewActivityId path parameter. Activity id from intent/api/v1/activity. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -222,19 +220,18 @@ class Wired(object):
 
         return self._object_factory('bpm_b6139c3f3ef15bcf9a42f5283a6aea64_v3_1_3_0', json_data)
 
-    def get_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1(self,
-                                                                              feature,
-                                                                              id,
-                                                                              headers=None,
-                                                                              **request_parameters):
+    def get_configurations_for_a_deployed_layer2_feature_on_a_wired_device(self,
+                                                                           feature,
+                                                                           id,
+                                                                           headers=None,
+                                                                           **request_parameters):
         """The API returns configurations for a deployed layer 2 feature on a wired device. .
 
         Args:
-            id(str): id path parameter. Network device ID of the wired device to retrieve configuration for.
-                .
-            feature(str): feature path parameter. Name of the feature to retrieve Layer 2 configuration for.
-                The API /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be
-                used to get the list of features supported on a device. .
+            id(str): id path parameter. Network device ID of the wired device to retrieve configuration for. .
+            feature(str): feature path parameter. Name of the feature to retrieve Layer 2 configuration for. The API
+                /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be used to
+                get the list of features supported on a device. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -288,16 +285,15 @@ class Wired(object):
 
         return self._object_factory('bpm_fcf9673050079b4abedf3ffc9777_v3_1_3_0', json_data)
 
-    def get_number_of_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1(self,
-                                                                                        feature,
-                                                                                        id,
-                                                                                        headers=None,
-                                                                                        **request_parameters):
+    def get_number_of_configurations_for_a_deployed_layer2_feature_on_a_wired_device(self,
+                                                                                     feature,
+                                                                                     id,
+                                                                                     headers=None,
+                                                                                     **request_parameters):
         """The API returns the number of configurations for a deployed layer 2 feature on a wired device. .
 
         Args:
-            id(str): id path parameter. Network device ID of the wired device to retrieve configuration for.
-                .
+            id(str): id path parameter. Network device ID of the wired device to retrieve configuration for. .
             feature(str): feature path parameter. Name of the feature to retrieve configuration for. The API
                 /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be used to
                 get the list of features supported on a device. .
@@ -354,10 +350,10 @@ class Wired(object):
 
         return self._object_factory('bpm_e495979e25a6559394fbad6fcd4c495a_v3_1_3_0', json_data)
 
-    def create_configurations_for_intended_layer2_features_on_a_wired_device_v1(self,
-                                                                                id,
-                                                                                headers=None,
-                                                                                **request_parameters):
+    def create_configurations_for_intended_layer2_features_on_a_wired_device(self,
+                                                                             id,
+                                                                             headers=None,
+                                                                             **request_parameters):
         """This API creates configurations for the intended features on a wired device, if none have been added earlier.
         Only the feature configurations to be changed need to be added to the intended features. When the
         intended features are deployed to a device using the API
@@ -420,10 +416,10 @@ class Wired(object):
 
         return self._object_factory('bpm_a862379cc525a79a01fc845fdda7d68_v3_1_3_0', json_data)
 
-    def update_configurations_for_intended_layer2_features_on_a_wired_device_v1(self,
-                                                                                id,
-                                                                                headers=None,
-                                                                                **request_parameters):
+    def update_configurations_for_intended_layer2_features_on_a_wired_device(self,
+                                                                             id,
+                                                                             headers=None,
+                                                                             **request_parameters):
         """This API updates the configurations for the intended features on a wired device. Only the feature configurations
         to be changed need to be added to the intended features. Updates to intended features can be done over
         several iterations. Once the updates are complete, the intended features can be deployed to a device
@@ -484,11 +480,11 @@ class Wired(object):
 
         return self._object_factory('bpm_ecf0984975fb7af51796da58aca21_v3_1_3_0', json_data)
 
-    def get_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(self,
-                                                                               feature,
-                                                                               id,
-                                                                               headers=None,
-                                                                               **request_parameters):
+    def get_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
+                                                                            feature,
+                                                                            id,
+                                                                            headers=None,
+                                                                            **request_parameters):
         """This API returns the configurations for an intended layer 2 feature on a wired device. Even after the intended
         configurations are deployed using the API
         /dna/intent/api/v1/networkDevices/{id}/configFeatures/intended/deploy, they continue to be a part of the
@@ -550,11 +546,11 @@ class Wired(object):
 
         return self._object_factory('bpm_d1b2d399192a5da39b4ae3fe0f5288d4_v3_1_3_0', json_data)
 
-    def delete_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(self,
-                                                                                  feature,
-                                                                                  id,
-                                                                                  headers=None,
-                                                                                  **request_parameters):
+    def delete_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
+                                                                               feature,
+                                                                               id,
+                                                                               headers=None,
+                                                                               **request_parameters):
         """This API deletes the configurations for an intended feature on a wired device. Once all the updates to intended
         features are complete, they can be deployed to a device using the API
         /dna/intent/api/v1/networkDevices/{id}/configFeatures/intended/deploy. When the intended features are
@@ -618,32 +614,32 @@ class Wired(object):
 
         return self._object_factory('bpm_d4649fef20535193fd86c95925bcf8_v3_1_3_0', json_data)
 
-    def update_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(self,
-                                                                                  feature,
-                                                                                  id,
-                                                                                  cdpGlobalConfig=None,
-                                                                                  cdpInterfaceConfig=None,
-                                                                                  dhcpSnoopingGlobalConfig=None,
-                                                                                  dhcpSnoopingInterfaceConfig=None,
-                                                                                  dot1xGlobalConfig=None,
-                                                                                  dot1xInterfaceConfig=None,
-                                                                                  igmpSnoopingGlobalConfig=None,
-                                                                                  lldpGlobalConfig=None,
-                                                                                  lldpInterfaceConfig=None,
-                                                                                  mabInterfaceConfig=None,
-                                                                                  mldSnoopingGlobalConfig=None,
-                                                                                  portChannelConfig=None,
-                                                                                  stpGlobalConfig=None,
-                                                                                  stpInterfaceConfig=None,
-                                                                                  switchportInterfaceConfig=None,
-                                                                                  trunkInterfaceConfig=None,
-                                                                                  vlanConfig=None,
-                                                                                  vtpGlobalConfig=None,
-                                                                                  vtpInterfaceConfig=None,
-                                                                                  headers=None,
-                                                                                  payload=None,
-                                                                                  active_validation=True,
-                                                                                  **request_parameters):
+    def update_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
+                                                                               feature,
+                                                                               id,
+                                                                               cdpGlobalConfig=None,
+                                                                               cdpInterfaceConfig=None,
+                                                                               dhcpSnoopingGlobalConfig=None,
+                                                                               dhcpSnoopingInterfaceConfig=None,
+                                                                               dot1xGlobalConfig=None,
+                                                                               dot1xInterfaceConfig=None,
+                                                                               igmpSnoopingGlobalConfig=None,
+                                                                               lldpGlobalConfig=None,
+                                                                               lldpInterfaceConfig=None,
+                                                                               mabInterfaceConfig=None,
+                                                                               mldSnoopingGlobalConfig=None,
+                                                                               portChannelConfig=None,
+                                                                               stpGlobalConfig=None,
+                                                                               stpInterfaceConfig=None,
+                                                                               switchportInterfaceConfig=None,
+                                                                               trunkInterfaceConfig=None,
+                                                                               vlanConfig=None,
+                                                                               vtpGlobalConfig=None,
+                                                                               vtpInterfaceConfig=None,
+                                                                               headers=None,
+                                                                               payload=None,
+                                                                               active_validation=True,
+                                                                               **request_parameters):
         """This API updates the configurations for an intended feature on a wired device. Updates to other intended
         features can be done over several iterations. Once all the updates to intended features are complete,
         they can be deployed to a device using the API
@@ -673,8 +669,8 @@ class Wired(object):
             vtpGlobalConfig(object): Wired's vtpGlobalConfig.
             vtpInterfaceConfig(object): Wired's vtpInterfaceConfig.
             id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature path parameter. Name of the feature to update configuration for. The
-                feature must be already created. .
+            feature(str): feature path parameter. Name of the feature to update configuration for. The feature must
+                be already created. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             payload(dict): A JSON serializable Python object to send in the
@@ -780,32 +776,32 @@ class Wired(object):
 
         return self._object_factory('bpm_ee7664344f50cb8f2c94beaa01629d_v3_1_3_0', json_data)
 
-    def create_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(self,
-                                                                                  feature,
-                                                                                  id,
-                                                                                  cdpGlobalConfig=None,
-                                                                                  cdpInterfaceConfig=None,
-                                                                                  dhcpSnoopingGlobalConfig=None,
-                                                                                  dhcpSnoopingInterfaceConfig=None,
-                                                                                  dot1xGlobalConfig=None,
-                                                                                  dot1xInterfaceConfig=None,
-                                                                                  igmpSnoopingGlobalConfig=None,
-                                                                                  lldpGlobalConfig=None,
-                                                                                  lldpInterfaceConfig=None,
-                                                                                  mabInterfaceConfig=None,
-                                                                                  mldSnoopingGlobalConfig=None,
-                                                                                  portChannelConfig=None,
-                                                                                  stpGlobalConfig=None,
-                                                                                  stpInterfaceConfig=None,
-                                                                                  switchportInterfaceConfig=None,
-                                                                                  trunkInterfaceConfig=None,
-                                                                                  vlanConfig=None,
-                                                                                  vtpGlobalConfig=None,
-                                                                                  vtpInterfaceConfig=None,
-                                                                                  headers=None,
-                                                                                  payload=None,
-                                                                                  active_validation=True,
-                                                                                  **request_parameters):
+    def create_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
+                                                                               feature,
+                                                                               id,
+                                                                               cdpGlobalConfig=None,
+                                                                               cdpInterfaceConfig=None,
+                                                                               dhcpSnoopingGlobalConfig=None,
+                                                                               dhcpSnoopingInterfaceConfig=None,
+                                                                               dot1xGlobalConfig=None,
+                                                                               dot1xInterfaceConfig=None,
+                                                                               igmpSnoopingGlobalConfig=None,
+                                                                               lldpGlobalConfig=None,
+                                                                               lldpInterfaceConfig=None,
+                                                                               mabInterfaceConfig=None,
+                                                                               mldSnoopingGlobalConfig=None,
+                                                                               portChannelConfig=None,
+                                                                               stpGlobalConfig=None,
+                                                                               stpInterfaceConfig=None,
+                                                                               switchportInterfaceConfig=None,
+                                                                               trunkInterfaceConfig=None,
+                                                                               vlanConfig=None,
+                                                                               vtpGlobalConfig=None,
+                                                                               vtpInterfaceConfig=None,
+                                                                               headers=None,
+                                                                               payload=None,
+                                                                               active_validation=True,
+                                                                               **request_parameters):
         """This API creates configurations for an intended feature on a wired device. Once all the updates to intended
         features are complete, they can be deployed to a device using the API
         /dna/intent/api/v1/networkDevices/{id}/configFeatures/intended/deploy. When the intended features are
@@ -942,11 +938,11 @@ class Wired(object):
 
         return self._object_factory('bpm_d7b57050bdb98e9340d0bc4dba_v3_1_3_0', json_data)
 
-    def get_number_of_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(self,
-                                                                                         feature,
-                                                                                         id,
-                                                                                         headers=None,
-                                                                                         **request_parameters):
+    def get_number_of_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
+                                                                                      feature,
+                                                                                      id,
+                                                                                      headers=None,
+                                                                                      **request_parameters):
         """This API returns the count of the instances of the configurations for an intended layer 2 feature on a wired
         device. .
 
@@ -1008,10 +1004,10 @@ class Wired(object):
 
         return self._object_factory('bpm_d2cca58398312cb0129d39d8c_v3_1_3_0', json_data)
 
-    def get_the_supported_layer2_features_on_a_wired_device_v1(self,
-                                                               id,
-                                                               headers=None,
-                                                               **request_parameters):
+    def get_the_supported_layer2_features_on_a_wired_device(self,
+                                                            id,
+                                                            headers=None,
+                                                            **request_parameters):
         """The API returns the supported layer 2 features on a wired device. .
 
         Args:
@@ -1066,10 +1062,10 @@ class Wired(object):
 
         return self._object_factory('bpm_c4684074beb50b1ae5e77141244ebbd_v3_1_3_0', json_data)
 
-    def create_a_configuration_model_for_the_intended_configs_for_a_wired_device_v1(self,
-                                                                                    network_device_id,
-                                                                                    headers=None,
-                                                                                    **request_parameters):
+    def create_a_configuration_model_for_the_intended_configs_for_a_wired_device(self,
+                                                                                 network_device_id,
+                                                                                 headers=None,
+                                                                                 **request_parameters):
         """Create a configuration model for the intended configs for a wired device. This is a pre-requisite to preview the
         generated device config for the provisioning intent. This is mandatory if the provisioning settings
         require Preview or ITSM Approval before deploying configurations on network devices. The API
@@ -1149,11 +1145,11 @@ class Wired(object):
 
         return self._object_factory('bpm_c74d2bae55f85924002ddb92fe064_v3_1_3_0', json_data)
 
-    def delete_the_configuration_model_v1(self,
-                                          network_device_id,
-                                          preview_activity_id,
-                                          headers=None,
-                                          **request_parameters):
+    def delete_the_configuration_model(self,
+                                       network_device_id,
+                                       preview_activity_id,
+                                       headers=None,
+                                       **request_parameters):
         """Deletes the configuration model. The API can be used at any step to discard/cancel the provision of intended
         features. .
 
@@ -1219,11 +1215,11 @@ class Wired(object):
 
         return self._object_factory('bpm_fec9a36b80305b5593608e369fa05b64_v3_1_3_0', json_data)
 
-    def generate_the_device_config_for_the_configuration_model_v1(self,
-                                                                  network_device_id,
-                                                                  preview_activity_id,
-                                                                  headers=None,
-                                                                  **request_parameters):
+    def generate_the_device_config_for_the_configuration_model(self,
+                                                               network_device_id,
+                                                               preview_activity_id,
+                                                               headers=None,
+                                                               **request_parameters):
         """Generates the device config for the configuration model. This API is 'Step 2' in the following workflow  Step
         1Use 'POST
         /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/configurationModels' to
@@ -1307,11 +1303,11 @@ class Wired(object):
 
         return self._object_factory('bpm_e174c2cf0ecb5b52806a95a08477ae4d_v3_1_3_0', json_data)
 
-    def gets_the_device_config_for_the_configuration_model_v1(self,
-                                                              network_device_id,
-                                                              preview_activity_id,
-                                                              headers=None,
-                                                              **request_parameters):
+    def gets_the_device_config_for_the_configuration_model(self,
+                                                           network_device_id,
+                                                           preview_activity_id,
+                                                           headers=None,
+                                                           **request_parameters):
         """Gets the device config for the configuration model. This API is 'Step 3' in the following workflow. Step 1Use
         'POST /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/configurationModels'
         to start the provision of intended features. The response has a taskId which is the previewActivityId in
@@ -1334,9 +1330,9 @@ class Wired(object):
             network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
                 provision. The API /intent/api/v1/network-device can be used to get the network device
                 ID. .
-            preview_activity_id(str): previewActivityId path parameter. Activity id is the taskId from Step
-                2'POST /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/con
-                figurationModels/{previewActivityId}/networkDevices/{networkDeviceId}/config .
+            preview_activity_id(str): previewActivityId path parameter. Activity id is the taskId from Step 2'POST /
+                intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/configurati
+                onModels/{previewActivityId}/networkDevices/{networkDeviceId}/config .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -1391,10 +1387,10 @@ class Wired(object):
 
         return self._object_factory('bpm_f7fdcd6e2dd5f4eaf7ceed5e5856ba2_v3_1_3_0', json_data)
 
-    def deploy_the_intended_configuration_features_on_a_wired_device_v1(self,
-                                                                        network_device_id,
-                                                                        headers=None,
-                                                                        **request_parameters):
+    def deploy_the_intended_configuration_features_on_a_wired_device(self,
+                                                                     network_device_id,
+                                                                     headers=None,
+                                                                     **request_parameters):
         """Deploy the intended configuration features on a wired device. This can be used only if the provisioning settings
         do not require Preview or ITSM Approval before deploying configurations on network devices. The API
         /intent/api/v1/provisioningSettings can be used to get or update provisioning settings. .
@@ -1456,10 +1452,10 @@ class Wired(object):
 
         return self._object_factory('bpm_a21cb2b7ea258e197f22082301cd1cc_v3_1_3_0', json_data)
 
-    def get_device_deployment_status_connectivity_v1(self,
-                                                     network_device_id,
-                                                     headers=None,
-                                                     **request_parameters):
+    def get_device_deployment_status_connectivity(self,
+                                                  network_device_id,
+                                                  headers=None,
+                                                  **request_parameters):
         """The API returns device deployment status based on filter criteria. .
 
         Args:
@@ -1516,10 +1512,10 @@ class Wired(object):
 
         return self._object_factory('bpm_be5246ea895b5b958caa2c67d6e389_v3_1_3_0', json_data)
 
-    def get_service_deployment_status_v1(self,
-                                         network_device_id,
-                                         headers=None,
-                                         **request_parameters):
+    def get_service_deployment_status(self,
+                                      network_device_id,
+                                      headers=None,
+                                      **request_parameters):
         """Returns service deployment status based on filter criteria. .
 
         Args:
@@ -1576,645 +1572,5 @@ class Wired(object):
 
         return self._object_factory('bpm_c16b9caed6045399a6e7744914195fee_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def get_number_of_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
-                                                                                         feature,
-                                                                                         id,
-                                                                                         headers=None,
-                                                                                         **request_parameters):
-        """ This function is an alias of get_number_of_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature path parameter. Name of the feature to configure. The API
-                /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be used to
-                get the list of features supported on a device. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_number_of_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.get_number_of_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
-                                                                               feature,
-                                                                               id,
-                                                                               headers=None,
-                                                                               **request_parameters):
-        """ This function is an alias of get_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature path parameter. The name of the feature to be retrieved. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.get_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_configurations_for_intended_layer2_features_on_a_wired_device(self,
-                                                                                id,
-                                                                                headers=None,
-                                                                                **request_parameters):
-        """ This function is an alias of create_configurations_for_intended_layer2_features_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_configurations_for_intended_layer2_features_on_a_wired_device_v1 .
-        """
-        return self.create_configurations_for_intended_layer2_features_on_a_wired_device_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_number_of_configurations_for_a_deployed_layer2_feature_on_a_wired_device(self,
-                                                                                        feature,
-                                                                                        id,
-                                                                                        headers=None,
-                                                                                        **request_parameters):
-        """ This function is an alias of get_number_of_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to retrieve configuration for.
-                .
-            feature(str): feature path parameter. Name of the feature to retrieve configuration for. The API
-                /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be used to
-                get the list of features supported on a device. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_number_of_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.get_number_of_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_the_supported_layer2_features_on_a_wired_device(self,
-                                                               id,
-                                                               headers=None,
-                                                               **request_parameters):
-        """ This function is an alias of get_the_supported_layer2_features_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_the_supported_layer2_features_on_a_wired_device_v1 .
-        """
-        return self.get_the_supported_layer2_features_on_a_wired_device_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
-                                                                                  feature,
-                                                                                  id,
-                                                                                  headers=None,
-                                                                                  **request_parameters):
-        """ This function is an alias of delete_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature path parameter. Name of the feature to delete. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.delete_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def update_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
-                                                                                  feature,
-                                                                                  id,
-                                                                                  cdpGlobalConfig=None,
-                                                                                  cdpInterfaceConfig=None,
-                                                                                  dhcpSnoopingGlobalConfig=None,
-                                                                                  dhcpSnoopingInterfaceConfig=None,
-                                                                                  dot1xGlobalConfig=None,
-                                                                                  dot1xInterfaceConfig=None,
-                                                                                  igmpSnoopingGlobalConfig=None,
-                                                                                  lldpGlobalConfig=None,
-                                                                                  lldpInterfaceConfig=None,
-                                                                                  mabInterfaceConfig=None,
-                                                                                  mldSnoopingGlobalConfig=None,
-                                                                                  portChannelConfig=None,
-                                                                                  stpGlobalConfig=None,
-                                                                                  stpInterfaceConfig=None,
-                                                                                  switchportInterfaceConfig=None,
-                                                                                  trunkInterfaceConfig=None,
-                                                                                  vlanConfig=None,
-                                                                                  vtpGlobalConfig=None,
-                                                                                  vtpInterfaceConfig=None,
-                                                                                  headers=None,
-                                                                                  payload=None,
-                                                                                  active_validation=True,
-                                                                                  **request_parameters):
-        """ This function is an alias of update_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            cdpGlobalConfig(object): Wired's cdpGlobalConfig.
-            cdpInterfaceConfig(object): Wired's cdpInterfaceConfig.
-            dhcpSnoopingGlobalConfig(object): Wired's dhcpSnoopingGlobalConfig.
-            dhcpSnoopingInterfaceConfig(object): Wired's dhcpSnoopingInterfaceConfig.
-            dot1xGlobalConfig(object): Wired's dot1xGlobalConfig.
-            dot1xInterfaceConfig(object): Wired's dot1xInterfaceConfig.
-            igmpSnoopingGlobalConfig(object): Wired's igmpSnoopingGlobalConfig.
-            lldpGlobalConfig(object): Wired's lldpGlobalConfig.
-            lldpInterfaceConfig(object): Wired's lldpInterfaceConfig.
-            mabInterfaceConfig(object): Wired's mabInterfaceConfig.
-            mldSnoopingGlobalConfig(object): Wired's mldSnoopingGlobalConfig.
-            portChannelConfig(object): Wired's portChannelConfig.
-            stpGlobalConfig(object): Wired's stpGlobalConfig.
-            stpInterfaceConfig(object): Wired's stpInterfaceConfig.
-            switchportInterfaceConfig(object): Wired's switchportInterfaceConfig.
-            trunkInterfaceConfig(object): Wired's trunkInterfaceConfig.
-            vlanConfig(object): Wired's vlanConfig.
-            vtpGlobalConfig(object): Wired's vtpGlobalConfig.
-            vtpInterfaceConfig(object): Wired's vtpInterfaceConfig.
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature path parameter. Name of the feature to update configuration for. The
-                feature must be already created. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of update_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.update_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    cdpGlobalConfig=cdpGlobalConfig,
-                    cdpInterfaceConfig=cdpInterfaceConfig,
-                    dhcpSnoopingGlobalConfig=dhcpSnoopingGlobalConfig,
-                    dhcpSnoopingInterfaceConfig=dhcpSnoopingInterfaceConfig,
-                    dot1xGlobalConfig=dot1xGlobalConfig,
-                    dot1xInterfaceConfig=dot1xInterfaceConfig,
-                    igmpSnoopingGlobalConfig=igmpSnoopingGlobalConfig,
-                    lldpGlobalConfig=lldpGlobalConfig,
-                    lldpInterfaceConfig=lldpInterfaceConfig,
-                    mabInterfaceConfig=mabInterfaceConfig,
-                    mldSnoopingGlobalConfig=mldSnoopingGlobalConfig,
-                    portChannelConfig=portChannelConfig,
-                    stpGlobalConfig=stpGlobalConfig,
-                    stpInterfaceConfig=stpInterfaceConfig,
-                    switchportInterfaceConfig=switchportInterfaceConfig,
-                    trunkInterfaceConfig=trunkInterfaceConfig,
-                    vlanConfig=vlanConfig,
-                    vtpGlobalConfig=vtpGlobalConfig,
-                    vtpInterfaceConfig=vtpInterfaceConfig,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_service_deployment_status(self,
-                                         network_device_id,
-                                         headers=None,
-                                         **request_parameters):
-        """ This function is an alias of get_service_deployment_status_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_service_deployment_status_v1 .
-        """
-        return self.get_service_deployment_status_v1(
-                    network_device_id=network_device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_configurations_for_a_deployed_layer2_feature_on_a_wired_device(self,
-                                                                              feature,
-                                                                              id,
-                                                                              headers=None,
-                                                                              **request_parameters):
-        """ This function is an alias of get_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to retrieve configuration for.
-                .
-            feature(str): feature path parameter. Name of the feature to retrieve Layer 2 configuration for.
-                The API /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be
-                used to get the list of features supported on a device. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.get_configurations_for_a_deployed_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def generate_the_device_config_for_the_configuration_model(self,
-                                                                  network_device_id,
-                                                                  preview_activity_id,
-                                                                  headers=None,
-                                                                  **request_parameters):
-        """ This function is an alias of generate_the_device_config_for_the_configuration_model_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            preview_activity_id(str): previewActivityId path parameter. Activity id is taskId from Step 1POST
-                /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/configurat
-                ionModels' .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of generate_the_device_config_for_the_configuration_model_v1 .
-        """
-        return self.generate_the_device_config_for_the_configuration_model_v1(
-                    network_device_id=network_device_id,
-                    preview_activity_id=preview_activity_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_device_deployment_status_connectivity(self,
-                                                     network_device_id,
-                                                     headers=None,
-                                                     **request_parameters):
-        """ This function is an alias of get_device_deployment_status_connectivity_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_device_deployment_status_connectivity_v1 .
-        """
-        return self.get_device_deployment_status_connectivity_v1(
-                    network_device_id=network_device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_the_configuration_model(self,
-                                          network_device_id,
-                                          preview_activity_id,
-                                          headers=None,
-                                          **request_parameters):
-        """ This function is an alias of delete_the_configuration_model_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            preview_activity_id(str): previewActivityId path parameter. Activity id from POST
-                /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/configurat
-                ionModels or /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intend
-                ed/configurationModels/{previewActivityId}/networkDevices/{networkDeviceId}/config .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_the_configuration_model_v1 .
-        """
-        return self.delete_the_configuration_model_v1(
-                    network_device_id=network_device_id,
-                    preview_activity_id=preview_activity_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def update_configurations_for_intended_layer2_features_on_a_wired_device(self,
-                                                                                id,
-                                                                                headers=None,
-                                                                                **request_parameters):
-        """ This function is an alias of update_configurations_for_intended_layer2_features_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of update_configurations_for_intended_layer2_features_on_a_wired_device_v1 .
-        """
-        return self.update_configurations_for_intended_layer2_features_on_a_wired_device_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_a_configuration_model_for_the_intended_configs_for_a_wired_device(self,
-                                                                                    network_device_id,
-                                                                                    headers=None,
-                                                                                    **request_parameters):
-        """ This function is an alias of create_a_configuration_model_for_the_intended_configs_for_a_wired_device_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_a_configuration_model_for_the_intended_configs_for_a_wired_device_v1 .
-        """
-        return self.create_a_configuration_model_for_the_intended_configs_for_a_wired_device_v1(
-                    network_device_id=network_device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_configurations_for_an_intended_layer2_feature_on_a_wired_device(self,
-                                                                                  feature,
-                                                                                  id,
-                                                                                  cdpGlobalConfig=None,
-                                                                                  cdpInterfaceConfig=None,
-                                                                                  dhcpSnoopingGlobalConfig=None,
-                                                                                  dhcpSnoopingInterfaceConfig=None,
-                                                                                  dot1xGlobalConfig=None,
-                                                                                  dot1xInterfaceConfig=None,
-                                                                                  igmpSnoopingGlobalConfig=None,
-                                                                                  lldpGlobalConfig=None,
-                                                                                  lldpInterfaceConfig=None,
-                                                                                  mabInterfaceConfig=None,
-                                                                                  mldSnoopingGlobalConfig=None,
-                                                                                  portChannelConfig=None,
-                                                                                  stpGlobalConfig=None,
-                                                                                  stpInterfaceConfig=None,
-                                                                                  switchportInterfaceConfig=None,
-                                                                                  trunkInterfaceConfig=None,
-                                                                                  vlanConfig=None,
-                                                                                  vtpGlobalConfig=None,
-                                                                                  vtpInterfaceConfig=None,
-                                                                                  headers=None,
-                                                                                  payload=None,
-                                                                                  active_validation=True,
-                                                                                  **request_parameters):
-        """ This function is an alias of create_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        Args:
-            cdpGlobalConfig(object): Wired's cdpGlobalConfig.
-            cdpInterfaceConfig(object): Wired's cdpInterfaceConfig.
-            dhcpSnoopingGlobalConfig(object): Wired's dhcpSnoopingGlobalConfig.
-            dhcpSnoopingInterfaceConfig(object): Wired's dhcpSnoopingInterfaceConfig.
-            dot1xGlobalConfig(object): Wired's dot1xGlobalConfig.
-            dot1xInterfaceConfig(object): Wired's dot1xInterfaceConfig.
-            igmpSnoopingGlobalConfig(object): Wired's igmpSnoopingGlobalConfig.
-            lldpGlobalConfig(object): Wired's lldpGlobalConfig.
-            lldpInterfaceConfig(object): Wired's lldpInterfaceConfig.
-            mabInterfaceConfig(object): Wired's mabInterfaceConfig.
-            mldSnoopingGlobalConfig(object): Wired's mldSnoopingGlobalConfig.
-            portChannelConfig(object): Wired's portChannelConfig.
-            stpGlobalConfig(object): Wired's stpGlobalConfig.
-            stpInterfaceConfig(object): Wired's stpInterfaceConfig.
-            switchportInterfaceConfig(object): Wired's switchportInterfaceConfig.
-            trunkInterfaceConfig(object): Wired's trunkInterfaceConfig.
-            vlanConfig(object): Wired's vlanConfig.
-            vtpGlobalConfig(object): Wired's vtpGlobalConfig.
-            vtpInterfaceConfig(object): Wired's vtpInterfaceConfig.
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature path parameter. Name of the feature to configure. The API
-                /dna/intent/api/v1/networkDevices/{id}/configFeatures/supported/layer2 can be used to
-                get the list of features supported on a device. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1 .
-        """
-        return self.create_configurations_for_an_intended_layer2_feature_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    cdpGlobalConfig=cdpGlobalConfig,
-                    cdpInterfaceConfig=cdpInterfaceConfig,
-                    dhcpSnoopingGlobalConfig=dhcpSnoopingGlobalConfig,
-                    dhcpSnoopingInterfaceConfig=dhcpSnoopingInterfaceConfig,
-                    dot1xGlobalConfig=dot1xGlobalConfig,
-                    dot1xInterfaceConfig=dot1xInterfaceConfig,
-                    igmpSnoopingGlobalConfig=igmpSnoopingGlobalConfig,
-                    lldpGlobalConfig=lldpGlobalConfig,
-                    lldpInterfaceConfig=lldpInterfaceConfig,
-                    mabInterfaceConfig=mabInterfaceConfig,
-                    mldSnoopingGlobalConfig=mldSnoopingGlobalConfig,
-                    portChannelConfig=portChannelConfig,
-                    stpGlobalConfig=stpGlobalConfig,
-                    stpInterfaceConfig=stpInterfaceConfig,
-                    switchportInterfaceConfig=switchportInterfaceConfig,
-                    trunkInterfaceConfig=trunkInterfaceConfig,
-                    vlanConfig=vlanConfig,
-                    vtpGlobalConfig=vtpGlobalConfig,
-                    vtpInterfaceConfig=vtpInterfaceConfig,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_configurations_for_intended_layer2_features_on_a_wired_device(self,
-                                                                             feature,
-                                                                             id,
-                                                                             headers=None,
-                                                                             **request_parameters):
-        """ This function is an alias of get_configurations_for_intended_layer2_features_on_a_wired_device_v1 .
-        Args:
-            id(str): id path parameter. Network device ID of the wired device to configure. .
-            feature(str): feature query parameter. Name of the feature to configure. The API
-                /data/intent/api/wired/networkDevices/{id}/configFeatures/supported/layer2 can be used
-                to get the list of features supported on a device. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_configurations_for_intended_layer2_features_on_a_wired_device_v1 .
-        """
-        return self.get_configurations_for_intended_layer2_features_on_a_wired_device_v1(
-                    feature=feature,
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def deploy_the_configuration_model_on_the_network_device(self,
-                                                                network_device_id,
-                                                                preview_activity_id,
-                                                                headers=None,
-                                                                **request_parameters):
-        """ This function is an alias of deploy_the_configuration_model_on_the_network_device_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            preview_activity_id(str): previewActivityId path parameter. Activity id from
-                intent/api/v1/activity. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of deploy_the_configuration_model_on_the_network_device_v1 .
-        """
-        return self.deploy_the_configuration_model_on_the_network_device_v1(
-                    network_device_id=network_device_id,
-                    preview_activity_id=preview_activity_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def deploy_the_intended_configuration_features_on_a_wired_device(self,
-                                                                        network_device_id,
-                                                                        headers=None,
-                                                                        **request_parameters):
-        """ This function is an alias of deploy_the_intended_configuration_features_on_a_wired_device_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of deploy_the_intended_configuration_features_on_a_wired_device_v1 .
-        """
-        return self.deploy_the_intended_configuration_features_on_a_wired_device_v1(
-                    network_device_id=network_device_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def gets_the_device_config_for_the_configuration_model(self,
-                                                              network_device_id,
-                                                              preview_activity_id,
-                                                              headers=None,
-                                                              **request_parameters):
-        """ This function is an alias of gets_the_device_config_for_the_configuration_model_v1 .
-        Args:
-            network_device_id(str): networkDeviceId path parameter. Network device ID of the wired device to
-                provision. The API /intent/api/v1/network-device can be used to get the network device
-                ID. .
-            preview_activity_id(str): previewActivityId path parameter. Activity id is the taskId from Step
-                2'POST /intent/api/v1/wired/networkDevices/{networkDeviceId}/configFeatures/intended/con
-                figurationModels/{previewActivityId}/networkDevices/{networkDeviceId}/config .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of gets_the_device_config_for_the_configuration_model_v1 .
-        """
-        return self.gets_the_device_config_for_the_configuration_model_v1(
-                    network_device_id=network_device_id,
-                    preview_activity_id=preview_activity_id,
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

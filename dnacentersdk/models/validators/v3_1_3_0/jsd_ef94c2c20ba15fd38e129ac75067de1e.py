@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center QueryAssuranceEventsWithFiltersV1 data model.
+"""Cisco DNA Center QueryAssuranceEventsWithFilters data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorEf94C2C20Ba15Fd38E129Ac75067De1E(object):
-    """QueryAssuranceEventsWithFiltersV1 request schema definition."""
+    """QueryAssuranceEventsWithFilters request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorEf94C2C20Ba15Fd38E129Ac75067De1E, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

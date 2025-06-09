@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
 from builtins import *
 
 
@@ -31,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -63,9 +65,9 @@ class Backup(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_backup_configuration_v1(self,
-                                    headers=None,
-                                    **request_parameters):
+    def get_backup_configuration(self,
+                                 headers=None,
+                                 **request_parameters):
         """This api is used to get the backup configuration .
 
         Args:
@@ -115,15 +117,15 @@ class Backup(object):
 
         return self._object_factory('bpm_dd47c40ef6e75dfeb079b162f5e1d594_v3_1_3_0', json_data)
 
-    def create_backup_configuration_v1(self,
-                                       dataRetention=None,
-                                       encryptionPassphrase=None,
-                                       mountPath=None,
-                                       type=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
+    def create_backup_configuration(self,
+                                    dataRetention=None,
+                                    encryptionPassphrase=None,
+                                    mountPath=None,
+                                    type=None,
+                                    headers=None,
+                                    payload=None,
+                                    active_validation=True,
+                                    **request_parameters):
         """This api is used to create or update backup configuration. Obtain the `mountPath` value from the mountPoint
         attribute in the response of the `/dna/system/api/v1/backupStorages` API. .
 
@@ -200,16 +202,16 @@ class Backup(object):
 
         return self._object_factory('bpm_b843a90c86875472af1f351e78dd5521_v3_1_3_0', json_data)
 
-    def create_n_f_s_configuration_v1(self,
-                                      nfsPort=None,
-                                      nfsVersion=None,
-                                      portMapperPort=None,
-                                      server=None,
-                                      sourcePath=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def create_n_f_s_configuration(self,
+                                   nfsPort=None,
+                                   nfsVersion=None,
+                                   portMapperPort=None,
+                                   server=None,
+                                   sourcePath=None,
+                                   headers=None,
+                                   payload=None,
+                                   active_validation=True,
+                                   **request_parameters):
         """This api is used to create NFS configuration. .
 
         Args:
@@ -291,9 +293,9 @@ class Backup(object):
 
         return self._object_factory('bpm_e9c39175d785a0eb9d6f402f378a2ba_v3_1_3_0', json_data)
 
-    def get_all_n_f_s_configurations_v1(self,
-                                        headers=None,
-                                        **request_parameters):
+    def get_all_n_f_s_configurations(self,
+                                     headers=None,
+                                     **request_parameters):
         """This api is used to get all the configured NFS .
 
         Args:
@@ -343,17 +345,16 @@ class Backup(object):
 
         return self._object_factory('bpm_f7ccd6a28585516e9858e43b24f5f63d_v3_1_3_0', json_data)
 
-    def delete_n_f_s_configuration_v1(self,
-                                      id,
-                                      headers=None,
-                                      **request_parameters):
+    def delete_n_f_s_configuration(self,
+                                   id,
+                                   headers=None,
+                                   **request_parameters):
         """This api is used to delete the NFS configuration. Obtain the `id` from the id attribute in the response of the
         `/dna/system/api/v1/backupNfsConfigurations` API. .
 
         Args:
-            id(str): id path parameter. The `id` of the NFS configuration to be deleted.Obtain the `id` from
-                the id attribute in the response of the `/dna/system/api/v1/backupNfsConfigurations`
-                API. .
+            id(str): id path parameter. The `id` of the NFS configuration to be deleted.Obtain the `id` from the id
+                attribute in the response of the `/dna/system/api/v1/backupNfsConfigurations` API. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -403,29 +404,29 @@ class Backup(object):
 
         return self._object_factory('bpm_d7282ec01a275f5d9c093c2a4b2cf6af_v3_1_3_0', json_data)
 
-    def get_backup_and_restore_executions_v1(self,
-                                             backup_id=None,
-                                             job_type=None,
-                                             limit=None,
-                                             offset=None,
-                                             order=None,
-                                             sort_by=None,
-                                             status=None,
-                                             headers=None,
-                                             **request_parameters):
+    def get_backup_and_restore_executions(self,
+                                          backup_id=None,
+                                          job_type=None,
+                                          limit=None,
+                                          offset=None,
+                                          order=None,
+                                          sort_by=None,
+                                          status=None,
+                                          headers=None,
+                                          **request_parameters):
         """This api is used to get all the backup and restore executions. .
 
         Args:
-            backup_id(str): backupId query parameter. The `backupId` of the backup execution to be
-                retrieved.Obtain the `backupId` from the id attribute in the response of the
-                `/dna/system/api/v1/backups` API. .
+            backup_id(str): backupId query parameter. The `backupId` of the backup execution to be retrieved.Obtain
+                the `backupId` from the id attribute in the response of the `/dna/system/api/v1/backups`
+                API. .
             job_type(str): jobType query parameter. The `jobType` of the backup execution to be retrieved. .
             status(str): status query parameter. The `status` of the backup execution to be retrieved. .
             offset(int): offset query parameter. The first record to show for this page. .
             limit(int): limit query parameter. The number of records to show for this page. .
             sort_by(str): sortBy query parameter. A property within the response to sort by. .
-            order(str): order query parameter. Whether ascending or descending order should be used to sort
-                the response. .
+            order(str): order query parameter. Whether ascending or descending order should be used to sort the
+                response. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -493,10 +494,10 @@ class Backup(object):
 
         return self._object_factory('bpm_e87332fa345c06b01cc351ca31a35c_v3_1_3_0', json_data)
 
-    def get_backup_and_restore_execution_v1(self,
-                                            id,
-                                            headers=None,
-                                            **request_parameters):
+    def get_backup_and_restore_execution(self,
+                                         id,
+                                         headers=None,
+                                         **request_parameters):
         """This api is used to get the execution detail of a specific backup or restore worflow process .
 
         Args:
@@ -550,16 +551,16 @@ class Backup(object):
 
         return self._object_factory('bpm_aa285ec05ff68b1101c7a15254e3_v3_1_3_0', json_data)
 
-    def get_backup_storages_v1(self,
-                               storage_type,
-                               headers=None,
-                               **request_parameters):
+    def get_backup_storages(self,
+                            storage_type,
+                            headers=None,
+                            **request_parameters):
         """This api is used to get all the mounted backup storage information like mount point, disk size based on the
         provided storage type .
 
         Args:
-            storage_type(str): storageType query parameter. The `storageType` of the backup storage to be
-                retrieved. .
+            storage_type(str): storageType query parameter. The `storageType` of the backup storage to be retrieved.
+                .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -610,14 +611,14 @@ class Backup(object):
 
         return self._object_factory('bpm_adbfee1ef7015fbfb1bd47020ab90f89_v3_1_3_0', json_data)
 
-    def get_all_backup_v1(self,
-                          limit=None,
-                          offset=None,
-                          order=None,
-                          query=None,
-                          sort_by=None,
-                          headers=None,
-                          **request_parameters):
+    def get_all_backup(self,
+                       limit=None,
+                       offset=None,
+                       order=None,
+                       query=None,
+                       sort_by=None,
+                       headers=None,
+                       **request_parameters):
         """This api is used to get all the backup available in the configured storage .
 
         Args:
@@ -625,8 +626,8 @@ class Backup(object):
             offset(int): offset query parameter. The first record to show for this page. .
             limit(int): limit query parameter. The number of records to show for this page. .
             sort_by(str): sortBy query parameter. A property within the response to sort by. .
-            order(str): order query parameter. Whether ascending or descending order should be used to sort
-                the response. .
+            order(str): order query parameter. Whether ascending or descending order should be used to sort the
+                response. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -688,13 +689,13 @@ class Backup(object):
 
         return self._object_factory('bpm_f09b1316bea5602aaadebe1102b8b86_v3_1_3_0', json_data)
 
-    def create_backup_v1(self,
-                         name=None,
-                         scope=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
+    def create_backup(self,
+                      name=None,
+                      scope=None,
+                      headers=None,
+                      payload=None,
+                      active_validation=True,
+                      **request_parameters):
         """This api is used to trigger a workflow to create an on demand backup. To monitor the progress and completion of
         the backup creation , please call `/dna/system/api/v1/backupRestoreExecutions/{id}` api , where id is
         the taskId attribute from the response of the curent endpoint. .
@@ -768,10 +769,10 @@ class Backup(object):
 
         return self._object_factory('bpm_c9d3ba6208e5d6eb45fa5c9b8f7e327_v3_1_3_0', json_data)
 
-    def get_backup_by_id_v1(self,
-                            id,
-                            headers=None,
-                            **request_parameters):
+    def get_backup_by_id(self,
+                         id,
+                         headers=None,
+                         **request_parameters):
         """This api is used to get a specific backup based on the provided `backup id`. .
 
         Args:
@@ -825,18 +826,18 @@ class Backup(object):
 
         return self._object_factory('bpm_efd1d42f31af56dd8b395df3685dd465_v3_1_3_0', json_data)
 
-    def delete_backup_v1(self,
-                         id,
-                         headers=None,
-                         **request_parameters):
+    def delete_backup(self,
+                      id,
+                      headers=None,
+                      **request_parameters):
         """This api is used to trigger delete workflow of a specific backup based on the provided `id` Obtain the `id` from
         the id attribute in the response of the `/dna/system/api/v1/backups` API. To monitor the progress and
         completion of the backup deletion , please call `/dna/system/api/v1/backupRestoreExecutions/{id}` api ,
         where id is the taskId attribute from the response of the curent endpoint. .
 
         Args:
-            id(str): id path parameter. The `id` of the backup to be deleted.Obtain the 'id' from the id
-                attribute in the response of the `/dna/system/api/v1/backups` API. .
+            id(str): id path parameter. The `id` of the backup to be deleted.Obtain the 'id' from the id attribute
+                in the response of the `/dna/system/api/v1/backups` API. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -886,363 +887,5 @@ class Backup(object):
 
         return self._object_factory('bpm_c468255fb65851c2b356d2dcf5397cd6_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def get_backup_and_restore_execution(self,
-                                            id,
-                                            headers=None,
-                                            **request_parameters):
-        """ This function is an alias of get_backup_and_restore_execution_v1 .
-        Args:
-            id(str): id path parameter. The `id` of the backup execution to be retrieved. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_backup_and_restore_execution_v1 .
-        """
-        return self.get_backup_and_restore_execution_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_backup_by_id(self,
-                            id,
-                            headers=None,
-                            **request_parameters):
-        """ This function is an alias of get_backup_by_id_v1 .
-        Args:
-            id(str): id path parameter. The `id` of the backup to be retrieved. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_backup_by_id_v1 .
-        """
-        return self.get_backup_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_backup_and_restore_executions(self,
-                                             backup_id=None,
-                                             job_type=None,
-                                             limit=None,
-                                             offset=None,
-                                             order=None,
-                                             sort_by=None,
-                                             status=None,
-                                             headers=None,
-                                             **request_parameters):
-        """ This function is an alias of get_backup_and_restore_executions_v1 .
-        Args:
-            backup_id(str): backupId query parameter. The `backupId` of the backup execution to be
-                retrieved.Obtain the `backupId` from the id attribute in the response of the
-                `/dna/system/api/v1/backups` API. .
-            job_type(str): jobType query parameter. The `jobType` of the backup execution to be retrieved. .
-            status(str): status query parameter. The `status` of the backup execution to be retrieved. .
-            offset(int): offset query parameter. The first record to show for this page. .
-            limit(int): limit query parameter. The number of records to show for this page. .
-            sort_by(str): sortBy query parameter. A property within the response to sort by. .
-            order(str): order query parameter. Whether ascending or descending order should be used to sort
-                the response. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_backup_and_restore_executions_v1 .
-        """
-        return self.get_backup_and_restore_executions_v1(
-                    backup_id=backup_id,
-                    job_type=job_type,
-                    limit=limit,
-                    offset=offset,
-                    order=order,
-                    sort_by=sort_by,
-                    status=status,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_backup_configuration(self,
-                                    headers=None,
-                                    **request_parameters):
-        """ This function is an alias of get_backup_configuration_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_backup_configuration_v1 .
-        """
-        return self.get_backup_configuration_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_n_f_s_configuration(self,
-                                      nfsPort=None,
-                                      nfsVersion=None,
-                                      portMapperPort=None,
-                                      server=None,
-                                      sourcePath=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of create_n_f_s_configuration_v1 .
-        Args:
-            nfsPort(integer): Backup's NFS Port .
-            nfsVersion(string): Backup's NFS version . Available values are 'nfs3' and 'nfs4'.
-            portMapperPort(integer): Backup's NFS port mapper port .
-            server(string): Backup's NFS server host .
-            sourcePath(string): Backup's NFS server path .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_n_f_s_configuration_v1 .
-        """
-        return self.create_n_f_s_configuration_v1(
-                    nfsPort=nfsPort,
-                    nfsVersion=nfsVersion,
-                    portMapperPort=portMapperPort,
-                    server=server,
-                    sourcePath=sourcePath,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_all_backup(self,
-                          limit=None,
-                          offset=None,
-                          order=None,
-                          query=None,
-                          sort_by=None,
-                          headers=None,
-                          **request_parameters):
-        """ This function is an alias of get_all_backup_v1 .
-        Args:
-            query(str): query query parameter. Filter based on the provided text on predefined fields .
-            offset(int): offset query parameter. The first record to show for this page. .
-            limit(int): limit query parameter. The number of records to show for this page. .
-            sort_by(str): sortBy query parameter. A property within the response to sort by. .
-            order(str): order query parameter. Whether ascending or descending order should be used to sort
-                the response. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_all_backup_v1 .
-        """
-        return self.get_all_backup_v1(
-                    limit=limit,
-                    offset=offset,
-                    order=order,
-                    query=query,
-                    sort_by=sort_by,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_n_f_s_configuration(self,
-                                      id,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of delete_n_f_s_configuration_v1 .
-        Args:
-            id(str): id path parameter. The `id` of the NFS configuration to be deleted.Obtain the `id` from
-                the id attribute in the response of the `/dna/system/api/v1/backupNfsConfigurations`
-                API. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_n_f_s_configuration_v1 .
-        """
-        return self.delete_n_f_s_configuration_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_backup(self,
-                         name=None,
-                         scope=None,
-                         headers=None,
-                         payload=None,
-                         active_validation=True,
-                         **request_parameters):
-        """ This function is an alias of create_backup_v1 .
-        Args:
-            name(string): Backup's The backup name .
-            scope(string): Backup's The backup scope states whether the backup is with assurance or without
-                assurance data . Available values are 'CISCO_DNA_DATA_WITH_ASSURANCE' and
-                'CISCO_DNA_DATA_WITHOUT_ASSURANCE'.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_backup_v1 .
-        """
-        return self.create_backup_v1(
-                    name=name,
-                    scope=scope,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def delete_backup(self,
-                         id,
-                         headers=None,
-                         **request_parameters):
-        """ This function is an alias of delete_backup_v1 .
-        Args:
-            id(str): id path parameter. The `id` of the backup to be deleted.Obtain the 'id' from the id
-                attribute in the response of the `/dna/system/api/v1/backups` API. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of delete_backup_v1 .
-        """
-        return self.delete_backup_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_backup_storages(self,
-                               storage_type,
-                               headers=None,
-                               **request_parameters):
-        """ This function is an alias of get_backup_storages_v1 .
-        Args:
-            storage_type(str): storageType query parameter. The `storageType` of the backup storage to be
-                retrieved. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_backup_storages_v1 .
-        """
-        return self.get_backup_storages_v1(
-                    storage_type=storage_type,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_all_n_f_s_configurations(self,
-                                        headers=None,
-                                        **request_parameters):
-        """ This function is an alias of get_all_n_f_s_configurations_v1 .
-        Args:
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_all_n_f_s_configurations_v1 .
-        """
-        return self.get_all_n_f_s_configurations_v1(
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def create_backup_configuration(self,
-                                       dataRetention=None,
-                                       encryptionPassphrase=None,
-                                       mountPath=None,
-                                       type=None,
-                                       headers=None,
-                                       payload=None,
-                                       active_validation=True,
-                                       **request_parameters):
-        """ This function is an alias of create_backup_configuration_v1 .
-        Args:
-            dataRetention(integer): Backup's Date retention policy of the backup .
-            encryptionPassphrase(string): Backup's Password to encrypt the backup information .
-            mountPath(string): Backup's Backup storage mount path .
-            type(string): Backup's The storage type . Available values are 'PHYSICAL_DISK' and 'NFS'.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of create_backup_configuration_v1 .
-        """
-        return self.create_backup_configuration_v1(
-                    dataRetention=dataRetention,
-                    encryptionPassphrase=encryptionPassphrase,
-                    mountPath=mountPath,
-                    type=type,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
+# Alias Functions
 

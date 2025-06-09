@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,18 +65,18 @@ class KnowYourNetwork(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def get_energy_summary_analytics_v1(self,
-                                        aggregateAttributes=None,
-                                        attributes=None,
-                                        endTime=None,
-                                        filters=None,
-                                        groupBy=None,
-                                        page=None,
-                                        startTime=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
+    def get_energy_summary_analytics(self,
+                                     aggregateAttributes=None,
+                                     attributes=None,
+                                     endTime=None,
+                                     filters=None,
+                                     groupBy=None,
+                                     page=None,
+                                     startTime=None,
+                                     headers=None,
+                                     payload=None,
+                                     active_validation=True,
+                                     **request_parameters):
         """Retrieve the summary analytics data related to device energy consumption for all devices, including network
         devices and clients assigned to specific sites. For detailed information about the usage of the API,
         please refer to the Open API specification document - https://github.com/cisco-en-
@@ -172,18 +171,18 @@ class KnowYourNetwork(object):
 
         return self._object_factory('bpm_d0b2cc705afb536fab6fd0848baa73c0_v3_1_3_0', json_data)
 
-    def get_energy_trend_analytics_v1(self,
-                                      aggregateAttributes=None,
-                                      attributes=None,
-                                      endTime=None,
-                                      filters=None,
-                                      groupBy=None,
-                                      page=None,
-                                      startTime=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
+    def get_energy_trend_analytics(self,
+                                   aggregateAttributes=None,
+                                   attributes=None,
+                                   endTime=None,
+                                   filters=None,
+                                   groupBy=None,
+                                   page=None,
+                                   startTime=None,
+                                   headers=None,
+                                   payload=None,
+                                   active_validation=True,
+                                   **request_parameters):
         """Retrieve the energy trend analytics data related to device energy consumption for all devices, including network
         devices and clients assigned to specific sites. For detailed information about the usage of the API,
         please refer to the Open API specification document - https://github.com/cisco-en-
@@ -278,103 +277,5 @@ class KnowYourNetwork(object):
 
         return self._object_factory('bpm_de4a255bc6849a7c9cec69f13c_v3_1_3_0', json_data)
 
-
-
-    # Alias Function
-    def get_energy_trend_analytics(self,
-                                      aggregateAttributes=None,
-                                      attributes=None,
-                                      endTime=None,
-                                      filters=None,
-                                      groupBy=None,
-                                      page=None,
-                                      startTime=None,
-                                      headers=None,
-                                      payload=None,
-                                      active_validation=True,
-                                      **request_parameters):
-        """ This function is an alias of get_energy_trend_analytics_v1 .
-        Args:
-            aggregateAttributes(list): Know Your Network's aggregateAttributes (list of objects).
-            attributes(list): Know Your Network's Attributes (list of strings).
-            endTime(integer): Know Your Network's End Time.
-            filters(list): Know Your Network's filters (list of objects).
-            groupBy(list): Know Your Network's Group By (list of strings).
-            page(object): Know Your Network's page.
-            startTime(integer): Know Your Network's Start Time.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_energy_trend_analytics_v1 .
-        """
-        return self.get_energy_trend_analytics_v1(
-                    aggregateAttributes=aggregateAttributes,
-                    attributes=attributes,
-                    endTime=endTime,
-                    filters=filters,
-                    groupBy=groupBy,
-                    page=page,
-                    startTime=startTime,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def get_energy_summary_analytics(self,
-                                        aggregateAttributes=None,
-                                        attributes=None,
-                                        endTime=None,
-                                        filters=None,
-                                        groupBy=None,
-                                        page=None,
-                                        startTime=None,
-                                        headers=None,
-                                        payload=None,
-                                        active_validation=True,
-                                        **request_parameters):
-        """ This function is an alias of get_energy_summary_analytics_v1 .
-        Args:
-            aggregateAttributes(list): Know Your Network's aggregateAttributes (list of objects).
-            attributes(list): Know Your Network's Attributes (list of strings).
-            endTime(integer): Know Your Network's End Time.
-            filters(list): Know Your Network's filters (list of objects).
-            groupBy(list): Know Your Network's Group By (list of strings).
-            page(object): Know Your Network's page.
-            startTime(integer): Know Your Network's Start Time.
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of get_energy_summary_analytics_v1 .
-        """
-        return self.get_energy_summary_analytics_v1(
-                    aggregateAttributes=aggregateAttributes,
-                    attributes=attributes,
-                    endTime=endTime,
-                    filters=filters,
-                    groupBy=groupBy,
-                    page=page,
-                    startTime=startTime,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
+# Alias Functions
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center QueryAnAggregatedSummaryOfSiteHealthDataV1 data model.
+"""Cisco DNA Center QueryAnAggregatedSummaryOfSiteHealthData data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBec2Dde673C5B2F940D0474Fed32Af6(object):
-    """QueryAnAggregatedSummaryOfSiteHealthDataV1 request schema
+    """QueryAnAggregatedSummaryOfSiteHealthData request schema
     definition."""
     def __init__(self):
         super(JSONSchemaValidatorBec2Dde673C5B2F940D0474Fed32Af6, self).__init__()

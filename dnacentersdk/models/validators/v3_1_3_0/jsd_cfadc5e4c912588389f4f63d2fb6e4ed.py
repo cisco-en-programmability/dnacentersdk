@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center RunNowSensorTestV1 data model.
+"""Cisco DNA Center RunNowSensorTest data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCfadc5E4C912588389F4F63D2Fb6E4Ed(object):
-    """RunNowSensorTestV1 request schema definition."""
+    """RunNowSensorTest request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCfadc5E4C912588389F4F63D2Fb6E4Ed, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

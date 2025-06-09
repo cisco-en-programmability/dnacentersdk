@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateWirelessProfileConnectivityV1 data model.
+"""Cisco DNA Center CreateWirelessProfileConnectivity data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorCc59D48F8159008F52B29E08738811(object):
-    """CreateWirelessProfileConnectivityV1 request schema definition."""
+    """CreateWirelessProfileConnectivity request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorCc59D48F8159008F52B29E08738811, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -53,6 +53,23 @@ class JSONSchemaValidatorCc59D48F8159008F52B29E08738811(object):
                 "type": "string"
                 },
                 "rfProfileName": {
+                "type": "string"
+                },
+                "ssids": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                }
+                },
+                "type": "object"
+                },
+                "type": "array"
+                },
+                "featureTemplates": {
+                "items": {
+                "properties": {
+                "id": {
                 "type": "string"
                 },
                 "ssids": {
@@ -90,6 +107,9 @@ class JSONSchemaValidatorCc59D48F8159008F52B29E08738811(object):
                 "type": "object"
                 },
                 "interfaceName": {
+                "type": "string"
+                },
+                "policyProfileName": {
                 "type": "string"
                 },
                 "ssidName": {

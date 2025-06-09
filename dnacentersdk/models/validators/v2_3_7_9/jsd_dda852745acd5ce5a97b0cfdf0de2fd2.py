@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center DisableApplicationTelemetryFeatureOnMultipleNetworkDevicesV1 data model.
+"""Cisco DNA Center DisableApplicationTelemetryFeatureOnMultipleNetworkDevices data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,8 +33,8 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDda852745Acd5Ce5A97B0Cfdf0De2Fd2(object):
-    """DisableApplicationTelemetryFeatureOnMultipleNetworkDevicesV1
-    request schema definition."""
+    """DisableApplicationTelemetryFeatureOnMultipleNetworkDevices request
+    schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDda852745Acd5Ce5A97B0Cfdf0De2Fd2, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

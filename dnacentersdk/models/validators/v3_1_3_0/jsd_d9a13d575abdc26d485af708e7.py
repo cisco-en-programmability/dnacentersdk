@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center RetrievesSpecificClientInformationOverASpecifiedPeriodOfTimeV1 data model.
+"""Cisco DNA Center RetrievesSpecificClientInformationOverASpecifiedPeriodOfTime data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD9A13D575ABdc26D485Af708E7(object):
-    """RetrievesSpecificClientInformationOverASpecifiedPeriodOfTimeV1
+    """RetrievesSpecificClientInformationOverASpecifiedPeriodOfTime
     request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD9A13D575ABdc26D485Af708E7, self).__init__()

@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '2.3.7.9', reason='version does not match')
 
 
-def is_valid_import_trusted_certificate_v1(json_schema_validate, obj):
+def is_valid_import_trusted_certificate(json_schema_validate, obj):
     json_schema_validate('jsd_ebe0eab8e1785bec83a1e155112fb70e_v2_3_7_9').validate(obj)
     return True
 
 
-def import_trusted_certificate_v1(api):
-    endpoint_result = api.cisco_trusted_certificates.import_trusted_certificate_v1(
+def import_trusted_certificate(api):
+    endpoint_result = api.cisco_trusted_certificates.import_trusted_certificate(
         active_validation=True,
         payload=None
     )
@@ -43,11 +43,11 @@ def import_trusted_certificate_v1(api):
 
 
 @pytest.mark.cisco_trusted_certificates
-def test_import_trusted_certificate_v1(api, validator):
+def test_import_trusted_certificate(api, validator):
     try:
-        assert is_valid_import_trusted_certificate_v1(
+        assert is_valid_import_trusted_certificate(
             validator,
-            import_trusted_certificate_v1(api)
+            import_trusted_certificate(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -55,8 +55,8 @@ def test_import_trusted_certificate_v1(api, validator):
             raise original_e
 
 
-def import_trusted_certificate_v1_default_val(api):
-    endpoint_result = api.cisco_trusted_certificates.import_trusted_certificate_v1(
+def import_trusted_certificate_default_val(api):
+    endpoint_result = api.cisco_trusted_certificates.import_trusted_certificate(
         active_validation=True,
         payload=None
     )
@@ -64,11 +64,11 @@ def import_trusted_certificate_v1_default_val(api):
 
 
 @pytest.mark.cisco_trusted_certificates
-def test_import_trusted_certificate_v1_default_val(api, validator):
+def test_import_trusted_certificate_default_val(api, validator):
     try:
-        assert is_valid_import_trusted_certificate_v1(
+        assert is_valid_import_trusted_certificate(
             validator,
-            import_trusted_certificate_v1_default_val(api)
+            import_trusted_certificate_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

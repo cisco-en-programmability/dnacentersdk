@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Cisco Catalyst Center Health and Performance API wrapper.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +23,7 @@ SOFTWARE.
 """
 
 
-
 from builtins import *
-
 
 
 from ...restsession import RestSession
@@ -34,6 +32,7 @@ from ...utils import (
     check_type,
     dict_from_items_with_values,
     dict_of_str,
+    
 )
 
 
@@ -66,10 +65,10 @@ class HealthAndPerformance(object):
         self._object_factory = object_factory
         self._request_validator = request_validator
 
-    def retrieves_diagnostic_task_by_id_v1(self,
-                                           id,
-                                           headers=None,
-                                           **request_parameters):
+    def retrieves_diagnostic_task_by_id(self,
+                                        id,
+                                        headers=None,
+                                        **request_parameters):
         """This API retrieves the diagnostic task identified by the specified `id`. .
 
         Args:
@@ -123,10 +122,10 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_f1144e25e659d1aedcfe02afca97cc_v2_3_7_9', json_data)
 
-    def retrieves_diagnostic_task_details_by_id_v1(self,
-                                                   id,
-                                                   headers=None,
-                                                   **request_parameters):
+    def retrieves_diagnostic_task_details_by_id(self,
+                                                id,
+                                                headers=None,
+                                                **request_parameters):
         """This API retrieves the details of the diagnostic task identified by the specified `id`. .
 
         Args:
@@ -180,16 +179,16 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_a656639f78625002805a9ad1257f9cde_v2_3_7_9', json_data)
 
-    def retrieves_all_the_validation_sets_v1(self,
-                                             view=None,
-                                             headers=None,
-                                             **request_parameters):
+    def retrieves_all_the_validation_sets(self,
+                                          view=None,
+                                          headers=None,
+                                          **request_parameters):
         """Retrieves all the validation sets and optionally the contained validations .
 
         Args:
-            view(str): view query parameter. When the query parameter `view=DETAIL` is passed, all validation
-                sets and associated validations will be returned. When the query parameter
-                `view=DEFAULT` is passed, only validation sets metadata will be returned. .
+            view(str): view query parameter. When the query parameter `view=DETAIL` is passed, all validation sets
+                and associated validations will be returned. When the query parameter `view=DEFAULT` is
+                passed, only validation sets metadata will be returned. .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -239,10 +238,10 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_d6fc1397d48d52449923716aff009d3c_v2_3_7_9', json_data)
 
-    def retrieves_validation_details_for_a_validation_set_v1(self,
-                                                             id,
-                                                             headers=None,
-                                                             **request_parameters):
+    def retrieves_validation_details_for_a_validation_set(self,
+                                                          id,
+                                                          headers=None,
+                                                          **request_parameters):
         """Retrieves validation details for the given validation set id .
 
         Args:
@@ -296,14 +295,14 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_d95307fdbf5b169d9d05e3151f61ac_v2_3_7_9', json_data)
 
-    def retrieves_the_list_of_validation_workflows_v1(self,
-                                                      end_time=None,
-                                                      limit=None,
-                                                      offset=None,
-                                                      run_status=None,
-                                                      start_time=None,
-                                                      headers=None,
-                                                      **request_parameters):
+    def retrieves_the_list_of_validation_workflows(self,
+                                                   end_time=None,
+                                                   limit=None,
+                                                   offset=None,
+                                                   run_status=None,
+                                                   start_time=None,
+                                                   headers=None,
+                                                   **request_parameters):
         """Retrieves the workflows that have been successfully submitted and are currently available. This is sorted by
         `submitTime` .
 
@@ -382,14 +381,14 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_a53d325f85e5549b7c5957c6ecbd891_v2_3_7_9', json_data)
 
-    def submits_the_workflow_for_executing_validations_v1(self,
-                                                          description=None,
-                                                          name=None,
-                                                          validationSetIds=None,
-                                                          headers=None,
-                                                          payload=None,
-                                                          active_validation=True,
-                                                          **request_parameters):
+    def submits_the_workflow_for_executing_validations(self,
+                                                       description=None,
+                                                       name=None,
+                                                       validationSetIds=None,
+                                                       headers=None,
+                                                       payload=None,
+                                                       active_validation=True,
+                                                       **request_parameters):
         """Submits the workflow for executing the validations for the given validation specifications .
 
         Args:
@@ -462,12 +461,12 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_cf9d39cef5e95bb9bd48d5f86e094c99_v2_3_7_9', json_data)
 
-    def retrieves_the_count_of_validation_workflows_v1(self,
-                                                       end_time=None,
-                                                       run_status=None,
-                                                       start_time=None,
-                                                       headers=None,
-                                                       **request_parameters):
+    def retrieves_the_count_of_validation_workflows(self,
+                                                    end_time=None,
+                                                    run_status=None,
+                                                    start_time=None,
+                                                    headers=None,
+                                                    **request_parameters):
         """Retrieves the count of workflows that have been successfully submitted and are currently available. .
 
         Args:
@@ -535,10 +534,10 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_b174a2fc5171520d9423c9a50f7394e7_v2_3_7_9', json_data)
 
-    def deletes_a_validation_workflow_v1(self,
-                                         id,
-                                         headers=None,
-                                         **request_parameters):
+    def deletes_a_validation_workflow(self,
+                                      id,
+                                      headers=None,
+                                      **request_parameters):
         """Deletes the workflow for the given id .
 
         Args:
@@ -592,10 +591,10 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_b3ab76a74dae51fabf39b2ad85c3c58f_v2_3_7_9', json_data)
 
-    def retrieves_validation_workflow_details_v1(self,
-                                                 id,
-                                                 headers=None,
-                                                 **request_parameters):
+    def retrieves_validation_workflow_details(self,
+                                              id,
+                                              headers=None,
+                                              **request_parameters):
         """Retrieves workflow details for a workflow id .
 
         Args:
@@ -649,7 +648,7 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_c36c30b8c5ddfbf9ccf36db5dd68a_v2_3_7_9', json_data)
 
-    def system_health_v1(self,
+    def system_health(self,
                       domain=None,
                       limit=None,
                       offset=None,
@@ -661,11 +660,10 @@ class HealthAndPerformance(object):
 
         Args:
             summary(bool): summary query parameter. Fetch the latest high severity event .
-            domain(str): domain query parameter. Fetch system events with this domain. Possible values of
-                domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
-            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible
-                values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
-                toolkit/events .
+            domain(str): domain query parameter. Fetch system events with this domain. Possible values of domain are
+                listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
+            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible values of
+                subdomain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
             limit(int): limit query parameter. Specifies the maximum number of system health events to return per
                 page. Must be an integer between 1 and 50, inclusive .
             offset(int): offset query parameter. Specifies the starting point for the list of system health events
@@ -731,7 +729,7 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_d0acccfae6885bc28f8f39c67f4acfc1_v2_3_7_9', json_data)
 
-    def system_health_count_v1(self,
+    def system_health_count(self,
                             domain=None,
                             subdomain=None,
                             headers=None,
@@ -739,11 +737,10 @@ class HealthAndPerformance(object):
         """This API gives the count of the latest system events .
 
         Args:
-            domain(str): domain query parameter. Fetch system events with this domain. Possible values of
-                domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
-            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible
-                values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
-                toolkit/events .
+            domain(str): domain query parameter. Fetch system events with this domain. Possible values of domain are
+                listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
+            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible values of
+                subdomain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
             headers(dict): Dictionary of HTTP Headers to send with the Request
                 .
             **request_parameters: Additional request parameters (provides
@@ -796,7 +793,7 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_f6dd603bc35db1948f31c782a37647_v2_3_7_9', json_data)
 
-    def system_performance_v1(self,
+    def system_performance(self,
                            end_time=None,
                            function=None,
                            kpi=None,
@@ -872,7 +869,7 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_cfcb7a875f215cb4ba59be38abb871e6_v2_3_7_9', json_data)
 
-    def system_performance_historical_v1(self,
+    def system_performance_historical(self,
                                       end_time=None,
                                       kpi=None,
                                       start_time=None,
@@ -883,8 +880,7 @@ class HealthAndPerformance(object):
         available from the past 24 hours. .
 
         Args:
-            kpi(str): kpi query parameter. Fetch historical data for this kpi. Valid values:
-                cpu,memory,network .
+            kpi(str): kpi query parameter. Fetch historical data for this kpi. Valid values: cpu,memory,network .
             start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
                 performance indicator need to be fetched .
             end_time(int): endTime query parameter. This is the epoch end time in milliseconds upto which
@@ -945,395 +941,5 @@ class HealthAndPerformance(object):
 
         return self._object_factory('bpm_f131d712dc253dca528c0298b3e41c6_v2_3_7_9', json_data)
 
-
-
-    # Alias Function
-    def system_performance(self,
-                           end_time=None,
-                           function=None,
-                           kpi=None,
-                           start_time=None,
-                           headers=None,
-                           **request_parameters):
-        """ This function is an alias of system_performance_v1 .
-        Args:
-            kpi(str): kpi query parameter. Valid values: cpu,memory,network .
-            function(str): function query parameter. Valid values: sum,average,max .
-            start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
-                performance indicator need to be fetched .
-            end_time(int): endTime query parameter. This is the epoch end time in milliseconds upto which
-                performance indicator need to be fetched .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of system_performance_v1 .
-        """
-        return self.system_performance_v1(
-                    end_time=end_time,
-                    function=function,
-                    kpi=kpi,
-                    start_time=start_time,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def system_performance_historical(self,
-                                      end_time=None,
-                                      kpi=None,
-                                      start_time=None,
-                                      headers=None,
-                                      **request_parameters):
-        """ This function is an alias of system_performance_historical_v1 .
-        Args:
-            kpi(str): kpi query parameter. Fetch historical data for this kpi. Valid values:
-                cpu,memory,network .
-            start_time(int): startTime query parameter. This is the epoch start time in milliseconds from which
-                performance indicator need to be fetched .
-            end_time(int): endTime query parameter. This is the epoch end time in milliseconds upto which
-                performance indicator need to be fetched .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of system_performance_historical_v1 .
-        """
-        return self.system_performance_historical_v1(
-                    end_time=end_time,
-                    kpi=kpi,
-                    start_time=start_time,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def system_health(self,
-                      domain=None,
-                      limit=None,
-                      offset=None,
-                      subdomain=None,
-                      summary=None,
-                      headers=None,
-                      **request_parameters):
-        """ This function is an alias of system_health_v1 .
-        Args:
-            summary(bool): summary query parameter. Fetch the latest high severity event .
-            domain(str): domain query parameter. Fetch system events with this domain. Possible values of
-                domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
-            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible
-                values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
-                toolkit/events .
-            limit(int): limit query parameter. Specifies the maximum number of system health events to return per
-                page. Must be an integer between 1 and 50, inclusive .
-            offset(int): offset query parameter. Specifies the starting point for the list of system health events
-                to return. Must be an integer greater than or equal to 0 .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of system_health_v1 .
-        """
-        return self.system_health_v1(
-                    domain=domain,
-                    limit=limit,
-                    offset=offset,
-                    subdomain=subdomain,
-                    summary=summary,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def deletes_a_validation_workflow(self,
-                                         id,
-                                         headers=None,
-                                         **request_parameters):
-        """ This function is an alias of deletes_a_validation_workflow_v1 .
-        Args:
-            id(str): id path parameter. Workflow id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of deletes_a_validation_workflow_v1 .
-        """
-        return self.deletes_a_validation_workflow_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_validation_details_for_a_validation_set(self,
-                                                             id,
-                                                             headers=None,
-                                                             **request_parameters):
-        """ This function is an alias of retrieves_validation_details_for_a_validation_set_v1 .
-        Args:
-            id(str): id path parameter. Validation set id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_validation_details_for_a_validation_set_v1 .
-        """
-        return self.retrieves_validation_details_for_a_validation_set_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_the_count_of_validation_workflows(self,
-                                                       end_time=None,
-                                                       run_status=None,
-                                                       start_time=None,
-                                                       headers=None,
-                                                       **request_parameters):
-        """ This function is an alias of retrieves_the_count_of_validation_workflows_v1 .
-        Args:
-            start_time(int): startTime query parameter. Workflows started after the given time (as milliseconds
-                since UNIX epoch). .
-            end_time(int): endTime query parameter. Workflows started before the given time (as milliseconds since
-                UNIX epoch). .
-            run_status(str): runStatus query parameter. Execution status of the workflow. If the workflow is
-                successfully submitted, runStatus is `PENDING`. If the workflow execution has started,
-                runStatus is `IN_PROGRESS`. If the workflow executed is completed with all validations
-                executed, runStatus is `COMPLETED`. If the workflow execution fails while running
-                validations, runStatus is `FAILED`. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_the_count_of_validation_workflows_v1 .
-        """
-        return self.retrieves_the_count_of_validation_workflows_v1(
-                    end_time=end_time,
-                    run_status=run_status,
-                    start_time=start_time,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_the_list_of_validation_workflows(self,
-                                                      end_time=None,
-                                                      limit=None,
-                                                      offset=None,
-                                                      run_status=None,
-                                                      start_time=None,
-                                                      headers=None,
-                                                      **request_parameters):
-        """ This function is an alias of retrieves_the_list_of_validation_workflows_v1 .
-        Args:
-            start_time(int): startTime query parameter. Workflows started after the given time (as milliseconds
-                since UNIX epoch). .
-            end_time(int): endTime query parameter. Workflows started before the given time (as milliseconds since
-                UNIX epoch). .
-            run_status(str): runStatus query parameter. Execution status of the workflow. If the workflow is
-                successfully submitted, runStatus is `PENDING`. If the workflow execution has started,
-                runStatus is `IN_PROGRESS`. If the workflow executed is completed with all validations
-                executed, runStatus is `COMPLETED`. If the workflow execution fails while running
-                validations, runStatus is `FAILED`. .
-            offset(int): offset query parameter. The first record to show for this page; the first record is
-                numbered 1. .
-            limit(int): limit query parameter. Specifies the maximum number of workflows to return per page. Must be
-                an integer between 1 and 500, inclusive. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_the_list_of_validation_workflows_v1 .
-        """
-        return self.retrieves_the_list_of_validation_workflows_v1(
-                    end_time=end_time,
-                    limit=limit,
-                    offset=offset,
-                    run_status=run_status,
-                    start_time=start_time,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def system_health_count(self,
-                            domain=None,
-                            subdomain=None,
-                            headers=None,
-                            **request_parameters):
-        """ This function is an alias of system_health_count_v1 .
-        Args:
-            domain(str): domain query parameter. Fetch system events with this domain. Possible values of
-                domain are listed here : /dna/platform/app/consumer-portal/developer-toolkit/events .
-            subdomain(str): subdomain query parameter. Fetch system events with this subdomain. Possible
-                values of subdomain are listed here : /dna/platform/app/consumer-portal/developer-
-                toolkit/events .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of system_health_count_v1 .
-        """
-        return self.system_health_count_v1(
-                    domain=domain,
-                    subdomain=subdomain,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_diagnostic_task_by_id(self,
-                                           id,
-                                           headers=None,
-                                           **request_parameters):
-        """ This function is an alias of retrieves_diagnostic_task_by_id_v1 .
-        Args:
-            id(str): id path parameter. The `id` of the diagnostic task to be retrieved .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_diagnostic_task_by_id_v1 .
-        """
-        return self.retrieves_diagnostic_task_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_validation_workflow_details(self,
-                                                 id,
-                                                 headers=None,
-                                                 **request_parameters):
-        """ This function is an alias of retrieves_validation_workflow_details_v1 .
-        Args:
-            id(str): id path parameter. Workflow id .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_validation_workflow_details_v1 .
-        """
-        return self.retrieves_validation_workflow_details_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def submits_the_workflow_for_executing_validations(self,
-                                                          description=None,
-                                                          name=None,
-                                                          validationSetIds=None,
-                                                          headers=None,
-                                                          payload=None,
-                                                          active_validation=True,
-                                                          **request_parameters):
-        """ This function is an alias of submits_the_workflow_for_executing_validations_v1 .
-        Args:
-            description(string): Health and Performance's Description of the workflow to run .
-            name(string): Health and Performance's Name of the workflow to run. It must be unique. .
-            validationSetIds(list): Health and Performance's List of validation set ids  (list of strings).
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            payload(): A JSON serializable Python object to send in the
-                body of the Request.
-            active_validation(bool): Enable/Disable payload validation.
-                Defaults to True.
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of submits_the_workflow_for_executing_validations_v1 .
-        """
-        return self.submits_the_workflow_for_executing_validations_v1(
-                    description=description,
-                    name=name,
-                    validationSetIds=validationSetIds,
-                    headers=headers,
-                    payload=payload,
-                    active_validation=active_validation,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_all_the_validation_sets(self,
-                                             view=None,
-                                             headers=None,
-                                             **request_parameters):
-        """ This function is an alias of retrieves_all_the_validation_sets_v1 .
-        Args:
-            view(str): view query parameter. When the query parameter `view=DETAIL` is passed, all validation
-                sets and associated validations will be returned. When the query parameter
-                `view=DEFAULT` is passed, only validation sets metadata will be returned. .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_all_the_validation_sets_v1 .
-        """
-        return self.retrieves_all_the_validation_sets_v1(
-                    view=view,
-                    headers=headers,
-                    **request_parameters
-        )
-
-
-    # Alias Function
-    def retrieves_diagnostic_task_details_by_id(self,
-                                                   id,
-                                                   headers=None,
-                                                   **request_parameters):
-        """ This function is an alias of retrieves_diagnostic_task_details_by_id_v1 .
-        Args:
-            id(str): id path parameter. The `id` of the diagnostic task to be retrieved .
-            headers(dict): Dictionary of HTTP Headers to send with the Request
-                .
-            **request_parameters: Additional request parameters (provides
-                support for parameters that may be added in the future).
-
-        Returns:
-            This function returns the output of retrieves_diagnostic_task_details_by_id_v1 .
-        """
-        return self.retrieves_diagnostic_task_details_by_id_v1(
-                    id=id,
-                    headers=headers,
-                    **request_parameters
-        )
-
+# Alias Functions
 

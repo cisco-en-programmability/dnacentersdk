@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AcceptCiscoISEServerCertificateForCiscoISEServerIntegrationV1 data model.
+"""Cisco DNA Center AcceptCiscoISEServerCertificateForCiscoISEServerIntegration data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorE0Ed6B9A530EA05D77A199Ded4E3(object):
-    """AcceptCiscoISEServerCertificateForCiscoISEServerIntegrationV1
+    """AcceptCiscoISEServerCertificateForCiscoISEServerIntegration
     request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorE0Ed6B9A530EA05D77A199Ded4E3, self).__init__()

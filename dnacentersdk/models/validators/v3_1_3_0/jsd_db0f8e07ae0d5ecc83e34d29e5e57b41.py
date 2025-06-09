@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddImageDistributionServerV1 data model.
+"""Cisco DNA Center AddImageDistributionServer data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorDb0F8E07Ae0D5Ecc83E34D29E5E57B41(object):
-    """AddImageDistributionServerV1 request schema definition."""
+    """AddImageDistributionServer request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorDb0F8E07Ae0D5Ecc83E34D29E5E57B41, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center SetTelemetrySettingsForASiteV1 data model.
+"""Cisco DNA Center SetTelemetrySettingsForASite data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,121 +33,87 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda(object):
-    """SetTelemetrySettingsForASiteV1 request schema definition."""
+    """SetTelemetrySettingsForASite request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorBac0C488707959C182DfEf18681Bceda, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
             '''{
                 "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "object",
                 "properties": {
-                    "applicationVisibility": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "collector": {
-                                        "type": "object",
-                                        "properties": {
-                                            "address": {
-                                                "type": "string"
-                                            },
-                                            "collectorType": {
-                                                "type": "string",
-                                                "enum": ["Builtin", "TelemetryBrokerOrUDPDirector"]
-                                            },
-                                            "port": {
-                                                "type": "integer"
-                                            }
-                                        }
-                                    },
-                                    "enableOnWiredAccessDevices": {
-                                        "type": "boolean"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "snmpTraps": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "externalTrapServers": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "useBuiltinTrapServer": {
-                                        "type": "boolean"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "syslogs": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "externalSyslogServers": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "useBuiltinSyslogServer": {
-                                        "type": "boolean"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "wiredDataCollection": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "enableWiredDataCollectio": {
-                                        "type": "boolean"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "wirelessTelemetry": {
-                        "oneOf": [
-                            {
-                                "type": "object",
-                                "properties": {
-                                    "enableWirelessTelemetry": {
-                                        "type": "boolean"
-                                    }
-                                }
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    }
+                "applicationVisibility": {
+                "properties": {
+                "collector": {
+                "properties": {
+                "address": {
+                "type": "string"
+                },
+                "collectorType": {
+                "enum": [
+                "Builtin",
+                "TelemetryBrokerOrUDPDirector"
+                ],
+                "type": "string"
+                },
+                "port": {
+                "type": "integer"
                 }
-            }
-            '''.replace("\n" + ' ' * 16, '')
+                },
+                "type": "object"
+                },
+                "enableOnWiredAccessDevices": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "snmpTraps": {
+                "properties": {
+                "externalTrapServers": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "useBuiltinTrapServer": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "syslogs": {
+                "properties": {
+                "externalSyslogServers": {
+                "items": {
+                "type": "string"
+                },
+                "type": "array"
+                },
+                "useBuiltinSyslogServer": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "wiredDataCollection": {
+                "properties": {
+                "enableWiredDataCollection": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                },
+                "wirelessTelemetry": {
+                "properties": {
+                "enableWirelessTelemetry": {
+                "type": "boolean"
+                }
+                },
+                "type": "object"
+                }
+                },
+                "type": "object"
+                }'''.replace("\n" + ' ' * 16, '')
         ))
-
 
     def validate(self, request):
         try:

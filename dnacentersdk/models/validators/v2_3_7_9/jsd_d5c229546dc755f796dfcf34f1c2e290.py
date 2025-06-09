@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdateWebhookDestinationV1 data model.
+"""Cisco DNA Center UpdateWebhookDestination data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD5C229546Dc755F796DfCf34F1C2E290(object):
-    """UpdateWebhookDestinationV1 request schema definition."""
+    """UpdateWebhookDestination request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD5C229546Dc755F796DfCf34F1C2E290, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

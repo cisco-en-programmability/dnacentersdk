@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
 
 
-def is_valid_get_energy_summary_analytics_v1(json_schema_validate, obj):
+def is_valid_get_energy_summary_analytics(json_schema_validate, obj):
     json_schema_validate('jsd_d0b2cc705afb536fab6fd0848baa73c0_v3_1_3_0').validate(obj)
     return True
 
 
-def get_energy_summary_analytics_v1(api):
-    endpoint_result = api.know_your_network.get_energy_summary_analytics_v1(
+def get_energy_summary_analytics(api):
+    endpoint_result = api.know_your_network.get_energy_summary_analytics(
         active_validation=True,
         aggregateAttributes=[{'name': 'string', 'function': 'string'}],
         attributes=['string'],
@@ -50,11 +50,11 @@ def get_energy_summary_analytics_v1(api):
 
 
 @pytest.mark.know_your_network
-def test_get_energy_summary_analytics_v1(api, validator):
+def test_get_energy_summary_analytics(api, validator):
     try:
-        assert is_valid_get_energy_summary_analytics_v1(
+        assert is_valid_get_energy_summary_analytics(
             validator,
-            get_energy_summary_analytics_v1(api)
+            get_energy_summary_analytics(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -62,8 +62,8 @@ def test_get_energy_summary_analytics_v1(api, validator):
             raise original_e
 
 
-def get_energy_summary_analytics_v1_default_val(api):
-    endpoint_result = api.know_your_network.get_energy_summary_analytics_v1(
+def get_energy_summary_analytics_default_val(api):
+    endpoint_result = api.know_your_network.get_energy_summary_analytics(
         active_validation=True,
         aggregateAttributes=None,
         attributes=None,
@@ -78,24 +78,24 @@ def get_energy_summary_analytics_v1_default_val(api):
 
 
 @pytest.mark.know_your_network
-def test_get_energy_summary_analytics_v1_default_val(api, validator):
+def test_get_energy_summary_analytics_default_val(api, validator):
     try:
-        assert is_valid_get_energy_summary_analytics_v1(
+        assert is_valid_get_energy_summary_analytics(
             validator,
-            get_energy_summary_analytics_v1_default_val(api)
+            get_energy_summary_analytics_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_energy_trend_analytics_v1(json_schema_validate, obj):
+def is_valid_get_energy_trend_analytics(json_schema_validate, obj):
     json_schema_validate('jsd_568503de4a255bc6849a7c9cec69f13c_v3_1_3_0').validate(obj)
     return True
 
 
-def get_energy_trend_analytics_v1(api):
-    endpoint_result = api.know_your_network.get_energy_trend_analytics_v1(
+def get_energy_trend_analytics(api):
+    endpoint_result = api.know_your_network.get_energy_trend_analytics(
         active_validation=True,
         aggregateAttributes=[{'name': 'string', 'function': 'string'}],
         attributes=['string'],
@@ -110,11 +110,11 @@ def get_energy_trend_analytics_v1(api):
 
 
 @pytest.mark.know_your_network
-def test_get_energy_trend_analytics_v1(api, validator):
+def test_get_energy_trend_analytics(api, validator):
     try:
-        assert is_valid_get_energy_trend_analytics_v1(
+        assert is_valid_get_energy_trend_analytics(
             validator,
-            get_energy_trend_analytics_v1(api)
+            get_energy_trend_analytics(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -122,8 +122,8 @@ def test_get_energy_trend_analytics_v1(api, validator):
             raise original_e
 
 
-def get_energy_trend_analytics_v1_default_val(api):
-    endpoint_result = api.know_your_network.get_energy_trend_analytics_v1(
+def get_energy_trend_analytics_default_val(api):
+    endpoint_result = api.know_your_network.get_energy_trend_analytics(
         active_validation=True,
         aggregateAttributes=None,
         attributes=None,
@@ -138,11 +138,11 @@ def get_energy_trend_analytics_v1_default_val(api):
 
 
 @pytest.mark.know_your_network
-def test_get_energy_trend_analytics_v1_default_val(api, validator):
+def test_get_energy_trend_analytics_default_val(api, validator):
     try:
-        assert is_valid_get_energy_trend_analytics_v1(
+        assert is_valid_get_energy_trend_analytics(
             validator,
-            get_energy_trend_analytics_v1_default_val(api)
+            get_energy_trend_analytics_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

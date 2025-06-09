@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateA80211beProfileV1 data model.
+"""Cisco DNA Center CreateA80211beProfile data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF08Eb586113E597A91B1658297570934(object):
-    """CreateA80211beProfileV1 request schema definition."""
+    """CreateA80211beProfile request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF08Eb586113E597A91B1658297570934, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

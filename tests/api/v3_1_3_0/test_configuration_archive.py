@@ -29,13 +29,13 @@ from tests.environment import DNA_CENTER_VERSION
 pytestmark = pytest.mark.skipif(DNA_CENTER_VERSION != '3.1.3.0', reason='version does not match')
 
 
-def is_valid_export_device_configurations_v1(json_schema_validate, obj):
+def is_valid_export_device_configurations(json_schema_validate, obj):
     json_schema_validate('jsd_e85b40c5ca055f4c82281617a8f95644_v3_1_3_0').validate(obj)
     return True
 
 
-def export_device_configurations_v1(api):
-    endpoint_result = api.configuration_archive.export_device_configurations_v1(
+def export_device_configurations(api):
+    endpoint_result = api.configuration_archive.export_device_configurations(
         active_validation=True,
         deviceId=['string'],
         password='string',
@@ -45,11 +45,11 @@ def export_device_configurations_v1(api):
 
 
 @pytest.mark.configuration_archive
-def test_export_device_configurations_v1(api, validator):
+def test_export_device_configurations(api, validator):
     try:
-        assert is_valid_export_device_configurations_v1(
+        assert is_valid_export_device_configurations(
             validator,
-            export_device_configurations_v1(api)
+            export_device_configurations(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -57,8 +57,8 @@ def test_export_device_configurations_v1(api, validator):
             raise original_e
 
 
-def export_device_configurations_v1_default_val(api):
-    endpoint_result = api.configuration_archive.export_device_configurations_v1(
+def export_device_configurations_default_val(api):
+    endpoint_result = api.configuration_archive.export_device_configurations(
         active_validation=True,
         deviceId=None,
         password=None,
@@ -68,24 +68,24 @@ def export_device_configurations_v1_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_export_device_configurations_v1_default_val(api, validator):
+def test_export_device_configurations_default_val(api, validator):
     try:
-        assert is_valid_export_device_configurations_v1(
+        assert is_valid_export_device_configurations(
             validator,
-            export_device_configurations_v1_default_val(api)
+            export_device_configurations_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_configuration_archive_details_v1(json_schema_validate, obj):
+def is_valid_get_configuration_archive_details(json_schema_validate, obj):
     json_schema_validate('jsd_4ff699112d3854d99557dc1f48987f09_v3_1_3_0').validate(obj)
     return True
 
 
-def get_configuration_archive_details_v1(api):
-    endpoint_result = api.configuration_archive.get_configuration_archive_details_v1(
+def get_configuration_archive_details(api):
+    endpoint_result = api.configuration_archive.get_configuration_archive_details(
         created_by='string',
         created_time='string',
         device_id='string',
@@ -97,11 +97,11 @@ def get_configuration_archive_details_v1(api):
 
 
 @pytest.mark.configuration_archive
-def test_get_configuration_archive_details_v1(api, validator):
+def test_get_configuration_archive_details(api, validator):
     try:
-        assert is_valid_get_configuration_archive_details_v1(
+        assert is_valid_get_configuration_archive_details(
             validator,
-            get_configuration_archive_details_v1(api)
+            get_configuration_archive_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -109,8 +109,8 @@ def test_get_configuration_archive_details_v1(api, validator):
             raise original_e
 
 
-def get_configuration_archive_details_v1_default_val(api):
-    endpoint_result = api.configuration_archive.get_configuration_archive_details_v1(
+def get_configuration_archive_details_default_val(api):
+    endpoint_result = api.configuration_archive.get_configuration_archive_details(
         created_by=None,
         created_time=None,
         device_id=None,
@@ -122,24 +122,24 @@ def get_configuration_archive_details_v1_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_get_configuration_archive_details_v1_default_val(api, validator):
+def test_get_configuration_archive_details_default_val(api, validator):
     try:
-        assert is_valid_get_configuration_archive_details_v1(
+        assert is_valid_get_configuration_archive_details(
             validator,
-            get_configuration_archive_details_v1_default_val(api)
+            get_configuration_archive_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_network_device_configuration_file_details_v1(json_schema_validate, obj):
+def is_valid_get_network_device_configuration_file_details(json_schema_validate, obj):
     json_schema_validate('jsd_73c07ca5c25f5084ae4148ce8b1ce940_v3_1_3_0').validate(obj)
     return True
 
 
-def get_network_device_configuration_file_details_v1(api):
-    endpoint_result = api.configuration_archive.get_network_device_configuration_file_details_v1(
+def get_network_device_configuration_file_details(api):
+    endpoint_result = api.configuration_archive.get_network_device_configuration_file_details(
         file_type='string',
         id='string',
         limit=0,
@@ -150,11 +150,11 @@ def get_network_device_configuration_file_details_v1(api):
 
 
 @pytest.mark.configuration_archive
-def test_get_network_device_configuration_file_details_v1(api, validator):
+def test_get_network_device_configuration_file_details(api, validator):
     try:
-        assert is_valid_get_network_device_configuration_file_details_v1(
+        assert is_valid_get_network_device_configuration_file_details(
             validator,
-            get_network_device_configuration_file_details_v1(api)
+            get_network_device_configuration_file_details(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -162,8 +162,8 @@ def test_get_network_device_configuration_file_details_v1(api, validator):
             raise original_e
 
 
-def get_network_device_configuration_file_details_v1_default_val(api):
-    endpoint_result = api.configuration_archive.get_network_device_configuration_file_details_v1(
+def get_network_device_configuration_file_details_default_val(api):
+    endpoint_result = api.configuration_archive.get_network_device_configuration_file_details(
         file_type=None,
         id=None,
         limit=None,
@@ -174,24 +174,24 @@ def get_network_device_configuration_file_details_v1_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_get_network_device_configuration_file_details_v1_default_val(api, validator):
+def test_get_network_device_configuration_file_details_default_val(api, validator):
     try:
-        assert is_valid_get_network_device_configuration_file_details_v1(
+        assert is_valid_get_network_device_configuration_file_details(
             validator,
-            get_network_device_configuration_file_details_v1_default_val(api)
+            get_network_device_configuration_file_details_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_count_of_network_device_configuration_files_v1(json_schema_validate, obj):
+def is_valid_count_of_network_device_configuration_files(json_schema_validate, obj):
     json_schema_validate('jsd_789af5e273c15f6abc150e9328e4d070_v3_1_3_0').validate(obj)
     return True
 
 
-def count_of_network_device_configuration_files_v1(api):
-    endpoint_result = api.configuration_archive.count_of_network_device_configuration_files_v1(
+def count_of_network_device_configuration_files(api):
+    endpoint_result = api.configuration_archive.count_of_network_device_configuration_files(
         file_type='string',
         id='string',
         network_device_id='string'
@@ -200,11 +200,11 @@ def count_of_network_device_configuration_files_v1(api):
 
 
 @pytest.mark.configuration_archive
-def test_count_of_network_device_configuration_files_v1(api, validator):
+def test_count_of_network_device_configuration_files(api, validator):
     try:
-        assert is_valid_count_of_network_device_configuration_files_v1(
+        assert is_valid_count_of_network_device_configuration_files(
             validator,
-            count_of_network_device_configuration_files_v1(api)
+            count_of_network_device_configuration_files(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -212,8 +212,8 @@ def test_count_of_network_device_configuration_files_v1(api, validator):
             raise original_e
 
 
-def count_of_network_device_configuration_files_v1_default_val(api):
-    endpoint_result = api.configuration_archive.count_of_network_device_configuration_files_v1(
+def count_of_network_device_configuration_files_default_val(api):
+    endpoint_result = api.configuration_archive.count_of_network_device_configuration_files(
         file_type=None,
         id=None,
         network_device_id=None
@@ -222,35 +222,35 @@ def count_of_network_device_configuration_files_v1_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_count_of_network_device_configuration_files_v1_default_val(api, validator):
+def test_count_of_network_device_configuration_files_default_val(api, validator):
     try:
-        assert is_valid_count_of_network_device_configuration_files_v1(
+        assert is_valid_count_of_network_device_configuration_files(
             validator,
-            count_of_network_device_configuration_files_v1_default_val(api)
+            count_of_network_device_configuration_files_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_get_configuration_file_details_by_id_v1(json_schema_validate, obj):
+def is_valid_get_configuration_file_details_by_id(json_schema_validate, obj):
     json_schema_validate('jsd_0e8878000b5e5810be1b2630e70a5118_v3_1_3_0').validate(obj)
     return True
 
 
-def get_configuration_file_details_by_id_v1(api):
-    endpoint_result = api.configuration_archive.get_configuration_file_details_by_id_v1(
+def get_configuration_file_details_by_id(api):
+    endpoint_result = api.configuration_archive.get_configuration_file_details_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_archive
-def test_get_configuration_file_details_by_id_v1(api, validator):
+def test_get_configuration_file_details_by_id(api, validator):
     try:
-        assert is_valid_get_configuration_file_details_by_id_v1(
+        assert is_valid_get_configuration_file_details_by_id(
             validator,
-            get_configuration_file_details_by_id_v1(api)
+            get_configuration_file_details_by_id(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -258,32 +258,32 @@ def test_get_configuration_file_details_by_id_v1(api, validator):
             raise original_e
 
 
-def get_configuration_file_details_by_id_v1_default_val(api):
-    endpoint_result = api.configuration_archive.get_configuration_file_details_by_id_v1(
+def get_configuration_file_details_by_id_default_val(api):
+    endpoint_result = api.configuration_archive.get_configuration_file_details_by_id(
         id='string'
     )
     return endpoint_result
 
 
 @pytest.mark.configuration_archive
-def test_get_configuration_file_details_by_id_v1_default_val(api, validator):
+def test_get_configuration_file_details_by_id_default_val(api, validator):
     try:
-        assert is_valid_get_configuration_file_details_by_id_v1(
+        assert is_valid_get_configuration_file_details_by_id(
             validator,
-            get_configuration_file_details_by_id_v1_default_val(api)
+            get_configuration_file_details_by_id_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_download_masked_device_configuration_v1(json_schema_validate, obj):
+def is_valid_download_masked_device_configuration(json_schema_validate, obj):
     json_schema_validate('jsd_36fe0e28b3465084b5ee60a43602be1c_v3_1_3_0').validate(obj)
     return True
 
 
-def download_masked_device_configuration_v1(api):
-    endpoint_result = api.configuration_archive.download_masked_device_configuration_v1(
+def download_masked_device_configuration(api):
+    endpoint_result = api.configuration_archive.download_masked_device_configuration(
         active_validation=True,
         id='string',
         payload=None
@@ -292,11 +292,11 @@ def download_masked_device_configuration_v1(api):
 
 
 @pytest.mark.configuration_archive
-def test_download_masked_device_configuration_v1(api, validator):
+def test_download_masked_device_configuration(api, validator):
     try:
-        assert is_valid_download_masked_device_configuration_v1(
+        assert is_valid_download_masked_device_configuration(
             validator,
-            download_masked_device_configuration_v1(api)
+            download_masked_device_configuration(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -304,8 +304,8 @@ def test_download_masked_device_configuration_v1(api, validator):
             raise original_e
 
 
-def download_masked_device_configuration_v1_default_val(api):
-    endpoint_result = api.configuration_archive.download_masked_device_configuration_v1(
+def download_masked_device_configuration_default_val(api):
+    endpoint_result = api.configuration_archive.download_masked_device_configuration(
         active_validation=True,
         id='string',
         payload=None
@@ -314,24 +314,24 @@ def download_masked_device_configuration_v1_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_download_masked_device_configuration_v1_default_val(api, validator):
+def test_download_masked_device_configuration_default_val(api, validator):
     try:
-        assert is_valid_download_masked_device_configuration_v1(
+        assert is_valid_download_masked_device_configuration(
             validator,
-            download_masked_device_configuration_v1_default_val(api)
+            download_masked_device_configuration_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):
             raise original_e
 
 
-def is_valid_download_unmaskedraw_device_configuration_as_z_ip_v1(json_schema_validate, obj):
+def is_valid_download_unmaskedraw_device_configuration_as_z_ip(json_schema_validate, obj):
     json_schema_validate('jsd_d8fcd6dbb7ff53b58f7398c49b27ded2_v3_1_3_0').validate(obj)
     return True
 
 
-def download_unmaskedraw_device_configuration_as_z_ip_v1(api):
-    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_z_ip_v1(
+def download_unmaskedraw_device_configuration_as_z_ip(api):
+    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_z_ip(
         active_validation=True,
         id='string',
         password='string',
@@ -341,11 +341,11 @@ def download_unmaskedraw_device_configuration_as_z_ip_v1(api):
 
 
 @pytest.mark.configuration_archive
-def test_download_unmaskedraw_device_configuration_as_z_ip_v1(api, validator):
+def test_download_unmaskedraw_device_configuration_as_z_ip(api, validator):
     try:
-        assert is_valid_download_unmaskedraw_device_configuration_as_z_ip_v1(
+        assert is_valid_download_unmaskedraw_device_configuration_as_z_ip(
             validator,
-            download_unmaskedraw_device_configuration_as_z_ip_v1(api)
+            download_unmaskedraw_device_configuration_as_z_ip(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -353,8 +353,8 @@ def test_download_unmaskedraw_device_configuration_as_z_ip_v1(api, validator):
             raise original_e
 
 
-def download_unmaskedraw_device_configuration_as_z_ip_v1_default_val(api):
-    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_z_ip_v1(
+def download_unmaskedraw_device_configuration_as_z_ip_default_val(api):
+    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_z_ip(
         active_validation=True,
         id='string',
         password=None,
@@ -364,11 +364,11 @@ def download_unmaskedraw_device_configuration_as_z_ip_v1_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_download_unmaskedraw_device_configuration_as_z_ip_v1_default_val(api, validator):
+def test_download_unmaskedraw_device_configuration_as_z_ip_default_val(api, validator):
     try:
-        assert is_valid_download_unmaskedraw_device_configuration_as_z_ip_v1(
+        assert is_valid_download_unmaskedraw_device_configuration_as_z_ip(
             validator,
-            download_unmaskedraw_device_configuration_as_z_ip_v1_default_val(api)
+            download_unmaskedraw_device_configuration_as_z_ip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

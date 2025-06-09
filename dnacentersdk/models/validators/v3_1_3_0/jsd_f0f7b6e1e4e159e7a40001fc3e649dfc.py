@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center UpdatePowerProfileByIDV1 data model.
+"""Cisco DNA Center UpdatePowerProfileByID data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc(object):
-    """UpdatePowerProfileByIDV1 request schema definition."""
+    """UpdatePowerProfileByID request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF0F7B6E1E4E159E7A40001Fc3E649Dfc, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

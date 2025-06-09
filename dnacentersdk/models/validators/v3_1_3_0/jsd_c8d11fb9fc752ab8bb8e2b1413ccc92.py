@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center TriggerSoftwareImageDistributionV1 data model.
+"""Cisco DNA Center TriggerSoftwareImageDistribution data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorC8D11Fb9Fc752Ab8Bb8E2B1413Ccc92(object):
-    """TriggerSoftwareImageDistributionV1 request schema definition."""
+    """TriggerSoftwareImageDistribution request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorC8D11Fb9Fc752Ab8Bb8E2B1413Ccc92, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

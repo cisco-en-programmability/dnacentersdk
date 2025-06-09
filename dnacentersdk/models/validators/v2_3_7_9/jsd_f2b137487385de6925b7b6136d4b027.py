@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center AddPortChannelsV1 data model.
+"""Cisco DNA Center AddPortChannels data model.
 
-Copyright (c) 2024 Cisco Systems.
+Copyright (c) 2025 Cisco Systems.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorF2B137487385De6925B7B6136D4B027(object):
-    """AddPortChannelsV1 request schema definition."""
+    """AddPortChannels request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorF2B137487385De6925B7B6136D4B027, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(
@@ -41,6 +41,9 @@ class JSONSchemaValidatorF2B137487385De6925B7B6136D4B027(object):
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "items": {
                 "properties": {
+                "allowedVlanRanges": {
+                "type": "string"
+                },
                 "connectedDeviceType": {
                 "enum": [
                 "TRUNK",
@@ -60,6 +63,9 @@ class JSONSchemaValidatorF2B137487385De6925B7B6136D4B027(object):
                 "type": "string"
                 },
                 "type": "array"
+                },
+                "nativeVlanId": {
+                "type": "integer"
                 },
                 "networkDeviceId": {
                 "type": "string"

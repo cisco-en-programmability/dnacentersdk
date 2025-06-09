@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Cisco Catalyst Center CreateAGlobalIPAddressPoolV1 data model.
+"""Cisco DNA Center CreateAGlobalIPAddressPool data model.
 
 Copyright (c) 2025 Cisco Systems.
 
@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import json
 from builtins import *
@@ -33,7 +33,7 @@ from dnacentersdk.exceptions import MalformedRequest
 
 
 class JSONSchemaValidatorD833C51C4F5Cd2879D3E69F773295C(object):
-    """CreateAGlobalIPAddressPoolV1 request schema definition."""
+    """CreateAGlobalIPAddressPool request schema definition."""
     def __init__(self):
         super(JSONSchemaValidatorD833C51C4F5Cd2879D3E69F773295C, self).__init__()
         self._validator = fastjsonschema.compile(json.loads(

@@ -22,7 +22,7 @@ A clear and concise description of what you expected to happen.
 Please provide an screenshot of the successful API call with cuRL, Postman, etc.
 
 **Environment (please complete the following information):**
-* Cisco DNA Center Version and patch: 
+* Cisco Catalyst Center Version and patch: 
 * Python version:
 * SDK version:
 * OS Version: 
