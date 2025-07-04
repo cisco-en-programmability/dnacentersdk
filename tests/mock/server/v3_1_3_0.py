@@ -4300,7 +4300,7 @@ class MockServerRequestHandler_v3_1_3_0(BaseHTTPRequestHandler):
             self.path
         )
 
-    def configuration_archive_download_unmaskedraw_device_configuration_as_z_ip_response(self):
+    def configuration_archive_download_unmaskedraw_device_configuration_as_zip_response(self):
         # Add response status code.
         self.send_response(requests.codes.ok)
         # Add response headers.
@@ -26185,7 +26185,7 @@ class MockServerRequestHandler_v3_1_3_0(BaseHTTPRequestHandler):
             return
 
         if self.matches_CONFIGURATION_ARCHIVE_d8fcd6dbb7ff53b58f7398c49b27ded2():
-            self.configuration_archive_download_unmaskedraw_device_configuration_as_z_ip_response()
+            self.configuration_archive_download_unmaskedraw_device_configuration_as_zip_response()
             return
 
         if self.matches_CONFIGURATION_TEMPLATES_27e37e7d81575d35a974df797e0a2268():

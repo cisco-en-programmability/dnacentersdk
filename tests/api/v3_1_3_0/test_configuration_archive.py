@@ -325,13 +325,13 @@ def test_download_masked_device_configuration_default_val(api, validator):
             raise original_e
 
 
-def is_valid_download_unmaskedraw_device_configuration_as_z_ip(json_schema_validate, obj):
+def is_valid_download_unmaskedraw_device_configuration_as_zip(json_schema_validate, obj):
     json_schema_validate('jsd_d8fcd6dbb7ff53b58f7398c49b27ded2_v3_1_3_0').validate(obj)
     return True
 
 
-def download_unmaskedraw_device_configuration_as_z_ip(api):
-    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_z_ip(
+def download_unmaskedraw_device_configuration_as_zip(api):
+    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_zip(
         active_validation=True,
         id='string',
         password='string',
@@ -341,11 +341,11 @@ def download_unmaskedraw_device_configuration_as_z_ip(api):
 
 
 @pytest.mark.configuration_archive
-def test_download_unmaskedraw_device_configuration_as_z_ip(api, validator):
+def test_download_unmaskedraw_device_configuration_as_zip(api, validator):
     try:
-        assert is_valid_download_unmaskedraw_device_configuration_as_z_ip(
+        assert is_valid_download_unmaskedraw_device_configuration_as_zip(
             validator,
-            download_unmaskedraw_device_configuration_as_z_ip(api)
+            download_unmaskedraw_device_configuration_as_zip(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest)):
@@ -353,8 +353,8 @@ def test_download_unmaskedraw_device_configuration_as_z_ip(api, validator):
             raise original_e
 
 
-def download_unmaskedraw_device_configuration_as_z_ip_default_val(api):
-    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_z_ip(
+def download_unmaskedraw_device_configuration_as_zip_default_val(api):
+    endpoint_result = api.configuration_archive.download_unmaskedraw_device_configuration_as_zip(
         active_validation=True,
         id='string',
         password=None,
@@ -364,11 +364,11 @@ def download_unmaskedraw_device_configuration_as_z_ip_default_val(api):
 
 
 @pytest.mark.configuration_archive
-def test_download_unmaskedraw_device_configuration_as_z_ip_default_val(api, validator):
+def test_download_unmaskedraw_device_configuration_as_zip_default_val(api, validator):
     try:
-        assert is_valid_download_unmaskedraw_device_configuration_as_z_ip(
+        assert is_valid_download_unmaskedraw_device_configuration_as_zip(
             validator,
-            download_unmaskedraw_device_configuration_as_z_ip_default_val(api)
+            download_unmaskedraw_device_configuration_as_zip_default_val(api)
         )
     except Exception as original_e:
         with pytest.raises((JsonSchemaException, MalformedRequest, TypeError)):

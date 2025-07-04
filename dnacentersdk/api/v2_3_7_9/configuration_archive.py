@@ -509,7 +509,7 @@ class ConfigurationArchive(object):
 
         return self._object_factory('bpm_fe0e28b3465084b5ee60a43602be1c_v2_3_7_9', json_data)
 
-    def download_unmaskedraw_device_configuration_as_z_ip(self,
+    def download_unmaskedraw_device_configuration_as_zip(self,
                                                           id,
                                                           password=None,
                                                           headers=None,
